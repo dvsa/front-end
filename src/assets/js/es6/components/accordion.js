@@ -1,4 +1,4 @@
-import elHasClass from './../misc/has-class';
+import { elHasClass, toggleClass } from './../misc';
 
 export class Accordion {
   constructor() {
@@ -63,7 +63,7 @@ export class Accordion {
       for(let i = 0; i < this.state.sections.length; i++) {
         let section = this.state.sections[i];
         if( section.sectionOpen ) {
-          
+
         }
       }
     }

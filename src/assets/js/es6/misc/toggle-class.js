@@ -1,4 +1,14 @@
-export default function toggleClass(el, className) {
+/**
+ * toggleClass
+ * 
+ * Toggles the class for a DOM element.
+ * 
+ * Supported: IE8+
+ * 
+ * @param {DOMElement} el Element to toggle the class for.
+ * @param {string} className Name of the class to toggle.
+ */
+export function toggleClass(el, className) {
   if (el.classList) {
     el.classList.toggle(className);
   }

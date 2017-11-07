@@ -1,0 +1,54 @@
+.badge {
+  border-radius: 2px;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1;
+  margin: -5px 0;
+  min-width: 10px;
+  padding: 5px 8px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  // Default badge
+  background-color: $white;
+  color: $text-colour;
+  border: 1px solid $border-colour;
+
+  &:empty {
+    display: none;
+  }
+
+  &--success {
+    background-color: $green;
+    color: #fff;
+  }
+
+  &--warn {
+    background-color: $yellow;
+    color: #3c3c3c;
+  }
+
+  &--info {
+    background-color: $link-colour;
+    color: #fff;
+  }
+
+  &--alert {
+    background-color: $mellow-red;
+    color: #fff;
+  }
+
+  &--smaller {
+    font-size: 80%;
+    padding: 3px 5px 2px;
+  }
+
+  // In related__status items badges float right
+  .related__status & {
+    float: right;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+}

@@ -1,0 +1,30 @@
+{
+  "name": "DVSA MOT",
+  "short_name": "DVSA MOT",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0c0c",
+  "description": "Check your MOT.",
+  "icons": [
+    {
+      "src": "/images/apple-touch-icon-180x180.png?0.22.1",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon-167x167.png?0.22.1",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/apple-touch-icon-152x152.png?0.22.1",
+      "sizes": "152x152",
+      "type": "image/png"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web"
+    }
+  ]
+}

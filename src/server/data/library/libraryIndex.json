@@ -1,0 +1,25 @@
+{
+    "ELEMENT-BREADCRUMBS" : {
+        "FOREACH-BREADCRUMB" : [
+            {"label": "Library"}
+        ]
+    },
+
+    "contentHeader": [
+        {
+            "title" : "Library"
+        }
+    ],
+
+    "contentNavigation" : [
+        {
+            "primary" : [
+                {"link" : "Submit form", "isInput" : "true"}
+            ],
+            "secondary" : [
+                {"link" : "Return home", "href" : "/"}
+            ]
+        }
+    ]
+
+}

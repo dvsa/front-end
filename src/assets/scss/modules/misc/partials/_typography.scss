@@ -1,0 +1,31 @@
+strong {
+  font-weight: bold;
+}
+
+@media print {
+  h1, .heading-xlarge {
+    font-size: 36px;
+  }
+  
+  .heading-large {
+    font-size: 28px;
+  }
+  
+  #content {
+  
+    .heading-pairs,
+    .heading-pairs span,
+    p,
+    h2,
+    h2 *,
+    h4,
+    li {
+      font-size: 18px !important;
+    }
+  
+    .column-third h2.heading-large {
+      font-size: 130% !important;
+    }
+  
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "headerBackLink" : [
+        {
+            "href": "/moth"
+        }
+    ],
+
+    "formHeader": [
+        {
+            "title" : "What is the vehicle's registration number?"
+        }
+    ],
+
+    "contentNavigation" : [
+        {
+            "primary" : [
+                {"link" : "Continue", "isInput" : "true"}
+            ]
+        }
+    ]
+
+}

@@ -1,0 +1,20 @@
+// Randon hidden/off-canvas classes for honeypot
+.blocked,
+.inlined,
+.shown,
+.isOnshow,
+.form-element,
+.salad-box,
+.robo-cop,
+.r-f,
+.ddt,
+.tyu-33 {
+    @extend .visuallyhidden;
+
+    position: absolute;
+    left: -9999em;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}

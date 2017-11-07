@@ -1,0 +1,10 @@
+.mot-result {
+  @include bold-48;
+  text-transform: uppercase;
+  &--fail {
+    color: $red;
+  }
+  &--pass {
+    color: $green;
+  }
+}

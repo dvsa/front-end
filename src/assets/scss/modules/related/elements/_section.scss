@@ -1,0 +1,16 @@
+&__section {
+  padding-right: 1em;
+  &-title {
+    @include bold-24();
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+  &-links {
+    @include core-16;
+    margin-bottom: 3em;
+
+    > li {
+      margin-bottom: .75em;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.styleguide-library{
+  &__right {
+    width: calc( 100% - 250px );
+    float: right;
+    min-height: 100%;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}

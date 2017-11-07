@@ -1,0 +1,86 @@
+// scss-lint:disable VendorPrefix
+
+// sometimes user agent stylesheet overrides the reset on <li>, so been a wee bit more specific here
+ul,
+ol,
+ul li,
+ol li {
+  list-style-type: none;
+}
+
+
+.list-bullet {
+  list-style-type: disc;
+  padding-left: 20px;
+
+  li {
+    list-style-type: disc;
+  }
+}
+
+// Numbered lists
+.list-number {
+  list-style-type: decimal;
+  padding-left: 20px;
+
+  @include ie-lte(7) {
+    padding-left: 28px;
+  }
+
+  li {
+    list-style-type: decimal;
+  }
+}
+
+// additional layout size
+.column-three-quarters {
+  @include grid-column(3 / 4);
+}
+
+// The default GDS <code> display isn't responsive
+.responsive-code {
+  color: #0b0c0c;
+  background-color: #f8f8f8;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 12px;
+  direction: ltr;
+  padding: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: left;
+  border: 1px solid #bfc1c3;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+
+body a,
+body a:link,
+body a:visited {
+  color: $govuk-blue;
+}
+
+body a:hover {
+  color: $light-blue;
+}
+
+body .button-start,
+body .button-get-started,
+body .button-start:visited,
+body .button-get-started:visited,
+body .button-start:focus,
+body .button-get-started:focus,
+body .button-start:hover,
+body .button-get-started:hover {
+  color: #fff;
+}
+
+// screenreader only
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

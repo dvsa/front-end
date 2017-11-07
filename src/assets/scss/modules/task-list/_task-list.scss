@@ -1,0 +1,14 @@
+$task-list-indent: 35px;
+
+.task-list {
+
+  margin-top: $gutter;
+  
+  @include media(tablet) {
+    margin-top: ($gutter * 2);
+  }
+
+  @import "elements/item";
+  @import "elements/items"
+
+}

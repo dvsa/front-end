@@ -1,0 +1,57 @@
+{{<new_template}}
+
+{{$pageTitle}}What is the vehicle's registration number? - Check MOT history{{/pageTitle}}
+
+    {{$content}}
+        {{#viewData}}
+            <main id="content">
+
+                {{> new_phase-banner}}
+
+                {{# headerBackLink }}
+                    {{> new_c_back }}
+                {{/ headerBackLink }}
+
+                <div class="grid-row">
+
+                    <div class="column-two-thirds">
+
+                        {{# formHeader }}
+                            {{>new_a_form-header}}
+                        {{/ formHeader }}
+
+
+                        <div class="error-summary" role="group" aria-labelledby="enterRegErrorSummary" tabindex="-1">
+                            <h1 class="heading-medium error-summary-heading" id="enterRegErrorSummary">There was a problem with the information</h1>
+                            <p>You had one job: you need to enter the car's details so that we can find it in our database. (this is optional)</p>
+                            <ul class="error-summary-list">
+                                <li><a href="#enterReg">Enter your the vehicle registration in the input field</a></li>
+                            </ul>
+                        </div>
+
+                        <form name="enterReg" action="/moth/enter-reg" method="post">
+                            <fieldset>
+                                <legend class="form-title heading-medium">Enter the vehicle registration</legend>
+                                <div class="form-group form-group-error">
+                                    <label for="enterReg" id="errorEnterReg">
+                                        <span class="form-label-bold">Registration number (number plate)</span>
+                                        <span class="form-hint">For example, CU57ABC</span>
+                                        <span class="error-message">Enter the car registration below</span>
+                                    </label>
+                                    <input type="text" id="enterReg" name="enterReg" value="{{exampleVar}}" class="form-control form-control-error" tabindex="1">
+                                </div>
+                            </fieldset>
+
+                            {{> new_m_content-navigation }}
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </main>
+        {{/viewData}}
+        <!-- / #content -->
+    {{/content}}
+{{/new_template}}

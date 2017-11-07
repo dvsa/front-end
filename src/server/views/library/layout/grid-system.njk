@@ -1,0 +1,113 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Grid System' %}
+
+{% block content %}
+
+  {{ components.heading(text='Page Width', tag='h2', size='medium') }}
+  {{ components.paragraph(text='The default maximum page width is 1020px, but go wider if the content requires it.') }}
+
+  {{ components.heading(text='Screen Size', tag='h2', size='medium') }}
+  {{ components.paragraph(text='Design for small screens first using a single column layout.') }}
+
+  {{ components.heading(text='Full Width', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+    {% call components.gridRow() %}
+      {% call components.columnFull() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
+  {{ components.heading(text='Halves', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+    {% call components.gridRow() %}
+      {% call components.columnHalf() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnHalf() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
+  {{ components.heading(text='Thirds', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+    {% call components.gridRow() %}
+      {% call components.columnOneThird() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnOneThird() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnOneThird() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
+  {{ components.heading(text='Two Thirds / One Third', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+    {% call components.gridRow() %}
+      {% call components.columnTwoThirds() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnOneThird() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
+  {{ components.heading(text='One Thirds / Two Thirds', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+    {% call components.gridRow() %}
+      {% call components.columnOneThird() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnTwoThirds() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
+  {{ components.heading(text='Quarters', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+    {% call components.gridRow() %}
+      {% call components.columnOneQuarter() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnOneQuarter() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnOneQuarter() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnOneQuarter() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
+  {{ components.heading(text='Two Quarters / One Half', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+    {% call components.gridRow() %}
+      {% call components.columnOneQuarter() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnOneQuarter() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+      {% call components.columnHalf() %}
+        {{ components.placeholderBox() }}
+      {%- endcall %}
+    {%- endcall %}
+  {%- endcall %}
+
+{% endblock %}

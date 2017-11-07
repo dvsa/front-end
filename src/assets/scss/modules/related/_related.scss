@@ -1,0 +1,12 @@
+.related {
+  border-top: 10px solid $mot-blue;
+
+  // Elements
+  @import "elements/section";
+  @import "elements/status";
+
+  // Modifiers
+  @import "modifiers/no-bar";
+  @import "modifiers/no-bar";
+
+}

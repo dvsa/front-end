@@ -1,0 +1,31 @@
+// scss-lint:disable ImportantRule
+/**
+* Based on the design guidelines:
+* Spacing between elements is usually 5px, 10px, 15px or multiples of 15px
+
+* These classes are limited by the space-class-values list in config/_layout.scss
+*/
+
+// NOTE:
+/*
+  t = top
+  b = bottom
+  y = top & bottom
+*/
+
+// Padding
+@each $value in $space-class-values {
+    .u-pad-t#{$value} { padding-top: #{$value}px !important; }
+    .u-pad-b#{$value} { padding-bottom: #{$value}px !important; }
+
+    .u-pad-y#{$value} {
+        padding-top: #{$value}px !important;
+        padding-bottom: #{$value}px !important;
+    }
+}
+
+@media print {
+    .u-pad-b15 {
+        padding-bottom: 5px !important;
+    }
+}

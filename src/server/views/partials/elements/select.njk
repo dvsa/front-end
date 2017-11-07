@@ -1,0 +1,14 @@
+{% from "partials/elements/label.njk" import formLabel %}
+
+{% macro select(options=false, label='', labelBold=false, id='', name='', hint=false, group=false, error=false) %}
+  {% if label and options %}
+    {% if group or error %}<div class="form-group {{ 'form-group-error' if error }}">{% endif %}
+    {{ formLabel(label=label, id=id, bold=labelBold, hint=hint, error=error) }}
+    <select class="form-control {{ 'form-control-error' if error }}" {{ 'id="' + id + '"' if id }} name="{{ name if name else id }}">
+      {% for option in options %}
+        <option {{ 'value="' + option.value + '"' if option.value }}>{{ option.text }}</option>
+      {% endfor %}
+    </select>
+    {% if group or error %}</div>{% endif %}
+  {% endif %}
+{% endmacro %}

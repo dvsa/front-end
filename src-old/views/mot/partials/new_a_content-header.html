@@ -1,0 +1,18 @@
+<h1 class="heading-xlarge">
+    {{# type}}
+        <span class="heading-secondary">{{{type}}}</span>
+    {{/ type}}
+
+    {{{title}}}
+</h1>
+{{# tertiary }}
+    <h2 class="content-header__tertiary">{{tertiary}}</h2>
+{{/ tertiary }}
+
+{{# tertiaryList }}
+    <ul class="content-header__tertiary-list">
+        {{#items}}
+            <li class="content-header__list-item{{#isPrimary}}--primary{{/isPrimary}}">{{value}}</li>
+        {{/items}}
+    </ul>
+{{/ tertiaryList }}

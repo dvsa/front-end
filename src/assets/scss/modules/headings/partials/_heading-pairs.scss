@@ -1,0 +1,22 @@
+.heading-pairs {
+  @include bold-24;
+  span {
+    @include core-24;
+    display: block;
+    color: $grey-1;
+  }
+
+  &--small-top {
+    @include bold-19;
+    span {
+      @include core-19;
+    }
+  }
+
+  &--small {
+    @include core-19;
+    span {
+      @include core-19;
+    }
+  }
+}

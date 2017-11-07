@@ -1,0 +1,18 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "../images/";
+
+// Variables
+@import 'variables/variables';
+
+// Mixins
+@import 'mixins/mixins';
+
+// Extends
+@import 'extends/extends';
+
+// Templates
+@import "template/template";
+
+// Elements
+@import 'elements/elements';

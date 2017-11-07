@@ -1,0 +1,15 @@
+&-section {
+  @include bold-24;
+  display: table;
+  padding-bottom: ($gutter / 6);
+
+  &-number {
+    display: table-cell;
+    padding-right: ($gutter / 6);
+    @include media(tablet) {
+      min-width: $task-list-indent;
+      padding-right: 0;
+    }
+  }
+
+}

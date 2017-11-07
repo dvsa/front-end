@@ -1,0 +1,24 @@
+// Task list pattern
+// Override column width for tablet and up
+.column-minimum {
+  @include media(tablet) {
+    min-width: 600px;
+  }
+}
+
+@media print {
+  .column-one-third {
+    width: 33%;
+    float: left;
+  }
+  
+  .column-two-thirds {
+    width: 65%;
+    float: left;
+  }
+  
+  .column-half, .column-one-half {
+    float: left;
+    width: 50%;
+  }
+}

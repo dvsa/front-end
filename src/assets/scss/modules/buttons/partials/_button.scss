@@ -1,0 +1,28 @@
+/**
+ * @TODO: See below
+ *
+ * Should have its own class instead of using bem modifiers
+ * This will prevent duplicate code from being generated
+ *
+ * .button
+ *   Has all main default button styles
+ *
+ * .button--alert
+ *   This should contain any changes to defaults for this modifier
+ *   instead of putting all button styles
+ */
+
+.button {
+    &--alert {
+        //background-color: $red;
+        @include button($red);
+    }
+    &--info {
+        // background-color: $govuk-blue;
+        @include button($govuk-blue);
+    }
+    &--warn {
+        // background-color: $yellow;
+        @include button($yellow);
+    }
+}

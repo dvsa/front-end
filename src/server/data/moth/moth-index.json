@@ -1,0 +1,25 @@
+{
+    "ELEMENT-BREADCRUMBS" : {
+        "FOREACH-BREADCRUMB" : [
+            {"label": "MOTH templates"}
+        ]
+    },
+
+    "contentHeader": [
+        {
+            "title" : "MOTH templates"
+        }
+    ],
+
+    "contentNavigation" : [
+        {
+            "primary" : [
+                {"link" : "Submit form", "isInput" : "true"}
+            ],
+            "secondary" : [
+                {"link" : "Return home", "href" : "/"}
+            ]
+        }
+    ]
+
+}

@@ -1,0 +1,267 @@
+{{<new_template}}
+
+{{$pageTitle}}[vehicle make] [vehicle model] - Check MOT history{{/pageTitle}}
+
+    {{$content}}
+        {{#viewData}}
+            <main id="content">
+
+                {{> new_phase-banner}}
+
+                {{> new_c_breadcrumbs }}
+
+                {{# contentHeader }}
+                    {{>new_a_content-header}}
+                {{/ contentHeader }}
+
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h2 class="heading-large u-space-t5">
+                            <span class="heading-secondary">MOT valid until</span>
+                            X Month 20XX
+                        </h2>
+                        <a href="https://www.reminders.mot-testing.service.gov.uk/">Get a reminder email</a>
+                    </div>
+
+                    <div class="column-two-thirds">
+                        <h2 class="heading-large u-space-t5">
+                            <span class="heading-secondary">Registration</span>
+                            FNZ6110
+                        </h2>
+
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <h2 class="heading-pairs">
+                                    <span>Fuel type</span>
+                                    Petrol
+                                </h2>
+                            </div>
+
+                            <div class="column-one-third">
+                                <h2 class="heading-pairs">
+                                    <span>Colour</span>
+                                    Grey
+                                </h2>
+                            </div>
+
+                            <div class="column-one-third">
+                                <h2 class="heading-pairs">
+                                    <span>Date registered</span>
+                                    2 Jan 2004
+                                </h2>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-row">
+
+                    <div class="column-full">
+
+                        {{> new_m_content-navigation }}
+
+                     </div>
+
+                </div>
+
+                <div class="grid-row">
+
+                    <div class="column-full">
+
+                         <details>
+                            <summary>
+                                <span class="summary">Incorrect details?</span>
+                            </summary>
+                            <div class="panel panel-border-narrow" id="wrong-vehicle" aria-hidden="true">
+                                <p>If you think the MOT expiry date or any of the vehicle details are wrong, <a href="">contact DVSA</a></p>
+                            </div>
+                        </details>
+
+                    </div>
+
+                </div>
+
+                <div class="grid-row">
+
+                    <div class="column-full">
+
+                        <h2 class="heading-medium">MOT history</h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="grid-row u-space-b15">
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                            <span>Date tested</span>
+                            27 July 2017                </h3>
+                    </div>
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                            <span>Mileage</span>
+                            138,582 kms                </h3>
+                    </div>
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                                                    <span>MOT test number</span>
+                                1000 1048 5768                                    </h3>
+                    </div>
+
+                </div>
+
+                <div class="grid-row u-border-bgrey2 u-space-b15 u-pad-b15">
+
+                    <div class="column-one-third">
+                        <h3 class="mot-result mot-result--pass">
+                            Pass                </h3>
+                    </div>
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small">
+                            <span>Test location</span>
+                            Address line 1<br>
+                            Line 2 <br>
+                            Town/city<br>
+                            Postcode
+                        </h3>
+                    </div>
+
+                                <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small">
+                            <span>MOT test number</span>
+                            9996 6445 5018                </h3>
+                    </div>
+
+                </div>
+
+                <div class="grid-row u-space-b15">
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                            <span>Date tested</span>
+                            11 July 2017                </h3>
+                    </div>
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                            <span>Mileage</span>
+                            297,881 kms                </h3>
+                    </div>
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                                                    <span>MOT test number</span>
+                                1000 0001 0240                                    </h3>
+                    </div>
+
+                </div>
+
+                <div class="grid-row u-border-bgrey2 u-space-b15 u-pad-b15">
+
+                    <div class="column-one-third">
+                        <h3 class="mot-result mot-result--fail">
+                            Fail                </h3>
+                    </div>
+
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small">
+                            <span>Test location</span>
+                            Address line 1<br>
+                            Line 2 <br>
+                            Town/city<br>
+                            Postcode
+                        </h3>
+                    </div>
+
+                </div>
+
+                <div class="grid-row u-space-b15">
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                            <span>Date tested</span>
+                            11 July 2017                </h3>
+                    </div>
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                            <span>Mileage</span>
+                            297,881 kms                </h3>
+                    </div>
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small-top">
+                                                    <span>MOT test number</span>
+                                1000 0001 0240                                    </h3>
+                    </div>
+                </div>
+
+                <div class="grid-row u-space-b15 ">
+                    <div class="column-one-third">
+                        <h3 class="mot-result mot-result--fail">
+                            Fail                </h3>
+                    </div>
+                    <div class="column-one-third">
+                        <h3 class="heading-pairs heading-pairs--small">
+                            <span>Test location</span>
+                            Address line 1<br>
+                            Line 2 <br>
+                            Town/city<br>
+                            Postcode
+                        </h3>
+                    </div>
+
+                </div>
+
+                <div class="grid-row u-space-b15 u-pad-b15 u-border-bgrey2">
+
+                    <div class="column-one-third">&nbsp;</div>
+
+                    <div class="column-two-thirds">
+
+                        <h3 class="heading-subtle">Reason(s) for failure</h3>
+                        <ul class="list-bullet bold-small">
+                            <li>Body has a sharp edge caused by corrosion (6.1.C.1)</li><li>Anti-lock braking system component missing (3.4.2)</li><li>Anti-lock braking system warning lamp indicates an ABS fault (3.4.1c)</li>
+                        </ul>
+                        <h3 class="heading-subtle">Advisory notice item(s)</h3>
+                        <ul class="list-bullet bold-small">
+                            <li>Anti-lock braking system component slightly damaged (3.4.2)</li>
+                        </ul>
+
+                        <details class="u-space-t15">
+                            <summary>
+                                <span class="summary">What are these?</span>
+                            </summary>
+                            <div class="panel panel-border-narrow">
+                                <p>Failure items must be fixed before the vehicle can pass its MOT.</p>
+                                <p>Advisory notices are minor problems with the vehicle. If they become more serious they could cause the vehicle to fail its next MOT test.</p>
+                            </div>
+                        </details>
+
+                    </div>
+                </div>
+
+
+                <div class="grid-row u-space-b15 u-pad-b15 u-border-bgrey2">
+                    <div class="column-one-quarter">
+                        <h3 class="mot-result mot-result--pass">
+                            PASS
+                        </h3>
+                    </div>
+
+                    <div class="column-three-quarters">
+                        <p>blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah </p>
+                    </div>
+
+                </div>
+
+
+
+            </main>
+        {{/viewData}}
+        <!-- / #content -->
+    {{/content}}
+{{/new_template}}

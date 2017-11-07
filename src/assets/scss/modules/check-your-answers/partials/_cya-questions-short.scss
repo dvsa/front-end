@@ -1,0 +1,14 @@
+.cya-questions-short {
+
+    &--switch-bold {
+        
+        // Should not be inside of a modifier
+        .cya-question {
+            @include core-19;
+        }
+        .cya-answer {
+            @include bold-19;
+        }
+    }
+
+}

@@ -1,0 +1,42 @@
+
+{{<new_template}}
+
+{{$pageTitle}}Test page{{/pageTitle}}
+
+    {{$content}}
+        {{#viewData}}
+            <main id="content">
+
+
+            <!-- -------------------------------------------------
+                ********************************
+                Dump everything between here...
+                ********************************
+            ------------------------------------------------------ -->
+
+
+
+
+            <!-- -------------------------------------------------
+                ********************************
+                ...and here
+                ********************************
+            ------------------------------------------------------ -->
+
+            </main>
+        {{/viewData}}
+        <!-- / #content -->
+    {{/content}}
+
+    {{$bodyEndInlineScripts}}
+        <script>
+            /*$(document).ready(function () {
+                var showHideContent = new GOVUK.ShowHideContent();
+                showHideContent.init();
+            });*/
+        </script>
+    {{/bodyEndInlineScripts}}
+
+
+{{/new_template}}
+

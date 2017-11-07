@@ -1,0 +1,52 @@
+{{<new_template}}
+
+{{$pageTitle}}Example{{/pageTitle}}
+
+    {{$content}}
+        {{#viewData}}
+            <main id="content">
+
+                {{> new_phase-banner}}
+
+                {{> new_c_breadcrumbs }}
+
+                {{# contentHeader }}
+                    {{>new_a_content-header}}
+                {{/ contentHeader }}
+
+                {{# error}}
+                <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+                      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">There was a problem with the information</h1>
+
+                      <p>You had one job</p>
+
+                      <ul class="error-summary-list">
+                        <li><a href="#input1">Enter your name in the input field</a></li>
+                      </ul>
+
+                </div>
+
+                {{/ error}}
+
+                <div class="text">
+                    <p class="lede">This is a very simple example page</p>
+
+                    <form name="example" action="/example" method="post">
+                        <fieldset>
+                            <legend class="form-title heading-medium">Example form</legend>
+                            <div class="form-group">
+                                <label for="input1" class="form-label ">Your name</label>
+                                <input type="text" id="input1" name="input1" value="{{exampleVar}}" class="form-control form-control-1-2" tabindex="1">
+                            </div>
+                        </fieldset>
+
+                        {{> new_m_content-navigation }}
+
+                    </form>
+                </div>
+            </main>
+        {{/viewData}}
+        <!-- / #content -->
+    {{/content}}
+{{/new_template}}

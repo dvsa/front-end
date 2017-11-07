@@ -1,0 +1,8 @@
+&-items {
+  margin-bottom: $gutter;
+
+  @include media(tablet) {
+    margin-bottom: ($gutter * 2);
+    padding-left: $task-list-indent;
+  }
+}

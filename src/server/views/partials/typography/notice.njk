@@ -1,0 +1,8 @@
+{% macro notice(text='') %}
+  <div class="notice">
+    <i class="icon icon-important">
+      <span class="visually-hidden">Warning</span>
+    </i>
+    <strong class="bold-small">{{ text }}</strong>
+  </div>
+{% endmacro %}

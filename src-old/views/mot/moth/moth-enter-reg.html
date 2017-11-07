@@ -1,0 +1,47 @@
+{{<new_template}}
+
+{{$pageTitle}}What is the vehicle's registration number? - Check MOT history{{/pageTitle}}
+
+    {{$content}}
+        {{#viewData}}
+            <main id="content">
+
+                {{> new_phase-banner}}
+
+                {{# headerBackLink }}
+                    {{> new_c_back }}
+                {{/ headerBackLink }}
+
+                <div class="grid-row">
+
+                    <div class="column-two-thirds">
+
+                        {{# formHeader }}
+                            {{>new_a_form-header}}
+                        {{/ formHeader }}
+
+                        <form name="enterReg" action="/moth/enter-reg-error" method="post">
+                            <fieldset>
+                                <legend class="form-title heading-medium visuallyhidden">Enter the vehicle registration</legend>
+                                <div class="form-group">
+                                    <label for="enterReg" class="form-label">
+                                        <span class="form-label-bold">Registration number (number plate)</span>
+                                        <span class="form-hint">For example, CU57ABC</span>
+                                    </label>
+                                    <input type="text" id="enterReg" name="enterReg" value="{{exampleVar}}" class="form-control" tabindex="1">
+                                </div>
+                            </fieldset>
+
+                            {{> new_m_content-navigation }}
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </main>
+        {{/viewData}}
+        <!-- / #content -->
+    {{/content}}
+{{/new_template}}

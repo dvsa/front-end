@@ -1,0 +1,52 @@
+.js-accordion {
+
+  &__top-section {
+    
+    
+  }
+
+  &__expand-button {
+    float: right;
+    font-family: $nta-light;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: $link-colour;
+    padding: 0.5em 0;
+  }
+
+  &__wrapper {
+    &:before {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__section {
+
+  }
+
+  &__header {
+
+  }
+
+  &__title {
+    &-button {
+
+    }
+  }
+
+  &__description {
+    
+  }
+
+  &__content {
+    display: none;
+  }
+
+}

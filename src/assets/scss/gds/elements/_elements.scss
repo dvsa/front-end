@@ -1,0 +1,31 @@
+// GOV.UK elements
+
+@import 'partials/helpers';                       // Helper functions and classes
+
+// Generic (normalize/reset.css)
+@import 'partials/reset';
+
+// Base (unclassed HTML elements)
+// These are predefined by govuk_template
+// If you're not using govuk_template, uncomment the line below.
+@import 'partials/govuk-template-base';        // Base styles set by GOV.UK template
+
+// Objects (unstyled design patterns)
+@import 'partials/layout';                        // Main content container. Grid layout - rows and column widths
+
+// Components (chunks of UI)
+@import 'partials/elements-typography';           // Typography
+@import 'partials/buttons';                       // Buttons
+@import 'partials/icons';                         // Icons - numbered steps, calendar, search
+@import 'partials/lists';                         // Lists - numbered, bulleted
+@import 'partials/tables';                        // Tables - regular, numeric
+@import 'partials/details';                       // Details summary
+@import 'partials/panels';                        // Panels with a left grey border
+@import 'partials/forms';                         // Form - wrappers, inputs, labels
+@import 'partials/forms/form-multiple-choice';    // Custom radio buttons and checkboxes
+@import 'partials/forms/form-date';               // Date of birth pattern
+@import 'partials/forms/form-validation';         // Errors and validation
+@import 'partials/breadcrumbs';                   // Breadcrumbs
+@import 'partials/phase-banner';                  // Alpha and beta banners and tags
+@import 'partials/components';                    // GOV.UK prefixed styles - blue highlighted box
+@import 'partials/shame';                         // Hacks and workarounds that will go away eventually

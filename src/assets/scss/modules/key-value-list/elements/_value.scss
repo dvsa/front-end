@@ -1,0 +1,21 @@
+// @TODO:
+// Below should just be one modifier
+// ex: .key-value-list--half-width
+&__value {
+  width: 50%;
+  @include bold-19;
+  padding-left: $gutter-half;
+
+  &--numeric {
+    width: 50%;
+    @include bold-19($tabular-numbers: true);
+    padding-left: $gutter-half;
+    letter-spacing: .03em;
+  }
+
+  &--muted {
+    width: 50%;
+    color: $secondary-text-colour;
+    padding-left: $gutter-half;
+  }
+}

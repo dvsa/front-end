@@ -1,0 +1,27 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOT Design System' %}
+
+{% block content %}
+
+  {{ components.pageHeading(contentHeader.title, contentHeader.type) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Library', tag='h2', size='medium', url='/library') }}
+      {{ components.paragraph(text='GDS and MOTH components library.') }}
+      
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Prototypes', tag='h2', size='medium', url='/prototypes') }}
+      {{ components.paragraph(text='All of MOTH prototypes.') }}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

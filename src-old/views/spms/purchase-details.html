@@ -1,0 +1,54 @@
+{{<mot_template}}
+
+{{$pageTitle}}Example purchase details{{/pageTitle}}
+
+{{$content}}
+    {{#viewData}}
+        <main id="content" role="main">
+            {{> mot_phase-banner}}
+            {{> mot_c_breadcrumbs}}
+            {{# contentHeader }}            
+                    {{>mot_a_content-header}}
+                {{/ contentHeader }}
+
+                {{#CONTEXT-SUPPLIER-DETAILS}}
+                <h3 class="key-value-list__header">{{heading}}</h3>
+                {{# callsToAction }}
+                    <a href="#" class="key-value-list__action">{{value}}</a>
+                {{/ callsToAction }}
+                {{> mot_c_key-value-list}}
+                {{/CONTEXT-SUPPLIER-DETAILS}}
+
+                {{#CONTEXT-PURCHASER-DETAILS}}
+                <h3 class="key-value-list__header">{{heading}}</h3>
+                {{# callsToAction }}
+                    <a href="#" class="key-value-list__action">{{value}}</a>
+                {{/ callsToAction }}
+                {{> mot_c_key-value-list}}
+                {{/CONTEXT-PURCHASER-DETAILS}}
+
+                {{#CONTEXT-PAYMENT-DETAILS}}
+                <h3 class="key-value-list__header">{{heading}}</h3>
+                {{# callsToAction }}
+                    <a href="#" class="key-value-list__action">{{value}}</a>
+                {{/ callsToAction }}
+                {{> mot_c_key-value-list}}
+                {{/CONTEXT-PAYMENT-DETAILS}}
+
+                {{#CONTEXT-ORDER-DETAILS}}
+                <h3 class="key-value-list__header">{{heading}}</h3>
+                {{# callsToAction }}
+                    <a href="#" class="key-value-list__action">{{value}}</a>
+                {{/ callsToAction }}
+                {{> mot_c_key-value-list}}
+                {{/CONTEXT-ORDER-DETAILS}}
+
+                {{> mot_m_content-navigation }}
+        </main>
+    {{/viewData}}
+    <!-- / #content -->
+{{/content}}
+
+{{/mot_template}}
+
+

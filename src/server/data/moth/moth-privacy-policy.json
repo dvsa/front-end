@@ -1,0 +1,22 @@
+{
+    "ELEMENT-BREADCRUMBS" : {
+        "FOREACH-BREADCRUMB" : [
+            {"label": "Privacy policy"}
+        ]
+    },
+
+    "contentHeader": [
+        {
+            "title" : "Privacy policy"
+        }
+    ],
+
+    "contentNavigation" : [
+        {
+            "secondary" : [
+                {"link" : "Return home", "href" : "/moth/"}
+            ]
+        }
+    ]
+
+}

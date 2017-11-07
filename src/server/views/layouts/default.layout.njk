@@ -1,0 +1,114 @@
+{#
+  Import macros for global use in all views
+#}
+{% set components = {} %}
+{% for component in macroFilePaths %}
+  {% import component as temp %}{% set macro = _.assign(components, temp) %}
+{% endfor %}
+
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html class="lte-ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="" lang="en"><!--<![endif]-->
+  <head>
+    <title>{{ pageTitle }}</title>
+    
+    <meta charset="utf-8" />
+    <meta name="name" content="DVSA MOT" />
+    <meta name="theme-color" content="#0b0c0c" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="/images/opengraph-image.png?0.22.1">
+
+    <!-- head-misc -->
+    <link rel="shortcut icon" href="/images/favicon.ico?0.22.1" type="image/x-icon" />
+    <link rel="mask-icon" href="/images/gov.uk_logotype_crown.svg?0.22.1" color="#0b0c0c">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png?0.22.1">
+    <link rel="apple-touch-icon" sizes="167x167" href="/images/apple-touch-icon-167x167.png?0.22.1">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png?0.22.1">
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png?0.22.1">
+    <link rel="manifest" href="/misc/manifest.json">
+    <!-- /head-misc -->
+
+    <!-- stylesheets -->
+    <link href="/stylesheets/styles.css" media="all" rel="stylesheet" />
+    <!-- /stylesheets -->
+
+    <!-- head-scripts -->
+    <script type="text/javascript" src="/javascripts/vendor.bundle.js"></script>
+    <!-- /head-scripts -->
+    
+    {% block header %}{% endblock %}
+
+    <script type="text/javascript">
+    // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    // ga('create', 'UA-49672752-1', 'govuk-elements.herokuapp.com');
+    // ga('send', 'pageview');
+    </script>
+
+  </head>
+  <body class="">
+
+    <!-- skiplink -->
+    <div id="skiplink-container">
+      <div>
+        <a href="#content" class="skiplink">Skip to main content</a>
+      </div>
+    </div>
+    <!-- /skiplink -->
+
+    <!-- cookie-message -->
+    <div id="global-cookie-message">
+        
+    </div>
+    <!-- /cookie-message -->
+
+    <!-- header -->
+    {% include 'layouts/partials/header.njk' %}
+    <!-- /header -->
+
+    <main id="content" {{ 'class="' + mainContainerClass + '"' if mainContainerClass }}>
+      {% include 'layouts/partials/phase-banner.njk' %}
+      {% block content %}{% endblock %}
+    </main>
+
+    <!-- footer -->
+    {% include 'layouts/partials/footer.njk' %}
+    <!-- /footer -->
+
+    <div id="global-app-error" class="app-error hidden"></div>
+
+    <!-- body-scripts -->
+    <script type="text/javascript">
+      document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    </script>
+
+    <!-- mot-js-bundle -->
+    <script type="text/javascript" src="/javascripts/mot.bundle.js"></script>
+    <!-- /mot-js-bundle -->
+
+    {% block bodyScripts %}{% endblock %}
+    <!-- /body-scripts -->
+
+    <!-- development-only -->
+    <script type="text/javascript">
+    (function(d) {
+      var g = d.createElement('script');
+      g.type = 'text/javascript';
+      g.defer = true;
+      g.src = '/javascripts/development.bundle.js';
+      d.body.appendChild(g);
+
+      var g = d.createElement('link');
+      g.href = '/stylesheets/development.css';
+      g.rel = 'stylesheet';
+      d.head.appendChild(g);
+    }(document));
+    </script>
+    <!-- /development-only -->
+
+  </body>
+</html>

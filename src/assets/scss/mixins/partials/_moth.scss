@@ -1,0 +1,5 @@
+@mixin moth-specific {
+  .moth {
+    @content;
+  }
+}

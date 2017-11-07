@@ -1,0 +1,31 @@
+{{<new_template}}
+
+{{$pageTitle}}Check MOT history{{/pageTitle}}
+
+    {{$content}}
+        {{#viewData}}
+            <main id="content">
+
+                {{> new_phase-banner}}
+
+                {{> new_c_breadcrumbs }}
+
+                {{# contentHeader }}
+                    {{>new_a_content-header}}
+                {{/ contentHeader }}
+
+                <div class="text">
+                    <p class="lede">Various MOTH templates:</p>
+
+                    <ul class="list-bullet">
+                        <li><a href="/moth/enter-reg">BL-5432 Enter registration</a> </li>
+                        <li><a href="/moth/enter-reg-error">BL-5432 Enter registration, in error state</a> </li>
+                        <li><a href="/moth/search-results">BL-5432 Search results showing history</a> </li>
+                        <li><a href="/moth/privacy-policy">BL-5489 MOTH privacy policy</a> </li>
+                    </ul>
+                </div>
+            </main>
+        {{/viewData}}
+        <!-- / #content -->
+    {{/content}}
+{{/new_template}}

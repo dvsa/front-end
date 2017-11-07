@@ -1,0 +1,43 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Inputs' %}
+
+{% block content %}
+
+  {{ components.heading(text='Field with label', tag='h2', size='medium') }}
+  {{ components.field(label='Full name', id='full-name-f1') | prism }}
+
+  {{ components.heading(text='Field with hint', tag='h2', size='medium') }}
+  {{ components.field(label='Full name', id='full-name-f1', hint="This is some hint text") | prism }}
+
+  {{ components.heading(text='Field with groups', tag='h2', size='medium') }}
+  {% call components.displayCode() %}
+    {{ components.field(label='First name', id='first-name', group=true) }}
+    {{ components.field(label='Last name', id='last-name', group=true) }}
+  {%- endcall %}
+
+  {{ components.heading(text='Field 12.5% width', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', width=12.5, id='first-name') | prism }}
+
+  {{ components.heading(text='Field 25% width', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', width=25, id='first-name') | prism }}
+
+  {{ components.heading(text='Field 33% width', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', width=33, id='first-name') | prism }}
+  
+  {{ components.heading(text='Field 50% width', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', width=50, id='first-name') | prism }}
+
+  {{ components.heading(text='Field 60% width', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', width=66, id='first-name') | prism }}
+
+  {{ components.heading(text='Field 75% width', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', width=75, id='first-name') | prism }}
+
+  {{ components.heading(text='Field with bold label', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', labelBold=true, id='first-name') | prism }}
+
+  {{ components.heading(text='Field with error', tag='h2', size='medium') }}
+  {{ components.field(label='Field Name', labelBold=true, id='field-name', hint='Hint message goes here', error='Error message goes here') | prism }}
+
+{% endblock %}

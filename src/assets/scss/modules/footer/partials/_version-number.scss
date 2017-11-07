@@ -1,0 +1,6 @@
+.version-number {
+  @include core-14;
+  position: absolute;
+  bottom: -26px;
+  color: darken($grey-1, 10);
+}

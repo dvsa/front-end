@@ -1,0 +1,29 @@
+{{<new_template}}
+
+{{$pageTitle}}Example{{/pageTitle}}
+
+    {{$content}}
+        {{#viewData}}
+            <main id="content">
+
+                {{> new_phase-banner}}
+
+                {{> new_c_breadcrumbs }}
+
+                {{# contentHeader }}
+                    {{>new_a_content-header}}
+                {{/ contentHeader }}
+
+                <div class="text">
+                    <p class="lede">This is a very simple example page to receive your name from the previous page</p>
+
+                    <p>Here it is: <strong>{{exampleVar}}</strong></p>
+
+                    {{> new_m_content-navigation }}
+
+                </div>
+            </main>
+        {{/viewData}}
+        <!-- / #content -->
+    {{/content}}
+{{/new_template}}

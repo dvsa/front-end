@@ -1,0 +1,10 @@
+{% macro pageHeading(heading='', secondary='') %}
+
+  {% if heading %}
+    <h1 class="heading-xlarge">
+      {% if secondary %}<span class="heading-secondary">{{ secondary }}</span>{% endif %}
+      {{ heading }}
+    </h1>
+  {% endif %}
+
+{% endmacro %}

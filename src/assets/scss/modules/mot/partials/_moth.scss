@@ -1,0 +1,15 @@
+// catch-all with .moth class on body
+.moth {
+
+  .breadcrumbs li {
+    background-image: url('/Assets/images/separator.png');
+    &:first-child {
+      background-image: none;
+    }
+  }
+
+  form[name="moth-search"] input[type="text"] {
+    text-transform: uppercase;
+  }
+
+}

@@ -1,0 +1,8 @@
+{% macro button(text='', url=false, start=false, disabled=false) %}
+  {% set disabledCode = 'disabled="disabled" aria-disabled="true"' %}
+  {% if url %}
+    <a class="button {{ 'button-start' if start }}" href="{{ url }}" role="button">Start now</a>
+  {% else %}
+    <input class="button" type="submit" value="{{ text }}" {{ disabledCode if disabled }}>
+  {% endif %}
+{% endmacro %}

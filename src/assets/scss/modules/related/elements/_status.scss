@@ -1,0 +1,11 @@
+&__status {
+  @include core-16;
+  margin-bottom: 3em;
+
+  > li {
+    border-bottom: 1px solid #bfc1c3;
+    border-left: 1px solid #bfc1c3;
+    border-right: 1px solid #bfc1c3;
+    padding: .75em .75em .5625em;
+  }
+}

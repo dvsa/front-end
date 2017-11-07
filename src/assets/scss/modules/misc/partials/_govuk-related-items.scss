@@ -1,0 +1,17 @@
+.govuk-related-items {
+
+    margin-top: $gutter;
+    border-top: 10px solid $govuk-blue;
+    padding-top: 5px;
+
+    .heading-medium {
+        margin-top: .3em;
+        margin-bottom: .5em;
+    }
+
+    li {
+        margin-bottom: 10px;
+        list-style-type: none;
+    }
+}
+

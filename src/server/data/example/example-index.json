@@ -1,0 +1,27 @@
+{
+    "ELEMENT-BREADCRUMBS" : {
+        "FOREACH-BREADCRUMB" : [
+            {"label": "Example title page"}
+        ]
+    },
+
+    "contentHeader": [
+        {
+
+            "type" : "Quick example",
+            "title" : "Example title page"
+        }
+    ],
+
+    "contentNavigation" : [
+        {
+            "primary" : [
+                {"link" : "Submit form", "isInput" : "true"}
+            ],
+            "secondary" : [
+                {"link" : "Return home", "href" : "/"}
+            ]
+        }
+    ]
+
+}

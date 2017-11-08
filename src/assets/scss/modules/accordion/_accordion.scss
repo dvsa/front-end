@@ -51,6 +51,9 @@
       vertical-align: middle;
       width: 30px;
       display: none;
+      @media(max-width: 640px) {
+        text-align: right;
+      }
     }
 
     &-icon {
@@ -134,7 +137,7 @@
     .js-accordion--js-enabled & {
       display: none;
     }
-    
+
     .js-accordion__section--open & {
       display: block;
     }

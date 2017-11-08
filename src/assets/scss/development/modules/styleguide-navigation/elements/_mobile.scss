@@ -1,7 +1,6 @@
 &__mobile {
   display: none;
   border-bottom: 1px solid $grey-3;
-  padding-bottom: 15px;
 
   &:after {
     content: ' ';
@@ -14,6 +13,8 @@
     display: table;
     border: none;
     background: none;
+    width: 100%;
+    padding: 15px;
 
     &:hover {
       cursor: pointer;

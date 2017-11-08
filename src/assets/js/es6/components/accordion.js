@@ -1,3 +1,8 @@
+import store from 'store';
+import md5 from 'md5';
+
+import { findIndex } from 'lodash';
+
 import {
   elHasClass,
   toggleClass,
@@ -10,6 +15,9 @@ class Accordion {
 
     if( !accordionElement ) return;
     this.accordionElement = accordionElement;
+
+    // Create unique hash for current element based on DOM HTML
+    this.uniqueIdentifier = 'js-accordion-' + md5(this.accordionElement.innerHTML);
 
     // Text for expand button
     this.sectionCloseAllText = 'Close All';
@@ -39,7 +47,7 @@ class Accordion {
     this.state = {
       expandAll: false,
       expanding: false,
-      sections: []
+      sections: [],
     };
     
     this.setup();
@@ -68,9 +76,6 @@ class Accordion {
   expandButtonClickHandler() {
     this.state.expanding = true;
     this.state.expandAll = !this.state.expandAll;
-    for(let i = 0; i < this.state.sections.length; i++) {
-      this.state.sections[i].sectionOpen = this.state.expandAll;
-    }
     this.refreshState();
     this.state.expanding = false;
   }
@@ -89,6 +94,7 @@ class Accordion {
       let sectionContentElement = sectionHeaderElement.querySelector('.' + this.sectionContentClass);
       // Add the section elements to the state
       this.state.sections.push({
+        sectionUniqueIdentifier: md5(sectionElement.innerHTML),
         sectionElement,
         sectionHeaderElement,
         sectionContentElement,
@@ -103,6 +109,8 @@ class Accordion {
 
     // Add event for expand button
     addEventListenerToEl(this.expandButton, 'click', this.expandButtonClickHandler.bind(this));
+  
+    this.restoreSavedStateData();
   }
 
   /**
@@ -112,6 +120,42 @@ class Accordion {
    */
   isSectionOpen(el) {
     return elHasClass(el, this.sectionOpenClass) ? true : false;
+  }
+
+  /**
+   * Restores the state of the accordions
+   */
+  restoreSavedStateData() {
+    // Restore state if saved
+    let savedState = store.get(this.uniqueIdentifier);
+    if( savedState && savedState.sections ) {
+      for(let i = 0; i < savedState.sections.length; i++) {
+        let section = savedState.sections[i];
+        if( !section || !section.uniqueIdentifier ) continue;
+        let sectionIndex = findIndex(this.state.sections, {
+          sectionUniqueIdentifier: section.uniqueIdentifier
+        });
+        if( sectionIndex == undefined ) continue;
+        this.state.sections[sectionIndex].sectionOpen = savedState.expandAll ? true : section.open;
+      }
+    }
+  }
+
+  /**
+   * Saves the current state of the accordions
+   */
+  saveCurrentStateData() {
+    let data = {};
+    data.expandAll = this.state.expandAll;
+    data.sections = [];
+    for(let i = 0; i < this.state.sections.length; i++) {
+      let section = this.state.sections[i];
+      data.sections.push({
+        uniqueIdentifier: section.sectionUniqueIdentifier,
+        open: section.sectionOpen
+      });
+    }
+    store.set(this.uniqueIdentifier, data);
   }
 
   /**
@@ -125,27 +169,38 @@ class Accordion {
       let openCount = 0;
       // Refresh the DOM for each section
       for(let i = 0; i < this.state.sections.length; i++) {
+        if( this.state.expanding ) {
+          this.state.sections[i].sectionOpen = this.state.expandAll;
+          console.log('hello');
+        }
+
         let section = this.state.sections[i];
+
         // Toggle the correct class based on the state
         let sectionOpenState = section.sectionOpen;
         toggleClass(section.sectionElement, this.sectionOpenClass, section.sectionOpen);
+
         if( section.sectionOpen ) {
           openCount++;
         }
+
         // Change expand status if one section is closed
         if( openCount >= 1 && !this.state.expanding ) {
           this.state.expandAll = false;
         }
+
         // Check if all sections are open
         if ( openCount >= this.state.sections.length && !this.state.expanding ) {
           this.state.expandAll = true;
         }
       }
     }
-
+  
     // Update expand button text
     this.expandButton.innerText = this.state.expandAll ? this.sectionCloseAllText : this.sectionOpenAllText;
-
+  
+    // Save current state for future
+    this.saveCurrentStateData();
   }
 
 }

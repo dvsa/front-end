@@ -15,11 +15,12 @@
     cursor: pointer;
     background: none;
     border: none;
-    color: $link-colour;
+    color: $govuk-blue;
     padding: 0.5em 0;
   }
 
   &__wrapper {
+    border-bottom: 1px solid $grey-2;
     &:before {
       content: ' ';
       display: block;
@@ -28,25 +29,91 @@
   }
 
   &__section {
-
+    border-top: 1px solid $grey-2;
   }
 
   &__header {
-
+    padding: 14px 0;
+    display: table;
+    width: 100%;
+    &:hover {
+      cursor: pointer;
+      background: $grey-4;
+    }
+    &-left {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    &-right {
+      display: table-cell;
+      vertical-align: middle;
+      width: 30px;
+    }
+    &-icon {
+      background: none;
+      border: none;
+      width: 16px;
+      height: 16px;
+      background-image: url('../images/icons-plus-minus.png');
+      background: url('../images/icons-plus-minus.svg'),linear-gradient(transparent, transparent);
+      background-repeat: no-repeat;
+      background-position: 0 -16px;
+      padding: 0;
+      margin: 0;
+      .js-accordion__section--open & {
+        background-position: 0 0;
+      }
+    }
   }
 
   &__title {
+    font-family: $nta-light;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 24px;
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
     &-button {
-
+      color: $govuk-blue;
+      cursor: pointer;
+      font-family: $nta-light;
+      font-weight: 700;
+      text-transform: none;
+      font-size: 24px;
+      line-height: 1.25;
+      background: none;
+      border: 0;
+      padding-left: 0;
+      text-align: left;
+    }
+    @media(max-width: 640px) {
+      font-size: 18px;
+      line-height: 1.2;
+      &-button {
+        font-size: 18px;
+        line-height: 1.2;
+      }
     }
   }
 
   &__description {
-    
+    margin: 5px 0 0 0;
+    padding: 0;
+    font-size: 19px;
+    line-height: 1.31579;
+    @media(max-width: 640px) {
+      font-size: 16px;
+      line-height: 1.25;
+    }
   }
 
   &__content {
     display: none;
+    padding: 10px 0 30px 0;
+    .js-accordion__section--open & {
+      display: block;
+    }
   }
 
 }

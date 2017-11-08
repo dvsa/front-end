@@ -1,7 +1,21 @@
 {% if libraryNavigationItems %}
 <div id="styleguide-navigation" class="styleguide-navigation">
 
+  <div class="styleguide-navigation__mobile">
+    <button class="styleguide-navigation__mobile-nav">
+      <div class="styleguide-navigation__mobile-nav-bars">
+        <span class="styleguide-navigation__mobile-nav-bar"></span>
+        <span class="styleguide-navigation__mobile-nav-bar"></span>
+        <span class="styleguide-navigation__mobile-nav-bar"></span>
+      </div>
+      <span class="styleguide-navigation__mobile-nav-text">
+        Library Menu
+      </span>
+    </button>
+  </div>
+
   <div class="styleguide-navigation__inner">
+
     {% for item in libraryNavigationItems %}
       <div class="styleguide-navigation__item">
         <a href="{{ item.link }}" class="styleguide-navigation__main-link">{{ item.name }}</a>
@@ -16,6 +30,7 @@
         </ul>
       </div>
     {% endfor %}
+
   </div>
 
 </div>

@@ -75,6 +75,12 @@
     {% include 'layouts/partials/header.njk' %}
     <!-- /header -->
 
+    {% if not hideLayoutPhaseBanner %}
+    <!-- header-bar -->
+    <div id="global-header-bar"></div>
+    <!-- /header-bar -->
+    {% endif %}
+
     <main id="content" {{ 'class="' + mainContainerClass + '"' if mainContainerClass }}>
       {% include 'layouts/partials/phase-banner.njk' %}
       <div class="styleguide-library" id="library-container">

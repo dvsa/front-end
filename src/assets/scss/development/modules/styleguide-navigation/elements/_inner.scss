@@ -3,4 +3,10 @@
   transform: translate(0, 0);
   transform: translate3d(0, 0, 0);
   will-change: position, transform;
+  @media(max-width: 800px) {
+    display: none;
+    &--open {
+      display: block;
+    }
+  }
 }

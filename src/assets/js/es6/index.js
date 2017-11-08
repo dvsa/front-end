@@ -1,8 +1,8 @@
-import { Accordion } from './components/accordion';
-import { domReady } from './misc';
+import { AccordionInitializer } from './components/accordion';
+import { domReady } from './../shared/misc';
 
 domReady(() => {
 
-  new Accordion();
+  AccordionInitializer();
 
 });

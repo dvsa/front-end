@@ -1,0 +1,54 @@
+&__mobile {
+  display: none;
+  border-bottom: 1px solid $grey-3;
+  padding-bottom: 15px;
+
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  &-nav {
+    float: left;
+    display: table;
+    border: none;
+    background: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &-bars {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    &-bar {
+      width: 40px;
+      height: 5px;
+      background: $govuk-blue;
+      margin-bottom: 5px;
+      display: block;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
+    &-text {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 10px;
+      font-family: $nta-light;
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.2;
+      color: $govuk-blue;
+    }
+  }
+
+  @media(max-width: 800px) {
+    display: block;
+  }
+
+}

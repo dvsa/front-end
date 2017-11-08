@@ -33,7 +33,7 @@ export const GOV_UK_FRONTEND_TOOLKIT_JS_FILE_PATHS = () => {
     'frontend-toolkit/govuk/details.polyfill',
     'frontend-toolkit/govuk/modules',
     'frontend-toolkit/govuk/primary-links',
-    'frontend-toolkit/govuk/selection-buttons',
+    // 'frontend-toolkit/govuk/selection-buttons',
     'frontend-toolkit/govuk/shim-links-with-button-role',
     'frontend-toolkit/govuk/show-hide-content',
     'frontend-toolkit/govuk/stick-at-top-when-scrolling',

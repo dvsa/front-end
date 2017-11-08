@@ -38,10 +38,6 @@
     padding: 14px 0;
     display: table;
     width: 100%;
-    &:hover {
-      cursor: pointer;
-      background: $grey-4;
-    }
     &-left {
       display: table-cell;
       vertical-align: middle;
@@ -51,9 +47,6 @@
       vertical-align: middle;
       width: 30px;
       display: none;
-      .js-accordion--js-enabled & {
-        display: table-cell;
-      }
     }
     &-icon {
       background: none;
@@ -68,6 +61,15 @@
       margin: 0;
       .js-accordion__section--open & {
         background-position: 0 0;
+      }
+    }
+    .js-accordion--js-enabled & {
+      &:hover {
+        cursor: pointer;
+        background: $grey-4;
+      }
+      &-right {
+        display: table-cell;
       }
     }
   }

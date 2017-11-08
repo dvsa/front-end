@@ -171,7 +171,6 @@ class Accordion {
       for(let i = 0; i < this.state.sections.length; i++) {
         if( this.state.expanding ) {
           this.state.sections[i].sectionOpen = this.state.expandAll;
-          console.log('hello');
         }
 
         let section = this.state.sections[i];

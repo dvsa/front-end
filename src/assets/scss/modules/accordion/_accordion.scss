@@ -1,8 +1,10 @@
 .js-accordion {
 
   &__top-section {
-    
-    
+    display: none;
+    .js-accordion--js-enabled & {
+      display: block;
+    }
   }
 
   &__expand-button {
@@ -48,6 +50,10 @@
       display: table-cell;
       vertical-align: middle;
       width: 30px;
+      display: none;
+      .js-accordion--js-enabled & {
+        display: table-cell;
+      }
     }
     &-icon {
       background: none;
@@ -109,8 +115,11 @@
   }
 
   &__content {
-    display: none;
+    display: block;
     padding: 10px 0 30px 0;
+    .js-accordion--js-enabled & {
+      display: none;
+    }
     .js-accordion__section--open & {
       display: block;
     }

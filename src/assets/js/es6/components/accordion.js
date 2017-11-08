@@ -25,12 +25,16 @@ class Accordion {
     this.sectionContentClass = 'js-accordion__content';
     this.sectionClass = 'js-accordion__section';
     this.sectionExpandButtonClass = 'js-accordion__expand-button';
+    this.accordionJSEnabledClassed = 'js-accordion--js-enabled';
 
     // Get all of the accordion sections
     this.sections = this.accordionElement.querySelectorAll('.' + this.sectionClass);
     this.headings = this.accordionElement.querySelectorAll('.' + this.sectionHeaderClass);
     this.expandButton = this.accordionElement.querySelector('.'+ this.sectionExpandButtonClass);
 
+    // Add JS Enabled class
+    toggleClass(this.accordionElement, this.accordionJSEnabledClassed, true);
+    
     // State for accordions
     this.state = {
       expandAll: false,

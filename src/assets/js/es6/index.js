@@ -3,6 +3,7 @@ import { domReady } from './../shared/misc';
 
 domReady(() => {
 
+  // Accordions component
   AccordionInitializer();
 
 });

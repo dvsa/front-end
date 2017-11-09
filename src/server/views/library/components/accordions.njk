@@ -4,10 +4,78 @@
 
 {% block content %}
 
-  {{ components.heading(text='Accordion with Description', tag='h2', size='medium') }}
+  {{ components.heading(text='Accordions with plus/minus icons', tag='h2', size='medium') }}
 
   {% call components.displayCode() %}
   <div class="js-accordion">
+    
+    <div class="js-accordion__top-section">
+      <button class="js-accordion__expand-button">
+        Open All
+      </button>
+    </div>
+
+    <div class="js-accordion__wrapper">
+
+      <div class="js-accordion__section">
+        <div class="js-accordion__header">
+          <div class="js-accordion__header-left">
+            <h2 class="js-accordion__title">
+              <button class="js-accordion__title-button">
+                Designing government services
+              </button>
+            </h2>
+
+            <p class="js-accordion__description">
+              Introduction, scoping, naming and prototyping.
+            </p>
+          </div>
+
+          <div class="js-accordion__header-right">
+            <button class="js-accordion__header-icon"></button>
+          </div>
+        </div>
+        <div class="js-accordion__content">
+
+          {{ components.placeholderBox() }}
+          
+        </div>
+      </div>
+
+      <div class="js-accordion__section">
+        <div class="js-accordion__header">
+          <div class="js-accordion__header-left">
+            <h2 class="js-accordion__title">
+              <button class="js-accordion__title-button">
+                Section Two
+              </button>
+            </h2>
+
+            <p class="js-accordion__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing.
+            </p>
+          </div>
+
+          <div class="js-accordion__header-right">
+            <button class="js-accordion__header-icon"></button>
+          </div>
+        </div>
+        <div class="js-accordion__content">
+
+          {{ components.placeholderBox() }}
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(text='Accordion with up/down icons', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+  <div class="js-accordion js-accordion--up-down-arrows">
     
     <div class="js-accordion__top-section">
       <button class="js-accordion__expand-button">

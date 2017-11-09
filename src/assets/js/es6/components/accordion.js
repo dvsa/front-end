@@ -1,5 +1,6 @@
 import store from 'store';
 import md5 from 'md5';
+import SmoothScroll from 'smooth-scroll';
 
 import { findIndex } from 'lodash';
 
@@ -15,6 +16,8 @@ class Accordion {
 
     if( !accordionElement ) return;
     this.accordionElement = accordionElement;
+
+    this.smoothScroll = new SmoothScroll();
 
     // Create unique hash for current element based on DOM HTML
     this.uniqueIdentifier = 'js-accordion-' + md5(this.accordionElement.innerHTML);
@@ -49,6 +52,12 @@ class Accordion {
       expanding: false,
       sections: [],
     };
+
+    this.smoothScrollOptions = {
+      offset: 30,
+      speed: 300,
+      easing: 'easeOutCubic'
+    };
     
     this.setup();
     this.refreshState();
@@ -66,8 +75,10 @@ class Accordion {
     let stateSectionIndexId = Number(sectionHeader.getAttribute(this.sectionStateIndexIdAttributeName));
     let sectionFromState = this.state.sections[stateSectionIndexId];
     if( !sectionFromState ) return;
-    this.state.sections[stateSectionIndexId].sectionOpen = !sectionFromState.sectionOpen;
+    let newSectionOpenState = sectionFromState.sectionOpen;
+    this.state.sections[stateSectionIndexId].sectionOpen = !newSectionOpenState;
     this.refreshState();
+    this.smoothScroll.animateScroll(sectionHeader, true, this.smoothScrollOptions);
   }
 
   /**
@@ -78,6 +89,7 @@ class Accordion {
     this.state.expandAll = !this.state.expandAll;
     this.refreshState();
     this.state.expanding = false;
+    this.smoothScroll.animateScroll(this.expandButton, true, this.smoothScrollOptions);
   }
 
   /**

@@ -82,6 +82,7 @@
     "run-sequence": "^2.2.0",
     "sass-module-importer": "^1.4.0",
     "sendgrid": "^1.9.2",
+    "smooth-scroll": "^12.1.5",
     "sticky-sidebar": "^3.2.1",
     "store": "^2.0.12",
     "style-loader": "^0.19.0",
@@ -90,7 +91,8 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "webpack": "^3.6.0",
-    "webpack-stream": "^4.0.0"
+    "webpack-stream": "^4.0.0",
+    "zenscroll": "^4.0.0"
   },
   "devDependencies": {
     "prettier": "^1.7.4"

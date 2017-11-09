@@ -110,6 +110,7 @@ class Accordion {
     // Add event for expand button
     addEventListenerToEl(this.expandButton, 'click', this.expandButtonClickHandler.bind(this));
   
+    // Restore the saved state
     this.restoreSavedStateData();
   }
 
@@ -119,6 +120,7 @@ class Accordion {
    * @param {DOMElement} el Element to check if open
    */
   isSectionOpen(el) {
+    // Check if element has the open class
     return elHasClass(el, this.sectionOpenClass) ? true : false;
   }
 
@@ -128,14 +130,21 @@ class Accordion {
   restoreSavedStateData() {
     // Restore state if saved
     let savedState = store.get(this.uniqueIdentifier);
+    // Check there is a saved state with sections
     if( savedState && savedState.sections ) {
       for(let i = 0; i < savedState.sections.length; i++) {
         let section = savedState.sections[i];
+        // Check to make sure that the saved section
+        // has a unique identifier
         if( !section || !section.uniqueIdentifier ) continue;
+        // Check to make sure that the saved section exists in the state
         let sectionIndex = findIndex(this.state.sections, {
           sectionUniqueIdentifier: section.uniqueIdentifier
         });
+        // Don't proceed if section doesn't exist in the state
         if( sectionIndex == undefined ) continue;
+        // Check if expand all was saved
+        // If it was then put the current state of the section as the expand all state
         this.state.sections[sectionIndex].sectionOpen = savedState.expandAll ? true : section.open;
       }
     }
@@ -145,16 +154,26 @@ class Accordion {
    * Saves the current state of the accordions
    */
   saveCurrentStateData() {
+    // Create temporary object for later use
     let data = {};
+    // Add the current expand all state to the object
     data.expandAll = this.state.expandAll;
+    // Create an empty sections array to hold
+    // the current state sections
     data.sections = [];
+    // Loop through each section in the state
     for(let i = 0; i < this.state.sections.length; i++) {
+      // Create temporary variable to hold the
+      // current section from the iteration
       let section = this.state.sections[i];
+      // Add the open/close state of the current section to
+      // the temporary saved state object
       data.sections.push({
         uniqueIdentifier: section.sectionUniqueIdentifier,
         open: section.sectionOpen
       });
     }
+    // Save the current state of the section with it's unqiue hash
     store.set(this.uniqueIdentifier, data);
   }
 
@@ -162,33 +181,47 @@ class Accordion {
    * Refresh the DOM based on the state
    */
   refreshState() {
+    // If the state object doesn't exist,
+    // then don't proceed to refresh
     if( !this.state ) return;
 
     // Check if there is any sections avaliable
     if( this.state.sections ) {
+      // Create temporary variable to hold
+      // the open sections count
       let openCount = 0;
       // Refresh the DOM for each section
       for(let i = 0; i < this.state.sections.length; i++) {
+        // If the expand button has been clicked,
+        // then change the open state of the section to the expand all state
         if( this.state.expanding ) {
           this.state.sections[i].sectionOpen = this.state.expandAll;
         }
 
+        // Get the section from the state based on the iteration
         let section = this.state.sections[i];
 
         // Toggle the correct class based on the state
         let sectionOpenState = section.sectionOpen;
+
+        // Add/Remove the open class based on whether the section is open or closed
         toggleClass(section.sectionElement, this.sectionOpenClass, section.sectionOpen);
 
+        // If the section is open
+        // update the open count
         if( section.sectionOpen ) {
           openCount++;
         }
 
-        // Change expand status if one section is closed
+        // Change expand status if one section or more
+        // section(s) is open, but only if expand button
+        // was not clicked
         if( openCount >= 1 && !this.state.expanding ) {
           this.state.expandAll = false;
         }
 
-        // Check if all sections are open
+        // Check if all sections are open and change the expand all state,
+        // but only if expand button was not clicked
         if ( openCount >= this.state.sections.length && !this.state.expanding ) {
           this.state.expandAll = true;
         }

@@ -5,10 +5,12 @@ import 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
 import { LibraryPageNavigation } from './components/library-page-navigation';
+import { TurbolinksIntegration } from './components/turbolinks-integration';
 import { domReady } from './../shared/misc';
 
 domReady(function() {
 
   new LibraryPageNavigation();
+  new TurbolinksIntegration();
 
 });

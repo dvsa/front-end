@@ -85,6 +85,7 @@
     "sticky-sidebar": "^3.2.1",
     "store": "^2.0.12",
     "style-loader": "^0.19.0",
+    "turbolinks": "^5.0.3",
     "undertaker-forward-reference": "^1.0.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",

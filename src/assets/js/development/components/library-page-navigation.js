@@ -1,4 +1,4 @@
-import stickySidebar from 'sticky-sidebar';
+import StickySidebar from 'sticky-sidebar';
 import {
   addEventListenerToEl,
   toggleClass
@@ -11,11 +11,21 @@ export class LibraryPageNavigation {
     this.sidebar = false;
     this.maxWidth = 800;
 
+    // Create variables for later use
+    this.navigationId = 'styleguide-navigation';
+    this.navigationInnerClassName = 'styleguide-navigation__inner';
+    this.navigationInnerOpenClassName = 'styleguide-navigation__inner--open';
+    this.contentId = 'styleguide-content';
+    this.mobileNavClassName = 'styleguide-navigation__mobile-nav';
+    this.libraryContainerId = 'library-container';
+
     // Get elements
-    this.navigation = document.getElementById('styleguide-navigation');
-    this.navigationInner = this.navigation.querySelector('.styleguide-navigation__inner');
-    this.content = document.getElementById('styleguide-content');
-    this.mobileNavigation = document.querySelector('.styleguide-navigation__mobile-nav');
+    this.navigation = document.getElementById(this.navigationId);
+    if( !this.navigation ) return;
+    
+    this.navigationInner = this.navigation.querySelector('.' + this.navigationInnerClassName);
+    this.content = document.getElementById(this.contentId);
+    this.mobileNavigation = document.querySelector('.' + this.mobileNavClassName);
 
     if( !this.navigation || !this.content ) return;
 
@@ -42,9 +52,6 @@ export class LibraryPageNavigation {
    * - Reset and reinitalize the current sticky sidebar
    */
   reizeHandler() {
-    if( this.sidebar ) {
-      this.sidebar.destroy();
-    }
     this.initSidebar();
   }
 
@@ -57,12 +64,18 @@ export class LibraryPageNavigation {
     if( window.innerWidth <= this.maxWidth ) return;
     // Fix jumping
     this.content.style.minHeight = this.navigation.offsetHeight + 'px';
+    // If sticky sidebar has been initialized
+    // call the destroy function to reset it
+    if( this.sidebar ) {
+      this.sidebar.destroy();
+    }
     // Initialize sticky sidebar
-    this.sidebar = new stickySidebar(this.navigation, {
+    this.sidebar = new StickySidebar(this.navigation, {
       topSpacing: 15,
+      bottomSpacing: 15,
       resizeSensor: false,
-      containerSelector: '#library-container',
-      innerWrapperSelector: '.styleguide-navigation__inner'
+      containerSelector: '#' + this.libraryContainerId,
+      innerWrapperSelector: '.' + this.navigationInnerClassName
     });
   }
 
@@ -71,7 +84,7 @@ export class LibraryPageNavigation {
    * - Toggles the open class
    */
   mobileNavigationClickHandler() {
-    toggleClass(this.navigationInner, 'styleguide-navigation__inner--open');
+    toggleClass(this.navigationInner, this.navigationInnerOpenClassName);
   }
   
 }

@@ -11,6 +11,7 @@ import { domReady } from './../shared/misc';
 
 const readyFunction = (fn) => {
   if( Turbolinks.supported ) {
+    Turbolinks.start();
     document.addEventListener("turbolinks:load", fn);
   } else {
     domReady(fn);

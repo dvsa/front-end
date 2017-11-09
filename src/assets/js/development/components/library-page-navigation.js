@@ -22,7 +22,7 @@ export class LibraryPageNavigation {
     // Get elements
     this.navigation = document.getElementById(this.navigationId);
     if( !this.navigation ) return;
-    
+
     this.navigationInner = this.navigation.querySelector('.' + this.navigationInnerClassName);
     this.content = document.getElementById(this.contentId);
     this.mobileNavigation = document.querySelector('.' + this.mobileNavClassName);

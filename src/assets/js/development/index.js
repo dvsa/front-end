@@ -7,7 +7,6 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import Turbolinks from 'turbolinks';
 
 import { LibraryPageNavigation } from './components/library-page-navigation';
-import { TurbolinksIntegration } from './components/turbolinks-integration';
 import { domReady } from './../shared/misc';
 
 const readyFunction = (fn) => {
@@ -21,6 +20,5 @@ const readyFunction = (fn) => {
 readyFunction(function() {
 
   new LibraryPageNavigation();
-  new TurbolinksIntegration();
 
 });

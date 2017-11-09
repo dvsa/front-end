@@ -83,13 +83,15 @@ class Accordion {
     this.refreshState();
     this.smoothScroll.animateScroll(sectionHeader, true, this.smoothScrollOptions);
     // GA Tracking code
-    dataLayer.push({
-      'event': 'link-click',
-      'link': 'subsection-<' + sectionHeaderCategory + '>',
-      'link-text': sectionHeader.querySelector('.' + this.accordionTitleClass).innerText,
-      'link-action': newSectionOpenState ? 'open' : 'close',
-      'link-type': 'accordion'
-    });
+    if( window.dataLayer ) {
+      window.dataLayer.push({
+        'event': 'link-click',
+        'link': 'subsection-<' + sectionHeaderCategory + '>',
+        'link-text': sectionHeader.querySelector('.' + this.accordionTitleClass).innerText,
+        'link-action': newSectionOpenState ? 'open' : 'close',
+        'link-type': 'accordion'
+      });
+    }
   }
 
   /**
@@ -102,13 +104,15 @@ class Accordion {
     this.state.expanding = false;
     this.smoothScroll.animateScroll(this.expandButton, true, this.smoothScrollOptions);
     // GA Tracking Code
-    dataLayer.push({
-      'event': 'link-click',
-      'link': 'subsection-all',
-      'link-text': this.getExpandButtonText(),
-      'link-action': this.state.expandAll ? 'open' : 'close',
-      'link-type': 'accordion'
-    });
+    if( window.dataLayer ) {
+      window.dataLayer.push({
+        'event': 'link-click',
+        'link': 'subsection-all',
+        'link-text': this.getExpandButtonText(),
+        'link-action': this.state.expandAll ? 'open' : 'close',
+        'link-type': 'accordion'
+      });
+    }
   }
 
   /**

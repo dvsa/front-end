@@ -12,7 +12,9 @@ import { domReady } from './../shared/misc';
 const readyFunction = (fn) => {
   if( Turbolinks.supported ) {
     Turbolinks.start();
-    document.addEventListener("turbolinks:load", fn);
+    document.addEventListener("turbolinks:load", function() {
+      fn();
+    });
   } else {
     domReady(fn);
   }

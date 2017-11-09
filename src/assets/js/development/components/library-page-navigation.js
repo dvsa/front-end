@@ -1,6 +1,7 @@
 import StickySidebar from 'sticky-sidebar';
 import {
   addEventListenerToEl,
+  removeAllEventsFromEl,
   toggleClass
 } from './../../shared/misc';
 
@@ -41,6 +42,9 @@ export class LibraryPageNavigation {
   setup() {
     // Add resize event listener
     addEventListenerToEl(window, 'resize', this.reizeHandler.bind(this));
+    // Remove all bound events to mobile navigation button
+    removeAllEventsFromEl(this.mobileNavigation);
+    this.mobileNavigation = document.querySelector('.' + this.mobileNavClassName);
     // Mobile navigation
     addEventListenerToEl(this.mobileNavigation, 'click', this.mobileNavigationClickHandler.bind(this));
     // Create sticky sidebar
@@ -61,15 +65,18 @@ export class LibraryPageNavigation {
    * - Create new instance of sticky sidebar
    */
   initSidebar() {
-    if( window.innerWidth <= this.maxWidth ) return;
-    // Fix jumping
-    this.content.style.minHeight = this.navigation.offsetHeight + 'px';
     // If sticky sidebar has been initialized
     // call the destroy function to reset it
+    // Initialize sticky sidebar
     if( this.sidebar ) {
       this.sidebar.destroy();
     }
-    // Initialize sticky sidebar
+    // Check the window width so it shouldn't run the sticky sidebar
+    // when less than a certain width
+    if( window.innerWidth <= this.maxWidth ) return;
+    // Fix jumping
+    this.content.style.minHeight = this.navigation.offsetHeight + 'px';
+    // Initialize the sticky sidebar
     this.sidebar = new StickySidebar(this.navigation, {
       topSpacing: 15,
       bottomSpacing: 15,

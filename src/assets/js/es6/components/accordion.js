@@ -29,6 +29,7 @@ class Accordion {
     // Element attribute names
     this.sectionContentIdAttributeName = 'data-content-id';
     this.sectionStateIndexIdAttributeName = 'data-section-state-index-id';
+    this.sectionHeaderCategoryAttributeName = 'data-section-category';
 
     // Classes for later use
     this.sectionOpenClass = 'js-accordion__section--open';
@@ -36,7 +37,8 @@ class Accordion {
     this.sectionContentClass = 'js-accordion__content';
     this.sectionClass = 'js-accordion__section';
     this.sectionExpandButtonClass = 'js-accordion__expand-button';
-    this.accordionJSEnabledClassed = 'js-accordion--js-enabled';
+    this.accordionJSEnabledClass = 'js-accordion--js-enabled';
+    this.accordionTitleClass = 'js-accordion__title-button';
 
     // Get all of the accordion sections
     this.sections = this.accordionElement.querySelectorAll('.' + this.sectionClass);
@@ -44,7 +46,7 @@ class Accordion {
     this.expandButton = this.accordionElement.querySelector('.'+ this.sectionExpandButtonClass);
 
     // Add JS Enabled class
-    toggleClass(this.accordionElement, this.accordionJSEnabledClassed, true);
+    toggleClass(this.accordionElement, this.accordionJSEnabledClass, true);
     
     // State for accordions
     this.state = {
@@ -72,6 +74,7 @@ class Accordion {
   headerClickHandler(event) {
     if( !event.target || !this.state.sections.length ) return;
     let sectionHeader = closestParentOfEl(event.target, '.' + this.sectionClass);
+    let sectionHeaderCategory = sectionHeader.getAttribute(this.sectionHeaderCategoryAttributeName);
     let stateSectionIndexId = Number(sectionHeader.getAttribute(this.sectionStateIndexIdAttributeName));
     let sectionFromState = this.state.sections[stateSectionIndexId];
     if( !sectionFromState ) return;
@@ -79,6 +82,14 @@ class Accordion {
     this.state.sections[stateSectionIndexId].sectionOpen = !newSectionOpenState;
     this.refreshState();
     this.smoothScroll.animateScroll(sectionHeader, true, this.smoothScrollOptions);
+    // GA Tracking code
+    dataLayer.push({
+      'event': 'link-click',
+      'link': 'subsection-<' + sectionHeaderCategory + '>',
+      'link-text': sectionHeader.querySelector('.' + this.accordionTitleClass).innerText,
+      'link-action': newSectionOpenState ? 'open' : 'close',
+      'link-type': 'accordion'
+    });
   }
 
   /**
@@ -90,6 +101,14 @@ class Accordion {
     this.refreshState();
     this.state.expanding = false;
     this.smoothScroll.animateScroll(this.expandButton, true, this.smoothScrollOptions);
+    // GA Tracking Code
+    dataLayer.push({
+      'event': 'link-click',
+      'link': 'subsection-all',
+      'link-text': this.getExpandButtonText(),
+      'link-action': this.state.expandAll ? 'open' : 'close',
+      'link-type': 'accordion'
+    });
   }
 
   /**
@@ -241,10 +260,17 @@ class Accordion {
     }
   
     // Update expand button text
-    this.expandButton.innerText = this.state.expandAll ? this.sectionCloseAllText : this.sectionOpenAllText;
+    this.expandButton.innerText = this.getExpandButtonText();
   
     // Save current state for future
     this.saveCurrentStateData();
+  }
+
+  /**
+   * Gets the current expand button text based on the state
+   */
+  getExpandButtonText() {
+    return this.state.expandAll ? this.sectionCloseAllText : this.sectionOpenAllText;
   }
 
 }

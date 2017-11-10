@@ -73,15 +73,15 @@ class Accordion {
    */
   headerClickHandler(event) {
     if( !event.target || !this.state.sections.length ) return;
-    let sectionHeader = closestParentOfEl(event.target, '.' + this.sectionClass);
-    let sectionHeaderCategory = sectionHeader.getAttribute(this.sectionHeaderCategoryAttributeName);
-    let stateSectionIndexId = Number(sectionHeader.getAttribute(this.sectionStateIndexIdAttributeName));
+    let section = closestParentOfEl(event.target, '.' + this.sectionClass);
+    let sectionHeaderCategory = section.getAttribute(this.sectionHeaderCategoryAttributeName);
+    let stateSectionIndexId = Number(section.getAttribute(this.sectionStateIndexIdAttributeName));
     let sectionFromState = this.state.sections[stateSectionIndexId];
     if( !sectionFromState ) return;
-    let newSectionOpenState = sectionFromState.sectionOpen;
-    this.state.sections[stateSectionIndexId].sectionOpen = !newSectionOpenState;
+    let newSectionOpenState = !sectionFromState.sectionOpen;
+    this.state.sections[stateSectionIndexId].sectionOpen = newSectionOpenState;
     this.refreshState();
-    this.smoothScroll.animateScroll(sectionHeader, true, this.smoothScrollOptions);
+    this.smoothScroll.animateScroll(section, true, this.smoothScrollOptions);
     // GA Tracking code
     if( window.dataLayer ) {
       window.dataLayer.push({

@@ -87,7 +87,7 @@ class Accordion {
       window.dataLayer.push({
         'event': 'link-click',
         'link': 'subsection-<' + sectionHeaderCategory + '>',
-        'link-text': sectionHeader.querySelector('.' + this.accordionTitleClass).innerText,
+        'link-text': section.querySelector('.' + this.accordionTitleClass).innerText,
         'link-action': newSectionOpenState ? 'open' : 'close',
         'link-type': 'accordion'
       });

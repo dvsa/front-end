@@ -49,10 +49,10 @@ All images will be placed inside of the 'public/images' folder for production. E
 
 All javascript files will be placed inside of the 'public/javascripts' folder for production. Each file is uglified for optimal performance.
 
-### Vendor Bundle
+### IE Shims Bundle
 
-The file named **vendor.bundle.js** contains all of the javascript assets provided by GOVUK. It also includes any third-party shims or polyfills. It must be included above head tag.
+The file named **ie-shins.bundle.js** contains polyfills to make IE8 work as expected. It allows support for HTML5 and other basic features.
 
-### MOT Bundle
+### DVSA Bundle
 
-The file named **mot.bundle.js** contains all of the new ES6 javascript bundled using webpack. It is also transpiled uisng babel-loader to allow ES5 browser compatibility. This can be loaded right at the end of the page before body tag and can be defered.
+The file named **dvsa.bundle.js** contains all of the new ES6 javascript bundled using webpack. It is also transpiled uisng babel-loader to allow ES5 browser compatibility. This can be loaded right at the end of the page before body tag and can be defered.

@@ -3,6 +3,7 @@ import merge from 'webpack-merge';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 
 module.exports = merge(common, {
+  watch: false,
   plugins: [
     new MinifyPlugin()
   ],

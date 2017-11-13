@@ -59,6 +59,8 @@
     return null;
   };
 }).call(this);
+
+
 (function () {
   "use strict"
   var root = this;
@@ -74,6 +76,8 @@
     }
   };
 }).call(this);
+
+
 (function() {
   "use strict"
 

@@ -12,6 +12,7 @@ import { CONFIG } from './../constants';
  * 
  * @author Tameem Safi <t.safi@kainos.com>
  * @since 1.0.0 
+ * @deprecated
  */
 gulp.task('javascript-vendor', () => {
   // Read all vendor js files from npm package

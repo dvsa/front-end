@@ -1,7 +1,6 @@
 import store from 'store';
 import md5 from 'md5';
 import SmoothScroll from 'smooth-scroll';
-
 import findIndex from 'lodash/findIndex';
 
 import {
@@ -39,6 +38,11 @@ class Accordion {
     this.sectionExpandButtonClass = 'js-accordion__expand-button';
     this.accordionJSEnabledClass = 'js-accordion--js-enabled';
     this.accordionTitleClass = 'js-accordion__title-button';
+
+    // Aria attribute names
+    this.ariaControlsAttributeName = 'aria-controls';
+    this.ariaExpandedAtributeName = 'aria-expanded';
+    this.ariaHiddenAttributeName = 'aria-hidden';
 
     // Get all of the accordion sections
     this.sections = this.accordionElement.querySelectorAll('.' + this.sectionClass);
@@ -126,10 +130,11 @@ class Accordion {
     for(let i = 0; i < this.sections.length; i++) {
       let sectionElement = this.sections[i];
       let sectionHeaderElement = sectionElement.querySelector('.' + this.sectionHeaderClass);
-      let sectionContentElement = sectionHeaderElement.querySelector('.' + this.sectionContentClass);
+      let sectionContentElement = sectionElement.querySelector('.' + this.sectionContentClass);
+      let sectionUniqueIdentifier = md5(sectionElement.innerHTML);
       // Add the section elements to the state
       this.state.sections.push({
-        sectionUniqueIdentifier: md5(sectionElement.innerHTML),
+        sectionUniqueIdentifier,
         sectionElement,
         sectionHeaderElement,
         sectionContentElement,
@@ -138,6 +143,8 @@ class Accordion {
       // Update the DOM elements state index ID
       let stateSectionIndexId = this.state.sections.length - 1;
       sectionElement.setAttribute(this.sectionStateIndexIdAttributeName, stateSectionIndexId);
+      // Set unique identifier for content
+      sectionContentElement.setAttribute('id', sectionUniqueIdentifier);
       // Add header event click
       addEventListenerToEl(sectionHeaderElement, 'click', this.headerClickHandler.bind(this));
     }
@@ -241,6 +248,11 @@ class Accordion {
 
         // Add/Remove the open class based on whether the section is open or closed
         toggleClass(section.sectionElement, this.sectionOpenClass, section.sectionOpen);
+
+        // Set Aria attributes
+        section.sectionHeaderElement.setAttribute(this.ariaControlsAttributeName, section.sectionUniqueIdentifier);
+        section.sectionHeaderElement.setAttribute(this.ariaExpandedAtributeName, section.sectionOpen ? 'true' : 'false');
+        section.sectionContentElement.setAttribute(this.ariaHiddenAttributeName, section.sectionOpen ? 'false' : 'true');
 
         // If the section is open
         // update the open count

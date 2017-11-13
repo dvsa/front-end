@@ -33,9 +33,9 @@
     <link href="/stylesheets/styles.css" media="all" rel="stylesheet" />
     <!-- /stylesheets -->
 
-    <!-- head-scripts -->
-    <script type="text/javascript" src="/javascripts/vendor.bundle.js"></script>
-    <!-- /head-scripts -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="/javascripts/ie-shims.bundle.js"></script>
+    <![endif]-->
     
     {% block header %}{% endblock %}
 
@@ -52,23 +52,9 @@
   </head>
   <body class="">
 
-    <!-- skiplink -->
-    <div id="skiplink-container">
-      <div>
-        <a href="#content" class="skiplink">Skip to main content</a>
-      </div>
-    </div>
-    <!-- /skiplink -->
-
-    <!-- cookie-message -->
-    <div id="global-cookie-message">
-        
-    </div>
-    <!-- /cookie-message -->
-
-    <!-- header -->
+    {% include 'layouts/partials/skip-link.njk' %}
+    {% include 'layouts/partials/cookie-message.njk' %}
     {% include 'layouts/partials/header.njk' %}
-    <!-- /header -->
 
     {% if not hideLayoutPhaseBanner %}
     <!-- header-bar -->
@@ -92,9 +78,7 @@
       document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
     </script>
 
-    <!-- mot-js-bundle -->
-    <script type="text/javascript" src="/javascripts/mot.bundle.js"></script>
-    <!-- /mot-js-bundle -->
+    <script type="text/javascript" src="/javascripts/dvsa.bundle.js"></script>
 
     {% block bodyScripts %}{% endblock %}
     <!-- /body-scripts -->

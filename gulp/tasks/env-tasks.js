@@ -11,7 +11,7 @@ import { CONFIG } from './../constants';
  * @author Tameem Safi <t.safi@kainos.com>
  * @since 1.0.0
  */
-gulp.task('watch-dev', gulp.series('javascript-vendor', 'copy-images', 'copy-fonts', 'copy-misc', 'scss', () => {
+gulp.task('watch-dev', gulp.series('copy-images', 'copy-fonts', 'copy-misc', 'scss', () => {
 
     // Watch all scss files inside of the source folder
     // If any changes occure then run the scss gulp task
@@ -32,4 +32,4 @@ gulp.task('watch-dev', gulp.series('javascript-vendor', 'copy-images', 'copy-fon
  * @author Tameem Safi <t.safi@kainos.com>
  * @since 1.0.0
  */
-gulp.task('build-production', gulp.series('javascript-vendor', 'copy-images', 'copy-fonts', 'copy-misc', 'scss'));
+gulp.task('build-production', gulp.series('copy-images', 'copy-fonts', 'copy-misc', 'scss'));

@@ -4,7 +4,8 @@ import webpack from 'webpack';
 module.exports = {
   watch: true,
   entry: {
-    mot: path.resolve('src', 'assets', 'js', 'es6', 'index.js'),
+    dvsa: path.resolve('src', 'assets', 'js', 'dvsa', 'index.js'),
+    'ie-shims': path.resolve('src', 'assets', 'js', 'ie-shims', 'index.js'),
     development: path.resolve('src', 'assets', 'js', 'development', 'index.js'),
   },
   output: {
@@ -27,12 +28,14 @@ module.exports = {
                 }
               ]
             ],
+            plugins: [
+              'babel-plugin-transform-class-properties'
+            ]
           },
         },
       },
     ],
   },
   plugins: [
-    new webpack.ProvidePlugin({})
   ]
 };

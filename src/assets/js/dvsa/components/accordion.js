@@ -106,7 +106,7 @@ class Accordion {
     this.state.expandAll = !this.state.expandAll;
     this.refreshState();
     this.state.expanding = false;
-    this.smoothScroll.animateScroll(this.expandButton, true, this.smoothScrollOptions);
+    this.smoothScroll.animateScroll(event.target, true, this.smoothScrollOptions);
     // GA Tracking Code
     if( window.dataLayer ) {
       window.dataLayer.push({

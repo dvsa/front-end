@@ -51,7 +51,7 @@ All javascript files will be placed inside of the 'public/javascripts' folder fo
 
 ### IE Shims Bundle
 
-The file named **ie-shins.bundle.js** contains polyfills to make IE8 work as expected. It allows support for HTML5 and other basic features.
+The file named **ie-shims.bundle.js** contains polyfills to make IE8 work as expected. It allows support for HTML5 and other basic features.
 
 ### DVSA Bundle
 

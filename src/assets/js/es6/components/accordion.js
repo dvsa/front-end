@@ -2,7 +2,7 @@ import store from 'store';
 import md5 from 'md5';
 import SmoothScroll from 'smooth-scroll';
 
-import { findIndex } from 'lodash';
+import findIndex from 'lodash/findIndex';
 
 import {
   elHasClass,

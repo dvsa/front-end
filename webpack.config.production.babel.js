@@ -1,4 +1,5 @@
 import path from 'path';
+import webpack from 'webpack';
 import MinifyPlugin from 'babel-minify-webpack-plugin';
 
 module.exports = {
@@ -19,11 +20,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015'],
+            presets: [
+              ['es2015', { modules: false }]
+            ],
           },
         },
       },
     ],
   },
-  plugins: [new MinifyPlugin()],
+  plugins: [
+    new MinifyPlugin(),
+    new webpack.ProvidePlugin({
+      '$': 'jquery',
+      'jQuery': 'jquery',
+      'window.jQuery': 'jquery'
+    })
+  ],
 };

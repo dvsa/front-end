@@ -75,7 +75,7 @@ class Accordion {
    * 
    * @param {Event} event Event object when it is firect.
    */
-  headerClickHandler(event) {
+  headerClickHandler = (event) => {
     if( !event.target || !this.state.sections.length ) return;
     let section = closestParentOfEl(event.target, '.' + this.sectionClass);
     let sectionHeaderCategory = section.getAttribute(this.sectionHeaderCategoryAttributeName);
@@ -101,7 +101,7 @@ class Accordion {
   /**
    * Open/Close all accordion sections
    */
-  expandButtonClickHandler() {
+  expandButtonClickHandler = (event) => {
     this.state.expanding = true;
     this.state.expandAll = !this.state.expandAll;
     this.refreshState();
@@ -145,12 +145,13 @@ class Accordion {
       sectionElement.setAttribute(this.sectionStateIndexIdAttributeName, stateSectionIndexId);
       // Set unique identifier for content
       sectionContentElement.setAttribute('id', sectionUniqueIdentifier);
-      // Add header event click
-      addEventListenerToEl(sectionHeaderElement, 'click', this.headerClickHandler.bind(this));
     }
 
-    // Add event for expand button
-    addEventListenerToEl(this.expandButton, 'click', this.expandButtonClickHandler.bind(this));
+    // Delegate section header click event
+    $.delegate(document, 'click', '.' + this.sectionHeaderClass, this.headerClickHandler);
+
+    // Delegate section expand button click event
+    $.delegate(document, 'click', '.' + this.sectionExpandButtonClass, this.expandButtonClickHandler);
   
     // Restore the saved state
     this.restoreSavedStateData();

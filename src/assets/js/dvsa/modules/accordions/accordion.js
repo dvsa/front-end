@@ -118,7 +118,6 @@ export class Accordion {
     this.refreshState();
     this.smoothScroll.animateScroll(section, true, this.smoothScrollOptions);
     // GA Tracking code
-    window.dataLayer = [];
     if (window.dataLayer) {
       let dataLayerObject = {
         event: 'link-click',
@@ -127,7 +126,6 @@ export class Accordion {
         'link-action': newSectionOpenState ? 'open' : 'close',
         'link-type': 'accordion',
       };
-      // dataLayerObject['subsection-' + sectionHeaderCategory + '-status'] = newSectionOpenState ? 'open' : 'close';
       window.dataLayer.push(dataLayerObject);
     }
   };

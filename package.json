@@ -10,7 +10,7 @@
     "start-server": "babel-node ./src/server",
     "build-production": "NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
-    "test": "NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
+    "run-tests": "NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
   },
   "repository": {
     "type": "git",

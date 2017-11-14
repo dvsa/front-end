@@ -26,7 +26,7 @@ describe('Accordions', () => {
     expect(accordion).to.not.equal(false);
   });
 
-  it('should display accordion after clicking header', async () => {
+  it('should show accordion content after clicking header', async () => {
     let accordionHeading = await Browser.page.$('.js-accordion > .js-accordion__wrapper > .js-accordion__section:nth-child(1) > .js-accordion__header');
     await accordionHeading.click();
     let accordionContentClass = await Browser.page.evaluate(() => {

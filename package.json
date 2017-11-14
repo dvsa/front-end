@@ -7,9 +7,10 @@
     "start-heroku": "npm run build-production && npm run start-server",
     "start-dev": "NODE_ENV=development concurrently \"gulp watch-dev\" \"webpack --config ./webpack/webpack.config.development.babel.js\" \"npm run start-dev-server\"",
     "start-dev-server": "npm run pretty-js && nodemon --watch 'src/server/**/*.js' --exec npm run start-server",
-    "start-server": "babel-node ./src/server/app.js",
+    "start-server": "babel-node ./src/server",
     "build-production": "NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
-    "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\""
+    "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
+    "test": "NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
   },
   "repository": {
     "type": "git",
@@ -101,6 +102,9 @@
     "zenscroll": "^4.0.0"
   },
   "devDependencies": {
-    "prettier": "^1.7.4"
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "prettier": "^1.7.4",
+    "puppeteer": "^0.13.0"
   }
 }

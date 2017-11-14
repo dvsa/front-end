@@ -20,7 +20,7 @@ import { allRoutes } from './config/routes';
 import { CONFIG } from './config/constants';
 import { addLibraryNavigationItemsToRequestObject } from './middlewares/libraryNavigation';
 
-const startApp = async () => {
+export const startApp = async () => {
   // Create express server
   const app = express();
 
@@ -150,8 +150,10 @@ const startApp = async () => {
 
   // Logger middleware
   // Outputs all http requests and responses
-  app.use(morgan('dev'));
-
+  if( process.env.NODE_ENV != 'testing' ) {
+    app.use(morgan('dev'));
+  }
+  
   // Express session middleware
   // Website: https://www.npmjs.com/package/express-session
   app.use(
@@ -178,11 +180,11 @@ const startApp = async () => {
 
   // Start HTTP server
   app.listen(appPort, () => {
-    console.log(`
-      Port: ${appPort} 
-      Env: ${app.get('env')}
-    `);
+    if( process.env.NODE_ENV != 'testing' ) {
+      console.log(`
+        Port: ${appPort} 
+        Env: ${app.get('env')}
+      `);
+    }
   });
 };
-
-startApp();

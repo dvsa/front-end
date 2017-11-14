@@ -3,17 +3,11 @@ import md5 from 'md5';
 import SmoothScroll from 'smooth-scroll';
 import findIndex from 'lodash/findIndex';
 
-import {
-  elHasClass,
-  toggleClass,
-  addEventListenerToEl,
-  closestParentOfEl
-} from './../../shared/misc';
+import { elHasClass, toggleClass, addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
 
-class Accordion {
+export class Accordion {
   constructor(accordionElement) {
-
-    if( !accordionElement ) return;
+    if (!accordionElement) return;
     this.accordionElement = accordionElement;
 
     this.smoothScroll = new SmoothScroll();
@@ -47,11 +41,11 @@ class Accordion {
     // Get all of the accordion sections
     this.sections = this.accordionElement.querySelectorAll('.' + this.sectionClass);
     this.headings = this.accordionElement.querySelectorAll('.' + this.sectionHeaderClass);
-    this.expandButton = this.accordionElement.querySelector('.'+ this.sectionExpandButtonClass);
+    this.expandButton = this.accordionElement.querySelector('.' + this.sectionExpandButtonClass);
 
     // Add JS Enabled class
     toggleClass(this.accordionElement, this.accordionJSEnabledClass, true);
-    
+
     // State for accordions
     this.state = {
       expandAll: false,
@@ -62,61 +56,11 @@ class Accordion {
     this.smoothScrollOptions = {
       offset: 30,
       speed: 300,
-      easing: 'easeOutCubic'
+      easing: 'easeOutCubic',
     };
-    
+
     this.setup();
     this.refreshState();
-
-  }
-
-  /**
-   * Handles event when the header is clicked.
-   * 
-   * @param {Event} event Event object when it is firect.
-   */
-  headerClickHandler = (event) => {
-    if( !event.target || !this.state.sections.length ) return;
-    let section = closestParentOfEl(event.target, '.' + this.sectionClass);
-    let sectionHeaderCategory = section.getAttribute(this.sectionHeaderCategoryAttributeName);
-    let stateSectionIndexId = Number(section.getAttribute(this.sectionStateIndexIdAttributeName));
-    let sectionFromState = this.state.sections[stateSectionIndexId];
-    if( !sectionFromState ) return;
-    let newSectionOpenState = !sectionFromState.sectionOpen;
-    this.state.sections[stateSectionIndexId].sectionOpen = newSectionOpenState;
-    this.refreshState();
-    this.smoothScroll.animateScroll(section, true, this.smoothScrollOptions);
-    // GA Tracking code
-    if( window.dataLayer ) {
-      window.dataLayer.push({
-        'event': 'link-click',
-        'link': 'subsection-<' + sectionHeaderCategory + '>',
-        'link-text': section.querySelector('.' + this.accordionTitleClass).innerText,
-        'link-action': newSectionOpenState ? 'open' : 'close',
-        'link-type': 'accordion'
-      });
-    }
-  }
-
-  /**
-   * Open/Close all accordion sections
-   */
-  expandButtonClickHandler = (event) => {
-    this.state.expanding = true;
-    this.state.expandAll = !this.state.expandAll;
-    this.refreshState();
-    this.state.expanding = false;
-    this.smoothScroll.animateScroll(event.target, true, this.smoothScrollOptions);
-    // GA Tracking Code
-    if( window.dataLayer ) {
-      window.dataLayer.push({
-        'event': 'link-click',
-        'link': 'subsection-all',
-        'link-text': this.getExpandButtonText(),
-        'link-action': this.state.expandAll ? 'open' : 'close',
-        'link-type': 'accordion'
-      });
-    }
   }
 
   /**
@@ -124,10 +68,10 @@ class Accordion {
    */
   setup() {
     // Check if atleast one section element exists
-    if( !this.sections.length ) return;
+    if (!this.sections.length) return;
 
     // Loop through each section element
-    for(let i = 0; i < this.sections.length; i++) {
+    for (let i = 0; i < this.sections.length; i++) {
       let sectionElement = this.sections[i];
       let sectionHeaderElement = sectionElement.querySelector('.' + this.sectionHeaderClass);
       let sectionContentElement = sectionElement.querySelector('.' + this.sectionContentClass);
@@ -138,7 +82,7 @@ class Accordion {
         sectionElement,
         sectionHeaderElement,
         sectionContentElement,
-        sectionOpen: this.isSectionOpen(sectionElement)
+        sectionOpen: this.isSectionOpen(sectionElement),
       });
       // Update the DOM elements state index ID
       let stateSectionIndexId = this.state.sections.length - 1;
@@ -152,10 +96,62 @@ class Accordion {
 
     // Delegate section expand button click event
     $.delegate(document, 'click', '.' + this.sectionExpandButtonClass, this.expandButtonClickHandler);
-  
+
     // Restore the saved state
     this.restoreSavedStateData();
   }
+
+  /**
+   * Handles event when the header is clicked.
+   * 
+   * @param {Event} event Event object when it is firect.
+   */
+  headerClickHandler = event => {
+    if (!event.target || !this.state.sections.length) return;
+    let section = closestParentOfEl(event.target, '.' + this.sectionClass);
+    let sectionHeaderCategory = section.getAttribute(this.sectionHeaderCategoryAttributeName);
+    let stateSectionIndexId = Number(section.getAttribute(this.sectionStateIndexIdAttributeName));
+    let sectionFromState = this.state.sections[stateSectionIndexId];
+    if (!sectionFromState) return;
+    let newSectionOpenState = !sectionFromState.sectionOpen;
+    this.state.sections[stateSectionIndexId].sectionOpen = newSectionOpenState;
+    this.refreshState();
+    this.smoothScroll.animateScroll(section, true, this.smoothScrollOptions);
+    // GA Tracking code
+    window.dataLayer = [];
+    if (window.dataLayer) {
+      let dataLayerObject = {
+        event: 'link-click',
+        link: 'subsection-' + sectionHeaderCategory,
+        'link-text': section.querySelector('.' + this.accordionTitleClass).innerText,
+        'link-action': newSectionOpenState ? 'open' : 'close',
+        'link-type': 'accordion',
+      };
+      // dataLayerObject['subsection-' + sectionHeaderCategory + '-status'] = newSectionOpenState ? 'open' : 'close';
+      window.dataLayer.push(dataLayerObject);
+    }
+  };
+
+  /**
+   * Open/Close all accordion sections
+   */
+  expandButtonClickHandler = event => {
+    this.state.expanding = true;
+    this.state.expandAll = !this.state.expandAll;
+    this.refreshState();
+    this.state.expanding = false;
+    this.smoothScroll.animateScroll(event.target, true, this.smoothScrollOptions);
+    // GA Tracking Code
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: 'link-click',
+        link: 'subsection-all',
+        'link-text': this.getExpandButtonText(),
+        'link-action': this.state.expandAll ? 'open' : 'close',
+        'link-type': 'accordion',
+      });
+    }
+  };
 
   /**
    * Check if section is open
@@ -174,18 +170,18 @@ class Accordion {
     // Restore state if saved
     let savedState = store.get(this.uniqueIdentifier);
     // Check there is a saved state with sections
-    if( savedState && savedState.sections ) {
-      for(let i = 0; i < savedState.sections.length; i++) {
+    if (savedState && savedState.sections) {
+      for (let i = 0; i < savedState.sections.length; i++) {
         let section = savedState.sections[i];
         // Check to make sure that the saved section
         // has a unique identifier
-        if( !section || !section.uniqueIdentifier ) continue;
+        if (!section || !section.uniqueIdentifier) continue;
         // Check to make sure that the saved section exists in the state
         let sectionIndex = findIndex(this.state.sections, {
-          sectionUniqueIdentifier: section.uniqueIdentifier
+          sectionUniqueIdentifier: section.uniqueIdentifier,
         });
         // Don't proceed if section doesn't exist in the state
-        if( sectionIndex == undefined ) continue;
+        if (sectionIndex == undefined) continue;
         // Check if expand all was saved
         // If it was then put the current state of the section as the expand all state
         this.state.sections[sectionIndex].sectionOpen = savedState.expandAll ? true : section.open;
@@ -205,7 +201,7 @@ class Accordion {
     // the current state sections
     data.sections = [];
     // Loop through each section in the state
-    for(let i = 0; i < this.state.sections.length; i++) {
+    for (let i = 0; i < this.state.sections.length; i++) {
       // Create temporary variable to hold the
       // current section from the iteration
       let section = this.state.sections[i];
@@ -213,7 +209,7 @@ class Accordion {
       // the temporary saved state object
       data.sections.push({
         uniqueIdentifier: section.sectionUniqueIdentifier,
-        open: section.sectionOpen
+        open: section.sectionOpen,
       });
     }
     // Save the current state of the section with it's unqiue hash
@@ -226,18 +222,18 @@ class Accordion {
   refreshState() {
     // If the state object doesn't exist,
     // then don't proceed to refresh
-    if( !this.state ) return;
+    if (!this.state) return;
 
     // Check if there is any sections avaliable
-    if( this.state.sections ) {
+    if (this.state.sections) {
       // Create temporary variable to hold
       // the open sections count
       let openCount = 0;
       // Refresh the DOM for each section
-      for(let i = 0; i < this.state.sections.length; i++) {
+      for (let i = 0; i < this.state.sections.length; i++) {
         // If the expand button has been clicked,
         // then change the open state of the section to the expand all state
-        if( this.state.expanding ) {
+        if (this.state.expanding) {
           this.state.sections[i].sectionOpen = this.state.expandAll;
         }
 
@@ -257,28 +253,28 @@ class Accordion {
 
         // If the section is open
         // update the open count
-        if( section.sectionOpen ) {
+        if (section.sectionOpen) {
           openCount++;
         }
 
         // Change expand status if one section or more
         // section(s) is open, but only if expand button
         // was not clicked
-        if( openCount >= 1 && !this.state.expanding ) {
+        if (openCount >= 1 && !this.state.expanding) {
           this.state.expandAll = false;
         }
 
         // Check if all sections are open and change the expand all state,
         // but only if expand button was not clicked
-        if ( openCount >= this.state.sections.length && !this.state.expanding ) {
+        if (openCount >= this.state.sections.length && !this.state.expanding) {
           this.state.expandAll = true;
         }
       }
     }
-  
+
     // Update expand button text
     this.expandButton.innerText = this.getExpandButtonText();
-  
+
     // Save current state for future
     this.saveCurrentStateData();
   }
@@ -289,14 +285,4 @@ class Accordion {
   getExpandButtonText() {
     return this.state.expandAll ? this.sectionCloseAllText : this.sectionOpenAllText;
   }
-
 }
-
-export function AccordionInitializer() {
-  let accordions = document.querySelectorAll('.js-accordion');
-  if( accordions.length ) {
-    for(let i = 0; i < accordions.length; i++) {
-      new Accordion(accordions[i]);
-    }
-  }
-};

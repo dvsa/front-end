@@ -14,7 +14,7 @@ export function addEventListenerToEl(el, eventName, handler) {
     el.addEventListener(eventName, handler);
     return;
   }
-  el.attachEvent('on' + eventName, function(){
+  el.attachEvent('on' + eventName, function() {
     handler.call(el);
   });
 }

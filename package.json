@@ -9,7 +9,7 @@
     "start-dev-server": "npm run pretty-js && nodemon --watch 'src/server/**/*.js' --exec npm run start-server",
     "start-server": "babel-node ./src/server/app.js",
     "build-production": "NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
-    "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/server/**/*.js\""
+    "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\""
   },
   "repository": {
     "type": "git",

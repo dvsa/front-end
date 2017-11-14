@@ -1,11 +1,7 @@
-import {
-  closestParentOfEl,
-  toggleClass
-} from './../../shared';
+import { closestParentOfEl, toggleClass } from './../../../../shared';
 
 export class ShowHideContent {
   constructor() {
-
     // Variables for later use
     this.contentHiddenClass = 'js-hidden';
     this.ariaControlsAttributeName = 'aria-controls';
@@ -38,19 +34,19 @@ export class ShowHideContent {
     $.delegate(document, 'click', this.radioSelector, this.clickEventHandler);
     $.delegate(document, 'click', this.checkboxSelector, this.clickEventHandler);
   }
- 
+
   /**
    * Handle the click event
    */
-  clickEventHandler = (event) => {
+  clickEventHandler = event => {
     let type = event.target.getAttribute('type');
-    switch(type) {
+    switch (type) {
       case 'radio': {
         let radioGroupName = event.target.getAttribute('name');
         // Refresh all radios for this group
-        if( radioGroupName ) {
+        if (radioGroupName) {
           let radioInputsForGroup = $$('input[type="radio"][name="' + radioGroupName + '"');
-          radioInputsForGroup.forEach((radio) => {
+          radioInputsForGroup.forEach(radio => {
             this.toggleContentBasedOnCheckState(radio);
           });
         }
@@ -64,8 +60,8 @@ export class ShowHideContent {
       default: {
         return;
       }
-    } 
-  }
+    }
+  };
 
   /**
    * Loops through each radio/checkbox element in the dom
@@ -82,16 +78,16 @@ export class ShowHideContent {
    * 
    * @param {DOMElement} element The radio/checkbox
    */
-  toggleContentBasedOnCheckState = (element) => {
-    if( !element ) return;
+  toggleContentBasedOnCheckState = element => {
+    if (!element) return;
     let targetInfo = this.getTargetFromElement(element);
     toggleClass(targetInfo.element, this.contentHiddenClass, !element.checked);
-    
+
     // Refresh aria tags
     element.setAttribute(this.ariaControlsAttributeName, targetInfo.id);
     element.setAttribute(this.ariaExpandedAtributeName, element.checked ? 'true' : 'false');
-    targetInfo.element.setAttribute(this.ariaHiddenAttributeName, element.checked ? 'false' : 'true' );
-  }
+    targetInfo.element.setAttribute(this.ariaHiddenAttributeName, element.checked ? 'false' : 'true');
+  };
 
   /**
    * Returns the target id and element
@@ -100,14 +96,13 @@ export class ShowHideContent {
    * @returns {Object} An object with id and element
    */
   getTargetFromElement(element) {
-    if( !element ) return;
+    if (!element) return;
     let parentContainer = closestParentOfEl(element, this.dataTargetSelector);
     let targetContainerId = parentContainer.getAttribute('data-target');
     let targetContainer = document.getElementById(targetContainerId);
     return {
       id: targetContainerId,
-      element: targetContainer
-    }
+      element: targetContainer,
+    };
   }
-
-};
+}

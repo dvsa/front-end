@@ -1,13 +1,8 @@
 import StickySidebar from 'sticky-sidebar';
-import {
-  addEventListenerToEl,
-  removeAllEventsFromEl,
-  toggleClass
-} from './../../shared/misc';
+import { addEventListenerToEl, removeAllEventsFromEl, toggleClass } from './../../../shared/misc';
 
 export class LibraryPageNavigation {
   constructor() {
-
     // Create values for later use
     this.sidebar = false;
     this.maxWidth = 800;
@@ -17,18 +12,18 @@ export class LibraryPageNavigation {
     this.navigationInnerClassName = 'styleguide-navigation__inner';
     this.navigationInnerOpenClassName = 'styleguide-navigation__inner--open';
     this.contentId = 'styleguide-content';
-    this.mobileNavClassName = 'styleguide-navigation__mobile-nav';
+    this.mobileNavigationClassName = 'styleguide-navigation__mobile-nav';
     this.libraryContainerId = 'library-container';
 
     // Get elements
     this.navigation = document.getElementById(this.navigationId);
-    if( !this.navigation ) return;
+    if (!this.navigation) return;
 
     this.navigationInner = this.navigation.querySelector('.' + this.navigationInnerClassName);
     this.content = document.getElementById(this.contentId);
-    this.mobileNavigation = document.querySelector('.' + this.mobileNavClassName);
+    this.mobileNavigation = document.querySelector('.' + this.mobileNavigationClassName);
 
-    if( !this.navigation || !this.content ) return;
+    if (!this.navigation || !this.content) return;
 
     this.setup();
   }
@@ -41,12 +36,11 @@ export class LibraryPageNavigation {
    */
   setup() {
     // Add resize event listener
-    addEventListenerToEl(window, 'resize', this.reizeHandler.bind(this));
-    // Remove all bound events to mobile navigation button
-    removeAllEventsFromEl(this.mobileNavigation);
-    this.mobileNavigation = document.querySelector('.' + this.mobileNavClassName);
+    $.events(window, {
+      'resize': this.reizeHandler
+    });
     // Mobile navigation
-    addEventListenerToEl(this.mobileNavigation, 'click', this.mobileNavigationClickHandler.bind(this));
+    $.delegate(document, 'click', '.' + this.mobileNavigationClassName, this.mobileNavigationClickHandler);
     // Create sticky sidebar
     this.initSidebar();
   }
@@ -55,7 +49,7 @@ export class LibraryPageNavigation {
    * Resize handler
    * - Reset and reinitalize the current sticky sidebar
    */
-  reizeHandler() {
+  reizeHandler = () => {
     this.initSidebar();
   }
 
@@ -68,12 +62,12 @@ export class LibraryPageNavigation {
     // If sticky sidebar has been initialized
     // call the destroy function to reset it
     // Initialize sticky sidebar
-    if( this.sidebar ) {
+    if (this.sidebar) {
       this.sidebar.destroy();
     }
     // Check the window width so it shouldn't run the sticky sidebar
     // when less than a certain width
-    if( window.innerWidth <= this.maxWidth ) return;
+    if (window.innerWidth <= this.maxWidth) return;
     // Fix jumping
     this.content.style.minHeight = this.navigation.offsetHeight + 'px';
     // Initialize the sticky sidebar
@@ -82,7 +76,7 @@ export class LibraryPageNavigation {
       bottomSpacing: 15,
       resizeSensor: false,
       containerSelector: '#' + this.libraryContainerId,
-      innerWrapperSelector: '.' + this.navigationInnerClassName
+      innerWrapperSelector: '.' + this.navigationInnerClassName,
     });
   }
 
@@ -90,8 +84,7 @@ export class LibraryPageNavigation {
    * Mobile navigation toggle
    * - Toggles the open class
    */
-  mobileNavigationClickHandler() {
+  mobileNavigationClickHandler = () => {
     toggleClass(this.navigationInner, this.navigationInnerOpenClassName);
   }
-  
 }

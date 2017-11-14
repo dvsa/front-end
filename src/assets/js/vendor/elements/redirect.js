@@ -1,9 +1,9 @@
 // Redirect all the existing URLs with fragment identifiers in to the new section
-;(function () {
-  'use strict'
+(function() {
+  'use strict';
 
-  var getNewRouteFor = function (fragment) {
-    var baseURL = window.location.protocol + '//' + window.location.host
+  var getNewRouteFor = function(fragment) {
+    var baseURL = window.location.protocol + '//' + window.location.host;
     var newRoutes = {
       '#guide-layout': '/layout',
       '#layout-spacing': '/layout/#layout-spacing',
@@ -48,25 +48,25 @@
       '#error-message-examples': '/errors/#examples',
       '#guide-alpha-beta': '/alpha-beta-banners',
       '#guide-alpha-beta-govuk': '/alpha-beta-banners/#alpha-banner',
-      '#alpha-beta-creating-banners': '/alpha-beta-banners/#creating-phase-banners'
-    }
+      '#alpha-beta-creating-banners': '/alpha-beta-banners/#creating-phase-banners',
+    };
 
     if (typeof newRoutes[fragment] !== 'undefined') {
-      return baseURL + newRoutes[fragment]
+      return baseURL + newRoutes[fragment];
     }
 
-    return false
-  }
+    return false;
+  };
 
-  var fragment = window.location.hash
-  var newRoute
+  var fragment = window.location.hash;
+  var newRoute;
 
   if (fragment === '') {
-    return
+    return;
   }
-  newRoute = getNewRouteFor(fragment)
+  newRoute = getNewRouteFor(fragment);
 
   if (newRoute) {
-    window.location.href = newRoute
+    window.location.href = newRoute;
   }
-}())
+})();

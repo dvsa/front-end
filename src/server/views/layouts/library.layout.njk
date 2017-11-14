@@ -1,6 +1,4 @@
-{#
-  Import macros for global use in all views
-#}
+{# Import macros for global use in all views #}
 {% set components = {} %}
 {% for component in macroFilePaths %}
   {% import component as temp %}{% set macro = _.assign(components, temp) %}
@@ -87,12 +85,7 @@
     <div id="global-app-error" class="app-error hidden"></div>
 
     <!-- body-scripts -->
-    <script type="text/javascript">
-      document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
-    </script>
-
     <script type="text/javascript" src="/javascripts/dvsa.bundle.js"></script>
-
     <!-- development-only -->
     <script type="text/javascript" src="/javascripts/development.bundle.js"></script>
     <!-- /development-only -->

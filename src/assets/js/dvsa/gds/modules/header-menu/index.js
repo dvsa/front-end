@@ -1,4 +1,4 @@
-import { toggleClass } from './../../shared';
+import { toggleClass } from './../../../../shared';
 
 export class HeaderMenu {
   constructor() {
@@ -8,14 +8,14 @@ export class HeaderMenu {
     this.contentVisibleClass = 'js-visible';
 
     // DOM Elements
-    this.headerToggles = $$( '.' + this.headerToggleClass );
+    this.headerToggles = $$('.' + this.headerToggleClass);
 
     this.setup();
   }
 
   setup() {
     // Delegate event click of header toggle
-    $.delegate(window, 'click', '.' + this.headerToggleClass, (e) => {
+    $.delegate(window, 'click', '.' + this.headerToggleClass, e => {
       e.preventDefault();
       let itemsContainerId = $(event.target).getAttribute('href');
       let itemsContainer = $(itemsContainerId);
@@ -23,4 +23,4 @@ export class HeaderMenu {
       toggleClass(itemsContainer, this.contentVisibleClass);
     });
   }
-};
+}

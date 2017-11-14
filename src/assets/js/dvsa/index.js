@@ -1,8 +1,9 @@
 import store from 'store';
 import expirePlugin from 'store/plugins/expire';
+
 import { domReady } from './../shared';
-import { AccordionInitializer } from './components';
-import { initGDSComponents } from './gds';
+import { initModules } from './modules';
+import { initGDS } from './gds';
 
 // Third-party
 import './third-party';
@@ -11,11 +12,9 @@ import './third-party';
 store.addPlugin(expirePlugin);
 
 domReady(() => {
+  // GDS
+  initGDS();
 
-  // GDS Components
-  initGDSComponents();
-
-  // Accordions component
-  AccordionInitializer();
-
+  // Modules
+  initModules();
 });

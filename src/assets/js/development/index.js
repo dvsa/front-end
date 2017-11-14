@@ -6,13 +6,13 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
 import Turbolinks from 'turbolinks';
 
-import { LibraryPageNavigation } from './components/library-page-navigation';
 import { domReady } from './../shared/misc';
+import { initModules } from './modules';
 
-const readyFunction = (fn) => {
-  if( Turbolinks.supported ) {
+const readyFunction = fn => {
+  if (Turbolinks.supported) {
     Turbolinks.start();
-    document.addEventListener("turbolinks:load", function() {
+    document.addEventListener('turbolinks:load', function() {
       fn();
     });
   } else {
@@ -21,7 +21,5 @@ const readyFunction = (fn) => {
 };
 
 readyFunction(function() {
-
-  new LibraryPageNavigation();
-
+  new initModules();
 });

@@ -20,16 +20,15 @@ export function toggleClass(el, className, force) {
   let existingIndex = -1;
 
   // Find the index of the className in the array
-  for (var i = classes.length; i--;) {
-    if (classes[i] === className)
-      existingIndex = i;
+  for (var i = classes.length; i--; ) {
+    if (classes[i] === className) existingIndex = i;
   }
 
   // Remove class
-  if( existingIndex >= 0 && force !== true ) {
+  if (existingIndex >= 0 && force !== true) {
     classes.splice(existingIndex, 1);
   } else {
-    if( force !== false ) {
+    if (force !== false) {
       classes.push(className);
     }
   }

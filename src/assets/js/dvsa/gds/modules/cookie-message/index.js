@@ -2,7 +2,6 @@ import store from 'store';
 
 export class CookieMessage {
   constructor() {
-  
     // Variables for later use
     this.cookieMessageStoreKey = 'mot-cookie-message-seen';
     this.cookieMessageDOMId = 'global-cookie-message';
@@ -20,10 +19,10 @@ export class CookieMessage {
   }
 
   setup() {
-    if( !this.storeValueForCookieMessage ) {
+    if (!this.storeValueForCookieMessage) {
       this.cookieMessageElement.style.display = 'block';
       // Add to store so it doesn't show message again
       store.set(this.cookieMessageStoreKey, 'yes', this.expireDate);
     }
   }
-};
+}

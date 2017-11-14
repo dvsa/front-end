@@ -37,7 +37,7 @@ export class LibraryPageNavigation {
   setup() {
     // Add resize event listener
     $.events(window, {
-      'resize': this.reizeHandler
+      resize: this.reizeHandler,
     });
     // Mobile navigation
     $.delegate(document, 'click', '.' + this.mobileNavigationClassName, this.mobileNavigationClickHandler);
@@ -51,7 +51,7 @@ export class LibraryPageNavigation {
    */
   reizeHandler = () => {
     this.initSidebar();
-  }
+  };
 
   /**
    * Initialize sticky sidebar
@@ -86,5 +86,5 @@ export class LibraryPageNavigation {
    */
   mobileNavigationClickHandler = () => {
     toggleClass(this.navigationInner, this.navigationInnerOpenClassName);
-  }
+  };
 }

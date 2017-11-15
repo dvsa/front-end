@@ -64,7 +64,9 @@ export class RecallsAccordion {
     // Add the ajax endpoint to the state
     this.state.ajaxEndpoint = this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxEndpoint);
     // Get ajax data to send with request
-    this.state.ajaxRequestBody = JSON.parse(this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxData));
+    this.state.ajaxRequestBody = JSON.parse(
+      this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxData)
+    );
     // Delegate event for when the accordion header is clicked
     $.delegate(this.parentAccordionElement, 'click', RECALLS_ACCORDION_CONSTANTS.selectors.header, this.recallsHeadingClickHandler);
   }
@@ -83,7 +85,7 @@ export class RecallsAccordion {
       // Make AJAX call
       axios
         .post(this.state.ajaxEndpoint, {
-          ...this.state.ajaxRequestBody
+          ...this.state.ajaxRequestBody,
         })
         .then(response => {
           this.state.loading = false;

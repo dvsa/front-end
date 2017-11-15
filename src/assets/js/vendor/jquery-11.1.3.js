@@ -891,11 +891,11 @@
       }
 
       /**
-   * Create key-value caches of limited size
-   * @returns {Function(string, Object)} Returns the Object data after storing it on itself with
-   *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
-   *	deleting the oldest entry
-   */
+       * Create key-value caches of limited size
+       * @returns {Function(string, Object)} Returns the Object data after storing it on itself with
+       *	property name the (space-suffixed) string and (if the cache is larger than Expr.cacheLength)
+       *	deleting the oldest entry
+       */
       function createCache() {
         var keys = [];
 
@@ -911,18 +911,18 @@
       }
 
       /**
-   * Mark a function for special use by Sizzle
-   * @param {Function} fn The function to mark
-   */
+       * Mark a function for special use by Sizzle
+       * @param {Function} fn The function to mark
+       */
       function markFunction(fn) {
         fn[expando] = true;
         return fn;
       }
 
       /**
-   * Support testing using an element
-   * @param {Function} fn Passed the created div and expects a boolean result
-   */
+       * Support testing using an element
+       * @param {Function} fn Passed the created div and expects a boolean result
+       */
       function assert(fn) {
         var div = document.createElement('div');
 
@@ -941,10 +941,10 @@
       }
 
       /**
-   * Adds the same handler for all of the specified attrs
-   * @param {String} attrs Pipe-separated list of attributes
-   * @param {Function} handler The method that will be applied
-   */
+       * Adds the same handler for all of the specified attrs
+       * @param {String} attrs Pipe-separated list of attributes
+       * @param {Function} handler The method that will be applied
+       */
       function addHandle(attrs, handler) {
         var arr = attrs.split('|'),
           i = attrs.length;
@@ -955,11 +955,11 @@
       }
 
       /**
-   * Checks document order of two siblings
-   * @param {Element} a
-   * @param {Element} b
-   * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
-   */
+       * Checks document order of two siblings
+       * @param {Element} a
+       * @param {Element} b
+       * @returns {Number} Returns less than 0 if a precedes b, greater than 0 if a follows b
+       */
       function siblingCheck(a, b) {
         var cur = b && a,
           diff = cur && a.nodeType === 1 && b.nodeType === 1 && (~b.sourceIndex || MAX_NEGATIVE) - (~a.sourceIndex || MAX_NEGATIVE);
@@ -982,9 +982,9 @@
       }
 
       /**
-   * Returns a function to use in pseudos for input types
-   * @param {String} type
-   */
+       * Returns a function to use in pseudos for input types
+       * @param {String} type
+       */
       function createInputPseudo(type) {
         return function(elem) {
           var name = elem.nodeName.toLowerCase();
@@ -993,9 +993,9 @@
       }
 
       /**
-   * Returns a function to use in pseudos for buttons
-   * @param {String} type
-   */
+       * Returns a function to use in pseudos for buttons
+       * @param {String} type
+       */
       function createButtonPseudo(type) {
         return function(elem) {
           var name = elem.nodeName.toLowerCase();
@@ -1004,9 +1004,9 @@
       }
 
       /**
-   * Returns a function to use in pseudos for positionals
-   * @param {Function} fn
-   */
+       * Returns a function to use in pseudos for positionals
+       * @param {Function} fn
+       */
       function createPositionalPseudo(fn) {
         return markFunction(function(argument) {
           argument = +argument;
@@ -1026,10 +1026,10 @@
       }
 
       /**
-   * Checks a node for validity as a Sizzle context
-   * @param {Element|Object=} context
-   * @returns {Element|Object|Boolean} The input node if acceptable, otherwise a falsy value
-   */
+       * Checks a node for validity as a Sizzle context
+       * @param {Element|Object=} context
+       * @returns {Element|Object|Boolean} The input node if acceptable, otherwise a falsy value
+       */
       function testContext(context) {
         return context && typeof context.getElementsByTagName !== 'undefined' && context;
       }
@@ -1038,10 +1038,10 @@
       support = Sizzle.support = {};
 
       /**
-   * Detects XML nodes
-   * @param {Element|Object} elem An element or a document
-   * @returns {Boolean} True iff elem is a non-HTML XML node
-   */
+       * Detects XML nodes
+       * @param {Element|Object} elem An element or a document
+       * @returns {Boolean} True iff elem is a non-HTML XML node
+       */
       isXML = Sizzle.isXML = function(elem) {
         // documentElement is verified for cases where it doesn't yet exist
         // (such as loading iframes in IE - #4833)
@@ -1050,10 +1050,10 @@
       };
 
       /**
-   * Sets document-related variables once based on the current document
-   * @param {Element|Object} [doc] An element or document object to use to set the document
-   * @returns {Object} Returns the current document
-   */
+       * Sets document-related variables once based on the current document
+       * @param {Element|Object} [doc] An element or document object to use to set the document
+       * @returns {Object} Returns the current document
+       */
       setDocument = Sizzle.setDocument = function(node) {
         var hasCompare,
           parent,
@@ -1494,9 +1494,9 @@
       };
 
       /**
-   * Document sorting and removing duplicates
-   * @param {ArrayLike} results
-   */
+       * Document sorting and removing duplicates
+       * @param {ArrayLike} results
+       */
       Sizzle.uniqueSort = function(results) {
         var elem,
           duplicates = [],
@@ -1527,9 +1527,9 @@
       };
 
       /**
-   * Utility function for retrieving the text value of an array of DOM nodes
-   * @param {Array|Element} elem
-   */
+       * Utility function for retrieving the text value of an array of DOM nodes
+       * @param {Array|Element} elem
+       */
       getText = Sizzle.getText = function(elem) {
         var node,
           ret = '',
@@ -2513,14 +2513,14 @@
       };
 
       /**
-   * A low-level selection function that works with Sizzle's compiled
-   *  selector functions
-   * @param {String|Function} selector A selector or a pre-compiled
-   *  selector function built with Sizzle.compile
-   * @param {Element} context
-   * @param {Array} [results]
-   * @param {Array} [seed] A set of elements to match against
-   */
+       * A low-level selection function that works with Sizzle's compiled
+       *  selector functions
+       * @param {String|Function} selector A selector or a pre-compiled
+       *  selector function built with Sizzle.compile
+       * @param {Element} context
+       * @param {Array} [results]
+       * @param {Array} [seed] A set of elements to match against
+       */
       select = Sizzle.select = function(selector, context, results, seed) {
         var i,
           tokens,
@@ -8388,7 +8388,8 @@
   // Return jQuery for attributes-only inclusion
 
   jQuery.each(
-    ('blur focus focusin focusout load resize scroll unload click dblclick ' +
+    (
+      'blur focus focusin focusout load resize scroll unload click dblclick ' +
       'mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave ' +
       'change select submit keydown keypress keyup error contextmenu'
     ).split(' '),

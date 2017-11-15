@@ -1,11 +1,11 @@
 /**
  * domReady
- * 
+ *
  * Runs a callback function when the DOM is ready.
- * 
+ *
  * Supported: IE8+
- * 
- * @param {function} fn Callback for when the DOM is fully loaded.  
+ *
+ * @param {function} fn Callback for when the DOM is fully loaded.
  */
 
 export function domReady(fn) {

@@ -77,7 +77,7 @@ export class Accordion {
 
   /**
    * Setup the state
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   setup() {
@@ -120,7 +120,7 @@ export class Accordion {
 
   /**
    * Handles event when the header is clicked.
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    * @param {Event} event Event object when it is firect.
    */
@@ -141,7 +141,7 @@ export class Accordion {
 
   /**
    * Open/Close all accordion sections
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   expandButtonClickHandler = event => {
@@ -155,7 +155,7 @@ export class Accordion {
 
   /**
    * Restores the state of the accordions
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   restoreSavedStateData() {
@@ -192,7 +192,7 @@ export class Accordion {
 
   /**
    * Saves the current state of the accordions
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   saveCurrentStateData() {
@@ -218,7 +218,7 @@ export class Accordion {
 
   /**
    * Refresh the DOM based on the state
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   refreshState() {
@@ -283,7 +283,7 @@ export class Accordion {
 
   /**
    * Pushes a dataLayer object for all accordions
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   pushDataLayerForAllAccordions = () => {
@@ -308,9 +308,9 @@ export class Accordion {
 
   /**
    * Pushes a datalayer object for a specific accordion section
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
-   * @param {Number} sectionIndex The index id of the section in the state 
+   * @param {Number} sectionIndex The index id of the section in the state
    */
   pushDataLayerForAccordion = sectionIndex => {
     if (!window.dataLayer || !sectionIndex) return;
@@ -330,7 +330,7 @@ export class Accordion {
 
   /**
    * Pushes a datalayer object for all accordions restored from the saved state
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    * @param {Array} section Array of sections restored from the saved state
    */
@@ -353,7 +353,7 @@ export class Accordion {
 
   /**
    * Check if section is open
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    * @param {DOMElement} element Element to check if open
    */
@@ -364,7 +364,7 @@ export class Accordion {
 
   /**
    * Gets the current expand button text based on the state
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   getExpandButtonText() {
@@ -373,7 +373,7 @@ export class Accordion {
 
   /**
    * Get the section info for the datalayer push
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   getSectionDataLayerInfo = section => {

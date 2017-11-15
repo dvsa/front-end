@@ -75,7 +75,7 @@ export class ShowHideContent {
   /**
    * Shows/Hides the content of the current radio/checkbox
    * based on if the radio/checkbox is check or unchecked.
-   * 
+   *
    * @param {DOMElement} element The radio/checkbox
    */
   toggleContentBasedOnCheckState = element => {
@@ -91,7 +91,7 @@ export class ShowHideContent {
 
   /**
    * Returns the target id and element
-   * 
+   *
    * @param {DOMElement} element The radio/checkbox
    * @returns {Object} An object with id and element
    */

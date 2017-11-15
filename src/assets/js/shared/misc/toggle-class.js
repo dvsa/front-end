@@ -1,10 +1,10 @@
 /**
  * toggleClass
- * 
+ *
  * Toggles the class for a DOM element.
- * 
+ *
  * Supported: IE8+
- * 
+ *
  * @param {DOMElement} el Element to toggle the class for.
  * @param {string} className Name of the class to toggle.
  */

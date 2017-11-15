@@ -5,18 +5,5 @@
 node_modules
 .bundle
 *.log
-# Ignore compiled/dependency assets
-public/stylesheets/
-public/images/
-public/javascripts/
-# Ignore test files
-dist/*.html
-dist
-bower_components
-govuk_components
-
 /vendor/
-# Ignore wraith screenshots
-/tests/wraith/shots/
-/tests/wraith/shots_history/
 spider.txt

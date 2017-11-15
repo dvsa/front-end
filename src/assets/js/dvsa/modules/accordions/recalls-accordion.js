@@ -55,7 +55,7 @@ export class RecallsAccordion {
   /**
    * Setup recalls accordion
    * - Add recall accordion events
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   setup() {

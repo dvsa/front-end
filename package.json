@@ -62,7 +62,6 @@
     "prismjs": "^1.8.3",
     "readdir": "0.0.6",
     "require-dir": "^0.3.2",
-    "sendgrid": "^1.9.2",
     "smooth-scroll": "^12.1.5",
     "sticky-sidebar": "^3.2.1",
     "store": "^2.0.12",

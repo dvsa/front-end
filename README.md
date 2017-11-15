@@ -35,6 +35,8 @@ It will automatically run the following processess concurrently
 
 Production command will generate product ready frontend assets (images, javascripts, stylesheets) inside of the public folder.
 
+You must build production before pushing to production/heroku. Since it will not build the asseets (css/js/images) on the server.
+
 ```javascript
 npm run build-production
 ```

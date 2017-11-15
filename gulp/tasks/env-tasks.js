@@ -15,8 +15,8 @@ gulp.task('watch-dev', gulp.series('copy-images', 'copy-fonts', 'copy-misc', 'sc
 
     // Watch all scss files inside of the source folder
     // If any changes occure then run the scss gulp task
-    gulp.watch(path.join(CONFIG.sourcePaths.base, '**/**.*'), gulp.parallel('copy-images', 'copy-fonts', 'copy-misc', 'scss'));
-    
+    gulp.watch(path.join(CONFIG.sourcePaths.scss, '**/*.scss'), gulp.parallel('scss'));
+
 }));
 
 /**

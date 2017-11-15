@@ -14,6 +14,7 @@ import minifyHTML from 'express-minify-html';
 import helmet from 'helmet';
 import pretty from 'pretty';
 import { minify } from 'html-minifier';
+import errorhandler from 'errorhandler';
 import _ from 'lodash';
 
 import { allRoutes } from './config/routes';
@@ -91,7 +92,7 @@ export const startApp = async () => {
   const getMacroFilePaths = async () => {
     // Creates a promise since the function uses a callback
     return new Promise((resolve, reject) => {
-      nodeDir.paths(path.resolve(CONFIG.paths.views.base, 'partials'), (err, paths) => {
+      nodeDir.paths(path.resolve(CONFIG.paths.views.base, 'macros'), (err, paths) => {
         // Handles error
         if (err) {
           // Returns a reject promise response
@@ -150,10 +151,10 @@ export const startApp = async () => {
 
   // Logger middleware
   // Outputs all http requests and responses
-  if( process.env.NODE_ENV != 'testing' ) {
+  if (process.env.NODE_ENV != 'testing') {
     app.use(morgan('dev'));
   }
-  
+
   // Express session middleware
   // Website: https://www.npmjs.com/package/express-session
   app.use(
@@ -172,6 +173,11 @@ export const startApp = async () => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
+  // Error handling for development
+  if (process.env.NODE_ENV == 'development') {
+    app.use(errorhandler());
+  }
+
   // Routes
   app.use('/', allRoutes);
 
@@ -180,7 +186,7 @@ export const startApp = async () => {
 
   // Start HTTP server
   app.listen(appPort, () => {
-    if( process.env.NODE_ENV != 'testing' ) {
+    if (process.env.NODE_ENV != 'testing') {
       console.log(`
         Port: ${appPort} 
         Env: ${app.get('env')}

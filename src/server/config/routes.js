@@ -2,7 +2,7 @@ import { Router } from 'express';
 
 import * as mainController from './../controllers/main.controller';
 import * as miscController from './../controllers/misc.controller';
-// import * as libraryController from './../controllers/library.controller';
+import * as recallsController from './../controllers/api/v1/recalls.controller';
 
 const router = Router();
 
@@ -10,8 +10,8 @@ const router = Router();
 router.get('/robots.txt', mainController.robots);
 router.get('/', mainController.index);
 
-// Library routes
-// router.get('/library/*', libraryController.allViews);
+// API Routes
+router.get('/api/v1/recalls', recallsController.recalls);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

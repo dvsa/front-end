@@ -3,7 +3,7 @@ import path from 'path';
 import { CONFIG } from './../config/constants';
 
 // View file
-export let viewFileRoute = (req, res) => {
+export const viewFileRoute = (req, res) => {
   let viewFilePath = path.join(CONFIG.paths.views.base, req.path + '.njk');
   let viewIndexFilePath = path.join(CONFIG.paths.views.base, req.path, 'index.njk');
 

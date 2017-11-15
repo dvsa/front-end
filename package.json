@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "autoprefixer": "^7.1.4",
+    "axios": "^0.17.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -44,6 +45,7 @@
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "document-ready": "^2.0.1",
+    "errorhandler": "^1.5.0",
     "etag": "^1.8.1",
     "express": "^4.16.2",
     "express-minify-html": "^0.11.4",

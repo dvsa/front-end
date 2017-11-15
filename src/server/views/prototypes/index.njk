@@ -1,0 +1,20 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Prototypes Index' %}
+
+{% block content %}
+
+  {{ components.pageHeading('Prototypes', 'DVSA Front-End') }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='MOTH Accordions', tag='h2', size='medium', url='/moth-accordions') }}
+      {{ components.paragraph(text='A prototype mockup of the moth history page with accordions.') }}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

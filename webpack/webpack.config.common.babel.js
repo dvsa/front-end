@@ -2,7 +2,6 @@ import path from 'path';
 import webpack from 'webpack';
 
 module.exports = {
-  watch: true,
   entry: {
     dvsa: path.resolve('src', 'assets', 'js', 'dvsa', 'index.js'),
     'ie-shims': path.resolve('src', 'assets', 'js', 'ie-shims', 'index.js'),

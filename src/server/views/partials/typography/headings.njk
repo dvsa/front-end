@@ -1,7 +1,0 @@
-{% macro heading(text='', secondary=false, tag='h1', size='large', url=false) %}
-  {% if text %}
-    <{{ tag }} class="heading-{{ size }}">
-      {{ '<a href="' + url +'">' + text + '</a>' if url else text }}
-    </{{ tag }}>
-  {% endif %}
-{% endmacro %}

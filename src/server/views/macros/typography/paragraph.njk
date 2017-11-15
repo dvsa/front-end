@@ -1,7 +1,5 @@
 {% macro paragraph(text=false, small=false, lead=false) %}
-  {% if text %}
   <p {{ 'class="lede"' if lead }}{{ 'class="font-xsmall"' if small }}>
     {{ text }}
   </p>
-  {% endif %}
 {% endmacro %}

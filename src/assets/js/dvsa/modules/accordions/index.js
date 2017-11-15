@@ -1,10 +1,18 @@
 import { Accordion } from './accordion';
+import { RecallsAccordion } from './recalls-accordion';
 
 export const initAccordions = () => {
+  // Get all accordions on the page
   let accordions = document.querySelectorAll('.js-accordion');
+
+  // Check if atleast one accordion exists
   if (accordions.length) {
-    for (let i = 0; i < accordions.length; i++) {
-      new Accordion(accordions[i]);
-    }
+    // Initialize all the accordions on the page
+    accordions.forEach(accordion => {
+      new Accordion(accordion);
+    });
   }
+
+  // Initialize ajax for recalls accordion
+  new RecallsAccordion();
 };

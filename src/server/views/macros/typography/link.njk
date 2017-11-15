@@ -1,0 +1,7 @@
+{% macro link(text='', url=false, back=false, paragraph=false) %}
+  {% if text %}
+    {% if paragraph %}<p>{% endif %}
+      <a {{ 'href="' + url + '"' if url }} {{ 'class="link-back"' if back }}>{{ text }}</a>
+    {% if paragraph %}</p>{% endif %}
+  {% endif %}
+{% endmacro %}

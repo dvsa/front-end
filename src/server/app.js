@@ -132,15 +132,15 @@ export const startApp = async () => {
 
   // Enable HTML Compression
   // Website: https://www.npmjs.com/package/express-minify-html
-  app.use(
-    minifyHTML({
-      override: true,
-      exception_url: false,
-      htmlMinifier: {
-        removeComments: true,
-      },
-    })
-  );
+  // app.use(
+  //   minifyHTML({
+  //     override: true,
+  //     exception_url: false,
+  //     htmlMinifier: {
+  //       removeComments: true,
+  //     },
+  //   })
+  // );
 
   // Enables security middleware
   // Website: https://helmetjs.github.io/

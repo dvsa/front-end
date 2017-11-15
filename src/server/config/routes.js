@@ -11,7 +11,7 @@ router.get('/robots.txt', mainController.robots);
 router.get('/', mainController.index);
 
 // API Routes
-router.get('/api/v1/recalls', recallsController.recalls);
+router.post('/api/v1/recalls', recallsController.recalls);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

@@ -103,7 +103,7 @@ export class Accordion {
       let stateSectionIndexId = this.state.sections.length - 1;
       sectionElement.setAttribute(ACCORDION_CONSTANTS.attributeNames.stateIndexId, stateSectionIndexId);
       // Set unique identifier for content
-      if( !sectionContentElement.getAttribute('id') ) {
+      if (!sectionContentElement.getAttribute('id')) {
         sectionContentElement.setAttribute('id', sectionContentId ? sectionContentId : sectionUniqueIdentifier);
       }
     });
@@ -246,7 +246,10 @@ export class Accordion {
         toggleClass(section.sectionElement, ACCORDION_CONSTANTS.classNames.sectionOpen, section.sectionOpen);
 
         // Set Aria attributes
-        section.sectionHeaderElement.setAttribute(ACCORDION_CONSTANTS.ariaAttributes.controls, section.sectionContentId ? section.sectionContentId : section.sectionUniqueIdentifier);
+        section.sectionHeaderElement.setAttribute(
+          ACCORDION_CONSTANTS.ariaAttributes.controls,
+          section.sectionContentId ? section.sectionContentId : section.sectionUniqueIdentifier
+        );
         section.sectionHeaderElement.setAttribute(ACCORDION_CONSTANTS.ariaAttributes.expanded, section.sectionOpen ? 'true' : 'false');
         section.sectionContentElement.setAttribute(ACCORDION_CONSTANTS.ariaAttributes.hidden, section.sectionOpen ? 'false' : 'true');
 

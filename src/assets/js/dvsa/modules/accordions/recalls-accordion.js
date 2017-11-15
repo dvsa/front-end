@@ -10,6 +10,7 @@ export const RECALLS_ACCORDION_CONSTANTS = {
   },
   attributeNames: {
     ajaxEndpoint: 'data-recalls-ajax-endpoint',
+    ajaxData: 'data-recalls-ajax-data',
   },
   classNames: {
     content: 'recalls-accordion',
@@ -28,12 +29,12 @@ export class RecallsAccordion {
     this.recallsAccordionSectionElement = document.querySelector(RECALLS_ACCORDION_CONSTANTS.selectors.section);
 
     // Do not continue if recalls accordion does not exist
-    if (!this.recallsAccordionSectionElement ) return;
+    if (!this.recallsAccordionSectionElement) return;
 
     this.recallsAccordionHeaderElement = document.querySelector(RECALLS_ACCORDION_CONSTANTS.selectors.header);
     this.parentAccordionElement = closestParentOfEl(this.recallsAccordionSectionElement, '.' + ACCORDION_CONSTANTS.classNames.accordion);
     this.recallsAccordionContentElement = this.recallsAccordionSectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.content);
-    
+
     // Recalls specific elements
     this.recallsContentElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.content);
     this.recallsContentNoJSAlternativeElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.noJSAlternative);
@@ -41,6 +42,7 @@ export class RecallsAccordion {
     this.recallsContentOutputElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.output);
 
     this.state = {
+      ajaxRequestBody: false,
       ajaxEndpoint: false,
       ajaxContentAddedToDOM: false,
       loading: false,
@@ -61,6 +63,8 @@ export class RecallsAccordion {
     toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentNoJs, false);
     // Add the ajax endpoint to the state
     this.state.ajaxEndpoint = this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxEndpoint);
+    // Get ajax data to send with request
+    this.state.ajaxRequestBody = JSON.parse(this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxData));
     // Delegate event for when the accordion header is clicked
     $.delegate(this.parentAccordionElement, 'click', RECALLS_ACCORDION_CONSTANTS.selectors.header, this.recallsHeadingClickHandler);
   }
@@ -77,8 +81,11 @@ export class RecallsAccordion {
       // Toggle loading class to show spinner and message
       toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, true);
       // Make AJAX call
-      axios.get(this.state.ajaxEndpoint)
-        .then((response) => {
+      axios
+        .post(this.state.ajaxEndpoint, {
+          ...this.state.ajaxRequestBody
+        })
+        .then(response => {
           this.state.loading = false;
           this.state.ajaxContentAddedToDOM = true;
           // Remove loading class
@@ -88,13 +95,11 @@ export class RecallsAccordion {
           // Display the accordion output
           toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
         })
-        .catch((error) => {
+        .catch(error => {
           console.log(error);
         });
 
-      setTimeout(() => {
-        
-      }, 2000);
+      setTimeout(() => {}, 2000);
     }
   };
 }

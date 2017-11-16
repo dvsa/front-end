@@ -5,8 +5,6 @@ import { domReady } from './../shared';
 import { initModules } from './modules';
 import { initGDS } from './gds';
 
-import FastClick from 'fastclick';
-
 // Third-party
 import './third-party';
 
@@ -14,8 +12,6 @@ import './third-party';
 store.addPlugin(expirePlugin);
 
 domReady(() => {
-  FastClick.attach(document.body);
-
   // GDS
   initGDS();
 

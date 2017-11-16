@@ -2,6 +2,7 @@ import store from 'store';
 import md5 from 'md5';
 import SmoothScroll from 'smooth-scroll';
 import findIndex from 'lodash/findIndex';
+import Hammer from 'hammerjs';
 
 import { elHasClass, toggleClass, addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
 
@@ -54,6 +55,7 @@ export class Accordion {
     this.sections = this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.section);
     this.headings = this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.header);
     this.expandButton = this.accordionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.expandButton);
+    this.hammerExpandButton = new Hammer(this.expandButton);
 
     // Add JS Enabled class
     toggleClass(this.accordionElement, ACCORDION_CONSTANTS.classNames.jsEnabled, true);
@@ -106,13 +108,15 @@ export class Accordion {
       if (!sectionContentElement.getAttribute('id')) {
         sectionContentElement.setAttribute('id', sectionContentId ? sectionContentId : sectionUniqueIdentifier);
       }
+
+      let hammerAccordionHeading = new Hammer(sectionHeaderElement);
+      hammerAccordionHeading.on('tap', this.headerClickHandler);
     });
 
     // Delegate section header click event
-    $.delegate(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.header, this.headerClickHandler);
 
     // Delegate section expand button click event
-    $.delegate(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.expandButton, this.expandButtonClickHandler);
+    this.hammerExpandButton.on('tap', this.expandButtonClickHandler);
 
     // Restore the saved state
     this.restoreSavedStateData();
@@ -231,12 +235,15 @@ export class Accordion {
       // Create temporary variable to hold
       // the open sections count
       let openCount = 0;
+      let totalCount = 0;
       // Refresh the DOM for each section
       this.state.sections.forEach(section => {
         // If the expand button has been clicked,
         // then change the open state of the section to the expand all state
         if (this.state.expanding) {
-          section.sectionOpen = this.state.expandAll;
+          if (!section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.disableStateRestore)) {
+            section.sectionOpen = this.state.expandAll;
+          }
         }
 
         // Toggle the correct class based on the state
@@ -258,6 +265,10 @@ export class Accordion {
         if (section.sectionOpen) {
           openCount++;
         }
+
+        // Add count to total sections
+        // This would exclude any that are disabled
+        totalCount++;
 
         // Change expand status if one section or more
         // section(s) is open, but only if expand button

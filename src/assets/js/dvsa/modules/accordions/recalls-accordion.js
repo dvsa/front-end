@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Hammer from 'hammerjs';
 
 import { ACCORDION_CONSTANTS } from './accordion';
 import { closestParentOfEl, toggleClass } from './../../../shared/misc';
@@ -35,6 +36,9 @@ export class RecallsAccordion {
     this.parentAccordionElement = closestParentOfEl(this.recallsAccordionSectionElement, '.' + ACCORDION_CONSTANTS.classNames.accordion);
     this.recallsAccordionContentElement = this.recallsAccordionSectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.content);
 
+    // Hammerjs for tap event
+    this.hammerRecallsAccordionHeader = new Hammer(this.recallsAccordionHeaderElement);
+
     // Recalls specific elements
     this.recallsContentElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.content);
     this.recallsContentNoJSAlternativeElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.noJSAlternative);
@@ -68,7 +72,7 @@ export class RecallsAccordion {
       this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxData)
     );
     // Delegate event for when the accordion header is clicked
-    $.delegate(this.parentAccordionElement, 'click', RECALLS_ACCORDION_CONSTANTS.selectors.header, this.recallsHeadingClickHandler);
+    this.hammerRecallsAccordionHeader.on('tap', this.recallsHeadingClickHandler);
   }
 
   /**

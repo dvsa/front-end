@@ -1,4 +1,5 @@
 import StickySidebar from 'sticky-sidebar';
+import Hammer from 'hammerjs';
 import { addEventListenerToEl, removeAllEventsFromEl, toggleClass } from './../../../shared/misc';
 
 export class LibraryPageNavigation {
@@ -21,6 +22,9 @@ export class LibraryPageNavigation {
     this.navigation = document.getElementById(this.navigationId);
     if (!this.navigation || !this.libraryContainerElement) return;
 
+    this.mobileNavigationContainer = document.querySelector('.' + this.mobileNavigationClassName);
+    this.hammerMobileContainer = new Hammer(this.mobileNavigationContainer);
+
     this.navigationInner = this.navigation.querySelector('.' + this.navigationInnerClassName);
     this.content = document.getElementById(this.contentId);
     this.mobileNavigation = document.querySelector('.' + this.mobileNavigationClassName);
@@ -42,8 +46,8 @@ export class LibraryPageNavigation {
       resize: this.reizeHandler,
     });
     // Mobile navigation
-    $.delegate(this.libraryContainerElement, 'click', '.' + this.mobileNavigationContainerClassName, this.mobileNavigationClickHandler);
-    console.log('hello');
+    // $.delegate(this.libraryContainerElement, 'click', '.' + this.mobileNavigationContainerClassName, this.mobileNavigationClickHandler);
+    this.hammerMobileContainer.on('tap', this.mobileNavigationClickHandler);
     // Create sticky sidebar
     this.initSidebar();
   }

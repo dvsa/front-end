@@ -92,6 +92,7 @@ export class LibraryPageNavigation {
    * - Toggles the open class
    */
   mobileNavigationClickHandler = () => {
-    toggleClass(this.navigationInner, this.navigationInnerOpenClassName);
+    alert('hello');
+    toggleClass(this.navigationInner, this.navigationInnerOpenClassName); 
   };
 }

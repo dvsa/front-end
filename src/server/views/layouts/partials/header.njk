@@ -28,7 +28,7 @@
                 <a href="/">Index</a>
               </li>
               <li>
-                <a href="https://gitlab.motdev.org.uk/mot/mot-new-wfa">GitLab</a>
+                <a href="https://github.com/dvsa/front-end">Github</a>
               </li>
             </ul>
           {% endif %}
@@ -36,26 +36,6 @@
         </nav>
       </div>
     </div>
-
-    {% if not loggedOut %}
-      <div class="header-proposition">
-        <div class="content">
-          <nav id="proposition-menu">
-            <span class="header-user__name">Bob Bobbingdon</span>
-            <span class="header-user__id">007ABC</span>
-            <span class="header-user__address">
-              Quickfit - Bristol South BR2 11GH
-              <a href="#">Change Site</a>
-            </span>
-            <ul class="header-user__menu">
-              <li><a href="/user-home/">Home</a></li>
-              <li><a href="/your-account/">Your profile</a></li>
-              <li><a href="/2fa/">Sign out</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    {% endif %}
 
   </div>
 </header>

@@ -243,7 +243,7 @@ export class Accordion {
         // then change the open state of the section to the expand all state
         if (this.state.expanding) {
           // if (!section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.disableStateRestore)) {
-            section.sectionOpen = this.state.expandAll;
+          section.sectionOpen = this.state.expandAll;
           // }
         }
 

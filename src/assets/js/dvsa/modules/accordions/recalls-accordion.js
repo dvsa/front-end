@@ -73,7 +73,7 @@ export class RecallsAccordion {
     // Call ajax if all accordions are expanded
     // $.once(document, ACCORDION_CONSTANTS.eventNames.expandAllOpen, '', this.recallsHeadingClickHandler);
     $.events(document, {
-      [ACCORDION_CONSTANTS.eventNames.expandAllOpen]: this.recallsHeadingClickHandler
+      [ACCORDION_CONSTANTS.eventNames.expandAllOpen]: this.recallsHeadingClickHandler,
     });
   }
 

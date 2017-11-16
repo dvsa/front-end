@@ -3,7 +3,7 @@ import path from 'path';
 export const SRC_PATH = path.resolve('src', 'server');
 
 export const CONFIG = {
-  port: 3008,
+  port: 3002,
   sessionSecret: 'secret',
   paths: {
     src: SRC_PATH,

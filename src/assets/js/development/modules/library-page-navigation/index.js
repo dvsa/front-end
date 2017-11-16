@@ -1,4 +1,3 @@
-import { StickySidebar } from './../../third-party';
 import { addEventListenerToEl, removeAllEventsFromEl, toggleClass } from './../../../shared/misc';
 
 export class LibraryPageNavigation {
@@ -61,27 +60,12 @@ export class LibraryPageNavigation {
    * Initialize sticky sidebar
    * - Set minimum height of the content to be the height of the sidebar
    * - Create new instance of sticky sidebar
+   * @todo: Create sticky sidebar
    */
   initSidebar() {
-    // If sticky sidebar has been initialized
-    // call the destroy function to reset it
-    // Initialize sticky sidebar
-    if (this.sidebar) {
-      this.sidebar.destroy();
-    }
     // Check the window width so it shouldn't run the sticky sidebar
     // when less than a certain width
     if (window.innerWidth <= this.maxWidth) return;
-    // Fix jumping
-    this.content.style.minHeight = this.navigation.offsetHeight + 'px';
-    // Initialize the sticky sidebar
-    this.sidebar = new StickySidebar(this.navigation, {
-      topSpacing: 15,
-      bottomSpacing: 15,
-      resizeSensor: false,
-      containerSelector: '#' + this.libraryContainerId,
-      innerWrapperSelector: '.' + this.navigationInnerClassName,
-    });
   }
 
   /**

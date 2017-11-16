@@ -13,11 +13,13 @@ export class LibraryPageNavigation {
     this.navigationInnerOpenClassName = 'styleguide-navigation__inner--open';
     this.contentId = 'styleguide-content';
     this.mobileNavigationClassName = 'styleguide-navigation__mobile-nav';
+    this.mobileNavigationContainerClassName = 'styleguide-navigation__mobile';
     this.libraryContainerId = 'library-container';
 
     // Get elements
+    this.libraryContainerElement = document.getElementById(this.libraryContainerId);
     this.navigation = document.getElementById(this.navigationId);
-    if (!this.navigation) return;
+    if (!this.navigation || !this.libraryContainerElement) return;
 
     this.navigationInner = this.navigation.querySelector('.' + this.navigationInnerClassName);
     this.content = document.getElementById(this.contentId);
@@ -40,7 +42,8 @@ export class LibraryPageNavigation {
       resize: this.reizeHandler,
     });
     // Mobile navigation
-    $.delegate(document, 'click', '.' + this.mobileNavigationClassName, this.mobileNavigationClickHandler);
+    $.delegate(this.libraryContainerElement, 'click', '.' + this.mobileNavigationContainerClassName, this.mobileNavigationClickHandler);
+    console.log('hello');
     // Create sticky sidebar
     this.initSidebar();
   }

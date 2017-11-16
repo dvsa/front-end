@@ -13,8 +13,4 @@ export const CONFIG = {
     assets: path.join(SRC_PATH, 'assets'),
     data: path.join(SRC_PATH, 'data'),
   },
-  basicAuth: {
-    username: 'admin',
-    password: 'uxrocksmysocks',
-  },
 };

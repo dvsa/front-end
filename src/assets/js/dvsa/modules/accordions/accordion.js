@@ -242,9 +242,7 @@ export class Accordion {
         // If the expand button has been clicked,
         // then change the open state of the section to the expand all state
         if (this.state.expanding) {
-          // if (!section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.disableStateRestore)) {
           section.sectionOpen = this.state.expandAll;
-          // }
         }
 
         // Toggle the correct class based on the state

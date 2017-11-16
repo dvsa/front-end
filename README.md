@@ -18,10 +18,16 @@ npm install
 
 ### Development
 
-To run development mode run the following command inside the directory
+To run development mode run the following command inside the directory.
 
 ```javascript
 npm run start-dev
+```
+
+You can access the local server with the following url
+
+```
+http://localhost:3002
 ```
 
 It will automatically run the following processess concurrently
@@ -35,7 +41,7 @@ It will automatically run the following processess concurrently
 
 Production command will generate product ready frontend assets (images, javascripts, stylesheets) inside of the public folder.
 
-You must build production before pushing to production/heroku. Since it will not build the asseets (css/js/images) on the server.
+You must run this command before pushing to production/heroku, since it will not build the assets (css/js/images) on the server.
 
 ```javascript
 npm run build-production

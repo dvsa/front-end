@@ -37,6 +37,10 @@
     <script type="text/javascript" src="/javascripts/ie-shims.bundle.js"></script>
     <![endif]-->
     
+    <!-- development-only -->
+    <link rel="stylesheet" href="/stylesheets/development.css">
+    <!-- /development-only -->
+    
     {% block header %}{% endblock %}
 
     <script type="text/javascript">
@@ -75,25 +79,9 @@
 
     <!-- body-scripts -->
     <script type="text/javascript" src="/javascripts/dvsa.bundle.js"></script>
+    <script type="text/javascript" src="/javascripts/development.bundle.js"></script>
     {% block bodyScripts %}{% endblock %}
     <!-- /body-scripts -->
-
-    <!-- development-only -->
-    <script type="text/javascript">
-    (function(d) {
-      var g = d.createElement('script');
-      g.type = 'text/javascript';
-      g.defer = true;
-      g.src = '/javascripts/development.bundle.js';
-      d.body.appendChild(g);
-
-      var g = d.createElement('link');
-      g.href = '/stylesheets/development.css';
-      g.rel = 'stylesheet';
-      d.head.appendChild(g);
-    }(document));
-    </script>
-    <!-- /development-only -->
 
   </body>
 </html>

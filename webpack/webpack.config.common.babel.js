@@ -19,22 +19,25 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
+            babelrc: false,
             presets: [
-              [
-                'es2015',
-                {
-                  modules: false
-                }
-              ]
+              ['env', {
+                'targets': {
+                  'browsers': [
+                    'last 3 versions',
+                    'ie >= 9',
+                    'last 3 iOS major versions'
+                  ]
+                },
+                'debug': true,
+                useBuiltIns: true,
+              }],
+              'stage-2',
+              'stage-3'
             ],
-            plugins: [
-              'babel-plugin-transform-class-properties'
-            ]
           },
         },
       },
     ],
-  },
-  plugins: [
-  ]
+  }
 };

@@ -1,4 +1,4 @@
-import StickySidebar from 'sticky-sidebar';
+import { StickySidebar } from './../../third-party';
 import { addEventListenerToEl, removeAllEventsFromEl, toggleClass } from './../../../shared/misc';
 
 export class LibraryPageNavigation {

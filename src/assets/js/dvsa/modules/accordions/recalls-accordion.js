@@ -69,6 +69,12 @@ export class RecallsAccordion {
     );
     // Delegate event for when the accordion header is clicked
     $.delegate(this.parentAccordionElement, 'click', RECALLS_ACCORDION_CONSTANTS.selectors.header, this.recallsHeadingClickHandler);
+    // Listen for expand all open event
+    // Call ajax if all accordions are expanded
+    // $.once(document, ACCORDION_CONSTANTS.eventNames.expandAllOpen, '', this.recallsHeadingClickHandler);
+    $.events(document, {
+      [ACCORDION_CONSTANTS.eventNames.expandAllOpen]: this.recallsHeadingClickHandler
+    });
   }
 
   /**

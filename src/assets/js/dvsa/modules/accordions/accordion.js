@@ -38,6 +38,9 @@ export const ACCORDION_CONSTANTS = {
     sectionMemoryEvent: 'subsection-memory',
     sectionAll: 'subsection-all',
   },
+  eventNames: {
+    expandAllOpen: 'js-accordion:expand-all-open',
+  },
 };
 
 export class Accordion {
@@ -146,6 +149,9 @@ export class Accordion {
   expandButtonClickHandler = event => {
     this.state.expanding = true;
     this.state.expandAll = !this.state.expandAll;
+    if (this.state.expandAll) {
+      $.fire(document, ACCORDION_CONSTANTS.eventNames.expandAllOpen);
+    }
     this.refreshState();
     this.state.expanding = false;
     this.smoothScroll.animateScroll(event.target, true, this.smoothScrollOptions);
@@ -236,9 +242,9 @@ export class Accordion {
         // If the expand button has been clicked,
         // then change the open state of the section to the expand all state
         if (this.state.expanding) {
-          if (!section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.disableStateRestore)) {
+          // if (!section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.disableStateRestore)) {
             section.sectionOpen = this.state.expandAll;
-          }
+          // }
         }
 
         // Toggle the correct class based on the state

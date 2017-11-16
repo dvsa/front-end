@@ -1,6 +1,4328 @@
-(function(e){function t(n){if(o[n])return o[n].exports;var r=o[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,t),r.l=!0,r.exports}var o={};return t.m=e,t.c=o,t.d=function(e,o,n){t.o(e,o)||Object.defineProperty(e,o,{configurable:!1,enumerable:!0,get:n})},t.n=function(e){var o=e&&e.__esModule?function(){return e['default']}:function(){return e};return t.d(o,'a',o),o},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p='',t(t.s=192)})({192:function(e,t,o){'use strict';o(193),o(194),o(195),o(204),o(205);var n=o(206),r=function(e){return e&&e.__esModule?e:{default:e}}(n),a=o(4),i=o(208);(function(e){r.default.supported?(r.default.start(),document.addEventListener('turbolinks:load',function(){e()})):(0,a.domReady)(e)})(function(){new i.initModules})},193:function(e,t,o){(function(t){var o='undefined'==typeof window?'undefined'!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{}:window,n=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=o.Prism={manual:o.Prism&&o.Prism.manual,disableWorkerMessageHandler:o.Prism&&o.Prism.disableWorkerMessageHandler,util:{encode:function(e){return e instanceof r?new r(e.type,n.util.encode(e.content),e.alias):'Array'===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\u00a0/g,' ')},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,'__id',{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case'Object':var o={};for(var r in e)e.hasOwnProperty(r)&&(o[r]=n.util.clone(e[r]));return o;case'Array':return e.map(function(e){return n.util.clone(e)});}return e}},languages:{extend:function(e,t){var o=n.util.clone(n.languages[e]);for(var r in t)o[r]=t[r];return o},insertBefore:function(e,t,o,r){r=r||n.languages;var a=r[e];if(2==arguments.length){for(var i in o=arguments[1],o)o.hasOwnProperty(i)&&(a[i]=o[i]);return a}var s={};for(var l in a)if(a.hasOwnProperty(l)){if(l==t)for(var i in o)o.hasOwnProperty(i)&&(s[i]=o[i]);s[l]=a[l]}return n.languages.DFS(n.languages,function(t,o){o===r[e]&&t!=e&&(this[t]=s)}),r[e]=s},DFS:function(e,t,o,r){for(var a in r=r||{},e)e.hasOwnProperty(a)&&(t.call(e,a,e[a],o||a),'Object'!==n.util.type(e[a])||r[n.util.objId(e[a])]?'Array'===n.util.type(e[a])&&!r[n.util.objId(e[a])]&&(r[n.util.objId(e[a])]=!0,n.languages.DFS(e[a],t,a,r)):(r[n.util.objId(e[a])]=!0,n.languages.DFS(e[a],t,null,r)))}},plugins:{},highlightAll:function(e,t){var o={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run('before-highlightall',o);for(var r,a=o.elements||document.querySelectorAll(o.selector),s=0;r=a[s++];)n.highlightElement(r,!0===e,o.callback)},highlightElement:function(t,r,a){for(var i,s,l=t;l&&!e.test(l.className);)l=l.parentNode;l&&(i=(l.className.match(e)||[,''])[1].toLowerCase(),s=n.languages[i]),t.className=t.className.replace(e,'').replace(/\s+/g,' ')+' language-'+i,t.parentNode&&(l=t.parentNode,/pre/i.test(l.nodeName)&&(l.className=l.className.replace(e,'').replace(/\s+/g,' ')+' language-'+i));var d=t.textContent,p={element:t,language:i,grammar:s,code:d};if(n.hooks.run('before-sanity-check',p),!p.code||!p.grammar)return p.code&&(n.hooks.run('before-highlight',p),p.element.textContent=p.code,n.hooks.run('after-highlight',p)),void n.hooks.run('complete',p);if(n.hooks.run('before-highlight',p),r&&o.Worker){var c=new Worker(n.filename);c.onmessage=function(e){p.highlightedCode=e.data,n.hooks.run('before-insert',p),p.element.innerHTML=p.highlightedCode,a&&a.call(p.element),n.hooks.run('after-highlight',p),n.hooks.run('complete',p)},c.postMessage(JSON.stringify({language:p.language,code:p.code,immediateClose:!0}))}else p.highlightedCode=n.highlight(p.code,p.grammar,p.language),n.hooks.run('before-insert',p),p.element.innerHTML=p.highlightedCode,a&&a.call(t),n.hooks.run('after-highlight',p),n.hooks.run('complete',p)},highlight:function(e,t,o){var a=n.tokenize(e,t);return r.stringify(n.util.encode(a),o)},matchGrammar:function(e,t,o,r,a,s,l){var d=n.Token;for(var c in o)if(o.hasOwnProperty(c)&&o[c]){if(c==l)return;var u=o[c];u='Array'===n.util.type(u)?u:[u];for(var g=0;g<u.length;++g){var h=u[g],y=h.inside,m=!!h.lookbehind,f=!!h.greedy,b=0,v=h.alias;if(f&&!h.pattern.global){var E=h.pattern.toString().match(/[imuy]*$/)[0];h.pattern=RegExp(h.pattern.source,E+'g')}h=h.pattern||h;for(var S,T=r,i=a;T<t.length;i+=t[T].length,++T){if(S=t[T],t.length>e.length)return;if(!(S instanceof d)){h.lastIndex=0;var C=h.exec(S),L=1;if(!C&&f&&T!=t.length-1){if(h.lastIndex=i,C=h.exec(e),!C)break;for(var w=C.index+(m?C[1].length:0),P=C.index+C[0].length,x=T,k=i,p=t.length;x<p&&(k<P||!t[x].type&&!t[x-1].greedy);++x)k+=t[x].length,w>=k&&(++T,i=k);if(t[T]instanceof d||t[x-1].greedy)continue;L=x-T,S=e.slice(i,k),C.index-=i}if(!C){if(s)break;continue}m&&(b=C[1].length);var w=C.index+b,C=C[0].slice(b),P=w+C.length,A=S.slice(0,w),R=S.slice(P),I=[T,L];A&&(++T,i+=A.length,I.push(A));var N=new d(c,y?n.tokenize(C,y):C,v,C,f);if(I.push(N),R&&I.push(R),Array.prototype.splice.apply(t,I),1!=L&&n.matchGrammar(e,t,o,T,i,!0,c),s)break}}}}},tokenize:function(e,t){var o=[e],r=t.rest;if(r){for(var a in r)t[a]=r[a];delete t.rest}return n.matchGrammar(e,o,t,0,0,!1),o},hooks:{all:{},add:function(e,t){var o=n.hooks.all;o[e]=o[e]||[],o[e].push(t)},run:function(e,t){var o=n.hooks.all[e];if(o&&o.length)for(var r,a=0;r=o[a++];)r(t)}}},r=n.Token=function(e,t,o,n,r){this.type=e,this.content=t,this.alias=o,this.length=0|(n||'').length,this.greedy=!!r};if(r.stringify=function(e,t,a){if('string'==typeof e)return e;if('Array'===n.util.type(e))return e.map(function(o){return r.stringify(o,t,e)}).join('');var i={type:e.type,content:r.stringify(e.content,t,a),tag:'span',classes:['token',e.type],attributes:{},language:t,parent:a};if(e.alias){var s='Array'===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(i.classes,s)}n.hooks.run('wrap',i);var l=Object.keys(i.attributes).map(function(e){return e+'="'+(i.attributes[e]||'').replace(/"/g,'&quot;')+'"'}).join(' ');return'<'+i.tag+' class="'+i.classes.join(' ')+'"'+(l?' '+l:'')+'>'+i.content+'</'+i.tag+'>'},!o.document)return o.addEventListener?(n.disableWorkerMessageHandler||o.addEventListener('message',function(e){var t=JSON.parse(e.data),r=t.language,a=t.code,i=t.immediateClose;o.postMessage(n.highlight(a,n.languages[r],r)),i&&o.close()},!1),o.Prism):o.Prism;var a=document.currentScript||[].slice.call(document.getElementsByTagName('script')).pop();return a&&(n.filename=a.src,!n.manual&&!a.hasAttribute('data-manual')&&('loading'===document.readyState?document.addEventListener('DOMContentLoaded',n.highlightAll):window.requestAnimationFrame?window.requestAnimationFrame(n.highlightAll):window.setTimeout(n.highlightAll,16))),o.Prism}();'undefined'!=typeof e&&e.exports&&(e.exports=n),'undefined'!=typeof t&&(t.Prism=n),n.languages.markup={comment:/<!--[\s\S]*?-->/,prolog:/<\?[\s\S]+?\?>/,doctype:/<!DOCTYPE[\s\S]+?>/i,cdata:/<!\[CDATA\[[\s\S]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+)/i,inside:{punctuation:[/^=/,{pattern:/(^|[^\\])["']/,lookbehind:!0}]}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},n.languages.markup.tag.inside['attr-value'].inside.entity=n.languages.markup.entity,n.hooks.add('wrap',function(e){'entity'===e.type&&(e.attributes.title=e.content.replace(/&amp;/,'&'))}),n.languages.xml=n.languages.markup,n.languages.html=n.languages.markup,n.languages.mathml=n.languages.markup,n.languages.svg=n.languages.markup,n.languages.css={comment:/\/\*[\s\S]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(?:;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^{}\s][^{};]*?(?=\s*\{)/,string:{pattern:/("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},property:/[\w-]+(?=\s*:)/i,important:/\B!important\b/i,function:/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},n.languages.css.atrule.inside.rest=n.util.clone(n.languages.css),n.languages.markup&&(n.languages.insertBefore('markup','tag',{style:{pattern:/(<style[\s\S]*?>)[\s\S]*?(?=<\/style>)/i,lookbehind:!0,inside:n.languages.css,alias:'language-css'}}),n.languages.insertBefore('inside','attr-value',{"style-attr":{pattern:/\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:n.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:n.languages.css}},alias:'language-css'}},n.languages.markup.tag)),n.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[\w.\\]+/i,lookbehind:!0,inside:{punctuation:/[.\\]/}},keyword:/\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,boolean:/\b(?:true|false)\b/,function:/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/},n.languages.javascript=n.languages.extend('clike',{keyword:/\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\d*\.?\d+(?:[Ee][+-]?\d+)?|NaN|Infinity)\b/,function:/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*\()/i,operator:/-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/}),n.languages.insertBefore('javascript','keyword',{regex:{pattern:/(^|[^/])\/(?!\/)(\[[^\]\r\n]+]|\\.|[^/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0},"function-variable":{pattern:/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)\s*=>))/i,alias:'function'}}),n.languages.insertBefore('javascript','string',{"template-string":{pattern:/`(?:\\[\s\S]|[^\\`])*`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:'punctuation'},rest:n.languages.javascript}},string:/[\s\S]+/}}}),n.languages.markup&&n.languages.insertBefore('markup','tag',{script:{pattern:/(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i,lookbehind:!0,inside:n.languages.javascript,alias:'language-javascript'}}),n.languages.js=n.languages.javascript,function(){'undefined'!=typeof self&&self.Prism&&self.document&&document.querySelector&&(self.Prism.fileHighlight=function(){var e={js:'javascript',py:'python',rb:'ruby',ps1:'powershell',psm1:'powershell',sh:'bash',bat:'batch',h:'c',tex:'latex'};Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function(t){for(var o,r=t.getAttribute('data-src'),a=t,i=/\blang(?:uage)?-(?!\*)(\w+)\b/i;a&&!i.test(a.className);)a=a.parentNode;if(a&&(o=(t.className.match(i)||[,''])[1]),!o){var s=(r.match(/\.(\w+)$/)||[,''])[1];o=e[s]||s}var l=document.createElement('code');l.className='language-'+o,t.textContent='',l.textContent='Loading\u2026',t.appendChild(l);var d=new XMLHttpRequest;d.open('GET',r,!0),d.onreadystatechange=function(){4==d.readyState&&(400>d.status&&d.responseText?(l.textContent=d.responseText,n.highlightElement(l)):400<=d.status?l.textContent='\u2716 Error '+d.status+' while fetching file: '+d.statusText:l.textContent='\u2716 Error: File does not exist or is empty')},d.send(null)})},document.addEventListener('DOMContentLoaded',self.Prism.fileHighlight))}()}).call(t,o(6))},194:function(){(function(){if('undefined'!=typeof self&&self.Prism&&self.document){var e=[],t={},o=function(){};Prism.plugins.toolbar={};var n=Prism.plugins.toolbar.registerButton=function(o,n){var r;r='function'==typeof n?n:function(e){var t;return'function'==typeof n.onClick?(t=document.createElement('button'),t.type='button',t.addEventListener('click',function(){n.onClick.call(this,e)})):'string'==typeof n.url?(t=document.createElement('a'),t.href=n.url):t=document.createElement('span'),t.textContent=n.text,t},e.push(t[o]=r)},r=Prism.plugins.toolbar.hook=function(n){var r=n.element.parentNode;if(r&&/pre/i.test(r.nodeName)&&!r.classList.contains('code-toolbar')){r.classList.add('code-toolbar');var a=document.createElement('div');a.classList.add('toolbar'),document.body.hasAttribute('data-toolbar-order')&&(e=document.body.getAttribute('data-toolbar-order').split(',').map(function(e){return t[e]||o})),e.forEach(function(e){var t=e(n);if(t){var o=document.createElement('div');o.classList.add('toolbar-item'),o.appendChild(t),a.appendChild(o)}}),r.appendChild(a)}};n('label',function(e){var t=e.element.parentNode;if(t&&/pre/i.test(t.nodeName)&&t.hasAttribute('data-label')){var o,n,r=t.getAttribute('data-label');try{n=document.querySelector('template#'+r)}catch(t){}return n?o=n.content:(t.hasAttribute('data-url')?(o=document.createElement('a'),o.href=t.getAttribute('data-url')):o=document.createElement('span'),o.textContent=r),o}}),Prism.hooks.add('complete',r)}})()},195:function(e,t,o){(function(){if('undefined'!=typeof self&&self.Prism&&self.document){if(!Prism.plugins.toolbar)return void console.warn('Copy to Clipboard plugin loaded before Toolbar plugin.');var e=window.Clipboard||void 0;/(native code)/.test(e.toString())&&(e=void 0),e||!1||(e=o(196));var t=[];if(!e){var n=document.createElement('script'),r=document.querySelector('head');n.onload=function(){if(e=window.Clipboard,e)for(;t.length;)t.pop()()},n.src='https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js',r.appendChild(n)}Prism.plugins.toolbar.registerButton('copy-to-clipboard',function(o){function n(){var t=new e(a,{text:function(){return o.code}});t.on('success',function(){a.textContent='Copied!',r()}),t.on('error',function(){a.textContent='Press Ctrl+C to copy',r()})}function r(){setTimeout(function(){a.textContent='Copy'},5e3)}var a=document.createElement('a');return a.textContent='Copy',e?n():t.push(n),a})}})()},196:function(e,t,o){var n,r,a;(function(i,s){r=[e,o(197),o(199),o(200)],n=s,a='function'==typeof n?n.apply(t,r):n,!(void 0!==a&&(e.exports=a))})(this,function(e,t,o,n){'use strict';function r(e){return e&&e.__esModule?e:{default:e}}function a(e,t){if(!(e instanceof t))throw new TypeError('Cannot call a class as a function')}function i(e,t){if(!e)throw new ReferenceError('this hasn\'t been initialised - super() hasn\'t been called');return t&&('object'==typeof t||'function'==typeof t)?t:e}function s(e,t){if('function'!=typeof t&&null!==t)throw new TypeError('Super expression must either be null or a function, not '+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}function l(e,t){var o='data-clipboard-'+e;return t.hasAttribute(o)?t.getAttribute(o):void 0}var d=r(t),p=r(o),c=r(n),u='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&'function'==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?'symbol':typeof e},g=function(){function e(e,t){for(var o,n=0;n<t.length;n++)o=t[n],o.enumerable=o.enumerable||!1,o.configurable=!0,'value'in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}return function(t,o,n){return o&&e(t.prototype,o),n&&e(t,n),t}}(),h=function(e){function t(e,o){a(this,t);var n=i(this,(t.__proto__||Object.getPrototypeOf(t)).call(this));return n.resolveOptions(o),n.listenClick(e),n}return s(t,e),g(t,[{key:'resolveOptions',value:function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};this.action='function'==typeof e.action?e.action:this.defaultAction,this.target='function'==typeof e.target?e.target:this.defaultTarget,this.text='function'==typeof e.text?e.text:this.defaultText,this.container='object'===u(e.container)?e.container:document.body}},{key:'listenClick',value:function(e){var t=this;this.listener=(0,c.default)(e,'click',function(o){return t.onClick(o)})}},{key:'onClick',value:function(t){var e=t.delegateTarget||t.currentTarget;this.clipboardAction&&(this.clipboardAction=null),this.clipboardAction=new d.default({action:this.action(e),target:this.target(e),text:this.text(e),container:this.container,trigger:e,emitter:this})}},{key:'defaultAction',value:function(e){return l('action',e)}},{key:'defaultTarget',value:function(e){var t=l('target',e);if(t)return document.querySelector(t)}},{key:'defaultText',value:function(e){return l('text',e)}},{key:'destroy',value:function(){this.listener.destroy(),this.clipboardAction&&(this.clipboardAction.destroy(),this.clipboardAction=null)}}],[{key:'isSupported',value:function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:['copy','cut'],t='string'==typeof e?[e]:e,o=!!document.queryCommandSupported;return t.forEach(function(e){o=o&&!!document.queryCommandSupported(e)}),o}}]),t}(p.default);e.exports=h})},197:function(e,t,o){var n,r,a;(function(i,s){r=[e,o(198)],n=s,a='function'==typeof n?n.apply(t,r):n,!(void 0!==a&&(e.exports=a))})(this,function(e,t){'use strict';function o(e,t){if(!(e instanceof t))throw new TypeError('Cannot call a class as a function')}var n=function(e){return e&&e.__esModule?e:{default:e}}(t),r='function'==typeof Symbol&&'symbol'==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&'function'==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?'symbol':typeof e},a=function(){function e(e,t){for(var o,n=0;n<t.length;n++)o=t[n],o.enumerable=o.enumerable||!1,o.configurable=!0,'value'in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}return function(t,o,n){return o&&e(t.prototype,o),n&&e(t,n),t}}(),i=function(){function e(t){o(this,e),this.resolveOptions(t),this.initSelection()}return a(e,[{key:'resolveOptions',value:function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:{};this.action=e.action,this.container=e.container,this.emitter=e.emitter,this.target=e.target,this.text=e.text,this.trigger=e.trigger,this.selectedText=''}},{key:'initSelection',value:function(){this.text?this.selectFake():this.target&&this.selectTarget()}},{key:'selectFake',value:function(){var e=this,t='rtl'==document.documentElement.getAttribute('dir');this.removeFake(),this.fakeHandlerCallback=function(){return e.removeFake()},this.fakeHandler=this.container.addEventListener('click',this.fakeHandlerCallback)||!0,this.fakeElem=document.createElement('textarea'),this.fakeElem.style.fontSize='12pt',this.fakeElem.style.border='0',this.fakeElem.style.padding='0',this.fakeElem.style.margin='0',this.fakeElem.style.position='absolute',this.fakeElem.style[t?'right':'left']='-9999px';var o=window.pageYOffset||document.documentElement.scrollTop;this.fakeElem.style.top=o+'px',this.fakeElem.setAttribute('readonly',''),this.fakeElem.value=this.text,this.container.appendChild(this.fakeElem),this.selectedText=(0,n.default)(this.fakeElem),this.copyText()}},{key:'removeFake',value:function(){this.fakeHandler&&(this.container.removeEventListener('click',this.fakeHandlerCallback),this.fakeHandler=null,this.fakeHandlerCallback=null),this.fakeElem&&(this.container.removeChild(this.fakeElem),this.fakeElem=null)}},{key:'selectTarget',value:function(){this.selectedText=(0,n.default)(this.target),this.copyText()}},{key:'copyText',value:function(){var e;try{e=document.execCommand(this.action)}catch(t){e=!1}this.handleResult(e)}},{key:'handleResult',value:function(e){this.emitter.emit(e?'success':'error',{action:this.action,text:this.selectedText,trigger:this.trigger,clearSelection:this.clearSelection.bind(this)})}},{key:'clearSelection',value:function(){this.trigger&&this.trigger.focus(),window.getSelection().removeAllRanges()}},{key:'destroy',value:function(){this.removeFake()}},{key:'action',set:function(){var e=0<arguments.length&&void 0!==arguments[0]?arguments[0]:'copy';if(this._action=e,'copy'!==this._action&&'cut'!==this._action)throw new Error('Invalid "action" value, use either "copy" or "cut"')},get:function(){return this._action}},{key:'target',set:function(e){if(void 0!==e)if(e&&'object'===('undefined'==typeof e?'undefined':r(e))&&1===e.nodeType){if('copy'===this.action&&e.hasAttribute('disabled'))throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');if('cut'===this.action&&(e.hasAttribute('readonly')||e.hasAttribute('disabled')))throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');this._target=e}else throw new Error('Invalid "target" value, use a valid Element')},get:function(){return this._target}}]),e}();e.exports=i})},198:function(e){e.exports=function(e){var t;if('SELECT'===e.nodeName)e.focus(),t=e.value;else if('INPUT'===e.nodeName||'TEXTAREA'===e.nodeName){var o=e.hasAttribute('readonly');o||e.setAttribute('readonly',''),e.select(),e.setSelectionRange(0,e.value.length),o||e.removeAttribute('readonly'),t=e.value}else{e.hasAttribute('contenteditable')&&e.focus();var n=window.getSelection(),r=document.createRange();r.selectNodeContents(e),n.removeAllRanges(),n.addRange(r),t=n.toString()}return t}},199:function(e){function t(){}t.prototype={on:function(t,o,n){var r=this.e||(this.e={});return(r[t]||(r[t]=[])).push({fn:o,ctx:n}),this},once:function(e,t,o){function n(){r.off(e,n),t.apply(o,arguments)}var r=this;return n._=t,this.on(e,n,o)},emit:function(e){var t=[].slice.call(arguments,1),o=((this.e||(this.e={}))[e]||[]).slice(),n=0,r=o.length;for(n;n<r;n++)o[n].fn.apply(o[n].ctx,t);return this},off:function(t,o){var n=this.e||(this.e={}),e=n[t],r=[];if(e&&o)for(var a=0,i=e.length;a<i;a++)e[a].fn!==o&&e[a].fn._!==o&&r.push(e[a]);return r.length?n[t]=r:delete n[t],this}},e.exports=t},20:function(e,t){'use strict';Object.defineProperty(t,'__esModule',{value:!0}),t.domReady=function(e){'loading'==document.readyState?document.addEventListener?document.addEventListener('DOMContentLoaded',e):document.attachEvent('onreadystatechange',function(){'loading'!=document.readyState&&e()}):e()}},200:function(e,t,o){function n(e,t,o){return e.addEventListener(t,o),{destroy:function(){e.removeEventListener(t,o)}}}function r(e,t,o){return Array.prototype.forEach.call(e,function(e){e.addEventListener(t,o)}),{destroy:function(){Array.prototype.forEach.call(e,function(e){e.removeEventListener(t,o)})}}}function a(e,t,o){return s(document.body,e,t,o)}var i=o(201),s=o(202);e.exports=function(e,t,o){if(!e&&!t&&!o)throw new Error('Missing required arguments');if(!i.string(t))throw new TypeError('Second argument must be a String');if(!i.fn(o))throw new TypeError('Third argument must be a Function');if(i.node(e))return n(e,t,o);if(i.nodeList(e))return r(e,t,o);if(i.string(e))return a(e,t,o);throw new TypeError('First argument must be a String, HTMLElement, HTMLCollection, or NodeList')}},201:function(e,t){t.node=function(e){return e!==void 0&&e instanceof HTMLElement&&1===e.nodeType},t.nodeList=function(e){var o=Object.prototype.toString.call(e);return e!==void 0&&('[object NodeList]'===o||'[object HTMLCollection]'===o)&&'length'in e&&(0===e.length||t.node(e[0]))},t.string=function(e){return'string'==typeof e||e instanceof String},t.fn=function(e){var t=Object.prototype.toString.call(e);return'[object Function]'===t}},202:function(e,t,o){function n(t,o,e,n){return function(a){a.delegateTarget=r(a.target,o),a.delegateTarget&&n.call(t,a)}}var r=o(203);e.exports=function(e,t,o,r,a){var i=n.apply(this,arguments);return e.addEventListener(o,i,a),{destroy:function(){e.removeEventListener(o,i,a)}}}},203:function(e){if('undefined'!=typeof Element&&!Element.prototype.matches){var t=Element.prototype;t.matches=t.matchesSelector||t.mozMatchesSelector||t.msMatchesSelector||t.oMatchesSelector||t.webkitMatchesSelector}e.exports=function(e,t){for(;e&&e.nodeType!==9;){if('function'==typeof e.matches&&e.matches(t))return e;e=e.parentNode}}},204:function(e){(function(){function t(e){this.defaults=r({},e)}function o(e){return e.replace(/-(\w)/g,function(e,t){return t.toUpperCase()})}function n(e){for(var t=0,o=0;o<e.length;++o)9==e.charCodeAt(o)&&(t+=3);return e.length+t}var r=Object.assign||function(e,t){for(var o in t)t.hasOwnProperty(o)&&(e[o]=t[o]);return e};t.prototype={setDefaults:function(e){this.defaults=r(this.defaults,e)},normalize:function(e,t){for(var n in t=r(this.defaults,t),t){var a=o(n);'normalize'!=n&&'setDefaults'!==a&&t[n]&&this[a]&&(e=this[a].call(this,e,t[n]))}return e},leftTrim:function(e){return e.replace(/^\s+/,'')},rightTrim:function(e){return e.replace(/\s+$/,'')},tabsToSpaces:function(e,t){return t=0|t||4,e.replace(/\t/g,Array(++t).join(' '))},spacesToTabs:function(e,t){return t=0|t||4,e.replace(new RegExp(' {'+t+'}','g'),'\t')},removeTrailing:function(e){return e.replace(/\s*?$/gm,'')},removeInitialLineFeed:function(e){return e.replace(/^(?:\r?\n|\r)/,'')},removeIndent:function(e){var t=e.match(/^[^\S\n\r]*(?=\S)/gm);return t&&t[0].length?(t.sort(function(e,t){return e.length-t.length}),t[0].length?e.replace(new RegExp('^'+t[0],'gm'),''):e):e},indent:function(e,t){return e.replace(/^[^\S\n\r]*(?=\S)/gm,Array(++t).join('\t')+'$&')},breakLines:function(e,t){t=!0===t?80:0|t||80;for(var o=e.split('\n'),r=0;r<o.length;++r)if(!(n(o[r])<=t)){for(var a,i=o[r].split(/(\s+)/g),s=0,l=0;l<i.length;++l)a=n(i[l]),s+=a,s>t&&(i[l]='\n'+i[l],s=a);o[r]=i.join('')}return o.join('\n')}},'undefined'!=typeof e&&e.exports&&(e.exports=t);'undefined'==typeof Prism||(Prism.plugins.NormalizeWhitespace=new t({"remove-trailing":!0,"remove-indent":!0,"left-trim":!0,"right-trim":!0}),Prism.hooks.add('before-sanity-check',function(e){var t=Prism.plugins.NormalizeWhitespace;if(!(e.settings&&!1===e.settings['whitespace-normalization'])){if((!e.element||!e.element.parentNode)&&e.code)return void(e.code=t.normalize(e.code,e.settings));var o=e.element.parentNode,n=/\bno-whitespace-normalization\b/;if(e.code&&o&&'pre'===o.nodeName.toLowerCase()&&!n.test(o.className)&&!n.test(e.element.className)){for(var r,a=o.childNodes,s='',l='',d=!1,p=0;p<a.length;++p)r=a[p],r==e.element?d=!0:'#text'===r.nodeName&&(d?l+=r.nodeValue:s+=r.nodeValue,o.removeChild(r),--p);if(!e.element.children.length||!Prism.plugins.KeepMarkup)e.code=s+e.code+l,e.code=t.normalize(e.code,e.settings);else{var i=s+e.element.innerHTML+l;e.element.innerHTML=t.normalize(i,e.settings),e.code=e.element.textContent}}}}))})()},205:function(){(function(){if('undefined'!=typeof self&&self.Prism&&self.document){var e=function(e){var o=t(e),n=o['white-space'];if('pre-wrap'===n||'pre-line'===n){var r=e.querySelector('code'),a=e.querySelector('.line-numbers-rows'),i=e.querySelector('.line-numbers-sizer'),s=e.textContent.split('\n');i||(i=document.createElement('span'),i.className='line-numbers-sizer',r.appendChild(i)),i.style.display='block',s.forEach(function(e,t){i.textContent=e||'\n';var o=i.getBoundingClientRect().height;a.children[t].style.height=o+'px'}),i.textContent='',i.style.display='none'}},t=function(e){return e?window.getComputedStyle?getComputedStyle(e):e.currentStyle||null:null};window.addEventListener('resize',function(){Array.prototype.forEach.call(document.querySelectorAll('pre.'+'line-numbers'),e)}),Prism.hooks.add('complete',function(t){if(t.code){var o=t.element.parentNode,n=/\s*\bline-numbers\b\s*/;if(o&&/pre/i.test(o.nodeName)&&(n.test(o.className)||n.test(t.element.className))&&!t.element.querySelector('.line-numbers-rows')){n.test(t.element.className)&&(t.element.className=t.element.className.replace(n,' ')),n.test(o.className)||(o.className+=' line-numbers');var r,a=t.code.match(/\n(?!$)/g),i=a?a.length+1:1,s=Array(i+1);s=s.join('<span></span>'),r=document.createElement('span'),r.setAttribute('aria-hidden','true'),r.className='line-numbers-rows',r.innerHTML=s,o.hasAttribute('data-start')&&(o.style.counterReset='linenumber '+(parseInt(o.getAttribute('data-start'),10)-1)),t.element.appendChild(r),e(o)}}})}})()},206:function(e,o,n){var r,a;(function(){(function(){(function(){this.Turbolinks={supported:function(){return null!=window.history.pushState&&null!=window.requestAnimationFrame&&null!=window.addEventListener}(),visit:function(t,e){return l.controller.visit(t,e)},clearCache:function(){return l.controller.clearCache()}}}).call(this)}).call(this);var l=this.Turbolinks;(function(){(function(){var o,a,i=[].slice;l.copyObject=function(o){var t,e,r;for(t in e={},o)r=o[t],e[t]=r;return e},l.closest=function(e,t){return o.call(e,t)},o=function(){var o,t;return o=document.documentElement,null==(t=o.closest)?function(o){var t;for(t=this;t;){if(t.nodeType===Node.ELEMENT_NODE&&a.call(t,o))return t;t=t.parentNode}}:t}(),l.defer=function(e){return setTimeout(e,1)},l.throttle=function(o){var t;return t=null,function(){var e;return e=1<=arguments.length?i.call(arguments,0):[],null==t?t=requestAnimationFrame(function(r){return function(){return t=null,o.apply(r,e)}}(this)):t}},l.dispatch=function(a,t){var e,r,n,o,i;return o=null==t?{}:t,i=o.target,e=o.cancelable,r=o.data,n=document.createEvent('Events'),n.initEvent(a,!0,!0===e),n.data=null==r?{}:r,(null==i?document:i).dispatchEvent(n),n},l.match=function(o,t){return a.call(o,t)},a=function(){var o,t,e,r;return o=document.documentElement,null==(t=null==(e=null==(r=o.matchesSelector)?o.webkitMatchesSelector:r)?o.msMatchesSelector:e)?o.mozMatchesSelector:t}(),l.uuid=function(){var o,t,e,n=Math.floor;for(e='',o=t=1;36>=t;o=++t)e+=9===o||14===o||19===o||24===o?'-':15===o?'4':20===o?(n(4*Math.random())+8).toString(16):n(15*Math.random()).toString(16);return e}}).call(this),function(){l.Location=function(){function a(o){var n,a;null==o&&(o=''),a=document.createElement('a'),a.href=o.toString(),this.absoluteURL=a.href,n=a.hash.length,2>n?this.requestURL=this.absoluteURL:(this.requestURL=this.absoluteURL.slice(0,-n),this.anchor=a.hash.slice(1))}var i,s,e,n;return a.wrap=function(e){return e instanceof this?e:new this(e)},a.prototype.getOrigin=function(){return this.absoluteURL.split('/',3).join('/')},a.prototype.getPath=function(){var o,t;return null==(o=null==(t=this.absoluteURL.match(/\/\/[^\/]*(\/[^?;]*)/))?void 0:t[1])?'/':o},a.prototype.getPathComponents=function(){return this.getPath().split('/').slice(1)},a.prototype.getLastPathComponent=function(){return this.getPathComponents().slice(-1)[0]},a.prototype.getExtension=function(){var o,t;return null==(o=null==(t=this.getLastPathComponent().match(/\.[^.]*$/))?void 0:t[0])?'':o},a.prototype.isHTML=function(){return this.getExtension().match(/^(?:|\.(?:htm|html|xhtml))$/)},a.prototype.isPrefixedBy=function(o){var t;return t=s(o),this.isEqualTo(o)||n(this.absoluteURL,t)},a.prototype.isEqualTo=function(e){return this.absoluteURL===(null==e?void 0:e.absoluteURL)},a.prototype.toCacheKey=function(){return this.requestURL},a.prototype.toJSON=function(){return this.absoluteURL},a.prototype.toString=function(){return this.absoluteURL},a.prototype.valueOf=function(){return this.absoluteURL},s=function(e){return i(e.getOrigin()+e.getPath())},i=function(o){return e(o,'/')?o:o+'/'},n=function(o,t){return o.slice(0,t.length)===t},e=function(o,t){return o.slice(-t.length)===t},a}()}.call(this),function(){var t=function(o,t){return function(){return o.apply(t,arguments)}};l.HttpRequest=function(){function e(e,a,n){this.delegate=e,this.requestCanceled=t(this.requestCanceled,this),this.requestTimedOut=t(this.requestTimedOut,this),this.requestFailed=t(this.requestFailed,this),this.requestLoaded=t(this.requestLoaded,this),this.requestProgressed=t(this.requestProgressed,this),this.url=l.Location.wrap(a).requestURL,this.referrer=l.Location.wrap(n).absoluteURL,this.createXHR()}return e.NETWORK_FAILURE=0,e.TIMEOUT_FAILURE=-1,e.timeout=60,e.prototype.send=function(){var e;return this.xhr&&!this.sent?(this.notifyApplicationBeforeRequestStart(),this.setProgress(0),this.xhr.send(),this.sent=!0,'function'==typeof(e=this.delegate).requestStarted?e.requestStarted():void 0):void 0},e.prototype.cancel=function(){return this.xhr&&this.sent?this.xhr.abort():void 0},e.prototype.requestProgressed=function(e){return e.lengthComputable?this.setProgress(e.loaded/e.total):void 0},e.prototype.requestLoaded=function(){return this.endRequest(function(o){return function(){var t;return 200<=(t=o.xhr.status)&&300>t?o.delegate.requestCompletedWithResponse(o.xhr.responseText,o.xhr.getResponseHeader('Turbolinks-Location')):(o.failed=!0,o.delegate.requestFailedWithStatusCode(o.xhr.status,o.xhr.responseText))}}(this))},e.prototype.requestFailed=function(){return this.endRequest(function(e){return function(){return e.failed=!0,e.delegate.requestFailedWithStatusCode(e.constructor.NETWORK_FAILURE)}}(this))},e.prototype.requestTimedOut=function(){return this.endRequest(function(e){return function(){return e.failed=!0,e.delegate.requestFailedWithStatusCode(e.constructor.TIMEOUT_FAILURE)}}(this))},e.prototype.requestCanceled=function(){return this.endRequest()},e.prototype.notifyApplicationBeforeRequestStart=function(){return l.dispatch('turbolinks:request-start',{data:{url:this.url,xhr:this.xhr}})},e.prototype.notifyApplicationAfterRequestEnd=function(){return l.dispatch('turbolinks:request-end',{data:{url:this.url,xhr:this.xhr}})},e.prototype.createXHR=function(){return this.xhr=new XMLHttpRequest,this.xhr.open('GET',this.url,!0),this.xhr.timeout=1e3*this.constructor.timeout,this.xhr.setRequestHeader('Accept','text/html, application/xhtml+xml'),this.xhr.setRequestHeader('Turbolinks-Referrer',this.referrer),this.xhr.onprogress=this.requestProgressed,this.xhr.onload=this.requestLoaded,this.xhr.onerror=this.requestFailed,this.xhr.ontimeout=this.requestTimedOut,this.xhr.onabort=this.requestCanceled},e.prototype.endRequest=function(e){return this.xhr?(this.notifyApplicationAfterRequestEnd(),null!=e&&e.call(this),this.destroy()):void 0},e.prototype.setProgress=function(o){var t;return this.progress=o,'function'==typeof(t=this.delegate).requestProgressed?t.requestProgressed(this.progress):void 0},e.prototype.destroy=function(){var e;return this.setProgress(1),'function'==typeof(e=this.delegate).requestFinished&&e.requestFinished(),this.delegate=null,this.xhr=null},e}()}.call(this),function(){var t=function(o,t){return function(){return o.apply(t,arguments)}};l.ProgressBar=function(){function e(){this.trickle=t(this.trickle,this),this.stylesheetElement=this.createStylesheetElement(),this.progressElement=this.createProgressElement()}var o;return o=300,e.defaultCSS='.turbolinks-progress-bar {\n  position: fixed;\n  display: block;\n  top: 0;\n  left: 0;\n  height: 3px;\n  background: #0076ff;\n  z-index: 9999;\n  transition: width '+o+'ms ease-out, opacity '+o/2+'ms '+o/2+'ms ease-in;\n  transform: translate3d(0, 0, 0);\n}',e.prototype.show=function(){return this.visible?void 0:(this.visible=!0,this.installStylesheetElement(),this.installProgressElement(),this.startTrickling())},e.prototype.hide=function(){return this.visible&&!this.hiding?(this.hiding=!0,this.fadeProgressElement(function(e){return function(){return e.uninstallProgressElement(),e.stopTrickling(),e.visible=!1,e.hiding=!1}}(this))):void 0},e.prototype.setValue=function(e){return this.value=e,this.refresh()},e.prototype.installStylesheetElement=function(){return document.head.insertBefore(this.stylesheetElement,document.head.firstChild)},e.prototype.installProgressElement=function(){return this.progressElement.style.width=0,this.progressElement.style.opacity=1,document.documentElement.insertBefore(this.progressElement,document.body),this.refresh()},e.prototype.fadeProgressElement=function(e){return this.progressElement.style.opacity=0,setTimeout(e,1.5*o)},e.prototype.uninstallProgressElement=function(){return this.progressElement.parentNode?document.documentElement.removeChild(this.progressElement):void 0},e.prototype.startTrickling=function(){return null==this.trickleInterval?this.trickleInterval=setInterval(this.trickle,o):this.trickleInterval},e.prototype.stopTrickling=function(){return clearInterval(this.trickleInterval),this.trickleInterval=null},e.prototype.trickle=function(){return this.setValue(this.value+Math.random()/100)},e.prototype.refresh=function(){return requestAnimationFrame(function(e){return function(){return e.progressElement.style.width=10+90*e.value+'%'}}(this))},e.prototype.createStylesheetElement=function(){var e;return e=document.createElement('style'),e.type='text/css',e.textContent=this.constructor.defaultCSS,e},e.prototype.createProgressElement=function(){var e;return e=document.createElement('div'),e.className='turbolinks-progress-bar',e},e}()}.call(this),function(){var t=function(o,t){return function(){return o.apply(t,arguments)}};l.BrowserAdapter=function(){function e(e){this.controller=e,this.showProgressBar=t(this.showProgressBar,this),this.progressBar=new l.ProgressBar}var r,n,o,a;return a=l.HttpRequest,r=a.NETWORK_FAILURE,o=a.TIMEOUT_FAILURE,n=500,e.prototype.visitProposedToLocationWithAction=function(o,t){return this.controller.startVisitToLocationWithAction(o,t)},e.prototype.visitStarted=function(e){return e.issueRequest(),e.changeHistory(),e.loadCachedSnapshot()},e.prototype.visitRequestStarted=function(e){return this.progressBar.setValue(0),e.hasCachedSnapshot()||'restore'!==e.action?this.showProgressBarAfterDelay():this.showProgressBar()},e.prototype.visitRequestProgressed=function(e){return this.progressBar.setValue(e.progress)},e.prototype.visitRequestCompleted=function(e){return e.loadResponse()},e.prototype.visitRequestFailedWithStatusCode=function(n,t){return t===r||t===o?this.reload():n.loadResponse()},e.prototype.visitRequestFinished=function(){return this.hideProgressBar()},e.prototype.visitCompleted=function(e){return e.followRedirect()},e.prototype.pageInvalidated=function(){return this.reload()},e.prototype.showProgressBarAfterDelay=function(){return this.progressBarTimeout=setTimeout(this.showProgressBar,n)},e.prototype.showProgressBar=function(){return this.progressBar.show()},e.prototype.hideProgressBar=function(){return this.progressBar.hide(),clearTimeout(this.progressBarTimeout)},e.prototype.reload=function(){return window.location.reload()},e}()}.call(this),function(){var o=function(o,t){return function(){return o.apply(t,arguments)}};l.History=function(){function e(e){this.delegate=e,this.onPageLoad=o(this.onPageLoad,this),this.onPopState=o(this.onPopState,this)}return e.prototype.start=function(){return this.started?void 0:(addEventListener('popstate',this.onPopState,!1),addEventListener('load',this.onPageLoad,!1),this.started=!0)},e.prototype.stop=function(){return this.started?(removeEventListener('popstate',this.onPopState,!1),removeEventListener('load',this.onPageLoad,!1),this.started=!1):void 0},e.prototype.push=function(t,e){return t=l.Location.wrap(t),this.update('push',t,e)},e.prototype.replace=function(t,e){return t=l.Location.wrap(t),this.update('replace',t,e)},e.prototype.onPopState=function(t){var e,r,n,o;return this.shouldHandlePopState()&&(o=null==(r=t.state)?void 0:r.turbolinks)?(e=l.Location.wrap(window.location),n=o.restorationIdentifier,this.delegate.historyPoppedToLocationWithRestorationIdentifier(e,n)):void 0},e.prototype.onPageLoad=function(){return l.defer(function(e){return function(){return e.pageLoaded=!0}}(this))},e.prototype.shouldHandlePopState=function(){return this.pageIsLoaded()},e.prototype.pageIsLoaded=function(){return this.pageLoaded||'complete'===document.readyState},e.prototype.update=function(o,t,e){var a;return a={turbolinks:{restorationIdentifier:e}},history[o+'State'](a,null,t)},e}()}.call(this),function(){l.Snapshot=function(){function t(o){var t,n;n=o.head,t=o.body,this.head=null==n?document.createElement('head'):n,this.body=null==t?document.createElement('body'):t}return t.wrap=function(e){return e instanceof this?e:this.fromHTML(e)},t.fromHTML=function(o){var t;return t=document.createElement('html'),t.innerHTML=o,this.fromElement(t)},t.fromElement=function(e){return new this({head:e.querySelector('head'),body:e.querySelector('body')})},t.prototype.clone=function(){return new t({head:this.head.cloneNode(!0),body:this.body.cloneNode(!0)})},t.prototype.getRootLocation=function(){var t,e;return e=null==(t=this.getSetting('root'))?'/':t,new l.Location(e)},t.prototype.getCacheControlValue=function(){return this.getSetting('cache-control')},t.prototype.hasAnchor=function(e){try{return null!=this.body.querySelector('[id=\''+e+'\']')}catch(t){}},t.prototype.isPreviewable=function(){return'no-preview'!==this.getCacheControlValue()},t.prototype.isCacheable=function(){return'no-cache'!==this.getCacheControlValue()},t.prototype.getSetting=function(o){var t,e;return e=this.head.querySelectorAll('meta[name=\'turbolinks-'+o+'\']'),t=e[e.length-1],null==t?void 0:t.getAttribute('content')},t}()}.call(this),function(){var a=[].slice;l.Renderer=function(){function e(){}var o;return e.render=function(){var e,t,r,n;return r=arguments[0],t=arguments[1],e=3<=arguments.length?a.call(arguments,2):[],n=function(a,t,e){e.prototype=a.prototype;var r=new e,n=a.apply(r,t);return Object(n)===n?n:r}(this,e,function(){}),n.delegate=r,n.render(t),n},e.prototype.renderView=function(e){return this.delegate.viewWillRender(this.newBody),e(),this.delegate.viewRendered(this.newBody)},e.prototype.invalidateView=function(){return this.delegate.viewInvalidated()},e.prototype.createScriptElement=function(n){var t;return'false'===n.getAttribute('data-turbolinks-eval')?n:(t=document.createElement('script'),t.textContent=n.textContent,o(t,n),t)},o=function(l,t){var e,r,n,o,i,s,a;for(o=t.attributes,s=[],e=0,r=o.length;r>e;e++)i=o[e],n=i.name,a=i.value,s.push(l.setAttribute(n,a));return s},e}()}.call(this),function(){l.HeadDetails=function(){function a(o){var p,e,r,i,s,a,c;for(this.element=o,this.elements={},c=this.element.childNodes,i=0,a=c.length;a>i;i++)r=c[i],r.nodeType===Node.ELEMENT_NODE&&(s=r.outerHTML,e=null==(p=this.elements)[s]?p[s]={type:n(r),tracked:d(r),elements:[]}:p[s],e.elements.push(r))}var i,e,d,n;return a.prototype.hasElementWithKey=function(e){return e in this.elements},a.prototype.getTrackedElementSignature=function(){var o,t;return function(){var e,r;for(o in e=this.elements,r=[],e)t=e[o].tracked,t&&r.push(o);return r}.call(this).join('')},a.prototype.getScriptElementsNotInDetails=function(e){return this.getElementsMatchingTypeNotInDetails('script',e)},a.prototype.getStylesheetElementsNotInDetails=function(e){return this.getElementsMatchingTypeNotInDetails('stylesheet',e)},a.prototype.getElementsMatchingTypeNotInDetails=function(l,t){var e,r,n,o,i,s;for(r in n=this.elements,i=[],n)o=n[r],s=o.type,e=o.elements,s!==l||t.hasElementWithKey(r)||i.push(e[0]);return i},a.prototype.getProvisionalElements=function(){var a,t,e,r,n,o,i;for(t in e=[],r=this.elements,r)n=r[t],i=n.type,o=n.tracked,a=n.elements,null!=i||o?1<a.length&&e.push.apply(e,a.slice(1)):e.push.apply(e,a);return e},n=function(o){return i(o)?'script':e(o)?'stylesheet':void 0},d=function(e){return'reload'===e.getAttribute('data-turbolinks-track')},i=function(o){var t;return t=o.tagName.toLowerCase(),'script'===t},e=function(o){var t;return t=o.tagName.toLowerCase(),'style'===t||'link'===t&&'stylesheet'===o.getAttribute('rel')},a}()}.call(this),function(){var t=function(r,t){function e(){this.constructor=r}for(var a in t)n.call(t,a)&&(r[a]=t[a]);return e.prototype=t.prototype,r.prototype=new e,r.__super__=t.prototype,r},n={}.hasOwnProperty;l.SnapshotRenderer=function(e){function o(t,e){this.currentSnapshot=t,this.newSnapshot=e,this.currentHeadDetails=new l.HeadDetails(this.currentSnapshot.head),this.newHeadDetails=new l.HeadDetails(this.newSnapshot.head),this.newBody=this.newSnapshot.body}return t(o,e),o.prototype.render=function(o){return this.trackedElementsAreIdentical()?(this.mergeHead(),this.renderView(function(t){return function(){return t.replaceBody(),t.focusFirstAutofocusableElement(),o()}}(this))):this.invalidateView()},o.prototype.mergeHead=function(){return this.copyNewHeadStylesheetElements(),this.copyNewHeadScriptElements(),this.removeCurrentHeadProvisionalElements(),this.copyNewHeadProvisionalElements()},o.prototype.replaceBody=function(){return this.activateBodyScriptElements(),this.importBodyPermanentElements(),this.assignNewBody()},o.prototype.trackedElementsAreIdentical=function(){return this.currentHeadDetails.getTrackedElementSignature()===this.newHeadDetails.getTrackedElementSignature()},o.prototype.copyNewHeadStylesheetElements=function(){var a,t,e,r,n;for(r=this.getNewHeadStylesheetElements(),n=[],t=0,e=r.length;e>t;t++)a=r[t],n.push(document.head.appendChild(a));return n},o.prototype.copyNewHeadScriptElements=function(){var a,t,e,r,n;for(r=this.getNewHeadScriptElements(),n=[],t=0,e=r.length;e>t;t++)a=r[t],n.push(document.head.appendChild(this.createScriptElement(a)));return n},o.prototype.removeCurrentHeadProvisionalElements=function(){var a,t,e,r,n;for(r=this.getCurrentHeadProvisionalElements(),n=[],t=0,e=r.length;e>t;t++)a=r[t],n.push(document.head.removeChild(a));return n},o.prototype.copyNewHeadProvisionalElements=function(){var a,t,e,r,n;for(r=this.getNewHeadProvisionalElements(),n=[],t=0,e=r.length;e>t;t++)a=r[t],n.push(document.head.appendChild(a));return n},o.prototype.importBodyPermanentElements=function(){var a,t,e,r,n,o;for(r=this.getNewBodyPermanentElements(),o=[],t=0,e=r.length;e>t;t++)n=r[t],(a=this.findCurrentBodyPermanentElement(n))?o.push(n.parentNode.replaceChild(a,n)):o.push(void 0);return o},o.prototype.activateBodyScriptElements=function(){var a,t,e,r,n,o;for(r=this.getNewBodyScriptElements(),o=[],t=0,e=r.length;e>t;t++)n=r[t],a=this.createScriptElement(n),o.push(n.parentNode.replaceChild(a,n));return o},o.prototype.assignNewBody=function(){return document.body=this.newBody},o.prototype.focusFirstAutofocusableElement=function(){var e;return null==(e=this.findFirstAutofocusableElement())?void 0:e.focus()},o.prototype.getNewHeadStylesheetElements=function(){return this.newHeadDetails.getStylesheetElementsNotInDetails(this.currentHeadDetails)},o.prototype.getNewHeadScriptElements=function(){return this.newHeadDetails.getScriptElementsNotInDetails(this.currentHeadDetails)},o.prototype.getCurrentHeadProvisionalElements=function(){return this.currentHeadDetails.getProvisionalElements()},o.prototype.getNewHeadProvisionalElements=function(){return this.newHeadDetails.getProvisionalElements()},o.prototype.getNewBodyPermanentElements=function(){return this.newBody.querySelectorAll('[id][data-turbolinks-permanent]')},o.prototype.findCurrentBodyPermanentElement=function(e){return document.body.querySelector('#'+e.id+'[data-turbolinks-permanent]')},o.prototype.getNewBodyScriptElements=function(){return this.newBody.querySelectorAll('script')},o.prototype.findFirstAutofocusableElement=function(){return document.body.querySelector('[autofocus]')},o}(l.Renderer)}.call(this),function(){var o=function(r,t){function e(){this.constructor=r}for(var a in t)n.call(t,a)&&(r[a]=t[a]);return e.prototype=t.prototype,r.prototype=new e,r.__super__=t.prototype,r},n={}.hasOwnProperty;l.ErrorRenderer=function(e){function t(e){this.html=e}return o(t,e),t.prototype.render=function(o){return this.renderView(function(t){return function(){return t.replaceDocumentHTML(),t.activateBodyScriptElements(),o()}}(this))},t.prototype.replaceDocumentHTML=function(){return document.documentElement.innerHTML=this.html},t.prototype.activateBodyScriptElements=function(){var a,t,e,r,n,o;for(r=this.getScriptElements(),o=[],t=0,e=r.length;e>t;t++)n=r[t],a=this.createScriptElement(n),o.push(n.parentNode.replaceChild(a,n));return o},t.prototype.getScriptElements=function(){return document.documentElement.querySelectorAll('script')},t}(l.Renderer)}.call(this),function(){l.View=function(){function t(e){this.delegate=e,this.element=document.documentElement}return t.prototype.getRootLocation=function(){return this.getSnapshot().getRootLocation()},t.prototype.getSnapshot=function(){return l.Snapshot.fromElement(this.element)},t.prototype.render=function(a,t){var e,r,n;return n=a.snapshot,e=a.error,r=a.isPreview,this.markAsPreview(r),null==n?this.renderError(e,t):this.renderSnapshot(n,t)},t.prototype.markAsPreview=function(e){return e?this.element.setAttribute('data-turbolinks-preview',''):this.element.removeAttribute('data-turbolinks-preview')},t.prototype.renderSnapshot=function(t,e){return l.SnapshotRenderer.render(this.delegate,e,this.getSnapshot(),l.Snapshot.wrap(t))},t.prototype.renderError=function(t,e){return l.ErrorRenderer.render(this.delegate,e,t)},t}()}.call(this),function(){var t=function(o,t){return function(){return o.apply(t,arguments)}};l.ScrollManager=function(){function e(e){this.delegate=e,this.onScroll=t(this.onScroll,this),this.onScroll=l.throttle(this.onScroll)}return e.prototype.start=function(){return this.started?void 0:(addEventListener('scroll',this.onScroll,!1),this.onScroll(),this.started=!0)},e.prototype.stop=function(){return this.started?(removeEventListener('scroll',this.onScroll,!1),this.started=!1):void 0},e.prototype.scrollToElement=function(e){return e.scrollIntoView()},e.prototype.scrollToPosition=function(o){var t,e;return t=o.x,e=o.y,window.scrollTo(t,e)},e.prototype.onScroll=function(){return this.updatePosition({x:window.pageXOffset,y:window.pageYOffset})},e.prototype.updatePosition=function(o){var t;return this.position=o,null==(t=this.delegate)?void 0:t.scrollPositionChanged(this.position)},e}()}.call(this),function(){l.SnapshotCache=function(){function t(e){this.size=e,this.keys=[],this.snapshots={}}var o;return t.prototype.has=function(n){var t;return t=o(n),t in this.snapshots},t.prototype.get=function(o){var t;if(this.has(o))return t=this.read(o),this.touch(o),t},t.prototype.put=function(o,t){return this.write(o,t),this.touch(o),t},t.prototype.read=function(n){var t;return t=o(n),this.snapshots[t]},t.prototype.write=function(r,t){var e;return e=o(r),this.snapshots[e]=t},t.prototype.touch=function(r){var t,e;return e=o(r),t=this.keys.indexOf(e),-1<t&&this.keys.splice(t,1),this.keys.unshift(e),this.trim()},t.prototype.trim=function(){var a,t,e,r,n;for(r=this.keys.splice(this.size),n=[],a=0,e=r.length;e>a;a++)t=r[a],n.push(delete this.snapshots[t]);return n},o=function(t){return l.Location.wrap(t).toCacheKey()},t}()}.call(this),function(){var t=function(o,t){return function(){return o.apply(t,arguments)}};l.Visit=function(){function e(e,a,n){this.controller=e,this.action=n,this.performScroll=t(this.performScroll,this),this.identifier=l.uuid(),this.location=l.Location.wrap(a),this.adapter=this.controller.adapter,this.state='initialized',this.timingMetrics={}}var o;return e.prototype.start=function(){return'initialized'===this.state?(this.recordTimingMetric('visitStart'),this.state='started',this.adapter.visitStarted(this)):void 0},e.prototype.cancel=function(){var e;return'started'===this.state?(null!=(e=this.request)&&e.cancel(),this.cancelRender(),this.state='canceled'):void 0},e.prototype.complete=function(){var e;return'started'===this.state?(this.recordTimingMetric('visitEnd'),this.state='completed','function'==typeof(e=this.adapter).visitCompleted&&e.visitCompleted(this),this.controller.visitCompleted(this)):void 0},e.prototype.fail=function(){var e;return'started'===this.state?(this.state='failed','function'==typeof(e=this.adapter).visitFailed?e.visitFailed(this):void 0):void 0},e.prototype.changeHistory=function(){var n,t;return this.historyChanged?void 0:(n=this.location.isEqualTo(this.referrer)?'replace':this.action,t=o(n),this.controller[t](this.location,this.restorationIdentifier),this.historyChanged=!0)},e.prototype.issueRequest=function(){return this.shouldIssueRequest()&&null==this.request?(this.progress=0,this.request=new l.HttpRequest(this,this.location,this.referrer),this.request.send()):void 0},e.prototype.getCachedSnapshot=function(){var e;return(e=this.controller.getCachedSnapshotForLocation(this.location))&&(null==this.location.anchor||e.hasAnchor(this.location.anchor))&&('restore'===this.action||e.isPreviewable())?e:void 0},e.prototype.hasCachedSnapshot=function(){return null!=this.getCachedSnapshot()},e.prototype.loadCachedSnapshot=function(){var o,n;return(n=this.getCachedSnapshot())?(o=this.shouldIssueRequest(),this.render(function(){var a;return this.cacheSnapshot(),this.controller.render({snapshot:n,isPreview:o},this.performScroll),'function'==typeof(a=this.adapter).visitRendered&&a.visitRendered(this),o?void 0:this.complete()})):void 0},e.prototype.loadResponse=function(){return null==this.response?void 0:this.render(function(){var o,t;return this.cacheSnapshot(),this.request.failed?(this.controller.render({error:this.response},this.performScroll),'function'==typeof(o=this.adapter).visitRendered&&o.visitRendered(this),this.fail()):(this.controller.render({snapshot:this.response},this.performScroll),'function'==typeof(t=this.adapter).visitRendered&&t.visitRendered(this),this.complete())})},e.prototype.followRedirect=function(){return this.redirectedToLocation&&!this.followedRedirect?(this.location=this.redirectedToLocation,this.controller.replaceHistoryWithLocationAndRestorationIdentifier(this.redirectedToLocation,this.restorationIdentifier),this.followedRedirect=!0):void 0},e.prototype.requestStarted=function(){var e;return this.recordTimingMetric('requestStart'),'function'==typeof(e=this.adapter).visitRequestStarted?e.visitRequestStarted(this):void 0},e.prototype.requestProgressed=function(o){var t;return this.progress=o,'function'==typeof(t=this.adapter).visitRequestProgressed?t.visitRequestProgressed(this):void 0},e.prototype.requestCompletedWithResponse=function(t,e){return this.response=t,null!=e&&(this.redirectedToLocation=l.Location.wrap(e)),this.adapter.visitRequestCompleted(this)},e.prototype.requestFailedWithStatusCode=function(o,t){return this.response=t,this.adapter.visitRequestFailedWithStatusCode(this,o)},e.prototype.requestFinished=function(){var e;return this.recordTimingMetric('requestEnd'),'function'==typeof(e=this.adapter).visitRequestFinished?e.visitRequestFinished(this):void 0},e.prototype.performScroll=function(){return this.scrolled?void 0:('restore'===this.action?this.scrollToRestoredPosition()||this.scrollToTop():this.scrollToAnchor()||this.scrollToTop(),this.scrolled=!0)},e.prototype.scrollToRestoredPosition=function(){var o,t;return o=null==(t=this.restorationData)?void 0:t.scrollPosition,null==o?void 0:(this.controller.scrollToPosition(o),!0)},e.prototype.scrollToAnchor=function(){return null==this.location.anchor?void 0:(this.controller.scrollToAnchor(this.location.anchor),!0)},e.prototype.scrollToTop=function(){return this.controller.scrollToPosition({x:0,y:0})},e.prototype.recordTimingMetric=function(o){var t;return null==(t=this.timingMetrics)[o]?t[o]=new Date().getTime():t[o]},e.prototype.getTimingMetrics=function(){return l.copyObject(this.timingMetrics)},o=function(e){return'replace'===e?'replaceHistoryWithLocationAndRestorationIdentifier':'advance'===e||'restore'===e?'pushHistoryWithLocationAndRestorationIdentifier':void 0},e.prototype.shouldIssueRequest=function(){return'restore'!==this.action||!this.hasCachedSnapshot()},e.prototype.cacheSnapshot=function(){return this.snapshotCached?void 0:(this.controller.cacheSnapshot(),this.snapshotCached=!0)},e.prototype.render=function(o){return this.cancelRender(),this.frame=requestAnimationFrame(function(t){return function(){return t.frame=null,o.call(t)}}(this))},e.prototype.cancelRender=function(){return this.frame?cancelAnimationFrame(this.frame):void 0},e}()}.call(this),function(){var t=function(o,t){return function(){return o.apply(t,arguments)}};l.Controller=function(){function e(){this.clickBubbled=t(this.clickBubbled,this),this.clickCaptured=t(this.clickCaptured,this),this.pageLoaded=t(this.pageLoaded,this),this.history=new l.History(this),this.view=new l.View(this),this.scrollManager=new l.ScrollManager(this),this.restorationData={},this.clearCache()}return e.prototype.start=function(){return l.supported&&!this.started?(addEventListener('click',this.clickCaptured,!0),addEventListener('DOMContentLoaded',this.pageLoaded,!1),this.scrollManager.start(),this.startHistory(),this.started=!0,this.enabled=!0):void 0},e.prototype.disable=function(){return this.enabled=!1},e.prototype.stop=function(){return this.started?(removeEventListener('click',this.clickCaptured,!0),removeEventListener('DOMContentLoaded',this.pageLoaded,!1),this.scrollManager.stop(),this.stopHistory(),this.started=!1):void 0},e.prototype.clearCache=function(){return this.cache=new l.SnapshotCache(10)},e.prototype.visit=function(t,e){var r,n;return null==e&&(e={}),t=l.Location.wrap(t),this.applicationAllowsVisitingLocation(t)?this.locationIsVisitable(t)?(r=null==(n=e.action)?'advance':n,this.adapter.visitProposedToLocationWithAction(t,r)):window.location=t:void 0},e.prototype.startVisitToLocationWithAction=function(t,e,r){var n;return l.supported?(n=this.getRestorationDataForIdentifier(r),this.startVisit(t,e,{restorationData:n})):window.location=t},e.prototype.startHistory=function(){return this.location=l.Location.wrap(window.location),this.restorationIdentifier=l.uuid(),this.history.start(),this.history.replace(this.location,this.restorationIdentifier)},e.prototype.stopHistory=function(){return this.history.stop()},e.prototype.pushHistoryWithLocationAndRestorationIdentifier=function(t,e){return this.restorationIdentifier=e,this.location=l.Location.wrap(t),this.history.push(this.location,this.restorationIdentifier)},e.prototype.replaceHistoryWithLocationAndRestorationIdentifier=function(t,e){return this.restorationIdentifier=e,this.location=l.Location.wrap(t),this.history.replace(this.location,this.restorationIdentifier)},e.prototype.historyPoppedToLocationWithRestorationIdentifier=function(t,e){var o;return this.restorationIdentifier=e,this.enabled?(o=this.getRestorationDataForIdentifier(this.restorationIdentifier),this.startVisit(t,'restore',{restorationIdentifier:this.restorationIdentifier,restorationData:o,historyChanged:!0}),this.location=l.Location.wrap(t)):this.adapter.pageInvalidated()},e.prototype.getCachedSnapshotForLocation=function(o){var t;return t=this.cache.get(o),t?t.clone():void 0},e.prototype.shouldCacheSnapshot=function(){return this.view.getSnapshot().isCacheable()},e.prototype.cacheSnapshot=function(){var e;return this.shouldCacheSnapshot()?(this.notifyApplicationBeforeCachingSnapshot(),e=this.view.getSnapshot(),this.cache.put(this.lastRenderedLocation,e.clone())):void 0},e.prototype.scrollToAnchor=function(o){var t;return(t=document.getElementById(o))?this.scrollToElement(t):this.scrollToPosition({x:0,y:0})},e.prototype.scrollToElement=function(e){return this.scrollManager.scrollToElement(e)},e.prototype.scrollToPosition=function(e){return this.scrollManager.scrollToPosition(e)},e.prototype.scrollPositionChanged=function(o){var t;return t=this.getCurrentRestorationData(),t.scrollPosition=o},e.prototype.render=function(o,t){return this.view.render(o,t)},e.prototype.viewInvalidated=function(){return this.adapter.pageInvalidated()},e.prototype.viewWillRender=function(e){return this.notifyApplicationBeforeRender(e)},e.prototype.viewRendered=function(){return this.lastRenderedLocation=this.currentVisit.location,this.notifyApplicationAfterRender()},e.prototype.pageLoaded=function(){return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLoad()},e.prototype.clickCaptured=function(){return removeEventListener('click',this.clickBubbled,!1),addEventListener('click',this.clickBubbled,!1)},e.prototype.clickBubbled=function(o){var t,a,r;return this.enabled&&this.clickEventIsSignificant(o)&&(a=this.getVisitableLinkForNode(o.target))&&(r=this.getVisitableLocationForLink(a))&&this.applicationAllowsFollowingLinkToLocation(a,r)?(o.preventDefault(),t=this.getActionForLink(a),this.visit(r,{action:t})):void 0},e.prototype.applicationAllowsFollowingLinkToLocation=function(o,t){var e;return e=this.notifyApplicationAfterClickingLinkToLocation(o,t),!e.defaultPrevented},e.prototype.applicationAllowsVisitingLocation=function(o){var t;return t=this.notifyApplicationBeforeVisitingLocation(o),!t.defaultPrevented},e.prototype.notifyApplicationAfterClickingLinkToLocation=function(t,o){return l.dispatch('turbolinks:click',{target:t,data:{url:o.absoluteURL},cancelable:!0})},e.prototype.notifyApplicationBeforeVisitingLocation=function(t){return l.dispatch('turbolinks:before-visit',{data:{url:t.absoluteURL},cancelable:!0})},e.prototype.notifyApplicationAfterVisitingLocation=function(t){return l.dispatch('turbolinks:visit',{data:{url:t.absoluteURL}})},e.prototype.notifyApplicationBeforeCachingSnapshot=function(){return l.dispatch('turbolinks:before-cache')},e.prototype.notifyApplicationBeforeRender=function(t){return l.dispatch('turbolinks:before-render',{data:{newBody:t}})},e.prototype.notifyApplicationAfterRender=function(){return l.dispatch('turbolinks:render')},e.prototype.notifyApplicationAfterPageLoad=function(t){return null==t&&(t={}),l.dispatch('turbolinks:load',{data:{url:this.location.absoluteURL,timing:t}})},e.prototype.startVisit=function(o,t,e){var r;return null!=(r=this.currentVisit)&&r.cancel(),this.currentVisit=this.createVisit(o,t,e),this.currentVisit.start(),this.notifyApplicationAfterVisitingLocation(o)},e.prototype.createVisit=function(t,e,r){var n,o,i,s,a;return o=null==r?{}:r,s=o.restorationIdentifier,i=o.restorationData,n=o.historyChanged,a=new l.Visit(this,t,e),a.restorationIdentifier=null==s?l.uuid():s,a.restorationData=l.copyObject(i),a.historyChanged=n,a.referrer=this.location,a},e.prototype.visitCompleted=function(e){return this.notifyApplicationAfterPageLoad(e.getTimingMetrics())},e.prototype.clickEventIsSignificant=function(e){return!(e.defaultPrevented||e.target.isContentEditable||1<e.which||e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)},e.prototype.getVisitableLinkForNode=function(t){return this.nodeIsVisitable(t)?l.closest(t,'a[href]:not([target]):not([download])'):void 0},e.prototype.getVisitableLocationForLink=function(t){var e;return e=new l.Location(t.getAttribute('href')),this.locationIsVisitable(e)?e:void 0},e.prototype.getActionForLink=function(o){var t;return null==(t=o.getAttribute('data-turbolinks-action'))?'advance':t},e.prototype.nodeIsVisitable=function(t){var e;return!(e=l.closest(t,'[data-turbolinks]'))||'false'!==e.getAttribute('data-turbolinks')},e.prototype.locationIsVisitable=function(e){return e.isPrefixedBy(this.view.getRootLocation())&&e.isHTML()},e.prototype.getCurrentRestorationData=function(){return this.getRestorationDataForIdentifier(this.restorationIdentifier)},e.prototype.getRestorationDataForIdentifier=function(o){var t;return null==(t=this.restorationData)[o]?t[o]={}:t[o]},e}()}.call(this),function(){var t,e,o;l.start=function(){return e()?(null==l.controller&&(l.controller=t()),l.controller.start()):void 0},e=function(){return null==window.Turbolinks&&(window.Turbolinks=l),o()},t=function(){var t;return t=new l.Controller,t.adapter=new l.BrowserAdapter(t),t},o=function(){return window.Turbolinks===l},o()&&l.start()}.call(this)}).call(this),'object'==typeof e&&e.exports?e.exports=l:n(207)&&(r=l,a='function'==typeof r?r.call(o,n,o,e):r,!(a!==void 0&&(e.exports=a)))}).call(this)},207:function(e,t){(function(t){e.exports=t}).call(t,{})},208:function(e,t,o){'use strict';Object.defineProperty(t,'__esModule',{value:!0}),t.initModules=void 0;var n=o(209),r=t.initModules=function(){new n.LibraryPageNavigation}},209:function(e,t,o){'use strict';function n(e,t){if(!(e instanceof t))throw new TypeError('Cannot call a class as a function')}Object.defineProperty(t,'__esModule',{value:!0}),t.LibraryPageNavigation=void 0;var r=function(){function e(e,t){for(var o,n=0;n<t.length;n++)o=t[n],o.enumerable=o.enumerable||!1,o.configurable=!0,'value'in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}return function(t,o,n){return o&&e(t.prototype,o),n&&e(t,n),t}}(),a=o(210),i=function(e){return e&&e.__esModule?e:{default:e}}(a),s=o(4),l=t.LibraryPageNavigation=function(){function e(){var t=this;(n(this,e),this.reizeHandler=function(){t.initSidebar()},this.mobileNavigationClickHandler=function(){(0,s.toggleClass)(t.navigationInner,t.navigationInnerOpenClassName)},this.sidebar=!1,this.maxWidth=800,this.navigationId='styleguide-navigation',this.navigationInnerClassName='styleguide-navigation__inner',this.navigationInnerOpenClassName='styleguide-navigation__inner--open',this.contentId='styleguide-content',this.mobileNavigationClassName='styleguide-navigation__mobile-nav',this.libraryContainerId='library-container',this.navigation=document.getElementById(this.navigationId),!!this.navigation)&&(this.navigationInner=this.navigation.querySelector('.'+this.navigationInnerClassName),this.content=document.getElementById(this.contentId),this.mobileNavigation=document.querySelector('.'+this.mobileNavigationClassName),this.navigation&&this.content&&this.setup())}return r(e,[{key:'setup',value:function(){$.events(window,{resize:this.reizeHandler}),$.delegate(document,'click','.'+this.mobileNavigationClassName,this.mobileNavigationClickHandler),this.initSidebar()}},{key:'initSidebar',value:function(){this.sidebar&&this.sidebar.destroy(),window.innerWidth<=this.maxWidth||(this.content.style.minHeight=this.navigation.offsetHeight+'px',this.sidebar=new i.default(this.navigation,{topSpacing:15,bottomSpacing:15,resizeSensor:!1,containerSelector:'#'+this.libraryContainerId,innerWrapperSelector:'.'+this.navigationInnerClassName}))}}]),e}()},21:function(e,t){'use strict';Object.defineProperty(t,'__esModule',{value:!0}),t.elHasClass=function(e,t){return e.classList?e.classList.contains(t):new RegExp('(^| )'+t+'( |$)','gi').test(e.className)}},210:function(e,t){'use strict';Object.defineProperty(t,'__esModule',{value:!0});/**
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 192);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 186:
+/***/ (function(module, exports) {
+
+(function() {
+"use strict";
+
+function overload(callback, start, end) {
+	start = start === undefined ? 1 : start;
+	end = end || start + 1;
+
+	if (end - start <= 1) {
+		return function() {
+			if (arguments.length <= start || $.type(arguments[start]) === "string") {
+				return callback.apply(this, arguments);
+			}
+
+			var obj = arguments[start], ret;
+
+			for (var key in obj) {
+				var args = Array.from(arguments);
+				args.splice(start, 1, key, obj[key]);
+				ret = callback.apply(this, args);
+			}
+
+			return ret;
+		};
+	}
+
+	return overload(overload(callback, start + 1, end), start, end - 1);
+}
+
+// Copy properties from one object to another. Overwrites allowed.
+// Subtle difference of array vs string whitelist: If property doesn't exist in from, array will not define it.
+function extend(to, from, whitelist) {
+	var whitelistType = type(whitelist);
+
+	if (whitelistType === "string") {
+		// To copy gettters/setters, preserve flags etc
+		var descriptor = Object.getOwnPropertyDescriptor(from, whitelist);
+
+		if (descriptor && (!descriptor.writable || !descriptor.configurable || !descriptor.enumerable || descriptor.get || descriptor.set)) {
+			delete to[whitelist];
+			Object.defineProperty(to, whitelist, descriptor);
+		}
+		else {
+			to[whitelist] = from[whitelist];
+		}
+	}
+	else if (whitelistType === "array") {
+		whitelist.forEach(function(property) {
+			if (property in from) {
+				extend(to, from, property);
+			}
+		});
+	}
+	else {
+		for (var property in from) {
+			if (whitelist) {
+				if (whitelistType === "regexp" && !whitelist.test(property) ||
+					whitelistType === "function" && !whitelist.call(from, property)) {
+					continue;
+				}
+			}
+
+			extend(to, from, property);
+		}
+	}
+
+	return to;
+}
+
+/**
+ * Returns the [[Class]] of an object in lowercase (eg. array, date, regexp, string etc)
+ */
+function type(obj) {
+	if (obj === null) {
+		return "null";
+	}
+
+	if (obj === undefined) {
+		return "undefined";
+	}
+
+	var ret = (Object.prototype.toString.call(obj).match(/^\[object\s+(.*?)\]$/)[1] || "").toLowerCase();
+
+	if (ret == "number" && isNaN(obj)) {
+		return "nan";
+	}
+
+	return ret;
+}
+
+var $ = self.Bliss = extend(function(expr, context) {
+	if (arguments.length == 2 && !context || !expr) {
+		return null;
+	}
+
+	return $.type(expr) === "string"? (context || document).querySelector(expr) : expr || null;
+}, self.Bliss);
+
+extend($, {
+	extend: extend,
+	overload: overload,
+	type: type,
+
+	property: $.property || "_",
+
+	sources: {},
+
+	noop: function() {},
+
+	$: function(expr, context) {
+		if (expr instanceof Node || expr instanceof Window) {
+			return [expr];
+		}
+
+		if (arguments.length == 2 && !context) {
+			return [];
+		}
+
+		return Array.from(typeof expr == "string"? (context || document).querySelectorAll(expr) : expr || []);
+	},
+
+	/*
+	 * Return first non-undefined value. Mainly used internally.
+	 */
+	defined: function () {
+		for (var i=0; i<arguments.length; i++) {
+			if (arguments[i] !== undefined) {
+				return arguments[i];
+			}
+		}
+	},
+
+	create: function (tag, o) {
+		if (tag instanceof Node) {
+			return $.set(tag, o);
+		}
+
+		// 4 signatures: (tag, o), (tag), (o), ()
+		if (arguments.length === 1) {
+			if ($.type(tag) === "string") {
+				o = {};
+			}
+			else {
+				o = tag;
+				tag = o.tag;
+				o = $.extend({}, o, function(property) {
+					return property !== "tag";
+				});
+			}
+		}
+
+		return $.set(document.createElement(tag || "div"), o);
+	},
+
+	each: function(obj, callback, ret) {
+		ret = ret || {};
+
+		for (var property in obj) {
+			ret[property] = callback.call(obj, property, obj[property]);
+		}
+
+		return ret;
+	},
+
+	ready: function(context) {
+		context = context || document;
+
+		return new Promise(function(resolve, reject) {
+			if (context.readyState !== "loading") {
+				resolve();
+			}
+			else {
+				context.addEventListener("DOMContentLoaded", function() {
+					resolve();
+				});
+			}
+		});
+	},
+
+	// Helper for defining OOP-like “classes”
+	Class: function(o) {
+		var special = ["constructor", "extends", "abstract", "static"].concat(Object.keys($.classProps));
+		var init = o.hasOwnProperty("constructor")? o.constructor : $.noop;
+
+		var Class = function() {
+			if (this.constructor.__abstract && this.constructor === Class) {
+				throw new Error("Abstract classes cannot be directly instantiated.");
+			}
+
+			Class.super && Class.super.apply(this, arguments);
+
+			init.apply(this, arguments);
+		};
+
+		Class.super = o.extends || null;
+
+		Class.prototype = $.extend(Object.create(Class.super? Class.super.prototype : Object), {
+			constructor: Class
+		});
+
+		var specialFilter = function(property) {
+			return this.hasOwnProperty(property) && special.indexOf(property) === -1;
+		};
+
+		// Static methods
+		if (o.static) {
+			$.extend(Class, o.static, specialFilter);
+
+			for (var property in $.classProps) {
+				if (property in o.static) {
+					$.classProps[property](Class, o.static[property]);
+				}
+			}
+		}
+
+		// Instance methods
+		$.extend(Class.prototype, o, specialFilter);
+
+		for (var property in $.classProps) {
+			if (property in o) {
+				$.classProps[property](Class.prototype, o[property]);
+			}
+		}
+
+		// For easier calling of super methods
+		// This doesn't save us from having to use .call(this) though
+		Class.prototype.super = Class.super? Class.super.prototype : null;
+
+		Class.__abstract = !!o.abstract;
+
+		return Class;
+	},
+
+	// Properties with special handling in classes
+	classProps: {
+		// Lazily evaluated properties
+		lazy: overload(function(obj, property, getter) {
+			Object.defineProperty(obj, property, {
+				get: function() {
+					var value = getter.call(this);
+
+					Object.defineProperty(this, property, {
+						value: value,
+						configurable: true,
+						enumerable: true,
+						writable: true
+					});
+
+					return value;
+				},
+				set: function(value) {
+					// Blind write: skip running the getter
+					Object.defineProperty(this, property, {
+						value: value,
+						configurable: true,
+						enumerable: true,
+						writable: true
+					});
+				},
+				configurable: true,
+				enumerable: true
+			});
+
+			return obj;
+		}),
+
+		// Properties that behave like normal properties but also execute code upon getting/setting
+		live: overload(function(obj, property, descriptor) {
+			if ($.type(descriptor) === "function") {
+				descriptor = {set: descriptor};
+			}
+
+			Object.defineProperty(obj, property, {
+				get: function() {
+					var value = this["_" + property];
+					var ret = descriptor.get && descriptor.get.call(this, value);
+					return ret !== undefined? ret : value;
+				},
+				set: function(v) {
+					var value = this["_" + property];
+					var ret = descriptor.set && descriptor.set.call(this, v, value);
+					this["_" + property] = ret !== undefined? ret : v;
+				},
+				configurable: descriptor.configurable,
+				enumerable: descriptor.enumerable
+			});
+
+			return obj;
+		})
+
+	},
+
+	// Includes a script, returns a promise
+	include: function() {
+		var url = arguments[arguments.length - 1];
+		var loaded = arguments.length === 2? arguments[0] : false;
+
+		var script = document.createElement("script");
+
+		return loaded? Promise.resolve() : new Promise(function(resolve, reject) {
+			$.set(script, {
+				async: true,
+				onload: function() {
+					resolve();
+					$.remove(script);
+				},
+				onerror: function() {
+					reject();
+				},
+				src: url,
+				inside: document.head
+			});
+		});
+
+	},
+
+	/*
+	 * Fetch API inspired XHR wrapper. Returns promise.
+	 */
+	fetch: function(url, o) {
+		if (!url) {
+			throw new TypeError("URL parameter is mandatory and cannot be " + url);
+		}
+
+		// Set defaults & fixup arguments
+		var env = extend({
+			url: new URL(url, location),
+			data: "",
+			method: "GET",
+			headers: {},
+			xhr: new XMLHttpRequest()
+		}, o);
+
+		env.method = env.method.toUpperCase();
+
+		$.hooks.run("fetch-args", env);
+
+		// Start sending the request
+
+		if (env.method === "GET" && env.data) {
+			env.url.search += env.data;
+		}
+
+		document.body.setAttribute("data-loading", env.url);
+
+		env.xhr.open(env.method, env.url.href, env.async !== false, env.user, env.password);
+
+		for (var property in o) {
+			if (property in env.xhr) {
+				try {
+					env.xhr[property] = o[property];
+				}
+				catch (e) {
+					self.console && console.error(e);
+				}
+			}
+		}
+
+		if (env.method !== "GET" && !env.headers["Content-type"] && !env.headers["Content-Type"]) {
+			env.xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		}
+
+		for (var header in env.headers) {
+			env.xhr.setRequestHeader(header, env.headers[header]);
+		}
+
+		return new Promise(function(resolve, reject) {
+			env.xhr.onload = function() {
+				document.body.removeAttribute("data-loading");
+
+				if (env.xhr.status === 0 || env.xhr.status >= 200 && env.xhr.status < 300 || env.xhr.status === 304) {
+					// Success!
+					resolve(env.xhr);
+				}
+				else {
+					reject($.extend(Error(env.xhr.statusText), {
+						xhr: env.xhr,
+						get status() {
+							return this.xhr.status;
+						}
+					}));
+				}
+			};
+
+			env.xhr.onerror = function() {
+				document.body.removeAttribute("data-loading");
+				reject($.extend(Error("Network Error"), {xhr: env.xhr}));
+			};
+
+			env.xhr.ontimeout = function() {
+			    document.body.removeAttribute("data-loading");
+			    reject($.extend(Error("Network Timeout"), {xhr: env.xhr}));
+			};
+
+			env.xhr.send(env.method === "GET"? null : env.data);
+		});
+	},
+
+	value: function(obj) {
+		var hasRoot = $.type(obj) !== "string";
+
+		return $.$(arguments).slice(+hasRoot).reduce(function(obj, property) {
+	        return obj && obj[property];
+	    }, hasRoot? obj : self);
+	}
+});
+
+$.Hooks = new $.Class({
+	add: function (name, callback, first) {
+		(Array.isArray(name)? name : [name]).forEach(function(name) {
+			this[name] = this[name] || [];
+			this[name][first? "unshift" : "push"](callback);
+		}, this);
+	},
+
+	run: function (name, env) {
+		this[name] = this[name] || [];
+		this[name].forEach(function(callback) {
+			callback.call(env && env.context? env.context : env, env);
+		});
+	}
+});
+
+$.hooks = new $.Hooks();
+
+var _ = $.property;
+
+$.Element = function (subject) {
+	this.subject = subject;
+
+	// Author-defined element-related data
+	this.data = {};
+
+	// Internal Bliss element-related data
+	this.bliss = {};
+};
+
+$.Element.prototype = {
+	set: overload(function(property, value) {
+
+		if (property in $.setProps) {
+			$.setProps[property].call(this, value);
+		}
+		else if (property in this) {
+			this[property] = value;
+		}
+		else {
+			this.setAttribute(property, value);
+		}
+
+	}, 0),
+
+	// Run a CSS transition, return promise
+	transition: function(props, duration) {
+		duration = +duration || 400;
+
+		return new Promise(function(resolve, reject) {
+			if ("transition" in this.style) {
+				// Get existing style
+				var previous = $.extend({}, this.style, /^transition(Duration|Property)$/);
+
+				$.style(this, {
+					transitionDuration: (duration || 400) + "ms",
+					transitionProperty: Object.keys(props).join(", ")
+				});
+
+				$.once(this, "transitionend", function() {
+					clearTimeout(i);
+					$.style(this, previous);
+					resolve(this);
+				});
+
+				// Failsafe, in case transitionend doesn’t fire
+				var i = setTimeout(resolve, duration+50, this);
+
+				$.style(this, props);
+			}
+			else {
+				$.style(this, props);
+				resolve(this);
+			}
+		}.bind(this));
+	},
+
+	// Fire a synthesized event on the element
+	fire: function (type, properties) {
+		var evt = document.createEvent("HTMLEvents");
+
+		evt.initEvent(type, true, true );
+
+		// Return the result of dispatching the event, so we
+		// can know if `e.preventDefault` was called inside it
+		return this.dispatchEvent($.extend(evt, properties));
+	},
+
+	unbind: overload(function(events, callback) {
+		(events || "").split(/\s+/).forEach(function (type) {
+			if ((_ in this) && (type.indexOf(".") > -1 || !callback)) {
+				// Mass unbinding, need to go through listeners
+				type = (type || "").split(".");
+				var className = type[1];
+				type = type[0];
+				// man, can’t wait to be able to do [type, className] = type.split(".");
+
+				var listeners = this[_].bliss.listeners = this[_].bliss.listeners || {};
+
+				for (var ltype in listeners) {
+					if (!type || ltype === type) {
+						// No forEach, because we’re mutating the array
+						for (var i=0, l; l=listeners[ltype][i]; i++) {
+							if ((!className || className === l.className) &&
+							    (!callback || callback === l.callback )) { // TODO what about capture?
+								this.removeEventListener(ltype, l.callback, l.capture);
+								i--;
+							}
+						}
+
+					}
+				}
+			}
+			else {
+				// Normal event unbinding, defer to native JS
+				this.removeEventListener(type, callback);
+			}
+		}, this);
+	}, 0)
+};
+
+/*
+ * Properties with custom handling in $.set()
+ * Also available as functions directly on element._ and on $
+ */
+$.setProps = {
+	// Set a bunch of inline CSS styles
+	style: function (val) {
+		$.extend(this.style, val);
+	},
+
+	// Set a bunch of attributes
+	attributes: function (o) {
+		for (var attribute in o) {
+			this.setAttribute(attribute, o[attribute]);
+		}
+	},
+
+	// Set a bunch of properties on the element
+	properties: function (val) {
+		$.extend(this, val);
+	},
+
+	// Bind one or more events to the element
+	events: function (val) {
+		if (val && val.addEventListener) {
+			// Copy events from other element (requires Bliss Full)
+			var me = this;
+
+			// Copy listeners
+			if (val[_] && val[_].bliss) {
+				var listeners = val[_].bliss.listeners;
+
+				for (var type in listeners) {
+					listeners[type].forEach(function(l) {
+						me.addEventListener(type, l.callback, l.capture);
+					});
+				}
+			}
+
+			// Copy inline events
+			for (var onevent in val) {
+				if (onevent.indexOf("on") === 0) {
+					this[onevent] = val[onevent];
+				}
+			}
+		}
+		else if (arguments.length > 1 && $.type(val) === "string") {
+			var callback = arguments[1], capture = arguments[2];
+
+			val.split(/\s+/).forEach(function (event) {
+				this.addEventListener(event, callback, capture);
+			}, this);
+		}
+		else {
+			for (var events in val) {
+				$.events(this, events, val[events]);
+			}
+		}
+	},
+
+	once: overload(function(events, callback) {
+		events = events.split(/\s+/);
+		var me = this;
+		var once = function() {
+			events.forEach(function(event) {
+				me.removeEventListener(event, once);
+			});
+
+			return callback.apply(me, arguments);
+		};
+
+		events.forEach(function (event) {
+			me.addEventListener(event, once);
+		});
+	}, 0),
+
+	// Event delegation
+	delegate: overload(function (type, selector, callback) {
+		this.addEventListener(type, function(evt) {
+			if (evt.target.closest(selector)) {
+				callback.call(this, evt);
+			}
+		});
+	}, 0, 2),
+
+	// Set the contents as a string, an element, an object to create an element or an array of these
+	contents: function (val) {
+		if (val || val === 0) {
+			(Array.isArray(val)? val : [val]).forEach(function (child) {
+				var type = $.type(child);
+
+				if (/^(string|number)$/.test(type)) {
+					child = document.createTextNode(child + "");
+				}
+				else if (type === "object") {
+					child = $.create(child);
+				}
+
+				if (child instanceof Node) {
+					this.appendChild(child);
+				}
+			}, this);
+		}
+	},
+
+	// Append the element inside another element
+	inside: function (element) {
+		element.appendChild(this);
+	},
+
+	// Insert the element before another element
+	before: function (element) {
+		element.parentNode.insertBefore(this, element);
+	},
+
+	// Insert the element after another element
+	after: function (element) {
+		element.parentNode.insertBefore(this, element.nextSibling);
+	},
+
+	// Insert the element before another element's contents
+	start: function (element) {
+		element.insertBefore(this, element.firstChild);
+	},
+
+	// Wrap the element around another element
+	around: function (element) {
+		if (element.parentNode) {
+			$.before(this, element);
+		}
+
+		(/^template$/i.test(this.nodeName)? this.content || this : this).appendChild(element);
+	}
+};
+
+$.Array = function (subject) {
+	this.subject = subject;
+};
+
+$.Array.prototype = {
+	all: function(method) {
+		var args = $$(arguments).slice(1);
+
+		return this[method].apply(this, args);
+	}
+};
+
+// Extends Bliss with more methods
+$.add = overload(function(method, callback, on, noOverwrite) {
+	on = $.extend({$: true, element: true, array: true}, on);
+
+	if ($.type(callback) == "function") {
+		if (on.element && (!(method in $.Element.prototype) || !noOverwrite)) {
+			$.Element.prototype[method] = function () {
+				return this.subject && $.defined(callback.apply(this.subject, arguments), this.subject);
+			};
+		}
+
+		if (on.array && (!(method in $.Array.prototype) || !noOverwrite)) {
+			$.Array.prototype[method] = function() {
+				var args = arguments;
+				return this.subject.map(function(element) {
+					return element && $.defined(callback.apply(element, args), element);
+				});
+			};
+		}
+
+		if (on.$) {
+			$.sources[method] = $[method] = callback;
+
+			if (on.array || on.element) {
+				$[method] = function () {
+					var args = [].slice.apply(arguments);
+					var subject = args.shift();
+					var Type = on.array && Array.isArray(subject)? "Array" : "Element";
+
+					return $[Type].prototype[method].apply({subject: subject}, args);
+				};
+			}
+		}
+	}
+}, 0);
+
+$.add($.Array.prototype, {element: false});
+$.add($.Element.prototype);
+$.add($.setProps);
+$.add($.classProps, {element: false, array: false});
+
+// Add native methods on $ and _
+var dummy = document.createElement("_");
+$.add($.extend({}, HTMLElement.prototype, function(method) {
+	return $.type(dummy[method]) === "function";
+}), null, true);
+
+
+})();
+
+(function($) {
+"use strict";
+
+if (!Bliss || Bliss.shy) {
+	return;
+}
+
+var _ = Bliss.property;
+
+// Methods requiring Bliss Full
+$.add({
+	// Clone elements, with events and data
+	clone: function () {
+		var clone = this.cloneNode(true);
+		var descendants = $.$("*", clone).concat(clone);
+
+		$.$("*", this).concat(this).forEach(function(element, i, arr) {
+			$.events(descendants[i], element);
+			descendants[i]._.data = $.extend({}, element._.data);
+		});
+
+		return clone;
+	}
+}, {array: false});
+
+// Define the _ property on arrays and elements
+
+Object.defineProperty(Node.prototype, _, {
+	// Written for IE compatability (see #49)
+	get: function getter () {
+		Object.defineProperty(Node.prototype, _, {
+			get: undefined
+		});
+		Object.defineProperty(this, _, {
+			value: new $.Element(this)
+		});
+		Object.defineProperty(Node.prototype, _, {
+			get: getter
+		});
+		return this[_];
+	},
+	configurable: true
+});
+
+Object.defineProperty(Array.prototype, _, {
+	get: function () {
+		Object.defineProperty(this, _, {
+			value: new $.Array(this)
+		});
+
+		return this[_];
+	},
+	configurable: true
+});
+
+// Hijack addEventListener and removeEventListener to store callbacks
+
+if (self.EventTarget && "addEventListener" in EventTarget.prototype) {
+	var addEventListener = EventTarget.prototype.addEventListener,
+	    removeEventListener = EventTarget.prototype.removeEventListener,
+	    equal = function(callback, capture, l) {
+			return l.callback === callback && l.capture == capture;
+	    },
+	    notEqual = function() { 
+			return !equal.apply(this, arguments); 
+		};
+
+	EventTarget.prototype.addEventListener = function(type, callback, capture) {
+		if (this && this[_] && this[_].bliss && callback) {
+			var listeners = this[_].bliss.listeners = this[_].bliss.listeners || {};
+
+			if (type.indexOf(".") > -1) {
+				type = type.split(".");
+				var className = type[1];
+				type = type[0];
+			}
+
+			listeners[type] = listeners[type] || [];
+
+			if (listeners[type].filter(equal.bind(null, callback, capture)).length === 0) {
+				listeners[type].push({callback: callback, capture: capture, className: className});
+			}
+		}
+
+		return addEventListener.call(this, type, callback, capture);
+	};
+
+	EventTarget.prototype.removeEventListener = function(type, callback, capture) {
+		if (this && this[_] && this[_].bliss  && callback) {
+			var listeners = this[_].bliss.listeners = this[_].bliss.listeners || {};
+
+			if (listeners[type]) {
+				listeners[type] = listeners[type].filter(notEqual.bind(null, callback, capture));
+			}
+		}
+
+		return removeEventListener.call(this, type, callback, capture);
+	};
+}
+
+// Set $ and $$ convenience methods, if not taken
+self.$ = self.$ || $;
+self.$$ = self.$$ || $.$;
+
+})(Bliss);
+
+
+/***/ }),
+
+/***/ 192:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(193);
+
+__webpack_require__(194);
+
+__webpack_require__(195);
+
+__webpack_require__(204);
+
+__webpack_require__(205);
+
+__webpack_require__(186);
+
+var _turbolinks = __webpack_require__(206);
+
+var _turbolinks2 = _interopRequireDefault(_turbolinks);
+
+var _misc = __webpack_require__(4);
+
+var _modules = __webpack_require__(208);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var readyFunction = function readyFunction(fn) {
+  if (_turbolinks2.default.supported) {
+    _turbolinks2.default.start();
+    document.addEventListener('turbolinks:load', function () {
+      fn();
+    });
+  } else {
+    (0, _misc.domReady)(fn);
+  }
+};
+
+readyFunction(function () {
+  new _modules.initModules();
+});
+
+/***/ }),
+
+/***/ 193:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(global) {
+/* **********************************************
+     Begin prism-core.js
+********************************************** */
+
+var _self = (typeof window !== 'undefined')
+	? window   // if in browser
+	: (
+		(typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope)
+		? self // if in worker
+		: {}   // if in node js
+	);
+
+/**
+ * Prism: Lightweight, robust, elegant syntax highlighting
+ * MIT license http://www.opensource.org/licenses/mit-license.php/
+ * @author Lea Verou http://lea.verou.me
+ */
+
+var Prism = (function(){
+
+// Private helper vars
+var lang = /\blang(?:uage)?-(\w+)\b/i;
+var uniqueId = 0;
+
+var _ = _self.Prism = {
+	manual: _self.Prism && _self.Prism.manual,
+	disableWorkerMessageHandler: _self.Prism && _self.Prism.disableWorkerMessageHandler,
+	util: {
+		encode: function (tokens) {
+			if (tokens instanceof Token) {
+				return new Token(tokens.type, _.util.encode(tokens.content), tokens.alias);
+			} else if (_.util.type(tokens) === 'Array') {
+				return tokens.map(_.util.encode);
+			} else {
+				return tokens.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\u00a0/g, ' ');
+			}
+		},
+
+		type: function (o) {
+			return Object.prototype.toString.call(o).match(/\[object (\w+)\]/)[1];
+		},
+
+		objId: function (obj) {
+			if (!obj['__id']) {
+				Object.defineProperty(obj, '__id', { value: ++uniqueId });
+			}
+			return obj['__id'];
+		},
+
+		// Deep clone a language definition (e.g. to extend it)
+		clone: function (o) {
+			var type = _.util.type(o);
+
+			switch (type) {
+				case 'Object':
+					var clone = {};
+
+					for (var key in o) {
+						if (o.hasOwnProperty(key)) {
+							clone[key] = _.util.clone(o[key]);
+						}
+					}
+
+					return clone;
+
+				case 'Array':
+					return o.map(function(v) { return _.util.clone(v); });
+			}
+
+			return o;
+		}
+	},
+
+	languages: {
+		extend: function (id, redef) {
+			var lang = _.util.clone(_.languages[id]);
+
+			for (var key in redef) {
+				lang[key] = redef[key];
+			}
+
+			return lang;
+		},
+
+		/**
+		 * Insert a token before another token in a language literal
+		 * As this needs to recreate the object (we cannot actually insert before keys in object literals),
+		 * we cannot just provide an object, we need anobject and a key.
+		 * @param inside The key (or language id) of the parent
+		 * @param before The key to insert before. If not provided, the function appends instead.
+		 * @param insert Object with the key/value pairs to insert
+		 * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.
+		 */
+		insertBefore: function (inside, before, insert, root) {
+			root = root || _.languages;
+			var grammar = root[inside];
+
+			if (arguments.length == 2) {
+				insert = arguments[1];
+
+				for (var newToken in insert) {
+					if (insert.hasOwnProperty(newToken)) {
+						grammar[newToken] = insert[newToken];
+					}
+				}
+
+				return grammar;
+			}
+
+			var ret = {};
+
+			for (var token in grammar) {
+
+				if (grammar.hasOwnProperty(token)) {
+
+					if (token == before) {
+
+						for (var newToken in insert) {
+
+							if (insert.hasOwnProperty(newToken)) {
+								ret[newToken] = insert[newToken];
+							}
+						}
+					}
+
+					ret[token] = grammar[token];
+				}
+			}
+
+			// Update references in other language definitions
+			_.languages.DFS(_.languages, function(key, value) {
+				if (value === root[inside] && key != inside) {
+					this[key] = ret;
+				}
+			});
+
+			return root[inside] = ret;
+		},
+
+		// Traverse a language definition with Depth First Search
+		DFS: function(o, callback, type, visited) {
+			visited = visited || {};
+			for (var i in o) {
+				if (o.hasOwnProperty(i)) {
+					callback.call(o, i, o[i], type || i);
+
+					if (_.util.type(o[i]) === 'Object' && !visited[_.util.objId(o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, null, visited);
+					}
+					else if (_.util.type(o[i]) === 'Array' && !visited[_.util.objId(o[i])]) {
+						visited[_.util.objId(o[i])] = true;
+						_.languages.DFS(o[i], callback, i, visited);
+					}
+				}
+			}
+		}
+	},
+	plugins: {},
+
+	highlightAll: function(async, callback) {
+		var env = {
+			callback: callback,
+			selector: 'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'
+		};
+
+		_.hooks.run("before-highlightall", env);
+
+		var elements = env.elements || document.querySelectorAll(env.selector);
+
+		for (var i=0, element; element = elements[i++];) {
+			_.highlightElement(element, async === true, env.callback);
+		}
+	},
+
+	highlightElement: function(element, async, callback) {
+		// Find language
+		var language, grammar, parent = element;
+
+		while (parent && !lang.test(parent.className)) {
+			parent = parent.parentNode;
+		}
+
+		if (parent) {
+			language = (parent.className.match(lang) || [,''])[1].toLowerCase();
+			grammar = _.languages[language];
+		}
+
+		// Set language on the element, if not present
+		element.className = element.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+
+		if (element.parentNode) {
+			// Set language on the parent, for styling
+			parent = element.parentNode;
+
+			if (/pre/i.test(parent.nodeName)) {
+				parent.className = parent.className.replace(lang, '').replace(/\s+/g, ' ') + ' language-' + language;
+			}
+		}
+
+		var code = element.textContent;
+
+		var env = {
+			element: element,
+			language: language,
+			grammar: grammar,
+			code: code
+		};
+
+		_.hooks.run('before-sanity-check', env);
+
+		if (!env.code || !env.grammar) {
+			if (env.code) {
+				_.hooks.run('before-highlight', env);
+				env.element.textContent = env.code;
+				_.hooks.run('after-highlight', env);
+			}
+			_.hooks.run('complete', env);
+			return;
+		}
+
+		_.hooks.run('before-highlight', env);
+
+		if (async && _self.Worker) {
+			var worker = new Worker(_.filename);
+
+			worker.onmessage = function(evt) {
+				env.highlightedCode = evt.data;
+
+				_.hooks.run('before-insert', env);
+
+				env.element.innerHTML = env.highlightedCode;
+
+				callback && callback.call(env.element);
+				_.hooks.run('after-highlight', env);
+				_.hooks.run('complete', env);
+			};
+
+			worker.postMessage(JSON.stringify({
+				language: env.language,
+				code: env.code,
+				immediateClose: true
+			}));
+		}
+		else {
+			env.highlightedCode = _.highlight(env.code, env.grammar, env.language);
+
+			_.hooks.run('before-insert', env);
+
+			env.element.innerHTML = env.highlightedCode;
+
+			callback && callback.call(element);
+
+			_.hooks.run('after-highlight', env);
+			_.hooks.run('complete', env);
+		}
+	},
+
+	highlight: function (text, grammar, language) {
+		var tokens = _.tokenize(text, grammar);
+		return Token.stringify(_.util.encode(tokens), language);
+	},
+
+	matchGrammar: function (text, strarr, grammar, index, startPos, oneshot, target) {
+		var Token = _.Token;
+
+		for (var token in grammar) {
+			if(!grammar.hasOwnProperty(token) || !grammar[token]) {
+				continue;
+			}
+
+			if (token == target) {
+				return;
+			}
+
+			var patterns = grammar[token];
+			patterns = (_.util.type(patterns) === "Array") ? patterns : [patterns];
+
+			for (var j = 0; j < patterns.length; ++j) {
+				var pattern = patterns[j],
+					inside = pattern.inside,
+					lookbehind = !!pattern.lookbehind,
+					greedy = !!pattern.greedy,
+					lookbehindLength = 0,
+					alias = pattern.alias;
+
+				if (greedy && !pattern.pattern.global) {
+					// Without the global flag, lastIndex won't work
+					var flags = pattern.pattern.toString().match(/[imuy]*$/)[0];
+					pattern.pattern = RegExp(pattern.pattern.source, flags + "g");
+				}
+
+				pattern = pattern.pattern || pattern;
+
+				// Don’t cache length as it changes during the loop
+				for (var i = index, pos = startPos; i < strarr.length; pos += strarr[i].length, ++i) {
+
+					var str = strarr[i];
+
+					if (strarr.length > text.length) {
+						// Something went terribly wrong, ABORT, ABORT!
+						return;
+					}
+
+					if (str instanceof Token) {
+						continue;
+					}
+
+					pattern.lastIndex = 0;
+
+					var match = pattern.exec(str),
+					    delNum = 1;
+
+					// Greedy patterns can override/remove up to two previously matched tokens
+					if (!match && greedy && i != strarr.length - 1) {
+						pattern.lastIndex = pos;
+						match = pattern.exec(text);
+						if (!match) {
+							break;
+						}
+
+						var from = match.index + (lookbehind ? match[1].length : 0),
+						    to = match.index + match[0].length,
+						    k = i,
+						    p = pos;
+
+						for (var len = strarr.length; k < len && (p < to || (!strarr[k].type && !strarr[k - 1].greedy)); ++k) {
+							p += strarr[k].length;
+							// Move the index i to the element in strarr that is closest to from
+							if (from >= p) {
+								++i;
+								pos = p;
+							}
+						}
+
+						/*
+						 * If strarr[i] is a Token, then the match starts inside another Token, which is invalid
+						 * If strarr[k - 1] is greedy we are in conflict with another greedy pattern
+						 */
+						if (strarr[i] instanceof Token || strarr[k - 1].greedy) {
+							continue;
+						}
+
+						// Number of tokens to delete and replace with the new match
+						delNum = k - i;
+						str = text.slice(pos, p);
+						match.index -= pos;
+					}
+
+					if (!match) {
+						if (oneshot) {
+							break;
+						}
+
+						continue;
+					}
+
+					if(lookbehind) {
+						lookbehindLength = match[1].length;
+					}
+
+					var from = match.index + lookbehindLength,
+					    match = match[0].slice(lookbehindLength),
+					    to = from + match.length,
+					    before = str.slice(0, from),
+					    after = str.slice(to);
+
+					var args = [i, delNum];
+
+					if (before) {
+						++i;
+						pos += before.length;
+						args.push(before);
+					}
+
+					var wrapped = new Token(token, inside? _.tokenize(match, inside) : match, alias, match, greedy);
+
+					args.push(wrapped);
+
+					if (after) {
+						args.push(after);
+					}
+
+					Array.prototype.splice.apply(strarr, args);
+
+					if (delNum != 1)
+						_.matchGrammar(text, strarr, grammar, i, pos, true, token);
+
+					if (oneshot)
+						break;
+				}
+			}
+		}
+	},
+
+	tokenize: function(text, grammar, language) {
+		var strarr = [text];
+
+		var rest = grammar.rest;
+
+		if (rest) {
+			for (var token in rest) {
+				grammar[token] = rest[token];
+			}
+
+			delete grammar.rest;
+		}
+
+		_.matchGrammar(text, strarr, grammar, 0, 0, false);
+
+		return strarr;
+	},
+
+	hooks: {
+		all: {},
+
+		add: function (name, callback) {
+			var hooks = _.hooks.all;
+
+			hooks[name] = hooks[name] || [];
+
+			hooks[name].push(callback);
+		},
+
+		run: function (name, env) {
+			var callbacks = _.hooks.all[name];
+
+			if (!callbacks || !callbacks.length) {
+				return;
+			}
+
+			for (var i=0, callback; callback = callbacks[i++];) {
+				callback(env);
+			}
+		}
+	}
+};
+
+var Token = _.Token = function(type, content, alias, matchedStr, greedy) {
+	this.type = type;
+	this.content = content;
+	this.alias = alias;
+	// Copy of the full string this token was created from
+	this.length = (matchedStr || "").length|0;
+	this.greedy = !!greedy;
+};
+
+Token.stringify = function(o, language, parent) {
+	if (typeof o == 'string') {
+		return o;
+	}
+
+	if (_.util.type(o) === 'Array') {
+		return o.map(function(element) {
+			return Token.stringify(element, language, o);
+		}).join('');
+	}
+
+	var env = {
+		type: o.type,
+		content: Token.stringify(o.content, language, parent),
+		tag: 'span',
+		classes: ['token', o.type],
+		attributes: {},
+		language: language,
+		parent: parent
+	};
+
+	if (o.alias) {
+		var aliases = _.util.type(o.alias) === 'Array' ? o.alias : [o.alias];
+		Array.prototype.push.apply(env.classes, aliases);
+	}
+
+	_.hooks.run('wrap', env);
+
+	var attributes = Object.keys(env.attributes).map(function(name) {
+		return name + '="' + (env.attributes[name] || '').replace(/"/g, '&quot;') + '"';
+	}).join(' ');
+
+	return '<' + env.tag + ' class="' + env.classes.join(' ') + '"' + (attributes ? ' ' + attributes : '') + '>' + env.content + '</' + env.tag + '>';
+
+};
+
+if (!_self.document) {
+	if (!_self.addEventListener) {
+		// in Node.js
+		return _self.Prism;
+	}
+
+	if (!_.disableWorkerMessageHandler) {
+		// In worker
+		_self.addEventListener('message', function (evt) {
+			var message = JSON.parse(evt.data),
+				lang = message.language,
+				code = message.code,
+				immediateClose = message.immediateClose;
+
+			_self.postMessage(_.highlight(code, _.languages[lang], lang));
+			if (immediateClose) {
+				_self.close();
+			}
+		}, false);
+	}
+
+	return _self.Prism;
+}
+
+//Get current script and highlight
+var script = document.currentScript || [].slice.call(document.getElementsByTagName("script")).pop();
+
+if (script) {
+	_.filename = script.src;
+
+	if (!_.manual && !script.hasAttribute('data-manual')) {
+		if(document.readyState !== "loading") {
+			if (window.requestAnimationFrame) {
+				window.requestAnimationFrame(_.highlightAll);
+			} else {
+				window.setTimeout(_.highlightAll, 16);
+			}
+		}
+		else {
+			document.addEventListener('DOMContentLoaded', _.highlightAll);
+		}
+	}
+}
+
+return _self.Prism;
+
+})();
+
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = Prism;
+}
+
+// hack for components to work correctly in node.js
+if (typeof global !== 'undefined') {
+	global.Prism = Prism;
+}
+
+
+/* **********************************************
+     Begin prism-markup.js
+********************************************** */
+
+Prism.languages.markup = {
+	'comment': /<!--[\s\S]*?-->/,
+	'prolog': /<\?[\s\S]+?\?>/,
+	'doctype': /<!DOCTYPE[\s\S]+?>/i,
+	'cdata': /<!\[CDATA\[[\s\S]*?]]>/i,
+	'tag': {
+		pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+))?)*\s*\/?>/i,
+		inside: {
+			'tag': {
+				pattern: /^<\/?[^\s>\/]+/i,
+				inside: {
+					'punctuation': /^<\/?/,
+					'namespace': /^[^\s>\/:]+:/
+				}
+			},
+			'attr-value': {
+				pattern: /=(?:("|')(?:\\[\s\S]|(?!\1)[^\\])*\1|[^\s'">=]+)/i,
+				inside: {
+					'punctuation': [
+						/^=/,
+						{
+							pattern: /(^|[^\\])["']/,
+							lookbehind: true
+						}
+					]
+				}
+			},
+			'punctuation': /\/?>/,
+			'attr-name': {
+				pattern: /[^\s>\/]+/,
+				inside: {
+					'namespace': /^[^\s>\/:]+:/
+				}
+			}
+
+		}
+	},
+	'entity': /&#?[\da-z]{1,8};/i
+};
+
+Prism.languages.markup['tag'].inside['attr-value'].inside['entity'] =
+	Prism.languages.markup['entity'];
+
+// Plugin to make entity title show the real entity, idea by Roman Komarov
+Prism.hooks.add('wrap', function(env) {
+
+	if (env.type === 'entity') {
+		env.attributes['title'] = env.content.replace(/&amp;/, '&');
+	}
+});
+
+Prism.languages.xml = Prism.languages.markup;
+Prism.languages.html = Prism.languages.markup;
+Prism.languages.mathml = Prism.languages.markup;
+Prism.languages.svg = Prism.languages.markup;
+
+
+/* **********************************************
+     Begin prism-css.js
+********************************************** */
+
+Prism.languages.css = {
+	'comment': /\/\*[\s\S]*?\*\//,
+	'atrule': {
+		pattern: /@[\w-]+?.*?(?:;|(?=\s*\{))/i,
+		inside: {
+			'rule': /@[\w-]+/
+			// See rest below
+		}
+	},
+	'url': /url\((?:(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,
+	'selector': /[^{}\s][^{};]*?(?=\s*\{)/,
+	'string': {
+		pattern: /("|')(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		greedy: true
+	},
+	'property': /[\w-]+(?=\s*:)/i,
+	'important': /\B!important\b/i,
+	'function': /[-a-z0-9]+(?=\()/i,
+	'punctuation': /[(){};:]/
+};
+
+Prism.languages.css['atrule'].inside.rest = Prism.util.clone(Prism.languages.css);
+
+if (Prism.languages.markup) {
+	Prism.languages.insertBefore('markup', 'tag', {
+		'style': {
+			pattern: /(<style[\s\S]*?>)[\s\S]*?(?=<\/style>)/i,
+			lookbehind: true,
+			inside: Prism.languages.css,
+			alias: 'language-css'
+		}
+	});
+	
+	Prism.languages.insertBefore('inside', 'attr-value', {
+		'style-attr': {
+			pattern: /\s*style=("|')(?:\\[\s\S]|(?!\1)[^\\])*\1/i,
+			inside: {
+				'attr-name': {
+					pattern: /^\s*style/i,
+					inside: Prism.languages.markup.tag.inside
+				},
+				'punctuation': /^\s*=\s*['"]|['"]\s*$/,
+				'attr-value': {
+					pattern: /.+/i,
+					inside: Prism.languages.css
+				}
+			},
+			alias: 'language-css'
+		}
+	}, Prism.languages.markup.tag);
+}
+
+/* **********************************************
+     Begin prism-clike.js
+********************************************** */
+
+Prism.languages.clike = {
+	'comment': [
+		{
+			pattern: /(^|[^\\])\/\*[\s\S]*?(?:\*\/|$)/,
+			lookbehind: true
+		},
+		{
+			pattern: /(^|[^\\:])\/\/.*/,
+			lookbehind: true
+		}
+	],
+	'string': {
+		pattern: /(["'])(?:\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,
+		greedy: true
+	},
+	'class-name': {
+		pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[\w.\\]+/i,
+		lookbehind: true,
+		inside: {
+			punctuation: /[.\\]/
+		}
+	},
+	'keyword': /\b(?:if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,
+	'boolean': /\b(?:true|false)\b/,
+	'function': /[a-z0-9_]+(?=\()/i,
+	'number': /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,
+	'operator': /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,
+	'punctuation': /[{}[\];(),.:]/
+};
+
+
+/* **********************************************
+     Begin prism-javascript.js
+********************************************** */
+
+Prism.languages.javascript = Prism.languages.extend('clike', {
+	'keyword': /\b(?:as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,
+	'number': /\b-?(?:0[xX][\dA-Fa-f]+|0[bB][01]+|0[oO][0-7]+|\d*\.?\d+(?:[Ee][+-]?\d+)?|NaN|Infinity)\b/,
+	// Allow for all non-ASCII characters (See http://stackoverflow.com/a/2008444)
+	'function': /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*\()/i,
+	'operator': /-[-=]?|\+[+=]?|!=?=?|<<?=?|>>?>?=?|=(?:==?|>)?|&[&=]?|\|[|=]?|\*\*?=?|\/=?|~|\^=?|%=?|\?|\.{3}/
+});
+
+Prism.languages.insertBefore('javascript', 'keyword', {
+	'regex': {
+		pattern: /(^|[^/])\/(?!\/)(\[[^\]\r\n]+]|\\.|[^/\\\[\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,
+		lookbehind: true,
+		greedy: true
+	},
+	// This must be declared before keyword because we use "function" inside the look-forward
+	'function-variable': {
+		pattern: /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\s*=\s*(?:function\b|(?:\([^()]*\)|[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*)\s*=>))/i,
+		alias: 'function'
+	}
+});
+
+Prism.languages.insertBefore('javascript', 'string', {
+	'template-string': {
+		pattern: /`(?:\\[\s\S]|[^\\`])*`/,
+		greedy: true,
+		inside: {
+			'interpolation': {
+				pattern: /\$\{[^}]+\}/,
+				inside: {
+					'interpolation-punctuation': {
+						pattern: /^\$\{|\}$/,
+						alias: 'punctuation'
+					},
+					rest: Prism.languages.javascript
+				}
+			},
+			'string': /[\s\S]+/
+		}
+	}
+});
+
+if (Prism.languages.markup) {
+	Prism.languages.insertBefore('markup', 'tag', {
+		'script': {
+			pattern: /(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i,
+			lookbehind: true,
+			inside: Prism.languages.javascript,
+			alias: 'language-javascript'
+		}
+	});
+}
+
+Prism.languages.js = Prism.languages.javascript;
+
+
+/* **********************************************
+     Begin prism-file-highlight.js
+********************************************** */
+
+(function () {
+	if (typeof self === 'undefined' || !self.Prism || !self.document || !document.querySelector) {
+		return;
+	}
+
+	self.Prism.fileHighlight = function() {
+
+		var Extensions = {
+			'js': 'javascript',
+			'py': 'python',
+			'rb': 'ruby',
+			'ps1': 'powershell',
+			'psm1': 'powershell',
+			'sh': 'bash',
+			'bat': 'batch',
+			'h': 'c',
+			'tex': 'latex'
+		};
+
+		Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+			var src = pre.getAttribute('data-src');
+
+			var language, parent = pre;
+			var lang = /\blang(?:uage)?-(?!\*)(\w+)\b/i;
+			while (parent && !lang.test(parent.className)) {
+				parent = parent.parentNode;
+			}
+
+			if (parent) {
+				language = (pre.className.match(lang) || [, ''])[1];
+			}
+
+			if (!language) {
+				var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+				language = Extensions[extension] || extension;
+			}
+
+			var code = document.createElement('code');
+			code.className = 'language-' + language;
+
+			pre.textContent = '';
+
+			code.textContent = 'Loading…';
+
+			pre.appendChild(code);
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.open('GET', src, true);
+
+			xhr.onreadystatechange = function () {
+				if (xhr.readyState == 4) {
+
+					if (xhr.status < 400 && xhr.responseText) {
+						code.textContent = xhr.responseText;
+
+						Prism.highlightElement(code);
+					}
+					else if (xhr.status >= 400) {
+						code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+					}
+					else {
+						code.textContent = '✖ Error: File does not exist or is empty';
+					}
+				}
+			};
+
+			xhr.send(null);
+		});
+
+	};
+
+	document.addEventListener('DOMContentLoaded', self.Prism.fileHighlight);
+
+})();
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6)))
+
+/***/ }),
+
+/***/ 194:
+/***/ (function(module, exports) {
+
+(function(){
+	if (typeof self === 'undefined' || !self.Prism || !self.document) {
+		return;
+	}
+
+	var callbacks = [];
+	var map = {};
+	var noop = function() {};
+
+	Prism.plugins.toolbar = {};
+
+	/**
+	 * Register a button callback with the toolbar.
+	 *
+	 * @param {string} key
+	 * @param {Object|Function} opts
+	 */
+	var registerButton = Prism.plugins.toolbar.registerButton = function (key, opts) {
+		var callback;
+
+		if (typeof opts === 'function') {
+			callback = opts;
+		} else {
+			callback = function (env) {
+				var element;
+
+				if (typeof opts.onClick === 'function') {
+					element = document.createElement('button');
+					element.type = 'button';
+					element.addEventListener('click', function () {
+						opts.onClick.call(this, env);
+					});
+				} else if (typeof opts.url === 'string') {
+					element = document.createElement('a');
+					element.href = opts.url;
+				} else {
+					element = document.createElement('span');
+				}
+
+				element.textContent = opts.text;
+
+				return element;
+			};
+		}
+
+		callbacks.push(map[key] = callback);
+	};
+
+	/**
+	 * Post-highlight Prism hook callback.
+	 *
+	 * @param env
+	 */
+	var hook = Prism.plugins.toolbar.hook = function (env) {
+		// Check if inline or actual code block (credit to line-numbers plugin)
+		var pre = env.element.parentNode;
+		if (!pre || !/pre/i.test(pre.nodeName)) {
+			return;
+		}
+
+		// Autoloader rehighlights, so only do this once.
+		if (pre.classList.contains('code-toolbar')) {
+			return;
+		}
+
+		pre.classList.add('code-toolbar');
+
+		// Setup the toolbar
+		var toolbar = document.createElement('div');
+		toolbar.classList.add('toolbar');
+
+		if (document.body.hasAttribute('data-toolbar-order')) {
+			callbacks = document.body.getAttribute('data-toolbar-order').split(',').map(function(key) {
+				return map[key] || noop;
+			});
+		}
+
+		callbacks.forEach(function(callback) {
+			var element = callback(env);
+
+			if (!element) {
+				return;
+			}
+
+			var item = document.createElement('div');
+			item.classList.add('toolbar-item');
+
+			item.appendChild(element);
+			toolbar.appendChild(item);
+		});
+
+		// Add our toolbar to the <pre> tag
+		pre.appendChild(toolbar);
+	};
+
+	registerButton('label', function(env) {
+		var pre = env.element.parentNode;
+		if (!pre || !/pre/i.test(pre.nodeName)) {
+			return;
+		}
+
+		if (!pre.hasAttribute('data-label')) {
+			return;
+		}
+
+		var element, template;
+		var text = pre.getAttribute('data-label');
+		try {
+			// Any normal text will blow up this selector.
+			template = document.querySelector('template#' + text);
+		} catch (e) {}
+
+		if (template) {
+			element = template.content;
+		} else {
+			if (pre.hasAttribute('data-url')) {
+				element = document.createElement('a');
+				element.href = pre.getAttribute('data-url');
+			} else {
+				element = document.createElement('span');
+			}
+
+			element.textContent = text;
+		}
+
+		return element;
+	});
+
+	/**
+	 * Register the toolbar with Prism.
+	 */
+	Prism.hooks.add('complete', hook);
+})();
+
+
+/***/ }),
+
+/***/ 195:
+/***/ (function(module, exports, __webpack_require__) {
+
+(function(){
+	if (typeof self === 'undefined' || !self.Prism || !self.document) {
+		return;
+	}
+
+	if (!Prism.plugins.toolbar) {
+		console.warn('Copy to Clipboard plugin loaded before Toolbar plugin.');
+
+		return;
+	}
+
+	var Clipboard = window.Clipboard || undefined;
+
+	if (/(native code)/.test(Clipboard.toString())) {
+		Clipboard = undefined;
+	}
+
+	if (!Clipboard && "function" === 'function') {
+		Clipboard = __webpack_require__(196);
+	}
+
+	var callbacks = [];
+
+	if (!Clipboard) {
+		var script = document.createElement('script');
+		var head = document.querySelector('head');
+
+		script.onload = function() {
+			Clipboard = window.Clipboard;
+
+			if (Clipboard) {
+				while (callbacks.length) {
+					callbacks.pop()();
+				}
+			}
+		};
+
+		script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.8/clipboard.min.js';
+		head.appendChild(script);
+	}
+
+	Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
+		var linkCopy = document.createElement('a');
+		linkCopy.textContent = 'Copy';
+
+		if (!Clipboard) {
+			callbacks.push(registerClipboard);
+		} else {
+			registerClipboard();
+		}
+
+		return linkCopy;
+
+		function registerClipboard() {
+			var clip = new Clipboard(linkCopy, {
+				'text': function () {
+					return env.code;
+				}
+			});
+
+			clip.on('success', function() {
+				linkCopy.textContent = 'Copied!';
+
+				resetText();
+			});
+			clip.on('error', function () {
+				linkCopy.textContent = 'Press Ctrl+C to copy';
+
+				resetText();
+			});
+		}
+
+		function resetText() {
+			setTimeout(function () {
+				linkCopy.textContent = 'Copy';
+			}, 5000);
+		}
+	});
+})();
+
+
+/***/ }),
+
+/***/ 196:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(197), __webpack_require__(199), __webpack_require__(200)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if (typeof exports !== "undefined") {
+        factory(module, require('./clipboard-action'), require('tiny-emitter'), require('good-listener'));
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory(mod, global.clipboardAction, global.tinyEmitter, global.goodListener);
+        global.clipboard = mod.exports;
+    }
+})(this, function (module, _clipboardAction, _tinyEmitter, _goodListener) {
+    'use strict';
+
+    var _clipboardAction2 = _interopRequireDefault(_clipboardAction);
+
+    var _tinyEmitter2 = _interopRequireDefault(_tinyEmitter);
+
+    var _goodListener2 = _interopRequireDefault(_goodListener);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+        return typeof obj;
+    } : function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _createClass = function () {
+        function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+
+        return function (Constructor, protoProps, staticProps) {
+            if (protoProps) defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) defineProperties(Constructor, staticProps);
+            return Constructor;
+        };
+    }();
+
+    function _possibleConstructorReturn(self, call) {
+        if (!self) {
+            throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+        }
+
+        return call && (typeof call === "object" || typeof call === "function") ? call : self;
+    }
+
+    function _inherits(subClass, superClass) {
+        if (typeof superClass !== "function" && superClass !== null) {
+            throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+        }
+
+        subClass.prototype = Object.create(superClass && superClass.prototype, {
+            constructor: {
+                value: subClass,
+                enumerable: false,
+                writable: true,
+                configurable: true
+            }
+        });
+        if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+    }
+
+    var Clipboard = function (_Emitter) {
+        _inherits(Clipboard, _Emitter);
+
+        /**
+         * @param {String|HTMLElement|HTMLCollection|NodeList} trigger
+         * @param {Object} options
+         */
+        function Clipboard(trigger, options) {
+            _classCallCheck(this, Clipboard);
+
+            var _this = _possibleConstructorReturn(this, (Clipboard.__proto__ || Object.getPrototypeOf(Clipboard)).call(this));
+
+            _this.resolveOptions(options);
+            _this.listenClick(trigger);
+            return _this;
+        }
+
+        /**
+         * Defines if attributes would be resolved using internal setter functions
+         * or custom functions that were passed in the constructor.
+         * @param {Object} options
+         */
+
+
+        _createClass(Clipboard, [{
+            key: 'resolveOptions',
+            value: function resolveOptions() {
+                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                this.action = typeof options.action === 'function' ? options.action : this.defaultAction;
+                this.target = typeof options.target === 'function' ? options.target : this.defaultTarget;
+                this.text = typeof options.text === 'function' ? options.text : this.defaultText;
+                this.container = _typeof(options.container) === 'object' ? options.container : document.body;
+            }
+        }, {
+            key: 'listenClick',
+            value: function listenClick(trigger) {
+                var _this2 = this;
+
+                this.listener = (0, _goodListener2.default)(trigger, 'click', function (e) {
+                    return _this2.onClick(e);
+                });
+            }
+        }, {
+            key: 'onClick',
+            value: function onClick(e) {
+                var trigger = e.delegateTarget || e.currentTarget;
+
+                if (this.clipboardAction) {
+                    this.clipboardAction = null;
+                }
+
+                this.clipboardAction = new _clipboardAction2.default({
+                    action: this.action(trigger),
+                    target: this.target(trigger),
+                    text: this.text(trigger),
+                    container: this.container,
+                    trigger: trigger,
+                    emitter: this
+                });
+            }
+        }, {
+            key: 'defaultAction',
+            value: function defaultAction(trigger) {
+                return getAttributeValue('action', trigger);
+            }
+        }, {
+            key: 'defaultTarget',
+            value: function defaultTarget(trigger) {
+                var selector = getAttributeValue('target', trigger);
+
+                if (selector) {
+                    return document.querySelector(selector);
+                }
+            }
+        }, {
+            key: 'defaultText',
+            value: function defaultText(trigger) {
+                return getAttributeValue('text', trigger);
+            }
+        }, {
+            key: 'destroy',
+            value: function destroy() {
+                this.listener.destroy();
+
+                if (this.clipboardAction) {
+                    this.clipboardAction.destroy();
+                    this.clipboardAction = null;
+                }
+            }
+        }], [{
+            key: 'isSupported',
+            value: function isSupported() {
+                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : ['copy', 'cut'];
+
+                var actions = typeof action === 'string' ? [action] : action;
+                var support = !!document.queryCommandSupported;
+
+                actions.forEach(function (action) {
+                    support = support && !!document.queryCommandSupported(action);
+                });
+
+                return support;
+            }
+        }]);
+
+        return Clipboard;
+    }(_tinyEmitter2.default);
+
+    /**
+     * Helper function to retrieve attribute value.
+     * @param {String} suffix
+     * @param {Element} element
+     */
+    function getAttributeValue(suffix, element) {
+        var attribute = 'data-clipboard-' + suffix;
+
+        if (!element.hasAttribute(attribute)) {
+            return;
+        }
+
+        return element.getAttribute(attribute);
+    }
+
+    module.exports = Clipboard;
+});
+
+/***/ }),
+
+/***/ 197:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;(function (global, factory) {
+    if (true) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [module, __webpack_require__(198)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if (typeof exports !== "undefined") {
+        factory(module, require('select'));
+    } else {
+        var mod = {
+            exports: {}
+        };
+        factory(mod, global.select);
+        global.clipboardAction = mod.exports;
+    }
+})(this, function (module, _select) {
+    'use strict';
+
+    var _select2 = _interopRequireDefault(_select);
+
+    function _interopRequireDefault(obj) {
+        return obj && obj.__esModule ? obj : {
+            default: obj
+        };
+    }
+
+    var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+        return typeof obj;
+    } : function (obj) {
+        return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+
+    function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+            throw new TypeError("Cannot call a class as a function");
+        }
+    }
+
+    var _createClass = function () {
+        function defineProperties(target, props) {
+            for (var i = 0; i < props.length; i++) {
+                var descriptor = props[i];
+                descriptor.enumerable = descriptor.enumerable || false;
+                descriptor.configurable = true;
+                if ("value" in descriptor) descriptor.writable = true;
+                Object.defineProperty(target, descriptor.key, descriptor);
+            }
+        }
+
+        return function (Constructor, protoProps, staticProps) {
+            if (protoProps) defineProperties(Constructor.prototype, protoProps);
+            if (staticProps) defineProperties(Constructor, staticProps);
+            return Constructor;
+        };
+    }();
+
+    var ClipboardAction = function () {
+        /**
+         * @param {Object} options
+         */
+        function ClipboardAction(options) {
+            _classCallCheck(this, ClipboardAction);
+
+            this.resolveOptions(options);
+            this.initSelection();
+        }
+
+        /**
+         * Defines base properties passed from constructor.
+         * @param {Object} options
+         */
+
+
+        _createClass(ClipboardAction, [{
+            key: 'resolveOptions',
+            value: function resolveOptions() {
+                var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+                this.action = options.action;
+                this.container = options.container;
+                this.emitter = options.emitter;
+                this.target = options.target;
+                this.text = options.text;
+                this.trigger = options.trigger;
+
+                this.selectedText = '';
+            }
+        }, {
+            key: 'initSelection',
+            value: function initSelection() {
+                if (this.text) {
+                    this.selectFake();
+                } else if (this.target) {
+                    this.selectTarget();
+                }
+            }
+        }, {
+            key: 'selectFake',
+            value: function selectFake() {
+                var _this = this;
+
+                var isRTL = document.documentElement.getAttribute('dir') == 'rtl';
+
+                this.removeFake();
+
+                this.fakeHandlerCallback = function () {
+                    return _this.removeFake();
+                };
+                this.fakeHandler = this.container.addEventListener('click', this.fakeHandlerCallback) || true;
+
+                this.fakeElem = document.createElement('textarea');
+                // Prevent zooming on iOS
+                this.fakeElem.style.fontSize = '12pt';
+                // Reset box model
+                this.fakeElem.style.border = '0';
+                this.fakeElem.style.padding = '0';
+                this.fakeElem.style.margin = '0';
+                // Move element out of screen horizontally
+                this.fakeElem.style.position = 'absolute';
+                this.fakeElem.style[isRTL ? 'right' : 'left'] = '-9999px';
+                // Move element to the same position vertically
+                var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+                this.fakeElem.style.top = yPosition + 'px';
+
+                this.fakeElem.setAttribute('readonly', '');
+                this.fakeElem.value = this.text;
+
+                this.container.appendChild(this.fakeElem);
+
+                this.selectedText = (0, _select2.default)(this.fakeElem);
+                this.copyText();
+            }
+        }, {
+            key: 'removeFake',
+            value: function removeFake() {
+                if (this.fakeHandler) {
+                    this.container.removeEventListener('click', this.fakeHandlerCallback);
+                    this.fakeHandler = null;
+                    this.fakeHandlerCallback = null;
+                }
+
+                if (this.fakeElem) {
+                    this.container.removeChild(this.fakeElem);
+                    this.fakeElem = null;
+                }
+            }
+        }, {
+            key: 'selectTarget',
+            value: function selectTarget() {
+                this.selectedText = (0, _select2.default)(this.target);
+                this.copyText();
+            }
+        }, {
+            key: 'copyText',
+            value: function copyText() {
+                var succeeded = void 0;
+
+                try {
+                    succeeded = document.execCommand(this.action);
+                } catch (err) {
+                    succeeded = false;
+                }
+
+                this.handleResult(succeeded);
+            }
+        }, {
+            key: 'handleResult',
+            value: function handleResult(succeeded) {
+                this.emitter.emit(succeeded ? 'success' : 'error', {
+                    action: this.action,
+                    text: this.selectedText,
+                    trigger: this.trigger,
+                    clearSelection: this.clearSelection.bind(this)
+                });
+            }
+        }, {
+            key: 'clearSelection',
+            value: function clearSelection() {
+                if (this.trigger) {
+                    this.trigger.focus();
+                }
+
+                window.getSelection().removeAllRanges();
+            }
+        }, {
+            key: 'destroy',
+            value: function destroy() {
+                this.removeFake();
+            }
+        }, {
+            key: 'action',
+            set: function set() {
+                var action = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'copy';
+
+                this._action = action;
+
+                if (this._action !== 'copy' && this._action !== 'cut') {
+                    throw new Error('Invalid "action" value, use either "copy" or "cut"');
+                }
+            },
+            get: function get() {
+                return this._action;
+            }
+        }, {
+            key: 'target',
+            set: function set(target) {
+                if (target !== undefined) {
+                    if (target && (typeof target === 'undefined' ? 'undefined' : _typeof(target)) === 'object' && target.nodeType === 1) {
+                        if (this.action === 'copy' && target.hasAttribute('disabled')) {
+                            throw new Error('Invalid "target" attribute. Please use "readonly" instead of "disabled" attribute');
+                        }
+
+                        if (this.action === 'cut' && (target.hasAttribute('readonly') || target.hasAttribute('disabled'))) {
+                            throw new Error('Invalid "target" attribute. You can\'t cut text from elements with "readonly" or "disabled" attributes');
+                        }
+
+                        this._target = target;
+                    } else {
+                        throw new Error('Invalid "target" value, use a valid Element');
+                    }
+                }
+            },
+            get: function get() {
+                return this._target;
+            }
+        }]);
+
+        return ClipboardAction;
+    }();
+
+    module.exports = ClipboardAction;
+});
+
+/***/ }),
+
+/***/ 198:
+/***/ (function(module, exports) {
+
+function select(element) {
+    var selectedText;
+
+    if (element.nodeName === 'SELECT') {
+        element.focus();
+
+        selectedText = element.value;
+    }
+    else if (element.nodeName === 'INPUT' || element.nodeName === 'TEXTAREA') {
+        var isReadOnly = element.hasAttribute('readonly');
+
+        if (!isReadOnly) {
+            element.setAttribute('readonly', '');
+        }
+
+        element.select();
+        element.setSelectionRange(0, element.value.length);
+
+        if (!isReadOnly) {
+            element.removeAttribute('readonly');
+        }
+
+        selectedText = element.value;
+    }
+    else {
+        if (element.hasAttribute('contenteditable')) {
+            element.focus();
+        }
+
+        var selection = window.getSelection();
+        var range = document.createRange();
+
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+
+        selectedText = selection.toString();
+    }
+
+    return selectedText;
+}
+
+module.exports = select;
+
+
+/***/ }),
+
+/***/ 199:
+/***/ (function(module, exports) {
+
+function E () {
+  // Keep this empty so it's easier to inherit from
+  // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
+}
+
+E.prototype = {
+  on: function (name, callback, ctx) {
+    var e = this.e || (this.e = {});
+
+    (e[name] || (e[name] = [])).push({
+      fn: callback,
+      ctx: ctx
+    });
+
+    return this;
+  },
+
+  once: function (name, callback, ctx) {
+    var self = this;
+    function listener () {
+      self.off(name, listener);
+      callback.apply(ctx, arguments);
+    };
+
+    listener._ = callback
+    return this.on(name, listener, ctx);
+  },
+
+  emit: function (name) {
+    var data = [].slice.call(arguments, 1);
+    var evtArr = ((this.e || (this.e = {}))[name] || []).slice();
+    var i = 0;
+    var len = evtArr.length;
+
+    for (i; i < len; i++) {
+      evtArr[i].fn.apply(evtArr[i].ctx, data);
+    }
+
+    return this;
+  },
+
+  off: function (name, callback) {
+    var e = this.e || (this.e = {});
+    var evts = e[name];
+    var liveEvents = [];
+
+    if (evts && callback) {
+      for (var i = 0, len = evts.length; i < len; i++) {
+        if (evts[i].fn !== callback && evts[i].fn._ !== callback)
+          liveEvents.push(evts[i]);
+      }
+    }
+
+    // Remove event from queue to prevent memory leak
+    // Suggested by https://github.com/lazd
+    // Ref: https://github.com/scottcorgan/tiny-emitter/commit/c6ebfaa9bc973b33d110a84a307742b7cf94c953#commitcomment-5024910
+
+    (liveEvents.length)
+      ? e[name] = liveEvents
+      : delete e[name];
+
+    return this;
+  }
+};
+
+module.exports = E;
+
+
+/***/ }),
+
+/***/ 20:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.domReady = domReady;
+/**
+ * domReady
+ *
+ * Runs a callback function when the DOM is ready.
+ *
+ * Supported: IE8+
+ *
+ * @param {function} fn Callback for when the DOM is fully loaded.
+ */
+
+function domReady(fn) {
+  if (document.readyState != 'loading') {
+    fn();
+  } else if (document.addEventListener) {
+    document.addEventListener('DOMContentLoaded', fn);
+  } else {
+    document.attachEvent('onreadystatechange', function () {
+      if (document.readyState != 'loading') fn();
+    });
+  }
+}
+
+/***/ }),
+
+/***/ 200:
+/***/ (function(module, exports, __webpack_require__) {
+
+var is = __webpack_require__(201);
+var delegate = __webpack_require__(202);
+
+/**
+ * Validates all params and calls the right
+ * listener function based on its target type.
+ *
+ * @param {String|HTMLElement|HTMLCollection|NodeList} target
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listen(target, type, callback) {
+    if (!target && !type && !callback) {
+        throw new Error('Missing required arguments');
+    }
+
+    if (!is.string(type)) {
+        throw new TypeError('Second argument must be a String');
+    }
+
+    if (!is.fn(callback)) {
+        throw new TypeError('Third argument must be a Function');
+    }
+
+    if (is.node(target)) {
+        return listenNode(target, type, callback);
+    }
+    else if (is.nodeList(target)) {
+        return listenNodeList(target, type, callback);
+    }
+    else if (is.string(target)) {
+        return listenSelector(target, type, callback);
+    }
+    else {
+        throw new TypeError('First argument must be a String, HTMLElement, HTMLCollection, or NodeList');
+    }
+}
+
+/**
+ * Adds an event listener to a HTML element
+ * and returns a remove listener function.
+ *
+ * @param {HTMLElement} node
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listenNode(node, type, callback) {
+    node.addEventListener(type, callback);
+
+    return {
+        destroy: function() {
+            node.removeEventListener(type, callback);
+        }
+    }
+}
+
+/**
+ * Add an event listener to a list of HTML elements
+ * and returns a remove listener function.
+ *
+ * @param {NodeList|HTMLCollection} nodeList
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listenNodeList(nodeList, type, callback) {
+    Array.prototype.forEach.call(nodeList, function(node) {
+        node.addEventListener(type, callback);
+    });
+
+    return {
+        destroy: function() {
+            Array.prototype.forEach.call(nodeList, function(node) {
+                node.removeEventListener(type, callback);
+            });
+        }
+    }
+}
+
+/**
+ * Add an event listener to a selector
+ * and returns a remove listener function.
+ *
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Object}
+ */
+function listenSelector(selector, type, callback) {
+    return delegate(document.body, selector, type, callback);
+}
+
+module.exports = listen;
+
+
+/***/ }),
+
+/***/ 201:
+/***/ (function(module, exports) {
+
+/**
+ * Check if argument is a HTML element.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.node = function(value) {
+    return value !== undefined
+        && value instanceof HTMLElement
+        && value.nodeType === 1;
+};
+
+/**
+ * Check if argument is a list of HTML elements.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.nodeList = function(value) {
+    var type = Object.prototype.toString.call(value);
+
+    return value !== undefined
+        && (type === '[object NodeList]' || type === '[object HTMLCollection]')
+        && ('length' in value)
+        && (value.length === 0 || exports.node(value[0]));
+};
+
+/**
+ * Check if argument is a string.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.string = function(value) {
+    return typeof value === 'string'
+        || value instanceof String;
+};
+
+/**
+ * Check if argument is a function.
+ *
+ * @param {Object} value
+ * @return {Boolean}
+ */
+exports.fn = function(value) {
+    var type = Object.prototype.toString.call(value);
+
+    return type === '[object Function]';
+};
+
+
+/***/ }),
+
+/***/ 202:
+/***/ (function(module, exports, __webpack_require__) {
+
+var closest = __webpack_require__(203);
+
+/**
+ * Delegates event to a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @param {Boolean} useCapture
+ * @return {Object}
+ */
+function delegate(element, selector, type, callback, useCapture) {
+    var listenerFn = listener.apply(this, arguments);
+
+    element.addEventListener(type, listenerFn, useCapture);
+
+    return {
+        destroy: function() {
+            element.removeEventListener(type, listenerFn, useCapture);
+        }
+    }
+}
+
+/**
+ * Finds closest match and invokes callback.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @param {String} type
+ * @param {Function} callback
+ * @return {Function}
+ */
+function listener(element, selector, type, callback) {
+    return function(e) {
+        e.delegateTarget = closest(e.target, selector);
+
+        if (e.delegateTarget) {
+            callback.call(element, e);
+        }
+    }
+}
+
+module.exports = delegate;
+
+
+/***/ }),
+
+/***/ 203:
+/***/ (function(module, exports) {
+
+var DOCUMENT_NODE_TYPE = 9;
+
+/**
+ * A polyfill for Element.matches()
+ */
+if (typeof Element !== 'undefined' && !Element.prototype.matches) {
+    var proto = Element.prototype;
+
+    proto.matches = proto.matchesSelector ||
+                    proto.mozMatchesSelector ||
+                    proto.msMatchesSelector ||
+                    proto.oMatchesSelector ||
+                    proto.webkitMatchesSelector;
+}
+
+/**
+ * Finds the closest parent that matches a selector.
+ *
+ * @param {Element} element
+ * @param {String} selector
+ * @return {Function}
+ */
+function closest (element, selector) {
+    while (element && element.nodeType !== DOCUMENT_NODE_TYPE) {
+        if (typeof element.matches === 'function' &&
+            element.matches(selector)) {
+          return element;
+        }
+        element = element.parentNode;
+    }
+}
+
+module.exports = closest;
+
+
+/***/ }),
+
+/***/ 204:
+/***/ (function(module, exports) {
+
+(function() {
+
+var assign = Object.assign || function (obj1, obj2) {
+	for (var name in obj2) {
+		if (obj2.hasOwnProperty(name))
+			obj1[name] = obj2[name];
+	}
+	return obj1;
+}
+
+function NormalizeWhitespace(defaults) {
+	this.defaults = assign({}, defaults);
+}
+
+function toCamelCase(value) {
+	return value.replace(/-(\w)/g, function(match, firstChar) {
+		return firstChar.toUpperCase();
+	});
+}
+
+function tabLen(str) {
+	var res = 0;
+	for (var i = 0; i < str.length; ++i) {
+		if (str.charCodeAt(i) == '\t'.charCodeAt(0))
+			res += 3;
+	}
+	return str.length + res;
+}
+
+NormalizeWhitespace.prototype = {
+	setDefaults: function (defaults) {
+		this.defaults = assign(this.defaults, defaults);
+	},
+	normalize: function (input, settings) {
+		settings = assign(this.defaults, settings);
+
+		for (var name in settings) {
+			var methodName = toCamelCase(name);
+			if (name !== "normalize" && methodName !== 'setDefaults' &&
+					settings[name] && this[methodName]) {
+				input = this[methodName].call(this, input, settings[name]);
+			}
+		}
+
+		return input;
+	},
+
+	/*
+	 * Normalization methods
+	 */
+	leftTrim: function (input) {
+		return input.replace(/^\s+/, '');
+	},
+	rightTrim: function (input) {
+		return input.replace(/\s+$/, '');
+	},
+	tabsToSpaces: function (input, spaces) {
+		spaces = spaces|0 || 4;
+		return input.replace(/\t/g, new Array(++spaces).join(' '));
+	},
+	spacesToTabs: function (input, spaces) {
+		spaces = spaces|0 || 4;
+		return input.replace(new RegExp(' {' + spaces + '}', 'g'), '\t');
+	},
+	removeTrailing: function (input) {
+		return input.replace(/\s*?$/gm, '');
+	},
+	// Support for deprecated plugin remove-initial-line-feed
+	removeInitialLineFeed: function (input) {
+		return input.replace(/^(?:\r?\n|\r)/, '');
+	},
+	removeIndent: function (input) {
+		var indents = input.match(/^[^\S\n\r]*(?=\S)/gm);
+
+		if (!indents || !indents[0].length)
+			return input;
+
+		indents.sort(function(a, b){return a.length - b.length; });
+
+		if (!indents[0].length)
+			return input;
+
+		return input.replace(new RegExp('^' + indents[0], 'gm'), '');
+	},
+	indent: function (input, tabs) {
+		return input.replace(/^[^\S\n\r]*(?=\S)/gm, new Array(++tabs).join('\t') + '$&');
+	},
+	breakLines: function (input, characters) {
+		characters = (characters === true) ? 80 : characters|0 || 80;
+
+		var lines = input.split('\n');
+		for (var i = 0; i < lines.length; ++i) {
+			if (tabLen(lines[i]) <= characters)
+				continue;
+
+			var line = lines[i].split(/(\s+)/g),
+			    len = 0;
+
+			for (var j = 0; j < line.length; ++j) {
+				var tl = tabLen(line[j]);
+				len += tl;
+				if (len > characters) {
+					line[j] = '\n' + line[j];
+					len = tl;
+				}
+			}
+			lines[i] = line.join('');
+		}
+		return lines.join('\n');
+	}
+};
+
+// Support node modules
+if (typeof module !== 'undefined' && module.exports) {
+	module.exports = NormalizeWhitespace;
+}
+
+// Exit if prism is not loaded
+if (typeof Prism === 'undefined') {
+	return;
+}
+
+Prism.plugins.NormalizeWhitespace = new NormalizeWhitespace({
+	'remove-trailing': true,
+	'remove-indent': true,
+	'left-trim': true,
+	'right-trim': true,
+	/*'break-lines': 80,
+	'indent': 2,
+	'remove-initial-line-feed': false,
+	'tabs-to-spaces': 4,
+	'spaces-to-tabs': 4*/
+});
+
+Prism.hooks.add('before-sanity-check', function (env) {
+	var Normalizer = Prism.plugins.NormalizeWhitespace;
+
+	// Check settings
+	if (env.settings && env.settings['whitespace-normalization'] === false) {
+		return;
+	}
+
+	// Simple mode if there is no env.element
+	if ((!env.element || !env.element.parentNode) && env.code) {
+		env.code = Normalizer.normalize(env.code, env.settings);
+		return;
+	}
+
+	// Normal mode
+	var pre = env.element.parentNode;
+	var clsReg = /\bno-whitespace-normalization\b/;
+	if (!env.code || !pre || pre.nodeName.toLowerCase() !== 'pre' ||
+			clsReg.test(pre.className) || clsReg.test(env.element.className))
+		return;
+
+	var children = pre.childNodes,
+	    before = '',
+	    after = '',
+	    codeFound = false;
+
+	// Move surrounding whitespace from the <pre> tag into the <code> tag
+	for (var i = 0; i < children.length; ++i) {
+		var node = children[i];
+
+		if (node == env.element) {
+			codeFound = true;
+		} else if (node.nodeName === "#text") {
+			if (codeFound) {
+				after += node.nodeValue;
+			} else {
+				before += node.nodeValue;
+			}
+
+			pre.removeChild(node);
+			--i;
+		}
+	}
+
+	if (!env.element.children.length || !Prism.plugins.KeepMarkup) {
+		env.code = before + env.code + after;
+		env.code = Normalizer.normalize(env.code, env.settings);
+	} else {
+		// Preserve markup for keep-markup plugin
+		var html = before + env.element.innerHTML + after;
+		env.element.innerHTML = Normalizer.normalize(html, env.settings);
+		env.code = env.element.textContent;
+	}
+});
+
+}());
+
+/***/ }),
+
+/***/ 205:
+/***/ (function(module, exports) {
+
+(function () {
+
+	if (typeof self === 'undefined' || !self.Prism || !self.document) {
+		return;
+	}
+
+	/**
+	 * Class name for <pre> which is activating the plugin
+	 * @type {String}
+	 */
+	var PLUGIN_CLASS = 'line-numbers';
+
+	/**
+	 * Resizes line numbers spans according to height of line of code
+	 * @param  {Element} element <pre> element
+	 */
+	var _resizeElement = function (element) {
+		var codeStyles = getStyles(element);
+		var whiteSpace = codeStyles['white-space'];
+
+		if (whiteSpace === 'pre-wrap' || whiteSpace === 'pre-line') {
+			var codeElement = element.querySelector('code');
+			var lineNumbersWrapper = element.querySelector('.line-numbers-rows');
+			var lineNumberSizer = element.querySelector('.line-numbers-sizer');
+			var codeLines = element.textContent.split('\n');
+
+			if (!lineNumberSizer) {
+				lineNumberSizer = document.createElement('span');
+				lineNumberSizer.className = 'line-numbers-sizer';
+
+				codeElement.appendChild(lineNumberSizer);
+			}
+
+			lineNumberSizer.style.display = 'block';
+
+			codeLines.forEach(function (line, lineNumber) {
+				lineNumberSizer.textContent = line || '\n';
+				var lineSize = lineNumberSizer.getBoundingClientRect().height;
+				lineNumbersWrapper.children[lineNumber].style.height = lineSize + 'px';
+			});
+
+			lineNumberSizer.textContent = '';
+			lineNumberSizer.style.display = 'none';
+		}
+	};
+
+	/**
+	 * Returns style declarations for the element
+	 * @param {Element} element
+	 */
+	var getStyles = function (element) {
+		if (!element) {
+			return null;
+		}
+
+		return window.getComputedStyle ? getComputedStyle(element) : (element.currentStyle || null);
+	};
+
+	window.addEventListener('resize', function () {
+		Array.prototype.forEach.call(document.querySelectorAll('pre.' + PLUGIN_CLASS), _resizeElement);
+	});
+
+	Prism.hooks.add('complete', function (env) {
+		if (!env.code) {
+			return;
+		}
+
+		// works only for <code> wrapped inside <pre> (not inline)
+		var pre = env.element.parentNode;
+		var clsReg = /\s*\bline-numbers\b\s*/;
+		if (
+			!pre || !/pre/i.test(pre.nodeName) ||
+			// Abort only if nor the <pre> nor the <code> have the class
+			(!clsReg.test(pre.className) && !clsReg.test(env.element.className))
+		) {
+			return;
+		}
+
+		if (env.element.querySelector(".line-numbers-rows")) {
+			// Abort if line numbers already exists
+			return;
+		}
+
+		if (clsReg.test(env.element.className)) {
+			// Remove the class "line-numbers" from the <code>
+			env.element.className = env.element.className.replace(clsReg, ' ');
+		}
+		if (!clsReg.test(pre.className)) {
+			// Add the class "line-numbers" to the <pre>
+			pre.className += ' line-numbers';
+		}
+
+		var match = env.code.match(/\n(?!$)/g);
+		var linesNum = match ? match.length + 1 : 1;
+		var lineNumbersWrapper;
+
+		var lines = new Array(linesNum + 1);
+		lines = lines.join('<span></span>');
+
+		lineNumbersWrapper = document.createElement('span');
+		lineNumbersWrapper.setAttribute('aria-hidden', 'true');
+		lineNumbersWrapper.className = 'line-numbers-rows';
+		lineNumbersWrapper.innerHTML = lines;
+
+		if (pre.hasAttribute('data-start')) {
+			pre.style.counterReset = 'linenumber ' + (parseInt(pre.getAttribute('data-start'), 10) - 1);
+		}
+
+		env.element.appendChild(lineNumbersWrapper);
+
+		_resizeElement(pre);
+	});
+
+}());
+
+/***/ }),
+
+/***/ 206:
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
+Turbolinks 5.0.3
+Copyright © 2017 Basecamp, LLC
+ */
+(function(){(function(){(function(){this.Turbolinks={supported:function(){return null!=window.history.pushState&&null!=window.requestAnimationFrame&&null!=window.addEventListener}(),visit:function(e,r){return t.controller.visit(e,r)},clearCache:function(){return t.controller.clearCache()}}}).call(this)}).call(this);var t=this.Turbolinks;(function(){(function(){var e,r,n=[].slice;t.copyObject=function(t){var e,r,n;r={};for(e in t)n=t[e],r[e]=n;return r},t.closest=function(t,r){return e.call(t,r)},e=function(){var t,e;return t=document.documentElement,null!=(e=t.closest)?e:function(t){var e;for(e=this;e;){if(e.nodeType===Node.ELEMENT_NODE&&r.call(e,t))return e;e=e.parentNode}}}(),t.defer=function(t){return setTimeout(t,1)},t.throttle=function(t){var e;return e=null,function(){var r;return r=1<=arguments.length?n.call(arguments,0):[],null!=e?e:e=requestAnimationFrame(function(n){return function(){return e=null,t.apply(n,r)}}(this))}},t.dispatch=function(t,e){var r,n,o,i,s;return i=null!=e?e:{},s=i.target,r=i.cancelable,n=i.data,o=document.createEvent("Events"),o.initEvent(t,!0,r===!0),o.data=null!=n?n:{},(null!=s?s:document).dispatchEvent(o),o},t.match=function(t,e){return r.call(t,e)},r=function(){var t,e,r,n;return t=document.documentElement,null!=(e=null!=(r=null!=(n=t.matchesSelector)?n:t.webkitMatchesSelector)?r:t.msMatchesSelector)?e:t.mozMatchesSelector}(),t.uuid=function(){var t,e,r;for(r="",t=e=1;36>=e;t=++e)r+=9===t||14===t||19===t||24===t?"-":15===t?"4":20===t?(Math.floor(4*Math.random())+8).toString(16):Math.floor(15*Math.random()).toString(16);return r}}).call(this),function(){t.Location=function(){function t(t){var e,r;null==t&&(t=""),r=document.createElement("a"),r.href=t.toString(),this.absoluteURL=r.href,e=r.hash.length,2>e?this.requestURL=this.absoluteURL:(this.requestURL=this.absoluteURL.slice(0,-e),this.anchor=r.hash.slice(1))}var e,r,n,o;return t.wrap=function(t){return t instanceof this?t:new this(t)},t.prototype.getOrigin=function(){return this.absoluteURL.split("/",3).join("/")},t.prototype.getPath=function(){var t,e;return null!=(t=null!=(e=this.absoluteURL.match(/\/\/[^\/]*(\/[^?;]*)/))?e[1]:void 0)?t:"/"},t.prototype.getPathComponents=function(){return this.getPath().split("/").slice(1)},t.prototype.getLastPathComponent=function(){return this.getPathComponents().slice(-1)[0]},t.prototype.getExtension=function(){var t,e;return null!=(t=null!=(e=this.getLastPathComponent().match(/\.[^.]*$/))?e[0]:void 0)?t:""},t.prototype.isHTML=function(){return this.getExtension().match(/^(?:|\.(?:htm|html|xhtml))$/)},t.prototype.isPrefixedBy=function(t){var e;return e=r(t),this.isEqualTo(t)||o(this.absoluteURL,e)},t.prototype.isEqualTo=function(t){return this.absoluteURL===(null!=t?t.absoluteURL:void 0)},t.prototype.toCacheKey=function(){return this.requestURL},t.prototype.toJSON=function(){return this.absoluteURL},t.prototype.toString=function(){return this.absoluteURL},t.prototype.valueOf=function(){return this.absoluteURL},r=function(t){return e(t.getOrigin()+t.getPath())},e=function(t){return n(t,"/")?t:t+"/"},o=function(t,e){return t.slice(0,e.length)===e},n=function(t,e){return t.slice(-e.length)===e},t}()}.call(this),function(){var e=function(t,e){return function(){return t.apply(e,arguments)}};t.HttpRequest=function(){function r(r,n,o){this.delegate=r,this.requestCanceled=e(this.requestCanceled,this),this.requestTimedOut=e(this.requestTimedOut,this),this.requestFailed=e(this.requestFailed,this),this.requestLoaded=e(this.requestLoaded,this),this.requestProgressed=e(this.requestProgressed,this),this.url=t.Location.wrap(n).requestURL,this.referrer=t.Location.wrap(o).absoluteURL,this.createXHR()}return r.NETWORK_FAILURE=0,r.TIMEOUT_FAILURE=-1,r.timeout=60,r.prototype.send=function(){var t;return this.xhr&&!this.sent?(this.notifyApplicationBeforeRequestStart(),this.setProgress(0),this.xhr.send(),this.sent=!0,"function"==typeof(t=this.delegate).requestStarted?t.requestStarted():void 0):void 0},r.prototype.cancel=function(){return this.xhr&&this.sent?this.xhr.abort():void 0},r.prototype.requestProgressed=function(t){return t.lengthComputable?this.setProgress(t.loaded/t.total):void 0},r.prototype.requestLoaded=function(){return this.endRequest(function(t){return function(){var e;return 200<=(e=t.xhr.status)&&300>e?t.delegate.requestCompletedWithResponse(t.xhr.responseText,t.xhr.getResponseHeader("Turbolinks-Location")):(t.failed=!0,t.delegate.requestFailedWithStatusCode(t.xhr.status,t.xhr.responseText))}}(this))},r.prototype.requestFailed=function(){return this.endRequest(function(t){return function(){return t.failed=!0,t.delegate.requestFailedWithStatusCode(t.constructor.NETWORK_FAILURE)}}(this))},r.prototype.requestTimedOut=function(){return this.endRequest(function(t){return function(){return t.failed=!0,t.delegate.requestFailedWithStatusCode(t.constructor.TIMEOUT_FAILURE)}}(this))},r.prototype.requestCanceled=function(){return this.endRequest()},r.prototype.notifyApplicationBeforeRequestStart=function(){return t.dispatch("turbolinks:request-start",{data:{url:this.url,xhr:this.xhr}})},r.prototype.notifyApplicationAfterRequestEnd=function(){return t.dispatch("turbolinks:request-end",{data:{url:this.url,xhr:this.xhr}})},r.prototype.createXHR=function(){return this.xhr=new XMLHttpRequest,this.xhr.open("GET",this.url,!0),this.xhr.timeout=1e3*this.constructor.timeout,this.xhr.setRequestHeader("Accept","text/html, application/xhtml+xml"),this.xhr.setRequestHeader("Turbolinks-Referrer",this.referrer),this.xhr.onprogress=this.requestProgressed,this.xhr.onload=this.requestLoaded,this.xhr.onerror=this.requestFailed,this.xhr.ontimeout=this.requestTimedOut,this.xhr.onabort=this.requestCanceled},r.prototype.endRequest=function(t){return this.xhr?(this.notifyApplicationAfterRequestEnd(),null!=t&&t.call(this),this.destroy()):void 0},r.prototype.setProgress=function(t){var e;return this.progress=t,"function"==typeof(e=this.delegate).requestProgressed?e.requestProgressed(this.progress):void 0},r.prototype.destroy=function(){var t;return this.setProgress(1),"function"==typeof(t=this.delegate).requestFinished&&t.requestFinished(),this.delegate=null,this.xhr=null},r}()}.call(this),function(){var e=function(t,e){return function(){return t.apply(e,arguments)}};t.ProgressBar=function(){function t(){this.trickle=e(this.trickle,this),this.stylesheetElement=this.createStylesheetElement(),this.progressElement=this.createProgressElement()}var r;return r=300,t.defaultCSS=".turbolinks-progress-bar {\n  position: fixed;\n  display: block;\n  top: 0;\n  left: 0;\n  height: 3px;\n  background: #0076ff;\n  z-index: 9999;\n  transition: width "+r+"ms ease-out, opacity "+r/2+"ms "+r/2+"ms ease-in;\n  transform: translate3d(0, 0, 0);\n}",t.prototype.show=function(){return this.visible?void 0:(this.visible=!0,this.installStylesheetElement(),this.installProgressElement(),this.startTrickling())},t.prototype.hide=function(){return this.visible&&!this.hiding?(this.hiding=!0,this.fadeProgressElement(function(t){return function(){return t.uninstallProgressElement(),t.stopTrickling(),t.visible=!1,t.hiding=!1}}(this))):void 0},t.prototype.setValue=function(t){return this.value=t,this.refresh()},t.prototype.installStylesheetElement=function(){return document.head.insertBefore(this.stylesheetElement,document.head.firstChild)},t.prototype.installProgressElement=function(){return this.progressElement.style.width=0,this.progressElement.style.opacity=1,document.documentElement.insertBefore(this.progressElement,document.body),this.refresh()},t.prototype.fadeProgressElement=function(t){return this.progressElement.style.opacity=0,setTimeout(t,1.5*r)},t.prototype.uninstallProgressElement=function(){return this.progressElement.parentNode?document.documentElement.removeChild(this.progressElement):void 0},t.prototype.startTrickling=function(){return null!=this.trickleInterval?this.trickleInterval:this.trickleInterval=setInterval(this.trickle,r)},t.prototype.stopTrickling=function(){return clearInterval(this.trickleInterval),this.trickleInterval=null},t.prototype.trickle=function(){return this.setValue(this.value+Math.random()/100)},t.prototype.refresh=function(){return requestAnimationFrame(function(t){return function(){return t.progressElement.style.width=10+90*t.value+"%"}}(this))},t.prototype.createStylesheetElement=function(){var t;return t=document.createElement("style"),t.type="text/css",t.textContent=this.constructor.defaultCSS,t},t.prototype.createProgressElement=function(){var t;return t=document.createElement("div"),t.className="turbolinks-progress-bar",t},t}()}.call(this),function(){var e=function(t,e){return function(){return t.apply(e,arguments)}};t.BrowserAdapter=function(){function r(r){this.controller=r,this.showProgressBar=e(this.showProgressBar,this),this.progressBar=new t.ProgressBar}var n,o,i,s;return s=t.HttpRequest,n=s.NETWORK_FAILURE,i=s.TIMEOUT_FAILURE,o=500,r.prototype.visitProposedToLocationWithAction=function(t,e){return this.controller.startVisitToLocationWithAction(t,e)},r.prototype.visitStarted=function(t){return t.issueRequest(),t.changeHistory(),t.loadCachedSnapshot()},r.prototype.visitRequestStarted=function(t){return this.progressBar.setValue(0),t.hasCachedSnapshot()||"restore"!==t.action?this.showProgressBarAfterDelay():this.showProgressBar()},r.prototype.visitRequestProgressed=function(t){return this.progressBar.setValue(t.progress)},r.prototype.visitRequestCompleted=function(t){return t.loadResponse()},r.prototype.visitRequestFailedWithStatusCode=function(t,e){switch(e){case n:case i:return this.reload();default:return t.loadResponse()}},r.prototype.visitRequestFinished=function(t){return this.hideProgressBar()},r.prototype.visitCompleted=function(t){return t.followRedirect()},r.prototype.pageInvalidated=function(){return this.reload()},r.prototype.showProgressBarAfterDelay=function(){return this.progressBarTimeout=setTimeout(this.showProgressBar,o)},r.prototype.showProgressBar=function(){return this.progressBar.show()},r.prototype.hideProgressBar=function(){return this.progressBar.hide(),clearTimeout(this.progressBarTimeout)},r.prototype.reload=function(){return window.location.reload()},r}()}.call(this),function(){var e=function(t,e){return function(){return t.apply(e,arguments)}};t.History=function(){function r(t){this.delegate=t,this.onPageLoad=e(this.onPageLoad,this),this.onPopState=e(this.onPopState,this)}return r.prototype.start=function(){return this.started?void 0:(addEventListener("popstate",this.onPopState,!1),addEventListener("load",this.onPageLoad,!1),this.started=!0)},r.prototype.stop=function(){return this.started?(removeEventListener("popstate",this.onPopState,!1),removeEventListener("load",this.onPageLoad,!1),this.started=!1):void 0},r.prototype.push=function(e,r){return e=t.Location.wrap(e),this.update("push",e,r)},r.prototype.replace=function(e,r){return e=t.Location.wrap(e),this.update("replace",e,r)},r.prototype.onPopState=function(e){var r,n,o,i;return this.shouldHandlePopState()&&(i=null!=(n=e.state)?n.turbolinks:void 0)?(r=t.Location.wrap(window.location),o=i.restorationIdentifier,this.delegate.historyPoppedToLocationWithRestorationIdentifier(r,o)):void 0},r.prototype.onPageLoad=function(e){return t.defer(function(t){return function(){return t.pageLoaded=!0}}(this))},r.prototype.shouldHandlePopState=function(){return this.pageIsLoaded()},r.prototype.pageIsLoaded=function(){return this.pageLoaded||"complete"===document.readyState},r.prototype.update=function(t,e,r){var n;return n={turbolinks:{restorationIdentifier:r}},history[t+"State"](n,null,e)},r}()}.call(this),function(){t.Snapshot=function(){function e(t){var e,r;r=t.head,e=t.body,this.head=null!=r?r:document.createElement("head"),this.body=null!=e?e:document.createElement("body")}return e.wrap=function(t){return t instanceof this?t:this.fromHTML(t)},e.fromHTML=function(t){var e;return e=document.createElement("html"),e.innerHTML=t,this.fromElement(e)},e.fromElement=function(t){return new this({head:t.querySelector("head"),body:t.querySelector("body")})},e.prototype.clone=function(){return new e({head:this.head.cloneNode(!0),body:this.body.cloneNode(!0)})},e.prototype.getRootLocation=function(){var e,r;return r=null!=(e=this.getSetting("root"))?e:"/",new t.Location(r)},e.prototype.getCacheControlValue=function(){return this.getSetting("cache-control")},e.prototype.hasAnchor=function(t){try{return null!=this.body.querySelector("[id='"+t+"']")}catch(e){}},e.prototype.isPreviewable=function(){return"no-preview"!==this.getCacheControlValue()},e.prototype.isCacheable=function(){return"no-cache"!==this.getCacheControlValue()},e.prototype.getSetting=function(t){var e,r;return r=this.head.querySelectorAll("meta[name='turbolinks-"+t+"']"),e=r[r.length-1],null!=e?e.getAttribute("content"):void 0},e}()}.call(this),function(){var e=[].slice;t.Renderer=function(){function t(){}var r;return t.render=function(){var t,r,n,o;return n=arguments[0],r=arguments[1],t=3<=arguments.length?e.call(arguments,2):[],o=function(t,e,r){r.prototype=t.prototype;var n=new r,o=t.apply(n,e);return Object(o)===o?o:n}(this,t,function(){}),o.delegate=n,o.render(r),o},t.prototype.renderView=function(t){return this.delegate.viewWillRender(this.newBody),t(),this.delegate.viewRendered(this.newBody)},t.prototype.invalidateView=function(){return this.delegate.viewInvalidated()},t.prototype.createScriptElement=function(t){var e;return"false"===t.getAttribute("data-turbolinks-eval")?t:(e=document.createElement("script"),e.textContent=t.textContent,r(e,t),e)},r=function(t,e){var r,n,o,i,s,a,u;for(i=e.attributes,a=[],r=0,n=i.length;n>r;r++)s=i[r],o=s.name,u=s.value,a.push(t.setAttribute(o,u));return a},t}()}.call(this),function(){t.HeadDetails=function(){function t(t){var e,r,i,s,a,u,l;for(this.element=t,this.elements={},l=this.element.childNodes,s=0,u=l.length;u>s;s++)i=l[s],i.nodeType===Node.ELEMENT_NODE&&(a=i.outerHTML,r=null!=(e=this.elements)[a]?e[a]:e[a]={type:o(i),tracked:n(i),elements:[]},r.elements.push(i))}var e,r,n,o;return t.prototype.hasElementWithKey=function(t){return t in this.elements},t.prototype.getTrackedElementSignature=function(){var t,e;return function(){var r,n;r=this.elements,n=[];for(t in r)e=r[t].tracked,e&&n.push(t);return n}.call(this).join("")},t.prototype.getScriptElementsNotInDetails=function(t){return this.getElementsMatchingTypeNotInDetails("script",t)},t.prototype.getStylesheetElementsNotInDetails=function(t){return this.getElementsMatchingTypeNotInDetails("stylesheet",t)},t.prototype.getElementsMatchingTypeNotInDetails=function(t,e){var r,n,o,i,s,a;o=this.elements,s=[];for(n in o)i=o[n],a=i.type,r=i.elements,a!==t||e.hasElementWithKey(n)||s.push(r[0]);return s},t.prototype.getProvisionalElements=function(){var t,e,r,n,o,i,s;r=[],n=this.elements;for(e in n)o=n[e],s=o.type,i=o.tracked,t=o.elements,null!=s||i?t.length>1&&r.push.apply(r,t.slice(1)):r.push.apply(r,t);return r},o=function(t){return e(t)?"script":r(t)?"stylesheet":void 0},n=function(t){return"reload"===t.getAttribute("data-turbolinks-track")},e=function(t){var e;return e=t.tagName.toLowerCase(),"script"===e},r=function(t){var e;return e=t.tagName.toLowerCase(),"style"===e||"link"===e&&"stylesheet"===t.getAttribute("rel")},t}()}.call(this),function(){var e=function(t,e){function n(){this.constructor=t}for(var o in e)r.call(e,o)&&(t[o]=e[o]);return n.prototype=e.prototype,t.prototype=new n,t.__super__=e.prototype,t},r={}.hasOwnProperty;t.SnapshotRenderer=function(r){function n(e,r){this.currentSnapshot=e,this.newSnapshot=r,this.currentHeadDetails=new t.HeadDetails(this.currentSnapshot.head),this.newHeadDetails=new t.HeadDetails(this.newSnapshot.head),this.newBody=this.newSnapshot.body}return e(n,r),n.prototype.render=function(t){return this.trackedElementsAreIdentical()?(this.mergeHead(),this.renderView(function(e){return function(){return e.replaceBody(),e.focusFirstAutofocusableElement(),t()}}(this))):this.invalidateView()},n.prototype.mergeHead=function(){return this.copyNewHeadStylesheetElements(),this.copyNewHeadScriptElements(),this.removeCurrentHeadProvisionalElements(),this.copyNewHeadProvisionalElements()},n.prototype.replaceBody=function(){return this.activateBodyScriptElements(),this.importBodyPermanentElements(),this.assignNewBody()},n.prototype.trackedElementsAreIdentical=function(){return this.currentHeadDetails.getTrackedElementSignature()===this.newHeadDetails.getTrackedElementSignature()},n.prototype.copyNewHeadStylesheetElements=function(){var t,e,r,n,o;for(n=this.getNewHeadStylesheetElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.appendChild(t));return o},n.prototype.copyNewHeadScriptElements=function(){var t,e,r,n,o;for(n=this.getNewHeadScriptElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.appendChild(this.createScriptElement(t)));return o},n.prototype.removeCurrentHeadProvisionalElements=function(){var t,e,r,n,o;for(n=this.getCurrentHeadProvisionalElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.removeChild(t));return o},n.prototype.copyNewHeadProvisionalElements=function(){var t,e,r,n,o;for(n=this.getNewHeadProvisionalElements(),o=[],e=0,r=n.length;r>e;e++)t=n[e],o.push(document.head.appendChild(t));return o},n.prototype.importBodyPermanentElements=function(){var t,e,r,n,o,i;for(n=this.getNewBodyPermanentElements(),i=[],e=0,r=n.length;r>e;e++)o=n[e],(t=this.findCurrentBodyPermanentElement(o))?i.push(o.parentNode.replaceChild(t,o)):i.push(void 0);return i},n.prototype.activateBodyScriptElements=function(){var t,e,r,n,o,i;for(n=this.getNewBodyScriptElements(),i=[],e=0,r=n.length;r>e;e++)o=n[e],t=this.createScriptElement(o),i.push(o.parentNode.replaceChild(t,o));return i},n.prototype.assignNewBody=function(){return document.body=this.newBody},n.prototype.focusFirstAutofocusableElement=function(){var t;return null!=(t=this.findFirstAutofocusableElement())?t.focus():void 0},n.prototype.getNewHeadStylesheetElements=function(){return this.newHeadDetails.getStylesheetElementsNotInDetails(this.currentHeadDetails)},n.prototype.getNewHeadScriptElements=function(){return this.newHeadDetails.getScriptElementsNotInDetails(this.currentHeadDetails)},n.prototype.getCurrentHeadProvisionalElements=function(){return this.currentHeadDetails.getProvisionalElements()},n.prototype.getNewHeadProvisionalElements=function(){return this.newHeadDetails.getProvisionalElements()},n.prototype.getNewBodyPermanentElements=function(){return this.newBody.querySelectorAll("[id][data-turbolinks-permanent]")},n.prototype.findCurrentBodyPermanentElement=function(t){return document.body.querySelector("#"+t.id+"[data-turbolinks-permanent]")},n.prototype.getNewBodyScriptElements=function(){return this.newBody.querySelectorAll("script")},n.prototype.findFirstAutofocusableElement=function(){return document.body.querySelector("[autofocus]")},n}(t.Renderer)}.call(this),function(){var e=function(t,e){function n(){this.constructor=t}for(var o in e)r.call(e,o)&&(t[o]=e[o]);return n.prototype=e.prototype,t.prototype=new n,t.__super__=e.prototype,t},r={}.hasOwnProperty;t.ErrorRenderer=function(t){function r(t){this.html=t}return e(r,t),r.prototype.render=function(t){return this.renderView(function(e){return function(){return e.replaceDocumentHTML(),e.activateBodyScriptElements(),t()}}(this))},r.prototype.replaceDocumentHTML=function(){return document.documentElement.innerHTML=this.html},r.prototype.activateBodyScriptElements=function(){var t,e,r,n,o,i;for(n=this.getScriptElements(),i=[],e=0,r=n.length;r>e;e++)o=n[e],t=this.createScriptElement(o),i.push(o.parentNode.replaceChild(t,o));return i},r.prototype.getScriptElements=function(){return document.documentElement.querySelectorAll("script")},r}(t.Renderer)}.call(this),function(){t.View=function(){function e(t){this.delegate=t,this.element=document.documentElement}return e.prototype.getRootLocation=function(){return this.getSnapshot().getRootLocation()},e.prototype.getSnapshot=function(){return t.Snapshot.fromElement(this.element)},e.prototype.render=function(t,e){var r,n,o;return o=t.snapshot,r=t.error,n=t.isPreview,this.markAsPreview(n),null!=o?this.renderSnapshot(o,e):this.renderError(r,e)},e.prototype.markAsPreview=function(t){return t?this.element.setAttribute("data-turbolinks-preview",""):this.element.removeAttribute("data-turbolinks-preview")},e.prototype.renderSnapshot=function(e,r){return t.SnapshotRenderer.render(this.delegate,r,this.getSnapshot(),t.Snapshot.wrap(e))},e.prototype.renderError=function(e,r){return t.ErrorRenderer.render(this.delegate,r,e)},e}()}.call(this),function(){var e=function(t,e){return function(){return t.apply(e,arguments)}};t.ScrollManager=function(){function r(r){this.delegate=r,this.onScroll=e(this.onScroll,this),this.onScroll=t.throttle(this.onScroll)}return r.prototype.start=function(){return this.started?void 0:(addEventListener("scroll",this.onScroll,!1),this.onScroll(),this.started=!0)},r.prototype.stop=function(){return this.started?(removeEventListener("scroll",this.onScroll,!1),this.started=!1):void 0},r.prototype.scrollToElement=function(t){return t.scrollIntoView()},r.prototype.scrollToPosition=function(t){var e,r;return e=t.x,r=t.y,window.scrollTo(e,r)},r.prototype.onScroll=function(t){return this.updatePosition({x:window.pageXOffset,y:window.pageYOffset})},r.prototype.updatePosition=function(t){var e;return this.position=t,null!=(e=this.delegate)?e.scrollPositionChanged(this.position):void 0},r}()}.call(this),function(){t.SnapshotCache=function(){function e(t){this.size=t,this.keys=[],this.snapshots={}}var r;return e.prototype.has=function(t){var e;return e=r(t),e in this.snapshots},e.prototype.get=function(t){var e;if(this.has(t))return e=this.read(t),this.touch(t),e},e.prototype.put=function(t,e){return this.write(t,e),this.touch(t),e},e.prototype.read=function(t){var e;return e=r(t),this.snapshots[e]},e.prototype.write=function(t,e){var n;return n=r(t),this.snapshots[n]=e},e.prototype.touch=function(t){var e,n;return n=r(t),e=this.keys.indexOf(n),e>-1&&this.keys.splice(e,1),this.keys.unshift(n),this.trim()},e.prototype.trim=function(){var t,e,r,n,o;for(n=this.keys.splice(this.size),o=[],t=0,r=n.length;r>t;t++)e=n[t],o.push(delete this.snapshots[e]);return o},r=function(e){return t.Location.wrap(e).toCacheKey()},e}()}.call(this),function(){var e=function(t,e){return function(){return t.apply(e,arguments)}};t.Visit=function(){function r(r,n,o){this.controller=r,this.action=o,this.performScroll=e(this.performScroll,this),this.identifier=t.uuid(),this.location=t.Location.wrap(n),this.adapter=this.controller.adapter,this.state="initialized",this.timingMetrics={}}var n;return r.prototype.start=function(){return"initialized"===this.state?(this.recordTimingMetric("visitStart"),this.state="started",this.adapter.visitStarted(this)):void 0},r.prototype.cancel=function(){var t;return"started"===this.state?(null!=(t=this.request)&&t.cancel(),this.cancelRender(),this.state="canceled"):void 0},r.prototype.complete=function(){var t;return"started"===this.state?(this.recordTimingMetric("visitEnd"),this.state="completed","function"==typeof(t=this.adapter).visitCompleted&&t.visitCompleted(this),this.controller.visitCompleted(this)):void 0},r.prototype.fail=function(){var t;return"started"===this.state?(this.state="failed","function"==typeof(t=this.adapter).visitFailed?t.visitFailed(this):void 0):void 0},r.prototype.changeHistory=function(){var t,e;return this.historyChanged?void 0:(t=this.location.isEqualTo(this.referrer)?"replace":this.action,e=n(t),this.controller[e](this.location,this.restorationIdentifier),this.historyChanged=!0)},r.prototype.issueRequest=function(){return this.shouldIssueRequest()&&null==this.request?(this.progress=0,this.request=new t.HttpRequest(this,this.location,this.referrer),this.request.send()):void 0},r.prototype.getCachedSnapshot=function(){var t;return!(t=this.controller.getCachedSnapshotForLocation(this.location))||null!=this.location.anchor&&!t.hasAnchor(this.location.anchor)||"restore"!==this.action&&!t.isPreviewable()?void 0:t},r.prototype.hasCachedSnapshot=function(){return null!=this.getCachedSnapshot()},r.prototype.loadCachedSnapshot=function(){var t,e;return(e=this.getCachedSnapshot())?(t=this.shouldIssueRequest(),this.render(function(){var r;return this.cacheSnapshot(),this.controller.render({snapshot:e,isPreview:t},this.performScroll),"function"==typeof(r=this.adapter).visitRendered&&r.visitRendered(this),t?void 0:this.complete()})):void 0},r.prototype.loadResponse=function(){return null!=this.response?this.render(function(){var t,e;return this.cacheSnapshot(),this.request.failed?(this.controller.render({error:this.response},this.performScroll),"function"==typeof(t=this.adapter).visitRendered&&t.visitRendered(this),this.fail()):(this.controller.render({snapshot:this.response},this.performScroll),"function"==typeof(e=this.adapter).visitRendered&&e.visitRendered(this),this.complete())}):void 0},r.prototype.followRedirect=function(){return this.redirectedToLocation&&!this.followedRedirect?(this.location=this.redirectedToLocation,this.controller.replaceHistoryWithLocationAndRestorationIdentifier(this.redirectedToLocation,this.restorationIdentifier),this.followedRedirect=!0):void 0},r.prototype.requestStarted=function(){var t;return this.recordTimingMetric("requestStart"),"function"==typeof(t=this.adapter).visitRequestStarted?t.visitRequestStarted(this):void 0},r.prototype.requestProgressed=function(t){var e;return this.progress=t,"function"==typeof(e=this.adapter).visitRequestProgressed?e.visitRequestProgressed(this):void 0},r.prototype.requestCompletedWithResponse=function(e,r){return this.response=e,null!=r&&(this.redirectedToLocation=t.Location.wrap(r)),this.adapter.visitRequestCompleted(this)},r.prototype.requestFailedWithStatusCode=function(t,e){return this.response=e,this.adapter.visitRequestFailedWithStatusCode(this,t)},r.prototype.requestFinished=function(){var t;return this.recordTimingMetric("requestEnd"),"function"==typeof(t=this.adapter).visitRequestFinished?t.visitRequestFinished(this):void 0},r.prototype.performScroll=function(){return this.scrolled?void 0:("restore"===this.action?this.scrollToRestoredPosition()||this.scrollToTop():this.scrollToAnchor()||this.scrollToTop(),this.scrolled=!0)},r.prototype.scrollToRestoredPosition=function(){var t,e;return t=null!=(e=this.restorationData)?e.scrollPosition:void 0,null!=t?(this.controller.scrollToPosition(t),!0):void 0},r.prototype.scrollToAnchor=function(){return null!=this.location.anchor?(this.controller.scrollToAnchor(this.location.anchor),!0):void 0},r.prototype.scrollToTop=function(){return this.controller.scrollToPosition({x:0,y:0})},r.prototype.recordTimingMetric=function(t){var e;return null!=(e=this.timingMetrics)[t]?e[t]:e[t]=(new Date).getTime()},r.prototype.getTimingMetrics=function(){return t.copyObject(this.timingMetrics)},n=function(t){switch(t){case"replace":return"replaceHistoryWithLocationAndRestorationIdentifier";case"advance":case"restore":return"pushHistoryWithLocationAndRestorationIdentifier"}},r.prototype.shouldIssueRequest=function(){return"restore"===this.action?!this.hasCachedSnapshot():!0},r.prototype.cacheSnapshot=function(){return this.snapshotCached?void 0:(this.controller.cacheSnapshot(),this.snapshotCached=!0)},r.prototype.render=function(t){return this.cancelRender(),this.frame=requestAnimationFrame(function(e){return function(){return e.frame=null,t.call(e)}}(this))},r.prototype.cancelRender=function(){return this.frame?cancelAnimationFrame(this.frame):void 0},r}()}.call(this),function(){var e=function(t,e){return function(){return t.apply(e,arguments)}};t.Controller=function(){function r(){this.clickBubbled=e(this.clickBubbled,this),this.clickCaptured=e(this.clickCaptured,this),this.pageLoaded=e(this.pageLoaded,this),this.history=new t.History(this),this.view=new t.View(this),this.scrollManager=new t.ScrollManager(this),this.restorationData={},this.clearCache()}return r.prototype.start=function(){return t.supported&&!this.started?(addEventListener("click",this.clickCaptured,!0),addEventListener("DOMContentLoaded",this.pageLoaded,!1),this.scrollManager.start(),this.startHistory(),this.started=!0,this.enabled=!0):void 0},r.prototype.disable=function(){return this.enabled=!1},r.prototype.stop=function(){return this.started?(removeEventListener("click",this.clickCaptured,!0),removeEventListener("DOMContentLoaded",this.pageLoaded,!1),this.scrollManager.stop(),this.stopHistory(),this.started=!1):void 0},r.prototype.clearCache=function(){return this.cache=new t.SnapshotCache(10)},r.prototype.visit=function(e,r){var n,o;return null==r&&(r={}),e=t.Location.wrap(e),this.applicationAllowsVisitingLocation(e)?this.locationIsVisitable(e)?(n=null!=(o=r.action)?o:"advance",this.adapter.visitProposedToLocationWithAction(e,n)):window.location=e:void 0},r.prototype.startVisitToLocationWithAction=function(e,r,n){var o;return t.supported?(o=this.getRestorationDataForIdentifier(n),this.startVisit(e,r,{restorationData:o})):window.location=e},r.prototype.startHistory=function(){return this.location=t.Location.wrap(window.location),this.restorationIdentifier=t.uuid(),this.history.start(),this.history.replace(this.location,this.restorationIdentifier)},r.prototype.stopHistory=function(){return this.history.stop()},r.prototype.pushHistoryWithLocationAndRestorationIdentifier=function(e,r){return this.restorationIdentifier=r,this.location=t.Location.wrap(e),this.history.push(this.location,this.restorationIdentifier)},r.prototype.replaceHistoryWithLocationAndRestorationIdentifier=function(e,r){return this.restorationIdentifier=r,this.location=t.Location.wrap(e),this.history.replace(this.location,this.restorationIdentifier)},r.prototype.historyPoppedToLocationWithRestorationIdentifier=function(e,r){var n;return this.restorationIdentifier=r,this.enabled?(n=this.getRestorationDataForIdentifier(this.restorationIdentifier),this.startVisit(e,"restore",{restorationIdentifier:this.restorationIdentifier,restorationData:n,historyChanged:!0}),this.location=t.Location.wrap(e)):this.adapter.pageInvalidated()},r.prototype.getCachedSnapshotForLocation=function(t){var e;return e=this.cache.get(t),e?e.clone():void 0},r.prototype.shouldCacheSnapshot=function(){return this.view.getSnapshot().isCacheable()},r.prototype.cacheSnapshot=function(){var t;return this.shouldCacheSnapshot()?(this.notifyApplicationBeforeCachingSnapshot(),t=this.view.getSnapshot(),this.cache.put(this.lastRenderedLocation,t.clone())):void 0},r.prototype.scrollToAnchor=function(t){var e;return(e=document.getElementById(t))?this.scrollToElement(e):this.scrollToPosition({x:0,y:0})},r.prototype.scrollToElement=function(t){return this.scrollManager.scrollToElement(t)},r.prototype.scrollToPosition=function(t){return this.scrollManager.scrollToPosition(t)},r.prototype.scrollPositionChanged=function(t){var e;return e=this.getCurrentRestorationData(),e.scrollPosition=t},r.prototype.render=function(t,e){return this.view.render(t,e)},r.prototype.viewInvalidated=function(){return this.adapter.pageInvalidated()},r.prototype.viewWillRender=function(t){return this.notifyApplicationBeforeRender(t)},r.prototype.viewRendered=function(){return this.lastRenderedLocation=this.currentVisit.location,this.notifyApplicationAfterRender()},r.prototype.pageLoaded=function(){return this.lastRenderedLocation=this.location,this.notifyApplicationAfterPageLoad()},r.prototype.clickCaptured=function(){return removeEventListener("click",this.clickBubbled,!1),addEventListener("click",this.clickBubbled,!1)},r.prototype.clickBubbled=function(t){var e,r,n;return this.enabled&&this.clickEventIsSignificant(t)&&(r=this.getVisitableLinkForNode(t.target))&&(n=this.getVisitableLocationForLink(r))&&this.applicationAllowsFollowingLinkToLocation(r,n)?(t.preventDefault(),e=this.getActionForLink(r),this.visit(n,{action:e})):void 0},r.prototype.applicationAllowsFollowingLinkToLocation=function(t,e){var r;return r=this.notifyApplicationAfterClickingLinkToLocation(t,e),!r.defaultPrevented},r.prototype.applicationAllowsVisitingLocation=function(t){var e;return e=this.notifyApplicationBeforeVisitingLocation(t),!e.defaultPrevented},r.prototype.notifyApplicationAfterClickingLinkToLocation=function(e,r){return t.dispatch("turbolinks:click",{target:e,data:{url:r.absoluteURL},cancelable:!0})},r.prototype.notifyApplicationBeforeVisitingLocation=function(e){return t.dispatch("turbolinks:before-visit",{data:{url:e.absoluteURL},cancelable:!0})},r.prototype.notifyApplicationAfterVisitingLocation=function(e){return t.dispatch("turbolinks:visit",{data:{url:e.absoluteURL}})},r.prototype.notifyApplicationBeforeCachingSnapshot=function(){return t.dispatch("turbolinks:before-cache")},r.prototype.notifyApplicationBeforeRender=function(e){
+return t.dispatch("turbolinks:before-render",{data:{newBody:e}})},r.prototype.notifyApplicationAfterRender=function(){return t.dispatch("turbolinks:render")},r.prototype.notifyApplicationAfterPageLoad=function(e){return null==e&&(e={}),t.dispatch("turbolinks:load",{data:{url:this.location.absoluteURL,timing:e}})},r.prototype.startVisit=function(t,e,r){var n;return null!=(n=this.currentVisit)&&n.cancel(),this.currentVisit=this.createVisit(t,e,r),this.currentVisit.start(),this.notifyApplicationAfterVisitingLocation(t)},r.prototype.createVisit=function(e,r,n){var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationData,o=i.historyChanged,u=new t.Visit(this,e,r),u.restorationIdentifier=null!=a?a:t.uuid(),u.restorationData=t.copyObject(s),u.historyChanged=o,u.referrer=this.location,u},r.prototype.visitCompleted=function(t){return this.notifyApplicationAfterPageLoad(t.getTimingMetrics())},r.prototype.clickEventIsSignificant=function(t){return!(t.defaultPrevented||t.target.isContentEditable||t.which>1||t.altKey||t.ctrlKey||t.metaKey||t.shiftKey)},r.prototype.getVisitableLinkForNode=function(e){return this.nodeIsVisitable(e)?t.closest(e,"a[href]:not([target]):not([download])"):void 0},r.prototype.getVisitableLocationForLink=function(e){var r;return r=new t.Location(e.getAttribute("href")),this.locationIsVisitable(r)?r:void 0},r.prototype.getActionForLink=function(t){var e;return null!=(e=t.getAttribute("data-turbolinks-action"))?e:"advance"},r.prototype.nodeIsVisitable=function(e){var r;return(r=t.closest(e,"[data-turbolinks]"))?"false"!==r.getAttribute("data-turbolinks"):!0},r.prototype.locationIsVisitable=function(t){return t.isPrefixedBy(this.view.getRootLocation())&&t.isHTML()},r.prototype.getCurrentRestorationData=function(){return this.getRestorationDataForIdentifier(this.restorationIdentifier)},r.prototype.getRestorationDataForIdentifier=function(t){var e;return null!=(e=this.restorationData)[t]?e[t]:e[t]={}},r}()}.call(this),function(){var e,r,n;t.start=function(){return r()?(null==t.controller&&(t.controller=e()),t.controller.start()):void 0},r=function(){return null==window.Turbolinks&&(window.Turbolinks=t),n()},e=function(){var e;return e=new t.Controller,e.adapter=new t.BrowserAdapter(e),e},n=function(){return window.Turbolinks===t},n()&&t.start()}.call(this)}).call(this),"object"==typeof module&&module.exports?module.exports=t:"function"=="function"&&__webpack_require__(207)&&!(__WEBPACK_AMD_DEFINE_FACTORY__ = (t),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__))}).call(this);
+
+/***/ }),
+
+/***/ 207:
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(exports, {}))
+
+/***/ }),
+
+/***/ 208:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.initModules = undefined;
+
+var _libraryPageNavigation = __webpack_require__(209);
+
+var initModules = exports.initModules = function initModules() {
+  new _libraryPageNavigation.LibraryPageNavigation();
+};
+
+/***/ }),
+
+/***/ 209:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.LibraryPageNavigation = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _stickySidebar = __webpack_require__(210);
+
+var _stickySidebar2 = _interopRequireDefault(_stickySidebar);
+
+var _misc = __webpack_require__(4);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var LibraryPageNavigation = exports.LibraryPageNavigation = function () {
+  function LibraryPageNavigation() {
+    var _this = this;
+
+    _classCallCheck(this, LibraryPageNavigation);
+
+    this.reizeHandler = function () {
+      _this.initSidebar();
+    };
+
+    this.mobileNavigationClickHandler = function () {
+      (0, _misc.toggleClass)(_this.navigationInner, _this.navigationInnerOpenClassName);
+    };
+
+    // Create values for later use
+    this.sidebar = false;
+    this.maxWidth = 800;
+
+    // Create variables for later use
+    this.navigationId = 'styleguide-navigation';
+    this.navigationInnerClassName = 'styleguide-navigation__inner';
+    this.navigationInnerOpenClassName = 'styleguide-navigation__inner--open';
+    this.contentId = 'styleguide-content';
+    this.mobileNavigationClassName = 'styleguide-navigation__mobile-nav';
+    this.libraryContainerId = 'library-container';
+
+    // Get elements
+    this.navigation = document.getElementById(this.navigationId);
+    if (!this.navigation) return;
+
+    this.navigationInner = this.navigation.querySelector('.' + this.navigationInnerClassName);
+    this.content = document.getElementById(this.contentId);
+    this.mobileNavigation = document.querySelector('.' + this.mobileNavigationClassName);
+
+    if (!this.navigation || !this.content) return;
+
+    this.setup();
+  }
+
+  /**
+   * Setup functions
+   * - Create sticky sidebar
+   * - Add resize event listener
+   * - Setup events for mobile menu
+   */
+
+
+  _createClass(LibraryPageNavigation, [{
+    key: 'setup',
+    value: function setup() {
+      // Add resize event listener
+      $.events(window, {
+        resize: this.reizeHandler
+      });
+      // Mobile navigation
+      $.delegate(document, 'click', '.' + this.mobileNavigationClassName, this.mobileNavigationClickHandler);
+      // Create sticky sidebar
+      this.initSidebar();
+    }
+
+    /**
+     * Resize handler
+     * - Reset and reinitalize the current sticky sidebar
+     */
+
+  }, {
+    key: 'initSidebar',
+
+
+    /**
+     * Initialize sticky sidebar
+     * - Set minimum height of the content to be the height of the sidebar
+     * - Create new instance of sticky sidebar
+     */
+    value: function initSidebar() {
+      // If sticky sidebar has been initialized
+      // call the destroy function to reset it
+      // Initialize sticky sidebar
+      if (this.sidebar) {
+        this.sidebar.destroy();
+      }
+      // Check the window width so it shouldn't run the sticky sidebar
+      // when less than a certain width
+      if (window.innerWidth <= this.maxWidth) return;
+      // Fix jumping
+      this.content.style.minHeight = this.navigation.offsetHeight + 'px';
+      // Initialize the sticky sidebar
+      this.sidebar = new _stickySidebar2.default(this.navigation, {
+        topSpacing: 15,
+        bottomSpacing: 15,
+        resizeSensor: false,
+        containerSelector: '#' + this.libraryContainerId,
+        innerWrapperSelector: '.' + this.navigationInnerClassName
+      });
+    }
+
+    /**
+     * Mobile navigation toggle
+     * - Toggles the open class
+     */
+
+  }]);
+
+  return LibraryPageNavigation;
+}();
+
+/***/ }),
+
+/***/ 21:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.elHasClass = elHasClass;
+/**
+ * elHasClass
+ *
+ * Checks if the element has the class.
+ *
+ * Supported: IE8+
+ *
+ * @param {DOMElement} el Element to check the class of.
+ * @param {string} class Name of the class to check for.
+ */
+function elHasClass(el, className) {
+  if (el.classList) {
+    return el.classList.contains(className);
+  }
+  return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+}
+
+/***/ }),
+
+/***/ 210:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/**
  * Sticky Sidebar JavaScript Plugin.
  * @version 3.2.0
  * @author Ahmed Bouhuolia <a.bouhuolia@gmail.com>
  * @license The MIT License (MIT)
- */const o=(()=>{var e=Math.max,t=Math.min;const o='.stickySidebar',n={topSpacing:0,bottomSpacing:0,containerSelector:!1,innerWrapperSelector:'.inner-wrapper-sticky',stickyClass:'is-affixed',resizeSensor:!0,minWidth:!1};class r{constructor(e,t={}){if(this.options=r.extend(n,t),this.sidebar='string'==typeof e?document.querySelector(e):e,'undefined'==typeof this.sidebar)throw new Error('There is no specific sidebar element.');this.sidebarInner=!1,this.container=this.sidebar.parentElement,this.affixedType='STATIC',this.direction='down',this.support={transform:!1,transform3d:!1},this._initialized=!1,this._breakpoint=!1,this._resizeListeners=[],this.dimensions={translateY:0,topSpacing:0,bottomSpacing:0,sidebarHeight:0,sidebarWidth:0,containerTop:0,containerHeight:0,viewportHeight:0,viewportTop:0,lastViewportTop:0},['handleEvent'].forEach((e)=>{this[e]=this[e].bind(this)}),this.initialize()}initialize(){if(this._setSupportFeatures(),this.options.innerWrapperSelector&&(this.sidebarInner=this.sidebar.querySelector(this.options.innerWrapperSelector),null===this.sidebarInner&&(this.sidebarInner=!1)),!this.sidebarInner){let e=document.createElement('div');for(e.setAttribute('class','inner-wrapper-sticky'),this.sidebar.appendChild(e);this.sidebar.firstChild!=e;)e.appendChild(this.sidebar.firstChild);this.sidebarInner=this.sidebar.querySelector('.inner-wrapper-sticky')}if(this.options.containerSelector){let e=document.querySelectorAll(this.options.containerSelector);if(e=Array.prototype.slice.call(e),e.forEach((e)=>{e.contains(this.sidebar)&&(this.container=e)}),!e.length)throw new Error('The container does not contains on the sidebar.')}'function'!=typeof this.options.topSpacing&&(this.options.topSpacing=parseInt(this.options.topSpacing)||0),'function'!=typeof this.options.bottomSpacing&&(this.options.bottomSpacing=parseInt(this.options.bottomSpacing)||0),this._widthBreakpoint(),this.calcDimensions(),this.stickyPosition(),this.bindEvents(),this._initialized=!0}bindEvents(){window.addEventListener('resize',this,{passive:!0}),window.addEventListener('scroll',this,{passive:!0}),this.sidebar.addEventListener('update'+o,this),this.options.resizeSensor&&'undefined'!=typeof ResizeSensor&&(new ResizeSensor(this.sidebarInner,this.handleEvent),new ResizeSensor(this.container,this.handleEvent))}handleEvent(e){this.updateSticky(e)}calcDimensions(){if(!this._breakpoint){var e=this.dimensions;e.containerTop=r.offsetRelative(this.container).top,e.containerHeight=this.container.clientHeight,e.containerBottom=e.containerTop+e.containerHeight,e.sidebarHeight=this.sidebarInner.offsetHeight,e.sidebarWidth=this.sidebar.offsetWidth,e.viewportHeight=window.innerHeight,this._calcDimensionsWithScroll()}}_calcDimensionsWithScroll(){var e=this.dimensions;e.sidebarLeft=r.offsetRelative(this.sidebar).left,e.viewportTop=document.documentElement.scrollTop||document.body.scrollTop,e.viewportBottom=e.viewportTop+e.viewportHeight,e.viewportLeft=document.documentElement.scrollLeft||document.body.scrollLeft,e.topSpacing=this.options.topSpacing,e.bottomSpacing=this.options.bottomSpacing,'function'==typeof e.topSpacing&&(e.topSpacing=parseInt(e.topSpacing(this.sidebar))||0),'function'==typeof e.bottomSpacing&&(e.bottomSpacing=parseInt(e.bottomSpacing(this.sidebar))||0)}isSidebarFitsViewport(){return this.dimensions.sidebarHeight<this.dimensions.viewportHeight}observeScrollDir(){var o=this.dimensions;if(o.lastViewportTop!==o.viewportTop){var n='down'===this.direction?t:e;o.viewportTop===n(o.viewportTop,o.lastViewportTop)&&(this.direction='down'===this.direction?'up':'down')}}getAffixType(){var o=this.dimensions,n=!1;this._calcDimensionsWithScroll();var r=o.sidebarHeight+o.containerTop,a=o.viewportTop+o.topSpacing,i=o.viewportBottom-o.bottomSpacing;return'up'===this.direction?a<=o.containerTop?(o.translateY=0,n='STATIC'):a<=o.translateY+o.containerTop?(o.translateY=a-o.containerTop,n='VIEWPORT-TOP'):!this.isSidebarFitsViewport()&&o.containerTop<=a&&(n='VIEWPORT-UNBOTTOM'):this.isSidebarFitsViewport()?o.sidebarHeight+a>=o.containerBottom?(o.translateY=o.containerBottom-r,n='CONTAINER-BOTTOM'):a>=o.containerTop&&(o.translateY=a-o.containerTop,n='VIEWPORT-TOP'):o.containerBottom<=i?(o.translateY=o.containerBottom-r,n='CONTAINER-BOTTOM'):r+o.translateY<=i?(o.translateY=i-r,n='VIEWPORT-BOTTOM'):o.containerTop+o.translateY<=a&&(n='VIEWPORT-UNBOTTOM'),o.translateY=e(0,o.translateY),o.translateY=t(o.containerHeight,o.translateY),o.lastViewportTop=o.viewportTop,n}_getStyle(e){if('undefined'!=typeof e){var t={inner:{},outer:{}},o=this.dimensions;switch(e){case'VIEWPORT-TOP':t.inner={position:'fixed',top:this.options.topSpacing,left:o.sidebarLeft-o.viewportLeft,width:o.sidebarWidth};break;case'VIEWPORT-BOTTOM':t.inner={position:'fixed',top:'auto',left:o.sidebarLeft,bottom:this.options.bottomSpacing,width:o.sidebarWidth};break;case'CONTAINER-BOTTOM':case'VIEWPORT-UNBOTTOM':let n=this._getTranslate(0,o.translateY+'px');t.inner=n?{transform:n}:{position:'absolute',top:o.translateY,width:o.sidebarWidth};}return'VIEWPORT-TOP'===e||'VIEWPORT-BOTTOM'===e||'VIEWPORT-UNBOTTOM'===e||'CONTAINER-BOTTOM'===e?t.outer={height:o.sidebarHeight,position:'relative'}:void 0,t.outer=r.extend({height:'',position:''},t.outer),t.inner=r.extend({position:'relative',top:'',left:'',bottom:'',width:'',transform:this._getTranslate()},t.inner),t}}stickyPosition(e){if(!this._breakpoint){e=e||!1;var t=this.options.topSpacing,n=this.options.bottomSpacing,a=this.getAffixType(),i=this._getStyle(a);if((this.affixedType!=a||e)&&a){let e='affix.'+a.toLowerCase().replace('viewport-','')+o;for(let t in r.eventTrigger(this.sidebar,e),'STATIC'===a?r.removeClass(this.sidebar,this.options.stickyClass):r.addClass(this.sidebar,this.options.stickyClass),i.outer){'number'==typeof i.outer[t]?'px':'';this.sidebar.style[t]=i.outer[t]}for(let e in i.inner){let t='number'==typeof i.inner[e]?'px':'';this.sidebarInner.style[e]=i.inner[e]+t}let t='affixed.'+a.toLowerCase().replace('viewport','')+o;r.eventTrigger(this.sidebar,t)}else this._initialized&&(this.sidebarInner.style.left=i.inner.left);this.affixedType=a}}_widthBreakpoint(){window.innerWidth<=this.options.minWidth?(this._breakpoint=!0,this.affixedType='STATIC',this.sidebar.removeAttribute('style'),r.removeClass(this.sidebar,this.options.stickyClass),this.sidebarInner.removeAttribute('style')):this._breakpoint=!1}updateSticky(e={}){this._running||(this._running=!0,((e)=>{requestAnimationFrame(()=>{switch(e){case'scroll':this._calcDimensionsWithScroll(),this.observeScrollDir(),this.stickyPosition();break;case'resize':default:this._widthBreakpoint(),this.calcDimensions(),this.stickyPosition(!0);}this._running=!1})})(e.type))}_setSupportFeatures(){var e=this.support;e.transform=r.supportTransform(),e.transform3d=r.supportTransform(!0)}_getTranslate(e=0,t=0,o=0){return this.support.transform3d?'translate3d('+e+', '+t+', '+o+')':!!this.support.translate&&'translate('+e+', '+t+')'}destroy(){window.removeEventListener('resize',this),window.removeEventListener('scroll',this),this.sidebar.classList.remove(this.options.stickyClass),this.sidebar.style.minHeight='',this.sidebar.removeEventListener('update'+o,this);var e={inner:{},outer:{},inner:{position:'',top:'',left:'',bottom:'',width:'',transform:''},outer:{height:'',position:''}};for(let t in e.outer)this.sidebar.style[t]=e.outer[t];for(let t in e.inner)this.sidebarInner.style[t]=e.inner[t];this.options.resizeSensor&&'undefined'!=typeof ResizeSensor&&(ResizeSensor.detach(this.sidebarInner,this.handleEvent),ResizeSensor.detach(this.container,this.handleEvent))}static supportTransform(e){var t=!1,o=e?'perspective':'transform',n=o.charAt(0).toUpperCase()+o.slice(1),r=document.createElement('support'),a=r.style;return(o+' '+['Webkit','Moz','O','ms'].join(n+' ')+n).split(' ').forEach(function(e){if(void 0!==a[e])return t=e,!1}),t}static eventTrigger(e,t,o){try{var n=new CustomEvent(t,{detail:o})}catch(r){var n=document.createEvent('CustomEvent');n.initCustomEvent(t,!0,!0,o)}e.dispatchEvent(n)}static extend(e,t){var o={};for(let n in e)o[n]='undefined'==typeof t[n]?e[n]:t[n];return o}static offsetRelative(e){var t={left:0,top:0};do{let o=e.offsetTop,n=e.offsetLeft;isNaN(o)||(t.top+=o),isNaN(n)||(t.left+=n)}while(e=e.offsetParent);return t}static addClass(e,t){r.hasClass(e,t)||(e.classList?e.classList.add(t):e.className+=' '+t)}static removeClass(e,t){r.hasClass(e,t)&&(e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp('(^|\\b)'+t.split(' ').join('|')+'(\\b|$)','gi'),' '))}static hasClass(e,t){return e.classList?e.classList.contains(t):new RegExp('(^| )'+t+'( |$)','gi').test(e.className)}}return r})();t['default']=o,window.StickySidebar=o},22:function(e,t){'use strict';Object.defineProperty(t,'__esModule',{value:!0}),t.toggleClass=function(e,t,o){if(e.classList)return void e.classList.toggle(t,o);for(var n=e.className.split(' '),r=-1,a=n.length;a--;)n[a]===t&&(r=a);0<=r&&!0!==o?n.splice(r,1):!1!==o&&n.push(t),e.className=n.join(' ')}},23:function(e,t){'use strict';Object.defineProperty(t,'__esModule',{value:!0}),t.addEventListenerToEl=function(e,t,o){return e.addEventListener?void e.addEventListener(t,o):void e.attachEvent('on'+t,function(){o.call(e)})},t.removeEventListenerFromEl=function(e,t,o){return e.removeEventListener?void e.removeEventListener(t,o):void e.detachEvent('on'+t,o)},t.removeAllEventsFromEl=function(e){var t=e.cloneNode(!0);e.parentNode.replaceChild(t,e)}},24:function(e,t){'use strict';Object.defineProperty(t,'__esModule',{value:!0}),t.closestParentOfEl=function(e,t){var o,n=(document||e.ownerDocument).querySelectorAll(t);do for(o=n.length;0<=--o&&n.item(o)!==e;);while(0>o&&(e=e.parentElement));return e}},4:function(e,t,o){'use strict';Object.defineProperty(t,'__esModule',{value:!0});var n=o(20);Object.keys(n).forEach(function(e){'default'===e||'__esModule'===e||Object.defineProperty(t,e,{enumerable:!0,get:function(){return n[e]}})});var r=o(21);Object.keys(r).forEach(function(e){'default'===e||'__esModule'===e||Object.defineProperty(t,e,{enumerable:!0,get:function(){return r[e]}})});var a=o(22);Object.keys(a).forEach(function(e){'default'===e||'__esModule'===e||Object.defineProperty(t,e,{enumerable:!0,get:function(){return a[e]}})});var i=o(23);Object.keys(i).forEach(function(e){'default'===e||'__esModule'===e||Object.defineProperty(t,e,{enumerable:!0,get:function(){return i[e]}})});var s=o(24);Object.keys(s).forEach(function(e){'default'===e||'__esModule'===e||Object.defineProperty(t,e,{enumerable:!0,get:function(){return s[e]}})})},6:function(e){var t=function(){return this}();try{t=t||Function('return this')()||(1,eval)('this')}catch(o){'object'==typeof window&&(t=window)}e.exports=t}});
+ */
+const StickySidebar = (() => {
+  
+    // ---------------------------------
+    // # Define Constants
+    // ---------------------------------
+    //
+    const EVENT_KEY = '.stickySidebar';
+    const VERSION   = '3.2.0';
+  
+    const DEFAULTS = {
+      
+      /**
+       * Additional top spacing of the element when it becomes sticky.
+       * @type {Numeric|Function}
+       */
+      topSpacing: 0,
+  
+      /**
+       * Additional bottom spacing of the element when it becomes sticky.
+       * @type {Numeric|Function}
+       */
+      bottomSpacing: 0,
+  
+      /**
+       * Container sidebar selector to know what the beginning and end of sticky element.
+       * @type {String|False}
+       */
+      containerSelector: false,
+  
+      /**
+       * Inner wrapper selector.
+       * @type {String}
+       */
+      innerWrapperSelector: '.inner-wrapper-sticky',
+  
+      /**
+       * The name of CSS class to apply to elements when they have become stuck.
+       * @type {String|False}
+       */
+      stickyClass: 'is-affixed',
+  
+      /**
+       * Detect when sidebar and its container change height so re-calculate their dimensions.
+       * @type {Boolean}
+       */
+      resizeSensor: true,
+  
+      /**
+       * The sidebar returns to its normal position if its width below this value.
+       * @type {Numeric}
+       */
+      minWidth: false
+    };
+  
+    // ---------------------------------
+    // # Class Definition
+    // ---------------------------------
+    //
+    /**
+     * Sticky Sidebar Class.
+     * @public
+     */
+    class StickySidebar{
+  
+      /**
+       * Sticky Sidebar Constructor.
+       * @constructor
+       * @param {HTMLElement|String} sidebar - The sidebar element or sidebar selector.
+       * @param {Object} options - The options of sticky sidebar.
+       */
+      constructor(sidebar, options = {}){
+        this.options = StickySidebar.extend(DEFAULTS, options);
+  
+        // Sidebar element query if there's no one, throw error.
+        this.sidebar = ('string' === typeof sidebar ) ? document.querySelector(sidebar) : sidebar;
+        if( 'undefined' === typeof this.sidebar )
+          throw new Error("There is no specific sidebar element.");
+  
+        this.sidebarInner = false;
+        this.container = this.sidebar.parentElement;
+  
+        // Current Affix Type of sidebar element.
+        this.affixedType = 'STATIC';
+        this.direction = 'down';
+        this.support = {
+          transform:   false,
+          transform3d: false
+        };
+  
+        this._initialized = false;
+        this._breakpoint = false;
+        this._resizeListeners = [];
+        
+        // Dimenstions of sidebar, container and screen viewport.
+        this.dimensions = {
+          translateY: 0,
+          topSpacing: 0,
+          bottomSpacing: 0,
+          sidebarHeight: 0,
+          sidebarWidth: 0,
+          containerTop: 0,
+          containerHeight: 0,
+          viewportHeight: 0,
+          viewportTop: 0, 
+          lastViewportTop: 0,
+        };
+  
+        // Bind event handlers for referencability.
+        ['handleEvent'].forEach( (method) => {
+          this[method] = this[method].bind(this);
+        });
+  
+        // Initialize sticky sidebar for first time.
+        this.initialize();
+      }
+  
+      /**
+       * Initializes the sticky sidebar by adding inner wrapper, define its container, 
+       * min-width breakpoint, calculating dimenstions, adding helper classes and inline style.
+       * @private
+       */
+      initialize(){
+        this._setSupportFeatures();
+  
+        // Get sticky sidebar inner wrapper, if not found, will create one.
+        if( this.options.innerWrapperSelector ){
+          this.sidebarInner = this.sidebar.querySelector(this.options.innerWrapperSelector);
+  
+          if( null === this.sidebarInner )
+            this.sidebarInner = false;
+        }
+        
+        if( ! this.sidebarInner ){
+          let wrapper = document.createElement('div');
+          wrapper.setAttribute('class', 'inner-wrapper-sticky');
+          this.sidebar.appendChild(wrapper);
+  
+          while( this.sidebar.firstChild != wrapper )
+            wrapper.appendChild(this.sidebar.firstChild);
+  
+          this.sidebarInner = this.sidebar.querySelector('.inner-wrapper-sticky');
+        }
+  
+        // Container wrapper of the sidebar.
+        if( this.options.containerSelector ){
+          let containers = document.querySelectorAll(this.options.containerSelector);
+          containers = Array.prototype.slice.call(containers);
+  
+          containers.forEach((container, item) => {
+            if( ! container.contains(this.sidebar) ) return;
+            this.container = container;
+          });
+  
+          if( ! containers.length )
+            throw new Error("The container does not contains on the sidebar.");
+        }
+        
+        // If top/bottom spacing is not function parse value to integer.
+        if( 'function' !== typeof this.options.topSpacing )
+          this.options.topSpacing = parseInt(this.options.topSpacing) || 0;
+  
+        if( 'function' !== typeof this.options.bottomSpacing )
+          this.options.bottomSpacing = parseInt(this.options.bottomSpacing) || 0;
+            
+        // Breakdown sticky sidebar if screen width below `options.minWidth`.
+        this._widthBreakpoint();
+  
+        // Calculate dimensions of sidebar, container and viewport.
+        this.calcDimensions();
+  
+        // Affix sidebar in proper position.
+        this.stickyPosition();
+  
+        // Bind all events.
+        this.bindEvents();
+        
+        // Inform other properties the sticky sidebar is initialized.
+        this._initialized = true;
+      }
+  
+      /**
+       * Bind all events of sticky sidebar plugin.
+       * @protected
+       */
+      bindEvents(){
+        window.addEventListener('resize', this, {passive: true});
+        window.addEventListener('scroll', this, {passive: true});
+  
+        this.sidebar.addEventListener('update' + EVENT_KEY, this);
+  
+        if( this.options.resizeSensor && 'undefined' !== typeof ResizeSensor ){
+          new ResizeSensor(this.sidebarInner, this.handleEvent);
+          new ResizeSensor(this.container, this.handleEvent);
+        }
+      }
+  
+      /**
+       * Handles all events of the plugin.
+       * @param {Object} event - Event object passed from listener.
+       */
+      handleEvent(event){
+        this.updateSticky(event);
+      }
+  
+      /**
+       * Calculates dimesntions of sidebar, container and screen viewpoint
+       * @public
+       */
+      calcDimensions(){
+        if( this._breakpoint ) return;
+        var dims = this.dimensions;
+  
+        // Container of sticky sidebar dimensions.
+        dims.containerTop    = StickySidebar.offsetRelative(this.container).top;
+        dims.containerHeight = this.container.clientHeight;
+        dims.containerBottom = dims.containerTop + dims.containerHeight;
+  
+        // Sidebar dimensions.
+        dims.sidebarHeight = this.sidebarInner.offsetHeight;
+        dims.sidebarWidth  = this.sidebar.offsetWidth;
+        
+        // Screen viewport dimensions.
+        dims.viewportHeight = window.innerHeight;
+  
+        this._calcDimensionsWithScroll();
+      }
+  
+      /**
+       * Some dimensions values need to be up-to-date when scrolling the page.
+       * @private
+       */
+      _calcDimensionsWithScroll(){
+        var dims = this.dimensions;
+  
+        dims.sidebarLeft = StickySidebar.offsetRelative(this.sidebar).left;
+  
+        dims.viewportTop    = document.documentElement.scrollTop || document.body.scrollTop;
+        dims.viewportBottom = dims.viewportTop + dims.viewportHeight;
+        dims.viewportLeft   = document.documentElement.scrollLeft || document.body.scrollLeft;
+  
+        dims.topSpacing    = this.options.topSpacing;
+        dims.bottomSpacing = this.options.bottomSpacing;
+  
+        if( 'function' === typeof dims.topSpacing )
+            dims.topSpacing = parseInt(dims.topSpacing(this.sidebar)) || 0;
+  
+        if( 'function' === typeof dims.bottomSpacing )
+            dims.bottomSpacing = parseInt(dims.bottomSpacing(this.sidebar)) || 0;
+      }
+      
+      /**
+       * Detarmine wheather the sidebar is bigger than viewport.
+       * @public
+       * @return {Boolean}
+       */
+      isSidebarFitsViewport(){
+        return this.dimensions.sidebarHeight < this.dimensions.viewportHeight;
+      }
+  
+      /**
+       * Observe browser scrolling direction top and down.
+       */
+      observeScrollDir(){
+        var dims = this.dimensions;
+        if( dims.lastViewportTop === dims.viewportTop ) return;
+  
+        var furthest = 'down' === this.direction ? Math.min : Math.max;
+        
+        // If the browser is scrolling not in the same direction.
+        if( dims.viewportTop === furthest(dims.viewportTop, dims.lastViewportTop) )
+          this.direction = 'down' === this.direction ?  'up' : 'down';
+      }
+  
+      /**
+       * Gets affix type of sidebar according to current scrollTop and scrollLeft.
+       * Holds all logical affix of the sidebar when scrolling up and down and when sidebar 
+       * is bigger than viewport and vice versa.
+       * @public
+       * @return {String|False} - Proper affix type.
+       */
+      getAffixType(){
+        var dims = this.dimensions, affixType = false;
+  
+        this._calcDimensionsWithScroll();
+  
+        var sidebarBottom = dims.sidebarHeight + dims.containerTop;
+        var colliderTop = dims.viewportTop + dims.topSpacing;
+        var colliderBottom = dims.viewportBottom - dims.bottomSpacing;
+  
+        // When browser is scrolling top.
+        if( 'up' === this.direction ){
+          if( colliderTop <= dims.containerTop ){
+            dims.translateY = 0;
+            affixType = 'STATIC';
+  
+          } else if( colliderTop <= dims.translateY + dims.containerTop ){
+            dims.translateY = colliderTop - dims.containerTop;
+            affixType = 'VIEWPORT-TOP';
+  
+          } else if( ! this.isSidebarFitsViewport() && dims.containerTop <= colliderTop ){
+            affixType = 'VIEWPORT-UNBOTTOM';
+          }
+        // When browser is scrolling up.
+        } else {
+          // When sidebar element is not bigger than screen viewport.
+          if( this.isSidebarFitsViewport() ){
+  
+            if( dims.sidebarHeight + colliderTop >= dims.containerBottom ){
+              dims.translateY = dims.containerBottom - sidebarBottom;
+              affixType = 'CONTAINER-BOTTOM'; 
+  
+            } else if( colliderTop >= dims.containerTop ){
+              dims.translateY = colliderTop - dims.containerTop;
+              affixType = 'VIEWPORT-TOP';
+            }
+          // When sidebar element is bigger than screen viewport.
+          } else {
+      
+            if( dims.containerBottom <= colliderBottom ){
+              dims.translateY = dims.containerBottom - sidebarBottom; 
+              affixType = 'CONTAINER-BOTTOM';    
+  
+            } else if( sidebarBottom + dims.translateY <= colliderBottom ){
+              dims.translateY = colliderBottom - sidebarBottom;
+              affixType = 'VIEWPORT-BOTTOM';
+            
+            } else if( dims.containerTop + dims.translateY <= colliderTop ){
+              affixType = 'VIEWPORT-UNBOTTOM';
+            }
+          }
+        }
+  
+        // Make sure the translate Y is not bigger than container height.
+        dims.translateY = Math.max(0, dims.translateY);
+        dims.translateY = Math.min(dims.containerHeight, dims.translateY);
+  
+        dims.lastViewportTop = dims.viewportTop;
+        return affixType;
+      }
+  
+      /**
+       * Gets inline style of sticky sidebar wrapper and inner wrapper according 
+       * to its affix type.
+       * @private
+       * @param {String} affixType - Affix type of sticky sidebar.
+       * @return {Object}
+       */
+      _getStyle(affixType){
+        if( 'undefined' === typeof affixType ) return;
+  
+        var style = {inner: {}, outer: {}};
+        var dims = this.dimensions;
+  
+        switch( affixType ){
+          case 'VIEWPORT-TOP':
+            style.inner = {position: 'fixed', top: this.options.topSpacing,
+                  left: dims.sidebarLeft - dims.viewportLeft, width: dims.sidebarWidth};
+            break;
+          case 'VIEWPORT-BOTTOM':
+            style.inner = {position: 'fixed', top: 'auto', left: dims.sidebarLeft,
+                  bottom: this.options.bottomSpacing, width: dims.sidebarWidth};
+            break;
+          case 'CONTAINER-BOTTOM':
+          case 'VIEWPORT-UNBOTTOM':
+            let translate = this._getTranslate(0, dims.translateY + 'px');
+            
+            if( translate )
+              style.inner = {transform: translate};
+            else 
+              style.inner = {position: 'absolute', top: dims.translateY, width: dims.sidebarWidth};
+            break;
+        }
+        
+        switch( affixType ){
+          case 'VIEWPORT-TOP':
+          case 'VIEWPORT-BOTTOM':
+          case 'VIEWPORT-UNBOTTOM':
+          case 'CONTAINER-BOTTOM':
+            style.outer = {height: dims.sidebarHeight, position: 'relative'};
+            break;
+        }
+  
+        style.outer = StickySidebar.extend({height: '', position: ''}, style.outer);
+        style.inner = StickySidebar.extend({position: 'relative', top: '', left: '',
+            bottom: '', width: '',  transform: this._getTranslate()}, style.inner);
+  
+        return style;
+      }
+     
+      /**
+       * Cause the sidebar to be sticky according to affix type by adding inline
+       * style, adding helper class and trigger events.
+       * @function
+       * @protected
+       * @param {string} force - Update sticky sidebar position by force.
+       */
+      stickyPosition(force){
+        if( this._breakpoint ) return;
+  
+        force = force || false;
+        
+        var offsetTop = this.options.topSpacing;
+        var offsetBottom = this.options.bottomSpacing;
+  
+        var affixType = this.getAffixType();
+        var style = this._getStyle(affixType);
+        
+        if( (this.affixedType != affixType || force) && affixType ){
+          let affixEvent = 'affix.' + affixType.toLowerCase().replace('viewport-', '') + EVENT_KEY;
+          StickySidebar.eventTrigger(this.sidebar, affixEvent);
+  
+          if( 'STATIC' === affixType )
+            StickySidebar.removeClass(this.sidebar, this.options.stickyClass);
+          else
+            StickySidebar.addClass(this.sidebar, this.options.stickyClass);
+          
+          for( let key in style.outer ){
+            let _unit = ('number' === typeof style.outer[key]) ? 'px' : '';
+            this.sidebar.style[key] = style.outer[key];
+          }
+  
+          for( let key in style.inner ){
+            let _unit = ('number' === typeof style.inner[key]) ? 'px' : '';
+            this.sidebarInner.style[key] = style.inner[key] + _unit;
+          }
+  
+          let affixedEvent = 'affixed.'+ affixType.toLowerCase().replace('viewport', '') + EVENT_KEY;
+          StickySidebar.eventTrigger(this.sidebar, affixedEvent);
+        } else {
+          if( this._initialized ) this.sidebarInner.style.left = style.inner.left;
+        }
+  
+        this.affixedType = affixType;
+      }
+  
+      /**
+       * Breakdown sticky sidebar when window width is below `options.minWidth` value.
+       * @protected
+       */
+      _widthBreakpoint(){
+  
+        if( window.innerWidth <= this.options.minWidth ){
+          this._breakpoint = true;
+          this.affixedType = 'STATIC';
+  
+          this.sidebar.removeAttribute('style');
+          StickySidebar.removeClass(this.sidebar, this.options.stickyClass);
+          this.sidebarInner.removeAttribute('style');
+        } else {
+          this._breakpoint = false;
+        }
+      }
+  
+      /**
+       * Switchs between functions stack for each event type, if there's no 
+       * event, it will re-initialize sticky sidebar.
+       * @public
+       */
+      updateSticky(event = {}){
+        if( this._running ) return;
+        this._running = true;
+  
+        ((eventType) => {
+
+          requestAnimationFrame(() => {
+            switch( eventType ){
+              // When browser is scrolling and re-calculate just dimensions
+              // within scroll. 
+              case 'scroll':
+                this._calcDimensionsWithScroll();
+                this.observeScrollDir();
+                this.stickyPosition();
+                break;
+  
+              // When browser is resizing or there's no event, observe width
+              // breakpoint and re-calculate dimensions.
+              case 'resize':
+              default: 
+                this._widthBreakpoint();
+                this.calcDimensions();
+                this.stickyPosition(true);
+                break;
+            }
+            this._running = false;
+          });
+        })(event.type);
+      }
+  
+      /**
+       * Set browser support features to the public property.
+       * @private
+       */
+      _setSupportFeatures(){
+        var support = this.support;
+  
+        support.transform = StickySidebar.supportTransform();
+        support.transform3d = StickySidebar.supportTransform(true);
+      }
+  
+      /**
+       * Get translate value, if the browser supports transfrom3d, it will adopt it.
+       * and the same with translate. if browser doesn't support both return false.
+       * @param {Number} y - Value of Y-axis.
+       * @param {Number} x - Value of X-axis.
+       * @param {Number} z - Value of Z-axis.
+       * @return {String|False}
+       */
+      _getTranslate(y = 0, x = 0, z = 0){
+        if( this.support.transform3d ) return 'translate3d(' + y +', '+ x +', '+ z +')';
+        else if( this.support.translate ) return 'translate('+ y +', '+ x +')';
+        else return false;
+      }
+  
+      /**
+       * Destroy sticky sidebar plugin.
+       * @public
+       */
+      destroy(){
+        window.removeEventListener('resize', this);
+        window.removeEventListener('scroll', this);
+  
+        this.sidebar.classList.remove(this.options.stickyClass);
+        this.sidebar.style.minHeight = '';
+  
+        this.sidebar.removeEventListener('update' + EVENT_KEY, this);
+  
+        var styleReset = {inner: {}, outer: {}};
+  
+        styleReset.inner = {position: '', top: '', left: '', bottom: '', width: '',  transform: ''};
+        styleReset.outer = {height: '', position: ''};
+  
+        for( let key in styleReset.outer )
+          this.sidebar.style[key] = styleReset.outer[key];
+  
+        for( let key in styleReset.inner )
+          this.sidebarInner.style[key] = styleReset.inner[key];
+  
+        if( this.options.resizeSensor && 'undefined' !== typeof ResizeSensor ){
+          ResizeSensor.detach(this.sidebarInner, this.handleEvent);
+          ResizeSensor.detach(this.container, this.handleEvent);
+        }
+      }
+  
+      /**
+       * Detarmine if the browser supports CSS transfrom feature.
+       * @function
+       * @static
+       * @param {Boolean} transform3d - Detect transform with translate3d.
+       * @return {String}
+       */
+      static supportTransform(transform3d){
+        var result = false,
+            property = (transform3d) ? 'perspective' : 'transform',
+            upper = property.charAt(0).toUpperCase() + property.slice(1),
+            prefixes = ['Webkit', 'Moz', 'O', 'ms'],
+            support = document.createElement('support'),
+            style = support.style;
+  
+        (property + ' ' + prefixes.join(upper + ' ') + upper).split(' ').forEach(function(property, i) {
+          if (style[property] !== undefined) {
+            result = property;
+            return false;
+          }
+        });
+        return result;
+      }
+  
+      /**
+       * Trigger custom event.
+       * @static
+       * @param {DOMObject} element - Target element on the DOM.
+       * @param {String} eventName - Event name.
+       * @param {Object} data - 
+       */
+      static eventTrigger(element, eventName, data){
+        try{
+          var event = new CustomEvent(eventName, {detail: data});
+        } catch(e){
+          var event = document.createEvent('CustomEvent');
+          event.initCustomEvent(eventName, true, true, data);
+        }
+        element.dispatchEvent(event);
+      }
+  
+      /**
+       * Extend options object with defaults.
+       * @function
+       * @static
+       */
+      static extend(defaults, options){
+        var results = {};
+        for( let key in defaults ){
+          if( 'undefined' !== typeof options[key] ) results[key] = options[key];
+          else results[key] = defaults[key];
+        }
+        return results;
+      }
+  
+      /**
+       * Get current coordinates left and top of specific element.
+       * @static
+       */
+      static offsetRelative(element){
+        var result = {left: 0, top: 0};
+        do{
+          let offsetTop = element.offsetTop;
+          let offsetLeft = element.offsetLeft;
+  
+          if( ! isNaN(offsetTop) )
+            result.top += offsetTop;
+  
+          if( ! isNaN(offsetLeft) )
+            result.left += offsetLeft;
+        } while( element = element.offsetParent )
+        return result;
+      }
+  
+      /**
+       * Add specific class name to specific element.
+       * @static 
+       * @param {ObjectDOM} element 
+       * @param {String} className 
+       */
+      static addClass(element, className){
+        if( ! StickySidebar.hasClass(element, className) ){
+          if (element.classList)
+            element.classList.add(className);
+          else
+            element.className += ' ' + className;
+        }
+      }
+      
+      /**
+       * Remove specific class name to specific element
+       * @static
+       * @param {ObjectDOM} element 
+       * @param {String} className 
+       */
+      static removeClass(element, className){
+        if( StickySidebar.hasClass(element, className) ){
+          if (element.classList)
+            element.classList.remove(className);
+          else
+            element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+      }
+
+      /**
+       * Detarmine weather the element has specific class name.
+       * @static
+       * @param {ObjectDOM} element 
+       * @param {String} className 
+       */
+      static hasClass(element, className){
+        if (element.classList)
+          return element.classList.contains(className);
+        else
+          return new RegExp('(^| )' + className + '( |$)', 'gi').test(element.className);
+      }
+    }
+  
+    return StickySidebar;
+  })();
+  
+  /* harmony default export */ __webpack_exports__["default"] = (StickySidebar);
+  
+  // Global
+  // -------------------------
+  window.StickySidebar = StickySidebar;
+
+/***/ }),
+
+/***/ 22:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.toggleClass = toggleClass;
+/**
+ * toggleClass
+ *
+ * Toggles the class for a DOM element.
+ *
+ * Supported: IE8+
+ *
+ * @param {DOMElement} el Element to toggle the class for.
+ * @param {string} className Name of the class to toggle.
+ */
+function toggleClass(el, className, force) {
+  // Check if new classList API is avaliagle
+  if (el.classList) {
+    el.classList.toggle(className, force);
+    return;
+  }
+
+  // Get all of the class names as an array
+  var classes = el.className.split(' ');
+  var existingIndex = -1;
+
+  // Find the index of the className in the array
+  for (var i = classes.length; i--;) {
+    if (classes[i] === className) existingIndex = i;
+  }
+
+  // Remove class
+  if (existingIndex >= 0 && force !== true) {
+    classes.splice(existingIndex, 1);
+  } else {
+    if (force !== false) {
+      classes.push(className);
+    }
+  }
+
+  // Re-add all of the classes
+  el.className = classes.join(' ');
+}
+
+/***/ }),
+
+/***/ 23:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.addEventListenerToEl = addEventListenerToEl;
+exports.removeEventListenerFromEl = removeEventListenerFromEl;
+exports.removeAllEventsFromEl = removeAllEventsFromEl;
+/**
+ * addEventListenerToEl
+ *
+ * Adds an event listener to an element.
+ *
+ * Supported: IE8+
+ *
+ * @param {DOMElement} el Element to add the event to.
+ * @param {string} eventName Name of the event.
+ * @param {function} handler Callback function to handle event.
+ */
+function addEventListenerToEl(el, eventName, handler) {
+  if (el.addEventListener) {
+    el.addEventListener(eventName, handler);
+    return;
+  }
+  el.attachEvent('on' + eventName, function () {
+    handler.call(el);
+  });
+}
+
+/**
+ * removeEventListenerFromEl
+ *
+ * Removes an event handler from an element.
+ *
+ * Supported: IE8+
+ *
+ * @param {DOMElement} el DOM element
+ * @param {string} eventName Name of the event.
+ * @param {function} handler Callback function to remove from event.
+ */
+function removeEventListenerFromEl(el, eventName, handler) {
+  if (el.removeEventListener) {
+    el.removeEventListener(eventName, handler);
+    return;
+  }
+  el.detachEvent('on' + eventName, handler);
+}
+
+/**
+ * removeAllEventsFromEl
+ *
+ * Removes all event handlers from an element.
+ *
+ * Supported: IE8+
+ *
+ * @param {DOMElement} el DOM element
+ */
+function removeAllEventsFromEl(el) {
+  var clone = el.cloneNode(true);
+  el.parentNode.replaceChild(clone, el);
+}
+
+/***/ }),
+
+/***/ 24:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.closestParentOfEl = closestParentOfEl;
+/**
+ * closestParentOfEl
+ *
+ * Loops up the DOM tree until it finds a parent with the class name.
+ *
+ * @param {DOMElement} el Element to start and traverse up from.
+ * @param {string} className Class name to look for in parent.
+ */
+function closestParentOfEl(el, className) {
+  var matches = (document || el.ownerDocument).querySelectorAll(className);
+  var i = void 0;
+  do {
+    i = matches.length;
+    while (--i >= 0 && matches.item(i) !== el) {}
+  } while (i < 0 && (el = el.parentElement));
+  return el;
+}
+
+/***/ }),
+
+/***/ 4:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _domReady = __webpack_require__(20);
+
+Object.keys(_domReady).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _domReady[key];
+    }
+  });
+});
+
+var _hasClass = __webpack_require__(21);
+
+Object.keys(_hasClass).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _hasClass[key];
+    }
+  });
+});
+
+var _toggleClass = __webpack_require__(22);
+
+Object.keys(_toggleClass).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _toggleClass[key];
+    }
+  });
+});
+
+var _events = __webpack_require__(23);
+
+Object.keys(_events).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _events[key];
+    }
+  });
+});
+
+var _closestParent = __webpack_require__(24);
+
+Object.keys(_closestParent).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _closestParent[key];
+    }
+  });
+});
+
+/***/ }),
+
+/***/ 6:
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ })
+
+/******/ });

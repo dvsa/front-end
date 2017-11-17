@@ -10,10 +10,14 @@
     "start-server": "babel-node ./src/server",
     "build-production": "cross-env NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
-    "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
+    "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js",
+    "precommit-msg": "echo 'Running build-production before commit...' && exit 0",
+    "git-add": "git add ."
   },
   "pre-commit": [
-    "build-production"
+    "precommit-msg",
+    "build-production",
+    "git-add"
   ],
   "repository": {
     "type": "git",

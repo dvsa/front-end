@@ -31,6 +31,7 @@ export class RecallsAccordion {
     // Do not continue if recalls accordion does not exist
     if (!this.recallsAccordionSectionElement) return;
 
+    // Get elements
     this.recallsAccordionHeaderElement = document.querySelector(RECALLS_ACCORDION_CONSTANTS.selectors.header);
     this.parentAccordionElement = closestParentOfEl(this.recallsAccordionSectionElement, '.' + ACCORDION_CONSTANTS.classNames.accordion);
     this.recallsAccordionContentElement = this.recallsAccordionSectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.content);
@@ -41,6 +42,36 @@ export class RecallsAccordion {
     this.recallsContentLoadingElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.loading);
     this.recallsContentOutputElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.output);
 
+    // Check if elements exist
+    if (!this.recallsAccordionHeaderElement) {
+      return console.warn('Recalls accordion header element not found');
+    }
+
+    if (!this.parentAccordionElement) {
+      return console.warn('Recalls main accordion element not found');
+    }
+
+    if (!this.recallsAccordionContentElement) {
+      return console.warn('Recalls accordion content element not found');
+    }
+
+    if (!this.recallsContentElement) {
+      return console.warn('Recalls accordion content inner wrapper element not found');
+    }
+
+    if (!this.recallsContentNoJSAlternativeElement) {
+      return console.warn('Recalls accordion no js alternative element not found');
+    }
+
+    if (!this.recallsContentLoadingElement) {
+      return console.warn('Recalls accordion loading element not found');
+    }
+
+    if (!this.recallsContentOutputElement) {
+      return console.warn('Recalls accordion ajax output placeholder element not found');
+    }
+
+    // Setup initial state
     this.state = {
       ajaxRequestBody: false,
       ajaxEndpoint: false,
@@ -84,28 +115,171 @@ export class RecallsAccordion {
     if (!this.state.ajaxEndpoint) return;
     // Enable loading
     if (!this.state.loading && !this.state.ajaxContentAddedToDOM) {
-      // Change the state
-      this.state.loading = true;
-      // Toggle loading class to show spinner and message
-      toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, true);
       // Make AJAX call
-      axios
-        .post(this.state.ajaxEndpoint, {
-          ...this.state.ajaxRequestBody,
-        })
-        .then(response => {
-          this.state.loading = false;
-          this.state.ajaxContentAddedToDOM = true;
-          // Remove loading class
-          toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, false);
-          // Add html form ajax to output
-          this.recallsContentOutputElement.innerHTML = response.data;
-          // Display the accordion output
-          toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
-        })
-        .catch(error => {
-          console.log(error);
-        });
+      // this.callAjaxWithHTMLResponse();
+      this.callAjaxWithJSONResponse();
+    }
+  };
+
+  /**
+   * Calls ajax and expects a JSON response
+   *
+   * Response should be in the following format:
+   *
+   * {
+   *   "result": "HTML we render",
+   *   "smartSurveyLink": "just string with url",
+   *   "dataLayer": [
+   *     {
+   *       "event": "api-response"
+   *       ...
+   *     },
+   *     {
+   *       "event": "cta-status-ready"
+   *       ...
+   *     }
+   *   ]
+   * }
+   *
+   * result - HTML will replace accordion content in DOM
+   * smartSurveyLink - Will change the feedback url
+   * dataLayer - Will push each item in the array
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  callAjaxWithJSONResponse = () => {
+    // Start loading
+    this.startLoading();
+    axios
+      .post(this.state.ajaxEndpoint, {
+        ...this.state.ajaxRequestBody,
+      })
+      .then(response => {
+
+        let responseData = response.data;
+
+        // Check if response has HTML result
+        if (responseData === null || responseData.result === null) {
+          // Stop loading
+          this.stopLoading();
+          // Return console message
+          return console.warn('No HTML result key found in response');
+        }
+
+        // Change recalls accordion DOM content with response
+        this.recallsContentOutputElement.innerHTML = responseData.result;
+        // Display the accordion output
+        toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
+        // Change state to reflect DOM change
+        this.state.ajaxContentAddedToDOM = true;
+
+        // Check if smartSurveyLink key exists in response
+        if (responseData !== null && responseData.smartSurveyLink) {
+          // Get phase banner link
+          let phaseBannerLink = document.querySelector('.phase-banner a');
+          // Check if the link exists
+          if (phaseBannerLink) {
+            // Replace current survey link with new one from the response
+            phaseBannerLink.href = responseData.smartSurveyLink;
+          } else {
+            console.warn('Found smart survey link in response, but could no detect phase banner link in the DOM');
+          }
+        }
+
+        // Check if dataLayer key exists in repsonse
+        if (responseData !== null && responseData.dataLayer) {
+          // Check if is array
+          if (Array.isArray(responseData.dataLayer)) {
+            responseData.dataLayer.forEach(dataLayerObject => {
+              this.dataLayerPush(dataLayerObject);
+            });
+          } else if (responseData.dataLayer !== null && typeof responseData.dataLayer === 'object') {
+            this.dataLayerPush(responseData.dataLayer);
+          }
+        }
+
+        // Stop loading
+        this.stopLoading();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  /**
+   * Calls ajax and expects a text/html response
+   * then it will replace the recalls accordion content with the response
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  callAjaxWithHTMLResponse = () => {
+    // Start loading
+    this.startLoading();
+    axios
+      .post(this.state.ajaxEndpoint, {
+        ...this.state.ajaxRequestBody,
+      })
+      .then(response => {
+        // check if response has data
+        if( !response || !response.data ) {
+          this.stopLoading();
+          return console.warn('Response has no data');
+        }
+
+        // Add html form ajax to output
+        this.recallsContentOutputElement.innerHTML = response.data;
+
+        // Change state to reflect DOM change
+        this.state.ajaxContentAddedToDOM = true;
+
+        // Display the accordion output
+        toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
+
+        // Stop Loading
+        this.stopLoading();
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
+  /**
+   * Enabled the loading message in the recalls accordion
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  startLoading = () => {
+    // Change the state
+    this.state.loading = true;
+    // Toggle loading class to show spinner and message
+    toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, true);
+  };
+
+  /**
+   * Disabled the loading message in the recalls accordion
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  stopLoading = () => {
+    // Remove loading class
+    toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, false);
+    // Change state since loading is now finished
+    this.state.loading = false;
+  };
+
+  /**
+   * Makes a dataLayer push
+   *
+   * @param {Object} object dataLayer object with key/value pairs
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  dataLayerPush = object => {
+    // Check if dataLayer exists and the object is valid
+    if (!window.dataLayer || object === null || typeof object !== 'object') {
+      console.warn('Could not push dataLayer as it was not found');
+    } else {
+      // Make a data layer push
+      window.dataLayer.push(object);
     }
   };
 }

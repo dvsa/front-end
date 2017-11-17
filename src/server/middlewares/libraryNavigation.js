@@ -3,7 +3,7 @@ import fs from 'fs';
 import nodeDir from 'node-dir';
 import { startCase } from 'lodash';
 
-import { CONFIG } from './../config/constants';
+import CONFIG from './../config/constants';
 
 export const isDirectory = source => fs.lstatSync(source).isDirectory();
 

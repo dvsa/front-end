@@ -45,9 +45,14 @@ export const ACCORDION_CONSTANTS = {
 
 export class Accordion {
   constructor(accordionElement) {
-    if (!accordionElement) return;
     this.accordionElement = accordionElement;
 
+    // Check if the accordion exists
+    if (!this.accordionElement) {
+      return console.warn('Accordion element not found');
+    }
+
+    // Setup smooth scrolling library
     this.smoothScroll = new SmoothScroll();
 
     // Create unique hash for current element based on DOM HTML
@@ -57,6 +62,11 @@ export class Accordion {
     this.sections = this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.section);
     this.headings = this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.header);
     this.expandButton = this.accordionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.expandButton);
+
+    // Check if sections and headings exist
+    if (!this.sections || !this.headings || !this.expandButton) {
+      return console.warn('No sections found', 'No headings found', 'No expand button found');
+    }
 
     // Add JS Enabled class
     toggleClass(this.accordionElement, ACCORDION_CONSTANTS.classNames.jsEnabled, true);
@@ -68,6 +78,7 @@ export class Accordion {
       sections: [],
     };
 
+    // Setup smooth scrolling options
     this.smoothScrollOptions = {
       offset: 30,
       speed: 300,
@@ -89,8 +100,20 @@ export class Accordion {
 
     // Loop through each section element
     this.sections.forEach(sectionElement => {
+      if (!sectionElement) {
+        return console.log('Section element not found');
+      }
+
       let sectionHeaderElement = sectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.header);
+      if (!sectionHeaderElement) {
+        return console.log('Section header element not found');
+      }
+
       let sectionContentElement = sectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.content);
+      if (!sectionContentElement) {
+        return console.log('Section content element not found');
+      }
+
       let sectionUniqueIdentifier = md5(sectionElement.innerHTML);
       let sectionContentId = sectionHeaderElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.sectionContentId);
       // Add the section elements to the state
@@ -252,12 +275,18 @@ export class Accordion {
         toggleClass(section.sectionElement, ACCORDION_CONSTANTS.classNames.sectionOpen, section.sectionOpen);
 
         // Set Aria attributes
-        section.sectionHeaderElement.setAttribute(
-          ACCORDION_CONSTANTS.ariaAttributes.controls,
-          section.sectionContentId ? section.sectionContentId : section.sectionUniqueIdentifier
-        );
-        section.sectionHeaderElement.setAttribute(ACCORDION_CONSTANTS.ariaAttributes.expanded, section.sectionOpen ? 'true' : 'false');
-        section.sectionContentElement.setAttribute(ACCORDION_CONSTANTS.ariaAttributes.hidden, section.sectionOpen ? 'false' : 'true');
+        if (
+          section.sectionHeaderElement &&
+          section.sectionContentElement &&
+          (section.sectionContentId || section.sectionUniqueIdentifier)
+        ) {
+          section.sectionHeaderElement.setAttribute(
+            ACCORDION_CONSTANTS.ariaAttributes.controls,
+            section.sectionContentId ? section.sectionContentId : section.sectionUniqueIdentifier
+          );
+          section.sectionHeaderElement.setAttribute(ACCORDION_CONSTANTS.ariaAttributes.expanded, section.sectionOpen ? 'true' : 'false');
+          section.sectionContentElement.setAttribute(ACCORDION_CONSTANTS.ariaAttributes.hidden, section.sectionOpen ? 'false' : 'true');
+        }
 
         // If the section is open
         // update the open count
@@ -387,7 +416,7 @@ export class Accordion {
    * @author Tameem Safi <t.safi@kainos.com>
    */
   getSectionDataLayerInfo = section => {
-    if (!section) return;
+    if (!section || !section.sectionElement) return;
     return {
       category: section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.sectionCategory),
       indexId: Number(section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.stateIndexId)),

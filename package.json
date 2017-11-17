@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start-heroku": "npm run start-server",
-    "start-dev": "NODE_ENV=development npm run pretty-js && concurrently \"gulp watch-dev\" \"webpack --config ./webpack/webpack.config.development.babel.js\" \"npm run start-dev-server\"",
+    "start-dev": "cross-env NODE_ENV=development npm run pretty-js && concurrently \"cross-env NODE_ENV=development gulp watch-dev\" \"cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.babel.js\" \"cross-env NODE_ENV=development npm run start-dev-server\"",
     "start-dev-server": "nodemon --watch 'src/server/**/*.js' --exec npm run start-server",
     "start-server": "babel-node ./src/server",
-    "build-production": "NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
+    "build-production": "cross-env NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
-    "run-tests": "NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
+    "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
   },
   "repository": {
     "type": "git",
@@ -64,10 +64,12 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
+    "babel-minify-webpack-plugin": "^0.2.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "chai": "^4.1.2",
+    "cross-env": "^5.1.1",
     "cssnano": "^3.10.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
@@ -92,7 +94,6 @@
     "undertaker-forward-reference": "^1.0.2",
     "webpack": "^3.6.0",
     "webpack-merge": "^4.1.1",
-    "webpack-stream": "^4.0.0",
-    "babel-minify-webpack-plugin": "^0.2.0"
+    "webpack-stream": "^4.0.0"
   }
 }

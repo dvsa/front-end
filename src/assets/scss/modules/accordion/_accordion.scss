@@ -3,6 +3,12 @@
   &__top-section {
     display: none;
 
+    &:after {
+      content: ' ';
+      display: table;
+      clear: both;
+    }
+
     .js-accordion--js-enabled & {
       display: block;
     }

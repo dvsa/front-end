@@ -8,6 +8,16 @@ const delay = () => {
 
 export const recalls = async (req, res) => {
   await delay();
-  res.type('text/html');
-  res.send(`<p>The following '<strong>${req.body.test_variable}</strong>' was taken from the ajax request body.</p>`);
+  res.json({
+    result: `<p>The following '<strong>${req.body.test_variable}</strong>' was taken from the ajax request body.</p>`,
+    smartSurveyLink: 'https://www.gov.uk',
+    dataLayer: [
+      {
+        event: 'test-event-one',
+      },
+      {
+        event: 'test-event-two',
+      },
+    ],
+  });
 };

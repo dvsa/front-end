@@ -18,15 +18,27 @@ export class LibraryPageNavigation {
     // Get elements
     this.libraryContainerElement = document.getElementById(this.libraryContainerId);
     this.navigation = document.getElementById(this.navigationId);
+
+    // Check if elements exist
     if (!this.navigation || !this.libraryContainerElement) return;
 
+    // Get elements
     this.mobileNavigationContainer = document.querySelector('.' + this.mobileNavigationClassName);
-
     this.navigationInner = this.navigation.querySelector('.' + this.navigationInnerClassName);
     this.content = document.getElementById(this.contentId);
-    this.mobileNavigation = document.querySelector('.' + this.mobileNavigationClassName);
 
-    if (!this.navigation || !this.content) return;
+    // Check if elements exist
+    if (!this.mobileNavigationContainer) {
+      return console.warn('Mobile navigation container not found');
+    }
+
+    if (!this.navigationInner) {
+      return console.warn('Navigation inner not found');
+    }
+
+    if (!this.content) {
+      return console.warn('Library content not found');
+    }
 
     this.setup();
   }

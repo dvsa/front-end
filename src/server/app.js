@@ -18,7 +18,7 @@ import errorhandler from 'errorhandler';
 import _ from 'lodash';
 
 import { allRoutes } from './config/routes';
-import { CONFIG } from './config/constants';
+import CONFIG from './config/constants';
 import { addLibraryNavigationItemsToRequestObject } from './middlewares/libraryNavigation';
 
 export const startApp = async () => {
@@ -87,6 +87,9 @@ export const startApp = async () => {
 
   // Add lodash as a global for view templates
   env.addGlobal('_', _);
+
+  // Add app url as global
+  env.addGlobal('appURL', CONFIG.appURL);
 
   // Loops through views/parials folder and get full path for each file
   const getMacroFilePaths = async () => {
@@ -181,14 +184,11 @@ export const startApp = async () => {
   // Routes
   app.use('/', allRoutes);
 
-  // Get the correct port based on the enviroment
-  let appPort = process.env.PORT || CONFIG.port;
-
   // Start HTTP server
-  app.listen(appPort, () => {
+  app.listen(CONFIG.port, () => {
     if (process.env.NODE_ENV != 'testing') {
       console.log(`
-        Port: ${appPort} 
+        Port: ${CONFIG.port} 
         Env: ${app.get('env')}
       `);
     }

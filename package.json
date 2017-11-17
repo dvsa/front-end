@@ -6,7 +6,7 @@
   "scripts": {
     "start-heroku": "npm run start-server",
     "start-dev": "cross-env NODE_ENV=development npm run pretty-js && concurrently \"cross-env NODE_ENV=development gulp watch-dev\" \"cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.babel.js\" \"cross-env NODE_ENV=development npm run start-dev-server\"",
-    "start-dev-server": "nodemon --watch 'src/server/**/*.js' --exec npm run start-server",
+    "start-dev-server": "nodemon -e js,njk --watch 'src/server/*' --exec npm run start-server",
     "start-server": "babel-node ./src/server",
     "build-production": "cross-env NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",

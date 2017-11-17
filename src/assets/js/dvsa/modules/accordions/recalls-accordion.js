@@ -155,7 +155,6 @@ export class RecallsAccordion {
         ...this.state.ajaxRequestBody,
       })
       .then(response => {
-
         let responseData = response.data;
 
         // Check if response has HTML result
@@ -221,7 +220,7 @@ export class RecallsAccordion {
       })
       .then(response => {
         // check if response has data
-        if( !response || !response.data ) {
+        if (!response || !response.data) {
           this.stopLoading();
           return console.warn('Response has no data');
         }

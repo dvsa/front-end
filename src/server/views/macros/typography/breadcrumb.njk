@@ -1,0 +1,20 @@
+{% macro breadcrumb(items=false, type=false, homeUrl='/', homeLabel='Home') %}
+  {% if items %}
+    <div class="breadcrumbs">
+      <ol>
+          <li><a href="{{ homeUrl }}">{{ homeLabel }}</a></li>
+          {% for item in items %}
+          <li>
+            {% if item.url %}
+            <a href="{{ item.url }}">
+            {% endif %}
+              {{ item.text }}
+            {% if item.url %}
+            </a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ol>
+    </div>
+  {% endif %}
+{% endmacro %}

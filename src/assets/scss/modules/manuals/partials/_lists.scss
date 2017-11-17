@@ -1,0 +1,75 @@
+// manuals menus
+// for the sake of BEM brevity, this has been shortened to m-m
+
+.m-m {
+
+    &__number {
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-align: right;
+        width: 30px;
+        margin: 0 10px 0 0;
+        color: $black;
+    }
+
+    &__text {
+        display: block;
+        padding-left: 35px;
+    }
+
+    li {
+        @include core-16;
+        position: relative;
+    }
+
+    a {
+        position: relative;
+        display: block;
+    }
+
+    &--parent {
+
+        li {
+
+            a {
+                font-weight: bold;
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    &--child {
+        margin-bottom: 30px;
+
+        li {
+            margin-bottom: 4px;
+
+            a {
+                font-weight: normal;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.manuals {
+
+    ul ul {
+
+        padding-left: 20px;
+
+        & >li {
+            list-style: circle;
+        }
+
+        & ul {
+
+            padding-left: 20px;
+
+            & >li {
+                list-style: square;
+            }
+        }
+    }
+}

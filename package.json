@@ -13,7 +13,6 @@
     "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
   },
   "pre-commit": [
-    "run-tests",
     "build-production"
   ],
   "repository": {

@@ -12,6 +12,10 @@
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
     "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
   },
+  "pre-commit": [
+    "run-tests",
+    "build-production"
+  ],
   "repository": {
     "type": "git",
     "url": "git@gitlab.motdev.org.uk:mot/mot-new-wfa.git"
@@ -87,6 +91,7 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-tap": "^1.0.1",
     "mocha": "^4.0.1",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.7.4",
     "puppeteer": "^0.13.0",
     "run-sequence": "^2.2.0",

@@ -352,7 +352,7 @@ export class Accordion {
    * @param {Number} sectionIndex The index id of the section in the state
    */
   pushDataLayerForAccordion = sectionIndex => {
-    if (!window.dataLayer || !sectionIndex) return;
+    if (!window.dataLayer || sectionIndex == undefined) return;
     let section = this.state.sections[sectionIndex];
     if (!section || !section.sectionElement) return;
     let sectionDataLayerInfo = this.getSectionDataLayerInfo(section);

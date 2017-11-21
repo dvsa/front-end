@@ -1,0 +1,21 @@
+sub,
+sup,
+.sub,
+.sup {
+    font-size: 80%;
+}
+
+.sub,
+.sup {
+    position: relative;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+.sup {
+    top: -0.5em;
+}
+
+.sub {
+    bottom: -0.25em;
+}

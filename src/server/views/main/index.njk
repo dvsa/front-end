@@ -22,6 +22,13 @@
       
     {%- endcall %}
 
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Templates', tag='h2', size='medium', url='/templates') }}
+      {{ components.paragraph(text='Various templates for (mostly) public-facing services.') }}
+
+    {%- endcall %}
+
   {%- endcall %}
   
 {% endblock %}

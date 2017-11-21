@@ -68,6 +68,7 @@
 
     <main id="content" {{ 'class="' + mainContainerClass + '"' if mainContainerClass }}>
       {% include 'layouts/partials/phase-banner.njk' %}
+      {% include 'layouts/partials/breadcrumbs.njk' %}
       {% block content %}{% endblock %}
     </main>
 
@@ -79,6 +80,11 @@
 
     <!-- body-scripts -->
     <script type="text/javascript" src="/javascripts/dvsa.bundle.js"></script>
+    
+    <!-- development-only -->
+    <script type="text/javascript" src="/javascripts/development.bundle.js"></script>
+    <!-- /development-only -->
+    
     {% block bodyScripts %}{% endblock %}
     <!-- /body-scripts -->
 

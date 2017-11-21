@@ -1,12 +1,15 @@
-{% extends 'layouts/manuals.layout.njk' %}
+{% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'MOT Library - Templates - Manuals' %}
+{% set pageTitle = 'MOT Manuals - Styles' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'MOT Manuals', url: '/manuals' },
+  { text: 'Styles' }
+] %}
 
 {% block content %}
 
-  {{ components.breadcrumb(homeUrl='/templates/',homeLabel='MOT manuals',items=[
-    { text: 'Example page', url: '' }
-  ]) }}
+  {{ components.breadcrumb(items=breadcrumbItems) }}
 
   {{ components.pageHeading(heading='Manuals', secondary='GOV.UK elements') }}
 

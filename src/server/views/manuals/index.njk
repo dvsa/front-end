@@ -4,8 +4,7 @@
 
 {% block content %}
 
-  {{ components.pageHeading(heading='Templates', secondary='GOV.UK elements') }}
-
+  {{ components.pageHeading(heading='Manuals', secondary='GOV.UK elements') }}
   {{ components.paragraph(text='Various templates', lead=true) }}
 
   {% call components.gridRow() %}
@@ -13,9 +12,9 @@
     {% call components.columnOneThird() %}
 
       {{ components.list(items=[
-        { text: 'Manuals - all the styles', url: '/templates/manuals' },
-        { text: 'Manuals - all menus', url: '/templates/manuals-menu' },
-        { text: 'Manuals - example page', url: '/templates/manuals-page' }
+        { text: 'Manuals - all the styles', url: '/manuals/styles' },
+        { text: 'Manuals - all menus', url: '/manuals/menu' },
+        { text: 'Manuals - example page', url: '/manuals/page' }
       ], type='bullet')}}
 
     {%- endcall %}

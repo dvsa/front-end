@@ -4,6 +4,14 @@ import CONFIG from './../config/constants';
 
 // View file
 export const viewFileRoute = (req, res) => {
+  let directoryName = path.dirname(req.path);
+  let directoryBaseName = path.basename(directoryName);
+
+  // Partials folder show not be accessed
+  if (directoryBaseName == 'partials') {
+    return res.send('Partials folder is not an accessible route.');
+  }
+
   let viewFilePath = path.join(CONFIG.paths.views.base, req.path + '.njk');
   let viewIndexFilePath = path.join(CONFIG.paths.views.base, req.path, 'index.njk');
 

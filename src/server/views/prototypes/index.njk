@@ -15,6 +15,13 @@
       
     {%- endcall %}
 
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Manuals', tag='h2', size='medium', url='/manuals') }}
+      {{ components.paragraph(text='A prototype mockup of the manuals.') }}
+      
+    {%- endcall %}
+
   {%- endcall %}
   
 {% endblock %}

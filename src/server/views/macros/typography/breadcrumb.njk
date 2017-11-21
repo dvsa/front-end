@@ -1,8 +1,7 @@
-{% macro breadcrumb(items=false, type=false, homeUrl='/', homeLabel='Home') %}
+{% macro breadcrumb(items=false) %}
   {% if items %}
     <div class="breadcrumbs">
       <ol>
-          <li><a href="{{ homeUrl }}">{{ homeLabel }}</a></li>
           {% for item in items %}
           <li>
             {% if item.url %}

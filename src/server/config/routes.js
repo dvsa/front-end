@@ -6,7 +6,7 @@ import * as recallsController from './../controllers/api/v1/recalls.controller';
 
 const router = Router();
 
-// Misc routes 
+// Misc routes
 router.get('/robots.txt', mainController.robots);
 router.get('/', mainController.index);
 

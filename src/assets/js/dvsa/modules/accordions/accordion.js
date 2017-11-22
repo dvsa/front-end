@@ -37,6 +37,11 @@ export const ACCORDION_CONSTANTS = {
     linkType: 'accordion',
     sectionMemoryEvent: 'subsection-memory',
     sectionAll: 'subsection-all',
+    submitEvent: 'recall-cta-submit',
+    submitElementName: 'Recall',
+    submitRecallUi: 'cta-submitted',
+    submitRecallOutcome: 'Requested',
+    submitTimestamp: 'timestamp',
   },
   eventNames: {
     expandAllOpen: 'js-accordion:expand-all-open',
@@ -356,15 +361,25 @@ export class Accordion {
     let section = this.state.sections[sectionIndex];
     if (!section || !section.sectionElement) return;
     let sectionDataLayerInfo = this.getSectionDataLayerInfo(section);
-    let dataLayerObject = {
+
+    let dataLayerClickObject = {
       event: ACCORDION_CONSTANTS.dataLayer.linkClickEvent,
       link: 'subsection-' + sectionDataLayerInfo.category,
       'link-text': sectionDataLayerInfo.heading,
       'link-action': sectionDataLayerInfo.openState,
       'link-type': ACCORDION_CONSTANTS.dataLayer.linkType,
     };
-    dataLayerObject['subsection-' + sectionDataLayerInfo.category + '-status'] = sectionDataLayerInfo.openState;
-    window.dataLayer.push(dataLayerObject);
+    dataLayerClickObject['subsection-' + sectionDataLayerInfo.category + '-status'] = sectionDataLayerInfo.openState;
+    window.dataLayer.push(dataLayerClickObject);
+
+    let dataLayerSubmitObject = {
+      'event': sectionDataLayerInfo.dataLayer.submitEvent,
+      'element-name': sectionDataLayerInfo.dataLayer.submitElementName,
+      'recall-ui': sectionDataLayerInfo.dataLayer.submitRecallUi,
+      'recall-outcome': sectionDataLayerInfo.dataLayer.submitRecallOutcome,
+      'timestamp': new Date().toISOString(),
+    };
+    window.dataLayer.push(dataLayerSubmitObject);
   };
 
   /**

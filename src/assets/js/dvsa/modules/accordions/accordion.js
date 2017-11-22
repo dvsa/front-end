@@ -356,15 +356,19 @@ export class Accordion {
     let section = this.state.sections[sectionIndex];
     if (!section || !section.sectionElement) return;
     let sectionDataLayerInfo = this.getSectionDataLayerInfo(section);
-    let dataLayerObject = {
+
+    // Create the datalayer push object
+    let dataLayerClickObject = {
       event: ACCORDION_CONSTANTS.dataLayer.linkClickEvent,
       link: 'subsection-' + sectionDataLayerInfo.category,
       'link-text': sectionDataLayerInfo.heading,
       'link-action': sectionDataLayerInfo.openState,
       'link-type': ACCORDION_CONSTANTS.dataLayer.linkType,
     };
-    dataLayerObject['subsection-' + sectionDataLayerInfo.category + '-status'] = sectionDataLayerInfo.openState;
-    window.dataLayer.push(dataLayerObject);
+    // Add the category to the push object
+    dataLayerClickObject['subsection-' + sectionDataLayerInfo.category + '-status'] = sectionDataLayerInfo.openState;
+    // Push the object into the datalayer array
+    window.dataLayer.push(dataLayerClickObject);
   };
 
   /**

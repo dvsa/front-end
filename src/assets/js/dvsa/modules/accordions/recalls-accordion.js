@@ -21,6 +21,13 @@ export const RECALLS_ACCORDION_CONSTANTS = {
     loading: 'recalls-accordion__loading',
     output: 'recalls-accordion__output',
   },
+  dataLayer: {
+    submitEvent: 'recall-cta-submit',
+    submitElementName: 'Recall',
+    submitRecallUi: 'cta-submitted',
+    submitRecallOutcome: 'Requested',
+    submitTimestamp: 'timestamp',
+  },
 };
 
 export class RecallsAccordion {
@@ -116,6 +123,7 @@ export class RecallsAccordion {
     // Enable loading
     if (!this.state.loading && !this.state.ajaxContentAddedToDOM) {
       // Make AJAX call
+      this.dataLayerPushBeforeAjax();
       // this.callAjaxWithHTMLResponse();
       this.callAjaxWithJSONResponse();
     }
@@ -240,6 +248,25 @@ export class RecallsAccordion {
       .catch(error => {
         console.log(error);
       });
+  };
+
+  /**
+   * Makes a datalayer push before the ajax function is called
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  dataLayerPushBeforeAjax = () => {
+    if (!window.dataLayer) return;
+    // Create datalayer object
+    let dataLayerSubmitObject = {
+      event: RECALLS_ACCORDION_CONSTANTS.dataLayer.submitEvent,
+      'element-name': RECALLS_ACCORDION_CONSTANTS.dataLayer.submitElementName,
+      'recall-ui': RECALLS_ACCORDION_CONSTANTS.dataLayer.submitRecallUi,
+      'recall-outcome': RECALLS_ACCORDION_CONSTANTS.dataLayer.submitRecallOutcome,
+      timestamp: new Date().toISOString(),
+    };
+    // Push datalayer object
+    window.dataLayer.push(dataLayerSubmitObject);
   };
 
   /**

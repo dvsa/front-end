@@ -263,7 +263,7 @@ export class RecallsAccordion {
       'element-name': RECALLS_ACCORDION_CONSTANTS.dataLayer.submitElementName,
       'recall-ui': RECALLS_ACCORDION_CONSTANTS.dataLayer.submitRecallUi,
       'recall-outcome': RECALLS_ACCORDION_CONSTANTS.dataLayer.submitRecallOutcome,
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().getTime(),
     };
     // Push datalayer object
     window.dataLayer.push(dataLayerSubmitObject);

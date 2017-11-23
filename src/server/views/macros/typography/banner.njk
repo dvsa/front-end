@@ -1,0 +1,10 @@
+{% macro banner(mainText='', secondaryText=false, type) %}
+  {% if mainText %}
+    <div class="banner {% if type %}banner--{{ type }}{% endif %}">
+        <span class="banner__heading-large">{{ mainText }}</span>
+        {% if secondaryText %}
+            <span>{{ secondaryText }}</span>
+        {% endif %}
+    </div>
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,17 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Buttons' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'Subsection one', url: '/' },
+  { text: 'This page title' }
+] %}
+
+{% block content %}
+
+  {{ components.heading(text='Breadcrumbs', tag='h2', size='medium') }}
+
+  {{ components.breadcrumb(items=pageBreadcrumbItems) | prism }}
+
+{% endblock %}

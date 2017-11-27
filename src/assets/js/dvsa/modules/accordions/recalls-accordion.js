@@ -136,7 +136,6 @@ export class RecallsAccordion {
    *
    * {
    *   "result": "HTML we render",
-   *   "smartSurveyLink": "just string with url",
    *   "dataLayer": [
    *     {
    *       "event": "api-response"
@@ -150,7 +149,6 @@ export class RecallsAccordion {
    * }
    *
    * result - HTML will replace accordion content in DOM
-   * smartSurveyLink - Will change the feedback url
    * dataLayer - Will push each item in the array
    *
    * @author Tameem Safi <t.safi@kainos.com>
@@ -304,6 +302,49 @@ export class RecallsAccordion {
     if (!window.dataLayer || object === null || typeof object !== 'object') {
       console.warn('Could not push dataLayer as it was not found');
     } else {
+      // Update feedback survey URL
+      // Get current query string parameters
+      // TODO move to some page-scope constants?
+      let feedbackSurveyLink = document.querySelector('a.appendClientID');
+      console.log(feedbackSurveyLink);
+
+      let url = feedbackSurveyLink.href;
+      console.log(url);
+
+      var params = new Object();
+      // Get query string params from URL
+      url.split('?')[1].split('&').map(function(value) {
+        let split = value.split("=");
+        params[split[0]] = split[1];
+      });
+      console.log(object);
+
+      let keysToReplace = [
+        'recall_ui',
+        'lambda_return_code',
+        'recall_outcome',
+        'recall_outcome_detail',
+        'recall_last_update_date',
+      ];
+      console.log(params);
+
+      // Update params with new values
+      keysToReplace.forEach(function(destinationKey) {
+          // keys separate words by '-' in Data Layer but '_' in Feedback Survey URL
+          let sourceKey = destinationKey.replace(/_/g, '-');
+          console.log(object[sourceKey]);
+          params[destinationKey] = object[sourceKey];
+      });
+      console.log(params);
+
+      // Parse params to new query string
+      const urlParams = new URLSearchParams();
+      Object.keys(params).forEach(key => urlParams.append(key, params[key]));
+      console.log(urlParams.toString());
+
+      // Update URL
+      feedbackSurveyLink.href = url.replace(/\?.*/g, '?' + urlParams.toString());
+
       // Make a data layer push
       window.dataLayer.push(object);
     }

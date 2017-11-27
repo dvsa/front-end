@@ -32,7 +32,7 @@ export const ACCORDION_CONSTANTS = {
   },
   dataLayer: {
     open: 'open',
-    close: 'close',
+    close: 'closed',
     linkClickEvent: 'link-click',
     linkType: 'accordion',
     sectionMemoryEvent: 'subsection-memory',

@@ -47,16 +47,6 @@ The productions assets are located in the **dist/assets** folder and the server 
 npm run build-production
 ```
 
-### Push heroku
-
-Push heroku command can be run instead of the normal git heroku push.
-
-It will first run the build production command before pushing the code to heroku.
-
-```javascript
-npm run push-heroku
-```
-
 ## Front-end Assets
 
 ## Images

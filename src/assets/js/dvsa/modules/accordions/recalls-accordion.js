@@ -203,11 +203,7 @@ export class RecallsAccordion {
 
   handleError = error => {
     // Check error object exists
-    if( !error ) return;
-    // Check error has a response object
-    if( !error.response ) return;
-    // Check response has a status
-    if( !error.response.status ) return;
+    if( !error || !error.response || error.response.status ) return;
     // Check for 500 error
     if( error.response.status === 500 ) {
       if( this.elements.error ) {

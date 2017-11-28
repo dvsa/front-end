@@ -159,9 +159,7 @@ export class RecallsAccordion {
         // Stop loading
         this.stopLoading();
       })
-      .catch(error => {
-        this.handleError(error);
-      });
+      .catch(this.handleError);
   };
 
   /**
@@ -196,9 +194,7 @@ export class RecallsAccordion {
         // Stop Loading
         this.stopLoading();
       })
-      .catch(error => {
-        this.handleError(error);
-      });
+      .catch(this.handleError);
   };
 
   handleError = error => {

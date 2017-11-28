@@ -18,17 +18,17 @@ export class RecallsAccordion {
       noJSAlternative: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.noJSAlternative),
       loading: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.loading),
       output: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.output),
-      error: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.errorMessage)
+      error: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.errorMessage),
     };
-    
+
     // Loop through each element
-    for(let name in this.elements) {
+    for (let name in this.elements) {
       // Check all element exist
-      if(!this.elements[name]) {
+      if (!this.elements[name]) {
         return console.warn(`${name} - Element was not found, aborting.`);
       }
     }
-    
+
     // Setup initial state
     this.state = {
       ajaxRequestBody: false,
@@ -203,24 +203,24 @@ export class RecallsAccordion {
 
   handleError = error => {
     // Check error object exists
-    if( !error || !error.response || error.response.status ) return;
+    if (!error || !error.response || error.response.status) return;
     // Check for 500 error
-    if( error.response.status === 500 ) {
-      if( this.elements.error ) {
+    if (error.response.status === 500) {
+      if (this.elements.error) {
         // Stop loading message
         this.stopLoading();
         // Display error message
         toggleClass(this.elements.error, RECALLS_ACCORDION_CONSTANTS.classNames.errorMessageVisible, true);
         // Create datalayer object
         let dataLayerObject = {
-          'event': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.event,
+          event: RECALLS_ACCORDION_CONSTANTS.dataLayer.error.event,
           'element-name': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.elementName,
           'recall-ui': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.recallUI,
           'recall-ui-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.detail,
           'lambda-return-code': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.lambdaReturnCode,
           'recall-outcome': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcome,
-          'recall-outcome-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcomeDetail,	
-          'smmt-call': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.smmtCall
+          'recall-outcome-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcomeDetail,
+          'smmt-call': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.smmtCall,
         };
         // Push datalayer
         this.dataLayerPush(dataLayerObject);

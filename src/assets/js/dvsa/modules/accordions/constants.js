@@ -70,7 +70,7 @@ export const RECALLS_ACCORDION_CONSTANTS = {
       lambdaReturnCode: '',
       outcome: 'Error',
       outcomeDetail: 'Connection error',
-      smmtCall: 0
-    }
+      smmtCall: 0,
+    },
   },
 };

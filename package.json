@@ -16,6 +16,7 @@
   },
   "pre-commit": [
     "precommit-msg",
+    "pretty-js",
     "build-production",
     "git-add"
   ],

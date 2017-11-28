@@ -18,5 +18,3 @@ domReady(() => {
   // Modules
   initModules();
 });
-
-console.log('helo');

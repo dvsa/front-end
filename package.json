@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "push-heroku": "npm run build-production && git push heroku master",
     "start-heroku": "node ./dist/server/index.js",
     "start-dev": "cross-env NODE_ENV=development npm run pretty-js && concurrently \"cross-env NODE_ENV=development gulp watch-dev\" \"cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.babel.js\" \"cross-env NODE_ENV=development npm run start-dev-server\"",
     "start-dev-server": "nodemon -e js,njk --watch 'src/server/*' --exec npm run start-server",

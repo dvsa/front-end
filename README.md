@@ -47,6 +47,8 @@ The productions assets are located in the **dist/assets** folder and the server 
 npm run build-production
 ```
 
+**You must run this command and commit changes before pushing to heroku**
+
 ## Front-end Assets
 
 ## Images

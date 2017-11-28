@@ -18,7 +18,7 @@ import errorhandler from 'errorhandler';
 import _ from 'lodash';
 
 import { allRoutes } from './config/routes';
-import CONFIG from './config/constants';
+import { CONFIG, isDevelopment, isTesting } from './config/constants';
 import { addLibraryNavigationItemsToRequestObject } from './middlewares/libraryNavigation';
 
 export const startApp = async () => {
@@ -26,7 +26,7 @@ export const startApp = async () => {
   const app = express();
 
   // Create nunjucks fileloader instance for the views folder
-  const nunjucksFileLoader = new nunjucks.FileSystemLoader(path.join(__dirname, 'views'), {
+  const nunjucksFileLoader = new nunjucks.FileSystemLoader(path.resolve('src', 'server', 'views'), {
     noCache: true,
   });
 
@@ -154,7 +154,7 @@ export const startApp = async () => {
 
   // Logger middleware
   // Outputs all http requests and responses
-  if (process.env.NODE_ENV != 'testing') {
+  if (!isTesting()) {
     app.use(morgan('dev'));
   }
 
@@ -169,7 +169,7 @@ export const startApp = async () => {
   );
 
   // Static folder
-  app.use(express.static(path.resolve('public')));
+  app.use(express.static(CONFIG.paths.publicAssets));
 
   // Body parsing middleware
   // Website: https://www.npmjs.com/package/body-parser
@@ -177,7 +177,7 @@ export const startApp = async () => {
   app.use(bodyParser.urlencoded({ extended: true }));
 
   // Error handling for development
-  if (process.env.NODE_ENV == 'development') {
+  if (isDevelopment()) {
     app.use(errorhandler());
   }
 
@@ -186,7 +186,7 @@ export const startApp = async () => {
 
   // Start HTTP server
   app.listen(CONFIG.port, () => {
-    if (process.env.NODE_ENV != 'testing') {
+    if (!isTesting()) {
       console.log(`
         Port: ${CONFIG.port} 
         Env: ${app.get('env')}

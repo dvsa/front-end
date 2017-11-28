@@ -18,7 +18,7 @@ export const IS_PRODUCTION = () => {
   return (process.env.NODE_ENV === 'production') ? true : false;
 }
 
-export const DIST_FOLDER_PATH = IS_PRODUCTION() ? path.resolve('public') : path.resolve('public');
+export const DIST_FOLDER_PATH = IS_PRODUCTION() ? path.resolve('dist', 'assets') : path.resolve('public');
 
 export const CONFIG = {
   isProduction: IS_PRODUCTION,

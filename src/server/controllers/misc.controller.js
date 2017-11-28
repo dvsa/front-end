@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import CONFIG from './../config/constants';
+import { CONFIG } from './../config/constants';
 
 // View file
 export const viewFileRoute = (req, res) => {

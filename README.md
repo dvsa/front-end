@@ -37,14 +37,24 @@ It will automatically run the following processess concurrently
 * express application with nodemon
 
 
-### Production
+### Build Production
 
-Production command will generate product ready frontend assets (images, javascripts, stylesheets) inside of the public folder.
+Build production command will generate production ready assets and node js server code.
 
-This command will automatically be run before every commit, to make sure the repo has the lastest production ready assets.
+The productions assets are located in the **dist/assets** folder and the server code is located in the **dist/server** folder.
 
 ```javascript
 npm run build-production
+```
+
+### Push heroku
+
+Push heroku command can be run instead of the normal git heroku push.
+
+It will first run the build production command before pushing the code to heroku.
+
+```javascript
+npm run push-heroku
 ```
 
 ## Front-end Assets

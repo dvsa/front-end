@@ -202,30 +202,26 @@ export class RecallsAccordion {
   };
 
   handleError = error => {
-    // Check error object exists
-    if (!error || !error.response || error.response.status) return;
-    // Check for 500 error
-    if (error.response.status === 500) {
-      if (this.elements.error) {
-        // Stop loading message
-        this.stopLoading();
-        // Display error message
-        toggleClass(this.elements.error, RECALLS_ACCORDION_CONSTANTS.classNames.errorMessageVisible, true);
-        // Create datalayer object
-        let dataLayerObject = {
-          event: RECALLS_ACCORDION_CONSTANTS.dataLayer.error.event,
-          'element-name': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.elementName,
-          'recall-ui': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.recallUI,
-          'recall-ui-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.detail,
-          'lambda-return-code': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.lambdaReturnCode,
-          'recall-outcome': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcome,
-          'recall-outcome-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcomeDetail,
-          'smmt-call': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.smmtCall,
-        };
-        // Push datalayer
-        this.dataLayerPush(dataLayerObject);
-      }
+    // Stop loading message
+    this.stopLoading();
+    // Check if error element exists
+    if (this.elements.error) {
+      // Display error message
+      toggleClass(this.elements.error, RECALLS_ACCORDION_CONSTANTS.classNames.errorMessageVisible, true);
     }
+    // Create datalayer object
+    let dataLayerObject = {
+      event: RECALLS_ACCORDION_CONSTANTS.dataLayer.error.event,
+      'element-name': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.elementName,
+      'recall-ui': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.recallUI,
+      'recall-ui-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.detail,
+      'lambda-return-code': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.lambdaReturnCode,
+      'recall-outcome': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcome,
+      'recall-outcome-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcomeDetail,
+      'smmt-call': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.smmtCall,
+    };
+    // Push datalayer
+    this.dataLayerPush(dataLayerObject);
   };
 
   /**

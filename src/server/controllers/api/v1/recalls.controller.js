@@ -8,6 +8,7 @@ const delay = () => {
 
 export const recalls = async (req, res) => {
   await delay();
+  res.status(500).send('Something broke!');
   res.json({
     result: `<p>The following '<strong>${req.body.test_variable}</strong>' was taken from the ajax request body.</p>`,
     smartSurveyLink: 'https://www.gov.uk',

@@ -1,5 +1,12 @@
 .recalls-accordion {
 
+  &__error-message {
+    display: none;
+    &--visible {
+      display: block;
+    }
+  }
+
   &__no-js-alternative {
     display: none;
     .recalls-accordion--no-js & {

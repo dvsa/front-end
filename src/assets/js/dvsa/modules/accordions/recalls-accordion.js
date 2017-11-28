@@ -1,34 +1,7 @@
 import axios from 'axios';
 
-import { ACCORDION_CONSTANTS } from './accordion';
+import { ACCORDION_CONSTANTS, RECALLS_ACCORDION_CONSTANTS } from './constants';
 import { closestParentOfEl, toggleClass } from './../../../shared/misc';
-
-export const RECALLS_ACCORDION_CONSTANTS = {
-  selectors: {
-    section: '[data-recalls-accordion]',
-    header: '[data-recalls-accordion-header]',
-  },
-  attributeNames: {
-    ajaxEndpoint: 'data-recalls-ajax-endpoint',
-    ajaxData: 'data-recalls-ajax-data',
-  },
-  classNames: {
-    content: 'recalls-accordion',
-    contentNoJs: 'recalls-accordion--no-js',
-    contentLoading: 'recalls-accordion--loading',
-    contentShowOutput: 'recalls-accordion--show-output',
-    noJSAlternative: 'recalls-accordion__no-js-alternative',
-    loading: 'recalls-accordion__loading',
-    output: 'recalls-accordion__output',
-  },
-  dataLayer: {
-    submitEvent: 'recall-cta-submit',
-    submitElementName: 'Recall',
-    submitRecallUi: 'cta-submitted',
-    submitRecallOutcome: 'Requested',
-    submitTimestamp: 'timestamp',
-  },
-};
 
 export class RecallsAccordion {
   constructor() {
@@ -38,46 +11,24 @@ export class RecallsAccordion {
     // Do not continue if recalls accordion does not exist
     if (!this.recallsAccordionSectionElement) return;
 
-    // Get elements
-    this.recallsAccordionHeaderElement = document.querySelector(RECALLS_ACCORDION_CONSTANTS.selectors.header);
-    this.parentAccordionElement = closestParentOfEl(this.recallsAccordionSectionElement, '.' + ACCORDION_CONSTANTS.classNames.accordion);
-    this.recallsAccordionContentElement = this.recallsAccordionSectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.content);
-
-    // Recalls specific elements
-    this.recallsContentElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.content);
-    this.recallsContentNoJSAlternativeElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.noJSAlternative);
-    this.recallsContentLoadingElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.loading);
-    this.recallsContentOutputElement = document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.output);
-
-    // Check if elements exist
-    if (!this.recallsAccordionHeaderElement) {
-      return console.warn('Recalls accordion header element not found');
+    this.elements = {
+      parent: closestParentOfEl(this.recallsAccordionSectionElement, '.' + ACCORDION_CONSTANTS.classNames.accordion),
+      header: document.querySelector(RECALLS_ACCORDION_CONSTANTS.selectors.header),
+      content: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.content),
+      noJSAlternative: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.noJSAlternative),
+      loading: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.loading),
+      output: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.output),
+      error: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.errorMessage)
+    };
+    
+    // Loop through each element
+    for(let name in this.elements) {
+      // Check all element exist
+      if(!this.elements[name]) {
+        return console.warn(`${name} - Element was not found, aborting.`);
+      }
     }
-
-    if (!this.parentAccordionElement) {
-      return console.warn('Recalls main accordion element not found');
-    }
-
-    if (!this.recallsAccordionContentElement) {
-      return console.warn('Recalls accordion content element not found');
-    }
-
-    if (!this.recallsContentElement) {
-      return console.warn('Recalls accordion content inner wrapper element not found');
-    }
-
-    if (!this.recallsContentNoJSAlternativeElement) {
-      return console.warn('Recalls accordion no js alternative element not found');
-    }
-
-    if (!this.recallsContentLoadingElement) {
-      return console.warn('Recalls accordion loading element not found');
-    }
-
-    if (!this.recallsContentOutputElement) {
-      return console.warn('Recalls accordion ajax output placeholder element not found');
-    }
-
+    
     // Setup initial state
     this.state = {
       ajaxRequestBody: false,
@@ -98,7 +49,7 @@ export class RecallsAccordion {
    */
   setup() {
     // Remove no js class to hide alternative method
-    toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentNoJs, false);
+    toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentNoJs, false);
     // Add the ajax endpoint to the state
     this.state.ajaxEndpoint = this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxEndpoint);
     // Get ajax data to send with request
@@ -106,7 +57,7 @@ export class RecallsAccordion {
       this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxData)
     );
     // Delegate event for when the accordion header is clicked
-    $.delegate(this.parentAccordionElement, 'click', RECALLS_ACCORDION_CONSTANTS.selectors.header, this.recallsHeadingClickHandler);
+    $.delegate(this.elements.parent, 'click', RECALLS_ACCORDION_CONSTANTS.selectors.header, this.recallsHeadingClickHandler);
     // Listen for expand all open event
     // Call ajax if all accordions are expanded
     // $.once(document, ACCORDION_CONSTANTS.eventNames.expandAllOpen, '', this.recallsHeadingClickHandler);
@@ -174,9 +125,9 @@ export class RecallsAccordion {
         }
 
         // Change recalls accordion DOM content with response
-        this.recallsContentOutputElement.innerHTML = responseData.result;
+        this.elements.output.innerHTML = responseData.result;
         // Display the accordion output
-        toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
+        toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
         // Change state to reflect DOM change
         this.state.ajaxContentAddedToDOM = true;
 
@@ -209,7 +160,7 @@ export class RecallsAccordion {
         this.stopLoading();
       })
       .catch(error => {
-        console.log(error);
+        this.handleError(error);
       });
   };
 
@@ -234,20 +185,51 @@ export class RecallsAccordion {
         }
 
         // Add html form ajax to output
-        this.recallsContentOutputElement.innerHTML = response.data;
+        this.elements.output.innerHTML = response.data;
 
         // Change state to reflect DOM change
         this.state.ajaxContentAddedToDOM = true;
 
         // Display the accordion output
-        toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
+        toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
 
         // Stop Loading
         this.stopLoading();
       })
       .catch(error => {
-        console.log(error);
+        this.handleError(error);
       });
+  };
+
+  handleError = error => {
+    // Check error object exists
+    if( !error ) return;
+    // Check error has a response object
+    if( !error.response ) return;
+    // Check response has a status
+    if( !error.response.status ) return;
+    // Check for 500 error
+    if( error.response.status === 500 ) {
+      if( this.elements.error ) {
+        // Stop loading message
+        this.stopLoading();
+        // Display error message
+        toggleClass(this.elements.error, RECALLS_ACCORDION_CONSTANTS.classNames.errorMessageVisible, true);
+        // Create datalayer object
+        let dataLayerObject = {
+          'event': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.event,
+          'element-name': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.elementName,
+          'recall-ui': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.recallUI,
+          'recall-ui-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.detail,
+          'lambda-return-code': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.lambdaReturnCode,
+          'recall-outcome': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcome,
+          'recall-outcome-detail': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.outcomeDetail,	
+          'smmt-call': RECALLS_ACCORDION_CONSTANTS.dataLayer.error.smmtCall
+        };
+        // Push datalayer
+        this.dataLayerPush(dataLayerObject);
+      }
+    }
   };
 
   /**
@@ -278,7 +260,7 @@ export class RecallsAccordion {
     // Change the state
     this.state.loading = true;
     // Toggle loading class to show spinner and message
-    toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, true);
+    toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, true);
   };
 
   /**
@@ -288,7 +270,7 @@ export class RecallsAccordion {
    */
   stopLoading = () => {
     // Remove loading class
-    toggleClass(this.recallsContentElement, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, false);
+    toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, false);
     // Change state since loading is now finished
     this.state.loading = false;
   };
@@ -302,10 +284,9 @@ export class RecallsAccordion {
   dataLayerPush = object => {
     // Check if dataLayer exists and the object is valid
     if (!window.dataLayer || object === null || typeof object !== 'object') {
-      console.warn('Could not push dataLayer as it was not found');
-    } else {
-      // Make a data layer push
-      window.dataLayer.push(object);
+      return console.warn('Could not push dataLayer as it was not found');
     }
+    // Make a data layer push
+    window.dataLayer.push(object);
   };
 }

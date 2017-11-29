@@ -25,7 +25,8 @@ export const ACCORDION_CONSTANTS = {
   },
   dataLayer: {
     open: 'open',
-    close: 'closed',
+    close: 'close',
+    closedStatus: 'closed',
     linkClickEvent: 'link-click',
     linkType: 'accordion',
     sectionMemoryEvent: 'subsection-memory',

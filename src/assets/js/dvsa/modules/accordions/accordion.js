@@ -294,7 +294,7 @@ export class Accordion {
     let dataLayerObject = {
       event: ACCORDION_CONSTANTS.dataLayer.linkClickEvent,
       link: ACCORDION_CONSTANTS.dataLayer.sectionAll,
-      'link-text': this.getExpandButtonText(),
+      'link-text': this.state.expandAll ? ACCORDION_CONSTANTS.openAllText : ACCORDION_CONSTANTS.closeAllText,
       'link-action': expandState,
       'link-type': ACCORDION_CONSTANTS.dataLayer.linkType,
     };
@@ -302,7 +302,11 @@ export class Accordion {
     // to the data layer push object
     this.state.sections.forEach(section => {
       let sectionDataLayerInfo = this.getSectionDataLayerInfo(section);
-      dataLayerObject['subsection-' + sectionDataLayerInfo.category + '-status'] = expandState;
+      // Rename state 'close' to 'closed' for subsection-<category>-status
+      let subsectionCategoryStatusState =
+        expandState === ACCORDION_CONSTANTS.dataLayer.close ? ACCORDION_CONSTANTS.dataLayer.closedStatus : expandState;
+      // Add to datalayer object
+      dataLayerObject['subsection-' + sectionDataLayerInfo.category + '-status'] = subsectionCategoryStatusState;
     });
     // Push the data layer object
     window.dataLayer.push(dataLayerObject);
@@ -328,8 +332,14 @@ export class Accordion {
       'link-action': sectionDataLayerInfo.openState,
       'link-type': ACCORDION_CONSTANTS.dataLayer.linkType,
     };
+
+    // Rename state 'close' to 'closed' for subsection-<category>-status
+    let subsectionCategoryStatusState =
+      sectionDataLayerInfo.openState === ACCORDION_CONSTANTS.dataLayer.close
+        ? ACCORDION_CONSTANTS.dataLayer.closedStatus
+        : sectionDataLayerInfo.openState;
     // Add the category to the push object
-    dataLayerClickObject['subsection-' + sectionDataLayerInfo.category + '-status'] = sectionDataLayerInfo.openState;
+    dataLayerClickObject['subsection-' + sectionDataLayerInfo.category + '-status'] = subsectionCategoryStatusState;
     // Push the object into the datalayer array
     window.dataLayer.push(dataLayerClickObject);
   };
@@ -344,7 +354,7 @@ export class Accordion {
     if (!window.dataLayer || !sections) return;
     sections.forEach(section => {
       let sectionDataLayerInfo = this.getSectionDataLayerInfo(section);
-      if (sectionDataLayerInfo.openState == 'close') return;
+      if (sectionDataLayerInfo.openState == ACCORDION_CONSTANTS.dataLayer.close) return;
       let dataLayerObject = {
         event: ACCORDION_CONSTANTS.dataLayer.sectionMemoryEvent,
         link: 'subsection-' + sectionDataLayerInfo.category,
@@ -352,7 +362,7 @@ export class Accordion {
         'link-action': sectionDataLayerInfo.openState,
         'link-type': ACCORDION_CONSTANTS.dataLayer.linkType,
       };
-      dataLayerObject['subsection-' + sectionDataLayerInfo.category + '-status'] = 'open';
+      dataLayerObject['subsection-' + sectionDataLayerInfo.category + '-status'] = sectionDataLayerInfo.openState;
       window.dataLayer.push(dataLayerObject);
     });
   };

@@ -6,47 +6,6 @@ import findIndex from 'lodash/findIndex';
 import { ACCORDION_CONSTANTS } from './constants';
 import { elHasClass, toggleClass, addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
 
-<<<<<<< HEAD
-=======
-export const ACCORDION_CONSTANTS = {
-  closeAllText: 'Close All',
-  openAllText: 'Open All',
-  attributeNames: {
-    sectionContentId: 'data-section-content-id',
-    stateIndexId: 'data-section-state-index-id',
-    sectionCategory: 'data-section-category',
-    preventDefault: 'data-section-prevent-default',
-    disableStateRestore: 'data-section-disable-restore-state',
-  },
-  classNames: {
-    accordion: 'js-accordion',
-    section: 'js-accordion__section',
-    sectionOpen: 'js-accordion__section--open',
-    header: 'js-accordion__header',
-    title: 'js-accordion__title-button',
-    content: 'js-accordion__content',
-    expandButton: 'js-accordion__expand-button',
-    jsEnabled: 'js-accordion--js-enabled',
-  },
-  ariaAttributes: {
-    controls: 'aria-controls',
-    expanded: 'aria-expanded',
-    hidden: 'aria-hidden',
-  },
-  dataLayer: {
-    open: 'open',
-    close: 'close',
-    linkClickEvent: 'link-click',
-    linkType: 'accordion',
-    sectionMemoryEvent: 'subsection-memory',
-    sectionAll: 'subsection-all',
-  },
-  eventNames: {
-    expandAllOpen: 'js-accordion:expand-all-open',
-  },
-};
-
->>>>>>> BL-6187 renamed 'close' to 'closed' in dataLayer
 export class Accordion {
   constructor(accordionElement) {
     this.accordionElement = accordionElement;
@@ -375,15 +334,11 @@ export class Accordion {
     };
 
     // Rename state 'close' to 'closed' for subsection-<category>-status
-<<<<<<< HEAD
-    let subsectionCategoryStatusState = sectionDataLayerInfo.openState == ACCORDION_CONSTANTS.dataLayer.close ? 'closed' : sectionDataLayerInfo.openState;
-=======
     let subsectionCategoryStatusState =
       sectionDataLayerInfo.openState === ACCORDION_CONSTANTS.dataLayer.close
         ? ACCORDION_CONSTANTS.dataLayer.closedStatus
         : sectionDataLayerInfo.openState;
     // Add the category to the push object
->>>>>>> Swapped link-text in datalayer push for when the expand all button is clicked
     dataLayerClickObject['subsection-' + sectionDataLayerInfo.category + '-status'] = subsectionCategoryStatusState;
     // Push the object into the datalayer array
     window.dataLayer.push(dataLayerClickObject);

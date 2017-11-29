@@ -8,3 +8,4 @@ node_modules
 /vendor/
 spider.txt
 public
+npm-debug.log

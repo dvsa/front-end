@@ -1,28 +1,28 @@
 {
   "name": "dvsa-front-end",
-  "version": "2.0.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Front-end assets built on Node/Express to be used for public-facing DVSA sites and applications. Based on GOV UK prototype kit, but highly modified. It uses SCSS, Nunjucks, Gulp, ES6, WebPack, Babel, Mocha, Chai, Puppeteer, and NPM libraries.",
   "main": "index.js",
   "scripts": {
-    "start-heroku": "npm run start-server",
+    "start-heroku": "node ./dist/server/index.js",
     "start-dev": "cross-env NODE_ENV=development npm run pretty-js && concurrently \"cross-env NODE_ENV=development gulp watch-dev\" \"cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.babel.js\" \"cross-env NODE_ENV=development npm run start-dev-server\"",
     "start-dev-server": "nodemon -e js,njk --watch 'src/server/*' --exec npm run start-server",
     "start-server": "babel-node ./src/server",
-    "build-production": "cross-env NODE_ENV=production concurrently \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
+    "build-server": "babel ./src/server --out-dir ./dist/server",
+    "build-production": "cross-env NODE_ENV=production concurrently \"npm run build-server\" \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
     "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js",
-    "precommit-msg": "echo 'Running build-production before commit...' && exit 0",
+    "precommit-msg": "echo 'Running pre-commit commands...' && exit 0",
     "git-add": "git add ."
   },
   "pre-commit": [
     "precommit-msg",
     "pretty-js",
-    "build-production",
     "git-add"
   ],
   "repository": {
     "type": "git",
-    "url": "git@gitlab.motdev.org.uk:mot/mot-new-wfa.git"
+    "url": "git@github.com:dvsa/front-end.git"
   },
   "author": "",
   "license": "ISC",

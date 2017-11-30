@@ -7,3 +7,5 @@ node_modules
 *.log
 /vendor/
 spider.txt
+public
+npm-debug.log

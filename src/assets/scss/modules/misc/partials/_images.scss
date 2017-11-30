@@ -1,9 +1,15 @@
 .image {
 
-    width: 100%;
+    max-width: 100%;
 
     &-wrapper {
         width: 100%;
         margin-bottom: 30px;
     }
+
+    &__caption {
+        @include core-14;
+        display: block;
+    }
 }
+

@@ -52,24 +52,3 @@
         }
     }
 }
-
-.manuals {
-
-    ul ul {
-
-        padding-left: 20px;
-
-        & >li {
-            list-style: circle;
-        }
-
-        & ul {
-
-            padding-left: 20px;
-
-            & >li {
-                list-style: square;
-            }
-        }
-    }
-}

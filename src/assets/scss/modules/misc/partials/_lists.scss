@@ -34,3 +34,19 @@ ul[class^="list-"] li {
         border: none;
     }
 }
+
+// multi-level bullet list, "extends" list-bullet
+.list-bullet {
+    ul {
+        padding-left:20px;
+        & > li {
+            list-style:circle;
+        }
+        & ul {
+            padding-left:20px;
+            & > li {
+                list-style:square;
+            }
+        }
+    }
+}

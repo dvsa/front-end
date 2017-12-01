@@ -1,7 +1,4 @@
-.print {
- 
-  // Elements
-  @import 'elements/show';
-  @import 'elements/hide';
-
+@media print {
+  @import 'partials/misc';
+  @import 'partials/header';
 }

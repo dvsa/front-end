@@ -57,9 +57,6 @@
       vertical-align: middle;
       width: 30px;
       display: none;
-      @media(max-width: 640px) {
-        text-align: right;
-      }
     }
 
     &-icon {
@@ -119,15 +116,6 @@
       padding-left: 0;
       text-align: left;
     }
-
-    @media(max-width: 640px) {
-      font-size: 18px;
-      line-height: 1.2;
-      &-button {
-        font-size: 18px;
-        line-height: 1.2;
-      }
-    }
   }
 
   &__description {
@@ -135,11 +123,6 @@
     padding: 0;
     font-size: 19px;
     line-height: 1.31579;
-
-    @media(max-width: 640px) {
-      font-size: 16px;
-      line-height: 1.25;
-    }
   }
 
   &__content {
@@ -153,6 +136,49 @@
     .js-accordion__section--open & {
       display: block;
     }
+  }
+
+  @media(max-width: 640px) {
+    &__header {
+      &-right {
+        text-align: right;
+      }
+    }
+
+    &__title {
+      font-size: 18px;
+      line-height: 1.2;
+      &-button {
+        font-size: 18px;
+        line-height: 1.2; 
+      }
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+  }
+
+  @media print {
+    padding-bottom: 60px;
+
+    &__content {
+      display: block;
+    }
+
+    &__header {
+      &-icon {
+        display: block !important;
+      }
+    }
+
+    &__title {
+      &-button {
+        display: block !important;
+      }
+    }
+
   }
 
 }

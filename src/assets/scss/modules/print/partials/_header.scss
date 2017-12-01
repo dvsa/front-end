@@ -1,0 +1,28 @@
+#global-header {
+  background: transparent;
+  margin-bottom: 0;
+  .header-wrapper {
+    background: transparent;
+    max-width: 960px;
+    .header-global {
+      .header-logo {
+        #logo {
+          color: $govuk-blue;
+          font-size: 38px;
+          img {
+            width: 45px;
+            height: 40px;
+            position: relative;
+            top: -3px;
+            vertical-align: bottom;
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    .header-proposition {
+      display: none;
+    }
+  }
+}

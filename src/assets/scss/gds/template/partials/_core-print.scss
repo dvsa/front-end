@@ -43,7 +43,7 @@
   
   #global-header {
     margin: 3px 0 1em; // 3px additional space at top for countering -3px re-positioning of #logo img
-  
+
     #logo {
       @include bold-48;
       font-size: 28pt;

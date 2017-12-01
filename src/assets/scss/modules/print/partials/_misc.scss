@@ -1,0 +1,23 @@
+a[target="_blank"],
+details,
+button,
+.button,
+.link-back,
+.phase-banner,
+.print-hide {
+  display: none !important;
+}
+
+#content {
+  margin-left: 0;
+  padding-bottom: 0;
+  margin: 0 auto;
+
+  .mot-result {
+    font-size: 42px !important;
+  }
+}
+
+.print-show {
+  display: block !important;
+}

@@ -10,6 +10,7 @@
     &__caption {
         @include core-14;
         display: block;
+        margin: 4px 0;
     }
 
     &__heading {

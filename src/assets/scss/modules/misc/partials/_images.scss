@@ -1,8 +1,8 @@
 .image {
-
+    display: block;
     max-width: 100%;
 
-    &-wrapper {
+    &__wrapper {
         width: 100%;
         margin-bottom: 30px;
     }
@@ -10,5 +10,16 @@
     &__caption {
         @include core-14;
         display: block;
+    }
+
+    &__heading {
+        @include bold-19;
+        display: block;
+        margin-top: em(10, 16);
+        margin-bottom: em(5, 16);
+
+        @include media(tablet) {
+            margin-top: em(20, 19);
+        }
     }
 }

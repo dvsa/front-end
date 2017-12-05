@@ -22,8 +22,8 @@ export class Accordion {
     this.uniqueIdentifier = 'js-accordion-' + md5(this.accordionElement.innerHTML);
 
     // Get all of the accordion sections
-    this.sections = this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.section);
-    this.headings = this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.header);
+    this.sections = Array.from(this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.section));
+    this.headings = Array.from(this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.header));
     this.expandButton = this.accordionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.expandButton);
 
     // Check if sections and headings exist
@@ -169,12 +169,15 @@ export class Accordion {
       let stateSection = this.state.sections[sectionIndex];
       if (!stateSection) return;
       // Check if section has restore state disabled
+      let disableRestore = false;
       if (stateSection.sectionElement) {
-        if (stateSection.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.disableStateRestore)) return;
+        if (stateSection.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.disableStateRestore)) {
+          disableRestore = true;
+        }
       }
       // Check if expand all was saved
       // If it was then put the current state of the section as the expand all state
-      this.state.sections[sectionIndex].sectionOpen = savedState.expandAll ? true : section.open;
+      this.state.sections[sectionIndex].sectionOpen = disableRestore ? false : savedState.expandAll ? true : section.open;
       // Add current section to restored list
       restoredSections.push(this.state.sections[sectionIndex]);
     });
@@ -194,6 +197,8 @@ export class Accordion {
     // Create an empty sections array to hold
     // the current state sections
     data.sections = [];
+    // Check if sections exist in state
+    if (!this.state || !this.state.sections) return;
     // Loop through each section in the state
     this.state.sections.forEach(section => {
       // Add the open/close state of the current section to
@@ -223,6 +228,7 @@ export class Accordion {
       // the open sections count
       let openCount = 0;
       let totalCount = 0;
+
       // Refresh the DOM for each section
       this.state.sections.forEach(section => {
         // If the expand button has been clicked,

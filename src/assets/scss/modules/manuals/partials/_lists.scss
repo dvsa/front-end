@@ -60,3 +60,11 @@
 .level-4 {
     padding-left: 40px;
 }
+
+tr.borderless + tr {
+
+    li {
+        margin-left: 20px;
+    }
+
+}

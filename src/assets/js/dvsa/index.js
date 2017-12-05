@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import store from 'store';
 import expirePlugin from 'store/plugins/expire';
 

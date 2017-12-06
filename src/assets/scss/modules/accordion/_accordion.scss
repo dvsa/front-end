@@ -91,6 +91,12 @@
       &-right {
         display: table-cell;
       }
+
+      &-icon {
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
 

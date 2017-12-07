@@ -13,6 +13,7 @@ export const ACCORDION_CONSTANTS = {
     section: 'js-accordion__section',
     sectionOpen: 'js-accordion__section--open',
     header: 'js-accordion__header',
+    headerHover: 'js-accordion__header--hover',
     title: 'js-accordion__title-button',
     content: 'js-accordion__content',
     expandButton: 'js-accordion__expand-button',

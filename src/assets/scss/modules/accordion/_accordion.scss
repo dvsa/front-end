@@ -80,6 +80,14 @@
           background-position: 0 0;
         }
       }
+      .js-accordion__header--hover & {
+        cursor: pointer;
+      }
+    }
+
+    &--hover {
+      cursor: pointer;
+      background: $grey-4;
     }
 
     .js-accordion--js-enabled & {
@@ -90,12 +98,6 @@
 
       &-right {
         display: table-cell;
-      }
-
-      &-icon {
-        &:hover {
-          cursor: pointer;
-        }
       }
     }
   }

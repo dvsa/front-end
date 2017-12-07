@@ -15,6 +15,8 @@ export class Accordion {
       return console.warn('Accordion element not found');
     }
 
+    this.accordionElement.setAttribute('role', 'presentation');
+
     // Setup smooth scrolling library
     this.smoothScroll = new SmoothScroll();
 
@@ -72,13 +74,24 @@ export class Accordion {
         return console.log('Section header element not found');
       }
 
+      sectionHeaderElement.setAttribute('role', 'heading');
+
+      // Add mouseenter event to apply hover styles
+      addEventListenerToEl(sectionHeaderElement, 'mouseenter', this.headerMouseEnterHandler);
+
+      // Add mouseleave event to remove hover styles
+      addEventListenerToEl(sectionHeaderElement, 'mouseleave', this.headerMouseLeaveHandler);
+
       let sectionContentElement = sectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.content);
       if (!sectionContentElement) {
         return console.log('Section content element not found');
       }
 
+      sectionHeaderElement.setAttribute('role', 'region');
+
       let sectionUniqueIdentifier = md5(sectionElement.innerHTML);
       let sectionContentId = sectionHeaderElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.sectionContentId);
+
       // Add the section elements to the state
       this.state.sections.push({
         sectionUniqueIdentifier,
@@ -88,9 +101,11 @@ export class Accordion {
         sectionContentId,
         sectionOpen: this.isSectionOpen(sectionElement),
       });
+
       // Update the DOM elements state index ID
       let stateSectionIndexId = this.state.sections.length - 1;
       sectionElement.setAttribute(ACCORDION_CONSTANTS.attributeNames.stateIndexId, stateSectionIndexId);
+
       // Set unique identifier for content
       if (!sectionContentElement.getAttribute('id')) {
         sectionContentElement.setAttribute('id', sectionContentId ? sectionContentId : sectionUniqueIdentifier);
@@ -99,6 +114,7 @@ export class Accordion {
 
     // Delegate section header click event
     $.delegate(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.header, this.headerClickHandler);
+
     // Delegate section expand button click event
     $.delegate(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.expandButton, this.expandButtonClickHandler);
 
@@ -125,6 +141,33 @@ export class Accordion {
     this.refreshState();
     this.smoothScroll.animateScroll(section, true, this.smoothScrollOptions);
     this.pushDataLayerForAccordion(stateSectionIndexId);
+  };
+
+  /**
+   * Handles event when the mouse enters the header element.
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   * @param {Event} event Event object when it is firect.
+   */
+  headerMouseEnterHandler = event => {
+    console.log('test');
+    if (!event.target) return;
+    let header = closestParentOfEl(event.target, '.' + ACCORDION_CONSTANTS.classNames.header);
+    if (!header) return;
+    toggleClass(header, ACCORDION_CONSTANTS.classNames.headerHover, true);
+  };
+
+  /**
+   * Handles event when the mouse leaves the header element.
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   * @param {Event} event Event object when it is firect.
+   */
+  headerMouseLeaveHandler = event => {
+    if (!event.target) return;
+    let header = closestParentOfEl(event.target, '.' + ACCORDION_CONSTANTS.classNames.header);
+    if (!header) return;
+    toggleClass(header, ACCORDION_CONSTANTS.classNames.headerHover, false);
   };
 
   /**

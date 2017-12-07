@@ -150,7 +150,6 @@ export class Accordion {
    * @param {Event} event Event object when it is firect.
    */
   headerMouseEnterHandler = event => {
-    console.log('test');
     if (!event.target) return;
     let header = closestParentOfEl(event.target, '.' + ACCORDION_CONSTANTS.classNames.header);
     if (!header) return;

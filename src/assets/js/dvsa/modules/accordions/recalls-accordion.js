@@ -148,10 +148,18 @@ export class RecallsAccordion {
         if (responseData !== null && responseData.dataLayer) {
           // Check if is array
           if (Array.isArray(responseData.dataLayer)) {
-            responseData.dataLayer.forEach(dataLayerObject => {
+            responseData.dataLayer.forEach((dataLayerObject, index) => {
+              // Add response timestamp
+              // to the first datalayer push
+              if (index === 0) {
+                dataLayerObject[RECALLS_ACCORDION_CONSTANTS.dataLayer.responseTimestamp] = Date.now();
+              }
               this.dataLayerPush(dataLayerObject);
             });
           } else if (responseData.dataLayer !== null && typeof responseData.dataLayer === 'object') {
+            // Add response timestamp
+            // to the first datalayer push
+            responseData.dataLayer[RECALLS_ACCORDION_CONSTANTS.dataLayer.responseTimestamp] = Date.now();
             this.dataLayerPush(responseData.dataLayer);
           }
         }

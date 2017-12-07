@@ -63,6 +63,7 @@ export const RECALLS_ACCORDION_CONSTANTS = {
     submitRecallUi: 'cta-submitted',
     submitRecallOutcome: 'Requested',
     submitTimestamp: 'timestamp',
+    responseTimestamp: 'response-timestamp',
     error: {
       event: 'api-response',
       elementName: 'Recall',

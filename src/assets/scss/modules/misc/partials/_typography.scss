@@ -1,4 +1,5 @@
-strong {
+strong,
+.strong {
   font-weight: bold;
 }
 
@@ -12,7 +13,6 @@ strong {
   }
   
   #content {
-  
     .heading-pairs,
     .heading-pairs span,
     p,
@@ -26,6 +26,10 @@ strong {
     .column-third h2.heading-large {
       font-size: 130% !important;
     }
-  
   }
+}
+
+em,
+.italic {
+  font-style: italic;
 }

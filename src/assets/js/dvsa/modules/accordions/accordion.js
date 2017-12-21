@@ -119,7 +119,7 @@ export class Accordion {
     $.delegate(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.expandButton, this.expandButtonClickHandler);
 
     // Restore the saved state
-    this.restoreSavedStateData();
+    // this.restoreSavedStateData();
   }
 
   /**
@@ -328,7 +328,7 @@ export class Accordion {
     this.expandButton.innerText = this.getExpandButtonText();
 
     // Save current state for future
-    this.saveCurrentStateData();
+    // this.saveCurrentStateData();
   }
 
   /**

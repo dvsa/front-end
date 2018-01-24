@@ -1,0 +1,24 @@
+.responsive-toggle {
+  position: relative;
+
+  @include media(mobile) {
+    position: relative;
+
+    .filter__content {
+      border-top: 5px solid $grey-3;
+    }
+
+    &__switch {
+      display: block;
+      float: right;
+    }
+  }
+
+  @include media(tablet) {
+    position: relative;
+
+    &__switch {
+      display: none;
+    }
+  }
+}

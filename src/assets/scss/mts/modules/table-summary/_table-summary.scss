@@ -1,0 +1,113 @@
+.table-summary {
+  table-layout: fixed;
+
+  // BL-1708 40 character values
+  &--smaller-key {
+    table-layout: fixed;
+  
+    tbody > tr > th:first-child,
+    tbody > tr > td:first-child {
+      width: 25%;
+    }
+  }
+
+  & + & {
+    margin-top: $gutter-half;
+  }
+
+  &__key {
+    @include core-16;
+    padding: em(12, 16) em(20, 16) em(9, 16) 0;    
+    font-weight: 700;
+  }
+
+  &__value {
+    &,
+    &--numeric,
+    &--tabular,
+    &--muted {
+      @include core-16;
+      padding: em(12, 16) em(20, 16) em(9, 16) 0;
+      min-width: 55%;
+      position: relative;
+
+      &:last-child {
+        // Damn el selectors in elements styling!
+        padding-right: 80px;
+      }
+    }
+
+    &--numeric,
+    &--tabular {
+      @include core-16($tabular-numbers: true);
+    }
+
+    &--numeric {
+      text-align: right;
+    }
+    
+    &--muted {
+      color: $secondary-text-colour;
+    }
+  }
+
+  &__heading {
+    &--numeric {
+      @include core-16;
+      padding: em(12, 16) em(20, 16) em(9, 16) 0;    
+      font-weight: 700; 
+    }
+
+    &--numeric {
+      text-align: right;
+    }
+  }
+
+  &__meta {
+    color: $secondary-text-colour;
+    font-weight: 300;
+    display: block;
+  }
+
+  &__action {
+    display: block;
+    width: 80px;
+    top: em(12, 16);
+    right: 0;
+
+    @include media(mobile) { 
+      position: absolute;
+      text-align: right; 
+    }
+
+    @include media($max-width: 490px) { 
+      position: static;
+      text-align: left;
+    }
+
+    @include media(tablet) { 
+      position: static;
+    }
+    
+    @include media(desktop) { 
+      position: absolute;
+      text-align: left; 
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  &--error {
+    color: $red;
+    font-weight: bold;
+  }
+
+  &--strong {
+    color: $black;
+    font-weight: bold;
+  }
+}
+
+

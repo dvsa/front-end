@@ -1,0 +1,40 @@
+// Originally taken form elemets '_form-date.scss'
+
+.form-time {
+  .form-group {
+    float: left;
+    width: 50px;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    clear: none;
+    
+    // Remove the below 'cus they're always visuallyhidden
+    // label {
+    //     display: block;
+    //     margin-bottom: 5px;
+    // }
+
+    input,
+    select {
+      width: 100%;
+    }
+
+    select {
+      // TC: not happy with this.
+      //     - why are select and input els different heights?
+      max-height: 35px;
+    }
+  }
+
+  .form-group-ampm {
+    width: 70px;
+  }
+
+  .form-group-delimeter {
+    width: auto;
+    margin-top: 8px;
+    margin-right: 10px;
+    margin-left: -10px;
+  }
+}

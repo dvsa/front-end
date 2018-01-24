@@ -1,0 +1,176 @@
+%cats {
+  float: left;
+
+  &:last-of-type {
+    // width: 100%;
+
+    a {
+      @include media(false, 768px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &.browse__slctd {
+        color: $white;
+      }
+    }
+  }
+}
+
+%browse {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+// have to have a mixin here as the active link
+// won't naturally inherit the rules of the anchor
+@mixin list-anchor {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 12px 8px 8px;
+}
+
+.browse {
+
+  &,
+  &--two,
+  &--three,
+  &--four,
+  &--five {
+    @extend %browse;
+    // need generic div class and partial selector to pick out __cats and __cats--sub
+    // can't just use "div" without either as that won't override the .browse_cats--sub:last-of-type column 
+
+    div[class^=browse__cats] {
+      @include media(false, 768px) {
+        display: none;
+
+        .lte-ie8 & {
+          display: block;
+        }
+
+        &:last-child {
+          display: block;
+          width: 100%;
+
+          .browse__list {
+            min-height: 1px;
+          }
+        }
+      }
+    }
+  }
+
+
+  &__cats {
+    width: 100%;
+    
+    .browse &,
+    .browse--two &,
+    .browse--three &,
+    .browse--four &,
+    .browse--five & {
+      @extend %cats;
+
+      &--sub {
+        // have to add the rules for __cats as it won't inherit
+        // should only be adding modifiers below, not the whole shebang
+        @extend %cats;
+      }
+    }
+
+    .browse--two & {
+      width: 49%;
+
+      &:last-of-type {
+        width: 49%
+      }
+
+      &--sub {
+        width: 49%;
+      }
+    }
+
+    .browse--three & {
+      width: 24%;
+
+      &:nth-child(3) {
+        width: 52%;
+      }
+
+      &--sub {
+        width: 24%;
+  
+        &:last-child {
+          width: 50%;
+        }
+      }
+    }
+
+    .browse--four & {
+      width: 24%;
+
+      &--sub {
+        width: 24%;
+      }
+    }
+
+    .browse--five & {
+      width: 15%;
+
+      &--sub {
+        width: 24%;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    padding: 0 0 10px 8px;
+  }
+
+  &__list {
+    position: relative;
+    border-right: 1px solid $grey-2;
+    border-left: 1px solid $grey-2;
+    margin-left: -1px;
+
+    li {
+      margin: 0;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    a {
+      @include list-anchor;
+      color: $govuk-blue;
+
+      &:hover {
+        // falls between grey-2 (too dark) and grey-3 (too light)
+        background: #f1f1f1;
+      }
+
+      &:after {
+        position: absolute;
+        content: '\203A';
+        top: 7px;
+        right: 5px;
+        color: #003;
+      }
+
+      &.browse__slctd {
+        background-color: $govuk-blue;
+        color: $white;
+      }
+
+      &.browse__slctd:after {
+        color: $white;
+      }
+    }
+  }
+}

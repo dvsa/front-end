@@ -1,0 +1,42 @@
+.slot-hero {
+  background-color: $govuk-blue; 
+  margin-top: 30px;
+  color: $white;
+
+  li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    & + li {
+      border-top: 1px solid #4d8fc0;
+    }
+  }
+
+  .button--on-blue {
+    margin-top: 15px;
+  }
+
+  p {
+    @include core-16();
+    color: lighten($govuk-blue, 60%);
+    margin-bottom: em(5, 16);
+  }
+
+  &__count,
+  &__usage {
+    @include grid-column(1 / 2);
+    padding: 10px 30px;
+  
+    @include media(tablet) {
+      padding: 20px $gutter + 10;
+    }
+  }
+
+  &__title {
+    @include bold-48();
+  
+    span {
+      @include bold-36();
+    }
+  }
+}

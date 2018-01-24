@@ -1,0 +1,56 @@
+.data-paging {
+  @extend %contain-floats;
+
+  &__prev,
+  &__next {
+    @include core-27;
+    list-style: none;
+    float: left;
+    width: 50%;
+  }
+
+  &__next {
+    text-align: right;
+    float: right;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: $gutter-half 0;
+  
+    &:hover {
+      background-color: $canvas-colour;
+    }
+  
+    &:before {
+      content: ' ';  
+      display: block;
+      width: 30px;
+      height: 38px;
+      float: left;
+      background: transparent file-url('icons/arrow-sprite.png') -20px -11px no-repeat;
+  
+      .data-paging__next & {
+        float: right;
+        background-position: -102px -11px;
+      }
+    }
+  }
+
+  &__numbers {
+    @include core-14;
+    display: block;
+  }
+
+  // this needs looking at. Maybe need
+  // a visually hidden mixin and reset rather
+  // than class which is blanket for all breakpoints
+  &__page {
+    display: none;
+  
+    @include media(tablet) {
+      display: inline;
+    }
+  }
+}

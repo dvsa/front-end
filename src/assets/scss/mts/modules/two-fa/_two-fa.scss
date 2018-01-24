@@ -1,0 +1,53 @@
+.two-fa {
+  @include box-sizing(border-box);
+  background-color: #005ea5;
+  color: $white;
+  padding: $gutter-half;
+
+  &__logo {
+    margin-right: $gutter;
+    vertical-align: middle;
+  }
+
+  &__pin {
+    letter-spacing: 5px;
+    margin-left: $gutter;
+  }
+
+  &__reset {
+    @include core-16;
+    width: 100%;
+    text-align: right;
+    padding-top: $gutter-half;
+    display: block;
+
+    @include media(tablet) {
+      max-width: 50%;
+    }
+  }
+
+  &__input {
+    @include box-sizing(border-box);
+    border: 1px solid $grey-2;
+    // border: 1px solid lime!important;
+    border-top: 0;
+    // margin-left: 0 !important;
+    // margin-right: 0 !important;
+    padding: 15px;
+
+    //  Modifier for error state
+    &.has-error {
+      background-color: $error-background;
+      border-left-color: $mellow-red;
+      border-left-width: 3px;
+    }    
+
+    @include media(desktop) {
+      max-width: 66.6667%;
+    }
+  }
+
+  @include media(desktop) {
+    max-width: 66.6667%;
+  }
+}

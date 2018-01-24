@@ -1,0 +1,11 @@
+.table-row-cta {
+  // position:absolute;
+  display: inline-block;
+
+  &--right {
+    display: inline-block;
+    //float:right;
+    //top:0;
+    //right:0;
+  }
+}

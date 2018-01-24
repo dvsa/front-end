@@ -1,0 +1,200 @@
+.defect {
+  @include core-16;
+  position: relative;
+  border-top: 1px solid $grey-2;
+  padding: 15px;
+  background-color: $white;
+  transition: background-color .4s ease-in-out;
+
+  &__is-dangerous {
+    color: $mellow-red;
+    font-weight: 700;
+    display: block;
+  }
+
+  &__mark-repaired {
+    margin-bottom: 6px;
+  }
+
+  &.has-success {
+    background-color: mix($white, $green, 85%);
+
+    .defect__mark-repaired { display: none; }
+    .defect__marked-undo { display: block; }
+  }
+
+  &__inner {
+    @include media(tablet) {
+      padding-left: 45px;
+    }
+  }
+
+  &__title {
+    @include bold-16;
+    display: block;
+
+    @include media(tablet) {
+      margin-right: 220px;
+    }
+  }
+
+  &__meta {
+    display: block;
+    padding-top: 5px;
+    margin: 0;
+
+    @include media(tablet) {
+      margin-right: 220px;
+    }
+  }
+
+  &__reference {
+    display: block;
+    padding-top: 5px;
+    margin: 0;
+    color: $secondary-text-colour;
+
+    a {
+      &[rel="external"]:after {
+        background-position: right 3px;
+      }
+    }
+  }
+
+  &__marked-defect {
+    background-color: $grey-1;
+  }
+
+  &__marked-undo {
+    display: none;
+
+    span {
+      @include bold-16;
+      display: block;
+      color: $green;
+
+      &:before {
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url('../images/icons/icon-tick.png');
+        width: 27px;
+        height: 27px;
+        display: inline-block;
+        position: relative;
+        content: '';
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  // Actions for editing or removing defects (summary view}
+  &__edit {
+    padding: 5px 0 0;
+
+    @include media(tablet) {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      padding-bottom: 5px;
+      text-align: right;
+    }
+
+    // li {
+    //     display: inline;
+    //
+    //     @include media(tablet) {
+    //         display: block;
+    //     }
+    // }
+
+    li:first-child {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__change-error {
+    @include core-14();
+
+    display: none;
+    // display: block;
+    position: relative;
+    line-height: 12px;
+    text-align: right;
+    color: $red;
+    // top: -10px;
+  }
+
+  // Actions for adding defects (list view)
+  &__add {
+    margin-top: 10px;
+
+    @include media(tablet) {
+      position: absolute;
+      right: 0;
+      margin-top: 0;
+      top: 15px;
+    }
+
+    li {
+      display: inline;
+    }
+
+    li + li {
+      margin-left: 10px;
+    }
+  }
+
+  // Positional values of added defect
+  &__positions {
+    @extend %contain-floats;
+    color: $secondary-text-colour;
+    padding-top: 5px;
+
+    li {
+      @include media(tablet) {
+        display: inline-block;
+        width: 30%;
+      }
+
+      @include media(false, 740px) {
+        display: block;
+        width: 100%;
+      }
+
+      @include media(false, 640px) {
+        display: inline-block;
+        width: 30%;
+      }
+    }
+
+    &-value {
+
+      @include media(desktop) {
+        display: inline;
+      }
+
+      @include media(false, 900px) {
+        display: block;
+      }
+
+      @include media(false, 740px) {
+        display: inline;
+      }
+
+      @include media(false, 445px) {
+        display: block;
+      }
+    }
+  }
+
+  // CONTEXT STUFF
+  .defect-results & {
+    padding-left: 0;
+
+    &:last-child {
+      border-bottom: 1px solid $grey-2;
+    }
+  }
+}

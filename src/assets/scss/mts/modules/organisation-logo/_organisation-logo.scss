@@ -1,0 +1,37 @@
+.organisation-logo {
+  @include core-19;
+  display: block;
+  position: relative;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 5px 0 5px 35px;
+  background-image: url('../images/icons/crests/org_crest_13px.png');
+  background-position: 5px center;
+  background-repeat: no-repeat;
+  border-left: 2px solid $department-for-transport;
+
+  @media all and (-webkit-min-device-pixel-ratio: 2) {
+    background-image: url('../images/icons/crests/org_crest_13px_x2.png');
+    background-size: auto 20px;
+  }
+
+  &:link,
+  &:visited {
+    color: #0b0c0c;
+  }
+
+  &--md {
+    @media (min-width: 641px) {
+      padding: 5px 0 5px 45px;
+      background-image: url('../images/icons/crests/org_crest_18px.png');
+      background-position: 6px center;
+      white-space: nowrap;
+    }
+  
+    @media all and (min-width: 641px) and (-webkit-min-device-pixel-ratio: 2) {
+      background-image: url('../images/icons/crests/org_crest_18px_x2.png');
+      background-size: auto 26px;
+    }
+  }
+}

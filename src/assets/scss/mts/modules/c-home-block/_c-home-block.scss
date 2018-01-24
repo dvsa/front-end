@@ -1,0 +1,21 @@
+.c-home-block {
+  display: block;
+  margin-bottom: 60px;
+
+  &__head {
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    @include bold-27();
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__subtitle {
+    @include core-16();
+    color: $grey-1;
+  }
+}

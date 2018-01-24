@@ -1,0 +1,44 @@
+.present-data {
+  @extend %grid-row;
+
+  & 
+  & dd + dt {
+    margin-top: .5em;
+  }
+
+  dd {
+    @include bold-19;
+  }  
+
+  &__title {
+    .present-data__title-container & {
+      @include bold-27;
+    }
+  }
+
+  &__title-container {
+    @include grid-column(1 / 3);
+    margin-bottom: $gutter-half;
+  
+    @include media(tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title-link {
+    @include core-16;
+    
+    @include media(tablet) {
+      display: block;
+    }
+  
+    // .present-data__title-link + .present-data__title-link
+    & + & {
+      margin-left: 0;
+    
+      @include media(mobile) {
+        margin-left: $gutter-half;
+      }
+    }   
+  }
+}

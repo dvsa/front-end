@@ -13,6 +13,8 @@
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
     "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js",
     "precommit-msg": "echo 'Running pre-commit commands...' && exit 0",
+    "move-assets-to-motdev-production": "cross-env NODE_ENV=production gulp move-assets-to-motdev",
+    "move-assets-to-motdev-watch": "gulp move-assets-to-motdev-watch",
     "git-add": "git add ."
   },
   "pre-commit": [

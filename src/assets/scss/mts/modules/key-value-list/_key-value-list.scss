@@ -1,0 +1,57 @@
+.key-value-list {
+  margin-top: $gutter;
+
+  .heading-medium + & {
+    margin-top: 0;
+  }
+
+  &__header {
+    @include bold-36;
+    margin-top: em(25, 24);
+    
+    @include media(tablet) {
+      margin-top: em(45, 36);
+    }
+  }
+
+  &__key,
+  &__value,
+  &__value--numeric,
+  &__value--muted {
+    width: 50%;
+  }
+
+  &__value {
+    @include bold-19;
+    padding-left: $gutter-half;
+
+    &--numeric {
+      @include bold-19($tabular-numbers: true);
+      padding-left: $gutter-half;
+      letter-spacing: .03em;
+    }
+
+    &--muted {
+      color: $secondary-text-colour;
+      padding-left: $gutter-half;
+    }
+  }
+
+  &__item-action {
+    padding-left: $gutter-half;
+  }
+
+  &__action {
+    // Key/value action table links
+    &--fr {
+      float: right;
+      font-weight: normal;
+    }
+  }
+
+  &__meta {
+    @include core-16;
+    color: $secondary-text-colour;
+    display: block;
+  }
+}

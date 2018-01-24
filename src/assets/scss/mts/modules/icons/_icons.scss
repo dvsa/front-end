@@ -1,0 +1,55 @@
+.icon {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.icon-tick {
+  background-image: file-url('icons/icon-tick.png');
+  width: 27px;
+  height: 27px;
+
+  @include device-pixel-ratio() {
+    background-image: file-url('icons/icon-tick-2x.png');
+    background-size: 100%;
+  }
+}
+
+.img-icon {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.img-icon--error {
+  background-image: file-url('icons/icon-mot-important-red.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @include device-pixel-ratio() {
+    background-image: file-url('icons/icon-mot-important-red-2x.png');
+    background-size: contain;
+  }
+} 
+
+@mixin iconhelper($icon-name, $icon-width: 27px, $icon-height: 27px) {
+  @include device-pixel-ratio() {
+    background-image: file-url('icons/icon-#{$icon-name}-2x.png');
+    background-size: 100%;
+  }
+
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-image: file-url('icons/icon-#{$icon-name}.png');
+
+  width: $icon-width;
+  height: $icon-height;
+  
+  // if psudo element
+
+  display: inline-block;
+  position: absolute;
+  content: '';
+  // $gutter-half + width (-42px std)
+  margin-left: (-$gutter-half) + (-$icon-width);
+}

@@ -1,0 +1,19 @@
+.entity-header {
+  margin: 45px 0 20px;
+
+  &__type {
+    @include core-16;
+    color: $secondary-text-colour;
+    display: block;
+  }
+
+  &__title {
+    @include bold-24;
+  }
+
+  &__tertiary {
+    @include core-19;
+    display: block;
+  }
+}
+

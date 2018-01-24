@@ -1,0 +1,21 @@
+.c-notification {
+  padding-top: 10px;
+
+  &.is-nomination {
+    background-color: $grey-3;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  &__link {
+    .is-unread & {
+      font-weight: 700;
+    }
+  }
+
+  &__time {
+    @include core-16;
+    color: $grey-1;
+  }
+}

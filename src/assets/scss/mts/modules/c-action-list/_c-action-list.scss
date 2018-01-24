@@ -1,0 +1,18 @@
+.c-action-list {
+
+  &__item {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    color: $white;
+    
+    &:visited {
+      color: $white;
+    }
+    
+    &:focus {
+      color: $black;
+    }
+  }
+}

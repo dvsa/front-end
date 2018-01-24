@@ -1,0 +1,29 @@
+
+%transaction-header-base {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: $gutter;
+  background: $turquoise;
+  color: $white;
+  text-align: center;
+}
+
+.transaction-header {
+  @extend %transaction-header-base;
+
+  &__title {
+    @include bold-48;
+  }
+
+  &__next-step {
+    @include core-36;
+    margin: 0;
+    padding: .25em 0;
+  }
+
+  // Modifiers
+  &--failure {
+    @extend %transaction-header-base;
+    background: $red;
+  }
+}

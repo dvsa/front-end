@@ -1,0 +1,117 @@
+.eu-defect {
+  margin-bottom: 30px;
+
+  &__title {
+    @include bold-24;
+  }
+
+  &__manual-ref {
+    @include core-16;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  &__list {
+
+    border-top: 2px solid $grey-1;
+    border-bottom: 2px solid $grey-1;
+
+    li {
+      position: relative;
+      border-bottom: 2px solid $grey-3;
+      clear: both;
+      margin: 4px 0;
+      padding: 12px 0;
+
+      &:last-of-type {
+        border-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__name {
+    @include core-16;
+    display: block;
+    padding-right: 260px;
+
+    @include media(mobile) {
+      padding-right: 0;
+    }
+  }
+
+  &__options {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    width: 264px;
+    text-align: right;
+
+    @include media(mobile) {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: auto;
+      text-align: left;
+    }
+
+    a[class^="button"] {
+      width: 128px;
+      text-align: center;
+    }
+
+    a.button--info {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    &--left {
+      float: left;
+      width: 140px;
+      text-align: left;
+    }
+
+    &--right {
+      float: right;
+      width: 110px;
+      text-align: right;
+    }
+
+    &--left,
+    &--right {
+      @include media(mobile) {
+        float: none;
+        width: auto;
+        text-align: left;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__badge {
+    @include bold-16;
+    padding: 5px 8px 3px;
+  }
+
+  &__link {
+    @include core-16;
+  }
+
+  &--interim {
+    .eu-defect__options {
+      top: 6px;
+
+      @include media(mobile) {
+        margin-bottom: 10px;
+      } 
+    }
+
+    .eu-defect__name {
+      padding-right: 240px;
+
+      @include media(mobile) {
+        padding-right: 0;
+      }
+    }
+  }
+}

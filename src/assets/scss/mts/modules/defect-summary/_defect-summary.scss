@@ -1,0 +1,152 @@
+.defect-summary {
+  @extend %contain-floats;
+  @include core-16;
+  background-color: #e7e7e7;
+  border: 1px solid $grey-2;
+  margin-bottom: $gutter-half;
+
+  // Optional totals for browse, search and list views
+  &__total {
+    position: relative;
+    padding: $gutter-half;
+
+    @include media(tablet) {
+      padding: 15px 130px;
+    }
+
+    &-heading {
+      // display: none;
+      font-weight: 700;
+
+      @include media(tablet) {
+        display: inline-block;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+      }
+
+      @include media(mobile) {
+        padding-bottom: 20px;
+      }
+    }
+
+    ul {
+
+      li {
+        display: inline-block;
+        margin-right: 10px;
+
+        @include media(tablet) {
+          width: 32%;
+          margin-right: 0;
+        }
+      }
+    }
+
+    &--eu {
+
+      @include media(tablet) {
+        padding: 15px 85px 15px 80px;
+      }
+
+      ul {
+        @include media(tablet) {
+          margin-left: 20px;
+        }
+
+        li {
+
+          @include media(tablet) {
+            width: 22%;
+          }
+
+          @include media(mobile) {
+            width: 20%;
+          }
+        }
+      }
+
+      span[class^="badge"] {
+        display: block;
+        max-width: 20px;
+        margin-bottom: 2px;
+        padding: 5px 3px 3px;
+
+        @include media(desktop) {
+          display: inline-block;
+          max-width: auto;
+          padding: 5px 8px 3px;
+          margin-bottom: -5px;
+        }
+      }
+    }
+  }
+
+  &__heading,
+  &__heading--small {
+    @include bold-24;
+    border-top: 1px solid $grey-2;
+    padding: 12px 15px;
+    background-color: #f1f1f1;
+
+    &-type {
+      padding-left: 10px;
+    }
+
+    .badge--warn,
+    .badge--info,
+    .badge--alert {
+      margin: 0;
+    }
+  }
+
+  &__heading--small {
+    @include bold-19;
+  }
+
+  &__toggle {
+    font-weight: 700;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    display: none;
+
+    .js-enabled & {
+      display: block;
+    }
+
+    .lte-ie8 & {
+      display: none;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+
+    .js-enabled & {
+      border-top: 1px solid $grey-2;
+      padding: 10px 15px;
+    }
+
+    a {
+      font-weight: 700;
+      display: none;
+
+      .js-enabled & {
+        display: inline-block;
+      }
+
+      .lte-ie8 & {
+        display: none;
+      }
+    }
+  }
+
+  //Context stuff
+
+  .action-panel + & {
+    border-top: 0;
+    margin-top: -1px;
+    margin-bottom: 30px;
+  }
+}

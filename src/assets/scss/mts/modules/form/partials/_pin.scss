@@ -1,0 +1,23 @@
+// Originally taken form elemets '_form-date.scss'
+
+.form-pin {
+  .form-group {
+    float: left;
+    width: 50px;
+    margin-top: 5px;
+    margin-right: 20px;
+    margin-bottom: 0;
+    clear: none;
+    
+    // Remove the below 'cus they're always visuallyhidden
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      width: 100%;
+    }
+  }
+}

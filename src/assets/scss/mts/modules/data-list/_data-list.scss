@@ -1,0 +1,39 @@
+.data-list {
+  li {
+    padding-bottom: $gutter-half;
+
+    + li {
+      border-top: 1px solid $grey-2;
+      padding-top: $gutter-half;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &__heading {
+    @include bold-24;
+    text-decoration: none;
+  
+    &[href]:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  &__content {
+    display: block;
+    clear: both;
+  }
+
+  &__subtitle {
+    @include core-16;
+    color: $secondary-text-colour;
+    position: relative;
+  
+    a {
+      position: absolute;
+      right: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.layout-filter-data {
+  @extend %grid-row;
+
+  .key-value-list__header:first-of-type {
+    margin-top: 0;
+  }
+
+  &__filters {
+    @extend %contain-floats;
+    @include grid-column(1 / 3, $full-width: desktop, $float: left);
+  }
+
+  &__results {
+    @include grid-column(2 / 3, $full-width: 1024px, $float: right);
+  }
+}

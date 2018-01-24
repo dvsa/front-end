@@ -1,0 +1,63 @@
+.hide-large {
+  @include media(false, false, 768px) {
+    display: none !important;
+  }
+}
+
+.hide-small {
+  @include media(false, 767px) {
+    display: none;
+  }
+}
+
+.js-only,
+.js-only--block,
+.js-only--inline {
+  display: none !important;
+}
+
+.js-enabled {
+  .js-hidden {
+    display: none;
+  }
+
+  .js-only,
+  .js-only--inline {
+    display: inline-block !important;
+  }
+
+  .js-only--block {
+    display: block !important;
+  }
+}
+
+// toggle switch with arrow
+%toggle-switch {
+  position: relative;
+  display: block;
+  margin-left: 24px;
+
+  &:before {
+    position: absolute;
+    left: -24px;
+    top: 0;
+    content: '\25BA';
+  }
+}
+
+.toggle-switch {
+  @extend  %toggle-switch;
+}
+
+.toggle-switch--open {
+  @extend  %toggle-switch;
+
+  &:before {
+    content: '\25BC';
+  }
+}
+
+// text align right when required (for example, some form elements)
+.a-r {
+  text-align: right;
+}

@@ -1,0 +1,100 @@
+.twitter-typeahead {
+  width: 100%;
+
+  .tt-input {
+    background-position: left;
+    background-repeat: no-repeat;
+    background-image: file-url('icons/icon-search.png');
+    padding-left: $gutter;
+    
+    @include device-pixel-ratio() {
+      background-image: file-url('icons/icon-search-2x.png');
+      background-size: 27px 27px;
+    }
+  }
+
+  .tt-dropdown-menu {
+    @include box-shadow(0 5px 5px rgba(0, 0, 0, .2));
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    padding: 0;
+    margin: 3px 0 0;
+    list-style: none;
+    text-align: left;
+    background-color: $white;
+    border: 1px solid $border-colour;
+    background-clip: padding-box;
+  }
+
+  .tt-hint {
+    color: $secondary-text-colour;
+    padding-left: $gutter;
+  }
+
+  .tt-suggestion {
+    & > p {
+      display: block;
+      padding: 5px 20px 5px $gutter;
+      margin: 0;
+      clear: both;
+      font-weight: normal;
+      white-space: nowrap;
+
+      &:hover,
+      &:focus {
+        color: $white;
+        text-decoration: none;
+        outline: 0;
+        background-color: $link-colour;
+      }
+    }
+  }
+
+  .tt-suggestion.tt-cursor {
+    color: $white;
+    background-color: $link-colour;
+  }
+
+  // Modify sizes to match form-control modifiers
+  & > .form-control + .tt-dropdown-menu,
+  & > .form-control + pre + .tt-dropdown-menu {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 50%;
+    }
+  }
+
+  & > .form-control-3-4  + .tt-dropdown-menu,
+  & > .form-control-3-4 + pre + .tt-dropdown-menu {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 75%;
+    }
+  }
+
+  & > .form-control-1-2 + .tt-dropdown-menu,
+  & > .form-control-1-2 + pre + .tt-dropdown-menu {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 50%;
+    }
+  }
+
+  & > .form-control-1-4 + .tt-dropdown-menu,
+  & > .form-control-1-4 + pre + .tt-dropdown-menu {
+      width: 25%;
+  }
+
+  & > .form-control-1-8 + .tt-dropdown-menu,
+  & > .form-control-1-8 + pre + .tt-dropdown-menu {
+      width: 12.5%;
+  }
+
+}

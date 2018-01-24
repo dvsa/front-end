@@ -1,0 +1,137 @@
+a:visited {
+  color: $govuk-blue;
+}
+
+.hr--thin {
+  height: 0;
+  margin: $gutter 0;
+  border: 0;
+  background-color: transparent;
+  border-top: 1px solid $grey-2;
+}
+
+.heading-medium {
+  .heading-secondary {
+    @include core-24;
+  }
+}
+
+.heading-contents {
+  margin-top: 1.5em;
+
+  @include media(desktop) {
+    margin-top: 3em;
+  }
+}
+
+.list-contents {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  
+  li {
+    @include core-16;
+    margin-bottom: 5px;
+  }
+}
+
+code {
+  white-space: nowrap;
+  font-weight: 400;
+}
+
+.highlight {
+  color: $hm-government;
+  white-space: nowrap;
+}
+
+.masked-text {
+  font-size: 1.5em;
+  line-height: .75em;
+}
+
+.lead-in {
+  margin-bottom: 0;
+}
+
+.form-legend {
+  @include bold-24();
+
+  margin-top: em(10, 20);
+  margin-bottom: em(10, 20);
+
+  @include media(tablet) {
+    margin-top: em(20, 24);
+    margin-bottom: em(20, 24);
+  }
+}
+
+.heading-meta {
+  @include core-16;
+  display: block;
+  color: $grey-1;
+}
+
+.heading-small {
+  .heading-meta {
+    @include core-14;
+  }
+}
+
+.heading-medium {
+  .heading-meta {
+    @include core-16;
+  }
+}
+
+.heading-large {
+  .heading-meta {
+    @include core-24;
+  }
+}
+
+// Data
+.data {
+  margin-top: em(5, 16);
+  margin-bottom: em(20, 16);
+
+  @include media(tablet) {
+    margin-top: em(5, 19);
+    margin-bottom: em(20, 19);
+  }
+}
+
+.data-item {
+  display: block;
+  line-height: 1;
+}
+
+.big-link {
+  @include bold-19;
+  display: inline-block;
+}
+
+// Bold font sizes
+.bold-xxlarge {
+  @include bold-80();
+}
+
+.bold-xlarge {
+  @include bold-48();
+}
+
+.bold-large {
+  @include bold-36();
+}
+
+.bold-medium {
+  @include bold-24();
+}
+
+.bold-small {
+  @include bold-19();
+}
+
+.bold-xsmall {
+  @include bold-16();
+}
+

@@ -1,0 +1,35 @@
+.footer-resources {
+  &,
+  &--one-third,
+  &--two-thirds {
+    color: #333; // #A11y contrast fix
+
+    @include media(tablet) {
+      padding-bottom: 30px;
+    }
+  }
+  
+  &--one-third {
+    @include media(tablet) {
+      width: 33.333%; 
+      float: left;
+    }
+  }
+
+  &--two-thirds {
+    @include media(tablet) {
+      width: 66.666%; 
+      float: left;
+    }
+  }
+
+  &__header {
+    margin: 0 15px;
+    padding: 10px 0 0;
+    
+    @include media(tablet) {
+      padding-bottom: 20px;
+      border-bottom: 1px solid $border-colour;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// Buttons
+// GOV.UK front end toolkit dependencies
+
+.button {
+  @include button ($button-colour);
+  margin: 0 $gutter-half $gutter-half 0;
+  padding: em(10) em(15) em(5) em(15);
+  vertical-align: top;
+
+  // Fix unwanted
+  // button padding in Firefox
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &:focus {
+    outline: 3px solid $yellow;
+  }
+
+  // Disabled buttons
+  &[disabled="disabled"] {
+    background: $button-colour;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

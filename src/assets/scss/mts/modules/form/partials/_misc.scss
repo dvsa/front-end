@@ -1,0 +1,46 @@
+.form-group.has-error {
+  background-color: $error-background;
+  border-left: 3px solid $mellow-red;
+
+  margin-left: -$gutter-half;
+  padding-left: $gutter-half;
+
+  padding-top: $gutter-half;
+  padding-bottom: $gutter-half;
+}
+
+.form-group + .panel-indent.has-error,
+.panel-indent.has-error {
+  background-color: $error-background;
+  border-left-color: $mellow-red;
+  border-left-width: 3px;
+
+  margin-left: -$gutter-half;
+  padding-left: $gutter-half;
+  padding-right: 0;
+  box-sizing: content-box;
+
+  > .form-label,
+  > .form-control {
+    margin-left: 15px;
+  }
+}
+
+.panel-indent .validation-message {
+  margin-left: 15px;
+}
+
+.block-label__meta {
+  @include core-16;
+  display: block;
+}
+
+.input-link {
+  @include core-16;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-title {
+  margin: 45px 0;
+}

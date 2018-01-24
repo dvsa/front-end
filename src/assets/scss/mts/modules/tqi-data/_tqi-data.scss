@@ -1,0 +1,28 @@
+// Legacy: Remove once TQI BL1933 is live
+.tqi-data {
+  background-color: $light-blue;
+
+  td {
+    color: $white;
+    padding-top: 0;
+    padding-bottom: 30px;
+    border: 0;
+  }
+
+  td:first-child {
+    padding-right: 1.05263em;
+    padding-left: 15px;
+  }
+
+  .bold-large span {
+    &.label {
+      @include bold-19;
+      display: block;
+    }
+
+    &.meta {
+      @include core-19;
+      color: $white;
+    }
+  }
+}

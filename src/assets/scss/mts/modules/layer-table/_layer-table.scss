@@ -1,0 +1,50 @@
+.layer-table {
+  @extend %contain-floats;
+  @include core-16;
+
+  border: 1px solid $grey-2;
+  border-bottom: 0;
+  margin-bottom: $gutter-half;
+
+  .action-panel + & {
+    border-top: 0;
+    margin-top: -1px;
+    margin-bottom: 30px;
+  }
+
+  td {
+    // brings borders back to FireFox
+    background-clip: padding-box;
+  }
+
+  &__heading {
+    th {
+      @include bold-16();
+      padding: 15px;
+      background-color: #e7e7e7;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-right: 30px;
+  }
+
+  &__item {
+    @include core-16();
+    position: relative;
+    border-top: 1px solid #bfc1c3;
+    padding: 15px;
+    background-color: #fff;
+
+    &--right {
+      text-align: right;
+    }
+
+    &--secondary {
+      @include bold-16();
+      background-color: #f1f1f1;
+      padding: 10px 15px;
+    }
+  }
+}

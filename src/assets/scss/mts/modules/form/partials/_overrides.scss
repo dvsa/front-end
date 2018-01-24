@@ -1,0 +1,83 @@
+// Negates the need for the ".form-group-compound" modifier
+.form-group + .panel-indent {
+  @include box-sizing(border-box);
+  float: left;
+  width: 100%;
+  margin: -20px 0 30px;
+  padding: 10px 15px;
+}
+
+select.form-control,
+.form-control-select {
+  @include core-19;
+  @include box-sizing(border-box);
+  border: 2px solid $black;
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist; 
+}
+
+.form-control {
+  border: 2px solid #0b0c0c;
+}
+
+.form-control-select {
+  width: 100%;
+
+  @include media(tablet) {
+    width: 50%;
+  }
+
+  &.form-control-3-4 {
+
+    @include media(tablet) {
+      width: 75%;
+    }
+  }
+
+  &.form-control-1-2 {
+
+    @include media(tablet) {
+      width: 50%;
+    }
+  }
+
+  &.form-control-1-4 {
+
+    @include media(tablet) {
+      width: 25%;
+    }
+  }
+
+  &.form-control-1-8 {
+
+    @include media(tablet) {
+      width: 12.5%;
+    }
+  }
+
+  &--large {
+    @include core-24; 
+  }
+}
+
+// Hitherto unadded to prevent teeny weeny inputs on mobile
+.form-control-1-4,
+.form-control-1-8 {
+  @include media(mobile) {
+    width: 100%;
+  }
+}
+
+// add some spacing to the mini GQR tables on the VTS entity page
+.text-secondary--spaced-8 {
+  display: block;
+  margin-top: 8px;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 0;
+}

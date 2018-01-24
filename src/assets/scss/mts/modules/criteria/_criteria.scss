@@ -1,0 +1,40 @@
+.module-criteria {
+  .criteria {
+    &,
+    &--has-passed,
+    &--has-failed {
+      padding-left: 5px;
+
+      &:before {
+        font-family: "nta",Arial,sans-serif;
+        content: '\25CF';
+        transform: scale3d(1.2, 1.2, 1);
+        padding-right: 10px;
+        color: $text-colour;
+        display: inline-block;
+        width: 20px;
+      }
+    }
+
+    &--has-passed {
+      &:before {
+        content: '\2714';
+        color: $green;
+      }
+    }
+
+    &--has-failed {
+      &:before {
+        content: '\2716';
+        color: $error-colour;
+      }
+    }
+
+    &__list {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      list-style-type: none;
+    }
+  }
+}
+

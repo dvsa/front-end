@@ -1,0 +1,40 @@
+.pivot-panel {
+  .big-data--is-link + .big-data {
+    margin: 0 0 $gutter-half;
+    padding-top: $gutter;
+  }
+
+  .data-list + .big-data {
+    border-top: 1px solid $border-colour;
+    margin: $gutter-half 0;
+    padding-top: $gutter;
+  }
+  
+  & + & {
+    margin-top: 60px;
+  }
+
+  &__title {
+    @include bold-27;
+  
+    a {
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__header {
+    padding: $gutter-half 0;
+  }
+
+  &__subtitle {
+    // Used in titles and list items
+    @include core-16;
+    color: $secondary-text-colour;
+    display: block;
+    margin: 0;
+  }
+}

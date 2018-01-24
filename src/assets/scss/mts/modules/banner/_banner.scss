@@ -1,0 +1,51 @@
+.banner {
+  background-color: $light-blue;
+
+  &,
+  &--default,
+  &--error,
+  &--confirmation {
+    color: $white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    a {
+      &:link,
+      &:visited,
+      &:hover,
+      &:active {
+        color: #fff;
+      }
+    }
+  }
+
+  &--error {
+    background-color: $red;
+  }
+
+  &--confirmation {
+    background-color: $turquoise;
+  }
+
+  &--info {
+    background: $govuk-blue;
+  }
+
+  &--content {
+    margin-top: $gutter * 2;
+  }
+
+  &__heading {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  &__heading-large {
+    font-size: 36px;
+    font-weight: bold;
+    display: block;
+  }
+}

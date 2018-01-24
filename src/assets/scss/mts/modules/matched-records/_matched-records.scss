@@ -1,0 +1,37 @@
+.matched-records {
+  &__key {
+    @include core-16;
+    padding: em(12, 16) em(20, 16) em(9, 16) 0;
+    font-weight: 700;
+  }
+    
+  &__value {
+    &--numeric,
+    &--right,
+    &--tabular {
+      @include core-16;
+      padding: em(12, 16) em(20, 16) em(9, 16) 0;
+    }
+    
+    &-numeric,
+    &--tabular {
+      @include core-16($tabular-numbers: true);
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__heading {
+    @include core-16;
+    padding: em(12, 16) em(20, 16) em(9, 16) 0;
+    font-weight: 700;
+  }
+
+  &__meta {
+    color: $secondary-text-colour;
+    font-weight: 300;
+    display: block;
+  }
+}

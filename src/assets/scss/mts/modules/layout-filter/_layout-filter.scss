@@ -1,0 +1,22 @@
+.layout-filter {
+  // This is currently only implemented on the TQI section and give a 1/4 - 3/4 layout with a stricter breakpoint
+  // as the extant functionality was a bit sloppy where there was a vague crossover point
+
+  &__controls {
+    @include grid-column(1 / 4);
+
+    @media (max-width: 767px) {
+      float: left;
+      width: 100%;
+    }
+  }
+
+  &__content {
+    @include grid-column(3 / 4);
+
+    @media (max-width: 767px) {
+      float: left;
+      width: 100%;
+    }
+  }
+}

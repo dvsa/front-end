@@ -1,0 +1,28 @@
+.c-slots {
+  margin-bottom: 15px;
+
+  &__title {
+    @include core-19();
+    margin: 0;
+  }
+
+  &__count {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &__count--sm {
+    @include bold-19();
+    line-height: 1;
+  }
+  
+  &__count--lg {
+    @include bold-80();
+  }
+
+  &__subtext {
+    @include core-16();
+    display: block;
+    margin-top: -5px;
+  }
+}

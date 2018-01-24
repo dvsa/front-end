@@ -1,0 +1,63 @@
+%badge {
+  border-radius: 2px;
+  display: inline-block;
+  font-weight: 700;
+  line-height: 1;
+  margin: -5px 0;
+  min-width: 10px;
+  padding: 5px 8px 3px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  
+  &:empty {
+    display: none;
+  }
+
+  // In related__status items badges float right
+  .related__status & {
+    float: right;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  } 
+}
+
+.badge {
+  @extend %badge;
+  background-color: $white;
+  color: $text-colour;
+  border: 1px solid $border-colour;
+
+  &--success {
+    @extend %badge;
+    background-color: $green;
+    color: #fff;
+  }
+
+  &--warn {
+    @extend %badge;
+    background-color: $yellow;
+    color: #3c3c3c;
+  }
+
+  &--info {
+    @extend %badge;
+    background-color: $link-colour;
+    color: #fff;
+  }
+
+  &--alert {
+    @extend %badge;
+    background-color: $mellow-red;
+    color: #fff;
+  }
+
+  &--plain {
+    @extend %badge;
+    background-color: $white;
+    color: $black;
+    border: 1px solid $black;
+    border-radius: 2px;
+    padding: 4px 7px 2px;
+  }
+}

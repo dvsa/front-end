@@ -1,0 +1,22 @@
+.sign-in {
+  margin-bottom: $gutter;
+  border: solid 10px $grey-2; 
+  padding: $gutter-half;
+
+  .form-title {
+    margin-top: 0;
+    margin-bottom: $gutter-half;
+  }
+
+  input[type='text'] {
+    width: 175px;
+  }
+
+  input[type='password'] {
+    width: 225px;
+  }
+
+  .content-navigation {
+    margin-top: 0;
+  }
+}

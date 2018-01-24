@@ -1,0 +1,64 @@
+.content-navigation {
+  &,
+  &--notice {
+    margin-top: $gutter;
+
+    [class*='button'] {
+      margin: 0 15px 15px 0;
+    }
+  }
+
+  &--notice {
+    border: 10px solid $panel-colour;
+    padding: $gutter;
+  }
+
+  &__secondary {
+    list-style: none;
+  
+    li {
+      margin-bottom: 5px;
+  
+      &:first-child {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  &__heading {
+    @include bold-24;
+    margin-bottom: $gutter-half;
+  }
+
+  &__split {
+    li {
+      display: inline;
+      float: left;
+      width: 50%;
+  
+      @include media(mobile) {
+        float: none;
+        display: block;
+      }
+    }
+
+    // The following allows for
+    // left/right green/red split buttons
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+  
+      @include media(mobile) {
+        text-align: left;
+      }
+  
+      .button {
+        @include core-19();
+        margin-right: 0;
+      }
+    }
+  }
+}

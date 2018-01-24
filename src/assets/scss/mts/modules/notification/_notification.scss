@@ -1,0 +1,36 @@
+.notification {
+  padding: $gutter-half 0;
+
+  &--nomination {
+    background-color: $grey-4;
+    padding: $gutter-half;
+  }
+
+  &__subject {
+    margin: 0;
+
+    &--is-unread {
+      margin: 0;
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    text-decoration: none;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__time {
+    @include core-16;
+    color: $secondary-text-colour;
+    display: block;
+    clear: both;
+  }
+}

@@ -1,0 +1,63 @@
+.filter {
+  background-color: $panel-colour;
+  margin-bottom: $gutter;
+  padding: 0 5px 5px;
+
+  &__heading {
+    @include bold-19;
+    display: block;
+    padding: 8px 5px 3px;
+  
+    @include media(mobile) {
+      padding: 10px 5px 3px;
+    }
+  }
+
+  &,
+  &--text {
+    @extend %contain-floats;
+    @include core-16;
+    padding: 10px;
+    background-color: $white;
+
+    .form-label {
+      @include bold-16;
+    }
+
+    > .form-group {
+      margin-bottom: 0;
+    }
+
+    > .form-group + .form-group {
+      margin-top: $gutter-half;
+    }
+  }
+
+  &__content {
+    &--text {
+      background-color: $panel-colour;
+      padding: 0 5px;
+    
+      .form-control {
+        width: 100%;
+      }   
+    }
+  }
+
+  &__list {
+    li {
+      padding: 5px 0;
+    }
+  }
+
+  &__help {
+    @include core-14;
+    display: block; 
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  &__actions {
+    margin-bottom: $gutter;
+  }
+}

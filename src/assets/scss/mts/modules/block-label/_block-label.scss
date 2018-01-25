@@ -1,0 +1,56 @@
+.block-label {
+  display: block;
+  float: none;
+  clear: left;
+  position: relative;
+  background: $panel-colour;
+  border: 1px solid $panel-colour;
+  padding: (18px $gutter $gutter-half $gutter*1.5);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer; // Encourage clicking on block labels
+
+  .inline & {
+    clear: none;
+    margin-right: $gutter-half;
+  }
+
+  label {
+    .selected {
+      .js-enabled & { 
+        background: $white;
+        border-color: $black;
+      }
+    }
+
+    .focused {
+      .js-enabled & {
+        outline: 3px solid $yellow;
+      }
+    }
+  }
+
+  @include media(tablet) {
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    // width: 25%; - Test : check that text within labels will wrap
+  }
+
+  // Absolutely position inputs within label, to allow text to wrap
+  input {
+    position: absolute;
+    top: 18px;
+    left: $gutter-half;
+    cursor: pointer;
+
+    .js-enabled .focused & {
+      outline: none;
+    }
+  }
+
+  // Change border on hover
+  &:hover {
+    border-color: $black;
+  }
+}

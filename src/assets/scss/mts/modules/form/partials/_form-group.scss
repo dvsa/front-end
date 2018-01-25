@@ -2,4 +2,11 @@
   margin-bottom: 30px;
   float: left;
   width: 100%;
+  position: relative;
+
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
 }

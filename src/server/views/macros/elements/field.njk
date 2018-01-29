@@ -1,6 +1,6 @@
 {% from "macros/elements/label.njk" import formLabel %}
 
-{% macro field(label='', labelBold=false, id='', type='text', name='', hint=false, group=false, error=false, width=false) %}
+{% macro field(label='', labelVisuallyHidden=false, labelBold=false, id='', type='text', name='', value='', hint=false, group=false, groupCompound=false, error=false, width=false) %}
   
   {% if width == 12.5 %}
     {% set widthClass = 'form-control-1-8' %}
@@ -19,9 +19,15 @@
   {% endif %}
   
   {% if label %}
-    {% if group or error %}<div class="form-group {{ 'form-group-error' if error }}">{% endif %}
-    {{ formLabel(label=label, id=id, bold=labelBold, hint=hint, error=error) }}
-    <input {{ 'class="form-control' + ( ' form-control-error' if error ) + ( ' ' + widthClass if widthClass ) + '"' if type !== 'file' }} {{ 'id="' + id + '"' if id }} type="{{ type }}" name="{{ name if name else id }}">
+    {% if group or error %}<div class="form-group {{ 'form-group-compound' if groupCompound }} {{ 'form-group-error' if error }}">{% endif %}
+    {{ formLabel(label=label, visuallyHidden=labelVisuallyHidden, id=id, bold=labelBold, hint=hint, error=error) }}
+    <input 
+    {{ 'class="form-control' + ( ' form-control-error' if error ) + ( ' ' + widthClass if widthClass ) + '"' if type !== 'file' }}
+    {{ 'id="' + id + '"' if id }}
+    type="{{ type }}"
+    name="{{ name if name else id }}"
+    value="{{ value }}"
+    >
     {% if group or error %}</div>{% endif %}
   {% endif %}
 {% endmacro %}

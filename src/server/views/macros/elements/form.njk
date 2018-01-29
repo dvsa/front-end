@@ -1,0 +1,10 @@
+{% macro form(action=false, method=false, class=false, multipart=false) %}
+  <form
+  {{ 'action="' + action  + '"' if action }}
+  {{ 'method="' + method + '"' if method }}
+  {{ 'class="' + class + '"' if class }}
+  {{ 'enctype="multipart/form-data"' if multipart }}
+  >
+    {{ caller() }}
+  </form>
+{% endmacro %}

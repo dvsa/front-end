@@ -165,6 +165,10 @@ export const startApp = async () => {
       resave: true,
       saveUninitialized: true,
       secret: CONFIG.sessionSecret,
+      cookie: {
+        // 20 minutes
+        maxAge: 1200000,
+      },
     })
   );
 

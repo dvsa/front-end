@@ -23,7 +23,7 @@ export const renderViewWithValuesOrRedirect = (req, res, viewName, viewData = {}
   return res.redirect('/prototypes/create-account');
 };
 
-export const renderWithErrorsOrRedirectWithSession = (req, res, viewName, redirectUrl) => {
+export const renderWithErrorsOrRedirectWithSession = (req, res, viewName, redirectUrl, viewData = {}) => {
   const errors = validationResult(req);
   const values = filterFormData(req.body);
 
@@ -31,6 +31,7 @@ export const renderWithErrorsOrRedirectWithSession = (req, res, viewName, redire
     return res.render(viewName, {
       errors: errors.mapped(),
       values,
+      ...viewData,
     });
   }
 

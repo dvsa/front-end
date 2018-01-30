@@ -25,6 +25,10 @@ var _expressSession = require('express-session');
 
 var _expressSession2 = _interopRequireDefault(_expressSession);
 
+var _memorystore = require('memorystore');
+
+var _memorystore2 = _interopRequireDefault(_memorystore);
+
 var _morgan = require('morgan');
 
 var _morgan2 = _interopRequireDefault(_morgan);
@@ -229,12 +233,24 @@ const startApp = exports.startApp = (() => {
       app.use((0, _morgan2.default)('dev'));
     }
 
+    // Memory store created for production use
+    // See: https://www.npmjs.com/package/memorystore
+    const MemoryStore = (0, _memorystore2.default)(_expressSession2.default);
+
     // Express session middleware
     // Website: https://www.npmjs.com/package/express-session
     app.use((0, _expressSession2.default)({
       resave: true,
       saveUninitialized: true,
-      secret: _constants.CONFIG.sessionSecret
+      secret: _constants.CONFIG.sessionSecret,
+      cookie: {
+        store: new MemoryStore({
+          // prune expired entries every 24h
+          checkPeriod: 86400000
+        }),
+        // 20 minutes
+        maxAge: 1200000
+      }
     }));
 
     // Static folder

@@ -9,12 +9,11 @@ export const renderViewWithValuesOrRedirect = (req, res, viewName, viewData = {}
 
   // Check if email request path or session has create form data
   if (isEmailPath || (req.session && req.session.createAccountForm)) {
-    if (isReviewPath) {
-      // Check if all required fields are completed
-      if (!req.session.createAccountForm.hasAllRequiredKeys) {
-        return res.redirect('/prototypes/create-account/email');
-      }
+    // Review page requires all steps to be completed
+    if (isReviewPath && !req.session.createAccountForm.hasAllRequiredKeys) {
+      return res.redirect('/prototypes/create-account/email');
     }
+    // Render view with session values
     return res.render(viewName, {
       values: req.session.createAccountForm,
       ...viewData,

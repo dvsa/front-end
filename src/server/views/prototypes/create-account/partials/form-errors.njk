@@ -5,20 +5,20 @@
   </h2>
 
   <ul class="error-summary-list">
+    {% for fieldId, index in errors %}
+    <li>
+      <a href="#{{ fieldId }}">
+        {{ errors[fieldId].msg }}
+      </a>
+    </li>
+    {% endfor %}
+    
     {% if (errors.day) or (errors.month) or (errors.year) %}
     <li>
       <a href="#dateOfBirth">
         {{ dateOfBirthErrorMessage }}
       </a>
     </li>
-    {% else %}
-      {% for fieldId, index in errors %}
-      <li>
-        <a href="#{{ fieldId }}">
-          {{ errors[fieldId].msg }}
-        </a>
-      </li>
-      {% endfor %}
     {% endif %}
   </ul>
 </div>

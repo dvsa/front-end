@@ -33,15 +33,15 @@ const renderViewWithValuesOrRedirect = exports.renderViewWithValuesOrRedirect = 
   return res.redirect('/prototypes/create-account');
 };
 
-const renderWithErrorsOrRedirectWithSession = exports.renderWithErrorsOrRedirectWithSession = (req, res, viewName, redirectUrl) => {
+const renderWithErrorsOrRedirectWithSession = exports.renderWithErrorsOrRedirectWithSession = (req, res, viewName, redirectUrl, viewData = {}) => {
   const errors = (0, _check.validationResult)(req);
   const values = (0, _formHelpers.filterFormData)(req.body);
 
   if (!errors.isEmpty()) {
-    return res.render(viewName, {
+    return res.render(viewName, _extends({
       errors: errors.mapped(),
       values
-    });
+    }, viewData));
   }
 
   req.session = (0, _sessionHelpers.addFormValuesToSession)(req.session, values);

@@ -11,6 +11,9 @@ export const postSecurityQuestions = (req, res) => {
     req,
     res,
     'prototypes/create-account/security-questions',
-    '/prototypes/create-account/password'
+    '/prototypes/create-account/password',
+    {
+      securityQuestions: allSecurityQuestions(),
+    }
   );
 };

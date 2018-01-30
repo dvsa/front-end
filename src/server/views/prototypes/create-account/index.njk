@@ -1,0 +1,51 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Create an account', secondary='MOT testing service') }}
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='You need to create an account before using the MOT testing service. This should take 5 minutes', lead=true) }}
+
+        {{ components.heading(text='Before you start', size='medium', tag='h2') }}
+
+        {{ components.paragraph(text='Only people who need to use the MOT testing service for work - for example MOT testers, garage managers and DVSA staff - should create an account.') }}
+
+        {{ components.paragraph(text='Do not create a new account if you already have one.') }}
+
+        {{ components.paragraph(text='You will need:') }}
+
+        {% set listItems = [
+          {
+            text: 'your email address'
+          },
+          {
+            text: 'your telephone number'
+          },
+          {
+            text: 'your address'
+          },
+          {
+            text: 'your date of birth'
+          }
+        ] %}
+
+        {{ components.list(items=listItems, type='bullet') }}
+      </div>
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/create-account/email') }}
+      </div>
+
+      {{ components.link(text='Cancel and return to sign in', url='#', paragraph=true) }}
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

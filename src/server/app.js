@@ -3,6 +3,7 @@ import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 import session from 'express-session';
+import memoryStore from 'memorystore';
 import morgan from 'morgan';
 import nunjucks from 'nunjucks';
 import Prism from 'prismjs';
@@ -158,6 +159,10 @@ export const startApp = async () => {
     app.use(morgan('dev'));
   }
 
+  // Memory store created for production use
+  // See: https://www.npmjs.com/package/memorystore
+  const MemoryStore = memoryStore(session);
+
   // Express session middleware
   // Website: https://www.npmjs.com/package/express-session
   app.use(
@@ -165,6 +170,14 @@ export const startApp = async () => {
       resave: true,
       saveUninitialized: true,
       secret: CONFIG.sessionSecret,
+      cookie: {
+        store: new MemoryStore({
+          // prune expired entries every 24h
+          checkPeriod: 86400000,
+        }),
+        // 20 minutes
+        maxAge: 1200000,
+      },
     })
   );
 

@@ -1,0 +1,45 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account - Security Questions' %}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/prototypes/create-account/contact-details', back=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Security Questions', secondary='Create an account') }}
+
+      {{ components.paragraph(text='These are used to identify you if you forget your password.', lead=true) }}
+
+      {% call components.form(action='/prototypes/create-account/security-questions', method='POST') %}
+
+        {% include './partials/form-errors.njk' %}
+
+        {{ components.heading(text='First security question', tag='h2') }}
+
+        {{ components.select(options=securityQuestions, label='Choose question', id='questionOne', group=true, selectedValue=values.questionOne, error=errors.questionOne.msg) }}
+
+        {{ components.field(label='Memorable answer', id='questionOneAnswer', group=true, value=values.questionOneAnswer, error=errors.questionOneAnswer.msg) }}
+
+        {{ components.heading(text='Second security question', tag='h2') }}
+
+        {{ components.select(options=securityQuestions, label='Choose question', id='questionTwo', group=true, selectedValue=values.questionTwo, error=errors.questionTwo.msg) }}
+
+        {{ components.field(label='Memorable answer', id='questionTwoAnswer', group=true, value=values.questionTwoAnswer, error=errors.questionTwoAnswer.msg) }}
+
+        {% if values.hasAllRequiredFields %}
+          {{ components.button(text='Save and continue') }}
+        {% else %}
+          {{ components.button(text='Continue') }}
+        {% endif %}
+
+      {%- endcall %}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,23 @@
+@for $i from 1 through 20 {
+  $margin: $i * 5;
+
+  .u-margin-bottom-#{$margin} {
+    margin-bottom: #{$margin}px;
+  }
+
+  .u-margin-top-#{$margin} {
+    margin-top: #{$margin}px;
+  }
+
+  .u-margin-left-#{$margin} {
+    margin-left: #{$margin}px;
+  }
+
+  .u-margin-right-#{$margin} {
+    margin-right: #{$margin}px;
+  }
+
+  .u-margin-all-#{$margin} {
+    margin: #{$margin}px;
+  }
+}

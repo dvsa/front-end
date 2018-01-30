@@ -1,0 +1,33 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account - Your email address' %}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/prototypes/create-account', back=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Your email address', secondary='Create an account') }}
+
+      {{ components.paragraph(text='Your user ID will be sent here.', lead=true, limitWidth=true, clearfix=true) }}
+
+      {% call components.form(action='/prototypes/create-account/email', method='POST') %}
+
+        {% include './partials/form-errors.njk' %}
+        
+        {{ components.field(label='Email address', id='email', group=true, width=75, value=values.email, error=errors.email.msg) }}
+
+        {{ components.field(label='Re-type your email address', id='emailConfirmation', group=true, width=75, value=values.emailConfirmation, error=errors.emailConfirmation.msg) }}
+
+        {% include './partials/form-submit-button.njk' %}
+
+      {%- endcall %}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

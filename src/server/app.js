@@ -31,7 +31,7 @@ export const startApp = async () => {
     noCache: true,
   });
 
-  // Create a nunkucks instance to be used for the view engine
+  // Create a nunjucks instance to be used for the view engine
   // This instance can be used to add filters and globals
   let env = new nunjucks.Environment(nunjucksFileLoader, {
     autoescape: false,

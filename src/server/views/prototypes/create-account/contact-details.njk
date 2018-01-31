@@ -32,11 +32,7 @@
 
         {{ components.field(label='Enter your home, mobile or work number', id='phoneNumber', group=true, value=values.phoneNumber, error=errors.phoneNumber.msg) }}
 
-        {% if values.hasAllRequiredFields %}
-          {{ components.button(text='Save and continue') }}
-        {% else %}
-          {{ components.button(text='Continue') }}
-        {% endif %}
+        {% include './partials/form-submit-button.njk' %}
 
       {%- endcall %}
       

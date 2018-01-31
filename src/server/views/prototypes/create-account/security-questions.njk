@@ -30,11 +30,7 @@
 
         {{ components.field(label='Memorable answer', id='questionTwoAnswer', group=true, value=values.questionTwoAnswer, error=errors.questionTwoAnswer.msg) }}
 
-        {% if values.hasAllRequiredFields %}
-          {{ components.button(text='Save and continue') }}
-        {% else %}
-          {{ components.button(text='Continue') }}
-        {% endif %}
+        {% include './partials/form-submit-button.njk' %}
 
       {%- endcall %}
       

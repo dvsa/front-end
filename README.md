@@ -4,7 +4,31 @@ You can view a live demo here:
 
 [Heroku Demo](https://dvsa-front-end.herokuapp.com/)
 
-## Setup
+## Docker setup for development
+
+**You will need the latest version of docker installed**
+
+For faster development you can use docker by running the following command:
+
+```
+docker-compose up
+```
+
+You can remove the docker instance by running the following command:
+
+```
+docker-compose down
+```
+
+To rebuild the docker instance image, you can run the following command:
+
+```
+docker-compose build
+````
+
+This can be done after adding a new npm package for example.
+
+## Local Setup
 
 ### Prerequisite
 
@@ -37,7 +61,7 @@ It will automatically run the following processess concurrently
 * express application with nodemon
 
 
-### Build Production
+## Build Production
 
 Build production command will generate production ready assets and node js server code.
 

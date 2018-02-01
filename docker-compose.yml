@@ -1,0 +1,14 @@
+version: '3.4'
+services:
+  web:
+    build: .
+    command: npm run start-dev
+    volumes:
+      - .:/usr/app/
+      - /usr/app/node_modules
+    ports:
+      - "3002:3002"
+    environment:
+      PORT: 3002
+      NODE_ENV: development
+      SESSION_SECRET: 'secret'

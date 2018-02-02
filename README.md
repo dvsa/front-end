@@ -27,7 +27,7 @@ http://localhost:3002
 Run the following command
 
 ```
-docker-compose run -rm app npm run build-production
+docker-compose run --rm app npm run build-production
 ```
 
 ## Local Setup

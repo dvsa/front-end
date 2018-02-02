@@ -1,7 +1,4 @@
-import { 
-  toggleClass,
-  delegateEvent
-} from './../../../../shared';
+import { toggleClass, delegateEvent } from './../../../../shared';
 
 export class HeaderMenu {
   constructor() {

@@ -1,9 +1,4 @@
-import { 
-  addEventListenerToEl,
-  removeAllEventsFromEl,
-  toggleClass,
-  delegateEvent
-} from './../../../shared';
+import { addEventListenerToEl, removeAllEventsFromEl, toggleClass, delegateEvent } from './../../../shared';
 
 export class LibraryPageNavigation {
   constructor() {

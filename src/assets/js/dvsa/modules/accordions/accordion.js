@@ -4,7 +4,7 @@ import SmoothScroll from 'smooth-scroll';
 import findIndex from 'lodash/findIndex';
 
 import { ACCORDION_CONSTANTS } from './constants';
-import { elHasClass, toggleClass, addEventListenerToEl, closestParentOfEl, delegateEvent } from './../../../shared/misc';
+import { elHasClass, toggleClass, addEventListenerToEl, closestParentOfEl, delegateEvent, triggerCustomEvent } from './../../../shared/misc';
 
 export class Accordion {
   constructor(accordionElement) {
@@ -82,6 +82,9 @@ export class Accordion {
       // Add mouseleave event to remove hover styles
       addEventListenerToEl(sectionHeaderElement, 'mouseleave', this.headerMouseLeaveHandler);
 
+      // Add click events
+      addEventListenerToEl(sectionHeaderElement, 'click', this.headerClickHandler);
+
       let sectionContentElement = sectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.content);
       if (!sectionContentElement) {
         return console.log('Section content element not found');
@@ -113,7 +116,7 @@ export class Accordion {
     });
 
     // Delegate section header click event
-    delegateEvent(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.header, this.headerClickHandler);
+    // delegateEvent(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.header, this.headerClickHandler);
 
     // Delegate section expand button click event
     delegateEvent(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.expandButton, this.expandButtonClickHandler);
@@ -178,7 +181,7 @@ export class Accordion {
     this.state.expanding = true;
     this.state.expandAll = !this.state.expandAll;
     if (this.state.expandAll) {
-      $.fire(document, ACCORDION_CONSTANTS.eventNames.expandAllOpen);
+      triggerCustomEvent(document, ACCORDION_CONSTANTS.eventNames.expandAllOpen);
     }
     this.refreshState();
     this.state.expanding = false;

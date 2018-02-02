@@ -1,8 +1,4 @@
-import { 
-  closestParentOfEl,
-  toggleClass,
-  delegateEvent
-} from './../../../../shared';
+import { closestParentOfEl, toggleClass, delegateEvent } from './../../../../shared';
 
 export class ShowHideContent {
   constructor() {

@@ -1,6 +1,4 @@
-import {
-  delegateEvent
-} from './../../../../shared';
+import { delegateEvent } from './../../../../shared';
 
 export class LinksWithRole {
   constructor() {

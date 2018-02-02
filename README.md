@@ -14,13 +14,13 @@ For faster development you can use docker by running the following command:
 docker-compose up
 ```
 
-You can remove the docker instance by running the following command:
+#### Remove container
 
 ```
 docker-compose down
 ```
 
-To rebuild the docker instance image, you can run the following command:
+#### Rebuld container
 
 ```
 docker-compose build

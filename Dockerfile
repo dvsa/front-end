@@ -1,14 +1,13 @@
-FROM node:carbon
+FROM node:8.9
 
 # Create app directory
 WORKDIR /usr/app
 
-# Install app dependencies
+# Copy the package.json file
 COPY package.json .
 
+# Install app dependencies
 RUN npm install
-# If you are building your code for production
-# RUN npm install --only=production
 
 # Bundle app source
 COPY . .
@@ -16,5 +15,5 @@ COPY . .
 # Expose app port from docker container
 EXPOSE 3002
 
-# Run app
+# Run app using defined npm script
 CMD [ "npm", "run", "start-dev" ]

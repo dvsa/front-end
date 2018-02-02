@@ -53,7 +53,7 @@ export const RECALLS_ACCORDION_CONSTANTS = {
     contentLoading: 'recalls-accordion--loading',
     contentShowOutput: 'recalls-accordion--show-output',
     errorMessage: 'recalls-accordion__error-message',
-    errorMessageVisible: 'recalls-accordion__error-message--visible',
+    errorMessageVisible: 'recalls-accordion--error-message-visible',
     noJSAlternative: 'recalls-accordion__no-js-alternative',
     loading: 'recalls-accordion__loading',
     output: 'recalls-accordion__output',

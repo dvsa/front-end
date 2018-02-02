@@ -92,3 +92,28 @@ export const delegateEvent = (domElement, eventName, selector, handler) => {
     }
   });
 };
+
+/**
+ * Trigger a custom javascript event
+ * 
+ * Works on IE9+
+ *
+ * @param {HTMLElement} element Element on which the event should trigger
+ * @param {String} eventName Name of the custom event
+ * @param {Object} data Any custom data that should be passed with the custom event
+ * 
+ * @since 1.0.14
+ * @author Tameem Safi <t.safi@kainos.com>
+ */
+export const triggerCustomEvent = (element, eventName, data = {}) => {
+  let event;
+
+  if (window.CustomEvent) {
+    event = new CustomEvent(eventName, {detail: data});
+  } else {
+    event = document.createEvent('CustomEvent');
+    event.initCustomEvent(eventName, true, true, data);
+  }
+
+  element.dispatchEvent(event);
+};

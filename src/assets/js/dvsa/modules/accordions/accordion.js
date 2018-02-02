@@ -4,7 +4,7 @@ import SmoothScroll from 'smooth-scroll';
 import findIndex from 'lodash/findIndex';
 
 import { ACCORDION_CONSTANTS } from './constants';
-import { elHasClass, toggleClass, addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
+import { elHasClass, toggleClass, addEventListenerToEl, closestParentOfEl, delegateEvent } from './../../../shared/misc';
 
 export class Accordion {
   constructor(accordionElement) {
@@ -113,10 +113,10 @@ export class Accordion {
     });
 
     // Delegate section header click event
-    $.delegate(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.header, this.headerClickHandler);
+    delegateEvent(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.header, this.headerClickHandler);
 
     // Delegate section expand button click event
-    $.delegate(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.expandButton, this.expandButtonClickHandler);
+    delegateEvent(this.accordionElement, 'click', '.' + ACCORDION_CONSTANTS.classNames.expandButton, this.expandButtonClickHandler);
 
     // Restore the saved state
     // this.restoreSavedStateData();

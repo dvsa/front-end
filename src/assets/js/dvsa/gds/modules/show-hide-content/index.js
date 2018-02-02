@@ -1,4 +1,8 @@
-import { closestParentOfEl, toggleClass } from './../../../../shared';
+import { 
+  closestParentOfEl,
+  toggleClass,
+  delegateEvent
+} from './../../../../shared';
 
 export class ShowHideContent {
   constructor() {
@@ -13,8 +17,8 @@ export class ShowHideContent {
     this.checkboxSelector = this.dataTargetSelector + ' > input[type="checkbox"]';
 
     // Get elements from the DOM
-    this.radioElements = $$(this.radioSelector);
-    this.checkboxElements = $$(this.checkboxSelector);
+    this.radioElements = Array.from(document.querySelectorAll(this.radioSelector));
+    this.checkboxElements = Array.from(document.querySelectorAll(this.checkboxSelector));
 
     this.setup();
   }
@@ -31,8 +35,8 @@ export class ShowHideContent {
    * Delegate click events
    */
   addEvents() {
-    $.delegate(document, 'click', this.radioSelector, this.clickEventHandler);
-    $.delegate(document, 'click', this.checkboxSelector, this.clickEventHandler);
+    delegateEvent(document, 'click', this.radioSelector, this.clickEventHandler);
+    delegateEvent(document, 'click', this.checkboxSelector, this.clickEventHandler);
   }
 
   /**
@@ -45,7 +49,8 @@ export class ShowHideContent {
         let radioGroupName = event.target.getAttribute('name');
         // Refresh all radios for this group
         if (radioGroupName) {
-          let radioInputsForGroup = $$('input[type="radio"][name="' + radioGroupName + '"');
+          let radioInputsForGroup = document.querySelectorAll('input[type="radio"][name="' + radioGroupName + '"');
+          radioInputsForGroup = Array.from(radioInputsForGroup);
           radioInputsForGroup.forEach(radio => {
             this.toggleContentBasedOnCheckState(radio);
           });

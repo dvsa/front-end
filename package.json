@@ -1,25 +1,18 @@
 {
   "name": "dvsa-front-end",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Front-end assets built on Node/Express to be used for public-facing DVSA sites and applications. Based on GOV UK prototype kit, but highly modified. It uses SCSS, Nunjucks, Gulp, ES6, WebPack, Babel, Mocha, Chai, Puppeteer, and NPM libraries.",
   "main": "index.js",
   "scripts": {
-    "start-heroku": "cross-env NODE_ENV=production node ./dist/server/index.js",
+    "start-heroku": "node ./dist/server/index.js",
     "start-dev": "cross-env NODE_ENV=development npm run pretty-js && concurrently \"cross-env NODE_ENV=development gulp watch-dev\" \"cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.babel.js\" \"cross-env NODE_ENV=development npm run start-dev-server\"",
-    "start-dev-server": "nodemon -e js,njk --watch 'src/server/*' --exec npm run start-server",
+    "start-dev-server": "onchange './src/server/**/*' -i -v -- npm run start-server",
     "start-server": "SESSION_SECRET=secret babel-node ./src/server",
     "build-server": "babel ./src/server --out-dir ./dist/server",
-    "build-production": "cross-env NODE_ENV=production concurrently \"npm run build-server\" \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
+    "build-production": "cross-env NODE_ENV=production concurrently \"npm run pretty-js\" \"npm run build-server\" \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
-    "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js",
-    "precommit-msg": "echo 'Running pre-commit commands...' && exit 0",
-    "git-add": "git add ."
+    "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
   },
-  "pre-commit": [
-    "precommit-msg",
-    "pretty-js",
-    "git-add"
-  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:dvsa/front-end.git"
@@ -31,11 +24,6 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "blissfuljs": "^1.0.3",
     "body-parser": "^1.18.2",
     "clean-html": "^1.5.0",
     "clipboard": "^1.7.1",
@@ -62,18 +50,19 @@
     "memorystore": "^1.6.0",
     "morgan": "^1.9.0",
     "node-dir": "^0.1.17",
-    "nodemon": "^1.12.1",
     "nunjucks": "^3.0.1",
     "pretty": "^2.0.0",
     "prismjs": "^1.8.3",
     "readdir": "0.0.6",
     "require-dir": "^0.3.2",
     "smooth-scroll": "^12.1.5",
-    "sticky-sidebar": "^3.2.1",
     "store": "^2.0.12"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -99,7 +88,7 @@
     "gulp-sourcemaps": "^2.6.1",
     "gulp-tap": "^1.0.1",
     "mocha": "^4.0.1",
-    "pre-commit": "^1.2.2",
+    "onchange": "^3.3.0",
     "prettier": "^1.7.4",
     "puppeteer": "^0.13.0",
     "run-sequence": "^2.2.0",

@@ -5,6 +5,7 @@ import merge from 'webpack-merge';
 
 module.exports = merge(common, {
   watch: true,
+  devtool: 'eval',
   plugins: [
     // More info:
     // https://webpack.js.org/plugins/source-map-dev-tool-plugin/

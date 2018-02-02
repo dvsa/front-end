@@ -41,7 +41,7 @@ export class LibraryPageNavigation {
     }
 
     // Mobile navigation
-    delegateEvent(document, 'click', '.' + this.mobileNavigationClassName, this.mobileNavigationClickHandler);
+    addEventListenerToEl(this.mobileNavigationContainer, 'click', this.mobileNavigationClickHandler);
   }
 
   /**
@@ -49,7 +49,6 @@ export class LibraryPageNavigation {
    * - Toggles the open class
    */
   mobileNavigationClickHandler = () => {
-    console.log('test');
     toggleClass(this.navigationInner, this.navigationInnerOpenClassName);
   };
 }

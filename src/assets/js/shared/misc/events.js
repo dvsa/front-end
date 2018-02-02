@@ -106,14 +106,6 @@ export const delegateEvent = (domElement, eventName, selector, handler) => {
  * @author Tameem Safi <t.safi@kainos.com>
  */
 export const triggerCustomEvent = (element, eventName, data = {}) => {
-  let event;
-
-  if (window.CustomEvent) {
-    event = new CustomEvent(eventName, { detail: data });
-  } else {
-    event = document.createEvent('CustomEvent');
-    event.initCustomEvent(eventName, true, true, data);
-  }
-
+  let event = new CustomEvent(eventName, { detail: data, bubbles: true, cancelable: true });
   element.dispatchEvent(event);
 };

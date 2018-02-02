@@ -14,6 +14,3 @@ COPY . .
 
 # Expose app port from docker container
 EXPOSE 3002
-
-# Run app using defined npm script
-CMD [ "npm", "run", "start-dev" ]

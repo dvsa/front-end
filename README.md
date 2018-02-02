@@ -8,25 +8,27 @@ You can view a live demo here:
 
 **You will need the latest version of docker installed**
 
+### Running development mode
+
 For faster development you can use docker by running the following command:
 
 ```
 docker-compose up
 ```
 
-#### Remove container
+After which the server is located at the local address below:
 
 ```
-docker-compose down
+http://localhost:3002
 ```
 
-#### Rebuld container
+### Building production assets
+
+Run the following command
 
 ```
-docker-compose build
-````
-
-This can be done after adding a new npm package for example.
+docker-compose run -rm app npm run build-production
+```
 
 ## Local Setup
 

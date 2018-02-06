@@ -9,13 +9,21 @@
   }
 
   &__link {
-    .is-unread & {
-      font-weight: 700;
-    }
   }
 
   &__time {
     @include core-16;
     color: $grey-1;
+  }
+}
+
+// Below must be written this way in order for
+// the body wrapper class to work since it is outdated code
+
+.is-unread {
+  .c-notification {
+    &__link {
+      font-weight: 700;
+    }
   }
 }

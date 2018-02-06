@@ -12,13 +12,6 @@ export class HeaderMenu {
 
   setup() {
     // Delegate event click of header toggle
-    // $.delegate(window, 'click', '.' + this.headerToggleClass, e => {
-    //   e.preventDefault();
-    //   let itemsContainerId = $(event.target).getAttribute('href');
-    //   let itemsContainer = $(itemsContainerId);
-    //   toggleClass(event.target, this.headerButtonHiddenClass);
-    //   toggleClass(itemsContainer, this.contentVisibleClass);
-    // });
     delegateEvent(document, 'click', '.' + this.headerToggleClass, e => {
       e.preventDefault();
       let itemsContainerId = event.target.getAttribute('href');

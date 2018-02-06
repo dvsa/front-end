@@ -1,7 +1,3 @@
-// Based on GOV.UK brand blue but slightly lighter so it hits contrast on the
-// black header bar when used as copy colour
-$proposition-active-nav: #1d8feb;
-
 .header-user {
   &__name {
     @include bold-24;

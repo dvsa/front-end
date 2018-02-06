@@ -32,8 +32,6 @@
     // Grrr, damn your specificity alphaGov!
     &[type='search'] {
       @include box-sizing(border-box);
-      // Disable webkit appearance and remove rounded corners
-      -webkit-appearance: none;
       appearance: none;
     }
   

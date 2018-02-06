@@ -4,3 +4,7 @@
 @import 'partials/time';
 @import 'partials/overrides';
 @import 'partials/form-label';
+
+// Should be removed as
+// it is using out dated HTML markup
+@import 'partials/old-validation';

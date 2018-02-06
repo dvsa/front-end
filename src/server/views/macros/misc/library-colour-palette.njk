@@ -1,0 +1,20 @@
+{% macro libraryColourPalette(colours=false) %}
+  {% if colours %}
+
+    {% for colour in colours %}
+    <div class="library-colour-palette__item">
+      <h3 class="library-colour-palette__heading">
+        {{ colour.title }}
+      </h3>
+      <div class="library-colour-palette__colour {{ 'library-colour-palette__colour--border' if colour.border }}" style="background: {{ colour.hex }};"></div>
+      <span class="library-colour-palette__hex">
+        {{ colour.hex }}
+      </span>
+      <span class="library-colour-palette__variable">
+        {{ colour.variable }}
+      </span>
+    </div>
+    {% endfor %}
+
+  {% endif %}
+{% endmacro %}

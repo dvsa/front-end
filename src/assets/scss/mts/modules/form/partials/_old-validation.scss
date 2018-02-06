@@ -1,0 +1,14 @@
+.form-group {
+  &.has-error {
+    padding: 0 0 0 15px;
+    background-color: transparent;
+    border-left: 5px solid $error-colour;
+    
+    .form-label {
+      .validation-message {
+        display: block;
+        color: $error-colour;
+      }
+    }
+  }
+}

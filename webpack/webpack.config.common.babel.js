@@ -4,7 +4,6 @@ import webpack from 'webpack';
 module.exports = {
   entry: {
     dvsa: path.resolve('src', 'assets', 'js', 'dvsa', 'index.js'),
-    'dvsa-mts': path.resolve('src', 'assets', 'js', 'dvsa-mts', 'index.js'),
     development: path.resolve('src', 'assets', 'js', 'development', 'index.js'),
   },
   output: {

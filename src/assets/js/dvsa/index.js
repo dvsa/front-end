@@ -6,7 +6,7 @@ import { domReady, initGDS } from './../shared';
 import { initModules } from './modules';
 
 // Third-party
-import './third-party';
+import './../third-party';
 
 // Add expiry plugin for store
 store.addPlugin(expirePlugin);

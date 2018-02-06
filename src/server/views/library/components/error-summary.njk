@@ -1,0 +1,51 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Error Summary' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Error Summary',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.errorSummary(
+    heading='Heading for the error summary',
+    headingId='heading',
+    description=false,
+    items=[
+      {
+        link: '#example-error-one',
+        text: 'Error message one goes here...'
+      },
+      {
+        link: '#example-error-two',
+        text: 'Error message two goes here...'
+      }
+    ]
+  ) | prism }}
+
+  {{ components.heading(
+    text='Error Summary - With description',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.errorSummary(
+    heading='Heading for the error summary',
+    headingId='heading',
+    description='Optional description goes here...',
+    items=[
+      {
+        link: '#example-error-one',
+        text: 'Error message one goes here...'
+      },
+      {
+        link: '#example-error-two',
+        text: 'Error message two goes here...'
+      }
+    ]
+  ) | prism }}
+
+{% endblock %}

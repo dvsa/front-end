@@ -5,121 +5,104 @@
 {% block content %}
 
   {{ components.heading(text='Error message and summary box', tag='h2', size='medium') }}
+
   {% call components.displayCode() %}
-  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
-    <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-      Message to alert the user to a problem goes here
-    </h2>
+    {{ components.errorSummary(
+      heading='Message to alert the user to a problem goes here',
+      headingId='error-summary-example-heading-one',
+      description='Optional description of the errors and how to correct them',
+      items=[
+        {
+          link: '#example-personal-details',
+          text: 'Descriptive link to the question with an error'
+        }
+      ]
+    ) }}
 
-    <p>
-      Optional description of the errors and how to correct them
-    </p>
+    {{ components.heading(
+      text='Check your personal details',
+      tag='h2',
+      size='large')
+    }}
 
-    <ul class="error-summary-list">
-      <li><a href="#example-personal-details">Descriptive link to the question with an error</a></li>
-    </ul>
+    {{ components.paragraph(
+      text='Look at your name, signature and other details.'
+    ) }}
 
-  </div>
+    {% call components.form() %}
 
-  <h1 class="heading-large">
-    Check your personal details
-  </h1>
+      {% call components.formGroup(
+        label='Are your personal details correct and up-to-date?',
+        labelBold=true,
+        error='Error message about personal details goes here'
+      ) %}
 
-  <p>
-    Look at your name, signature and other details.
-  </p>
+        {{ components.radio(
+          text='Yes, my personal details are correct',
+          value='Yes',
+          id='personal_details_yes',
+          name='personalDetails'
+        ) }}
 
-  <form>
-    <div class="form-group form-group-error">
-      <fieldset>
+        {{ components.radio(
+          text='No, some details are wrong or have changed',
+          value='No',
+          id='personal_details_no',
+          name='personalDetails'
+        ) }}
 
-        <legend id="example-personal-details">
+      {%- endcall %}
 
-          <span class="form-label-bold">
-            Are your personal details correct and up-to-date?
-          </span>
-          <span class="error-message">
-            Error message about personal details goes here
-          </span>
+      {{ components.button(text='Continue') }}
 
-        </legend>
-
-        <div class="multiple-choice">
-          <input id="personal_details_yes" type="radio" name="personalDetails" value="Yes">
-          <label for="personal_details_yes">Yes, my personal details are correct</label>
-        </div>
-
-        <div class="multiple-choice">
-          <input id="personal_details_no" type="radio" name="personalDetails" value="No">
-          <label for="personal_details_no">No, some details are wrong or have changed</label>
-        </div>
-
-      </fieldset>
-    </div>
-
-    <input class="button" type="submit" value="Continue">
-
-  </form>
+    {%- endcall %}
   {%- endcall %}
 
   {{ components.heading(text='Highlight errors in forms', tag='h2', size='medium') }}
+
   {% call components.displayCode() %}
-  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-2" tabindex="-1">
 
-    <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-2">
-      Message to alert the user to a problem goes here
-    </h2>
+    {{ components.errorSummary(
+      heading='Message to alert the user to a problem goes here',
+      headingId='error-summary-example-heading-two',
+      description='Optional description of the errors and how to correct them',
+      items=[
+        {
+          link: '#example-full-name',
+          text: 'Descriptive link to the question with an error'
+        },
+        {
+          link: '#example-ni-number',
+          text: 'Descriptive link to the question with an error'
+        }
+      ]
+    ) }}
 
-    <p>
-      Optional description of the errors and how to correct them
-    </p>
+    {{ components.heading(
+      text='Your personal details',
+      tag='h2',
+      size='large')
+    }}
 
-    <ul class="error-summary-list">
-      <li><a href="#example-full-name">Descriptive link to the question with an error</a></li>
-      <li><a href="#example-ni-number">Descriptive link to the question with an error</a></li>
-    </ul>
+    {{ components.field(
+      label='Full name',
+      labelBold=true,
+      id='full-name',
+      hint='As shown on your birth certificate or passport',
+      error='Error message about full name goes here'
+    ) }}
 
-  </div>
+    {{ components.field(
+      label='National Insurance number',
+      labelBold=true,
+      id='full-name',
+      hint='It’s on your National Insurance card, benefit letter, payslip or P60. <br>For example, ‘QQ 12 34 56 C’.',
+      error='Error message about National Insurance number goes here'
+    ) }}
 
-  <h1 class="heading-large">
-    Your personal details
-  </h1>
+    {{ components.button(text='Continue') }}
 
-  <div class="form-group form-group-error">
-
-    <label for="example-full-name" id="error-full-name">
-
-      <span class="form-label-bold">Full name</span>
-      <span class="form-hint">As shown on your birth certificate or passport</span>
-      <span class="error-message">Error message about full name goes here</span>
-
-    </label>
-
-    <input class="form-control form-control-error" id="example-full-name" type="text" name="fullName" value="">
-  </div>
-
-  <div class="form-group form-group-error">
-
-    <label for="example-ni-number" id="error-ni-number">
-
-      <span class="form-label-bold">National Insurance number</span>
-      <span class="form-hint">
-        It’s on your National Insurance card, benefit letter, payslip or P60.
-        <br>
-        For example, ‘QQ 12 34 56 C’.
-      </span>
-      <span class="error-message">
-        Error message about National Insurance number goes here
-      </span>
-
-    </label>
-
-    <input class="form-control form-control-error" id="example-ni-number" type="text" name="niNo" value="">
-
-  </div>
-
-  <input class="button" type="submit" value="Continue">
   {%- endcall %}
 
 {% endblock %}

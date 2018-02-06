@@ -1,0 +1,31 @@
+{% macro errorSummary(heading='', headingId='heading', description=false, items=false) %}
+  <div class="error-summary" role="alert" aria-labelledby="{{ headingId }}" tabindex="-1">
+
+    <h2 class="heading-medium error-summary-heading" id="{{ headingId }}">
+      {{ heading }}
+    </h2>
+
+    {% if description %}
+    <p>
+      {{ description }}
+    </p>
+    {% endif %}
+
+    {% if items %}
+    <ul class="error-summary-list">
+      {% for item in items %}
+      <li>
+        {% if item.link %}
+        <a href="{{ item.link }}">
+          {{ item.text }}
+        </a>
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+  </div>
+{% endmacro %}

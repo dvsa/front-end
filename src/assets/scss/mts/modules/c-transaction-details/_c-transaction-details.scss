@@ -12,6 +12,25 @@
     border-top-color: rgba($black, .5);
   }
 
+  &--two {
+    .c-transaction-details__item {
+      width: 50%;
+    }
+  }
+
+  &--three {
+    .c-transaction-details__item {
+      width: 33.33%;
+    }
+  }
+
+  &--four {
+    .c-transaction-details__item {
+      width: 25%;
+      text-align: left;
+    }
+  }
+
   &__item {
     display: table-cell;
     text-align: center;
@@ -32,19 +51,6 @@
       @include media(mobile) {
         text-align: left;
       }
-    }
-
-    .c-transaction-details--two & {
-      width: 50%;
-    }
-
-    .c-transaction-details--three & {
-      width: 33.33%;
-    }
-
-    .c-transaction-details--four & {
-      width: 25%;
-      text-align: left;
     }
 
     @include media(mobile) {

@@ -2,7 +2,7 @@
 
   &__error-message {
     display: none;
-    &--visible {
+    .recalls-accordion--error-message-visible & {
       display: block;
     }
   }

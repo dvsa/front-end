@@ -4,7 +4,33 @@ You can view a live demo here:
 
 [Heroku Demo](https://dvsa-front-end.herokuapp.com/)
 
-## Setup
+## Docker setup for development
+
+**You will need the latest version of docker installed**
+
+### Running development mode
+
+For faster development you can use docker by running the following command:
+
+```
+docker-compose up
+```
+
+After which the server is located at the local address below:
+
+```
+http://localhost:3002
+```
+
+### Building production assets
+
+Run the following command
+
+```
+docker-compose run --rm app npm run build-production
+```
+
+## Local Setup
 
 ### Prerequisite
 
@@ -37,7 +63,7 @@ It will automatically run the following processess concurrently
 * express application with nodemon
 
 
-### Build Production
+## Build Production
 
 Build production command will generate production ready assets and node js server code.
 

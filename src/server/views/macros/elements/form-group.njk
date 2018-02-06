@@ -1,0 +1,15 @@
+{% macro formGroup(label=false, labelBold=true, hint=false, id=false, error=false) %}
+  <div
+  class="form-group {{ 'form-group-error' if error }}"
+  {{ 'id="' + id + '"' if id }}
+  >
+    <fieldset>
+      <legend>
+        {% if label %}<span class="form-label {{ 'form-label-bold' if labelBold }}">{{ label }}</span>{% endif %}
+        {% if hint %}<span class="form-hint">{{ hint }}</span>{% endif %}
+        {% if error %}<span class="error-message">{{ error }}</span>{% endif %}
+      </legend>
+      {{ caller() }}
+    </fieldset>
+  </div>
+{% endmacro %}

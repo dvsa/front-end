@@ -12,7 +12,7 @@ export const isTesting = () => {
 
 let config = {
   port: process.env.PORT || 3002,
-  sessionSecret: 'secret',
+  sessionSecret: process.env.SESSION_SECRET || 'secret',
   appURL: 'https://dvsa-front-end.herokuapp.com',
   paths: {
     src: SRC_PATH,

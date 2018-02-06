@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { ACCORDION_CONSTANTS, RECALLS_ACCORDION_CONSTANTS } from './constants';
-import { closestParentOfEl, toggleClass } from './../../../shared/misc';
+import { closestParentOfEl, toggleClass, delegateEvent, addEventListenerToEl } from './../../../shared/misc';
 
 export class RecallsAccordion {
   constructor() {
@@ -57,13 +57,11 @@ export class RecallsAccordion {
       this.recallsAccordionSectionElement.getAttribute(RECALLS_ACCORDION_CONSTANTS.attributeNames.ajaxData)
     );
     // Delegate event for when the accordion header is clicked
-    $.delegate(this.elements.parent, 'click', RECALLS_ACCORDION_CONSTANTS.selectors.header, this.recallsHeadingClickHandler);
+    addEventListenerToEl(this.elements.header, 'click', this.recallsHeadingClickHandler);
+
     // Listen for expand all open event
     // Call ajax if all accordions are expanded
-    // $.once(document, ACCORDION_CONSTANTS.eventNames.expandAllOpen, '', this.recallsHeadingClickHandler);
-    $.events(document, {
-      [ACCORDION_CONSTANTS.eventNames.expandAllOpen]: this.recallsHeadingClickHandler,
-    });
+    document.addEventListener(ACCORDION_CONSTANTS.eventNames.expandAllOpen, this.recallsHeadingClickHandler);
   }
 
   /**
@@ -126,8 +124,10 @@ export class RecallsAccordion {
 
         // Change recalls accordion DOM content with response
         this.elements.output.innerHTML = responseData.result;
+
         // Display the accordion output
         toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
+
         // Change state to reflect DOM change
         this.state.ajaxContentAddedToDOM = true;
 
@@ -211,7 +211,7 @@ export class RecallsAccordion {
     // Check if error element exists
     if (this.elements.error) {
       // Display error message
-      toggleClass(this.elements.error, RECALLS_ACCORDION_CONSTANTS.classNames.errorMessageVisible, true);
+      toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.errorMessageVisible, true);
     }
     // Create datalayer object
     let dataLayerObject = {
@@ -255,6 +255,8 @@ export class RecallsAccordion {
   startLoading = () => {
     // Change the state
     this.state.loading = true;
+    // Hide error message if present
+    toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.errorMessageVisible, false);
     // Toggle loading class to show spinner and message
     toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentLoading, true);
   };

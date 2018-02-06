@@ -1,0 +1,151 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account - Review your account details' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Review your account details', secondary='Create an account') }}
+
+      {{ components.paragraph(text='Check that the information is correct before you create your account.', lead=true, limitWidth=true, clearfix=true) }}
+
+      {% call components.form(action='/prototypes/create-account/review', method='GET') %}
+
+        <table class='u-margin-bottom-30 u-clearfix'>
+          <caption class='heading-small'>
+            Your details
+          </caption>
+          <tbody>
+            <tr>
+              <td>
+                Email address
+              </td>
+              <td class='u-font-bold'>
+                {{ values.email }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/email') }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Name
+              </td>
+              <td class='u-font-bold'>
+                {{ values.firstname }} {{ values.middlename }} {{ values.lastname }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/details') }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Date of birth
+              </td>
+              <td class='u-font-bold'>
+                {{ values.day }} {{ values.month }} {{ values.year }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/details') }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Address
+              </td>
+              <td class='u-font-bold'>
+                {{ values.address1 }}
+                <br>
+                {{ values.address2 }}
+                <br>
+                {{ values.address3 }}
+                <br>
+                {{ values.townOrCity }}
+                <br>
+                {{ values.postCode }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/contact-details') }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Phone Number
+              </td>
+              <td class='u-font-bold'>
+                {{ values.phoneNumber }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/contact-details') }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class='u-margin-bottom-30 u-clearfix'>
+          <caption class='heading-small'>
+            Your account security
+          </caption>
+          <tbody>
+            <tr>
+              <td>
+                First security question
+              </td>
+              <td>
+                <span class="u-font-bold">
+                  {{ values.questionOneReadable }}
+                </span>
+                <br>
+                {{ values.questionOneAnswer }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/security-questions') }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Second security question
+              </td>
+              <td>
+                <span class="u-font-bold">
+                  {{ values.questionTwoReadable }}
+                </span>
+                <br>
+                {{ values.questionTwoAnswer }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/security-questions') }}
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                Password
+              </td>
+              <td class='u-font-bold'>
+                {{ values.passwordReadable }}
+              </td>
+              <td class='u-align-right'>
+                {{ components.link(text='Change', url='/prototypes/create-account/password') }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        {{ components.button(text='Continue') }}
+
+      {%- endcall %}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

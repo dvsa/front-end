@@ -1,0 +1,57 @@
+{% macro formDate(dayLabel='Day', dayId='day', dayName=fale, dayValue='', dayError=false, monthLabel='Month', monthId='month', monthName=false, monthValue='', monthError=false, yearLabel='Year', yearId='year', yearName=false, maxYear=2018, yearValue='', yearError=false) %}
+  <div class="form-date">
+    <div class="form-group form-group-day">
+      <label
+      class="form-label"
+      for="{{ dayId }}"
+      >
+      {{ dayLabel }}
+      </label>
+      <input
+      class="form-control {{ 'form-control-error' if dayError }}"
+      id="{{ dayId }}"
+      name="{{ dayName if dayName else dayId }}"
+      type="number"
+      pattern="[0-9]*"
+      min="0"
+      max="31"
+      value="{{ dayValue }}"
+      >
+    </div>
+    <div class="form-group form-group-month">
+      <label
+      class="form-label"
+      for="{{ monthId }}"
+      >
+      {{ monthLabel }}
+      </label>
+      <input
+      class="form-control {{ 'form-control-error' if monthError }}"
+      id="{{ monthId }}"
+      name="{{ monthName if monthName else monthId }}"
+      type="number"
+      pattern="[0-9]*"
+      min="0"
+      max="12"
+      value="{{ monthValue }}"
+      >
+    </div>
+    <div class="form-group form-group-year">
+      <label
+      class="form-label"
+      for="{{ yearId }}"
+      >
+        {{ yearLabel }}
+      </label>
+      <input
+      class="form-control {{ 'form-control-error' if yearError }}"
+      id="{{ yearId }}" name="{{ yearName if yearName else yearId }}"
+      type="number"
+      pattern="[0-9]*"
+      min="0"
+      max="{{ maxYear }}"
+      value="{{ yearValue }}"
+      >
+    </div>
+  </div>
+{% endmacro %}

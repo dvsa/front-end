@@ -1,8 +1,8 @@
-import './details-polyfill';
 import './npm-polyfills';
+import './details-polyfill';
 import './request-animation-frame';
-import 'blissfuljs';
+import './custom-event';
 
-if (GOVUK && GOVUK.details) {
-  GOVUK.details.init();
+if (window.GOVUK && window.GOVUK.details) {
+  window.GOVUK.details.init();
 }

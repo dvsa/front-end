@@ -1,4 +1,4 @@
-import { addEventListenerToEl, removeAllEventsFromEl, toggleClass } from './../../../shared/misc';
+import { addEventListenerToEl, removeAllEventsFromEl, toggleClass, delegateEvent } from './../../../shared';
 
 export class LibraryPageNavigation {
   constructor() {
@@ -12,7 +12,7 @@ export class LibraryPageNavigation {
     this.navigationInnerOpenClassName = 'styleguide-navigation__inner--open';
     this.contentId = 'styleguide-content';
     this.mobileNavigationClassName = 'styleguide-navigation__mobile-nav';
-    this.mobileNavigationContainerClassName = 'styleguide-navigation__mobile';
+    this.mobileNavigationContainerClassName = 'styleguide-navigation';
     this.libraryContainerId = 'library-container';
 
     // Get elements
@@ -40,44 +40,8 @@ export class LibraryPageNavigation {
       return console.warn('Library content not found');
     }
 
-    this.setup();
-  }
-
-  /**
-   * Setup functions
-   * - Create sticky sidebar
-   * - Add resize event listener
-   * - Setup events for mobile menu
-   */
-  setup() {
-    // Add resize event listener
-    $.events(window, {
-      resize: this.reizeHandler,
-    });
     // Mobile navigation
-    $.delegate(document, 'click', '.' + this.mobileNavigationContainerClassName, this.mobileNavigationClickHandler);
-    // Create sticky sidebar
-    this.initSidebar();
-  }
-
-  /**
-   * Resize handler
-   * - Reset and reinitalize the current sticky sidebar
-   */
-  reizeHandler = () => {
-    this.initSidebar();
-  };
-
-  /**
-   * Initialize sticky sidebar
-   * - Set minimum height of the content to be the height of the sidebar
-   * - Create new instance of sticky sidebar
-   * @todo: Create sticky sidebar
-   */
-  initSidebar() {
-    // Check the window width so it shouldn't run the sticky sidebar
-    // when less than a certain width
-    if (window.innerWidth <= this.maxWidth) return;
+    addEventListenerToEl(this.mobileNavigationContainer, 'click', this.mobileNavigationClickHandler);
   }
 
   /**

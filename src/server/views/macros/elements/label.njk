@@ -1,6 +1,6 @@
-{% macro formLabel(label='', id=false, bold=false, hint=false, error=false) %}
+{% macro formLabel(label='', visuallyHidden=false, id=false, bold=false, hint=false, error=false) %}
   {% if label %}
-    <label class="form-label {{ 'form-label-bold' if bold }}" {{ 'for="' + id + '"' if id }}>
+    <label class="form-label {{ 'form-label-bold' if bold }} {{ 'visuallyhidden' if visuallyHidden }}" {{ 'for="' + id + '"' if id }}>
       {{ label }}
       {% if hint %}
         <span class="form-hint">{{ hint }}</span>

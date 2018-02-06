@@ -10,6 +10,15 @@
   margin-bottom: 10px;
   cursor: pointer; // Encourage clicking on block labels
 
+  &.selected {
+    background: $white;
+    border-color: $black;
+  }
+
+  &.focused {
+    outline: 3px solid $yellow;
+  }
+
   @include media(tablet) {
     float: left;
     margin-top: 5px;
@@ -23,6 +32,10 @@
     top: 18px;
     left: $gutter-half;
     cursor: pointer;
+
+    &.focus {
+      outline: none;
+    }
   }
 
   // Change border on hover
@@ -37,25 +50,4 @@
 .inline .block-label {
   clear: none;
   margin-right: $gutter-half;
-}
-
-.js-enabled {
-  .block-label {
-    label {
-      &.selected {
-        background: $white;
-        border-color: $black;
-      }
-
-      &.focused {
-        outline: 3px solid $yellow;
-      }
-    }
-
-    input {
-      &.focus {
-        outline: none;
-      }
-    }
-  }
 }

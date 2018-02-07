@@ -8,7 +8,7 @@ export class ShowHideContent {
     this.ariaExpandedAtributeName = 'aria-expanded';
     this.ariaHiddenAttributeName = 'aria-hidden';
     this.targetAttributeName = 'data-target';
-    this.dataTargetSelector = '[' + this.targetAttributeName + ']';
+    this.dataTargetSelector = '.multiple-choice';
     this.radioSelector = this.dataTargetSelector + ' > input[type="radio"]';
     this.checkboxSelector = this.dataTargetSelector + ' > input[type="checkbox"]';
 
@@ -87,7 +87,9 @@ export class ShowHideContent {
     // Refresh aria tags
     element.setAttribute(this.ariaControlsAttributeName, targetInfo.id);
     element.setAttribute(this.ariaExpandedAtributeName, element.checked ? 'true' : 'false');
-    targetInfo.element.setAttribute(this.ariaHiddenAttributeName, element.checked ? 'false' : 'true');
+    if(targetInfo) {
+      targetInfo.element.setAttribute(this.ariaHiddenAttributeName, element.checked ? 'false' : 'true');
+    }
   };
 
   /**
@@ -97,9 +99,11 @@ export class ShowHideContent {
    * @returns {Object} An object with id and element
    */
   getTargetFromElement(element) {
-    if (!element) return;
+    if (!element) return false;
     let parentContainer = closestParentOfEl(element, this.dataTargetSelector);
+    if(!parentContainer) return false;
     let targetContainerId = parentContainer.getAttribute('data-target');
+    if(!targetContainerId) return false;
     let targetContainer = document.getElementById(targetContainerId);
     return {
       id: targetContainerId,

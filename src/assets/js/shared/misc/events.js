@@ -83,7 +83,7 @@ export const delegateEvent = (domElement, eventName, selector, handler) => {
   }
 
   // Add event listener to the document object for delegation
-  domElement.addEventListener(eventName, event => {
+  addEventListenerToEl(domElement, eventName, event => {
     // Check that target exists
     if (!event.target) return;
     // Check if target element has the class of the selector

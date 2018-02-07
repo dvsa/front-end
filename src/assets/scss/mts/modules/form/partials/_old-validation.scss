@@ -10,5 +10,10 @@
         color: $error-colour;
       }
     }
+
+    .validation-message {
+      display: block;
+      color: $error-colour;
+    }
   }
 }

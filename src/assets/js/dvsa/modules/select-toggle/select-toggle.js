@@ -14,23 +14,26 @@ export class SelectToggle {
         controls: 'aria-controls',
         hidden: 'aria-hidden',
         expanded: 'aria-expanded',
-      }
+      },
     };
 
     this.selectors = {
       selectElements: `select[${this.attributes.target}]`,
-      inputs: `textarea:not([value=""]), input[type="text"], input[type="email"], input[type="password"], input[type="tel"]`
+      inputs: `textarea:not([value=""]), input[type="text"], input[type="email"], input[type="password"], input[type="tel"]`,
     };
 
     this.elements = {
-      selectElements: Array.from(document.querySelectorAll(this.selectors.selectElements))
+      selectElements: Array.from(document.querySelectorAll(this.selectors.selectElements)),
     };
-    
+
     this.init();
   }
 
   /**
    * Initializer which will call all functions to setup
+   *
+   * - Setup the select fields based on DOM state
+   * - Attach required events
    * 
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
@@ -42,47 +45,47 @@ export class SelectToggle {
 
   /**
    * Setup the initial state of select fields from DOM
-   * 
+   *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
   setupInitialStateFromDOM = () => {
-    if(!this.elements.selectElements) return;
+    if (!this.elements.selectElements) return;
     this.elements.selectElements.forEach(element => {
       this.updateSelectFieldStateFromDOM(element);
     });
-  }
+  };
 
   /**
    * Handles the change event for the select field
-   * 
+   *
    * @param {Event} event Event object
-   * 
+   *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  selectChangeHandler = (event) => {
+  selectChangeHandler = event => {
     const element = event.target;
-    if(!element) return;
+    if (!element) return;
     this.updateSelectFieldStateFromDOM(element);
   };
 
   /**
    * Updates the state of the select field
-   * 
+   *
    * - Shows/Hides target element
    * - Updates aria attributes
-   * 
+   *
    * @param {HTMLElement} element Select field element
-   * 
+   *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  updateSelectFieldStateFromDOM = (element) => {
-    if(!element) return;
+  updateSelectFieldStateFromDOM = element => {
+    if (!element) return;
     const elementDetails = this.getElementDetails(element);
-    if(!elementDetails) return;
-    if(elementDetails.targetValues.indexOf(element.value) !== -1) {
+    if (!elementDetails) return;
+    if (elementDetails.targetValues.indexOf(element.value) !== -1) {
       elementDetails.targetElement.display = 'block';
       toggleClass(elementDetails.targetElement, this.classnames.jsHidden, false);
     } else {
@@ -91,43 +94,43 @@ export class SelectToggle {
     }
     this.updateAriaAttributes(element);
     this.clearAllInputData(element);
-  }
+  };
 
   /**
    * Get the select field details
-   * 
+   *
    * @param {HTMLElement} element Select field element
-   * 
+   *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  getElementDetails = (element) => {
-    if(!element) return false;
+  getElementDetails = element => {
+    if (!element) return false;
     const targetId = element.getAttribute(this.attributes.target);
     const targetElement = document.querySelector(`#${targetId}`);
     const targetValues = element.getAttribute(this.attributes.targetValue);
-    if(!targetId || !targetElement) return false;
+    if (!targetId || !targetElement) return false;
     return {
       targetId,
       targetElement,
-      targetValues: targetValues.split(',')
-    }
+      targetValues: targetValues.split(','),
+    };
   };
 
   /**
    * Get the select field aria attributes
-   * 
+   *
    * @param {HTMLElement} element Select field element
-   * 
+   *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  updateAriaAttributes = (element) => {
-    if(!element) return;
+  updateAriaAttributes = element => {
+    if (!element) return;
     const elementDetails = this.getElementDetails(element);
-    if(!elementDetails) return;
+    if (!elementDetails) return;
     element.setAttribute(this.attributes.aria.controls, elementDetails.targetId);
-    if(elementDetails.targetValues.indexOf(element.value) !== -1) {
+    if (elementDetails.targetValues.indexOf(element.value) !== -1) {
       element.setAttribute(this.attributes.aria.expanded, true);
     } else {
       element.setAttribute(this.attributes.aria.expanded, false);
@@ -136,20 +139,20 @@ export class SelectToggle {
 
   /**
    * Get the select field aria attributes
-   * 
+   *
    * @param {HTMLElement} element Select field element
-   * 
+   *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  clearAllInputData = (element) => {
+  clearAllInputData = element => {
     const inputElements = Array.from(element.querySelectorAll(this.selectors.inputs));
-    if(!inputElements) return;
+    if (!inputElements) return;
     inputElements.forEach(inputElement => {
       const retainValue = inputElement.getAttribute(this.attributes.retainValue);
-      if(!retainValue) {
+      if (!retainValue) {
         inputElement.value = '';
       }
     });
-  }
+  };
 }

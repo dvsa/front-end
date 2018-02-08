@@ -4,28 +4,35 @@
 
 {% block content %}
 
-  {{ components.pageHeading('Prototypes', 'DVSA Front-End') }}
+  {{ components.pageHeading('Prototypes', 'LPG Front-End') }}
 
   {% call components.gridRow() %}
 
     {% call components.columnOneThird() %}
 
-      {{ components.heading(text='MOTH Accordions', tag='h2', size='medium', url='/moth-accordions') }}
-      {{ components.paragraph(text='A prototype mockup of the moth history page with accordions.') }}
+      {{ components.heading(text='GDS Accordions', tag='h2', size='medium', url='/moth-accordions') }}
+      {{ components.paragraph(text='A rebuild of the GDS accordian with AJAX call on open (used at DVSA).') }}
       
     {%- endcall %}
-
+    {#
     {% call components.columnOneThird() %}
 
       {{ components.heading(text='Manuals', tag='h2', size='medium', url='/manuals') }}
       {{ components.paragraph(text='A prototype mockup of the manuals.') }}
       
     {%- endcall %}
-
+    #}
     {% call components.columnOneThird() %}
 
       {{ components.heading(text='Create Account', tag='h2', size='medium', url='/prototypes/create-account') }}
       {{ components.paragraph(text='Creating an account user journey prototype.') }}
+      
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Layouts', tag='h2', size='medium', url='/prototypes/layouts') }}
+      {{ components.paragraph(text='Various layouts') }}
       
     {%- endcall %}
 

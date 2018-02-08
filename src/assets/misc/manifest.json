@@ -1,10 +1,10 @@
 {
-  "name": "DVSA MOT",
-  "short_name": "DVSA MOT",
+  "name": "Learning Platform For Government",
+  "short_name": "LPG",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0b0c0c",
-  "description": "Check your MOT.",
+  "description": "Civil Service Learning Platform",
   "icons": [
     {
       "src": "/images/apple-touch-icon-180x180.png?0.22.1",

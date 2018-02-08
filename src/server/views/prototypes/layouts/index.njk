@@ -1,0 +1,21 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Prototypes Index: layouts' %}
+
+{% block content %}
+
+  {{ components.pageHeading('Prototypes: layouts', 'LPG Front-End') }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Home page', tag='h2', size='medium', url='/prototypes/layouts/home-page') }}
+      {{ components.paragraph(text='All home page layout design iterations') }}
+      
+    {%- endcall %}
+
+
+  {%- endcall %}
+  
+{% endblock %}

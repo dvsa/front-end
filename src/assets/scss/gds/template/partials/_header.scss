@@ -225,7 +225,7 @@
 #global-header-bar {
   @extend %site-width-container;
   height: 10px;
-  background-color: $govuk-blue;
+  background-color: $civil-service;
   @include ie-lte(8) {
     font-size: 0;
   }

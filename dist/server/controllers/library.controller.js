@@ -29,7 +29,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 let libraryNavgiationItems = exports.libraryNavgiationItems = (() => {
   var _ref = _asyncToGenerator(function* (req, res, next) {
     let viewData = {
-      pageTitle: 'MOT Library',
+      pageTitle: 'Library',
       loggedOut: true,
       designSystem: true
     };

@@ -1,0 +1,25 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Prototypes Index: layouts' %}
+
+{% block content %}
+
+  {{ components.pageHeading('Prototypes: home-page layouts', 'LPG Front-End') }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Home page', tag='h2', size='medium') }}
+      {{ components.paragraph(text='All home page layout design iterations') }}
+      
+      {{ components.list(items=[
+        { text: 'Version 1 - 8th February 2018', url: '/prototypes/layouts/home-page/v1' }
+      ], type='bullet')}}
+
+    {%- endcall %}
+
+
+  {%- endcall %}
+  
+{% endblock %}

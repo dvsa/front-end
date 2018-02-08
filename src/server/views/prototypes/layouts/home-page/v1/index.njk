@@ -1,0 +1,33 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Home page - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %}
+
+{% block content %}
+
+  {{ components.pageHeading('Your home', '') }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+      {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading-lined') }}
+
+      <table>
+        <tbody>
+            <tr>
+                <td></td>
+            </tr>
+        </tbody>
+
+      </table>
+
+      {{ components.heading(text='Planned learning', tag='h2', size='medium', extraClass='heading-lined') }}
+      
+
+    {%- endcall %}
+
+
+  {%- endcall %}
+  
+{% endblock %}

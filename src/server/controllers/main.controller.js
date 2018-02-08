@@ -8,10 +8,10 @@ export const robots = (req, res) => {
 export const index = (req, res) => {
   let viewData = {
     contentHeader: {
-      type: 'MOT testing service',
+      type: 'Learning Platform For Government',
       title: 'Design System',
     },
-    pageTitle: 'MOT testing service Design System',
+    pageTitle: 'LPG Design System',
     loggedOut: true,
     designSystem: true,
   };

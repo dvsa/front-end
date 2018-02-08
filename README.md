@@ -2,7 +2,7 @@
 
 You can view a live demo here:
 
-[Heroku Demo](https://dvsa-front-end.herokuapp.com/)
+[Heroku Demo](https://lpg-prototypes.herokuapp.com/)
 
 ## Docker setup for development
 
@@ -10,7 +10,7 @@ You can view a live demo here:
 
 ### Running development mode
 
-For faster development you can use docker by running the following command:
+For faster development you can use docker by running the following command:w
 
 ```
 docker-compose up

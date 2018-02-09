@@ -37,5 +37,16 @@
     {%- endcall %}
 
   {%- endcall %}
+
+  {% call components.gridRow() %}
+
+      {% call components.columnOneThird() %}
+
+          {{ components.heading(text='Learner journey', tag='h2', size='medium', url='/prototypes/learner/v1') }}
+          {{ components.paragraph(text='And end-to-end journey for ') }}
+
+      {%- endcall %}
+
+  {%- endcall %}
   
 {% endblock %}

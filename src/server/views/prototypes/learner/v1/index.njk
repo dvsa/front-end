@@ -1,0 +1,22 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Sign in - Civil Service Learning Platform' %}
+
+{% block content %}
+
+    {{ components.pageHeading('Sign in', 'Civil Service Learning Platform') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+
+
+            {{ components.heading(text='GDS Accordions', tag='h2', size='medium', url='/moth-accordions') }}
+            {{ components.paragraph(text='A rebuild of the GDS accordian with AJAX call on open (used at DVSA).') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

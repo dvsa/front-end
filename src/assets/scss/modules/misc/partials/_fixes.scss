@@ -83,3 +83,8 @@ body .button-get-started:hover {
   height: 1px;
   overflow: hidden;
 }
+
+// reduce padding on main#content if lower hero present
+.has-lower-hero {
+  padding-bottom: 50px !important;
+}

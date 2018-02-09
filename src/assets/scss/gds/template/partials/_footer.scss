@@ -2,7 +2,8 @@
 
 #footer {
   background-color: $footer-background;
-  border-top: 1px solid $footer-border-top;
+  // border-top: 1px solid $footer-border-top;
+  border-top: 10px solid $civil-service;
 
   .footer-wrapper {
     @extend %site-width-container;

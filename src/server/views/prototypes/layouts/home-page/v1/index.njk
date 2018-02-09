@@ -2,6 +2,8 @@
 
 {% set pageTitle = 'Home page - Civil Service Learning Platform' %}
 {% set blackBarTitle = 'Civil Service Learning' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+
 
 {% block content %}
 
@@ -50,7 +52,7 @@
                     <span class="meta">1 hour, online course</span>
                 </td>
                 <td>Online learning</td>
-                <td><span class="badge">Pending</span></td>
+                <td><span class="badge">Not started</span></td>
                 <td>By Jun 2018</td>
                 <td><a href="#">Delete</a></td>
             </tr>
@@ -112,7 +114,127 @@
 
     {%- endcall %}
 
-
   {%- endcall %}
-  
+
+{% endblock %}
+
+{% block lowerHero %}
+
+    {% call components.lowerHero() %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <h2 class="heading-medium">Suggested courses</h2>
+                <h3 class="heading-small">Based on your grade</h3>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                <div class="tile">
+
+                    <h4 class="heading-small">
+                        <a href="#">Improving Audit Committee Effectiveness</a>
+                        <span class="heading__meta">1 day, Training course</span>
+                    </h4>
+                    <p>This one-day course looks at improving Audit Committee effectiveness.</p>
+
+                </div>
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                <div class="tile">
+
+                    <h4 class="heading-small">
+                        <a href="#">Introduction To Audit &amp; Risk Assurance Committees</a>
+                        <span class="heading__meta">Half day, Training course</span>
+                    </h4>
+                    <p>This course provides a comprehensive introduction to the role of the Committee in relation to governance.</p>
+
+                </div>
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                <div class="tile">
+
+                    <h4 class="heading-small">
+                        <a href="#">Delegation, Level II</a>
+                        <span class="heading__meta">4 hour, Online learning</span>
+                    </h4>
+                    <p>This video teaches best-practice techniques for delegating tasks to junior colleagues</p>
+
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <h3 class="heading-small">Based on your profession</h3>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                <div class="tile">
+
+                    <h4 class="heading-small">
+                        <a href="#">Nunquam talem habitio</a>
+                        <span class="heading__meta">Blog</span>
+                    </h4>
+                    <p>Quot quot labunter menses, nunc etc bibendum.</p>
+
+                </div>
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                <div class="tile">
+
+                    <h4 class="heading-small">
+                        <a href="#">Sint racanaes amor castus</a>
+                        <span class="heading__meta">Half day, Training course</span>
+                    </h4>
+                    <p>Candidatuss crescere in culina lorem ipsum.</p>
+
+                </div>
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                <div class="tile">
+
+                    <h4 class="heading-small">
+                        <a href="#">Qui custodit custodes</a>
+                        <span class="heading__meta">1 hour, Online learning</span>
+                    </h4>
+                    <p>In sepsis quoth puella lam custor loremm veritas.</p>
+
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
 {% endblock %}

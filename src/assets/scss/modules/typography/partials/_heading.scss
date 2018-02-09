@@ -32,4 +32,10 @@
     }
   }
 
+  &__meta {
+    @include core-16;
+    display: block;
+    color: $grey-1;
+  }
+
 }

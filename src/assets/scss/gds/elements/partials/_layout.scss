@@ -6,7 +6,8 @@
 
 // Allow an ID here, this is useful as it matches the GOV.UK template skiplink
 // scss-lint:disable IdSelector
-#content {
+#content,
+.wrapper {
   @extend %site-width-container;
   @extend %contain-floats;
   padding-bottom: $gutter;

@@ -1,0 +1,75 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Report MOT fraud' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Report MOT fraud') }}
+
+      <div class='text u-clearfix'>
+        
+        {{ components.paragraph(text='If you think someone is committing MOT fraud, you can report it.', lead=true) }}
+
+        {{ components.heading(text='What is MOT fraud?', size='medium', tag='h2') }}
+
+        {{ components.paragraph(text='MOT fraud happens when a garage or a tester breaks the MOT testing rules on purpose, to cut corners or to make profit.') }}
+
+        {{ components.paragraph(text='They could be issuing MOT certificates for vehicles that haven’t been tested or deliberately passing vehicles that should have failed.') }}
+
+        {{ components.heading(text='How to help', size='medium', tag='h2') }}
+
+        {{ components.paragraph(text='Give as much information as possible, such as:') }}
+
+        {% set listItems = [
+          {
+            text: 'name and address of the MOT garage or person involved'
+          },
+          {
+            text: 'registration number of the vehicle involved'
+          },
+          {
+            text: 'detailed description of the suspected fraud'
+          }
+        ] %}
+
+        {{ components.list(items=listItems, type='bullet') }}
+
+        {{ components.paragraph(text="You give the information anonymously, so it's safe and secure to pass information about suspected fraud.") }}
+
+        {{ components.heading(text='What happens', size='medium', tag='h2') }}
+
+        {{ components.paragraph(text='DVSA will investigate the report.') }}
+
+        {{ components.paragraph(text='If there is enough evidence DVSA may warn the garage or tester, or suspend them from MOT testing.') }}
+
+      </div>
+
+      <div class="u-margin-top-10">
+
+        {{ components.button(text='Start now', url='/prototypes/report-fraud/report', start=true) }}
+
+      </div>
+
+      <div class="text u-clearfix">
+
+        {{ components.heading(text='Appeal an MOT test', size='medium', tag='h2') }}
+
+        <p>
+          If you’re unhappy with the result of an individual MOT test, do not report it here. 
+          <a href='https://www.gov.uk/getting-an-mot/problems-with-your-test-result'>
+          Appeal your MOT</a>.
+        </p>
+
+        <p class='font-xsmall u-font-light'>Last Updated: 5 February 2018</p>
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

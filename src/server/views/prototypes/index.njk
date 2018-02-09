@@ -30,5 +30,16 @@
     {%- endcall %}
 
   {%- endcall %}
-  
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Report MOT fraud', tag='h2', size='medium', url='/prototypes/report-fraud') }}
+      {{ components.paragraph(text='Report an MOT fraud user journey prototype') }}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+
 {% endblock %}

@@ -5,25 +5,110 @@
 
 {% block content %}
 
-  {{ components.pageHeading('Your home', '') }}
+  {{ components.pageHeading('Your learning') }}
 
   {% call components.gridRow() %}
 
-    {% call components.columnTwoThirds() %}
+    {% call components.columnFull() %}
 
-      {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading-lined') }}
+      {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='') }}
 
       <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th><span class="visuallyhidden">Actions</span></th>
+                <th><span class="visuallyhidden">Manage booking</span></th>
+            </tr>
+        </thead>
         <tbody>
             <tr>
-                <td></td>
+                <td>
+                    <a href="#">Analysis and use of evidence</a>
+                    <span class="meta">2 hour, online course</span>
+                </td>
+                <td>Online learning</td>
+                <td><span class="badge badge--info">In progress</span></td>
+                <td><a href="#">Resume</a></td>
+                <td><a href="#">Delete</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Influencing skills as a leader</a>
+                    <span class="meta">1 day, Swindon</span>
+                </td>
+                <td>Training course</td>
+                <td><span class="badge">Booked</span></td>
+                <td>15th Mar 2018</td>
+                <td><a href="#">Manage booking</a></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Information Security</a>
+                    <span class="meta">1 hour, online course</span>
+                </td>
+                <td>Online learning</td>
+                <td><span class="badge">Pending</span></td>
+                <td>By Jun 2018</td>
+                <td><a href="#">Delete</a></td>
             </tr>
         </tbody>
 
       </table>
 
-      {{ components.heading(text='Planned learning', tag='h2', size='medium', extraClass='heading-lined') }}
-      
+      {{ components.heading(text='Planned learning', tag='h2', size='medium', extraClass='') }}
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th><span class="visuallyhidden">Manage booking</span></th>
+                    <th><span class="visuallyhidden">Actions</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="#">Finance For Non-Finance Managers</a>
+                        <span class="meta">2 days, London</span>
+                    </td>
+                    <td>Training course</td>
+                    <td><a href="#">Book</a></td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Being An Effective Non-Executive Director</a>
+                        <span class="meta">1/2 day, Leeds</span>
+                    </td>
+                    <td>Training course</td>
+                    <td><a href="#">Book</a></td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Effective Policy Making</a>
+                        <span class="meta">1 hour, online course</span>
+                    </td>
+                    <td>Online learning</td>
+                    <td>&nbsp;</td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Managing contractors</a>
+                        <span class="meta">2 hour, online course</span>
+                    </td>
+                    <td>Online learning</td>
+                    <td>&nbsp;</td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+            </tbody>
+
+        </table>
 
     {%- endcall %}
 

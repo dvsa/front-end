@@ -33,3 +33,9 @@ em,
 .italic {
   font-style: italic;
 }
+
+.meta {
+  @include core-16;
+  display: block;
+  color: $grey-1;
+}

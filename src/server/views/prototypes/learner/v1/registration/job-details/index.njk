@@ -1,0 +1,71 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Enter your personal details - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/home' %}
+
+{% set professionSelectOptions2 = professionSelectOptions2 if professionSelectOptions2 %}
+{% set departmentSelectOptions = departmentSelectOptions if departmentSelectOptions %}
+
+{% block content %}
+
+    {{ components.pageHeading('Enter your personal details', 'Civil Service Learning Platform') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='registerName', method='POST', action="#") %}
+
+                {{ components.field(label='Grade', id='grade', group=true)}}
+
+                {{ components.field(label='Organisation', id='organisation', group=true)}}
+
+                <!-- Department -->
+                {{ components.select(options=departmentSelectOptions, label='Department', id='department', hint='Start typing to find your Government department name', group=true, extraClass='autocomplete-wrapper')}}
+
+                {{ components.field(label='Job role', id='jobRole', group=true)}}
+
+                <!-- Profession -->
+                {{ components.select(options=professionSelectOptions2, label='Profession', id='profession', hint='Start typing to find your profession', group=true, extraClass='autocomplete-wrapper')}}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Continue', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v1">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <script type="text/javascript" src="/javascripts/accessible-autocomplete/accessible-autocomplete.min.js"></script>
+    <script type="text/javascript">
+        var selectEl = document.querySelector('#department')
+        accessibleAutocomplete.enhanceSelectElement({
+            autoselect: true,
+            defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+            minLength: 2,
+            selectElement: selectEl
+        });
+
+        selectEl = document.querySelector('#profession')
+        accessibleAutocomplete.enhanceSelectElement({
+            autoselect: true,
+            defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+            minLength: 2,
+            selectElement: selectEl
+        });
+    </script>
+
+{% endblock %}
+

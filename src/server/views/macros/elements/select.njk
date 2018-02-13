@@ -1,8 +1,8 @@
 {% from "macros/elements/label.njk" import formLabel %}
 
-{% macro select(options=false, label='', labelBold=false, id='', name='', selectedValue=false, hint=false, group=false, error=false) %}
+{% macro select(options=false, label='', labelBold=false, id='', name='', selectedValue=false, hint=false, group=false, error=false, extraClass='') %}
   {% if label and options %}
-    {% if group or error %}<div class="form-group {{ 'form-group-error' if error }}">{% endif %}
+    {% if group or error %}<div class="form-group {{ 'form-group-error' if error }} {{ extraClass if extraClass }}">{% endif %}
     {{ formLabel(label=label, id=id, bold=labelBold, hint=hint, error=error) }}
     <select class="form-control {{ 'form-control-error' if error }}" {{ 'id="' + id + '"' if id }} name="{{ name if name else id }}">
       {% for option in options %}

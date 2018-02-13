@@ -1,19 +1,56 @@
 {% extends 'layouts/default.layout.njk' %}
 
+{% set signinError = signinError if signinError %}
+
 {% set pageTitle = 'Sign in - Civil Service Learning Platform' %}
 
 {% block content %}
 
     {{ components.pageHeading('Sign in', 'Civil Service Learning Platform') }}
 
+    {% if signinError %}
+
+        {% set emailError = 'Enter your email' %}
+        {% set passwordError = 'Enter your password' %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your sign-in details</h2>
+            {{ components.paragraph(text='Please try again') }}
+        </div>
+
+    {% endif %}
+
     {% call components.gridRow() %}
 
         {% call components.columnTwoThirds() %}
 
-            {{ components.heading(text='GDS Accordions', tag='h2', size='medium', url='/moth-accordions') }}
-            {{ components.paragraph(text='A rebuild of the GDS accordian with AJAX call on open (used at DVSA).') }}
+            {% call components.formElement(name='signIn', method='POST') %}
+
+                {{ components.field(label='Email address', id='email', hint="", group=true, error=emailError)}}
+
+                {{ components.field(label='Password', id='password', hint="", type="password", group=true, error=passwordError)}}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Sign in', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="#">Forgotten your password?</a>
+                </p>
+
+            {%- endcall %}
 
         {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <p>
+                <a href="/prototypes/learner/v1/registration">Register for an account</a>
+            </p>
+
+        {%- endcall  %}
 
     {%- endcall %}
 

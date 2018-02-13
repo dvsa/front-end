@@ -1,0 +1,15 @@
+{% macro formElement(name='', method='GET', action='#') %}
+
+    <form name="{{ name }}" method="{{ method }}" action="{{ action }}">
+        {{ caller() }}
+    </form>
+
+{% endmacro %}
+
+{% macro formGroup() %}
+
+    <div class="form-group">
+        {{ caller() }}
+    </div>
+
+{% endmacro %}

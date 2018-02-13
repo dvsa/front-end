@@ -23,6 +23,7 @@
     "node": "8.9.0"
   },
   "dependencies": {
+    "accessible-autocomplete": "^1.6.1",
     "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "clean-html": "^1.5.0",

@@ -1,0 +1,24 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Review your registration details - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/home' %}
+
+{% block content %}
+
+    {{ components.pageHeading('Review your registration details', 'Civil Service Learning Platform') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Review your details below</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

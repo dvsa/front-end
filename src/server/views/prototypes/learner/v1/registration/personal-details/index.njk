@@ -1,0 +1,46 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Enter your personal details - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/home' %}
+{% set firstName = firstName if firstName %}
+{% set lastName = lastName if lastName %}
+{% set phoneNumber = phoneNumber if phoneNumber %}
+{% set registrationPersonalError = registrationPersonalError if registrationPersonalError %}
+
+{% block content %}
+
+    {{ components.pageHeading('Enter your personal details', 'Civil Service Learning Platform') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='registerName', method='POST', action="#") %}
+
+                {{ components.field(label='First name', id='firstName', hint="", group=true, value=firstName)}}
+
+                {{ components.field(label='Last name', id='lastName', hint="", group=true, value=lastName)}}
+
+                {{ components.field(label='Phone number', id='phoneNumber', hint="", group=true, value=phoneNumber)}}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Continue', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v1">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

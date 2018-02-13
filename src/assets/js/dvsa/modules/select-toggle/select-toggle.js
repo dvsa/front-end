@@ -34,7 +34,7 @@ export class SelectToggle {
    *
    * - Setup the select fields based on DOM state
    * - Attach required events
-   * 
+   *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */

@@ -6,14 +6,20 @@ export class ShowHideToggle {
       jsHidden: 'js-hidden',
       hideSmall: 'hide-small',
       toggleSwitch: 'toggle-switch',
-      toggleSwitchOpen: 'toggle-switch--open'
+      toggleSwitchOpen: 'toggle-switch--open',
     };
 
     this.attributes = {
+      targetState: 'data-target-state',
       openText: 'data-open-text',
       target: 'data-target',
       toggleType: 'data-toggle-type',
-      closedText: 'data-closed-text'
+      closedText: 'data-closed-text',
+    };
+
+    this.targetStates = {
+      closed: 'closed',
+      open: 'open'
     };
 
     this.selectors = {
@@ -21,12 +27,12 @@ export class ShowHideToggle {
     };
 
     this.elements = {
-      showHideToggles: Array.from(document.querySelectorAll(this.selectors.showHideToggle))
+      showHideToggles: Array.from(document.querySelectorAll(this.selectors.showHideToggle)),
     };
 
     this.toggleTypes = {
-      responsive: 'responsive'
-    }
+      responsive: 'responsive',
+    };
 
     this.init();
   }
@@ -40,7 +46,7 @@ export class ShowHideToggle {
   init = () => {
     this.setupInitialStateFromDOM();
     this.addEvents();
-  }
+  };
 
   /**
    * Setup the state based on current DOM
@@ -49,16 +55,19 @@ export class ShowHideToggle {
    * @author Tameem Safi <t.safi@kainos.com>
    */
   setupInitialStateFromDOM = () => {
-    if(!this.elements.showHideToggles) return;
+    if (!this.elements.showHideToggles) return;
     this.elements.showHideToggles.forEach(element => {
       const elementDetails = this.getElementDetails(element);
-      if(!elementDetails) return;
-      element.setAttribute(this.attributes.closedText, elementDetails.startText);
-      if(elementDetails.toggleType !== this.toggleTypes.responsive) {
+      if (!elementDetails) return;
+      element.setAttribute(this.attributes.closedText, element.innerText);
+      element.setAttribute(this.attributes.targetState, this.targetStates.closed);
+      if (elementDetails.toggleType !== this.toggleTypes.responsive) {
         toggleClass(elementDetails.targetElement, this.classnames.jsHidden, true);
+      } else {
+        toggleClass(elementDetails.targetElement, this.classnames.hideSmall, true);
       }
     });
-  }
+  };
 
   /**
    * Add required events
@@ -68,79 +77,97 @@ export class ShowHideToggle {
    */
   addEvents = () => {
     delegateEvent(document, 'click', this.selectors.showHideToggle, this.showHideToggleClickHandler);
-  }
+  };
 
   /**
    * Handles the show hide toggle click event
-   * 
+   *
    * @param {Event} event Event object
    *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  showHideToggleClickHandler = (event) => {
-    if(!event.target);
+  showHideToggleClickHandler = event => {
+    if (!event.target);
     event.preventDefault();
     this.updateElementState(event.target);
-  }
+  };
 
   /**
    * Toggles the element based on current DOM state
-   * 
+   *
    * @param {HTMLElement} element Element to toggle state of
    *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  updateElementState = (element) => {
-    if(!element) return;
+  updateElementState = element => {
+    if (!element) return;
     const elementDetails = this.getElementDetails(element);
-    if(!elementDetails) return;
-    const hidden = isElementHidden(elementDetails.targetElement);
-    
-    if(elementDetails.toggleType === this.toggleTypes.responsive) {
+    if (!elementDetails) return;
+    const hidden = elementDetails.targetState === this.targetStates.closed;
+
+    if (elementDetails.toggleType === this.toggleTypes.responsive) {
       toggleClass(elementDetails.targetElement, this.classnames.hideSmall, !hidden);
     } else {
       toggleClass(elementDetails.targetElement, this.classnames.jsHidden, !hidden);
     }
 
-    if(this.elements.showHideToggles) {
-      this.elements.showHideToggles.forEach(showHideToggleElement => {
-        showHideToggleElement.innerText = hidden ? elementDetails.openText : elementDetails.startText;
-        toggleClass(showHideToggleElement, this.classnames.toggleSwitch, !hidden);
-        toggleClass(showHideToggleElement, this.classnames.toggleSwitchOpen, hidden);
-      });
-    }
+    element.setAttribute(this.attributes.targetState, hidden ? this.targetStates.open : this.targetStates.closed);
 
-    const targetParent = document.querySelector(`#${elementDetails}Parent`);
+    this.updateAllShowHideToggles();
 
-    if(targetParent) {
+    const targetParent = document.querySelector(`#${elementDetails.targetId}Parent`);
+
+    if (targetParent) {
       targetParent.scrollIntoView(true);
+    }
+  };
+
+  /**
+   * Update all of the DOM show hide toggle based on their DOM states
+   *
+   * @since 1.1.0
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  updateAllShowHideToggles = () => {
+    if (this.elements.showHideToggles) {
+      this.elements.showHideToggles.forEach(element => {
+        const elementDetails = this.getElementDetails(element);
+        if (!elementDetails) return;
+        const hidden = elementDetails.targetState === this.targetStates.closed;
+        console.log('test', hidden, elementDetails.targetState);
+        element.innerText = hidden ? elementDetails.closedText : elementDetails.openText;
+        toggleClass(element, this.classnames.toggleSwitch, !hidden);
+        toggleClass(element, this.classnames.toggleSwitchOpen,  hidden);
+      });
     }
   }
 
   /**
    * Grabs the required details from the DOM for the element
-   * 
+   *
    * @param {HTMLElement} element Element to get details from
    *
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  getElementDetails = (element) => {
-    if(!element) return;
-    const startText = element.innerText;
+  getElementDetails = element => {
+    if (!element) return;
     const openText = element.getAttribute(this.attributes.openText);
+    const closedText = element.getAttribute(this.attributes.closedText);
     const targetId = element.getAttribute(this.attributes.target);
     const toggleType = element.getAttribute(this.attributes.toggleType);
     const targetElement = document.querySelector(`#${targetId}`);
-    if(!targetId || !targetElement) return;
+    const targetState = element.getAttribute(this.attributes.targetState);
+    if (!targetId || !targetElement) return;
     return {
-      startText,
       openText,
+      closedText,
       targetId,
       toggleType,
-      targetElement
-    }
-  }
+      targetElement,
+      targetState,
+    };
+  };
 }

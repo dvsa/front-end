@@ -1,0 +1,242 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Home page - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/home' %}
+
+
+{% block content %}
+
+    {{ components.pageHeading('Your learning') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='') }}
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th><span class="visuallyhidden">Actions</span></th>
+                    <th><span class="visuallyhidden">Manage booking</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a href="#">Analysis and use of evidence</a>
+                        <span class="meta">2 hour, online course</span>
+                    </td>
+                    <td>Online learning</td>
+                    <td><span class="badge badge--info">In progress</span></td>
+                    <td><a href="#">Resume</a></td>
+                    <td><a href="#">Delete</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Influencing skills as a leader</a>
+                        <span class="meta">1 day, Swindon</span>
+                    </td>
+                    <td>Training course</td>
+                    <td><span class="badge">Booked</span></td>
+                    <td>15th Mar 2018</td>
+                    <td><a href="#">Manage booking</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Information Security</a>
+                        <span class="meta">1 hour, online course</span>
+                    </td>
+                    <td>Online learning</td>
+                    <td><span class="badge">Not started</span></td>
+                    <td>By Jun 2018</td>
+                    <td><a href="#">Delete</a></td>
+                </tr>
+                </tbody>
+
+            </table>
+
+            {{ components.heading(text='Planned learning', tag='h2', size='medium', extraClass='') }}
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th><span class="visuallyhidden">Manage booking</span></th>
+                    <th><span class="visuallyhidden">Actions</span></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <a href="#">Finance For Non-Finance Managers</a>
+                        <span class="meta">2 days, London</span>
+                    </td>
+                    <td>Training course</td>
+                    <td><a href="#">Book</a></td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Being An Effective Non-Executive Director</a>
+                        <span class="meta">1/2 day, Leeds</span>
+                    </td>
+                    <td>Training course</td>
+                    <td><a href="#">Book</a></td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Effective Policy Making</a>
+                        <span class="meta">1 hour, online course</span>
+                    </td>
+                    <td>Online learning</td>
+                    <td>&nbsp;</td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Managing contractors</a>
+                        <span class="meta">2 hour, online course</span>
+                    </td>
+                    <td>Online learning</td>
+                    <td>&nbsp;</td>
+                    <td><a href="#">Remove</a></td>
+                </tr>
+                </tbody>
+
+            </table>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+
+{% block lowerHero %}
+
+    {% call components.lowerHero() %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <h2 class="heading-medium">Suggested courses</h2>
+            <h3 class="heading-small">Based on your grade</h3>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            <div class="tile">
+
+                <h4 class="heading-small">
+                    <a href="#">Improving Audit Committee Effectiveness</a>
+                    <span class="heading__meta">1 day, Training course</span>
+                </h4>
+                <p>This one-day course looks at improving Audit Committee effectiveness.</p>
+
+            </div>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <div class="tile">
+
+                <h4 class="heading-small">
+                    <a href="#">Introduction To Audit &amp; Risk Assurance Committees</a>
+                    <span class="heading__meta">Half day, Training course</span>
+                </h4>
+                <p>This course provides a comprehensive introduction to the role of the Committee in relation to governance.</p>
+
+            </div>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <div class="tile">
+
+                <h4 class="heading-small">
+                    <a href="#">Delegation, Level II</a>
+                    <span class="heading__meta">4 hour, Online learning</span>
+                </h4>
+                <p>This video teaches best-practice techniques for delegating tasks to junior colleagues</p>
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <h3 class="heading-small">Based on your profession</h3>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            <div class="tile">
+
+                <h4 class="heading-small">
+                    <a href="#">Nunquam talem habitio</a>
+                    <span class="heading__meta">Blog</span>
+                </h4>
+                <p>Quot quot labunter menses, nunc etc bibendum.</p>
+
+            </div>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <div class="tile">
+
+                <h4 class="heading-small">
+                    <a href="#">Sint racanaes amor castus</a>
+                    <span class="heading__meta">Half day, Training course</span>
+                </h4>
+                <p>Candidatuss crescere in culina lorem ipsum.</p>
+
+            </div>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <div class="tile">
+
+                <h4 class="heading-small">
+                    <a href="#">Qui custodit custodes</a>
+                    <span class="heading__meta">1 hour, Online learning</span>
+                </h4>
+                <p>In sepsis quoth puella lam custor loremm veritas.</p>
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

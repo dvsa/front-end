@@ -109,7 +109,7 @@ export function registerJobGet(req, res) {
   ];
 
   departmentSelectOptions = [
-    { value: '', text: 'Select a profession' },
+    { value: '', text: 'Select a department' },
     { value: '1', text: 'Cabinet Office' },
     { value: '2', text: 'Department of Health and Social Care' },
     { value: '3', text: 'HM Revenue & Customs' },

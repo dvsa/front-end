@@ -49,6 +49,12 @@
       padding: 3px 15px 3px 0;
       list-style: outside none none;
 
+      a {
+        &:visited {
+          color: $white;
+        }
+      }
+
       @include media(desktop) {
         display: block;
         width: auto;

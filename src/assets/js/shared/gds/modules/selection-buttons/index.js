@@ -13,7 +13,7 @@ export class SelectionButtons {
       checkbox: `.${this.classnames.blockLabel} input[type="checkbox"]`,
     };
 
-    this.elements = document.querySelectorAll(`${this.selectors.radio}, ${this.selectors.checkbox}`);
+    this.elements = Array.from(document.querySelectorAll(`${this.selectors.radio}, ${this.selectors.checkbox}`));
 
     this.ariaAttributes = {
       controls: 'aria-controls',
@@ -63,10 +63,13 @@ export class SelectionButtons {
     if (!elementDetails) return;
 
     // Reset all other elements
-    groupElements.forEach(groupElement => {
+    elementDetails.groupElements.forEach(groupElement => {
       groupElement.checked = false;
       this.updateDomElementAttributes(groupElement);
     });
+
+    // Set the current element as checked
+    element.checked = true;
 
     // Update current element
     return this.updateDomElementAttributes(element);
@@ -128,6 +131,7 @@ export class SelectionButtons {
    * @author Tameem Safi <t.safi@kainos.com>
    */
   updateAllElementsAriaAttributes = () => {
+    if(!this.elements) return;
     this.elements.forEach(element => {
       // Update aria attributes
       this.updateAriaAttributesForElement(element);
@@ -167,7 +171,7 @@ export class SelectionButtons {
   updateAriaAttributesForElement = element => {
     if (!element) return;
     const elementDetails = this.getElementDetails(element);
-    if (elementDetails) {
+    if (elementDetails && elementDetails.targetId) {
       element.setAttribute(this.ariaAttributes.controls, elementDetails.targetId);
     }
     element.setAttribute(this.ariaAttributes.hidden, element.checked ? 'false' : 'true');

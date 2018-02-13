@@ -58,7 +58,7 @@ export class CriteriaValidation {
       // Get the param from data attribute
       const param = element.getAttribute(this.attributes.param);
       // Check if name and param exist
-      if (criteriaName && criteriaParam) {
+      if (name) {
         // Add the criterion to the array
         this.criteria.push({
           name,
@@ -88,12 +88,12 @@ export class CriteriaValidation {
    */
   checkCriteriaHandler = () => {
     if (!this.elements.passwordElement) return;
-    const value = this.elements.passwordElement;
+    const value = this.elements.passwordElement.value;
     this.criteria.forEach(criteriaItem => {
       const { name, param, element } = criteriaItem;
-      if (!name || !param || !element) return;
+      if (!name || !element) return;
       const valid = this[name](value, param);
-      if (value) {
+      if (valid) {
         toggleClass(element, this.classnames.pass, true);
         toggleClass(element, this.classnames.fail, false);
       } else {
@@ -113,7 +113,7 @@ export class CriteriaValidation {
    * @author Tameem Safi <t.safi@kainos.com>
    */
   hasMixedCase = value => {
-    if (/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(val)) {
+    if (/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(value)) {
       return true;
     }
     return false;

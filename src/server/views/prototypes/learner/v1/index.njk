@@ -24,7 +24,7 @@
 
         {% call components.columnTwoThirds() %}
 
-            {% call components.formElement(name='signIn', method='POST') %}
+            {% call components.formElement(name='signIn', method='POST', action='/prototypes/learner/v1') %}
 
                 {{ components.field(label='Email address', id='email', hint="", group=true, error=emailError)}}
 

@@ -206,6 +206,7 @@
 
       summary.__details.__summary.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       summary.__details.__content.setAttribute('aria-hidden', hidden ? 'false' : 'true');
+      summary.__details.__content.style.display = (expanded ? 'none' : 'block');
 
       if (!GOVUK.details.NATIVE_DETAILS) {
         summary.__details.__content.style.display = expanded ? 'none' : '';

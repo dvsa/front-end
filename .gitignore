@@ -9,6 +9,7 @@ node_modules
 spider.txt
 public
 npm-debug.log
+/tmp/
 
 # Logs
 logs

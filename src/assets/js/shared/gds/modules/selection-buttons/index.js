@@ -131,7 +131,7 @@ export class SelectionButtons {
    * @author Tameem Safi <t.safi@kainos.com>
    */
   updateAllElementsAriaAttributes = () => {
-    if(!this.elements) return;
+    if (!this.elements) return;
     this.elements.forEach(element => {
       // Update aria attributes
       this.updateAriaAttributesForElement(element);

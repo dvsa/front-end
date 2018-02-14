@@ -43,9 +43,9 @@ export class MarkRepairs {
         summary: document.querySelector(this.selectors.brakeTest.summary),
       },
       actionPanel: document.querySelector(this.selectors.brakeTest.actionPanel),
-      numberOfFailures: document.querySelector(this.selectors.numberOfFailures),
-      numberOfAdvisories: document.querySelector(this.selectors.numberOfAdvisories),
-      numberOfMinors: document.querySelector(this.selectors.numberOfMinors),
+      numberOfFailures: Array.from(document.querySelectorAll(this.selectors.numberOfFailures)),
+      numberOfAdvisories: Array.from(document.querySelectorAll(this.selectors.numberOfAdvisories)),
+      numberOfMinors: Array.from(document.querySelectorAll(this.selectors.numberOfMinors)),
     };
 
     this.responseActions = {
@@ -113,12 +113,12 @@ export class MarkRepairs {
     const url = rfrForm.getAttribute(this.attributes.action) || element.getAttribute(this.attributes.url);
     const formData = serializeForm(rfrForm) || element.getAttribute(this.attributes.form);
 
-    if(!url || !formData) return console.warn('Could not find route URL or form data');
+    if (!url || !formData) return console.warn('Could not find route URL or form data');
 
     // Setup loading
     toggleClass(rfrItem, this.classnames.hasStatus, true);
     toggleClass(rfrItem, this.classnames.hasSuccess, false);
-    itemStatus.innerText = this.messages.loading;
+    itemStatus.textContent = this.messages.loading;
 
     const tryAgainMessage = `That didn\'t work, <a class="js-buttonMarkRepaired" href="" data-url="${url}" data-form="${formData}">try again</a>`;
 
@@ -126,8 +126,8 @@ export class MarkRepairs {
     // Use for ajax request
     const axiosConfig = {
       headers: {
-        'X-Requested-With': 'XMLHttpRequest'
-      }
+        'X-Requested-With': 'XMLHttpRequest',
+      },
     };
 
     // Make ajax request
@@ -164,17 +164,17 @@ export class MarkRepairs {
   updateCount = (defectType, action) => {
     switch (defectType) {
       case 'advisory': {
-        this.updateCountForElement(this.elements.numberOfAdvisories, action);
+        this.updateCountForAllElements(this.elements.numberOfAdvisories, action);
         break;
       }
 
       case 'minor': {
-        this.updateCountForElement(this.elements.numberOfMinors, action);
+        this.updateCountForAllElements(this.elements.numberOfMinors, action);
         break;
       }
 
       case 'failure': {
-        this.updateCountForElement(this.elements.numberOfFailures, action);
+        this.updateCountForAllElements(this.elements.numberOfFailures, action);
         break;
       }
 
@@ -182,6 +182,22 @@ export class MarkRepairs {
         return console.warn('Invalid type');
       }
     }
+  };
+
+  /**
+   * Updates the count of failures, advisories and minors for all elements
+   *
+   * @param {HTMLElement} element Elements which to parse number from and change
+   * @param {String} action Action can be repair or not
+   *
+   * @since 1.1.0
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  updateCountForAllElements = (elements, action) => {
+    if (!elements || !Array.isArray(elements)) return;
+    elements.forEach(element => {
+      this.updateCountForElement(element, action);
+    });
   };
 
   /**
@@ -195,13 +211,13 @@ export class MarkRepairs {
    */
   updateCountForElement = (element, action) => {
     if (!element) return;
-    let count = parseInt(element.innerText) || 0;
-    if(action === this.responseActions.repair) {
+    let count = parseInt(element.textContent) || 0;
+    if (action === this.responseActions.repair) {
       count--;
     } else {
       count++;
     }
-    element.innerText = count;
+    element.textContent = count;
   };
 
   /**
@@ -220,23 +236,21 @@ export class MarkRepairs {
 
     // Update test status
     if (this.elements.brakeTest.testStatus) {
-      this.elements.brakeTest.testStatus.innerText = testStatus;
+      this.elements.brakeTest.testStatus.textContent = testStatus;
     }
-
-    const testedAndHasResults = tested === true && results === true;
 
     // Update brake test actions
     if (this.elements.brakeTest.actions) {
-      if (testedAndHasResults) {
-        toggleClass(this.elements.brakeTest.actionPanel, this.classnames.uHidden, false);
+      if (tested === true && results === true) {
+        toggleClass(this.elements.brakeTest.actions, this.classnames.uHidden, false);
       } else {
-        toggleClass(this.elements.brakeTest.actionPanel, this.classnames.uHidden, true);
+        toggleClass(this.elements.brakeTest.actions, this.classnames.uHidden, true);
       }
     }
 
     // Update add brake test
     if (this.elements.brakeTest.addBrakeTest) {
-      if (testedAndHasResults) {
+      if (tested === false || results === true) {
         toggleClass(this.elements.brakeTest.addBrakeTest, this.classnames.uHidden, true);
       } else {
         toggleClass(this.elements.brakeTest.addBrakeTest, this.classnames.uHidden, false);

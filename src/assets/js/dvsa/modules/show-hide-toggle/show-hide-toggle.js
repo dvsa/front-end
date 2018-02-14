@@ -19,7 +19,7 @@ export class ShowHideToggle {
 
     this.targetStates = {
       closed: 'closed',
-      open: 'open'
+      open: 'open',
     };
 
     this.selectors = {
@@ -59,7 +59,7 @@ export class ShowHideToggle {
     this.elements.showHideToggles.forEach(element => {
       const elementDetails = this.getElementDetails(element);
       if (!elementDetails) return;
-      element.setAttribute(this.attributes.closedText, element.innerText);
+      element.setAttribute(this.attributes.closedText, element.textContent);
       element.setAttribute(this.attributes.targetState, this.targetStates.closed);
       if (elementDetails.toggleType !== this.toggleTypes.responsive) {
         toggleClass(elementDetails.targetElement, this.classnames.jsHidden, true);
@@ -136,13 +136,12 @@ export class ShowHideToggle {
         const elementDetails = this.getElementDetails(element);
         if (!elementDetails) return;
         const hidden = elementDetails.targetState === this.targetStates.closed;
-        console.log('test', hidden, elementDetails.targetState);
-        element.innerText = hidden ? elementDetails.closedText : elementDetails.openText;
+        element.textContent = hidden ? elementDetails.closedText : elementDetails.openText;
         toggleClass(element, this.classnames.toggleSwitch, !hidden);
-        toggleClass(element, this.classnames.toggleSwitchOpen,  hidden);
+        toggleClass(element, this.classnames.toggleSwitchOpen, hidden);
       });
     }
-  }
+  };
 
   /**
    * Grabs the required details from the DOM for the element

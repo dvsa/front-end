@@ -332,7 +332,7 @@ export class Accordion {
     }
 
     // Update expand button text
-    this.expandButton.innerText = this.getExpandButtonText();
+    this.expandButton.textContent = this.getExpandButtonText();
 
     // Save current state for future
     // this.saveCurrentStateData();
@@ -451,7 +451,7 @@ export class Accordion {
     return {
       category: section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.sectionCategory),
       indexId: Number(section.sectionElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.stateIndexId)),
-      heading: section.sectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.title).innerText,
+      heading: section.sectionElement.querySelector('.' + ACCORDION_CONSTANTS.classNames.title).textContent,
       openState: section.sectionOpen ? ACCORDION_CONSTANTS.dataLayer.open : ACCORDION_CONSTANTS.dataLayer.close,
     };
   };

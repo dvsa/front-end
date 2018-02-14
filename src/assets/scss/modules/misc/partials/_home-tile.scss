@@ -1,0 +1,29 @@
+.home-tile {
+  width: 100%;
+
+  @include media(desktop) {
+    max-width: 360px;
+  }
+
+  p {
+    margin: 4px 0;
+  }
+
+  &__top {
+
+    *[class^=heading] {
+      //
+    }
+  }
+
+  &__actions {
+
+    a {
+      display: inline-block;
+    }
+
+    a + a {
+      margin-left: 8px;
+    }
+  }
+}

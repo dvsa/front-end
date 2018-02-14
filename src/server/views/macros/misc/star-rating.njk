@@ -1,0 +1,8 @@
+{% macro starRating(rating='100%', total='50') %}
+    <div class="star-rating">
+        <div class="star-rating__sprite">
+            <span style="width: {{ rating }};" class="star-rating__value">This course was popular with {{ rating }} of those who responded</span>
+        </div>
+        <span class="star-rating__total">({{ total }}<span class="visuallyhidden"> people rated this resource</span>)</span>
+    </div>
+{% endmacro %}

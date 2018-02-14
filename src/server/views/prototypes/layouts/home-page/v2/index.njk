@@ -1,0 +1,182 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Home page - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+
+{% block content %}
+
+  {{ components.pageHeading('Your learning') }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='') }}
+
+      <table class="table--top">
+        <thead class="visuallyhidden">
+            <tr>
+                <th>Title</th>
+                <th>Rating</th>
+                <th>Reason</th>
+                <th>Type</th>
+                <th><span class="visuallyhidden">Duration</span></th>
+                <th><span class="visuallyhidden">Status</span></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="has-star-rating">
+                    <a href="#">Health and Safety</a>
+                    <span class="meta"><a href="#">Resume</a></span>
+                </td>
+                <td>{{ components.starRating(rating='25%', total='10') }}</td>
+                <td>Required by 31 March 2018</td>
+                <td>Online</td>
+                <td>1 hour</td>
+                <td class="u-align-right"><span class="badge badge--info badge--smaller">In progress</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#">Unconcious bias</a>
+                    <span class="meta"><a href="#">Start</a></span>
+                </td>
+                <td>{{ components.starRating(rating='50%', total='81') }}</td>
+                <td>Required by 4 May 2018</td>
+                <td>Classroom</td>
+                <td>1 day</td>
+                <td class="u-align-right"><span class="badge badge--smaller">Booked</span></td>
+            </tr>
+        </tbody>
+      </table>
+
+      {{ components.heading(text='Planned learning', tag='h2', size='medium', extraClass='') }}
+
+        <table class="course-table">
+            <thead class="visuallyhidden">
+                <tr>
+                    <th>Title</th>
+                    <th>Rating</th>
+                    <th>Reason</th>
+                    <th>Type</th>
+                    <th><span class="visuallyhidden">Duration</span></th>
+                    <th><span class="visuallyhidden">Status</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="has-star-rating">
+                        <a href="#">Managing contractors</a>
+                        <span class="meta"><a href="#">Cancel booking</a></span>
+                    </td>
+                    <td>{{ components.starRating(rating='80%', total='49') }}</td>
+                    <td>From your performance review</td>
+                    <td>Classroom</td>
+                    <td>1 day</td>
+                    <td class="u-align-right">
+                        <span class="badge badge--info badge--smaller">Booked</span>
+                        <span class="meta">15 Mar 2018</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#">Analysis and use of evidence</a>
+                        <span class="meta"><a href="#">Delete</a></span>
+                    </td>
+                    <td>{{ components.starRating(rating='95%', total='91') }}</td>
+                    <td>Because of your work objectives</td>
+                    <td>Online</td>
+                    <td>1 hour</td>
+                    <td class="u-align-right"><span class="badge badge--smaller">Not started</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><a href="#">Show 2 more</a> </p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+{% endblock %}
+
+{% block lowerHero %}
+
+    {% call components.lowerHero() %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <h2 class="heading-medium">Suggested for you</h2>
+
+                <p>Sugegstions are tailored by the service or from colleagues' recommendations.</p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnHalf() %}
+
+                <div class="home-tile">
+                    <h4 class="heading-small"><a href="#">Towards Universal Credit - Getting a Job is a Full Time Job</a></h4>
+                    {{ components.starRating(rating='80%', total='128') }}
+                    <p class="">Suggested by Janet Rimmer</p>
+                    <p>Online 1 hour £Free</p>
+                    <p>You'll develop lorem ac semper semper, eros erat malesuada diam, sed fringilla felis enim</p>
+                    <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
+                </div>
+
+            {%- endcall %}
+
+            {% call components.columnHalf() %}
+
+                <div class="home-tile">
+                    <h4 class="heading-small"><a href="#">WIG The Secrets of Group Dynamics – How to Influence and Manage People in Groups</a></h4>
+                    {{ components.starRating(rating='94%', total='51') }}
+                    <p>Because you did Commercial Cycle 1</p>
+                    <p>Classroom 2 days £357</p>
+                    <p>Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.</p>
+                    <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnHalf() %}
+
+                <div class="home-tile">
+                    <h4 class="heading-small"><a href="#">Risk</a></h4>
+                    {{ components.starRating(rating='64%', total='39') }}
+                    <p>Suggested by William Smith</p>
+                    <p>Video 17 mins</p>
+                    <p>In this video, eros erat malesuada diam, sed fringilla felis enim</p>
+                    <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
+                </div>
+
+            {%- endcall %}
+
+            {% call components.columnHalf() %}
+
+                <div class="home-tile">
+                    <h4 class="heading-small"><a href="#">Positive Action Pathway "Levelling the Playing Field" EO Modules</a></h4>
+                    {{ components.starRating(rating='70%', total='84') }}
+                    <p>Recommended by Commercial</p>
+                    <p>Blog (external link)</p>
+                    <p>Introduces you to the different factors neque lacus, ultricies vitae nunc quis.</p>
+                    <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

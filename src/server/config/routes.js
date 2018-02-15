@@ -56,9 +56,15 @@ router.post('/prototypes/learner/v1/registration', learnerV1Controller.registerE
 // registration, name
 router.get('/prototypes/learner/v1/registration/personal-details', learnerV1Controller.registerPersonalGet);
 router.post('/prototypes/learner/v1/registration/personal-details', learnerV1Controller.registerPersonalPost);
-// registration, job
+// registration, job, part 1, departments
 router.get('/prototypes/learner/v1/registration/job-details', learnerV1Controller.registerJobGet);
 router.post('/prototypes/learner/v1/registration/job-details', learnerV1Controller.registerJobPost);
+// registration, job, part 2, profession and grade
+router.get('/prototypes/learner/v1/registration/job-details/profession', learnerV1Controller.registerJob2Get);
+router.post('/prototypes/learner/v1/registration/job-details/profession', learnerV1Controller.registerJob2Post);
+// registration, password
+router.get('/prototypes/learner/v1/registration/password', learnerV1Controller.registerPasswordGet);
+router.post('/prototypes/learner/v1/registration/password', learnerV1Controller.registerPasswordPost);
 // registration, review
 router.get('/prototypes/learner/v1/registration/review', learnerV1Controller.registerReviewGet);
 router.post('/prototypes/learner/v1/registration/review', learnerV1Controller.registerReviewPost);

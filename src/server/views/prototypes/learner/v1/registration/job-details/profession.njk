@@ -1,0 +1,114 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Enter your personal details - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/' %}
+
+{% set professionSelectOptions = professionSelectOptions if professionSelectOptions %}
+{% set gradeSelectOptions = gradeSelectOptions if gradeSelectOptions %}
+{% set registrationJob2Error = registrationJob2Error if registrationJob2Error %}
+{% set registrationProfessionError = registrationProfessionError if registrationProfessionError %}
+{% set registrationGradeError = registrationGradeError if registrationGradeError %}
+{% set registrationGradeError = registrationGradeError if registrationGradeError %}
+{% set profession = profession if profession %}
+{% set grade = grade if grade %}
+
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes'  %}
+{% else %}
+    {% set buttonText = 'Continue'  %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Enter your profession details', 'Civil Service Learning Platform') }}
+
+    {% if registrationJob2Error %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your information</h2>
+            <ul class="error-summary-list">
+                {% if registrationProfessionError %}
+                    {% set registrationProfessionErrorMessage = 'Selet your profession' %}
+                    <li><a href="#profession">You must select a profession</a></li>
+                {% endif %}
+                {% if registrationGradeError %}
+                    {% set registrationGradeErrorMessage = 'Selet your grade' %}
+                    <li><a href="#grade">You must select a grade</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='registerProfession', method='POST', action="#") %}
+
+                <!-- Profession -->
+                {{ components.select(
+                    options=professionSelectOptions,
+                    label='Profession',
+                    id='profession',
+                    hint='Start typing to find your profession',
+                    group=true,
+                    extraClass='autocomplete-wrapper',
+                    error=registrationProfessionErrorMessage,
+                    selectedValue=profession)
+                }}
+
+                <!-- Grade -->
+                {{ components.select(
+                    options=gradeSelectOptions,
+                    label='Grade',
+                    id='grade',
+                    hint='Start typing to find your grade',
+                    group=true,
+                    extraClass='autocomplete-wrapper',
+                    error=registrationGradeErrorMessage,
+                    selectedValue=grade)
+                }}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v1">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <script type="text/javascript" src="/javascripts/accessible-autocomplete/accessible-autocomplete.min.js"></script>
+    <script type="text/javascript">
+        var selectEl = document.querySelector('#profession')
+        accessibleAutocomplete.enhanceSelectElement({
+            autoselect: true,
+            defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+            minLength: 1,
+            selectElement: selectEl
+        });
+
+        selectEl = document.querySelector('#grade')
+        accessibleAutocomplete.enhanceSelectElement({
+            autoselect: true,
+            defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+            minLength: 1,
+            selectElement: selectEl
+        });
+    </script>
+
+{% endblock %}
+

@@ -5,10 +5,17 @@
 {% set blackBarTitle = 'Civil Service Learning' %}
 {% set loggedOut = 'true' %}
 {% set signOutPath = '/prototypes/learner/v1/' %}
-{% set homePath = '/prototypes/learner/v1/home' %}
+{% set homePath = '/prototypes/learner/v1/' %}
 {% set email = email if email %}
+{% set email2 = email2 if email2 %}
 {% set registrationEmailError = registrationEmailError if registrationEmailError %}
 {% set registrationEmailErrorMessage = registrationEmailErrorMessage if registrationEmailErrorMessage %}
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes'  %}
+{% else %}
+    {% set buttonText = 'Continue'  %}
+{% endif %}
 
 {% block content %}
 
@@ -31,15 +38,15 @@
 
             {% call components.formElement(name='registerName', method='POST', action="#") %}
 
-                <p class="lede">You need to create an account before using the Civil Service Learning Platform. This should take 5 minutes</p>
+                <p class="lede">You need to create an account before using the Civil Service Learning Platform. This should take 5 minutes.</p>
 
                 {{ components.field(label='Email address', id='email', hint="", group=true, value=email)}}
 
-                {{ components.field(label='Confirm email address', id='email2', hint="", group=true)}}
+                {{ components.field(label='Confirm email address', id='email2', hint="", group=true, value=email2)}}
 
                 {% call components.formGroup() %}
 
-                    {{ components.button(text='Continue', group=true)}}
+                    {{ components.button(text=buttonText, group=true)}}
 
                 {%- endcall %}
 

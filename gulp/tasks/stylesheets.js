@@ -1,6 +1,7 @@
 import gulp from 'gulp';
-import autoprefixer from 'gulp-autoprefixer';
-import cssnano from 'gulp-cssnano';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
+import cssnano from 'cssnano';
 import notify from 'gulp-notify';
 import path from 'path';
 import sourcemaps from 'gulp-sourcemaps';
@@ -15,7 +16,7 @@ import { CONFIG } from './../constants';
  * Compiles the MOT public scss file to a css file using sass and postcss with
  * autoprefixer and cssnano plugins.
  * 
- * CSS Plugins: 
+ * PostCSS Plugins: 
  * ------------
  *  - Autoprefixer (https://autoprefixer.github.io/)
  *    Adds browsers compatibility css.
@@ -25,9 +26,35 @@ import { CONFIG } from './../constants';
  *    Only used in production build.
  * 
  * @author Tameem Safi <t.safi@kainos.com>
- * @since 1.0.0
+ * @since 1.1.0
  */
 gulp.task('scss', () => {
+  // Setup postcss plugins
+  let postcssPlugins = [
+    // Adds browser specific prefixes
+    autoprefixer({
+      browsers: [
+        'ie 8',
+        'ie 9',
+        'ie 10',
+        'ie 11',
+        'last 2 versions'
+      ]
+    }),
+  ];
+
+  if(CONFIG.isProduction()) {
+    postcssPlugins.push(
+      // Minify the outputted css
+      cssnano({
+        minifyFontValues: false,
+        discardComments: {
+          removeAll: true,
+        },
+      })
+    );
+  }
+
   return gulp.src(path.join(CONFIG.sourcePaths.scss, CONFIG.patterns.scss))
     // Enable source maps for development
     .pipe(gulpIf(!CONFIG.isProduction(), sourcemaps.init()))
@@ -39,23 +66,8 @@ gulp.task('scss', () => {
     }))
     // If error occures, display error instead of crashing
     .on("error", notify.onError("Error: <%= error.message %>"))
-    // Add browser specific prefixes
-    .pipe(autoprefixer({
-      browsers: [
-        'ie 8',
-        'ie 9',
-        'ie 10',
-        'ie 11',
-        'last 2 versions'
-      ]
-    }))
-    // If in production, minify the css
-    .pipe(gulpIf(CONFIG.isProduction(), cssnano({
-      minifyFontValues: false,
-      discardComments: {
-        removeAll: true,
-      },
-    })))
+    // Use postcss for plugins
+    .pipe(postcss(postcssPlugins))
     // Output source maps for development
     .pipe(gulpIf(!CONFIG.isProduction(), sourcemaps.write('./')))
     // Output compiled css to the distribution folder

@@ -15,24 +15,17 @@
 
         <nav id="proposition-menu">
           <a href="/" id="proposition-name">
-            {% if blackBarTitle %}
-              {{ blackBarTitle }}
-            {% else %}
-              Prototype kit
-            {% endif %}
+            DVSA Front-end v{{ repoPackageJSON.version }}
           </a>
 
-          {% if not blackBarTitle %}
-            <ul id="proposition-links">
-              <li>
-                <a href="/">Index</a>
-              </li>
-              <li>
-                <a href="https://github.com/dvsa/front-end">Github</a>
-              </li>
-            </ul>
-          {% endif %}
-
+          <ul id="proposition-links">
+            <li>
+              <a href="/">Index</a>
+            </li>
+            <li>
+              <a href="https://github.com/dvsa/front-end">Github</a>
+            </li>
+          </ul>
         </nav>
       </div>
     </div>

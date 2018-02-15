@@ -24,7 +24,7 @@ module.exports = {
                 'targets': {
                   'browsers': [
                     'last 3 versions',
-                    'ie >= 8',
+                    'ie >= 9',
                     'last 3 iOS major versions'
                   ]
                 },

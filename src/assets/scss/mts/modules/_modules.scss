@@ -4,6 +4,8 @@
   // Misc specific to MTS
   @import 'misc/misc';
 
+  @import 'layout/layout';
+
   @import 'action-panel/action-panel';
   @import 'banner/banner';
   @import 'big-data/big-data';
@@ -61,7 +63,6 @@
 @import 'hero/hero';
 @import 'key-value-list/key-value-list';
 @import 'layer-table/layer-table';
-@import 'layout/layout';
 @import 'layout-filter/layout-filter';
 @import 'layout-filter-data/layout-filter-data';
 @import 'panels/panels';

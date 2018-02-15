@@ -6,21 +6,19 @@ import session from 'express-session';
 import memoryStore from 'memorystore';
 import morgan from 'morgan';
 import nunjucks from 'nunjucks';
-import Prism from 'prismjs';
-import Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
 import nodeDir from 'node-dir';
 import compression from 'compression';
 import etag from 'etag';
 import minifyHTML from 'express-minify-html';
 import helmet from 'helmet';
-import pretty from 'pretty';
-import { minify } from 'html-minifier';
 import errorhandler from 'errorhandler';
 import _ from 'lodash';
 
 import { allRoutes } from './config/routes';
 import { CONFIG, isDevelopment, isTesting } from './config/constants';
 import { addLibraryNavigationItemsToRequestObject } from './middlewares/libraryNavigation';
+import * as Helpers from './helpers';
+import * as REPO_PACKAGE_JSON from './../../package.json';
 
 export const startApp = async () => {
   // Create express server
@@ -43,54 +41,17 @@ export const startApp = async () => {
   // Add custom prism filter
   // Converts html to prism highlighted syntax
   // This can be used to display the code inside of the view templates
-  env.addFilter('prism', code => {
-    let nw = new Normalizer({
-      'remove-trailing': true,
-      'remove-indent': false,
-      'left-trim': true,
-      'right-trim': true,
-    });
-
-    // Minifies the html code
-    // This is done to normalize it before making it pretty
-    let cleanHTML = minify(code, {
-      html5: true,
-      collapseWhitespace: true,
-      preserveLineBreaks: true,
-    });
-
-    // Normalize the html code to Prism standards
-    let normalizedCode = nw.normalize(cleanHTML);
-
-    // Make the HTML code pretty
-    let prettyCode = pretty(normalizedCode);
-
-    // Highlight the code using prismjs
-    let highlightedCode = Prism.highlight(prettyCode, Prism.languages.markup);
-
-    // Create the developer preview output
-    let preview = `<div class="dev-preview__example">${code}</div>`;
-
-    // Create the code highlighting output
-    let prismCode = `<pre><code class="line-numbers language-html">${highlightedCode}</code></pre>`;
-
-    // Return the new HTML
-    // Combination of the preview and prism code highlighting
-    return `
-      <!-- dev-preview -->
-      <div class="dev-preview">
-        ${preview}
-        ${prismCode}
-      </div>
-      <!-- /dev-preview -->
-    `;
-  });
+  env.addFilter('prism', Helpers.wrapCodeWithPreviwAndPrism);
+  env.addFilter('prismFullpage', Helpers.wrapCodeWithPrismForFullPagePreview);
 
   // Add lodash as a global for view templates
   env.addGlobal('_', _);
 
   // Add app url as global
   env.addGlobal('appURL', CONFIG.appURL);
+
+  // Add package json contents as gloabl
+  env.addGlobal('repoPackageJSON', REPO_PACKAGE_JSON);
 
   // Loops through views/parials folder and get full path for each file
   const getMacroFilePaths = async () => {

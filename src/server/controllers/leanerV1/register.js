@@ -7,7 +7,7 @@ let generalData = require('./data');
 // Email: GET
 // **************************************************************************************
 export function registerEmailGet(req, res) {
-  let viewData, email, email2,  registrationEmailError, registrationEmailErrorMessage, mode, editMode,clearSession;
+  let viewData, email, email2, registrationEmailError, registrationEmailErrorMessage, mode, editMode, clearSession;
 
   email = req.session.email;
   registrationEmailError = req.session.registrationEmailError;
@@ -20,10 +20,10 @@ export function registerEmailGet(req, res) {
 
   mode = req.param('mode');
   console.log('mode = ' + mode);
-  if(mode == 'edit') {
-      email2 = email;
-      editMode = true;
-      req.session.editMode = true;
+  if (mode == 'edit') {
+    email2 = email;
+    editMode = true;
+    req.session.editMode = true;
   }
 
   viewData = {
@@ -31,7 +31,7 @@ export function registerEmailGet(req, res) {
     email2,
     registrationEmailError,
     registrationEmailErrorMessage,
-    editMode
+    editMode,
   };
 
   return res.render('prototypes/learner/v1/registration/index', viewData);
@@ -62,10 +62,10 @@ export function registerEmailPost(req, res) {
   } else {
     req.session.registrationEmailError = req.session.registrationEmailErrorMessage = null;
     if (editMode === true) {
-        req.session.editMode = null;
-        return res.redirect('/prototypes/learner/v1/registration/review');
+      req.session.editMode = null;
+      return res.redirect('/prototypes/learner/v1/registration/review');
     } else {
-        return res.redirect('/prototypes/learner/v1/registration/personal-details');
+      return res.redirect('/prototypes/learner/v1/registration/personal-details');
     }
   }
 }
@@ -73,7 +73,14 @@ export function registerEmailPost(req, res) {
 // Personal details: GET
 // **************************************************************************************
 export function registerPersonalGet(req, res) {
-  let viewData, firstName, lastName, registrationPersonalError, registrationPersonalErrorFirstName, registrationPersonalErrorLastName, mode, editMode;
+  let viewData,
+    firstName,
+    lastName,
+    registrationPersonalError,
+    registrationPersonalErrorFirstName,
+    registrationPersonalErrorLastName,
+    mode,
+    editMode;
 
   firstName = req.session.firstName;
   lastName = req.session.lastName;
@@ -81,11 +88,11 @@ export function registerPersonalGet(req, res) {
   registrationPersonalErrorFirstName = req.session.registrationPersonalErrorFirstName;
   registrationPersonalErrorLastName = req.session.registrationPersonalErrorLastName;
 
-    mode = req.param('mode');
-    if(mode == 'edit') {
-        editMode = true;
-        req.session.editMode = true;
-    }
+  mode = req.param('mode');
+  if (mode == 'edit') {
+    editMode = true;
+    req.session.editMode = true;
+  }
 
   viewData = {
     firstName,
@@ -93,7 +100,7 @@ export function registerPersonalGet(req, res) {
     registrationPersonalError,
     registrationPersonalErrorFirstName,
     registrationPersonalErrorLastName,
-    editMode
+    editMode,
   };
 
   return res.render('prototypes/learner/v1/registration/personal-details/index', viewData);
@@ -128,10 +135,10 @@ export function registerPersonalPost(req, res) {
     req.session.registrationPersonalErrorFirstName = req.session.registrationPersonalErrorLastName = req.session.registrationPersonalError = null;
 
     if (editMode === true) {
-        req.session.editMode = null;
-        return res.redirect('/prototypes/learner/v1/registration/review');
+      req.session.editMode = null;
+      return res.redirect('/prototypes/learner/v1/registration/review');
     } else {
-        return res.redirect('/prototypes/learner/v1/registration/job-details');
+      return res.redirect('/prototypes/learner/v1/registration/job-details');
     }
   }
 }
@@ -145,9 +152,9 @@ export function registerJobGet(req, res) {
   registrationDepartmentError = req.session.registrationDepartmentError;
 
   mode = req.param('mode');
-  if(mode == 'edit') {
-      editMode = true;
-      req.session.editMode = true;
+  if (mode == 'edit') {
+    editMode = true;
+    req.session.editMode = true;
   }
 
   department = req.session.department;
@@ -156,7 +163,7 @@ export function registerJobGet(req, res) {
     departmentSelectOptions,
     registrationDepartmentError,
     department,
-    editMode
+    editMode,
   };
 
   return res.render('prototypes/learner/v1/registration/job-details/index', viewData);
@@ -169,9 +176,8 @@ export function registerJobPost(req, res) {
   let registrationDepartmentError, departmentSelectOptions, departmentName, editMode;
   departmentSelectOptions = generalData.allDepartments;
 
-  for (let i = 0; i < departmentSelectOptions.length; i ++) {
-    if(departmentSelectOptions[i].value == department)
-        departmentName = departmentSelectOptions[i].text;
+  for (let i = 0; i < departmentSelectOptions.length; i++) {
+    if (departmentSelectOptions[i].value == department) departmentName = departmentSelectOptions[i].text;
   }
 
   editMode = req.session.editMode;
@@ -185,10 +191,10 @@ export function registerJobPost(req, res) {
     req.session.departmentName = departmentName;
     req.session.registrationDepartmentError = null;
     if (editMode === true) {
-        req.session.editMode = null;
-        return res.redirect('/prototypes/learner/v1/registration/review');
+      req.session.editMode = null;
+      return res.redirect('/prototypes/learner/v1/registration/review');
     } else {
-        return res.redirect('/prototypes/learner/v1/registration/job-details/profession');
+      return res.redirect('/prototypes/learner/v1/registration/job-details/profession');
     }
   }
 }
@@ -208,9 +214,9 @@ export function registerJob2Get(req, res) {
     editMode;
 
   mode = req.param('mode');
-  if(mode == 'edit') {
-      editMode = true;
-      req.session.editMode = true;
+  if (mode == 'edit') {
+    editMode = true;
+    req.session.editMode = true;
   }
 
   professionSelectOptions = generalData.allProfessions;
@@ -229,7 +235,7 @@ export function registerJob2Get(req, res) {
     registrationJob2Error,
     profession,
     grade,
-    editMode
+    editMode,
   };
 
   return res.render('prototypes/learner/v1/registration/job-details/profession', viewData);
@@ -239,7 +245,14 @@ export function registerJob2Get(req, res) {
 export function registerJob2Post(req, res) {
   const { profession, grade } = req.body;
 
-  let registrationJob2Error, registrationProfessionError, registrationGradeError, professionSelectOptions, gradeSelectOptions, professionName, gradeName, editMode;
+  let registrationJob2Error,
+    registrationProfessionError,
+    registrationGradeError,
+    professionSelectOptions,
+    gradeSelectOptions,
+    professionName,
+    gradeName,
+    editMode;
   professionSelectOptions = generalData.allProfessions;
   gradeSelectOptions = generalData.allGrades;
 
@@ -248,14 +261,12 @@ export function registerJob2Post(req, res) {
 
   editMode = req.session.editMode;
 
-  for (let i = 0; i < professionSelectOptions.length; i ++) {
-      if(professionSelectOptions[i].value == profession)
-          professionName = professionSelectOptions[i].text;
+  for (let i = 0; i < professionSelectOptions.length; i++) {
+    if (professionSelectOptions[i].value == profession) professionName = professionSelectOptions[i].text;
   }
 
-  for (let i = 0; i < gradeSelectOptions.length; i ++) {
-      if(gradeSelectOptions[i].value == grade)
-          gradeName = gradeSelectOptions[i].text;
+  for (let i = 0; i < gradeSelectOptions.length; i++) {
+    if (gradeSelectOptions[i].value == grade) gradeName = gradeSelectOptions[i].text;
   }
 
   req.session.professionName = professionName;
@@ -277,15 +288,14 @@ export function registerJob2Post(req, res) {
     req.session.registrationProfessionError = registrationProfessionError;
     return res.redirect('/prototypes/learner/v1/registration/job-details/profession');
   } else {
-
     req.session.registrationJob2Error = false;
     req.session.registrationJob2Error = req.session.registrationGradeError = req.session.registrationProfessionError = null;
 
     if (editMode === true) {
-        req.session.editMode = null;
-        return res.redirect('/prototypes/learner/v1/registration/review');
+      req.session.editMode = null;
+      return res.redirect('/prototypes/learner/v1/registration/review');
     } else {
-        return res.redirect('/prototypes/learner/v1/registration/password');
+      return res.redirect('/prototypes/learner/v1/registration/password');
     }
   }
 }
@@ -293,96 +303,94 @@ export function registerJob2Post(req, res) {
 // Password GET
 // **************************************************************************************
 export function registerPasswordGet(req, res) {
-    let viewData, passwordError, passwordErrorMessage, passwordOneError, passwordTwoError, password, mode, editMode;
+  let viewData, passwordError, passwordErrorMessage, passwordOneError, passwordTwoError, password, mode, editMode;
 
-    passwordError = req.session.passwordError;
-    passwordErrorMessage = req.session.passwordErrorMessage;
-    passwordOneError = req.session.passwordOneError;
-    passwordTwoError = req.session.passwordTwoError;
-    password = req.session.password;
+  passwordError = req.session.passwordError;
+  passwordErrorMessage = req.session.passwordErrorMessage;
+  passwordOneError = req.session.passwordOneError;
+  passwordTwoError = req.session.passwordTwoError;
+  password = req.session.password;
 
-    mode = req.param('mode');
-    if(mode == 'edit') {
-        editMode = true;
-        req.session.editMode = true;
-    }
+  mode = req.param('mode');
+  if (mode == 'edit') {
+    editMode = true;
+    req.session.editMode = true;
+  }
 
-    viewData =  {
-        passwordError,
-        passwordErrorMessage,
-        passwordOneError,
-        passwordTwoError,
-        password,
-        editMode
-    };
+  viewData = {
+    passwordError,
+    passwordErrorMessage,
+    passwordOneError,
+    passwordTwoError,
+    password,
+    editMode,
+  };
 
-    return res.render('prototypes/learner/v1/registration/password/index', viewData);
+  return res.render('prototypes/learner/v1/registration/password/index', viewData);
 }
 
 // password: POST
 export function registerPasswordPost(req, res) {
-    const { passwordOne, passwordTwo } = req.body;
+  const { passwordOne, passwordTwo } = req.body;
 
-    let passwordError, passwordErrorMessage, passwordOneError, passwordTwoError;
+  let passwordError, passwordErrorMessage, passwordOneError, passwordTwoError;
 
-    req.session.password = passwordOne;
+  req.session.password = passwordOne;
 
-    let hasUpperCase = /[A-Z]/.test(passwordOne);
-    let hasLowerCase = /[a-z]/.test(passwordOne);
-    let hasNumbers = /\d/.test(passwordOne);
-    // let hasNonalphas = /\W/.test(passwordOne);
+  let hasUpperCase = /[A-Z]/.test(passwordOne);
+  let hasLowerCase = /[a-z]/.test(passwordOne);
+  let hasNumbers = /\d/.test(passwordOne);
+  // let hasNonalphas = /\W/.test(passwordOne);
 
-    if(passwordOne.length < 8) {
-      passwordError = true;
-      passwordOneError = true;
-      passwordErrorMessage = '<li>Your password is too short</li>';
-    } else if (hasUpperCase + hasLowerCase + hasNumbers < 3) {
-        passwordError = true;
-        passwordOneError = true;
-        passwordErrorMessage = '<li>Your password is not complex enough</li>';
-    } else if(passwordOne !== passwordTwo) {
-        passwordError = true;
-        passwordTwoError = true;
-        passwordErrorMessage = '<li>Your passwords do not match</li>';
-    }
+  if (passwordOne.length < 8) {
+    passwordError = true;
+    passwordOneError = true;
+    passwordErrorMessage = '<li>Your password is too short</li>';
+  } else if (hasUpperCase + hasLowerCase + hasNumbers < 3) {
+    passwordError = true;
+    passwordOneError = true;
+    passwordErrorMessage = '<li>Your password is not complex enough</li>';
+  } else if (passwordOne !== passwordTwo) {
+    passwordError = true;
+    passwordTwoError = true;
+    passwordErrorMessage = '<li>Your passwords do not match</li>';
+  }
 
-    if(passwordError === true) {
-      req.session.passwordError = passwordError;
-      req.session.passwordOneError = passwordOneError;
-      req.session.passwordTwoError = passwordTwoError;
-      req.session.passwordErrorMessage = passwordErrorMessage;
-        return res.redirect('/prototypes/learner/v1/registration/password');
-    } else {
-        req.session.passwordError = req.session.passwordOneError = req.session.passwordTwoError = req.session.passwordErrorMessage = null;
-        return res.redirect('/prototypes/learner/v1/registration/review');
-    }
-
+  if (passwordError === true) {
+    req.session.passwordError = passwordError;
+    req.session.passwordOneError = passwordOneError;
+    req.session.passwordTwoError = passwordTwoError;
+    req.session.passwordErrorMessage = passwordErrorMessage;
+    return res.redirect('/prototypes/learner/v1/registration/password');
+  } else {
+    req.session.passwordError = req.session.passwordOneError = req.session.passwordTwoError = req.session.passwordErrorMessage = null;
+    return res.redirect('/prototypes/learner/v1/registration/review');
+  }
 }
 
 // **************************************************************************************
 // Review GET
 // **************************************************************************************
 export function registerReviewGet(req, res) {
+  let viewData, email, firstName, lastName, departmentName, professionName, gradeName, password;
 
-    let viewData, email, firstName, lastName, departmentName, professionName, gradeName, password;
+  email = req.session.email;
+  firstName = req.session.firstName;
+  lastName = req.session.lastName;
+  departmentName = req.session.departmentName;
+  professionName = req.session.professionName;
+  gradeName = req.session.gradeName;
+  password = req.session.password;
 
-    email = req.session.email;
-    firstName = req.session.firstName;
-    lastName = req.session.lastName;
-    departmentName = req.session.departmentName;
-    professionName = req.session.professionName;
-    gradeName = req.session.gradeName;
-    password = req.session.password;
-
-    viewData =  {
-        email,
-        firstName,
-        lastName,
-        departmentName,
-        professionName,
-        gradeName,
-        password
-    };
+  viewData = {
+    email,
+    firstName,
+    lastName,
+    departmentName,
+    professionName,
+    gradeName,
+    password,
+  };
 
   return res.render('prototypes/learner/v1/registration/review/index', viewData);
 }
@@ -400,7 +408,6 @@ export function registerReviewPost(req, res) {
 // Complete GET
 // **************************************************************************************
 export function registerCompleteGet(req, res) {
-
   let viewData;
 
   return res.render('prototypes/learner/v1/registration/complete/index', viewData);

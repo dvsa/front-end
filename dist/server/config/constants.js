@@ -26,7 +26,7 @@ const isTesting = exports.isTesting = () => {
 let config = {
   port: process.env.PORT || 3002,
   sessionSecret: process.env.SESSION_SECRET || 'secret',
-  appURL: 'https://dvsa-front-end.herokuapp.com',
+  appURL: 'https://lpg-prototypes.herokuapp.com',
   paths: {
     src: SRC_PATH,
     views: {

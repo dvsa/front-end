@@ -6,6 +6,9 @@
  * Supported: IE8+
  *
  * @param {function} fn Callback for when the DOM is fully loaded.
+ *
+ * @since 1.0.0
+ * @author Tameem Safi <t.safi@kainos.com>
  */
 
 export function domReady(fn) {

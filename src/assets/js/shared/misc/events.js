@@ -10,6 +10,9 @@ import { elHasClass } from './has-class';
  * @param {DOMElement} el Element to add the event to.
  * @param {string} eventName Name of the event.
  * @param {function} handler Callback function to handle event.
+ *
+ * @since 1.0.0
+ * @author Tameem Safi <t.safi@kainos.com>
  */
 export function addEventListenerToEl(el, eventName, handler) {
   if (el.addEventListener) {
@@ -31,6 +34,9 @@ export function addEventListenerToEl(el, eventName, handler) {
  * @param {DOMElement} el DOM element
  * @param {string} eventName Name of the event.
  * @param {function} handler Callback function to remove from event.
+ *
+ * @since 1.0.0
+ * @author Tameem Safi <t.safi@kainos.com>
  */
 export function removeEventListenerFromEl(el, eventName, handler) {
   if (el.removeEventListener) {
@@ -48,6 +54,9 @@ export function removeEventListenerFromEl(el, eventName, handler) {
  * Supported: IE8+
  *
  * @param {DOMElement} el DOM element
+ *
+ * @since 1.0.0
+ * @author Tameem Safi <t.safi@kainos.com>
  */
 export function removeAllEventsFromEl(el) {
   var clone = el.cloneNode(true);

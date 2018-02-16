@@ -6,10 +6,6 @@ module.exports = {
     dvsa: path.resolve('src', 'assets', 'js', 'dvsa', 'index.js'),
     development: path.resolve('src', 'assets', 'js', 'development', 'index.js'),
   },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve('public', 'javascripts'),
-  },
   module: {
     rules: [
       {
@@ -30,6 +26,7 @@ module.exports = {
                 },
                 'debug': true,
                 useBuiltIns: true,
+                uglify: true
               }],
               'stage-2',
               'stage-3'

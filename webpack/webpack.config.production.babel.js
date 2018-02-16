@@ -16,6 +16,7 @@ module.exports = merge(common, {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new MinifyPlugin()
+    // new MinifyPlugin()
+    new webpack.optimize.UglifyJsPlugin()
   ],
 });

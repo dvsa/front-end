@@ -1,7 +1,6 @@
 import store from 'store';
 import md5 from 'md5';
 import SmoothScroll from 'smooth-scroll';
-import findIndex from 'lodash/findIndex';
 
 import { ACCORDION_CONSTANTS } from './constants';
 import {
@@ -207,10 +206,13 @@ export class Accordion {
     savedState.sections.forEach(section => {
       // Check to make sure that the saved section
       // has a unique identifier
-      if (!section || !section.uniqueIdentifier) return;
+      if (!section || !section.uniqueIdentifier || !this.state.sections) return;
       // Check to make sure that the saved section exists in the state
-      let sectionIndex = findIndex(this.state.sections, {
-        sectionUniqueIdentifier: section.uniqueIdentifier,
+      let sectionIndex = false;
+      this.state.sections.forEach((stateSection, stateSectionIndex) => {
+        if (stateSection.sectionUniqueIdentifier === section.uniqueIdentifier) {
+          sectionIndex = stateSectionIndex;
+        }
       });
       // Don't proceed if section doesn't exist in the state
       if (sectionIndex == undefined) return;

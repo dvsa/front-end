@@ -5,6 +5,9 @@
  *
  * @param {DOMElement} el Element to toggle the class for.
  * @param {string} className Name of the class to toggle.
+ *
+ * @since 1.0.0
+ * @author Tameem Safi <t.safi@kainos.com>
  */
 export function toggleClass(el, className, force) {
   if (!el || !className) return;

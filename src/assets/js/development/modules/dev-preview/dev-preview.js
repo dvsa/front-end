@@ -13,6 +13,7 @@ export class DevPreview {
       devPreviewCloseButton: '.dev-preview__close-button',
       content: '#content',
       body: 'body',
+      footer: '#footer',
     };
 
     this.elements = {
@@ -20,6 +21,7 @@ export class DevPreview {
       devPreviewFullPage: document.querySelector(this.selectors.devPreviewFullPage),
       devPreviewFloatingButton: document.querySelector(this.selectors.devPreviewFloatingButton),
       content: document.querySelector(this.selectors.content),
+      footer: document.querySelector(this.selectors.footer),
     };
 
     this.state = {
@@ -50,14 +52,14 @@ export class DevPreview {
    * @author Tameem Safi <t.safi@kainos.com>
    */
   addBodyPaddingToAccountForFloatingButton = () => {
-    if (!this.elements.devPreviewFloatingButton) return;
+    if (!this.elements.devPreviewFloatingButton || !this.elements.footer) return;
     let floatingButtonHeight = this.elements.devPreviewFloatingButton.offsetHeight;
-    let paddingBottom = window.getComputedStyle(this.elements.body, null).getPropertyValue('padding-bottom') || 0;
+    let paddingBottom = window.getComputedStyle(this.elements.footer, null).getPropertyValue('padding-bottom') || 0;
     // Replace px
     paddingBottom = paddingBottom.replace('px', '');
     // Add height of floating button
     paddingBottom += floatingButtonHeight;
-    this.elements.body.style.paddingBottom = `${paddingBottom}px`;
+    this.elements.footer.style.paddingBottom = `${paddingBottom}px`;
   };
 
   /**

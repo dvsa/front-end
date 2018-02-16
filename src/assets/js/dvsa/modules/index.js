@@ -5,6 +5,12 @@ import { initDoubleClickPrevention } from './double-click-prevention';
 import { initMarkRepairs } from './mark-repairs';
 import { initShowHideToggle } from './show-hide-toggle';
 
+/**
+ * Custom DVSA Modules
+ *
+ * @since 1.0.0
+ * @author Tameem Safi <t.safi@kainos.com>
+ */
 export const initModules = () => {
   initAccordions();
   initCritieraValidation();

@@ -37,14 +37,6 @@ var _nunjucks = require('nunjucks');
 
 var _nunjucks2 = _interopRequireDefault(_nunjucks);
 
-var _prismjs = require('prismjs');
-
-var _prismjs2 = _interopRequireDefault(_prismjs);
-
-var _prismNormalizeWhitespace = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
-
-var _prismNormalizeWhitespace2 = _interopRequireDefault(_prismNormalizeWhitespace);
-
 var _nodeDir = require('node-dir');
 
 var _nodeDir2 = _interopRequireDefault(_nodeDir);
@@ -65,12 +57,6 @@ var _helmet = require('helmet');
 
 var _helmet2 = _interopRequireDefault(_helmet);
 
-var _pretty = require('pretty');
-
-var _pretty2 = _interopRequireDefault(_pretty);
-
-var _htmlMinifier = require('html-minifier');
-
 var _errorhandler = require('errorhandler');
 
 var _errorhandler2 = _interopRequireDefault(_errorhandler);
@@ -84,6 +70,16 @@ var _routes = require('./config/routes');
 var _constants = require('./config/constants');
 
 var _libraryNavigation = require('./middlewares/libraryNavigation');
+
+var _helpers = require('./helpers');
+
+var Helpers = _interopRequireWildcard(_helpers);
+
+var _package = require('./../../package.json');
+
+var REPO_PACKAGE_JSON = _interopRequireWildcard(_package);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -108,54 +104,17 @@ const startApp = exports.startApp = async () => {
   // Add custom prism filter
   // Converts html to prism highlighted syntax
   // This can be used to display the code inside of the view templates
-  env.addFilter('prism', code => {
-    let nw = new _prismNormalizeWhitespace2.default({
-      'remove-trailing': true,
-      'remove-indent': false,
-      'left-trim': true,
-      'right-trim': true
-    });
-
-    // Minifies the html code
-    // This is done to normalize it before making it pretty
-    let cleanHTML = (0, _htmlMinifier.minify)(code, {
-      html5: true,
-      collapseWhitespace: true,
-      preserveLineBreaks: true
-    });
-
-    // Normalize the html code to Prism standards
-    let normalizedCode = nw.normalize(cleanHTML);
-
-    // Make the HTML code pretty
-    let prettyCode = (0, _pretty2.default)(normalizedCode);
-
-    // Highlight the code using prismjs
-    let highlightedCode = _prismjs2.default.highlight(prettyCode, _prismjs2.default.languages.markup);
-
-    // Create the developer preview output
-    let preview = `<div class="dev-preview__example">${code}</div>`;
-
-    // Create the code highlighting output
-    let prismCode = `<pre><code class="line-numbers language-html">${highlightedCode}</code></pre>`;
-
-    // Return the new HTML
-    // Combination of the preview and prism code highlighting
-    return `
-      <!-- dev-preview -->
-      <div class="dev-preview">
-        ${preview}
-        ${prismCode}
-      </div>
-      <!-- /dev-preview -->
-    `;
-  });
+  env.addFilter('prism', Helpers.wrapCodeWithPreviwAndPrism);
+  env.addFilter('prismFullpage', Helpers.wrapCodeWithPrismForFullPagePreview);
 
   // Add lodash as a global for view templates
   env.addGlobal('_', _lodash2.default);
 
   // Add app url as global
   env.addGlobal('appURL', _constants.CONFIG.appURL);
+
+  // Add package json contents as gloabl
+  env.addGlobal('repoPackageJSON', REPO_PACKAGE_JSON);
 
   // Loops through views/parials folder and get full path for each file
   const getMacroFilePaths = async () => {

@@ -95,6 +95,7 @@
     "sass-module-importer": "^1.4.0",
     "undertaker-forward-reference": "^1.0.2",
     "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.10.0",
     "webpack-merge": "^4.1.1",
     "webpack-stream": "^4.0.0"
   }

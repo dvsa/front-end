@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import store from 'store';
 import expirePlugin from 'store/plugins/expire';
 
@@ -7,6 +6,9 @@ import { initModules } from './modules';
 
 // Third-party
 import './../third-party';
+
+// Polyfills
+import 'core-js/es6/array';
 
 // Add expiry plugin for store
 store.addPlugin(expirePlugin);

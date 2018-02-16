@@ -12,14 +12,7 @@ const robots = exports.robots = (req, res) => {
 // Index Route
 const index = exports.index = (req, res) => {
   let viewData = {
-    contentHeader: {
-      type: 'MOT testing service',
-      title: 'Design System'
-    },
-    pageTitle: 'MOT testing service Design System',
-    loggedOut: true,
-    designSystem: true
+    pageTitle: 'MOT testing service Design System'
   };
-
   res.render('main/index', viewData);
 };

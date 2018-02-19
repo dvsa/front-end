@@ -1,0 +1,6 @@
+{% macro checkbox(text='', value='', id='', name='', checked='') %}
+    <div class="multiple-choice">
+        <input {{ 'id="' + id + '"' if id }} type="checkbox" name="{{ name if name else id }}" {{ 'value="' + value + '"' if value }} {{ checked }}>
+        <label {{ 'for="' + id + '"' if id }}>{{ text }}</label>
+    </div>
+{% endmacro %}§

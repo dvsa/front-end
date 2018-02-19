@@ -11,7 +11,7 @@ let allDepartments = [
 module.exports.allDepartments = allDepartments;
 
 let allProfessions = [
-  { value: '0', text: 'Select a profession' },
+  //{ value: '0', text: 'Select a profession' },
   { value: '1', text: 'Commercial' },
   { value: '2', text: 'Communications' },
   { value: '3', text: 'Corporate Finance' },
@@ -29,7 +29,7 @@ let allProfessions = [
 module.exports.allProfessions = allProfessions;
 
 let allGrades = [
-  { value: '0', text: 'Select a grade' },
+  //{ value: '0', text: 'Select a grade' },
   { value: '1', text: 'Administrative Assistant' },
   { value: '2', text: 'Administrative Officer' },
   { value: '3', text: 'Executive Officer' },

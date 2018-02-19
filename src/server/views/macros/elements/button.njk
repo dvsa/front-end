@@ -3,6 +3,6 @@
   {% if url %}
     <a class="button {{ 'button-start' if start }}" href="{{ url }}" role="button">{{ text }}</a>
   {% else %}
-    <input class="button" type="submit" value="{{ text }}" {{ disabledCode if disabled }}>
+    <input class="button {{ 'button-start' if start }}" type="submit" value="{{ text }}" {{ disabledCode if disabled }}>
   {% endif %}
 {% endmacro %}

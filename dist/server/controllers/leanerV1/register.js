@@ -7,10 +7,12 @@ exports.registerEmailGet = registerEmailGet;
 exports.registerEmailPost = registerEmailPost;
 exports.registerPersonalGet = registerPersonalGet;
 exports.registerPersonalPost = registerPersonalPost;
-exports.registerJobGet = registerJobGet;
-exports.registerJobPost = registerJobPost;
-exports.registerJob2Get = registerJob2Get;
-exports.registerJob2Post = registerJob2Post;
+exports.registerDepartmentGet = registerDepartmentGet;
+exports.registerDepartmentPost = registerDepartmentPost;
+exports.registerAreaGet = registerAreaGet;
+exports.registerAreaPost = registerAreaPost;
+exports.registerGradeGet = registerGradeGet;
+exports.registerGradePost = registerGradePost;
 exports.registerPasswordGet = registerPasswordGet;
 exports.registerPasswordPost = registerPasswordPost;
 exports.registerReviewGet = registerReviewGet;
@@ -150,14 +152,14 @@ function registerPersonalPost(req, res) {
       req.session.editMode = null;
       return res.redirect('/prototypes/learner/v1/registration/review');
     } else {
-      return res.redirect('/prototypes/learner/v1/registration/job-details');
+      return res.redirect('/prototypes/learner/v1/registration/department');
     }
   }
 }
 // **************************************************************************************
 // Job details 1: GET Department
 // **************************************************************************************
-function registerJobGet(req, res) {
+function registerDepartmentGet(req, res) {
   let viewData, departmentSelectOptions, registrationDepartmentError, mode, editMode, department;
 
   departmentSelectOptions = generalData.allDepartments;
@@ -178,11 +180,11 @@ function registerJobGet(req, res) {
     editMode
   };
 
-  return res.render('prototypes/learner/v1/registration/job-details/index', viewData);
+  return res.render('prototypes/learner/v1/registration/department/index', viewData);
 }
 
 // Job details: POST
-function registerJobPost(req, res) {
+function registerDepartmentPost(req, res) {
   const { department } = req.body;
 
   let registrationDepartmentError, departmentSelectOptions, departmentName, editMode;
@@ -197,7 +199,7 @@ function registerJobPost(req, res) {
   if (parseInt(department) < 1) {
     registrationDepartmentError = true;
     req.session.registrationDepartmentError = registrationDepartmentError;
-    return res.redirect('/prototypes/learner/v1/registration/job-details');
+    return res.redirect('/prototypes/learner/v1/registration/department');
   } else {
     req.session.department = department;
     req.session.departmentName = departmentName;
@@ -206,15 +208,15 @@ function registerJobPost(req, res) {
       req.session.editMode = null;
       return res.redirect('/prototypes/learner/v1/registration/review');
     } else {
-      return res.redirect('/prototypes/learner/v1/registration/job-details/profession');
+      return res.redirect('/prototypes/learner/v1/registration/area-of-work');
     }
   }
 }
 // **************************************************************************************
-// Job2 details 2: GET  Profession and grade
+// Job2 details 2: GET  Profession AKA area-of-work
 // **************************************************************************************
-function registerJob2Get(req, res) {
-  let viewData, professionSelectOptions, registrationProfessionError, registrationGradeError, gradeSelectOptions, registrationJob2Error, profession, grade, mode, editMode;
+function registerAreaGet(req, res) {
+  let viewData, professionSelectOptions, registrationProfessionError, registrationJob2Error, profession, mode, editMode;
 
   mode = req.param('mode');
   if (mode == 'edit') {
@@ -223,37 +225,32 @@ function registerJob2Get(req, res) {
   }
 
   professionSelectOptions = generalData.allProfessions;
-  gradeSelectOptions = generalData.allGrades;
   registrationJob2Error = req.session.registrationJob2Error;
   registrationProfessionError = req.session.registrationProfessionError;
-  registrationGradeError = req.session.registrationGradeError;
   profession = req.session.profession;
-  grade = req.session.grade;
+
+  console.log('professionSelectOptions = ' + professionSelectOptions);
 
   viewData = {
     professionSelectOptions,
-    gradeSelectOptions,
     registrationProfessionError,
-    registrationGradeError,
     registrationJob2Error,
     profession,
-    grade,
     editMode
   };
 
-  return res.render('prototypes/learner/v1/registration/job-details/profession', viewData);
+  return res.render('prototypes/learner/v1/registration/area-of-work/index', viewData);
 }
 
 // Job2 details: POST
-function registerJob2Post(req, res) {
-  const { profession, grade } = req.body;
+function registerAreaPost(req, res) {
+  const { profession } = req.body;
 
-  let registrationJob2Error, registrationProfessionError, registrationGradeError, professionSelectOptions, gradeSelectOptions, professionName, gradeName, editMode;
+  let registrationJob2Error, registrationProfessionError, professionSelectOptions, gradeSelectOptions, professionName, editMode;
+
   professionSelectOptions = generalData.allProfessions;
-  gradeSelectOptions = generalData.allGrades;
 
   req.session.profession = profession;
-  req.session.grade = grade;
 
   editMode = req.session.editMode;
 
@@ -261,17 +258,74 @@ function registerJob2Post(req, res) {
     if (professionSelectOptions[i].value == profession) professionName = professionSelectOptions[i].text;
   }
 
-  for (let i = 0; i < gradeSelectOptions.length; i++) {
-    if (gradeSelectOptions[i].value == grade) gradeName = gradeSelectOptions[i].text;
-  }
-
   req.session.professionName = professionName;
-  req.session.gradeName = gradeName;
 
   if (parseInt(profession) < 1) {
     registrationJob2Error = true;
     registrationProfessionError = true;
   }
+
+  if (registrationJob2Error === true) {
+    req.session.registrationJob2Error = registrationJob2Error;
+    req.session.registrationProfessionError = registrationProfessionError;
+    return res.redirect('/prototypes/learner/v1/registration/area-of-work');
+  } else {
+    req.session.registrationJob2Error = false;
+    req.session.registrationJob2Error = req.session.registrationProfessionError = null;
+
+    if (editMode === true) {
+      req.session.editMode = null;
+      return res.redirect('/prototypes/learner/v1/registration/review');
+    } else {
+      return res.redirect('/prototypes/learner/v1/registration/grade');
+    }
+  }
+}
+// **************************************************************************************
+// Job3 details 3: GET  Grade
+// **************************************************************************************
+function registerGradeGet(req, res) {
+  let viewData, registrationGradeError, gradeSelectOptions, registrationJob2Error, grade, mode, editMode;
+
+  mode = req.param('mode');
+  if (mode == 'edit') {
+    editMode = true;
+    req.session.editMode = true;
+  }
+
+  gradeSelectOptions = generalData.allGrades;
+  registrationJob2Error = req.session.registrationJob2Error;
+  registrationGradeError = req.session.registrationGradeError;
+  grade = req.session.grade;
+
+  viewData = {
+    gradeSelectOptions,
+    registrationGradeError,
+    registrationJob2Error,
+    grade,
+    editMode
+  };
+
+  return res.render('prototypes/learner/v1/registration/grade/index', viewData);
+}
+
+// Job2 details: POST
+function registerGradePost(req, res) {
+  const { grade } = req.body;
+
+  let registrationJob2Error, registrationProfessionError, registrationGradeError, gradeSelectOptions, gradeName, editMode;
+
+  gradeSelectOptions = generalData.allGrades;
+
+  req.session.grade = grade;
+
+  editMode = req.session.editMode;
+
+  for (let i = 0; i < gradeSelectOptions.length; i++) {
+    if (gradeSelectOptions[i].value == grade) gradeName = gradeSelectOptions[i].text;
+  }
+
+  req.session.gradeName = gradeName;
 
   if (parseInt(grade) < 1) {
     registrationJob2Error = true;
@@ -281,11 +335,10 @@ function registerJob2Post(req, res) {
   if (registrationJob2Error === true) {
     req.session.registrationJob2Error = registrationJob2Error;
     req.session.registrationGradeError = registrationGradeError;
-    req.session.registrationProfessionError = registrationProfessionError;
-    return res.redirect('/prototypes/learner/v1/registration/job-details/profession');
+    return res.redirect('/prototypes/learner/v1/registration/job-details/grade');
   } else {
     req.session.registrationJob2Error = false;
-    req.session.registrationJob2Error = req.session.registrationGradeError = req.session.registrationProfessionError = null;
+    req.session.registrationJob2Error = req.session.registrationGradeError = null;
 
     if (editMode === true) {
       req.session.editMode = null;

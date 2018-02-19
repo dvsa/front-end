@@ -1,19 +1,15 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Enter your personal details - Civil Service Learning Platform' %}
+{% set pageTitle = 'Your job grade - Civil Service Learning Platform' %}
 
 {% set blackBarTitle = 'Civil Service Learning' %}
 {% set loggedOut = 'true' %}
 {% set signOutPath = '/prototypes/learner/v1/' %}
 {% set homePath = '/prototypes/learner/v1/' %}
 
-{% set professionSelectOptions = professionSelectOptions if professionSelectOptions %}
 {% set gradeSelectOptions = gradeSelectOptions if gradeSelectOptions %}
 {% set registrationJob2Error = registrationJob2Error if registrationJob2Error %}
-{% set registrationProfessionError = registrationProfessionError if registrationProfessionError %}
 {% set registrationGradeError = registrationGradeError if registrationGradeError %}
-{% set registrationGradeError = registrationGradeError if registrationGradeError %}
-{% set profession = profession if profession %}
 {% set grade = grade if grade %}
 
 {% set editMode = editMode if editMode %}
@@ -25,7 +21,7 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Enter your profession details', 'Civil Service Learning Platform') }}
+    {{ components.pageHeading('Your job grade', 'Civil Service Learning Platform') }}
 
     {% if registrationJob2Error %}
 
@@ -49,31 +45,23 @@
 
         {% call components.columnTwoThirds() %}
 
-            {% call components.formElement(name='registerProfession', method='POST', action="#") %}
-
-                <!-- Profession -->
-                {{ components.select(
-                    options=professionSelectOptions,
-                    label='Profession',
-                    id='profession',
-                    hint='Start typing to find your profession',
-                    group=true,
-                    extraClass='autocomplete-wrapper',
-                    error=registrationProfessionErrorMessage,
-                    selectedValue=profession)
-                }}
+            {% call components.formElement(name='registerGrade', method='POST', action="#") %}
 
                 <!-- Grade -->
-                {{ components.select(
-                    options=gradeSelectOptions,
-                    label='Grade',
-                    id='grade',
-                    hint='Start typing to find your grade',
-                    group=true,
-                    extraClass='autocomplete-wrapper',
-                    error=registrationGradeErrorMessage,
-                    selectedValue=grade)
-                }}
+                <fieldset class="u-space-b30">
+
+                {#{% macro radio(text='', value='', id='', name='') %}#}
+
+                {% for item in gradeSelectOptions %}
+                    {% if grade in item.value %}
+                        {% set checked = 'checked' %}
+                    {% else %}
+                        {% set checked = '' %}
+                    {% endif %}
+                    {{ components.radio(item.text, item.value, 'areaOfWork'+item.value, name='gradeRadios') }}
+                {% endfor %}
+
+                </fieldset>
 
                 {% call components.formGroup() %}
 

@@ -39,3 +39,15 @@ Object.keys(_register).forEach(function (key) {
     }
   });
 });
+
+var _resource = require('./resource');
+
+Object.keys(_resource).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _resource[key];
+    }
+  });
+});

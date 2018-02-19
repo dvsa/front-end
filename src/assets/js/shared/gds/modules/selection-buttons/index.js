@@ -6,6 +6,7 @@ export class SelectionButtons {
       blockLabel: 'block-label',
       selected: 'selected',
       focused: 'focused',
+      jsHidden: 'js-hidden',
     };
 
     this.selectors = {
@@ -147,12 +148,14 @@ export class SelectionButtons {
   updateDomElementAttributes = element => {
     const elementDetails = this.getElementDetails(element);
     if (!elementDetails) return;
+
     // Update selected class
     toggleClass(elementDetails.label, this.classnames.selected, element.checked);
 
     // Hide/show target
     if (elementDetails.target) {
       elementDetails.target.display = element.checked ? 'block' : 'none';
+      toggleClass(elementDetails.target, this.classnames.jsHidden, !element.checked);
     }
 
     // Update aria attributes
@@ -195,7 +198,12 @@ export class SelectionButtons {
     }
 
     const targetId = label.getAttribute('data-target');
-    const target = label.querySelector(targetId);
+    let target = false;
+
+    if(targetId) {
+      const targetIdWithoutHashTag = targetId.replace(/#/g, '');
+      target = document.querySelector(`#${targetIdWithoutHashTag}`);
+    }
 
     return {
       groupName,

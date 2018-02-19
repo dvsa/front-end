@@ -2,6 +2,7 @@ import gulp from 'gulp';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+import cssmqpacker from 'css-mqpacker';
 import notify from 'gulp-notify';
 import path from 'path';
 import sourcemaps from 'gulp-sourcemaps';
@@ -20,6 +21,9 @@ import { CONFIG } from './../constants';
  * ------------
  *  - Autoprefixer (https://autoprefixer.github.io/)
  *    Adds browsers compatibility css.
+ * 
+ *  - CSS MQPacker
+ *    Bundles all media queries into one
  * 
  *  - CSS Nano (http://cssnano.co)
  *    Compresses the outputted css file to be as compact as possible.
@@ -41,6 +45,7 @@ gulp.task('scss', () => {
         'last 2 versions'
       ]
     }),
+    cssmqpacker()
   ];
 
   if(CONFIG.isProduction()) {

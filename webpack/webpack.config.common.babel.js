@@ -24,7 +24,7 @@ module.exports = {
                     'last 3 iOS major versions'
                   ]
                 },
-                'debug': true,
+                debug: true,
                 useBuiltIns: true,
                 uglify: true
               }],

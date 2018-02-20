@@ -54,5 +54,5 @@ export const CONFIG = {
   configFiles: {
     scssLink: path.join(BASE_FOLDER_PATH, '.scss-lint.yml'),
   },
-  motDevAssetsFolderPath: path.join(MOTDEV_PUBLIC_FOLDER, 'dvsa-front-end')
+  motDevAssetsFolderPath: path.join(MOTDEV_PUBLIC_FOLDER, 'dvsa-frontend')
 };

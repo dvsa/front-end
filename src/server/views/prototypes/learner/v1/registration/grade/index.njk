@@ -28,10 +28,6 @@
         <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
             <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your information</h2>
             <ul class="error-summary-list">
-                {% if registrationProfessionError %}
-                    {% set registrationProfessionErrorMessage = 'Selet your profession' %}
-                    <li><a href="#profession">You must select a profession</a></li>
-                {% endif %}
                 {% if registrationGradeError %}
                     {% set registrationGradeErrorMessage = 'Selet your grade' %}
                     <li><a href="#grade">You must select a grade</a></li>
@@ -48,17 +44,15 @@
             {% call components.formElement(name='registerGrade', method='POST', action="#") %}
 
                 <!-- Grade -->
-                <fieldset class="u-space-b30">
-
-                {#{% macro radio(text='', value='', id='', name='') %}#}
+                <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
 
                 {% for item in gradeSelectOptions %}
-                    {% if grade in item.value %}
+                    {% if grade == item.value %}
                         {% set checked = 'checked' %}
                     {% else %}
                         {% set checked = '' %}
                     {% endif %}
-                    {{ components.radio(item.text, item.value, 'areaOfWork'+item.value, name='gradeRadios') }}
+                    {{ components.radio(item.text, item.value, 'areaOfWork'+item.value, name='grade', isChecked=checked) }}
                 {% endfor %}
 
                 </fieldset>
@@ -78,25 +72,6 @@
         {%- endcall %}
 
     {%- endcall %}
-
-    <script type="text/javascript" src="/javascripts/accessible-autocomplete/accessible-autocomplete.min.js"></script>
-    <script type="text/javascript">
-        var selectEl = document.querySelector('#profession')
-        accessibleAutocomplete.enhanceSelectElement({
-            autoselect: true,
-            defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
-            minLength: 1,
-            selectElement: selectEl
-        });
-
-        selectEl = document.querySelector('#grade')
-        accessibleAutocomplete.enhanceSelectElement({
-            autoselect: true,
-            defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
-            minLength: 1,
-            selectElement: selectEl
-        });
-    </script>
 
 {% endblock %}
 

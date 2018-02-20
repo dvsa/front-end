@@ -30,7 +30,7 @@
             <ul class="error-summary-list">
                 {% if registrationProfessionError %}
                     {% set registrationProfessionErrorMessage = 'Selet your profession' %}
-                    <li><a href="#profession">You must select a profession</a></li>
+                    <li><a href="#profession">You must select at least one area of work</a></li>
                 {% endif %}
             </ul>
         </div>
@@ -45,22 +45,17 @@
 
             {% call components.formElement(name='registerProfession', method='POST', action="#") %}
 
-                <fieldset class="u-space-b30">
+                <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
 
                     {% for item in professionSelectOptions %}
-                        {% if profession in item.value %}
-                            {% set checked = 'checked' %}
+
+                        {% if item.value in profession %}
+                            {% set checked = true %}
                         {% else %}
                             {% set checked = '' %}
                         {% endif %}
-                        {{ components.checkbox(item.text, item.value, 'areaOfWork'+item.value, checked) }}
+                        {{ components.checkbox(text=item.text, value=item.value, id='profession'+item.value,name='profession', compareTo=item.value, isChecked=checked) }}
                     {% endfor %}
-                {#{% for item in professionSelectOptions %}
-                    <div class="multiple-choice">
-                        <input id="areaOfWork{{ item.value }}" name="areaOfWork{{ item.value }}" type="checkbox" value="{{ item.value }}">
-                        <label for="areaOfWork{{ item.value }}">{{ item.text }}</label>
-                    </div>
-                {% endfor %}#}
 
                 </fieldset>
 

@@ -1,6 +1,6 @@
-{% macro checkbox(text='', value='', id='', name='', checked='') %}
+{% macro checkbox(text='', value='', id='', name='', isChecked='', compareTo='') %}
     <div class="multiple-choice">
-        <input {{ 'id="' + id + '"' if id }} type="checkbox" name="{{ name if name else id }}" {{ 'value="' + value + '"' if value }} {{ checked }}>
+        <input {{ 'id="' + id + '"' if id }} type="checkbox" name="{{ name if name else id }}" {{ 'value="' + value + '"' if value }} {{ ' checked' if isChecked }}>
         <label {{ 'for="' + id + '"' if id }}>{{ text }}</label>
     </div>
 {% endmacro %}§

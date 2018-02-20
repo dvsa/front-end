@@ -200,7 +200,7 @@ export class SelectionButtons {
     const targetId = label.getAttribute('data-target');
     let target = false;
 
-    if(targetId) {
+    if (targetId) {
       const targetIdWithoutHashTag = targetId.replace(/#/g, '');
       target = document.querySelector(`#${targetIdWithoutHashTag}`);
     }

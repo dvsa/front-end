@@ -19,7 +19,10 @@
     "type": "git",
     "url": "git@github.com:dvsa/front-end.git"
   },
-  "author": "Tameem Safi",
+  "author": "Tameem Safi <https://github.com/tameemsafi>",
+  "contributors": [
+    "Tameem Safi <https://github.com/tameemsafi>"
+  ],
   "license": "MIT",
   "engines": {
     "node": "8.9.0"
@@ -50,6 +53,7 @@
     "lodash": "^4.17.4",
     "md5": "^2.2.1",
     "memorystore": "^1.6.0",
+    "moment": "^2.20.1",
     "morgan": "^1.9.0",
     "node-dir": "^0.1.17",
     "nunjucks": "^3.0.1",
@@ -65,7 +69,6 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",

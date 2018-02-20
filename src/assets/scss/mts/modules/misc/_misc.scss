@@ -146,6 +146,11 @@ span.label-value {
   }
 }
 
+.result__group {
+  margin-top: em(10, 20);
+  margin-bottom: em(10, 20);
+}
+
 .result__actions {
   padding-top: $gutter;
 }

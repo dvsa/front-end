@@ -1,11 +1,14 @@
 {
-    "name": "dvsa/front-end",
-    "version": "1.0.17",
-    "authors": [
-        {
-            "name": "",
-            "email": ""
-        }
-    ],
-    "require": {}
+  "name": "dvsa/front-end",
+  "description": "DVSA front-end assets used within all applications",
+  "version": "1.1.0-beta",
+  "homepage": "https://github.com/dvsa/front-end",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Tameem Safi",
+      "homepage": "https://github.com/tameemsafi",
+      "role": "Front-end Developer"
+    }
+  ]
 }

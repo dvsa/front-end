@@ -12,20 +12,41 @@
   }
 
   &__list {
-
     border-top: 2px solid $grey-1;
     border-bottom: 2px solid $grey-1;
 
     li {
       position: relative;
-      border-bottom: 2px solid $grey-3;
       clear: both;
       margin: 4px 0;
       padding: 12px 0;
+      border-bottom: 2px solid $grey-3;
 
       &:last-of-type {
         border-bottom: 0;
         margin-bottom: 0;
+      }
+    }
+
+    &--interim {
+      li {
+        border-width: 1px;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  &__group-item {
+    position: relative;
+    margin: 4px 0;
+    padding: 12px 0;
+
+    &--secondary {
+      margin-top: -15px;
+
+      @include media(desktop) {
+        margin-top: -5px;                
       }
     }
   }
@@ -34,6 +55,15 @@
     @include core-16;
     display: block;
     padding-right: 260px;
+
+    &--bold {
+      @include bold-16;
+      padding-right: 0;
+
+      @include media(desktop) {
+        padding-right: 380px;
+      }
+    }
 
     @include media(mobile) {
       padding-right: 0;
@@ -86,6 +116,37 @@
         margin-top: 10px;
       }
     }
+
+    &--collapse-tablet {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: auto;
+      text-align: left;
+
+      @include media(desktop) {
+        position: absolute;
+        right: 0;
+        top: 6px;
+        width: 400px;
+        text-align: right;
+      }
+    }
+
+    &--manual-ref {
+      position: relative;
+      top: auto;
+      right: auto;
+      width: auto;
+      text-align: left;
+
+      @include media(desktop) {
+        position: absolute;
+        right: 225px;
+        top: 11px;
+        text-align: right;
+      }
+    }
   }
 
   &__badge {
@@ -95,23 +156,5 @@
 
   &__link {
     @include core-16;
-  }
-
-  &--interim {
-    .eu-defect__options {
-      top: 6px;
-
-      @include media(mobile) {
-        margin-bottom: 10px;
-      } 
-    }
-
-    .eu-defect__name {
-      padding-right: 240px;
-
-      @include media(mobile) {
-        padding-right: 0;
-      }
-    }
   }
 }

@@ -74,21 +74,3 @@ npm run build-production
 ```
 
 **Run this command and commit changes before pushing to heroku.**
-
-## Front-end Assets
-
-## Images
-
-All images will be placed inside of the 'public/images' folder for production. Each image will also be compressed using imagemin.
-
-## Javascript
-
-All javascript files will be placed inside of the 'public/javascripts' folder for production. Each file is uglified for optimal performance.
-
-### IE Shims Bundle
-
-The file named **ie-shims.bundle.js** contains polyfills to make IE8 work as expected. It allows support for HTML5 and other basic features.
-
-### DVSA Bundle
-
-The file named **dvsa.bundle.js** contains all of the new ES6 javascript bundled using webpack. It is also transpiled uisng babel-loader to allow ES5 browser compatibility. This can be loaded right at the end of the page before body tag and can be defered.

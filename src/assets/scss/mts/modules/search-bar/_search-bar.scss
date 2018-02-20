@@ -38,6 +38,11 @@
     &::-webkit-search-cancel-button {
       display: none;
     }
+
+    &--darken-border {
+      border-width: 2px;
+      border-color: $mot-border;
+    }
   }
 
   &__search-submit {

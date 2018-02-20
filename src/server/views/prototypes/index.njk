@@ -14,14 +14,7 @@
       {{ components.paragraph(text='A rebuild of the GDS accordian with AJAX call on open (used at DVSA).') }}
       
     {%- endcall %}
-    {#
-    {% call components.columnOneThird() %}
 
-      {{ components.heading(text='Manuals', tag='h2', size='medium', url='/manuals') }}
-      {{ components.paragraph(text='A prototype mockup of the manuals.') }}
-      
-    {%- endcall %}
-    #}
     {% call components.columnOneThird() %}
 
       {{ components.heading(text='Create Account', tag='h2', size='medium', url='/prototypes/create-account') }}
@@ -42,10 +35,8 @@
 
       {% call components.columnOneThird() %}
 
-          {{ components.heading(text='Learner journey', tag='h2', size='medium', url='/prototypes/learner/v1') }}
-          {{ components.paragraph(text='And end-to-end journey for learners, including registration. (<a href="/prototypes/learner/v1/registration?clearSession=true" class="font-xsmall">Clear previous session</a>)') }}
-
-
+          {{ components.heading(text='Learner journey', tag='h2', size='medium', url='/prototypes/learner') }}
+          {{ components.paragraph(text='And end-to-end journey for learners, including registration.') }}
 
       {%- endcall %}
 

@@ -58,6 +58,10 @@ router.post('/prototypes/create-account/password', createAccountController.passw
 //
 //******************************************************
 
+// learner config
+router.get('/prototypes/learner', learnerV1Controller.configGet);
+router.post('/prototypes/learner', learnerV1Controller.configPost);
+
 // start
 router.get('/prototypes/learner/v1', learnerV1Controller.indexGet);
 router.post('/prototypes/learner/v1', learnerV1Controller.indexPost);

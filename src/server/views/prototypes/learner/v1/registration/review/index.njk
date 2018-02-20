@@ -16,11 +16,11 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Review your registration details', 'Civil Service Learning Platform') }}
+    {{ components.pageHeading('Review your registration details', 'Create an account') }}
 
     {% call components.gridRow() %}
 
-        {% call components.columnFull() %}
+        {% call components.columnTwoThirds() %}
 
             <p class="lede">Check your detials are correct before completing registration.</p>
 
@@ -55,9 +55,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="key-value-list__key">Profession</td>
+                        <td class="key-value-list__key">Area of work</td>
                         <td class="key-value-list__value">
-                            {{ professionName }}
+                            {#{{ professionName }}#}
                             {% for item in professionName %}
                                 {{ item }}<br>
                             {% endfor %}

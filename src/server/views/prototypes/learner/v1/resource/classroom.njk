@@ -7,16 +7,16 @@
 {% set homePath = '/prototypes/learner/v1/home' %}
 
 {% set resourceType = resourceType if resourceType %}
+{% set detailOnlyStars = detailOnlyStars if detailOnlyStars %}
 
 
 {% block content %}
 
+    {{ components.pageHeading(heading='Managing contractors') }}
 
     {% call components.gridRow() %}
 
         {% call components.columnTwoThirds() %}
-
-            {{ components.pageHeading(heading='Managing contractors', secondary='Learning resource') }}
 
             <p>An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. It is a foundation product in the commercial professions curriculum. </p>
 
@@ -46,7 +46,7 @@
             {% call components.formElement(name='startLearning', method='POST', action="#") %}
 
                 {% call components.formGroup() %}
-                    {{ components.button(text='Book this course', start=true, group=true)}}
+                    {{ components.button(text='Book this course', start=false, group=true)}}
                 {%- endcall %}
 
                 <p><a href="#">Add to learning plan</a></p>
@@ -57,10 +57,10 @@
 
         {% call components.columnOneThird() %}
 
-            <aside class="govuk-related-items" role="complementary">
+            <aside class="govuk-related-items govuk-related-items--flush" role="complementary">
                 <h2 class="heading-small">Key information</h2>
 
-                <table class="table-font-xsmall">
+                <table class="table-simple table--top">
                     <caption class="visuallyhidden">Details about the course</caption>
                     <tbody>
                         <tr>
@@ -69,7 +69,7 @@
                         </tr>
                         <tr>
                             <th>Level</th>
-                            <td>EO to Grade 6</td>
+                            <td>Administrative Assistant to Grade 6</td>
                         </tr>
                         <tr>
                             <th>Key area</th>
@@ -93,7 +93,7 @@
 
                 <h2 class="heading-small">Availability</h2>
 
-                <table class="table-font-xsmall">
+                <table class="table-simple table--top">
                     <caption class="visuallyhidden">Course availability</caption>
                     <tbody>
                         <tr>
@@ -118,8 +118,10 @@
                     <li><a href="#">MPA review (pre-reading)</a> </li>
                 </ul>
 
-                <h2 class="heading-small">Course rating</h2>
-                {{ components.starRating(rating='76%', total='104') }}
+                {% if not detailOnlyStars %}
+                    <h2 class="heading-small heading--flush">User rating</h2>
+                    {{ components.starRating(rating='76%', total='104') }}
+                {% endif %}
 
             </aside>
 

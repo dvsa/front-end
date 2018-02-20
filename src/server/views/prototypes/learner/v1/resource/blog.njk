@@ -7,31 +7,35 @@
 {% set homePath = '/prototypes/learner/v1/home' %}
 
 {% set resourceType = resourceType if resourceType %}
-
+{% set detailOnlyStars = detailOnlyStars if detailOnlyStars %}
 
 {% block content %}
 
+    {{ components.pageHeading(heading='Rupert McNeil: what the civil service of tomorrow will look like') }}
 
     {% call components.gridRow() %}
 
         {% call components.columnTwoThirds() %}
-
-            {{ components.pageHeading(heading='Rupert McNeil: what the civil service of tomorrow will look like', secondary='Learning resource') }}
 
             <p>Since Brexit, the question of whether the civil service has the right people, skills, and capabilities is the subject of heated debate. One man who must address these issues is Rupert McNeil, the head of Government HR says Jen Gold. </p>
 
             <p><a href="https://www.instituteforgovernment.org.uk/blog/rupert-mcneil-what-civil-service-tomorrow-will-look" target="_blank">Read this blog article</a> (external link)</p>
 
             <hr>
-            <p>Was this blog useful? <a href="#">Yes</a>&nbsp;&nbsp;<a href="#">No</a> </p>
-            <h2 class="heading-small">User rating</h2>
-            {{ components.starRating(rating='85%', total='52') }}
+            <span>Was this blog useful? <a href="#">Yes</a>&nbsp;&nbsp;<a href="#">No</a> </span>
             <hr>
 
         {%- endcall %}
 
+        {% call components.columnOneThird() %}
+
+            {% if not detailOnlyStars %}
+            <h2 class="heading-small heading--flush">User rating</h2>
+            {{ components.starRating(rating='85%', total='52') }}
+            {% endif %}
+
+        {% endcall %}
 
     {%- endcall %}
-
 
 {% endblock %}

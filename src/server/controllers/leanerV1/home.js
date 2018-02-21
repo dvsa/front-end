@@ -1,18 +1,14 @@
 // home GET
 export function homeGet(req, res) {
-  let viewData, anotherTestVar, showAllStars, hideAllStars, detailOnlyStars;
+  let viewData, hideHomeStars;
 
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
 
-  showAllStars = req.session.showAllStars;
-  hideAllStars = req.session.hideAllStars;
-  detailOnlyStars = req.session.detailOnlyStars;
+  hideHomeStars = req.session.hideHomeStars;
 
   viewData = {
-    showAllStars,
-    hideAllStars,
-    detailOnlyStars,
+    hideHomeStars,
   };
 
   return res.render('prototypes/learner/v1/home/index', viewData);

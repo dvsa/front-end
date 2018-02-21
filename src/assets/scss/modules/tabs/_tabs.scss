@@ -1,0 +1,281 @@
+.nav-tabs {
+  zoom: 1;
+  background: #fff;
+  padding: 0;
+  position: relative;
+}
+
+.nav-tabs:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.nav-tabs ol,
+.nav-tabs ul,
+.nav-tabs .tabs-nav {
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 5;
+}
+
+@media (max-width: 640px) {
+  .nav-tabs ol,
+  .nav-tabs ul,
+  .nav-tabs .tabs-nav {
+    float: none;
+    margin: 0 -16px;
+  }
+}
+
+.nav-tabs li,
+.nav-tabs .tabs-nav li {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 1.14286;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+@media (min-width: 641px) {
+  .nav-tabs li,
+  .nav-tabs .tabs-nav li {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-tabs li,
+  .nav-tabs .tabs-nav li {
+    float: none;
+  }
+}
+
+.nav-tabs li a,
+.nav-tabs .tabs-nav li a {
+  border: solid 1px #fff;
+  border-bottom: none;
+  float: left;
+  height: 2.25em;
+  line-height: 2.25em;
+  margin-bottom: -1px;
+  padding: 0 1em 0 1em;
+  position: relative;
+  text-align: center;
+  top: 0;
+}
+
+@media (max-width: 640px) {
+  .nav-tabs li a,
+  .nav-tabs .tabs-nav li a {
+    display: block;
+    position: static;
+    float: none;
+    height: auto;
+    line-height: 3.5em;
+    padding: 0 16px;
+    text-align: left;
+    margin-bottom: 0;
+    border-bottom: 1px solid #bfc1c3;
+  }
+}
+
+.nav-tabs li a:hover,
+.nav-tabs .tabs-nav li a:hover {
+  background-color: #bfc1c3;
+}
+
+.nav-tabs li.active a,
+.nav-tabs .tabs-nav li.active a {
+  background-color: #fff;
+  border: solid 1px #bfc1c3;
+  border-bottom: solid 1px #fff;
+  color: #0b0c0c;
+  position: relative;
+  text-decoration: none;
+  z-index: 5;
+}
+
+@media (max-width: 640px) {
+  .nav-tabs li.active a,
+  .nav-tabs .tabs-nav li.active a {
+    border: none;
+    border-bottom: 1px solid #bfc1c3;
+  }
+}
+
+.nav-tabs li.active a:hover,
+.nav-tabs .tabs-nav li.active a:hover {
+  color: inherit;
+}
+
+.nav-tabs li:first-child a,
+.nav-tabs .tabs-nav li:first-child a {
+  margin-left: 0;
+}
+
+@media (max-width: 640px) {
+  .nav-tabs li:first-child a,
+  .nav-tabs .tabs-nav li:first-child a {
+    border-left: none;
+    border-top: 1px solid #bfc1c3;
+  }
+}
+
+@media (max-width: 640px) {
+  .tab-content {
+    margin: 0 -1em;
+  }
+}
+
+.tab-content .tab-pane {
+  padding: 1em 1em 0 1em;
+  border-top: solid 1px #bfc1c3;
+  clear: both;
+  width: auto;
+}
+
+@media (max-width: 640px) {
+  .tab-content .tab-pane {
+    border-top: none;
+    padding: 0;
+  }
+}
+
+.tab-content .inner {
+  padding: 0em 2.5em 1em;
+}
+
+@media (max-width: 640px) {
+  .tab-content .inner {
+    padding: 0 1em 1em;
+    border-bottom: solid 1px #C9D0D0;
+  }
+}
+
+.tab-content h1.visuallyhidden + h2 {
+  margin-top: 2em;
+}
+
+.tab-content p {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tab-content em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.tab-content nav {
+  margin: 1em -1.375em 0;
+}
+
+.js-tab-content .js-heading-tab {
+  border-bottom: solid 1px #bfc1c3;
+  list-style: none;
+}
+
+.js-tab-content .js-heading-tab a,
+.js-tab-content .js-heading-tab h1 {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 18px;
+  line-height: 2.64706;
+  background: #FFF url("/public/images/accordion-arrow.png") no-repeat 100% -2px;
+  display: block;
+  padding: 0 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: underline;
+  top: 0;
+}
+
+@media (min-width: 641px) {
+  .js-tab-content .js-heading-tab a,
+  .js-tab-content .js-heading-tab h1 {
+    font-size: 24px;
+    line-height: 1.875;
+  }
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .js-tab-content .js-heading-tab a,
+  .js-tab-content .js-heading-tab h1 {
+    background-image: url("/public/images/accordion-arrow-2x.png");
+    background-size: 45px 90px;
+  }
+}
+
+.js-tab-content .js-heading-tab a:hover,
+.js-tab-content .js-heading-tab h1:hover {
+  background-color: #dee0e2;
+}
+
+.js-tab-content .js-heading-tab.active {
+  text-decoration: none;
+}
+
+.js-tab-content .js-heading-tab.active a,
+.js-tab-content .js-heading-tab.active h1 {
+  background-position: 100% -48px;
+  background-color: #dee0e2;
+  color: #0b0c0c;
+  text-decoration: none;
+}
+
+.js-tab-content .js-heading-tab {
+  margin: 0;
+  clear: both;
+}
+
+.js-tab-content .js-heading-tab h1 {
+  padding: 0;
+}
+
+.js-tab-content .tab-shiftlink {
+  font-family: "nta", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  position: absolute;
+  left: -9999em;
+}
+
+@media (min-width: 641px) {
+  .js-tab-content .tab-shiftlink {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+@media (max-width: 640px) {
+  .js-tab-content .tab-shiftlink {
+    position: static;
+    left: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .js-tab-content .js-tab-container {
+    min-height: 0;
+  }
+  .js-tab-content .js-tab-pane {
+    border-bottom: solid 1px #bfc1c3;
+  }
+  .js-tab-content .js-tab-container:first-child {
+    border-top: solid 1px #bfc1c3;
+  }
+}

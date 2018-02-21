@@ -99,6 +99,13 @@ router.get('/prototypes/learner/v1/registration/complete', learnerV1Controller.r
 // registration, complete
 router.get('/prototypes/learner/v1/resource', learnerV1Controller.resourceGet);
 
+// booking
+router.get('/prototypes/learner/v1/booking', learnerV1Controller.bookingDateGet);
+router.post('/prototypes/learner/v1/booking', learnerV1Controller.bookingDatePost);
+router.get('/prototypes/learner/v1/booking/payment', learnerV1Controller.bookingPaymentGet);
+router.get('/prototypes/learner/v1/booking/confirm', learnerV1Controller.bookingConfirmGet);
+router.get('/prototypes/learner/v1/booking/complete', learnerV1Controller.bookingCompleteGet);
+
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
 

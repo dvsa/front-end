@@ -7,7 +7,7 @@
 {% set homePath = '/prototypes/learner/v1/home' %}
 
 {% set resourceType = resourceType if resourceType %}
-{% set detailOnlyStars = detailOnlyStars if detailOnlyStars %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
 
 
 {% block content %}
@@ -46,7 +46,7 @@
             {% call components.formElement(name='startLearning', method='POST', action="#") %}
 
                 {% call components.formGroup() %}
-                    {{ components.button(text='Book this course', start=false, group=true)}}
+                    {{ components.button(text='Book this course', start=false, group=true, url='/prototypes/learner/v1/booking/')}}
                 {%- endcall %}
 
                 <p><a href="#">Add to learning plan</a></p>
@@ -118,7 +118,7 @@
                     <li><a href="#">MPA review (pre-reading)</a> </li>
                 </ul>
 
-                {% if not detailOnlyStars %}
+                {% if not hideDetailStars %}
                     <h2 class="heading-small heading--flush">User rating</h2>
                     {{ components.starRating(rating='76%', total='104') }}
                 {% endif %}

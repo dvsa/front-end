@@ -5,7 +5,7 @@
 {% set mainContainerClass = 'has-lower-hero' %}
 {% set signOutPath = '/prototypes/learner/v1/' %}
 {% set homePath = '/prototypes/learner/v1/home' %}
-{% set hideAllStars = hideAllStars if hideAllStars %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
 
 {% block content %}
 
@@ -17,11 +17,13 @@
 
             {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='') }}
 
+            <span>hideHomeStars = {{ hideHomeStars }}</span>
+
             <table class="table--top">
                 <thead class="visuallyhidden">
                 <tr>
                     <th>Title</th>
-                    {% if not hideAllStars %}<th>Rating</th>{% endif %}
+                    {% if not hideHomeStars %}<th>Rating</th>{% endif %}
                     <th>Reason</th>
                     <th>Type</th>
                     <th><span class="visuallyhidden">Duration</span></th>
@@ -34,7 +36,7 @@
                         <a href="#">Health and Safety</a>
                         <span class="meta"><a href="#">Resume</a></span>
                     </td>
-                    {% if not hideAllStars %}<td>{{ components.starRating(rating='25%', total='10') }}</td>{% endif %}
+                    {% if not hideHomeStars %}<td>{{ components.starRating(rating='25%', total='10') }}</td>{% endif %}
                     <td>Required by 31 March 2018</td>
                     <td>Online</td>
                     <td>1 hour</td>
@@ -45,7 +47,7 @@
                         <a href="#">Unconcious bias</a>
                         <span class="meta"><a href="#">Start</a></span>
                     </td>
-    {% if not hideAllStars %}<td>{{ components.starRating(rating='50%', total='81') }}</td> {% endif %}
+    {% if not hideHomeStars %}<td>{{ components.starRating(rating='50%', total='81') }}</td> {% endif %}
                     <td>Required by 4 May 2018</td>
                     <td>Classroom</td>
                     <td>1 day</td>
@@ -60,7 +62,7 @@
                 <thead class="visuallyhidden">
                 <tr>
                     <th>Title</th>
-    {% if not hideAllStars %}<th>Rating</th>{% endif %}
+    {% if not hideHomeStars %}<th>Rating</th>{% endif %}
                     <th>Reason</th>
                     <th>Type</th>
                     <th><span class="visuallyhidden">Duration</span></th>
@@ -73,7 +75,7 @@
                         <a href="#">Managing contractors</a>
                         <span class="meta"><a href="#">Cancel booking</a></span>
                     </td>
-    {% if not hideAllStars %}<td>{{ components.starRating(rating='80%', total='49') }}</td>{% endif %}
+    {% if not hideHomeStars %}<td>{{ components.starRating(rating='80%', total='49') }}</td>{% endif %}
                     <td>From your performance review</td>
                     <td>Classroom</td>
                     <td>1 day</td>
@@ -87,7 +89,7 @@
                         <a href="#">Analysis and use of evidence</a>
                         <span class="meta"><a href="#">Delete</a></span>
                     </td>
-    {% if not hideAllStars %}<td>{{ components.starRating(rating='95%', total='91') }}</td>{% endif %}
+    {% if not hideHomeStars %}<td>{{ components.starRating(rating='95%', total='91') }}</td>{% endif %}
                     <td>Because of your work objectives</td>
                     <td>Online</td>
                     <td>1 hour</td>
@@ -126,7 +128,7 @@
 
             <div class="home-tile">
                 <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=online">Digital awareness "Digital by default"</a></h4>
-                {% if not hideAllStars %}
+                {% if not hideHomeStars %}
                     {{ components.starRating(rating='80%', total='128') }}
                 {% endif %}
                 <p class="">Suggested by Janet Rimmer</p>
@@ -141,7 +143,7 @@
 
             <div class="home-tile">
                 <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=classroom">Managing contractors</a></h4>
-                {% if not hideAllStars %}
+                {% if not hideHomeStars %}
                     {{ components.starRating(rating='76%', total='104') }}
                 {% endif %}
                 <p>Because you did Hiring Contractors Part I</p>
@@ -153,14 +155,14 @@
         {%- endcall %}
 
     {%- endcall %}
-balanace running shoe
+
     {% call components.gridRow() %}
 
         {% call components.columnHalf() %}
 
             <div class="home-tile">
                 <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=video">Simon Sinek - Start With Why - TED Talk Short Edited</a></h4>
-                {% if not hideAllStars %}
+                {% if not hideHomeStars %}
                     {{ components.starRating(rating='64%', total='39') }}
                 {% endif %}
                 <p>Suggested by William Smith</p>
@@ -175,7 +177,7 @@ balanace running shoe
 
             <div class="home-tile">
                 <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=blog">Rupert McNeil: what the civil service of tomorrow will look like</a></h4>
-                {% if not hideAllStars %}
+                {% if not hideHomeStars %}
                     {{ components.starRating(rating='70%', total='84') }}
                 {% endif %}
                 <p>Recommended by Commercial</p>

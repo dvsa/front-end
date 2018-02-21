@@ -63,3 +63,15 @@ Object.keys(_config).forEach(function (key) {
     }
   });
 });
+
+var _booking = require('./booking');
+
+Object.keys(_booking).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _booking[key];
+    }
+  });
+});

@@ -7,7 +7,7 @@
 {% set homePath = '/prototypes/learner/v1/home' %}
 
 {% set resourceType = resourceType if resourceType %}
-{% set detailOnlyStars = detailOnlyStars if detailOnlyStars %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
 
 {% block content %}
 
@@ -29,7 +29,7 @@
 
         {% call components.columnOneThird() %}
 
-            {% if not detailOnlyStars %}
+            {% if not hideDetailStars %}
             <h2 class="heading-small heading--flush">User rating</h2>
             {{ components.starRating(rating='85%', total='52') }}
             {% endif %}

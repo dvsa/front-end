@@ -1,60 +1,62 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.configGet = configGet;
 exports.configPost = configPost;
 // config GET
 function configGet(req, res) {
-    let viewData, configError;
+  let viewData, configError;
 
-    configError = req.session.configError;
+  configError = req.session.configError;
 
-    viewData = {
-        configError
-    };
+  viewData = {
+    configError
+  };
 
-    return res.render('prototypes/learner/index', viewData);
+  return res.render('prototypes/learner/index', viewData);
 }
 
 function configPost(req, res) {
-    const { regConfig } = req.body;
+  const { regConfig } = req.body;
 
-    console.log('regConfig');
-    let showAllStars, hideAllStars, detailOnlyStars;
+  console.log('regConfig');
+  let showAllStars, hideDetailStars, hideHomeStars;
 
-    showAllStars = false;
-    hideAllStars = false;
-    detailOnlyStars = false;
+  showAllStars = false;
+  hideDetailStars = false;
+  hideHomeStars = false;
 
-    if (regConfig == 'all') {
-        showAllStars = true;
-    } else if (regConfig == 'detail') {
-        detailOnlyStars = true;
-    } else if (regConfig == 'none') {
-        hideAllStars = true;
-    }
+  // all | detailAndhome |  home
+  if (regConfig == 'all') {
+    showAllStars = true;
+  } else if (regConfig == 'detailAndHome') {
+    hideDetailStars = true;
+    hideHomeStars = true;
+  } else if (regConfig == 'home') {
+    hideHomeStars = true;
+  }
 
-    req.session.showAllStars = showAllStars;
-    req.session.hideAllStars = hideAllStars;
-    req.session.detailOnlyStars = detailOnlyStars;
+  req.session.showAllStars = showAllStars;
+  req.session.hideDetailStars = hideDetailStars;
+  req.session.hideHomeStars = hideHomeStars;
 
-    res.local = {
-        testingLocals: 'testing 123'
-    };
+  res.local = {
+    testingLocals: 'testing 123'
+  };
 
-    res.locals.testingVars = 'my value';
+  res.locals.testingVars = 'my value';
 
-    global.anotherTestVar = 'ONE MILLIONS!';
+  global.anotherTestVar = 'ONE MILLIONS!';
 
-    console.log(req.session);
+  console.log(req.session);
 
-    if (!regConfig) {
-        req.session.configError = true;
-        return res.redirect('/prototypes/learner');
-    } else {
-        req.session.configError = false;
-        return res.redirect('/prototypes/learner/v1');
-    }
+  if (!regConfig) {
+    req.session.configError = true;
+    return res.redirect('/prototypes/learner');
+  } else {
+    req.session.configError = false;
+    return res.redirect('/prototypes/learner/v1');
+  }
 }

@@ -1,6 +1,6 @@
 // Different types pf learning resource pages
 export function resourceGet(req, res) {
-  let viewData, resourceType, returnPath, availableTypes, detailOnlyStars, hideAllStars;
+  let viewData, resourceType, returnPath, availableTypes, hideDetailStars;
 
   resourceType = req.param('resourceType');
 
@@ -12,16 +12,11 @@ export function resourceGet(req, res) {
     returnPath = 'prototypes/learner/v1/resource/index';
   }
 
-  detailOnlyStars = req.session.detailOnlyStars;
-  hideAllStars = req.session.hideAllStars;
-
-  if (hideAllStars === true) {
-    detailOnlyStars = true;
-  }
+  hideDetailStars = req.session.hideDetailStars;
 
   viewData = {
     resourceType,
-    detailOnlyStars,
+    hideDetailStars,
   };
 
   return res.render(returnPath, viewData);

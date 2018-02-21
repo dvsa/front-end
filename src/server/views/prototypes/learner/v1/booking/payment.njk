@@ -1,0 +1,39 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Payment for your course - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/home' %}
+
+{% set courseDates = courseDates if courseDates %}
+{% set course = course if course %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Payment options', secondary="Booking a course") }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="lede">Select payment method</p>
+
+            {% call components.formElement(name='paymentOptions', method='POST', action="#") %}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Continue', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v1/resource?resourceType=classroom" class="link-back">Cancel booking request</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

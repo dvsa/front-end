@@ -51,6 +51,12 @@
     }
   }
 
+  .label__meta {
+    display: block;
+    @include core-16;
+    color: $grey-1;
+  }
+
   [type=radio] + label::before {
     content: "";
     border: 2px solid;
@@ -140,3 +146,5 @@
     margin-right: $gutter;
   }
 }
+
+

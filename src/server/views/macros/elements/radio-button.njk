@@ -1,6 +1,10 @@
-{% macro radio(text='', value='', id='', name='', isChecked='') %}
+{% macro radio(text='', value='', id='', name='', isChecked='', meta='') %}
   <div class="multiple-choice">
     <input {{ 'id="' + id + '"' if id }} type="radio" name="{{ name if name else id }}" {{ 'value="' + value + '"' if value }} {{ ' checked' if isChecked }}>
-    <label {{ 'for="' + id + '"' if id }}>{{ text }}</label>
+    <label {{ 'for="' + id + '"' if id }}>{{ text }}
+      {% if meta %}
+        <span class="label__meta">{{ meta }}</span>
+      {% endif %}
+    </label>
   </div>
 {% endmacro %}§

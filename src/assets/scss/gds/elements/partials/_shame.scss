@@ -14,3 +14,44 @@
     display: revert;
   }
 }
+
+// dirty radio buttons, added to recreate some nasty implementation of radio buttons in Civ Serv Learning Platform pages
+.course-radios {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 24px;
+
+  &__button {
+    display:none;
+  }
+
+  &__label {
+    display: inline-block;
+    width: 80px;
+    height: 24px;
+    margin-left: -9999px;
+
+    &:before {
+      position: absolute;
+      display:block;
+      content: "Select";
+      width: 80px;
+      text-align: center;
+      height: 24px;
+      border: 2px solid $mauve;
+      border-radius: 4px;
+      left: 1px;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__button:checked + &__label:before {
+    content: "Selected";
+    width: 80px;
+    height: 24px;
+    border: 2px solid $purple;
+    background-color: $grey-3;
+  }
+}

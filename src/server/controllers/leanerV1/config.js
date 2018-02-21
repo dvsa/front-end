@@ -15,23 +15,25 @@ export function configPost(req, res) {
   const { regConfig } = req.body;
 
   console.log('regConfig');
-  let showAllStars, hideAllStars, detailOnlyStars;
+  let showAllStars, hideDetailStars, hideHomeStars;
 
   showAllStars = false;
-  hideAllStars = false;
-  detailOnlyStars = false;
+  hideDetailStars = false;
+  hideHomeStars = false;
 
+  // all | detailAndhome |  home
   if (regConfig == 'all') {
     showAllStars = true;
-  } else if (regConfig == 'detail') {
-    detailOnlyStars = true;
-  } else if (regConfig == 'none') {
-    hideAllStars = true;
+  } else if (regConfig == 'detailAndHome') {
+    hideDetailStars = true;
+    hideHomeStars = true;
+  } else if (regConfig == 'home') {
+    hideHomeStars = true;
   }
 
   req.session.showAllStars = showAllStars;
-  req.session.hideAllStars = hideAllStars;
-  req.session.detailOnlyStars = detailOnlyStars;
+  req.session.hideDetailStars = hideDetailStars;
+  req.session.hideHomeStars = hideHomeStars;
 
   res.local = {
     testingLocals: 'testing 123',

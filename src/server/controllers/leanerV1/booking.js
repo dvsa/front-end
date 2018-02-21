@@ -22,6 +22,8 @@ export function bookingDatePost(req, res) {
   return res.redirect('/prototypes/learner/v1/booking/payment');
 }
 
+// PAYMENT
+
 export function bookingPaymentGet(req, res) {
   let viewData;
 
@@ -30,10 +32,26 @@ export function bookingPaymentGet(req, res) {
   return res.render('prototypes/learner/v1/booking/payment', viewData);
 }
 
+export function bookingPaymentPost(req, res) {
+  return res.redirect('/prototypes/learner/v1/booking/confirm');
+}
+
+// CONFIRM
+
 export function bookingConfirmGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
   return res.render('prototypes/learner/v1/booking/confirm', viewData);
 }
 
+// COMPLETE
+
 export function bookingCompleteGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
   return res.render('prototypes/learner/v1/booking/complete', viewData);
 }

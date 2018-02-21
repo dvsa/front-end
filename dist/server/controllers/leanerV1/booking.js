@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.bookingDateGet = bookingDateGet;
 exports.bookingDatePost = bookingDatePost;
 exports.bookingPaymentGet = bookingPaymentGet;
+exports.bookingPaymentPost = bookingPaymentPost;
 exports.bookingConfirmGet = bookingConfirmGet;
 exports.bookingCompleteGet = bookingCompleteGet;
 // Booking
@@ -32,6 +33,8 @@ function bookingDatePost(req, res) {
   return res.redirect('/prototypes/learner/v1/booking/payment');
 }
 
+// PAYMENT
+
 function bookingPaymentGet(req, res) {
   let viewData;
 
@@ -40,10 +43,26 @@ function bookingPaymentGet(req, res) {
   return res.render('prototypes/learner/v1/booking/payment', viewData);
 }
 
+function bookingPaymentPost(req, res) {
+  return res.redirect('/prototypes/learner/v1/booking/confirm');
+}
+
+// CONFIRM
+
 function bookingConfirmGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
   return res.render('prototypes/learner/v1/booking/confirm', viewData);
 }
 
+// COMPLETE
+
 function bookingCompleteGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
   return res.render('prototypes/learner/v1/booking/complete', viewData);
 }

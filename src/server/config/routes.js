@@ -88,6 +88,7 @@ router.get('/prototypes/learner/v1/resource', learnerV1Controller.resourceGet);
 router.get('/prototypes/learner/v1/booking', learnerV1Controller.bookingDateGet);
 router.post('/prototypes/learner/v1/booking', learnerV1Controller.bookingDatePost);
 router.get('/prototypes/learner/v1/booking/payment', learnerV1Controller.bookingPaymentGet);
+router.post('/prototypes/learner/v1/booking/payment', learnerV1Controller.bookingPaymentPost);
 router.get('/prototypes/learner/v1/booking/confirm', learnerV1Controller.bookingConfirmGet);
 router.get('/prototypes/learner/v1/booking/complete', learnerV1Controller.bookingCompleteGet);
 

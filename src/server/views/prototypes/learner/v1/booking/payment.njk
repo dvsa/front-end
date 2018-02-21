@@ -20,6 +20,8 @@
 
             {% call components.formElement(name='paymentOptions', method='POST', action="#") %}
 
+                {{ components.field(label='Purchase order number', id='poNumber', hint="", group=true)}}
+
                 {% call components.formGroup() %}
 
                     {{ components.button(text='Continue', group=true)}}

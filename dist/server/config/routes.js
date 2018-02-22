@@ -62,6 +62,9 @@ router.post('/prototypes/create-account/password', createAccountController.passw
 router.get('/prototypes/learner', learnerV1Controller.configGet);
 router.post('/prototypes/learner', learnerV1Controller.configPost);
 
+//******************************************************
+//      Various smaller sections
+//******************************************************
 // start
 router.get('/prototypes/learner/v1', learnerV1Controller.indexGet);
 router.post('/prototypes/learner/v1', learnerV1Controller.indexPost);
@@ -69,6 +72,16 @@ router.post('/prototypes/learner/v1', learnerV1Controller.indexPost);
 router.get('/prototypes/learner/v1/home', learnerV1Controller.homeGet);
 // router.post('/prototypes/learner/v1/home', learnerV1Controller.homePost);
 
+// profile
+router.get('/prototypes/learner/v1/your-profile', learnerV1Controller.profileGet);
+// planned learning
+router.get('/prototypes/learner/v1/home', learnerV1Controller.plannedGet);
+// learning record
+router.get('/prototypes/learner/v1/home', learnerV1Controller.recordGet);
+
+//******************************************************
+//      Registration stuff
+//******************************************************
 // registration, email
 router.get('/prototypes/learner/v1/registration', learnerV1Controller.registerEmailGet);
 router.post('/prototypes/learner/v1/registration', learnerV1Controller.registerEmailPost);
@@ -99,7 +112,9 @@ router.get('/prototypes/learner/v1/registration/complete', learnerV1Controller.r
 // registration, complete
 router.get('/prototypes/learner/v1/resource', learnerV1Controller.resourceGet);
 
-// booking
+//******************************************************
+//      Booking stuff
+//******************************************************
 router.get('/prototypes/learner/v1/booking', learnerV1Controller.bookingDateGet);
 router.post('/prototypes/learner/v1/booking', learnerV1Controller.bookingDatePost);
 router.get('/prototypes/learner/v1/booking/payment', learnerV1Controller.bookingPaymentGet);

@@ -1,0 +1,25 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your profile - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+
+{% block content %}
+
+    {{ components.pageHeading('Your profile') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Personal details', tag='h2', size='medium', extraClass='') }}
+
+            {{ components.heading(text='Job details', tag='h2', size='medium', extraClass='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

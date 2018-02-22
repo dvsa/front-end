@@ -8,8 +8,12 @@ import path from 'path';
 import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
 import gulpIf from 'gulp-if';
+import header from 'gulp-header';
+import moment from 'moment';
+import replace from 'gulp-replace';
 
 import { CONFIG } from './../constants';
+import * as PACKAGE_JSON from './../../package.json';
 
 /**
  * SCSS Task
@@ -52,10 +56,8 @@ gulp.task('scss', () => {
     postcssPlugins.push(
       // Minify the outputted css
       cssnano({
-        minifyFontValues: false,
-        discardComments: {
-          removeAll: true,
-        },
+        preset: 'advanced',
+        minifyFontValues: false
       })
     );
   }
@@ -63,6 +65,12 @@ gulp.task('scss', () => {
   return gulp.src(path.join(CONFIG.sourcePaths.scss, CONFIG.patterns.scss))
     // Enable source maps for development
     .pipe(gulpIf(!CONFIG.isProduction(), sourcemaps.init()))
+    // Add package data
+    .pipe(replace('{{packageName}}', PACKAGE_JSON.name))
+    .pipe(replace('{{packageVersion}}', PACKAGE_JSON.version))
+    .pipe(replace('{{packageAuthor}}', PACKAGE_JSON.author))
+    .pipe(replace('{{packageContributors}}', PACKAGE_JSON.contributors.join(', ')))
+    .pipe(replace('{{packageTimestamp}}', moment().format('MMMM Do YYYY, h:mm:ss a')))
     // Include node_modules folder to allow for imports
     .pipe(sass({
       includePaths: [

@@ -8,7 +8,6 @@ import path from 'path';
 import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
 import gulpIf from 'gulp-if';
-import header from 'gulp-header';
 import moment from 'moment';
 import replace from 'gulp-replace';
 

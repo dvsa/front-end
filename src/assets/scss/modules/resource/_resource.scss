@@ -16,7 +16,7 @@
     text-align: left;
   }
 
-  &__title {
+  &__main {
     @extend %li;
     width: 100%;
     max-width: auto;
@@ -24,6 +24,10 @@
     @include media(desktop) {
       max-width: 300px;
     }
+  }
+
+  &__title {
+
 
   }
 
@@ -57,24 +61,19 @@
 
     @include media(desktop) {
       position: absolute;
-      right:100px;
+      right: 0;
       text-align: right;
     }
 
   }
 
   &__action {
-    @extend %li;
     position: relative;
-    right: auto;
+    display: block;
 
-    min-width: 100px;
-    padding-right: 0;
 
     @include media(desktop) {
-      position: absolute;
-      right:0;
-      text-align: right;
+
     }
 
   }

@@ -1,0 +1,85 @@
+// starter class for <li>
+%li {
+  display:inline-block;
+  float:left;
+  vertical-align: top;
+  padding:10px 8px 10px 0;
+
+}
+
+.resource {
+  margin-bottom: 10px;
+  border-bottom: 1px solid $grey-2;
+
+  &__item {
+    position: relative;
+    text-align: left;
+  }
+
+  &__title {
+    @extend %li;
+    width: 100%;
+    max-width: auto;
+
+    @include media(desktop) {
+      max-width: 300px;
+    }
+
+  }
+
+  &__rating {
+    @extend %li;
+    min-width: 148px;
+    display: none;
+  }
+
+  &__info {
+    @extend %li;
+    padding-right: 20px;
+
+  }
+
+  &__duration {
+    @extend %li;
+    @include media(desktop) {
+
+
+    }
+  }
+
+  &__status {
+    @extend %li;
+    position: relative;
+    right:auto;
+
+    min-width: 100px;
+    padding-right: 0;
+
+    @include media(desktop) {
+      position: absolute;
+      right:100px;
+      text-align: right;
+    }
+
+  }
+
+  &__action {
+    @extend %li;
+    position: relative;
+    right: auto;
+
+    min-width: 100px;
+    padding-right: 0;
+
+    @include media(desktop) {
+      position: absolute;
+      right:0;
+      text-align: right;
+    }
+
+  }
+  .meta {
+    margin-top: 4px;
+  }
+
+}

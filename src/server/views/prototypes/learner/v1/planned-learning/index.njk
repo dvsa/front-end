@@ -16,12 +16,179 @@
 
             {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='') }}
 
+            <div class="resource resource--required">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a class="" href="#">Digital awareness "Digital by default"</a>
+                    </li>
+                    <li class="resource__info">
+                        <span>Required by 18 Sep 2018</span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>1 hour</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--info badge--smaller">In progress</span>
+                    </li>
+                    <li class="resource__action">
+                        <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                    </li>
+                </ul>
+            </div>
 
-            {{ components.heading(text='Your own learning (?!?!?!)', tag='h2', size='medium', extraClass='') }}
+            <div class="resource resource--required">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a class="" href="#">Unconcious bias</a>
+                    </li>
+                    <li class="resource__info">
+                        <span>Required by 21 Oct 2018</span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>2 hour</span>
+                    </li>
+                    <li class="resource__action">
+                        <a href="#">Start <span class="visuallyhidden"> course</span></a>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="resource resource--required">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a class="" href="#">Annual Health and safety</a>
+                    </li>
+                    <li class="resource__info">
+                        <span>Required by 9 Feb 2018</span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>1 hour</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class=" badge--alert badge--smaller">Overdue</span>
+                    </li>
+                    <li class="resource__action">
+                        <a href="#">Start <span class="visuallyhidden"> course</span></a>
+                    </li>
+                </ul>
+            </div>
 
+            {{ components.heading(text='Your own learning', tag='h2', size='medium', extraClass='') }}
 
+            <div class="resource resource--planned">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a  class="" href="#">Digital awareness "Digital by default"</a>
+                    </li>
+                    {% if not hideHomeStars %}
+                        <li class="resource__rating">
+                            {{ components.starRating(rating='25%', total='10') }}
+                        </li>
+                    {% endif %}
+                    <li class="resource__info">
+                        <span>Added by you</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Online, 3 hours</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--info badge--smaller">In progress</span>
+                    </li>
+                    <li class="resource__action">
+                        <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                    </li>
+                </ul>
+            </div>
 
+            <div class="resource resource--planned">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a  class="" href="#">Effective negotiation for senior managers</a>
+                    </li>
+                    {% if not hideHomeStars %}
+                        <li class="resource__rating">
+                            {{ components.starRating(rating='100%', total='82') }}
+                        </li>
+                    {% endif %}
+                    <li class="resource__info">
+                        <span>Recommended by Commercial</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Classroom, 2 hours</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--info badge--smaller">Booked</span>
+                        <span class="meta">21 Aug 2018</span>
+                    </li>
+                    <li class="resource__action">
+                        <a href="#">Cancel <span class="visuallyhidden"> this booking</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource resource--planned">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a  class="" href="#">Simon Sinek - Start With Why - TED Talk Short Edited</a>
+                    </li>
+                    {% if not hideHomeStars %}
+                        <li class="resource__rating">
+                            {{ components.starRating(rating='96%', total='486') }}
+                        </li>
+                    {% endif %}
+                    <li class="resource__info">
+                        <span>Recommened by Barry Gubbins</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Video, 30 mins</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="visuallyhidden">Not started</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource resource--planned">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a class="" href="#">Interviewing strategies and how to get the right people on board</a>
+                    </li>
+                    {% if not hideHomeStars %}
+                        <li class="resource__rating">
+                            {{ components.starRating(rating='77%', total='351') }}
+                        </li>
+                    {% endif %}
+                    <li class="resource__info">
+                        <span>Recommended by Shirley Knott</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Blog, 10 mins</span>
+                    </li>
+                    <li class="resource__status"><span class="visuallyhidden">Not started</span></li>
+                </ul>
+            </div>
+
+            <div class="resource resource--planned">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__title">
+                        <a class="" href="#">Foreign contract compliance legal obligations</a>
+                    </li>
+                    {% if not hideHomeStars %}
+                        <li class="resource__rating">
+                            {{ components.starRating(rating='85%', total='83') }}
+                        </li>
+                    {% endif %}
+                    <li class="resource__info">
+                        <span>Added by you</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Classroom, 5 hours</span>
+                    </li>
+                    <li class="resource__action">
+                        <a href="#">Book now</a>
+                    </li>
+                </ul>
+            </div>
         {%- endcall %}
 
     {%- endcall %}

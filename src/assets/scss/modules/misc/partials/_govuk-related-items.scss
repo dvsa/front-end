@@ -17,4 +17,14 @@
     &--flush {
         margin-top: 8px;
     }
+
+    &--keylined {
+        // For LPG
+        border: 1px solid $grey-2;
+        border-top: 10px solid $civil-service;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 }
+
+

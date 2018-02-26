@@ -1,6 +1,6 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Planned learning - Civil Service Learning Platform' %}
+{% set pageTitle = 'Learning plan - Civil Service Learning Platform' %}
 {% set blackBarTitle = 'Civil Service Learning' %}
 {% set signOutPath = '/prototypes/learner/v1/' %}
 {% set homePath = '/prototypes/learner/v1/home' %}
@@ -8,13 +8,61 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Planned learning') }}
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="u-space-y30 header-box u-border-bgrey2">
+
+                {% call components.gridRow() %}
+
+                    {% call components.columnHalf() %}
+
+                        {{ components.heading(text='Learning plan', tag='h1', size='large', extraClass='heading--flush') }}
+
+                        <p class="u-space-b5">You have <a href="#">one overdue required course</a> to complete.</p>
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="#") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                    <a href="#" class="search-box__advanced">Advanced search</a>
+
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
+
+                {%- endcall %}
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
 
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
 
-            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='') }}
+            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading--red-top') }}
 
             <div class="resource resource--required">
                 <ul class="resource__item u-clearfix">
@@ -57,7 +105,7 @@
             <div class="resource resource--required">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
-                        <a class="resource__title" href="#">Annual Health and safety</a>
+                        <a class="resource__title" href="#">Annual Health and Safety</a>
                         <span class="resource__action">
                             <a href="#">Start <span class="visuallyhidden"> course</span></a>
                         </span>
@@ -74,7 +122,7 @@
                 </ul>
             </div>
 
-            {{ components.heading(text='Your own learning', tag='h2', size='medium', extraClass='') }}
+            {{ components.heading(text='Your own learning', tag='h2', size='medium', extraClass='heading--red-top') }}
 
             <div class="resource resource--planned">
                 <ul class="resource__item u-clearfix">
@@ -82,6 +130,7 @@
                         <a  class="resource__title" href="#">Digital awareness "Digital by default"</a>
                         <span class="resource__action">
                             <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                            <a href="#?remove=true&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
                         </span>
                     </li>
                     {% if not hideHomeStars %}
@@ -132,7 +181,9 @@
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
                         <a class="resource__title" href="#">Simon Sinek - Start With Why - TED Talk Short Edited</a>
-
+                        <span class="resource__action">
+                            <a href="#?remove=true&id=2">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                        </span>
                     </li>
                     {% if not hideHomeStars %}
                         <li class="resource__rating">
@@ -140,7 +191,7 @@
                         </li>
                     {% endif %}
                     <li class="resource__info">
-                        <span>Recommened by Barry Gubbins</span>
+                        <span>Recommened by Digital</span>
                     </li>
                     <li class="resource__info">
                         <span>Video, 30 mins</span>
@@ -155,6 +206,9 @@
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
                         <a class="resource__title" href="#">Interviewing strategies and how to get the right people on board</a>
+                        <span class="resource__action">
+                            <a href="#?remove=true&id=3">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                        </span>
                     </li>
                     {% if not hideHomeStars %}
                         <li class="resource__rating">
@@ -162,7 +216,7 @@
                         </li>
                     {% endif %}
                     <li class="resource__info">
-                        <span>Recommended by Shirley Knott</span>
+                        <span>Recommended by Commercial</span>
                     </li>
                     <li class="resource__info">
                         <span>Blog, 10 mins</span>
@@ -177,6 +231,7 @@
                         <a class="resource__title" href="#">Foreign contract compliance legal obligations</a>
                         <span class="resource__action">
                             <a href="/prototypes/learner/v1/booking/">Book now</a>
+                            <a href="#?remove=true&id=4">Remove <span class="visuallyhidden"> from learning plan</span></a>
                         </span>
                     </li>
                     {% if not hideHomeStars %}

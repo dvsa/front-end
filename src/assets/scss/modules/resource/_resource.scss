@@ -79,16 +79,33 @@
 
     a {
       @include core-16;
+      display: inline-block;
+    }
+
+    a + a {
+      margin-left: 8px;
     }
 
 
-    @include media(desktop) {
-
-    }
 
   }
   .meta {
     margin-top: 4px;
+  }
+
+  &__long {
+    @extend %li;
+
+    @include media(desktop) {
+      width: 60%;
+    }
+  }
+
+  &--feedback {
+    background-color: $grey-4;
+    padding-left: 20px;
+    padding-right: 20px;
+
   }
 
 }

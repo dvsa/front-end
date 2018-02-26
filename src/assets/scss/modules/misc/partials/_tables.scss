@@ -16,3 +16,9 @@
     }
 
 }
+
+.table--fix-first {
+    @include media(desktop) {
+        width: 460px;
+    }
+}

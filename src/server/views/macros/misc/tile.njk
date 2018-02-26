@@ -8,13 +8,14 @@
     because='',
     type='',
     duration='',
+    hideStars=false,
     cost='',
     intro=''
     )
 %}
     <div class="tile">
         <h4 class="heading-small"><a href="{{ url }}">{{ title }}</a></h4>
-        {% if not hideHomeStars %}
+        {% if not hideStars %}
             {{ starRating(rating=starPercent, total=starTotal) }}
         {% endif %}
         <p class="tile__attribution">{{ because }}</p>
@@ -30,6 +31,6 @@
             {% endif %}
         </ul>
         <p>{{ intro }}</p>
-        <p class="tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
+        <p class="tile__actions"><a href="/prototypes/learner/v1/planned-learning?action=added">Add to learning plan</a> <a href="?action=removed&type={{ type }}">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
     </div>
 {% endmacro %}

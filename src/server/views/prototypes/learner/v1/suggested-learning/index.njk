@@ -1,0 +1,170 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suggestions for you - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v1/' %}
+{% set homePath = '/prototypes/learner/v1/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="u-space-y30 header-box u-border-bgrey2">
+
+                {% call components.gridRow(extraClass="") %}
+
+                    {% call components.columnHalf() %}
+
+                        {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
+
+                        <p class="u-space-b5">Suggestions are tailored by the service or from colleagues recommendations.</p>
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="#") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                    <a href="#" class="search-box__advanced">Advanced search</a>
+
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
+
+                {%- endcall %}
+
+             </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {{ components.heading(text='By your area of work', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Digital awareness "Digital by default"',
+                url='/prototypes/learner/v1/resource?resourceType=online',
+                starPercent='80%',
+                starTotal='128',
+                because='Suggested by Commercial',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                intro='You\'ll develop lorem ac semper semper, eros erat malesuada diam, sed fringilla felis enim'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v1/resource?resourceType=classroom',
+                starPercent='76%',
+                starTotal='104',
+                because='Because you did Hiring Contractors Part I',
+                type='Classroom',
+                duration='2 days',
+                cost='£357',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing employees',
+                url='/prototypes/learner/v1/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                because='Because you did Onboarding for new staff',
+                type='Classroom',
+                duration='1 day',
+                cost='£199',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {{ components.heading(text='By your colleagues', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Digital awareness "Digital by default"',
+                url='/prototypes/learner/v1/resource?resourceType=online',
+                starPercent='80%',
+                starTotal='128',
+                because='Suggested by Legal',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                intro='You\'ll develop lorem ac semper semper, eros erat malesuada diam, sed fringilla felis enim'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v1/resource?resourceType=classroom',
+                starPercent='76%',
+                starTotal='104',
+                because='Because you did Hiring Contractors Part I',
+                type='Classroom',
+                duration='2 days',
+                cost='£357',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing employees',
+                url='/prototypes/learner/v1/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                because='Because you did Onboarding for new staff',
+                type='Classroom',
+                duration='1 day',
+                cost='£199',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

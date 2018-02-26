@@ -22,7 +22,7 @@
     max-width: auto;
 
     @include media(desktop) {
-      max-width: 300px;
+      width: 320px;
     }
   }
 
@@ -40,6 +40,11 @@
   &__info {
     @extend %li;
     padding-right: 20px;
+
+    @include media(desktop) {
+      width: 280px;
+
+    }
 
   }
 
@@ -70,6 +75,11 @@
   &__action {
     position: relative;
     display: block;
+    margin-top: 10px;
+
+    a {
+      @include core-16;
+    }
 
 
     @include media(desktop) {

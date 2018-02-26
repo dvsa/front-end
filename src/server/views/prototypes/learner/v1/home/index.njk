@@ -122,33 +122,51 @@
 
     {% call components.gridRow() %}
 
-        {% call components.columnHalf() %}
+        {% call components.columnOneThird() %}
 
-            <div class="home-tile">
-                <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=online">Digital awareness "Digital by default"</a></h4>
-                {% if not hideHomeStars %}
-                    {{ components.starRating(rating='80%', total='128') }}
-                {% endif %}
-                <p class="">Suggested by Janet Rimmer</p>
-                <p>Online 1 hour £Free</p>
-                <p>You'll develop lorem ac semper semper, eros erat malesuada diam, sed fringilla felis enim</p>
-                <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
-            </div>
+            {{ components.tile(
+                title='Digital awareness "Digital by default"',
+                url='/prototypes/learner/v1/resource?resourceType=online',
+                starPercent='80%',
+                starTotal='128',
+                because='Suggested by Janet Rimmer',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                intro='You\'ll develop lorem ac semper semper, eros erat malesuada diam, sed fringilla felis enim'
+            ) }}
 
         {%- endcall %}
 
-        {% call components.columnHalf() %}
+        {% call components.columnOneThird() %}
 
-            <div class="home-tile">
-                <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=classroom">Managing contractors</a></h4>
-                {% if not hideHomeStars %}
-                    {{ components.starRating(rating='76%', total='104') }}
-                {% endif %}
-                <p>Because you did Hiring Contractors Part I</p>
-                <p>Classroom 2 days £357</p>
-                <p>Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.</p>
-                <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
-            </div>
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v1/resource?resourceType=classroom',
+                starPercent='76%',
+                starTotal='104',
+                because='Because you did Hiring Contractors Part I',
+                type='Classroom',
+                duration='2 days',
+                cost='£357',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing employees',
+                url='/prototypes/learner/v1/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                because='Because you did Onboarding for new staff',
+                type='Classroom',
+                duration='1 day',
+                cost='£199',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
 
         {%- endcall %}
 
@@ -156,33 +174,50 @@
 
     {% call components.gridRow() %}
 
-        {% call components.columnHalf() %}
+        {% call components.columnOneThird() %}
 
-            <div class="home-tile">
-                <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=video">Simon Sinek - Start With Why - TED Talk Short Edited</a></h4>
-                {% if not hideHomeStars %}
-                    {{ components.starRating(rating='64%', total='39') }}
-                {% endif %}
-                <p>Suggested by William Smith</p>
-                <p>Video 17 mins</p>
-                <p>In this video, eros erat malesuada diam, sed fringilla felis enim</p>
-                <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
-            </div>
+            {{ components.tile(
+                title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                url='/prototypes/learner/v1/resource?resourceType=video',
+                starPercent='64%',
+                starTotal='39',
+                because='Suggested by William Smith',
+                type='Video',
+                duration='17 mins',
+                cost='£FREE',
+                intro='In this video, eros erat malesuada diam, sed fringilla felis enim'
+            ) }}
 
         {%- endcall %}
 
-        {% call components.columnHalf() %}
+        {% call components.columnOneThird() %}
 
-            <div class="home-tile">
-                <h4 class="heading-small"><a href="/prototypes/learner/v1/resource?resourceType=blog">Rupert McNeil: what the civil service of tomorrow will look like</a></h4>
-                {% if not hideHomeStars %}
-                    {{ components.starRating(rating='70%', total='84') }}
-                {% endif %}
-                <p>Recommended by Commercial</p>
-                <p>Blog</p>
-                <p>Introduces you to the different factors neque lacus, ultricies vitae nunc quis.</p>
-                <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
-            </div>
+            {{ components.tile(
+                title='Rupert McNeil: what the civil service of tomorrow will look like',
+                url='/prototypes/learner/v1/resource?resourceType=video',
+                starPercent='70%',
+                starTotal='84',
+                because='Recommended by Commercial',
+                type='Blog',
+                cost='£FREE',
+                intro='Introduces you to the different factors neque lacus, ultricies vitae nunc quis.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Ruth Trousers: Management strategies in senior government',
+                url='/prototypes/learner/v1/resource?resourceType=video',
+                starPercent='95%',
+                starTotal='233',
+                because='Recommended by Commercial',
+                type='Blog',
+                duration='5 mins',
+                cost='£FREE',
+                intro='Introduces you to the different factors neque lacus, ultricies vitae nunc quis.'
+            ) }}
 
         {%- endcall %}
 

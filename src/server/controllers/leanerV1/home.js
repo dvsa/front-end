@@ -40,3 +40,12 @@ export function recordGet(req, res) {
 
   return res.render('prototypes/learner/v1/learning-record/index', viewData);
 }
+
+// suggested learning GET
+export function suggestedGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
+  return res.render('prototypes/learner/v1/suggested-learning/index', viewData);
+}

@@ -1,0 +1,35 @@
+{% from "macros/misc/star-rating.njk" import starRating %}
+
+{% macro tile(
+    title='',
+    url='',
+    starPercent='50%',
+    starTotal='99',
+    because='',
+    type='',
+    duration='',
+    cost='',
+    intro=''
+    )
+%}
+    <div class="tile">
+        <h4 class="heading-small"><a href="{{ url }}">{{ title }}</a></h4>
+        {% if not hideHomeStars %}
+            {{ starRating(rating=starPercent, total=starTotal) }}
+        {% endif %}
+        <p class="tile__attribution">{{ because }}</p>
+        <ul class="tile__properties u-clearfix">
+            {% if type %}
+                <li class="tile__property">{{ type }}</li>
+            {% endif %}
+            {% if duration %}
+                <li class="tile__property">{{ duration }}</li>
+            {% endif %}
+            {% if cost %}
+                <li class="tile__property">{{ cost }}</li>
+            {% endif %}
+        </ul>
+        <p>{{ intro }}</p>
+        <p class="tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
+    </div>
+{% endmacro %}

@@ -1,54 +1,54 @@
-{% macro gridRow() %}
+{% macro gridRow(extraClass='') %}
 
-  <div class="grid-row">
+  <div class="grid-row {{ extraClass if extraClass }}">
     {{ caller() }}  
   </div>
 
 {% endmacro %}
 
-{% macro columnFull() %}
+{% macro columnFull(extraClass='') %}
 
-  <div class="column-full">
+  <div class="column-full {{ extraClass if extraClass }}">
     {{ caller() }}
   </div>
 
 {% endmacro %}
 
-{% macro columnHalf() %}
+{% macro columnHalf(extraClass='') %}
 
-  <div class="column-one-half">
+  <div class="column-one-half {{ extraClass if extraClass }}">
     {{ caller() }}
   </div>
 
 {% endmacro %}
 
-{% macro columnOneThird() %}
+{% macro columnOneThird(extraClass='') %}
 
-  <div class="column-one-third">
+  <div class="column-one-third {{ extraClass if extraClass }}">
     {{ caller() }}
   </div>
 
 {% endmacro %}
 
-{% macro columnTwoThirds() %}
+{% macro columnTwoThirds(extraClass='') %}
 
-  <div class="column-two-thirds">
+  <div class="column-two-thirds {{ extraClass if extraClass }}">
     {{ caller() }}
   </div>
 
 {% endmacro %}
 
-{% macro columnOneQuarter() %}
+{% macro columnOneQuarter(extraClass='') %}
 
-  <div class="column-one-quarter">
+  <div class="column-one-quarter {{ extraClass if extraClass }}">
     {{ caller() }}
   </div>
 
 {% endmacro %}
 
-{% macro lowerHero() %}
+{% macro lowerHero(extraClass='') %}
 
-  <div class="lower-hero">
+  <div class="lower-hero {{ extraClass if extraClass }}">
       <div class="wrapper">
           {{ caller() }}
       </div>

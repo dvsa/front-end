@@ -7,6 +7,7 @@ exports.homeGet = homeGet;
 exports.plannedGet = plannedGet;
 exports.profileGet = profileGet;
 exports.recordGet = recordGet;
+exports.suggestedGet = suggestedGet;
 // home GET
 function homeGet(req, res) {
   let viewData, hideHomeStars;
@@ -48,4 +49,13 @@ function recordGet(req, res) {
   viewData = {};
 
   return res.render('prototypes/learner/v1/learning-record/index', viewData);
+}
+
+// suggested learning GET
+function suggestedGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
+  return res.render('prototypes/learner/v1/suggested-learning/index', viewData);
 }

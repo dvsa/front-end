@@ -39,7 +39,7 @@ export class ShowHideContent {
    * Handle the click event
    */
   clickEventHandler = event => {
-    if(!event.target) return;
+    if (!event.target) return;
     const element = event.target;
     let type = element.getAttribute('type');
     switch (type) {

@@ -53,13 +53,13 @@ ol li {
   tab-size: 4;
 }
 
-body a,
-body a:link,
-body a:visited {
+a,
+a:link,
+a:visited {
   color: $govuk-blue;
 }
 
-body a:hover {
+a:hover {
   color: $light-blue;
 }
 

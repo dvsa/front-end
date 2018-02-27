@@ -50,8 +50,10 @@
       list-style: outside none none;
 
       a {
+        color: $white;
+
         &:visited {
-          color: $white !important;
+          color: $white;
         }
       }
 

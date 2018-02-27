@@ -9,9 +9,6 @@
     {% call components.gridRow() %}
 
         {% call components.columnTwoThirds() %}
-
-            {{ components.heading(text='Config optons for learner journey', tag='h2', size='medium') }}
-
             {% if configError %}
 
                 <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
@@ -22,7 +19,7 @@
                 </div>
 
             {% endif %}
-
+        
             {% call components.formElement(name='registrtionConfig', method='POST', action="#") %}
 
                 <p>Basic user journey for learners with ability to register a new account.</p>

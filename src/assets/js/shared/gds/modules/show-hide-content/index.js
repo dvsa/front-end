@@ -39,13 +39,15 @@ export class ShowHideContent {
    * Handle the click event
    */
   clickEventHandler = event => {
-    let type = event.target.getAttribute('type');
+    if(!event.target) return;
+    const element = event.target;
+    let type = element.getAttribute('type');
     switch (type) {
       case 'radio': {
-        let radioGroupName = event.target.getAttribute('name');
+        let radioGroupName = element.getAttribute('name');
         // Refresh all radios for this group
         if (radioGroupName) {
-          let radioInputsForGroup = document.querySelectorAll('input[type="radio"][name="' + radioGroupName + '"');
+          let radioInputsForGroup = document.querySelectorAll(`input[type="radio"][name="${radioGroupName}"]`);
           radioInputsForGroup = Array.from(radioInputsForGroup);
           radioInputsForGroup.forEach(radio => {
             this.toggleContentBasedOnCheckState(radio);
@@ -55,7 +57,7 @@ export class ShowHideContent {
       }
       case 'checkbox': {
         // Refresh current checkbox
-        this.toggleContentBasedOnCheckState(event.target);
+        this.toggleContentBasedOnCheckState(element);
         return;
       }
       default: {
@@ -81,15 +83,17 @@ export class ShowHideContent {
    */
   toggleContentBasedOnCheckState = element => {
     if (!element) return;
+
     let targetInfo = this.getTargetFromElement(element);
-    toggleClass(targetInfo.element, this.contentHiddenClass, !element.checked);
+    if (!targetInfo || !targetInfo.element || !targetInfo.id) return;
 
     // Refresh aria tags
     element.setAttribute(this.ariaControlsAttributeName, targetInfo.id);
     element.setAttribute(this.ariaExpandedAtributeName, element.checked ? 'true' : 'false');
-    if (targetInfo && targetInfo.element) {
-      targetInfo.element.setAttribute(this.ariaHiddenAttributeName, element.checked ? 'false' : 'true');
-    }
+
+    // Refresh target aria/class
+    toggleClass(targetInfo.element, this.contentHiddenClass, !element.checked);
+    targetInfo.element.setAttribute(this.ariaHiddenAttributeName, element.checked ? 'false' : 'true');
   };
 
   /**

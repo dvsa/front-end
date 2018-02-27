@@ -15,7 +15,7 @@
             {% if configError %}
 
                 <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
-                    <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your email address</h2>
+                    <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem</h2>
                     <ul class="error-summary-list">
                         <li><a href="#config1">Pick one option from below to continue</a></li>
                     </ul>
@@ -25,7 +25,7 @@
 
             {% call components.formElement(name='registrtionConfig', method='POST', action="#") %}
 
-                <p>Basic user journey for <lear></lear>ners with ability to register a new account.</p>
+                <p>Basic user journey for learners with ability to register a new account.</p>
 
                 <p>
                     If you want to get rid of everything and start again, then <a href="/prototypes/learner/v1/registration?clearSession=true">clear previous session</a>.
@@ -52,7 +52,7 @@
 
                 {% call components.formGroup() %}
 
-                    {{ components.button(text='Start registration journey', group=true)}}
+                    {{ components.button(text='Continue', group=true)}}
 
                 {%- endcall %}
 

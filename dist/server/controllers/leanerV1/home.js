@@ -8,7 +8,11 @@ exports.plannedGet = plannedGet;
 exports.profileGet = profileGet;
 exports.recordGet = recordGet;
 exports.suggestedGet = suggestedGet;
-// home GET
+exports.searchGet = searchGet;
+exports.searchPost = searchPost;
+
+var _validationFunctions = require('./validation-functions');
+
 function homeGet(req, res) {
   let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage;
 
@@ -41,6 +45,7 @@ function homeGet(req, res) {
 }
 
 // planned GET
+// home GET
 function plannedGet(req, res) {
   let viewData;
 
@@ -74,4 +79,28 @@ function suggestedGet(req, res) {
   viewData = {};
 
   return res.render('prototypes/learner/v1/suggested-learning/index', viewData);
+}
+
+// search
+function searchGet(req, res) {
+  let viewData, searchTerm;
+
+  searchTerm = req.session.searchTerm;
+
+  viewData = {
+    searchTerm
+  };
+
+  return res.render('prototypes/learner/v1/search/index', viewData);
+}
+
+// Personal details: POST
+function searchPost(req, res) {
+  const { searchInput } = req.body;
+
+  let searchTerm;
+  searchTerm = searchInput;
+  req.session.searchTerm = searchTerm;
+
+  return res.redirect('/prototypes/learner/v1/registration/department');
 }

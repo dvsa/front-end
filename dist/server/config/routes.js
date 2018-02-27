@@ -81,6 +81,10 @@ router.get('/prototypes/learner/v1/learning-record', learnerV1Controller.recordG
 // suggested learning
 router.get('/prototypes/learner/v1/suggested-learning', learnerV1Controller.suggestedGet);
 
+// search
+router.get('/prototypes/learner/v1/search', learnerV1Controller.searchGet);
+router.get('/prototypes/learner/v1/search', learnerV1Controller.searchPost);
+
 //******************************************************
 //      Registration stuff
 //******************************************************

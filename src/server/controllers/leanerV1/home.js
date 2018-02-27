@@ -1,4 +1,6 @@
 // home GET
+import { validateWord } from './validation-functions';
+
 export function homeGet(req, res) {
   let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage;
 
@@ -64,4 +66,28 @@ export function suggestedGet(req, res) {
   viewData = {};
 
   return res.render('prototypes/learner/v1/suggested-learning/index', viewData);
+}
+
+// search
+export function searchGet(req, res) {
+  let viewData, searchTerm;
+
+  searchTerm = req.session.searchTerm;
+
+  viewData = {
+    searchTerm,
+  };
+
+  return res.render('prototypes/learner/v1/search/index', viewData);
+}
+
+// Personal details: POST
+export function searchPost(req, res) {
+  const { searchInput } = req.body;
+
+  let searchTerm;
+  searchTerm = searchInput;
+  req.session.searchTerm = searchTerm;
+
+  return res.redirect('/prototypes/learner/v1/registration/department');
 }

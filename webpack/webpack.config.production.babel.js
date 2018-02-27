@@ -6,6 +6,15 @@ import moment from 'moment';
 import common from './webpack.config.common.babel';
 import * as packageJSON from './../package.json';
 
+const banner = `
+  Name: ${packageJSON.name}
+  Version: ${packageJSON.version}
+  Author: ${packageJSON.author}
+  Contributors: ${packageJSON.contributors.join(', ')}
+  Timestamp: ${moment().format('MMMM Do YYYY, h:mm:ss a')}
+  Source: https://github.com/dvsa/front-end
+`;
+
 module.exports = merge(common, {
   output: {
     filename: '[name].bundle.js',
@@ -21,14 +30,7 @@ module.exports = merge(common, {
       minimize: true
     }),
     new webpack.BannerPlugin({
-      banner: `
-        Name: ${packageJSON.name}
-        Version: ${packageJSON.version}
-        Author: ${packageJSON.author}
-        Contributors: ${packageJSON.contributors.join(', ')}
-        Timestamp: ${moment().format('MMMM Do YYYY, h:mm:ss a')}
-        Source: https://github.com/dvsa/front-end
-      `
+      banner
     })
   ],
 });

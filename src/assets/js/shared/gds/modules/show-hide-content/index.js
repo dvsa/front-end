@@ -47,8 +47,7 @@ export class ShowHideContent {
         let radioGroupName = element.getAttribute('name');
         // Refresh all radios for this group
         if (radioGroupName) {
-          let radioInputsForGroup = document.querySelectorAll(`input[type="radio"][name="${radioGroupName}"]`);
-          radioInputsForGroup = Array.from(radioInputsForGroup);
+          let radioInputsForGroup = Array.from(document.querySelectorAll(`input[type="radio"][name="${radioGroupName}"]`));
           radioInputsForGroup.forEach(radio => {
             this.toggleContentBasedOnCheckState(radio);
           });

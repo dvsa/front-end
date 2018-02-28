@@ -117,7 +117,7 @@
                 </ul>
             </div>
 
-            <div class="resource resource--required">
+            {#<div class="resource resource--required">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
                         <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=online">Annual Health and Safety</a>
@@ -135,7 +135,7 @@
                         <span class=" badge--alert badge--smaller">Overdue</span>
                     </li>
                 </ul>
-            </div>
+            </div>#}
 
             {{ components.heading(text='Your own learning', tag='h2', size='medium', extraClass='heading--red-top') }}
 
@@ -154,7 +154,7 @@
                         </li>
                     {% endif %}
                     <li class="resource__info">
-                        <span>Added by you</span>
+                        <span>&nbsp;</span>
                     </li>
                     <li class="resource__info">
                         <span>Online, 3 hours</span>
@@ -255,7 +255,7 @@
                         </li>
                     {% endif %}
                     <li class="resource__info">
-                        <span>Added by you</span>
+                        <span>&nbsp;</span>
                     </li>
                     <li class="resource__info">
                         <span>Classroom, 5 hours</span>

@@ -12,6 +12,7 @@ exports.searchGet = searchGet;
 exports.searchPost = searchPost;
 exports.actionsGet = actionsGet;
 exports.actionsPost = actionsPost;
+exports.feedbackGet = feedbackGet;
 
 var _validationFunctions = require('./validation-functions');
 
@@ -188,4 +189,13 @@ function actionsPost(req, res) {
     }*/
 
   return res.redirect(redirectPath);
+}
+
+// search
+function feedbackGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
+  return res.render('prototypes/learner/v1/feedback/index', viewData);
 }

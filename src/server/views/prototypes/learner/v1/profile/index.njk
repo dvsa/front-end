@@ -8,15 +8,121 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Your profile') }}
+    {{ components.pageHeading('Hello, Roger') }}
 
     {% call components.gridRow() %}
 
-        {% call components.columnFull() %}
+        {% call components.columnTwoThirds() %}
 
             {{ components.heading(text='Personal details', tag='h2', size='medium', extraClass='') }}
 
+            <table class="key-value-list key-value-list--auto u-space-b30 table--top">
+
+                <thead class="visuallyhidden">
+                    <th>Detail</th>
+                    <th>Your entered value</th>
+                    <th>Action</th>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="key-value-list__key ">Name</td>
+                        <td class="key-value-list__value">
+                            {% if firstName %}
+                                {{ firstName }} {{ lastName }}
+                            {% else %}
+                                Roger Connery
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your first  or last name</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Email</td>
+                        <td class="key-value-list__value">
+                            {% if email %}
+                                {{ email }}
+                            {% else %}
+                                r.connery@cabinetoffice.gov.uk
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your email</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Password</td>
+                        <td class="key-value-list__value">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your password</span></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
             {{ components.heading(text='Job details', tag='h2', size='medium', extraClass='') }}
+
+            <table class="key-value-list key-value-list--auto u-space-b30 table--top">
+
+                <thead class="visuallyhidden">
+                    <th>Detail</th>
+                    <th>Your entered value</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="key-value-list__key ">Department</td>
+                        <td class="key-value-list__value">
+                            {% if departmentName %}
+                                {{ departmentName }}
+                            {% else %}
+                                Cabinet Office
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your job department</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Area of work</td>
+                        <td class="key-value-list__value">
+                            {% if professionName %}
+                                {% for item in professionName %}
+                                    {{ item }}<br>
+                                {% endfor %}
+                            {% else %}
+                                Legal<br>Communications
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your area of work</span></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="key-value-list__key ">Grade</td>
+                        <td class="key-value-list__value">
+                            {% if gradeName %}
+                                {{ gradeName }}
+                            {% else %}
+                                Higher Executive Officer
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your job grade</span></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
 
         {%- endcall %}
 

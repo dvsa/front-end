@@ -54,27 +54,31 @@
             <table class="table-simple table--top u-space-b30">
                 <caption class="visuallyhidden">Details about the course</caption>
                 <tbody>
-                <tr>
-                    <th>Course type</th>
-                    <td>Online</td>
-                </tr>
-                <tr>
-                    <th>Level</th>
-                    <td>AA to Grade 6</td>
-                </tr>
-                <tr>
-                    <th>Key area</th>
-                    <td>Digital</td>
-                </tr>
-                <tr>
-                    <th>Duration</th>
-                    <td>1 hour</td>
-                </tr>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>AA to Grade 6</td>
+                    </tr>
+                    <tr>
+                        <th>Key area</th>
+                        <td>Digital</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>1 hour</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£FREE</td>
+                    </tr>
                 </tbody>
             </table>
 
             {% if not hideDetailStars %}
-                <h2 class="heading-small">Course rating</h2>
+                <h2 class="heading-small">User rating</h2>
                 {{ components.starRating(rating='68%', total='97') }}
             {% endif %}
 

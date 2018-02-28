@@ -85,6 +85,9 @@ router.get('/prototypes/learner/v1/suggested-learning', learnerV1Controller.sugg
 router.get('/prototypes/learner/v1/search', learnerV1Controller.searchGet);
 router.get('/prototypes/learner/v1/search', learnerV1Controller.searchPost);
 
+// feedback
+router.get('/prototypes/learner/v1/feedback', learnerV1Controller.feedbackGet);
+
 // Actions
 router.get('/prototypes/learner/v1/actions', learnerV1Controller.actionsGet);
 router.get('/prototypes/learner/v1/actions', learnerV1Controller.actionsPost);

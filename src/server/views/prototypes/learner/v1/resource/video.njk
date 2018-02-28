@@ -37,12 +37,15 @@
 
         {% call components.columnOneThird() %}
 
-            {% if not hideDetailStars %}
-                <h2 class="heading-small heading--flush">Course rating</h2>
-                {{ components.starRating(rating='68%', total='97') }}
-            {% endif %}
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
 
-            <p><a href="#">Transcript</a></p>
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='68%', total='97') }}
+                {% endif %}
+                <p><a href="#">Transcript</a></p>
+
+            </aside>
 
         {% endcall %}
 

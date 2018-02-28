@@ -21,17 +21,22 @@
 
             <p><a href="https://www.instituteforgovernment.org.uk/blog/rupert-mcneil-what-civil-service-tomorrow-will-look" target="_blank">Read this blog article</a> (external link)</p>
 
-            <hr>
-            <span>Was this blog useful? <a href="#">Yes</a>&nbsp;&nbsp;<a href="#">No</a> </span>
-            <hr>
+            <p>
+                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
 
         {%- endcall %}
 
         {% call components.columnOneThird() %}
 
             {% if not hideDetailStars %}
-            <h2 class="heading-small heading--flush">User rating</h2>
-            {{ components.starRating(rating='85%', total='52') }}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <h2 class="heading-small">Key information</h2>
+
+            </aside>
+
+
             {% endif %}
 
         {% endcall %}

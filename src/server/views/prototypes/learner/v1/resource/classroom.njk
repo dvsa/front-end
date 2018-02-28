@@ -49,7 +49,9 @@
                     {{ components.button(text='Book this course', start=false, group=true, url='/prototypes/learner/v1/booking/')}}
                 {%- endcall %}
 
-                <p><a href="#">Add to learning plan</a></p>
+                <p>
+                    <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+                </p>
 
             {%- endcall %}
 

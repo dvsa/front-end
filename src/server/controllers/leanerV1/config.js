@@ -19,7 +19,7 @@ export function configPost(req, res) {
 
   showAllStars = false;
   hideDetailStars = false;
-  hideHomeStars = false;
+  hideHomeStars = true;
 
   // all | detailAndhome |  home
   if (regConfig == 'all') {

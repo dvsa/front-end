@@ -81,109 +81,61 @@
 
             {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading--red-top') }}
 
-            <div class="resource resource--required">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        <a class="resource__title" href="#">Digital awareness "Digital by default"</a>
-                        <span class="resource__action">
-                            <a href="#">Resume <span class="visuallyhidden"> course</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__info">
-                        <span>Required by 18 Sep 2018</span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>1 hour</span>
-                    </li>
-                    <li class="resource__status">
-                        <span class="badge badge--info badge--smaller">In progress</span>
-                    </li>
+            <div class="resources">
 
-                </ul>
-            </div>
-
-            <div class="resource resource--required">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        <a class="resource__title" href="#">Unconscious bias</a>
-                        <span class="resource__action">
-                            <a href="#">Start<span class="visuallyhidden"> course</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__info">
-                        <span>Required by 21 Oct 2018</span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>2 hour</span>
-                    </li>
-                </ul>
-            </div>
-
-            {{ components.heading(text='Planned learning', tag='h2', size='medium', extraClass='heading--red-top') }}
-
-            {% if not removeMessage %}
-            <div class="resource resource--planned">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        <a  class="resource__title" href="#">Digital awareness "Digital by default"</a>
-                        <span class="resource__action">
-                            <a href="#">Resume <span class="visuallyhidden"> course</span></a>
-                            <a href="/prototypes/learner/v1/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
-                        </span>
-                    </li>
-                    {% if not hideHomeStars %}
-                        <li class="resource__rating">
-                            {{ components.starRating(rating='25%', total='10') }}
+                <div class="resource resource--required">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="#">Responsibility for information</a>
+                            <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                            </span>
                         </li>
-                    {% endif %}
-                    <li class="resource__info">
-                        <span>&nbsp;</span>
-                    </li>
-                    <li class="resource__info">
-                        <span>Online, 3 hours</span>
-                    </li>
-                    <li class="resource__status">
-                        <span class="badge badge--info badge--smaller">In progress</span>
-                    </li>
-
-                </ul>
-            </div>
-            {% endif %}
-
-            <div class="resource resource--planned">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        <a  class="resource__title" href="#">Effective negotiation for senior managers</a>
-                        <span class="resource__action">
-                            <a href="#">Cancel <span class="visuallyhidden"> this booking</span></a>
-                        </span>
-                    </li>
-                    {% if not hideHomeStars %}
-                        <li class="resource__rating">
-                            {{ components.starRating(rating='100%', total='82') }}
+                        <li class="resource__info">
+                            <span>Required by 18 Sep 2018</span>
                         </li>
-                    {% endif %}
-                    <li class="resource__info">
-                        <span>Recommended by Commercial</span>
-                    </li>
-                    <li class="resource__info">
-                        <span>Classroom, 2 hours</span>
-                    </li>
-                    <li class="resource__status">
-                        <span class="badge badge--info badge--smaller">Booked</span>
-                        <span class="meta">21 Aug 2018</span>
-                    </li>
-                </ul>
+                        <li class="resource__duration">
+                            <span>1 hour</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info badge--smaller">In progress</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="resource resource--required">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="#">Unconscious bias</a>
+                            <span class="resource__action">
+                                <a href="#">Start<span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Required by 21 Oct 2018</span>
+                        </li>
+                        <li class="resource__duration">
+                            <span>2 hour</span>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-            {% if removeMessage %}
+            {{ components.heading(text='Other learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <div class="resources">
+
+                {% if not removeMessage %}
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a  class="resource__title" href="#">Simon Sinek - Start With Why - TED Talk Short Edited</a>
+                            <a  class="resource__title" href="#">Digital awareness "Digital by default"</a>
                             <span class="resource__action">
-                            <a href="/prototypes/learner/v1/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
-                        </span>
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                                <a href="/prototypes/learner/v1/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
                         </li>
                         {% if not hideHomeStars %}
                             <li class="resource__rating">
@@ -194,11 +146,68 @@
                             <span>&nbsp;</span>
                         </li>
                         <li class="resource__info">
-                            <span>Video, 15 mins</span>
+                            <span>Online, 3 hours</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info badge--smaller">In progress</span>
                         </li>
 
                     </ul>
                 </div>
+                {% endif %}
+
+                <div class="resource resource--planned">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a  class="resource__title" href="#">Effective negotiation for senior managers</a>
+                            <span class="resource__action">
+                                <a href="#">Cancel <span class="visuallyhidden"> this booking</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='100%', total='82') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>Recommended by Commercial</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 2 hours</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info badge--smaller">Booked</span>
+                            <span class="meta">21 Aug 2018</span>
+                        </li>
+                    </ul>
+                </div>
+
+                {% if removeMessage %}
+                    <div class="resource resource--planned">
+                        <ul class="resource__item u-clearfix">
+                            <li class="resource__main">
+                                <a  class="resource__title" href="#">Simon Sinek - Start With Why - TED Talk Short Edited</a>
+                                <span class="resource__action">
+                                <a href="/prototypes/learner/v1/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                            </li>
+                            {% if not hideHomeStars %}
+                                <li class="resource__rating">
+                                    {{ components.starRating(rating='25%', total='10') }}
+                                </li>
+                            {% endif %}
+                            <li class="resource__info">
+                                <span>&nbsp;</span>
+                            </li>
+                            <li class="resource__info">
+                                <span>Video, 15 mins</span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
             {% endif %}
 
             <p class="u-space-t30"><a href="/prototypes/learner/v1/learning-plan" class="">Go to my learning plan</a> </p>

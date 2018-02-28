@@ -21,7 +21,7 @@ export function homeGet(req, res) {
     removeMessage = true;
   }
 
-  console.log('removeMessage = ' + removeMessage + ' and id = ' + courseId);
+  // console.log('removeMessage = ' + removeMessage + ' and id = ' + courseId);
 
   viewData = {
     hideHomeStars,
@@ -34,11 +34,39 @@ export function homeGet(req, res) {
 
 // planned GET
 export function plannedGet(req, res) {
-  let viewData;
+  let viewData, addedToLearningPlan, removedFromLearningPlan, removedFromLearningPlanWarning, hasBeenAdded, hasBeenRemoved, willBeRemoved;
 
-  viewData = {};
+  // action = req.param('action');
+  // type = req.param('type');
 
-  return res.render('prototypes/learner/v1/planned-learning/index', viewData);
+  removedFromLearningPlanWarning = req.session.removedFromLearningPlanWarning;
+  addedToLearningPlan = req.session.addedToLearningPlan;
+  removedFromLearningPlan = req.session.removedFromLearningPlan;
+
+  if (addedToLearningPlan) {
+    hasBeenAdded = true;
+    req.session.addedToLearningPlan = null;
+  }
+
+  if (removedFromLearningPlanWarning) {
+    willBeRemoved = true;
+    req.session.removedFromLearningPlanWarning = null;
+  }
+
+  if (removedFromLearningPlan) {
+    hasBeenRemoved = true;
+    req.session.removedFromLearningPlan = null;
+  }
+
+  // console.log('addedToLearningPlan = ' + addedToLearningPlan);
+
+  viewData = {
+    hasBeenAdded,
+    willBeRemoved,
+    hasBeenRemoved,
+  };
+
+  return res.render('prototypes/learner/v1/learning-plan/index', viewData);
 }
 
 // profile GET
@@ -90,4 +118,59 @@ export function searchPost(req, res) {
   req.session.searchTerm = searchTerm;
 
   return res.redirect('/prototypes/learner/v1/registration/department');
+}
+
+// Actions: POST
+// just deals with various actions and then redirects accordingly with session stuff stored to
+export function actionsGet(req, res) {
+  let action, type, searchTerm, redirectPath, referrer, status;
+
+  action = req.param('action');
+  // type = req.param('type');
+  status = req.param('status');
+  referrer = req.headers.referer;
+  redirectPath = referrer;
+
+  console.log('referrer = ' + referrer);
+
+  console.log('action = ' + action);
+
+  if (action == 'addedToLearningPlan') {
+    req.session.addedToLearningPlan = true;
+    redirectPath = '/prototypes/learner/v1/learning-plan';
+  }
+
+  if (action == 'removedFromLearningPlan' && status == 'started') {
+    // req.session.removedFromLearningPlan = true;
+    req.session.removedFromLearningPlanWarning = true;
+    redirectPath = '/prototypes/learner/v1/learning-plan';
+  }
+
+  if (action == 'removedFromLearningPlan' && status != 'started') {
+    req.session.removedFromLearningPlan = true;
+    // req.session.removedFromLearningPlanWarning = true;
+    redirectPath = '/prototypes/learner/v1/learning-plan';
+  }
+
+  // removedFromSuggestedList
+  if (action == 'removedFromSuggestedList') {
+    req.session.removedFromSuggestedList = true;
+    redirectPath = '/prototypes/learner/v1/learning-plan';
+  }
+
+  return res.redirect(redirectPath);
+}
+
+export function actionsPost(req, res) {
+  const { action, type } = req.body;
+
+  //let searchTerm, redirectPath;
+
+  /*if (action === 'addedToLearningPlan') {
+        req.session.addedToLearningPlan = true;
+        // req.session.hasBeenAddedType = true;
+        redirectPath = '/prototypes/learner/v1/suggested-learning';
+    }*/
+
+  return res.redirect(redirectPath);
 }

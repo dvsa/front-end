@@ -5,6 +5,9 @@
 {% set signOutPath = '/prototypes/learner/v1/' %}
 {% set homePath = '/prototypes/learner/v1/home' %}
 {% set hideHomeStars = hideHomeStars if hideHomeStars %}
+{% set hasBeenAdded = hasBeenAdded if hasBeenAdded %}
+{% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
+{% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
 
 {% block content %}
 
@@ -54,6 +57,18 @@
 
             </div>
 
+            {% if hasBeenAdded %}
+                {{ components.banner(mainText='Course successfully added', secondaryText='The course <strong>Digital awareness "Digital by default"</strong> has successfully been added to your learning plan', type="confirmation")}}
+            {% endif %}
+            {% if hasBeenRemoved %}
+                {{ components.banner(mainText='Course successfully removed', secondaryText='The course <strong>Digital awareness "Digital by default"</strong> has successfully been removed from your learning plan', type="confirmation")}}
+            {% endif %}
+
+            {% if willBeRemoved %}
+                {{ components.banner(mainText='Are you sure you want to remove this course?', secondaryText='You have already started this course and your progress may be lost. <br><a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">No, keep it</a>', type="warning")}}
+
+            {% endif %}
+
         {%- endcall %}
 
     {%- endcall %}
@@ -88,7 +103,7 @@
             <div class="resource resource--required">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
-                        <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=online">Unconcious bias</a>
+                        <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=online">Unconscious bias</a>
                         <span class="resource__action">
                             <a href="#">Start<span class="visuallyhidden"> course</span></a>
                         </span>
@@ -130,7 +145,7 @@
                         <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceType=online">Digital awareness "Digital by default"</a>
                         <span class="resource__action">
                             <a href="#">Resume <span class="visuallyhidden"> course</span></a>
-                            <a href="#?remove=true&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan&status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
                         </span>
                     </li>
                     {% if not hideHomeStars %}
@@ -182,7 +197,7 @@
                     <li class="resource__main">
                         <a class="resource__title" href="#">Simon Sinek - Start With Why - TED Talk Short Edited</a>
                         <span class="resource__action">
-                            <a href="#?remove=true&id=2">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
                         </span>
                     </li>
                     {% if not hideHomeStars %}
@@ -191,7 +206,7 @@
                         </li>
                     {% endif %}
                     <li class="resource__info">
-                        <span>Recommened by Digital</span>
+                        <span>Recommended by Digital</span>
                     </li>
                     <li class="resource__info">
                         <span>Video, 30 mins</span>
@@ -207,7 +222,7 @@
                     <li class="resource__main">
                         <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=blog">Interviewing strategies and how to get the right people on board</a>
                         <span class="resource__action">
-                            <a href="#?remove=true&id=3">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
                         </span>
                     </li>
                     {% if not hideHomeStars %}
@@ -231,7 +246,7 @@
                         <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=classroom">Foreign contract compliance legal obligations</a>
                         <span class="resource__action">
                             <a href="/prototypes/learner/v1/booking/">Book now</a>
-                            <a href="#?remove=true&id=4">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Remove<span class="visuallyhidden"> from learning plan</span></a>
                         </span>
                     </li>
                     {% if not hideHomeStars %}

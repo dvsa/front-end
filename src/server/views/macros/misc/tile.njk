@@ -31,6 +31,9 @@
             {% endif %}
         </ul>
         <p>{{ intro }}</p>
-        <p class="tile__actions"><a href="/prototypes/learner/v1/planned-learning?action=added">Add to learning plan</a> <a href="?action=removed&type={{ type }}">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
+        <p class="tile__actions">
+            <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type={{ type }}">Add to learning plan</a>
+            <a href="/prototypes/learner/v1/actions?action=removedFromSuggestedList&type={{ type }}">Remove <span class="visuallyhidden">from suggested learning list</span></a>
+        </p>
     </div>
 {% endmacro %}

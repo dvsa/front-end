@@ -26,9 +26,13 @@
 
             {% call components.formElement(name='signIn', method='POST', action='/prototypes/learner/v1') %}
 
-                {{ components.field(label='Email address', id='email', hint="", group=true, error=emailError)}}
+                {#{{ components.field(label='Email address', id='email', hint="", group=true, error=emailError)}}
 
-                {{ components.field(label='Password', id='password', hint="", type="password", group=true, error=passwordError)}}
+                {{ components.field(label='Password', id='password', hint="", type="password", group=true, error=passwordError)}}#}
+
+                {{ components.field(label='Email address', id='email', hint="", group=true)}}
+
+                {{ components.field(label='Password', id='password', hint="", type="password", group=true)}}
 
                 {% call components.formGroup() %}
 

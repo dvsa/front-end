@@ -5,8 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.indexGet = indexGet;
 exports.indexPost = indexPost;
-// import path from 'path';
-// import { CONFIG } from './../../config/constants';
+
+var _validationFunctions = require('./validation-functions');
 
 // Start: GET
 function indexGet(req, res) {
@@ -53,6 +53,7 @@ function indexGet(req, res) {
 }
 
 // Start: POST
+// import generic validation functions
 function indexPost(req, res) {
   const { email, password } = req.body;
 
@@ -61,7 +62,7 @@ function indexPost(req, res) {
 
   let signinError;
 
-  if (email === 'test@example.com' && password === 'password') {
+  if ((0, _validationFunctions.validateEmail)(email) && password.length >= 2) {
     return res.redirect('/prototypes/learner/v1/home');
   } else {
     signinError = true;

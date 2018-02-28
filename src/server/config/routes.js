@@ -60,7 +60,7 @@ router.get('/prototypes/learner/v1/home', learnerV1Controller.homeGet);
 // profile
 router.get('/prototypes/learner/v1/your-profile', learnerV1Controller.profileGet);
 // planned learning
-router.get('/prototypes/learner/v1/planned-learning', learnerV1Controller.plannedGet);
+router.get('/prototypes/learner/v1/learning-plan', learnerV1Controller.plannedGet);
 // learning record
 router.get('/prototypes/learner/v1/learning-record', learnerV1Controller.recordGet);
 // suggested learning
@@ -69,6 +69,10 @@ router.get('/prototypes/learner/v1/suggested-learning', learnerV1Controller.sugg
 // search
 router.get('/prototypes/learner/v1/search', learnerV1Controller.searchGet);
 router.get('/prototypes/learner/v1/search', learnerV1Controller.searchPost);
+
+// Actions
+router.get('/prototypes/learner/v1/actions', learnerV1Controller.actionsGet);
+router.get('/prototypes/learner/v1/actions', learnerV1Controller.actionsPost);
 
 //******************************************************
 //      Registration stuff

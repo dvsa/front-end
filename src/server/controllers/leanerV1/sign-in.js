@@ -1,5 +1,5 @@
-// import path from 'path';
-// import { CONFIG } from './../../config/constants';
+// import generic validation functions
+import { validateEmail } from './validation-functions';
 
 // Start: GET
 export function indexGet(req, res) {
@@ -60,7 +60,7 @@ export function indexPost(req, res) {
 
   let signinError;
 
-  if (email === 'test@example.com' && password === 'password') {
+  if (validateEmail(email) && password.length >= 2) {
     return res.redirect('/prototypes/learner/v1/home');
   } else {
     signinError = true;

@@ -10,11 +10,12 @@
     duration='',
     hideStars=false,
     cost='',
-    intro=''
+    intro='',
+    targetBlank=false
     )
 %}
     <div class="tile">
-        <h4 class="heading-small"><a href="{{ url }}">{{ title }}</a></h4>
+        <h4 class="heading-small"><a href="{{ url }}" {% if targetBlank %} target="_blank" {% endif %}>{{ title }}</a></h4>
         {% if not hideStars %}
             {{ starRating(rating=starPercent, total=starTotal) }}
         {% endif %}

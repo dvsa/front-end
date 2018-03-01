@@ -4,8 +4,20 @@
   position: absolute;
   width: 60px;
   height:35px;
-  right:20px;
+  right:-10px;
   top: 5px;
+
+  @include media(tablet) {
+    right:-50px;
+  }
+
+  @include media(mobile) {
+    // display: block;
+    // position: relative;
+    // right: auto;
+    right:-44px;
+    top: 2px;
+  }
 }
 
 .thumb-rating {

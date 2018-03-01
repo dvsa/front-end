@@ -226,6 +226,29 @@
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=blog">Rupert McNeil: what the civil service of tomorrow will look like</a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='77%', total='84') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>Recommended by Commercial</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Blog, 10 mins</span>
+                        </li>
+                        <li class="resource__status"><span class="visuallyhidden">Not started</span></li>
+                    </ul>
+                </div>
+
+                <div class="resource resource--planned">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
                             <a class="resource__title" href="https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better" target="_blank">Matt Foster: Higher base pay for commercial staff</a>
                             <span class="resource__action">
                                 <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>

@@ -1,0 +1,33 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suspend Users' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.link(text='Back', url='/prototypes/annual-assessment-admin-tool', back=true) }}
+
+      {{ components.pageHeading(heading='Suspend users', secondary='Annual assessment admin tool') }}
+
+      <div class='text u-clearfix'>
+
+        {{ components.paragraph(text='Suspend users who have failed to complete their annual assessment', lead=true) }}
+
+        {% call components.form(action='/prototypes/annual-assessment-admin-tool/suspend-users/review', method='POST') %}
+
+          {{ components.field(label='Upload a CSV file', id='file-upload', type='file', labelBold=true, group=true)}}
+
+          {{ components.button(text='Submit suspension list') }}
+
+        {%- endcall %}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

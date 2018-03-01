@@ -1,0 +1,39 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Send reminders' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.link(text='Back', url='/prototypes/annual-assessment-admin-tool', back=true) }}
+      
+      {{ components.pageHeading(heading='Send reminders', secondary='Annual assessment admin tool') }}
+
+      <div class='text u-clearfix'>
+
+        {{ components.paragraph(text='Do you want to notify testers to complete their annual assessment?', lead=true) }}
+
+        <div class='mts-body-wrapper'>
+
+          <div class='message--important'>
+
+            <h2 class='message__heading'>Warning</h2>
+
+            <p>This will send notifications to tests immediately.</p>
+
+          </div>
+
+        </div>
+
+        {{ components.button(text='Yes, send reminders', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

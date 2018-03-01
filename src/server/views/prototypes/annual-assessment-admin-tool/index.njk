@@ -1,0 +1,43 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Annual Assessment Admin Tool' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.link(text='Back', url='/prototypes/', back=true) }}
+
+      {{ components.pageHeading(heading='Annual Assessment Admin Tool', secondary='MOT testing service') }}
+
+      <div class="text u-clearfix">
+
+        {{ components.paragraph(text='Check and send notifications to testers who are currently qualified but have not done an annual assessment or added their results', lead=true) }}
+
+        {{ components.heading(text='Download the list of testers', size='medium', tag='h2') }}
+
+        {{ components.paragraph(text='Check the list of testers who need a reminder notification. This list does not include recently qualified or suspended testers.') }}
+
+        {{ components.link(text='Download a list of testers as a CSV (spreadsheet) file (1KB)', url='#', paragraph=true) }}
+
+        {{ components.heading(text='Send a reminder notification', size='medium', tag='h2') }}
+
+        <p>Notify testers that they need to complete their annual assessment before <strong>31 March</strong> or they will be suspended</p>
+
+        {{ components.link(text='Send notification reminders', url='/prototypes/annual-assessment-admin-tool/send-reminders/index', paragraph=true) }}
+
+        {{ components.heading(text='Suspend users', size='medium', tag='h2')}}
+
+        {{ components.paragraph(text='Suspend users who have not completed their annual assessment') }}
+
+        {{ components.link(text='Suspend users', url='/prototypes/annual-assessment-admin-tool/suspend-users', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

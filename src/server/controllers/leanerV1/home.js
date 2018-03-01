@@ -43,7 +43,6 @@ export function plannedGet(req, res) {
   addedToLearningPlan = req.session.addedToLearningPlan;
   removedFromLearningPlan = req.session.removedFromLearningPlan;
 
-
   if (addedToLearningPlan) {
     hasBeenAdded = true;
     req.session.addedToLearningPlan = null;
@@ -95,7 +94,7 @@ export function suggestedGet(req, res) {
   hideHomeStars = req.session.hideHomeStars;
 
   viewData = {
-      hideHomeStars
+    hideHomeStars,
   };
 
   return res.render('prototypes/learner/v1/suggested-learning/index', viewData);

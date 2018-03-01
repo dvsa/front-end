@@ -105,9 +105,13 @@ function recordGet(req, res) {
 
 // suggested learning GET
 function suggestedGet(req, res) {
-  let viewData;
+  let viewData, hideHomeStars;
 
-  viewData = {};
+  hideHomeStars = req.session.hideHomeStars;
+
+  viewData = {
+    hideHomeStars
+  };
 
   return res.render('prototypes/learner/v1/suggested-learning/index', viewData);
 }

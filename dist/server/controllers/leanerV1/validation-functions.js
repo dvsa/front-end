@@ -18,3 +18,7 @@ const validatePostCode = exports.validatePostCode = postcode => {
   let regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
   return regex.test(postcode);
 };
+
+const isNumeric = exports.isNumeric = number => {
+  return !isNaN(parseFloat(number)) && isFinite(number);
+};

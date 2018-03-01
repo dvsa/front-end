@@ -6,10 +6,10 @@ export function resourceGet(req, res) {
   resourceType = req.param('resourceType');
   resourceID = req.param('resourceID');
 
-    availableTypes = ['blog', 'video', 'classroom', 'online'];
+  availableTypes = ['blog', 'video', 'classroom', 'online'];
 
-  if(isNumeric(parseInt(resourceID)) && parseInt(resourceID) >= 1) {
-      returnPath = 'prototypes/learner/v1/resource/' + resourceID;
+  if (isNumeric(parseInt(resourceID)) && parseInt(resourceID) >= 1) {
+    returnPath = 'prototypes/learner/v1/resource/' + resourceID;
   } else if (availableTypes.includes(resourceType)) {
     returnPath = 'prototypes/learner/v1/resource/' + resourceType;
   } else {

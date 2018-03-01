@@ -133,7 +133,7 @@ function searchPost(req, res) {
   searchTerm = searchInput;
   req.session.searchTerm = searchTerm;
 
-  return res.redirect('/prototypes/learner/v1/registration/department');
+  return res.redirect('/prototypes/learner/v1/search');
 }
 
 // Actions: POST

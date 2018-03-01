@@ -1,0 +1,60 @@
+$module: 'pager';
+
+.#{$module} {
+  margin-top: em(5, 16);
+  margin-bottom: em(20, 16);
+
+  @include media(tablet) {
+    margin-top: em(5);
+    margin-bottom: em(20);
+  }
+
+  &__controls {
+
+    @include media(tablet) {
+      float: right;
+    }
+  }
+
+  &__list {
+    display: none;
+
+    @include media(tablet) {
+      display: inline;
+
+      li {
+        display: inline;
+        margin: 0 5px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &__next,
+  &__prev {
+    margin-right: 10px;
+
+    @include media(tablet) {
+      margin-right: 0;
+    }
+  }
+
+  &__next {
+    @include media(tablet) {
+      margin-left: 10px;
+    }
+  }
+
+  &__prev {
+    @include media(tablet) {
+      margin-right: 10px;
+    }
+  }
+}

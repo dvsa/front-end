@@ -31,7 +31,7 @@
 
                         <div class="search-box">
 
-                            {% call components.formElement(name='searchLearning', method='POST', action="#") %}
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v1/search") %}
 
                                 <div class="form-group search-box__group u-space-b">
 
@@ -86,7 +86,7 @@
                 <div class="resource resource--required">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="#">Responsibility for information</a>
+                            <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=online">Responsibility for information</a>
                             <span class="resource__action">
                                 <a href="#">Resume <span class="visuallyhidden"> course</span></a>
                             </span>
@@ -107,7 +107,7 @@
                 <div class="resource resource--required">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="#">Unconscious bias</a>
+                            <a class="resource__title" href="/prototypes/learner/v1/resource?resourceType=online">Unconscious bias</a>
                             <span class="resource__action">
                                 <a href="#">Start<span class="visuallyhidden"> course</span></a>
                             </span>
@@ -131,7 +131,7 @@
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a  class="resource__title" href="#">Digital awareness "Digital by default"</a>
+                            <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceType=online">Digital awareness "Digital by default"</a>
                             <span class="resource__action">
                                 <a href="#">Resume <span class="visuallyhidden"> course</span></a>
                                 <a href="/prototypes/learner/v1/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
@@ -159,7 +159,7 @@
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a  class="resource__title" href="#">Effective negotiation for senior managers</a>
+                            <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceType=classroom">Effective negotiation for senior managers</a>
                             <span class="resource__action">
                                 <a href="#">Cancel booking</a>
                             </span>
@@ -186,7 +186,7 @@
                     <div class="resource resource--planned">
                         <ul class="resource__item u-clearfix">
                             <li class="resource__main">
-                                <a  class="resource__title" href="#">Simon Sinek - Start With Why - TED Talk Short Edited</a>
+                                <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceType=video">Simon Sinek - Start With Why - TED Talk Short Edited</a>
                                 <span class="resource__action">
                                 <a href="/prototypes/learner/v1/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
                             </span>

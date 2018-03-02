@@ -17,9 +17,9 @@
             <div class="resource resource--feedback">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__long">
-                        <a class="" href="#">Andrew Shatte – Resilience</a>
+                        <a class="" href="/prototypes/learner/v1/resource?resourceID=10">Andrew Shatte – Resilience</a>
                     </li>
-                    <li class="resource__info">
+                    <li class="resource__info" style="width:320px;">
                         Did you find this video useful? <span class="thumb-ratings"><a href="#" class="thumb-rating thumb-rating--up">Yes</a><a href="#" class="thumb-rating thumb-rating--down">No</a></span>
                     </li>
                 </ul>
@@ -40,6 +40,46 @@
         {%- endcall %}
 
     {%- endcall %}
+
+    {#{% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        <a class="resource__title" href="#">Digital awareness "Digital by default"</a>
+                    </li>
+                    <li class="resource__info">
+                        <span>Completed on 11 Dec 2017</span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>1 hour</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="resource resource--required">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        <a class="resource__title" href="#">Unconcious bias</a>
+                    </li>
+                    <li class="resource__info">
+                        <span>Completed by 2 Sep 2017</span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>2 hour</span>
+                    </li>
+                </ul>
+            </div>
+
+
+        {%- endcall %}
+
+    {%- endcall %}#}
 
     {% call components.gridRow() %}
 

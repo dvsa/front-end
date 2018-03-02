@@ -10,21 +10,19 @@
 
       {{ components.link(text='Back', url='/prototypes/annual-assessment-admin-tool', back=true) }}
 
+      {% include './partials/form-errors.njk' %}
+
       {{ components.pageHeading(heading='Suspend users', secondary='Annual assessment admin tool') }}
 
-      <div class='text u-clearfix'>
+      {{ components.paragraph(text='Suspend users who have failed to complete their annual assessment', lead=true, limitWidth=true) }}
 
-        {{ components.paragraph(text='Suspend users who have failed to complete their annual assessment', lead=true) }}
+      {% call components.form(action='/prototypes/annual-assessment-admin-tool/suspend-users/', method='POST') %}
 
-        {% call components.form(action='/prototypes/annual-assessment-admin-tool/suspend-users/', method='POST') %}
+        {{ components.field(label='Upload a CSV file', id='file-upload', type='file', labelBold=true, group=true, error=errors, value=value)}}
 
-          {{ components.field(label='Upload a CSV file', id='file-upload', type='file', labelBold=true, group=true)}}
+        {{ components.button(text='Submit suspension list') }}
 
-          {{ components.button(text='Submit suspension list') }}
-
-        {%- endcall %}
-
-      </div>
+      {%- endcall %}
 
     {%- endcall %}
 

@@ -2,31 +2,47 @@
 
 {% set pageTitle = 'Send reminders' %}
 
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'Annual Assessment Admin Tool', url: '/prototypes/annual-assessment-admin-tool/' },
+  { text: 'Send reminder notification' }
+] %}
+
 {% block content %}
 
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
-
-      {{ components.link(text='Back', url='/prototypes/annual-assessment-admin-tool', back=true) }}
       
-      {{ components.pageHeading(heading='Send reminders', secondary='Annual assessment admin tool') }}
+      {{ components.pageHeading(heading='Send reminder notification', secondary='Annual assessment admin tool') }}
 
-      {{ components.paragraph(text='Do you want to notify testers to complete their annual assessment?', lead=true, limitWidth=true) }}
+      <p class='lede text u-clearfix'>Confirm that you want to send an annual reminder notification to <strong>29</strong> testers</p>
 
       <div class='mts-body-wrapper'>
 
         <div class='message--important'>
 
-          <h2 class='message__heading'>Warning</h2>
-
-          <p>This will send notifications to tests immediately.</p>
+          <p>This will send notifications to testers immediately.</p>
 
         </div>
 
-      </div>
+        <nav class="content-navigation">
 
-      {{ components.button(text='Yes, send reminders', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+          {{ components.button(text='Send notifications', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+
+          <ul class="content-navigation__secondary">
+
+            <li>
+
+              {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool/') }}
+
+            </li>
+            
+          </ul>
+
+        </nav>
+
+      </div>
 
     {%- endcall %}
 

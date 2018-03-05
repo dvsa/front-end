@@ -1,0 +1,47 @@
+.dvsa-banner {
+  color: $white;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 30px;
+
+  // Default
+  background-color: $light-blue;
+
+  a {
+    &:link, &:visited, &:hover, &:active {
+      color: #fff;
+    }
+  }
+
+  // Modifiers
+  &--error {
+    background-color: $red;
+  }
+
+  &--confirmation {
+    background-color: $turquoise;
+  }
+
+  &--info {
+    background: $govuk-blue;
+  }
+
+  &--content {
+    margin-top: $gutter * 2;
+  }
+
+  // Elements
+  &__heading {
+    @include bold-24;
+    margin-bottom: 0;
+
+    &-large {
+      @include bold-36;
+      display: block;
+    }
+  }
+
+  &__secondary-text {
+    margin-bottom: 0;
+  }
+}

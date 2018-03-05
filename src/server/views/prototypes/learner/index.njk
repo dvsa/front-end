@@ -27,10 +27,30 @@
                 <p><strong>Sign in page</strong> will accept any legitimate email address and any password that is two or more characters long.</p>
 
                 <p>
-                    If you want to get rid of everything and start again, then <a href="/prototypes/learner/v1/registration?clearSession=true">clear previous session</a>.
+                    If you want to get rid of everything and start again, then:
+                    <br><a href="/prototypes/learner/v1/registration?clearSession=true">clear v1 session</a>
+                    <br><a href="/prototypes/learner/v2/registration?clearSession=true">clear v2 session</a>
                 </p>
 
+                <fieldset class="u-space-b30">
+
+                    <legend class="heading-small">Which version do you want?</legend>
+
+                    <div class="multiple-choice">
+                        <input id="v1" type="radio" name="versionSelecta" value="v1" checked="checked">
+                        <label for="v1">version 1</label>
+                    </div>
+
+                    <div class="multiple-choice">
+                        <input id="config2" type="radio" name="versionSelecta" value="v2">
+                        <label for="config2">version 2</label>
+                    </div>
+
+                </fieldset>
+
                 <fieldset class="u-space-b30 {% if configError %} form-group-error {% endif %}">
+
+                    <legend class="heading-small">Where do you want to display the stars?</legend>
 
                     <div class="multiple-choice">
                         <input id="config1" type="radio" name="regConfig" value="all">

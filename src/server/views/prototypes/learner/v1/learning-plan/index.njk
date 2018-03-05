@@ -1,7 +1,7 @@
 {% extends 'layouts/default.layout.njk' %}
 
 {% set pageTitle = 'Learning plan - Civil Service Learning Platform' %}
-{% set blackBarTitle = 'Civil Service Learning' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v1' %}
 {% set signOutPath = '/prototypes/learner/v1/' %}
 {% set homePath = '/prototypes/learner/v1/home' %}
 {% set hideHomeStars = hideHomeStars if hideHomeStars %}
@@ -23,7 +23,7 @@
 
                         {{ components.heading(text='Learning plan', tag='h1', size='large', extraClass='heading--flush') }}
 
-                        <p class="u-space-b5">You have <a href="#">one overdue required course</a> to complete.</p>
+                        {#<p class="u-space-b5">You have <a href="#">one overdue required course</a> to complete.</p>#}
 
                     {%- endcall %}
 
@@ -90,10 +90,10 @@
                             </span>
                         </li>
                         <li class="resource__info">
-                            <span>Required by 18 Sep 2018</span>
+                            <span>Due by 18 Sep 2018</span>
                         </li>
                         <li class="resource__duration">
-                            <span>1 hour</span>
+                            <span>1 hr</span>
                         </li>
                         <li class="resource__status">
                             <span class="badge badge--info badge--smaller">In progress</span>
@@ -111,10 +111,10 @@
                             </span>
                         </li>
                         <li class="resource__info">
-                            <span>Required by 21 Oct 2018</span>
+                            <span>Due by 21 Oct 2018</span>
                         </li>
                         <li class="resource__duration">
-                            <span>2 hour</span>
+                            <span>2 hrs</span>
                         </li>
                     </ul>
                 </div>
@@ -128,7 +128,7 @@
                             </span>
                         </li>
                         <li class="resource__info">
-                            <span>Required by 9 Feb 2018</span>
+                            <span>Due by 9 Feb 2018</span>
                         </li>
                         <li class="resource__duration">
                             <span>1 hour</span>
@@ -148,7 +148,7 @@
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceID=3">Digital awareness "Digital by default"</a>
+                            <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceID=3">Digital awareness: digital by default</a>
                             <span class="resource__action">
                                 <a href="#">Resume <span class="visuallyhidden"> course</span></a>
                                 <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan&status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
@@ -163,7 +163,7 @@
                             <span>&nbsp;</span>
                         </li>
                         <li class="resource__info">
-                            <span>Online, 3 hours</span>
+                            <span>Online, 3 hrs</span>
                         </li>
                         <li class="resource__status">
                             <span class="badge badge--info badge--smaller">In progress</span>
@@ -186,10 +186,10 @@
                             </li>
                         {% endif %}
                         <li class="resource__info">
-                            <span>Recommended by Commercial</span>
+                            <span>Work area: commercial</span>
                         </li>
                         <li class="resource__info">
-                            <span>Classroom, 2 hours</span>
+                            <span>Classroom, 2 hrs</span>
                         </li>
                         <li class="resource__status">
                             <span class="badge badge--info badge--smaller">Booked</span>
@@ -212,10 +212,10 @@
                             </li>
                         {% endif %}
                         <li class="resource__info">
-                            <span>Recommended by Digital</span>
+                            <span>Work area: digital</span>
                         </li>
                         <li class="resource__info">
-                            <span>Video, 30 mins</span>
+                            <span>Video, 30 min</span>
                         </li>
                         <li class="resource__status">
                             <span class="visuallyhidden">Not started</span>
@@ -226,7 +226,7 @@
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v1/resource?resourceID=2">Rupert McNeil: what the civil service of tomorrow will look like</a>
+                            <a class="resource__title" href="/prototypes/learner/v1/resource?resourceID=2">What the civil service of tomorrow will look like</a>
                             <span class="resource__action">
                                 <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
                             </span>
@@ -237,10 +237,10 @@
                             </li>
                         {% endif %}
                         <li class="resource__info">
-                            <span>Recommended by Commercial</span>
+                            <span>Work area: commercial</span>
                         </li>
                         <li class="resource__info">
-                            <span>Blog, 10 mins</span>
+                            <span>Blog, 10 min</span>
                         </li>
                         <li class="resource__status"><span class="visuallyhidden">Not started</span></li>
                     </ul>
@@ -249,7 +249,7 @@
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better" target="_blank">Matt Foster: Higher base pay for commercial staff</a>
+                            <a class="resource__title" href="https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better" target="_blank">Higher base pay for commercial staff</a>
                             <span class="resource__action">
                                 <a href="/prototypes/learner/v1/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
                             </span>
@@ -260,10 +260,10 @@
                             </li>
                         {% endif %}
                         <li class="resource__info">
-                            <span>Recommended by Commercial</span>
+                            <span>Work area: commercial</span>
                         </li>
                         <li class="resource__info">
-                            <span>Blog, 10 mins</span>
+                            <span>Blog, 10 min</span>
                         </li>
                         <li class="resource__status"><span class="visuallyhidden">Not started</span></li>
                     </ul>
@@ -287,7 +287,7 @@
                             <span>&nbsp;</span>
                         </li>
                         <li class="resource__info">
-                            <span>Classroom, 5 hours</span>
+                            <span>Classroom, 5 hrs</span>
                         </li>
                     </ul>
                 </div>

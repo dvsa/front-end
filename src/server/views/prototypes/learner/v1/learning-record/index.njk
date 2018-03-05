@@ -1,7 +1,7 @@
 {% extends 'layouts/default.layout.njk' %}
 
 {% set pageTitle = 'Learning record - Civil Service Learning Platform' %}
-{% set blackBarTitle = 'Civil Service Learning' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v1' %}
 {% set signOutPath = '/prototypes/learner/v1/' %}
 {% set homePath = '/prototypes/learner/v1/home' %}
 {% set hideHomeStars = hideHomeStars if hideHomeStars %}
@@ -13,6 +13,8 @@
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
+
+            <p>You can leave feedback on 2 items.</p>
 
             <div class="resource resource--feedback">
                 <ul class="resource__item u-clearfix">
@@ -50,7 +52,7 @@
             <div class="resource">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
-                        <a class="resource__title" href="#">Digital awareness "Digital by default"</a>
+                        <a class="resource__title" href="#">Digital awareness: digital by default</a>
                     </li>
                     <li class="resource__info">
                         <span>Completed on 11 Dec 2017</span>
@@ -89,7 +91,7 @@
             <table class="u-space-b30">
                 <thead>
                     <tr>
-                        <th class="table--fix-first">Course title</th>
+                        <th class="table--fix-first">Course</th>
                         <th>Type</th>
                         <th>Duration</th>
                         <th>Completion date</th>
@@ -99,19 +101,19 @@
                     <tr>
                         <td><a href="#">Responsible for information</a></td>
                         <td>Online</td>
-                        <td>1 hour</td>
+                        <td>1 hr</td>
                         <td>12 Aug 2017</td>
                     </tr>
                     <tr>
                         <td><a href="#">Unconscious bias</a></td>
                         <td>Online</td>
-                        <td>1 hour 30 mins</td>
+                        <td>1 hr 30 min</td>
                         <td>10 Jan 2017</td>
                     </tr>
                 </tbody>
            </table>
 
-            <p>You have completed 2 out of 3 required learning courses.</p>
+           {# <p>You have completed 2 out of 3 required learning courses.</p>#}
 
         {%- endcall %}
 
@@ -125,7 +127,7 @@
             <table class="u-space-b30">
                 <thead>
                 <tr>
-                    <th class="table--fix-first">Course title</th>
+                    <th class="table--fix-first">Course</th>
                     <th>Type</th>
                     <th>Duration</th>
                     <th>Completion date</th>
@@ -133,27 +135,27 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td><a href="#">Rupert McNeil: what the civil service of tomorrow will look like</a></td>
+                    <td><a href="#">What the civil service of tomorrow will look like</a></td>
                     <td>Blog</td>
                     <td>-</td>
                     <td>3 Aug 2017</td>
                 </tr>
                 <tr>
-                    <td><a href="#">Carol Dweck – Growth Mindset</a></td>
+                    <td><a href="#">Growth Mindset</a></td>
                     <td>Video</td>
-                    <td>15 mins</td>
+                    <td>15 min</td>
                     <td>10 Jul 2017</td>
                 </tr>
                 <tr>
-                    <td><a href="#">Capability in the civil service</a></td>
+                    <td><a href="#">Capability in the Civil Service</a></td>
                     <td>Document</td>
-                    <td>10 mins</td>
+                    <td>10 min</td>
                     <td>12 Jan 2017</td>
                 </tr>
                 <tr>
                     <td><a href="#">Commercial awareness</a></td>
                     <td>Online</td>
-                    <td>2 hours 30 mins</td>
+                    <td>2 hrs 30 min</td>
                     <td>21 Mar 2017</td>
                 </tr>
                 </tbody>

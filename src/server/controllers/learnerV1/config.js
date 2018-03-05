@@ -8,7 +8,7 @@ export function configGet(req, res) {
     configError,
   };
 
-  return res.render('prototypes/learner/index', viewData);
+  return res.render('prototypes/learner/v1/config', viewData);
 }
 
 export function configPost(req, res) {
@@ -47,7 +47,7 @@ export function configPost(req, res) {
 
   if (!regConfig) {
     req.session.configError = true;
-    return res.redirect('/prototypes/learner');
+    return res.redirect('/prototypes/learner/v1/config');
   } else {
     req.session.configError = false;
     return res.redirect('/prototypes/learner/v1');

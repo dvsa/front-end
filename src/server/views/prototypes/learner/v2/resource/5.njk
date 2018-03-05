@@ -1,0 +1,91 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Online training - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v2' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v2/' %}
+{% set homePath = '/prototypes/learner/v2/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Responsibility for information') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>The Civil Service is embracing more and more digital services and communications. This means you need to be digitally literate and have an understanding of how to work within an online environment.</p>
+
+        <p>This topic equips you with the basic digital skills needed to work in an increasingly online environment and allows you to work more collaboratively with your colleagues. </p>
+
+        {{ components.heading(text='Learning outcomes', size='medium') }}
+
+        <p>On completing this learning, you'll be able to:</p>
+
+        <ul class="list-bullet u-space-b30">
+            <li>improve your all-round digital confidence</li>
+            <li>fill in any gaps in your digital knowledge</li>
+            <li>develop the skills to make you more efficient and productive in your job</li>
+        </ul>
+
+    {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+        {% call components.formGroup() %}
+            {{ components.button(text='Start this learning', start=false, group=true)}}
+        {%- endcall %}
+
+        <p>
+            <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+        </p>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>AA to Grade 6</td>
+                    </tr>
+                    <tr>
+                        <th>Key area</th>
+                        <td>Digital</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>1 hr</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£Free</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

@@ -1,0 +1,358 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your learning - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v2' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v2/' %}
+{% set homePath = '/prototypes/learner/v2/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+{% set removeMessage = removeMessage if removeMessage %}
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="u-space-y30 header-box u-border-bgrey2">
+
+                {% call components.gridRow() %}
+
+                    {% call components.columnHalf() %}
+
+                        {{ components.heading(text='Your learning', tag='h1', size='large', extraClass='heading--flush') }}
+
+                        <p class="u-space-b5">You can <a href="/prototypes/learner/v2/learning-record">leave feedback on 2 items</a>.</p>
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v2/search") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                    <a href="#" class="search-box__advanced">Advanced search</a>
+
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
+
+                {%- endcall %}
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% if removeMessage %}
+
+                {{ components.banner(mainText='Course successfully removed', secondaryText='The course <strong>Digital awareness: digital by default</strong> has successfully been removed from your learning plan', type="confirmation")}}
+
+            {% endif %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <div class="resources">
+
+                <div class="resource resource--required">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=5">Responsibility for information</a>
+                            <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Due by 18 Sep 2018</span>
+                        </li>
+                        <li class="resource__duration">
+                            <span>1 hr</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info badge--smaller">In progress</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="resource resource--required">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=6">Unconscious bias</a>
+                            <span class="resource__action">
+                                <a href="#">Start<span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Due by 21 Oct 2018</span>
+                        </li>
+                        <li class="resource__duration">
+                            <span>2 hrs</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            {{ components.heading(text='Other learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <div class="resources">
+
+                {% if not removeMessage %}
+                <div class="resource resource--planned">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a  class="resource__title" href="/prototypes/learner/v2/resource?resourceID=3">Digital awareness: digital by default</a>
+                            <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                                <a href="/prototypes/learner/v2/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='25%', total='10') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Online, 3 hrs</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info badge--smaller">In progress</span>
+                        </li>
+
+                    </ul>
+                </div>
+                {% endif %}
+
+                <div class="resource resource--planned">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a  class="resource__title" href="/prototypes/learner/v2/resource?resourceID=7">Effective negotiation for senior managers</a>
+                            <span class="resource__action">
+                                <a href="#">Cancel booking</a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='100%', total='82') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>Work area: commercial</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 2 hrs</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info badge--smaller">Booked</span>
+                            <span class="meta">21 Aug 2018</span>
+                        </li>
+                    </ul>
+                </div>
+
+                {% if removeMessage %}
+                    <div class="resource resource--planned">
+                        <ul class="resource__item u-clearfix">
+                            <li class="resource__main">
+                                <a  class="resource__title" href="/prototypes/learner/v2/resource?resourceID=4">Simon Sinek - Start With Why - TED Talk Short Edited</a>
+                                <span class="resource__action">
+                                <a href="/prototypes/learner/v2/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                            </li>
+                            {% if not hideHomeStars %}
+                                <li class="resource__rating">
+                                    {{ components.starRating(rating='25%', total='10') }}
+                                </li>
+                            {% endif %}
+                            <li class="resource__info">
+                                <span>&nbsp;</span>
+                            </li>
+                            <li class="resource__info">
+                                <span>Video, 15 min</span>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+            <p class="u-space-t30"><a href="/prototypes/learner/v2/learning-plan" class="">See more learning in your Learning plan</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+
+{% block lowerHero %}
+
+    {% call components.lowerHero() %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <h2 class="heading-medium u-space-t30">Suggestions for you</h2>
+
+                <p>Tailored suggestions from Civil Service Learning or recommendations from colleagues.</p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Commercial awareness',
+                    url='/prototypes/learner/v2/resource?resourceID=11',
+                    starPercent='80%',
+                    starTotal='128',
+                    because='Work area: commercial',
+                    type='Online',
+                    duration='2hrs 20min',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Managing contractors',
+                    url='/prototypes/learner/v2/resource?resourceID=1',
+                    starPercent='76%',
+                    starTotal='104',
+                    because='Work area: commercial',
+                    type='Classroom',
+                    duration='2 days',
+                    hideStars=hideHomeStars,
+                    cost='£357',
+                    intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Managing employees',
+                    url='/prototypes/learner/v2/resource?resourceID=8',
+                    starPercent='61%',
+                    starTotal='25',
+                    because='Work area: commercial',
+                    type='Classroom',
+                    duration='1 day',
+                    hideStars=hideHomeStars,
+                    cost='£199',
+                    intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                    url='/prototypes/learner/v2/resource?resourceID=4',
+                    starPercent='76%',
+                    starTotal='104',
+                    type='Video',
+                    duration='10 min',
+                    cost='£Free',
+                    because='Recommended by HMRC',
+                    hideStars=hideHomeStars,
+                    intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='What the civil service of tomorrow will look like',
+                    url='/prototypes/learner/v2/resource?resourceID=2',
+                    starPercent='61%',
+                    starTotal='25',
+                    type='Blog',
+                    because='Recommended by HMRC',
+                    hideStars=hideHomeStars,
+                    intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Higher base pay for commercial staff',
+                    url='https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better',
+                    starPercent='95%',
+                    starTotal='233',
+                    because='Recommended by HMRC',
+                    type='Blog',
+                    duration='5 min',
+                    hideStars=hideHomeStars,
+                    cost='£Free',
+                    targetBlank = true,
+                    intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnHalf() %}
+
+                <p class="font-small"><a href="/prototypes/learner/v2/suggested-learning" class="">See more suggestions for you</a> </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

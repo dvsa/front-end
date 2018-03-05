@@ -35,8 +35,12 @@
 
       {% call components.columnOneThird() %}
 
-          {{ components.heading(text='Learner journey', tag='h2', size='medium', url='/prototypes/learner') }}
+          {{ components.heading(text='Learner journey', tag='h2', size='medium') }}
           {{ components.paragraph(text='And end-to-end journey for learners, including registration.') }}
+          <ul>
+            <li><a href="/prototypes/learner/v1/config">version 1</a> </li>
+            <li><a href="/prototypes/learner/v2/config">version 2</a> </li>
+          </ul>
 
       {%- endcall %}
 

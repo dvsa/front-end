@@ -1,0 +1,84 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create a password - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v2' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v2/' %}
+{% set homePath = '/prototypes/learner/v2/' %}
+{% set firstName = firstName if firstName %}
+{% set lastName = lastName if lastName %}
+{% set passwordError = passwordError if passwordError %}
+{% set passwordErrorMessage = passwordErrorMessage if passwordErrorMessage %}
+{% set passwordOneError = passwordOneError if passwordOneError %}
+{% set passwordTwoError = passwordTwoError if passwordTwoError %}
+{% set password = password if password %}
+
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes'  %}
+{% else %}
+    {% set buttonText = 'Continue'  %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Create a password', 'Create an account') }}
+
+    {% if passwordError %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your password</h2>
+            <ul class="error-summary-list">
+                {% if passwordError %}
+                    {% if passwordOneError %}
+                        {% set registrationPasswordErrorOneMessage = 'Enter a valid password' %}
+                    {% endif %}
+                    {% if passwordTwoError %}
+                        {% set registrationPasswordErrorTwoMessage = 'Enter a matching password' %}
+                    {% endif %}
+                    <li><a href="#passwordOne">{{ passwordErrorMessage }}</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p class="lede">Now you need to create a memorable password for your account.</p>
+
+            <div class="module-criteria u-space-b30" id="password-criteria-scope">
+                <p>Your password must have:</p>
+                <ul class="list-bullet criteria__list">
+                    <li class="criteria__criterion" data-criteria="minLength" data-criteria-param="8">8 or more characters</li>
+                    <li class="criteria__criterion" data-criteria="hasNumeric">1 or more numbers</li>
+                    <li class="criteria__criterion" data-criteria="hasMixedCase">upper and lower case letters</li>
+                </ul>
+            </div>
+
+            {% call components.formElement(name='registerPassword', method='POST', action="#") %}
+
+                {{ components.field(label='Create a password', id='passwordOne', hint="", group=true, type='password', value=password, error=registrationPasswordErrorOneMessage)}}
+
+                {{ components.field(label='Re-type your password', id='passwordTwo', hint="", group=true, type='password', error=registrationPasswordErrorTwoMessage)}}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v2">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

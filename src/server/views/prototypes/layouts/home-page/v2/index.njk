@@ -1,7 +1,7 @@
 {% extends 'layouts/default.layout.njk' %}
 
 {% set pageTitle = 'Home page - Civil Service Learning Platform' %}
-{% set blackBarTitle = 'Civil Service Learning' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v1' %}
 {% set mainContainerClass = 'has-lower-hero' %}
 
 {% block content %}
@@ -32,9 +32,9 @@
                     <span class="meta"><a href="#">Resume</a></span>
                 </td>
                 <td>{{ components.starRating(rating='25%', total='10') }}</td>
-                <td>Required by 31 March 2018</td>
+                <td>Due by 31 March 2018</td>
                 <td>Online</td>
-                <td>1 hour</td>
+                <td>1 hr</td>
                 <td class="u-align-right"><span class="badge badge--info badge--smaller">In progress</span></td>
             </tr>
             <tr>
@@ -43,7 +43,7 @@
                     <span class="meta"><a href="#">Start</a></span>
                 </td>
                 <td>{{ components.starRating(rating='50%', total='81') }}</td>
-                <td>Required by 4 May 2018</td>
+                <td>Due by 4 May 2018</td>
                 <td>Classroom</td>
                 <td>1 day</td>
                 <td class="u-align-right"><span class="badge badge--smaller">Booked</span></td>
@@ -87,7 +87,7 @@
                     <td>{{ components.starRating(rating='95%', total='91') }}</td>
                     <td>Because of your work objectives</td>
                     <td>Online</td>
-                    <td>1 hour</td>
+                    <td>1 hr</td>
                     <td class="u-align-right"><span class="badge badge--smaller">Not started</span></td>
                 </tr>
             </tbody>
@@ -111,7 +111,7 @@
 
                 <h2 class="heading-medium">Suggested for you</h2>
 
-                <p>Suggestions are tailored by the service or from colleague recommendations.</p>
+                <p>Tailored suggestions from Civil Service Learning or recommendations from colleagues.</p>
 
             {%- endcall %}
 
@@ -125,7 +125,7 @@
                     <h4 class="heading-small"><a href="#">Towards Universal Credit - Getting a Job is a Full Time Job</a></h4>
                     {{ components.starRating(rating='80%', total='128') }}
                     <p class="">Suggested by Janet Rimmer</p>
-                    <p>Online 1 hour £FREE</p>
+                    <p>Online 1 hr £Free</p>
                     <p>You'll develop lorem ac semper semper, eros erat malesuada diam, sed fringilla felis enim</p>
                     <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
                 </div>
@@ -155,7 +155,7 @@
                     <h4 class="heading-small"><a href="#">Risk</a></h4>
                     {{ components.starRating(rating='64%', total='39') }}
                     <p>Suggested by William Smith</p>
-                    <p>Video 17 mins</p>
+                    <p>Video 17 min</p>
                     <p>In this video, eros erat malesuada diam, sed fringilla felis enim</p>
                     <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>
                 </div>
@@ -167,7 +167,7 @@
                 <div class="home-tile">
                     <h4 class="heading-small"><a href="#">Positive Action Pathway "Levelling the Playing Field" EO Modules</a></h4>
                     {{ components.starRating(rating='70%', total='84') }}
-                    <p>Recommended by Commercial</p>
+                    <p>Work area: commercial</p>
                     <p>Blog (external link)</p>
                     <p>Introduces you to the different factors neque lacus, ultricies vitae nunc quis.</p>
                     <p class="home-tile__actions"><a href="#">Add to learning plan</a> <a href="#">Remove <span class="visuallyhidden">from suggested learning list</span></a> </p>

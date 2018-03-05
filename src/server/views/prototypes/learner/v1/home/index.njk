@@ -1,7 +1,7 @@
 {% extends 'layouts/default.layout.njk' %}
 
 {% set pageTitle = 'Your learning - Civil Service Learning Platform' %}
-{% set blackBarTitle = 'Civil Service Learning' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v1' %}
 {% set mainContainerClass = 'has-lower-hero' %}
 {% set signOutPath = '/prototypes/learner/v1/' %}
 {% set homePath = '/prototypes/learner/v1/home' %}
@@ -22,7 +22,7 @@
 
                         {{ components.heading(text='Your learning', tag='h1', size='large', extraClass='heading--flush') }}
 
-                        <p class="u-space-b5">You have <a href="/prototypes/learner/v1/learning-record">two feedback ratings</a> to complete.</p>
+                        <p class="u-space-b5">You can <a href="/prototypes/learner/v1/learning-record">leave feedback on 2 items</a>.</p>
 
                     {%- endcall %}
 
@@ -66,7 +66,7 @@
 
             {% if removeMessage %}
 
-                {{ components.banner(mainText='Course successfully removed', secondaryText='The course <strong>Digital awareness "Digital by default"</strong> has successfully been removed from your learning plan', type="confirmation")}}
+                {{ components.banner(mainText='Course successfully removed', secondaryText='The course <strong>Digital awareness: digital by default</strong> has successfully been removed from your learning plan', type="confirmation")}}
 
             {% endif %}
 
@@ -92,10 +92,10 @@
                             </span>
                         </li>
                         <li class="resource__info">
-                            <span>Required by 18 Sep 2018</span>
+                            <span>Due by 18 Sep 2018</span>
                         </li>
                         <li class="resource__duration">
-                            <span>1 hour</span>
+                            <span>1 hr</span>
                         </li>
                         <li class="resource__status">
                             <span class="badge badge--info badge--smaller">In progress</span>
@@ -113,10 +113,10 @@
                             </span>
                         </li>
                         <li class="resource__info">
-                            <span>Required by 21 Oct 2018</span>
+                            <span>Due by 21 Oct 2018</span>
                         </li>
                         <li class="resource__duration">
-                            <span>2 hour</span>
+                            <span>2 hrs</span>
                         </li>
                     </ul>
                 </div>
@@ -131,7 +131,7 @@
                 <div class="resource resource--planned">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceID=3">Digital awareness "Digital by default"</a>
+                            <a  class="resource__title" href="/prototypes/learner/v1/resource?resourceID=3">Digital awareness: digital by default</a>
                             <span class="resource__action">
                                 <a href="#">Resume <span class="visuallyhidden"> course</span></a>
                                 <a href="/prototypes/learner/v1/home?action=remove&id=1">Remove <span class="visuallyhidden"> from learning plan</span></a>
@@ -146,7 +146,7 @@
                             <span>&nbsp;</span>
                         </li>
                         <li class="resource__info">
-                            <span>Online, 3 hours</span>
+                            <span>Online, 3 hrs</span>
                         </li>
                         <li class="resource__status">
                             <span class="badge badge--info badge--smaller">In progress</span>
@@ -170,10 +170,10 @@
                             </li>
                         {% endif %}
                         <li class="resource__info">
-                            <span>Recommended by Commercial</span>
+                            <span>Work area: commercial</span>
                         </li>
                         <li class="resource__info">
-                            <span>Classroom, 2 hours</span>
+                            <span>Classroom, 2 hrs</span>
                         </li>
                         <li class="resource__status">
                             <span class="badge badge--info badge--smaller">Booked</span>
@@ -200,7 +200,7 @@
                                 <span>&nbsp;</span>
                             </li>
                             <li class="resource__info">
-                                <span>Video, 15 mins</span>
+                                <span>Video, 15 min</span>
                             </li>
 
                         </ul>
@@ -228,7 +228,7 @@
 
                 <h2 class="heading-medium u-space-t30">Suggestions for you</h2>
 
-                <p>Suggestions are tailored by the service or from colleague recommendations.</p>
+                <p>Tailored suggestions from Civil Service Learning or recommendations from colleagues.</p>
 
             {%- endcall %}
 
@@ -239,16 +239,16 @@
             {% call components.columnOneThird() %}
 
                 {{ components.tile(
-                    title='Digital awareness "Digital by default"',
-                    url='/prototypes/learner/v1/resource?resourceID=3',
+                    title='Commercial awareness',
+                    url='/prototypes/learner/v1/resource?resourceID=11',
                     starPercent='80%',
                     starTotal='128',
-                    because='Recommended by colleagues',
+                    because='Work area: commercial',
                     type='Online',
-                    duration='1 hour',
+                    duration='2hrs 20min',
+                    cost='£Free',
                     hideStars=hideHomeStars,
-                    cost='£FREE',
-                    intro='You\'ll develop lorem ac semper semper, eros erat malesuada diam, sed fringilla felis enim'
+                    intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
                 ) }}
 
             {%- endcall %}
@@ -260,7 +260,7 @@
                     url='/prototypes/learner/v1/resource?resourceID=1',
                     starPercent='76%',
                     starTotal='104',
-                    because='Because you did Hiring Contractors Part I',
+                    because='Work area: commercial',
                     type='Classroom',
                     duration='2 days',
                     hideStars=hideHomeStars,
@@ -277,7 +277,7 @@
                     url='/prototypes/learner/v1/resource?resourceID=8',
                     starPercent='61%',
                     starTotal='25',
-                    because='Because you did Onboarding for new staff',
+                    because='Work area: commercial',
                     type='Classroom',
                     duration='1 day',
                     hideStars=hideHomeStars,
@@ -296,14 +296,14 @@
                 {{ components.tile(
                     title='Simon Sinek - Start With Why - TED Talk Short Edited',
                     url='/prototypes/learner/v1/resource?resourceID=4',
-                    starPercent='64%',
-                    starTotal='39',
-                    because='Recommended by colleagues',
+                    starPercent='76%',
+                    starTotal='104',
                     type='Video',
-                    duration='17 mins',
+                    duration='10 min',
+                    cost='£Free',
+                    because='Recommended by HMRC',
                     hideStars=hideHomeStars,
-                    cost='£FREE',
-                    intro='In this video, eros erat malesuada diam, sed fringilla felis enim'
+                    intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
                 ) }}
 
             {%- endcall %}
@@ -311,15 +311,14 @@
             {% call components.columnOneThird() %}
 
                 {{ components.tile(
-                    title='Rupert McNeil: what the civil service of tomorrow will look like',
+                    title='What the civil service of tomorrow will look like',
                     url='/prototypes/learner/v1/resource?resourceID=2',
-                    starPercent='70%',
-                    starTotal='84',
-                    because='Recommended by Commercial',
+                    starPercent='61%',
+                    starTotal='25',
                     type='Blog',
+                    because='Recommended by HMRC',
                     hideStars=hideHomeStars,
-                    cost='£FREE',
-                    intro='Introduces you to the different factors neque lacus, ultricies vitae nunc quis.'
+                    intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
                 ) }}
 
             {%- endcall %}
@@ -327,17 +326,17 @@
             {% call components.columnOneThird() %}
 
                 {{ components.tile(
-                    title='Matt Foster: Higher base pay for commercial staff',
+                    title='Higher base pay for commercial staff',
                     url='https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better',
                     starPercent='95%',
                     starTotal='233',
-                    because='Recommended by Commercial',
+                    because='Recommended by HMRC',
                     type='Blog',
-                    duration='5 mins',
+                    duration='5 min',
                     hideStars=hideHomeStars,
-                    cost='£FREE',
+                    cost='£Free',
                     targetBlank = true,
-                    intro='Introduces you to the different factors neque lacus, ultricies vitae nunc quis.'
+                    intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
                 ) }}
 
             {%- endcall %}

@@ -1,0 +1,31 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Registration complete - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v2' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v2/' %}
+{% set homePath = '/prototypes/learner/v2/' %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">Registration complete</h1>
+        <p class="font-medium">Your account with Civil Service Learning Platform  has been created</p>
+    </div>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">What happens next?</h2>
+
+            <p>We have sent you a confirmation email.</p>
+
+            <p>You can now <a href="/prototypes/learner/v2">sign into the Civil Service Learning Platform</a>.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

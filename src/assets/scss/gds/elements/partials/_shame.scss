@@ -31,6 +31,11 @@
     width: 80px;
     height: 24px;
     margin-left: -9999px;
+    line-height: 26px;
+
+    @include media(desktop) {
+      //
+    }
 
     &:before {
       position: absolute;

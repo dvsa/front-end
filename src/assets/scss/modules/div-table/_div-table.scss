@@ -1,0 +1,40 @@
+.div-table {
+  width: 100%;
+  margin: 30px 0;
+
+  &__row {
+    border-bottom: 1px solid $grey-2;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+
+    @include media(desktop) {
+      display: table-row;
+    }
+  }
+
+  &__th {
+    display: none;
+    @include bold-16;
+
+   @include media(desktop) {
+      display: table-cell;
+      border-bottom: 1px solid $grey-2;
+    }
+  }
+
+  &__cell {
+    @include media(desktop) {
+      display: table-cell;
+      padding: 10px 40px 10px 0;
+      border-bottom: 1px solid $grey-2;
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+
+    &--action {
+        margin-top: 10px;
+    }
+  }
+}

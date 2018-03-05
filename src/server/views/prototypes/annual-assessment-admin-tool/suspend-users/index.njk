@@ -2,27 +2,61 @@
 
 {% set pageTitle = 'Suspend Users' %}
 
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'Annual Assessment Admin Tool', url: '/prototypes/annual-assessment-admin-tool/' },
+  { text: 'Suspend users' }
+] %}
+
 {% block content %}
 
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
 
-      {{ components.link(text='Back', url='/prototypes/annual-assessment-admin-tool', back=true) }}
-
-      {% include './partials/form-errors.njk' %}
-
       {{ components.pageHeading(heading='Suspend users', secondary='Annual assessment admin tool') }}
 
-      {{ components.paragraph(text='Suspend users who have failed to complete their annual assessment', lead=true, limitWidth=true) }}
+      {{ components.paragraph(text='Confirm that you want to suspend testers', lead=true, limitWidth=true) }}
+
+      <p class='text u-clearfix'>Suspend the testers who have not completed an annual assessment in their qualified group or did not acheive the <strong>60%</strong> pass rate. </p>
 
       {% call components.form(action='/prototypes/annual-assessment-admin-tool/suspend-users/', method='POST') %}
 
-        {{ components.field(label='Upload a CSV file', id='file-upload', type='file', labelBold=true, group=true, error=errors, value=value)}}
+        {% include './partials/form-errors.njk' %}
 
-        {{ components.button(text='Submit suspension list') }}
+        {{ components.field(label='Choose a CSV file to upload', id='file-upload', type='file', labelBold=true, group=true, error=errors, value=value)}}
+
+        <div class='mts-body-wrapper'>
+
+          <div class='message--important'>
+
+            <p>This will suspend the selected testers immediately.</p>
+
+          </div>
+
+        </div>
+
+        {{ components.button(text='Upload') }}
 
       {%- endcall %}
+
+      <div class='mts-body-wrapper'>
+
+        <nav class="content-navigation">
+
+          <ul class="content-navigation__secondary">
+
+            <li>
+
+              {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool/') }}
+
+            </li>
+
+          </ul>
+
+        </nav>
+
+      </div>
 
     {%- endcall %}
 

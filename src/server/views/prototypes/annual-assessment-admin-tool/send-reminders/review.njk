@@ -8,21 +8,15 @@
 
     {% call components.columnFull() %}
 
-      <div class='u-margin-top-20'>
+      <div class='banner banner--confirmation u-margin-top-20'>
 
-        {{ components.banner(mainText='Thank you', secondaryText='Reminders have been sent to 100 testers', type="confirmation") }}
+        <span class='banner__heading-large'>Notification successfully sent</span>
+
+        <span>Annual assessment reminder notification sent to <strong>29</strong> testers</span>
 
       </div>
 
-      {{ components.heading(text='What happens next?', size='medium', tag='h2') }}
-
-      {{ components.paragraph(text='DVSA will investigate this report and decide on the best course of action.') }}
-
-      {{ components.paragraph(text='Investigations can take time and we can’t give updates on individual cases.') }}
-
-      {{ components.paragraph(text='You don’t need to do anything else.') }}
-
-      {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool', paragraph=true) }}
+      {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool/') }}
 
     {%- endcall %}
 

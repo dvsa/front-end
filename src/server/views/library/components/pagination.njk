@@ -1,0 +1,19 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'GDS Library - Pagination' %}
+
+{% block content %}
+
+    {{ components.heading(text='Pagination', tag='h2', size='medium') }}
+
+    {{ components.pagination(totalItems=9,currentPage=1) | prism }}
+
+    {{ components.pagination(totalItems=24,currentPage=1) | prism }}
+
+    {{ components.pagination(totalItems=24,currentPage=2) | prism }}
+
+    {{ components.pagination(totalItems=67,currentPage=2) | prism }}
+
+    {{ components.pagination(totalItems=104,currentPage=4) | prism }}
+
+{% endblock %}

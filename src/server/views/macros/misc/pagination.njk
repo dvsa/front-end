@@ -1,0 +1,45 @@
+{% macro pagination(
+    totalItems=99,
+    itemsPerPage=10,
+    currentPage=1
+  )
+%}
+{% set totalOverPerPage = totalItems/itemsPerPage %}
+{% set totalOverPerPageFloor = totalOverPerPage | round(0, "floor")  %}
+
+    <div class="pager">
+
+        {% if totalItems > itemsPerPage %}
+        <div class="pager__controls">
+
+            {% if currentPage > 1 %}
+            <a class="pager__prev" href="#">Prev</a>
+            {% endif %}
+
+            <ul class="pager__list">
+                {% for i in range(0, totalItems/itemsPerPage) -%}
+                {% set newI = i + 1 %}
+                <li>
+                    {% if currentPage != newI %}<a href="#">{% endif %}
+                        {{ newI }}
+                    {% if currentPage != newI %}</a>{% endif %}
+                </li>
+                {%- endfor %}
+            </ul>
+
+            {%  if currentPage < totalOverPerPageFloor %}
+                <a class="pager__next" href="#">Next</a>
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+        {% if totalItems < itemsPerPage %}
+            <div class="pager__summary">Showing {{ totalItems }} items</div>
+        {% else %}
+            <div class="pager__summary">Showing {{ (currentPage * 10)-9 }} –  {{ currentPage * 10 }} of {{ totalItems }} items</div>
+        {% endif %}
+
+    </div>
+{% endmacro %}

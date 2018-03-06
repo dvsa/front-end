@@ -1,6 +1,6 @@
 {% from "macros/elements/label.njk" import formLabel %}
 
-{% macro textarea(label='', labelBold=false, id='', name='', rows=5, hint=false, error=false, width=false) %}
+{% macro textarea(label='', labelBold=false, id='', name='', rows=5, hint=false, error=false, width=false, group=false) %}
 
   {% if width == 12.5 %}
     {% set widthClass = 'form-control-1-8' %}

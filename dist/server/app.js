@@ -83,57 +83,39 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
+var Helpers = _interopRequireWildcard(_helpers);
 
-const startApp = exports.startApp = (() => {
-  var _ref = _asyncToGenerator(function* () {
-    // Create express server
-    const app = (0, _express2.default)();
+var _package = require('./../../package.json');
 
-    // Create nunjucks fileloader instance for the views folder
-    const nunjucksFileLoader = new _nunjucks2.default.FileSystemLoader(_path2.default.resolve('src', 'server', 'views'), {
-      noCache: true
-    });
+var REPO_PACKAGE_JSON = _interopRequireWildcard(_package);
 
-    // Create a nunjucks instance to be used for the view engine
-    // This instance can be used to add filters and globals
-    let env = new _nunjucks2.default.Environment(nunjucksFileLoader, {
-      autoescape: false,
-      web: {
-        useCache: false
-      }
-    });
+  // Add custom prism filter
+  // Converts html to prism highlighted syntax
+  // This can be used to display the code inside of the view templates
+  env.addFilter('prism', Helpers.wrapCodeWithPreviwAndPrism);
+  env.addFilter('prismFullpage', Helpers.wrapCodeWithPrismForFullPagePreview);
 
-    // Add custom prism filter
-    // Converts html to prism highlighted syntax
-    // This can be used to display the code inside of the view templates
-    env.addFilter('prism', Helpers.wrapCodeWithPreviwAndPrism);
-    env.addFilter('prismFullpage', Helpers.wrapCodeWithPrismForFullPagePreview);
-
-    // Add lodash as a global for view templates
-    env.addGlobal('_', _lodash2.default);
-
-    // Add app url as global
-    env.addGlobal('appURL', _constants.CONFIG.appURL);
+  // Add lodash as a global for view templates
+  env.addGlobal('_', _lodash2.default);
 
     // Add package json contents as gloabl
     env.addGlobal('repoPackageJSON', REPO_PACKAGE_JSON);
 
-    // Loops through views/parials folder and get full path for each file
-    const getMacroFilePaths = (() => {
-      var _ref2 = _asyncToGenerator(function* () {
-        // Creates a promise since the function uses a callback
-        return new Promise(function (resolve, reject) {
-          _nodeDir2.default.paths(_path2.default.resolve(_constants.CONFIG.paths.views.base, 'macros'), function (err, paths) {
-            // Handles error
-            if (err) {
-              // Returns a reject promise response
-              return reject(err);
-            }
-            // Returns a resolved promise resonse
-            return resolve(paths.files);
-          });
-        });
+  // Add package json contents as gloabl
+  env.addGlobal('repoPackageJSON', REPO_PACKAGE_JSON);
+
+  // Loops through views/parials folder and get full path for each file
+  const getMacroFilePaths = async () => {
+    // Creates a promise since the function uses a callback
+    return new Promise((resolve, reject) => {
+      _nodeDir2.default.paths(_path2.default.resolve(_constants.CONFIG.paths.views.base, 'macros'), (err, paths) => {
+        // Handles error
+        if (err) {
+          // Returns a reject promise response
+          return reject(err);
+        }
+        // Returns a resolved promise resonse
+        return resolve(paths.files);
       });
 
       return function getMacroFilePaths() {

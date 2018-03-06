@@ -1,9 +1,4 @@
-{% macro pagination(
-    totalItems=99,
-    itemsPerPage=10,
-    currentPage=1
-  )
-%}
+{% macro pagination(totalItems=99,itemsPerPage=10,currentPage=1) %}
 {% set totalOverPerPage = totalItems/itemsPerPage %}
 {% set totalOverPerPageFloor = totalOverPerPage | round(0, "floor")  %}
 

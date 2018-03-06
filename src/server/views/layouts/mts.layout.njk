@@ -1,2 +1,15 @@
 {% set bodyClass = 'mts-body-wrapper' %}
-{% extends './default.layout.njk' %}
+{% extends './base.layout.njk' %}
+
+{% block bodyContentWrapper %}
+<main id="content" {{ 'class="' + mainContainerClass + '"' if mainContainerClass }}>
+  {% include './partials/phase-banner.njk' %}
+  {% include './partials/breadcrumbs.njk' %}
+
+  <div class="container">
+    {% filter prismFullpage %}
+      {% block content %}{% endblock %}
+    {% endfilter %}
+  </div>
+</main>
+{% endblock %}

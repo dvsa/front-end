@@ -83,23 +83,11 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const startApp = exports.startApp = async () => {
-  // Create express server
-  const app = (0, _express2.default)();
+var Helpers = _interopRequireWildcard(_helpers);
 
-  // Create nunjucks fileloader instance for the views folder
-  const nunjucksFileLoader = new _nunjucks2.default.FileSystemLoader(_path2.default.resolve('src', 'server', 'views'), {
-    noCache: true
-  });
+var _package = require('./../../package.json');
 
-  // Create a nunjucks instance to be used for the view engine
-  // This instance can be used to add filters and globals
-  let env = new _nunjucks2.default.Environment(nunjucksFileLoader, {
-    autoescape: false,
-    web: {
-      useCache: false
-    }
-  });
+var REPO_PACKAGE_JSON = _interopRequireWildcard(_package);
 
   // Add custom prism filter
   // Converts html to prism highlighted syntax
@@ -110,8 +98,8 @@ const startApp = exports.startApp = async () => {
   // Add lodash as a global for view templates
   env.addGlobal('_', _lodash2.default);
 
-  // Add app url as global
-  env.addGlobal('appURL', _constants.CONFIG.appURL);
+    // Add package json contents as gloabl
+    env.addGlobal('repoPackageJSON', REPO_PACKAGE_JSON);
 
   // Add package json contents as gloabl
   env.addGlobal('repoPackageJSON', REPO_PACKAGE_JSON);
@@ -129,103 +117,111 @@ const startApp = exports.startApp = async () => {
         // Returns a resolved promise resonse
         return resolve(paths.files);
       });
+
+      return function getMacroFilePaths() {
+        return _ref2.apply(this, arguments);
+      };
+    })();
+
+    // Add all macro file paths to be accessible inside view templates
+    env.addGlobal('macroFilePaths', (yield getMacroFilePaths()));
+
+    // Add express to the nunjucks enviroment instance
+    env.express(app);
+
+    // Create a view engine from nunjucks enviroment variable
+    app.engine('njk', env.render);
+
+    // Set the express view engine to the above created view engine
+    app.set('view engine', 'njk');
+    app.set('view cache', false);
+
+    // Disable powered by express in header
+    app.set('x-powered-by', false);
+
+    // Add eTag for files
+    // This is used for caching in modern browsers
+    // The eTag hash is generated from the file content
+    // So if the file changes, the hash is also changed which clears the current cache
+    app.set('etag', function (body, encoding) {
+      return (0, _etag2.default)(body, encoding);
     });
-  };
 
-  // Add all macro file paths to be accessible inside view templates
-  env.addGlobal('macroFilePaths', (await getMacroFilePaths()));
+    app.use(_libraryNavigation.addLibraryNavigationItemsToRequestObject);
 
-  // Add express to the nunjucks enviroment instance
-  env.express(app);
+    // Enable HTML Compression
+    // Website: https://www.npmjs.com/package/express-minify-html
+    // app.use(
+    //   minifyHTML({
+    //     override: true,
+    //     exception_url: false,
+    //     htmlMinifier: {
+    //       removeComments: true,
+    //     },
+    //   })
+    // );
 
-  // Create a view engine from nunjucks enviroment variable
-  app.engine('njk', env.render);
+    // Enables security middleware
+    // Website: https://helmetjs.github.io/
+    app.use((0, _helmet2.default)());
 
-  // Set the express view engine to the above created view engine
-  app.set('view engine', 'njk');
-  app.set('view cache', false);
+    // Enable GZip Compression
+    app.use((0, _compression2.default)());
 
-  // Disable powered by express in header
-  app.set('x-powered-by', false);
-
-  // Add eTag for files
-  // This is used for caching in modern browsers
-  // The eTag hash is generated from the file content
-  // So if the file changes, the hash is also changed which clears the current cache
-  app.set('etag', (body, encoding) => {
-    return (0, _etag2.default)(body, encoding);
-  });
-
-  app.use(_libraryNavigation.addLibraryNavigationItemsToRequestObject);
-
-  // Enable HTML Compression
-  // Website: https://www.npmjs.com/package/express-minify-html
-  // app.use(
-  //   minifyHTML({
-  //     override: true,
-  //     exception_url: false,
-  //     htmlMinifier: {
-  //       removeComments: true,
-  //     },
-  //   })
-  // );
-
-  // Enables security middleware
-  // Website: https://helmetjs.github.io/
-  app.use((0, _helmet2.default)());
-
-  // Enable GZip Compression
-  app.use((0, _compression2.default)());
-
-  // Logger middleware
-  // Outputs all http requests and responses
-  if (!(0, _constants.isTesting)()) {
-    app.use((0, _morgan2.default)('dev'));
-  }
-
-  // Memory store created for production use
-  // See: https://www.npmjs.com/package/memorystore
-  const MemoryStore = (0, _memorystore2.default)(_expressSession2.default);
-
-  // Express session middleware
-  // Website: https://www.npmjs.com/package/express-session
-  app.use((0, _expressSession2.default)({
-    resave: true,
-    saveUninitialized: true,
-    secret: _constants.CONFIG.sessionSecret,
-    cookie: {
-      store: new MemoryStore({
-        // prune expired entries every 24h
-        checkPeriod: 86400000
-      }),
-      // 20 minutes
-      maxAge: 1200000
-    }
-  }));
-
-  // Static folder
-  app.use(_express2.default.static(_constants.CONFIG.paths.publicAssets));
-
-  // Body parsing middleware
-  // Website: https://www.npmjs.com/package/body-parser
-  app.use(_bodyParser2.default.json());
-  app.use(_bodyParser2.default.urlencoded({ extended: true }));
-
-  // Error handling for development
-  if ((0, _constants.isDevelopment)()) {
-    app.use((0, _errorhandler2.default)());
-  }
-
-  // Routes
-  app.use('/', _routes.allRoutes);
-
-  // Start HTTP server
-  app.listen(_constants.CONFIG.port, () => {
+    // Logger middleware
+    // Outputs all http requests and responses
     if (!(0, _constants.isTesting)()) {
-      console.log(`
+      app.use((0, _morgan2.default)('dev'));
+    }
+
+    // Memory store created for production use
+    // See: https://www.npmjs.com/package/memorystore
+    const MemoryStore = (0, _memorystore2.default)(_expressSession2.default);
+
+    // Express session middleware
+    // Website: https://www.npmjs.com/package/express-session
+    app.use((0, _expressSession2.default)({
+      resave: true,
+      saveUninitialized: true,
+      secret: _constants.CONFIG.sessionSecret,
+      cookie: {
+        store: new MemoryStore({
+          // prune expired entries every 24h
+          checkPeriod: 86400000
+        }),
+        // 20 minutes
+        maxAge: 1200000
+      }
+    }));
+
+    // Static folder
+    app.use(_express2.default.static(_constants.CONFIG.paths.publicAssets));
+
+    // Body parsing middleware
+    // Website: https://www.npmjs.com/package/body-parser
+    app.use(_bodyParser2.default.json());
+    app.use(_bodyParser2.default.urlencoded({ extended: true }));
+
+    // Error handling for development
+    if ((0, _constants.isDevelopment)()) {
+      app.use((0, _errorhandler2.default)());
+    }
+
+    // Routes
+    app.use('/', _routes.allRoutes);
+
+    // Start HTTP server
+    app.listen(_constants.CONFIG.port, function () {
+      if (!(0, _constants.isTesting)()) {
+        console.log(`
         Port: ${_constants.CONFIG.port} 
         Env: ${app.get('env')}
       `);
-    }
+      }
+    });
   });
-};
+
+  return function startApp() {
+    return _ref.apply(this, arguments);
+  };
+})();

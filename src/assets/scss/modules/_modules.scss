@@ -1,5 +1,4 @@
 @import "badges/badges";
-@import "banners/banners";
 @import "buttons/buttons";
 @import "check-your-answers/check-your-answers";
 @import "footer/footer";
@@ -22,3 +21,8 @@
 @import 'recalls-accordion/recalls-accordion';
 @import 'iphone-x-fixes/iphone-x-fixes';
 @import 'details/details';
+
+//Custom Modules
+// @author James Nelson <j.nelson@kainos.com>
+@import 'dvsa-banner/dvsa-banner';
+

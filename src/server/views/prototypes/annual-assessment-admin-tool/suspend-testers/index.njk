@@ -4,8 +4,8 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Annual Assessment Admin Tool', url: '/prototypes/annual-assessment-admin-tool/' },
-  { text: 'Suspend users' }
+  { text: 'Annual assessment admin tool', url: '/prototypes/annual-assessment-admin-tool/' },
+  { text: 'Suspend testers' }
 ] %}
 
 {% block content %}
@@ -14,17 +14,17 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Suspend users', secondary='Annual assessment admin tool') }}
+      {{ components.pageHeading(heading='Suspend testers', secondary='Annual assessment admin tool') }}
+
+      {% include './partials/form-errors.njk' %}
 
       {{ components.paragraph(text='Confirm that you want to suspend testers', lead=true, limitWidth=true) }}
 
       <p class='text u-clearfix'>Suspend the testers who have not completed an annual assessment in their qualified group or did not acheive the <strong>60%</strong> pass rate. </p>
 
-      {% call components.form(action='/prototypes/annual-assessment-admin-tool/suspend-users/', method='POST') %}
+      {% call components.form(action='/prototypes/annual-assessment-admin-tool/suspend-testers/', method='POST') %}
 
-        {% include './partials/form-errors.njk' %}
-
-        {{ components.field(label='Choose a CSV file to upload', id='file-upload', type='file', labelBold=true, group=true, error=errors, value=value)}}
+        {{ components.field(label='Choose a CSV file', id='file-upload', type='file', labelBold=true, group=true, error=errors, value=value)}}
 
         <div class='mts-body-wrapper'>
 
@@ -36,7 +36,7 @@
 
         </div>
 
-        {{ components.button(text='Upload') }}
+        {{ components.button(text='Suspend testers') }}
 
       {%- endcall %}
 

@@ -13,11 +13,11 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Annual Assessment Admin Tool', secondary='MOT testing service') }}
+      {{ components.pageHeading(heading='Annual assessment admin tool', secondary='MOT testing service') }}
 
       <div class='text u-clearfix'>
 
-        {{ components.paragraph(text='Check and send notifications to testers who are currently qualified but have not done an annual assessment or added their results', lead=true) }}
+        {{ components.paragraph(text='Manage testers who have not done an annual assessment or added their results', lead=true) }}
 
         {{ components.heading(text='Download the list of testers', size='medium', tag='h2') }}
 
@@ -35,7 +35,7 @@
 
         <p>Suspend the testers who have not completed an annual assessment in their qualified group or did not achieve the <strong>60%</strong> pass rate.</p>
 
-        {{ components.link(text='Suspend testers', url='/prototypes/annual-assessment-admin-tool/suspend-users', paragraph=true) }}
+        {{ components.link(text='Suspend testers', url='/prototypes/annual-assessment-admin-tool/suspend-testers', paragraph=true) }}
 
       </div>
 

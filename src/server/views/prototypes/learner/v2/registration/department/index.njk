@@ -1,6 +1,6 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Your Government department - Civil Service Learning Platform' %}
+{% set pageTitle = 'Your organisation - Civil Service Learning Platform' %}
 
 {% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v2' %}
 {% set loggedOut = 'true' %}
@@ -19,16 +19,16 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Your Government  department', 'Create an account') }}
+    {{ components.pageHeading('Your organisation', 'Create an account') }}
 
     {% if registrationDepartmentError %}
 
-        {% set departmentErrorMessage = 'Select your government department'%}
+        {% set departmentErrorMessage = 'Select your organisation'%}
 
         <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
-            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your email address</h2>
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your information</h2>
             <ul class="error-summary-list">
-                <li><a href="#department">Your department does not appear to be valid</a></li>
+                <li><a href="#department">Your organisation does not appear to be valid</a></li>
             </ul>
         </div>
 
@@ -42,9 +42,9 @@
 
                 {{ components.select(
                     options=departmentSelectOptions,
-                    label='Department',
+                    label='Organisation',
                     id='department',
-                    hint='Start typing to find your Government department name',
+                    hint='Start typing to find your organisation name',
                     group=true,
                     extraClass='autocomplete-wrapper',
                     error=departmentErrorMessage,

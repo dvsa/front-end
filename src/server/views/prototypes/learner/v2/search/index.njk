@@ -14,7 +14,7 @@
 
             {{ components.pageHeading('Search results') }}
 
-            <div class="search-box">
+            <div class="search-box u-space-b30">
 
                 {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v2/search") %}
 
@@ -44,8 +44,307 @@
 
         {% call components.columnFull() %}
 
+            <div class="resources">
 
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v2/booking/">Book now</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
 
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 5 hours</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="#">Start</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Online, 2 hours</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Blog, 10 minutes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v2/booking/">Book now</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 10 minutes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v2/booking/">Book now</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 5 hours</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="#">Start</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Online, 2 hours</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Blog, 10 minutes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v2/booking/">Book now</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 10 minutes</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v2/booking/">Book now</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 5 hours</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <span class="resource__action">
+                                <a href="#">Start</a>
+                                <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                            </span>
+                        </li>
+
+                        <li class="resource__rating">
+
+                            <div class="star-rating">
+                                <div class="star-rating__sprite">
+                                    <span style="width: 85%;" class="star-rating__value">This course was popular with 85% of those who responded</span>
+                                </div>
+                                <span class="star-rating__total">(83 reviews)</span>
+                            </div>
+
+                        </li>
+
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Online, 2 hours</span>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
         {%- endcall %}
 
     {%- endcall %}

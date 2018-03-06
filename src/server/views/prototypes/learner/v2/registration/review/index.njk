@@ -1,6 +1,6 @@
-{% extends 'layouts/default.layout.njk' %}
+    {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Review your registration details - Civil Service Learning Platform' %}
+{% set pageTitle = 'Your registration details - Civil Service Learning Platform' %}
 
 {% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v2' %}
 {% set loggedOut = 'true' %}
@@ -16,7 +16,7 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Review your registration details', 'Create an account') }}
+    {{ components.pageHeading('Your registration details', 'Create an account') }}
 
     {% call components.gridRow() %}
 
@@ -60,7 +60,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td class="key-value-list__key ">Department</td>
+                        <td class="key-value-list__key ">Organisation</td>
                         <td class="key-value-list__value">
                             {% if departmentName %}
                                 {{ departmentName }}

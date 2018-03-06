@@ -10,6 +10,8 @@
 {% set email2 = email2 if email2 %}
 {% set registrationEmailError = registrationEmailError if registrationEmailError %}
 {% set registrationEmailErrorMessage = registrationEmailErrorMessage if registrationEmailErrorMessage %}
+{% set registrationEmailErrorMessageTop = registrationEmailErrorMessageTop if registrationEmailErrorMessageTop %}
+{% set registrationEmailErrorMessageBottom = registrationEmailErrorMessageBottom if registrationEmailErrorMessageBottom %}
 {% set editMode = editMode if editMode %}
 {% if editMode %}
     {% set buttonText = 'Save changes'  %}
@@ -38,11 +40,11 @@
 
             {% call components.formElement(name='registerName', method='POST', action="#") %}
 
-                <p class="lede">You need to create an account before using the Civil Service Learning Platform. This should take 5 minutes.</p>
+                <p class="lede">You need to create an account before using the Civil Service Learning Platform. This will take less than 5 minutes.</p>
 
-                {{ components.field(label='Email address', id='email', hint="", group=true, value=email)}}
+                {{ components.field(label='Email address', id='email', hint="", group=true, value=email, error=registrationEmailErrorMessageTop)}}
 
-                {{ components.field(label='Confirm email address', id='email2', hint="", group=true, value=email2)}}
+                {{ components.field(label='Confirm email address', id='email2', hint="", group=true, value=email2, error=registrationEmailErrorMessageBottom)}}
 
                 {% call components.formGroup() %}
 

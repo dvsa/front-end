@@ -48,13 +48,13 @@
 
         {% call components.columnTwoThirds() %}
 
-            <p class="lede">Now you need to create a memorable password for your account.</p>
+            {#<p class="lede">Now you need to create a memorable password for your account.</p>#}
 
             <div class="module-criteria u-space-b30" id="password-criteria-scope">
                 <p>Your password must have:</p>
                 <ul class="list-bullet criteria__list">
                     <li class="criteria__criterion" data-criteria="minLength" data-criteria-param="8">8 or more characters</li>
-                    <li class="criteria__criterion" data-criteria="hasNumeric">1 or more numbers</li>
+                    <li class="criteria__criterion" data-criteria="hasNumeric">at least 1 number</li>
                     <li class="criteria__criterion" data-criteria="hasMixedCase">upper and lower case letters</li>
                 </ul>
             </div>
@@ -63,7 +63,7 @@
 
                 {{ components.field(label='Create a password', id='passwordOne', hint="", group=true, type='password', value=password, error=registrationPasswordErrorOneMessage)}}
 
-                {{ components.field(label='Re-type your password', id='passwordTwo', hint="", group=true, type='password', error=registrationPasswordErrorTwoMessage)}}
+                {{ components.field(label='Retype your password', id='passwordTwo', hint="", group=true, type='password', error=registrationPasswordErrorTwoMessage)}}
 
                 {% call components.formGroup() %}
 

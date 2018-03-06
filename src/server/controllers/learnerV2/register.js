@@ -7,11 +7,22 @@ let generalData = require('./data');
 // Email: GET
 // **************************************************************************************
 export function registerEmailGet(req, res) {
-  let viewData, email, email2, registrationEmailError, registrationEmailErrorMessage, mode, editMode, clearSession;
+  let viewData,
+    email,
+    email2,
+    registrationEmailError,
+    registrationEmailErrorMessage,
+    mode,
+    editMode,
+    clearSession,
+    registrationEmailErrorMessageBottom,
+    registrationEmailErrorMessageTop;
 
   email = req.session.email;
   registrationEmailError = req.session.registrationEmailError;
   registrationEmailErrorMessage = req.session.registrationEmailErrorMessage;
+  registrationEmailErrorMessageTop = req.session.registrationEmailErrorMessageTop;
+  registrationEmailErrorMessageBottom = req.session.registrationEmailErrorMessageBottom;
 
   clearSession = req.param('clearSession');
   if (clearSession === 'true') {
@@ -32,6 +43,8 @@ export function registerEmailGet(req, res) {
     registrationEmailError,
     registrationEmailErrorMessage,
     editMode,
+    registrationEmailErrorMessageBottom,
+    registrationEmailErrorMessageTop,
   };
 
   return res.render('prototypes/learner/v2/registration/index', viewData);
@@ -41,23 +54,32 @@ export function registerEmailGet(req, res) {
 export function registerEmailPost(req, res) {
   const { email, email2 } = req.body;
 
-  let registrationEmailError, registrationEmailErrorMessage, editMode;
+  let registrationEmailError,
+    registrationEmailErrorMessage,
+    editMode,
+    registrationEmailErrorMessageTop,
+    registrationEmailErrorMessageBottom;
   req.session.email = email;
   editMode = req.session.editMode;
 
   if (!validateEmail(email)) {
     registrationEmailError = true;
-    registrationEmailErrorMessage = 'Enter a valid email';
+    registrationEmailErrorMessage = 'You must enter a valid email';
+    registrationEmailErrorMessageTop = 'Enter a valid email address';
   }
 
   if (email !== email2) {
     registrationEmailError = true;
     registrationEmailErrorMessage = 'The email addresses do not match';
+    registrationEmailErrorMessageBottom = 'Enter a matching email address';
   }
 
   if (registrationEmailError === true) {
     req.session.registrationEmailError = registrationEmailError;
     req.session.registrationEmailErrorMessage = registrationEmailErrorMessage;
+    req.session.registrationEmailErrorMessageTop = registrationEmailErrorMessageTop;
+    req.session.registrationEmailErrorMessageBottom = registrationEmailErrorMessageBottom;
+
     return res.redirect('/prototypes/learner/v2/registration');
   } else {
     req.session.registrationEmailError = req.session.registrationEmailErrorMessage = null;

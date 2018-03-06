@@ -4,7 +4,7 @@
     padding-bottom: 50%;
 
     &--Section5-image4 {
-        padding-bottom: 30%;
+        width: 100px;
     }
 
     &__image {
@@ -13,9 +13,5 @@
         height: 100%;
         top: 0;
         left: 0;
-
-        .manual-image--Section5-image4 & {
-            width: auto;
-        }
     }
 }

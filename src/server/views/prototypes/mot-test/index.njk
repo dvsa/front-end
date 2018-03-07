@@ -125,7 +125,15 @@
 
           <div class="action-panel__container--last">
 
-            {{ components.button(text='Add comment', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+            {% if viewData.comments %}
+
+              {{ components.button(text='Edit comment', url='/prototypes/mot-test/edit-tester-comment/edit/1') }}
+
+            {% else %}
+
+              {{ components.button(text='Add comment', url='/prototypes/mot-test/add-tester-comment/') }}
+
+            {% endif %}
 
           </div>
 
@@ -133,20 +141,54 @@
 
       </div>
 
+      {% if viewData.comments %}
+
+        <div class="defect-summary">
+
+          <ol>
+
+            {% for comment in viewData.comments %}
+
+            <li class='defect'>
+
+              {{ comment.value }}
+
+              <ul class="defect__edit">
+
+                <li> <a href="/prototypes/edit-tester-comment/edit/{{comment.id}}">Edit</a></li>
+
+                <li>or <a href="/prototypes/remove-tester-comment/remove/{{comment.id}}">Remove</a></li>
+
+              </ul>
+
+            </li>
+
+            {% endfor %}
+
+          </ol>
+
+        </div>
+
+      {% endif %}
+
       <nav class="content-navigation">
 
-        {{ components.button(text='Review test', url='/prototypes/annual-assessment-admin-tool/send-reminders/review', disabled=true) }}
+        <form action="/mot-test/325101349187/test-summary" method="get">
+
+          <input id="reviewTest" type="submit" class="js-reviewTestButton button" value="Review test" disabled="">
+
+        </form>
 
         <ul class="content-navigation__secondary">
 
           <li>
 
-            {{ components.link(text='Cancel test', url='/prototypes/annual-assessment-admin-tool/') }}
- 
+            <a href="/mot-test/325101349187/cancel" id="cancelTest">Cancel test</a>
+
           </li>
 
         </ul>
-
+        
       </nav>
 
     {%- endcall %}

@@ -5,6 +5,7 @@ import * as miscController from './../controllers/misc.controller';
 import * as recallsController from './../controllers/api/v1/recalls.controller';
 import * as createAccountController from './../controllers/create-account';
 import * as suspendTestersController from './../controllers/annual-assessment-tool/suspend-testers';
+import * as motTestResultsController from './../controllers/mot-test/mot-test';
 
 const router = Router();
 
@@ -40,6 +41,11 @@ router.post('/prototypes/create-account/password', createAccountController.passw
 // Annual Assessment tool - suspend testers path
 router.get('/prototypes/annual-assessment-admin-tool/suspend-testers', suspendTestersController.getSuspendTesters);
 router.post('/prototypes/annual-assessment-admin-tool/suspend-testers', suspendTestersController.postSuspendTesters);
+
+// MOT test - add tester comments
+router.get('/prototypes/mot-test', motTestResultsController.getMotTestResultComments);
+router.get('/prototypes/mot-test/add-tester-comment', motTestResultsController.getTesterComments);
+router.post('/prototypes/mot-test/add-tester-comment', motTestResultsController.postTesterComments);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

@@ -1,0 +1,156 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+
+        <h1><span class="content-header__title">MOT test results</span></h1>
+
+      </header>
+
+      <header class='content-header'>
+
+        <ul class='content-header__tertiary-list u-margin-bottom-35'>
+
+          <li class='content-header__list-item--primary'>BHW, 790</li>
+
+          <li class='content-header__list-item'>AJ30CTK</li>
+
+          <li class='content-header__list-item'>First used 25 Apr 2005</li>
+
+        </ul>
+
+      </header>
+      
+      <div class='text u-clearfix'>
+        
+        <p><a href='#'>Print the MOT inspection sheet</a> for this test.</p>
+
+        <p>See <a href='#'>testing advice</a> for this vechicle.</p>
+
+      </div>
+
+      <div class="action-panel">
+
+        <div class="clear-float">
+
+          <div class="action-panel__container">
+
+            <h3 class="action-panel__heading">Odometer</h3>
+
+          </div>
+
+          <div class="action-panel__container">
+
+            <h3 class="action-panel__value">Not recorded</h3>
+
+          </div>
+
+          <div class="action-panel__container--last">
+
+            {{ components.button(text='Add reading', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="action-panel">
+
+        <div class="clear-float">
+
+          <div class="action-panel__container">
+
+            <h3 class="action-panel__heading">Defects</h3>
+
+          </div>
+
+          <div class="action-panel__container--last">
+
+            {{ components.button(text='Add a defect', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="action-panel">
+
+        <div class="clear-float">
+
+          <div class="action-panel__container">
+
+            <h3 class="action-panel__heading">Break test</h3>
+
+          </div>
+
+          <div class="action-panel__container">
+
+            <h3 class="action-panel__value">Not recorded</h3>
+
+          </div>
+
+          <div class="action-panel__container--last">
+
+            {{ components.button(text='Add break tests', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="action-panel">
+
+        <div class="clear-float">
+
+          <div class="action-panel__container">
+
+            <h3 class="action-panel__heading">Testers comments</h3>
+
+          </div>
+
+          <div class="action-panel__container--last">
+
+            {{ components.button(text='Add comment', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <nav class="content-navigation">
+
+        {{ components.button(text='Review test', url='/prototypes/annual-assessment-admin-tool/send-reminders/review', disabled=true) }}
+
+        <ul class="content-navigation__secondary">
+
+          <li>
+
+            {{ components.link(text='Cancel test', url='/prototypes/annual-assessment-admin-tool/') }}
+ 
+          </li>
+
+        </ul>
+
+      </nav>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

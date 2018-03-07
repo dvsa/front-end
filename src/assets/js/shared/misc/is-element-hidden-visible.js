@@ -21,6 +21,6 @@ export const isElementHidden = element => {
  * @since 1.0.0
  */
 export const isElementVisible = element => {
-  if(!element) return false;
-  return !!( element.offsetWidth || element.offsetHeight || element.getClientRects().length );
+  if (!element) return false;
+  return !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length);
 };

@@ -1,0 +1,10 @@
+{% macro dvsaBanner(mainText='', headingType='h1', secondaryText=false, type) %}
+  {% if mainText %}
+    <div class="dvsa-banner {{ 'dvsa-banner--' + type if type }}">
+        <{{headingType}} class="dvsa-banner__heading-large">{{ mainText }}</{{headingType}}>
+        {% if secondaryText %}
+            <p class='dvsa-banner__secondary-text'>{{ secondaryText }}</p>
+        {% endif %}
+    </div>
+  {% endif %}
+{% endmacro %}

@@ -1,6 +1,6 @@
 {
   "name": "dvsa-front-end",
-  "version": "1.0.17",
+  "version": "1.1.9",
   "description": "Front-end assets built on Node/Express to be used for public-facing DVSA sites and applications. Based on GOV UK prototype kit, but highly modified. It uses SCSS, Nunjucks, Gulp, ES6, WebPack, Babel, Mocha, Chai, Puppeteer, and NPM libraries.",
   "main": "index.js",
   "scripts": {
@@ -11,16 +11,23 @@
     "build-server": "babel ./src/server --out-dir ./dist/server",
     "build-production": "cross-env NODE_ENV=production concurrently \"npm run pretty-js\" \"npm run build-server\" \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
-    "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js"
+    "run-tests": "cross-env NODE_ENV=testing mocha --require babel-core/register --watch --timeout 10000 ./tests/bootstrap/runner.js ./tests/src/**/**.js",
+    "move-assets-to-motdev-production": "cross-env NODE_ENV=production gulp move-assets-to-motdev",
+    "move-assets-to-motdev-watch": "gulp move-assets-to-motdev-watch"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:dvsa/front-end.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Tameem Safi <https://github.com/tameemsafi>",
+  "contributors": [
+    "Tameem Safi <https://github.com/tameemsafi>",
+    "James Nelson <j.nelson@kainos.com>"
+  ],
+  "license": "MIT",
   "engines": {
-    "node": "8.9.0"
+    "node": "9.7.1",
+    "npm": "5.6.0"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -48,6 +55,7 @@
     "lodash": "^4.17.4",
     "md5": "^2.2.1",
     "memorystore": "^1.6.0",
+    "moment": "^2.20.1",
     "morgan": "^1.9.0",
     "node-dir": "^0.1.17",
     "nunjucks": "^3.0.1",
@@ -63,7 +71,6 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
@@ -71,18 +78,19 @@
     "chai": "^4.1.2",
     "classlist.js": "^1.1.20150312",
     "cross-env": "^5.1.1",
+    "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
+    "cssnano-preset-advanced": "^4.0.0-rc.2",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-cssnano": "^2.1.2",
     "gulp-filter": "^5.0.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
     "gulp-notify": "^3.0.0",
-    "gulp-postcss": "^7.0.0",
+    "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
     "gulp-sass": "^3.1.0",
     "gulp-scss-lint": "^0.5.0",
     "gulp-sourcemaps": "^2.6.1",
@@ -95,6 +103,7 @@
     "sass-module-importer": "^1.4.0",
     "undertaker-forward-reference": "^1.0.2",
     "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.10.0",
     "webpack-merge": "^4.1.1",
     "webpack-stream": "^4.0.0"
   }

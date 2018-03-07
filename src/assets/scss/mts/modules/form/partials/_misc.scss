@@ -1,0 +1,40 @@
+.form-group.has-error {
+  background-color: $error-background;
+  border-left: 3px solid $mellow-red;
+
+  // margin-left: -$gutter-half;
+  padding-left: $gutter-half;
+}
+
+.form-group + .panel-indent.has-error,
+.panel-indent.has-error {
+  border-left: 5px solid $error-colour;
+
+  padding: 0;
+  box-sizing: content-box;
+
+  > .form-label,
+  > .form-control {
+    margin-left: 15px;
+  }
+}
+
+.panel-indent .validation-message {
+  display: block;
+  color: $error-colour;
+}
+
+.block-label__meta {
+  @include core-16;
+  display: block;
+}
+
+.input-link {
+  @include core-16;
+  display: block;
+  margin-top: 10px;
+}
+
+.form-title {
+  margin: 45px 0;
+}

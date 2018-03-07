@@ -1,0 +1,35 @@
+.c-mailbox-status {
+  border-bottom: 1px solid $border-colour;
+  border-top: 1px solid $border-colour;
+  display: block;
+  overflow: auto;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  position: relative;
+  text-decoration: none;
+
+  & + & {
+    border-top: 0;
+  }
+
+  &.is-overdue {
+    color: $mellow-red;
+  }
+
+  &__count {
+    @include bold-48();
+    display: inline-block;
+  }
+
+  &__info {
+    margin-left: 60px;
+    color: $black;
+  }
+
+  &__type {
+    padding-left: .5em;
+    position: relative;
+    top: -1em;
+    vertical-align: super;
+  }
+}

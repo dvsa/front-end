@@ -1,0 +1,36 @@
+// Validation summary styling is a nested
+// include within elements - needs to unpicked/or renamed
+.validation-summary {
+  background-color: transparent;
+  border: 5px solid #b10e1e;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px 15px 15px;
+  // margin-left: 15px;
+  // margin-right: 15px;
+
+  h2 {
+    font-weight: bold;
+  }
+
+  ul,
+  ol {
+    // margin-top: $gutter;
+    // margin-bottom: $gutter;
+    // color: $error-colour;
+    font-weight: 700;
+    text-transform: none;
+  }
+
+  li,
+  p {
+    @include core-19;
+    margin-bottom: 5px;
+    margin-top: 0.26316em;
+  }
+
+  .heading-medium {
+    margin-top: $gutter-half;
+    margin-bottom: 0;
+  }
+}

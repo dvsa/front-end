@@ -1,0 +1,92 @@
+.c-transaction-details {
+  width: 100%;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $white;
+  border-top-color: rgba($white, .5);
+  margin-top: 15px;
+
+  &--inverted {
+    color: $black;
+    border-top-color: $black;
+    border-top-color: rgba($black, .5);
+  }
+
+  &--two {
+    .c-transaction-details__item {
+      width: 50%;
+    }
+  }
+
+  &--three {
+    .c-transaction-details__item {
+      width: 33.33%;
+    }
+  }
+
+  &--four {
+    .c-transaction-details__item {
+      width: 25%;
+      text-align: left;
+    }
+  }
+
+  &__item {
+    display: table-cell;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 15px;
+
+    &--last {
+      text-align: right;
+    }
+
+    &--first {
+      text-align: left;
+    }
+
+    &,
+    &--last,
+    &--first {
+      @include media(mobile) {
+        text-align: left;
+      }
+    }
+
+    @include media(mobile) {
+      display: table-row;
+      width: 100%;
+
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: $white;
+      border-bottom-color: rgba($white, .5);
+    }
+  }
+
+  &__key {
+    @include core-16;
+  }
+
+  &__value {
+    @include  bold-24;
+
+    @include media(mobile) {
+      @include  bold-16;
+    }
+  }
+
+  &__key,
+  &__value {
+    display: block;
+    border: 0;
+    padding: 0;
+    text-align: inherit;
+    color: inherit;
+
+    @include media(mobile) {
+      padding: 10px 0;
+      display: table-cell;
+    }
+  }
+}

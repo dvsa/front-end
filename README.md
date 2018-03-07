@@ -4,32 +4,6 @@ You can view a live demo here:
 
 [Heroku Demo](https://dvsa-front-end.herokuapp.com/)
 
-## Docker setup for development
-
-**You will need the latest version of docker installed**
-
-### Running development mode
-
-For faster development you can use docker by running the following command:
-
-```
-docker-compose up
-```
-
-After which the server is located at the local address below:
-
-```
-http://localhost:3002
-```
-
-### Building production assets
-
-Run the following command
-
-```
-docker-compose run --rm app npm run build-production
-```
-
 ## Local Setup
 
 ### Prerequisite
@@ -75,20 +49,28 @@ npm run build-production
 
 **Run this command and commit changes before pushing to heroku.**
 
-## Front-end Assets
+## Docker setup for development
 
-## Images
+**You will need the latest version of docker installed**
 
-All images will be placed inside of the 'public/images' folder for production. Each image will also be compressed using imagemin.
+### Running development mode
 
-## Javascript
+For faster development you can use docker by running the following command:
 
-All javascript files will be placed inside of the 'public/javascripts' folder for production. Each file is uglified for optimal performance.
+```
+docker-compose up
+```
 
-### IE Shims Bundle
+After which the server is located at the local address below:
 
-The file named **ie-shims.bundle.js** contains polyfills to make IE8 work as expected. It allows support for HTML5 and other basic features.
+```
+http://localhost:3002
+```
 
-### DVSA Bundle
+### Building production assets
 
-The file named **dvsa.bundle.js** contains all of the new ES6 javascript bundled using webpack. It is also transpiled uisng babel-loader to allow ES5 browser compatibility. This can be loaded right at the end of the page before body tag and can be defered.
+Run the following command
+
+```
+docker-compose run --rm app npm run build-production
+```

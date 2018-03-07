@@ -1,0 +1,119 @@
+@import 'partials/button';
+@import 'partials/button-get-started';
+
+// RFR buttons
+.button {
+  &--alert {
+    @include button($red);
+    @include core-16;
+    margin: 0;
+  }
+
+  &--info {
+    @include button($govuk-blue);
+    @include core-16;
+    margin: 0;
+  }
+
+  &--warn {
+    @include button($yellow);
+    @include core-16;
+    margin: 0;
+  }
+
+  &--plain {
+    @include button($white);
+    @include core-16;
+    border: 1px solid $black;
+    box-shadow: 0 2px 0 $grey-1;
+    padding: .2em .52em;
+    margin: 0;
+  }
+
+  &--right {
+    margin-right: 0;
+  }
+
+  &--on-blue {
+    @include button($black);
+    font-weight: 700;
+    text-align: left;
+    background-image: file-url('icons/icon-pointer.png');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    padding-right: em(41);
+  
+    @include device-pixel-ratio {
+      background-image: file-url('icons/icon-pointer-2x.png');
+      background-size: 30px 19px;
+    }
+  
+    @include ie(6) {
+      background-image: file-url('icons/icon-pointer-2x.png');
+    }
+  }
+}
+
+.button-warning {
+  @include button($red);
+  margin: 0 $gutter-half $gutter-half 0;
+  padding: em(10) em(15) em(5);
+  vertical-align: top;
+}
+
+// Start now buttons
+.button-start {
+  @include _core-font-generator(24px, 20px, 16pt, (30 / 24), (24 / 20), false, 700);
+  @include box-sizing(border-box);
+  background-image: file-url('icons/icon-pointer.png');
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  padding: .3em 45px .2em .6em;
+  width: 100%;
+  max-width: 430px;
+  margin-bottom: 15px;
+
+  @include device-pixel-ratio {
+    background-image: file-url('icons/icon-pointer-2x.png');
+    background-size: 30px 19px;
+  }
+
+  @include ie(6) {
+    background-image: file-url('icons/icon-pointer-2x.png');
+  }
+}
+
+.related-button {
+  &,
+  &--warning {
+    @include button();
+  }
+
+  &--warning {
+    @include button($red);
+  }
+}
+
+//Be specific - don't wan't this class added to a tags
+input.button--link {
+  background-color: transparent;
+  border: 0;
+  color: $link-colour;
+  cursor: pointer;
+  left: -3px;
+  margin: 0;
+  outline: medium none;
+  padding: 0;
+  position: relative;
+  text-align: left;
+  text-decoration: underline;
+
+  &:hover {
+    color: $link-active-colour;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $yellow;
+  }
+}

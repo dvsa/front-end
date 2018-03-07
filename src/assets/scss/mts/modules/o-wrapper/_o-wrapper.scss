@@ -1,0 +1,19 @@
+.o-wrapper {
+  max-width: $site-width;
+  margin: 0 $gutter-half;
+  // Pressing enter when focus is on the skiplink sets focus on the #content area
+  // Remove the blue outline
+  outline: none;
+
+  @include ie-lte(8) {
+    width: $site-width;
+  }
+
+  @include media(tablet) {
+    margin: 0 $gutter;
+  }
+
+  @include media($min-width: ($site-width + $gutter * 2)) {
+    margin: 0 auto;
+  }
+}

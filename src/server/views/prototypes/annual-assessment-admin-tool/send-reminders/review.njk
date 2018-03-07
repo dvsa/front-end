@@ -1,0 +1,26 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Notification successfully sent' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <div class='dvsa-banner dvsa-banner--confirmation u-margin-top-20'>
+
+        <h1 class='dvsa-banner__heading-large'>Notification successfully sent</h1>
+
+        <p class='dvsa-banner__secondary-text'>Annual assessment reminder notification sent to <strong>29</strong> testers</span>
+
+      </div>
+
+      {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool/') }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+{%- endblock %}
+  

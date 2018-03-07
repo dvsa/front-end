@@ -1,13 +1,13 @@
 /**
  * closestParentOfEl
  *
- * Loops up the DOM tree until it finds a parent with the class name.
+ * Loops up the DOM tree until it finds a parent with the selector
  *
- * @param {DOMElement} el Element to start and traverse up from.
- * @param {string} className Class name to look for in parent.
+ * @param {DOMElement} el Element to start and traverse up from
+ * @param {string} selector Selector to look for
  */
-export function closestParentOfEl(el, className) {
-  let matches = (document || el.ownerDocument).querySelectorAll(className);
+export function closestParentOfEl(el, selector) {
+  let matches = (document || el.ownerDocument).querySelectorAll(selector);
   let i;
   do {
     i = matches.length;

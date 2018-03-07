@@ -1,0 +1,54 @@
+// Taken from elements-page.scss 
+.big-data {
+  display: block;
+  
+  // Modifier
+  &--is-link {
+    display: block;
+    background-color: $govuk-blue;
+    color: $white;
+    text-decoration: none;
+    padding: $gutter-half;
+
+    &:hover,
+    &:active {
+      background-color: $link-hover-colour;
+      color: $white;
+    }
+
+    &:visited {
+      color: $white;
+    }
+  }
+
+  // Modifier
+  &--is-block {
+    display: block;
+    background-color: $govuk-blue;
+    color: $white;
+    padding: $gutter $gutter-half;
+  }
+
+  &__number {
+    @include bold-48;
+    display: block;
+    line-height: .8;
+  }
+
+  &__unit {
+    @include bold-19;
+    display: block;
+
+    &--light {
+      @include core-19;
+      margin-top: $gutter-half;
+      display: block;
+    }
+  }
+
+  &__meta {
+    @include core-16;
+    margin-left: 60px;
+    color: $secondary-text-colour;
+  }
+}

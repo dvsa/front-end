@@ -1,0 +1,29 @@
+.c-vts-count {
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px; 
+  background-color: $govuk-blue;
+  color: $white !important;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $light-blue;
+  }
+
+  &__number,
+  &__text {
+    display: block;
+  }
+
+  &__number {
+    @include bold-48();
+    line-height: 1;
+  }
+
+  &__text {
+    @include core-16();
+    line-height: 1;
+  }
+}

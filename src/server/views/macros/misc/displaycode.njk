@@ -1,1 +1,3 @@
-{% macro displayCode() %}{{ caller() | prism }}{% endmacro %}
+{% macro displayCode() %}
+  {{ caller() | prism }}
+{% endmacro %}

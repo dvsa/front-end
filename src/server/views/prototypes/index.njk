@@ -29,10 +29,6 @@
       
     {%- endcall %}
 
-  {%- endcall %}
-
-  {% call components.gridRow() %}
-
     {% call components.columnOneThird() %}
 
       {{ components.heading(text='Report MOT fraud', tag='h2', size='medium', url='/prototypes/report-fraud') }}
@@ -40,6 +36,13 @@
       
     {%- endcall %}
 
-  {%- endcall %}
+    {% call components.columnOneThird() %}
 
+      {{ components.heading(text='Annual Assessment Admin Tool', tag='h2', size='medium', url='/prototypes/annual-assessment-admin-tool') }}
+      {{ components.paragraph(text='Admin Assessment tool user journey')}}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
 {% endblock %}

@@ -1,0 +1,19 @@
+import { delegateEvent } from './../../../../shared';
+
+export class LinksWithRole {
+  constructor() {
+    this.roleButtonSelector = '[role="button"]';
+    this.setup();
+  }
+
+  setup() {
+    delegateEvent(document, 'keydown', this.roleButtonSelector, event => {
+      // if the keyCode (which) is 32 it's a space, let's simulate a click.
+      if (event.which === 32) {
+        event.preventDefault();
+        // trigger the target's click event
+        event.target.click();
+      }
+    });
+  }
+}

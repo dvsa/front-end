@@ -14,3 +14,4 @@ COPY . .
 
 # Expose app port from docker container
 EXPOSE 3002
+EXPOSE 8888

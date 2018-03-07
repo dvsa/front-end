@@ -1,4 +1,5 @@
 import path from 'path';
+import os from 'os';
 import _ from 'lodash';
 
 /**
@@ -19,6 +20,8 @@ export const IS_PRODUCTION = () => {
 }
 
 export const DIST_FOLDER_PATH = IS_PRODUCTION() ? path.resolve('dist', 'assets') : path.resolve('public');
+
+export const MOTDEV_PUBLIC_FOLDER = path.join(os.homedir(), 'MOTDEV', 'mot', 'mot-web-frontend', 'public');
 
 export const CONFIG = {
   isProduction: IS_PRODUCTION,
@@ -51,4 +54,5 @@ export const CONFIG = {
   configFiles: {
     scssLink: path.join(BASE_FOLDER_PATH, '.scss-lint.yml'),
   },
+  motDevAssetsFolderPath: path.join(MOTDEV_PUBLIC_FOLDER, 'dvsa-frontend')
 };

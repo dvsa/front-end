@@ -77,6 +77,10 @@ textarea {
 // Form group compound is used to reduce the space between label and input pairs
 .form-group-compound {
   margin-bottom: 10px;
+
+  @include media(tablet) {
+    margin-bottom: 10px;
+  }
 }
 
 

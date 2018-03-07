@@ -1,0 +1,94 @@
+.header-user {
+  &__name {
+    @include bold-24;
+    color: $white;
+  }
+
+  &__id {
+    @include core-19;
+    color: $white;
+
+    &:before {
+      content: ' - ';
+      color: $white;
+    }
+  }
+
+  &__address {
+    @include core-19;
+    color: $white;
+    display: block;
+    text-decoration: none;
+
+    a,
+    a:link,
+    a:visited {
+      @include bold-14;
+      color: $white;
+      line-height: 1;
+      position: relative;
+      text-decoration: none;
+      
+      @include media(tablet) {
+        top: -5px;
+      }
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__menu {
+    @extend %contain-floats;
+    clear: both;
+    padding: 0;
+
+    li {
+      float: left;
+      padding: 3px 15px 3px 0;
+      list-style: outside none none;
+
+      a {
+        color: $white;
+
+        &:visited {
+          color: $white;
+        }
+      }
+
+      @include media(desktop) {
+        display: block;
+        width: auto;
+        padding: 0 15px 0 0;
+      }
+    }
+
+    a {
+      @include bold-14;
+      color: $white;
+      text-decoration: none;
+
+      @include media(desktop) {
+        @include bold-16;
+        line-height: 24px;
+      }
+
+      &:visited {
+        color: $white;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.is-active {
+        color: $proposition-active-nav;
+      }
+
+      &:focus {
+        color: $black;
+      }
+    }
+  }
+}

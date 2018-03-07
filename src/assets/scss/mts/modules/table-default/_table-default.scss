@@ -1,0 +1,43 @@
+.table-default {
+  &__head {
+    @include bold-16;
+  }
+
+  &__body {
+    &--primary {
+      font-weight: 700; 
+    }
+
+    &--action {
+      text-align: right;
+      .column-two-thirds & {
+        width: 80px;
+        text-align: left;
+      }
+    }
+
+    &,
+    &--primary,
+    &--action {
+      @include core-16;
+      td {
+        @include core-16;
+      }
+    }
+
+    &--primary,
+    &--action {
+      .table-default--small & {
+        td {
+          @include core-16;
+        }
+      }
+    }
+  }
+
+  &__meta {
+    color: $secondary-text-colour;
+    font-weight: 300;
+    display: block;
+  }
+}

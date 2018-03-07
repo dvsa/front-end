@@ -6,10 +6,6 @@ module.exports = {
     dvsa: path.resolve('src', 'assets', 'js', 'dvsa', 'index.js'),
     development: path.resolve('src', 'assets', 'js', 'development', 'index.js'),
   },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve('public', 'javascripts'),
-  },
   module: {
     rules: [
       {
@@ -24,12 +20,13 @@ module.exports = {
                 'targets': {
                   'browsers': [
                     'last 3 versions',
-                    'ie >= 8',
+                    'ie >= 9',
                     'last 3 iOS major versions'
                   ]
                 },
-                'debug': true,
+                debug: true,
                 useBuiltIns: true,
+                uglify: true
               }],
               'stage-2',
               'stage-3'

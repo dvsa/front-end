@@ -1,0 +1,160 @@
+
+.controls-row {
+  // if the table has a secondary controls
+  // row, apply this class to adjust borders
+  border-bottom: 1px solid $grey-2;
+}
+
+.meta-row {
+  th,
+  td {
+    padding: 0;
+  }
+}
+
+.inline-link {
+  @include core-16();
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.table-bold-th {
+  th {
+    font-weight: 700;
+  }
+}
+
+// 0. New BP for long service name
+#global-header .header-global--internal {
+  min-width: 288px;
+}
+
+// 1. Override logo sizes
+#global-header .header-global--internal #logo {
+  font-size: 24px;
+  line-height: normal;
+  top: -3px;
+}
+
+// 3. Override pading
+#global-header .header-proposition {
+  padding-top: 0;
+
+  @include media(tablet) {
+    width: 100%;
+  }
+}
+
+#global-header .header-proposition {
+  width: 100%;
+
+  @include media(false, '910px', '769px'){
+    width: 100% !important;
+  }
+}
+
+// Colour for RAG Risk assessment scores
+// only in here as I'm not sure where else to put it
+span[class^=label-value] {
+  position: relative;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 3px 8px 0;
+  line-height: 17px;
+  border: 1px solid #fff;
+}
+
+span[class^=label-value--] {
+  color: #fff;
+}
+
+span.label-value {
+  &--white {
+    background-color: #fff;
+    border: 1px solid #333;
+    color: inherit;
+  }
+
+  &--red {
+    background-color: $red;
+  }
+
+  &--amber {
+    background-color: $yellow;
+    color: inherit;
+  }
+
+  &--green {
+    background-color: $green;
+  }
+}
+
+// change of phase tag colour
+.phase-banner .phase-tag {
+  background-color: $govuk-blue;
+}
+
+// Used on the buy slots page
+// to reset the spacing in Chrome
+.slot-hero + fieldset legend {
+  float: left;
+}
+
+// the following fixes the missing
+// arrow in FireFox on the details/summary toggle box
+@-moz-document url-prefix() {
+  details summary {
+    display: list-item;
+    display: revert;
+  }
+}
+
+// PROG ENHANCEMENT STUFF
+.js-enabled {
+  .rfr-toggle-list {
+    display: none;
+  }
+}
+
+// modify content breadcrumb
+.rfr-nav {
+  margin: 0 0 10px;
+  border-top: 1px solid $grey-2;
+  border-bottom: 1px solid $grey-2;
+}
+
+// for displaying
+// verison number in footer
+.version-number {
+  @include core-14;
+  position: absolute;
+  bottom: -26px;
+  color: $grey-1;
+}
+
+// TYPOGRAPHICAL STYLES
+.result__group-heading,
+.filter__group-heading {
+  @include core-24();
+
+  margin-top: em(10, 20);
+  margin-bottom: em(10, 20);
+
+  @include media(tablet) {
+      margin-top: em(20, 24);
+      margin-bottom: em(20, 24);
+  }
+}
+
+.result__group {
+  margin-top: em(10, 20);
+  margin-bottom: em(10, 20);
+}
+
+.result__actions {
+  padding-top: $gutter;
+}
+
+.list-link li {
+  margin-bottom: 5px;
+}

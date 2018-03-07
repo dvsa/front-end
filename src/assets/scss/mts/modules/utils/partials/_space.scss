@@ -1,0 +1,30 @@
+/**
+ * Based on the design guidelines:
+ * Spacing between elements is usually 5px, 10px, 15px or multiples of 15px
+ * 
+ * These classes are limited by the space-class-values
+ *
+ * t = top
+ * b = bottom
+ * y = top & bottom
+ */
+ 
+&-space-xauto {
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+@each $value in $space-class-values {
+  &-space-t#{$value} {
+    margin-top: #{$value}px !important;
+  }
+
+  &-space-b#{$value} {
+    margin-bottom: #{$value}px !important;
+  }
+
+  &-space-y#{$value} {
+      margin-top: #{$value}px !important;
+      margin-bottom: #{$value}px !important;
+  }
+}

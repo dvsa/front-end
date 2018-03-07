@@ -1,0 +1,57 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Suspend Users' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Annual assessment admin tool', url: '/prototypes/annual-assessment-admin-tool/' },
+  { text: 'Suspend testers' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Suspend testers', secondary='Annual assessment admin tool') }}
+
+      {% include './partials/form-errors.njk' %}
+
+      {{ components.paragraph(text='Confirm that you want to suspend testers', lead=true, limitWidth=true) }}
+
+      <p class='text u-clearfix'>Suspend the testers who have not completed an annual assessment in their qualified group or did not acheive the <strong>60%</strong> pass rate. </p>
+
+      {% call components.form(action='/prototypes/annual-assessment-admin-tool/suspend-testers/', method='POST') %}
+
+        {{ components.field(label='Choose a CSV file', id='file-upload', type='file', labelBold=true, group=true, error=errors, value=value)}}
+
+        <div class='message--important'>
+
+          <p>This will suspend the selected testers immediately.</p>
+
+        </div>
+
+        {{ components.button(text='Suspend testers') }}
+
+      {%- endcall %}
+
+      <nav class="content-navigation">
+
+        <ul class="content-navigation__secondary">
+
+          <li>
+
+            {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool/') }}
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,57 @@
+.search-group {
+  @extend %grid-row;
+
+  .form-group {
+    padding-left: $gutter-half;
+    padding-right: $gutter-half;
+
+    @include media(tablet) {
+      display: inline-block;
+      float: none;
+      width: auto;
+    }
+  }
+
+  .form-label {
+    @include bold-24;
+  
+    @include media(tablet) {
+      min-height: 3em;
+    }
+  }
+
+  .form-control {
+    @include bold-19($tabular-numbers: true);
+    letter-spacing: 2px;
+    padding: 10px 6px;
+    text-transform: uppercase;
+    border-color: #999;
+
+    &.is-reg {
+      text-align: center;
+      background-color: lighten($yellow, 5);
+      text-transform: uppercase;
+      min-width: 9em;
+      max-width: 9em;
+    }
+
+    &.is-vin {
+      width: 100%;
+      max-width: 14em;
+    }
+  }
+
+  .form-hint {
+    @include core-19;
+  }
+
+  .button {
+    @include bold-19;
+    vertical-align: baseline;
+    margin-top: $gutter-half;
+
+    @include media(tablet) {
+      margin-top: 0;
+    }
+  }
+}

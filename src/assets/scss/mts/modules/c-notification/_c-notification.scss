@@ -1,0 +1,29 @@
+.c-notification {
+  padding-top: 10px;
+
+  &.is-nomination {
+    background-color: $grey-3;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  &__link {
+  }
+
+  &__time {
+    @include core-16;
+    color: $grey-1;
+  }
+}
+
+// Below must be written this way in order for
+// the body wrapper class to work since it is outdated code
+
+.is-unread {
+  .c-notification {
+    &__link {
+      font-weight: 700;
+    }
+  }
+}

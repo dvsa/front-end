@@ -1,0 +1,101 @@
+%table-reference-base {
+  margin-top: 15px;
+
+  td, 
+  th,
+  td.numeric,
+  th.numeric {
+    padding-right: 0;
+    padding-left: 15px;
+    font-size: 16px;
+
+    &:last-child {
+      padding-right: 15px;
+    }
+  }
+
+  th,
+  td {
+    .table-reference--isempty & {
+      background-color: $grey-3;
+      color: $text-colour;
+    }
+  }
+}
+
+.table-reference {
+  @extend %table-reference-base;
+
+  &__head {
+    th,
+    td {
+      // colour & size
+      background-color: $light-blue;
+      color: $white;
+      padding-bottom: 0;
+    }
+  }
+
+  &__meta {
+    // block weight font
+    display: block;
+    font-weight: 400;
+  }
+
+  &__row {
+    &--primary {
+      td,
+      th, 
+      td.numeric {
+        //size weight bgnd
+        font-size: 24px;
+        font-weight: 700;
+        color: $white;
+        background-color: $light-blue;
+        border: 0;
+        padding-top: 5px;
+
+        .table-reference--isempty & {
+          background-color: $grey-3;
+          color: $text-colour;
+        }
+      }
+
+      th {
+        .table-reference--isempty & {
+          @include bold-24;
+          border-top: 0;
+        }
+      }
+
+      &.numeric {
+        line-height: 16px!important;
+        vertical-align: bottom;
+        padding-bottom: 18px;
+      }
+
+      & + tr td {
+        border-top: 0;
+      }
+    }
+
+    &--secondary {
+      background-color: #d5e8f3;
+    }
+  }
+
+  &--isempty {
+    // @extend %table-reference-base;
+  }
+}
+
+// some hideous selectors
+// I can't use a special class in the natural css hierarchy as it's so specific, and governed by other rules that I need to use !important which we're not allowed to do.
+// there was a table-reference__no-data class...
+// Pick your lesser evil.
+// .table-reference--isempty .table-reference__row--primary .numeric,
+// .table-reference--isempty .table-reference__row--primary .font-xsmall {
+//   line-height: 16px!important;
+//   vertical-align: bottom;
+//   padding-bottom: 18px;
+// }

@@ -1,0 +1,51 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Send reminders notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Annual assessment admin tool', url: '/prototypes/annual-assessment-admin-tool/' },
+  { text: 'Send reminder notification' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Send reminder notification', secondary='Annual assessment admin tool') }}
+
+      <p class='lede text u-clearfix'>Confirm that you want to send an annual assessment reminder notification to <strong>29</strong> testers</p>
+
+      <div class='mts-body-wrapper'>
+
+        <div class='message--important'>
+
+          <p>This will send the notification to testers immediately.</p>
+
+        </div>
+
+        {{ components.button(text='Send notification', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+
+        <nav class="content-navigation">
+
+          <ul class="content-navigation__secondary">
+
+            <li>
+
+              {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool/') }}
+
+            </li>
+            
+          </ul>
+
+        </nav>
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

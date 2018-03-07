@@ -1,0 +1,112 @@
+// tab lists for noitifications and special noticies
+// .c-tab-list parent container for all notification message related elements
+.c-tab-list {
+  display: block;
+
+  // .c-tab-list__tabs
+  // <ul> for tabs
+  &__tabs {
+    position: relative;
+    text-align: left;
+    margin-bottom: -1px;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  &__tab-link {
+    @include bold-14();
+    display: block;
+    padding: 10px 30px;
+
+    &--active {
+      font-weight: normal;
+      background-color: $grey-3;
+    }
+  }
+
+  // .c-tab-list__items
+  // <ul> for all message items
+  &__items {
+    position: relative;
+  }
+
+  &__item-link {
+    position: relative;
+
+    .c-tab-list__row--unread & {
+      font-weight: bold;
+
+      &:before {
+        position: absolute;
+        left: -20px;
+        top: -4px;
+        font-size: 28px;
+        content: '\2022';
+
+        @include media(mobile) {
+          left: -14px;
+          top: -2px;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  &__item-left {
+    padding: 10px 150px 10px 32px;
+
+    @include media(mobile) {
+      padding: 10px 0 4px 20px;
+    }
+  }
+
+  &__item-right {
+    position: absolute;
+    right: 0;
+    width: 150px;
+    padding: 10px 0;
+    top: 2px;
+
+    @include media(mobile) {
+      position: relative;
+      right: auto;
+      top: auto;
+      width: auto;
+      padding: 4px 0 4px 20px;
+    }
+  }
+
+  // .c-tab-list__row
+  // <li> message item
+  &__row {
+    position: relative;
+    clear: both;
+    background-color: $grey-4;
+    border-top: 1px solid $grey-3;
+
+    &--unread {
+      background-color: $white;
+    }
+
+    &--header {
+      background-color: $grey-3;
+
+      @include media(mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__no-new {
+    @include core-19();
+    padding: 24px 32px;
+
+    @include media(mobile) {
+      margin-top: 0;
+      border-top: 1px solid $grey-3;
+      padding: 12px 20px;
+    }
+  }
+}

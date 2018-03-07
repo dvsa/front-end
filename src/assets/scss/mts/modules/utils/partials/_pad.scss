@@ -1,0 +1,24 @@
+/**
+ * Based on the design guidelines:
+ * Spacing between elements is usually 5px, 10px, 15px or multiples of 15px
+ *
+ * These classes are limited by the space-class-values list in config/_layout.scss
+ *
+ * t = top
+ * b = bottom
+ * y = top & bottom
+ */
+@each $value in $space-class-values {
+  &-pad-t#{$value} {
+    padding-top: #{$value}px !important;
+  }
+  
+  &-pad-b#{$value} {
+    padding-bottom: #{$value}px !important;
+  }
+
+  &-pad-y#{$value} {
+    padding-top: #{$value}px !important;
+    padding-bottom: #{$value}px !important;
+  }
+}

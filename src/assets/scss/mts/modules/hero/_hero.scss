@@ -1,0 +1,68 @@
+#hero {
+  @include core-19;
+  background-color: $hero-colour;
+  margin-top: -10px;
+  overflow: auto;
+}
+
+.hero {
+  &__wrap {
+    @extend %site-width-container;
+    color: $white;
+  }
+
+  &__content {
+    @include grid-column(2 / 3, desktop);
+  
+    .heading-large {
+      margin-top: em(15, 24);
+  
+      @include media(tablet) {
+        margin-top: em(30, 36);
+      }
+    }
+  
+    .heading-secondary {
+      color: $white;
+      padding-bottom: 0;
+    }
+  }
+
+  &__actions {
+    @include grid-column(1 / 3, desktop);
+    overflow: auto;
+  
+    @include media(desktop) {
+      padding-top: 15px;
+      background-color: $black;
+      min-height: 230px;
+      margin-top: em(15, 24);
+    }
+  
+    li {
+      @include bold-16;
+      margin: 10px 0;
+    }
+  
+    a,
+    a:visited {
+      color: $white;
+  
+    }
+    
+    a:hover {
+      color: $grey-3;
+    }
+  
+    a:focus {
+      color: $black;
+    }
+  
+    .button-start {
+      @include media(desktop) {
+        width: 100%;
+        margin: 0 0 $gutter-half;
+      }
+    }
+  }
+}

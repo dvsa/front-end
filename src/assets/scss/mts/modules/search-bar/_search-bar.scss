@@ -1,0 +1,77 @@
+.search-bar {
+  width: 100%;
+  position: relative;
+
+  &__label {
+    @include bold-19;
+    padding-bottom: 5px;
+    display: block;
+  }
+
+  &__control-group {
+    @include box-sizing(border-box);
+    display: inline-block;
+    padding-right: 203px;
+    position: relative;
+    width: 100%;
+    
+    @include media(775px) {
+      max-width: 75%;
+    }
+  }
+
+  &__search-input {
+    @include box-sizing(border-box);
+    @include border-radius(0);
+    line-height: $search-line-height;
+    padding: $search-padding;
+    height: 40px;
+    background-color: $white;
+    width: 100%;
+    border: 1px solid $border-colour;
+    // Grrr, damn your specificity alphaGov!
+    &[type='search'] {
+      @include box-sizing(border-box);
+      appearance: none;
+    }
+  
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+
+    &--darken-border {
+      border-width: 2px;
+      border-color: $mot-border;
+    }
+  }
+
+  &__search-submit {
+    @include button();
+    font-weight: 700;
+    line-height: $search-line-height;
+    padding: $search-padding;
+    height: 40px;
+    margin: 0;
+    vertical-align: top;
+    width: 200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__secondary-action {
+    color: $secondary-text-colour;
+    line-height: $search-line-height;
+    
+    padding-left: 0;
+    display: block;
+  
+    @include media(775px) {
+      display: inline-block;
+      max-width: 33.333%;
+      padding-left: 5px;
+      vertical-align: text-bottom;
+    }
+  }
+}
+

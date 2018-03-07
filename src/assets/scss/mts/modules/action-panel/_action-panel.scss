@@ -1,0 +1,134 @@
+// .action-panel
+// Used in mot test results
+
+.action-panel {
+  @extend %contain-floats;
+  position: relative;
+  background-color: $grey-3;
+  border: 1px solid $grey-2;
+  padding: 15px;
+
+  & + .action-panel {
+    margin-top: 30px;
+  }
+
+  .button {
+    margin: 0;
+    text-align: center;
+    width: 180px;
+    font-weight: 700;
+  }
+
+  &__container {
+    display: block;
+    width: 50%;
+    float: left;
+
+    @include media(tablet) {
+      width: 33.333%;
+    }
+
+    @include media(mobile) {
+      width: 100%;
+      float: initial;
+    }
+
+    &--last {
+      width: 100%;
+      padding-top: 10px;
+
+      @include media(tablet) {
+        padding-top: 0;
+        width: 33.333%;
+        text-align: right;
+        float: right;
+      }
+
+      @include media(mobile) {
+        padding-top: 0px;
+        width: 100%;
+        float: initial;
+        margin-top: 10px;
+      }
+    }
+
+    &--wider {
+      width: 55%;
+
+      @include media(mobile) {
+        width: 100%;
+      }
+
+      & + .action-panel__container {
+        width: 45%;
+
+        @include media(mobile) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__value {
+    @media(max-width: 890px) {
+      @include bold-24();
+      margin-top: 5px;
+    }
+
+    @include media(mobile) {
+      @include bold-19();
+      text-align: left;
+      margin-top: 10px;
+    }
+  }
+
+  &__heading,
+  &__value {
+    @include bold-36();
+    line-height: 1;
+  }
+
+  &__value,
+  &__meta {
+    display: block;
+    text-align: right;
+
+    @include media(tablet) {
+      text-align: left;
+    }
+  }
+
+  &__secondary-action {
+    @include core-16();
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    @include media(tablet) {
+      position: static;
+      margin-top: 10px;
+      display: block;
+    }
+
+    @include media(mobile) {
+      display: block;
+      position: static;
+      margin: 10px 0 0 0;
+    }
+  }
+
+  &__heads {
+    @include core-16();
+
+    &-item {
+      span {
+        display: inline-block;
+        min-width: 130px;
+
+        @include media(mobile) {
+          min-width: 10px;
+        }
+      }
+    }
+  }
+}

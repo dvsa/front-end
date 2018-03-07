@@ -35,9 +35,9 @@
       
       <div class='text u-clearfix'>
         
-        <p><a href='#'>Print the MOT inspection sheet</a> for this test.</p>
+        <p><a href='/prototypes/'>Print the MOT inspection sheet</a> for this test.</p>
 
-        <p>See <a href='#'>testing advice</a> for this vechicle.</p>
+        <p>See <a href='/prototypes/'>testing advice</a> for this vechicle.</p>
 
       </div>
 
@@ -117,7 +117,7 @@
 
         <div class="clear-float">
 
-          <div class="action-panel__container">
+          <div class="action-panel__container--twothirds">
 
             <h3 class="action-panel__heading">Testers comments</h3>
 
@@ -149,7 +149,7 @@
 
             {% for comment in viewData.comments %}
 
-            <li class='defect'>
+            <li class='defect defect__comment'>
 
               {{ comment.value }}
 
@@ -183,7 +183,7 @@
 
           <li>
 
-            <a href="/mot-test/325101349187/cancel" id="cancelTest">Cancel test</a>
+            <a href="/prototypes/" id="cancelTest">Cancel test</a>
 
           </li>
 

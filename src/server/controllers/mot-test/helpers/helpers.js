@@ -6,10 +6,10 @@
  *
  * @author James Nelson <j.nelson@kainos.com>
  */
-export const formatTextAreaResponse = (text) => {
+export const formatTextAreaResponse = text => {
   if (!text) return console.warn('formatTextArea was not provided a text param');
   // Checks if text param is of string
   if (typeof text !== 'string') return console.warn('Non string value passed into formatTextAreaResponse');
   // (/g) enables global matching
   return text.replace(/\n/g, '<br />');
-}
+};

@@ -15,13 +15,37 @@
 
       {{ components.pageHeading(heading='Add testers comment') }}
 
+      {% if viewData.errors %}
+
+        <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+
+          <h2 class="heading-medium error-summary-heading" id="error-summary-heading">There was some errors with the form</h2>
+
+          <ul class="error-summary-list">
+
+            {% for error in viewData.errors %}
+
+            <li>
+
+              <a href="#file-upload">{{ error }}</a>
+
+            </li>
+
+            {% endfor %}
+
+          </ul>
+
+        </div>
+
+      {% endif %}
+
       {{ components.paragraph(text='These comments are additional notes you can add to an MOT test', lead=true, limitWidth=true) }}
 
       {{ components.paragraph(text='Comments will not appear on certificates or MOT history. Only DVSA and scheme users will be able to view them.', limitWidth=true) }}
 
       {% call components.form(action='/prototypes/mot-test/add-tester-comment/', method='POST') %}
 
-        {{ components.textarea(label="Enter your comment", id='comment', group=true) }}
+        {{ components.textarea(label="Enter your comment", id='comment', group=true, error=viewData.errors) }}
 
         {{ components.button(text='Add comment') }}
 

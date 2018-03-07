@@ -24,10 +24,10 @@ module.exports = merge(common, {
      * 
      * https://www.npmjs.com/package/webpack-bundle-analyzer
      */
-    new BundleAnalyzerPlugin({
-      analyzerPort: 8888,
-      // Relative to output path
-      reportFilename: './../../tmp/webpack-bundle-report.html'
-    })
+    // new BundleAnalyzerPlugin({
+    //   analyzerPort: 8888,
+    //   // Relative to output path
+    //   reportFilename: './../../tmp/webpack-bundle-report.html'
+    // })
   ]
 });

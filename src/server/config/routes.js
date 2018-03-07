@@ -5,7 +5,6 @@ import * as miscController from './../controllers/misc.controller';
 import * as recallsController from './../controllers/api/v1/recalls.controller';
 import * as createAccountController from './../controllers/create-account';
 import * as suspendTestersController from './../controllers/annual-assessment-tool/suspend-testers';
-import * as motTestResultsController from './../controllers/mot-test/mot-test';
 
 const router = Router();
 

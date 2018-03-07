@@ -3,4 +3,4 @@ export * from './has-class';
 export * from './toggle-class';
 export * from './events';
 export * from './closest-parent';
-export * from './is-element-hidden';
+export * from './is-element-hidden-visible';

@@ -4,6 +4,7 @@ import { initSelectToggle } from './select-toggle';
 import { initDoubleClickPrevention } from './double-click-prevention';
 import { initMarkRepairs } from './mark-repairs';
 import { initShowHideToggle } from './show-hide-toggle';
+import { initFormDisableDetailsHiddenFields } from './form-submit-disable-details-hidden-fields';
 
 /**
  * Custom DVSA Modules
@@ -18,4 +19,5 @@ export const initModules = () => {
   initDoubleClickPrevention();
   initMarkRepairs();
   initShowHideToggle();
+  initFormDisableDetailsHiddenFields();
 };

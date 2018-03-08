@@ -36,3 +36,10 @@ export const postTesterComments = (req, res) => {
   // Return to add tester comment view if errors
   return res.redirect('/prototypes/mot-test/add-tester-comment');
 };
+
+// Currently implemented as a convinence method for removing a session.
+export const removeSessionAndRedirect = (req, res) => {
+  // Resets session & redirects
+  req.session.viewData = null;
+  return res.redirect('/prototypes/mot-test/');
+}

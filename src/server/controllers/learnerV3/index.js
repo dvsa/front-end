@@ -4,3 +4,5 @@ export * from './register';
 export * from './resource';
 export * from './config';
 export * from './booking';
+export * from './actions';
+export * from './scorms';

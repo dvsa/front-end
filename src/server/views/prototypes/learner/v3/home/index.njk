@@ -8,6 +8,7 @@
 {% set homePath = '/prototypes/learner/v3/home' %}
 {% set hideHomeStars = hideHomeStars if hideHomeStars %}
 {% set removeMessage = removeMessage if removeMessage %}
+{% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
 
 {% block content %}
 
@@ -23,7 +24,11 @@
 
                         {{ components.heading(text='Your learning', tag='h1', size='large', extraClass='heading--flush') }}
 
-                        <p class="u-space-b5">You can <a href="/prototypes/learner/v3/learning-record">leave feedback on 2 items</a>.</p>
+                        {% if fireTrainingComplete %}
+                            <p class="u-space-b5">You can <a href="/prototypes/learner/v3/learning-record">leave feedback on 3 items</a>.</p>
+                        {% else %}
+                            <p class="u-space-b5">You can <a href="/prototypes/learner/v3/learning-record">leave feedback on 2 items</a>.</p>
+                        {% endif %}
 
                     {%- endcall %}
 
@@ -103,6 +108,7 @@
                     </ul>
                 </div>
 
+                {% if not fireTrainingComplete %}
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
@@ -119,23 +125,7 @@
                         </li>
                     </ul>
                 </div>
-
-                {#<div class="resource">
-                    <ul class="resource__item u-clearfix">
-                        <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=5">Responsibility for information</a>
-                            <span class="resource__action">
-                                <a href="#">Start <span class="visuallyhidden"> course</span></a>
-                            </span>
-                        </li>
-                        <li class="resource__info">
-                            <span>Due by 18 Sep 2018</span>
-                        </li>
-                        <li class="resource__duration">
-                            <span>1 hour</span>
-                        </li>
-                    </ul>
-                </div>#}
+                {% endif %}
 
             </div>
 

@@ -277,6 +277,7 @@ router.get('/prototypes/learner/v3/registration/complete', learnerV3Controller.r
 
 // registration, complete
 router.get('/prototypes/learner/v3/resource', learnerV3Controller.resourceGet);
+router.post('/prototypes/learner/v3/resource', learnerV3Controller.resourcePost);
 
 //******************************************************
 //      Booking stuff
@@ -287,6 +288,10 @@ router.get('/prototypes/learner/v3/booking/payment', learnerV3Controller.booking
 router.post('/prototypes/learner/v3/booking/payment', learnerV3Controller.bookingPaymentPost);
 router.get('/prototypes/learner/v3/booking/confirm', learnerV3Controller.bookingConfirmGet);
 router.get('/prototypes/learner/v3/booking/complete', learnerV3Controller.bookingCompleteGet);
+
+// SCORMS fire safety
+router.get('/prototypes/learner/v3/scorms/basic-fire-safety', learnerV3Controller.basicFireSafetyGet);
+router.post('/prototypes/learner/v3/scorms/basic-fire-safety', learnerV3Controller.basicFireSafetyPost);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

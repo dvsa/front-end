@@ -2,7 +2,7 @@
 import { validateWord } from './validation-functions';
 
 export function homeGet(req, res) {
-  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage;
+  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage, fireTrainingComplete;
 
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
@@ -11,6 +11,7 @@ export function homeGet(req, res) {
   hideHomeStars = req.session.hideHomeStars;
   action = req.param('action');
   courseId = req.param('id');
+  fireTrainingComplete = req.session.fireTrainingComplete;
 
   if (parseInt(courseId) >= 1 && action === 'checkRemove') {
     removeCheckMessage = true;
@@ -27,6 +28,7 @@ export function homeGet(req, res) {
     hideHomeStars,
     removeMessage,
     removeCheckMessage,
+    fireTrainingComplete,
   };
 
   return res.render('prototypes/learner/v3/home/index', viewData);
@@ -80,9 +82,22 @@ export function profileGet(req, res) {
 
 // learning record GET
 export function recordGet(req, res) {
-  let viewData;
+  let viewData, fireTrainingComplete, fireTrainingCompleteBanner, trainingEndDate, todayDate, months;
 
-  viewData = {};
+  fireTrainingCompleteBanner = req.session.fireTrainingCompleteBanner;
+  fireTrainingComplete = req.session.fireTrainingComplete;
+
+  todayDate = new Date();
+  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  trainingEndDate = todayDate.getDate() + ' ' + months[todayDate.getMonth()] + ' ' + todayDate.getFullYear();
+
+  viewData = {
+    fireTrainingCompleteBanner,
+    fireTrainingComplete,
+    trainingEndDate,
+  };
+
+  req.session.fireTrainingCompleteBanner = null;
 
   return res.render('prototypes/learner/v3/learning-record/index', viewData);
 }
@@ -122,61 +137,6 @@ export function searchPost(req, res) {
   req.session.searchTerm = searchTerm;
 
   return res.redirect('/prototypes/learner/v3/search');
-}
-
-// Actions: POST
-// just deals with various actions and then redirects accordingly with session stuff stored to
-export function actionsGet(req, res) {
-  let action, type, searchTerm, redirectPath, referrer, status;
-
-  action = req.param('action');
-  // type = req.param('type');
-  status = req.param('status');
-  referrer = req.headers.referer;
-  redirectPath = referrer;
-
-  console.log('referrer = ' + referrer);
-
-  console.log('action = ' + action);
-
-  if (action == 'addedToLearningPlan') {
-    req.session.addedToLearningPlan = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
-  }
-
-  if (action == 'removedFromLearningPlan' && status == 'started') {
-    // req.session.removedFromLearningPlan = true;
-    req.session.removedFromLearningPlanWarning = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
-  }
-
-  if (action == 'removedFromLearningPlan' && status != 'started') {
-    req.session.removedFromLearningPlan = true;
-    // req.session.removedFromLearningPlanWarning = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
-  }
-
-  // removedFromSuggestedList
-  if (action == 'removedFromSuggestedList') {
-    req.session.removedFromSuggestedList = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
-  }
-
-  return res.redirect(redirectPath);
-}
-
-export function actionsPost(req, res) {
-  const { action, type } = req.body;
-
-  //let searchTerm, redirectPath;
-
-  /*if (action === 'addedToLearningPlan') {
-        req.session.addedToLearningPlan = true;
-        // req.session.hasBeenAddedType = true;
-        redirectPath = '/prototypes/learner/v3/suggested-learning';
-    }*/
-
-  return res.redirect(redirectPath);
 }
 
 // search

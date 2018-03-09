@@ -23,9 +23,23 @@ export function resourceGet(req, res) {
   }
 
   viewData = {
+    resourceID,
     resourceType,
     hideDetailStars,
   };
 
   return res.render(returnPath, viewData);
+}
+
+// Start: POST
+export function resourcePost(req, res) {
+  const { resourceID } = req.body;
+
+  console.log('resourceID = ' + resourceID);
+
+  if (resourceID === '15') {
+    return res.redirect('/prototypes/learner/v3/scorms/basic-fire-safety');
+  } else {
+    return res.redirect('/prototypes/learner/v3/');
+  }
 }

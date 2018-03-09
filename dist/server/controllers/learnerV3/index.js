@@ -75,3 +75,27 @@ Object.keys(_booking).forEach(function (key) {
     }
   });
 });
+
+var _actions = require('./actions');
+
+Object.keys(_actions).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _actions[key];
+    }
+  });
+});
+
+var _scorms = require('./scorms');
+
+Object.keys(_scorms).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _scorms[key];
+    }
+  });
+});

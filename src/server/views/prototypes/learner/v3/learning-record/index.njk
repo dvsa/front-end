@@ -5,16 +5,41 @@
 {% set signOutPath = '/prototypes/learner/v3/' %}
 {% set homePath = '/prototypes/learner/v3/home' %}
 {% set hideHomeStars = hideHomeStars if hideHomeStars %}
-
+{% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
+{% set fireTrainingCompleteBanner = fireTrainingCompleteBanner if fireTrainingCompleteBanner %}
+{% set trainingEndDate = trainingEndDate if trainingEndDate %}
 {% block content %}
 
     {{ components.pageHeading('Learning record') }}
+
+    {% if fireTrainingCompleteBanner %}
+        {{ components.banner(mainText='Course successfully completed', secondaryText='You have successfully competed <strong>Basic Fire Safety</strong> and it has been added to your learning record', type="confirmation")}}
+    {% endif %}
 
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
 
-            <p>You can leave feedback on 2 items.</p>
+            {% if fireTrainingComplete %}
+                <p>You can leave feedback on 3 items.</p>
+            {% else %}
+                <p>You can leave feedback on 2 items.</p>
+            {% endif %}
+
+
+            {% if fireTrainingComplete %}
+                <div class="resource resource--feedback">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__long">
+                            <a class="" href="/prototypes/learner/v3/resource?resourceID=15">Basic fire safety</a>
+                        </li>
+                        <li class="resource__info">
+                            <a href="/prototypes/learner/v3/feedback">Leave feedback</a>
+                        </li>
+                    </ul>
+                </div>
+
+            {% endif %}
 
             <div class="resource resource--feedback">
                 <ul class="resource__item u-clearfix">
@@ -40,48 +65,7 @@
 
 
         {%- endcall %}
-
     {%- endcall %}
-
-    {#{% call components.gridRow() %}
-
-        {% call components.columnFull() %}
-
-            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading--red-top') }}
-
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        <a class="resource__title" href="#">Digital awareness: digital by default</a>
-                    </li>
-                    <li class="resource__info">
-                        <span>Completed on 11 Dec 2017</span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>1 hour</span>
-                    </li>
-
-                </ul>
-            </div>
-
-            <div class="resource resource--required">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        <a class="resource__title" href="#">Unconcious bias</a>
-                    </li>
-                    <li class="resource__info">
-                        <span>Completed by 2 Sep 2017</span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>2 hour</span>
-                    </li>
-                </ul>
-            </div>
-
-
-        {%- endcall %}
-
-    {%- endcall %}#}
 
     {% call components.gridRow() %}
 
@@ -98,6 +82,14 @@
                     </tr>
                </thead>
                 <tbody>
+                    {% if fireTrainingComplete %}
+                        <tr>
+                            <td><a href="/prototypes/learner/v3/resource?resourceID=15">Basic fire safety</a></td>
+                            <td>Online</td>
+                            <td>1 hour</td>
+                            <td>{{ trainingEndDate }}</td>
+                        </tr>
+                    {% endif %}
                     <tr>
                         <td><a href="#">Disability Awareness</a></td>
                         <td>Online</td>

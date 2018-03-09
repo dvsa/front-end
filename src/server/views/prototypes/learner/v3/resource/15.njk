@@ -7,6 +7,7 @@
 {% set homePath = '/prototypes/learner/v3/home' %}
 
 {% set resourceType = resourceType if resourceType %}
+{% set resourceID = resourceID if resourceID %}
 {% set hideDetailStars = hideDetailStars if hideDetailStars %}
 
 
@@ -38,6 +39,8 @@
         </ul>
 
     {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+        <input type="hidden" name="resourceID" value="{{ resourceID }}">
 
         {% call components.formGroup() %}
             {{ components.button(text='Start this learning', start=false, group=true)}}

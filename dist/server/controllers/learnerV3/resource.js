@@ -4,6 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.resourceGet = resourceGet;
+exports.resourcePost = resourcePost;
 
 var _validationFunctions = require('./validation-functions');
 
@@ -31,9 +32,23 @@ function resourceGet(req, res) {
   }
 
   viewData = {
+    resourceID,
     resourceType,
     hideDetailStars
   };
 
   return res.render(returnPath, viewData);
+}
+
+// Start: POST
+function resourcePost(req, res) {
+  const { resourceID } = req.body;
+
+  console.log('resourceID = ' + resourceID);
+
+  if (resourceID === '15') {
+    return res.redirect('/prototypes/learner/v3/scorms/basic-fire-safety');
+  } else {
+    return res.redirect('/prototypes/learner/v3/');
+  }
 }

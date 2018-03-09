@@ -1,0 +1,367 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Defect Categories' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'MOT test summary' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='MOT test summary') }}
+
+      <section class='dvsa-summary'>
+
+        <div class='dvsa-summary__section '>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>
+                Test information
+
+                <span class='dvsa-summary__test-result dvsa-summary__test-result--pass'>Pass</span>
+              </h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <span class='dvsa-summary__group dvsa-summary__group--first'>
+
+                  <dt class='dvsa-summary__data-list-title'>Mot test number</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>757187664269</dd>
+
+                </span>
+
+              </dl>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <span class='dvsa-summary__group dvsa-summary__group--first'>
+
+                  <dt class='dvsa-summary__data-list-title'>VTS name and address</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>
+
+                    <span class='dvsa-summary__address-line'>VTS072740 - TIFFNER AUTOSALES</span>
+
+                    <span class='dvsa-summary__address-line'>134, Poision Vale,</span>
+
+                    <span class='dvsa-summary__address-line'>Aberdeen,</span>
+
+                    <span class='dvsa-summary__address-line'>Aberdeenshire,</span>
+
+                    <span class='dvsa-summary__address-line'>Scotland</span>
+
+                    <span class='dvsa-summary__address-line'>CA15 8HW</span>
+
+                  </dd>
+
+                </span>
+
+              </dl>
+
+            </div>
+
+          </div>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third dvsa-summary__col--push-one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>Issue date</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>21 September 2017</dd>
+
+                </span>
+
+              </dl>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>Expirt date</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>22 September 2018</dd>
+
+                </span>
+
+              </dl>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>Vechicle summary</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <span class='dvsa-summary__group dvsa-summary__group--first'>
+
+                  <dt class='dvsa-summary__data-list-title'>Registration number</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>AH90WFO</dd>
+
+                </span>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>VIN/Chassis number</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>AH90WFO</dd>
+
+                </span>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>Test class</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>4</dd>
+
+                </span>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>Approximate first use</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>29 September 1999</dd>
+
+                </span>
+
+              </dl>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+              
+                <span class='dvsa-summary__group dvsa-summary__group--first'>
+
+                  <dt class='dvsa-summary__data-list-title'>Make</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>Nissan</dd>
+
+                </span>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>Model</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>ALMERA</dd>
+
+                </span>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>Colour</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>Silver</dd>
+
+                </span>
+
+                <span class='dvsa-summary__group'>
+
+                  <dt class='dvsa-summary__data-list-title'>Fuel type</dt>
+
+                  <dd class='dvsa-summary__data-list-value'>Petrol</dd>
+
+                </span>
+
+              </dl>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>Odometer reading</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>4800 miles</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>Break results overall</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>Pass</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>Dangerous failure</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+             <p class='dvsa-summary__paragraph'>Stop lamp(s) remain on when the brakes are released</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>Major failure</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>None recorded</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>Minor defects</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds dvsa-summary__col--r-pad-right-tablet'>
+
+              <ul class='dvsa-summary__defect-list'>
+
+                <li class='dvsa-summary__defect-list-item'>Stop lamps(s) switch does not operate in accordance with the requriements</li>
+
+                <li class='dvsa-summary__defect-list-item dvsa-summary__defect-list-item--last'>A stop lamp emitted colour, position or intensity not in accordancce with the requriements</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>PRS</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>None recorded</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__row-heading'>Advisory notices</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>None recorded</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

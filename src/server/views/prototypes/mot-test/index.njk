@@ -79,7 +79,7 @@
 
           <div class="action-panel__container--last">
 
-            {{ components.button(text='Add a defect', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+            {{ components.button(text='Add a defect', url='/prototypes/mot-test/categories/') }}
 
           </div>
 
@@ -125,7 +125,7 @@
 
           <div class="action-panel__container--last">
 
-            {% if viewData.comments %}
+            {% if viewData.comments | length %}
 
               {{ components.button(text='Edit comment', url='/prototypes/mot-test/edit-tester-comment/edit/1') }}
 
@@ -141,7 +141,7 @@
 
       </div>
 
-      {% if viewData.comments %}
+      {% if viewData.comments | length %}
 
         <div class="defect-summary">
 
@@ -173,9 +173,17 @@
 
       <nav class="content-navigation">
 
-        <form action="/mot-test/325101349187/test-summary" method="get">
+        <form action="/prototypes/mot-test/review" method="GET">
 
-          <input id="reviewTest" type="submit" class="js-reviewTestButton button" value="Review test" disabled="">
+          {% if viewData.comments | length %}
+
+            {{ components.button(text='Review test') }}
+
+          {% else %}
+
+            {{ components.button(text='Review test', disabled=true) }}
+
+          {% endif %}
 
         </form>
 
@@ -183,7 +191,7 @@
 
           <li>
 
-            <a href="/prototypes/" id="cancelTest">Cancel test</a>
+            {{ components.link(text='Cancel test', url='/prototypes/') }}
 
           </li>
 

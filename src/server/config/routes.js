@@ -47,6 +47,7 @@ router.get('/prototypes/mot-test', motTestResultsController.getMotTestResultComm
 router.get('/prototypes/mot-test/add-tester-comment', motTestResultsController.getTesterComments);
 router.post('/prototypes/mot-test/add-tester-comment', motTestResultsController.postTesterComments);
 router.get('/prototypes/mot-test/remove-comment', motTestResultsController.removeSessionAndRedirect);
+router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

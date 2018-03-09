@@ -1,0 +1,130 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Defect Categories' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Defect Categories' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+
+        <h1><span class="content-header__title">Defect Categories</span></h1>
+
+      </header>
+
+      <header class='content-header'>
+
+        <ul class='content-header__tertiary-list u-margin-bottom-35'>
+
+          <li class='content-header__list-item--primary'>BHW, 790</li>
+
+          <li class='content-header__list-item'>AJ30CTK</li>
+
+          <li class='content-header__list-item'>First used 25 Apr 2005</li>
+
+        </ul>
+
+      </header>
+
+      <div class="defect-summary">
+
+        <div class="defect-summary__total defect-summary__total--eu">
+
+          <h2 class="defect-summary__total-heading">Defects</h2>
+
+          <ul>
+
+            <li><span class="badge--alert">0</span> Failures</li>
+
+            <li><span class="badge--warn">0</span> Minors</li>
+
+            <li><span class="badge--info">0</span> PRS</li>
+
+            <li><span class="badge">0</span> Advisories</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="search-bar__control-group u-margin-bottom-30">
+
+        <input class="search-bar__search-input" type="search" placeholder="Search for a defect" title="Search" id="search-main" name="search">
+
+        <input class="search-bar__search-submit" type="submit" value="Search">
+
+      </div>
+
+      <div class="browse u-margin-bottom-30">
+
+        <div class="browse__cats">
+
+            <h3 class="browse__title hide-small">Categories</h3>
+
+            <ul class="browse__list">
+              
+                <li><a href="#">Body, structure and general items</a></li>
+
+                <li><a href="#">Brakes</a></li>
+
+                <li><a href="#">Steering</a></li>
+
+                <li><a href="#">Suspension</a></li>
+
+                <li><a href="#">Tyres</a></li>
+
+                <li><a href="#">Road wheels</a></li>
+
+                <li><a href="#">Seat belts and supplementary restraint systems</a></li>
+
+                <li><a href="#">Lamps, reflectors and electrical equipment</a></li>
+
+                <li><a href="#">Exhaust, fuel and emissions</a></li>
+
+                <li><a href="#">Driving controls and speed limiters</a></li>
+
+                <li><a href="#">Registration plates and VIN</a></li>
+
+                <li><a href="#">Drivers view of the road</a></li>
+
+                <li><a href="#">Items not tested</a></li>
+
+                <li><a href="#">Motor tricycles and quadricycles</a></li>
+
+                <li><a href="#">Non-component advisories</a></li>
+
+            </ul>
+
+        </div>
+        
+      </div>
+
+      <div class="panel panel-border-wide">
+
+        <p>
+
+          <a href="#">Add a manual advisory</a> - only do this if you have searhced for a defect and can't find a match.
+
+        </p>
+
+      </div>
+
+      <nav class="content-navigation">
+
+        {{ components.button(text='Finish and return to MOT test results', url='/prototypes/mot-test') }}
+
+      </nav>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

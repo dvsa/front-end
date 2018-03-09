@@ -1,9 +1,9 @@
 {% extends 'layouts/default.layout.njk' %}
 
 {% set pageTitle = 'Search results - Civil Service Learning Platform' %}
-{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v2' %}
-{% set signOutPath = '/prototypes/learner/v2/' %}
-{% set homePath = '/prototypes/learner/v2/home' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v3' %}
+{% set signOutPath = '/prototypes/learner/v3/' %}
+{% set homePath = '/prototypes/learner/v3/home' %}
 {% set searchTerm = searchTerm if searchTerm %}
 
 {% block content %}
@@ -16,7 +16,7 @@
 
             <div class="search-box u-space-b30">
 
-                {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v2/search") %}
+                {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v3/search") %}
 
                     <div class="form-group search-box__group">
 
@@ -51,7 +51,7 @@
                         <li class="resource__main">
                             <a class="resource__title" href="/prototypes/learner/v1/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
-                                <a href="/prototypes/learner/v2/booking/">Book now</a>
+                                <a href="/prototypes/learner/v3/booking/">Book now</a>
                                 <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
@@ -79,7 +79,7 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
                                 <a href="#">Start</a>
                                 <a href="/prototypes/learner/v1/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
@@ -109,9 +109,9 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 
@@ -138,10 +138,10 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
-                                <a href="/prototypes/learner/v2/booking/">Book now</a>
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/booking/">Book now</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 
@@ -168,10 +168,10 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
-                                <a href="/prototypes/learner/v2/booking/">Book now</a>
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/booking/">Book now</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 
@@ -198,10 +198,10 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
                                 <a href="#">Start</a>
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 
@@ -228,9 +228,9 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 
@@ -257,10 +257,10 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
-                                <a href="/prototypes/learner/v2/booking/">Book now</a>
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/booking/">Book now</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 
@@ -287,10 +287,10 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
-                                <a href="/prototypes/learner/v2/booking/">Book now</a>
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/booking/">Book now</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 
@@ -317,10 +317,10 @@
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a class="resource__title" href="/prototypes/learner/v2/resource?resourceID=9"><strong>Course title</strong></a>
+                            <a class="resource__title" href="/prototypes/learner/v3/resource?resourceID=9"><strong>Course title</strong></a>
                             <span class="resource__action">
                                 <a href="#">Start</a>
-                                <a href="/prototypes/learner/v2/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
                             </span>
                         </li>
 

@@ -43,4 +43,11 @@
     border-top: 4px solid $civil-service;
   }
 
+  &--text {
+    // @include bold-16;
+    @include core-19;
+    margin: 0;
+  }
 }
+
+

@@ -1,0 +1,67 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your name - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v3' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v3/' %}
+{% set homePath = '/prototypes/learner/v3/' %}
+{% set firstName = firstName if firstName %}
+{% set lastName = lastName if lastName %}
+{% set registrationPersonalError = registrationPersonalError if registrationPersonalError %}
+{% set registrationPersonalErrorFirstName = registrationPersonalErrorFirstName if registrationPersonalErrorFirstName %}
+{% set registrationPersonalErrorLastName = registrationPersonalErrorLastName if registrationPersonalErrorLastName %}
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes'  %}
+{% else %}
+    {% set buttonText = 'Continue'  %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Your name', 'Create an account') }}
+
+    {% if registrationPersonalError %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your information</h2>
+            <ul class="error-summary-list">
+                {% if registrationPersonalErrorFirstName %}
+                    <li><a href="#firstName">Your first name does not appear to be valid</a></li>
+                {% endif %}
+                {% if registrationPersonalErrorLastName %}
+                    <li><a href="#LastName">Your last name does not appear to be valid</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='registerName', method='POST', action="#") %}
+
+                {{ components.field(label='First name', id='firstName', hint="", group=true, value=firstName, error=registrationPersonalErrorFirstName)}}
+
+                {{ components.field(label='Last name', id='lastName', hint="", group=true, value=lastName, error=registrationPersonalErrorLastName)}}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v3">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

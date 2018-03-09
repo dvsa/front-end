@@ -31,7 +31,9 @@
             {% else %}
               <ul id="proposition-links">
                 <li><a href="{{ homePath }}">Home</a></li>
+                {% if learnerPrototypeVersion != 'v3' %}
                 <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/learning-plan">Learning plan</a></li>
+                {% endif %}
                 <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/suggested-learning">Suggestions for you</a></li>
                 <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/learning-record">Learning record</a></li>
                 <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/your-profile">Profile</a></li>

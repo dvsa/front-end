@@ -1,0 +1,34 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Leave detailed feedback - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v3' %}
+{% set signOutPath = '/prototypes/learner/v3/' %}
+{% set homePath = '/prototypes/learner/v3/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+
+{% block content %}
+
+    {{ components.pageHeading('Leave detailed feedback') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p class="lede">Please leave some detailed feedback on the classroom or online course you have recently completed.</p>
+
+            <img class="" src="/images/feedback.png" width="">
+
+            {% call components.formGroup() %}
+
+                {{ components.button(text="Leave feedback", group=true)}}
+
+            {%- endcall %}
+
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

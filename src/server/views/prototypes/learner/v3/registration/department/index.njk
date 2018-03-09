@@ -1,0 +1,82 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your organisation - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v3' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v3/' %}
+{% set homePath = '/prototypes/learner/v3/' %}
+{% set departmentSelectOptions = departmentSelectOptions if departmentSelectOptions %}
+{% set registrationDepartmentError = registrationDepartmentError if registrationDepartmentError %}
+{% set department = department if department%}
+
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes'  %}
+{% else %}
+    {% set buttonText = 'Continue'  %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Your organisation', 'Create an account') }}
+
+    {% if registrationDepartmentError %}
+
+        {% set departmentErrorMessage = 'Select your organisation'%}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your information</h2>
+            <ul class="error-summary-list">
+                <li><a href="#department">Your organisation does not appear to be valid</a></li>
+            </ul>
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='registerDepartment', method='POST', action="#") %}
+
+                {{ components.select(
+                    options=departmentSelectOptions,
+                    label='Organisation',
+                    id='department',
+                    hint='Start typing to find your organisation name',
+                    group=true,
+                    extraClass='autocomplete-wrapper',
+                    error=departmentErrorMessage,
+                    selectedValue=department)
+                }}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v3">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <script type="text/javascript" src="/javascripts/accessible-autocomplete/accessible-autocomplete.min.js"></script>
+    <script type="text/javascript">
+        var selectEl = document.querySelector('#department');
+        accessibleAutocomplete.enhanceSelectElement({
+            autoselect: true,
+            defaultValue: selectEl.options[selectEl.options.selectedIndex].innerHTML,
+            minLength: 1,
+            selectElement: selectEl
+        });
+    </script>
+
+{% endblock %}
+

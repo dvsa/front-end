@@ -1,6 +1,6 @@
-{% macro heading(text='', secondary=false, tag='h1', size='large', url=false, extraClass) %}
+{% macro heading(text='', secondary=false, tag='h1', size='', url=false, extraClass) %}
   {% if text %}
-    <{{ tag }} class="heading {{ 'heading--' + size if size }} {{ extraClass if extraClass }} heading-{{ size }}">
+    <{{ tag }} class="heading {{'heading-' + size if size }} {{ extraClass if extraClass }}">
       {% if secondary %}
         <span class="heading__secondary">{{ secondary }}</span>
       {% endif %}

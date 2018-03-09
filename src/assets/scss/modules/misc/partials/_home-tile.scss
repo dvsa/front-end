@@ -37,20 +37,34 @@
   }
 
   &__properties {
+    // <ul>
     text-align: left;
   }
 
+
   &__property {
-    display: block;
-    width: 100%;
-    float: none;
-    @include bold-16;
+    // <li>
+    // display: block;
+    // width: 100%;
+    // float: none;
+
 
     @include media(desktop) {
-      display: inline-block;
-      width: 33%;
-      float: left;
+      //display: inline-block;
+     // width: 33%;
+     // float: left;
     }
+  }
+
+  &__key {
+    display: block;
+    float: left;
+    //width: 120px;
+    margin-right: 10px;
+  }
+
+  &__value {
+    @include bold-16;
   }
 
   &__attribution {

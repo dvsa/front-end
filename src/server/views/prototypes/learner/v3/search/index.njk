@@ -353,25 +353,7 @@
 
         {% call components.columnFull() %}
 
-            <div class="pager">
-
-                <div class="pager__controls">
-
-                    <ul class="pager__list">
-                        <li>1</li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                    </ul>
-
-                    <a class="pager__next" href="#">Next</a>
-
-                </div>
-
-                <div class="pager__summary">Showing 1 – 10 of 45 items</div>
-
-            </div>
+            {{ components.pagination(totalItems=46,currentPage=1) }}
 
         {%- endcall %}
 

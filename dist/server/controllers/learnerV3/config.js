@@ -7,9 +7,16 @@ exports.configGet = configGet;
 exports.configPost = configPost;
 // config GET
 function configGet(req, res) {
-  let viewData, configError;
+  let viewData, configError, clearSession;
 
   configError = req.session.configError;
+
+  clearSession = req.param('clearSession');
+  console.log('clearSession = ' + clearSession);
+  if (clearSession === 'true') {
+    req.session.destroy();
+    // res.redirect('/prototypes/learner/v3/config');
+  }
 
   viewData = {
     configError
@@ -19,7 +26,7 @@ function configGet(req, res) {
 }
 
 function configPost(req, res) {
-  const { regConfig } = req.body;
+  const { regConfig, clearSession } = req.body;
 
   console.log('regConfig');
   let showAllStars, hideDetailStars, hideHomeStars;

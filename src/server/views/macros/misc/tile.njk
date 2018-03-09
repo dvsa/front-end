@@ -22,13 +22,22 @@
         <p class="tile__attribution">{{ because }}</p>
         <ul class="tile__properties u-clearfix">
             {% if type %}
-                <li class="tile__property">{{ type }}</li>
+                <li class="tile__property">
+                    <span class="tile__key">Type</span>
+                    <span class="tile__value">{{ type }}</span>
+                </li>
             {% endif %}
             {% if duration %}
-                <li class="tile__property">{{ duration }}</li>
+                <li class="tile__property">
+                    <span class="tile__key">Duration</span>
+                    <span class="tile__value">{{ duration }}</span>
+                </li>
             {% endif %}
             {% if cost %}
-                <li class="tile__property">{{ cost }}</li>
+                <li class="tile__property">
+                    <span class="tile__key">Cost</span>
+                    <span class="tile__value">{{ cost }}</span>
+                </li>
             {% endif %}
         </ul>
         <p>{{ intro }}</p>

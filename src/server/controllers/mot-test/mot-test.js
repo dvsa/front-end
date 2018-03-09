@@ -1,8 +1,6 @@
 import * as motTestHelpers from './helpers/helpers';
 
-export const getMotTestResultComments = (req, res) => {
-  return res.render('prototypes/mot-test/index', { viewData: req.session.viewData });
-};
+export const getMotTestResultComments = (req, res) => res.render('prototypes/mot-test/index', { viewData: req.session.viewData });
 
 export const getTesterComments = (req, res) => {
   return res.render('prototypes/mot-test/add-tester-comment/index', { viewData: req.session.viewData ? req.session.viewData : null });
@@ -11,21 +9,14 @@ export const getTesterComments = (req, res) => {
 export const postTesterComments = (req, res) => {
   // Init an empty viewData object
   let viewData = {
-    val: req.body.comment ? motTestHelpers.formatTextAreaResponse(req.body.comment.trim()) : false,
-    errors: [],
-    comments: [],
+    comment: req.body.comment ? motTestHelpers.formatTextAreaResponse(req.body.comment.trim()) : null,
+    errors: []
   };
 
   // Create error message if textarea value was not set or contains white spacce only
-  if (!viewData.val || !viewData.val.trim()) {
+  if (!viewData.comment || !viewData.comment.trim()) {
     // Push error message
     viewData.errors.push('Enter your comment - You must enter a comment');
-  } else {
-    // push comment value to viewData's comment array
-    viewData.comments.push({
-      id: viewData.comments.length + 1,
-      value: viewData.val,
-    });
   }
 
   // Init viewData session
@@ -45,6 +36,4 @@ export const removeSessionAndRedirect = (req, res) => {
   return res.redirect('/prototypes/mot-test/');
 };
 
-export const getReview = (req, res) => {
-  return res.render('prototypes/mot-test/review', { viewData: req.session.viewData });
-};
+export const getReview = (req, res) => res.render('prototypes/mot-test/review', { viewData: req.session.viewData });

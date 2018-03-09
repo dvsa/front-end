@@ -15,29 +15,7 @@
 
       {{ components.pageHeading(heading='Add testers comment') }}
 
-      {% if viewData.errors %}
-
-        <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
-
-          <h2 class="heading-medium error-summary-heading" id="error-summary-heading">There was some errors with the form</h2>
-
-          <ul class="error-summary-list">
-
-            {% for error in viewData.errors %}
-
-            <li>
-
-              <a href="#file-upload">{{ error }}</a>
-
-            </li>
-
-            {% endfor %}
-
-          </ul>
-
-        </div>
-
-      {% endif %}
+      {% include './partials/form-errors.njk' %}
 
       {{ components.paragraph(text='These comments are additional notes you can add to an MOT test', lead=true, limitWidth=true) }}
 

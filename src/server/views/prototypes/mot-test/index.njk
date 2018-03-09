@@ -125,7 +125,7 @@
 
           <div class="action-panel__container--last">
 
-            {% if viewData.comments | length %}
+            {% if viewData.comment %}
 
               {{ components.button(text='Edit comment', url='/prototypes/mot-test/edit-tester-comment/edit/1') }}
 
@@ -141,29 +141,25 @@
 
       </div>
 
-      {% if viewData.comments | length %}
+      {% if viewData.comment %}
 
         <div class="defect-summary">
 
           <ol>
 
-            {% for comment in viewData.comments %}
-
             <li class='defect defect__comment'>
 
-              {{ comment.value }}
+              {{ viewData.comment }}
 
               <ul class="defect__edit">
 
-                <li> <a href="/prototypes/edit-tester-comment/edit/{{comment.id}}">Edit</a></li>
+                <li> <a href="/prototypes/edit-tester-comment/edit/1">Edit</a></li>
 
                 <li>or <a href="/prototypes/mot-test/remove-comment">Remove</a></li>
 
               </ul>
 
             </li>
-
-            {% endfor %}
 
           </ol>
 
@@ -175,7 +171,7 @@
 
         <form action="/prototypes/mot-test/review" method="GET">
 
-          {% if viewData.comments | length %}
+          {% if viewData.comment %}
 
             {{ components.button(text='Review test') }}
 

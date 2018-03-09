@@ -1,4 +1,8 @@
 .dvsa-summary {
+  &, * {
+    box-sizing: border-box;
+  }
+
   &__section {
     border-bottom: 1px solid $border-colour; 
   }
@@ -7,21 +11,17 @@
     margin: 0 -15px;
 
     // Clearfix
-    *zoom: 1;
-    &:before, &:after {
-        content: '';
-        display: table;
-    }
     &:after {
-        clear: both;
+      content: ' ';
+      display: block;
+      clear: both;
     }
   }
 
   &__col {
     float: left;
-    box-sizing: border-box;
-    width: 100%;    
-    padding: 0 15px; 
+    width: 100%;
+    padding: 0 15px;
 
     &--one-third {
       @include media(tablet) {
@@ -41,14 +41,14 @@
       }
     }
 
-    &--r-pad-right-tablet {
+    &--remove-padding-right-tablet {
       @include media(tablet) {
         padding-right: 0;        
       }
     }
   }
 
-  &__row-heading {
+  &__heading {
     font-size: 24px;
     font-weight: 700;  
     line-height: 1.25;
@@ -57,12 +57,21 @@
     @include media(tablet) {
       margin: 15px 0;
     }
+
+    &--remove-margin-bottom {
+      margin-bottom: 0;
+
+      @include media(tablet) {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__test-result {
     display: block;    
     font-size: 36px;
     font-weight: 700;
+    margin-top: 0;
 
     &--pass {
       color: $button-colour;
@@ -73,10 +82,11 @@
     }
   }
 
-  &__group {
+  &__data-list {
     display: block;
     border-top: 1px solid $border-colour;
-    padding: 10px 0;  
+    padding: 10px 0; 
+    font-size: 16px;    
 
     @include media(tablet) {
       margin-bottom: 20px;
@@ -91,17 +101,11 @@
     }
   }
 
-  &__data-list {
-    font-size: 16px;
-  }
-
   &__data-list-value {
     font-weight: 700;
   }
 
   &__defect-list {
-    margin-bottom: 10px;
-
     @include media(tablet) {
       margin: 10px 0;      
     }
@@ -113,7 +117,6 @@
 
     &--last {
       border: 0;
-      padding: 10px 0 0 0;
     }
   }
 

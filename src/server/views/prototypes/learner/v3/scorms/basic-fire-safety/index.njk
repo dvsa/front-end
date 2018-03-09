@@ -1,19 +1,8 @@
 {% extends 'layouts/blank.layout.njk' %}
-
 {% set pageTitle = 'Basic fire safety - Civil Service Learning Platform' %}
-{#{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v3' %}
-{% set signOutPath = '/prototypes/learner/v3/' %}
-{% set homePath = '/prototypes/learner/v3/home' %}#}
-
 {% set resourceType = resourceType if resourceType %}
-
-
 {% block content %}
-    {#
-    <iframe src="/scorms/fire/basic-fire-safety.html" height="100%" width="100%" border="0"></iframe>#}
-
     <style>
-
         body {
             background-color: #000;
         }
@@ -32,7 +21,6 @@
             display:block;
             width: 60px;
             height: 56px;
-            //text-indent: -9999px;
             text-decoration: none;
             font-weight: bold;
             color: #FFF!important;
@@ -51,22 +39,6 @@
         <a href="/prototypes/learner/v3/actions?action=completeFireTraining&id=15" id="" class="massive-button"><span>&#10554;</span> Exit</a>
     </div>
 
-    <iframe src="https://csl-learning-content.s3.eu-west-2.amazonaws.com/0x394/index.htm" height="100%" width="100%" border="0" id="fireSafetyFrame"></iframe>
-
-    {#<iframe src="http://www.bbc.co.uk/news" height="100%" width="100%" border="0" id="fireSafetyFrame"></iframe>#}
-
-
-    {#<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>#}
-    {#<script>#}
-        {#$(document).ready(function() {#}
-            {#console.log('parent page ready!');#}
-
-            {#$('#fireSafetyFrame').contents().on('click', function () {#}
-                {#// $('#result').text('clicked');#}
-                {#console.log('testing click hijack');#}
-                {#alert('testing');#}
-            {#});​#}
-        {#});#}
-    {#</script>#}
+    <iframe src="https://csl-learning-content.s3.eu-west-2.amazonaws.com/0x394/index.htm" height="100%" width="100%" frameborder="0" id="fireSafetyFrame"></iframe>
 
 {% endblock %}

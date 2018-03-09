@@ -105,7 +105,12 @@
                 </tbody>
            </table>
 
+            {% if fireTrainingComplete %}
+                <p>You have completed 3 of your required learning courses .</p>
+            {% else %}
                 <p>You have completed 2 of your required learning courses .</p>
+            {% endif %}
+
 
         {%- endcall %}
 

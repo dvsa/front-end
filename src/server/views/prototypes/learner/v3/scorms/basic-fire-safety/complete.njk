@@ -16,7 +16,7 @@
     <div class="govuk-box-highlight">
         <h1 class="heading-xlarge">Online course complete</h1>
         <h2 class="heading-large">Basic fire safety</h2>
-        <h3 class="heading-medium">Completed {{ trainingEndDate }}</h3>
+        <h3 class="heading-medium">Completed {% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</h3>
     </div>
 
     {% call components.gridRow() %}
@@ -27,7 +27,7 @@
 
             <p>Your learning record has been updated and will display this learning.</p>
 
-            <p><a href="/prototypes/learner/v3">Provide feedback</a> on this learning to help us improve it.</p>
+            <p><a href="/prototypes/learner/v3/feedback">Provide feedback</a> on this learning to help us improve it.</p>
 
         {%- endcall %}
 

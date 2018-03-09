@@ -1,0 +1,36 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Learning complete - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %}
+{% set learnerPrototypeVersion = 'v3' %}
+{% set signOutPath = '/prototypes/learner/v3/' %}
+{% set homePath = '/prototypes/learner/v3/home' %}
+
+{% set signOutPath = '/prototypes/learner/v3/' %}
+{% set homePath = '/prototypes/learner/v3/' %}
+
+{% set trainingEndDate = trainingEndDate if trainingEndDate %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">Online course complete</h1>
+        <h2 class="heading-large">Basic fire safety</h2>
+        <h3 class="heading-medium">Completed {{ trainingEndDate }}</h3>
+    </div>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">What happens next?</h2>
+
+            <p>Your learning record has been updated and will display this learning.</p>
+
+            <p><a href="/prototypes/learner/v3">Provide feedback</a> on this learning to help us improve it.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

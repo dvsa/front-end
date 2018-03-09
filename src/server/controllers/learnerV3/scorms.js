@@ -18,3 +18,16 @@ export function basicFireSafetyPost(req, res) {
 
   return res.redirect('/prototypes/learner/v3/');
 }
+
+// GET
+export function scormCompleteGet(req, res) {
+  let viewData, trainingEndDate;
+
+  trainingEndDate = req.session.trainingEndDate;
+
+  viewData = {
+    trainingEndDate,
+  };
+
+  return res.render('prototypes/learner/v3/scorms/basic-fire-safety/complete', viewData);
+}

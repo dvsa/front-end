@@ -6,15 +6,15 @@
 {% set homePath = '/prototypes/learner/v3/home' %}
 {% set hideHomeStars = hideHomeStars if hideHomeStars %}
 {% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
-{% set fireTrainingCompleteBanner = fireTrainingCompleteBanner if fireTrainingCompleteBanner %}
+{#{% set fireTrainingCompleteBanner = fireTrainingCompleteBanner if fireTrainingCompleteBanner %}#}
 {% set trainingEndDate = trainingEndDate if trainingEndDate %}
 {% block content %}
 
     {{ components.pageHeading('Learning record') }}
 
-    {% if fireTrainingCompleteBanner %}
-        {{ components.banner(mainText='Course successfully completed', secondaryText='You have successfully competed <strong>Basic Fire Safety</strong> and it has been added to your learning record', type="confirmation")}}
-    {% endif %}
+    {#{% if fireTrainingCompleteBanner %}#}
+        {#{{ components.banner(mainText='Course successfully completed', secondaryText='You have successfully competed <strong>Basic Fire Safety</strong> and it has been added to your learning record', type="confirmation")}}#}
+    {#{% endif %}#}
 
     {% call components.gridRow() %}
 

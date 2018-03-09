@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.basicFireSafetyGet = basicFireSafetyGet;
 exports.basicFireSafetyPost = basicFireSafetyPost;
+exports.scormCompleteGet = scormCompleteGet;
 // import generic validation functions
 // import { validateEmail } from './validation-functions';
 
@@ -24,4 +25,17 @@ function basicFireSafetyPost(req, res) {
   const { email, password } = req.body;
 
   return res.redirect('/prototypes/learner/v3/');
+}
+
+// GET
+function scormCompleteGet(req, res) {
+  let viewData, trainingEndDate;
+
+  trainingEndDate = req.session.trainingEndDate;
+
+  viewData = {
+    trainingEndDate
+  };
+
+  return res.render('prototypes/learner/v3/scorms/basic-fire-safety/complete', viewData);
 }

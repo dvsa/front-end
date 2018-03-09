@@ -82,14 +82,12 @@ export function profileGet(req, res) {
 
 // learning record GET
 export function recordGet(req, res) {
-  let viewData, fireTrainingComplete, fireTrainingCompleteBanner, trainingEndDate, todayDate, months;
+  let viewData, fireTrainingComplete, fireTrainingCompleteBanner, trainingEndDate;
 
   fireTrainingCompleteBanner = req.session.fireTrainingCompleteBanner;
   fireTrainingComplete = req.session.fireTrainingComplete;
 
-  todayDate = new Date();
-  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-  trainingEndDate = todayDate.getDate() + ' ' + months[todayDate.getMonth()] + ' ' + todayDate.getFullYear();
+  trainingEndDate = req.session.trainingEndDate;
 
   viewData = {
     fireTrainingCompleteBanner,

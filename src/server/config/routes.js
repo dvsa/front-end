@@ -292,6 +292,8 @@ router.get('/prototypes/learner/v3/booking/complete', learnerV3Controller.bookin
 // SCORMS fire safety
 router.get('/prototypes/learner/v3/scorms/basic-fire-safety', learnerV3Controller.basicFireSafetyGet);
 router.post('/prototypes/learner/v3/scorms/basic-fire-safety', learnerV3Controller.basicFireSafetyPost);
+// scorm done
+router.get('/prototypes/learner/v3/scorms/basic-fire-safety/complete', learnerV3Controller.scormCompleteGet);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

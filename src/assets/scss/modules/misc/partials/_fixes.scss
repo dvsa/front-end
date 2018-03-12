@@ -88,3 +88,13 @@ body .button-get-started:hover {
 .has-lower-hero {
   padding-bottom: 50px !important;
 }
+
+.js-only {
+  display: none;
+  visibility: hidden;
+}
+
+.js-enabled .js-only {
+  display: block;
+  visibility: visible;
+}

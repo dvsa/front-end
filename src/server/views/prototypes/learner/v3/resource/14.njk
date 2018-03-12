@@ -22,22 +22,24 @@
             <p><a href="https://www.ted.com/talks/carol_dweck_the_power_of_believing_that_you_can_improve" target="_blank">Watch the video on the TED website</a> (external link)</p>
 
             <p>
-                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=blog">Add to Other learning</a>
             </p>
 
         {%- endcall %}
 
         {% call components.columnOneThird() %}
 
-            {% if not hideDetailStars %}
-
             <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
-                <h2 class="heading-small">User rating</h2>
-                {{ components.starRating(rating='76%', total='104') }}
+
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='76%', total='104') }}
+                {% endif %}
+
             </aside>
-
-
-            {% endif %}
 
         {% endcall %}
 

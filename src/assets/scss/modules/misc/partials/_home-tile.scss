@@ -59,8 +59,11 @@
   &__key {
     display: block;
     float: left;
-    //width: 120px;
     margin-right: 10px;
+
+    @include media(desktop) {
+      width: 80px;
+    }
   }
 
   &__value {

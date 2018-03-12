@@ -12,20 +12,17 @@
 
     {% call components.gridRow() %}
 
-        {% call components.columnTwoThirds() %}
+        {% call components.columnFull() %}
 
-            <p class="lede">Please leave some detailed feedback on the classroom or online course you have recently completed.</p>
+            <p class="lede">Leave your feedback for [name of course]</p>
 
-            <img class="" src="/images/feedback.png" width="">
+            <img src="/images/feedback.png" style="display:block;max-width:100%;margin-bottom:30px">
 
             {% call components.formGroup() %}
 
                 {{ components.button(text="Leave feedback", group=true)}}
 
             {%- endcall %}
-
-
-
 
         {%- endcall %}
 

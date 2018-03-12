@@ -5,7 +5,8 @@
 {% set mainContainerClass = 'has-lower-hero' %}
 {% set signOutPath = '/prototypes/learner/v3/' %}
 {% set homePath = '/prototypes/learner/v3/home' %}
-{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set hideHomeStars = 'true' %}
 
 {% block content %}
 
@@ -74,6 +75,7 @@
                 duration='2 hours 20 minutes',
                 cost='£Free',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
             ) }}
 
@@ -90,6 +92,7 @@
                 duration='10 minutes',
                 cost='£Free',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
             ) }}
 
@@ -104,6 +107,7 @@
                 starTotal='25',
                 type='Blog',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
             ) }}
 
@@ -124,6 +128,7 @@
                 duration='1 hour',
                 cost='£Free',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
             ) }}
 
@@ -141,6 +146,7 @@
                 hideStars=hideHomeStars,
                 cost='£Free',
                 targetBlank = true,
+                version='v3',
                 intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
             ) }}
 
@@ -157,12 +163,24 @@
                 duration='10 minutes',
                 cost='£Free',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='Years ago, Dr. Shatte and several of his colleagues discovered that psychological resilience is the key to rebounding from life’s setbacks.'
             ) }}
 
         {%- endcall %}
 
     {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="#">Show all suggestions from Commercial</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
 
     {{ components.heading(text='From HMRC', tag='h2', size='medium', extraClass='heading--red-top') }}
 
@@ -178,6 +196,7 @@
                 type='Classroom',
                 duration='1 day',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
             ) }}
 
@@ -194,6 +213,7 @@
                 duration='1 hour',
                 cost='£Free',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
             ) }}
 
@@ -209,6 +229,7 @@
                 type='Video',
                 duration='10 minutes',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
             ) }}
 
@@ -229,6 +250,7 @@
                 duration='2 hours',
                 cost='£Free',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
             ) }}
 
@@ -245,6 +267,7 @@
                 duration='3 hours',
                 cost='£Free',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
             ) }}
 
@@ -260,8 +283,19 @@
                 type='Online',
                 duration='3 hours',
                 hideStars=hideHomeStars,
+                version='v3',
                 intro='Risks can never be completely avoided; only ever managed and mitigated.'
             ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="#">Show all suggestions from HMRC</a> </p>
 
         {%- endcall %}
 

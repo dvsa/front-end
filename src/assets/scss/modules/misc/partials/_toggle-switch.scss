@@ -1,0 +1,39 @@
+.toggle-switch {
+  position: relative;
+
+  .more {
+    display: inline;
+  }
+  .less {
+    display: none;
+  }
+
+  &:before {
+    position: absolute;
+    right: -24px;
+    top: 2px;
+    // down
+    content: '\25BC';
+  }
+
+  &--open {
+
+    .more {
+      display: none;
+    }
+    .less {
+      display: inline;
+    }
+
+    &:before {
+      content: '\25B2';
+    }
+  }
+
+  &--open:before {
+    // up
+
+  }
+
+
+}

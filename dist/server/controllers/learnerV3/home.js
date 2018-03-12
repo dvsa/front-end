@@ -15,7 +15,7 @@ exports.feedbackGet = feedbackGet;
 var _validationFunctions = require('./validation-functions');
 
 function homeGet(req, res) {
-  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage, fireTrainingComplete;
+  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage, fireTrainingComplete, removedFromLearningPlanWarning, addedToLearningPlan, removedFromLearningPlan, hasBeenRemoved, willBeRemoved, hasBeenAdded;
 
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
@@ -25,6 +25,27 @@ function homeGet(req, res) {
   action = req.param('action');
   courseId = req.param('id');
   fireTrainingComplete = req.session.fireTrainingComplete;
+
+  removedFromLearningPlanWarning = req.session.removedFromLearningPlanWarning;
+  addedToLearningPlan = req.session.addedToLearningPlan;
+  removedFromLearningPlan = req.session.removedFromLearningPlan;
+
+  console.log('removedFromLearningPlanWarning = ' + removedFromLearningPlanWarning);
+
+  if (addedToLearningPlan) {
+    hasBeenAdded = true;
+    req.session.addedToLearningPlan = null;
+  }
+
+  if (removedFromLearningPlanWarning) {
+    willBeRemoved = true;
+    req.session.removedFromLearningPlanWarning = null;
+  }
+
+  if (removedFromLearningPlan) {
+    hasBeenRemoved = true;
+    req.session.removedFromLearningPlan = null;
+  }
 
   if (parseInt(courseId) >= 1 && action === 'checkRemove') {
     removeCheckMessage = true;
@@ -41,7 +62,10 @@ function homeGet(req, res) {
     hideHomeStars,
     removeMessage,
     removeCheckMessage,
-    fireTrainingComplete
+    fireTrainingComplete,
+    hasBeenAdded,
+    willBeRemoved,
+    hasBeenRemoved
   };
 
   return res.render('prototypes/learner/v3/home/index', viewData);
@@ -118,7 +142,9 @@ function recordGet(req, res) {
 function suggestedGet(req, res) {
   let viewData, hideHomeStars;
 
-  hideHomeStars = req.session.hideHomeStars;
+  // hideHomeStars = req.session.hideHomeStars;
+
+  hideHomeStars = true;
 
   viewData = {
     hideHomeStars

@@ -22,19 +22,19 @@ export function actionsGet(req, res) {
 
   if (action === 'addedToLearningPlan') {
     req.session.addedToLearningPlan = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
+    redirectPath = '/prototypes/learner/v3/home';
   }
 
   if (action === 'removedFromLearningPlan' && status === 'started') {
     // req.session.removedFromLearningPlan = true;
     req.session.removedFromLearningPlanWarning = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
+    redirectPath = '/prototypes/learner/v3/home';
   }
 
   if (action === 'removedFromLearningPlan' && status !== 'started') {
     req.session.removedFromLearningPlan = true;
     // req.session.removedFromLearningPlanWarning = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
+    redirectPath = '/prototypes/learner/v3/home';
   }
 
   if (action === 'completeFireTraining' && id === '15') {
@@ -46,7 +46,7 @@ export function actionsGet(req, res) {
   // removedFromSuggestedList
   if (action === 'removedFromSuggestedList') {
     req.session.removedFromSuggestedList = true;
-    redirectPath = '/prototypes/learner/v3/learning-plan';
+    redirectPath = '/prototypes/learner/v3/home';
   }
 
   return res.redirect(redirectPath);

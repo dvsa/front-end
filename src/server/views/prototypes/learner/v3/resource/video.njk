@@ -30,7 +30,7 @@
             <p>This talk explores the idea that starting with 'why' helps motivate people to achieve an end goal and increases the chances of  success. It's helpful if you are thinking about how you communicate about your work or setting strategy for a team or project. </p>
 
             <p>
-                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+                <a href="/prototypes/learner/v3/actions?action=addedToLearningPlan&type=blog">Add to Other learning</a>
             </p>
 
         {%- endcall %}
@@ -39,11 +39,15 @@
 
             <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
 
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+
                 {% if not hideDetailStars %}
                     <h2 class="heading-small">User rating</h2>
                     {{ components.starRating(rating='68%', total='97') }}
                 {% endif %}
-                <p><a href="#">Transcript</a></p>
+                <p><a href="/prototypes/learner/v3/transcript">Transcript</a></p>
 
             </aside>
 

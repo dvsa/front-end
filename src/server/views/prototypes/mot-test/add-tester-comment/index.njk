@@ -3,6 +3,7 @@
 {% set pageTitle = 'Tester comments' %}
 
 {% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
   { text: 'MOT test results', url: '/prototypes/mot-test/' },
   { text: 'Add testers comment' }
 ] %}
@@ -23,26 +24,14 @@
 
       {% call components.form(action='/prototypes/mot-test/add-tester-comment/', method='POST') %}
 
-        {{ components.textarea(label="Enter your comment", id='comment', group=true, error=viewData.errors) }}
+        {{ components.textarea(label="Enter comment", id='comment', group=true, error=viewData.errors) }}
 
         {{ components.button(text='Add comment') }}
 
       {%- endcall %}
 
-      <nav class="content-navigation">
-
-        <ul class="content-navigation__secondary">
-
-          <li>
-
-            <a href="/prototypes/mot-test/" id="cancelTest">Cancel and return to MOT test results</a>
-
-          </li>
-
-        </ul>
+      {{ components.link(text='Cancel and return to MOT test results', url='/prototypes/mot-test/', paragraph=true) }}
         
-      </nav>
-
     {%- endcall %}
 
   {%- endcall %}

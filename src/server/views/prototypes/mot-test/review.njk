@@ -364,25 +364,13 @@
 
       </div>
 
-      <nav class='content-navigation'>
+      <form action='/prototypes/mot-test' method='GET'>
 
-        <form action='/prototypes/mot-test' method='GET'>
+        {{ components.button(text='Save test result') }}
 
-          {{ components.button(text='Save test result') }}
+      </form>
 
-        </form>
-
-        <ul class='content-navigation__secondary'>
-
-          <li>
-
-            {{ components.link(text='Back to results entry', url='/prototypes/mot-test') }}
-
-          </li>
-
-        </ul>
-        
-      </nav>
+      {{ components.link(text='Back to results entry', url='/prototypes/mot-test', paragraph=true) }}
 
     {%- endcall %}
 

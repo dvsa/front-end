@@ -16,7 +16,7 @@ export const postTesterComments = (req, res) => {
   // Create error message if textarea value was not set or contains white spacce only
   if (!viewData.comment || !viewData.comment.trim()) {
     // Push error message
-    viewData.errors.push('Enter your comment - You must enter a comment');
+    viewData.errors.push('Enter comment - You must enter a comment');
   }
 
   // Init viewData session

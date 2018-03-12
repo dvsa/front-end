@@ -41,159 +41,153 @@
 
       </div>
 
-      <div class="action-panel">
+      <div class='u-margin-bottom-30'>
 
-        <div class="clear-float">
+        <div class="action-panel">
 
-          <div class="action-panel__container">
+          <div class="clear-float">
 
-            <h3 class="action-panel__heading">Odometer</h3>
+            <div class="action-panel__container">
 
-          </div>
+              <h3 class="action-panel__heading">Odometer</h3>
 
-          <div class="action-panel__container">
+            </div>
 
-            <h3 class="action-panel__value">Not recorded</h3>
+            <div class="action-panel__container">
 
-          </div>
+              <h3 class="action-panel__value">Not recorded</h3>
 
-          <div class="action-panel__container--last">
+            </div>
 
-            {{ components.button(text='Add reading', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add reading', url='#') }}
+
+            </div>
 
           </div>
 
         </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Defects</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add a defect', url='/prototypes/mot-test/categories/') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Break test</h3>
+
+            </div>
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__value">Not recorded</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add break tests', url='#') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container--twothirds">
+
+              <h3 class="action-panel__heading">Testers comments</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {% if viewData.comment %}
+
+                {{ components.button(text='Edit comment', url='#') }}
+
+              {% else %}
+
+                {{ components.button(text='Add comment', url='/prototypes/mot-test/add-tester-comment/') }}
+
+              {% endif %}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {% if viewData.comment %}
+
+          <div class='dvsa-tester-comments'>
+
+            <p class='dvsa-tester-comments__content'>{{ viewData.comment }}</p>
+
+            <ul class='dvsa-tester-comments__actions-list'>
+
+              <li class='dvsa-tester-comments__action'>
+
+                <a class='dvsa-tester-comments__link dvsa-tester-comments__link--bolden' href='#'>Edit</a>
+
+              </li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>or</li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>
+
+                <a class='dvsa-tester-comments__link' href='/prototypes/mot-test/remove-comment'>Remove</a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        {% endif %}
 
       </div>
 
-      <div class="action-panel">
+      <form action="/prototypes/mot-test/review" method="GET">
 
-        <div class="clear-float">
+        {% if viewData.comment %}
 
-          <div class="action-panel__container">
+          {{ components.button(text='Review test') }}
 
-            <h3 class="action-panel__heading">Defects</h3>
+        {% else %}
 
-          </div>
+          {{ components.button(text='Review test', disabled=true) }}
 
-          <div class="action-panel__container--last">
+        {% endif %}
 
-            {{ components.button(text='Add a defect', url='/prototypes/mot-test/categories/') }}
+      </form>
 
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="action-panel">
-
-        <div class="clear-float">
-
-          <div class="action-panel__container">
-
-            <h3 class="action-panel__heading">Break test</h3>
-
-          </div>
-
-          <div class="action-panel__container">
-
-            <h3 class="action-panel__value">Not recorded</h3>
-
-          </div>
-
-          <div class="action-panel__container--last">
-
-            {{ components.button(text='Add break tests', url='/prototypes/annual-assessment-admin-tool/send-reminders/review') }}
-
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="action-panel">
-
-        <div class="clear-float">
-
-          <div class="action-panel__container--twothirds">
-
-            <h3 class="action-panel__heading">Testers comments</h3>
-
-          </div>
-
-          <div class="action-panel__container--last">
-
-            {% if viewData.comment %}
-
-              {{ components.button(text='Edit comment', url='/prototypes/mot-test/edit-tester-comment/edit/1') }}
-
-            {% else %}
-
-              {{ components.button(text='Add comment', url='/prototypes/mot-test/add-tester-comment/') }}
-
-            {% endif %}
-
-          </div>
-
-        </div>
-
-      </div>
-
-      {% if viewData.comment %}
-
-        <div class="defect-summary">
-
-          <ol>
-
-            <li class='defect defect__comment'>
-
-              {{ viewData.comment }}
-
-              <ul class="defect__edit">
-
-                <li> <a href="/prototypes/edit-tester-comment/edit/1">Edit</a></li>
-
-                <li>or <a href="/prototypes/mot-test/remove-comment">Remove</a></li>
-
-              </ul>
-
-            </li>
-
-          </ol>
-
-        </div>
-
-      {% endif %}
-
-      <nav class="content-navigation">
-
-        <form action="/prototypes/mot-test/review" method="GET">
-
-          {% if viewData.comment %}
-
-            {{ components.button(text='Review test') }}
-
-          {% else %}
-
-            {{ components.button(text='Review test', disabled=true) }}
-
-          {% endif %}
-
-        </form>
-
-        <ul class="content-navigation__secondary">
-
-          <li>
-
-            {{ components.link(text='Cancel test', url='/prototypes/') }}
-
-          </li>
-
-        </ul>
-        
-      </nav>
+      {{ components.link(text='Cancel test', url='/prototypes/', paragraph=true) }}
 
     {%- endcall %}
 

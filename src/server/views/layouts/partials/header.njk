@@ -14,7 +14,7 @@
         <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
 
         <nav id="proposition-menu">
-          <a href="/" id="proposition-name">
+          <a href="{% if homePath %}{{ homePath }}{% else %}/{% endif %}" id="proposition-name">
             {% if blackBarTitle %}
               {{ blackBarTitle }}
             {% else %}

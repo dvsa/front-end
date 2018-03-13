@@ -1,0 +1,33 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Tester comments' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test/' },
+  { text: 'Remove testers comment' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Remove testers comment') }}
+
+      {{ components.paragraph(text='Are you sure you want to remove this comment', lead=true, limitWidth=true) }}
+
+      {% call components.form(action='/prototypes/mot-test/comment/remove', method='POST') %}
+
+        <button class='button button--alert u-margin-bottom-20'>Remove comment</button>
+
+      {%- endcall %}
+
+      {{ components.link(text='Cancel and return to MOT test results', url='/prototypes/mot-test/', paragraph=true) }}
+        
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

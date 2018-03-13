@@ -3,6 +3,7 @@ import path from 'path';
 import express from 'express';
 import bodyParser from 'body-parser';
 import session from 'express-session';
+import flash from 'connect-flash';
 import memoryStore from 'memorystore';
 import morgan from 'morgan';
 import nunjucks from 'nunjucks';
@@ -151,6 +152,10 @@ export const startApp = async () => {
       },
     })
   );
+
+  // Express flash messaging middleware
+  // https://www.npmjs.com/package/connect-flash
+  app.use(flash());
 
   // Static folder
   app.use(express.static(CONFIG.paths.publicAssets));

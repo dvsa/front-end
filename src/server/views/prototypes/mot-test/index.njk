@@ -47,6 +47,16 @@
 
       </div>
 
+      {% if flashMessage != '' %}
+
+        <div class="message--success">
+
+          <p> {{ flashMessage }} </p>
+
+        </div>
+
+      {% endif %}
+
       <div class='u-margin-bottom-30'>
 
         <div class="action-panel">
@@ -135,11 +145,11 @@
 
               {% if viewData.comment %}
 
-                {{ components.button(text='Edit comment', url='#') }}
+                {{ components.button(text='Edit comment', url='/prototypes/mot-test/comment/edit') }}
 
               {% else %}
 
-                {{ components.button(text='Add comment', url='/prototypes/mot-test/add-tester-comment/') }}
+                {{ components.button(text='Add comment', url='/prototypes/mot-test/comment') }}
 
               {% endif %}
 
@@ -159,7 +169,7 @@
 
               <li class='dvsa-tester-comments__action'>
 
-                <a class='dvsa-tester-comments__link dvsa-tester-comments__link--bolden' href='#'>Edit</a>
+                <a class='dvsa-tester-comments__link dvsa-tester-comments__link--bolden' href='/prototypes/mot-test/comment/edit'>Edit</a>
 
               </li>
 
@@ -167,7 +177,7 @@
 
               <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>
 
-                <a class='dvsa-tester-comments__link' href='/prototypes/mot-test/remove-comment'>Remove</a>
+                <a class='dvsa-tester-comments__link' href='/prototypes/mot-test/comment/remove'>Remove</a>
 
               </li>
 

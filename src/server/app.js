@@ -108,11 +108,11 @@ export const startApp = async () => {
   // );
 
   // Add production middleware
-  if(!CONFIG.isDevelopment()) {
+  if (!CONFIG.isDevelopment()) {
     // Helmet middleware
     // https://helmetjs.github.io/
     app.use(helmet());
-    
+
     // Remove powered by express
     // for security reasons
     app.disable('x-powered-by');

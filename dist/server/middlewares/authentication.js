@@ -1,5 +1,19 @@
-import basicAuth from 'basic-auth';
-import config from './../config';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.authenticationMiddleware = undefined;
+
+var _basicAuth = require('basic-auth');
+
+var _basicAuth2 = _interopRequireDefault(_basicAuth);
+
+var _config = require('./../config');
+
+var _config2 = _interopRequireDefault(_config);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * Handle when request is unauthorized
@@ -22,11 +36,11 @@ const unauthorized = res => {
  *
  * @author Tameem Safi <t.safi@kainos.com>
  */
-export const authenticationMiddleware = (req, res, next) => {
+const authenticationMiddleware = exports.authenticationMiddleware = (req, res, next) => {
   // Handles http basic auth prompt
   // and gets input from user
   // https://www.npmjs.com/package/basic-auth
-  const user = basicAuth(req);
+  const user = (0, _basicAuth2.default)(req);
 
   // Check if username and password was set
   if (!user || !user.name || !user.pass) {

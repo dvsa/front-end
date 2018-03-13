@@ -69,7 +69,9 @@ var _routes = require('./config/routes');
 
 var _constants = require('./config/constants');
 
-var _libraryNavigation = require('./middlewares/libraryNavigation');
+var _middlewares = require('./middlewares');
+
+var Middlewares = _interopRequireWildcard(_middlewares);
 
 var _helpers = require('./helpers');
 
@@ -156,7 +158,7 @@ const startApp = exports.startApp = async () => {
     return (0, _etag2.default)(body, encoding);
   });
 
-  app.use(_libraryNavigation.addLibraryNavigationItemsToRequestObject);
+  app.use(Middlewares.addLibraryNavigationItemsToRequestObject);
 
   // Enable HTML Compression
   // Website: https://www.npmjs.com/package/express-minify-html
@@ -170,9 +172,19 @@ const startApp = exports.startApp = async () => {
   //   })
   // );
 
-  // Enables security middleware
-  // Website: https://helmetjs.github.io/
-  app.use((0, _helmet2.default)());
+  // Add production middleware
+  if (!_constants.CONFIG.isDevelopment()) {
+    // Helmet middleware
+    // https://helmetjs.github.io/
+    app.use((0, _helmet2.default)());
+
+    // Remove powered by express
+    // for security reasons
+    app.disable('x-powered-by');
+
+    // Add basic auth based on enviroment variables
+    app.use(Middlewares.authenticationMiddleware);
+  }
 
   // Enable GZip Compression
   app.use((0, _compression2.default)());

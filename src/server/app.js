@@ -108,7 +108,7 @@ export const startApp = async () => {
   // );
 
   // Add production middleware
-  if (!CONFIG.isDevelopment()) {
+  if (!isDevelopment()) {
     // Helmet middleware
     // https://helmetjs.github.io/
     app.use(helmet());

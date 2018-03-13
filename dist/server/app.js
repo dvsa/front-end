@@ -173,7 +173,7 @@ const startApp = exports.startApp = async () => {
   // );
 
   // Add production middleware
-  if (!_constants.CONFIG.isDevelopment()) {
+  if (!(0, _constants.isDevelopment)()) {
     // Helmet middleware
     // https://helmetjs.github.io/
     app.use((0, _helmet2.default)());

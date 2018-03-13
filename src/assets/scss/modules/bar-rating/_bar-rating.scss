@@ -1,0 +1,49 @@
+.bar-rating {
+  border: none;
+  float: left;
+  width: 100%;
+
+  &__wrapper {
+    width: 100%;
+    height: 24px;
+  }
+
+  & > input {
+    display: none;
+  }
+
+  & label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    // font-family: FontAwesome;
+    display: inline-block;
+    // content: "\f005";
+    width: 18%;
+    height: 24px;
+    background-color: #c0c0c0;
+  }
+
+  & > .half:before {
+    // content: "\f089";
+    position: absolute;
+  }
+
+  & > label {
+    color: #ddd;
+    float: right;
+  }
+
+  & > input:checked ~ label, /* show gold star when clicked */
+  &:not(:checked) > label:hover, /* hover current star */
+  &:not(:checked) > label:hover ~ label {
+    color: #FFD700;
+  }
+
+  & > input:checked + label:hover, /* hover current star when changing rating */
+  & > input:checked ~ label:hover,
+  & > label:hover ~ input:checked ~ label, /* lighten current selection */
+  & > input:checked ~ label:hover ~ label {
+    color: #FFED85;
+  }
+
+}

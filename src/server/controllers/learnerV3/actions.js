@@ -49,6 +49,12 @@ export function actionsGet(req, res) {
     redirectPath = '/prototypes/learner/v3/home';
   }
 
+  // hasLeftFeedback from feedback page
+  if (action === 'hasLeftFeedback') {
+    req.session.hasLeftFeedback = true;
+    redirectPath = '/prototypes/learner/v3/home';
+  }
+
   return res.redirect(redirectPath);
 }
 

@@ -15,7 +15,7 @@ exports.feedbackGet = feedbackGet;
 var _validationFunctions = require('./validation-functions');
 
 function homeGet(req, res) {
-  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage, fireTrainingComplete, removedFromLearningPlanWarning, addedToLearningPlan, removedFromLearningPlan, hasBeenRemoved, willBeRemoved, hasBeenAdded;
+  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage, fireTrainingComplete, removedFromLearningPlanWarning, addedToLearningPlan, removedFromLearningPlan, hasBeenRemoved, willBeRemoved, hasBeenAdded, hasLeftFeedback;
 
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
@@ -56,6 +56,11 @@ function homeGet(req, res) {
     removeMessage = true;
   }
 
+  hasLeftFeedback = req.session.hasLeftFeedback;
+  if (hasLeftFeedback) {
+    req.session.hasLeftFeedback = null;
+  }
+
   // console.log('removeMessage = ' + removeMessage + ' and id = ' + courseId);
 
   viewData = {
@@ -65,7 +70,8 @@ function homeGet(req, res) {
     fireTrainingComplete,
     hasBeenAdded,
     willBeRemoved,
-    hasBeenRemoved
+    hasBeenRemoved,
+    hasLeftFeedback
   };
 
   return res.render('prototypes/learner/v3/home/index', viewData);

@@ -14,7 +14,8 @@ export function homeGet(req, res) {
     removedFromLearningPlan,
     hasBeenRemoved,
     willBeRemoved,
-    hasBeenAdded;
+    hasBeenAdded,
+    hasLeftFeedback;
 
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
@@ -55,6 +56,11 @@ export function homeGet(req, res) {
     removeMessage = true;
   }
 
+  hasLeftFeedback = req.session.hasLeftFeedback;
+  if (hasLeftFeedback) {
+    req.session.hasLeftFeedback = null;
+  }
+
   // console.log('removeMessage = ' + removeMessage + ' and id = ' + courseId);
 
   viewData = {
@@ -65,6 +71,7 @@ export function homeGet(req, res) {
     hasBeenAdded,
     willBeRemoved,
     hasBeenRemoved,
+    hasLeftFeedback,
   };
 
   return res.render('prototypes/learner/v3/home/index', viewData);

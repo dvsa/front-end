@@ -12,7 +12,7 @@
 
     {% call components.gridRow() %}
 
-        {% call components.columnTwoThirds() %}
+        {% call components.columnFull() %}
 
             {{ components.heading(text='Personal details', tag='h2', size='medium', extraClass='') }}
 
@@ -46,7 +46,7 @@
                             {% if email %}
                                 {{ email }}
                             {% else %}
-                                r.connery@cabinetoffice.gov.uk
+                                r.connery@&#8203;cabinetoffice.&#8203;gov.uk
                             {% endif %}
                         </td>
                         <td class="key-value-list__item-action">

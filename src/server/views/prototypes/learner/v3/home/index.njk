@@ -14,6 +14,7 @@
 {% set hasBeenAdded = hasBeenAdded if hasBeenAdded %}
 {% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
 {% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
+{% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
 
 {% block content %}
 
@@ -77,6 +78,13 @@
 
         {% call components.columnFull() %}
 
+
+            {% if hasLeftFeedback %}
+
+                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type="confirmation")}}
+
+            {% endif %}
+
             {% if removeMessage %}
 
                 {{ components.banner(mainText='Course successfully removed', secondaryText='The course <strong>Digital awareness: digital by default</strong> has successfully been removed from your learning plan', type="confirmation")}}
@@ -92,7 +100,7 @@
             {% endif %}
 
             {% if willBeRemoved %}
-                {{ components.banner(mainText='Are you sure you want to remove this course?', secondaryText='You have already started this course and your progress may be lost. <br><br><a href="/prototypes/learner/v3/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/prototypes/learner/v3/home">No, keep it</a>', type="warning")}}
+                {{ components.banner(mainText='Removing this course?', secondaryText='If you remove this course, it will be deleted from your learning plan. <br><br><a href="/prototypes/learner/v3/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/prototypes/learner/v3/home">No, keep it</a>', type="warning")}}
              {% endif %}
 
         {%- endcall %}
@@ -124,7 +132,7 @@
                         </li>
 
                         <li class="resource__status">
-                            <span class="badge badge--info badge--smaller">In progress</span>
+                            <span class="badge badge--info ">In progress</span>
                         </li>
 
                     </ul>
@@ -177,7 +185,7 @@
                             <span>Video, 10 minutes</span>
                         </li>
                         <li class="resource__status">
-                            <span class="badge badge--success badge--smaller">Just added</span>
+                            <span class="badge badge--success ">Just added</span>
                         </li>
                     </ul>
                 </div>
@@ -205,7 +213,7 @@
                             <span>Online, 3 hours</span>
                         </li>
                         <li class="resource__status">
-                            <span class="badge badge--info badge--smaller">In progress</span>
+                            <span class="badge badge--info ">In progress</span>
                         </li>
 
                     </ul>
@@ -232,7 +240,7 @@
                             <span>Classroom, 2 hours</span>
                         </li>
                         <li class="resource__status">
-                            <span class="badge badge--info badge--smaller">Booked</span>
+                            <span class="badge badge--info ">Booked</span>
                             <span class="meta">21 Aug 2018</span>
                         </li>
                     </ul>
@@ -264,10 +272,6 @@
                         </ul>
                     </div>
                 {% endif %}
-
-                <div class="home-toggle-switch js-only u-space-y30">
-                    <a href="#" class="toggle-switch" onclick="toggleVisibility(this, 'toggleOtherContent', 'js-hidden')">Show <span class="more">more</span><span class="less">less</span></a>
-                   </div>
 
                 <div class="home-toggle js-hidden" id="toggleOtherContent">
 
@@ -370,6 +374,10 @@
                 </div>
 
                 {# end home toggle #}
+                </div>
+
+                <div class="home-toggle-switch js-only u-space-y30">
+                    <a href="#" class="toggle-switch" onclick="toggleVisibility(this, 'toggleOtherContent', 'js-hidden')">Show <span class="more">more</span><span class="less">less</span></a>
                 </div>
 
             {#<p class="u-space-t30"><a href="/prototypes/learner/v3/learning-plan" class="">See more learning in your Learning plan</a> </p>#}

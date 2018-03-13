@@ -1,0 +1,73 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'GDS Library - Leave feedback' %}
+
+{% block content %}
+
+    {{ components.heading(text='Leave feedback', tag='h2', size='medium') }}
+
+    <p>Bar rating, a la star rating</p>
+
+    {#<p>
+        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/assets/scss/modules/pagination/_pagination.scss">_pagination.scss</a>
+        <br>
+        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/server/views/macros/misc/pagination.njk">pagination.njk</a>
+    </p>#}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            <form>
+
+                <fieldset class="bar-rating">
+
+                    <legend class="heading-small">Presentation</legend>
+                    <p>Did you like the way the course was presented?</p>
+
+                    <div>
+                        <span style="display:inline-block;float:left">Not for me</span>
+                        <span style="display:inline-block;float:right">Loved it</span>
+                    </div>
+
+                    <div class="bar-rating__wrapper">
+
+                        <input type="radio" id="star5" name="rating" value="5" />
+                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+
+                        <input type="radio" id="star4" name="rating" value="4" />
+                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+
+                        <input type="radio" id="star3" name="rating" value="3" />
+                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
+
+                        <input type="radio" id="star2" name="rating" value="2" />
+                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+
+                        <input type="radio" id="star1" name="rating" value="1" />
+                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+
+                    </div>
+
+                    <div>
+                        <span style="display:inline-block;float:left">Not for me</span>
+                        <span style="display:inline-block;float:right">Loved it</span>
+                    </div>
+
+                </fieldset>
+            </form>
+
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+
+{% endblock %}

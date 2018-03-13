@@ -9,10 +9,6 @@ var _basicAuth = require('basic-auth');
 
 var _basicAuth2 = _interopRequireDefault(_basicAuth);
 
-var _config = require('./../config');
-
-var _config2 = _interopRequireDefault(_config);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**

@@ -24,7 +24,6 @@
 
   @import 'content-header/content-header';
   @import 'content-navigation/content-navigation';
-  @import 'criteria/criteria';
   @import 'data-list/data-list';
   @import 'data-tables/data-tables';
   @import 'entity-header/entity-header';
@@ -75,6 +74,7 @@
 @import 'table-default/table-default';
 @import 'table-reference/table-reference';
 @import 'two-fa/two-fa';
+@import 'criteria/criteria';
 
 // BEM Style modules
 // Do not need to be wrapped

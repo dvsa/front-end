@@ -6,7 +6,7 @@
   "scripts": {
     "start-heroku": "node ./dist/server/index.js",
     "start-dev": "cross-env NODE_ENV=development npm run pretty-js && concurrently \"cross-env NODE_ENV=development gulp watch-dev\" \"cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.babel.js\" \"cross-env NODE_ENV=development npm run start-dev-server\"",
-    "start-dev-server": "onchange './src/server/**/*' -i -v -- npm run start-server",
+    "start-dev-server": "onchange './src/server/**/*' -d 150 -i -v -- npm run start-server",
     "start-server": "SESSION_SECRET=secret babel-node ./src/server",
     "build-server": "babel ./src/server --out-dir ./dist/server",
     "build-production": "cross-env NODE_ENV=production concurrently \"npm run pretty-js\" \"npm run build-server\" \"gulp build-production\" \"webpack --config ./webpack/webpack.config.production.babel.js\"",

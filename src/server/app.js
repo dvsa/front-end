@@ -16,7 +16,7 @@ import _ from 'lodash';
 
 import { allRoutes } from './config/routes';
 import { CONFIG, isDevelopment, isTesting } from './config/constants';
-import { addLibraryNavigationItemsToRequestObject } from './middlewares/libraryNavigation';
+import * as Middlewares from './middlewares';
 import * as Helpers from './helpers';
 import * as REPO_PACKAGE_JSON from './../../package.json';
 
@@ -93,7 +93,7 @@ export const startApp = async () => {
     return etag(body, encoding);
   });
 
-  app.use(addLibraryNavigationItemsToRequestObject);
+  app.use(Middlewares.addLibraryNavigationItemsToRequestObject);
 
   // Enable HTML Compression
   // Website: https://www.npmjs.com/package/express-minify-html
@@ -107,9 +107,19 @@ export const startApp = async () => {
   //   })
   // );
 
-  // Enables security middleware
-  // Website: https://helmetjs.github.io/
-  app.use(helmet());
+  // Add production middleware
+  if(!CONFIG.isDevelopment()) {
+    // Helmet middleware
+    // https://helmetjs.github.io/
+    app.use(helmet());
+    
+    // Remove powered by express
+    // for security reasons
+    app.disable('x-powered-by');
+
+    // Add basic auth based on enviroment variables
+    app.use(Middlewares.authenticationMiddleware);
+  }
 
   // Enable GZip Compression
   app.use(compression());

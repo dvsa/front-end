@@ -12,22 +12,28 @@ export const passwordValidationChecks = [
     // Blocked words check
     .custom((value, { req }) => {
       const blockedWords = ['password', 'animal', 'cat', 'dog'];
-      return !blockedWords.contains(value);
+      return !blockedWords.includes(value);
     })
-    .withMessage(weakPasswordMessage)
+    .withMessage('Password contains a blocked word')
     // Personal details check
     .custom((value, { req }) => {
       const items = ['email', 'firstname', 'middlename', 'lastname'];
       let isValid = true;
       items.forEach(item => {
-        if (req.body[item]) {
-          const itemLowercase = req.body[item].toLowerCase();
-          isValid = !itemLowercase.contains(value.toLowerCase());
+        console.log(req.session.createAccountForm[item]);
+        if (req.session && req.session.createAccountForm && req.session.createAccountForm[item]) {
+          const itemValue = req.session.createAccountForm[item];
+          if(!itemValue) return;
+          const itemLowercase = itemValue.toLowerCase();
+          const itemUppercase = itemValue.toUpperCase();
+          if (value.includes(itemLowercase) || value.includes(itemLowercase) || value.includes(itemValue)) {
+            isValid = false;
+          }
         }
       });
       return isValid;
     })
-    .withMessage(weakPasswordMessage)
+    .withMessage('Please cannot contain any personal details')
     // Contains mixed characters
     .custom((value, { req }) => {
       return /^(?=.*[a-z])(?=.*[A-Z]).+$/.test(value);

@@ -1,0 +1,134 @@
+.dvsa-summary {
+  &, * {
+    box-sizing: border-box;
+  }
+
+  &__section {
+    border-bottom: 1px solid $border-colour; 
+  }
+
+  &__row {
+    margin: 0 -15px;
+
+    // Clearfix
+    &:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__col {
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+
+    &--one-third {
+      @include media(tablet) {
+        width: 33%;
+      }
+    }
+
+    &--two-thirds {
+      @include media(tablet) {
+        width: 65%;
+      }
+    }
+
+    &--push-one-third {
+      @include media(tablet) {
+        margin-left: 33%;
+      }
+    }
+
+    &--remove-padding-right-tablet {
+      @include media(tablet) {
+        padding-right: 0;        
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 24px;
+    font-weight: 700;  
+    line-height: 1.25;
+    margin: 20px 0;
+
+    @include media(tablet) {
+      margin: 15px 0;
+    }
+
+    &--remove-margin-bottom {
+      margin-bottom: 0;
+
+      @include media(tablet) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__test-result {
+    display: block;    
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 0;
+
+    &--pass {
+      color: $button-colour;
+    }
+
+    &--fail {
+      color: $red;
+    }
+  }
+
+  &__data-list {
+    display: block;
+    border-top: 1px solid $border-colour;
+    padding: 10px 0; 
+    font-size: 16px;    
+
+    @include media(tablet) {
+      margin-bottom: 20px;
+      border: 0;
+      padding: 0;
+    }
+
+    &--first {
+      @include media(tablet) {
+        margin-top: 20px;        
+      }
+    }
+  }
+
+  &__data-list-value {
+    font-weight: 700;
+  }
+
+  &__defect-list {
+    @include media(tablet) {
+      margin: 10px 0;      
+    }
+  }
+
+  &__defect-list-item {
+    border-bottom: 1px solid $border-colour;
+    padding: 10px 0;
+
+    &--last {
+      border: 0;
+    }
+  }
+
+  &__address-line {
+    display: block;
+  }
+
+  &__paragraph {
+    margin-top: 0;
+    
+    @include media(tablet) {
+      margin: 20px 0;
+    }
+  }
+}

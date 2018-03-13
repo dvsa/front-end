@@ -1,0 +1,39 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Tester comments' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test/' },
+  { text: 'Add testers comment' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Add testers comment') }}
+
+      {% include './partials/form-errors.njk' %}
+
+      {{ components.paragraph(text='These comments are additional notes you can add to an MOT test', lead=true, limitWidth=true) }}
+
+      {{ components.paragraph(text='Comments will not appear on certificates or MOT history. Only DVSA and scheme users will be able to view them.', limitWidth=true) }}
+
+      {% call components.form(action='/prototypes/mot-test/add-tester-comment/', method='POST') %}
+
+        {{ components.textarea(label="Enter comment", id='comment', group=true, error=viewData.errors) }}
+
+        {{ components.button(text='Add comment') }}
+
+      {%- endcall %}
+
+      {{ components.link(text='Cancel and return to MOT test results', url='/prototypes/mot-test/', paragraph=true) }}
+        
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

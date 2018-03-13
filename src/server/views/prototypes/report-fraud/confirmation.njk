@@ -7,27 +7,24 @@
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
-      
-      <div class='text u-clearfix'>
 
-        <div class='u-margin-top-20'>
-          <div class='banner banner--confirmation'>
-            <h1 class='banner__heading-large'>Thank you</h1>
-            <span>Your report has been sent</span>
-          </div>
-        </div>
-        
-        {{ components.heading(text='What happens next?', size='medium', tag='h2') }}
+      <div class='dvsa-banner dvsa-banner--confirmation u-margin-top-20'>
 
-        {{ components.paragraph(text='DVSA will investigate this report and decide on the best course of action.') }}
+        <h1 class='dvsa-banner__heading-large'>Thank you</h1>
 
-        {{ components.paragraph(text='Investigations can take time and we can’t give updates on individual cases.') }}
-
-        {{ components.paragraph(text='You don’t need to do anything else.') }}
-
-        <p><a href='http://www.gov.uk/'>Continue to GOV.UK</a></p>
+        <span class='dvsa-banner-secondary-text'>Your report has been sent</span>
 
       </div>
+      
+      {{ components.heading(text='What happens next?', size='medium', tag='h2') }}
+
+      {{ components.paragraph(text='DVSA will investigate this report and decide on the best course of action.') }}
+
+      {{ components.paragraph(text='Investigations can take time and we can’t give updates on individual cases.') }}
+
+      {{ components.paragraph(text='You don’t need to do anything else.') }}
+
+      {{ components.link(text='Continue to GOV.UK', url='http://www.gov.uk/', paragraph=true) }}
 
     {%- endcall %}
 

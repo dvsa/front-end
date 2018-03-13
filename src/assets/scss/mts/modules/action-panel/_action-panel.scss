@@ -67,6 +67,23 @@
         }
       }
     }
+
+    &--twothirds {
+      width: 66%;
+      display: inline-block;
+
+      @include media(mobile) {
+        width: 100%;
+      }
+
+      & + .action-panel__container {
+        width: 45%;
+
+        @include media(mobile) {
+          width: 100%;
+        }
+      }
+    }
   }
 
   &__value {

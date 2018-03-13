@@ -189,6 +189,16 @@
     }
   }
 
+  &__comment {
+    min-height: 45px;
+    padding-right: 100px;
+
+    @include media(false, 445px) {
+      min-height: 0;   
+      padding-right: 0;   
+    }
+  }
+
   // CONTEXT STUFF
   .defect-results & {
     padding-left: 0;

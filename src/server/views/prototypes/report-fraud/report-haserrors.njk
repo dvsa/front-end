@@ -25,13 +25,17 @@
         <h2 class='heading-medium error-summary-heading' id='error-summary-heading'>There was a problem</h2>
 
         <ul class='error-summary-list'>
+
           {% for fieldId, errorMessage in errors %}
+
           <li>
-            <a href="#{{ fieldId }}">
-              {{ errorMessage }}
-            </a>
+
+            <a href="#{{ fieldId }}">{{ errorMessage }}</a>
+
           </li>
+
           {% endfor %}
+          
         </ul>
 
       </div>
@@ -46,9 +50,7 @@
 
         {{ components.textarea(label='About the incident', labelBold=true, id='aboutIncident', rows=6, hint='Give a detailed description of what happened', group=true, error=errors.aboutIncident) }}
 
-        <div class='form-group'>
-          {{ components.button(text='Submit') }}
-        </div>
+        {{ components.button(text='Submit') }}
 
       {%- endcall %}
       

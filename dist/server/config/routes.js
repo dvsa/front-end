@@ -27,6 +27,10 @@ var _suspendTesters = require('./../controllers/annual-assessment-tool/suspend-t
 
 var suspendTestersController = _interopRequireWildcard(_suspendTesters);
 
+var _motTest = require('./../controllers/mot-test/mot-test');
+
+var motTestResultsController = _interopRequireWildcard(_motTest);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
@@ -55,6 +59,13 @@ router.post('/prototypes/create-account/password', createAccountController.passw
 // Annual Assessment tool - suspend testers path
 router.get('/prototypes/annual-assessment-admin-tool/suspend-testers', suspendTestersController.getSuspendTesters);
 router.post('/prototypes/annual-assessment-admin-tool/suspend-testers', suspendTestersController.postSuspendTesters);
+
+// MOT test - add tester comments
+router.get('/prototypes/mot-test', motTestResultsController.getMotTestResultComments);
+router.get('/prototypes/mot-test/add-tester-comment', motTestResultsController.getTesterComments);
+router.post('/prototypes/mot-test/add-tester-comment', motTestResultsController.postTesterComments);
+router.get('/prototypes/mot-test/remove-comment', motTestResultsController.removeSessionAndRedirect);
+router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

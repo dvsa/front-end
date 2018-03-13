@@ -1,5 +1,4 @@
 import basicAuth from 'basic-auth';
-import config from './../config';
 
 /**
  * Handle when request is unauthorized

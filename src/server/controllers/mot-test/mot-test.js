@@ -10,7 +10,7 @@ export const postTesterComments = (req, res) => {
   // Init an empty viewData object
   let viewData = {
     comment: req.body.comment ? motTestHelpers.formatTextAreaResponse(req.body.comment.trim()) : null,
-    errors: []
+    errors: [],
   };
 
   // Create error message if textarea value was not set or contains white spacce only

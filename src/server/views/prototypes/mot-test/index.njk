@@ -13,6 +13,12 @@
 
     {% call components.columnFull() %}
 
+      {{ components.dvsaBanner(
+        mainText='Prototype Preview',
+        secondaryText='The design on this page is not final yet',
+        type='error'
+      ) }}
+
       <header class="content-header">
 
         <h1><span class="content-header__title">MOT test results</span></h1>

@@ -23,7 +23,7 @@ export const passwordValidationChecks = [
         console.log(req.session.createAccountForm[item]);
         if (req.session && req.session.createAccountForm && req.session.createAccountForm[item]) {
           const itemValue = req.session.createAccountForm[item];
-          if(!itemValue) return;
+          if (!itemValue) return;
           const itemLowercase = itemValue.toLowerCase();
           const itemUppercase = itemValue.toUpperCase();
           if (value.includes(itemLowercase) || value.includes(itemLowercase) || value.includes(itemValue)) {

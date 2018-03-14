@@ -8,60 +8,70 @@
 
     <p>Bar rating, a la star rating</p>
 
-    {#<p>
-        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/assets/scss/modules/pagination/_pagination.scss">_pagination.scss</a>
-        <br>
-        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/server/views/macros/misc/pagination.njk">pagination.njk</a>
-    </p>#}
+    <p>
+        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/assets/scss/modules/bar-rating/_bar-rating.scss">_bar-rating.scss</a>
+        {#<br>
+        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/server/views/macros/misc/pagination.njk">pagination.njk</a>#}
+    </p>
 
     {% call components.gridRow() %}
 
-        {% call components.columnOneThird() %}
+        {% call components.columnTwoThirds() %}
 
-            <form>
 
-                <fieldset class="bar-rating">
 
-                    <legend class="heading-small">Presentation</legend>
-                    <p>Did you like the way the course was presented?</p>
+        {%- endcall %}
 
-                    <div class="bar-rating__scale">
-                        <span style="display:inline-block;float:left">Not for me</span>
-                        <span style="display:inline-block;float:right">Loved it</span>
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% call components.displayCode() %}
+
+                <fieldset class="bar-rating u-space-b30">
+
+                    <legend class="heading-small">Relevance</legend>
+                    <p>Do you think the course delivered the learning outcomes?</p>
+
+                    <div class="bar-rating__scale" aria-hidden="true">
+                        <span class="u-float-left">Not at all</span>
+                        <span class="u-float-right">Yes, completely</span>
                     </div>
 
                     <div class="bar-rating__wrapper">
 
-                        <input type="radio" id="star5" name="rating" value="5" />
-                        <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                        <input type="radio" id="starRelevance5" name="ratingRelevance" value="5" />
+                        <label for="starRelevance5" title="Yes completely - 5 stars"></label>
 
-                        <input type="radio" id="star4" name="rating" value="4" />
-                        <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                        <input type="radio" id="starRelevance4" name="ratingRelevance" value="4" />
+                        <label for="starRelevance4" title="It was pretty good - 4 stars"></label>
 
-                        <input type="radio" id="star3" name="rating" value="3" />
-                        <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                        <input type="radio" id="starRelevance3" name="ratingRelevance" value="3" />
+                        <label for="starRelevance3" title="It was OK - 3 stars"></label>
 
-                        <input type="radio" id="star2" name="rating" value="2" />
-                        <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                        <input type="radio" id="starRelevance2" name="ratingRelevance" value="2" />
+                        <label for="starRelevance2" title="It wasn't great - 2 stars"></label>
 
-                        <input type="radio" id="star1" name="rating" value="1" />
-                        <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                        <input type="radio" id="starRelevance1" name="ratingRelevance" value="1" />
+                        <label for="starRelevance1" title="Not at all - 1 star"></label>
 
                     </div>
 
-                    <div class="bar-rating__1to5">
+                    <div class="bar-rating__1to5" aria-hidden="true">
                         <ul>
-                            <l1>1</l1>
-                            <l1>2</l1>
-                            <l1>3</l1>
-                            <l1>4</l1>
-                            <l1>5</l1>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
                         </ul>
                     </div>
 
                 </fieldset>
-            </form>
 
+            {%- endcall %}
 
         {%- endcall %}
 

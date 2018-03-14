@@ -1,9 +1,10 @@
 import * as motTestHelpers from './helpers/helpers';
 
+// Config param populates error / flash message & redirect URL
 const postMessage = (req, res, config) => {
   let viewData = {
     comment: req.body.comment ? motTestHelpers.formatTextAreaResponse(req.body.comment.trim()) : null,
-    errors: []
+    errors: [],
   };
 
   // Create error message if textarea value was not set or contains white spacce only
@@ -27,12 +28,12 @@ const postMessage = (req, res, config) => {
 };
 
 export const getMOTResults = (req, res) => {
+  // Resets error session
   if (req.session.viewData) req.session.viewData.errors = null;
   return res.render('prototypes/mot-test/index', { viewData: req.session.viewData, flashMessage: req.flash('flash-message') });
 };
 
 export const getAddTesterComment = (req, res) => {
-
   return res.render('prototypes/mot-test/comment/index', { viewData: req.session.viewData ? req.session.viewData : null });
 };
 
@@ -59,7 +60,7 @@ export const postEditTesterComment = (req, res) => {
 export const destorySession = (req, res) => {
   // Resets session & redirects
   req.session.viewData = null;
-  req.flash('flash-message', 'Testers comment has been successfully removed');
+  req.flash('flash-message', 'Testers comment successfully removed');
   return res.redirect('/prototypes/mot-test/');
 };
 

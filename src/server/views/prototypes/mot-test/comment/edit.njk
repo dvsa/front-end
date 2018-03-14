@@ -18,9 +18,7 @@
 
       {% include './partials/form-errors.njk' %}
 
-      {{ components.paragraph(text='These comments are additional notes you can add to an MOT test', lead=true, limitWidth=true) }}
-
-      {{ components.paragraph(text='Comments will not appear on certificates or MOT history. Only DVSA and scheme users will be able to view them.', limitWidth=true) }}
+      {{ components.paragraph(text='You can make changes to the testers comment', lead=true, limitWidth=true) }}
 
       {% call components.form(action='/prototypes/mot-test/comment/edit', method='POST') %}
       

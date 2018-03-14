@@ -43,10 +43,21 @@
 
     {%- endcall %}
 
-        {% call components.columnOneThird() %}
+    {% call components.columnOneThird() %}
 
       {{ components.heading(text='MOT test results', tag='h2', size='medium', url='/prototypes/mot-test') }}
       {{ components.paragraph(text='Adding comments to defects user journey')}}
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Ajax Browse', tag='h2', size='medium', url='/prototypes/ajax-browse') }}
+      {{ components.paragraph(text='Browse categories with ajax proof of concept')}}
 
     {%- endcall %}
 

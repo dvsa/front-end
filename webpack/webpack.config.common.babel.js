@@ -29,7 +29,8 @@ module.exports = {
                 uglify: true
               }],
               'stage-2',
-              'stage-3'
+              'stage-3',
+              'react'
             ],
           },
         },

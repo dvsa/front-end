@@ -1,0 +1,438 @@
+.ajax-browse {
+
+  position: relative;
+
+  &, * {
+    box-sizing: border-box;
+  }
+
+  &:after {
+    content: ' ';
+    display: block;
+    clear: both;
+  }
+
+  &__back-wrapper {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 50;
+    display: none;
+    .ajax-browse--back-button & {
+      display: block;
+    }
+    .ajax-browse--2-blocks.ajax-browse--back-button &, .ajax-browse--1-blocks.ajax-browse--back-button & {
+      display: none;
+    }
+  }
+
+  &__back-button {
+    position: relative;
+    .ajax-browse--loading & {
+      &:after {
+        content: ' ';
+        background-image: url('../images/loading-spinner-small.gif');
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  &__back-text {
+    .ajax-browse--loading & {
+      opacity: 0;
+    }
+  }
+
+  &__inner {
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+
+  &__block {
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    background: white;
+    transition: all 0.15s ease-in-out;
+    position: relative;
+    white-space: normal;
+
+    &-inner {
+      border-left: 1px solid $grey-3;
+      min-height: 700px;
+      .ajax-browse__block:first-child & {
+        border-left-color: white;
+      }
+    }
+
+    .ajax-browse--3-blocks & {
+      &:nth-child(1) {
+        z-index: 1;
+      }
+      &:nth-child(2) {
+        z-index: 5;
+        margin-left: -20%;
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+      &:last-child {
+        z-index: 10;
+      }
+    }
+
+    .ajax-browse--4-blocks & {
+      &:nth-child(1) {
+        z-index: 1;
+      }
+      &:nth-child(2) {
+        z-index: 5;
+        margin-left: -31%;
+      }
+      &:nth-child(3) {
+        z-index: 10;
+        margin-left: -31%;
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+      &:last-child {
+        z-index: 15;
+      }
+    }
+
+    .ajax-browse--5-blocks & {
+      &:nth-child(1) {
+        z-index: 1;
+      }
+      &:nth-child(2) {
+        z-index: 5;
+        margin-left: -34%;
+      }
+      &:nth-child(3) {
+        z-index: 10;
+        margin-left: -34%;
+      }
+      &:nth-child(4) {
+        z-index: 15;
+        margin-left: -34%;
+      }
+      &:last-child {
+        z-index: 20;
+      }
+    }
+
+    .ajax-browse--6-blocks & {
+      &:nth-child(1) {
+        z-index: 1;
+      }
+      &:nth-child(2) {
+        z-index: 5;
+        margin-left: -36%;
+      }
+      &:nth-child(3) {
+        z-index: 10;
+        margin-left: -35%;
+      }
+      &:nth-child(4) {
+        z-index: 15;
+        margin-left: -35%;
+      }
+      &:nth-child(5) {
+        z-index: 15;
+        margin-left: -35%;
+      }
+      &:last-child {
+        z-index: 20;
+      }
+    }
+
+    .ajax-browse--3-blocks.ajax-browse--back-button & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.15;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ajax-browse--4-blocks.ajax-browse--back-button & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.1;
+        }
+      }
+      &:nth-child(2) {
+        .ajax-browse__block-inner {
+          opacity: 0.15;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ajax-browse--5-blocks.ajax-browse--back-button & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.1;
+        }
+      }
+      &:nth-child(2) {
+        .ajax-browse__block-inner {
+          opacity: 0.13;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 0.15;
+        }
+      }
+      &:nth-child(4) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ajax-browse--6-blocks.ajax-browse--back-button & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.1;
+        }
+      }
+      &:nth-child(2) {
+        .ajax-browse__block-inner {
+          opacity: 0.12;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 0.13;
+        }
+      }
+      &:nth-child(4) {
+        .ajax-browse__block-inner {
+          opacity: 0.15;
+        }
+      }
+      &:nth-child(5) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ajax-browse--3-blocks.ajax-browse--hover-effect & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.5;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ajax-browse--4-blocks.ajax-browse--hover-effect & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.3;
+        }
+      }
+      &:nth-child(2) {
+        .ajax-browse__block-inner {
+          opacity: 0.5;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ajax-browse--5-blocks.ajax-browse--hover-effect & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.15;
+        }
+      }
+      &:nth-child(2) {
+        .ajax-browse__block-inner {
+          opacity: 0.3;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 0.5;
+        }
+      }
+      &:nth-child(4) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    .ajax-browse--6-blocks.ajax-browse--hover-effect & {
+      &:nth-child(1) {
+        .ajax-browse__block-inner {
+          opacity: 0.15;
+        }
+      }
+      &:nth-child(2) {
+        .ajax-browse__block-inner {
+          opacity: 0.2;
+        }
+      }
+      &:nth-child(3) {
+        .ajax-browse__block-inner {
+          opacity: 0.3;
+        }
+      }
+      &:nth-child(4) {
+        .ajax-browse__block-inner {
+          opacity: 0.5;
+        }
+      }
+      &:nth-child(5) {
+        .ajax-browse__block-inner {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      & + .ajax-browse__block {
+        .ajax-browse__block-inner {
+          // opacity: 0.5;
+        }
+      }
+    }
+
+    .ajax-browse--hover-effect & {
+      &:hover {
+        &:nth-child(n) {
+          .ajax-browse__block-inner {
+            opacity: 1;
+          }
+        }
+        & ~ .ajax-browse__block {
+          margin-left: 0;
+          .ajax-browse__block-inner {
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+
+    .ajax-browse--loading & {
+      &:nth-child(n) {
+        .ajax-browse__block-inner {
+          opacity: 0.3;
+        }
+      }
+      &:hover {
+        .ajax-browse__block-inner {
+          opacity: 0.3;
+        }
+      }
+    }
+    
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 35px 10px 10px;
+    position: relative;
+    background: white;
+    text-decoration: none;
+    &-heading {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-description {
+      display: block;
+      margin: 5px 0 0 0;
+      padding: 0;
+      font-size: 16px;
+      line-height: 20px;
+      color: $text-colour;
+    }
+
+    &:after {
+      content: ' ';
+      display: block;
+      background-image: url('../images/separator.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      .ajax-browse__item--loading & {
+        background-image: url('../images/loading-spinner-small.gif');
+      }
+      .ajax-browse__item--end-of-tree & {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background: $grey-5;
+      cursor: pointer;
+    }
+
+    &:focus {
+      background: $focus-colour;
+      outline: none;
+    }
+
+    .ajax-browse--loading & {
+      pointer-events: none;
+      cursor: default;
+    }
+    
+    .ajax-browse__item--active & {
+      background: $govuk-blue;
+      &-heading {
+        color: white;
+      }
+      &-description {
+        color: transparentize($color: white, $amount: 0.3);
+      }
+    }
+  }
+
+}

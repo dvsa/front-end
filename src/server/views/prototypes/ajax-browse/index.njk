@@ -1,0 +1,204 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'DVSA - Ajax Browse' %}
+
+{% block content %}
+
+  {{ components.pageHeading(heading='Ajax Browse', secondary='DVSA Front-End') }}
+  {{ components.paragraph(text='This component is still under development.', lead=true) }}
+
+  <br class="clearfix">
+
+  <script type="text/javascript">
+  window.__AJAX_BROWSE__ = {
+    endpointURL: '{{ appURL }}/api/v1/ajax-browse',
+    blocks: [
+      {
+        visible: true,
+        items: [
+          {
+            id: 5690,
+            href: '#',
+            heading: 'Body, Structure and General Items',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5430,
+            href: '#',
+            heading: 'Brakes',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5100,
+            href: '#',
+            heading: 'Steering',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5190,
+            href: '#',
+            heading: 'Suspension',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5650,
+            href: '#',
+            heading: 'Tyres',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5670,
+            href: '#',
+            heading: 'Road Wheels',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5680,
+            href: '#',
+            heading: 'Seat Belts and Supplementary Restraint Systems',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5000,
+            href: '#',
+            heading: 'Lamps, Reflectors and Electrical Equipment',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5730,
+            href: '#',
+            heading: 'Exhaust, Fuel and Emissions',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5780,
+            href: '#',
+            heading: 'Driving Controls and Speed Limiters',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5785,
+            href: '#',
+            heading: 'Registration Plates and VIN',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5750,
+            href: '#',
+            heading: 'Drivers View of the Road',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 5800,
+            href: '#',
+            heading: 'Items Not Tested',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 9000,
+            href: '#',
+            heading: 'Motor tricycles and quadricycles',
+            description: false,
+            loading: false,
+            active: false,
+            endOfTree: false
+          },
+          {
+            id: 10000,
+            href: '#',
+            heading: 'Non-component advisories',
+            description: '',
+            loading: false,
+            active: false,
+            endOfTree: false
+          }
+        ]
+      }
+    ]
+  };
+  </script>
+
+  <div id="ajax-browse" class="ajax-browse ajax-browse--back-button ajax-browse--1-blocks" data-endpoint-url="{{ appURL }}/api/v1/ajax-browse">
+    <div class="ajax-browse__back-wrapper">
+      <a class="ajax-browse__back-button button">Back</a>
+    </div>
+    <div class="ajax-browse__inner">
+      <div class="ajax-browse__block">
+        <div class="ajax-browse__block-inner">
+          <ul class="ajax-browse__list">
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Body, Structure and General Items</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Brakes</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Steering</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Suspension</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Tyres</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Road Wheels</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Seat Belts and Supplementary Restraint Systems</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Lamps, Reflectors and Electrical Equipment</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Exhaust, Fuel and Emissions</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Driving Controls and Speed Limiters</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Registration Plates and VIN</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Drivers View of the Road</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Items Not Tested</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Motor tricycles and quadricycles</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+            <li class="ajax-browse__item"><a href="#" class="ajax-browse__link"><span class="ajax-browse__link-heading">Non-component advisories</span><span class="ajax-browse__link-description"></span></a>
+            </li>
+          </ul>
+        </div>
+    </div>
+    </div>
+  </div>
+
+{% endblock %}

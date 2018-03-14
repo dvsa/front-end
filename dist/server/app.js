@@ -25,6 +25,10 @@ var _expressSession = require('express-session');
 
 var _expressSession2 = _interopRequireDefault(_expressSession);
 
+var _connectFlash = require('connect-flash');
+
+var _connectFlash2 = _interopRequireDefault(_connectFlash);
+
 var _memorystore = require('memorystore');
 
 var _memorystore2 = _interopRequireDefault(_memorystore);
@@ -214,6 +218,10 @@ const startApp = exports.startApp = async () => {
       maxAge: 1200000
     }
   }));
+
+  // Express flash messaging middleware
+  // https://www.npmjs.com/package/connect-flash
+  app.use((0, _connectFlash2.default)());
 
   // Static folder
   app.use(_express2.default.static(_constants.CONFIG.paths.publicAssets));

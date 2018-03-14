@@ -61,10 +61,12 @@ router.get('/prototypes/annual-assessment-admin-tool/suspend-testers', suspendTe
 router.post('/prototypes/annual-assessment-admin-tool/suspend-testers', suspendTestersController.postSuspendTesters);
 
 // MOT test - add tester comments
-router.get('/prototypes/mot-test', motTestResultsController.getMotTestResultComments);
-router.get('/prototypes/mot-test/add-tester-comment', motTestResultsController.getTesterComments);
-router.post('/prototypes/mot-test/add-tester-comment', motTestResultsController.postTesterComments);
-router.get('/prototypes/mot-test/remove-comment', motTestResultsController.removeSessionAndRedirect);
+router.get('/prototypes/mot-test', motTestResultsController.getMOTResults);
+router.get('/prototypes/mot-test/comment', motTestResultsController.getAddTesterComment);
+router.post('/prototypes/mot-test/comment', motTestResultsController.postAddTesterComment);
+router.get('/prototypes/mot-test/comment/edit', motTestResultsController.getEditTesterComment);
+router.post('/prototypes/mot-test/comment/edit', motTestResultsController.postEditTesterComment);
+router.post('/prototypes/mot-test/comment/remove/', motTestResultsController.destorySession);
 router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
 
 // Create route from view path

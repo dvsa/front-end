@@ -8,29 +8,249 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Leave detailed feedback') }}
+    {{ components.pageHeading('Leave feedback') }}
 
-    {% call components.gridRow() %}
+    {% call components.formElement(name='registerDepartment', method='POST', action="#") %}
 
-        {% call components.columnOneThird() %}
+        {% call components.gridRow() %}
 
-            
+            {% call components.columnFull() %}
+
+                <p class="lede">Leave your feedback for [name of course]</p>
+
+                {#<img src="/images/feedback.png" style="display:block;max-width:100%;margin-bottom:30px">#}
+
+            {%- endcall %}
 
         {%- endcall %}
 
-    {%- endcall %}
+        {% call components.gridRow() %}
 
-    {% call components.gridRow() %}
+            {% call components.columnHalf() %}
 
-        {% call components.columnFull() %}
+                <fieldset class="bar-rating u-space-b30">
 
-            <p class="lede">Leave your feedback for [name of course]</p>
+                    <legend class="heading-small">Presentation</legend>
+                    <p>Did you like the way the course was presented?</p>
 
-            <img src="/images/feedback.png" style="display:block;max-width:100%;margin-bottom:30px">
+                    <div class="bar-rating__scale">
+                        <span class="u-float-left">Not for me</span>
+                        <span class="u-float-right">Loved it</span>
+                    </div>
 
-            {% call components.formGroup() %}
+                    <div class="bar-rating__wrapper">
 
-                {{ components.button(text="Leave feedback", group=true, url='/prototypes/learner/v3/actions?action=hasLeftFeedback')}}
+                        <input type="radio" id="starPresentation5" name="ratingPresentation" value="5" class="" />
+                        <label for="starPresentation5" title="I loved it - 5 stars"></label>
+
+                        <input type="radio" id="starPresentation4" name="ratingPresentation" value="4" />
+                        <label for="starPresentation4" title="It was pretty good - 4 stars"></label>
+
+                        <input type="radio" id="starPresentation3" name="ratingPresentation" value="3" />
+                        <label for="starPresentation3" title="It was OK - 3 stars"></label>
+
+                        <input type="radio" id="starPresentation2" name="ratingPresentation" value="2" />
+                        <label for="starPresentation2" title="I didn't enjoy it - 2 stars"></label>
+
+                        <input type="radio" id="starPresentation1" name="ratingPresentation" value="1" />
+                        <label for="starPresentation1" title="This was definitely not for me - 1 star"></label>
+
+                    </div>
+
+                    <div class="bar-rating__1to5">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </div>
+
+                </fieldset>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnHalf() %}
+
+                    <fieldset class="bar-rating u-space-b30">
+
+                        <legend class="heading-small">Content</legend>
+                        <p>Was the course content comprehensive enough for you? </p>
+
+                        <div class="bar-rating__scale">
+                            <span class="u-float-left">Not at all</span>
+                            <span class="u-float-right">Yes, completely</span>
+                        </div>
+
+                        <div class="bar-rating__wrapper">
+
+                            <input type="radio" id="starContent5" name="ratingContent" value="5" class="" />
+                            <label for="starContent5" title="The content was perfect - 5 stars"></label>
+
+                            <input type="radio" id="starContent4" name="ratingContent" value="4" />
+                            <label for="starContent4" title="It was pretty good - 4 stars"></label>
+
+                            <input type="radio" id="starContent3" name="ratingContent" value="3" />
+                            <label for="starContent3" title="It was OK - 3 stars"></label>
+
+                            <input type="radio" id="starContent2" name="ratingContent" value="2" />
+                            <label for="starContent2" title="It wasn't great - 2 stars"></label>
+
+                            <input type="radio" id="starContent1" name="ratingContent" value="1" />
+                            <label for="starContent1" title="This was definitely not for me - 1 star"></label>
+
+                        </div>
+
+                        <div class="bar-rating__1to5">
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
+                        </div>
+
+                    </fieldset>
+
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+    
+            {% call components.columnHalf() %}
+    
+                <fieldset class="bar-rating u-space-b30">
+    
+                    <legend class="heading-small">Relevance</legend>
+                    <p>Do you think the course delvered the learning outcomes?</p>
+    
+                    <div class="bar-rating__scale">
+                        <span class="u-float-left">Not at all</span>
+                        <span class="u-float-right">Yes, completely</span>
+                    </div>
+    
+                    <div class="bar-rating__wrapper">
+    
+                        <input type="radio" id="starRelevance5" name="ratingRelevance" value="5" class="" />
+                        <label for="starRelevance5" title="Yes completely - 5 stars"></label>
+    
+                        <input type="radio" id="starRelevance4" name="ratingRelevance" value="4" />
+                        <label for="starRelevance4" title="It was pretty good - 4 stars"></label>
+    
+                        <input type="radio" id="starRelevance3" name="ratingRelevance" value="3" />
+                        <label for="starRelevance3" title="It was OK - 3 stars"></label>
+    
+                        <input type="radio" id="starRelevance2" name="ratingRelevance" value="2" />
+                        <label for="starRelevance2" title="It wasn't great - 2 stars"></label>
+    
+                        <input type="radio" id="starRelevance1" name="ratingRelevance" value="1" />
+                        <label for="starRelevance1" title="Not at all - 1 star"></label>
+    
+                    </div>
+    
+                    <div class="bar-rating__1to5">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </div>
+    
+                </fieldset>
+    
+    
+            {%- endcall %}
+    
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnHalf() %}
+
+                <fieldset class="bar-rating u-space-b30">
+
+                    <legend class="heading-small">Interactivity</legend>
+                    <p>Was the course easy to open and use?</p>
+
+                    <div class="bar-rating__scale">
+                        <span class="u-float-left">Not at all</span>
+                        <span class="u-float-right">Yes, completely</span>
+                    </div>
+
+                    <div class="bar-rating__wrapper">
+
+                        <input type="radio" id="starInteractivity5" name="ratingInteractivity" value="5" class="" />
+                        <label for="starInteractivity5" title="Yes, it worked perfectly - 5 stars"></label>
+
+                        <input type="radio" id="starInteractivity4" name="ratingInteractivity" value="4" />
+                        <label for="starInteractivity4" title="I had no problems - 4 stars"></label>
+
+                        <input type="radio" id="starInteractivity3" name="ratingRelevance" value="3" />
+                        <label for="starInteractivity3" title="It seemed OK - 3 stars"></label>
+
+                        <input type="radio" id="starInteractivity2" name="ratingInteractivity" value="2" />
+                        <label for="starInteractivity2" title="It wasn't great - 2 stars"></label>
+
+                        <input type="radio" id="starInteractivity1" name="ratingInteractivity" value="1" />
+                        <label for="starInteractivity1" title="No, it was a horrible experience - 1 star"></label>
+
+                    </div>
+
+                    <div class="bar-rating__1to5">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </div>
+
+                </fieldset>
+
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <fieldset>
+                    <legend class="heading-small">Comments</legend>
+
+                    {% call components.formGroup() %}
+
+                        {{ components.textarea(label="Share your thoughts on this course with other learners (optional)",id='feedbackComments', width='100')}}
+
+                    {%- endcall %}
+
+                </fieldset>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text="Leave feedback", group=true, url='/prototypes/learner/v3/actions?action=hasLeftFeedback')}}
+
+                {%- endcall %}
 
             {%- endcall %}
 

@@ -1,6 +1,7 @@
 {% extends 'layouts/blank.layout.njk' %}
 {% set pageTitle = 'Basic fire safety - Civil Service Learning Platform' %}
 {% set resourceType = resourceType if resourceType %}
+{% set showMeTheScormScreenShot = showMeTheScormScreenShot if showMeTheScormScreenShot %}
 {% block content %}
     <style>
         body {
@@ -39,6 +40,12 @@
         <a href="/prototypes/learner/v3/actions?action=completeFireTraining&id=15" id="" class="massive-button"><span>&#10554;</span> Exit</a>
     </div>
 
-    <iframe src="https://csl-learning-content.s3.eu-west-2.amazonaws.com/0x394/index.htm" height="100%" width="100%" frameborder="0" id="fireSafetyFrame"></iframe>
+    {% if showMeTheScormScreenShot %}
+        <div class="scorm-screenshot">
+            <img src="/images/scorms/scormtastic.jpg" style="width:100%;">
+        </div>
+    {% else %}
+        <iframe src="https://csl-learning-content.s3.eu-west-2.amazonaws.com/0x394/index.htm" height="100%" width="100%" frameborder="0" id="fireSafetyFrame"></iframe>
+    {% endif %}
 
 {% endblock %}

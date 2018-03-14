@@ -3,10 +3,13 @@
 
 // GET
 export function basicFireSafetyGet(req, res) {
-  let viewData, signinError;
+  let viewData, signinError, showMeTheScormScreenShot;
+
+  showMeTheScormScreenShot = req.session.showMeTheScormScreenShot;
 
   viewData = {
     signinError,
+    showMeTheScormScreenShot,
   };
 
   return res.render('prototypes/learner/v3/scorms/basic-fire-safety/index', viewData);

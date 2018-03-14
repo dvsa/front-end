@@ -30,6 +30,28 @@
             If you want to get rid of everything and start again, then <a href="/prototypes/learner/v3/config?clearSession=true">clear v3 session</a>.
         </p>
 
+        <fieldset class="u-space-b30">
+
+            <legend class="heading-small">Do you want to load the proper SCORM package?</legend>
+
+            <div class="multiple-choice">
+                <input id="scorm1" type="radio" name="scormConfig" value="bringItOn" checked="checked">
+                <label for="scorm1">
+                    Yes, bring it on!
+                    <span class="form-hint">A snip, at circa 10MB</span>
+                </label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="scorm2" type="radio" name="scormConfig" value="hellNo">
+                <label for="scorm2">
+                    Save me, I can't take it.
+                    <span class="form-hint">A very sensible 1MB~ish</span>
+                </label>
+            </div>
+
+        </fieldset>
+
         <fieldset class="u-space-b30 {% if configError %} form-group-error {% endif %}">
 
             <legend class="heading-small"><strike>Where do you want to display the stars?</strike> <br>Stars disabled everywhere by default in this version</legend>

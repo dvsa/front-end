@@ -1,22 +1,20 @@
-// $bar-width: 47px;
 $bar-width: 51px;
 $bar-height: 16px;
+$wrapper-width: 275px;
+
 .bar-rating {
   float: left;
-  // background-color: #c0c0c0;
-
 
   &__scale {
     height: 24px;
     clear: both;
-    max-width:275px;
-
+    max-width: $wrapper-width;
   }
 
   &__1to5 {
     height: 24px;
     clear: both;
-    max-width:275px;
+    max-width: $wrapper-width;
 
     ul {
       text-align: center;
@@ -30,46 +28,33 @@ $bar-height: 16px;
   }
 
   &__wrapper {
-    width: 100%;
-    max-width:275px;
+    width: $wrapper-width;
     height: $bar-height;
     clear: both;
-    // border: 1px solid green;
     padding:10px 0;
-    //background-color: #f1f1f1;
 
     & > input {
       display: none;
     }
 
-    & label {
+    & > label {
       position: relative;
-      //width: 18%;
-      // min-width: $bar-width;
       width: $bar-width;
       height: $bar-height;
       margin-right:4px;
       background-color: #f3f3f3;
-
-    }
-
-    & label:before {
-      position: absolute;
-      // display: block;
-      display: inline-block;
-      content: " ";
-      // min-width: $bar-width - 1;
-      // width: 18%;
-      width: $bar-width - 1;
-      height: $bar-height - 1;
-      border: 1px solid #333;
-      border-radius: 2px;
-      cursor: pointer;
-    }
-
-    & > label {
-      color: #ddd;
       float: right;
+
+      &:before {
+        position: absolute;
+        display: inline-block;
+        content: " ";
+        width: $bar-width - 1;
+        height: $bar-height - 1;
+        border: 1px solid #333;
+        border-radius: 1px;
+        cursor: pointer;
+      }
     }
 
     & > input:checked ~ label, /* show gold block when clicked */

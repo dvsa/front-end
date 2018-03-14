@@ -11,10 +11,13 @@ exports.scormCompleteGet = scormCompleteGet;
 
 // GET
 function basicFireSafetyGet(req, res) {
-  let viewData, signinError;
+  let viewData, signinError, showMeTheScormScreenShot;
+
+  showMeTheScormScreenShot = req.session.showMeTheScormScreenShot;
 
   viewData = {
-    signinError
+    signinError,
+    showMeTheScormScreenShot
   };
 
   return res.render('prototypes/learner/v3/scorms/basic-fire-safety/index', viewData);

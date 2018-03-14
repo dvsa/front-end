@@ -26,14 +26,15 @@ function configGet(req, res) {
 }
 
 function configPost(req, res) {
-  const { regConfig, clearSession } = req.body;
+  const { regConfig, clearSession, scormConfig } = req.body;
 
   console.log('regConfig');
-  let showAllStars, hideDetailStars, hideHomeStars;
+  let showAllStars, hideDetailStars, hideHomeStars, showMeTheScormScreenShot;
 
   showAllStars = false;
   hideDetailStars = true;
   hideHomeStars = true;
+  showMeTheScormScreenShot = false;
 
   // all | detailAndhome |  home
   if (regConfig == 'all') {
@@ -48,6 +49,11 @@ function configPost(req, res) {
   req.session.showAllStars = showAllStars;
   req.session.hideDetailStars = hideDetailStars;
   req.session.hideHomeStars = hideHomeStars;
+
+  if (scormConfig == 'hellNo') {
+    showMeTheScormScreenShot = true;
+  }
+  req.session.showMeTheScormScreenShot = showMeTheScormScreenShot;
 
   res.local = {
     testingLocals: 'testing 123'

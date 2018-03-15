@@ -1,0 +1,47 @@
+{% macro gridRow() %}
+
+  <div class="grid-row">
+    {{ caller() }}  
+  </div>
+
+{% endmacro %}
+
+{% macro columnFull() %}
+
+  <div class="column-full">
+    {{ caller() }}
+  </div>
+
+{% endmacro %}
+
+{% macro columnHalf() %}
+
+  <div class="column-one-half">
+    {{ caller() }}
+  </div>
+
+{% endmacro %}
+
+{% macro columnOneThird() %}
+
+  <div class="column-one-third">
+    {{ caller() }}
+  </div>
+
+{% endmacro %}
+
+{% macro columnTwoThirds() %}
+
+  <div class="column-two-thirds">
+    {{ caller() }}
+  </div>
+
+{% endmacro %}
+
+{% macro columnOneQuarter() %}
+
+  <div class="column-one-quarter">
+    {{ caller() }}
+  </div>
+
+{% endmacro %}

@@ -1,0 +1,61 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Report MOT fraud – MOT fraud' %}
+
+{% set errors = {
+    'garageOrPersonName': 'Name of the garage or person must be fewer than XX characters',
+    'garageOrPersonAddress': 'Use fewer than XX characters to describe the location',
+    'regNo': 'Registration must be shorter than 14 characters',
+    'aboutIncident': 'Use fewer than XXX characters to describe the incident'
+  }
+%}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/prototypes/report-fraud/report', back=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Report MOT fraud') }}
+
+      <div class='error-summary' role='alert' aria-labelledby='error-summary-heading' tabindex='-1'>
+
+        <h2 class='heading-medium error-summary-heading' id='error-summary-heading'>There was a problem</h2>
+
+        <ul class='error-summary-list'>
+
+          {% for fieldId, errorMessage in errors %}
+
+          <li>
+
+            <a href="#{{ fieldId }}">{{ errorMessage }}</a>
+
+          </li>
+
+          {% endfor %}
+          
+        </ul>
+
+      </div>
+
+      {% call components.form(action='/prototypes/report-fraud/confirmation', method='GET') %}
+        
+        {{ components.field(label='Name of the garage or person involved', labelBold=true, id='garageOrPersonName', group=true, error=errors.garageOrPersonName) }}
+
+        {{ components.field(label='Address of the garage or person involved', labelBold=true, id='garageOrPersonAddress', hint='Include at least the street and town', group=true, error=errors.garageOrPersonAddress) }}
+
+        {{ components.field(label='Registration number of the vehicle involved', labelBold=true, id='regNo', hint='For example, CU57ABC', group=true, error=errors.regNo) }}
+
+        {{ components.textarea(label='About the incident', labelBold=true, id='aboutIncident', rows=6, hint='Give a detailed description of what happened', group=true, error=errors.aboutIncident) }}
+
+        {{ components.button(text='Submit') }}
+
+      {%- endcall %}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

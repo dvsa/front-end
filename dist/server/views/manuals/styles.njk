@@ -1,0 +1,420 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOT Manuals - Styles' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'MOT Manuals', url: '/manuals' },
+  { text: 'Styles' }
+] %}
+
+{% block content %}
+
+  {{ components.breadcrumb(items=breadcrumbItems) }}
+
+  {{ components.pageHeading(heading='Manuals', secondary='GOV.UK elements') }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+      <h2 class="heading-medium">Headings</h2>
+
+      <h1 class="heading-large">Heading h1</h1>
+      <p class="dev-small">Class: <code>heading-large</code></p>
+
+      <h2 class="heading-medium">Heading h2</h2>
+      <p class="dev-small">Class: <code>heading-medium</code></p>
+
+      <h3 class="heading-small">Heading h3</h3>
+      <p class="dev-small">Class: <code>heading-small</code></p>
+
+      <h4 class="heading-contents">Heading h4</h4>
+      <p class="dev-small">Class: <code>heading-contents</code></p>
+
+      <h5 class="heading-subtle">Heading h5: heading-subtle</h5>
+      <p class="dev-small">Class: <code>heading-subtle</code></p>
+
+
+      <h2 class="heading-medium">Text content</h2>
+
+      <p>This paragraph contains some text <strong>that has been made bold</strong>  to make it stand out from the rest of the tet surrounding it</p>
+      <p class="dev-small">Tag: <code>strong</code></p>
+      <p>This is another paragraph with some text that <em>has been made italic</em> to give it a little more emphasis from the rest of the text.</p>
+      <p class="dev-small">Tag: <code>em</code></p>
+      <p>Example of text<sub>sub</sub>, and some text<sup>sup</sup> (this is with tags).</p>
+      <p>Example of text<span class="sub">sub</span>, and some text<span class="sup">sup</span> (this is with classes).</p>
+      <p class="dev-small">
+        Tag: <code>sub</code> and <code>sup</code><br>
+        Or, class: <code>sub</code> and <code>sup</code>
+      </p>
+
+
+      <h2 class="heading-medium">Lists</h2>
+
+      <h3 class="heading-small">Unordered list</h3>
+
+      <ul class="list-bullet">
+        <li>If one, it must be mounted centrally, or if adjacent to another lamp, e.g. one dipped beam lamp and one main beam lamp, they must be mounted symmetrically about the centre.</li>
+        <li>If two, they must be symmetrically mounted</li>
+        <li>If the maximum vehicle width exceeds 1300mm, two dipped and main beam headlamps are required (1700mm for motorcycle derived tricycles)</li>
+      </ul>
+      <p class="dev-small">Class: <code>list-bullet</code></p>
+
+      <h3 class="heading-small">Unordered list with Mega Nesting&trade;</h3>
+
+      <ul class="list-bullet">
+        <li>item </li>
+        <li>item </li>
+        <li>
+            item
+          <ul>
+            <li>item </li>
+            <li>item </li>
+            <li>item </li>
+            <li>item </li>
+            <li>item </li>
+            <li>
+                item
+                <ul>
+                  <li>item </li>
+                  <li>item </li>
+                  <li>item </li>
+                  <li>item </li>
+                  <li>item </li>
+                  <li>item </li>
+                  <li>item </li>
+                </ul>
+            </li>
+            <li>item </li>
+          </ul>
+        </li>
+        <li>item </li>
+        <li>item </li>
+        <li>item </li>
+        <li>item </li>
+      </ul>
+
+      <h3 class="heading-small">Ordered list, numbered</h3>
+
+      <ol class="list-number">
+        <li>If one, it must be mounted centrally, or if adjacent to another lamp, e.g. one dipped beam lamp and one main beam lamp, they must be mounted symmetrically about the centre.</li>
+        <li>If two, they must be symmetrically mounted</li>
+        <li>If the maximum vehicle width exceeds 1300mm, two dipped and main beam headlamps are required (1700mm for motorcycle derived tricycles)</li>
+      </ol>
+      <p class="dev-small">Class: <code>list-number</code></p>
+
+      <h3 class="heading-small">Nested, ordered list, lettered and Roman</h3>
+
+      <ol class="list-alpha" type="a">
+        <li>A headlamp:
+          <ol class="list-roman" type="i">
+            <li>with up to &half; light sources not functioning in the case of LED</li>
+            <li>missing, inoperative or more than &half; not functioning in the case of LED.</li>
+          </ol>
+        </li>
+        <li>If two, they must be symmetrically mounted</li>
+        <li>If the maximum vehicle width exceeds 1300mm, two dipped and main beam headlamps are required (1700mm for motorcycle derived tricycles)</li>
+      </ol>
+      <p class="dev-small">Class: <code>list-alpha</code></p>
+      <p class="dev-small">Class: <code>list-roman</code></p>
+
+      <h2 class="heading-medium">Tables</h2>
+
+      <h3 class="heading-small">Very plain table</h3>
+
+      <table class="table--top">
+        <thead>
+          <tr>
+            <th>Deficiency</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Headlamp ‘on’ switch does not operate in accordance with the requirements.</td>
+            <td>Minor</td>
+          </tr>
+          <tr>
+            <td>Headlamp ‘dip’ switch does not operate in accordance with the requirements.</td>
+            <td>Major</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="heading-small">Very plain table with listed items</h3>
+
+      <table class="table--top">
+        <thead>
+          <tr>
+            <th>Deficiency</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <ol class="list-alpha">
+                <li>
+                  Headlamp cleaning device:
+                  <ol class="list-roman">
+                    <li>inoperative</li>
+                    <li>inoperative in the case of LED or gas discharge systems (HID)</li>
+                  </ol>
+                </li>
+              </ol>
+            </td>
+            <td>
+              <br>
+              Minor<br>
+              Major
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="heading-small">Lists with items in different rows, but that look like a single list.</h3>
+      <table class="table table--top">
+        <thead>
+          <tr>
+            <th class="vertically-aligned vertically-aligned"><span class="bold">Deficiency</span></th>
+            <th class="vertically-aligned"><span class="bold">Category</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="borderless">
+            <td class="borderless">
+              <ol class="list-alpha">
+                <li>Low pressure warning gauge or indicator:</li>
+              </ol>
+            </td>
+            <td class="borderless"></td>
+          </tr>
+          <tr class="borderless">
+            <td class="borderless no-top-border">
+              <ol class="list-roman">
+                <li>malfunctioning or defective</li>
+              </ol>
+            </td>
+            <td class="borderless no-top-border">Minor</td>
+          </tr>
+          <tr>
+            <td class="no-top-border">
+              <ol class="list-roman" start="2">
+                <li>not identifying low pressure.</li>
+              </ol>
+            </td>
+            <td class="no-top-border">Major</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3 class="heading-small">Very plain table with split lists</h3>
+      <table class="table--top">
+        <thead>
+          <tr>
+            <th>Deficiency</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <ol class="list-alpha">
+                <li>A lamp missing or inoperative.</li>
+              </ol>
+            </td>
+            <td>Major</td>
+          </tr>
+          <tr>
+            <td>
+              <ol class="list-alpha" start="2">
+                <li>Defective lens.</li>
+              </ol>
+            </td>
+            <td>Major</td>
+          </tr>
+          <tr>
+            <td>
+              <ol class="list-alpha" start="3">
+                <li>
+                  Lamp:
+                  <ol class="list-roman">
+                    <li>not securely attached</li>
+                    <li>likely to become detached</li>
+                  </ol>
+                </li>
+              </ol>
+            </td>
+            <td>
+              <br>
+              Minor<br>
+              Major
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="heading-small">Hideous table</h3>
+      <table class="table--top">
+        <thead>
+          <tr>
+            <th class=""><span class="bold">Vehicle Type</span></th>
+            <th class=""><span class="bold">Date of First Use</span></th>
+            <th class=""><span class="bold">Requirements</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class="">Vehicle Type</th>
+            <th class="">Date of First Use</th>
+            <th class="">Requirements</th>
+          </tr>
+          <tr>
+            <td class="">Passenger vehicles with less than 8 passenger seats</td>
+            <td class="">First used before 1 August 1978</td>
+            <td class="">At least one mirror/device in any of the above positions</td>
+          </tr>
+          <tr>
+            <td class="">Any passenger vehicle (excluding buses and minibuses)</td>
+            <td class="">First used on or after 1 August 1978</td>
+            <td class="" rowspan="4">Two mirrors/devices, one of which must be in position ‘a’.</td>
+          </tr>
+          <tr>
+            <td class="">Passenger vehicles with 8 or more passenger seats (excluding buses and minibuses)</td>
+            <td class="" rowspan="2">Any age</td>
+          </tr>
+          <tr>
+            <td class="">Goods vehicle</td>
+          </tr>
+          <tr>
+            <td class="" rowspan="2">Buses and minibuses</td>
+            <td class="">First used before 1 August 1983</td>
+          </tr>
+          <tr>
+            <td class="">First used on or after 1 August 1983</td>
+            <td class="">An exterior mirror/device fitted on both the offside and the nearside (‘a’ and ‘b’).</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <h3 class="heading-small">Plain table with borderless option</h3>
+      <table class="table--top">
+        <thead>
+          <tr>
+            <th>Deficiency</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>An normal item</td>
+            <td>Major</td>
+          </tr>
+          <tr class="borderless">
+            <td>An item with "children" in borderless rows</td>
+            <td>Major</td>
+          </tr>
+          <tr class="borderless">
+            <td>A "child" item related to the above</td>
+            <td>Minor</td>
+          </tr>
+          <tr>
+            <td>A "child" item related to the above</td>
+            <td>Minor</td>
+          </tr>
+          <tr>
+            <td>Back to normal</td>
+            <td>Minor</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 class="heading-medium">Images amongst some content</h2>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/section8_flowDiagram.png" align="Section 8 emissions" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. Facilisis dictum auctor fermentum sapien egestas non, morbi nam sociosqu phasellus ornare integer, facilisi rutrum dui hac habitant. Sociis morbi phasellus leo habitasse vivamus pulvinar lacus ac orci, per elementum dis pellentesque facilisi nunc curae mollis etiam class, ad et conubia accumsan nec blandit turpis in.</p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/image1.png" alt="image one" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/image2.png" alt="image two" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <ul class="list-bullet">
+        <li>If one, it must be mounted centrally, or if adjacent to another lamp, e.g. one dipped beam lamp and one main beam lamp, they must be mounted symmetrically about the centre.</li>
+        <li>If two, they must be symmetrically mounted</li>
+        <li>If the maximum vehicle width exceeds 1300mm, two dipped and main beam headlamps are required (1700mm for motorcycle derived tricycles)</li>
+      </ul>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/image3.png" alt="image three" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/section1_brake_efficiency.png" alt="image 4" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/section1_brake_imbalance.png" alt="image 5" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/section8_carbon_monoxide.png" alt="image 6" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/section8_hydrocarbon.png" alt="image 7" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <div class="image__wrapper">
+        <span class="image__heading">A suitable title for the image</span>
+        <img src="/images/manuals/section8_actual_value.png" alt="image 8" class="image">
+        <span class="image__caption">Meaningful caption</span>
+      </div>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. </p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+{% endblock %}

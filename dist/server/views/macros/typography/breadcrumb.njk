@@ -1,0 +1,19 @@
+{% macro breadcrumb(items=false) %}
+  {% if items %}
+    <div class="breadcrumbs">
+      <ol>
+          {% for item in items %}
+          <li>
+            {% if item.url %}
+            <a href="{{ item.url }}">
+            {% endif %}
+              {{ item.text }}
+            {% if item.url %}
+            </a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ol>
+    </div>
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,10 @@
+{% macro heading(text='', secondary=false, tag='h1', size='large', url=false, extraClass) %}
+  {% if text %}
+    <{{ tag }} class="heading {{ 'heading--' + size if size }} {{ extraClass if extraClass }} heading-{{ size }}">
+      {% if secondary %}
+        <span class="heading__secondary">{{ secondary }}</span>
+      {% endif %}
+      {{ '<a href="' + url +'">' + text + '</a>' if url else text }}
+    </{{ tag }}>
+  {% endif %}
+{% endmacro %}

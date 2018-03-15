@@ -1,0 +1,18 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Headings' %}
+
+{% block content %}
+
+  {{ components.heading(text='Page Heading with Sub-heading', tag='h2', size='medium') }}
+
+  {{ components.pageHeading(heading='Main Heading', secondary='Secondary heading text') | prism }}
+
+  {{ components.heading(text='Headings', tag='h2', size='medium') }}
+  
+  {{ components.heading(text='A 48px Bold heading',tag='h1', size='xlarge') | prism }}
+  {{ components.heading(text='A 36px Bold heading', tag='h2', size='large') | prism }}
+  {{ components.heading(text='A 24px Bold heading', tag='h3', size='medium') | prism }}
+  {{ components.heading(text='A 19px Bold heading', tag='h4', size='small') | prism }}
+
+{% endblock %}

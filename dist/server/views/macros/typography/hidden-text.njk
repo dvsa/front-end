@@ -1,0 +1,11 @@
+{% macro hiddenText(summary=false) %}
+  {% if summary %}
+    <details>
+
+      <summary><span class="summary">{{ summary }}</span></summary>
+
+      <div class="panel panel-border-narrow">{{ caller() }}</div>
+
+    </details>
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,58 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'DVSA - Ajax Browse' %}
+
+{% block content %}
+
+  <script type="text/javascript">
+  window.__AJAX_BROWSE__ = {{ initialState | dump }};
+  </script>
+
+  {% call components.gridRow() %}
+    
+    {% call components.columnFull() %}
+
+      <br class="clearfix">
+
+      {{
+        components.dvsaBanner(
+          mainText='Prototype Preview',
+          secondaryText='The design on this user journey is not final yet',
+          type='error'
+        )
+      }}
+
+      {{ components.pageHeading(heading='Ajax Browse', secondary='DVSA Front-End') }}
+
+      <div id="ajax-browse" class="ajax-browse ajax-browse--back-button ajax-browse--1-blocks" data-endpoint-url="{{ initialState.endpointURL }}">
+        <div class="ajax-browse__back-wrapper">
+          <a class="ajax-browse__back-button button">Back</a>
+        </div>
+        
+        <div class="ajax-browse__inner">
+          <div class="ajax-browse__block">
+            <div class="ajax-browse__block-inner">
+              <ul class="ajax-browse__list">
+                {% for item in items %}
+                <li class="ajax-browse__item">
+                  <a href="{{ item.href }}" class="ajax-browse__link">
+                    <span class="ajax-browse__link-heading">
+                      {{ item.heading }}
+                    </span>
+                    {% if item.description %}
+                    <span class="ajax-browse__link-description">
+                      {{ item.description }}
+                    </span>
+                    {% endif %}
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+        </div>
+      </div>
+    {%- endcall %}
+
+  {%- endcall %}
+
+{% endblock %}

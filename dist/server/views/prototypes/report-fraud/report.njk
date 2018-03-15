@@ -1,0 +1,33 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Report MOT fraud – MOT fraud' %}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/prototypes/report-fraud/', back=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Report MOT fraud') }}
+
+      {% call components.form(action='/prototypes/report-fraud/report-haserrors', method='GET') %}
+        
+        {{ components.field(label='Name of the garage or person involved', labelBold=true, id='garageOrPersonName', group=true) }}
+
+        {{ components.field(label='Address of the garage or person involved', labelBold=true, id='garageOrPersonAddress', hint='Include at least the street and town', group=true) }}
+
+        {{ components.field(label='Registration number of the vehicle involved', labelBold=true, id='regNo', hint='For example, CU57ABC', group=true) }}
+
+        {{ components.textarea(label='About the incident', labelBold=true, id='aboutIncident', rows=6, hint='Give a detailed description of what happened', group=true) }}
+
+        {{ components.button(text='Submit') }}
+
+      {%- endcall %}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

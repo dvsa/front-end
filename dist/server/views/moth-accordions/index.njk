@@ -1,0 +1,13 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOTH Accordions - Version List' %}
+
+{% block content %}
+
+  {{ components.pageHeading('MOTH Accordions', 'DVSA Front-End') }}
+
+  {{ components.list(items=[
+    { text: 'Version 1', url: '/moth-accordions/v1' }
+  ]) }}
+  
+{% endblock %}

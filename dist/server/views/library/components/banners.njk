@@ -1,0 +1,23 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Banners' %}
+
+{% block content %}
+
+  {{ components.heading(text='Default banner', tag='h2', size='medium') }}
+
+  {{ components.dvsaBanner(mainText='This is my rifle', secondaryText='There are many like it, but this one is mine.') | prism }}
+
+  {{ components.heading(text='Info banner', tag='h2', size='medium') }}
+
+  {{ components.dvsaBanner(mainText='This is a draft copy of the MOT manual', secondaryText='The final version is due to be released in XYV 2018', type="info") | prism }}
+
+  {{ components.heading(text='Error banner', tag='h2', size='medium') }}
+
+  {{ components.dvsaBanner(mainText='This is the end', secondaryText='Of our elaborate plans, the end', type="error") | prism }}
+
+  {{ components.heading(text='Confirmation banner', tag='h2', size='medium') }}
+
+  {{ components.dvsaBanner(mainText='I say yeh, yeh', secondaryText='That\'s what I say I say yeh, yeh', type="confirmation") | prism }}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Manuals Links' %}
+
+{% block content %}
+
+  {{ components.heading(text='Manuals Links', tag='h1', size='medium') }}
+
+  {{ components.manualsLinks(items=[
+    {
+      text: 'Identification of the Vehicle',
+      url: '#',
+      childItems: [
+        {
+          text: 'Registration plates',
+          url: '#'
+        },
+        {
+          text: 'Vehicle identification number',
+          url: '#'
+        }
+      ]
+    }
+  ]) | prism }}
+
+{% endblock %}

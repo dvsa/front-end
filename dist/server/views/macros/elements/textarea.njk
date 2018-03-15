@@ -1,0 +1,25 @@
+{% from "macros/elements/label.njk" import formLabel %}
+
+{% macro textarea(label='', labelBold=false, id='', name='', rows=5, hint=false, error=false, width=false, group=false, value='') %}
+
+  {% if width == 12.5 %}
+    {% set widthClass = 'form-control-1-8' %}
+  {% elif width == 25 %}
+    {% set widthClass = 'form-control-1-4' %}
+  {% elif width == 33 %}
+    {% set widthClass = 'form-control-1-3' %}
+  {% elif width == 50 %}
+    {% set widthClass = 'form-control-1-2' %}
+  {% elif width == 66 %}
+    {% set widthClass = 'form-control-2-3' %}
+  {% elif width == 75 %}
+    {% set widthClass = 'form-control-3-4' %}
+  {% else %}
+    {% set widthClass = false %}
+  {% endif %}
+  
+  {% if group or error %}<div class="form-group {{ 'form-group-error' if error }}">{% endif %}
+  {{ formLabel(label=label, id=id, bold=labelBold, hint=hint, error=error) }}
+  <textarea class="form-control {{ widthClass if widthClass }}" name="{{ name if name else id }}" {{ 'id="' + id + '"' if id }} rows="{{ rows }}">{{ value }}</textarea>
+  {% if group or error %}</div>{% endif %}
+{% endmacro %}

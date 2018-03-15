@@ -1,0 +1,46 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Annual Assessment Admin Tool' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Annual Assessment Admin Tool' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Annual assessment admin tool', secondary='MOT testing service') }}
+
+      <div class='text u-clearfix'>
+
+        {{ components.paragraph(text='Manage testers who have not done an annual assessment or added their results', lead=true) }}
+
+        {{ components.heading(text='Download the list of testers', size='medium', tag='h2') }}
+
+        {{ components.paragraph(text='Check the list of testers who need a reminder notification. This list does not include recently qualified or suspended testers.') }}
+
+        {{ components.link(text='Download a list of testers as a CSV (spreadsheet) file (1KB)', url='#', paragraph=true) }}
+
+        {{ components.heading(text='Send testers a reminder notification', size='medium', tag='h2') }}
+
+        <p>Remind testers that they will need to complete or add their annual assessment before <strong>31 March</strong> or they will be suspended.</p>
+
+        {{ components.link(text='Send reminder notification', url='/prototypes/annual-assessment-admin-tool/send-reminders/', paragraph=true) }}
+
+        {{ components.heading(text='Suspend testers', size='medium', tag='h2')}}
+
+        <p>Suspend the testers who have not completed an annual assessment in their qualified group or did not achieve the <strong>60%</strong> pass rate.</p>
+
+        {{ components.link(text='Suspend testers', url='/prototypes/annual-assessment-admin-tool/suspend-testers', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Templates' %}
+
+{% block content %}
+
+  {{ components.pageHeading(heading='Manuals', secondary='GOV.UK elements') }}
+  {{ components.paragraph(text='Various templates', lead=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.list(items=[
+        { text: 'Manuals - all the styles', url: '/manuals/styles' },
+        { text: 'Manuals - all menus', url: '/manuals/menu' },
+        { text: 'Manuals - example page', url: '/manuals/page' }
+      ], type='bullet')}}
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+{% endblock %}

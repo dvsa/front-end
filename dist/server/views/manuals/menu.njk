@@ -1,0 +1,376 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOT Manuals - Menu' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'MOT Manuals', url: '/manuals' },
+  { text: 'Menu' }
+] %}
+
+{% block content %}
+
+  {{ components.dvsaBanner(mainText='This is a draft - the language is being reviewed', secondaryText='The final version will be released by 1 March 2018', type="info") }}
+
+  {% call components.gridRow() %}
+
+  {% call components.columnTwoThirds() %}
+
+    {{ components.pageHeading(heading='Manuals', secondary='GOV.UK elements') }}
+
+    {% call components.gridRow() %}
+      {% call components.columnHalf() %}
+
+        {{ components.manualsLinks(items=[
+          {
+            text: 'Identification of the Vehicle',
+            url: 'Section-0-Identification-of-the-vehicle.html',
+            childItems: [
+              {
+                text: 'Registration plates',
+                url: 'Section-0-Identification-of-the-vehicle.html#section_0.1'
+              },
+              {
+                text: 'Vehicle identification number',
+                url: 'Section-0-Identification-of-the-vehicle.html#section_0.2'
+              }
+            ]
+          },
+          {
+            text: 'Brakes',
+            url: 'Section-1-Brakes.html',
+            childItems: [
+              {
+                text: 'Condition and operation',
+                url: 'Section-1-Brakes.html#section_1.1'
+              },
+              {
+                text: 'Service brake performance and efficiency',
+                url: 'Section-1-Brakes.html#section_1.2'
+              },
+              {
+                text: 'Secondary brake performance and efficiency',
+                url: 'Section-1-Brakes.html#section_1.3'
+              },
+              {
+                text: 'Parking brake performance and efficiency',
+                url: 'Section-1-Brakes.html#section_1.4'
+              },
+              {
+                text: 'Additional braking device (retarder) performance',
+                url: 'Section-1-Brakes.html#section_1.5'
+              },
+              {
+                text: 'Anti-lock braking system',
+                url: 'Section-1-Brakes.html#section_1.6'
+              },
+              {
+                text: 'Electronic braking system',
+                url: 'Section-1-Brakes.html#section_1.7'
+              },
+              {
+                text: 'Brake fluid',
+                url: 'Section-1-Brakes.html#section_1.8'
+              }
+            ]
+          },
+          {
+            text: 'Steering',
+            url: 'Section-2-Steering.html',
+            childItems: [
+              {
+                text: 'Mechanical condition',
+                url: 'Section-2-Steering.html#section_2.1'
+              },
+              {
+                text: 'Steering wheel and column or handlebar, forks and yokes',
+                url: 'Section-2-Steering.html#section_2.2'
+              },
+              {
+                text: 'Steering play',
+                url: 'Section-2-Steering.html#section_2.3'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Electronic power steering',
+                url: 'Section-2-Steering.html#section_2.6'
+              }
+            ]
+          },
+          {
+            text: 'Visibility',
+            url: 'Section-3-Visibility.html',
+            childItems: [
+              {
+                text: 'Field of vision',
+                url: 'Section-3-Visibility.html#section_3.1'
+              },
+              {
+                text: 'Condition of glass',
+                url: 'Section-3-Visibility.html#section_3.2'
+              },
+              {
+                text: 'View of rear',
+                url: 'Section-3-Visibility.html#section_3.3'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Windscreen wipers',
+                url: 'Section-3-Visibility.html#section_3.6'
+              },
+              {
+                text: 'Windscreen washers',
+                url: 'Section-3-Visibility.html#section_3.7'
+              }
+            ]
+          },
+          {
+            text: 'Lamps, reflectors and electrical equipment',
+            url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html',
+            childItems: [
+              {
+                text: 'Headlamps',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.1'
+              },
+              {
+                text: 'Front and rear position lamps, end outline marker lamps and daytime running lamps',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.2'
+              },
+              {
+                text: 'Stop lamps',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.3'
+              },
+              {
+                text: 'Direction indicators and hazard warning lamps',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.4'
+              },
+              {
+                text: 'Front and rear fog lamps',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.5'
+              },
+              {
+                text: 'Reversing lamps',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.6'
+              },
+              {
+                text: 'Rear registration plate lamps',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.7'
+              },
+              {
+                text: 'Rear reflectors',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.8'
+              },
+              {
+                text: 'Tell-tales mandatory for lighting equipment',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.9'
+              },
+              {
+                text: 'Trailer electrical socket',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.10'
+              },
+              {
+                text: 'Electrical wiring',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.11'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Battery(ies)',
+                url: 'Section-4-Lamps-reflectors-and-electrical-equipment.html#section_4.13'
+              }
+            ]
+          }
+        ]) }}
+
+      {%- endcall %}
+
+      {% call components.columnHalf() %}
+
+        {% set manualLinksColumnTwo = [
+          {
+            text: 'Axles, wheels, tyres and suspension',
+            url: 'Section-5-Axles-Wheels-Tyres-and-Suspension.html',
+            childItems: [
+              {
+                text: 'Axles',
+                url: 'Section-5-Axles-Wheels-Tyres-and-Suspension.html#section_5.1'
+              },
+              {
+                text: 'Wheels and tyres',
+                url: 'Section-5-Axles-Wheels-Tyres-and-Suspension.html#section_5.2'
+              },
+              {
+                text: 'Suspension',
+                url: 'Section-5-Axles-Wheels-Tyres-and-Suspension.html#section_5.3'
+              }
+            ]
+          },
+          {
+            text: 'Body, structure and attachments',
+            url: 'Section-6-Body-Structure-and-Attachments.html',
+            childItems: [
+              {
+                text: 'Structure and attachments',
+                url: 'Section-6-Body-Structure-and-Attachments.html#section_6.1'
+              },
+              {
+                text: 'Body and interior',
+                url: 'Section-6-Body-Structure-and-Attachments.html#section_6.2'
+              }
+            ]
+          },
+          {
+            text: 'Other equipment',
+            url: 'Section-7-Other-equipment.html',
+            childItems: [
+              {
+                text: 'Seat belts and suplementary restraint systems (SRS)',
+                url: 'Section-7-Other-equipment.html#section_7.1'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Anti-theft device',
+                url: 'Section-7-Other-equipment.html#section_7.3'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Audible warning (Horn)',
+                url: 'Section-7-Other-equipment.html#section_7.7'
+              },
+              {
+                text: 'Speedometer',
+                url: 'Section-7-Other-equipment.html#section_7.8'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Speed limiter (if required)',
+                url: 'Section-7-Other-equipment.html#section_7.10'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Electronic stability control',
+                url: 'Section-7-Other-equipment.html#section_7.12'
+              }
+            ]
+          },
+          {
+            text: 'Nuisance',
+            url: 'Section-8-Nuisance.html',
+            childItems: [
+              {
+                text: 'Noise',
+                url: 'Section-8-Nuisance.html#section_8.1'
+              },
+              {
+                text: 'Exhaust emission',
+                url: 'Section-8-Nuisance.html#section_8.2'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Other environmental items',
+                url: 'Section-8-Nuisance.html#section_8.4'
+              }
+            ]
+          },
+          {
+            text: 'Suplementary tests for buses and coaches',
+            url: 'Section-9-Supplementary-tests-for-buses-and-coaches.html',
+            childItems: [
+              {
+                text: 'Doors',
+                url: 'Section-9-Supplementary-tests-for-buses-and-coaches.html#section_9.1'
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Not in use',
+                url: ''
+              },
+              {
+                text: 'Passenger grab handles',
+                url: 'Section-9-Supplementary-tests-for-buses-and-coaches.html#section_9.6'
+              },
+              {
+                text: 'Steps and stairs',
+                url: 'Section-9-Supplementary-tests-for-buses-and-coaches.html#section_9.7'
+              }
+            ]
+          },
+          {
+            text: 'Seat belt installation checks',
+            url: 'Section-10-Seat-belt-installation-checks.html',
+            childItems: [
+              {
+                text: 'Seatbelts installation guidance notes',
+                url: 'Section-10-Seat-belt-installation-checks.html#section_10.1'
+              },
+              {
+                text: 'Seatbelts installation diagrams',
+                url: 'Section-10-Seat-belt-installation-checks.html#section_10.2'
+              }
+            ]
+          }
+        ] %}
+
+        {{ components.manualsLinks(items=manualLinksColumnTwo, startIndex=5) }}
+
+      {%- endcall %}
+    {%- endcall %}
+
+  {%- endcall %}
+
+  {% call components.columnOneThird() %}
+    {% include './partials/side-nav.njk' %}
+  {%- endcall %}
+
+  {%- endcall %}
+
+{% endblock %}

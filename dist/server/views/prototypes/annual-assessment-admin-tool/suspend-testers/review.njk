@@ -1,0 +1,25 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Suspension success' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      <div class='dvsa-banner dvsa-banner--confirmation u-margin-top-20'>
+
+        <h1 class='dvsa-banner__heading-large'>Testers successfully suspended</h1>
+
+        <p class='dvsa-banner__secondary-text'><strong>10</strong> testers have been suspended from testing</p>
+
+      </div>
+
+      {{ components.link(text='Return to annual assessment admin tool', url='/prototypes/annual-assessment-admin-tool/') }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+{%- endblock %}

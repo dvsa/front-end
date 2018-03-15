@@ -1,0 +1,40 @@
+<header id="global-header" class="with-proposition">
+  <div class="header-wrapper">
+    <div class="header-global">
+      <div class="header-logo">
+        <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+          <img src="/images/gov.uk_logotype_crown_invert_trans.png?0.22.1" width="36" height="32" alt="">
+          GOV.UK
+        </a>
+      </div>
+    </div>
+
+    <div class="header-proposition">
+      <div class="content">
+        <a href="#proposition-links" class="js-header-toggle menu">Menu</a>
+
+        <nav id="proposition-menu">
+          <a href="/" id="proposition-name">
+            DVSA Front-end v{{ repoPackageJSON.version }}
+          </a>
+
+          <ul id="proposition-links">
+            <li>
+              <a href="/">Index</a>
+            </li>
+            <li>
+              <a href="https://github.com/dvsa/front-end">Github</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+{% if not hideLayoutPhaseBanner %}
+  <!-- header-bar -->
+  <div id="global-header-bar"></div>
+  <!-- /header-bar -->
+{% endif %}

@@ -1,0 +1,51 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account - Your details' %}
+
+{% if (errors.day) or (errors.month) or (errors.year) %}
+  {% set dateOfBirthErrorMessage = 'The entered date of birth is invalid' %}
+{% endif %}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/prototypes/create-account/email', back=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Your details', secondary='Create an account') }}
+
+      {% call components.form(action='/prototypes/create-account/details', method='POST') %}
+
+        {% include './partials/form-errors.njk' %}
+
+        {{ components.heading(text='Name', tag='h2') }}
+
+        {{ components.paragraph(text="Enter all of your names in full - don't use initials.", lead=true, limitWidth=true, clearfix=true) }}
+        
+        {{ components.field(label='First name', id='firstname', group=true, width=75, value=values.firstname, error=errors.firstname.msg) }}
+
+        {{ components.field(label='Middle name (optional)', id='middlename', group=true, width=75, value=values.middlename) }}
+
+        {{ components.field(label='Lastname', id='lastname', group=true, width=75, value=values.lastname, error=errors.lastname.msg) }}
+
+        {{ components.heading(text='Date of birth', tag='h2') }}
+
+        {{ components.paragraph(text="This helps DVSA to identify you if you contact them.", lead=true, limitWidth=true, clearfix=true) }}
+        
+        {% call components.formGroup(label='Enter your date of birth', hint='For example, 31 03 2015', id='dateOfBirth', error=dateOfBirthErrorMessage) %}
+          
+          {{ components.formDate(dayError=errors.day.msg, dayValue=values.day, monthError=errors.month.msg, monthValue=values.month, yearError=errors.year.msg, yearValue=values.year) }}
+
+        {%- endcall %}
+
+        {% include './partials/form-submit-button.njk' %}
+
+      {%- endcall %}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

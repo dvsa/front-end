@@ -1,0 +1,7301 @@
+{
+	"data":
+	[
+		{
+			"id": 0,
+			"parent_test_item_category_id": 0,
+			"name": "RFR Home",
+			"description": ""
+		},
+		{
+			"id": 1,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle lighting and signalling",
+			"description": null
+		},
+		{
+			"id": 50,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle steering and suspension",
+			"description": null
+		},
+		{
+			"id": 120,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle brakes",
+			"description": null
+		},
+		{
+			"id": 172,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle tyres and wheels",
+			"description": null
+		},
+		{
+			"id": 195,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle sidecar",
+			"description": null
+		},
+		{
+			"id": 220,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle fuel and exhaust",
+			"description": null
+		},
+		{
+			"id": 240,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle body and structure",
+			"description": null
+		},
+		{
+			"id": 260,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle drive system",
+			"description": null
+		},
+		{
+			"id": 270,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle driving controls",
+			"description": null
+		},
+		{
+			"id": 290,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle reg plates and vin",
+			"description": null
+		},
+		{
+			"id": 501,
+			"parent_test_item_category_id": 0,
+			"name": "Towbars",
+			"description": null
+		},
+		{
+			"id": 5000,
+			"parent_test_item_category_id": 0,
+			"name": "Lamps, Reflectors and Electrical Equipment",
+			"description": null
+		},
+		{
+			"id": 5100,
+			"parent_test_item_category_id": 0,
+			"name": "Steering",
+			"description": null
+		},
+		{
+			"id": 5190,
+			"parent_test_item_category_id": 0,
+			"name": "Suspension",
+			"description": null
+		},
+		{
+			"id": 5430,
+			"parent_test_item_category_id": 0,
+			"name": "Brakes",
+			"description": null
+		},
+		{
+			"id": 5650,
+			"parent_test_item_category_id": 0,
+			"name": "Tyres",
+			"description": null
+		},
+		{
+			"id": 5670,
+			"parent_test_item_category_id": 0,
+			"name": "Road Wheels",
+			"description": null
+		},
+		{
+			"id": 5680,
+			"parent_test_item_category_id": 0,
+			"name": "Seat Belts and Supplementary Restraint Systems",
+			"description": null
+		},
+		{
+			"id": 5690,
+			"parent_test_item_category_id": 0,
+			"name": "Body, Structure and General Items",
+			"description": null
+		},
+		{
+			"id": 5730,
+			"parent_test_item_category_id": 0,
+			"name": "Exhaust, Fuel and Emissions",
+			"description": null
+		},
+		{
+			"id": 5750,
+			"parent_test_item_category_id": 0,
+			"name": "Drivers View of the Road",
+			"description": null
+		},
+		{
+			"id": 5780,
+			"parent_test_item_category_id": 0,
+			"name": "Driving Controls and Speed Limiters",
+			"description": null
+		},
+		{
+			"id": 5785,
+			"parent_test_item_category_id": 0,
+			"name": "Registration Plates and VIN",
+			"description": null
+		},
+		{
+			"id": 5800,
+			"parent_test_item_category_id": 0,
+			"name": "Items Not Tested",
+			"description": null
+		},
+		{
+			"id": 9000,
+			"parent_test_item_category_id": 0,
+			"name": "Motor tricycles and quadricycles",
+			"description": null
+		},
+		{
+			"id": 10000,
+			"parent_test_item_category_id": 0,
+			"name": "Non-component advisories",
+			"description": ""
+		},
+		{
+			"id": 20000,
+			"parent_test_item_category_id": 0,
+			"name": "Identification of the vehicle",
+			"description": null
+		},
+		{
+			"id": 20003,
+			"parent_test_item_category_id": 0,
+			"name": "Brakes",
+			"description": null
+		},
+		{
+			"id": 20106,
+			"parent_test_item_category_id": 0,
+			"name": "Steering",
+			"description": null
+		},
+		{
+			"id": 20147,
+			"parent_test_item_category_id": 0,
+			"name": "Visibility",
+			"description": null
+		},
+		{
+			"id": 20158,
+			"parent_test_item_category_id": 0,
+			"name": "Lamps, reflectors and electrical equipment",
+			"description": null
+		},
+		{
+			"id": 20218,
+			"parent_test_item_category_id": 0,
+			"name": "Suspension",
+			"description": null
+		},
+		{
+			"id": 20310,
+			"parent_test_item_category_id": 0,
+			"name": "Body, structure and attachments",
+			"description": null
+		},
+		{
+			"id": 20365,
+			"parent_test_item_category_id": 0,
+			"name": "Speedometer and speed limiter",
+			"description": null
+		},
+		{
+			"id": 20366,
+			"parent_test_item_category_id": 0,
+			"name": "Seat belts and supplementary restraint systems",
+			"description": null
+		},
+		{
+			"id": 20385,
+			"parent_test_item_category_id": 0,
+			"name": "Noise, emissions and leaks",
+			"description": null
+		},
+		{
+			"id": 20422,
+			"parent_test_item_category_id": 0,
+			"name": "Buses and coaches supplementary tests",
+			"description": null
+		},
+		{
+			"id": 20431,
+			"parent_test_item_category_id": 0,
+			"name": "Seat belt installation check",
+			"description": null
+		},
+		{
+			"id": 20448,
+			"parent_test_item_category_id": 0,
+			"name": "Road Wheels",
+			"description": null
+		},
+		{
+			"id": 20449,
+			"parent_test_item_category_id": 0,
+			"name": "Tyres",
+			"description": null
+		},
+		{
+			"id": 25000,
+			"parent_test_item_category_id": 0,
+			"name": "Identification of the vehicle",
+			"description": null
+		},
+		{
+			"id": 25003,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle brakes",
+			"description": null
+		},
+		{
+			"id": 25046,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle steering ",
+			"description": null
+		},
+		{
+			"id": 25061,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle lamps and reflectors",
+			"description": null
+		},
+		{
+			"id": 25081,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle suspension",
+			"description": null
+		},
+		{
+			"id": 25098,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle wheels",
+			"description": null
+		},
+		{
+			"id": 25102,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle tyres",
+			"description": null
+		},
+		{
+			"id": 25105,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle structure and attachments",
+			"description": null
+		},
+		{
+			"id": 25128,
+			"parent_test_item_category_id": 0,
+			"name": "Motorcycle audible warning (Horn)",
+			"description": "Horn"
+		},
+		{
+			"id": 90000,
+			"parent_test_item_category_id": 0,
+			"name": "Identification of the vehicle",
+			"description": null
+		},
+		{
+			"id": 2,
+			"parent_test_item_category_id": 1,
+			"name": "Position lamps",
+			"description": null
+		},
+		{
+			"id": 14,
+			"parent_test_item_category_id": 1,
+			"name": "Headlamps",
+			"description": null
+		},
+		{
+			"id": 23,
+			"parent_test_item_category_id": 1,
+			"name": "Stop lamp",
+			"description": "Stop lamp"
+		},
+		{
+			"id": 26,
+			"parent_test_item_category_id": 1,
+			"name": "Rear reflectors",
+			"description": "Rear reflector"
+		},
+		{
+			"id": 33,
+			"parent_test_item_category_id": 1,
+			"name": "Direction indicators",
+			"description": null
+		},
+		{
+			"id": 39,
+			"parent_test_item_category_id": 1,
+			"name": "Headlamp aim",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 40,
+			"parent_test_item_category_id": 1,
+			"name": "Headlamp aim (old)",
+			"description": null
+		},
+		{
+			"id": 44,
+			"parent_test_item_category_id": 1,
+			"name": "Horn",
+			"description": "Horn"
+		},
+		{
+			"id": 10154,
+			"parent_test_item_category_id": 1,
+			"name": "Headlamp aim not tested",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 3,
+			"parent_test_item_category_id": 2,
+			"name": "Motorcycle front",
+			"description": "Front position lamp"
+		},
+		{
+			"id": 4,
+			"parent_test_item_category_id": 2,
+			"name": "Motorcycle rear",
+			"description": "Rear position lamp"
+		},
+		{
+			"id": 5,
+			"parent_test_item_category_id": 2,
+			"name": "Sidecar front",
+			"description": "Sidecar front position lamp"
+		},
+		{
+			"id": 6,
+			"parent_test_item_category_id": 2,
+			"name": "Sidecar rear",
+			"description": "Sidecar rear position lamp"
+		},
+		{
+			"id": 7,
+			"parent_test_item_category_id": 2,
+			"name": "Switch",
+			"description": "Position lamp switch"
+		},
+		{
+			"id": 9,
+			"parent_test_item_category_id": 2,
+			"name": "All position lamps",
+			"description": "All position lamps"
+		},
+		{
+			"id": 15,
+			"parent_test_item_category_id": 14,
+			"name": "Headlamp defects which don't require an aim check on retest",
+			"description": null
+		},
+		{
+			"id": 19,
+			"parent_test_item_category_id": 14,
+			"name": "Headlamp defects which do require an aim check on retest",
+			"description": null
+		},
+		{
+			"id": 16,
+			"parent_test_item_category_id": 15,
+			"name": "Headlamp",
+			"description": "Headlamp"
+		},
+		{
+			"id": 17,
+			"parent_test_item_category_id": 15,
+			"name": "Switch",
+			"description": "Headlamp switch"
+		},
+		{
+			"id": 18,
+			"parent_test_item_category_id": 15,
+			"name": "Dipswitch",
+			"description": "Dipswitch"
+		},
+		{
+			"id": 20,
+			"parent_test_item_category_id": 19,
+			"name": "Headlamp",
+			"description": "Headlamp"
+		},
+		{
+			"id": 21,
+			"parent_test_item_category_id": 19,
+			"name": "Switch",
+			"description": "Headlamp switch"
+		},
+		{
+			"id": 22,
+			"parent_test_item_category_id": 19,
+			"name": "Dipswitch",
+			"description": "Dipswitch"
+		},
+		{
+			"id": 34,
+			"parent_test_item_category_id": 33,
+			"name": "Motorcycle",
+			"description": "Direction indicator"
+		},
+		{
+			"id": 35,
+			"parent_test_item_category_id": 33,
+			"name": "Side car",
+			"description": "Sidecar direction indicator"
+		},
+		{
+			"id": 36,
+			"parent_test_item_category_id": 33,
+			"name": "Tell tales",
+			"description": "Indicator tell tale"
+		},
+		{
+			"id": 37,
+			"parent_test_item_category_id": 33,
+			"name": "Switch",
+			"description": "Indicator switch"
+		},
+		{
+			"id": 38,
+			"parent_test_item_category_id": 33,
+			"name": "Direction indicators",
+			"description": "Direction indicators"
+		},
+		{
+			"id": 41,
+			"parent_test_item_category_id": 40,
+			"name": "European",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 42,
+			"parent_test_item_category_id": 40,
+			"name": "British american (main)",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 43,
+			"parent_test_item_category_id": 40,
+			"name": "British american (dip)",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 51,
+			"parent_test_item_category_id": 50,
+			"name": "Steering control",
+			"description": null
+		},
+		{
+			"id": 70,
+			"parent_test_item_category_id": 50,
+			"name": "Steering systems",
+			"description": null
+		},
+		{
+			"id": 80,
+			"parent_test_item_category_id": 50,
+			"name": "Front suspension",
+			"description": null
+		},
+		{
+			"id": 90,
+			"parent_test_item_category_id": 50,
+			"name": "Front wheel",
+			"description": "Front wheel"
+		},
+		{
+			"id": 91,
+			"parent_test_item_category_id": 50,
+			"name": "Front wheel bearings",
+			"description": "Front wheel bearings"
+		},
+		{
+			"id": 92,
+			"parent_test_item_category_id": 50,
+			"name": "Mudguard",
+			"description": "Front mudguard"
+		},
+		{
+			"id": 97,
+			"parent_test_item_category_id": 50,
+			"name": "Rear suspension",
+			"description": null
+		},
+		{
+			"id": 110,
+			"parent_test_item_category_id": 50,
+			"name": "Rear wheel",
+			"description": "Rear wheel"
+		},
+		{
+			"id": 111,
+			"parent_test_item_category_id": 50,
+			"name": "Rear wheel bearings",
+			"description": "Rear wheel bearings"
+		},
+		{
+			"id": 112,
+			"parent_test_item_category_id": 50,
+			"name": "Wheel alignment",
+			"description": "Wheel alignment"
+		},
+		{
+			"id": 52,
+			"parent_test_item_category_id": 51,
+			"name": "Handlebars",
+			"description": null
+		},
+		{
+			"id": 56,
+			"parent_test_item_category_id": 51,
+			"name": "Fork yoke",
+			"description": "Fork yoke"
+		},
+		{
+			"id": 57,
+			"parent_test_item_category_id": 51,
+			"name": "Free movement",
+			"description": null
+		},
+		{
+			"id": 62,
+			"parent_test_item_category_id": 51,
+			"name": "Damper",
+			"description": "Steering damper"
+		},
+		{
+			"id": 63,
+			"parent_test_item_category_id": 51,
+			"name": "Lock stop",
+			"description": "Steering lock stop"
+		},
+		{
+			"id": 53,
+			"parent_test_item_category_id": 52,
+			"name": "Mounting",
+			"description": "Handlebar mounting"
+		},
+		{
+			"id": 54,
+			"parent_test_item_category_id": 52,
+			"name": "Condition",
+			"description": "Handlebar"
+		},
+		{
+			"id": 55,
+			"parent_test_item_category_id": 52,
+			"name": "Handgrips",
+			"description": "Handlebar handgrip"
+		},
+		{
+			"id": 58,
+			"parent_test_item_category_id": 57,
+			"name": "Clearance",
+			"description": "Steering control"
+		},
+		{
+			"id": 59,
+			"parent_test_item_category_id": 57,
+			"name": "Restriction",
+			"description": "Steering control"
+		},
+		{
+			"id": 60,
+			"parent_test_item_category_id": 57,
+			"name": "Fairings",
+			"description": "Fairing"
+		},
+		{
+			"id": 61,
+			"parent_test_item_category_id": 57,
+			"name": "Leg shield",
+			"description": "Leg shield"
+		},
+		{
+			"id": 71,
+			"parent_test_item_category_id": 70,
+			"name": "Movement",
+			"description": "Steering movement"
+		},
+		{
+			"id": 72,
+			"parent_test_item_category_id": 70,
+			"name": "Headbearings",
+			"description": "Steering headbearing"
+		},
+		{
+			"id": 73,
+			"parent_test_item_category_id": 70,
+			"name": "Linkage",
+			"description": "Steering linkage"
+		},
+		{
+			"id": 81,
+			"parent_test_item_category_id": 80,
+			"name": "Suspension component",
+			"description": "Front suspension  assembly"
+		},
+		{
+			"id": 82,
+			"parent_test_item_category_id": 80,
+			"name": "Spring",
+			"description": "Front suspension spring"
+		},
+		{
+			"id": 83,
+			"parent_test_item_category_id": 80,
+			"name": "Shock absorber",
+			"description": "Front shock absorber"
+		},
+		{
+			"id": 84,
+			"parent_test_item_category_id": 80,
+			"name": "Operation",
+			"description": "Front suspension"
+		},
+		{
+			"id": 85,
+			"parent_test_item_category_id": 80,
+			"name": "Prescribed areas",
+			"description": "Front suspension"
+		},
+		{
+			"id": 98,
+			"parent_test_item_category_id": 97,
+			"name": "Component",
+			"description": "Rear suspension component"
+		},
+		{
+			"id": 99,
+			"parent_test_item_category_id": 97,
+			"name": "Spring",
+			"description": "Rear spring"
+		},
+		{
+			"id": 100,
+			"parent_test_item_category_id": 97,
+			"name": "Shock absorber",
+			"description": "Rear shock absorber"
+		},
+		{
+			"id": 101,
+			"parent_test_item_category_id": 97,
+			"name": "Mono-shock",
+			"description": "Rear mono-shock"
+		},
+		{
+			"id": 102,
+			"parent_test_item_category_id": 97,
+			"name": "Bearings",
+			"description": "Rear suspension bearing"
+		},
+		{
+			"id": 103,
+			"parent_test_item_category_id": 97,
+			"name": "Bushes",
+			"description": "Rear suspension bush"
+		},
+		{
+			"id": 104,
+			"parent_test_item_category_id": 97,
+			"name": "Prescribed areas",
+			"description": "Rear suspension"
+		},
+		{
+			"id": 105,
+			"parent_test_item_category_id": 97,
+			"name": "Operation",
+			"description": "Rear suspension"
+		},
+		{
+			"id": 121,
+			"parent_test_item_category_id": 120,
+			"name": "Braking system",
+			"description": null
+		},
+		{
+			"id": 150,
+			"parent_test_item_category_id": 120,
+			"name": "Hub components",
+			"description": null
+		},
+		{
+			"id": 162,
+			"parent_test_item_category_id": 120,
+			"name": "Performance",
+			"description": null
+		},
+		{
+			"id": 171,
+			"parent_test_item_category_id": 120,
+			"name": "Performance (sp)",
+			"description": null
+		},
+		{
+			"id": 122,
+			"parent_test_item_category_id": 121,
+			"name": "Presence",
+			"description": "Braking system"
+		},
+		{
+			"id": 123,
+			"parent_test_item_category_id": 121,
+			"name": "Brake controls",
+			"description": null
+		},
+		{
+			"id": 127,
+			"parent_test_item_category_id": 121,
+			"name": "Mechanical",
+			"description": null
+		},
+		{
+			"id": 134,
+			"parent_test_item_category_id": 121,
+			"name": "Hydraulic system",
+			"description": null
+		},
+		{
+			"id": 142,
+			"parent_test_item_category_id": 121,
+			"name": "Component condition",
+			"description": "Brake component"
+		},
+		{
+			"id": 124,
+			"parent_test_item_category_id": 123,
+			"name": "Pedal",
+			"description": "Brake pedal"
+		},
+		{
+			"id": 125,
+			"parent_test_item_category_id": 123,
+			"name": "Handlebar lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 126,
+			"parent_test_item_category_id": 123,
+			"name": "Hydraulic control",
+			"description": "Hydraulic brake control"
+		},
+		{
+			"id": 128,
+			"parent_test_item_category_id": 127,
+			"name": "Rod",
+			"description": "Brake rod"
+		},
+		{
+			"id": 129,
+			"parent_test_item_category_id": 127,
+			"name": "Lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 130,
+			"parent_test_item_category_id": 127,
+			"name": "Cable",
+			"description": "Brake cable"
+		},
+		{
+			"id": 131,
+			"parent_test_item_category_id": 127,
+			"name": "Linkage",
+			"description": "Brake linkage"
+		},
+		{
+			"id": 133,
+			"parent_test_item_category_id": 127,
+			"name": "Locking device",
+			"description": "Brake locking device"
+		},
+		{
+			"id": 135,
+			"parent_test_item_category_id": 134,
+			"name": "Fluid reservoir",
+			"description": "Brake fluid reservoir"
+		},
+		{
+			"id": 136,
+			"parent_test_item_category_id": 134,
+			"name": "Master cylinder",
+			"description": "Brake master cylinder"
+		},
+		{
+			"id": 137,
+			"parent_test_item_category_id": 134,
+			"name": "Brake cylinder",
+			"description": "Brake cylinder"
+		},
+		{
+			"id": 138,
+			"parent_test_item_category_id": 134,
+			"name": "Pipes",
+			"description": "Brake pipe"
+		},
+		{
+			"id": 139,
+			"parent_test_item_category_id": 134,
+			"name": "Hoses",
+			"description": "Brake hose"
+		},
+		{
+			"id": 140,
+			"parent_test_item_category_id": 134,
+			"name": "Linked system",
+			"description": "Brake linked system"
+		},
+		{
+			"id": 141,
+			"parent_test_item_category_id": 134,
+			"name": "Union",
+			"description": "Brake pipe union"
+		},
+		{
+			"id": 151,
+			"parent_test_item_category_id": 150,
+			"name": "Brake linings",
+			"description": "Brake lining(s)"
+		},
+		{
+			"id": 152,
+			"parent_test_item_category_id": 150,
+			"name": "Brake pads",
+			"description": "Brake pad(s)"
+		},
+		{
+			"id": 153,
+			"parent_test_item_category_id": 150,
+			"name": "Brake drums",
+			"description": "Brake drum(s)"
+		},
+		{
+			"id": 154,
+			"parent_test_item_category_id": 150,
+			"name": "Brake discs",
+			"description": "Brake disc(s)"
+		},
+		{
+			"id": 155,
+			"parent_test_item_category_id": 150,
+			"name": "Brake back plates",
+			"description": "Brake back plate(s)"
+		},
+		{
+			"id": 156,
+			"parent_test_item_category_id": 150,
+			"name": "Reaction bracket",
+			"description": "Brake reaction bracket"
+		},
+		{
+			"id": 157,
+			"parent_test_item_category_id": 150,
+			"name": "Brake calipers",
+			"description": "Brake caliper(s)"
+		},
+		{
+			"id": 163,
+			"parent_test_item_category_id": 162,
+			"name": "Roller brake test",
+			"description": "Roller brake test"
+		},
+		{
+			"id": 164,
+			"parent_test_item_category_id": 162,
+			"name": "Plate brake test",
+			"description": "Plate brake test"
+		},
+		{
+			"id": 165,
+			"parent_test_item_category_id": 162,
+			"name": "Floor test",
+			"description": "Floor brake test"
+		},
+		{
+			"id": 166,
+			"parent_test_item_category_id": 162,
+			"name": "Gradient",
+			"description": "Gradient brake test"
+		},
+		{
+			"id": 178,
+			"parent_test_item_category_id": 162,
+			"name": "Decelerometer test",
+			"description": "Decelerometer brake test"
+		},
+		{
+			"id": 10151,
+			"parent_test_item_category_id": 162,
+			"name": "Brake performance not tested",
+			"description": "Brake performance"
+		},
+		{
+			"id": 167,
+			"parent_test_item_category_id": 171,
+			"name": "Roller brake test",
+			"description": "Roller brake test"
+		},
+		{
+			"id": 168,
+			"parent_test_item_category_id": 171,
+			"name": "Plate brake test",
+			"description": "Plate brake test"
+		},
+		{
+			"id": 169,
+			"parent_test_item_category_id": 171,
+			"name": "Floor test",
+			"description": "Floor brake test"
+		},
+		{
+			"id": 170,
+			"parent_test_item_category_id": 171,
+			"name": "Gradient",
+			"description": "Gradient brake test"
+		},
+		{
+			"id": 179,
+			"parent_test_item_category_id": 171,
+			"name": "Decelerometer test",
+			"description": "Decelerometer brake test"
+		},
+		{
+			"id": 173,
+			"parent_test_item_category_id": 172,
+			"name": "Tyres",
+			"description": null
+		},
+		{
+			"id": 182,
+			"parent_test_item_category_id": 172,
+			"name": "Wheels",
+			"description": null
+		},
+		{
+			"id": 174,
+			"parent_test_item_category_id": 173,
+			"name": "Fitment",
+			"description": "Tyre"
+		},
+		{
+			"id": 175,
+			"parent_test_item_category_id": 173,
+			"name": "Condition",
+			"description": "Tyre"
+		},
+		{
+			"id": 176,
+			"parent_test_item_category_id": 173,
+			"name": "Valve stem",
+			"description": "Tyre valve stem"
+		},
+		{
+			"id": 183,
+			"parent_test_item_category_id": 182,
+			"name": "General condition",
+			"description": "Wheel"
+		},
+		{
+			"id": 184,
+			"parent_test_item_category_id": 182,
+			"name": "Spoke",
+			"description": "Wheel"
+		},
+		{
+			"id": 185,
+			"parent_test_item_category_id": 182,
+			"name": "Built up wheel",
+			"description": "Built up wheel"
+		},
+		{
+			"id": 186,
+			"parent_test_item_category_id": 182,
+			"name": "Attachment",
+			"description": null
+		},
+		{
+			"id": 189,
+			"parent_test_item_category_id": 182,
+			"name": "Distortion",
+			"description": "Wheel"
+		},
+		{
+			"id": 190,
+			"parent_test_item_category_id": 182,
+			"name": "Rear wheel rotation",
+			"description": "Rear wheel rotation"
+		},
+		{
+			"id": 187,
+			"parent_test_item_category_id": 186,
+			"name": "Front",
+			"description": "Front wheel"
+		},
+		{
+			"id": 188,
+			"parent_test_item_category_id": 186,
+			"name": "Rear",
+			"description": "Rear wheel"
+		},
+		{
+			"id": 196,
+			"parent_test_item_category_id": 195,
+			"name": "Lights (old)",
+			"description": null
+		},
+		{
+			"id": 202,
+			"parent_test_item_category_id": 195,
+			"name": "Attachment",
+			"description": "Sidecar attachment"
+		},
+		{
+			"id": 203,
+			"parent_test_item_category_id": 195,
+			"name": "Suspension",
+			"description": "Sidecar suspension"
+		},
+		{
+			"id": 204,
+			"parent_test_item_category_id": 195,
+			"name": "Wheels",
+			"description": null
+		},
+		{
+			"id": 205,
+			"parent_test_item_category_id": 195,
+			"name": "Tyres",
+			"description": null
+		},
+		{
+			"id": 206,
+			"parent_test_item_category_id": 195,
+			"name": "Wheel bearing",
+			"description": "Sidecar wheel bearings"
+		},
+		{
+			"id": 207,
+			"parent_test_item_category_id": 195,
+			"name": "Shock absorber",
+			"description": "Sidecar shock absorber"
+		},
+		{
+			"id": 208,
+			"parent_test_item_category_id": 195,
+			"name": "Wheel alignment",
+			"description": "Sidecar wheel alignment"
+		},
+		{
+			"id": 209,
+			"parent_test_item_category_id": 195,
+			"name": "Condition of structure",
+			"description": "Sidecar structure"
+		},
+		{
+			"id": 197,
+			"parent_test_item_category_id": 196,
+			"name": "Position lamps",
+			"description": null
+		},
+		{
+			"id": 200,
+			"parent_test_item_category_id": 196,
+			"name": "Directional indicators",
+			"description": "Sidecar direction indicator"
+		},
+		{
+			"id": 201,
+			"parent_test_item_category_id": 196,
+			"name": "Rear reflectors",
+			"description": "Sidecar rear red reflector"
+		},
+		{
+			"id": 198,
+			"parent_test_item_category_id": 197,
+			"name": "Sidecar front",
+			"description": "Sidecar front position lamp"
+		},
+		{
+			"id": 199,
+			"parent_test_item_category_id": 197,
+			"name": "Sidecar rear",
+			"description": "Sidecar rear position lamp"
+		},
+		{
+			"id": 212,
+			"parent_test_item_category_id": 204,
+			"name": "General condition",
+			"description": "Sidecar wheel"
+		},
+		{
+			"id": 213,
+			"parent_test_item_category_id": 204,
+			"name": "Spoke",
+			"description": "Sidecar wheel"
+		},
+		{
+			"id": 214,
+			"parent_test_item_category_id": 204,
+			"name": "Built up wheel",
+			"description": "Sidecar built up wheel"
+		},
+		{
+			"id": 215,
+			"parent_test_item_category_id": 204,
+			"name": "Attachment",
+			"description": "Sidecar wheel"
+		},
+		{
+			"id": 216,
+			"parent_test_item_category_id": 204,
+			"name": "Distortion",
+			"description": "Sidecar wheel"
+		},
+		{
+			"id": 217,
+			"parent_test_item_category_id": 205,
+			"name": "Fittment",
+			"description": "Sidecar tyre"
+		},
+		{
+			"id": 218,
+			"parent_test_item_category_id": 205,
+			"name": "Condition",
+			"description": "Sidecar tyre"
+		},
+		{
+			"id": 219,
+			"parent_test_item_category_id": 205,
+			"name": "Valve stem",
+			"description": "Sidecar tyre valve stem"
+		},
+		{
+			"id": 221,
+			"parent_test_item_category_id": 220,
+			"name": "Exhaust system",
+			"description": "Exhaust"
+		},
+		{
+			"id": 226,
+			"parent_test_item_category_id": 220,
+			"name": "Fuel system",
+			"description": null
+		},
+		{
+			"id": 227,
+			"parent_test_item_category_id": 226,
+			"name": "Tank",
+			"description": "Fuel tank"
+		},
+		{
+			"id": 228,
+			"parent_test_item_category_id": 226,
+			"name": "Hose",
+			"description": "Fuel hose"
+		},
+		{
+			"id": 229,
+			"parent_test_item_category_id": 226,
+			"name": "Pipe",
+			"description": "Fuel pipe"
+		},
+		{
+			"id": 230,
+			"parent_test_item_category_id": 226,
+			"name": "Cap",
+			"description": "Fuel cap"
+		},
+		{
+			"id": 231,
+			"parent_test_item_category_id": 226,
+			"name": "System",
+			"description": "Fuel system"
+		},
+		{
+			"id": 241,
+			"parent_test_item_category_id": 240,
+			"name": "Condition of structure",
+			"description": "Motorcycle structure"
+		},
+		{
+			"id": 242,
+			"parent_test_item_category_id": 240,
+			"name": "Seats",
+			"description": null
+		},
+		{
+			"id": 243,
+			"parent_test_item_category_id": 240,
+			"name": "Footrests",
+			"description": "Footrest"
+		},
+		{
+			"id": 245,
+			"parent_test_item_category_id": 240,
+			"name": "Rear wheel rotation",
+			"description": "Rear wheel rotation"
+		},
+		{
+			"id": 246,
+			"parent_test_item_category_id": 240,
+			"name": "Fairings",
+			"description": "Fairings"
+		},
+		{
+			"id": 247,
+			"parent_test_item_category_id": 240,
+			"name": "Leg shield",
+			"description": "Leg shield"
+		},
+		{
+			"id": 248,
+			"parent_test_item_category_id": 240,
+			"name": "Locking devices",
+			"description": "Locking devices"
+		},
+		{
+			"id": 250,
+			"parent_test_item_category_id": 242,
+			"name": "Riders seat",
+			"description": "Riders seat"
+		},
+		{
+			"id": 251,
+			"parent_test_item_category_id": 242,
+			"name": "Other seats",
+			"description": "Seat"
+		},
+		{
+			"id": 261,
+			"parent_test_item_category_id": 260,
+			"name": "Chain guard",
+			"description": "Chain guard"
+		},
+		{
+			"id": 262,
+			"parent_test_item_category_id": 260,
+			"name": "Belt guard",
+			"description": "Drive belt guard"
+		},
+		{
+			"id": 263,
+			"parent_test_item_category_id": 260,
+			"name": "Drive chain",
+			"description": "Drive chain"
+		},
+		{
+			"id": 264,
+			"parent_test_item_category_id": 260,
+			"name": "Drive belt",
+			"description": "Drive belt"
+		},
+		{
+			"id": 265,
+			"parent_test_item_category_id": 260,
+			"name": "Locking devices",
+			"description": "Locking device(s)"
+		},
+		{
+			"id": 271,
+			"parent_test_item_category_id": 270,
+			"name": "Throttle",
+			"description": "Throttle"
+		},
+		{
+			"id": 272,
+			"parent_test_item_category_id": 270,
+			"name": "Clutch lever",
+			"description": "Clutch lever"
+		},
+		{
+			"id": 244,
+			"parent_test_item_category_id": 290,
+			"name": "Registration plate",
+			"description": "Registration plate"
+		},
+		{
+			"id": 249,
+			"parent_test_item_category_id": 290,
+			"name": "Vehicle identification number",
+			"description": "Vehicle identification number"
+		},
+		{
+			"id": 502,
+			"parent_test_item_category_id": 501,
+			"name": "Towbar",
+			"description": "Towbar"
+		},
+		{
+			"id": 503,
+			"parent_test_item_category_id": 501,
+			"name": "Detachable tow ball",
+			"description": "Detachable tow ball"
+		},
+		{
+			"id": 504,
+			"parent_test_item_category_id": 501,
+			"name": "Swivelling towbar",
+			"description": "Swivelling towbar"
+		},
+		{
+			"id": 505,
+			"parent_test_item_category_id": 501,
+			"name": "Vehicle structure",
+			"description": "Vehicle structure"
+		},
+		{
+			"id": 1001,
+			"parent_test_item_category_id": 501,
+			"name": "Adjustable towbar",
+			"description": "Adjustable towbar"
+		},
+		{
+			"id": 521,
+			"parent_test_item_category_id": 519,
+			"name": "Seat belt load limiter",
+			"description": "seat belt"
+		},
+		{
+			"id": 522,
+			"parent_test_item_category_id": 519,
+			"name": "Seat belt pre-tensioner",
+			"description": "seat belt"
+		},
+		{
+			"id": 523,
+			"parent_test_item_category_id": 519,
+			"name": "SRS Malfunction Indicator Lamp",
+			"description": "Supplementary Restraint System"
+		},
+		{
+			"id": 1004,
+			"parent_test_item_category_id": 519,
+			"name": "Drivers airbag",
+			"description": "Drivers airbag"
+		},
+		{
+			"id": 1005,
+			"parent_test_item_category_id": 519,
+			"name": "Passengers airbag",
+			"description": "Passengers airbag"
+		},
+		{
+			"id": 5681,
+			"parent_test_item_category_id": 520,
+			"name": "Requirements",
+			"description": "Statutory seat belt"
+		},
+		{
+			"id": 5682,
+			"parent_test_item_category_id": 520,
+			"name": "Condition",
+			"description": "Seat belt"
+		},
+		{
+			"id": 5683,
+			"parent_test_item_category_id": 520,
+			"name": "Attachment",
+			"description": "Seat belt"
+		},
+		{
+			"id": 5684,
+			"parent_test_item_category_id": 520,
+			"name": "Installation check",
+			"description": null
+		},
+		{
+			"id": 5685,
+			"parent_test_item_category_id": 520,
+			"name": "Prescribed areas",
+			"description": "Seat belt anchorage"
+		},
+		{
+			"id": 526,
+			"parent_test_item_category_id": 525,
+			"name": "Steps",
+			"description": "Entrance/exit step"
+		},
+		{
+			"id": 527,
+			"parent_test_item_category_id": 525,
+			"name": "Stairs",
+			"description": "Stair"
+		},
+		{
+			"id": 530,
+			"parent_test_item_category_id": 525,
+			"name": "Retractable steps",
+			"description": "Retractable step"
+		},
+		{
+			"id": 2006,
+			"parent_test_item_category_id": 2005,
+			"name": "Front lamps",
+			"description": "Front outline marker lamp(s)"
+		},
+		{
+			"id": 2007,
+			"parent_test_item_category_id": 2005,
+			"name": "Rear lamps",
+			"description": "Rear outline marker lamp(s)"
+		},
+		{
+			"id": 2014,
+			"parent_test_item_category_id": 2005,
+			"name": "All outline markers",
+			"description": "All outline marker lamps"
+		},
+		{
+			"id": 2765,
+			"parent_test_item_category_id": 2751,
+			"name": "View/condition",
+			"description": "Windscreen view/condition"
+		},
+		{
+			"id": 2766,
+			"parent_test_item_category_id": 2751,
+			"name": "Type",
+			"description": "Windscreen"
+		},
+		{
+			"id": 2761,
+			"parent_test_item_category_id": 2760,
+			"name": "Windows (old)",
+			"description": null
+		},
+		{
+			"id": 2762,
+			"parent_test_item_category_id": 2760,
+			"name": "Glazing/screen/partition",
+			"description": "Glazing/screen/partition"
+		},
+		{
+			"id": 2763,
+			"parent_test_item_category_id": 2760,
+			"name": "Internal partition",
+			"description": "Internal partition glazing"
+		},
+		{
+			"id": 2764,
+			"parent_test_item_category_id": 2760,
+			"name": "Internal door",
+			"description": "Internal door glazing"
+		},
+		{
+			"id": 2770,
+			"parent_test_item_category_id": 2760,
+			"name": "Windows",
+			"description": "window(s)"
+		},
+		{
+			"id": 2767,
+			"parent_test_item_category_id": 2761,
+			"name": "Front facing",
+			"description": "Front facing window"
+		},
+		{
+			"id": 2768,
+			"parent_test_item_category_id": 2761,
+			"name": "Either side of driver",
+			"description": "Drivers side window"
+		},
+		{
+			"id": 2769,
+			"parent_test_item_category_id": 2761,
+			"name": "Other external windows",
+			"description": "External window"
+		},
+		{
+			"id": 511,
+			"parent_test_item_category_id": 5000,
+			"name": "Battery",
+			"description": "Battery"
+		},
+		{
+			"id": 512,
+			"parent_test_item_category_id": 5000,
+			"name": "Electrical wiring",
+			"description": "Electrical wiring"
+		},
+		{
+			"id": 513,
+			"parent_test_item_category_id": 5000,
+			"name": "Trailer electrical socket",
+			"description": "Trailer electrical socket"
+		},
+		{
+			"id": 2005,
+			"parent_test_item_category_id": 5000,
+			"name": "Outline marker lamps",
+			"description": null
+		},
+		{
+			"id": 5001,
+			"parent_test_item_category_id": 5000,
+			"name": "Position lamps",
+			"description": null
+		},
+		{
+			"id": 5009,
+			"parent_test_item_category_id": 5000,
+			"name": "Registration plate lamp",
+			"description": "Registration plate lamp"
+		},
+		{
+			"id": 5010,
+			"parent_test_item_category_id": 5000,
+			"name": "Rear fog lamp",
+			"description": null
+		},
+		{
+			"id": 5019,
+			"parent_test_item_category_id": 5000,
+			"name": "Headlamps",
+			"description": null
+		},
+		{
+			"id": 5030,
+			"parent_test_item_category_id": 5000,
+			"name": "Stop lamp",
+			"description": "Stop lamp"
+		},
+		{
+			"id": 5035,
+			"parent_test_item_category_id": 5000,
+			"name": "Rear reflectors",
+			"description": "Rear reflector"
+		},
+		{
+			"id": 5039,
+			"parent_test_item_category_id": 5000,
+			"name": "Direction indicators",
+			"description": null
+		},
+		{
+			"id": 5066,
+			"parent_test_item_category_id": 5000,
+			"name": "Hazard warning",
+			"description": null
+		},
+		{
+			"id": 5073,
+			"parent_test_item_category_id": 5000,
+			"name": "Headlamp aim",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 5074,
+			"parent_test_item_category_id": 5000,
+			"name": "Headlamp aim (old)",
+			"description": null
+		},
+		{
+			"id": 5085,
+			"parent_test_item_category_id": 5000,
+			"name": "Horn",
+			"description": "Horn"
+		},
+		{
+			"id": 10153,
+			"parent_test_item_category_id": 5000,
+			"name": "Headlamp aim not tested",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 5002,
+			"parent_test_item_category_id": 5001,
+			"name": "All position lamps",
+			"description": "All position lamps"
+		},
+		{
+			"id": 5003,
+			"parent_test_item_category_id": 5001,
+			"name": "Front lamps",
+			"description": "Front position lamp(s)"
+		},
+		{
+			"id": 5004,
+			"parent_test_item_category_id": 5001,
+			"name": "Rear lamps",
+			"description": "Rear position lamp(s)"
+		},
+		{
+			"id": 5008,
+			"parent_test_item_category_id": 5001,
+			"name": "Switch",
+			"description": "Position lamp switch"
+		},
+		{
+			"id": 5011,
+			"parent_test_item_category_id": 5010,
+			"name": "Fog lamp",
+			"description": "Rear fog lamp"
+		},
+		{
+			"id": 5012,
+			"parent_test_item_category_id": 5010,
+			"name": "Tell tale",
+			"description": "Rear fog lamp tell tale"
+		},
+		{
+			"id": 5013,
+			"parent_test_item_category_id": 5010,
+			"name": "Switch",
+			"description": "Rear fog lamp switch"
+		},
+		{
+			"id": 5020,
+			"parent_test_item_category_id": 5019,
+			"name": "Headlamp defects which don't require an aim check on retest",
+			"description": null
+		},
+		{
+			"id": 5025,
+			"parent_test_item_category_id": 5019,
+			"name": "Headlamp defects which do require an aim check on retest",
+			"description": null
+		},
+		{
+			"id": 506,
+			"parent_test_item_category_id": 5020,
+			"name": "Headlamp levelling device",
+			"description": "Headlamp levelling device"
+		},
+		{
+			"id": 508,
+			"parent_test_item_category_id": 5020,
+			"name": "Headlamp cleaning device",
+			"description": "Headlamp cleaning device"
+		},
+		{
+			"id": 510,
+			"parent_test_item_category_id": 5020,
+			"name": "Main beam 'tell-tale'",
+			"description": "Main beam 'tell-tale'"
+		},
+		{
+			"id": 5021,
+			"parent_test_item_category_id": 5020,
+			"name": "Headlamp",
+			"description": "Headlamp"
+		},
+		{
+			"id": 5022,
+			"parent_test_item_category_id": 5020,
+			"name": "Matched pair",
+			"description": "Headlamps matched pair"
+		},
+		{
+			"id": 5023,
+			"parent_test_item_category_id": 5020,
+			"name": "Switch",
+			"description": "Headlamp switch"
+		},
+		{
+			"id": 5024,
+			"parent_test_item_category_id": 5020,
+			"name": "Dipswitch",
+			"description": "Dipswitch"
+		},
+		{
+			"id": 507,
+			"parent_test_item_category_id": 5025,
+			"name": "Headlamp levelling device",
+			"description": "Headlamp levelling device"
+		},
+		{
+			"id": 509,
+			"parent_test_item_category_id": 5025,
+			"name": "Headlamp cleaning device",
+			"description": "Headlamp cleaning device"
+		},
+		{
+			"id": 1002,
+			"parent_test_item_category_id": 5025,
+			"name": "Main beam 'tell-tale'",
+			"description": "Main beam 'tell-tale'"
+		},
+		{
+			"id": 5026,
+			"parent_test_item_category_id": 5025,
+			"name": "Headlamp",
+			"description": "Headlamp"
+		},
+		{
+			"id": 5027,
+			"parent_test_item_category_id": 5025,
+			"name": "Matched pair",
+			"description": "Headlamps matched pair"
+		},
+		{
+			"id": 5028,
+			"parent_test_item_category_id": 5025,
+			"name": "Switch",
+			"description": "Headlamp switch"
+		},
+		{
+			"id": 5029,
+			"parent_test_item_category_id": 5025,
+			"name": "Dipswitch",
+			"description": "Dipswitch"
+		},
+		{
+			"id": 5040,
+			"parent_test_item_category_id": 5039,
+			"name": "Flashing type",
+			"description": null
+		},
+		{
+			"id": 5059,
+			"parent_test_item_category_id": 5039,
+			"name": "Semaphore",
+			"description": null
+		},
+		{
+			"id": 5041,
+			"parent_test_item_category_id": 5040,
+			"name": "All direction indicators",
+			"description": "Direction indicators"
+		},
+		{
+			"id": 5042,
+			"parent_test_item_category_id": 5040,
+			"name": "Individual lamps",
+			"description": "Direction indicator"
+		},
+		{
+			"id": 5043,
+			"parent_test_item_category_id": 5040,
+			"name": "Side repeaters",
+			"description": "Side repeater"
+		},
+		{
+			"id": 5044,
+			"parent_test_item_category_id": 5040,
+			"name": "Tell tales",
+			"description": "Indicator tell tale"
+		},
+		{
+			"id": 5045,
+			"parent_test_item_category_id": 5040,
+			"name": "Switch",
+			"description": "Indicator switch"
+		},
+		{
+			"id": 5060,
+			"parent_test_item_category_id": 5059,
+			"name": "Arm",
+			"description": "Semaphore indicator arm"
+		},
+		{
+			"id": 5061,
+			"parent_test_item_category_id": 5059,
+			"name": "Tell tales",
+			"description": "Semaphore indicator tell tale"
+		},
+		{
+			"id": 5062,
+			"parent_test_item_category_id": 5059,
+			"name": "Switch",
+			"description": "Semaphore indicator switch"
+		},
+		{
+			"id": 5067,
+			"parent_test_item_category_id": 5066,
+			"name": "Lamp",
+			"description": "Hazard warning lamps"
+		},
+		{
+			"id": 5068,
+			"parent_test_item_category_id": 5066,
+			"name": "Switch",
+			"description": "Hazard warning switch"
+		},
+		{
+			"id": 5069,
+			"parent_test_item_category_id": 5066,
+			"name": "Tell tale",
+			"description": "Hazard warning tell tale"
+		},
+		{
+			"id": 5075,
+			"parent_test_item_category_id": 5074,
+			"name": "Pre 1950",
+			"description": "Pre 1950 headlamp"
+		},
+		{
+			"id": 5076,
+			"parent_test_item_category_id": 5074,
+			"name": "European",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 5077,
+			"parent_test_item_category_id": 5074,
+			"name": "British american (main)",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 5078,
+			"parent_test_item_category_id": 5074,
+			"name": "British american (dip)",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 5101,
+			"parent_test_item_category_id": 5100,
+			"name": "Steering control",
+			"description": null
+		},
+		{
+			"id": 5122,
+			"parent_test_item_category_id": 5100,
+			"name": "Steering system",
+			"description": null
+		},
+		{
+			"id": 5151,
+			"parent_test_item_category_id": 5100,
+			"name": "Steering operation",
+			"description": "Steering system"
+		},
+		{
+			"id": 5152,
+			"parent_test_item_category_id": 5100,
+			"name": "Power steering",
+			"description": null
+		},
+		{
+			"id": 5160,
+			"parent_test_item_category_id": 5100,
+			"name": "Rear wheel steering",
+			"description": null
+		},
+		{
+			"id": 5165,
+			"parent_test_item_category_id": 5100,
+			"name": "Locking devices",
+			"description": "Steering"
+		},
+		{
+			"id": 5170,
+			"parent_test_item_category_id": 5100,
+			"name": "Prescribed areas",
+			"description": "Steering component mounting"
+		},
+		{
+			"id": 1003,
+			"parent_test_item_category_id": 5101,
+			"name": "Steering lock",
+			"description": "Steering lock"
+		},
+		{
+			"id": 5102,
+			"parent_test_item_category_id": 5101,
+			"name": "Steering wheel",
+			"description": "Steering wheel"
+		},
+		{
+			"id": 5103,
+			"parent_test_item_category_id": 5101,
+			"name": "Steering column",
+			"description": "Steering column"
+		},
+		{
+			"id": 5104,
+			"parent_test_item_category_id": 5101,
+			"name": "Steering shaft",
+			"description": "Steering column shaft"
+		},
+		{
+			"id": 5105,
+			"parent_test_item_category_id": 5101,
+			"name": "Steering coupling",
+			"description": null
+		},
+		{
+			"id": 5106,
+			"parent_test_item_category_id": 5105,
+			"name": "Flexible coupling",
+			"description": "Steering column flexible coupling"
+		},
+		{
+			"id": 5107,
+			"parent_test_item_category_id": 5105,
+			"name": "Universal joint",
+			"description": "Steering column universal joint"
+		},
+		{
+			"id": 5123,
+			"parent_test_item_category_id": 5122,
+			"name": "Free play",
+			"description": null
+		},
+		{
+			"id": 5126,
+			"parent_test_item_category_id": 5122,
+			"name": "Steering box",
+			"description": "Steering box"
+		},
+		{
+			"id": 5127,
+			"parent_test_item_category_id": 5122,
+			"name": "Steering rack",
+			"description": "Steering rack"
+		},
+		{
+			"id": 5128,
+			"parent_test_item_category_id": 5122,
+			"name": "Intermediate drop arm",
+			"description": "Intermediate drop arm"
+		},
+		{
+			"id": 5129,
+			"parent_test_item_category_id": 5122,
+			"name": "Ball joint",
+			"description": "Ball joint"
+		},
+		{
+			"id": 5130,
+			"parent_test_item_category_id": 5122,
+			"name": "Drag link end",
+			"description": "Drag link end"
+		},
+		{
+			"id": 5131,
+			"parent_test_item_category_id": 5122,
+			"name": "Track rod end",
+			"description": "Track rod end"
+		},
+		{
+			"id": 5132,
+			"parent_test_item_category_id": 5122,
+			"name": "Steering damper",
+			"description": "Steering damper"
+		},
+		{
+			"id": 5133,
+			"parent_test_item_category_id": 5122,
+			"name": "Lock stop",
+			"description": "Steering lock stop"
+		},
+		{
+			"id": 5134,
+			"parent_test_item_category_id": 5122,
+			"name": "Steering arm",
+			"description": "Steering arm"
+		},
+		{
+			"id": 5135,
+			"parent_test_item_category_id": 5122,
+			"name": "Other components",
+			"description": null
+		},
+		{
+			"id": 5124,
+			"parent_test_item_category_id": 5123,
+			"name": "Steering box",
+			"description": "Steering system"
+		},
+		{
+			"id": 5125,
+			"parent_test_item_category_id": 5123,
+			"name": "Steering rack",
+			"description": "Steering system"
+		},
+		{
+			"id": 5136,
+			"parent_test_item_category_id": 5135,
+			"name": "Steering pivot point",
+			"description": "Steering pivot point"
+		},
+		{
+			"id": 5137,
+			"parent_test_item_category_id": 5135,
+			"name": "Steering component",
+			"description": "Steering component"
+		},
+		{
+			"id": 5138,
+			"parent_test_item_category_id": 5135,
+			"name": "Steering linkage",
+			"description": "Steering linkage"
+		},
+		{
+			"id": 514,
+			"parent_test_item_category_id": 5152,
+			"name": "Electronic power steering",
+			"description": "Electronic power steering"
+		},
+		{
+			"id": 5153,
+			"parent_test_item_category_id": 5152,
+			"name": "Operation",
+			"description": "Power steering"
+		},
+		{
+			"id": 5154,
+			"parent_test_item_category_id": 5152,
+			"name": "Drive system",
+			"description": "Power steering"
+		},
+		{
+			"id": 5155,
+			"parent_test_item_category_id": 5152,
+			"name": "Pipes and hoses",
+			"description": "Power steering pipe(s) or hose(s)"
+		},
+		{
+			"id": 5156,
+			"parent_test_item_category_id": 5152,
+			"name": "Pump",
+			"description": "Power steering pump"
+		},
+		{
+			"id": 5157,
+			"parent_test_item_category_id": 5152,
+			"name": "Rams",
+			"description": "Power steering ram(s)"
+		},
+		{
+			"id": 5158,
+			"parent_test_item_category_id": 5152,
+			"name": "Other components",
+			"description": "Power steering component(s)"
+		},
+		{
+			"id": 5161,
+			"parent_test_item_category_id": 5160,
+			"name": "Components",
+			"description": "Rear wheel steering"
+		},
+		{
+			"id": 5162,
+			"parent_test_item_category_id": 5160,
+			"name": "Linkages",
+			"description": "Rear wheel steering linkage"
+		},
+		{
+			"id": 5163,
+			"parent_test_item_category_id": 5160,
+			"name": "Operation",
+			"description": "Rear wheel steering"
+		},
+		{
+			"id": 5164,
+			"parent_test_item_category_id": 5160,
+			"name": "Leaks",
+			"description": "Rear wheel steering"
+		},
+		{
+			"id": 5195,
+			"parent_test_item_category_id": 5190,
+			"name": "General condition",
+			"description": "Suspension"
+		},
+		{
+			"id": 5201,
+			"parent_test_item_category_id": 5190,
+			"name": "Leaf springs",
+			"description": null
+		},
+		{
+			"id": 5214,
+			"parent_test_item_category_id": 5190,
+			"name": "Coil springs",
+			"description": null
+		},
+		{
+			"id": 5222,
+			"parent_test_item_category_id": 5190,
+			"name": "Fluid suspension",
+			"description": null
+		},
+		{
+			"id": 5240,
+			"parent_test_item_category_id": 5190,
+			"name": "Gas suspension",
+			"description": null
+		},
+		{
+			"id": 5255,
+			"parent_test_item_category_id": 5190,
+			"name": "Air suspension",
+			"description": null
+		},
+		{
+			"id": 5270,
+			"parent_test_item_category_id": 5190,
+			"name": "Torsion bars",
+			"description": null
+		},
+		{
+			"id": 5280,
+			"parent_test_item_category_id": 5190,
+			"name": "Bonded suspension",
+			"description": null
+		},
+		{
+			"id": 5290,
+			"parent_test_item_category_id": 5190,
+			"name": "Suspension arms",
+			"description": null
+		},
+		{
+			"id": 5300,
+			"parent_test_item_category_id": 5190,
+			"name": "Trailing arms",
+			"description": null
+		},
+		{
+			"id": 5310,
+			"parent_test_item_category_id": 5190,
+			"name": "Radius arms",
+			"description": null
+		},
+		{
+			"id": 5320,
+			"parent_test_item_category_id": 5190,
+			"name": "Tie bars/rods",
+			"description": null
+		},
+		{
+			"id": 5330,
+			"parent_test_item_category_id": 5190,
+			"name": "Panhard rods",
+			"description": null
+		},
+		{
+			"id": 5340,
+			"parent_test_item_category_id": 5190,
+			"name": "Torque/reaction arms",
+			"description": null
+		},
+		{
+			"id": 5350,
+			"parent_test_item_category_id": 5190,
+			"name": "Anti-roll bars",
+			"description": null
+		},
+		{
+			"id": 5360,
+			"parent_test_item_category_id": 5190,
+			"name": "Macpherson strut",
+			"description": null
+		},
+		{
+			"id": 5370,
+			"parent_test_item_category_id": 5190,
+			"name": "Sub-frames",
+			"description": null
+		},
+		{
+			"id": 5380,
+			"parent_test_item_category_id": 5190,
+			"name": "Axles",
+			"description": null
+		},
+		{
+			"id": 5395,
+			"parent_test_item_category_id": 5190,
+			"name": "Wheel bearings",
+			"description": null
+		},
+		{
+			"id": 5410,
+			"parent_test_item_category_id": 5190,
+			"name": "Front suspension retaining and locking devices",
+			"description": "Front suspension"
+		},
+		{
+			"id": 5411,
+			"parent_test_item_category_id": 5190,
+			"name": "Front suspension joints",
+			"description": "Front suspension"
+		},
+		{
+			"id": 5412,
+			"parent_test_item_category_id": 5190,
+			"name": "Drive shafts (old)",
+			"description": null
+		},
+		{
+			"id": 5420,
+			"parent_test_item_category_id": 5190,
+			"name": "Shock absorbers",
+			"description": null
+		},
+		{
+			"id": 5423,
+			"parent_test_item_category_id": 5190,
+			"name": "Prescribed areas",
+			"description": null
+		},
+		{
+			"id": 5810,
+			"parent_test_item_category_id": 5190,
+			"name": "Drive shafts",
+			"description": null
+		},
+		{
+			"id": 2208,
+			"parent_test_item_category_id": 5201,
+			"name": "Spring slippers",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 2211,
+			"parent_test_item_category_id": 5201,
+			"name": "Balance beam",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5202,
+			"parent_test_item_category_id": 5201,
+			"name": "Condition",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5203,
+			"parent_test_item_category_id": 5201,
+			"name": "Spring eye",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5204,
+			"parent_test_item_category_id": 5201,
+			"name": "Pins and bushes",
+			"description": null
+		},
+		{
+			"id": 5209,
+			"parent_test_item_category_id": 5201,
+			"name": "Anchor bracket",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5210,
+			"parent_test_item_category_id": 5201,
+			"name": "Shackle bracket",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5212,
+			"parent_test_item_category_id": 5201,
+			"name": "Spring saddle",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5213,
+			"parent_test_item_category_id": 5201,
+			"name": "Securing bolts",
+			"description": "Leaf spring to axle"
+		},
+		{
+			"id": 5205,
+			"parent_test_item_category_id": 5204,
+			"name": "Shackle",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5206,
+			"parent_test_item_category_id": 5204,
+			"name": "Anchor",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5207,
+			"parent_test_item_category_id": 5204,
+			"name": "Other pins and bushes",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 5215,
+			"parent_test_item_category_id": 5214,
+			"name": "Condition",
+			"description": "coil spring"
+		},
+		{
+			"id": 5216,
+			"parent_test_item_category_id": 5214,
+			"name": "Location",
+			"description": "Coil spring"
+		},
+		{
+			"id": 5223,
+			"parent_test_item_category_id": 5222,
+			"name": "Operation",
+			"description": "Fluid suspension"
+		},
+		{
+			"id": 5224,
+			"parent_test_item_category_id": 5222,
+			"name": "Suspension unit",
+			"description": "Fluid suspension unit"
+		},
+		{
+			"id": 5225,
+			"parent_test_item_category_id": 5222,
+			"name": "Accumulator",
+			"description": "Fluid suspension accumulator"
+		},
+		{
+			"id": 5226,
+			"parent_test_item_category_id": 5222,
+			"name": "Bellows",
+			"description": "Fluid suspension bellows"
+		},
+		{
+			"id": 5227,
+			"parent_test_item_category_id": 5222,
+			"name": "Levelling valve",
+			"description": "Fluid suspension levelling valve"
+		},
+		{
+			"id": 5228,
+			"parent_test_item_category_id": 5222,
+			"name": "Pipes",
+			"description": "Fluid suspension"
+		},
+		{
+			"id": 5229,
+			"parent_test_item_category_id": 5222,
+			"name": "Other components",
+			"description": "Fluid suspension"
+		},
+		{
+			"id": 5241,
+			"parent_test_item_category_id": 5240,
+			"name": "Operation",
+			"description": "Gas suspension"
+		},
+		{
+			"id": 5242,
+			"parent_test_item_category_id": 5240,
+			"name": "Suspension unit",
+			"description": "Gas suspension unit"
+		},
+		{
+			"id": 5243,
+			"parent_test_item_category_id": 5240,
+			"name": "Accumulator",
+			"description": "Gas suspension accumulator"
+		},
+		{
+			"id": 5244,
+			"parent_test_item_category_id": 5240,
+			"name": "Bellows",
+			"description": "Gas suspension bellows"
+		},
+		{
+			"id": 5245,
+			"parent_test_item_category_id": 5240,
+			"name": "Levelling valve",
+			"description": "Gas suspension levelling valve"
+		},
+		{
+			"id": 5246,
+			"parent_test_item_category_id": 5240,
+			"name": "Pipes",
+			"description": "Gas suspension"
+		},
+		{
+			"id": 5247,
+			"parent_test_item_category_id": 5240,
+			"name": "Other components",
+			"description": "Gas suspension"
+		},
+		{
+			"id": 5256,
+			"parent_test_item_category_id": 5255,
+			"name": "Operation",
+			"description": "Air suspension"
+		},
+		{
+			"id": 5257,
+			"parent_test_item_category_id": 5255,
+			"name": "Suspension unit",
+			"description": "Air suspension unit"
+		},
+		{
+			"id": 5258,
+			"parent_test_item_category_id": 5255,
+			"name": "Accumulator",
+			"description": "Air suspension accumulator"
+		},
+		{
+			"id": 5259,
+			"parent_test_item_category_id": 5255,
+			"name": "Bellows",
+			"description": "Air suspension bellows"
+		},
+		{
+			"id": 5260,
+			"parent_test_item_category_id": 5255,
+			"name": "Levelling valve",
+			"description": "Air suspension levelling valve"
+		},
+		{
+			"id": 5261,
+			"parent_test_item_category_id": 5255,
+			"name": "Pipes",
+			"description": "Air suspension"
+		},
+		{
+			"id": 5262,
+			"parent_test_item_category_id": 5255,
+			"name": "Other components",
+			"description": "Air suspension"
+		},
+		{
+			"id": 5271,
+			"parent_test_item_category_id": 5270,
+			"name": "Condition",
+			"description": "Torsion bar"
+		},
+		{
+			"id": 5273,
+			"parent_test_item_category_id": 5270,
+			"name": "Attachment",
+			"description": "Torsion bar"
+		},
+		{
+			"id": 5281,
+			"parent_test_item_category_id": 5280,
+			"name": "Condition",
+			"description": "Bonded suspension unit"
+		},
+		{
+			"id": 5283,
+			"parent_test_item_category_id": 5280,
+			"name": "Attachment",
+			"description": "Bonded suspension unit"
+		},
+		{
+			"id": 5291,
+			"parent_test_item_category_id": 5290,
+			"name": "Condition",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 5292,
+			"parent_test_item_category_id": 5290,
+			"name": "Pins/bushes/ball joints",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 5293,
+			"parent_test_item_category_id": 5290,
+			"name": "Attachment",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 5301,
+			"parent_test_item_category_id": 5300,
+			"name": "Condition",
+			"description": "Trailing arm"
+		},
+		{
+			"id": 5302,
+			"parent_test_item_category_id": 5300,
+			"name": "Pins/bushes/ball joints",
+			"description": "Trailing arm"
+		},
+		{
+			"id": 5303,
+			"parent_test_item_category_id": 5300,
+			"name": "Attachment",
+			"description": "Trailing arm"
+		},
+		{
+			"id": 5311,
+			"parent_test_item_category_id": 5310,
+			"name": "Condition",
+			"description": "Radius arm"
+		},
+		{
+			"id": 5312,
+			"parent_test_item_category_id": 5310,
+			"name": "Pins/bushes/ball joints",
+			"description": "Radius arm"
+		},
+		{
+			"id": 5313,
+			"parent_test_item_category_id": 5310,
+			"name": "Attachment",
+			"description": "Radius arm"
+		},
+		{
+			"id": 5321,
+			"parent_test_item_category_id": 5320,
+			"name": "Condition",
+			"description": "Tie bar/rod"
+		},
+		{
+			"id": 5322,
+			"parent_test_item_category_id": 5320,
+			"name": "Pins/bushes/ball joints",
+			"description": "Tie bar/rod"
+		},
+		{
+			"id": 5323,
+			"parent_test_item_category_id": 5320,
+			"name": "Attachment",
+			"description": "Tie bar/rod"
+		},
+		{
+			"id": 5331,
+			"parent_test_item_category_id": 5330,
+			"name": "Condition",
+			"description": "Panhard rod"
+		},
+		{
+			"id": 5332,
+			"parent_test_item_category_id": 5330,
+			"name": "Pins/bushes/ball joints",
+			"description": "Panhard rod"
+		},
+		{
+			"id": 5333,
+			"parent_test_item_category_id": 5330,
+			"name": "Attachment",
+			"description": "Panhard rod"
+		},
+		{
+			"id": 5341,
+			"parent_test_item_category_id": 5340,
+			"name": "Condition",
+			"description": "Torque/reaction arm"
+		},
+		{
+			"id": 5342,
+			"parent_test_item_category_id": 5340,
+			"name": "Pins/bushes/ball joints",
+			"description": "Torque/reaction arm"
+		},
+		{
+			"id": 5343,
+			"parent_test_item_category_id": 5340,
+			"name": "Attachment",
+			"description": "Torque/reaction arm"
+		},
+		{
+			"id": 535,
+			"parent_test_item_category_id": 5350,
+			"name": "Linkage pins/bushes/ball joints",
+			"description": "Anti-roll bar linkage"
+		},
+		{
+			"id": 5351,
+			"parent_test_item_category_id": 5350,
+			"name": "Condition",
+			"description": "Anti-roll bar"
+		},
+		{
+			"id": 5352,
+			"parent_test_item_category_id": 5350,
+			"name": "Pins/bushes/ball joints",
+			"description": "Anti-roll bar"
+		},
+		{
+			"id": 5353,
+			"parent_test_item_category_id": 5350,
+			"name": "Attachment",
+			"description": "Anti-roll bar"
+		},
+		{
+			"id": 5354,
+			"parent_test_item_category_id": 5350,
+			"name": "Linkage condition",
+			"description": "Anti-roll bar linkage"
+		},
+		{
+			"id": 5355,
+			"parent_test_item_category_id": 5350,
+			"name": "Presence",
+			"description": "Anti-roll bar"
+		},
+		{
+			"id": 5361,
+			"parent_test_item_category_id": 5360,
+			"name": "Condition",
+			"description": "Macpherson strut"
+		},
+		{
+			"id": 5371,
+			"parent_test_item_category_id": 5370,
+			"name": "Condition",
+			"description": "Sub-frame"
+		},
+		{
+			"id": 5372,
+			"parent_test_item_category_id": 5370,
+			"name": "Pins/bushes/ball joints",
+			"description": "Sub-frame"
+		},
+		{
+			"id": 5373,
+			"parent_test_item_category_id": 5370,
+			"name": "Attachment",
+			"description": "Sub-frame attachment"
+		},
+		{
+			"id": 5381,
+			"parent_test_item_category_id": 5380,
+			"name": "Axle beam",
+			"description": "Axle beam"
+		},
+		{
+			"id": 5382,
+			"parent_test_item_category_id": 5380,
+			"name": "Stub axle",
+			"description": "Stub axle"
+		},
+		{
+			"id": 5383,
+			"parent_test_item_category_id": 5380,
+			"name": "King pins",
+			"description": "Axle king pin"
+		},
+		{
+			"id": 5384,
+			"parent_test_item_category_id": 5380,
+			"name": "Swivel joints/housing",
+			"description": "Axle swivel joint"
+		},
+		{
+			"id": 5385,
+			"parent_test_item_category_id": 5380,
+			"name": "Clearance",
+			"description": "Axle"
+		},
+		{
+			"id": 5396,
+			"parent_test_item_category_id": 5395,
+			"name": "Front",
+			"description": "Front wheel bearing"
+		},
+		{
+			"id": 5397,
+			"parent_test_item_category_id": 5395,
+			"name": "Rear",
+			"description": "Rear wheel bearing"
+		},
+		{
+			"id": 5413,
+			"parent_test_item_category_id": 5412,
+			"name": "Constant velocity joints",
+			"description": "Front constant velocity joint"
+		},
+		{
+			"id": 5414,
+			"parent_test_item_category_id": 5412,
+			"name": "Couplings",
+			"description": "Front drive shaft coupling"
+		},
+		{
+			"id": 5415,
+			"parent_test_item_category_id": 5412,
+			"name": "Drive shafts",
+			"description": null
+		},
+		{
+			"id": 5416,
+			"parent_test_item_category_id": 5415,
+			"name": "Front drive shaft",
+			"description": "Front drive shaft"
+		},
+		{
+			"id": 5417,
+			"parent_test_item_category_id": 5415,
+			"name": "Any drive shaft which is part of the suspension",
+			"description": "Drive shaft"
+		},
+		{
+			"id": 5421,
+			"parent_test_item_category_id": 5420,
+			"name": "Fitment",
+			"description": "Shock absorber"
+		},
+		{
+			"id": 5422,
+			"parent_test_item_category_id": 5420,
+			"name": "Condition",
+			"description": "Shock absorber"
+		},
+		{
+			"id": 5424,
+			"parent_test_item_category_id": 5423,
+			"name": "Component mounting",
+			"description": "Suspension component mounting"
+		},
+		{
+			"id": 5425,
+			"parent_test_item_category_id": 5423,
+			"name": "Spring mounting",
+			"description": "Suspension spring mounting"
+		},
+		{
+			"id": 5426,
+			"parent_test_item_category_id": 5423,
+			"name": "Subframe mounting",
+			"description": "Subframe mounting"
+		},
+		{
+			"id": 533,
+			"parent_test_item_category_id": 5430,
+			"name": "Electronic stability system",
+			"description": "Electronic stability system"
+		},
+		{
+			"id": 534,
+			"parent_test_item_category_id": 5430,
+			"name": "Electronic braking system",
+			"description": "Electronic braking system"
+		},
+		{
+			"id": 2560,
+			"parent_test_item_category_id": 5430,
+			"name": "Additional braking devices",
+			"description": "Additional braking device"
+		},
+		{
+			"id": 5431,
+			"parent_test_item_category_id": 5430,
+			"name": "Parking brake",
+			"description": null
+		},
+		{
+			"id": 5435,
+			"parent_test_item_category_id": 5430,
+			"name": "Hand operated control valves",
+			"description": null
+		},
+		{
+			"id": 5445,
+			"parent_test_item_category_id": 5430,
+			"name": "Service brake control components",
+			"description": null
+		},
+		{
+			"id": 5454,
+			"parent_test_item_category_id": 5430,
+			"name": "Mechanical components",
+			"description": null
+		},
+		{
+			"id": 5465,
+			"parent_test_item_category_id": 5430,
+			"name": "Full power hydraulic systems",
+			"description": null
+		},
+		{
+			"id": 5470,
+			"parent_test_item_category_id": 5430,
+			"name": "Hydraulic systems",
+			"description": null
+		},
+		{
+			"id": 5500,
+			"parent_test_item_category_id": 5430,
+			"name": "Air and vacuum systems",
+			"description": null
+		},
+		{
+			"id": 5525,
+			"parent_test_item_category_id": 5430,
+			"name": "Abs",
+			"description": "Anti-lock braking system"
+		},
+		{
+			"id": 5535,
+			"parent_test_item_category_id": 5430,
+			"name": "Hub components",
+			"description": null
+		},
+		{
+			"id": 5543,
+			"parent_test_item_category_id": 5430,
+			"name": "Locking devices",
+			"description": "Mechanical brake component"
+		},
+		{
+			"id": 5550,
+			"parent_test_item_category_id": 5430,
+			"name": "Restricted movement",
+			"description": "Mechanical brake component"
+		},
+		{
+			"id": 5565,
+			"parent_test_item_category_id": 5430,
+			"name": "Prescribed areas",
+			"description": null
+		},
+		{
+			"id": 5575,
+			"parent_test_item_category_id": 5430,
+			"name": "Brake performance",
+			"description": null
+		},
+		{
+			"id": 515,
+			"parent_test_item_category_id": 5431,
+			"name": "Electronic parking brake",
+			"description": "Electronic parking brake"
+		},
+		{
+			"id": 5432,
+			"parent_test_item_category_id": 5431,
+			"name": "Fitment",
+			"description": "Parking brake"
+		},
+		{
+			"id": 5433,
+			"parent_test_item_category_id": 5431,
+			"name": "Condition",
+			"description": "Parking brake"
+		},
+		{
+			"id": 5436,
+			"parent_test_item_category_id": 5435,
+			"name": "Condition",
+			"description": "Hand operated control valve"
+		},
+		{
+			"id": 5437,
+			"parent_test_item_category_id": 5435,
+			"name": "Attachment",
+			"description": "Hand operated control valve"
+		},
+		{
+			"id": 5438,
+			"parent_test_item_category_id": 5435,
+			"name": "Operation",
+			"description": "Hand operated control valve"
+		},
+		{
+			"id": 5446,
+			"parent_test_item_category_id": 5445,
+			"name": "Pedal",
+			"description": null
+		},
+		{
+			"id": 5449,
+			"parent_test_item_category_id": 5445,
+			"name": "Pedal linkage",
+			"description": null
+		},
+		{
+			"id": 5447,
+			"parent_test_item_category_id": 5446,
+			"name": "Condition",
+			"description": "Brake pedal"
+		},
+		{
+			"id": 5448,
+			"parent_test_item_category_id": 5446,
+			"name": "Anti-slip",
+			"description": "Brake pedal"
+		},
+		{
+			"id": 5450,
+			"parent_test_item_category_id": 5449,
+			"name": "Rod",
+			"description": "Brake pedal actuating"
+		},
+		{
+			"id": 5451,
+			"parent_test_item_category_id": 5449,
+			"name": "Lever",
+			"description": "Brake pedal actuating lever"
+		},
+		{
+			"id": 5452,
+			"parent_test_item_category_id": 5449,
+			"name": "Cable",
+			"description": "Brake pedal actuating cable"
+		},
+		{
+			"id": 5453,
+			"parent_test_item_category_id": 5449,
+			"name": "Linkage",
+			"description": "Brake pedal actuating linkage"
+		},
+		{
+			"id": 516,
+			"parent_test_item_category_id": 5454,
+			"name": "Brake slack adjuster",
+			"description": "Brake slack adjuster"
+		},
+		{
+			"id": 5455,
+			"parent_test_item_category_id": 5454,
+			"name": "Linkage",
+			"description": "Brake linkage"
+		},
+		{
+			"id": 5456,
+			"parent_test_item_category_id": 5454,
+			"name": "Rod",
+			"description": "Brake rod"
+		},
+		{
+			"id": 5457,
+			"parent_test_item_category_id": 5454,
+			"name": "Lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 5458,
+			"parent_test_item_category_id": 5454,
+			"name": "Cable",
+			"description": "Brake cable"
+		},
+		{
+			"id": 5459,
+			"parent_test_item_category_id": 5454,
+			"name": "Relay lever",
+			"description": "Brake relay lever"
+		},
+		{
+			"id": 5460,
+			"parent_test_item_category_id": 5454,
+			"name": "Clevis joint",
+			"description": "Brake clevis joint"
+		},
+		{
+			"id": 5461,
+			"parent_test_item_category_id": 5454,
+			"name": "Stationary pin",
+			"description": "Brake stationary pin"
+		},
+		{
+			"id": 5462,
+			"parent_test_item_category_id": 5454,
+			"name": "Pivot",
+			"description": "Brake pivot"
+		},
+		{
+			"id": 5466,
+			"parent_test_item_category_id": 5465,
+			"name": "Warning",
+			"description": "Brake warning device"
+		},
+		{
+			"id": 5467,
+			"parent_test_item_category_id": 5465,
+			"name": "Operation",
+			"description": "Brake operation"
+		},
+		{
+			"id": 517,
+			"parent_test_item_category_id": 5470,
+			"name": "Brake fluid warning lamp",
+			"description": "Brake fluid warning lamp"
+		},
+		{
+			"id": 5472,
+			"parent_test_item_category_id": 5470,
+			"name": "Operation",
+			"description": "Brake"
+		},
+		{
+			"id": 5473,
+			"parent_test_item_category_id": 5470,
+			"name": "Components",
+			"description": null
+		},
+		{
+			"id": 5482,
+			"parent_test_item_category_id": 5470,
+			"name": "Leaks",
+			"description": "Braking system"
+		},
+		{
+			"id": 2479,
+			"parent_test_item_category_id": 5473,
+			"name": "Cylinders",
+			"description": "Hydraulic brake cylinder"
+		},
+		{
+			"id": 5474,
+			"parent_test_item_category_id": 5473,
+			"name": "Pipes",
+			"description": "Brake pipe"
+		},
+		{
+			"id": 5475,
+			"parent_test_item_category_id": 5473,
+			"name": "Hoses",
+			"description": "Brake hose"
+		},
+		{
+			"id": 5476,
+			"parent_test_item_category_id": 5473,
+			"name": "Master cylinder",
+			"description": "Brake master cylinder"
+		},
+		{
+			"id": 5477,
+			"parent_test_item_category_id": 5473,
+			"name": "Reservoirs",
+			"description": "Brake hydraulic reservoir"
+		},
+		{
+			"id": 5478,
+			"parent_test_item_category_id": 5473,
+			"name": "Servos",
+			"description": "Brake"
+		},
+		{
+			"id": 5480,
+			"parent_test_item_category_id": 5473,
+			"name": "Pump",
+			"description": "Brake"
+		},
+		{
+			"id": 5481,
+			"parent_test_item_category_id": 5473,
+			"name": "Valves",
+			"description": "Brake"
+		},
+		{
+			"id": 5501,
+			"parent_test_item_category_id": 5500,
+			"name": "Warning",
+			"description": "Brake warning device"
+		},
+		{
+			"id": 5502,
+			"parent_test_item_category_id": 5500,
+			"name": "Operation",
+			"description": "Brake operation"
+		},
+		{
+			"id": 5503,
+			"parent_test_item_category_id": 5500,
+			"name": "Pressure/vacuum build up",
+			"description": "Brake"
+		},
+		{
+			"id": 5504,
+			"parent_test_item_category_id": 5500,
+			"name": "Components",
+			"description": null
+		},
+		{
+			"id": 5512,
+			"parent_test_item_category_id": 5500,
+			"name": "Leaks",
+			"description": "Braking system"
+		},
+		{
+			"id": 5505,
+			"parent_test_item_category_id": 5504,
+			"name": "Pipes",
+			"description": "Brake pipe"
+		},
+		{
+			"id": 5506,
+			"parent_test_item_category_id": 5504,
+			"name": "Hoses",
+			"description": "Brake hose"
+		},
+		{
+			"id": 5507,
+			"parent_test_item_category_id": 5504,
+			"name": "Reservoirs",
+			"description": "Air/vacuum reservoir"
+		},
+		{
+			"id": 5508,
+			"parent_test_item_category_id": 5504,
+			"name": "Servos",
+			"description": "Brake"
+		},
+		{
+			"id": 5509,
+			"parent_test_item_category_id": 5504,
+			"name": "Cylinders/actuators",
+			"description": "Air brake cylinder/actuator"
+		},
+		{
+			"id": 5510,
+			"parent_test_item_category_id": 5504,
+			"name": "Valves",
+			"description": "Brake"
+		},
+		{
+			"id": 5511,
+			"parent_test_item_category_id": 5504,
+			"name": "Pump/compressors",
+			"description": "Brake pump/compressor"
+		},
+		{
+			"id": 5536,
+			"parent_test_item_category_id": 5535,
+			"name": "Brake linings",
+			"description": "Brake lining(s)"
+		},
+		{
+			"id": 5537,
+			"parent_test_item_category_id": 5535,
+			"name": "Brake pads",
+			"description": "Brake pad(s)"
+		},
+		{
+			"id": 5538,
+			"parent_test_item_category_id": 5535,
+			"name": "Brake drums",
+			"description": "brake drum"
+		},
+		{
+			"id": 5539,
+			"parent_test_item_category_id": 5535,
+			"name": "Brake discs",
+			"description": "brake disc"
+		},
+		{
+			"id": 5540,
+			"parent_test_item_category_id": 5535,
+			"name": "Brake back plates",
+			"description": "Brake back plate(s)"
+		},
+		{
+			"id": 5541,
+			"parent_test_item_category_id": 5535,
+			"name": "Brake calipers",
+			"description": "brake caliper"
+		},
+		{
+			"id": 5542,
+			"parent_test_item_category_id": 5535,
+			"name": "Wheel cylinder",
+			"description": "wheel cylinder"
+		},
+		{
+			"id": 5566,
+			"parent_test_item_category_id": 5565,
+			"name": "Park brake mechanism/associated mountings",
+			"description": "Parking brake mechanism/associated mounting"
+		},
+		{
+			"id": 5567,
+			"parent_test_item_category_id": 5565,
+			"name": "Actuating linkage mounting",
+			"description": "Brake actuating linkage mounting"
+		},
+		{
+			"id": 5568,
+			"parent_test_item_category_id": 5565,
+			"name": "Master cylinder/servo mounting",
+			"description": "Brake master cylinder/servo mounting"
+		},
+		{
+			"id": 2600,
+			"parent_test_item_category_id": 5575,
+			"name": "Gradient hand brake",
+			"description": "Parking brake"
+		},
+		{
+			"id": 5576,
+			"parent_test_item_category_id": 5575,
+			"name": "Rbt",
+			"description": null
+		},
+		{
+			"id": 5582,
+			"parent_test_item_category_id": 5575,
+			"name": "Rbt (sp)",
+			"description": null
+		},
+		{
+			"id": 5590,
+			"parent_test_item_category_id": 5575,
+			"name": "Decelerometer",
+			"description": null
+		},
+		{
+			"id": 5594,
+			"parent_test_item_category_id": 5575,
+			"name": "Decelerometer (sp)",
+			"description": null
+		},
+		{
+			"id": 5620,
+			"parent_test_item_category_id": 5575,
+			"name": "Plate brake tester",
+			"description": null
+		},
+		{
+			"id": 5624,
+			"parent_test_item_category_id": 5575,
+			"name": "Plate brake tester (sp)",
+			"description": null
+		},
+		{
+			"id": 10150,
+			"parent_test_item_category_id": 5575,
+			"name": "Brake performance not tested",
+			"description": "Brake performance"
+		},
+		{
+			"id": 528,
+			"parent_test_item_category_id": 5576,
+			"name": "Brake imbalance",
+			"description": "Brakes imbalanced"
+		},
+		{
+			"id": 5577,
+			"parent_test_item_category_id": 5576,
+			"name": "Front wheels",
+			"description": "front"
+		},
+		{
+			"id": 5578,
+			"parent_test_item_category_id": 5576,
+			"name": "Rear wheels",
+			"description": "rear"
+		},
+		{
+			"id": 5820,
+			"parent_test_item_category_id": 5576,
+			"name": "Tricycles, quadricycles and pre-68 vehicles",
+			"description": null
+		},
+		{
+			"id": 5583,
+			"parent_test_item_category_id": 5582,
+			"name": "Brake Imbalance",
+			"description": "Brakes imbalanced"
+		},
+		{
+			"id": 5585,
+			"parent_test_item_category_id": 5582,
+			"name": "Service brake performance",
+			"description": "Service brake:"
+		},
+		{
+			"id": 5586,
+			"parent_test_item_category_id": 5582,
+			"name": "Parking brake performance",
+			"description": "Parking brake:"
+		},
+		{
+			"id": 5587,
+			"parent_test_item_category_id": 5582,
+			"name": "Transmission brake",
+			"description": "Transmission brake"
+		},
+		{
+			"id": 518,
+			"parent_test_item_category_id": 5590,
+			"name": "Parking brake operation",
+			"description": "Parking brake operation"
+		},
+		{
+			"id": 5591,
+			"parent_test_item_category_id": 5590,
+			"name": "Brake operation",
+			"description": "Service brake"
+		},
+		{
+			"id": 5823,
+			"parent_test_item_category_id": 5590,
+			"name": "Tricycles, quadricycles and pre-68 vehicles",
+			"description": null
+		},
+		{
+			"id": 5596,
+			"parent_test_item_category_id": 5594,
+			"name": "Service brake performance",
+			"description": "Service brake:"
+		},
+		{
+			"id": 5597,
+			"parent_test_item_category_id": 5594,
+			"name": "Parking brake performance",
+			"description": "Parking brake:"
+		},
+		{
+			"id": 5621,
+			"parent_test_item_category_id": 5620,
+			"name": "Operation",
+			"description": "Service brake"
+		},
+		{
+			"id": 5623,
+			"parent_test_item_category_id": 5620,
+			"name": "Parking brake performance",
+			"description": "Parking"
+		},
+		{
+			"id": 5826,
+			"parent_test_item_category_id": 5620,
+			"name": "Tricycles, quadricycles and pre-68 vehicles",
+			"description": null
+		},
+		{
+			"id": 5625,
+			"parent_test_item_category_id": 5624,
+			"name": "Brake imbalance",
+			"description": "Brakes imbalanced"
+		},
+		{
+			"id": 5626,
+			"parent_test_item_category_id": 5624,
+			"name": "Service brake performance",
+			"description": "Service brake:"
+		},
+		{
+			"id": 5627,
+			"parent_test_item_category_id": 5624,
+			"name": "Parking brake performance",
+			"description": "Parking brake:"
+		},
+		{
+			"id": 532,
+			"parent_test_item_category_id": 5650,
+			"name": "Tyre pressure monitoring system",
+			"description": "Tyre pressure monitoring system"
+		},
+		{
+			"id": 2653,
+			"parent_test_item_category_id": 5650,
+			"name": "Tread depth (class v)",
+			"description": "Tyre"
+		},
+		{
+			"id": 5651,
+			"parent_test_item_category_id": 5650,
+			"name": "Size/type",
+			"description": "Tyre(s)"
+		},
+		{
+			"id": 5652,
+			"parent_test_item_category_id": 5650,
+			"name": "Condition",
+			"description": "Tyre"
+		},
+		{
+			"id": 5653,
+			"parent_test_item_category_id": 5650,
+			"name": "Tread depth",
+			"description": null
+		},
+		{
+			"id": 5654,
+			"parent_test_item_category_id": 5650,
+			"name": "Valve stem",
+			"description": "Valve stem"
+		},
+		{
+			"id": 5655,
+			"parent_test_item_category_id": 5653,
+			"name": "Vehicles first used after 2 January 1933 upto 9 seats including driver",
+			"description": "Tyre"
+		},
+		{
+			"id": 5656,
+			"parent_test_item_category_id": 5653,
+			"name": "Vehicles over 9 seats including driver",
+			"description": "Tyre"
+		},
+		{
+			"id": 5657,
+			"parent_test_item_category_id": 5653,
+			"name": "Vehicles first used before 3 January 1933",
+			"description": "Tyre"
+		},
+		{
+			"id": 5658,
+			"parent_test_item_category_id": 5653,
+			"name": "Goods vehicle first used after 2 January 1933",
+			"description": "Tyre"
+		},
+		{
+			"id": 5659,
+			"parent_test_item_category_id": 5653,
+			"name": "Trikes more than 410kg and quads",
+			"description": "Tyre"
+		},
+		{
+			"id": 5660,
+			"parent_test_item_category_id": 5653,
+			"name": "Trikes less than 410kg and more than 50cc",
+			"description": "Tyre"
+		},
+		{
+			"id": 5661,
+			"parent_test_item_category_id": 5653,
+			"name": "Trikes less than 410kg and 50cc",
+			"description": "Tyre"
+		},
+		{
+			"id": 2673,
+			"parent_test_item_category_id": 5670,
+			"name": "Halfshafts",
+			"description": "Halfshaft"
+		},
+		{
+			"id": 2674,
+			"parent_test_item_category_id": 5670,
+			"name": "Hubs",
+			"description": "Wheel hub"
+		},
+		{
+			"id": 5671,
+			"parent_test_item_category_id": 5670,
+			"name": "Condition",
+			"description": "Road wheel"
+		},
+		{
+			"id": 5672,
+			"parent_test_item_category_id": 5670,
+			"name": "Attachment",
+			"description": "Wheel"
+		},
+		{
+			"id": 519,
+			"parent_test_item_category_id": 5680,
+			"name": "Supplementary restraint systems",
+			"description": null
+		},
+		{
+			"id": 520,
+			"parent_test_item_category_id": 5680,
+			"name": "Seat belts",
+			"description": null
+		},
+		{
+			"id": 5686,
+			"parent_test_item_category_id": 5684,
+			"name": "Anchorage's",
+			"description": "Seat belt installation"
+		},
+		{
+			"id": 5688,
+			"parent_test_item_category_id": 5684,
+			"name": "Belt(s)/padding",
+			"description": "Seat belt installation"
+		},
+		{
+			"id": 524,
+			"parent_test_item_category_id": 5690,
+			"name": "Engine mountings",
+			"description": "engine mounting"
+		},
+		{
+			"id": 525,
+			"parent_test_item_category_id": 5690,
+			"name": "Steps and stairs",
+			"description": null
+		},
+		{
+			"id": 2781,
+			"parent_test_item_category_id": 5690,
+			"name": "Speedometer",
+			"description": "Speedometer"
+		},
+		{
+			"id": 5691,
+			"parent_test_item_category_id": 5690,
+			"name": "Vehicle structure",
+			"description": null
+		},
+		{
+			"id": 5695,
+			"parent_test_item_category_id": 5690,
+			"name": "Body security",
+			"description": "Body"
+		},
+		{
+			"id": 5696,
+			"parent_test_item_category_id": 5690,
+			"name": "Body condition",
+			"description": "Body"
+		},
+		{
+			"id": 5697,
+			"parent_test_item_category_id": 5690,
+			"name": "Doors",
+			"description": null
+		},
+		{
+			"id": 5715,
+			"parent_test_item_category_id": 5690,
+			"name": "Seats",
+			"description": null
+		},
+		{
+			"id": 5720,
+			"parent_test_item_category_id": 5690,
+			"name": "Load security",
+			"description": null
+		},
+		{
+			"id": 5727,
+			"parent_test_item_category_id": 5690,
+			"name": "Spare wheel",
+			"description": "Spare wheel"
+		},
+		{
+			"id": 2693,
+			"parent_test_item_category_id": 5691,
+			"name": "Integral",
+			"description": "Integral body structure"
+		},
+		{
+			"id": 2694,
+			"parent_test_item_category_id": 5691,
+			"name": "Sub-frames",
+			"description": "Sub-frame"
+		},
+		{
+			"id": 5692,
+			"parent_test_item_category_id": 5691,
+			"name": "Chassis",
+			"description": "Vehicle structure"
+		},
+		{
+			"id": 529,
+			"parent_test_item_category_id": 5697,
+			"name": "Passenger entrance/exit doors (Class 5)",
+			"description": "Entrance/exit door"
+		},
+		{
+			"id": 2699,
+			"parent_test_item_category_id": 5697,
+			"name": "Passengers",
+			"description": "Passenger door"
+		},
+		{
+			"id": 2700,
+			"parent_test_item_category_id": 5697,
+			"name": "Emergency exits",
+			"description": "Emergency exit"
+		},
+		{
+			"id": 5698,
+			"parent_test_item_category_id": 5697,
+			"name": "Drivers",
+			"description": "Drivers door"
+		},
+		{
+			"id": 5700,
+			"parent_test_item_category_id": 5697,
+			"name": "Passengers front",
+			"description": "Front passenger door"
+		},
+		{
+			"id": 5701,
+			"parent_test_item_category_id": 5697,
+			"name": "Passengers other",
+			"description": "passenger door"
+		},
+		{
+			"id": 2722,
+			"parent_test_item_category_id": 5715,
+			"name": "Passengers",
+			"description": "passengers seat"
+		},
+		{
+			"id": 5717,
+			"parent_test_item_category_id": 5715,
+			"name": "Drivers",
+			"description": "Drivers seat"
+		},
+		{
+			"id": 5718,
+			"parent_test_item_category_id": 5715,
+			"name": "Front passenger",
+			"description": "Front passenger seat"
+		},
+		{
+			"id": 5719,
+			"parent_test_item_category_id": 5715,
+			"name": "Rear passenger",
+			"description": "Rear passenger seat"
+		},
+		{
+			"id": 2723,
+			"parent_test_item_category_id": 5720,
+			"name": "Access panel",
+			"description": "Access panel"
+		},
+		{
+			"id": 5722,
+			"parent_test_item_category_id": 5720,
+			"name": "Bootlid",
+			"description": "Bootlid"
+		},
+		{
+			"id": 5723,
+			"parent_test_item_category_id": 5720,
+			"name": "Tailgate",
+			"description": "Tailgate"
+		},
+		{
+			"id": 5724,
+			"parent_test_item_category_id": 5720,
+			"name": "Loading door",
+			"description": "Loading door"
+		},
+		{
+			"id": 5725,
+			"parent_test_item_category_id": 5720,
+			"name": "Hinged tailboard",
+			"description": "Hinged tailboard"
+		},
+		{
+			"id": 5726,
+			"parent_test_item_category_id": 5720,
+			"name": "Dropside",
+			"description": "Dropside"
+		},
+		{
+			"id": 5731,
+			"parent_test_item_category_id": 5730,
+			"name": "Exhaust system",
+			"description": "Exhaust"
+		},
+		{
+			"id": 5733,
+			"parent_test_item_category_id": 5730,
+			"name": "Spark ignition",
+			"description": null
+		},
+		{
+			"id": 5739,
+			"parent_test_item_category_id": 5730,
+			"name": "Compression ignition",
+			"description": null
+		},
+		{
+			"id": 5748,
+			"parent_test_item_category_id": 5730,
+			"name": "Fuel system",
+			"description": null
+		},
+		{
+			"id": 10152,
+			"parent_test_item_category_id": 5730,
+			"name": "Emissions not tested",
+			"description": "Emissions"
+		},
+		{
+			"id": 5732,
+			"parent_test_item_category_id": 5733,
+			"name": "Pre 01/08/1975 visual",
+			"description": "Exhaust"
+		},
+		{
+			"id": 5734,
+			"parent_test_item_category_id": 5733,
+			"name": "Non catalyst",
+			"description": "Exhaust"
+		},
+		{
+			"id": 5735,
+			"parent_test_item_category_id": 5733,
+			"name": "Catalyst",
+			"description": "Exhaust"
+		},
+		{
+			"id": 531,
+			"parent_test_item_category_id": 5739,
+			"name": "On or after 01/07/2008",
+			"description": "Exhaust"
+		},
+		{
+			"id": 5740,
+			"parent_test_item_category_id": 5739,
+			"name": "Pre 01/08/1979 visual",
+			"description": "Exhaust"
+		},
+		{
+			"id": 5741,
+			"parent_test_item_category_id": 5739,
+			"name": "Pre 01/07/2008 Turbo",
+			"description": "Exhaust"
+		},
+		{
+			"id": 5742,
+			"parent_test_item_category_id": 5739,
+			"name": "Pre 01/07/2008 Non turbo",
+			"description": "Exhaust"
+		},
+		{
+			"id": 5743,
+			"parent_test_item_category_id": 5748,
+			"name": "Tank",
+			"description": "Fuel tank"
+		},
+		{
+			"id": 5744,
+			"parent_test_item_category_id": 5748,
+			"name": "Hose",
+			"description": "Fuel hose"
+		},
+		{
+			"id": 5745,
+			"parent_test_item_category_id": 5748,
+			"name": "Pipe",
+			"description": "Fuel pipe"
+		},
+		{
+			"id": 5746,
+			"parent_test_item_category_id": 5748,
+			"name": "Cap",
+			"description": "Fuel cap/sealing device"
+		},
+		{
+			"id": 5747,
+			"parent_test_item_category_id": 5748,
+			"name": "System",
+			"description": "Fuel system"
+		},
+		{
+			"id": 1006,
+			"parent_test_item_category_id": 5750,
+			"name": "Indirect vision devices",
+			"description": "obligatory indirect vision device"
+		},
+		{
+			"id": 2751,
+			"parent_test_item_category_id": 5750,
+			"name": "Windscreen (old)",
+			"description": null
+		},
+		{
+			"id": 2759,
+			"parent_test_item_category_id": 5750,
+			"name": "Drivers view",
+			"description": "Drivers view"
+		},
+		{
+			"id": 2760,
+			"parent_test_item_category_id": 5750,
+			"name": "Glazing",
+			"description": null
+		},
+		{
+			"id": 5721,
+			"parent_test_item_category_id": 5750,
+			"name": "Bonnet",
+			"description": "Bonnet"
+		},
+		{
+			"id": 5751,
+			"parent_test_item_category_id": 5750,
+			"name": "Windscreen",
+			"description": "Windscreen"
+		},
+		{
+			"id": 5752,
+			"parent_test_item_category_id": 5750,
+			"name": "Wipers",
+			"description": "Windscreen wiper"
+		},
+		{
+			"id": 5753,
+			"parent_test_item_category_id": 5750,
+			"name": "Washers",
+			"description": "Windscreen washer"
+		},
+		{
+			"id": 5754,
+			"parent_test_item_category_id": 5750,
+			"name": "Mirrors",
+			"description": "Obligatory mirror"
+		},
+		{
+			"id": 2784,
+			"parent_test_item_category_id": 5780,
+			"name": "Driving controls",
+			"description": "Driving control(s)"
+		},
+		{
+			"id": 5782,
+			"parent_test_item_category_id": 5780,
+			"name": "Speed limiter",
+			"description": "Speed limiter"
+		},
+		{
+			"id": 5783,
+			"parent_test_item_category_id": 5780,
+			"name": "Speed limiter plate",
+			"description": "Speed limiter plate"
+		},
+		{
+			"id": 5786,
+			"parent_test_item_category_id": 5785,
+			"name": "Registration plate",
+			"description": "registration plate"
+		},
+		{
+			"id": 5787,
+			"parent_test_item_category_id": 5785,
+			"name": "Vehicle Identification Number",
+			"description": "Vehicle Identification Number"
+		},
+		{
+			"id": 536,
+			"parent_test_item_category_id": 5800,
+			"name": "Emissions - Spark Ignition",
+			"description": "Emissions"
+		},
+		{
+			"id": 537,
+			"parent_test_item_category_id": 5800,
+			"name": "Emissions - Compression Ignition",
+			"description": "Emissions"
+		},
+		{
+			"id": 5801,
+			"parent_test_item_category_id": 5800,
+			"name": "Brake performance",
+			"description": "Brake performance"
+		},
+		{
+			"id": 5802,
+			"parent_test_item_category_id": 5800,
+			"name": "Emissions",
+			"description": "Emissions"
+		},
+		{
+			"id": 5803,
+			"parent_test_item_category_id": 5800,
+			"name": "Headlamp aim",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 5804,
+			"parent_test_item_category_id": 5800,
+			"name": "Other components",
+			"description": "An item"
+		},
+		{
+			"id": 5811,
+			"parent_test_item_category_id": 5810,
+			"name": "Front drive shafts",
+			"description": null
+		},
+		{
+			"id": 5815,
+			"parent_test_item_category_id": 5810,
+			"name": "Any drive shaft which is part of the suspension",
+			"description": null
+		},
+		{
+			"id": 5812,
+			"parent_test_item_category_id": 5811,
+			"name": "Constant velocity joints",
+			"description": "Front constant velocity joint"
+		},
+		{
+			"id": 5813,
+			"parent_test_item_category_id": 5811,
+			"name": "Couplings",
+			"description": "Front drive shaft coupling"
+		},
+		{
+			"id": 5814,
+			"parent_test_item_category_id": 5811,
+			"name": "Drive shafts",
+			"description": "Front drive shaft"
+		},
+		{
+			"id": 5816,
+			"parent_test_item_category_id": 5815,
+			"name": "Universal joint",
+			"description": "Drive shaft uj which forms part of the suspension"
+		},
+		{
+			"id": 5817,
+			"parent_test_item_category_id": 5815,
+			"name": "Drive shafts",
+			"description": "Drive shaft which forms part of the suspension"
+		},
+		{
+			"id": 5821,
+			"parent_test_item_category_id": 5820,
+			"name": "Service brake performance",
+			"description": "Trikes, quads or pre-68 vehicles, service brake"
+		},
+		{
+			"id": 5822,
+			"parent_test_item_category_id": 5820,
+			"name": "Parking brake performance",
+			"description": "Parking brake"
+		},
+		{
+			"id": 5824,
+			"parent_test_item_category_id": 5823,
+			"name": "Service brake performance",
+			"description": "Trikes, quads or pre-68 vehicles, service brake"
+		},
+		{
+			"id": 5825,
+			"parent_test_item_category_id": 5823,
+			"name": "Parking brake performance",
+			"description": "Parking brake"
+		},
+		{
+			"id": 5827,
+			"parent_test_item_category_id": 5826,
+			"name": "Service brake performance",
+			"description": "Trikes, quads or pre-68 vehicles, service brake"
+		},
+		{
+			"id": 5828,
+			"parent_test_item_category_id": 5826,
+			"name": "Parking brake performance",
+			"description": "Parking brake"
+		},
+		{
+			"id": 9010,
+			"parent_test_item_category_id": 9000,
+			"name": "Lighting requirements",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9050,
+			"parent_test_item_category_id": 9000,
+			"name": "Motorbicycle derived steering and suspension",
+			"description": null
+		},
+		{
+			"id": 9087,
+			"parent_test_item_category_id": 9000,
+			"name": "Other steering types",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9120,
+			"parent_test_item_category_id": 9000,
+			"name": "Braking systems and requirements",
+			"description": null
+		},
+		{
+			"id": 9135,
+			"parent_test_item_category_id": 9000,
+			"name": "Tyres",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9140,
+			"parent_test_item_category_id": 9000,
+			"name": "Seat belts",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9145,
+			"parent_test_item_category_id": 9000,
+			"name": "Body and structure",
+			"description": null
+		},
+		{
+			"id": 9150,
+			"parent_test_item_category_id": 9000,
+			"name": "Emissions",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9151,
+			"parent_test_item_category_id": 9000,
+			"name": "Fuel system",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9160,
+			"parent_test_item_category_id": 9000,
+			"name": "Drivers view of the road",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9051,
+			"parent_test_item_category_id": 9050,
+			"name": "Motorbicycle derived steering control",
+			"description": null
+		},
+		{
+			"id": 9070,
+			"parent_test_item_category_id": 9050,
+			"name": "Motorbicycle derived steering systems",
+			"description": null
+		},
+		{
+			"id": 9080,
+			"parent_test_item_category_id": 9050,
+			"name": "Motorbicycle derived front suspension",
+			"description": null
+		},
+		{
+			"id": 9086,
+			"parent_test_item_category_id": 9050,
+			"name": "Other suspension types",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9090,
+			"parent_test_item_category_id": 9050,
+			"name": "Motorbicycle front wheel",
+			"description": "Front wheel"
+		},
+		{
+			"id": 9091,
+			"parent_test_item_category_id": 9050,
+			"name": "Motorbicycle front wheel bearings",
+			"description": "Front wheel bearings"
+		},
+		{
+			"id": 9052,
+			"parent_test_item_category_id": 9051,
+			"name": "Handlebars",
+			"description": null
+		},
+		{
+			"id": 9056,
+			"parent_test_item_category_id": 9051,
+			"name": "Fork yoke",
+			"description": "Fork yoke"
+		},
+		{
+			"id": 9057,
+			"parent_test_item_category_id": 9051,
+			"name": "Free movement",
+			"description": null
+		},
+		{
+			"id": 9062,
+			"parent_test_item_category_id": 9051,
+			"name": "Damper",
+			"description": "Steering damper"
+		},
+		{
+			"id": 9053,
+			"parent_test_item_category_id": 9052,
+			"name": "Mounting",
+			"description": "Handlebar mounting"
+		},
+		{
+			"id": 9054,
+			"parent_test_item_category_id": 9052,
+			"name": "Condition",
+			"description": "Handlebar"
+		},
+		{
+			"id": 9055,
+			"parent_test_item_category_id": 9052,
+			"name": "Handgrips",
+			"description": "Handlebar handgrip"
+		},
+		{
+			"id": 9058,
+			"parent_test_item_category_id": 9057,
+			"name": "Clearance",
+			"description": "Steering control"
+		},
+		{
+			"id": 9059,
+			"parent_test_item_category_id": 9057,
+			"name": "Restriction",
+			"description": "Steering control"
+		},
+		{
+			"id": 9071,
+			"parent_test_item_category_id": 9070,
+			"name": "Movement",
+			"description": "Steering movement"
+		},
+		{
+			"id": 9072,
+			"parent_test_item_category_id": 9070,
+			"name": "Headbearings",
+			"description": "Steering headbearing"
+		},
+		{
+			"id": 9081,
+			"parent_test_item_category_id": 9080,
+			"name": "Front suspension assembly",
+			"description": "Front suspension assembly"
+		},
+		{
+			"id": 9082,
+			"parent_test_item_category_id": 9080,
+			"name": "Spring",
+			"description": "Front suspension spring"
+		},
+		{
+			"id": 9083,
+			"parent_test_item_category_id": 9080,
+			"name": "Shock absorber",
+			"description": "Front shock absorber"
+		},
+		{
+			"id": 9084,
+			"parent_test_item_category_id": 9080,
+			"name": "Operation",
+			"description": "Front suspension"
+		},
+		{
+			"id": 9085,
+			"parent_test_item_category_id": 9080,
+			"name": "Prescribed areas",
+			"description": "Front suspension"
+		},
+		{
+			"id": 9123,
+			"parent_test_item_category_id": 9120,
+			"name": "Brake controls",
+			"description": null
+		},
+		{
+			"id": 9126,
+			"parent_test_item_category_id": 9120,
+			"name": "Other braking components",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9127,
+			"parent_test_item_category_id": 9120,
+			"name": "Performance",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9130,
+			"parent_test_item_category_id": 9120,
+			"name": "Abs",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 1007,
+			"parent_test_item_category_id": 9123,
+			"name": "Handlebar lever retaining and locking devices",
+			"description": "Brake lever"
+		},
+		{
+			"id": 9125,
+			"parent_test_item_category_id": 9123,
+			"name": "Handlebar lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 9146,
+			"parent_test_item_category_id": 9145,
+			"name": "Other components",
+			"description": "IMPORTANT."
+		},
+		{
+			"id": 9243,
+			"parent_test_item_category_id": 9145,
+			"name": "Tricycle and quadricycle footrests",
+			"description": "Footrest"
+		},
+		{
+			"id": 20001,
+			"parent_test_item_category_id": 20000,
+			"name": "Registration plates",
+			"description": "Registration plate"
+		},
+		{
+			"id": 20002,
+			"parent_test_item_category_id": 20000,
+			"name": "Vehicle Identification Number",
+			"description": "Vehicle Identification Number"
+		},
+		{
+			"id": 20004,
+			"parent_test_item_category_id": 20003,
+			"name": "Service brake pedal or hand lever",
+			"description": null
+		},
+		{
+			"id": 20007,
+			"parent_test_item_category_id": 20003,
+			"name": "Air and vacuum systems",
+			"description": null
+		},
+		{
+			"id": 20013,
+			"parent_test_item_category_id": 20003,
+			"name": "Low pressure warning",
+			"description": null
+		},
+		{
+			"id": 20016,
+			"parent_test_item_category_id": 20003,
+			"name": "Hand operated control valves",
+			"description": null
+		},
+		{
+			"id": 20021,
+			"parent_test_item_category_id": 20003,
+			"name": "Parking brake control",
+			"description": null
+		},
+		{
+			"id": 20024,
+			"parent_test_item_category_id": 20003,
+			"name": "Pressure storage reservoirs",
+			"description": null
+		},
+		{
+			"id": 20027,
+			"parent_test_item_category_id": 20003,
+			"name": "Hydraulic systems",
+			"description": null
+		},
+		{
+			"id": 20033,
+			"parent_test_item_category_id": 20003,
+			"name": "Rigid brake pipes",
+			"description": "Brake pipe"
+		},
+		{
+			"id": 20034,
+			"parent_test_item_category_id": 20003,
+			"name": "Flexible brake hoses",
+			"description": "Brake hose"
+		},
+		{
+			"id": 20050,
+			"parent_test_item_category_id": 20003,
+			"name": "Brake actuators (including spring brakes or hydraulic cylinders)",
+			"description": null
+		},
+		{
+			"id": 20054,
+			"parent_test_item_category_id": 20003,
+			"name": "Load sensing valves",
+			"description": "Brake load sensing valve"
+		},
+		{
+			"id": 20055,
+			"parent_test_item_category_id": 20003,
+			"name": "Other components and prescribed areas",
+			"description": null
+		},
+		{
+			"id": 20444,
+			"parent_test_item_category_id": 20003,
+			"name": "Mechanical brake components",
+			"description": null
+		},
+		{
+			"id": 20445,
+			"parent_test_item_category_id": 20003,
+			"name": "Brake performance",
+			"description": null
+		},
+		{
+			"id": 20446,
+			"parent_test_item_category_id": 20003,
+			"name": "ABS / EBS / ESC",
+			"description": null
+		},
+		{
+			"id": 20005,
+			"parent_test_item_category_id": 20004,
+			"name": "Pedal",
+			"description": "Brake pedal"
+		},
+		{
+			"id": 20006,
+			"parent_test_item_category_id": 20004,
+			"name": "Hand lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 20008,
+			"parent_test_item_category_id": 20007,
+			"name": "Operation",
+			"description": "Brake operation"
+		},
+		{
+			"id": 20009,
+			"parent_test_item_category_id": 20007,
+			"name": "Pressure/vacuum build up",
+			"description": "Brake"
+		},
+		{
+			"id": 20010,
+			"parent_test_item_category_id": 20007,
+			"name": "Leaks",
+			"description": "Braking system"
+		},
+		{
+			"id": 20011,
+			"parent_test_item_category_id": 20007,
+			"name": "Servos",
+			"description": "Brake servo"
+		},
+		{
+			"id": 20012,
+			"parent_test_item_category_id": 20007,
+			"name": "Valves",
+			"description": "Brake valve"
+		},
+		{
+			"id": 20014,
+			"parent_test_item_category_id": 20013,
+			"name": "Air and vacuum systems",
+			"description": "Brake warning device"
+		},
+		{
+			"id": 20015,
+			"parent_test_item_category_id": 20013,
+			"name": "Full power hydraulic systems",
+			"description": "Brake warning device"
+		},
+		{
+			"id": 20017,
+			"parent_test_item_category_id": 20016,
+			"name": "Condition",
+			"description": "Hand operated control valve"
+		},
+		{
+			"id": 20018,
+			"parent_test_item_category_id": 20016,
+			"name": "Attachment",
+			"description": "Hand operated control valve"
+		},
+		{
+			"id": 20019,
+			"parent_test_item_category_id": 20016,
+			"name": "Operation",
+			"description": "Hand operated control valve"
+		},
+		{
+			"id": 20020,
+			"parent_test_item_category_id": 20016,
+			"name": "Leaks",
+			"description": "Hand operated control valve"
+		},
+		{
+			"id": 20022,
+			"parent_test_item_category_id": 20021,
+			"name": "Lever",
+			"description": "Parking brake lever"
+		},
+		{
+			"id": 20023,
+			"parent_test_item_category_id": 20021,
+			"name": "Electronic parking brake",
+			"description": "Electronic parking brake"
+		},
+		{
+			"id": 20025,
+			"parent_test_item_category_id": 20024,
+			"name": "Full power hydraulic systems",
+			"description": "Brake pressure storage reservoir"
+		},
+		{
+			"id": 20026,
+			"parent_test_item_category_id": 20024,
+			"name": "Air and vacuum systems",
+			"description": "Air/vacuum reservoir"
+		},
+		{
+			"id": 20028,
+			"parent_test_item_category_id": 20027,
+			"name": "Servos",
+			"description": "Brake servo"
+		},
+		{
+			"id": 20029,
+			"parent_test_item_category_id": 20027,
+			"name": "Master cylinder",
+			"description": "Brake master cylinder"
+		},
+		{
+			"id": 20030,
+			"parent_test_item_category_id": 20027,
+			"name": "Reservoirs",
+			"description": "Brake hydraulic reservoir"
+		},
+		{
+			"id": 20031,
+			"parent_test_item_category_id": 20027,
+			"name": "Brake fluid ",
+			"description": "Brake fluid "
+		},
+		{
+			"id": 20032,
+			"parent_test_item_category_id": 20027,
+			"name": "Valves",
+			"description": "Brake valve"
+		},
+		{
+			"id": 20036,
+			"parent_test_item_category_id": 20035,
+			"name": "Brake linings",
+			"description": "Brake lining(s)"
+		},
+		{
+			"id": 20037,
+			"parent_test_item_category_id": 20035,
+			"name": "Brake pads",
+			"description": "Brake pad(s)"
+		},
+		{
+			"id": 20039,
+			"parent_test_item_category_id": 20038,
+			"name": "Brake discs",
+			"description": "Brake disc"
+		},
+		{
+			"id": 20040,
+			"parent_test_item_category_id": 20038,
+			"name": "Brake drums",
+			"description": "Brake drum"
+		},
+		{
+			"id": 20042,
+			"parent_test_item_category_id": 20041,
+			"name": "Rod",
+			"description": "Brake rod"
+		},
+		{
+			"id": 20043,
+			"parent_test_item_category_id": 20041,
+			"name": "Cable",
+			"description": "Brake cable"
+		},
+		{
+			"id": 20044,
+			"parent_test_item_category_id": 20041,
+			"name": "Lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 20045,
+			"parent_test_item_category_id": 20041,
+			"name": "Linkage",
+			"description": "Brake linkage"
+		},
+		{
+			"id": 20046,
+			"parent_test_item_category_id": 20041,
+			"name": "Relay lever",
+			"description": "Brake relay lever"
+		},
+		{
+			"id": 20047,
+			"parent_test_item_category_id": 20041,
+			"name": "Clevis joint",
+			"description": "Brake clevis joint"
+		},
+		{
+			"id": 20048,
+			"parent_test_item_category_id": 20041,
+			"name": "Pivot",
+			"description": "Brake pivot"
+		},
+		{
+			"id": 20049,
+			"parent_test_item_category_id": 20041,
+			"name": "Brake slack adjuster",
+			"description": "Brake slack adjuster"
+		},
+		{
+			"id": 20051,
+			"parent_test_item_category_id": 20050,
+			"name": "Hydraulic brake callipers",
+			"description": "Hydraulic brake calliper"
+		},
+		{
+			"id": 20052,
+			"parent_test_item_category_id": 20050,
+			"name": "Hydraulic brake cylinder",
+			"description": "Hydraulic brake cylinder"
+		},
+		{
+			"id": 20053,
+			"parent_test_item_category_id": 20050,
+			"name": "Air brake cylinder/actuator",
+			"description": "Air brake cylinder/actuator"
+		},
+		{
+			"id": 20056,
+			"parent_test_item_category_id": 20055,
+			"name": "Other components",
+			"description": "Brake"
+		},
+		{
+			"id": 20057,
+			"parent_test_item_category_id": 20055,
+			"name": "Prescribed areas",
+			"description": null
+		},
+		{
+			"id": 20103,
+			"parent_test_item_category_id": 20055,
+			"name": "Additional braking device",
+			"description": "Additional braking device"
+		},
+		{
+			"id": 20058,
+			"parent_test_item_category_id": 20057,
+			"name": "Park brake mechanism/associated mountings",
+			"description": "Parking brake mechanism/associated mounting"
+		},
+		{
+			"id": 20059,
+			"parent_test_item_category_id": 20057,
+			"name": "Actuating linkage mounting",
+			"description": "Brake actuating linkage mounting"
+		},
+		{
+			"id": 20060,
+			"parent_test_item_category_id": 20057,
+			"name": "Master cylinder/servo mounting",
+			"description": "Brake master cylinder/servo mounting"
+		},
+		{
+			"id": 20061,
+			"parent_test_item_category_id": 20057,
+			"name": "Other braking system component",
+			"description": "Brake"
+		},
+		{
+			"id": 20064,
+			"parent_test_item_category_id": 20063,
+			"name": "Rbt",
+			"description": null
+		},
+		{
+			"id": 20068,
+			"parent_test_item_category_id": 20063,
+			"name": "Decelerometer",
+			"description": null
+		},
+		{
+			"id": 20071,
+			"parent_test_item_category_id": 20063,
+			"name": "Plate brake tester",
+			"description": null
+		},
+		{
+			"id": 20065,
+			"parent_test_item_category_id": 20064,
+			"name": "Service brake performance",
+			"description": "Service brake"
+		},
+		{
+			"id": 20066,
+			"parent_test_item_category_id": 20064,
+			"name": "Service brake imbalance",
+			"description": "Brakes imbalanced"
+		},
+		{
+			"id": 20067,
+			"parent_test_item_category_id": 20064,
+			"name": "Service brake efficiency (Trikes, quads and pre-68 vehicles)",
+			"description": "Service brake"
+		},
+		{
+			"id": 20069,
+			"parent_test_item_category_id": 20068,
+			"name": "Service brake performance",
+			"description": "Service brake"
+		},
+		{
+			"id": 20070,
+			"parent_test_item_category_id": 20068,
+			"name": "Service brake performance (Trikes, quads and pre-68 vehicles)",
+			"description": "Service brake"
+		},
+		{
+			"id": 20072,
+			"parent_test_item_category_id": 20071,
+			"name": "Service brake performance",
+			"description": "Service brake"
+		},
+		{
+			"id": 20073,
+			"parent_test_item_category_id": 20071,
+			"name": "Service brake efficiency (Trikes, quads and pre-68 vehicles)",
+			"description": "Service brake"
+		},
+		{
+			"id": 20076,
+			"parent_test_item_category_id": 20075,
+			"name": "Rbt (sp)",
+			"description": null
+		},
+		{
+			"id": 20079,
+			"parent_test_item_category_id": 20075,
+			"name": "Decelerometer (sp)",
+			"description": "Service brake"
+		},
+		{
+			"id": 20080,
+			"parent_test_item_category_id": 20075,
+			"name": "Plate brake tester (sp)",
+			"description": null
+		},
+		{
+			"id": 20077,
+			"parent_test_item_category_id": 20076,
+			"name": "Service brake performance",
+			"description": "Service brake"
+		},
+		{
+			"id": 20078,
+			"parent_test_item_category_id": 20076,
+			"name": "Service brake imbalance",
+			"description": "Brakes imbalanced"
+		},
+		{
+			"id": 20081,
+			"parent_test_item_category_id": 20080,
+			"name": "Service brake performance",
+			"description": "Service brake"
+		},
+		{
+			"id": 20082,
+			"parent_test_item_category_id": 20080,
+			"name": "Service brake imbalance",
+			"description": "Brakes imbalanced"
+		},
+		{
+			"id": 20085,
+			"parent_test_item_category_id": 20084,
+			"name": "Rbt",
+			"description": null
+		},
+		{
+			"id": 20089,
+			"parent_test_item_category_id": 20084,
+			"name": "Decelerometer",
+			"description": null
+		},
+		{
+			"id": 20093,
+			"parent_test_item_category_id": 20084,
+			"name": "Plate brake tester",
+			"description": null
+		},
+		{
+			"id": 20086,
+			"parent_test_item_category_id": 20085,
+			"name": "Parking brake performance",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20087,
+			"parent_test_item_category_id": 20085,
+			"name": "Parking (secondary brake performance)",
+			"description": "Parking (secondary brake)"
+		},
+		{
+			"id": 20088,
+			"parent_test_item_category_id": 20085,
+			"name": "Parking brake efficiency (Trikes, quads and pre-68 vehicles)",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20090,
+			"parent_test_item_category_id": 20089,
+			"name": "Parking brake performance",
+			"description": "Parking brake operation"
+		},
+		{
+			"id": 20091,
+			"parent_test_item_category_id": 20089,
+			"name": "Parking (secondary brake performance)",
+			"description": "Parking (secondary brake)"
+		},
+		{
+			"id": 20092,
+			"parent_test_item_category_id": 20089,
+			"name": "Parking brake efficiency (Trikes, quads and pre-68 vehicles)",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20094,
+			"parent_test_item_category_id": 20093,
+			"name": "Parking brake performance",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20095,
+			"parent_test_item_category_id": 20093,
+			"name": "Parking (secondary brake performance)",
+			"description": "Parking (secondary brake)"
+		},
+		{
+			"id": 20096,
+			"parent_test_item_category_id": 20093,
+			"name": "Parking brake efficiency (Trikes, quads and pre-68 vehicles)",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20099,
+			"parent_test_item_category_id": 20098,
+			"name": "Rbt (sp)",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20100,
+			"parent_test_item_category_id": 20098,
+			"name": "Decelerometer (sp)",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20101,
+			"parent_test_item_category_id": 20098,
+			"name": "Plate brake tester (sp)",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20102,
+			"parent_test_item_category_id": 20098,
+			"name": "Gradient tester (sp)",
+			"description": "Parking brake"
+		},
+		{
+			"id": 20107,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering gear",
+			"description": null
+		},
+		{
+			"id": 20111,
+			"parent_test_item_category_id": 20106,
+			"name": "Prescribed areas",
+			"description": "Steering component mounting"
+		},
+		{
+			"id": 20112,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering linkage components",
+			"description": null
+		},
+		{
+			"id": 20126,
+			"parent_test_item_category_id": 20106,
+			"name": "Power steering",
+			"description": null
+		},
+		{
+			"id": 20132,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering wheel ",
+			"description": "Steering wheel"
+		},
+		{
+			"id": 20133,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering column",
+			"description": "Steering column"
+		},
+		{
+			"id": 20134,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering shaft",
+			"description": "Steering column shaft"
+		},
+		{
+			"id": 20135,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering coupling",
+			"description": null
+		},
+		{
+			"id": 20138,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering play",
+			"description": null
+		},
+		{
+			"id": 20141,
+			"parent_test_item_category_id": 20106,
+			"name": "Motorcycle derived steering systems",
+			"description": null
+		},
+		{
+			"id": 20146,
+			"parent_test_item_category_id": 20106,
+			"name": "Electronic power steering",
+			"description": "Electronic power steering"
+		},
+		{
+			"id": 20378,
+			"parent_test_item_category_id": 20106,
+			"name": "Steering lock",
+			"description": "Steering lock"
+		},
+		{
+			"id": 20108,
+			"parent_test_item_category_id": 20107,
+			"name": "Operation",
+			"description": "Steering system"
+		},
+		{
+			"id": 20109,
+			"parent_test_item_category_id": 20107,
+			"name": "Steering box",
+			"description": "Steering system"
+		},
+		{
+			"id": 20110,
+			"parent_test_item_category_id": 20107,
+			"name": "Steering rack",
+			"description": "Steering system"
+		},
+		{
+			"id": 20113,
+			"parent_test_item_category_id": 20112,
+			"name": "Ball joint",
+			"description": "Steering linkage ball joint"
+		},
+		{
+			"id": 20114,
+			"parent_test_item_category_id": 20112,
+			"name": "Drag link end",
+			"description": "Drag link end"
+		},
+		{
+			"id": 20115,
+			"parent_test_item_category_id": 20112,
+			"name": "Track rod end",
+			"description": "Track rod end"
+		},
+		{
+			"id": 20116,
+			"parent_test_item_category_id": 20112,
+			"name": "Intermediate drop arm",
+			"description": "Intermediate drop arm"
+		},
+		{
+			"id": 20117,
+			"parent_test_item_category_id": 20112,
+			"name": "Steering arm",
+			"description": "Steering arm"
+		},
+		{
+			"id": 20118,
+			"parent_test_item_category_id": 20112,
+			"name": "Other components",
+			"description": null
+		},
+		{
+			"id": 20121,
+			"parent_test_item_category_id": 20112,
+			"name": "Locking devices",
+			"description": "Steering"
+		},
+		{
+			"id": 20122,
+			"parent_test_item_category_id": 20112,
+			"name": "Lock stop",
+			"description": "Steering lock stop"
+		},
+		{
+			"id": 20123,
+			"parent_test_item_category_id": 20112,
+			"name": "Rear wheel steering",
+			"description": null
+		},
+		{
+			"id": 20119,
+			"parent_test_item_category_id": 20118,
+			"name": "Steering component",
+			"description": "Steering component"
+		},
+		{
+			"id": 20120,
+			"parent_test_item_category_id": 20118,
+			"name": "Steering linkage",
+			"description": "Steering linkage"
+		},
+		{
+			"id": 20124,
+			"parent_test_item_category_id": 20123,
+			"name": "Components",
+			"description": "Rear wheel steering"
+		},
+		{
+			"id": 20125,
+			"parent_test_item_category_id": 20123,
+			"name": "Linkages",
+			"description": "Rear wheel steering linkage"
+		},
+		{
+			"id": 20127,
+			"parent_test_item_category_id": 20126,
+			"name": "Operation",
+			"description": "Power steering"
+		},
+		{
+			"id": 20128,
+			"parent_test_item_category_id": 20126,
+			"name": "Pipes and hoses",
+			"description": "Power steering pipe/hose"
+		},
+		{
+			"id": 20129,
+			"parent_test_item_category_id": 20126,
+			"name": "Pump",
+			"description": "Power steering pump"
+		},
+		{
+			"id": 20130,
+			"parent_test_item_category_id": 20126,
+			"name": "Rams",
+			"description": "Power steering ram"
+		},
+		{
+			"id": 20131,
+			"parent_test_item_category_id": 20126,
+			"name": "Other components",
+			"description": "Power steering component"
+		},
+		{
+			"id": 20136,
+			"parent_test_item_category_id": 20135,
+			"name": "Flexible coupling",
+			"description": "Steering column flexible coupling"
+		},
+		{
+			"id": 20137,
+			"parent_test_item_category_id": 20135,
+			"name": "Universal joint",
+			"description": "Steering column universal joint"
+		},
+		{
+			"id": 20139,
+			"parent_test_item_category_id": 20138,
+			"name": "Steering box",
+			"description": "Steering box"
+		},
+		{
+			"id": 20140,
+			"parent_test_item_category_id": 20138,
+			"name": "Steering rack",
+			"description": "Steering rack"
+		},
+		{
+			"id": 20142,
+			"parent_test_item_category_id": 20141,
+			"name": "Handlebars",
+			"description": "Handlebar"
+		},
+		{
+			"id": 20143,
+			"parent_test_item_category_id": 20141,
+			"name": "Forks",
+			"description": "Forks"
+		},
+		{
+			"id": 20144,
+			"parent_test_item_category_id": 20141,
+			"name": "Fork yoke",
+			"description": "Fork yoke"
+		},
+		{
+			"id": 20145,
+			"parent_test_item_category_id": 20141,
+			"name": "Head bearings",
+			"description": "Steering head bearings"
+		},
+		{
+			"id": 20148,
+			"parent_test_item_category_id": 20147,
+			"name": "Driver's view",
+			"description": "Drivers view"
+		},
+		{
+			"id": 20149,
+			"parent_test_item_category_id": 20147,
+			"name": "Bonnet",
+			"description": "Bonnet"
+		},
+		{
+			"id": 20150,
+			"parent_test_item_category_id": 20147,
+			"name": "Condition of glass",
+			"description": null
+		},
+		{
+			"id": 20153,
+			"parent_test_item_category_id": 20147,
+			"name": "View to rear",
+			"description": null
+		},
+		{
+			"id": 20156,
+			"parent_test_item_category_id": 20147,
+			"name": "Wipers",
+			"description": "Windscreen wiper"
+		},
+		{
+			"id": 20157,
+			"parent_test_item_category_id": 20147,
+			"name": "Washers",
+			"description": "Windscreen washer"
+		},
+		{
+			"id": 20151,
+			"parent_test_item_category_id": 20150,
+			"name": "Windscreen",
+			"description": "Windscreen"
+		},
+		{
+			"id": 20152,
+			"parent_test_item_category_id": 20150,
+			"name": "Window",
+			"description": "Window"
+		},
+		{
+			"id": 20154,
+			"parent_test_item_category_id": 20153,
+			"name": "Mirrors",
+			"description": "Obligatory mirror"
+		},
+		{
+			"id": 20155,
+			"parent_test_item_category_id": 20153,
+			"name": "Indirect vision devices",
+			"description": "Obligatory indirect vision device"
+		},
+		{
+			"id": 20159,
+			"parent_test_item_category_id": 20158,
+			"name": "Headlamps",
+			"description": null
+		},
+		{
+			"id": 20174,
+			"parent_test_item_category_id": 20158,
+			"name": "Headlamp aim",
+			"description": null
+		},
+		{
+			"id": 20177,
+			"parent_test_item_category_id": 20158,
+			"name": "Position lamps",
+			"description": null
+		},
+		{
+			"id": 20181,
+			"parent_test_item_category_id": 20158,
+			"name": "Outline marker lamps",
+			"description": null
+		},
+		{
+			"id": 20184,
+			"parent_test_item_category_id": 20158,
+			"name": "Daytime running lamps",
+			"description": "Daytime running lamp"
+		},
+		{
+			"id": 20185,
+			"parent_test_item_category_id": 20158,
+			"name": "Stop lamp",
+			"description": "Stop lamp(s)"
+		},
+		{
+			"id": 20186,
+			"parent_test_item_category_id": 20158,
+			"name": "Direction indicators",
+			"description": null
+		},
+		{
+			"id": 20195,
+			"parent_test_item_category_id": 20158,
+			"name": "Hazard warning",
+			"description": null
+		},
+		{
+			"id": 20198,
+			"parent_test_item_category_id": 20158,
+			"name": "Front and rear fog lamps",
+			"description": null
+		},
+		{
+			"id": 20205,
+			"parent_test_item_category_id": 20158,
+			"name": "Reversing lamps",
+			"description": null
+		},
+		{
+			"id": 20208,
+			"parent_test_item_category_id": 20158,
+			"name": "Registration plate lamp(s)",
+			"description": "Registration plate lamp"
+		},
+		{
+			"id": 20209,
+			"parent_test_item_category_id": 20158,
+			"name": "Rear reflectors",
+			"description": "Rear reflector"
+		},
+		{
+			"id": 20210,
+			"parent_test_item_category_id": 20158,
+			"name": "Mandatory tell-tales",
+			"description": null
+		},
+		{
+			"id": 20447,
+			"parent_test_item_category_id": 20158,
+			"name": "Electrical equipment",
+			"description": null
+		},
+		{
+			"id": 20168,
+			"parent_test_item_category_id": 20159,
+			"name": "Headlamp",
+			"description": "Headlamp"
+		},
+		{
+			"id": 20169,
+			"parent_test_item_category_id": 20159,
+			"name": "Matched pair",
+			"description": "Headlamps matched pair"
+		},
+		{
+			"id": 20170,
+			"parent_test_item_category_id": 20159,
+			"name": "Switch",
+			"description": "Headlamp switch"
+		},
+		{
+			"id": 20171,
+			"parent_test_item_category_id": 20159,
+			"name": "Dipswitch",
+			"description": "Dipswitch"
+		},
+		{
+			"id": 20172,
+			"parent_test_item_category_id": 20159,
+			"name": "Headlamp levelling device",
+			"description": "Headlamp levelling device"
+		},
+		{
+			"id": 20173,
+			"parent_test_item_category_id": 20159,
+			"name": "Headlamp cleaning device",
+			"description": "Headlamp cleaning device"
+		},
+		{
+			"id": 20175,
+			"parent_test_item_category_id": 20174,
+			"name": "Headlamp aim",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 20176,
+			"parent_test_item_category_id": 20174,
+			"name": "Headlamp aim not tested",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 20178,
+			"parent_test_item_category_id": 20177,
+			"name": "All position lamps",
+			"description": "All position lamps"
+		},
+		{
+			"id": 20179,
+			"parent_test_item_category_id": 20177,
+			"name": "Position lamp",
+			"description": "Position lamp"
+		},
+		{
+			"id": 20180,
+			"parent_test_item_category_id": 20177,
+			"name": "Switch",
+			"description": "Position lamp switch"
+		},
+		{
+			"id": 20182,
+			"parent_test_item_category_id": 20181,
+			"name": "All outline marker lamps",
+			"description": "All outline marker lamps"
+		},
+		{
+			"id": 20183,
+			"parent_test_item_category_id": 20181,
+			"name": "Outline marker lamp",
+			"description": "Outline marker lamp"
+		},
+		{
+			"id": 20187,
+			"parent_test_item_category_id": 20186,
+			"name": "Flashing type",
+			"description": null
+		},
+		{
+			"id": 20192,
+			"parent_test_item_category_id": 20186,
+			"name": "Semaphore",
+			"description": null
+		},
+		{
+			"id": 20188,
+			"parent_test_item_category_id": 20187,
+			"name": "All direction indicators",
+			"description": "All direction indicators"
+		},
+		{
+			"id": 20189,
+			"parent_test_item_category_id": 20187,
+			"name": "Individual direction indicators",
+			"description": "Direction indicator"
+		},
+		{
+			"id": 20190,
+			"parent_test_item_category_id": 20187,
+			"name": "Side repeaters",
+			"description": "Side repeater"
+		},
+		{
+			"id": 20191,
+			"parent_test_item_category_id": 20187,
+			"name": "Switch",
+			"description": "Indicator switch"
+		},
+		{
+			"id": 20193,
+			"parent_test_item_category_id": 20192,
+			"name": "Arm",
+			"description": "Semaphore indicator arm"
+		},
+		{
+			"id": 20194,
+			"parent_test_item_category_id": 20192,
+			"name": "Switch",
+			"description": "Semaphore indicator switch"
+		},
+		{
+			"id": 20196,
+			"parent_test_item_category_id": 20195,
+			"name": "Lamp",
+			"description": "Hazard warning lamps"
+		},
+		{
+			"id": 20197,
+			"parent_test_item_category_id": 20195,
+			"name": "Switch",
+			"description": "Hazard warning switch"
+		},
+		{
+			"id": 20199,
+			"parent_test_item_category_id": 20198,
+			"name": "Rear fog lamp",
+			"description": null
+		},
+		{
+			"id": 20202,
+			"parent_test_item_category_id": 20198,
+			"name": "Front fog lamps",
+			"description": null
+		},
+		{
+			"id": 20200,
+			"parent_test_item_category_id": 20199,
+			"name": "Rear fog lamp",
+			"description": "Rear fog lamp"
+		},
+		{
+			"id": 20201,
+			"parent_test_item_category_id": 20199,
+			"name": "Switch",
+			"description": "Rear fog lamp switch"
+		},
+		{
+			"id": 20203,
+			"parent_test_item_category_id": 20202,
+			"name": "Front fog lamps",
+			"description": "Front fog lamp"
+		},
+		{
+			"id": 20204,
+			"parent_test_item_category_id": 20202,
+			"name": "Front fog lamp switch",
+			"description": "Front fog lamp switch"
+		},
+		{
+			"id": 20206,
+			"parent_test_item_category_id": 20205,
+			"name": "Reversing lamps",
+			"description": "Reversing lamp"
+		},
+		{
+			"id": 20207,
+			"parent_test_item_category_id": 20205,
+			"name": "Reversing lamp switch",
+			"description": "Reversing lamp switch"
+		},
+		{
+			"id": 20211,
+			"parent_test_item_category_id": 20210,
+			"name": "Main beam tell-tale",
+			"description": "Main beam tell-tale"
+		},
+		{
+			"id": 20212,
+			"parent_test_item_category_id": 20210,
+			"name": "Direction indicator tell-tale",
+			"description": "Indicator tell-tale"
+		},
+		{
+			"id": 20213,
+			"parent_test_item_category_id": 20210,
+			"name": "Hazard warning tell-tale",
+			"description": "Hazard warning tell-tale"
+		},
+		{
+			"id": 20214,
+			"parent_test_item_category_id": 20210,
+			"name": "Rear fog lamp tell-tale",
+			"description": "Rear fog lamp tell-tale"
+		},
+		{
+			"id": 20219,
+			"parent_test_item_category_id": 20218,
+			"name": "Axles",
+			"description": null
+		},
+		{
+			"id": 20224,
+			"parent_test_item_category_id": 20218,
+			"name": "Wheel bearings",
+			"description": "Wheel bearing"
+		},
+		{
+			"id": 20236,
+			"parent_test_item_category_id": 20218,
+			"name": "Springs",
+			"description": null
+		},
+		{
+			"id": 20253,
+			"parent_test_item_category_id": 20218,
+			"name": "Shock absorbers",
+			"description": null
+		},
+		{
+			"id": 20256,
+			"parent_test_item_category_id": 20218,
+			"name": "Macpherson strut",
+			"description": null
+		},
+		{
+			"id": 20260,
+			"parent_test_item_category_id": 20218,
+			"name": "Suspension arms",
+			"description": null
+		},
+		{
+			"id": 20264,
+			"parent_test_item_category_id": 20218,
+			"name": "Suspension rods",
+			"description": null
+		},
+		{
+			"id": 20268,
+			"parent_test_item_category_id": 20218,
+			"name": "Anti-roll bars",
+			"description": null
+		},
+		{
+			"id": 20274,
+			"parent_test_item_category_id": 20218,
+			"name": "Sub-frames",
+			"description": null
+		},
+		{
+			"id": 20278,
+			"parent_test_item_category_id": 20218,
+			"name": "Other suspension component",
+			"description": null
+		},
+		{
+			"id": 20282,
+			"parent_test_item_category_id": 20218,
+			"name": "Air/gas/fluid suspension",
+			"description": null
+		},
+		{
+			"id": 20306,
+			"parent_test_item_category_id": 20218,
+			"name": "Prescribed areas",
+			"description": null
+		},
+		{
+			"id": 20220,
+			"parent_test_item_category_id": 20219,
+			"name": "Axle",
+			"description": "Axle"
+		},
+		{
+			"id": 20221,
+			"parent_test_item_category_id": 20219,
+			"name": "Stub axle",
+			"description": "Stub axle"
+		},
+		{
+			"id": 20222,
+			"parent_test_item_category_id": 20219,
+			"name": "King pins",
+			"description": "Axle king pin"
+		},
+		{
+			"id": 20223,
+			"parent_test_item_category_id": 20219,
+			"name": "Swivel joints/housing",
+			"description": "Axle swivel joint"
+		},
+		{
+			"id": 20237,
+			"parent_test_item_category_id": 20236,
+			"name": "Leaf springs",
+			"description": null
+		},
+		{
+			"id": 20244,
+			"parent_test_item_category_id": 20236,
+			"name": "Coil springs",
+			"description": null
+		},
+		{
+			"id": 20247,
+			"parent_test_item_category_id": 20236,
+			"name": "Torsion bars",
+			"description": null
+		},
+		{
+			"id": 20250,
+			"parent_test_item_category_id": 20236,
+			"name": "Bonded suspension units",
+			"description": null
+		},
+		{
+			"id": 20238,
+			"parent_test_item_category_id": 20237,
+			"name": "Condition",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 20239,
+			"parent_test_item_category_id": 20237,
+			"name": "Anchor bracket",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 20240,
+			"parent_test_item_category_id": 20237,
+			"name": "Shackle bracket",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 20241,
+			"parent_test_item_category_id": 20237,
+			"name": "Pins and bushes",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 20242,
+			"parent_test_item_category_id": 20237,
+			"name": "Spring saddle",
+			"description": "Leaf spring"
+		},
+		{
+			"id": 20243,
+			"parent_test_item_category_id": 20237,
+			"name": "Securing bolts",
+			"description": "Leaf spring to axle"
+		},
+		{
+			"id": 20245,
+			"parent_test_item_category_id": 20244,
+			"name": "Condition",
+			"description": "Coil spring"
+		},
+		{
+			"id": 20246,
+			"parent_test_item_category_id": 20244,
+			"name": "Attachment/mounting",
+			"description": "Coil spring"
+		},
+		{
+			"id": 20248,
+			"parent_test_item_category_id": 20247,
+			"name": "Condition",
+			"description": "Torsion bar"
+		},
+		{
+			"id": 20249,
+			"parent_test_item_category_id": 20247,
+			"name": "Attachment/mounting",
+			"description": "Torsion bar"
+		},
+		{
+			"id": 20251,
+			"parent_test_item_category_id": 20250,
+			"name": "Condition",
+			"description": "Bonded suspension unit"
+		},
+		{
+			"id": 20252,
+			"parent_test_item_category_id": 20250,
+			"name": "Attachment/mounting",
+			"description": "Bonded suspension unit"
+		},
+		{
+			"id": 20254,
+			"parent_test_item_category_id": 20253,
+			"name": "Fitment",
+			"description": "Shock absorber"
+		},
+		{
+			"id": 20255,
+			"parent_test_item_category_id": 20253,
+			"name": "Condition",
+			"description": "Shock absorber"
+		},
+		{
+			"id": 20257,
+			"parent_test_item_category_id": 20256,
+			"name": "Condition",
+			"description": "Macpherson strut"
+		},
+		{
+			"id": 20258,
+			"parent_test_item_category_id": 20256,
+			"name": "Attachment/mounting",
+			"description": "Macpherson strut"
+		},
+		{
+			"id": 20259,
+			"parent_test_item_category_id": 20256,
+			"name": "Pins/bushes/ball joints",
+			"description": "Macpherson strut"
+		},
+		{
+			"id": 20261,
+			"parent_test_item_category_id": 20260,
+			"name": "Condition",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 20262,
+			"parent_test_item_category_id": 20260,
+			"name": "Attachment/mounting",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 20263,
+			"parent_test_item_category_id": 20260,
+			"name": "Pins/bushes/ball joints",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 20265,
+			"parent_test_item_category_id": 20264,
+			"name": "Condition",
+			"description": "Suspension rod"
+		},
+		{
+			"id": 20266,
+			"parent_test_item_category_id": 20264,
+			"name": "Attachment/mounting",
+			"description": "Suspension rod"
+		},
+		{
+			"id": 20267,
+			"parent_test_item_category_id": 20264,
+			"name": "Pins/bushes/ball joints",
+			"description": "Suspension rod"
+		},
+		{
+			"id": 20269,
+			"parent_test_item_category_id": 20268,
+			"name": "Condition",
+			"description": "Anti-roll bar"
+		},
+		{
+			"id": 20270,
+			"parent_test_item_category_id": 20268,
+			"name": "Attachment/mounting",
+			"description": "Anti-roll bar"
+		},
+		{
+			"id": 20271,
+			"parent_test_item_category_id": 20268,
+			"name": "Pins/bushes/ball joints",
+			"description": "Anti-roll bar"
+		},
+		{
+			"id": 20272,
+			"parent_test_item_category_id": 20268,
+			"name": "Linkage condition",
+			"description": "Anti-roll bar linkage"
+		},
+		{
+			"id": 20273,
+			"parent_test_item_category_id": 20268,
+			"name": "Linkage pins/bushes/ball joints",
+			"description": "Anti-roll bar linkage"
+		},
+		{
+			"id": 20275,
+			"parent_test_item_category_id": 20274,
+			"name": "Condition",
+			"description": "Sub-frame"
+		},
+		{
+			"id": 20276,
+			"parent_test_item_category_id": 20274,
+			"name": "Attachment/mounting",
+			"description": "Sub-frame"
+		},
+		{
+			"id": 20277,
+			"parent_test_item_category_id": 20274,
+			"name": "Pins/bushes/ball joints",
+			"description": "Sub-frame"
+		},
+		{
+			"id": 20279,
+			"parent_test_item_category_id": 20278,
+			"name": "Condition",
+			"description": "Suspension component"
+		},
+		{
+			"id": 20280,
+			"parent_test_item_category_id": 20278,
+			"name": "Attachment/mounting",
+			"description": "Suspension component"
+		},
+		{
+			"id": 20281,
+			"parent_test_item_category_id": 20278,
+			"name": "Pins/bushes/ball joints",
+			"description": "Suspension component"
+		},
+		{
+			"id": 20283,
+			"parent_test_item_category_id": 20282,
+			"name": "Operation",
+			"description": "Suspension"
+		},
+		{
+			"id": 20284,
+			"parent_test_item_category_id": 20282,
+			"name": "Suspension unit",
+			"description": "Suspension unit"
+		},
+		{
+			"id": 20285,
+			"parent_test_item_category_id": 20282,
+			"name": "Accumulator",
+			"description": "Suspension accumulator"
+		},
+		{
+			"id": 20286,
+			"parent_test_item_category_id": 20282,
+			"name": "Bellows",
+			"description": "Suspension bellows"
+		},
+		{
+			"id": 20287,
+			"parent_test_item_category_id": 20282,
+			"name": "Levelling valve",
+			"description": "Suspension levelling valve"
+		},
+		{
+			"id": 20288,
+			"parent_test_item_category_id": 20282,
+			"name": "Pipes",
+			"description": "Suspension pipe"
+		},
+		{
+			"id": 20289,
+			"parent_test_item_category_id": 20282,
+			"name": "Other components",
+			"description": "Suspension"
+		},
+		{
+			"id": 20307,
+			"parent_test_item_category_id": 20306,
+			"name": "Component mounting",
+			"description": "Suspension component mounting"
+		},
+		{
+			"id": 20308,
+			"parent_test_item_category_id": 20306,
+			"name": "Spring mounting",
+			"description": "Suspension spring mounting"
+		},
+		{
+			"id": 20309,
+			"parent_test_item_category_id": 20306,
+			"name": "Subframe mounting",
+			"description": "Subframe mounting"
+		},
+		{
+			"id": 20311,
+			"parent_test_item_category_id": 20310,
+			"name": "Vehicle structure",
+			"description": null
+		},
+		{
+			"id": 20315,
+			"parent_test_item_category_id": 20310,
+			"name": "Exhaust system",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20316,
+			"parent_test_item_category_id": 20310,
+			"name": "Fuel system",
+			"description": null
+		},
+		{
+			"id": 20322,
+			"parent_test_item_category_id": 20310,
+			"name": "Bumpers",
+			"description": "Bumper"
+		},
+		{
+			"id": 20323,
+			"parent_test_item_category_id": 20310,
+			"name": "Spare wheel",
+			"description": "Spare wheel"
+		},
+		{
+			"id": 20324,
+			"parent_test_item_category_id": 20310,
+			"name": "Towbars",
+			"description": null
+		},
+		{
+			"id": 20327,
+			"parent_test_item_category_id": 20310,
+			"name": "Transmission",
+			"description": null
+		},
+		{
+			"id": 20341,
+			"parent_test_item_category_id": 20310,
+			"name": "Engine mountings",
+			"description": "Engine mounting"
+		},
+		{
+			"id": 20342,
+			"parent_test_item_category_id": 20310,
+			"name": "Body",
+			"description": null
+		},
+		{
+			"id": 20345,
+			"parent_test_item_category_id": 20310,
+			"name": "Load security",
+			"description": null
+		},
+		{
+			"id": 20351,
+			"parent_test_item_category_id": 20310,
+			"name": "Cab security",
+			"description": "Cab"
+		},
+		{
+			"id": 20352,
+			"parent_test_item_category_id": 20310,
+			"name": "Doors",
+			"description": null
+		},
+		{
+			"id": 20356,
+			"parent_test_item_category_id": 20310,
+			"name": "Floor",
+			"description": "Floor"
+		},
+		{
+			"id": 20357,
+			"parent_test_item_category_id": 20310,
+			"name": "Seats",
+			"description": null
+		},
+		{
+			"id": 20360,
+			"parent_test_item_category_id": 20310,
+			"name": "Driving controls",
+			"description": "Driving control"
+		},
+		{
+			"id": 20361,
+			"parent_test_item_category_id": 20310,
+			"name": "Cab steps",
+			"description": "Cab step"
+		},
+		{
+			"id": 20362,
+			"parent_test_item_category_id": 20310,
+			"name": "Trike and quad",
+			"description": null
+		},
+		{
+			"id": 20312,
+			"parent_test_item_category_id": 20311,
+			"name": "Chassis",
+			"description": "Vehicle structure"
+		},
+		{
+			"id": 20313,
+			"parent_test_item_category_id": 20311,
+			"name": "Integral",
+			"description": "Integral body structure"
+		},
+		{
+			"id": 20314,
+			"parent_test_item_category_id": 20311,
+			"name": "Sub-frames",
+			"description": "Sub-frame"
+		},
+		{
+			"id": 20317,
+			"parent_test_item_category_id": 20316,
+			"name": "Tank",
+			"description": "Fuel tank"
+		},
+		{
+			"id": 20318,
+			"parent_test_item_category_id": 20316,
+			"name": "Hose",
+			"description": "Fuel hose"
+		},
+		{
+			"id": 20319,
+			"parent_test_item_category_id": 20316,
+			"name": "Pipe",
+			"description": "Fuel pipe"
+		},
+		{
+			"id": 20320,
+			"parent_test_item_category_id": 20316,
+			"name": "Fuel cap/sealing device",
+			"description": "Fuel cap/sealing device"
+		},
+		{
+			"id": 20321,
+			"parent_test_item_category_id": 20316,
+			"name": "System",
+			"description": "Fuel system"
+		},
+		{
+			"id": 20325,
+			"parent_test_item_category_id": 20324,
+			"name": "Towbar",
+			"description": "Towbar"
+		},
+		{
+			"id": 20326,
+			"parent_test_item_category_id": 20324,
+			"name": "Vehicle structure",
+			"description": "Vehicle structure"
+		},
+		{
+			"id": 20328,
+			"parent_test_item_category_id": 20327,
+			"name": "Drive shafts",
+			"description": null
+		},
+		{
+			"id": 20333,
+			"parent_test_item_category_id": 20327,
+			"name": "Prop shafts",
+			"description": null
+		},
+		{
+			"id": 20338,
+			"parent_test_item_category_id": 20327,
+			"name": "Halfshafts",
+			"description": "Halfshaft"
+		},
+		{
+			"id": 20339,
+			"parent_test_item_category_id": 20327,
+			"name": "Chains",
+			"description": "Drive chain"
+		},
+		{
+			"id": 20340,
+			"parent_test_item_category_id": 20327,
+			"name": "Belts",
+			"description": "Drive belt"
+		},
+		{
+			"id": 20329,
+			"parent_test_item_category_id": 20328,
+			"name": "Drive shaft",
+			"description": "Drive shaft"
+		},
+		{
+			"id": 20330,
+			"parent_test_item_category_id": 20328,
+			"name": "Joints",
+			"description": "Drive shaft joint"
+		},
+		{
+			"id": 20331,
+			"parent_test_item_category_id": 20328,
+			"name": "Flexible couplings",
+			"description": "Drive shaft flexible coupling"
+		},
+		{
+			"id": 20332,
+			"parent_test_item_category_id": 20328,
+			"name": "Bearing housing",
+			"description": "Drive shaft bearing housing"
+		},
+		{
+			"id": 20334,
+			"parent_test_item_category_id": 20333,
+			"name": "Prop shaft",
+			"description": "Prop shaft"
+		},
+		{
+			"id": 20335,
+			"parent_test_item_category_id": 20333,
+			"name": "Joints",
+			"description": "Prop shaft joint"
+		},
+		{
+			"id": 20336,
+			"parent_test_item_category_id": 20333,
+			"name": "Flexible couplings",
+			"description": "Prop shaft flexible coupling"
+		},
+		{
+			"id": 20337,
+			"parent_test_item_category_id": 20333,
+			"name": "Bearing housing",
+			"description": "Prop shaft bearing housing"
+		},
+		{
+			"id": 20343,
+			"parent_test_item_category_id": 20342,
+			"name": "Condition",
+			"description": "Body"
+		},
+		{
+			"id": 20344,
+			"parent_test_item_category_id": 20342,
+			"name": "Security",
+			"description": "Body"
+		},
+		{
+			"id": 20346,
+			"parent_test_item_category_id": 20345,
+			"name": "Bootlid",
+			"description": "Bootlid"
+		},
+		{
+			"id": 20347,
+			"parent_test_item_category_id": 20345,
+			"name": "Tailgate",
+			"description": "Tailgate"
+		},
+		{
+			"id": 20348,
+			"parent_test_item_category_id": 20345,
+			"name": "Loading door",
+			"description": "Loading door"
+		},
+		{
+			"id": 20349,
+			"parent_test_item_category_id": 20345,
+			"name": "Dropside",
+			"description": "Dropside"
+		},
+		{
+			"id": 20350,
+			"parent_test_item_category_id": 20345,
+			"name": "Access panel",
+			"description": "Access panel"
+		},
+		{
+			"id": 20353,
+			"parent_test_item_category_id": 20352,
+			"name": "Drivers",
+			"description": "Drivers door"
+		},
+		{
+			"id": 20354,
+			"parent_test_item_category_id": 20352,
+			"name": "Passengers front",
+			"description": "Front passenger door"
+		},
+		{
+			"id": 20355,
+			"parent_test_item_category_id": 20352,
+			"name": "Passengers other",
+			"description": "Passenger door"
+		},
+		{
+			"id": 20358,
+			"parent_test_item_category_id": 20357,
+			"name": "Drivers",
+			"description": "Drivers seat"
+		},
+		{
+			"id": 20359,
+			"parent_test_item_category_id": 20357,
+			"name": "Passengers",
+			"description": "Passengers seat"
+		},
+		{
+			"id": 20363,
+			"parent_test_item_category_id": 20362,
+			"name": "Passenger hand grips",
+			"description": "Passenger hand grip"
+		},
+		{
+			"id": 20364,
+			"parent_test_item_category_id": 20362,
+			"name": "Footrests",
+			"description": "Footrest"
+		},
+		{
+			"id": 20380,
+			"parent_test_item_category_id": 20365,
+			"name": "Speedometer",
+			"description": "Speedometer"
+		},
+		{
+			"id": 20381,
+			"parent_test_item_category_id": 20365,
+			"name": "Speed limiter",
+			"description": null
+		},
+		{
+			"id": 20367,
+			"parent_test_item_category_id": 20366,
+			"name": "Seat belts",
+			"description": null
+		},
+		{
+			"id": 20374,
+			"parent_test_item_category_id": 20366,
+			"name": "Airbags",
+			"description": null
+		},
+		{
+			"id": 20377,
+			"parent_test_item_category_id": 20366,
+			"name": "SRS malfunction indicator lamp",
+			"description": "Supplementary restraint system"
+		},
+		{
+			"id": 20368,
+			"parent_test_item_category_id": 20367,
+			"name": "Prescribed areas",
+			"description": "Seat belt anchorage"
+		},
+		{
+			"id": 20369,
+			"parent_test_item_category_id": 20367,
+			"name": "Attachment",
+			"description": "Seat belt"
+		},
+		{
+			"id": 20370,
+			"parent_test_item_category_id": 20367,
+			"name": "Requirements",
+			"description": "Seat belt"
+		},
+		{
+			"id": 20371,
+			"parent_test_item_category_id": 20367,
+			"name": "Condition",
+			"description": "Seat belt"
+		},
+		{
+			"id": 20372,
+			"parent_test_item_category_id": 20367,
+			"name": "Load limiters",
+			"description": "Seat belt"
+		},
+		{
+			"id": 20373,
+			"parent_test_item_category_id": 20367,
+			"name": "Pre-tensioners",
+			"description": "Seat belt"
+		},
+		{
+			"id": 20375,
+			"parent_test_item_category_id": 20374,
+			"name": "Drivers airbag",
+			"description": "Drivers airbag"
+		},
+		{
+			"id": 20376,
+			"parent_test_item_category_id": 20374,
+			"name": "Passengers airbag",
+			"description": "Passengers airbag"
+		},
+		{
+			"id": 20382,
+			"parent_test_item_category_id": 20381,
+			"name": "Speed limiter",
+			"description": "Speed limiter"
+		},
+		{
+			"id": 20383,
+			"parent_test_item_category_id": 20381,
+			"name": "Speed limiter plate",
+			"description": "Speed limiter plate"
+		},
+		{
+			"id": 20386,
+			"parent_test_item_category_id": 20385,
+			"name": "Noise suppression",
+			"description": null
+		},
+		{
+			"id": 20389,
+			"parent_test_item_category_id": 20385,
+			"name": "Exhaust emissions",
+			"description": null
+		},
+		{
+			"id": 20417,
+			"parent_test_item_category_id": 20385,
+			"name": "Fluid leaks",
+			"description": null
+		},
+		{
+			"id": 20387,
+			"parent_test_item_category_id": 20386,
+			"name": "Sound deadening material",
+			"description": "Sound deadening material"
+		},
+		{
+			"id": 20388,
+			"parent_test_item_category_id": 20386,
+			"name": "Undertray",
+			"description": "Undertray"
+		},
+		{
+			"id": 20390,
+			"parent_test_item_category_id": 20389,
+			"name": "Spark ignition",
+			"description": null
+		},
+		{
+			"id": 20402,
+			"parent_test_item_category_id": 20389,
+			"name": "Compression ignition",
+			"description": null
+		},
+		{
+			"id": 20391,
+			"parent_test_item_category_id": 20390,
+			"name": "Emission control equipment",
+			"description": null
+		},
+		{
+			"id": 20398,
+			"parent_test_item_category_id": 20390,
+			"name": "Non catalyst emissions",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20399,
+			"parent_test_item_category_id": 20390,
+			"name": "Catalyst emissions",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20400,
+			"parent_test_item_category_id": 20390,
+			"name": "Malfunction indicator lamp",
+			"description": "Engine"
+		},
+		{
+			"id": 20401,
+			"parent_test_item_category_id": 20390,
+			"name": "Emissions not tested",
+			"description": "Emissions"
+		},
+		{
+			"id": 20392,
+			"parent_test_item_category_id": 20391,
+			"name": "Catalytic converter",
+			"description": "Exhaust catalytic converter"
+		},
+		{
+			"id": 20393,
+			"parent_test_item_category_id": 20391,
+			"name": "Particulate filter",
+			"description": "Exhaust particulate filter"
+		},
+		{
+			"id": 20394,
+			"parent_test_item_category_id": 20391,
+			"name": "Oxygen sensor",
+			"description": "Emissions oxygen sensor"
+		},
+		{
+			"id": 20395,
+			"parent_test_item_category_id": 20391,
+			"name": "NOx sensor",
+			"description": "Emissions NOx sensor"
+		},
+		{
+			"id": 20396,
+			"parent_test_item_category_id": 20391,
+			"name": "Exhaust gas recirculation valve",
+			"description": "Exhaust gas recirculation valve"
+		},
+		{
+			"id": 20397,
+			"parent_test_item_category_id": 20391,
+			"name": "Other emission control equipment",
+			"description": "Emission control equipment"
+		},
+		{
+			"id": 20403,
+			"parent_test_item_category_id": 20402,
+			"name": "Emission control equipment",
+			"description": null
+		},
+		{
+			"id": 20410,
+			"parent_test_item_category_id": 20402,
+			"name": "Pre 01/01/1980 visual",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20411,
+			"parent_test_item_category_id": 20402,
+			"name": "Pre 01/07/2008 Turbo",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20412,
+			"parent_test_item_category_id": 20402,
+			"name": "Pre 01/07/2008 Non turbo",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20413,
+			"parent_test_item_category_id": 20402,
+			"name": "On or after 01/07/2008",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20414,
+			"parent_test_item_category_id": 20402,
+			"name": "On or after 01/01/2014",
+			"description": "Exhaust"
+		},
+		{
+			"id": 20415,
+			"parent_test_item_category_id": 20402,
+			"name": "Malfunction indicator lamp",
+			"description": "Engine MIL"
+		},
+		{
+			"id": 20416,
+			"parent_test_item_category_id": 20402,
+			"name": "Emissions not tested",
+			"description": "Emissions"
+		},
+		{
+			"id": 20404,
+			"parent_test_item_category_id": 20403,
+			"name": "Catalytic converter",
+			"description": "Exhaust catalytic converter"
+		},
+		{
+			"id": 20405,
+			"parent_test_item_category_id": 20403,
+			"name": "Particulate filter",
+			"description": "Exhaust particulate filter"
+		},
+		{
+			"id": 20406,
+			"parent_test_item_category_id": 20403,
+			"name": "Oxygen sensor",
+			"description": "Emissions oxygen sensor"
+		},
+		{
+			"id": 20407,
+			"parent_test_item_category_id": 20403,
+			"name": "NOx sensor",
+			"description": "Emissions NOx sensor"
+		},
+		{
+			"id": 20408,
+			"parent_test_item_category_id": 20403,
+			"name": "Exhaust gas recirculation valve",
+			"description": "Exhaust gas recirculation valve"
+		},
+		{
+			"id": 20409,
+			"parent_test_item_category_id": 20403,
+			"name": "Other emission control equipment",
+			"description": "Emission control equipment"
+		},
+		{
+			"id": 20418,
+			"parent_test_item_category_id": 20417,
+			"name": "Engine oil leaks",
+			"description": "Oil"
+		},
+		{
+			"id": 20419,
+			"parent_test_item_category_id": 20417,
+			"name": "Transmission oil leaks",
+			"description": "Oil"
+		},
+		{
+			"id": 20420,
+			"parent_test_item_category_id": 20417,
+			"name": "Hydraulic fluid leaks",
+			"description": "Hydraulic"
+		},
+		{
+			"id": 20421,
+			"parent_test_item_category_id": 20417,
+			"name": "Other leaks",
+			"description": "Fluid"
+		},
+		{
+			"id": 20423,
+			"parent_test_item_category_id": 20422,
+			"name": "Doors",
+			"description": null
+		},
+		{
+			"id": 20426,
+			"parent_test_item_category_id": 20422,
+			"name": "Passenger grab handles",
+			"description": "Passenger grab handle"
+		},
+		{
+			"id": 20427,
+			"parent_test_item_category_id": 20422,
+			"name": "Steps and stairs",
+			"description": null
+		},
+		{
+			"id": 20424,
+			"parent_test_item_category_id": 20423,
+			"name": "Emergency exits ",
+			"description": "Emergency exit"
+		},
+		{
+			"id": 20425,
+			"parent_test_item_category_id": 20423,
+			"name": "Passenger entrance/exit doors",
+			"description": "Entrance/exit door"
+		},
+		{
+			"id": 20428,
+			"parent_test_item_category_id": 20427,
+			"name": "Steps",
+			"description": "Entrance/exit step"
+		},
+		{
+			"id": 20429,
+			"parent_test_item_category_id": 20427,
+			"name": "Retractable steps",
+			"description": "Retractable step"
+		},
+		{
+			"id": 20430,
+			"parent_test_item_category_id": 20427,
+			"name": "Stairs",
+			"description": "Stairs"
+		},
+		{
+			"id": 20432,
+			"parent_test_item_category_id": 20431,
+			"name": "Anchorages",
+			"description": "Seat belt installation"
+		},
+		{
+			"id": 20433,
+			"parent_test_item_category_id": 20431,
+			"name": "Belt(s)/padding",
+			"description": "Seat belt installation"
+		},
+		{
+			"id": 20035,
+			"parent_test_item_category_id": 20444,
+			"name": "Brake linings and pads",
+			"description": null
+		},
+		{
+			"id": 20038,
+			"parent_test_item_category_id": 20444,
+			"name": "Brake discs and  drums",
+			"description": null
+		},
+		{
+			"id": 20041,
+			"parent_test_item_category_id": 20444,
+			"name": "Brake cables, rods, levers and linkages",
+			"description": null
+		},
+		{
+			"id": 20063,
+			"parent_test_item_category_id": 20445,
+			"name": "Service brake performance",
+			"description": null
+		},
+		{
+			"id": 20074,
+			"parent_test_item_category_id": 20445,
+			"name": "Brake performance not tested",
+			"description": "Brake performance"
+		},
+		{
+			"id": 20075,
+			"parent_test_item_category_id": 20445,
+			"name": "Service Brake Efficiency (sp)",
+			"description": null
+		},
+		{
+			"id": 20084,
+			"parent_test_item_category_id": 20445,
+			"name": "Parking brake performance",
+			"description": null
+		},
+		{
+			"id": 20098,
+			"parent_test_item_category_id": 20445,
+			"name": "Parking brake efficiency (sp)",
+			"description": null
+		},
+		{
+			"id": 20104,
+			"parent_test_item_category_id": 20446,
+			"name": "Anti-lock braking system",
+			"description": "Anti-lock braking system"
+		},
+		{
+			"id": 20105,
+			"parent_test_item_category_id": 20446,
+			"name": "Electronic braking system",
+			"description": "Electronic braking system"
+		},
+		{
+			"id": 20384,
+			"parent_test_item_category_id": 20446,
+			"name": "Electronic stability control",
+			"description": "Electronic stability control"
+		},
+		{
+			"id": 20215,
+			"parent_test_item_category_id": 20447,
+			"name": "Trailer electrical socket",
+			"description": "Trailer electrical socket"
+		},
+		{
+			"id": 20216,
+			"parent_test_item_category_id": 20447,
+			"name": "Electrical wiring ",
+			"description": "Electrical wiring "
+		},
+		{
+			"id": 20217,
+			"parent_test_item_category_id": 20447,
+			"name": "Battery(ies)",
+			"description": "Battery"
+		},
+		{
+			"id": 20379,
+			"parent_test_item_category_id": 20447,
+			"name": "Horn",
+			"description": "Horn"
+		},
+		{
+			"id": 20227,
+			"parent_test_item_category_id": 20448,
+			"name": "Condition",
+			"description": "Road wheel"
+		},
+		{
+			"id": 20228,
+			"parent_test_item_category_id": 20448,
+			"name": "Attachment",
+			"description": "Road wheel"
+		},
+		{
+			"id": 20229,
+			"parent_test_item_category_id": 20448,
+			"name": "Hubs",
+			"description": "Wheel hub"
+		},
+		{
+			"id": 20231,
+			"parent_test_item_category_id": 20449,
+			"name": "Size/type",
+			"description": "Tyre(s)"
+		},
+		{
+			"id": 20232,
+			"parent_test_item_category_id": 20449,
+			"name": "Condition",
+			"description": "Tyre"
+		},
+		{
+			"id": 20233,
+			"parent_test_item_category_id": 20449,
+			"name": "Tread depth",
+			"description": "Tyre"
+		},
+		{
+			"id": 20234,
+			"parent_test_item_category_id": 20449,
+			"name": "Tyre pressure monitoring system",
+			"description": "Tyre pressure monitoring system"
+		},
+		{
+			"id": 25001,
+			"parent_test_item_category_id": 25000,
+			"name": "Registration plate",
+			"description": "Registration plate"
+		},
+		{
+			"id": 25002,
+			"parent_test_item_category_id": 25000,
+			"name": "Vehicle identification number",
+			"description": "Vehicle identification number"
+		},
+		{
+			"id": 25004,
+			"parent_test_item_category_id": 25003,
+			"name": "Pedal or hand lever",
+			"description": null
+		},
+		{
+			"id": 25007,
+			"parent_test_item_category_id": 25003,
+			"name": "Hydraulic systems",
+			"description": null
+		},
+		{
+			"id": 25014,
+			"parent_test_item_category_id": 25003,
+			"name": "Linings and pads",
+			"description": null
+		},
+		{
+			"id": 25017,
+			"parent_test_item_category_id": 25003,
+			"name": "Discs and drums",
+			"description": null
+		},
+		{
+			"id": 25021,
+			"parent_test_item_category_id": 25003,
+			"name": "Cables, rods, levers and linkages",
+			"description": null
+		},
+		{
+			"id": 25029,
+			"parent_test_item_category_id": 25003,
+			"name": "Callipers and cylinders",
+			"description": null
+		},
+		{
+			"id": 25032,
+			"parent_test_item_category_id": 25003,
+			"name": "Other braking system components",
+			"description": "Brake component"
+		},
+		{
+			"id": 25033,
+			"parent_test_item_category_id": 25003,
+			"name": "Brake performance",
+			"description": null
+		},
+		{
+			"id": 25040,
+			"parent_test_item_category_id": 25003,
+			"name": "Brake efficiency (sp)",
+			"description": null
+		},
+		{
+			"id": 25005,
+			"parent_test_item_category_id": 25004,
+			"name": "Pedal",
+			"description": "Brake pedal"
+		},
+		{
+			"id": 25006,
+			"parent_test_item_category_id": 25004,
+			"name": "Handlebar lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 25008,
+			"parent_test_item_category_id": 25007,
+			"name": "Master cylinder",
+			"description": "Brake master cylinder"
+		},
+		{
+			"id": 25009,
+			"parent_test_item_category_id": 25007,
+			"name": "Fluid reservoir",
+			"description": "Brake fluid reservoir"
+		},
+		{
+			"id": 25010,
+			"parent_test_item_category_id": 25007,
+			"name": "Brake fluid ",
+			"description": "Brake fluid "
+		},
+		{
+			"id": 25011,
+			"parent_test_item_category_id": 25007,
+			"name": "Rigid brake pipes",
+			"description": "Brake pipe"
+		},
+		{
+			"id": 25012,
+			"parent_test_item_category_id": 25007,
+			"name": "Flexible brake hoses",
+			"description": "Brake hose"
+		},
+		{
+			"id": 25013,
+			"parent_test_item_category_id": 25007,
+			"name": "Servo",
+			"description": "Brake servo"
+		},
+		{
+			"id": 25015,
+			"parent_test_item_category_id": 25014,
+			"name": "Brake linings",
+			"description": "Brake lining(s)"
+		},
+		{
+			"id": 25016,
+			"parent_test_item_category_id": 25014,
+			"name": "Brake pads",
+			"description": "Brake pad(s)"
+		},
+		{
+			"id": 25018,
+			"parent_test_item_category_id": 25017,
+			"name": "Brake drums",
+			"description": "Brake drum"
+		},
+		{
+			"id": 25019,
+			"parent_test_item_category_id": 25017,
+			"name": "Brake discs",
+			"description": "Brake disc"
+		},
+		{
+			"id": 25020,
+			"parent_test_item_category_id": 25017,
+			"name": "Brake back plates",
+			"description": "Brake back plate"
+		},
+		{
+			"id": 25022,
+			"parent_test_item_category_id": 25021,
+			"name": "Rod",
+			"description": "Brake rod"
+		},
+		{
+			"id": 25023,
+			"parent_test_item_category_id": 25021,
+			"name": "Cable",
+			"description": "Brake cable"
+		},
+		{
+			"id": 25024,
+			"parent_test_item_category_id": 25021,
+			"name": "Lever",
+			"description": "Brake lever"
+		},
+		{
+			"id": 25025,
+			"parent_test_item_category_id": 25021,
+			"name": "Linkage",
+			"description": "Brake linkage"
+		},
+		{
+			"id": 25026,
+			"parent_test_item_category_id": 25021,
+			"name": "Reaction bracket",
+			"description": "Brake reaction bracket"
+		},
+		{
+			"id": 25027,
+			"parent_test_item_category_id": 25021,
+			"name": "Clevis joint",
+			"description": "Brake clevis joint"
+		},
+		{
+			"id": 25028,
+			"parent_test_item_category_id": 25021,
+			"name": "Pivot",
+			"description": "Brake pivot"
+		},
+		{
+			"id": 25030,
+			"parent_test_item_category_id": 25029,
+			"name": "Brake calipers",
+			"description": "Brake caliper"
+		},
+		{
+			"id": 25031,
+			"parent_test_item_category_id": 25029,
+			"name": "Brake cylinders",
+			"description": "Brake cylinder"
+		},
+		{
+			"id": 25034,
+			"parent_test_item_category_id": 25033,
+			"name": "Brake performance not tested",
+			"description": "Brake performance"
+		},
+		{
+			"id": 25035,
+			"parent_test_item_category_id": 25033,
+			"name": "Roller brake test",
+			"description": "Brake"
+		},
+		{
+			"id": 25036,
+			"parent_test_item_category_id": 25033,
+			"name": "Plate brake test",
+			"description": "Brake"
+		},
+		{
+			"id": 25037,
+			"parent_test_item_category_id": 25033,
+			"name": "Floor test",
+			"description": "Brake"
+		},
+		{
+			"id": 25038,
+			"parent_test_item_category_id": 25033,
+			"name": "Gradient",
+			"description": "Brake"
+		},
+		{
+			"id": 25039,
+			"parent_test_item_category_id": 25033,
+			"name": "Decelerometer test",
+			"description": "Brake"
+		},
+		{
+			"id": 25041,
+			"parent_test_item_category_id": 25040,
+			"name": "Roller brake test",
+			"description": "Roller brake test"
+		},
+		{
+			"id": 25042,
+			"parent_test_item_category_id": 25040,
+			"name": "Plate brake test",
+			"description": "Plate brake test"
+		},
+		{
+			"id": 25043,
+			"parent_test_item_category_id": 25040,
+			"name": "Floor test",
+			"description": "Floor brake test"
+		},
+		{
+			"id": 25044,
+			"parent_test_item_category_id": 25040,
+			"name": "Gradient",
+			"description": "Gradient brake test"
+		},
+		{
+			"id": 25045,
+			"parent_test_item_category_id": 25040,
+			"name": "Decelerometer test",
+			"description": "Decelerometer brake test"
+		},
+		{
+			"id": 25047,
+			"parent_test_item_category_id": 25046,
+			"name": "Steering operation and linkage",
+			"description": null
+		},
+		{
+			"id": 25053,
+			"parent_test_item_category_id": 25046,
+			"name": "Handlebar, forks and yokes",
+			"description": null
+		},
+		{
+			"id": 25058,
+			"parent_test_item_category_id": 25046,
+			"name": "Wheel alignment",
+			"description": null
+		},
+		{
+			"id": 25048,
+			"parent_test_item_category_id": 25047,
+			"name": "Operation",
+			"description": "Steering operation"
+		},
+		{
+			"id": 25049,
+			"parent_test_item_category_id": 25047,
+			"name": "Linkage",
+			"description": "Steering linkage"
+		},
+		{
+			"id": 25050,
+			"parent_test_item_category_id": 25047,
+			"name": "Ball joints",
+			"description": "Steering linkage ball joint"
+		},
+		{
+			"id": 25051,
+			"parent_test_item_category_id": 25047,
+			"name": "Damper",
+			"description": "Steering damper"
+		},
+		{
+			"id": 25052,
+			"parent_test_item_category_id": 25047,
+			"name": "Locking devices",
+			"description": "Steering linkage locking device"
+		},
+		{
+			"id": 25054,
+			"parent_test_item_category_id": 25053,
+			"name": "Handlebars",
+			"description": "Handlebar"
+		},
+		{
+			"id": 25055,
+			"parent_test_item_category_id": 25053,
+			"name": "Forks",
+			"description": "Forks"
+		},
+		{
+			"id": 25056,
+			"parent_test_item_category_id": 25053,
+			"name": "Fork yoke",
+			"description": "Fork yoke"
+		},
+		{
+			"id": 25057,
+			"parent_test_item_category_id": 25053,
+			"name": "Headbearings",
+			"description": "Steering headbearing"
+		},
+		{
+			"id": 25059,
+			"parent_test_item_category_id": 25058,
+			"name": "Wheel alignment",
+			"description": "Wheel alignment"
+		},
+		{
+			"id": 25060,
+			"parent_test_item_category_id": 25058,
+			"name": "Sidecar wheel alignment",
+			"description": "Sidecar wheel alignment"
+		},
+		{
+			"id": 25062,
+			"parent_test_item_category_id": 25061,
+			"name": "Headlamps",
+			"description": null
+		},
+		{
+			"id": 25066,
+			"parent_test_item_category_id": 25061,
+			"name": "Headlamp aim",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 25067,
+			"parent_test_item_category_id": 25061,
+			"name": "Headlamp aim not tested",
+			"description": "Headlamp aim"
+		},
+		{
+			"id": 25068,
+			"parent_test_item_category_id": 25061,
+			"name": "Position lamps",
+			"description": null
+		},
+		{
+			"id": 25072,
+			"parent_test_item_category_id": 25061,
+			"name": "Stop lamp",
+			"description": "Stop lamp"
+		},
+		{
+			"id": 25073,
+			"parent_test_item_category_id": 25061,
+			"name": "Direction indicators",
+			"description": null
+		},
+		{
+			"id": 25079,
+			"parent_test_item_category_id": 25061,
+			"name": "Registration plate lamp",
+			"description": "Registration plate lamp"
+		},
+		{
+			"id": 25080,
+			"parent_test_item_category_id": 25061,
+			"name": "Rear reflectors",
+			"description": "Rear reflector"
+		},
+		{
+			"id": 25063,
+			"parent_test_item_category_id": 25062,
+			"name": "Headlamp",
+			"description": "Headlamp"
+		},
+		{
+			"id": 25064,
+			"parent_test_item_category_id": 25062,
+			"name": "Switch",
+			"description": "Headlamp switch"
+		},
+		{
+			"id": 25065,
+			"parent_test_item_category_id": 25062,
+			"name": "Dipswitch",
+			"description": "Dipswitch"
+		},
+		{
+			"id": 25069,
+			"parent_test_item_category_id": 25068,
+			"name": "Position lamp",
+			"description": "Position lamp"
+		},
+		{
+			"id": 25070,
+			"parent_test_item_category_id": 25068,
+			"name": "All position lamps",
+			"description": "All position lamps"
+		},
+		{
+			"id": 25071,
+			"parent_test_item_category_id": 25068,
+			"name": "Switch",
+			"description": "Position lamp switch"
+		},
+		{
+			"id": 25074,
+			"parent_test_item_category_id": 25073,
+			"name": "Individual direction indicators",
+			"description": "Direction indicator"
+		},
+		{
+			"id": 25076,
+			"parent_test_item_category_id": 25073,
+			"name": "Tell tale",
+			"description": "Indicator tell tale"
+		},
+		{
+			"id": 25077,
+			"parent_test_item_category_id": 25073,
+			"name": "Switch",
+			"description": "Indicator switch"
+		},
+		{
+			"id": 25078,
+			"parent_test_item_category_id": 25073,
+			"name": "All direction indicators",
+			"description": "All direction indicators"
+		},
+		{
+			"id": 25082,
+			"parent_test_item_category_id": 25081,
+			"name": "Wheel bearings",
+			"description": "Wheel bearing"
+		},
+		{
+			"id": 25083,
+			"parent_test_item_category_id": 25081,
+			"name": "Suspension",
+			"description": null
+		},
+		{
+			"id": 25084,
+			"parent_test_item_category_id": 25083,
+			"name": "Springs",
+			"description": "Road spring"
+		},
+		{
+			"id": 25085,
+			"parent_test_item_category_id": 25083,
+			"name": "Shock absorbers",
+			"description": "Rear shock absorber"
+		},
+		{
+			"id": 25086,
+			"parent_test_item_category_id": 25083,
+			"name": "Suspension arms",
+			"description": null
+		},
+		{
+			"id": 25090,
+			"parent_test_item_category_id": 25083,
+			"name": "Suspension rods",
+			"description": null
+		},
+		{
+			"id": 25094,
+			"parent_test_item_category_id": 25083,
+			"name": "Other suspension component",
+			"description": null
+		},
+		{
+			"id": 25087,
+			"parent_test_item_category_id": 25086,
+			"name": "Condition",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 25088,
+			"parent_test_item_category_id": 25086,
+			"name": "Attachment/mounting",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 25089,
+			"parent_test_item_category_id": 25086,
+			"name": "Pins/bushes/ball joints",
+			"description": "Suspension arm"
+		},
+		{
+			"id": 25091,
+			"parent_test_item_category_id": 25090,
+			"name": "Condition",
+			"description": "Suspension rod"
+		},
+		{
+			"id": 25092,
+			"parent_test_item_category_id": 25090,
+			"name": "Attachment/mounting",
+			"description": "Suspension rod"
+		},
+		{
+			"id": 25093,
+			"parent_test_item_category_id": 25090,
+			"name": "Pins/bushes/ball joints",
+			"description": "Suspension rod"
+		},
+		{
+			"id": 25095,
+			"parent_test_item_category_id": 25094,
+			"name": "Condition",
+			"description": "Suspension"
+		},
+		{
+			"id": 25096,
+			"parent_test_item_category_id": 25094,
+			"name": "Attachment/mounting",
+			"description": "Suspension"
+		},
+		{
+			"id": 25097,
+			"parent_test_item_category_id": 25094,
+			"name": "Pins/bushes/ball joints",
+			"description": "Suspension"
+		},
+		{
+			"id": 25099,
+			"parent_test_item_category_id": 25098,
+			"name": "Condition",
+			"description": "Wheel"
+		},
+		{
+			"id": 25100,
+			"parent_test_item_category_id": 25098,
+			"name": "Attachment",
+			"description": "Wheel"
+		},
+		{
+			"id": 25101,
+			"parent_test_item_category_id": 25098,
+			"name": "Hub",
+			"description": "Wheel hub"
+		},
+		{
+			"id": 25103,
+			"parent_test_item_category_id": 25102,
+			"name": "Fitment",
+			"description": "Tyre"
+		},
+		{
+			"id": 25104,
+			"parent_test_item_category_id": 25102,
+			"name": "Condition",
+			"description": "Tyre"
+		},
+		{
+			"id": 25106,
+			"parent_test_item_category_id": 25105,
+			"name": "Motorcycle structure",
+			"description": "Motorcycle structure"
+		},
+		{
+			"id": 25107,
+			"parent_test_item_category_id": 25105,
+			"name": "Sidecar structure",
+			"description": "Sidecar structure"
+		},
+		{
+			"id": 25108,
+			"parent_test_item_category_id": 25105,
+			"name": "Exhaust system",
+			"description": "Exhaust"
+		},
+		{
+			"id": 25109,
+			"parent_test_item_category_id": 25105,
+			"name": "Fuel system",
+			"description": null
+		},
+		{
+			"id": 25115,
+			"parent_test_item_category_id": 25105,
+			"name": "Motorcycle drive system",
+			"description": null
+		},
+		{
+			"id": 25120,
+			"parent_test_item_category_id": 25105,
+			"name": "Motorcycle engine mountings",
+			"description": "Engine mounting/bracket"
+		},
+		{
+			"id": 25121,
+			"parent_test_item_category_id": 25105,
+			"name": "Motorcycle seats and riding controls",
+			"description": null
+		},
+		{
+			"id": 25127,
+			"parent_test_item_category_id": 25105,
+			"name": "Footrests",
+			"description": "Footrest"
+		},
+		{
+			"id": 25110,
+			"parent_test_item_category_id": 25109,
+			"name": "Tank",
+			"description": "Fuel tank"
+		},
+		{
+			"id": 25111,
+			"parent_test_item_category_id": 25109,
+			"name": "Hose",
+			"description": "Fuel hose"
+		},
+		{
+			"id": 25112,
+			"parent_test_item_category_id": 25109,
+			"name": "Pipe",
+			"description": "Fuel pipe"
+		},
+		{
+			"id": 25113,
+			"parent_test_item_category_id": 25109,
+			"name": "Fuel cap",
+			"description": "Fuel cap"
+		},
+		{
+			"id": 25114,
+			"parent_test_item_category_id": 25109,
+			"name": "System",
+			"description": "Fuel system"
+		},
+		{
+			"id": 25116,
+			"parent_test_item_category_id": 25115,
+			"name": "Drive chain",
+			"description": "Drive chain"
+		},
+		{
+			"id": 25117,
+			"parent_test_item_category_id": 25115,
+			"name": "Drive belt",
+			"description": "Drive belt"
+		},
+		{
+			"id": 25118,
+			"parent_test_item_category_id": 25115,
+			"name": "Chain guard",
+			"description": "Chain guard"
+		},
+		{
+			"id": 25119,
+			"parent_test_item_category_id": 25115,
+			"name": "Belt guard",
+			"description": "Drive belt guard"
+		},
+		{
+			"id": 25122,
+			"parent_test_item_category_id": 25121,
+			"name": "Riders seat",
+			"description": "Riders seat"
+		},
+		{
+			"id": 25123,
+			"parent_test_item_category_id": 25121,
+			"name": "Pillion seat",
+			"description": "Pillion seat"
+		},
+		{
+			"id": 25124,
+			"parent_test_item_category_id": 25121,
+			"name": "Riding controls",
+			"description": null
+		},
+		{
+			"id": 25125,
+			"parent_test_item_category_id": 25124,
+			"name": "Throttle",
+			"description": "Throttle"
+		},
+		{
+			"id": 25126,
+			"parent_test_item_category_id": 25124,
+			"name": "Clutch lever",
+			"description": "Clutch lever"
+		},
+		{
+			"id": 90001,
+			"parent_test_item_category_id": 90000,
+			"name": "Registration plates",
+			"description": "Registration plate"
+		}
+	]
+}

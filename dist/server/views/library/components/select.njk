@@ -1,0 +1,34 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Select' %}
+
+{% block content %}
+
+  {% set selectOptions = [
+    {
+      value: 'one',
+      text: 'GOV.UK elements option 1'
+    },
+    {
+      value: 'two',
+      text: 'GOV.UK elements option 2'
+    },
+    {
+      value: 'three',
+      text: 'GOV.UK elements option 3'
+    }
+  ] %}
+
+  {{ components.heading(text='Select box', tag='h2', size='medium') }}
+  {{ components.select(options=selectOptions, label='This is the label text', id='select-box', group=true) | prism }}
+
+  {{ components.heading(text='Select box with hint', tag='h2', size='medium') }}
+  {{ components.select(options=selectOptions, label='This is the label text', id='select-box', hint='Hint goes here', group=true) | prism }}
+
+  {{ components.heading(text='Select box with bold label', tag='h2', size='medium') }}
+  {{ components.select(options=selectOptions, label='This is the label text', labelBold=true, id='select-box', group=true) | prism }}
+
+  {{ components.heading(text='Select box with error', tag='h2', size='medium') }}
+  {{ components.select(options=selectOptions, label='This is the label text', labelBold=true, id='select-box', hint='Hint goes here', group=true, error='Error message goes here') | prism }}
+  
+{% endblock %}

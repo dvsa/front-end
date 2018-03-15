@@ -1,0 +1,135 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOTH History - Accordions Prototype' %}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/moth-accordions', back=true, paragraph=true) }}
+
+  {{ components.pageHeading('NISSAN QASHQAI', 'EJ13YLS', extraClass='heading--small-margin-bottom') }}
+
+  {{ components.link(text='Check another vehicle', url='#', paragraph=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+      {{ components.heading(text='White', secondary='Colour', tag='h2', size='medium', extraClass='heading--no-margin-top heading--small-margin-bottom') }}
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+      {{ components.heading(text='Petrol', secondary='Fuel type', tag='h2', size='medium', extraClass='heading--no-margin-top heading--small-margin-bottom') }}
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+      {{ components.heading(text='2013 (13 reg)', secondary='Year of manufacture', tag='h2', size='medium', extraClass='heading--no-margin-top heading--small-margin-bottom') }}
+    {%- endcall %}
+
+  {%- endcall %}
+
+  {{ components.heading(text='9 February 2018', secondary='MOT valid until', tag='h2', size='large', extraClass='heading--no-margin-top') }}
+
+  <p>
+    <a href="#">Get an MOT reminder</a> by email or text
+  </p>
+
+  <p>
+    If you think the MOT expiry date or any of the vehicle details are wrong, <a href="#">contact DVSA</a>
+  </p>
+
+  <div class="js-accordion js-accordion--up-down-arrows">
+    <div class="js-accordion__top-section">
+      <button class="js-accordion__expand-button">
+        Open All
+      </button>
+    </div>
+    <div class="js-accordion__wrapper">
+
+      <div class="js-accordion__section" data-section-category="mot-history">
+        <div class="js-accordion__header">
+          <div class="js-accordion__header-left">
+            <h2 class="js-accordion__title">
+              <button class="js-accordion__title-button">
+                MOT History
+              </button>
+            </h2>
+            <p class="js-accordion__description">
+              Mileage recorded at test, parts failed or had minor problems
+            </p>
+          </div>
+          <div class="js-accordion__header-right">
+            <button class="js-accordion__header-icon"></button>
+          </div>
+        </div>
+        <div class="js-accordion__content">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptates cumque tempore similique repudiandae, aut, expedita error perferendis quaerat minima, omnis quasi repellat autem eaque pariatur sapiente. Consectetur iure minima vitae consequatur placeat repudiandae voluptatibus expedita excepturi recusandae. Aliquam unde harum dignissimos voluptas est voluptate iure distinctio sequi saepe odit.
+          </p>
+        </div>
+      </div>
+
+       <div class="js-accordion__section" data-section-disable-restore-state="true" data-section-category="vehicle-recalls" data-recalls-accordion="true" data-recalls-ajax-endpoint="{{ appURL }}/api/v1/recalls" data-recalls-ajax-data='{"test_variable":"Test Content"}'>
+        <div class="js-accordion__header" data-recalls-accordion-header="true" data-section-content-id="vehicle-recalls-content">
+          <div class="js-accordion__header-left">
+            <h2 class="js-accordion__title">
+              <button class="js-accordion__title-button">
+                Outstanding vehicle recalls
+              </button>
+            </h2>
+            <p class="js-accordion__description">
+              Check if Nissan Qashqai EJ13YLS has outstanding safety recall
+            </p>
+          </div>
+          <div class="js-accordion__header-right">
+            <button class="js-accordion__header-icon"></button>
+          </div>
+        </div>
+        <div class="js-accordion__content" id="vehicle-recalls-content">
+          
+          <div class="recalls-accordion recalls-accordion--no-js">
+
+            <div class="recalls-accordion__error-message">
+              <p>
+                Sorry, something went wrong with the search. Please try again later.
+              </p>
+            </div>
+
+            <div class="recalls-accordion__no-js-alternative">
+              <form action="">
+              <input type="hidden" value="23323">
+                <h2 class="heading-medium heading heading--no-margin">
+                  No Javascript Detected
+                </h2>
+                <p>
+                  Please click on the button below in order to fetch the recalls data for this vehicle.
+                </p>
+                <p>
+                  <input class="button" type="submit" value="View Vehicle Recalls">
+                </p>
+              </form>
+            </div>
+
+            <div class="recalls-accordion__loading">
+              <h2 class="heading-medium heading heading--no-margin">
+                DVSA are checking for any recalls on this vehicle
+              </h2>
+              <p>
+                This may take a few seconds or so, please bear with us.
+              </p>
+              <img src="/images/loading-spinner.gif">
+            </div>
+
+            <div class="recalls-accordion__output">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure accusamus tempora expedita natus quos commodi esse dolor vitae cum officiis inventore nobis similique sequi corporis laboriosam, optio quibusdam dignissimos animi soluta ea atque. Ratione molestias, sapiente ea accusamus quas repudiandae natus! Saepe consectetur quos a nobis modi magni nesciunt culpa, deleniti et cum, ipsum illum dolorem nemo! Illo necessitatibus minus sed odit deserunt in a nesciunt animi nam, nihil iusto quaerat aliquid qui deleniti magnam obcaecati, repellendus veritatis ut ratione debitis. Facilis sunt voluptatum adipisci. Labore cum aliquid iste animi quam autem enim repellat non deleniti omnis, eaque ad quisquam officia harum iusto dicta impedit laborum, minus laudantium perferendis! Dolore cupiditate magnam quo laboriosam consequuntur possimus similique dolorem in asperiores perferendis dolor distinctio doloribus iste voluptates cumque vel ex, dignissimos sunt rem. Repellendus, sed quidem aliquid necessitatibus enim commodi eaque inventore nemo. Qui sit debitis enim fugit magni tempora molestias quis, totam nobis quos culpa ratione exercitationem a corrupti aliquam omnis sed obcaecati quas. Explicabo, ad deleniti. Eius blanditiis, magnam magni rerum iusto necessitatibus voluptates labore, quos nihil totam, repellat maiores numquam tempore aspernatur obcaecati! Deserunt ipsum possimus eaque excepturi delectus dignissimos molestias hic officia repellat cupiditate cumque, error expedita!
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

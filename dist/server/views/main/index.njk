@@ -1,0 +1,27 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOT Design System' %}
+
+{% block content %}
+
+  {{ components.pageHeading('DVSA Front-end', 'Build v' + repoPackageJSON.version) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Styleguide', tag='h2', size='medium', url='/library') }}
+      {{ components.paragraph(text='GDS and DVSA components library to be used by all applications.') }}
+      
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Prototypes', tag='h2', size='medium', url='/prototypes') }}
+      {{ components.paragraph(text='All of DVSA prototypes and user journeys.') }}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+
+{% endblock %}

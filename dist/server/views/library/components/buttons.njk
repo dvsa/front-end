@@ -1,0 +1,19 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Buttons' %}
+
+{% block content %}
+
+  {{ components.heading(text='Button text', tag='h2', size='medium') }}
+
+  {{ components.button(text='Save and continue') | prism }}
+
+  {{ components.heading(text='Button text (Disabled)', tag='h2', size='medium') }}
+
+  {{ components.button(text='Save and continue', disabled=true) | prism }}
+
+  {{ components.heading(text='Start now button', tag='h2', size='medium') }}
+
+  {{ components.button(text='Save and continue', url='#', start=true) | prism }}
+
+{% endblock %}

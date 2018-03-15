@@ -1,0 +1,43 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account - Contact details' %}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/prototypes/create-account/details', back=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Your contact details', secondary='Create an account') }}
+
+      {% call components.form(action='/prototypes/create-account/contact-details', method='POST') %}
+
+        {% include './partials/form-errors.njk' %}
+
+        {{ components.heading(text='Address', tag='h2') }}
+        
+        {{ components.field(label='Home address', id='address1', group=true, groupCompound=true, value=values.address1, error=errors.address1.msg) }}
+
+        {{ components.field(label='Address line 2', labelVisuallyHidden=true, id='address2', group=true, groupCompound=true, value=values.address2) }}
+
+        {{ components.field(label='Address line 3', labelVisuallyHidden=true, id='address3', group=true, groupCompound=true, value=values.address3) }}
+
+        {{ components.field(label='Town or city', id='townOrCity', group=true, groupCompound=true, width=25, value=values.townOrCity, error=errors.townOrCity.msg) }}
+
+        {{ components.field(label='Postcode', id='postCode', group=true, groupCompound=true, width=12.5, value=values.postCode, error=errors.postCode.msg) }}
+
+        {{ components.heading(text='Phone number', tag='h2') }}
+
+        {{ components.field(label='Enter your home, mobile or work number', id='phoneNumber', group=true, value=values.phoneNumber, error=errors.phoneNumber.msg) }}
+
+        {% include './partials/form-submit-button.njk' %}
+
+      {%- endcall %}
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

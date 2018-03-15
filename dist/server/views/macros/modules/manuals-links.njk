@@ -1,0 +1,31 @@
+{% macro manualsLinks(items=false, startIndex=0) %}
+  {% if items %}
+  <ol class="m-m m-m--parent">
+
+    {% for item in items %}
+    <li>
+      {% set currentLoopItemIndex = loop.index0 + startIndex %}
+      {{ '<a href="' + item.url + '">' if item.url }}
+        <span class="m-m__number">{{ currentLoopItemIndex }}</span>
+        <span class="m-m__text">{{ item.text }}</span>
+      {{ '</a>' if item.url }}
+
+      {% if item.childItems %}
+      <ol class="m-m m-m--child">
+        {% for childItem in item.childItems %}
+        <li>
+          {{ '<a href="' + childItem.url + '">' if childItem.url }}
+            <span class="m-m__number">{{ currentLoopItemIndex }}.{{ loop.index }}</span>
+            <span class="m-m__text">{{ childItem.text }}</span>
+          {{ '</a>' if childItem.url }}
+        </li>
+        {% endfor %}
+      </ol>
+      {% endif %}
+
+    </li>
+    {% endfor %}
+
+  </ol>
+  {% endif %}
+{% endmacro %}

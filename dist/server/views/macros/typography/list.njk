@@ -1,0 +1,11 @@
+{% macro list(items=false, type=false) %}
+  {% if items %}
+    <{{ 'ol' if type == 'number' else 'ul' }} {{ 'class="list list-' + type + '"' if type else 'class="list"' }}>
+      {% for item in items %}
+      <li>
+        {% if item.url %}<a href="{{ item.url }}" {{ 'class="' + item.class + '"' if item.class }}>{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}
+      </li>
+      {% endfor %}
+    </{{ 'ol' if type == 'number' else 'ul' }}>
+  {% endif %}
+{% endmacro %}

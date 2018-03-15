@@ -1,0 +1,289 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOT Manuals - Page' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'MOT Manuals', url: '/manuals' },
+  { text: 'Section 1 Brakes' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+      {{ components.pageHeading(heading='Section 1 Brakes') }}
+
+      <div class="">
+        <ul>
+          <li>
+            <a href="#section_1.1"><span class="level-2">1.1 Condition and operation</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.1"><span class="level-3">1.1.1 Service brake pedal or hand lever pivot</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.2"><span class="level-3">1.1.2 Service brake pedal or hand lever condition and travel</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.3"><span class="level-3">1.1.3 Air and vacuum systems</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.4"><span class="level-3">1.1.4 Low pressure warning</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.5"><span class="level-3">1.1.5 Hand operated brake control valve</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.6"><span class="level-3">1.1.6 Parking brake lever or control</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.6.x"><span class="level-4">1.1.6.x Demo of level 4</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.6.x"><span class="level-4">1.1.6.x Demo of level 4</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.6.x"><span class="level-4">1.1.6.x Demo of level 4</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.6.x"><span class="level-4">1.1.6.x Demo of level 4</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.7"><span class="level-3">1.1.7 Brake valves</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.8"><span class="level-3">1.1.8 Not in use</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.9"><span class="level-3">1.1.9 Pressure storage reservoirs</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.10"><span class="level-3">1.1.10 Brake servo units and master cylinders (hydraulic systems)</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.11"><span class="level-3">1.1.11 Rigid brake pipes</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.12"><span class="level-3">1.1.12 Flexible brake hoses</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.13"><span class="level-3">1.1.13 Brake linings and pads</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.14"><span class="level-3">1.1.14 Brake discs and drums</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.15"><span class="level-3">1.1.15 Brake cables, rods, levers and linkages</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.16"><span class="level-3">1.1.16 Brake actuators (including spring brakes or hydraulic cylinders)</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.17"><span class="level-3">1.1.17 Load sensing valve</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.18"><span class="level-3">1.1.18 Brake slack adjuster</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.19"><span class="level-3">1.1.19 Endurance braking system (where fitted)</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.20"><span class="level-3">1.1.20 Not in use</span></a>
+          </li>
+          <li>
+            <a href="#section_1.1.21"><span class="level-3">1.1.21 Complete braking system</span></a>
+          </li>
+          <li>
+            <a href="#section_1.2"><span class="level-2">1.2 Service brake performance and efficiency</span></a>
+          </li>
+          <li>
+            <a href="#section_1.2.1"><span class="level-3">1.2.1 Service brake performance</span></a>
+          </li>
+          <li>
+            <a href="#section_1.2.2"><span class="level-3">1.2.2 Service brake efficiency</span></a>
+          </li>
+          <li>
+            <a href="#section_1.3"><span class="level-2">1.3 Secondary brake performance and efficiency</span></a>
+          </li>
+          <li>
+            <a href="#section_1.3.1"><span class="level-3">1.3.1 Secondary brake performance</span></a>
+          </li>
+          <li>
+            <a href="#section_1.3.2"><span class="level-3">1.3.2 Secondary brake efficiency</span></a>
+          </li>
+          <li>
+            <a href="#section_1.4"><span class="level-2">1.4 Parking brake performance and efficiency</span></a>
+          </li>
+          <li>
+            <a href="#section_1.4.1"><span class="level-3">1.4.1 Performance</span></a>
+          </li>
+          <li>
+            <a href="#section_1.4.2"><span class="level-3">1.4.2 Efficiency</span></a>
+          </li>
+          <li>
+            <a href="#section_1.5"><span class="level-2">1.5 Additional braking device (retarder) performance</span></a>
+          </li>
+          <li>
+            <a href="#section_1.6"><span class="level-2">1.6 Anti-lock braking system</span></a>
+          </li>
+          <li>
+            <a href="#section_1.7"><span class="level-2">1.7 Electronic braking system</span></a>
+          </li>
+          <li>
+            <a href="#section_1.8"><span class="level-2">1.8 Brake fluid</span></a>
+          </li>
+        </ul>
+      </div>
+
+      <h2 class="heading-medium" id="one">1.1 Item one</h2>
+
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit semper volutpat lacus, enim sapien nunc hendrerit mi ridiculus felis euismod cubilia. Nisl natoque sociosqu est conubia iaculis luctus eget ornare vitae laoreet lacinia, felis inceptos lacus risus id interdum primis pretium vulputate aptent nisi, sagittis non suspendisse nostra leo ad semper venenatis cum curabitur. Donec non vehicula faucibus porta felis sollicitudin dictum taciti, aliquet orci primis libero suscipit turpis lacus convallis vestibulum, per purus lectus luctus semper nostra porttitor. Potenti hendrerit rutrum parturient accumsan mauris sed justo sapien class tempor, quisque quis tortor posuere cursus dapibus lobortis in hac, convallis donec litora dis pellentesque nullam ullamcorper enim vitae. Felis semper fermentum magnis tempus lacinia fringilla elementum lectus ac, himenaeos pellentesque tincidunt nisi vitae ornare leo id faucibus, ultricies non morbi cras litora maecenas ridiculus praesent.</p>
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+      <h2 class="heading-medium" id="two">1.2 Item two</h2>
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. Facilisis dictum auctor fermentum sapien egestas non, morbi nam sociosqu phasellus ornare integer, facilisi rutrum dui hac habitant. Sociis morbi phasellus leo habitasse vivamus pulvinar lacus ac orci, per elementum dis pellentesque facilisi nunc curae mollis etiam class, ad et conubia accumsan nec blandit turpis in. Tempor fames gravida elementum nam egestas risus donec vitae ante, condimentum iaculis suspendisse etiam felis molestie penatibus volutpat lectus aenean, non est lacinia rutrum hac maecenas tellus eleifend.</p>
+       <table class="table table--top">
+          <thead>
+              <tr>
+                  <th class="vertically-aligned vertically-aligned"><span class="bold">Deficiency</span></th>
+                  <th class="vertically-aligned"><span class="bold">Category</span></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="1"><li>Number plate missing or so insecure that it is likely to fall off.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="2"><li>Number plate inscription missing or illegible.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="3"><li>Number plate showing an incorrect registration</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="4"><li>Number plate does not conform to the specified requirements.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+          </tbody>
+      </table>
+      <p>Molestie nulla mus vestibulum semper morbi dictumst lacinia dis sem, tincidunt blandit quam senectus condimentum rutrum felis sociosqu, cum aliquam aenean hendrerit venenatis dictum lacus integer. Facilisis dictum auctor fermentum sapien egestas non, morbi nam sociosqu phasellus ornare integer, facilisi rutrum dui hac habitant. Sociis morbi phasellus leo habitasse vivamus pulvinar lacus ac orci, per elementum dis pellentesque facilisi nunc curae mollis etiam class, ad et conubia accumsan nec blandit turpis in. Tempor fames gravida elementum nam egestas risus donec vitae ante, condimentum iaculis suspendisse etiam felis molestie penatibus volutpat lectus aenean, non est lacinia rutrum hac maecenas tellus eleifend.</p>
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+
+      <h2 class="heading-medium" id="three">1.3 Item three</h2>
+      <table class="table table--top">
+          <thead>
+              <tr>
+                  <th class="vertically-aligned vertically-aligned"><span class="bold">Deficiency</span></th>
+                  <th class="vertically-aligned"><span class="bold">Category</span></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="1"><li>Number plate missing or so insecure that it is likely to fall off.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="2"><li>Number plate inscription missing or illegible.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="3"><li>Number plate showing an incorrect registration</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="4"><li>Number plate does not conform to the specified requirements.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+          </tbody>
+      </table>
+
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+
+      <h2 class="heading-medium" id="four">1.4 Item four</h2>
+      <p>Mauris scelerisque mi vulputate elementum nascetur viverra facilisi, tortor quisque ad diam et praesent, ridiculus odio felis per consequat nostra. Maecenas netus tristique ridiculus sociosqu nam augue tempor rhoncus, ligula accumsan rutrum quis egestas orci commodo, quam justo metus fermentum pulvinar ultrices auctor. Potenti dis orci luctus sem eu praesent porttitor netus pulvinar iaculis, convallis class lacinia aliquet natoque aliquam ridiculus libero imperdiet pretium, enim mi malesuada parturient felis suspendisse ac blandit tempus. Sociosqu odio congue orci purus litora, id facilisi aptent interdum, ornare per donec nec. Quisque eleifend integer felis habitasse lacus, facilisis sem himenaeos aliquet sagittis tempor, metus nunc vulputate mauris. Ridiculus nec mi vitae fames fringilla risus integer feugiat, quam nam pellentesque magnis egestas praesent nibh, eros nisi mattis dictum pulvinar in hac.</p>
+
+
+      <p>Lorem ipsum dolor sit amet consectetur adipiscing elit vivamus, habitant sagittis senectus phasellus sapien auctor cursus ultricies sociosqu, non pulvinar duis netus per congue ac. Non felis donec rutrum dapibus eleifend posuere facilisis nec ultrices molestie mauris aptent ante, tortor senectus aenean quam a montes augue proin eu lectus pharetra euismod metus nisl, cubilia blandit tempor cum odio sed habitasse parturient himenaeos massa cras vivamus. Nunc donec hac cubilia euismod, phasellus commodo cum class, consequat cras auctor. Malesuada commodo id taciti curae at hac litora mollis condimentum, phasellus praesent aptent leo est nascetur mauris venenatis dignissim, facilisi lectus tristique vulputate fames laoreet imperdiet inceptos. Parturient posuere sagittis aenean nascetur vitae sollicitudin varius quis augue erat mus libero ullamcorper, sodales himenaeos vivamus congue accumsan blandit suspendisse vestibulum dis tempus semper.</p>
+      <table class="table table--top">
+          <thead>
+              <tr>
+                  <th class="vertically-aligned vertically-aligned"><span class="bold">Deficiency</span></th>
+                  <th class="vertically-aligned"><span class="bold">Category</span></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="1"><li>Number plate missing or so insecure that it is likely to fall off.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="2"><li>Number plate inscription missing or illegible.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="3"><li>Number plate showing an incorrect registration</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+              <tr>
+                  <td>
+                      <ol class="list-alpha" start="4"><li>Number plate does not conform to the specified requirements.</li></ol>
+                  </td>
+                  <td>Major</td>
+              </tr>
+          </tbody>
+      </table>
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+      <h2 class="heading-medium" id="five">1.5 Item five</h2>
+      <p>Varius lectus felis facilisi lobortis lacus augue sodales at, consequat interdum vitae turpis nostra bibendum ut neque, diam platea fames mollis parturient facilisis conubia. Praesent potenti elementum habitasse per vitae velit fames cubilia, nisl vulputate nascetur platea nec non libero mus, commodo accumsan nunc lectus aliquet maecenas facilisis. Sodales volutpat mus etiam nunc nec et magna litora rutrum suscipit pellentesque potenti in pretium, lacus quisque eu aptent semper netus ornare lobortis molestie ultrices convallis id. Imperdiet turpis cum litora torquent facilisis habitasse libero facilisi ante conubia velit tortor commodo blandit vulputate maecenas, sed non netus integer curabitur viverra tempus cursus platea morbi aliquet venenatis rhoncus fames. Potenti magna fames habitasse libero sollicitudin sociis feugiat iaculis, augue donec rutrum proin tellus curabitur neque quisque, posuere leo viverra consequat mauris venenatis praesent. Ultricies nascetur aliquam eleifend dignissim condimentum pharetra leo cubilia platea, etiam viverra dapibus arcu consequat ante inceptos vestibulum elementum nibh, quis blandit primis congue porttitor mi lectus purus. Suspendisse quam auctor viverra risus libero, nullam ac odio egestas sociis, litora malesuada potenti rhoncus.</p>
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+      <h2 class="heading-medium" id="six">1.6 Item six</h2>
+      <p>A aliquet feugiat iaculis nisi felis diam integer nam morbi habitasse, eu est porttitor euismod mi curae nascetur arcu. Pulvinar risus ligula quisque sem dis taciti pharetra feugiat netus, habitasse nunc et praesent mollis lacinia tristique diam molestie, inceptos dapibus proin auctor in torquent eros velit. Vehicula odio dictum primis sollicitudin condimentum est risus senectus ultrices penatibus, duis laoreet magnis nascetur libero curabitur mattis ante imperdiet, mus mauris integer ad dapibus nisi purus euismod in. Porta auctor morbi arcu ultrices per sagittis laoreet dictumst vel eros dignissim, gravida risus fringilla nec interdum montes maecenas cubilia eu platea. Nisl mauris massa magna taciti pellentesque vulputate blandit orci, condimentum pharetra pretium imperdiet malesuada placerat quis, montes netus hendrerit porta iaculis morbi sagittis.</p>
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+      <h2 class="heading-medium" id="seven">1.7 Item seven</h2>
+      <p>Semper felis nibh elementum suscipit diam ligula ultrices, sed blandit euismod dui inceptos hendrerit interdum, odio lobortis duis libero nec urna. Habitasse aenean volutpat ultrices potenti nec cras luctus dis, scelerisque venenatis urna lobortis parturient montes tincidunt est conubia, neque viverra sem quis sed enim eu. Libero elementum fringilla ullamcorper ultricies tortor aptent integer magnis, mi tempor tempus vestibulum himenaeos pulvinar volutpat velit ante, quisque interdum sollicitudin magna venenatis condimentum feugiat. Duis torquent augue nulla malesuada lobortis luctus potenti ligula id quam nam, porta class sagittis montes mus vitae vehicula netus ridiculus. Duis nec vestibulum condimentum interdum lobortis accumsan mus enim, iaculis lacinia ullamcorper suspendisse congue porta aptent quam, eget ante sem velit mi tempus faucibus ligula, dui in magnis cubilia inceptos rhoncus diam. Sapien tellus pellentesque erat at natoque donec penatibus habitant habitasse volutpat, nec scelerisque nunc lacinia phasellus cubilia mus primis fames a, dignissim parturient egestas orci nulla torquent tempus non condimentum. Sed bibendum facilisi integer platea cubilia sem phasellus suspendisse, quisque gravida arcu nunc nec malesuada lacus tellus, conubia lectus placerat sodales maecenas penatibus senectus. Per molestie et a ridiculus massa tempor odio, sollicitudin hac id cursus sodales elementum justo, arcu etiam nibh netus integer venenatis.</p>
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+      <h2 class="heading-medium" id="eight">1.8 Item eight</h2>
+      <p>Aptent eget velit tortor sed vulputate nibh mollis cubilia natoque, commodo scelerisque leo suspendisse mi mattis in quisque, sollicitudin vestibulum lobortis nulla pulvinar fermentum donec ad. Rutrum pellentesque semper lobortis velit nulla malesuada congue vivamus conubia, cras habitasse diam mauris eu molestie eros suspendisse tellus, cum nunc dapibus vestibulum senectus sociis vehicula montes. Pharetra enim mus ante diam molestie, per nisi neque dui, sociosqu odio fusce a. Vestibulum a ridiculus sodales convallis senectus etiam nisi, donec curae aliquam fames venenatis nostra, sollicitudin conubia suscipit dictumst luctus augue. Nullam venenatis suspendisse habitant sociosqu nisi fames habitasse erat, lectus ullamcorper sed luctus imperdiet odio conubia, hendrerit mauris iaculis quis in nascetur facilisis.</p> <p>Lectus risus sagittis tempor pretium imperdiet natoque posuere, justo aenean habitant curae cras id. Pellentesque vitae nunc felis congue pharetra volutpat accumsan litora dapibus, massa curabitur platea ad ac dictumst curae justo phasellus, tempor laoreet et lacinia ridiculus sagittis vivamus magnis. Habitasse lectus est per dui ultrices platea enim, at quis dictum morbi laoreet sodales, phasellus ligula mattis integer diam feugiat. Urna malesuada est et morbi nisl facilisis aliquet tristique auctor vulputate vel dui, accumsan euismod fusce nec aliquam luctus litora class nullam suscipit rhoncus. Vitae dictum nisl mi etiam mollis ac commodo parturient, velit lectus varius metus urna venenatis at erat placerat, ligula porta leo porttitor purus quam condimentum. Suspendisse libero vivamus sodales tristique scelerisque hac ante congue id nullam, lobortis mollis nisl ullamcorper himenaeos mus primis integer sociis, purus vitae et litora nulla pretium eget gravida faucibus. Eros auctor ante a himenaeos venenatis nostra fermentum urna, viverra interdum lacus magnis semper aenean pulvinar, mi duis dui diam varius at ad. Venenatis torquent rhoncus fames leo arcu aenean interdum platea sodales eu, netus aliquet mus viverra feugiat ut pellentesque maecenas dictumst.</p> <p>Diam risus nec fusce egestas lobortis blandit porttitor, natoque metus fermentum habitasse suspendisse venenatis volutpat, ultricies sociis duis gravida at nunc. Pellentesque feugiat praesent est et pharetra metus neque imperdiet, quam sed lacinia volutpat viverra interdum tincidunt mus class, in a dictumst erat vitae ultrices suspendisse. Neque arcu primis rhoncus potenti eros mus turpis in, scelerisque ridiculus venenatis nascetur morbi fringilla quisque nibh, risus libero diam semper blandit natoque augue. Per mus sed id penatibus tempus primis pharetra nisi, dapibus egestas cursus posuere habitant morbi felis maecenas, ligula viverra laoreet dui fusce molestie netus. Fames nam dictum suscipit nibh magnis mattis maecenas potenti varius ut curae pulvinar condimentum, sagittis praesent turpis facilisis himenaeos semper iaculis ridiculus rutrum dapibus penatibus erat. Nam accumsan pharetra enim senectus netus maecenas condimentum curabitur elementum, aptent sagittis potenti nisi class faucibus neque eros urna massa, sem facilisis sed litora duis bibendum diam rutrum.</p> <p>Quisque mollis auctor tristique pulvinar proin rutrum nibh, dui mus sapien massa montes aliquet, justo dictumst lacinia habitant in senectus. Mus facilisis nullam curae vel nec blandit, feugiat consequat class arcu euismod tempor mattis, himenaeos inceptos velit morbi vitae. Pretium mauris tincidunt facilisi sodales sociosqu vulputate fringilla, pharetra porttitor cum lobortis est odio, ridiculus ullamcorper himenaeos fames nam aliquam. Aliquam viverra auctor eros conubia odio velit cursus, vivamus iaculis fermentum natoque et ligula. Mattis dis posuere potenti per ut in integer eget rhoncus, ornare venenatis habitasse luctus sem suspendisse consequat aenean, volutpat placerat dictumst tristique parturient rutrum aliquam morbi. Facilisi diam praesent viverra natoque integer non iaculis eu vel dis, aliquet penatibus tortor urna laoreet in placerat tempus accumsan gravida, et odio rhoncus nibh cras risus auctor ligula hac.</p>
+      <div class="font-small font-xsmall u-align-right print-hide"><a href="#top">Top of page</a></div>
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+      {% include './partials/side-nav.njk' %}
+    {%- endcall %}
+
+  {%- endcall %}
+
+{% endblock %}

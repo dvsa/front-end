@@ -29,7 +29,14 @@
             <li>'Contract and supplier management' area in the procurement profession skills and competency framework</li>
         </ul>
 
-        {{ components.heading(text='Learning outcomes', size='medium') }}
+        <div class="notice u-space-y30">
+            <i class="icon icon-important">
+                <span class="visually-hidden">Warning</span>
+            </i>
+            <strong class="bold-small">This course has a 1 hour exam</strong>
+        </div>
+
+        {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
 
         <p>On completing this learning, you'll be able to:</p>
 
@@ -42,13 +49,6 @@
             <li>Understand change control, governance, risk management and how to exit and terminate contracts</li>
             <li>Understand how intellectual property rights and assets can affect a contract</li>
         </ul>
-
-        <div class="notice" style="padding:40px 0;">
-            <i class="icon icon-important">
-                <span class="visually-hidden">Warning</span>
-            </i>
-            <strong class="bold-small">This course has a 1 hour exam</strong>
-        </div>
 
     {% call components.formElement(name='startLearning', method='POST', action="#") %}
 

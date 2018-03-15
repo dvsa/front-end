@@ -22,7 +22,7 @@ class Block extends Component {
    */
   componentDidUpdate() {
     // Check if active item exists
-    if(this.activeBlockItem) {
+    if (this.activeBlockItem) {
       // this.activeBlockItem.scrollIntoView();
     } else {
       this.firstBlockItem.scrollIntoView();
@@ -111,11 +111,11 @@ class Block extends Component {
           <ul className="ajax-browse__list" ref="itemsList">
             {this.props.items.map((item, index) => {
               let blockItemRef = blockItem => blockItem;
-              if(item.active) {
-                blockItemRef = blockItem => this.activeBlockItem = blockItem;
+              if (item.active) {
+                blockItemRef = blockItem => (this.activeBlockItem = blockItem);
               }
-              if(index === 0) {
-                blockItemRef = blockItem => this.firstBlockItem = blockItem;
+              if (index === 0) {
+                blockItemRef = blockItem => (this.firstBlockItem = blockItem);
               }
               return (
                 <BlockItem

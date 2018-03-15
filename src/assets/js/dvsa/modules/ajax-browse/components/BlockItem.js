@@ -35,7 +35,7 @@ BlockItem.propTypes = {
   loading: PropTypes.bool,
   endOfTree: PropTypes.bool,
   onClick: PropTypes.func.isRequired,
-  blockItemRef: PropTypes.func.isRequired
+  blockItemRef: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({

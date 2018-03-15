@@ -31,6 +31,10 @@ var _motTest = require('./../controllers/mot-test/mot-test');
 
 var motTestResultsController = _interopRequireWildcard(_motTest);
 
+var _ajaxBrowse = require('./../controllers/ajax-browse');
+
+var ajaxBrowseController = _interopRequireWildcard(_ajaxBrowse);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
@@ -41,6 +45,7 @@ router.get('/', mainController.index);
 
 // API Routes
 router.post('/api/v1/recalls', recallsController.recalls);
+// router.post('/api/v1/ajax-browse', ajaxBrowseAPIController.getItems);
 
 // Create account user journey
 router.get('/prototypes/create-account', createAccountController.getRoot);
@@ -68,6 +73,10 @@ router.get('/prototypes/mot-test/comment/edit', motTestResultsController.getEdit
 router.post('/prototypes/mot-test/comment/edit', motTestResultsController.postEditTesterComment);
 router.post('/prototypes/mot-test/comment/remove/', motTestResultsController.destorySession);
 router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
+
+// Ajax browse
+router.get('/prototypes/ajax-browse', ajaxBrowseController.getAjaxBrowse);
+router.post('/prototypes/ajax-browse', ajaxBrowseController.postAjaxBrowse);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

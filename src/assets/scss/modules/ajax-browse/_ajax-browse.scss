@@ -1,6 +1,7 @@
 .ajax-browse {
 
   position: relative;
+  z-index: 200;
 
   &, * {
     box-sizing: border-box;
@@ -52,8 +53,9 @@
   }
 
   &__inner {
-    overflow-x: hidden;
+    overflow: hidden;
     white-space: nowrap;
+    height: 500px;
   }
 
   &__block {
@@ -64,6 +66,8 @@
     transition: all 0.15s ease-in-out;
     position: relative;
     white-space: normal;
+    overflow-y: auto;
+    height: 500px;
 
     &-inner {
       border-left: 1px solid $grey-3;

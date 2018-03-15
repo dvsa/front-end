@@ -18,6 +18,18 @@ import BlockItem from './BlockItem';
 
 class Block extends Component {
   /**
+   * Scroll to top of component when first mounted
+   */
+  componentDidUpdate() {
+    // Check if active item exists
+    if(this.activeBlockItem) {
+      // this.activeBlockItem.scrollIntoView();
+    } else {
+      this.firstBlockItem.scrollIntoView();
+    }
+  }
+
+  /**
    * Handles the click event of the item inside the block
    *
    * @param {Object} item Current item passed when clicked
@@ -96,8 +108,15 @@ class Block extends Component {
     return (
       <div className="ajax-browse__block">
         <div className="ajax-browse__block-inner">
-          <ul className="ajax-browse__list">
+          <ul className="ajax-browse__list" ref="itemsList">
             {this.props.items.map((item, index) => {
+              let blockItemRef = blockItem => blockItem;
+              if(item.active) {
+                blockItemRef = blockItem => this.activeBlockItem = blockItem;
+              }
+              if(index === 0) {
+                blockItemRef = blockItem => this.firstBlockItem = blockItem;
+              }
               return (
                 <BlockItem
                   key={index}
@@ -109,6 +128,7 @@ class Block extends Component {
                   loading={item.loading}
                   endOfTree={item.endOfTree}
                   onClick={this.itemClickHanlder.bind(this, item, index)}
+                  blockItemRef={blockItemRef}
                 />
               );
             })}

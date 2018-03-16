@@ -15,3 +15,16 @@
     @content;
   }
 }
+
+@mixin e($element) {
+  @include element($element)  {
+    @content;
+  }
+}
+
+/// @alias modifier
+@mixin m($modifier) {
+  @include modifier($modifier) {
+    @content;
+  }
+}

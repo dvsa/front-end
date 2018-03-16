@@ -1,0 +1,216 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Diversity &amp; inclusion - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v4' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v4/' %}
+{% set homePath = '/prototypes/learner/v4/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Diversity &amp; inclusion') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>This topic covers the role unconscious bias can play in the workplace, as well as the importance of equality, diversity and inclusion.</p>
+
+        <p>You also learn about the equality laws that are in place, and the duty to treat our customers fairly.</p>
+        <p>This diversity and inclusion topic contains 8 activities. You can do them all in one go or in stages. </p>
+
+        {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+        <p>On completing all the topics, you'll:</p>
+        <ul class="list-bullet u-space-b30">
+            <li>have an understanding of what unconscious bias is and how it can affect your work</li>
+            <li>be able to recognise different types of unconscious bias and their impact</li>
+            <li>know how to challenge your own thinking, and how to help create the right environment.</li>
+            <li>be aware of some of the strategies you can use to minimise the impact of unconscious bias on decision making</li>
+            <li>understand why we need legislation</li>
+            <li>be more aware of how stereotyping, bullying and harassment can affect work relationships and decisions</li>
+            <li>have insight into the barriers disabled customers may face and duties towards all of our customers</li>
+        </ul>
+
+        <p><strong>You must complete all 8 learning modules to finish this topic.</strong></p>
+
+        <div class="resources resources--modules">
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='1. Introducing unconscious bias', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Retake <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>5 minutes</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--info ">Completed</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='2. Challenging unconscious bias in recruitment decisions', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Resume <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>8 minutes</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--info ">In progress</span>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='3. Unconscious bias in the workplace', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>5 minutes</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='4. Challenging unconscious bias', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>8 minutes</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='5. Equality, diversity and inclusion in the Civil Service', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>6 minutes</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='6. Equality, Diversity and Inclusion: The legal framework', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>5 minutes</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='7. Equality, diversity and inclusion: Our inclusive workplace', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>5 minutes</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        {{ components.heading(text='8. Equality, diversity and inclusion: Our customers', tag='h3', size='', extraClass='heading--text') }}
+                        <span class="resource__action">
+                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
+                        </span>
+                    </li>
+                    <li class="resource__duration">
+                        <span>8 minutes</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        {#{% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+            {% call components.formGroup() %}
+                {{ components.button(text='Start this learning', start=false, group=true)}}
+            {%- endcall %}
+
+        {%- endcall %}#}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>AA to SCS</td>
+                    </tr>
+                    <tr>
+                        <th>Key area</th>
+                        <td>General</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>1 hour</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£Free</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

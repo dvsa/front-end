@@ -35,6 +35,10 @@ var _learnerV3 = require('./../controllers/learnerV3');
 
 var learnerV3Controller = _interopRequireWildcard(_learnerV3);
 
+var _learnerV4 = require('./../controllers/learnerV4');
+
+var learnerV4Controller = _interopRequireWildcard(_learnerV4);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
@@ -315,6 +319,97 @@ router.get('/prototypes/learner/v3/scorms/basic-fire-safety', learnerV3Controlle
 router.post('/prototypes/learner/v3/scorms/basic-fire-safety', learnerV3Controller.basicFireSafetyPost);
 // scorm done
 router.get('/prototypes/learner/v3/scorms/basic-fire-safety/complete', learnerV3Controller.scormCompleteGet);
+
+//******************************************************
+//
+//      v4 end-to-end learner journey custom routes
+//
+//******************************************************
+// learner config
+
+router.get('/prototypes/learner/v4/config', learnerV4Controller.configGet);
+router.post('/prototypes/learner/v4/config', learnerV4Controller.configPost);
+
+//******************************************************
+//      Various smaller sections
+//******************************************************
+// start
+router.get('/prototypes/learner/v4', learnerV4Controller.indexGet);
+router.post('/prototypes/learner/v4', learnerV4Controller.indexPost);
+// home
+router.get('/prototypes/learner/v4/home', learnerV4Controller.homeGet);
+// router.post('/prototypes/learner/v4/home', learnerV4Controller.homePost);
+
+// profile
+router.get('/prototypes/learner/v4/your-profile', learnerV4Controller.profileGet);
+// planned learning
+router.get('/prototypes/learner/v4/learning-plan', learnerV4Controller.plannedGet);
+// learning record
+router.get('/prototypes/learner/v4/learning-record', learnerV4Controller.recordGet);
+// suggested learning
+router.get('/prototypes/learner/v4/suggested-learning', learnerV4Controller.suggestedGet);
+
+// search
+router.get('/prototypes/learner/v4/search', learnerV4Controller.searchGet);
+router.post('/prototypes/learner/v4/search', learnerV4Controller.searchPost);
+
+// feedback
+router.get('/prototypes/learner/v4/feedback', learnerV4Controller.feedbackGet);
+router.post('/prototypes/learner/v4/feedback', learnerV4Controller.feedbackPost);
+
+// Actions
+router.get('/prototypes/learner/v4/actions', learnerV4Controller.actionsGet);
+router.post('/prototypes/learner/v4/actions', learnerV4Controller.actionsPost);
+
+//******************************************************
+//      Registration stuff
+//******************************************************
+// registration, email
+router.get('/prototypes/learner/v4/registration', learnerV4Controller.registerEmailGet);
+router.post('/prototypes/learner/v4/registration', learnerV4Controller.registerEmailPost);
+// registration, name
+router.get('/prototypes/learner/v4/registration/personal-details', learnerV4Controller.registerPersonalGet);
+router.post('/prototypes/learner/v4/registration/personal-details', learnerV4Controller.registerPersonalPost);
+
+// registration, job, part 1, department
+router.get('/prototypes/learner/v4/registration/department', learnerV4Controller.registerDepartmentGet);
+router.post('/prototypes/learner/v4/registration/department', learnerV4Controller.registerDepartmentPost);
+// registration, job, part 2, profession
+router.get('/prototypes/learner/v4/registration/area-of-work', learnerV4Controller.registerAreaGet);
+router.post('/prototypes/learner/v4/registration/area-of-work', learnerV4Controller.registerAreaPost);
+// registration, job, part 3, grade
+router.get('/prototypes/learner/v4/registration/grade', learnerV4Controller.registerGradeGet);
+router.post('/prototypes/learner/v4/registration/grade', learnerV4Controller.registerGradePost);
+
+// registration, password
+router.get('/prototypes/learner/v4/registration/password', learnerV4Controller.registerPasswordGet);
+router.post('/prototypes/learner/v4/registration/password', learnerV4Controller.registerPasswordPost);
+// registration, review
+router.get('/prototypes/learner/v4/registration/review', learnerV4Controller.registerReviewGet);
+router.post('/prototypes/learner/v4/registration/review', learnerV4Controller.registerReviewPost);
+// registration, complete
+router.get('/prototypes/learner/v4/registration/complete', learnerV4Controller.registerCompleteGet);
+// router.post('/prototypes/learner/v4/registration/complete', learnerV4Controller.registerCompletePost);
+
+// registration, complete
+router.get('/prototypes/learner/v4/resource', learnerV4Controller.resourceGet);
+router.post('/prototypes/learner/v4/resource', learnerV4Controller.resourcePost);
+
+//******************************************************
+//      Booking stuff
+//******************************************************
+router.get('/prototypes/learner/v4/booking', learnerV4Controller.bookingDateGet);
+router.post('/prototypes/learner/v4/booking', learnerV4Controller.bookingDatePost);
+router.get('/prototypes/learner/v4/booking/payment', learnerV4Controller.bookingPaymentGet);
+router.post('/prototypes/learner/v4/booking/payment', learnerV4Controller.bookingPaymentPost);
+router.get('/prototypes/learner/v4/booking/confirm', learnerV4Controller.bookingConfirmGet);
+router.get('/prototypes/learner/v4/booking/complete', learnerV4Controller.bookingCompleteGet);
+
+// SCORMS fire safety
+router.get('/prototypes/learner/v4/scorms/basic-fire-safety', learnerV4Controller.basicFireSafetyGet);
+router.post('/prototypes/learner/v4/scorms/basic-fire-safety', learnerV4Controller.basicFireSafetyPost);
+// scorm done
+router.get('/prototypes/learner/v4/scorms/basic-fire-safety/complete', learnerV4Controller.scormCompleteGet);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

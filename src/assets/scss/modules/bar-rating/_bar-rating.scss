@@ -27,6 +27,15 @@ $wrapper-width: 275px;
     }
   }
 
+  &__input {
+    // display: none;
+    // visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    // left: -999px;
+    // top: -1px;
+  }
+
   &__wrapper {
     width: $wrapper-width;
     height: $bar-height;
@@ -34,7 +43,7 @@ $wrapper-width: 275px;
     padding:10px 0;
 
     & > input {
-      display: none;
+      // display: none;
     }
 
     & > label {

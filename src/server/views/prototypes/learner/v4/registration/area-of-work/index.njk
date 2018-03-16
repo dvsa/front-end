@@ -1,0 +1,79 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your area of work - Civil Service Learning Platform' %}
+
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v4' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v4/' %}
+{% set homePath = '/prototypes/learner/v4/' %}
+
+{% set professionSelectOptions = professionSelectOptions if professionSelectOptions %}
+{% set registrationJob2Error = registrationJob2Error if registrationJob2Error %}
+{% set registrationProfessionError = registrationProfessionError if registrationProfessionError %}
+{% set profession = profession if profession %}
+
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes' %}
+{% else %}
+    {% set buttonText = 'Continue' %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Your area of work', 'Create an account') }}
+
+    {% if registrationJob2Error %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your information</h2>
+            <ul class="error-summary-list">
+                {% if registrationProfessionError %}
+                    {% set registrationProfessionErrorMessage = 'Selet your profession' %}
+                    <li><a href="#profession">You must select at least one area of work</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p class="lede">Select all the areas of work that are relevant to you.</p>
+
+            {% call components.formElement(name='registerProfession', method='POST', action="#") %}
+
+                <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
+
+                    {% for item in professionSelectOptions %}
+
+                        {% if item.value in profession %}
+                            {% set checked = true %}
+                        {% else %}
+                            {% set checked = '' %}
+                        {% endif %}
+                        {{ components.checkbox(text=item.text, value=item.value, id='profession'+item.value,name='profession', compareTo=item.value, isChecked=checked) }}
+                    {% endfor %}
+
+                </fieldset>
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v4">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+

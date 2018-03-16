@@ -1,0 +1,215 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Search results - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v4' %}
+{% set signOutPath = '/prototypes/learner/v4/' %}
+{% set homePath = '/prototypes/learner/v4/home' %}
+{% set searchTerm = searchTerm if searchTerm %}
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.pageHeading('Search results') }}
+
+            <div class="search-box u-space-b30">
+
+                {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v4/search") %}
+
+                    <div class="form-group search-box__group">
+
+                        <label class="visuallyhidden">Search all available learning</label>
+
+                        <input class="form-control search-box__input" id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                        <button type="submit" class="search-box__submit">Search</button>
+
+                        {#<a href="#" class="search-box__advanced">Advanced search</a>#}
+
+                    </div>
+
+                {%- endcall %}
+
+            </div>
+
+        <p class="lede">There were <strong>46</strong> results for <strong>senior management</strong></p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {#{% call components.columnOneThird() %}
+
+            <strong>FILTERS ?</strong>
+            <br><br><br><br><br><br><br>
+
+        {%- endcall %}#}
+
+        {% call components.columnFull() %}
+
+            <div class="results">
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>APMG Change Management Foundation</strong></a>
+                        <p>In this module you consider how to work with potential providers and achieve what you require. You’ll learn about supply chains, pricing.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Classroom<br> 5 hours<br>Work area: Digital</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="/prototypes/learner/v4/booking/">Book now</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>APMG Change Management Foundation & Practitioner</strong></a>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Online<br> 2 hours<br>Work area: Commercial</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="">Start</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>                    
+                </div>
+
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>APMG International Managing Benefits™ Foundation & Practitioner certification</strong></a>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Classroom<br> 4 hours<br>Work area: Commercial</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="#">Start</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>APMG International Managing Benefits™ Practitioner certification</strong></a>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis partu.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Classroom<br> 4 hours<br>Work area: Commercial</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                </div>
+
+                <div class="result">
+                    
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>Managing Successful Programmes (MSP®) Advanced Practitioner re-registration dissertation route</strong></a>
+                        <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Classroom<br> 2 days<br> Work area: Commercial</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="/prototypes/learner/v4/booking/">Book now</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>Senior management strategy</strong></a>
+                        <p>Lorem. Ligula. Pede odio Eleifend. Dolor dignissim varius libero. Inceptos praesent. Nec eget viverra tellus elementum morbi fusce fermentum euismod volutpat turpis ad quis accumsan curae; tristique per Fermentum sociis.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Online<br> 1 hour<br> Work area: Commercial</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="#">Start</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>Managing Successful Programmes (MSP®) Practitioner</strong></a>
+                        <p>Cum, sed volutpat. Condimentum ligula convallis molestie aliquet eget, integer luctus rhoncus Aptent sagittis felis justo varius. Quam. Vulputate, nisl cubilia maecenas et sociosqu lobortis erat velit erat praesent tortor.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Classroom<br> 4 hours<br> Work area: Digital</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="/prototypes/learner/v4/booking/">Book now</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                    
+                </div>
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>Time management</strong></a>
+                        <p>Eget curabitur, vulputate quis primis, non tellus venenatis, felis a nostra mus primis. Ridiculus. A suspendisse massa ornare volutpat justo ligula scelerisque maecenas quam Cubilia torquent arcu ut tempus mattis.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Online<br> 2 hours<br>Work area: Commercial</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="#">Start</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>Ship Safety Management Office (SSMO) - Non Residential</strong></a>
+                        <p>Iaculis neque et, magna lacinia felis enim. Tincidunt fringilla sodales varius. Leo semper hac lacinia. Bibendum cras fames aliquet lectus.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Classroom<br> 2 hours<br> Work area: HMRC</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="/prototypes/learner/v4/booking/">Book now</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+                </div>
+
+                <div class="result">
+                    <div class="result__main">
+                        <a class="result__title" href="/prototypes/learner/v4/resource?resourceID=9"><strong>Managing teams remotely</strong></a>
+                        <p>Eros dui dignissim nascetur nec maecenas sodales dis platea Mus, sit natoque tempor hendrerit cras massa egestas odio, aliquet quam.</p>
+                    </div>
+                    <div class="result__info">
+                        <span>Online<br> 2 hours 30 minutes<br> Work area: Digital</span>
+                    </div>
+                    <div class="result__action">
+                        <a href="#">Start</a>
+                        <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type=Online">Add to learning plan</a>
+                    </div>
+
+                </div>
+                
+            </div>
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.pagination(totalItems=46,currentPage=1) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+{% endblock %}

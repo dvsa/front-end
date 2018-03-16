@@ -1,4 +1,4 @@
-$bar-width: 51px;
+$bar-width: 49px;
 $bar-height: 16px;
 $wrapper-width: 275px;
 
@@ -53,15 +53,17 @@ $wrapper-width: 275px;
       margin-right:4px;
       background-color: #f3f3f3;
       float: right;
+      overflow: hidden;
+      text-indent: 100px;
+      border: 1px solid #333;
+      border-radius: 1px;
 
       &:before {
         position: absolute;
         display: inline-block;
         content: " ";
-        width: $bar-width - 1;
-        height: $bar-height - 1;
-        border: 1px solid #333;
-        border-radius: 1px;
+        width: $bar-width - 2;
+        height: $bar-height - 2;
         cursor: pointer;
       }
     }

@@ -1,0 +1,25 @@
+{% macro searchResult(name='', url='#', description='', workArea, type='', duration, id='0') %}
+{%  set typeToLower = type | lower %}
+    <div class="result">
+        <div class="result__main">
+            <a class="result__title" href="/prototypes/learner/v4/resource?resourceID={{ id }}"><strong>{{ name }}</strong></a>
+            <p>{{ description }}</p>
+        </div>
+        <div class="result__info">
+            <span>
+                {{ type }}
+                {% if duration  %}<br>{{ duration }}{% endif %}
+                {% if workArea  %}<br>Work area: {{ workArea }}{% endif %}
+            </span>
+        </div>
+        <div class="result__action">
+            {% if typeToLower == 'classroom' %}
+            <a href="/prototypes/learner/v4/booking/">Book now</a>
+            {% endif %}
+            {% if typeToLower == 'online' %}
+                <a href="#">Start</a>
+            {% endif %}
+            <a href="/prototypes/learner/v4/actions?action=addedToLearningPlan&type={{ type }}">Add to learning plan</a>
+        </div>
+    </div>
+{% endmacro %}

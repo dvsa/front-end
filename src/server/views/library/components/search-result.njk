@@ -1,0 +1,26 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'GDS Library - Search result' %}
+
+{% block content %}
+
+    {{ components.heading(text='Search result item', tag='h2', size='medium') }}
+
+    <p>
+        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/assets/scss/modules/search-box/_search-box.scss">_search-box.scss</a>
+    </p>
+
+    {#searchResult(name='', url='#', description='', workArea, type='', duration, id='0')#}
+
+    {{ components.searchResult(
+        name='APMG Change Management Foundation',
+        id='9',
+        description='In this module you consider how to work with potential providers and achieve what you require. You’ll learn about supply chains, pricing.',
+        workArea='Digital',
+        type='Online',
+        duration='5 hours'
+        ) | prism }}
+
+
+
+{% endblock %}

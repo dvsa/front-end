@@ -3,7 +3,6 @@
     <div class="result">
         <div class="result__main">
             <a class="result__title" href="/prototypes/learner/v4/resource?resourceID={{ id }}"><strong>{{ name }}</strong></a>
-            <p>{{ description }}</p>
         </div>
         <div class="result__info">
             <span>
@@ -12,6 +11,7 @@
                 {% if workArea  %}<br>Work area: {{ workArea }}{% endif %}
             </span>
         </div>
+        <p class="result__description">{{ description }}</p>
         <div class="result__action">
             {% if typeToLower == 'classroom' %}
             <a href="/prototypes/learner/v4/booking/">Book now</a>

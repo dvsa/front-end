@@ -1,33 +1,6 @@
-/*
-
-@include modifier('search') {
-      width: 100%;
-      padding-right: 120px;
-      border: 1px solid red;
-    }
-
-&--right {
-      // float: right;
-      position: absolute;
-      right: 0;
-      width: 200px;
-      top: 0;
-      min-height: 60px;
-      text-align: right;
-      padding-right: 0;
-    }
-
-
- */
-
-.results {
-  // wrapper
-}
-
 .result {
   @include box-sizing(border-box);
   position: relative;
-  // padding:10px 8px 10px 0;
   margin-bottom: 10px;
   border-bottom: 1px solid $grey-2;
   padding-bottom: 10px;
@@ -39,10 +12,19 @@
     }
   }
 
+  &__description {
+    margin-bottom: 5px;
+
+    @include media(desktop) {
+      padding-right: 200px;
+    }
+
+  }
+
   &__info {
     position:relative;
     @include core-16;
-    padding-bottom: 10px;
+    padding: 10px 0 5px;
 
     @include media(desktop) {
       position: absolute;
@@ -50,6 +32,7 @@
       top: 5px;
       right: 0;
       text-align: right;
+      padding-top: 0;
     }
   }
 
@@ -69,6 +52,3 @@
     }
   }
 }
-
-
-

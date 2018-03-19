@@ -28,12 +28,8 @@ $wrapper-width: 275px;
   }
 
   &__input {
-    // display: none;
-    // visibility: hidden;
     position: absolute;
     opacity: 0;
-    // left: -999px;
-    // top: -1px;
   }
 
   &__wrapper {
@@ -41,10 +37,6 @@ $wrapper-width: 275px;
     height: $bar-height;
     clear: both;
     padding:10px 0;
-
-    & > input {
-      // display: none;
-    }
 
     & > label {
       position: relative;
@@ -82,9 +74,5 @@ $wrapper-width: 275px;
       color: #FFED85;
       background-color: #FFED85;
     }
-
   }
-
-
-
 }

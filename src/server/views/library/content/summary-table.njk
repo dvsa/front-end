@@ -1,0 +1,227 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Summary Tables' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Summary Table',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text='Used to present back information already in the service, for example, people, vehicles, tests, Vehicle Testing Stations and Authorised Examiners.'
+  ) }}
+
+  {{ components.heading(
+    text='Visual hierarchy',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text='The key uses a bold weight to enable scanning of property names.'
+  ) }}
+
+  {{ components.heading(
+    text='Numeric information',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text='Numeric data should use the tabular (fixed width) version of the NTA typeface to allow numbers to be more easily read and compared <code class="dev-code-snippet">.table-summary__value--tabular</code>.'
+  ) }}
+
+  {{ components.heading(
+    text='Accessibility',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text="Links are made more accessible by the inclusion of the property name within a hidden element. This allows screen readers to expose the context of the link, for example, 'Change email address' rather than 'Change'."
+  ) }}
+
+  {% call components.displayCode() %}
+  <table class="table-summary">
+    <tbody>
+      <tr>
+        <th class="table-summary__key">
+          Key
+          <span class="table-summary__meta">meta data</span>
+        </th>
+
+        <td class="table-summary__value">
+            Value
+          <span class="table-summary__meta">meta data</span>
+          <a href="#" class="table-summary__action" title="Action Key">Action<span class="visuallyhidden"> Key</span>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="table-summary__key">
+          Link
+        </th>
+
+        <td class="table-summary__value">
+          <a href="#">Value</a>
+          <a href="#" class="table-summary__action" title="Change Link">Change<span class="visuallyhidden"> Link</span></td>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="table-summary__key">
+          Numeric data
+          <span class="table-summary__meta">Uses a 'tabular' modifier</span>
+        </th>
+
+        <td class="table-summary__value--tabular">
+          07973613645
+          <a href="#" class="table-summary__action" title="Change Numeric data">Change<span class="visuallyhidden"> Numeric data</span></td>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="table-summary__key">
+          Empty state
+          <span class="table-summary__meta">Uses a 'muted' modifier</span>
+        </th>
+
+        <td class="table-summary__value--muted">
+          Unknown
+          <a href="#" class="table-summary__action" title="Change Empty state">Change<span class="visuallyhidden"> Empty state</span></td>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Key value table',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="Used to present back information captured when 'creating a thing', 'adding a thing' or 'changing a compound thing'."
+  ) }}
+
+  {{ components.heading(
+    text='Visual hierarchy',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text='The value uses a bold weight to enable scanning of the data entered.'
+  ) }}
+
+  {{ components.heading(
+    text='Numeric information',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text='Numeric data should use the tabular (fixed width) version of the NTA typeface to allow numbers to be more easily read and compared <code class="dev-code-snippet">.key-value-list__value--numeric</code>.'
+  ) }}
+
+  {% call components.displayCode() %}
+  <table class="key-value-list">
+    <tbody>
+      <tr>
+        <th class="key-value-list__key">
+          Key
+          <span class="key-value-list__meta">meta data</span>
+        </th>
+        <td class="key-value-list__value">
+          Value
+          <span class="key-value-list__meta">meta data</span>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="key-value-list__key">
+          Link
+        </th>
+        <td class="key-value-list__value">
+          <a href="#">Value</a>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="key-value-list__key">
+          Numeric data
+          <span class="key-value-list__meta">Uses a 'numeric' modifier</span>
+        </th>
+        <td class="key-value-list__value--numeric">
+          07973613645
+        </td>
+      </tr>
+
+      <tr>
+        <th class="key-value-list__key">
+          Empty state
+          <span class="key-value-list__meta">Uses a 'muted' modifier</span>
+        </th>
+        <td class="key-value-list__value--muted">
+          Unknown
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Key value with change links',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text='Enable users to quickly navigate to, and correct, errors.'
+  ) }}
+
+  {{ components.paragraph(
+    text="This pattern appears on the summary screen of the 'create a thing' or 'add a thing' interaction design patterns."
+  ) }}
+
+  {% call components.displayCode() %}
+  <table class="key-value-list">
+    <tbody>
+      <tr>
+        <th class="key-value-list__key">
+          Email address
+        </th>
+        <td class="key-value-list__value">
+          bill@microsoft.com
+        </td>
+        <td class="key-value-list__item-action">
+          <a href="#" title="Change Email address">
+            Change
+            <span class="visuallyhidden"> Email address</span>
+          </a>
+        </td>
+      </tr>
+
+      <tr>
+        <th class="key-value-list__key">
+          Password
+        </th>
+        <td class="key-value-list__value">
+          <span class="masked-text">••••••••</span>
+        </td>
+        <td class="key-value-list__item-action">
+          <a href="#" title="Change Password">
+            Change
+            <span class="visuallyhidden"> Password</span>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {%- endcall %}
+
+{% endblock %}

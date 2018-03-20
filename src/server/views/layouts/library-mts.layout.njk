@@ -1,0 +1,14 @@
+{% set bodyClass = 'mts-body-wrapper' %}
+{% extends './base.layout.njk' %}
+
+{% block bodyContentWrapper %}
+<main id="content" {{ 'class="' + mainContainerClass + '"' if mainContainerClass }}>
+  {% include './partials/phase-banner.njk' %}
+  <div class="styleguide-library" id="library-container">
+    {% include './partials/library-navigation.njk' %}
+    <div class="styleguide-library__right" id="styleguide-content">
+      {% block content %}{% endblock %}
+    </div>
+  </div>
+</main>
+{% endblock %}

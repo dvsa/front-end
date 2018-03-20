@@ -40,125 +40,82 @@
 
         <div class="resources resources--modules">
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='1. Introducing unconscious bias', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Retake <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>5 minutes</span>
-                    </li>
-                    <li class="resource__status">
-                        <span class="badge badge--info ">Completed</span>
-                    </li>
+            {#macro resourceRow(name='This resource title',headingTag='h3',size='',headingExtraClass='heading--text',type='',status='',action'',duration='')#}
 
-                </ul>
-            </div>
+            {{ components.resourceRow(
+                name='1. Introducing unconscious bias',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                status='Completed',
+                action='Retake',
+                duration='5 minutes'
+            ) }}
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='2. Challenging unconscious bias in recruitment decisions', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Resume <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>8 minutes</span>
-                    </li>
-                    <li class="resource__status">
-                        <span class="badge badge--info ">In progress</span>
-                    </li>
+            {{ components.resourceRow(
+                name='2. Challenging unconscious bias in recruitment decisions',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                status='In Progress',
+                action='Resume',
+                duration='8 minutes'
+            ) }}
 
-                </ul>
-            </div>
+            {{ components.resourceRow(
+                name='3. Unconscious bias in the workplace',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes'
+            ) }}
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='3. Unconscious bias in the workplace', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>5 minutes</span>
-                    </li>
-                </ul>
-            </div>
+            {{ components.resourceRow(
+                name='4. Challenging unconscious bias',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='8 minutes'
+            ) }}
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='4. Challenging unconscious bias', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>8 minutes</span>
-                    </li>
-                </ul>
-            </div>
+            {{ components.resourceRow(
+                name='5. Equality, diversity and inclusion in the Civil Service',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Video',
+                action='Start',
+                duration='12 minutes'
+            ) }}
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='5. Equality, diversity and inclusion in the Civil Service', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>6 minutes</span>
-                    </li>
-                </ul>
-            </div>
+            {{ components.resourceRow(
+                name='6. Equality, Diversity and Inclusion: The legal framework',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes'
+            ) }}
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='6. Equality, Diversity and Inclusion: The legal framework', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>5 minutes</span>
-                    </li>
-                </ul>
-            </div>
+            {{ components.resourceRow(
+                name='7. Equality, diversity and inclusion: Our inclusive workplace',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes'
+            ) }}
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='7. Equality, diversity and inclusion: Our inclusive workplace', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>5 minutes</span>
-                    </li>
-                </ul>
-            </div>
+            {{ components.resourceRow(
+                name='8. Equality, diversity and inclusion: Our customers',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='8 minutes'
+            ) }}
 
-            <div class="resource">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__main">
-                        {{ components.heading(text='8. Equality, diversity and inclusion: Our customers', tag='h3', size='', extraClass='heading--text') }}
-                        <span class="resource__action">
-                            <a href="#">Start <span class="visuallyhidden"> this module</span></a>
-                        </span>
-                    </li>
-                    <li class="resource__duration">
-                        <span>8 minutes</span>
-                    </li>
-                </ul>
-            </div>
         </div>
 
         {#{% call components.formElement(name='startLearning', method='POST', action="#") %}

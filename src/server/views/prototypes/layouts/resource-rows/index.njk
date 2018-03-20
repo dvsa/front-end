@@ -1,0 +1,414 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Prototypes Index: resource rows' %}
+
+{% block content %}
+
+    {{ components.pageHeading('Prototypes: resource rows', 'LPG Front-End') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Home page (and learning record)', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.paragraph(text='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Required learning:', tag='h3', size='medium', extraClass='') }}
+
+            <div class="resources">
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="#">Diversity &amp; inclusion</a>
+                            <span class="resource__action">
+                                <a href="#">Resume<span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Due by 21 Oct 2018</span>
+                        </li>
+                        <li class="resource__duration">
+                            <span>2 hours</span>
+                        </li>
+
+                        <li class="resource__status">
+                            <span class="badge badge--info ">In progress</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="#">Basic fire safety</a>
+                            <span class="resource__action">
+                                <a href="#">Start<span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Due by 18 Nov 2018</span>
+                        </li>
+                        <li class="resource__duration">
+                            <span>1 hour</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Other learning:', tag='h3', size='medium', extraClass='') }}
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        <a  class="resource__title" href="#">Commercial awareness</a>
+                        <span class="resource__action">
+                                <a href="#">Start <span class="visuallyhidden"> course</span></a>
+                                <a href="#">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Work area: digital</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Online, 2 hours 30 minutes</span>
+                    </li>
+                </ul>
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Other learning (in progress):', tag='h3', size='medium', extraClass='') }}
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        <a  class="resource__title" href="#">Commercial awareness</a>
+                        <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                                <a href="#">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                         </span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Work area: commercial</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Video, 10 minutes</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--info">In progress</span>
+                    </li>
+                </ul>
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Other learning (just added):', tag='h3', size='medium', extraClass='') }}
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        <a  class="resource__title" href="#">Managing Business Performance: An Introduction to Taking a Consultancy Approach</a>
+                        <span class="resource__action">
+                                <a href="#">Book <span class="visuallyhidden"> course</span></a>
+                                <a href="#">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                         </span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Work area: HMRC</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>Classroom, 1 day</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--success ">Just added</span>
+                    </li>
+                </ul>
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Search results', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.paragraph(text='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Without filters column:', tag='h3', size='medium', extraClass='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="results">
+
+                {{ components.searchResult(
+                    name='APMG Change Management Foundation',
+                    id='9',
+                    description='In this module you consider how to work with potential providers and achieve what you require. You’ll learn about supply chains, pricing.',
+                    workArea='Digital',
+                    type='Classoom',
+                    duration='5 hours'
+                ) }}
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='With filters column:', tag='h3', size='medium', extraClass='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird(extraClass='u-space-b30') %}
+
+            <strong>FILTERS</strong>
+            <br>---<br>---<br>---<br>---<br>---<br>
+
+        {%- endcall %}
+
+        {% call components.columnTwoThirds(extraClass='') %}
+
+            <div class="results">
+
+                {{ components.searchResult(
+                    name='APMG Change Management Foundation',
+                    id='9',
+                    description='In this module you consider how to work with potential providers and achieve what you require. You’ll learn about supply chains, pricing.',
+                    workArea='Digital',
+                    type='Classoom',
+                    duration='5 hours'
+                ) }}
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Modules in course detail page', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.paragraph(text='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <div class="resources resources--modules">
+
+                {{ components.resourceRow(
+                    name='1. Introducing unconscious bias',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    status='Completed',
+                    action='Retake',
+                    duration='5 minutes'
+                ) }}
+
+                {{ components.resourceRow(
+                    name='2. Challenging unconscious bias in recruitment decisions',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    status='In Progress',
+                    action='Resume',
+                    duration='8 minutes'
+                ) }}
+
+                {{ components.resourceRow(
+                    name='3. Unconscious bias in the workplace',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Start',
+                    duration='5 minutes'
+                ) }}
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Tables in learning record', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.paragraph(text='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <table class="u-space-b30 table--top">
+                <thead>
+                <tr>
+                    <th class="table--fix-first">Course</th>
+                    <th>Type</th>
+                    <th>Duration</th>
+                    <th>Completion date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% if fireTrainingComplete %}
+                    <tr>
+                        <td><a href="/prototypes/learner/v4/resource?resourceID=15">Basic fire safety</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>{% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</td>
+                    </tr>
+                {% endif %}
+                <tr>
+                    <td><a href="#">Disability Awareness</a></td>
+                    <td>Online</td>
+                    <td>1 hour</td>
+                    <td>12 Aug 2017</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Health and Safety Awareness</a></td>
+                    <td>Online</td>
+                    <td>1 hour 30 minutes</td>
+                    <td>10 Jan 2017</td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Suggestions tiles', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.paragraph(text='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Commercial awareness',
+                url='/prototypes/learner/v4/resource?resourceID=11',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours 20 minutes',
+                cost='£Free',
+                hideStars=true,
+                version='v4',
+                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                url='/prototypes/learner/v4/resource?resourceID=4',
+                starPercent='76%',
+                starTotal='104',
+                type='Video',
+                duration='10 minutes',
+                cost='£Free',
+                hideStars=true,
+                version='v4',
+                intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='What the civil service of tomorrow will look like',
+                url='/prototypes/learner/v4/resource?resourceID=2',
+                starPercent='61%',
+                starTotal='25',
+                type='Blog',
+                duration='12 minutes',
+                cost='£Free',
+                hideStars=true,
+                version='v4',
+                intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

@@ -1,4 +1,4 @@
-import store from 'store';
+import store from './../../../shared/store';
 import md5 from 'md5';
 import SmoothScroll from 'smooth-scroll';
 

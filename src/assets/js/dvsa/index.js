@@ -1,17 +1,11 @@
-import store from 'store';
-import expirePlugin from 'store/plugins/expire';
-
-import { domReady, initGDS } from './../shared';
-import { initModules } from './modules';
+// Polyfills
+import 'babel-polyfill';
 
 // Third-party
 import './../third-party';
 
-// Polyfills
-import 'core-js/es6/array';
-
-// Add expiry plugin for store
-store.addPlugin(expirePlugin);
+import { domReady, initGDS } from './../shared';
+import { initModules } from './modules';
 
 domReady(() => {
   // GDS

@@ -19,7 +19,9 @@
   }
 }
 
-.panel-indent .validation-message {
+.panel-indent .validation-message,
+.form-date .validation-message,
+.form-time .validation-message {
   display: block;
   color: $error-colour;
 }

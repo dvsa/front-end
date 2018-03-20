@@ -3,7 +3,6 @@
     <div class="resource">
         <ul class="resource__item u-clearfix">
             <li class="resource__main">
-                {#macro heading(text='', secondary=false, tag='h1', size='', url=false, extraClass)#}
                 {{ heading(text=name, tag=headingTag, size=headingSize, extraClass=headingExtraClass) }}
                 <span class="resource__action">
                     {% if action == 'Retake' %}
@@ -17,12 +16,12 @@
                     {% endif %}
                 </span>
             </li>
-            <li class="resource__info">
+            <li class="resource__property">
                 {% if type %}
-                    <span class="resource__property">{{ type }}</span>
+                    <span class="resource__property-item">{{ type }}</span>
                 {% endif %}
                 {% if duration %}
-                    <span class="resource__property">{{ duration }}</span>
+                    <span class="resource__property-item">{{ duration }}</span>
                 {% endif %}
             </li>
             {%  if status %}

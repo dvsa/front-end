@@ -1,0 +1,152 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Transaction Headers' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Default',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="A transaction header is the header displayed at the end of a transaction.",
+    lead=true
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header">
+    <h1 class="transaction-header__title">Your security card has been ordered</h1>
+    <p class="transaction-header__next-step">Activate your card as soon as it arrives</p>
+  </header>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Failed',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="Use the modified class <code class='dev-code-snippet'>.transaction-header--failure</code> to show a failed transaction (allows graceful handling of 500 errors)."
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header--failure">
+    <h1 class="transaction-header__title">Something went wrong</h1>
+    <p class="transaction-header__next-step">Please try again</p>
+  </header>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Single data',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header">
+    <h1 class="transaction-header__title">MOT test complete</h1>
+    <p class="transaction-header__next-step">Now print the certificate</p>
+
+    <table class="c-transaction-details">
+      <tr class="c-transaction-details__item c-transaction-details__item--first">
+        <th class="c-transaction-details__key">Vehicle</th>
+        <td class="c-transaction-details__value">Renault, Clio Extreme</td>
+      </tr>
+    </table>
+  </header>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Two columns data',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header">
+    <h1 class="transaction-header__title">MOT test complete</h1>
+    <p class="transaction-header__next-step">Now print the certificate</p>
+
+    <table class="c-transaction-details c-transaction-details--two">
+      <tr class="c-transaction-details__item c-transaction-details__item--first">
+        <th class="c-transaction-details__key">Vehicle</th>
+        <td class="c-transaction-details__value">Renault, Clio Extreme</td>
+      </tr>
+
+      <tr class="c-transaction-details__item c-transaction-details__item--last">
+        <th class="c-transaction-details__key">Test duration</th>
+        <td class="c-transaction-details__value">1 hour 2 minutes</td>
+      </tr>
+    </table>
+  </header>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Three columns data',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header">
+    <h1 class="transaction-header__title">MOT test complete</h1>
+    <p class="transaction-header__next-step">Now print the certificate</p>
+
+    <table class="c-transaction-details c-transaction-details--three">
+      <tr class="c-transaction-details__item c-transaction-details__item--first">
+        <th class="c-transaction-details__key">Vehicle</th>
+        <td class="c-transaction-details__value">Renault, Clio Extreme</td>
+      </tr>
+
+      <tr class="c-transaction-details__item">
+        <th class="c-transaction-details__key">Outcome</th>
+        <td class="c-transaction-details__value">Pass</td>
+      </tr>
+
+      <tr class="c-transaction-details__item c-transaction-details__item--last">
+        <th class="c-transaction-details__key">Test duration</th>
+        <td class="c-transaction-details__value">1 hour 2 minutes</td>
+      </tr>
+    </table>
+  </header>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Four columns data',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header">
+    <h1 class="transaction-header__title">MOT test complete</h1>
+    <p class="transaction-header__next-step">Now print the certificate</p>
+
+    <table class="c-transaction-details c-transaction-details--four">
+      <tr class="c-transaction-details__item c-transaction-details__item--first">
+        <th class="c-transaction-details__key">Vehicle</th>
+        <td class="c-transaction-details__value">Renault, Clio Extreme</td>
+      </tr>
+
+      <tr class="c-transaction-details__item">
+        <th class="c-transaction-details__key">Outcome</th>
+        <td class="c-transaction-details__value">Pass</td>
+      </tr>
+
+      <tr class="c-transaction-details__item">
+        <th class="c-transaction-details__key">Outcome</th>
+        <td class="c-transaction-details__value">Pass</td>
+      </tr>
+
+      <tr class="c-transaction-details__item c-transaction-details__item--last">
+        <th class="c-transaction-details__key">Test duration</th>
+        <td class="c-transaction-details__value">1 hour 2 minutes</td>
+      </tr>
+    </table>
+  </header>
+  {%- endcall %}
+  
+{% endblock %}

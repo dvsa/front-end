@@ -6,27 +6,34 @@
 
   {{ components.heading(text='Normal List', tag='h2', size='medium') }}
         
-  {{ components.list(items=[
-    { text: 'Aliquam blandit aliquet ex' },
-    { text: 'Quisque non scelerisque mi' },
-    { text: 'Vestibulum congue erat id justo tempor' }
-  ]) | prism }}
+  {{ components.list(
+    items=[
+      { text: 'Aliquam blandit aliquet ex' },
+      { text: 'Quisque non scelerisque mi' },
+      { text: 'Vestibulum congue erat id justo tempor' }
+    ]
+  ) | prism }}
   
   {{ components.heading(text='Bullet List', tag='h2', size='medium') }}
   
-  {{ components.list(items=[
-    { text: 'Aliquam blandit aliquet ex' },
-    { text: 'Quisque non scelerisque mi' },
-    { text: 'Vestibulum congue erat id justo tempor' }
-  ], type='bullet') | prism }}
+  {{ components.list(
+    items=[
+      { text: 'Aliquam blandit aliquet ex' },
+      { text: 'Quisque non scelerisque mi' },
+      { text: 'Vestibulum congue erat id justo tempor' }
+    ],
+    type='bullet'
+  ) | prism }}
 
   {{ components.heading(text='Links List', tag='h2', size='medium') }}
   
-  {{ components.list(items=[
-    { text: 'Aliquam blandit aliquet ex', url: '#' },
-    { text: 'Quisque non scelerisque mi', url: '#' },
-    { text: 'Vestibulum congue erat id justo tempor', url: '#' },
-    { text: 'More', url: '#', class: 'bold-xsmall' }
-  ]) | prism }}
+  {{ components.list(
+    items=[
+      { text: 'Aliquam blandit aliquet ex', url: '#' },
+      { text: 'Quisque non scelerisque mi', url: '#' },
+      { text: 'Vestibulum congue erat id justo tempor', url: '#' },
+      { text: 'More', url: '#', class: 'bold-xsmall' }
+    ]
+  ) | prism }}
 
 {% endblock %}

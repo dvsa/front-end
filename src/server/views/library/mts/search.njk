@@ -1,0 +1,80 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Search' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Default',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <form role="search" method="get" action="#">
+    <fieldset class="search-bar">
+      <label class="search-bar__label" for="search-main">Search the MOT testing service</label>
+      <div class="search-bar__control-group">
+        <input class="search-bar__search-input" type="search" title="Search" id="search-main" name="q">
+        <input class="search-bar__search-submit" type="submit" value="Search">
+      </div>
+    </fieldset>
+  </form>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='With link',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <form role="search" method="get" action="#">
+    <fieldset class="search-bar">
+      <label class="search-bar__label visuallyhidden" for="search-main">Search the MOT testing service</label>
+      <div class="search-bar__control-group">
+        <input class="search-bar__search-input" type="search" title="Search" id="search-main" name="q">
+        <input class="search-bar__search-submit" type="submit" value="Search all defects">
+      </div>
+      <span class="search-bar__secondary-action">or
+        <a href="#">return to browse</a>
+      </span>
+    </fieldset>
+  </form>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Two columns',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <form action="#">
+    <fieldset>
+      <legend class="form-title heading-large" id="">Search for a vehicle</legend>
+      <div class="search-group">
+        <div class="form-group">
+          <label class="form-label">
+            Registration mark
+          </label>
+          <input type="text" id="regMark" class="form-control is-reg" maxlength="10" value="">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">
+            Full VIN
+            <span class='form-hint'>or the last 6 digits</span>
+          </label>
+          <input type="text" maxlength="18" id="vinChassis" class="form-control is-vin" value="">
+        </div>
+
+        <div class="form-group">
+          <button class="button">Search</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  {%- endcall %}
+  
+{% endblock %}

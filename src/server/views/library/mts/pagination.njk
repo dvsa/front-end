@@ -1,0 +1,158 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Pagination' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Pagination',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="This page demonstrates how to display pagination in the MOT system. Pagination should only be used when a large amount of records are shown. If the record count is less than '10' then don't show pagination at all."
+  ) }}
+
+  {{ components.heading(
+    text='First item',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="pager">
+    <div class="pager__controls">
+      <ul class="pager__list">
+        <li>1</li>
+        <li>
+          <a href="#">2</a>
+        </li>
+        <li>
+          <a href="#">3</a>
+        </li>
+        <li>
+          <a href="#">4</a>
+        </li>
+        <li>
+          <a href="#">5</a>
+        </li>
+      </ul>
+
+      <a class="pager__next" href="#">Next</a>
+    </div>
+
+    <div class="pager__summary">Showing 1 &ndash; 10 of 45 items</div>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Middle item',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="pager">
+    <div class="pager__controls">
+      <a class="pager__prev" href="#">Prev</a>
+
+      <ul class="pager__list">
+        <li>
+          <a href="#">1</a>
+        </li>
+
+        <li>
+          <a href="#">2</a>
+        </li>
+
+        <li>3</li>
+
+        <li>
+          <a href="#">4</a>
+        </li>
+
+        <li>
+          <a href="#">5</a>
+        </li>
+      </ul>
+
+      <a class="pager__next" href="#">Next</a>
+    </div>
+
+    <div class="pager__summary">Showing 21 &ndash; 30 of 45 items</div>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Last item',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="pager">
+    <div class="pager__controls">
+      <a class="pager__prev" href="#">Prev</a>
+
+      <ul class="pager__list">
+        <li>
+          <a href="#">1</a>
+        </li>
+
+        <li>
+          <a href="#">2</a>
+        </li>
+
+        <li>
+          <a href="#">3</a>
+        </li>
+
+        <li>
+          <a href="#">4</a>
+        </li>
+        <li>5</li>
+      </ul>
+    </div>
+    
+    <div class="pager__summary">Showing 41 &ndash; 45 of 45 items</div>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='1 page of results',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="pager">
+    <div class="pager__summary">Showing 1 – 50 of 50 users</div>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Old style (deprecated)',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <ul class="data-paging">
+    <li class="data-paging__prev">
+      <a class="data-paging__link" href="#">Previous
+        <span class="data-paging__page">page</span>
+        <span class="data-paging__numbers">1 of 6</span>
+      </a>
+    </li>
+
+    <li class="data-paging__next">
+      <a class="data-paging__link" href="#">Next
+        <span class="data-paging__page">page</span>
+        <span class="data-paging__numbers">3 of 6</span>
+      </a>
+    </li>
+  </ul>
+  {%- endcall %}
+  
+{% endblock %}

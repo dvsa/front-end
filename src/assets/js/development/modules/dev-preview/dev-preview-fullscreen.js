@@ -36,6 +36,7 @@ export class DevPreviewFullscreen {
     };
 
     this.state = {
+      previousYOffset: 0,
       previewElements: [],
     };
 
@@ -95,12 +96,17 @@ export class DevPreviewFullscreen {
 
     // Check if state is currently fullscreen
     if (!stateItem.isFullscreen) {
+      this.state.previousYOffset = window.pageYOffset;
+
       // Expand to fullscreen
       this.elements.body.appendChild(stateItem.devPreviewExample);
       toggleClass(stateItem.devPreviewExample, this.classnames.devPreviewExample.fullscreen, true);
 
       // Hide body overflow
       toggleClass(this.elements.body, this.classnames.devPreview.overflowBodyHidden, true);
+
+      
+      console.log(this.state.previousYOffset);
     } else {
       // Move preview back to original spot
       stateItem.devPreviewElement.insertBefore(stateItem.devPreviewExample, stateItem.devPreviewPismCode);
@@ -108,6 +114,9 @@ export class DevPreviewFullscreen {
 
       // Show body overflow
       toggleClass(this.elements.body, this.classnames.devPreview.overflowBodyHidden, false);
+
+      window.scrollTo(0, this.state.previousYOffset);
+      this.state.previousYOffset = 0;
     }
 
     stateItem.isFullscreen = !stateItem.isFullscreen;

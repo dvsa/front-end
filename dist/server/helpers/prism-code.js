@@ -73,7 +73,14 @@ const wrapCodeWithPreviwAndPrism = exports.wrapCodeWithPreviwAndPrism = code => 
   let prismCode = highlightCode(code);
 
   // Create the developer preview output
-  let preview = `<div class="dev-preview__example">${code}</div>`;
+  let preview = `
+  <div class="dev-preview__example">
+    <div class="dev-preview__fullscreen-button">Fullscreen preview</div>
+    <div class="dev-preview__code">
+      ${code}
+    </div>
+  </div>
+  `;
 
   // Return the new HTML
   // Combination of the preview and prism code highlighting
@@ -81,7 +88,9 @@ const wrapCodeWithPreviwAndPrism = exports.wrapCodeWithPreviwAndPrism = code => 
     <!-- dev-preview -->
     <div class="dev-preview">
       ${preview}
-      ${prismCode}
+      <div class="dev-preview__prism-code">
+        ${prismCode}
+      </div>
     </div>
     <!-- /dev-preview -->
   `;

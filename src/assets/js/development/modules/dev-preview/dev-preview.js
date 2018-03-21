@@ -24,7 +24,7 @@ export class DevPreview {
       content: document.querySelector(this.selectors.content),
       footer: document.querySelector(this.selectors.footer),
     };
-    
+
     this.state = {
       fullPagePreviewHidden: true,
     };

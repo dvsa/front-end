@@ -8,8 +8,8 @@ export class DevPreviewFullscreen {
         overflowBodyHidden: 'dev-preview__body-overflow-hidden',
       },
       devPreviewExample: {
-        fullscreen: 'dev-preview__example--fullscreen'
-      }
+        fullscreen: 'dev-preview__example--fullscreen',
+      },
     };
 
     this.selectors = {
@@ -17,7 +17,7 @@ export class DevPreviewFullscreen {
       devPreviewExample: '.dev-preview__example',
       devPreviewFullscreenButton: '.dev-preview__fullscreen-button',
       devPreviewPismCode: '.dev-preview__prism-code',
-      body: 'body'
+      body: 'body',
     };
 
     this.attributes = {
@@ -32,11 +32,11 @@ export class DevPreviewFullscreen {
 
     this.elements = {
       body: document.querySelector(this.selectors.body),
-      previewElements: Array.from(document.querySelectorAll(this.selectors.devPreview))
+      previewElements: Array.from(document.querySelectorAll(this.selectors.devPreview)),
     };
 
     this.state = {
-      previewElements: []
+      previewElements: [],
     };
 
     this.init();
@@ -45,14 +45,14 @@ export class DevPreviewFullscreen {
   /**
    * Initializer
    * - Add click event
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com
    * @since 1.1.18
    */
   init = () => {
     this.setupState();
     delegateEvent(document, 'click', this.selectors.devPreviewFullscreenButton, this.onFullscreenPreviewClick);
-  }
+  };
 
   setupState = () => {
     this.elements.previewElements.forEach(devPreviewElement => {
@@ -65,7 +65,7 @@ export class DevPreviewFullscreen {
         fullscreenButton,
         devPreviewExample,
         devPreviewPismCode,
-        isFullscreen: false
+        isFullscreen: false,
       });
 
       const index = this.state.previewElements.length - 1;
@@ -73,7 +73,7 @@ export class DevPreviewFullscreen {
       devPreviewElement.setAttribute(this.attributes.stateItemId, index);
       fullscreenButton.setAttribute(this.attributes.stateItemId, index);
     });
-  }
+  };
 
   /**
    * Handle fullscreen preview for examples
@@ -91,10 +91,10 @@ export class DevPreviewFullscreen {
     const stateItem = this.state.previewElements[stateItemId];
 
     // Check if state item exists
-    if(!stateItem) return;
+    if (!stateItem) return;
 
     // Check if state is currently fullscreen
-    if(!stateItem.isFullscreen) {
+    if (!stateItem.isFullscreen) {
       // Expand to fullscreen
       this.elements.body.appendChild(stateItem.devPreviewExample);
       toggleClass(stateItem.devPreviewExample, this.classnames.devPreviewExample.fullscreen, true);

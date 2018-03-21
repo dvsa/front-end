@@ -40,7 +40,7 @@ export class DevPreviewFullscreen {
       previewElements: [],
     };
 
-    if(!this.elements.previewElements || !Array.isArray(this.elements.previewElements)) return;
+    if (!this.elements.previewElements || !Array.isArray(this.elements.previewElements)) return;
 
     this.init();
   }

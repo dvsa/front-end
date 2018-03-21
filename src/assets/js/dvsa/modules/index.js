@@ -5,6 +5,8 @@ import { initDoubleClickPrevention } from './double-click-prevention';
 import { initMarkRepairs } from './mark-repairs';
 import { initShowHideToggle } from './show-hide-toggle';
 import { initFormDisableDetailsHiddenFields } from './form-submit-disable-details-hidden-fields';
+import { initOdometerReading } from './odometer-reading';
+import { initFormDisableOnSubmit } from './form-disable-on-submit';
 
 /**
  * Custom DVSA Modules
@@ -20,4 +22,6 @@ export const initModules = () => {
   initMarkRepairs();
   initShowHideToggle();
   initFormDisableDetailsHiddenFields();
+  initOdometerReading();
+  initFormDisableOnSubmit();
 };

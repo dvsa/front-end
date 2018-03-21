@@ -1,5 +1,4 @@
 .block-label {
-  display: block;
   float: none;
   clear: left;
   position: relative;
@@ -9,10 +8,6 @@
   margin-top: 10px;
   margin-bottom: 10px;
   cursor: pointer; // Encourage clicking on block labels
-
-  &.js-hidden {
-    display: none;
-  }
 
   &.selected {
     background: $white;

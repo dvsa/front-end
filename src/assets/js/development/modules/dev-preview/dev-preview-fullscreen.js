@@ -105,7 +105,6 @@ export class DevPreviewFullscreen {
       // Hide body overflow
       toggleClass(this.elements.body, this.classnames.devPreview.overflowBodyHidden, true);
 
-      
       console.log(this.state.previousYOffset);
     } else {
       // Move preview back to original spot

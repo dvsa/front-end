@@ -1,0 +1,11 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'DVSA Front-end Library - MTS' %}
+
+{% block content %}
+
+  {{ components.pageHeading(heading='MTS', secondary='DVSA Front-end') }}
+
+  {{ components.paragraph(text='These components were built for MTS and should not be used in any other application.', lead=true) }}
+
+{% endblock %}

@@ -1,4 +1,5 @@
-import { delegateEvent, toggleClass } from './../../../shared';
+import md5 from 'md5';
+import { delegateEvent, toggleClass, closestParentOfEl } from './../../../shared';
 
 export class DevPreview {
   constructor() {
@@ -23,7 +24,7 @@ export class DevPreview {
       content: document.querySelector(this.selectors.content),
       footer: document.querySelector(this.selectors.footer),
     };
-
+    
     this.state = {
       fullPagePreviewHidden: true,
     };

@@ -39,6 +39,11 @@
         width: 100%;
       }   
     }
+
+    &--search-input-wrapper {
+      background-color: transparent;
+      padding: 0;
+    }
   }
 
   &__list {

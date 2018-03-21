@@ -21,7 +21,8 @@ module.exports = {
                   'browsers': [
                     'last 3 versions',
                     'ie >= 9',
-                    'last 3 iOS major versions'
+                    'last 3 iOS major versions',
+                    'ff >= 35'
                   ]
                 },
                 debug: true,

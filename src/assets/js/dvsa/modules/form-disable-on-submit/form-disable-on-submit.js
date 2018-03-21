@@ -4,12 +4,12 @@ export class FormDisableOnSubmit {
   constructor() {
     this.selectors = {
       form: 'form',
-      submitButton: `input[type="submit"]`
+      submitButton: `input[type="submit"]`,
     };
 
     this.attributes = {
-      disabled: 'disabled'
-    }
+      disabled: 'disabled',
+    };
 
     this.init();
   }
@@ -17,26 +17,26 @@ export class FormDisableOnSubmit {
   /**
    * Initializer
    * - Add events
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    * @since 1.1.21
    */
   init = () => {
     delegateEvent(document, 'submit', this.selectors.form, this.onFormSubmit);
-  }
+  };
 
   /**
    * Handles form submit
    * - Find submit button
    * - Add disabled attribute
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    * @since 1.1.21
    */
-  onFormSubmit = (event) => {
-    if(!event || !event.target) return;
+  onFormSubmit = event => {
+    if (!event || !event.target) return;
     const submitButton = event.target.querySelector(this.selectors.submitButton);
-    if(!submitButton) return;
+    if (!submitButton) return;
     submitButton.setAttribute(this.attributes.disabled, this.attributes.disabled);
-  }
+  };
 }

@@ -1,6 +1,6 @@
 /**
  * Trigger event on element
- * 
+ *
  * For a full list of event types:
  * https://developer.mozilla.org/en-US/docs/Web/API/document.createEvent
  *
@@ -17,22 +17,21 @@ export function triggerEventOnElement(el, eventName) {
   el.dispatchEvent(event);
 }
 
-
 /**
  * Simulate a click event.
- * 
+ *
  * @param {DOMElement} el Element to trigger event on
- * 
+ *
  * @author Tameem Safi <t.safi@kainos.com>
  * @since 1.0.0
  */
 export function triggerClickEventOnElement(el) {
-	// Create our event (with options)
-	const evt = new MouseEvent('click', {
-		bubbles: true,
-		cancelable: true,
-		view: window
-	});
-	// If cancelled, don't dispatch our event
-	const canceled = !el.dispatchEvent(evt);
-};
+  // Create our event (with options)
+  const evt = new MouseEvent('click', {
+    bubbles: true,
+    cancelable: true,
+    view: window,
+  });
+  // If cancelled, don't dispatch our event
+  const canceled = !el.dispatchEvent(evt);
+}

@@ -59,7 +59,7 @@ function actionsGet(req, res) {
   // hasLeftFeedback from feedback page
   if (action === 'hasLeftFeedback') {
     req.session.hasLeftFeedback = true;
-    redirectPath = '/prototypes/learner/v4/home';
+    redirectPath = '/prototypes/learner/v4/learning-record';
   }
 
   return res.redirect(redirectPath);

@@ -127,17 +127,23 @@ function profileGet(req, res) {
 
 // learning record GET
 function recordGet(req, res) {
-  let viewData, fireTrainingComplete, fireTrainingCompleteBanner, trainingEndDate;
+  let viewData, fireTrainingComplete, fireTrainingCompleteBanner, trainingEndDate, hasLeftFeedback;
 
   fireTrainingCompleteBanner = req.session.fireTrainingCompleteBanner;
   fireTrainingComplete = req.session.fireTrainingComplete;
 
   trainingEndDate = req.session.trainingEndDate;
 
+  hasLeftFeedback = req.session.hasLeftFeedback;
+  if (hasLeftFeedback) {
+    req.session.hasLeftFeedback = null;
+  }
+
   viewData = {
     fireTrainingCompleteBanner,
     fireTrainingComplete,
-    trainingEndDate
+    trainingEndDate,
+    hasLeftFeedback
   };
 
   req.session.fireTrainingCompleteBanner = null;
@@ -197,13 +203,13 @@ function feedbackPost(req, res) {
   const { ratingPresentation, ratingContent, ratingRelevance, ratingInteractivity, feedbackComments } = req.body;
   let redirectPath;
 
-  console.log('ratingPresentation = ' + ratingPresentation);
+  /*console.log('ratingPresentation = ' + ratingPresentation);
   console.log('ratingContent = ' + ratingContent);
   console.log('ratingRelevance = ' + ratingRelevance);
   console.log('ratingInteractivity = ' + ratingInteractivity);
-  console.log('feedbackComments = ' + feedbackComments);
+  console.log('feedbackComments = ' + feedbackComments);*/
 
   req.session.hasLeftFeedback = true;
-  redirectPath = '/prototypes/learner/v4/home';
+  redirectPath = '/prototypes/learner/v4/learning-record';
   return res.redirect(redirectPath);
 }

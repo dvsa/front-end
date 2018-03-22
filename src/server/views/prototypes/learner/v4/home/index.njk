@@ -100,7 +100,7 @@
             {% endif %}
 
             {% if willBeRemoved %}
-                {{ components.banner(mainText='Removing this course?', secondaryText='If you remove this course, it will be deleted from your learning plan. <br><br><a href="/prototypes/learner/v4/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/prototypes/learner/v4/home">No, keep it</a>', type="warning")}}
+                {{ components.banner(mainText='Are you sure you want to remove this course?', secondaryText='If you remove this course, it will be deleted from your learning plan. <br><br><a href="/prototypes/learner/v4/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/prototypes/learner/v4/home">No, keep it</a>', type="warning")}}
              {% endif %}
 
         {%- endcall %}

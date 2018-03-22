@@ -8,6 +8,8 @@
 {% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
 {#{% set fireTrainingCompleteBanner = fireTrainingCompleteBanner if fireTrainingCompleteBanner %}#}
 {% set trainingEndDate = trainingEndDate if trainingEndDate %}
+{% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
+
 {% block content %}
 
     {{ components.pageHeading('Learning record') }}
@@ -20,12 +22,17 @@
 
         {% call components.columnFull() %}
 
+            {% if hasLeftFeedback %}
+
+                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type='confirmation')}}
+
             {% if fireTrainingComplete %}
                 <p>You can leave feedback on 3 items.</p>
             {% else %}
                 <p>You can leave feedback on 2 items.</p>
             {% endif %}
 
+            {% endif %}
 
             {% if fireTrainingComplete %}
                 <div class="resource resource--feedback">

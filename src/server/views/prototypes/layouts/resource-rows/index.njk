@@ -411,4 +411,132 @@
 
     {%- endcall %}
 
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Multi purpose learning item row', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.paragraph(text='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Two thirds', tag='h3', size='medium', extraClass='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <div class="learning">
+
+                {{ components.learningRow(
+                    name='1. Introducing unconscious bias',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    status='Completed',
+                    action='Retake',
+                    duration='5 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+                {{ components.learningRow(
+                    name='2. Challenging unconscious bias in recruitment decisions',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    status='In Progress',
+                    action='Resume',
+                    duration='8 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+                {{ components.learningRow(
+                    name='3. Unconscious bias in the workplace',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Start',
+                    duration='5 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Full width', tag='h3', size='medium', extraClass='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="learning">
+
+                {{ components.learningRow(
+                    name='Simon Sinek - Start With Why - TED Talk Short Edited',
+                    headingTag='h3',
+                    description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
+                    headingExtraClass='learning__heading',
+                    headingURL='#',
+                    type='Online',
+                    status='Completed',
+                    action='Retake',
+                    workArea='Commercial',
+                    duration='2 hours 30 minutes',
+                    cost='£Free'
+                ) }}
+
+                {{ components.learningRow(
+                    name='Challenging unconscious bias in recruitment decisions',
+                    headingTag='h3',
+                    description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
+                    headingExtraClass='learning__heading',
+                    headingURL='#',
+                    type='Online',
+                    status='In Progress',
+                    action='Resume',
+                    workArea='Digital',
+                    duration='30 minutes',
+                    cost='£Free'
+                ) }}
+
+                {{ components.learningRow(
+                    name='Test title namd long name lots of words fills space, wraps onto next line',
+                    headingTag='h3',
+                    description='Unusually short description, considering the overly long title.',
+                    headingExtraClass='learning__heading',
+                    headingURL='#',
+                    type='Classroom',
+                    action='Start',
+                    workArea='HMRC',
+                    duration='1 day',
+                    cost='£549'
+                ) }}
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
 {% endblock %}

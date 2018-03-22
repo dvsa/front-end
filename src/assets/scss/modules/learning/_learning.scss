@@ -1,0 +1,95 @@
+$module: 'learning';
+
+%learningRowDiv {
+  @include box-sizing(border-box);
+  position: relative;
+  display:block;
+  float:none;
+  padding:10px 0;
+
+  @include media(desktop) {
+    display:inline-block;
+    float:left;
+    padding:10px 8px 10px 0;
+  }
+}
+
+.#{$module} {
+  // div.learning wrapper for all item
+  position: relative;
+
+  &__item {
+    // div.learning__item wrapper for individual item
+    position: relative;
+
+
+
+  }
+
+  &__main {
+    // div.learning__main container for title and action
+    @extend %learningRowDiv;
+  }
+
+
+  &__heading {
+    @include bold-19;
+  }
+
+  &__info {
+    // div.learning__info container 150~ish chars of information/descrition
+    @extend %learningRowDiv;
+  }
+
+  &__properties {
+    // div.learning__properties container for various data about the learning thing
+    @extend %learningRowDiv;
+  }
+
+  &__property {
+    // ul.learning__property the actual data about the learning thing
+
+  }
+
+  &__property-item {
+    // div.learning__property-item
+    @include bold-16;
+  }
+
+  &__status {
+    // div.learning__status usually a badge saying in progress|overdue|completed etc
+    @extend %learningRowDiv;
+
+    @include media(desktop) {
+      position: absolute;
+      display:block;
+      float:none;
+      top: 0;
+      right: 0;
+    }
+
+
+  }
+
+  &__area {
+    //div.learning__area
+    @extend %learningRowDiv;
+  }
+
+  &__action {
+    //div.learning__action
+
+    @extend %learningRowDiv;
+
+    @include media(desktop) {
+      position: absolute;
+      display:block;
+      float:none;
+      bottom: 0;
+      left: 0;
+    }
+
+  }
+
+
+}

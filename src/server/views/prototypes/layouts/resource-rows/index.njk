@@ -286,6 +286,25 @@
                     duration='5 minutes'
                 ) }}
 
+                {{ components.resourceRow(
+                    name='4. This is a module with a stupidly long title that goes on and on and won\'t interfere with other elements in the block.',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Start',
+                    duration='10 minutes'
+                ) }}
+
+                {{ components.resourceRow(
+                    name='5. This is another module, also with a stupidly long title that goes on and on and won\'t interfere with other elements in the block.',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Resume',
+                    status='In Progress',
+                    duration='10 minutes'
+                ) }}
+
             </div>
 
         {%- endcall %}
@@ -436,9 +455,9 @@
 
         {% call components.columnTwoThirds() %}
 
-            <div class="learning">
+            <div class="discite">
 
-                {{ components.learningRow(
+                {{ components.disciteRow(
                     name='1. Introducing unconscious bias',
                     headingTag='h3',
                     headingExtraClass='heading--text',
@@ -449,7 +468,7 @@
                     extraModifierClass='module'
                 ) }}
 
-                {{ components.learningRow(
+                {{ components.disciteRow(
                     name='2. Challenging unconscious bias in recruitment decisions',
                     headingTag='h3',
                     headingExtraClass='heading--text',
@@ -460,7 +479,7 @@
                     extraModifierClass='module'
                 ) }}
 
-                {{ components.learningRow(
+                {{ components.disciteRow(
                     name='3. Unconscious bias in the workplace',
                     headingTag='h3',
                     headingExtraClass='heading--text',
@@ -469,6 +488,28 @@
                     duration='5 minutes',
                     extraModifierClass='module'
                 ) }}
+
+                {{ components.disciteRow(
+                    name='4. Learning module with a very long name that will wrap onto the next line or even the one after.',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Start',
+                    duration='5 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='5. Another learning module with a very long name that will wrap onto the next line with a status label.',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Resume',
+                    status='In progress',
+                    duration='2 hours 30 minutes',
+                    extraModifierClass='module'
+                ) }}
+
 
             </div>
 
@@ -492,11 +533,11 @@
 
             <div class="learning">
 
-                {{ components.learningRow(
+                {{ components.disciteRow(
                     name='Simon Sinek - Start With Why - TED Talk Short Edited',
                     headingTag='h3',
                     description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
-                    headingExtraClass='learning__heading',
+                    headingExtraClass='discite__heading',
                     headingURL='#',
                     type='Online',
                     status='Completed',
@@ -506,11 +547,11 @@
                     cost='£Free'
                 ) }}
 
-                {{ components.learningRow(
+                {{ components.disciteRow(
                     name='Challenging unconscious bias in recruitment decisions',
                     headingTag='h3',
                     description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
-                    headingExtraClass='learning__heading',
+                    headingExtraClass='discite__heading',
                     headingURL='#',
                     type='Online',
                     status='In Progress',
@@ -520,11 +561,11 @@
                     cost='£Free'
                 ) }}
 
-                {{ components.learningRow(
+                {{ components.disciteRow(
                     name='Test title namd long name lots of words fills space, wraps onto next line',
                     headingTag='h3',
                     description='Unusually short description, considering the overly long title.',
-                    headingExtraClass='learning__heading',
+                    headingExtraClass='discite__heading',
                     headingURL='#',
                     type='Classroom',
                     action='Start',

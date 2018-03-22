@@ -1,6 +1,7 @@
 /// Block Element
 /// @access public
 /// @param {String} $element - Element's name
+// https://css-tricks.com/snippets/sass/bem-mixins/
 @mixin element($element) {
   &__#{$element} {
     @content;

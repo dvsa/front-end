@@ -1,6 +1,7 @@
-$module: 'learning';
+$module: 'discite';
+// diss-it-ay
 
-%learningRowDiv {
+%disciteRowDiv {
   @include box-sizing(border-box);
   position: relative;
   display:block;
@@ -15,81 +16,127 @@ $module: 'learning';
 }
 
 .#{$module} {
-  // div.learning wrapper for all item
+  // div.discite wrapper for all item
   position: relative;
 
   &__item {
-    // div.learning__item wrapper for individual item
+    // div.discite__item wrapper for individual item
     position: relative;
-
-
-
+    min-height: 60px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $grey-2;
   }
 
   &__main {
-    // div.learning__main container for title and action
-    @extend %learningRowDiv;
+    // div.discite__main container for title and action
+    @extend %disciteRowDiv;
+
+    @include media(desktop) {
+      padding-right: 300px;
+    }
+
+    @include m('module') {}
   }
 
 
   &__heading {
     @include bold-19;
+
+    @include media(desktop) {
+      padding-right: 300px;
+    }
   }
 
-  &__info {
-    // div.learning__info container 150~ish chars of information/descrition
-    @extend %learningRowDiv;
+  &__desc {
+    // div.discite__info container 150~ish chars of information/descrition
+    @extend %disciteRowDiv;
+
+    @include media(desktop) {
+      padding-right: 300px;
+    }
   }
 
   &__properties {
-    // div.learning__properties container for various data about the learning thing
-    @extend %learningRowDiv;
-  }
-
-  &__property {
-    // ul.learning__property the actual data about the learning thing
-
-  }
-
-  &__property-item {
-    // div.learning__property-item
-    @include bold-16;
-  }
-
-  &__status {
-    // div.learning__status usually a badge saying in progress|overdue|completed etc
-    @extend %learningRowDiv;
+    // div.discite__properties container for various data about the discite thing
+    @extend %disciteRowDiv;
+    width:100%;
+    clear: both;
+    min-height: 50px;
+    // padding: 0;
 
     @include media(desktop) {
       position: absolute;
       display:block;
+      width: 280px;
       float:none;
       top: 0;
       right: 0;
+      padding-right: 0;
     }
+  }
+
+    &__property {
+      // ul.discite__property the actual data about the discite thing
+      width: 50%;
+      float: left;
+    }
+
+    &__property-item {
+      // div.discite__property-item
+      @include bold-16;
+    }
+
+    &__status {
+      // div.discite__status usually a badge saying in progress|overdue|completed etc
+      @extend %disciteRowDiv;
+      width: 50%;
+      float: right;
+      text-align: right;
+      padding-right: 0;
+
+      @include media(desktop) {
+        position: absolute;
+        display:block;
+        float:none;
+        padding-top: 16px;
+        top: 0;
+        right: 0;
+      }
 
 
   }
 
   &__area {
-    //div.learning__area
-    @extend %learningRowDiv;
+    //div.discite__area
+    @extend %disciteRowDiv;
+
+    @include media(desktop) {
+      width: 100%;
+      display:block;
+      float:none;
+      clear: both;
+      padding-right: 300px;
+    }
   }
 
   &__action {
-    //div.learning__action
-
-    @extend %learningRowDiv;
+    //div.discite__action
+    @extend %disciteRowDiv;
+    clear: both;
 
     @include media(desktop) {
-      position: absolute;
+      //position: absolute;
       display:block;
       float:none;
-      bottom: 0;
-      left: 0;
+      //bottom: 0;
+      //left: 0;
     }
 
+    @include m('module') {
+      // position: absolute;
+      // bottom: 0;
+      // left: 0;
+
+    }
   }
-
-
 }

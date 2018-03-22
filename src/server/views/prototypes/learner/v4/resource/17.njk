@@ -36,15 +36,12 @@
             <li>have insight into the barriers disabled customers may face and duties towards all of our customers</li>
         </ul>
 
-        <p><strong>You must complete all 8 learning modules to finish this topic.
-           <br>The modules must be completed in order.</strong></p>
+        <p><strong>You must complete all 8 learning modules to finish this topic.</strong></p>
 
         <div class="discite">
 
-            {#macro resourceRow(name='This resource title',headingTag='h3',size='',headingExtraClass='heading--text',type='',status='',action'',duration='')#}
-
             {{ components.disciteRow(
-                name='1. Introducing unconscious bias',
+                name='Introducing unconscious bias',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Online',
@@ -55,7 +52,7 @@
             ) }}
 
             {{ components.disciteRow(
-                name='2. Challenging unconscious bias in recruitment decisions',
+                name='Challenging unconscious bias in recruitment decisions',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Online',
@@ -66,149 +63,67 @@
             ) }}
 
             {{ components.disciteRow(
-                name='3. Unconscious bias in the workplace',
+                name='Unconscious bias in the workplace',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Online',
-                action='invalid',
+                action='Start',
                 duration='5 minutes',
                 extraModifierClass='module'
             ) }}
 
             {{ components.disciteRow(
-                name='4. Challenging unconscious bias',
+                name='Challenging unconscious bias',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Online',
-                action='invalid',
+                action='Start',
                 duration='8 minutes',
                 extraModifierClass='module'
             ) }}
 
             {{ components.disciteRow(
-                name='5. Equality, diversity and inclusion in the Civil Service',
+                name='Equality, diversity and inclusion in the Civil Service',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Video',
-                action='invalid',
+                action='Start',
                 duration='12 minutes',
                 extraModifierClass='module'
             ) }}
 
             {{ components.disciteRow(
-                name='6. Equality, Diversity and Inclusion: The legal framework',
+                name='Equality, Diversity and Inclusion: The legal framework',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Online',
-                action='invalid',
+                action='Resume',
+                status='In progress',
                 duration='5 minutes',
                 extraModifierClass='module'
             ) }}
 
             {{ components.disciteRow(
-                name='7. Equality, diversity and inclusion: Our inclusive workplace',
+                name='Equality, diversity and inclusion: Our inclusive workplace',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Online',
-                action='invalid',
+                action='Start',
                 duration='5 minutes',
                 extraModifierClass='module'
             ) }}
 
             {{ components.disciteRow(
-                name='8. Equality, diversity and inclusion: Our customers',
+                name='Equality, diversity and inclusion: Our customers',
                 headingTag='h3',
                 headingExtraClass='heading--text',
                 type='Online',
-                action='invalid',
+                action='Start',
                 duration='8 minutes',
                 extraModifierClass='module'
             ) }}
 
-
-            {#{{ components.resourceRow(
-                name='1. Introducing unconscious bias',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Online',
-                status='Completed',
-                action='Retake',
-                duration='5 minutes'
-            ) }}
-
-            {{ components.resourceRow(
-                name='2. Challenging unconscious bias in recruitment decisions',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Online',
-                status='In Progress',
-                action='Resume',
-                duration='8 minutes'
-            ) }}
-
-            {{ components.resourceRow(
-                name='3. Unconscious bias in the workplace',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Online',
-                action='Start',
-                duration='5 minutes'
-            ) }}
-
-            {{ components.resourceRow(
-                name='4. Challenging unconscious bias',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Online',
-                action='Start',
-                duration='8 minutes'
-            ) }}
-
-            {{ components.resourceRow(
-                name='5. Equality, diversity and inclusion in the Civil Service',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Video',
-                action='Start',
-                duration='12 minutes'
-            ) }}
-
-            {{ components.resourceRow(
-                name='6. Equality, Diversity and Inclusion: The legal framework',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Online',
-                action='Start',
-                duration='5 minutes'
-            ) }}
-
-            {{ components.resourceRow(
-                name='7. Equality, diversity and inclusion: Our inclusive workplace',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Online',
-                action='Start',
-                duration='5 minutes'
-            ) }}
-
-            {{ components.resourceRow(
-                name='8. Equality, diversity and inclusion: Our customers',
-                headingTag='h3',
-                headingExtraClass='heading--text',
-                type='Online',
-                action='Start',
-                duration='8 minutes'
-            ) }}
-#}
         </div>
-
-        {#{% call components.formElement(name='startLearning', method='POST', action="#") %}
-
-            {% call components.formGroup() %}
-                {{ components.button(text='Start this learning', start=false, group=true)}}
-            {%- endcall %}
-
-        {%- endcall %}#}
 
     {%- endcall %}
 

@@ -1,0 +1,49 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Defects Panel' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Default',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text='Appears on "Defect categories", "Defects" and "Search for a defect" screens.',
+    lead=true
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'All defect types should be displayed with a value of 0' },
+      { text: 'The "Show defects" link should not be present' }
+    ],
+    type='number'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="defect-summary">
+    <div class="defect-summary__total defect-summary__total--eu">
+      <h2 class="defect-summary__total-heading">Defects</h2>
+      
+      <ul>
+        <li>
+          <span class="badge--alert">0</span> Failures</li>
+        <li>
+          <span class="badge--warn">0</span> Minors</li>
+        <li>
+          <span class="badge--info">0</span> PRS</li>
+        <li>
+          <span class="badge">0</span> Advisories</li>
+      </ul>
+    </div>
+
+    <div id="" class=" ">
+
+    </div>
+  </div>
+  {%- endcall %}
+
+{% endblock %}

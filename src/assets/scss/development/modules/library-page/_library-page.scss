@@ -1,0 +1,8 @@
+.library-page {
+  @media(min-width: 1080px) {
+    #global-header-bar,
+    #content {
+      max-width: 90%;
+    }
+  }
+}

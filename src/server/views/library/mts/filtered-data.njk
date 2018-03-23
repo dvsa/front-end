@@ -11,22 +11,337 @@
   ) }}
 
   {{ components.paragraph(
-    text="It's also possible to list data within the tertiary row using a <code class='dev-code-snippet'>.content-header__tertiary-list</code> element."
+    text='This page demonstrates how to display filtered data in the MOT system.',
+    lead=true
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'A summary of the number of results, applied filters or search terms should be including above the table' },
+      { text: 'Column headers should use the <code class="dev-code-snippet">th</code> tag' },
+      { text: 'Sortable columns should be indicated using a hyperlink' },
+      { text: 'The default sort should be sensible and indicated with a sort arrow' },
+      { text: 'If required, download options should appear in sentence format below the results table' }
+    ],
+    type='number'
+  ) }}
+
+  {{ components.heading(
+    text='CSS class summary',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text='A summary of the CSS classes used is as follows:'
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'Apply <code class="dev-code-snippet">sort-desc</code> and <code class="dev-code-snippet">sort-asc</code> to the sort hyperlink to indicate appropriate sort direction' },
+      { text: 'Numerical data (and associated column header) should be formatted using the standard <code class="dev-code-snippet">numeric</code> class' },
+      { text: 'Other data type values should have the <code class="dev-code-snippet">tabular</code> class applied which negates right align styles' }
+    ],
+    type='number'
   ) }}
 
   {% call components.displayCode() %}
-  <header class="content-header">
-    <h1>
-      <span class="content-header__type">MOT test</span>
-      <span class="content-header__title">Reasons for rejection</span>
-    </h1>
+  <h2 class="result__group-heading">
+    <strong>5</strong> purchases in the
+    <strong>last 30 days</strong>
+  </h2>
 
-    <ul class="content-header__tertiary-list">
-      <li class="content-header__list-item--primary">Renault, Clio</li>
-      <li class="content-header__list-item">FNZ 6610</li>
-      <li class="content-header__list-item">Registered 1 Feb 2004</li>
-    </ul>
-  </header>
+  <table class="result-table">
+    <thead>
+      <tr>
+        <th class="">Transaction
+          <br />number</th>
+        <th scope="col" class="">
+          <a href="#" class="">Date</a>
+        </th>
+        <th scope="col" class="">
+          <a href="#" class="">Payment
+            <br />method</a>
+        </th>
+        <th scope="col" class="numeric">
+          <a href="#" class="sort-desc">Quantity</a>
+        </th>
+        <th scope="col" class="numeric">
+          <a href="#" class="">Cost</a>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td class="tabular">
+          <a href="#">MOT-2015-001234</a>
+        </td>
+        <td class="tabular">12 Dec 2014</td>
+        <td class="">Card</td>
+        <td class="numeric">400</td>
+        <td class="numeric">&pound;1234.00</td>
+      </tr>
+
+      <tr>
+        <td class="tabular">
+          <a href="#">MOT-2015-001233</a>
+        </td>
+        <td class="tabular">12 Dec 2014</td>
+        <td class="">Card</td>
+        <td class="numeric">270</td>
+        <td class="numeric">&pound;820.00</td>
+      </tr>
+
+      <tr>
+        <td class="tabular">
+          <a href="#">MOT-2015-001232</a>
+        </td>
+        <td class="tabular">12 Dec 2014</td>
+        <td class="">Card</td>
+        <td class="numeric">270</td>
+        <td class="numeric">&pound;820.00</td>
+      </tr>
+      <tr>
+        <td class="tabular">
+          <a href="#">MOT-2015-001231</a>
+        </td>
+        <td class="tabular">12 Dec 2014</td>
+        <td class="">Card</td>
+        <td class="numeric">270</td>
+        <td class="numeric">&pound;820.00</td>
+      </tr>
+
+      <tr>
+        <td class="tabular">
+          <a href="#">MOT-2015-001230</a>
+        </td>
+        <td class="tabular">12 Dec 2014</td>
+        <td class="">Card</td>
+        <td class="numeric">270</td>
+        <td class="numeric">&pound;820.00</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="result__actions">
+    <p>
+      Download purchase history as a
+      <a href="#" class="" rel="external">PDF</a> or
+      <a href="#" class="" rel="external">CSV (Excel)</a> file.
+    </p>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Results table with filter boxes',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'When page includes filters, a 33/66 column split should be used' },
+      { text: 'For accessibility and content order purposes, the results table should be first in content' },
+      { text: 'For currently selected filters, remove the hyperlink and show as bold text' }
+    ],
+    type='number'
+  ) }}
+
+  {{ components.heading(
+    text='CSS class summary',
+    tag='h4',
+    size='small'
+  ) }}
+
+
+  {{ components.paragraph(
+    text='A summary of the CSS classes used for filter boxes is as follows:'
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'Use the <code class="dev-code-snippet">filter__help</code> class to add styled filter help within any filter box' },
+      { text: 'The <code class="dev-code-snippet">filter__actions</code> class is used to wrap a standard form submit button' }
+    ],
+    type='number'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="layout-filter-data">
+    <div class="layout-filter-data__results">
+      <h2 class="result__group-heading">
+        <strong>5</strong> purchases in the
+        <strong>last 30 days</strong>
+      </h2>
+
+      <table class="result-table">
+        <thead>
+          <tr>
+            <th class="">Transaction
+              <br />number</th>
+            <th scope="col" class="">
+              <a href="#" class="">Date</a>
+            </th>
+            <th scope="col" class="">
+              <a href="#" class="">Payment
+                <br />method</a>
+            </th>
+            <th scope="col" class="numeric">
+              <a href="#" class="sort-desc">Quantity</a>
+            </th>
+            <th scope="col" class="numeric">
+              <a href="#" class="">Cost</a>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td class="tabular">
+              <a href="#">MOT-2015-001234</a>
+            </td>
+            <td class="tabular">12 Dec 2014</td>
+            <td class="">Card</td>
+            <td class="numeric">400</td>
+            <td class="numeric">&pound;1234.00</td>
+          </tr>
+
+          <tr>
+            <td class="tabular">
+              <a href="#">MOT-2015-001233</a>
+            </td>
+            <td class="tabular">12 Dec 2014</td>
+            <td class="">Card</td>
+            <td class="numeric">270</td>
+            <td class="numeric">&pound;820.00</td>
+          </tr>
+
+          <tr>
+            <td class="tabular">
+              <a href="#">MOT-2015-001232</a>
+            </td>
+            <td class="tabular">12 Dec 2014</td>
+            <td class="">Card</td>
+            <td class="numeric">270</td>
+            <td class="numeric">&pound;820.00</td>
+          </tr>
+          <tr>
+            <td class="tabular">
+              <a href="#">MOT-2015-001231</a>
+            </td>
+            <td class="tabular">12 Dec 2014</td>
+            <td class="">Card</td>
+            <td class="numeric">270</td>
+            <td class="numeric">&pound;820.00</td>
+          </tr>
+
+          <tr>
+            <td class="tabular">
+              <a href="#">MOT-2015-001230</a>
+            </td>
+            <td class="tabular">12 Dec 2014</td>
+            <td class="">Card</td>
+            <td class="numeric">270</td>
+            <td class="numeric">&pound;820.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="result__actions">
+        <p>Download purchase history as a
+          <a href="#" class="" rel="external">PDF</a> or
+          <a href="#" class="" rel="external">CSV (Excel)</a> file.
+        </p>
+      </div>
+    </div>
+
+    <div class="layout-filter-data__filters">
+      <h2 class="filter__group-heading">Filters</h2>
+
+      <div class="filter">
+        <label for="filter-search" class="filter__heading">Search</label>
+        <div class="filter__content--text filter__content--search-input-wrapper">
+          <input id="filter-search" type="text" class="form-control">
+        </div>
+        <span class="filter__help">For example, Card</span>
+      </div>
+
+      <div class="filter">
+        <h3 class="filter__heading">Purchased</h3>
+        <div class="filter__content">
+          <ul class="filter__list">
+            <li>
+              <a href="#">Today</a>
+            </li>
+            <li>
+              <a href="#">Last 7 days</a>
+            </li>
+            <li>
+              <strong>Last 30 days</strong>
+            </li>
+            <li>
+              <a href="#">Last year</a>
+            </li>
+          </ul>
+        </div>
+
+        <h3 class="filter__heading">Custom date</h3>
+
+        <div class="filter__content">
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label">
+                From
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="date1-day">Day</label>
+                  <input type="text" class="form-control" id="date1-day">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="date1-month">Month</label>
+                  <input type="text" class="form-control" id="date1-month">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="date1-year">Year</label>
+                  <input type="text" class="form-control" id="date1-year">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label">
+                To
+              </legend>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label for="date2-day">Day</label>
+                  <input type="text" class="form-control" id="date2-day">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="date2-month">Month</label>
+                  <input type="text" class="form-control" id="date2-month">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="date2-year">Year</label>
+                  <input type="text" class="form-control" id="date2-year">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <span class="filter__help">For example, 21/11/2014</span>
+      </div>
+
+      <div class="filter__actions">
+        <button class="button">Update results</button>
+      </div>
+    </div>
+  </div>
   {%- endcall %}
 
 {% endblock %}

@@ -18,9 +18,33 @@
       </div>
 
       <div class="action-panel__container--last">
-        <a href="/rfr/browser" class="button">Add a defect</a>
+        <a href="#" class="button">Add a defect</a>
       </div>
     </div>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Success Message',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="message--success">
+    <h3>The failure <strong>Tyre pressure monitoring system inoperative</strong> has been removed</h3>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Error Message',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="message--failure">
+    <h3>The advisory <strong>Brake pads worn close to legal limit</strong> has not been removed. Try again.</h3>
   </div>
   {%- endcall %}
 
@@ -38,7 +62,7 @@
       </div>
 
       <div class="action-panel__container--last">
-        <a href="/rfr/browser" class="button">Add a defect</a>
+        <a href="#" class="button">Add a defect</a>
       </div>
     </div>
   </div>
@@ -397,6 +421,83 @@
             </li>
           </ul>
 
+        </li>
+      </ol>
+    </div>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Defects, with data during retest',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="action-panel">
+    <div class="clear-float">
+      <div class="action-panel__container">
+        <h3 class="action-panel__heading">Defects</h3>
+      </div>
+      <div class="action-panel__container--last">
+        <a href="#" class="button">Add a defect</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="defect-summary">
+    <div id="" class=" ">
+      <h3 class="defect-summary__heading">
+        <span class="badge--alert">2</span>
+        <span class="defect-summary__heading-type">Failures</span>
+      </h3>
+
+      <ol>
+        <li class="defect ">
+          <strong class="defect__is-dangerous" aria-hidden="true">Dangerous failure</strong>
+          <strong class="defect__title">Tyre pressure monitoring system inoperative</strong>
+
+          <p class="defect__meta">Showing no fault when tyres are flat.</p>
+          <strong class="visuallyhidden">Dangerous failure</strong>
+          <h4 class="visuallyhidden">Position</h4>
+
+          <ul class="defect__positions">
+            <li>Location not recorded</li>
+          </ul>
+
+          <h4 class="visuallyhidden">Actions</h4>
+
+          <ul class="defect__edit">
+            <li>
+              <a href="#" class="button button--small button--right">Mark as repaired</a>
+            </li>
+          </ul>
+
+        </li>
+        <li class="defect defect--is-selected">
+          <strong class="defect__is-dangerous" aria-hidden="true">Major failure</strong>
+          <strong class="defect__title">Torsion bar deteriorated by corrosion so that its cross sectional area is reduced and seriously weakened</strong>
+          <strong class="visuallyhidden">Major failure</strong>
+          <h4 class="visuallyhidden">Position</h4>
+
+          <ul class="defect__positions">
+            <li>Lateral:
+              <span class="defect__property-list-value">Nearside</span>
+            </li>
+            <li>Longitudinal:
+              <span class="defect__property-list-value">Front</span>
+            </li>
+            <li>Vertical:
+              <span class="defect__property-list-value">N/A</span>
+            </li>
+          </ul>
+
+          <ul class="defect__edit">
+            <li class="defect__marked-undo">
+              <span>Repaired</span>
+              <a href="#">Undo</a>
+            </li>
+          </ul>
         </li>
       </ol>
     </div>

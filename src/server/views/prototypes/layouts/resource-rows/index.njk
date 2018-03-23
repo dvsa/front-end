@@ -747,6 +747,32 @@
                     cost='£549'
                 ) }}
 
+                {{ components.disciteRow(
+                    name='This course has no description, and could go on the learning page',
+                    headingTag='h3',
+                    headingExtraClass='discite__heading',
+                    headingURL='#',
+                    type='Classroom',
+                    action='Start',
+                    workArea='HMRC',
+                    duration='1 day',
+                    cost='£549'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='This course also has no description, but does have a status',
+                    headingTag='h3',
+                    headingExtraClass='discite__heading',
+                    headingURL='#',
+                    type='Online',
+                    action='Resume',
+                    status='In progress',
+                    workArea='HMRC',
+                    duration='1 jour 45 minutes',
+                    cost='£Free',
+                    removeFromLearningPlan=true
+                ) }}
+
             </div>
 
         {%- endcall %}

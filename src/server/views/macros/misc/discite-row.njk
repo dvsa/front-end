@@ -1,5 +1,5 @@
 {% from "macros/typography/headings.njk" import heading %}
-{% macro disciteRow(name='This discite title',headingURL='', headingTag='h3', description='',addToLearningPlan=false, headingSize='', headingExtraClass='heading--text', type='', status='', action='', duration='', cost='', workArea='', extraModifierClass='') %}
+{% macro disciteRow(name='This discite title',headingURL='', headingTag='h3', description='',addToLearningPlan=false,removeFromLearningPlan=false, headingSize='', headingExtraClass='heading--text', type='', status='', action='', duration='', cost='', workArea='', extraModifierClass='') %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
 
         <div class="discite__main {% if extraModifierClass %}discite__main--{{ extraModifierClass }}{% endif %}">
@@ -49,22 +49,25 @@
 
         <div class="discite__action {% if extraModifierClass %}discite__action--{{ extraModifierClass }}{% endif %}">
             {% if action == 'Retake' %}
-                <a href="#">Retake <span class="visuallyhidden"> this module</span></a>
+                <a href="#">Retake<span class="visuallyhidden"> this module</span></a>
             {% endif %}
             {% if action == 'Start' %}
-                <a href="#">Start <span class="visuallyhidden"> this module</span></a>
+                <a href="#">Start<span class="visuallyhidden"> this module</span></a>
             {% endif %}
             {% if action == 'Resume' %}
-                <a href="#">Resume <span class="visuallyhidden"> this module</span></a>
+                <a href="#">Resume<span class="visuallyhidden"> this module</span></a>
             {% endif %}
             {% if action == 'invalid' %}
                 <span class="meta">Complete the previous module first</span>
             {% endif %}
             {% if action == 'Book' %}
-                <a href="#">Book <span class="visuallyhidden"> this module</span></a>
+                <a href="#">Book<span class="visuallyhidden"> this module</span></a>
             {% endif %}
             {% if addToLearningPlan %}
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Add to learning plan</a>
+            {% endif %}
+            {% if removeFromLearningPlan %}
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove<span class="visuallyhidden"> from learning plan</span></a>
             {% endif %}
         </div>
 

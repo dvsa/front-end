@@ -23,7 +23,7 @@
 
             {{ components.heading(text='Required learning:', tag='h3', size='medium', extraClass='') }}
 
-            <div class="resources">
+            {#<div class="resources">
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
@@ -63,6 +63,52 @@
                     </ul>
                 </div>
 
+            </div>#}
+
+            <div class="resources">
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v4/resource?resourceID=6">Diversity &amp; inclusion</a>
+                            <span class="resource__action">
+                                <a href="#">Resume<span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>2 hours</span>
+                        </li>
+                        <li class="resource__info">
+                            <span class="meta u-display-b">Due by:</span>
+                            <span class="u-display-b">21 Oct 2018</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info ">In progress</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                {% if not fireTrainingComplete %}
+                    <div class="resource">
+                        <ul class="resource__item u-clearfix">
+                            <li class="resource__main">
+                                <a class="resource__title" href="/prototypes/learner/v4/resource?resourceID=15">Basic fire safety</a>
+                                <span class="resource__action">
+                                <a href="/prototypes/learner/v4/scorms/basic-fire-safety">Start <span class="visuallyhidden"> course</span></a>
+                            </span>
+                            </li>
+                            <li class="resource__info">
+                                <span>30 minutes</span>
+                            </li>
+                            <li class="resource__info">
+                                <span class="meta u-display-b">Due by:</span>
+                                <span class="u-display-b">18 Sep 2018</span>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
+
             </div>
 
         {%- endcall %}
@@ -78,17 +124,23 @@
             <div class="resource">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
-                        <a  class="resource__title" href="#">Commercial awareness</a>
+                        <a  class="resource__title" href="/prototypes/learner/v4/resource?resourceID=3">Commercial awareness</a>
                         <span class="resource__action">
-                                <a href="#">Start <span class="visuallyhidden"> course</span></a>
-                                <a href="#">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                                <a href="/prototypes/learner/v4/actions?action=removedFromLearningPlan&id=1&status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
                             </span>
                     </li>
+                    {% if not hideHomeStars %}
+                        <li class="resource__rating">
+                            {{ components.starRating(rating='25%', total='10') }}
+                        </li>
+                    {% endif %}
                     <li class="resource__info">
-                        <span>Work area: digital</span>
+                        <span>Video<br>10 minutes<br>£Free</span>
                     </li>
                     <li class="resource__info">
-                        <span>Online, 2 hours 30 minutes</span>
+                        <span class="meta u-display-b">Work area:</span>
+                        <span class="u-display-b">Commercial</span>
                     </li>
                 </ul>
             </div>
@@ -103,7 +155,7 @@
 
             {{ components.heading(text='Other learning (in progress):', tag='h3', size='medium', extraClass='') }}
 
-            <div class="resource">
+            {#<div class="resource">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
                         <a  class="resource__title" href="#">Commercial awareness</a>
@@ -122,6 +174,33 @@
                         <span class="badge badge--info">In progress</span>
                     </li>
                 </ul>
+            </div>#}
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        <a  class="resource__title" href="/prototypes/learner/v4/resource?resourceID=3">Digital awareness: digital by default</a>
+                        <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                                <a href="/prototypes/learner/v4/actions?action=removedFromLearningPlan&id=1&status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                    </li>
+                    {% if not hideHomeStars %}
+                        <li class="resource__rating">
+                            {{ components.starRating(rating='25%', total='10') }}
+                        </li>
+                    {% endif %}
+                    <li class="resource__info">
+                        <span>Online<br> 3 hours 30 minutes<br>£Free</span>
+                    </li>
+                    <li class="resource__info">
+                        <span>&nbsp;</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--info ">In progress</span>
+                    </li>
+
+                </ul>
             </div>
 
         {%- endcall %}
@@ -134,7 +213,7 @@
 
             {{ components.heading(text='Other learning (just added):', tag='h3', size='medium', extraClass='') }}
 
-            <div class="resource">
+            {#<div class="resource">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
                         <a  class="resource__title" href="#">Managing Business Performance: An Introduction to Taking a Consultancy Approach</a>
@@ -148,6 +227,29 @@
                     </li>
                     <li class="resource__info">
                         <span>Classroom, 1 day</span>
+                    </li>
+                    <li class="resource__status">
+                        <span class="badge badge--success ">Just added</span>
+                    </li>
+                </ul>
+            </div>#}
+
+            <div class="resource">
+                <ul class="resource__item u-clearfix">
+                    <li class="resource__main">
+                        <a class="resource__title" href="/prototypes/learner/v4/resource?resourceID=3">Commercial awareness</a>
+                        <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                                <a href="/prototypes/learner/v4/actions?action=removedFromLearningPlan&amp;id=1&amp;status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                    </li>
+
+                    <li class="resource__info">
+                        <span>Video<br>10 minutes<br>£Free</span>
+                    </li>
+                    <li class="resource__info">
+                        <span class="meta u-display-b">Work area:</span>
+                        <span class="u-display-b">Commercial</span>
                     </li>
                     <li class="resource__status">
                         <span class="badge badge--success ">Just added</span>
@@ -244,7 +346,7 @@
 
         {% call components.columnFull() %}
 
-            {{ components.heading(text='Modules in course detail page', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.heading(text='Modules in course detail page (unordered)', tag='h2', size='medium', extraClass='heading--red-top') }}
             {{ components.paragraph(text='') }}
 
         {%- endcall %}
@@ -257,52 +359,123 @@
 
             <div class="resources resources--modules">
 
-                {{ components.resourceRow(
+                {{ components.disciteRow(
+                    name='Introducing unconscious bias',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    status='Completed',
+                    action='Retake',
+                    duration='5 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Challenging unconscious bias in recruitment decisions',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    status='In Progress',
+                    action='Resume',
+                    duration='8 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Unconscious bias in the workplace',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Start',
+                    duration='5 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='This is a module with a stupidly long title that goes on and on and won\'t interfere with other elements in the block.',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Start',
+                    duration='10 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='This is another module, also with a stupidly long title that goes on and on and won\'t interfere with other elements in the block.',
+                    headingTag='h3',
+                    headingExtraClass='heading--text',
+                    type='Online',
+                    action='Resume',
+                    status='In Progress',
+                    duration='10 minutes',
+                    extraModifierClass='module'
+                ) }}
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Modules in course detail page (ordered)', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.paragraph(text='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <div class="discite">
+
+                {{ components.disciteRow(
                     name='1. Introducing unconscious bias',
                     headingTag='h3',
                     headingExtraClass='heading--text',
                     type='Online',
                     status='Completed',
                     action='Retake',
-                    duration='5 minutes'
+                    duration='5 minutes',
+                    extraModifierClass='module'
                 ) }}
 
-                {{ components.resourceRow(
+                {{ components.disciteRow(
                     name='2. Challenging unconscious bias in recruitment decisions',
                     headingTag='h3',
                     headingExtraClass='heading--text',
                     type='Online',
                     status='In Progress',
                     action='Resume',
-                    duration='8 minutes'
+                    duration='8 minutes',
+                    extraModifierClass='module'
                 ) }}
 
-                {{ components.resourceRow(
+                {{ components.disciteRow(
                     name='3. Unconscious bias in the workplace',
                     headingTag='h3',
                     headingExtraClass='heading--text',
                     type='Online',
-                    action='Start',
-                    duration='5 minutes'
+                    action='invalid',
+                    duration='5 minutes',
+                    extraModifierClass='module'
                 ) }}
 
-                {{ components.resourceRow(
-                    name='4. This is a module with a stupidly long title that goes on and on and won\'t interfere with other elements in the block.',
+                {{ components.disciteRow(
+                    name='4. Challenging unconscious bias',
                     headingTag='h3',
                     headingExtraClass='heading--text',
                     type='Online',
-                    action='Start',
-                    duration='10 minutes'
-                ) }}
-
-                {{ components.resourceRow(
-                    name='5. This is another module, also with a stupidly long title that goes on and on and won\'t interfere with other elements in the block.',
-                    headingTag='h3',
-                    headingExtraClass='heading--text',
-                    type='Online',
-                    action='Resume',
-                    status='In Progress',
-                    duration='10 minutes'
+                    action='invalid',
+                    duration='8 minutes',
+                    extraModifierClass='module'
                 ) }}
 
             </div>
@@ -445,7 +618,7 @@
 
         {% call components.columnFull() %}
 
-            {{ components.heading(text='Two thirds', tag='h3', size='medium', extraClass='') }}
+            {{ components.heading(text='Two thirds, as modules', tag='h3', size='medium', extraClass='') }}
 
         {%- endcall %}
 
@@ -575,6 +748,41 @@
                 ) }}
 
             </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Full width, as search results', tag='h3', size='medium', extraClass='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+        <div class="learning">
+
+        {{ components.disciteRow(
+            name='Windsor Leadership Trust - Director Developing Strategic Leadership Programme',
+            headingTag='h3',
+            description='This programme assists those progressing towards more senior leadership positions to develop their strategic thinking.',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Classroom',
+            action='Book',
+            workArea='Commercial',
+            duration='3 days',
+            cost='£4100',
+            addToLearningPlan=true,
+            extraModifierClass='search'
+        ) }}
 
         {%- endcall %}
 

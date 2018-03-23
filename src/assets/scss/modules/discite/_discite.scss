@@ -43,7 +43,7 @@ $module: 'discite';
     @include bold-19;
 
     @include media(desktop) {
-      padding-right: 300px;
+      // padding-right: 300px;
     }
   }
 
@@ -73,12 +73,27 @@ $module: 'discite';
       right: 0;
       padding-right: 0;
     }
+
+    @include m('search') {
+      @include media(desktop) {
+        // width: 200px;
+        // text-align: right;
+      }
+    }
   }
 
     &__property {
       // ul.discite__property the actual data about the discite thing
       width: 50%;
       float: left;
+
+      @include m('search') {
+        @include media(desktop) {
+          width: 200px;
+          float: right;
+          text-align: right;
+        }
+      }
     }
 
     &__property-item {
@@ -109,6 +124,9 @@ $module: 'discite';
   &__area {
     //div.discite__area
     @extend %disciteRowDiv;
+    padding-top: 0;
+    padding-bottom: 0;
+    @include core-16;
 
     @include media(desktop) {
       width: 100%;

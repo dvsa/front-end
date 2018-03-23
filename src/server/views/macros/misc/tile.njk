@@ -20,28 +20,28 @@
         {% if not hideStars %}
             {{ starRating(rating=starPercent, total=starTotal) }}
         {% endif %}
-        <p class="tile__attribution">{{ because }}</p>
         <ul class="tile__properties u-clearfix">
             {% if type %}
                 <li class="tile__property">
-                    <span class="tile__key">Type</span>
+                    <span class="visuallyhidden">Type</span>
                     <span class="tile__value">{{ type }}</span>
                 </li>
             {% endif %}
             {% if duration %}
                 <li class="tile__property">
-                    <span class="tile__key">Duration</span>
+                    <span class="visuallyhidden">Duration</span>
                     <span class="tile__value">{{ duration }}</span>
                 </li>
             {% endif %}
             {% if cost %}
                 <li class="tile__property">
-                    <span class="tile__key">Cost</span>
+                    <span class="visuallyhidden">Cost</span>
                     <span class="tile__value">{{ cost }}</span>
                 </li>
             {% endif %}
         </ul>
         <p>{{ intro }}</p>
+        <p class="tile__attribution">{{ because }}</p>
         <p class="tile__actions">
             <a href="/prototypes/learner/{{ version }}/actions?action=addedToLearningPlan&type={{ type }}">Add to learning plan</a>
             <a href="/prototypes/learner/{{ version }}/actions?action=removedFromSuggestedList&type={{ type }}">Remove <span class="visuallyhidden">from suggested learning list</span></a>

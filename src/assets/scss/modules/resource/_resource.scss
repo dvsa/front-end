@@ -28,7 +28,7 @@
     max-width: auto;
 
     @include media(desktop) {
-      width: 320px;
+      width: 440px;
     }
   }
 
@@ -43,7 +43,8 @@
     padding-right: 20px;
 
     @include media(desktop) {
-      width: 280px;
+      width:100%;
+      max-width: 240px;
     }
   }
 

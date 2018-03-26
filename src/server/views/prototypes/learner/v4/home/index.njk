@@ -87,16 +87,16 @@
 
             {% if removeMessage %}
 
-                {{ components.banner(mainText='Course successfully removed', secondaryText='The course <strong>Digital awareness: digital by default</strong> has successfully been removed from your learning plan', type="confirmation")}}
+                {{ components.banner(mainText='Digital awareness: digital by default', secondaryText='This has been removed from your learning plan', type="confirmation")}}
 
             {% endif %}
 
             {% if hasBeenAdded %}
-                {{ components.banner(mainText='Course successfully added', secondaryText='This course has successfully been added to your learning plan', type="confirmation")}}
+                {{ components.banner(mainText='Digital awareness: digital by default', secondaryText='This has been added to your learning plan', type="confirmation")}}
             {% endif %}
 
             {% if hasBeenRemoved %}
-                {{ components.banner(mainText='Course successfully removed', secondaryText='The course has successfully been removed from your learning plan', type="confirmation")}}
+                {{ components.banner(mainText='Digital awareness: digital by default', secondaryText='This has been removed from your learning plan', type="confirmation")}}
             {% endif %}
 
             {% if willBeRemoved %}

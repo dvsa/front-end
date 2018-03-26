@@ -1,5 +1,5 @@
 {% from "macros/typography/headings.njk" import heading %}
-{% macro disciteRow(name='This discite title',headingURL='', headingTag='h3', description='',addToLearningPlan=false,removeFromLearningPlan=false, headingSize='', headingExtraClass='heading--text', type='', status='', action='', duration='', cost='', workArea='', extraModifierClass='') %}
+{% macro disciteRow(name='This discite title',headingURL='', headingTag='h3', description='',addToLearningPlan=false,removeFromLearningPlan=false, headingSize='', headingExtraClass='heading--text', type='', status='', action='', duration='', cost='', workArea='', extraModifierClass='', dueBy='') %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
 
         <div class="discite__main {% if extraModifierClass %}discite__main--{{ extraModifierClass }}{% endif %}">
@@ -45,6 +45,10 @@
 
         {% if workArea %}
             <div class="discite__area">Work area: {{ workArea }}</div>
+        {% endif %}
+
+        {% if dueBy %}
+            <div class="discite__area">Due by: {{ dueBy }}</div>
         {% endif %}
 
         <div class="discite__action {% if extraModifierClass %}discite__action--{{ extraModifierClass }}{% endif %}">

@@ -768,9 +768,44 @@
                     action='Resume',
                     status='In progress',
                     workArea='HMRC',
-                    duration='1 jour 45 minutes',
+                    duration='1 hour 45 minutes',
                     cost='£Free',
                     removeFromLearningPlan=true
+                ) }}
+
+                {{ components.disciteRow(
+                    name='This is a required learning module with a short title',
+                    headingTag='h3',
+                    headingExtraClass='discite__heading',
+                    headingURL='#',
+                    type='Online',
+                    action='Resume',
+                    status='In progress',
+                    dueBy='18 Oct 2018',
+                    duration='1 hour 45 minutes'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='This is also a required learning module with a slightly longer title',
+                    headingTag='h3',
+                    headingExtraClass='discite__heading',
+                    headingURL='#',
+                    type='Online',
+                    action='Start',
+                    dueBy='18 Oct 2018',
+                    duration='2 hours'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='This is yet another required learning module with a slightly longer title and a description',
+                    description='On this course, you will will become masterful at this particular range of skills.',
+                    headingTag='h3',
+                    headingExtraClass='discite__heading',
+                    headingURL='#',
+                    type='Online',
+                    action='Start',
+                    dueBy='24 Nov 2018',
+                    duration='1 hour 20 minutes'
                 ) }}
 
             </div>

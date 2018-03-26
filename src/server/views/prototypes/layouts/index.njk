@@ -31,5 +31,19 @@
 
 
   {%- endcall %}
+
+  {% call components.gridRow() %}
+
+      {% call components.columnOneThird() %}
+
+        {{ components.heading(text='Email templates', tag='h2', size='medium') }}
+        <ul>
+            <li><a href="/prototypes/layouts/emails/email1">Email v1 (working template)</a> </li>
+            <li><a href="/prototypes/layouts/emails/email1">Email v1, with WSO2 content</a> </li>
+        </ul>
+
+      {%- endcall %}
+
+    {%- endcall %}
   
 {% endblock %}

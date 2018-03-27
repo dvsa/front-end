@@ -31,7 +31,9 @@ export class ManualSmartSurvey {
    */
   init = () => {
     this.setupAllIframes();
-    addEventListenerToEl(window, 'load resize scroll', this.onWindowLoadResizeScroll);
+    addEventListenerToEl(window, 'load', this.setupAllIframes);
+    addEventListenerToEl(window, 'resize', this.setupAllIframes);
+    addEventListenerToEl(window, 'scroll', this.setupAllIframes);
   };
 
   /**
@@ -52,6 +54,7 @@ export class ManualSmartSurvey {
       // Add iframe
       const iframeSrc = element.getAttribute(this.attributes.iframeSrc);
       element.innerHTML = this.generateIframeCode(iframeSrc);
+      element.setAttribute(this.attributes.iframeAttached, 'yes');
     });
   };
 

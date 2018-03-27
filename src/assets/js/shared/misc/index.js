@@ -5,3 +5,4 @@ export * from './events';
 export * from './closest-parent';
 export * from './is-element-hidden-visible';
 export * from './trigger-events';
+export * from './is-element-in-viewport';

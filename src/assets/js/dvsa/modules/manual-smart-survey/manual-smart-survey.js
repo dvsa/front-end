@@ -45,7 +45,7 @@ export class ManualSmartSurvey {
   setupAllIframes = () => {
     this.elements.smartSurveyElements.forEach(element => {
       // Check to see if element is in viewport
-      if (!isElementInViewport(element)) return;
+      if (!isElementInViewport(element, 200)) return;
 
       // Check if iframe has already been added
       const iframeAttached = element.getAttribute(this.attributes.iframeAttached) || false;

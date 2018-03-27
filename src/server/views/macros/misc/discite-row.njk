@@ -1,5 +1,23 @@
 {% from "macros/typography/headings.njk" import heading %}
-{% macro disciteRow(name='This discite title',headingURL='', headingTag='h3', description='',addToLearningPlan=false,removeFromLearningPlan=false, headingSize='', headingExtraClass='heading--text', type='', status='', action='', duration='', cost='', workArea='', extraModifierClass='', dueBy='') %}
+{% macro disciteRow(
+    name='This discite title',
+    headingURL='',
+    headingTag='h3',
+    description='',
+    addToLearningPlan=false,
+    removeFromLearningPlan=false,
+    headingSize='',
+    headingExtraClass='heading--text',
+    type='',
+    status='',
+    action='',
+    duration='',
+    cost='',
+    workArea='',
+    extraModifierClass='',
+    dueBy=''
+    )
+%}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
 
         <div class="discite__main {% if extraModifierClass %}discite__main--{{ extraModifierClass }}{% endif %}">
@@ -68,10 +86,10 @@
                 <a href="#">Book<span class="visuallyhidden"> this module</span></a>
             {% endif %}
             {% if addToLearningPlan %}
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Add to learning plan</a>
+                <a href="#">Add to learning plan</a>
             {% endif %}
             {% if removeFromLearningPlan %}
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Remove<span class="visuallyhidden"> from learning plan</span></a>
+                <a href="#">Remove<span class="visuallyhidden"> from learning plan</span></a>
             {% endif %}
         </div>
 

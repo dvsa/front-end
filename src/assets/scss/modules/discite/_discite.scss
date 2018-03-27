@@ -25,6 +25,10 @@ $module: 'discite';
     min-height: 60px;
     margin-bottom: 10px;
     border-bottom: 1px solid $grey-2;
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
   }
 
   &__main {
@@ -34,17 +38,10 @@ $module: 'discite';
     @include media(desktop) {
       padding-right: 300px;
     }
-
-    @include m('module') {}
   }
-
 
   &__heading {
     @include bold-19;
-
-    @include media(desktop) {
-      // padding-right: 300px;
-    }
   }
 
   &__desc {
@@ -59,10 +56,10 @@ $module: 'discite';
   &__properties {
     // div.discite__properties container for various data about the discite thing
     @extend %disciteRowDiv;
+
     width:100%;
     clear: both;
     min-height: 50px;
-    // padding: 0;
 
     @include media(desktop) {
       position: absolute;
@@ -73,61 +70,52 @@ $module: 'discite';
       right: 0;
       padding-right: 0;
     }
+  }
+
+  &__property {
+    // ul.discite__property the actual data about the discite thing
+    width: 50%;
+    float: left;
 
     @include m('search') {
       @include media(desktop) {
-        // width: 200px;
-        // text-align: right;
+        width: 200px;
+        float: right;
+        text-align: right;
       }
     }
   }
 
-    &__property {
-      // ul.discite__property the actual data about the discite thing
-      width: 50%;
-      float: left;
+  &__property-item {
+    // div.discite__property-item
+    @include core-16;
+  }
 
-      @include m('search') {
-        @include media(desktop) {
-          width: 200px;
-          float: right;
-          text-align: right;
-        }
-      }
+  &__status {
+    // div.discite__status usually a badge saying in progress|overdue|completed etc
+    @extend %disciteRowDiv;
+    width: 50%;
+    float: right;
+    text-align: right;
+    padding-right: 0;
+    padding-top: 6px;
+
+    @include media(desktop) {
+      position: absolute;
+      display:block;
+      float:none;
+      padding-top: 16px;
+      top: 0;
+      right: 0;
     }
-
-    &__property-item {
-      // div.discite__property-item
-      @include core-16;
-    }
-
-    &__status {
-      // div.discite__status usually a badge saying in progress|overdue|completed etc
-      @extend %disciteRowDiv;
-      width: 50%;
-      float: right;
-      text-align: right;
-      padding-right: 0;
-      padding-top: 6px;
-
-      @include media(desktop) {
-        position: absolute;
-        display:block;
-        float:none;
-        padding-top: 16px;
-        top: 0;
-        right: 0;
-      }
-
-
   }
 
   &__area {
     //div.discite__area
     @extend %disciteRowDiv;
+    @include core-16;
     padding-top: 0;
     padding-bottom: 0;
-    @include core-16;
 
     @include media(desktop) {
       width: 100%;
@@ -143,19 +131,14 @@ $module: 'discite';
     @extend %disciteRowDiv;
     clear: both;
 
-    @include media(desktop) {
-      //position: absolute;
-      display:block;
-      float:none;
-      //bottom: 0;
-      //left: 0;
+    a {
+      display: inline-block;
+      margin-right: 8px;
     }
 
-    @include m('module') {
-      // position: absolute;
-      // bottom: 0;
-      // left: 0;
-
+    @include media(desktop) {
+      display:block;
+      float:none;
     }
   }
 }

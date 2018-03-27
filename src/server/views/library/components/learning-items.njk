@@ -1,0 +1,323 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'GDS Library - Learning items' %}
+
+{% block content %}
+
+    {{ components.heading(text='Learning items', tag='h2', size='medium') }}
+
+    <p>
+        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/assets/scss/modules/pagination/_pagination.scss">_discite.scss</a>
+        <br>
+        <a href="https://github.com/Civil-Service-Human-Resources/lpg-front-end/blob/master/src/server/views/macros/misc/discite-row.njk">discite-row.njk</a>
+    </p>
+
+    {{ components.heading(text='Two thirds, as modules', tag='h3', size='medium', extraClass='') }}
+
+    {{ components.heading(text='Items for modular courses, in a 2/3 column', tag='h4', size='medium', extraClass='') }}
+
+    <p>Takes modifier class <code>module</code></p>
+
+    <div class="discite">
+
+        {{ components.disciteRow(
+            name='1. Introducing unconscious bias',
+            headingTag='h3',
+            headingExtraClass='heading--text',
+            type='Online',
+            status='Completed',
+            action='Retake',
+            duration='5 minutes',
+            extraModifierClass='module'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='2. Challenging unconscious bias in recruitment decisions',
+            headingTag='h3',
+            headingExtraClass='heading--text',
+            type='Online',
+            status='In Progress',
+            action='Resume',
+            duration='8 minutes',
+            extraModifierClass='module'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='3. Unconscious bias in the workplace',
+            headingTag='h3',
+            headingExtraClass='heading--text',
+            type='Online',
+            action='Start',
+            duration='5 minutes',
+            extraModifierClass='module'
+        ) | prism }}
+
+    </div>
+
+    {{ components.heading(text='Items for modular courses, grouped without code preview', tag='h4', size='medium', extraClass='') }}
+
+    <div class="discite">
+
+        {{ components.disciteRow(
+            name='Introducing unconscious bias',
+            headingTag='h3',
+            headingExtraClass='heading--text',
+            type='Online',
+            status='Completed',
+            action='Retake',
+            duration='5 minutes',
+            extraModifierClass='module'
+        ) }}
+
+        {{ components.disciteRow(
+            name='Challenging unconscious bias in recruitment decisions',
+            headingTag='h3',
+            headingExtraClass='heading--text',
+            type='Online',
+            status='In Progress',
+            action='Resume',
+            duration='8 minutes',
+            extraModifierClass='module'
+        ) }}
+
+        {{ components.disciteRow(
+            name='Unconscious bias in the workplace',
+            headingTag='h3',
+            description='You can add a description to these modues as well if you like, and it will just wrap onto the next line when required if it goes on and on for a bit.',
+            headingExtraClass='heading--text',
+            type='Online',
+            action='Start',
+            duration='5 minutes',
+            extraModifierClass='module'
+        ) }}
+
+        {{ components.disciteRow(
+            name='Challenging unconscious bias',
+            headingTag='h3',
+            headingExtraClass='heading--text',
+            type='Online',
+            action='Start',
+            duration='8 minutes',
+            extraModifierClass='module'
+        ) }}
+
+    </div>
+
+    {{ components.heading(text='Full width column', tag='h3', size='medium', extraClass='') }}
+
+    {{ components.heading(text='As required learning item, in various states', tag='h4', size='medium', extraClass='') }}
+
+    <div class="discite">
+
+        {{ components.disciteRow(
+            name='This is a required learning module with a short title',
+            headingTag='h3',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            action='Resume',
+            status='In progress',
+            dueBy='18 Oct 2018',
+            duration='1 hour 45 minutes'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='This is also a required learning module with a slightly longer title',
+            headingTag='h3',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            action='Start',
+            dueBy='18 Oct 2018',
+            duration='2 hours'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='This is yet another required learning module with a slightly longer title and a description',
+            description='On this course, you will will become masterful at this particular range of skills.',
+            headingTag='h3',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            action='Start',
+            dueBy='24 Nov 2018',
+            duration='1 hour 20 minutes'
+        ) | prism }}
+
+    </div>
+
+    {{ components.heading(text='As other learning item, in various states', tag='h4', size='medium', extraClass='') }}
+
+    <div class="discite">
+
+        {{ components.disciteRow(
+            name='Simon Sinek - Start With Why - TED Talk Short Edited',
+            headingTag='h3',
+            description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            status='Completed',
+            action='Retake',
+            workArea='Commercial',
+            duration='2 hours 30 minutes',
+            cost='£Free'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='Challenging unconscious bias in recruitment decisions',
+            headingTag='h3',
+            description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            status='In Progress',
+            action='Resume',
+            workArea='Digital',
+            duration='30 minutes',
+            cost='£Free'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='Test title namd long name lots of words fills space, wraps onto next line',
+            headingTag='h3',
+            description='Unusually short description, considering the overly long title.',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Classroom',
+            action='Start',
+            workArea='HMRC',
+            duration='1 day',
+            cost='£549'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='This course has no description, and could go on the learning page',
+            headingTag='h3',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Classroom',
+            action='Start',
+            workArea='HMRC',
+            duration='1 day',
+            cost='£549'
+        ) | prism }}
+
+        {{ components.disciteRow(
+            name='This course also has no description, but does have a status',
+            headingTag='h3',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            action='Resume',
+            status='In progress',
+            workArea='HMRC',
+            duration='1 hour 45 minutes',
+            cost='£Free',
+            removeFromLearningPlan=true
+        ) | prism }}
+
+    </div>
+
+    {{ components.heading(text='As other learning item, when grouped', tag='h4', size='medium', extraClass='') }}
+
+    <p>They do have bottom border, except last-of-type</p>
+
+    <div class="discite">
+
+        {{ components.disciteRow(
+            name='Test title namd long name lots of words fills space, wraps onto next line',
+            headingTag='h3',
+            description='Unusually short description, considering the overly long title.',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Classroom',
+            action='Start',
+            workArea='HMRC',
+            duration='1 day',
+            cost='£549'
+        ) }}
+
+        {{ components.disciteRow(
+            name='This course has no description, and could go on the learning page',
+            headingTag='h3',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Classroom',
+            action='Start',
+            workArea='HMRC',
+            duration='1 day',
+            cost='£549'
+        ) }}
+
+        {{ components.disciteRow(
+            name='This course also has no description, but does have a status',
+            headingTag='h3',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            action='Resume',
+            status='In progress',
+            workArea='HMRC',
+            duration='1 hour 45 minutes',
+            cost='£Free',
+            removeFromLearningPlan=true
+        ) }}
+
+    </div>
+
+    {{ components.heading(text='As search result item, in various states', tag='h4', size='medium', extraClass='') }}
+
+    <p>Takes modifier class <code>search</code></p>
+
+    <div class="discite">
+
+        {{ components.disciteRow(
+            name='Windsor Leadership Trust - Director Developing Strategic Leadership Programme',
+            headingTag='h3',
+            description='This programme assists those progressing towards more senior leadership positions to develop their strategic thinking.',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Classroom',
+            action='Book',
+            workArea='Commercial',
+            duration='3 days',
+            cost='£4100',
+            addToLearningPlan=true,
+            extraModifierClass='search'
+        ) }}
+
+        {{ components.disciteRow(
+            name='Windsor Leadership Trust - Director Developing Strategic Leadership Programme',
+            headingTag='h3',
+            description='This programme assists those progressing towards more senior leadership positions to develop their strategic thinking.',
+            headingExtraClass='discite__heading',
+            headingURL='#',
+            type='Online',
+            action='Book',
+            workArea='Digital',
+            duration='2 hours',
+            cost='£Free',
+            addToLearningPlan=true,
+            extraModifierClass='search'
+        ) }}
+
+    </div>
+
+    {{ components.disciteRow(
+        name='Windsor Leadership Trust - Director Developing Strategic Leadership Programme',
+        headingTag='h3',
+        description='This programme assists those progressing towards more senior leadership positions to develop their strategic thinking.',
+        headingExtraClass='discite__heading',
+        headingURL='#',
+        type='Classroom',
+        action='Book',
+        workArea='Commercial',
+        duration='3 days',
+        cost='£4100',
+        addToLearningPlan=true,
+        extraModifierClass='search'
+    ) | prism }}
+
+
+{% endblock %}

@@ -7,6 +7,7 @@ import { initShowHideToggle } from './show-hide-toggle';
 import { initFormDisableDetailsHiddenFields } from './form-submit-disable-details-hidden-fields';
 import { initOdometerReading } from './odometer-reading';
 import { initFormDisableOnSubmit } from './form-disable-on-submit';
+import { initManualSmartSurvey } from './manual-smart-survey';
 
 /**
  * Custom DVSA Modules
@@ -24,4 +25,5 @@ export const initModules = () => {
   initFormDisableDetailsHiddenFields();
   initOdometerReading();
   initFormDisableOnSubmit();
+  initManualSmartSurvey();
 };

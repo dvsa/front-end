@@ -6,58 +6,72 @@
     <meta name="format-detection" content="telephone=no">
     <title>[PROPOSITION_NAME] account registration</title>
 </head>
-<body style="font-family: Helvetica, Arial, sans-serif;font-size: 16px;margin: 0;color:#0b0c0c">
+<body>
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-        <td width="100%" height="53" bgcolor="#0b0c0c">
-            <table width="580" cellpadding="0" cellspacing="0" border="0" align="center">
-                <tr>
-                    <td width="100%" bgcolor="#0b0c0c" valign="middle" align="left">
-                        <span style="padding-left: 5px;"><a href="https://www.gov.uk" style="font-family: Helvetica, Arial, sans-serif; font-size: 28px; line-height: 1.315789474; font-weight: 700; color: #efefef; text-decoration: none;">GOV.UK</a></span></a>
-                    </td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+<div style="font-family: Helvetica, Arial, sans-serif;font-size: 16px;margin: 0;color:#000000">
 
-<table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="margin-bottom: 19px;border-top: 10px solid #af292e">
-    <tr>
-        <td width="100%">
-            <table width="580" cellpadding="0" cellspacing="0" border="0" align="center">
-                <tr>
-                    <td width="75%">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td width="100%" height="53" bgcolor="#0b0c0c">
+                <table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+                    <tr>
+                        <td width="100%" bgcolor="#0b0c0c" valign="middle" align="left">
+                            <span><a href="https://www.gov.uk" style="font-family: Helvetica, Arial, sans-serif; font-size: 28px; line-height: 1.315789474; font-weight: 700; color: #efefef; text-decoration: none;">GOV.UK</a></span></a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 
-                        <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 36px; line-height: 1.315789474; font-weight: 700; margin: 19px 0 38px 0;">[PROPOSITION_NAME] account registration</h1>
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF" style="margin-bottom: 19px;border-top: 10px solid #af292e">
+        <tr>
+            <td width="100%">
+                <table width="600" cellpadding="0" cellspacing="0" border="0" align="center">
+                    <tr>
+                        <td width="75%">
 
-                        <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 30px 0 30px 0;">
-                            Dear [FIRST_NAME],
-                        </p>
+                            <h1 style="font-family: Helvetica, Arial, sans-serif; font-size: 30px; line-height: 1.315789474; font-weight: 700; margin: 19px 0 38px 0;">Civil Service Learning Platform</h1>
 
-                        <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
-                            You have created an account on the [PROPOSITION_NAME]
-                        </p>
+                            <h2 style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; line-height: 1.315789474; font-weight: 700; margin: 19px 0 38px 0;">Account registration</h2>
 
-                        <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
-                            You must sign in to complete registration. Click on the link below to set a password.
-                        </p>
+                            <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 30px 0 30px 0;">
+                                Dear {{user.claim.givenname}},
+                            </p>
 
-                        <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
-                            <a href="http://civilservicelearning.civilservice.gov.uk/complete-registration">http://civilservicelearning.civilservice.gov.uk/complete-registration</a>
-                        </p>
+                            <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">You have registered an account on the Civil Service Learning Platform</p>
 
-                        <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
-                            The link expires 24h after the sign up.
-                        </p>
+                            <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">Click on the link below to set a password and complete registration.</p>
 
-                    </td>
-                    <td width="25%">&nbsp;</td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+                            <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
+                                <a style="word-break: break-all; font-size: 18px" target="_blank"
+                                   href="{{carbon.product-url}}/accountrecoveryendpoint/confirmrecovery.do?confirmation={{confirmation-code}}&amp;userstoredomain={{userstore-domain}}&amp;username={{url:user-name}}&amp;tenantdomain={{tenant-domain}}">
+                                    {{carbon.product-url}}/accountrecoveryendpoint/confirmrecovery.do?confirmation={{confirmation-code}}&amp;userstoredomain={{userstore-domain}}&amp;username={{url:user-name}}&amp;tenantdomain={{tenant-domain}}
+                                </a>
+                            </p>
+
+                            <p style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; margin: 0 0 30px 0;">
+                                The link expires 24h after the sign up.
+                            </p>
+
+                        </td>
+                        <td width="25%">&nbsp;</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table align="center" cellpadding="0" cellspacing="0" border="0" width="100%"bgcolor="#f1f1f1">
+        <tr>
+            <td style="padding: 30px 30px 20px 30px;">&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
 
 </body>
 

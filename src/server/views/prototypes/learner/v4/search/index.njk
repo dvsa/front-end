@@ -14,19 +14,21 @@
 
             {{ components.pageHeading('Search results') }}
 
+            {{ components.searchBox(actionPath='/prototypes/learner/v4/search') }}
+
             <div class="search-box u-space-b30">
+
+
 
                 {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v4/search") %}
 
                     <div class="form-group search-box__group">
 
-                        <label class="visuallyhidden">Search all available learning</label>
+                        <label class="visuallyhidden" for="searchInput">Search all available learning</label>
 
                         <input class="form-control search-box__input" id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
 
                         <button type="submit" class="search-box__submit">Search</button>
-
-                        {#<a href="#" class="search-box__advanced">Advanced search</a>#}
 
                     </div>
 
@@ -44,26 +46,78 @@
 
         {% call components.columnOneThird(extraClass='filters-column') %}
 
-            <strong>FILTERS</strong>
-            <br>
-            <a href="#" class="remove-filters" onclick="removeFiltersColumn('filters-column', 'results-column');">Remove filters column</a>
-            <script>
-                function removeFiltersColumn(filterColumnClass, resultColumnClass) {
-                    removeElementsByClass(filterColumnClass);
-                    expandResultsColumn(resultColumnClass);
-                }
-                function expandResultsColumn(className) {
-                    var element = document.getElementsByClassName(className);
-                    element[0].classList.remove('column-two-thirds');
-                    element[0].classList.add('column-full');
-                }
-                function removeElementsByClass(className){
-                    var elements = document.getElementsByClassName(className);
-                    while(elements.length > 0){
-                        elements[0].parentNode.removeChild(elements[0]);
+            {% call components.formElement(name='registerDepartment', method='POST', action="#") %}
+
+                <div class="filters">
+
+                    <div class="filter">
+                        <h2 class="filter__title">Learning type</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter3" type="radio" name="learningType" value="blog">
+                                    <label for="typeFilter3" class="u-display-ib">Blog</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter2" type="radio" name="learningType" value="classroom">
+                                    <label for="typeFilter2" class="u-display-ib">Classroom</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter1" type="radio" name="learningType" value="online">
+                                    <label for="typeFilter1" class="u-display-ib">Online</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter4" type="radio" name="learningType" value="video">
+                                    <label for="typeFilter4" class="u-display-ib">Video</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter">
+                        <h2 class="filter__title">Cost</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="costFilter" type="checkbox" name="learningCost" value="blog">
+                                    <label for="costFilter" class="u-display-ib">Show only free</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <a href="#" class="remove-filters font-xsmall" onclick="removeFiltersColumn('filters-column', 'results-column');">Remove filters column</a>
+
+                <script>
+                    function removeFiltersColumn(filterColumnClass, resultColumnClass) {
+                        removeElementsByClass(filterColumnClass);
+                        expandResultsColumn(resultColumnClass);
                     }
-                }
-            </script>
+                    function expandResultsColumn(className) {
+                        var element = document.getElementsByClassName(className);
+                        element[0].classList.remove('column-two-thirds');
+                        element[0].classList.add('column-full');
+                    }
+                    function removeElementsByClass(className){
+                        var elements = document.getElementsByClassName(className);
+                        while(elements.length > 0){
+                            elements[0].parentNode.removeChild(elements[0]);
+                        }
+                    }
+                </script>
+
+            {%- endcall %}
 
         {%- endcall %}
 

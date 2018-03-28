@@ -1,0 +1,19 @@
+{% macro searchBox(buttonText='Search', value='', actionPath='/prototypes/learner/v4/search') %}
+    <div class="search-box u-space-b30">
+
+        <form name="searchLearning" method="POST" action="{{ actionPath }}">
+
+            <div class="form-group search-box__group u-space-b">
+
+                <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                <input class="form-control search-box__input" id="searchInput" type="search" name="searchInput" value="{{ value }}" placeholder="Search CSL">
+
+                <button type="submit" class="search-box__submit">{{ buttonText }}</button>
+
+            </div>
+
+        </form>
+
+    </div>
+{% endmacro %}

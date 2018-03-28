@@ -1,0 +1,79 @@
+$module: 'filter';
+
+%filter {
+  @include box-sizing(border-box);
+  position: relative;
+  display:block;
+  float:none;
+  padding:10px 0;
+
+  @include media(desktop) {
+    display:inline-block;
+    float:left;
+    padding:10px 8px 10px 0;
+  }
+}
+
+$filterPadding: 5px;
+
+.#{$module}s {
+  // div.filters wrapper
+
+  @include box-sizing(border-box);
+  position: relative;
+  display:block;
+}
+
+
+.#{$module} {
+  // div.filter
+
+  border:4px solid $grey-2;
+  padding:0;
+  margin:0 0 30px;
+
+  @include e('title') {
+    // Hx.filter__title
+
+    @include bold-19;
+
+    background-color: $grey-2;
+    padding: $filterPadding;
+  }
+
+  @include e('toggle') {
+    // not used yet
+  }
+
+  @include e('list') {
+    // ul.filter__list
+
+  }
+
+  @include e('item') {
+    // li.filter__list
+
+    border-bottom:1px solid $grey-2;
+    padding: $filterPadding;
+    clear: both;
+
+    &:last-of-type {
+      border: 0;
+    }
+
+  }
+
+  @include e('switch') {
+    // div.filter__item
+    display: block;
+    float: none;
+    clear: both;
+
+    & label {
+      display: block;
+      float: none;
+      clear: both;
+    }
+
+  }
+}

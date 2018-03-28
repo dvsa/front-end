@@ -22,7 +22,8 @@ module.exports = {
                     'last 3 versions',
                     'ie >= 9',
                     'last 3 iOS major versions',
-                    'ff >= 35'
+                    'ff >= 33',
+                    'safari >= 9'
                   ]
                 },
                 debug: true,

@@ -1,0 +1,10 @@
+.dvsa-full-width-content {
+  width: 100%;
+  padding-left: $full-width-padding;
+  padding-right: $full-width-padding;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
+}

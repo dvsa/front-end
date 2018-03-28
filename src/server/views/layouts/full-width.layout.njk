@@ -1,0 +1,31 @@
+{# Import macros for global use in all views #}
+{% set components = {} %}
+{% for component in macroFilePaths %}
+  {% import component as temp %}{% set macro = _.assign(components, temp) %}
+{% endfor %}
+{# end #}
+
+<!DOCTYPE html>
+<!--[if lte IE 8 ]><html class="lte-ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="" lang="en"><!--<![endif]-->
+  <head>
+    
+    {% include './partials/head.njk' %}
+    {% block header %}{% endblock %}
+
+  </head>
+  <body class="{{ bodyClass }}">
+
+    {% include './partials/no-js-fallback.njk' %}
+    {% include './partials/skip-link.njk' %}
+    {% include './partials/cookie-message.njk' %}
+    {% include './full-width-partials/header.njk' %}
+
+    {% block bodyContentWrapper %}{% endblock %}
+
+    {% include './partials/footer.njk' %}
+    {% include './partials/body-scripts.njk' %}
+
+  </body>
+</html>

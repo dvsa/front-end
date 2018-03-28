@@ -120,9 +120,7 @@ export class MarkRepairs {
     toggleClass(rfrItem, this.classnames.hasSuccess, false);
     itemStatus.textContent = this.messages.loading;
 
-    const tryAgainMessage = `That didn\'t work, <a class="js-buttonMarkRepaired" href="" data-url="${url}" data-form="${
-      formData
-    }">try again</a>`;
+    const tryAgainMessage = `That didn\'t work, <a class="js-buttonMarkRepaired" href="" data-url="${url}" data-form="${formData}">try again</a>`;
 
     // Setup axios config
     // Use for ajax request

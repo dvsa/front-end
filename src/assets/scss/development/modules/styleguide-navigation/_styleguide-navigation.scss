@@ -1,11 +1,10 @@
 .styleguide-navigation {
   width: 225px;
   float: left;
-  padding: 30px 0;
+  padding: 0;
   will-change: min-height;
-
   position: sticky;
-  top: 0;
+  top: 85px;
   
   @media(max-width: 800px) {
     width: 100%;

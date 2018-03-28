@@ -1,0 +1,13 @@
+<div class="dvsa-library-links">
+  <div class="dvsa-library-links__wrapper">
+    <ul class="dvsa-library-links__items">
+      {% for item in libraryNavigationItems %}
+      <li class="dvsa-library-links__item {{ 'dvsa-library-links__item--active' if item.active }}">
+        <a href="{{ item.link }}" class="dvsa-library-links__link">
+          {{ item.name }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

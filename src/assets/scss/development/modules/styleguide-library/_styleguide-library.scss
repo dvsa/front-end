@@ -1,9 +1,15 @@
 .styleguide-library{
+  padding: 30px 0;
 
   &__right {
     width: calc( 100% - 250px );
     float: right;
     min-height: 100%;
+
+    h1:first-child {
+      margin: 0 0 30px 0;
+    }
+
     @media(max-width: 800px) {
       width: 100%;
       float: initial;

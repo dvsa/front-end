@@ -1,13 +1,13 @@
 {% set bodyClass = 'mts-body-wrapper library-page' %}
-{% extends './base.layout.njk' %}
+{% extends './full-width.layout.njk' %}
 
 {% block bodyContentWrapper %}
-<main id="content" {{ 'class="' + mainContainerClass + '"' if mainContainerClass }}>
-  {% include './partials/phase-banner.njk' %}
+{% include './partials/library-links.njk' %}
+
+<main class="dvsa-full-width-content {{  mainContainerClass if mainContainerClass }}">
   <div class="styleguide-library" id="library-container">
     {% include './partials/library-navigation.njk' %}
     <div class="styleguide-library__right" id="styleguide-content">
-
       <br class="clearfix">
 
       <!-- only-in-mts-banner -->

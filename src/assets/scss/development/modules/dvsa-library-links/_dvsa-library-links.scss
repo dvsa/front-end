@@ -1,0 +1,58 @@
+.dvsa-library-links {
+  background-color: $highlight-colour;
+  will-change: min-height;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid $grey-5;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
+  &__wrapper {
+    padding-left: $full-width-padding;
+    padding-right: $full-width-padding;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  &__item {
+    &--active {
+      
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 5px solid $highlight-colour;
+
+    &:focus {
+      border-bottom-color: $focus-colour;
+      outline: none;
+      color: $black;
+    }
+
+    .dvsa-library-links__item--active & {
+      border-bottom-color: $govuk-blue;
+    }
+    
+    // .dvsa-library-links__item:first-child & {
+    //   padding-left: 0;
+    // }
+
+    // .dvsa-library-links__item:last-child & {
+    //   padding-right: 0;
+    // }
+  }
+}

@@ -20,13 +20,11 @@
       <div class="styleguide-navigation__item">
         <a href="{{ item.link }}" class="styleguide-navigation__main-link">{{ item.name }}</a>
         <ul class="styleguide-navigation__sub-nav {{ 'styleguide-navigation__sub-nav--hidden' if item.active == false }}">
-
           {% for subItem in item.subItems %}
             <li class="styleguide-navigation__sub-nav-item">
               <a href="{{ subItem.link }}" class="styleguide-navigation__sub-nav-link {{ 'styleguide-navigation__sub-nav-link--active' if subItem.active }}">{{ subItem.name }}</a>
             </li>
           {% endfor %}
-
         </ul>
       </div>
     {% endfor %}

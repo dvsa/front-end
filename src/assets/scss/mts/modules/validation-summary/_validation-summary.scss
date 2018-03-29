@@ -6,8 +6,6 @@
   margin-top: 30px;
   margin-bottom: 30px;
   padding: 20px 15px 15px;
-  // margin-left: 15px;
-  // margin-right: 15px;
 
   h2 {
     font-weight: bold;
@@ -33,4 +31,8 @@
     margin-top: $gutter-half;
     margin-bottom: 0;
   }
+}
+
+.__sign-in .validation-summary {
+  margin: 30px 15px;
 }

@@ -16,7 +16,6 @@
  */
 export function isElementInViewport(el, xOffet = 0, yOffset = 0) {
   const rect = el.getBoundingClientRect();
-  console.log(rect);
   return (
     rect.top >= 0 &&
     rect.left >= 0 &&

@@ -11,15 +11,15 @@ export class FormDisableOnSubmit {
       disabled: 'disabled',
       value: 'value',
       name: 'name',
-      formStateIndex: 'data-form-state-index'
+      formStateIndex: 'data-form-state-index',
     };
 
     this.elements = {
-      forms: Array.from(document.querySelectorAll(this.selectors.form))
+      forms: Array.from(document.querySelectorAll(this.selectors.form)),
     };
 
     this.state = {
-      forms: []
+      forms: [],
     };
 
     this.init();
@@ -44,15 +44,15 @@ export class FormDisableOnSubmit {
    * @since 1.1.34
    */
   setupAllFormsInState = () => {
-    if(!this.elements.forms) return;
+    if (!this.elements.forms) return;
     this.elements.forms.forEach(formElement => {
       this.state.forms.push({
         element: formElement,
-        submitted: false
+        submitted: false,
       });
       formElement.setAttribute(this.attributes.formStateIndex, this.state.forms.length - 1);
     });
-  }
+  };
 
   /**
    * Handles form submit
@@ -69,7 +69,7 @@ export class FormDisableOnSubmit {
     const formStateObject = this.state.forms[formStateIndex] || false;
     const submitButton = formElement.querySelector(this.selectors.submitButton);
     if (!submitButton || !formStateObject) return;
-    if(!formStateObject.submitted) {
+    if (!formStateObject.submitted) {
       const submitInputValue = submitButton.getAttribute(this.attributes.value);
       const submitButtonName = submitButton.getAttribute(this.attributes.name);
       // Create hidden submit button

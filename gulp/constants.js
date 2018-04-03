@@ -27,7 +27,7 @@ export const CONFIG = {
   isProduction: IS_PRODUCTION,
   patterns: {
     js: '**/*.js',
-    image: '**/*.{png,jpg,jpeg,gif,svg}',
+    image: '**/*.{png,jpg,jpeg,gif,svg,ico}',
     css: '**/*.css',
     scss: '**/*.scss',
     font: '**/*.{eot,woff}',

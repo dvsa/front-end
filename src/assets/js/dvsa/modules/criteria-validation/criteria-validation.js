@@ -78,6 +78,8 @@ export class CriteriaValidation {
   addEvents = () => {
     delegateEvent(document, 'keyup', this.selectors.passwordElement, this.checkCriteriaHandler);
     delegateEvent(document, 'paste', this.selectors.passwordElement, this.checkCriteriaHandler);
+    // Touch devices
+    delegateEvent(document, 'keypress', this.selectors.passwordElement, this.checkCriteriaHandler);
   };
 
   /**

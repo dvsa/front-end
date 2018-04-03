@@ -83,7 +83,8 @@
       }
 
       &.is-active {
-        color: $proposition-active-nav;
+        // color: $proposition-active-nav;
+        color: $white;
       }
 
       &:focus {

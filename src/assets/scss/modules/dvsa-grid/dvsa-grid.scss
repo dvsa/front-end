@@ -1,0 +1,14 @@
+.dvsa-grid {
+
+  &__row {
+  }
+
+  &__column {
+    &--mot-search-date {
+      @media(max-width: 789px) and (min-width: 641px) {
+        width: 35%;
+      }
+    }
+  }
+
+}

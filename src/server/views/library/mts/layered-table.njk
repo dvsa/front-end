@@ -1,0 +1,209 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - MTS Headings' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Layered table',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="Used in duplicate certificates."
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="action-panel">
+    <div class="clear-float">
+      <div class="action-panel__container action-panel__container--wider">
+        <h3 class="action-panel__heading">
+          <span class="heading-medium">Range Rover, Sport Autobiography</span>
+        </h3>
+      </div>
+      <div class="action-panel__container">
+        <ul class="action-panel__heads">
+          <li class="action-panel__heads-item">
+            <span>Registration mark: </span><strong>CU07 VGM</strong>
+          </li>
+          <li class="action-panel__heads-item">
+            <span>VIN: </span><strong>1M2GDM9AXFT042722</strong>
+          </li>
+        </ul>
+        <h3 class="action-panel__value"></h3>
+      </div>
+    </div>
+  </div>
+  <table class="layer-table">
+    <caption class="visuallyhidden">Vehicle MOT test certificates</caption>
+    <thead>
+      <tr class="layer-table__heading">
+        <th>Date of test</th>
+        <th>Test result</th>
+        <th>Vehicle Testing Station</th>
+        <th>
+          <span class="visuallyhidden">Action</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="layer-table__item">30 Sep 2016</td>
+        <td class="layer-table__item">
+          <span class="badge--success">Pass</span>
+        </td>
+        <td class="layer-table__item">
+          Pen Y Fai Service Station 
+          <span class="table-summary__meta">Tondu Road, Bridgend, CF314LL</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="layer-table__item layer-table__item--secondary">2 older test</td>
+        <td colspan="2" class="layer-table__item layer-table__item--secondary layer-table__item--right">
+          <a href="#" data-action="showHideToggle" data-open-text="Hide older tests" data-target="" data-toggle-class="js-toggle-older-tests" class="toggle-switch layer-table__link js-only" data-closed-text="Show older tests">Show older tests</a>
+        </td>
+      </tr>
+      <tr class="js-toggle-older-tests js-hidden">
+        <td class="layer-table__item">30 Sep 2016</td>
+        <td class="layer-table__item">
+          <span class="badge--alert">Fail</span>
+        </td>
+        <td class="layer-table__item">
+          Pen Y Fai Service Station 
+          <span class="table-summary__meta">Tondu Road, Bridgend, CF314LL</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+      <tr class="js-toggle-older-tests js-hidden">
+        <td class="layer-table__item">25 Aug 2015</td>
+        <td class="layer-table__item">
+          <span class="badge--success">Pass</span>
+        </td>
+        <td class="layer-table__item">
+          Popular Garages 
+          <span class="table-summary__meta">67 Main Road, Bristol, BS8 2NT</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {%- endcall %}
+
+  {% call components.displayCode() %}
+  <div class="action-panel">
+    <div class="clear-float">
+      <div class="action-panel__container action-panel__container--wider">
+        <h3 class="action-panel__heading">
+          <span class="heading-medium">Ford Fiesta</span>
+        </h3>
+      </div>
+      <div class="action-panel__container">
+        <ul class="action-panel__heads">
+          <li class="action-panel__heads-item">
+            <span>Registration mark: </span><strong>PRP 673V</strong>
+          </li>
+          <li class="action-panel__heads-item">
+            <span>VIN: </span><strong>2DRSE389AXF042722</strong>
+          </li>
+        </ul>
+        <h3 class="action-panel__value"></h3>
+      </div>
+    </div>
+  </div>
+  <table class="layer-table">
+    <caption class="visuallyhidden">Vehicle MOT test certificates</caption>
+    <thead>
+      <tr class="layer-table__heading">
+        <th>Date of test</th>
+        <th>Test result</th>
+        <th>Vehicle Testing Station</th>
+        <th>
+          <span class="visuallyhidden">Action</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="layer-table__item">30 Sep 2016</td>
+        <td class="layer-table__item">
+          <span class="badge--success">Pass</span>
+        </td>
+        <td class="layer-table__item">
+          Biggly Boddy Motors 
+          <span class="table-summary__meta">Bigglesworh Lane, Boddington, BD12 1SW</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="layer-table__item layer-table__item--secondary">4 older test</td>
+        <td colspan="2" class="layer-table__item layer-table__item--secondary layer-table__item--right">
+          <a href="#" data-action="showHideToggle" data-open-text="Hide older tests" data-target="" data-toggle-class="js-toggle-older-tests2" class="layer-table__link js-only toggle-switch--open" data-closed-text="Show older tests">Hide older tests</a>
+        </td>
+      </tr>
+      <tr class="js-toggle-older-tests2">
+        <td class="layer-table__item">30 Sep 2016</td>
+        <td class="layer-table__item">
+          <span class="badge--alert">Fail</span>
+        </td>
+        <td class="layer-table__item">
+          Biggly Boddy Motors
+          <span class="table-summary__meta">Bigglesworh Lane, Boddington, BD12 1SW</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+      <tr class="js-toggle-older-tests2">
+        <td class="layer-table__item">12 Oct 2015</td>
+        <td class="layer-table__item">
+          <span class="badge">Abandoned</span>
+        </td>
+        <td class="layer-table__item">
+          Biggly Boddy Motors
+          <span class="table-summary__meta">Bigglesworh Lane, Boddington, BD12 1SW</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+      <tr class="js-toggle-older-tests2">
+        <td class="layer-table__item">31 Sep 2014</td>
+        <td class="layer-table__item">
+          <span class="badge--success">Pass</span>
+        </td>
+        <td class="layer-table__item">
+          Biggly Boddy Motors 
+          <span class="table-summary__meta">Bigglesworh Lane, Boddington, BD12 1SW</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+      <tr class="js-toggle-older-tests2">
+        <td class="layer-table__item">9 Oct 2013</td>
+        <td class="layer-table__item">
+          <span class="badge--success">Pass</span>
+        </td>
+        <td class="layer-table__item">
+          Biggly Boddy Motors
+          <span class="table-summary__meta">Bigglesworh Lane, Boddington, BD12 1SW</span>
+        </td>
+        <td class="layer-table__item layer-table__item--right">
+          <a href="/bl15Tsm/mot-test-result" class="layer-table__link" title="Action Key">View certificate</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  {%- endcall %}
+
+{% endblock %}

@@ -1,10 +1,10 @@
 /*!
  * 
  *   Name: dvsa-front-end
- *   Version: 1.1.37
+ *   Version: 1.1.38
  *   Author: Tameem Safi <https://github.com/tameemsafi>
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>
- *   Timestamp: April 4th 2018, 12:27:05 pm
+ *   Timestamp: April 4th 2018, 5:16:54 pm
  *   Source: https://github.com/dvsa/front-end
  * 
  */

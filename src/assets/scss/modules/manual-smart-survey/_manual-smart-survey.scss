@@ -1,9 +1,11 @@
 .manual-smart-survey {
-  height: 197px;
-
   &__iframe {
     width: 100%;
-    height: 197px;
+    height: 60px;
     border: 0;
+
+    &--feedback-open {
+      height: 197px;
+    }
   }
 }

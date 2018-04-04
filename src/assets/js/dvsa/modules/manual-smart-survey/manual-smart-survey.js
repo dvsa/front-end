@@ -1,4 +1,4 @@
-import { addEventListenerToEl, isElementInViewport } from './../../../shared';
+import { addEventListenerToEl, isElementInViewport, toggleClass } from './../../../shared';
 
 export class ManualSmartSurvey {
   constructor() {
@@ -6,6 +6,7 @@ export class ManualSmartSurvey {
       manualSmartSurvey: {
         base: 'manual-smart-survey',
         iframe: 'manual-smart-survey__iframe',
+        iframeFeedbackOpen: 'manual-smart-survey__iframe--feedback-open'
       },
     };
 
@@ -16,6 +17,10 @@ export class ManualSmartSurvey {
 
     this.elements = {
       smartSurveyElements: Array.from(document.querySelectorAll(`.${this.classnames.manualSmartSurvey.base}`)),
+    };
+
+    this.events = {
+      smartSurveyRadioClicked: 'smartsurvey_radio_clicked'
     };
 
     this.init();
@@ -34,6 +39,7 @@ export class ManualSmartSurvey {
     addEventListenerToEl(window, 'load', this.setupAllIframes);
     addEventListenerToEl(window, 'resize', this.setupAllIframes);
     addEventListenerToEl(window, 'scroll', this.setupAllIframes);
+    addEventListenerToEl(window, 'message', this.onPostMessageReceived);
   };
 
   /**
@@ -57,6 +63,25 @@ export class ManualSmartSurvey {
       element.setAttribute(this.attributes.iframeAttached, 'yes');
     });
   };
+
+  /**
+   * Received post message
+   *
+   * @param {Event} event The event object received
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   * @since 1.1.25
+   */
+  onPostMessageReceived = (event) => {
+    if(!event || !event.data) return;
+    if(event.data.event_id === this.events.smartSurveyRadioClicked && event.data.value === 'No') {
+      const iframeContainer = document.querySelector(`[data-heading="${event.data.heading}"]`);
+      if(iframeContainer) {
+        const iframe = iframeContainer.querySelector(`.${this.classnames.manualSmartSurvey.iframe}`);
+        toggleClass(iframe, this.classnames.manualSmartSurvey.iframeFeedbackOpen, true);
+      }
+    }
+  }
 
   /**
    * Generates the html for the iframe

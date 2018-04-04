@@ -1,10 +1,16 @@
 .manual-smart-survey {
+  height: 60px;
+
+  &--feedback-open {
+    height: 197px;
+  }
+
   &__iframe {
     width: 100%;
     height: 60px;
     border: 0;
 
-    &--feedback-open {
+    .manual-smart-survey--feedback-open & {
       height: 197px;
     }
   }

@@ -43,7 +43,7 @@
 
     {%- endcall %}
 
-        {% call components.columnOneThird() %}
+    {% call components.columnOneThird() %}
 
       {{ components.heading(text='MOT test results', tag='h2', size='medium', url='/prototypes/mot-test') }}
       {{ components.paragraph(text='Adding comments to defects user journey')}}
@@ -51,5 +51,16 @@
     {%- endcall %}
 
   {%- endcall %}
-  
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Enforcement site review', tag='h2', size='medium', url='/prototypes/site-review') }}
+      {{ components.paragraph(text='Enforcement site review form prototype')}}
+
+    {%- endcall %}
+
+  {%- endcall %}
+
 {% endblock %}

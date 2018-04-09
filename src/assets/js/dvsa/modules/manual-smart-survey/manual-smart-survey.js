@@ -60,7 +60,7 @@ export class ManualSmartSurvey {
         attached: false,
         smartSurveyElement,
         src: smartSurveyElement.getAttribute(this.attributes.iframeSrc),
-        headingHash: md5(smartSurveyElement.getAttribute(this.attributes.heading).trim())
+        headingHash: md5(smartSurveyElement.getAttribute(this.attributes.heading).trim()),
       });
     });
     this.updateAllIframes();
@@ -106,11 +106,11 @@ export class ManualSmartSurvey {
       // Find item from state
       let iframeContainer = false;
       this.state.smartsurveys.forEach(stateItem => {
-        if(stateItem.headingHash === headingHash) {
+        if (stateItem.headingHash === headingHash) {
           iframeContainer = stateItem;
         }
       });
-      if(!iframeContainer) return;
+      if (!iframeContainer) return;
       toggleClass(iframeContainer.smartSurveyElement, this.classnames.manualSmartSurvey.iframeFeedbackOpen, true);
     }
   };

@@ -1,5 +1,6 @@
 import { addEventListenerToEl, isElementInViewport, toggleClass } from './../../../shared';
 import throttle from 'lodash/throttle';
+import md5 from 'md5';
 
 export class ManualSmartSurvey {
   constructor() {
@@ -12,6 +13,7 @@ export class ManualSmartSurvey {
     };
 
     this.attributes = {
+      heading: 'data-heading',
       iframeSrc: 'data-iframe-src',
       iframeAttached: 'data-iframe-attached',
     };
@@ -41,8 +43,8 @@ export class ManualSmartSurvey {
    */
   init = () => {
     this.setupAllIframes();
-    addEventListenerToEl(window, 'resize', throttle(this.updateAllIframes, 300));
-    addEventListenerToEl(window, 'scroll', throttle(this.updateAllIframes, 300));
+    addEventListenerToEl(window, 'resize', throttle(this.updateAllIframes, 50));
+    addEventListenerToEl(window, 'scroll', throttle(this.updateAllIframes, 50));
     addEventListenerToEl(window, 'message', this.onPostMessageReceived);
   };
 
@@ -58,6 +60,7 @@ export class ManualSmartSurvey {
         attached: false,
         smartSurveyElement,
         src: smartSurveyElement.getAttribute(this.attributes.iframeSrc),
+        headingHash: md5(smartSurveyElement.getAttribute(this.attributes.heading).trim())
       });
     });
     this.updateAllIframes();
@@ -99,12 +102,16 @@ export class ManualSmartSurvey {
     const dataParsed = JSON.parse(event.data);
     if (!dataParsed.event_id || !dataParsed.value) return;
     if (dataParsed.event_id === this.events.smartSurveyRadioClicked && dataParsed.value === 'No') {
-      const iframeContainer = document.querySelector(`[data-heading="${dataParsed.heading}"]`);
-      if (iframeContainer) {
-        toggleClass(iframeContainer, this.classnames.manualSmartSurvey.iframeFeedbackOpen, true);
-        // const iframe = iframeContainer.querySelector(`.${this.classnames.manualSmartSurvey.iframe}`);
-        // toggleClass(iframe, this.classnames.manualSmartSurvey.iframeFeedbackOpen, true);
-      }
+      const headingHash = md5(dataParsed.heading);
+      // Find item from state
+      let iframeContainer = false;
+      this.state.smartsurveys.forEach(stateItem => {
+        if(stateItem.headingHash === headingHash) {
+          iframeContainer = stateItem;
+        }
+      });
+      if(!iframeContainer) return;
+      toggleClass(iframeContainer.smartSurveyElement, this.classnames.manualSmartSurvey.iframeFeedbackOpen, true);
     }
   };
 

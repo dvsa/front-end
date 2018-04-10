@@ -73,13 +73,16 @@
                             </li>
                         </ul>
                     </div>
+
+                    <input class="button" type="submit" value="Apply search filters">
+
                 </div>
 
 
 
-                <a href="#" class="remove-filters font-xsmall" onclick="removeFiltersColumn('filters-column', 'results-column');">Remove filters column</a>
+                {#<a href="#" class="remove-filters font-xsmall" onclick="removeFiltersColumn('filters-column', 'results-column');">Remove filters column</a>#}
 
-                <script>
+                {#<script>
                     function removeFiltersColumn(filterColumnClass, resultColumnClass) {
                         removeElementsByClass(filterColumnClass);
                         expandResultsColumn(resultColumnClass);
@@ -95,7 +98,7 @@
                             elements[0].parentNode.removeChild(elements[0]);
                         }
                     }
-                </script>
+                </script>#}
 
             {%- endcall %}
 

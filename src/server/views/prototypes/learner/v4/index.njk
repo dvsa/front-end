@@ -1,17 +1,17 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Your learning - Civil Service Learning Platform' %}
-{% set blackBarTitle = 'Civil Service Learning' %}
+{% set pageTitle = 'Your learning - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
 {% set learnerPrototypeVersion = 'v4' %}
 {% set homePath = '/prototypes/learner/v4/' %}
 {% set loggedOut = 'true' %}
 {% set signinError = signinError if signinError %}
 
-{% set pageTitle = 'Sign in - Civil Service Learning Platform' %}
+{% set pageTitle = 'Sign in - Learning Platform for Government' %}
 
 {% block content %}
 
-    {{ components.pageHeading('Sign in', 'Civil Service Learning Platform') }}
+    {{ components.pageHeading('Sign in', 'Learning Platform for Government') }}
 
     {% if signinError %}
 
@@ -50,7 +50,7 @@
                 </p>
 
                 <div class="panel panel-border-wide">
-                    <p clase="cite">You can contact the Civil Service Learning helpdesk on<br> <a href="tel:+442036407985">020 3640 7985</a> or by email on <a href="mailto:support@civilservicelearning.uk">support@civilservicelearning.uk</a>.</p>
+                    <p clase="cite">You can contact the Learning Platform for Government helpdesk on<br> <a href="tel:+442036407985">020 3640 7985</a> or by email on <a href="mailto:support@civilservicelearning.uk">support@civilservicelearning.uk</a>.</p>
                 </div>
 
             {%- endcall %}

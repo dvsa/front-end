@@ -1,0 +1,51 @@
+{% extends 'layouts/blank.layout.njk' %}
+{% set pageTitle = 'Basic fire safety - Learning Platform for Government' %}
+{% set resourceType = resourceType if resourceType %}
+{% set showMeTheScormScreenShot = showMeTheScormScreenShot if showMeTheScormScreenShot %}
+{% block content %}
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        .iframe-overlay {
+            position: fixed;
+            width:100%;
+            height: 56px;
+            top:0;
+            left:0;
+            background-color: black;
+            border-bottom: 9px solid rgb(175, 41, 46);
+            z-index: 1000;
+        }
+        .massive-button {
+            display:block;
+            width: 60px;
+            height: 56px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #FFF!important;
+            line-height: 56px;
+            margin: 0 0 0 40px;
+            padding: 0 20px;
+        }
+        .massive-button:focus,
+        .massive-button:hover {
+            background-color: #FFF;
+            color: #000 !important;
+        }
+    </style>
+
+    <div style="" class="iframe-overlay" id="iframeOverlayBanner">
+        <a href="/prototypes/learner/v5/actions?action=completeFireTraining&id=15" id="" class="massive-button"><span>&#10554;</span> Exit</a>
+    </div>
+
+    {% if showMeTheScormScreenShot %}
+        <div class="scorm-screenshot">
+            <img src="/images/scorms/scormtastic.jpg" style="width:100%;">
+        </div>
+    {% else %}
+        <iframe src="https://csl-learning-content.s3.eu-west-2.amazonaws.com/0x394/index.htm" height="100%" width="100%" frameborder="0" id="fireSafetyFrame"></iframe>
+    {% endif %}
+
+{% endblock %}

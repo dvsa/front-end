@@ -38,6 +38,12 @@ $module: 'discite';
     @include media(desktop) {
       padding-right: 300px;
     }
+
+    @include m('search') {
+      @include media(desktop) {
+        padding-right: 80px;
+      }
+    }
   }
 
   &__heading {
@@ -50,6 +56,12 @@ $module: 'discite';
 
     @include media(desktop) {
       padding-right: 300px;
+    }
+
+    @include m('search') {
+      @include media(desktop) {
+        padding-right: 140px;
+      }
     }
   }
 

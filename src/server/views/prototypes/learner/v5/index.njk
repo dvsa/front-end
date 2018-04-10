@@ -1,0 +1,70 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your learning - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v5' %}
+{% set homePath = '/prototypes/learner/v5/' %}
+{% set loggedOut = 'true' %}
+{% set signinError = signinError if signinError %}
+
+{% set pageTitle = 'Sign in - Learning Platform for Government' %}
+
+{% block content %}
+
+    {{ components.pageHeading('Sign in', 'Learning Platform for Government') }}
+
+    {% if signinError %}
+
+        {% set emailError = 'Enter your email' %}
+        {% set passwordError = 'Enter your password' %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your sign-in details</h2>
+            {{ components.paragraph(text='Please try again') }}
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='signIn', method='POST', action='/prototypes/learner/v5') %}
+
+                {#{{ components.field(label='Email address', id='email', hint="", group=true, error=emailError)}}
+
+                {{ components.field(label='Password', id='password', hint="", type="password", group=true, error=passwordError)}}#}
+
+                {{ components.field(label='Email address', id='email', hint="", group=true)}}
+
+                {{ components.field(label='Password', id='password', hint="", type="password", group=true)}}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Sign in', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="#">Forgotten your password?</a>
+                </p>
+
+                <div class="panel panel-border-wide">
+                    <p clase="cite">You can contact the Learning Platform for Government helpdesk on<br> <a href="tel:+442036407985">020 3640 7985</a> or by email on <a href="mailto:support@civilservicelearning.uk">support@civilservicelearning.uk</a>.</p>
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <p>
+                <a href="/prototypes/learner/v5/registration">Register for an account</a>
+            </p>
+
+        {%- endcall  %}
+
+    {%- endcall %}
+
+{% endblock %}

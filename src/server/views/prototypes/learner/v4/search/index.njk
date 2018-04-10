@@ -1,7 +1,7 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Search results - Civil Service Learning Platform' %}
-{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v4' %}
+{% set pageTitle = 'Search results - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v4' %}
 {% set signOutPath = '/prototypes/learner/v4/' %}
 {% set homePath = '/prototypes/learner/v4/home' %}
 {% set searchTerm = searchTerm if searchTerm %}
@@ -15,26 +15,6 @@
             {{ components.pageHeading('Search results') }}
 
             {{ components.searchBox(actionPath='/prototypes/learner/v4/search') }}
-
-            <div class="search-box u-space-b30">
-
-
-
-                {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v4/search") %}
-
-                    <div class="form-group search-box__group">
-
-                        <label class="visuallyhidden" for="searchInput">Search all available learning</label>
-
-                        <input class="form-control search-box__input" id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
-
-                        <button type="submit" class="search-box__submit">Search</button>
-
-                    </div>
-
-                {%- endcall %}
-
-            </div>
 
         <p class="lede">There were <strong>46</strong> results for <strong>senior management</strong></p>
 
@@ -125,104 +105,160 @@
 
             <div class="results">
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='APMG Change Management Foundation',
                     id='9',
+                    headingTag='h3',
                     description='In this module you consider how to work with potential providers and achieve what you require. You’ll learn about supply chains, pricing.',
                     workArea='',
                     type='Classoom',
                     duration='5 hours',
-                    cost='£349'
+                    cost='£349',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='APMG Change Management Foundation & Practitioner',
                     id='9',
+                    headingTag='h3',
                     description='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo',
                     workArea='Commercial',
                     type='Online',
                     duration='2 hours',
-                    cost='£Free'
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='APMG International Managing Benefits™ Foundation & Practitioner certification',
                     id='9',
+                    headingTag='h3',
                     description='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.',
                     workArea='Commercial',
                     type='Classroom',
                     duration='4 hours',
-                    cost='£1055'
+                    cost='£1055',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='APMG International Managing Benefits™ Practitioner certification',
                     id='9',
+                    headingTag='h3',
                     description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis partu.',
                     workArea='Commercial',
                     type='Classroom',
                     duration='4 hours',
-                    cost='£2459'
+                    cost='£2459',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='Managing Successful Programmes (MSP®) Advanced Practitioner re-registration dissertation route',
                     id='9',
+                    headingTag='h3',
                     description='One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back.',
                     workArea='Commercial',
                     type='Classroom',
                     duration='2 days',
-                    cost='£259'
+                    cost='£259',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='Senior management strategy',
                     id='9',
+                    headingTag='h3',
                     description='Lorem. Ligula. Pede odio Eleifend. Dolor dignissim varius libero. Inceptos praesent. Nec eget viverra tellus elementum morbi fusce fermentum euismod volutpat turpis ad quis accumsan curae; tristique per Fermentum sociis.',
                     workArea='Commercial',
                     type='Online',
                     duration='1 hour',
-                    cost='£Free'
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='Managing Successful Programmes (MSP®) Practitioner',
                     id='9',
+                    headingTag='h3',
                     description='Condimentum ligula convallis molestie aliquet eget, integer luctus rhoncus Aptent sagittis felis justo varius. Quam. Vulputate, nisl cubilia maecenas et sociosqu lobortis erat velit erat praesent tortor.',
                     workArea='Digital',
                     type='Classroom',
                     duration='4 hours',
-                    cost='£1245'
+                    cost='£1245',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='Time management',
                     id='9',
+                    headingTag='h3',
                     description='Eget curabitur, vulputate quis primis, non tellus venenatis, felis a nostra mus primis. Ridiculus. A suspendisse massa ornare volutpat justo ligula scelerisque maecenas quam Cubilia torquent arcu ut tempus mattis.',
                     workArea='Digital',
                     type='Online',
                     duration='2 hours',
-                    cost='£Free'
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='Ship Safety Management Office (SSMO) - Non Residential',
                     id='9',
+                    headingTag='h3',
                     description='Eget curabitur, vulputate quis primis, non tellus venenatis, felis a nostra mus primis. Ridiculus. A suspendisse massa ornare volutpat justo ligula scelerisque maecenas quam Cubilia torquent arcu ut tempus mattis.',
                     workArea='HMRC',
                     type='Classroom',
                     duration='2 hours',
-                    cost='£1559'
+                    cost='£1559',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
                 ) }}
 
-                {{ components.searchResult(
+                {{ components.disciteRow(
                     name='Managing teams remotely',
                     id='9',
+                    headingTag='h3',
                     description='Eros dui dignissim nascetur nec maecenas sodales dis platea Mus, sit natoque tempor hendrerit cras massa egestas odio, aliquet quam.',
                     workArea='Digital',
                     type='Online',
                     duration='2 hours 30 minutes',
-                    cost='£Free'
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
                 ) }}
                 
             </div>

@@ -15,7 +15,8 @@
     cost='',
     workArea='',
     extraModifierClass='',
-    dueBy=''
+    dueBy='',
+    canBeBooked=false
     )
 %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
@@ -56,7 +57,7 @@
         </div>
 
         {% if description %}
-            <div class="discite__desc">
+            <div class="discite__desc {% if extraModifierClass %}discite__desc--{{ extraModifierClass }}{% endif %}">
                 {{ description }}
             </div>
         {% endif %}

@@ -1,8 +1,8 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Register for an account - Civil Service Learning Platform' %}
+{% set pageTitle = 'Register for an account - Learning Platform for Government' %}
 
-{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v4' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v4' %}
 {% set loggedOut = 'true' %}
 {% set signOutPath = '/prototypes/learner/v4/' %}
 {% set homePath = '/prototypes/learner/v4/' %}
@@ -40,7 +40,7 @@
 
             {% call components.formElement(name='registerName', method='POST', action="#") %}
 
-                <p class="lede">You need to create an account before using the Civil Service Learning Platform. This will take less than 5 minutes.</p>
+                <p class="lede">You need to create an account before using the Learning Platform for Government. This will take less than 5 minutes.</p>
 
                 {{ components.field(label='Email address', id='email', hint="", group=true, value=email, error=registrationEmailErrorMessageTop)}}
 

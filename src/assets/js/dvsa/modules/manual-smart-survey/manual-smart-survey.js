@@ -30,10 +30,7 @@ export class ManualSmartSurvey {
       smartsurveys: [],
     };
 
-    if(
-      !this.elements.smartSurveyElements ||
-      (this.elements.smartSurveyElements.length == 0)
-    ) return;
+    if (!this.elements.smartSurveyElements || this.elements.smartSurveyElements.length == 0) return;
 
     this.init();
   }

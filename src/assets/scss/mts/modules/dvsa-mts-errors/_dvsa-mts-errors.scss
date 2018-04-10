@@ -1,0 +1,45 @@
+.dvsa-mts-errors {
+  padding-top: 30px;
+
+  &,
+  * {
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    @include core-48;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+  }
+
+  h2 {
+    @include core-24;
+    margin: 0 0 15px 0;
+  }
+
+  h3 {
+    @include core-19;
+    margin: 0 0 15px 0;
+  }
+
+  &__stacktrace {
+    padding: 15px;
+    background-color: $highlight-colour;
+    border: 1px solid $black;
+    overflow: auto;
+    @include core-16;
+    line-height: 30px;
+  }
+
+  dl {
+    margin: 0;
+    
+    dt {
+      margin: 0 0 5px 0;
+    }
+
+    dd {
+      margin: 0 0 15px 0;
+    }
+  }
+}

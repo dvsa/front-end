@@ -116,13 +116,20 @@ export function plannedGet(req, res) {
 
 // profile GET
 export function profileGet(req, res) {
-  let viewData, workAreaHasBeenUpdated;
+  let viewData, workAreaHasBeenUpdated, setWorkAreaCommercial, setWorkAreaDigital;
 
   workAreaHasBeenUpdated = req.session.workAreaHasBeenUpdated;
   req.session.workAreaHasBeenUpdated = null;
 
+  setWorkAreaCommercial = req.session.setWorkAreaCommercial;
+  setWorkAreaDigital = req.session.setWorkAreaDigital;
+  req.session.setWorkAreaCommercial = null;
+  req.session.setWorkAreadigital = null;
+
   viewData = {
     workAreaHasBeenUpdated,
+    setWorkAreaCommercial,
+    setWorkAreaDigital,
   };
 
   return res.render('prototypes/learner/v5/profile/index', viewData);

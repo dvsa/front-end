@@ -16,8 +16,11 @@ function areasGet(req, res) {
   let viewData, professionSelectOptions, profession;
 
   // profession = 'Digital, Data and Technology';
-  profession = '4';
+  // profession = '4';
   professionSelectOptions = generalData.allProfessions;
+
+  req.session.setWorkAreaCommercial = null;
+  req.session.setWorkAreadigital = null;
 
   viewData = {
     professionSelectOptions,
@@ -34,6 +37,17 @@ function areasPost(req, res) {
 
   primaryWorkArea = profession;
 
+  req.session.setWorkAreaCommercial = null;
+  req.session.setWorkAreadigital = null;
+
+  if (primaryWorkArea == '1') {
+    req.session.setWorkAreaCommercial = true;
+    req.session.setWorkAreadigital = null;
+  } else {
+    req.session.setWorkAreaCommercial = null;
+    req.session.setWorkAreaDigital = true;
+  }
+
   console.log('primaryWorkArea = ' + primaryWorkArea);
 
   return res.redirect('/prototypes/learner/v5/your-profile/area-of-work/levels?level1=true');
@@ -41,10 +55,13 @@ function areasPost(req, res) {
 
 // Levels
 function areasLevelsGet(req, res) {
-  let viewData, level2, level3, showLevel2, showLevel3;
+  let viewData, level2, level3, showLevel2, showLevel3, setWorkAreaCommercial, setWorkAreaDigital;
 
   level2 = req.param('level2');
   level3 = req.param('level3');
+
+  setWorkAreaCommercial = req.session.setWorkAreaCommercial;
+  setWorkAreaDigital = req.session.setWorkAreaDigital;
 
   if (level2 == 'true') {
     showLevel2 = true;
@@ -54,14 +71,11 @@ function areasLevelsGet(req, res) {
     showLevel3 = true;
   }
 
-  console.log('level2 = ' + level2);
-  console.log('level3 = ' + level3);
-  console.log('showLevel2 = ' + showLevel2);
-  console.log('showLevel3 = ' + showLevel3);
-
   viewData = {
     showLevel2,
-    showLevel3
+    showLevel3,
+    setWorkAreaCommercial,
+    setWorkAreaDigital
   };
 
   return res.render('prototypes/learner/v5/area-of-work/levels', viewData);

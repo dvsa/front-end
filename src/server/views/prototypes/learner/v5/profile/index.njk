@@ -5,12 +5,12 @@
 {% set signOutPath = '/prototypes/learner/v5/' %}
 {% set homePath = '/prototypes/learner/v5/home' %}
 {% set hasBeenUpdated = workAreaHasBeenUpdated if workAreaHasBeenUpdated %}
-
-
+{% set setWorkAreaDigital = setWorkAreaDigital if setWorkAreaDigital %}
+{% set setWorkAreaCommercial = setWorkAreaCommercial if setWorkAreaCommercial %}
 
 {% block content %}
 
-    {{ components.pageHeading('Hello, Roger') }}
+    {{ components.pageHeading('Hello, Marjorie') }}
 
     {% call components.gridRow() %}
 
@@ -107,7 +107,12 @@
                                     {{ item }}<br>
                                 {% endfor %}
                             {% else %}
-                                Digital
+
+                                {% if setWorkAreaCommercial %}
+                                    Commercial{% if hasBeenUpdated %}, Commercial Specialist{% endif %}
+                                {% else %}
+                                    Digital, Data and Technology{% if hasBeenUpdated %}, Interaction designer{% endif %}
+                                {% endif %}
                             {% endif %}
                         </td>
                         <td class="key-value-list__item-action">

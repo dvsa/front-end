@@ -2,10 +2,10 @@ export class DvsaMTSErrors {
   constructor() {
     this.elements = {
       wrapper: document.querySelector('.dvsa-mts-errors'),
-      stacktraceElements: Array.from(document.querySelector)
+      stacktraceElements: Array.from(document.querySelector),
     };
 
-    if(!this.elements.wrapper) return;
+    if (!this.elements.wrapper) return;
 
     this.init();
   }
@@ -16,7 +16,5 @@ export class DvsaMTSErrors {
    * @author Tameem Safi <t.safi@kainos.com>
    * @since 1.1.39
    */
-  init = () => {
-
-  }
+  init = () => {};
 }

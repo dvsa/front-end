@@ -1,7 +1,7 @@
-import { initAccordions } from './accordions';
+import { initManualSmartSurvey } from './manual-smart-survey';
 
 /**
- * DVSA General modules
+ * Manuals application modules
  *
  * @since 1.0.0
  * @author Tameem Safi <t.safi@kainos.com>

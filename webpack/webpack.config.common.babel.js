@@ -1,10 +1,18 @@
 import path from 'path';
 import webpack from 'webpack';
+import ConcatPlugin from 'webpack-concat-plugin';
+
+const config = {
+  jsAssets: path.resolve('src', 'assets', 'js'),
+};
 
 module.exports = {
   entry: {
-    dvsa: path.resolve('src', 'assets', 'js', 'dvsa', 'index.js'),
-    development: path.resolve('src', 'assets', 'js', 'development', 'index.js'),
+    'dvsa': path.resolve(config.jsAssets, 'dvsa', 'index.js'),
+    'dvsa-manuals': path.resolve(config.jsAssets, 'dvsa-manuals', 'index.js'),
+    'dvsa-mts': path.resolve(config.jsAssets, 'dvsa-mts', 'index.js'),
+    'dvsa-mts-legacy': path.resolve(config.jsAssets, 'dvsa-mts-legacy', 'index.js'),
+    'development': path.resolve(config.jsAssets, 'development', 'index.js'),
   },
   module: {
     rules: [
@@ -37,5 +45,21 @@ module.exports = {
         },
       },
     ],
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      filename: 'common.bundle.js',
+      minChunks: 2
+    }),
+    new ConcatPlugin({
+      name: 'ie-shims',
+      fileName: 'ie-shims.js',
+      filesToConcat: [
+        path.resolve(config.jsAssets, 'ie-shims', 'ie.js'),
+        path.resolve(config.jsAssets, 'ie-shims', 'html5.js'),
+        path.resolve(config.jsAssets, 'ie-shims', 'mediaqueries.js')
+      ]
+    }),
+  ]
 };

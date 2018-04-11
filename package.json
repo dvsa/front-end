@@ -40,6 +40,7 @@
     "consolidate": "^0.10.0",
     "cookie-session": "^2.0.0-beta.3",
     "core-js": "^2.5.4",
+    "datatables": "^1.10.13",
     "document-ready": "^2.0.1",
     "element-closest": "^2.0.2",
     "errorhandler": "^1.5.0",
@@ -53,6 +54,7 @@
     "html": "^1.0.0",
     "html-minifier": "^3.5.12",
     "htmlclean": "^3.0.8",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.5",
     "md5": "^2.2.1",
     "memorystore": "^1.6.0",
@@ -106,6 +108,7 @@
     "undertaker-forward-reference": "^1.0.2",
     "webpack": "^3.11.0",
     "webpack-bundle-analyzer": "^2.11.1",
+    "webpack-concat-plugin": "^2.4.2",
     "webpack-merge": "^4.1.2",
     "webpack-stream": "^4.0.3"
   }

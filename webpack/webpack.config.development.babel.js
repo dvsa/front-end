@@ -28,6 +28,6 @@ module.exports = merge(common, {
     //   analyzerPort: 8888,
     //   // Relative to output path
     //   reportFilename: './../../tmp/webpack-bundle-report.html'
-    // })
+    // }),
   ]
 });

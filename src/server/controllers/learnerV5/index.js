@@ -5,4 +5,5 @@ export * from './resource';
 export * from './config';
 export * from './booking';
 export * from './actions';
+export * from './areas';
 export * from './scorms';

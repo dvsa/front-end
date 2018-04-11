@@ -6,9 +6,13 @@ let allDepartments = [{ value: '0', text: 'Select an organisation' }, { value: '
 
 module.exports.allDepartments = allDepartments;
 
-let allProfessions = [{ value: '1', text: 'Commercial' }, { value: '2', text: 'Communications' }, { value: '3', text: 'Corporate finance' }, { value: '4', text: 'DDAT' }, { value: '5', text: 'Finance' }, { value: '6', text: 'Fraud, error, debt and grants' }, { value: '7', text: 'Human resources' }, { value: '8', text: 'Internal audit' }, { value: '9', text: 'Legal' }, { value: '10', text: 'Project delivery' }, { value: '11', text: 'Property' }, { value: '12', text: 'Other' }];
+let allProfessions = [{ value: '1', text: 'Commercial' }, { value: '2', text: 'Communications' }, { value: '3', text: 'Corporate finance' }, { value: '4', text: 'Digital, Data and Technology' }, { value: '5', text: 'Finance' }, { value: '6', text: 'Fraud, error, debt and grants' }, { value: '7', text: 'Human resources' }, { value: '8', text: 'Internal audit' }, { value: '9', text: 'Legal' }, { value: '10', text: 'Project delivery' }, { value: '11', text: 'Property' }, { value: '12', text: 'Other' }];
 
 module.exports.allProfessions = allProfessions;
+
+let allProfessionsInterest = [{ value: '1', text: 'Commercial' }, { value: '2', text: 'Communications' }, { value: '3', text: 'Corporate finance' }, { value: '4', text: 'Digital, Data and Technology' }, { value: '5', text: 'Finance' }, { value: '6', text: 'Fraud, error, debt and grants' }, { value: '7', text: 'Human resources' }, { value: '8', text: 'Internal audit' }, { value: '9', text: 'Legal' }, { value: '10', text: 'Project delivery' }, { value: '11', text: 'Property' }, { value: '12', text: 'Other' }, { value: '12', text: 'Leadership' }, { value: '12', text: 'Fast stream' }, { value: '12', text: 'Contract management' }];
+
+module.exports.allProfessionsInterest = allProfessionsInterest;
 
 // **************************************************************
 // DDAT

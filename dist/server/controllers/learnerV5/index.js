@@ -88,6 +88,18 @@ Object.keys(_actions).forEach(function (key) {
   });
 });
 
+var _areas = require('./areas');
+
+Object.keys(_areas).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _areas[key];
+    }
+  });
+});
+
 var _scorms = require('./scorms');
 
 Object.keys(_scorms).forEach(function (key) {

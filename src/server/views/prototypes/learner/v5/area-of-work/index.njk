@@ -1,6 +1,6 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Your primary area of work - Learning Platform for Government' %}
+{% set pageTitle = 'Your area of work - Learning Platform for Government' %}
 
 {% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v5' %}
 {% set loggedOut = 'true' %}
@@ -21,7 +21,7 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Your primary area of work', 'Create an account') }}
+    {{ components.pageHeading('Your primary area of work') }}
 
     {% if registrationJob2Error %}
 
@@ -54,7 +54,7 @@
                         {% else %}
                             {% set checked = '' %}
                         {% endif %}
-                        {{ components.checkbox(text=item.text, value=item.value, id='profession'+item.value,name='profession', compareTo=item.value, isChecked=checked) }}
+                        {{ components.radio(text=item.text, value=item.value, id='profession'+item.value,name='profession', compareTo=item.value, isChecked=checked) }}
                     {% endfor %}
 
                 </fieldset>
@@ -66,7 +66,7 @@
                 {%- endcall %}
 
                 <p>
-                    <a href="/prototypes/learner/v5">Cancel</a>
+                    <a href="/prototypes/learner/v5/your-profile">Cancel</a>
                 </p>
 
             {%- endcall %}

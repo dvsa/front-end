@@ -1,0 +1,89 @@
+$module: 'levels';
+
+%disciteRowDiv {
+  @include box-sizing(border-box);
+  position: relative;
+  display:block;
+  float:none;
+  padding:10px 0;
+
+  @include media(desktop) {
+    display:inline-block;
+    float:left;
+    padding:10px 8px 10px 0;
+  }
+}
+
+.#{$module} {
+  // wrapper
+  margin-bottom: 30px;
+
+  &__col {
+
+    position: relative;
+    width: 30%;
+    float: left;
+    border-right: 1px solid $grey-3;
+
+
+  }
+
+  &__list {
+
+    li {
+      // padding: 10px 0;
+
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px 8px 8px;
+    color: #005ea5;
+
+    &:after {
+      position: absolute;
+      content: '\203A';
+      top: 7px;
+      right: 5px;
+      color: #003;
+    }
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    @include m('selected') {
+      background-color: #005ea5;
+      color: #fff !important;
+
+      &:after {
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: #005ea5;
+      }
+    }
+
+    @include m('unsure') {
+      @include bold-16;
+      &:after {
+        content: "";
+      }
+    }
+
+
+  }
+
+  &__col {
+
+
+  }
+
+
+
+}

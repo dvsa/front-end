@@ -118,9 +118,14 @@ function plannedGet(req, res) {
 
 // profile GET
 function profileGet(req, res) {
-  let viewData;
+  let viewData, workAreaHasBeenUpdated;
 
-  viewData = {};
+  workAreaHasBeenUpdated = req.session.workAreaHasBeenUpdated;
+  req.session.workAreaHasBeenUpdated = null;
+
+  viewData = {
+    workAreaHasBeenUpdated
+  };
 
   return res.render('prototypes/learner/v5/profile/index', viewData);
 }

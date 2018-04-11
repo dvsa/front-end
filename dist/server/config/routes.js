@@ -454,6 +454,16 @@ router.post('/prototypes/learner/v5/search', learnerV5Controller.searchPost);
 router.get('/prototypes/learner/v5/feedback', learnerV5Controller.feedbackGet);
 router.post('/prototypes/learner/v5/feedback', learnerV5Controller.feedbackPost);
 
+// edit areas of work with levels
+router.get('/prototypes/learner/v5/your-profile/area-of-work', learnerV5Controller.areasGet);
+router.post('/prototypes/learner/v5/your-profile/area-of-work', learnerV5Controller.areasPost);
+
+router.get('/prototypes/learner/v5/your-profile/area-of-work/levels', learnerV5Controller.areasLevelsGet);
+router.post('/prototypes/learner/v5/your-profile/area-of-work/levels', learnerV5Controller.areasLevelsPost);
+
+router.get('/prototypes/learner/v5/your-profile/other-areas -of-work', learnerV5Controller.otherAreasGet);
+router.post('/prototypes/learner/v5/your-profile/other-areas-of-work', learnerV5Controller.otherAreasPost);
+
 // Actions
 router.get('/prototypes/learner/v5/actions', learnerV5Controller.actionsGet);
 router.post('/prototypes/learner/v5/actions', learnerV5Controller.actionsPost);

@@ -4,7 +4,9 @@
 {% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v5' %}
 {% set signOutPath = '/prototypes/learner/v5/' %}
 {% set homePath = '/prototypes/learner/v5/home' %}
-{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+{% set hasBeenUpdated = workAreaHasBeenUpdated if workAreaHasBeenUpdated %}
+
+
 
 {% block content %}
 
@@ -13,6 +15,12 @@
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
+
+            {% if hasBeenUpdated %}
+
+                {{ components.banner(mainText='Your primary area of work has been updated', secondaryText='', type="confirmation")}}
+
+            {% endif %}
 
             {{ components.heading(text='Personal details', tag='h2', size='medium', extraClass='') }}
 
@@ -32,7 +40,7 @@
                             {% if firstName %}
                                 {{ firstName }} {{ lastName }}
                             {% else %}
-                                Roger Connery
+                                Marjorie Dawes
                             {% endif %}
                         </td>
                         <td class="key-value-list__item-action">
@@ -46,7 +54,7 @@
                             {% if email %}
                                 {{ email }}
                             {% else %}
-                                r.connery@&#8203;cabinetoffice.&#8203;gov.uk
+                                m.dawes@&#8203;cabinetoffice.&#8203;gov.uk
                             {% endif %}
                         </td>
                         <td class="key-value-list__item-action">
@@ -92,7 +100,23 @@
                     </tr>
 
                     <tr>
-                        <td class="key-value-list__key ">Area of work</td>
+                        <td class="key-value-list__key ">Primary area of work</td>
+                        <td class="key-value-list__value">
+                            {% if professionName %}
+                                {% for item in professionName %}
+                                    {{ item }}<br>
+                                {% endfor %}
+                            {% else %}
+                                Digital
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="/prototypes/learner/v5/your-profile/area-of-work">Change<span class="visuallyhidden"> your primary area of work</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Other work areas of interest</td>
                         <td class="key-value-list__value">
                             {% if professionName %}
                                 {% for item in professionName %}
@@ -103,9 +127,11 @@
                             {% endif %}
                         </td>
                         <td class="key-value-list__item-action">
-                            <a href="#">Change<span class="visuallyhidden"> your area of work</span></a>
+                            <a href="/prototypes/learner/v5/your-profile/other-areas-of-work">Change<span class="visuallyhidden"> your other areas of interest</span></a>
                         </td>
                     </tr>
+
+
                     <tr>
                         <td class="key-value-list__key ">Grade</td>
                         <td class="key-value-list__value">

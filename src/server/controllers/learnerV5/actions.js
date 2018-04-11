@@ -55,6 +55,12 @@ export function actionsGet(req, res) {
     redirectPath = '/prototypes/learner/v5/learning-record';
   }
 
+  // work area/job title has been updated
+  if (action == 'workAreaHasBeenUpdated') {
+    req.session.workAreaHasBeenUpdated = true;
+    redirectPath = '/prototypes/learner/v5/your-profile';
+  }
+
   return res.redirect(redirectPath);
 }
 

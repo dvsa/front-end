@@ -7,5 +7,5 @@ import { initManualSmartSurvey } from './manual-smart-survey';
  * @author Tameem Safi <t.safi@kainos.com>
  */
 export const initModules = () => {
-  initAccordions();
+  initManualSmartSurvey();
 };

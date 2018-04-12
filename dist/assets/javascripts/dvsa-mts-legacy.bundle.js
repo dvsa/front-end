@@ -1,10 +1,10 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-mts-legacy
- *   Version: 1.2.0
+ *   Version: 1.2.1
  *   Author: Tameem Safi <https://github.com/tameemsafi>
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>
- *   Timestamp: April 12th 2018, 12:53:09 pm
+ *   Timestamp: April 12th 2018, 12:59:56 pm
  *   Source: https://github.com/dvsa/front-end
  * 
  */

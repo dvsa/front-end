@@ -79,11 +79,11 @@ export class DevPreviewFullscreen {
 
       const index = this.state.previewElements.length - 1;
 
-      if(devPreviewElement) {
+      if (devPreviewElement) {
         devPreviewElement.setAttribute(this.attributes.stateItemId, index);
       }
 
-      if(fullscreenButton) {
+      if (fullscreenButton) {
         fullscreenButton.setAttribute(this.attributes.stateItemId, index);
       }
     });

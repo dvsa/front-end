@@ -6,15 +6,15 @@ import { initShowHideToggle } from './show-hide-toggle';
 import { initFormDisableDetailsHiddenFields } from './form-submit-disable-details-hidden-fields';
 import { initOdometerReading } from './odometer-reading';
 import { initFormDisableOnSubmit } from './form-disable-on-submit';
+import { initMotTestSearch } from './mot-test-search';
 
 /**
  * MTS Application modules
  *
- * @since 1.0.0
+ * @since 1.2.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
 export const initModules = () => {
-  initAccordions();
   initCritieraValidation();
   initSelectToggle();
   initDoubleClickPrevention();
@@ -23,5 +23,5 @@ export const initModules = () => {
   initFormDisableDetailsHiddenFields();
   initOdometerReading();
   initFormDisableOnSubmit();
-  initManualSmartSurvey();
+  initMotTestSearch();
 };

@@ -1,4 +1,9 @@
 .dvsa-table-responsive {
   width: 100%;
   overflow-x: auto;
+  white-space: nowrap;
+
+  &__table {
+    width: 100%;
+  }
 }

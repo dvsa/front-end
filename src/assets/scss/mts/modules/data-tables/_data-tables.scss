@@ -9,6 +9,87 @@
   * {
     box-sizing: border-box;
   }
+
+  table.collapsed {
+    tbody {
+      tr {
+        td:first-child {
+          padding-left: 90px;
+          position: relative;
+  
+          &:before {
+            top: 12px;
+            left: 4px;
+            display: block;
+            position: absolute;
+            color: white;
+            text-align: center;
+            line-height: 14px;
+            font-size: 14px;
+            letter-spacing: 1;
+            content: 'Expand';
+            background-color: $green;
+            padding: 6px;
+            width: 60px;
+
+            &:hover {
+              cursor: pointer;
+            }
+
+            @media(max-width: 640px) {
+              top: 8px;
+            }
+          }
+
+          &.dataTables_empty {
+            padding-left: 0;
+            
+            &:before {
+              display: none;
+            }
+          }
+        }
+  
+        &.parent {
+          td:first-child {
+            &:before {
+              content: 'Collapse';
+              background-color: $error-colour;
+            }
+          }
+        }
+  
+        &.child {
+          td:first-child {
+            padding-left: 0;
+  
+            &:before {
+              display: none;
+            }
+          }
+  
+          ul {
+            li {
+              margin-bottom: 5px;
+  
+              &:last-child {
+                margin-bottom: 0;
+              }
+              
+              .dtr-title {
+                display: block;
+                font-weight: bold;
+              }
+      
+              .dtr-data {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
   
   .dataTables_filter {
     width: 200px;
@@ -16,7 +97,7 @@
     padding-right: 1px;
     
     label {
-      .form-control {
+      .form-control { 
         display: block;
         width: 100%;
       }
@@ -27,6 +108,10 @@
       display: block;
       clear: both;
     }
+  }
+
+  .dataTables_info {
+    float: left;
   }
 
   .dataTables_length {
@@ -52,6 +137,10 @@
         text-decoration: none;
         color: inherit;
         cursor: default;
+      }
+
+      &.disabled {
+        opacity: 0.2;
       }
     }
     a.previous {

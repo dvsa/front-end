@@ -1,18 +1,105 @@
 import path from 'path';
 import webpack from 'webpack';
 import ConcatPlugin from 'webpack-concat-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
+/**
+ * Constants
+ * 
+ * @author Tameem Safi <t.safi@kainos.com>
+ * @since 1.2.0
+ */
 const config = {
-  jsAssets: path.resolve('src', 'assets', 'js'),
+  paths: {
+    scss: path.resolve('src', 'assets', 'scss'),
+    js: path.resolve('src', 'assets', 'js'),
+    fonts: path.resolve('src', 'assets', 'fonts'),
+    images: path.resolve('src', 'assets', 'img'),
+    misc: path.resolve('src', 'assets', 'misc'),
+  }
 };
 
-module.exports = {
+/**
+ * Checks environment variable to see if we are in production mode
+ * 
+ * @returns {Boolean} true if we are in production and false otherwise 
+ * 
+ * @author Tameem Safi <t.safi@kainos.com>
+ * @since 1.2.0
+ */
+const isProduction = () => {
+  return process.env.NODE_ENV === 'production';
+};
+
+/**
+ * Get the extract text plugin loader settings based on environment
+ * 
+ * @returns A webpack loader array
+ * 
+ * @author Tameem Safi <t.safi@kainos.com>
+ * @since 1.2.0
+ */
+const getExtractTextPluginLoaders = () => {
+  let postCSSPlugins = [
+    require('autoprefixer')({
+      browsers: [
+        "ie 8",
+        "ie 9",
+        "ie 10",
+        "ie 11",
+        "last 2 versions"
+      ]
+    })
+  ];
+
+  if(isProduction()) {
+    postCSSPlugins.push(require('cssnano')({
+      preset: 'advanced',
+      minifyFontValues: false
+    }));
+  }
+
+  return ExtractTextPlugin.extract({
+    use: [
+      {
+        loader: 'css-loader',
+        options: {
+          url: false,
+          sourceMap: !isProduction()
+        }
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          sourceMap: !isProduction(),
+          plugins: postCSSPlugins,
+        }
+      },
+      {
+        loader: 'sass-loader',
+        options: {
+          sourceMap: !isProduction(),
+        }
+      },
+    ]
+  })
+};
+
+/**
+ * Webpack configuration
+ * 
+ * @author Tameem Safi <t.safi@kainos.com>
+ * @since 1.2.0
+ */
+export default {
   entry: {
-    'dvsa': path.resolve(config.jsAssets, 'dvsa', 'index.js'),
-    'dvsa-manuals': path.resolve(config.jsAssets, 'dvsa-manuals', 'index.js'),
-    'dvsa-mts': path.resolve(config.jsAssets, 'dvsa-mts', 'index.js'),
-    'dvsa-mts-legacy': path.resolve(config.jsAssets, 'dvsa-mts-legacy', 'index.js'),
-    'development': path.resolve(config.jsAssets, 'development', 'index.js'),
+    'dvsa': path.resolve(config.paths.js, 'dvsa', 'index.js'),
+    'dvsa-manuals': path.resolve(config.paths.js, 'dvsa-manuals', 'index.js'),
+    'dvsa-mts': path.resolve(config.paths.js, 'dvsa-mts', 'index.js'),
+    'dvsa-mts-legacy': path.resolve(config.paths.js, 'dvsa-mts-legacy', 'index.js'),
+    'development': path.resolve(config.paths.js, 'development', 'index.js'),
+    'styles': path.resolve(config.paths.scss, 'styles.scss'),
   },
   module: {
     rules: [
@@ -44,22 +131,50 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: getExtractTextPluginLoaders(),
+      },
     ],
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common',
-      filename: 'common.bundle.js',
+      name: 'vendor',
+      filename: 'vendor.bundle.js',
       minChunks: 2
     }),
     new ConcatPlugin({
       name: 'ie-shims',
       fileName: 'ie-shims.js',
       filesToConcat: [
-        path.resolve(config.jsAssets, 'ie-shims', 'ie.js'),
-        path.resolve(config.jsAssets, 'ie-shims', 'html5.js'),
-        path.resolve(config.jsAssets, 'ie-shims', 'mediaqueries.js')
-      ]
+        path.resolve(config.paths.js, 'ie-shims', 'ie.js'),
+        path.resolve(config.paths.js, 'ie-shims', 'html5.js'),
+        path.resolve(config.paths.js, 'ie-shims', 'mediaqueries.js')
+      ],
+      uglify: {
+        ie8: true
+      }
     }),
+    new ExtractTextPlugin({
+      filename: '../stylesheets/[name].css'
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(config.paths.fonts, '**/*'),
+        to: '../fonts',
+        flatten: true
+      },
+      {
+        from: path.resolve(config.paths.images, '**/*'),
+        to: '../images',
+        flatten: true
+      },
+      {
+        from: path.resolve(config.paths.misc, '**/*'),
+        to: '../misc',
+        flatten: true
+      }
+    ])
   ]
 };

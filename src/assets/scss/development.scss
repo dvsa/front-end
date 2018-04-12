@@ -1,8 +1,8 @@
 @import 'gds/variables/variables';
 
-@import 'prismjs/themes/prism-coy';
-@import 'prismjs/plugins/line-numbers/prism-line-numbers';
-@import 'prismjs/plugins/toolbar/prism-toolbar';
+@import '~prismjs/themes/prism-coy';
+@import '~prismjs/plugins/line-numbers/prism-line-numbers';
+@import '~prismjs/plugins/toolbar/prism-toolbar';
 
 @import 'variables';
 @import 'development/development';

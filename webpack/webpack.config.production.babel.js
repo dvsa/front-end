@@ -2,12 +2,14 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import moment from 'moment';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import ImageminWebpackPlugin from 'imagemin-webpack-plugin';
 
 import common from './webpack.config.common.babel';
 import * as packageJSON from './../package.json';
 
 const banner = `
-  Name: ${packageJSON.name}
+  Name: ${packageJSON.name}/[name]
   Version: ${packageJSON.version}
   Author: ${packageJSON.author}
   Contributors: ${packageJSON.contributors.join(', ')}
@@ -15,7 +17,7 @@ const banner = `
   Source: https://github.com/dvsa/front-end
 `;
 
-module.exports = merge(common, {
+export default merge(common, {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve('dist', 'assets', 'javascripts'),
@@ -31,6 +33,9 @@ module.exports = merge(common, {
     }),
     new webpack.BannerPlugin({
       banner
+    }),
+    new ImageminWebpackPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i
     })
   ],
 });

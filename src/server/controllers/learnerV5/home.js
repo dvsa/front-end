@@ -116,7 +116,7 @@ export function plannedGet(req, res) {
 
 // profile GET
 export function profileGet(req, res) {
-  let viewData, workAreaHasBeenUpdated, setWorkAreaCommercial, setWorkAreaDigital;
+  let viewData, workAreaHasBeenUpdated, setWorkAreaCommercial, setWorkAreaDigital, showRolesJoined;
 
   workAreaHasBeenUpdated = req.session.workAreaHasBeenUpdated;
   req.session.workAreaHasBeenUpdated = null;
@@ -126,10 +126,14 @@ export function profileGet(req, res) {
   req.session.setWorkAreaCommercial = null;
   req.session.setWorkAreadigital = null;
 
+  // display all roles columns joined
+  showRolesJoined = req.session.showRolesJoined;
+
   viewData = {
     workAreaHasBeenUpdated,
     setWorkAreaCommercial,
     setWorkAreaDigital,
+    showRolesJoined,
   };
 
   return res.render('prototypes/learner/v5/profile/index', viewData);

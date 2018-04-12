@@ -78,6 +78,42 @@ export function areasLevelsPost(req, res) {
   return res.redirect('prototypes/learner/v5/area-of-work/levels');
 }
 
+// Joined levels
+export function areasJoinedLevelsGet(req, res) {
+  let viewData, level1, level2, level3, showLevel1, showLevel2, showLevel3;
+
+  level1 = req.param('level1');
+  level2 = req.param('level2');
+  level3 = req.param('level3');
+
+  if (level1 == 'true') {
+    showLevel1 = true;
+  }
+
+  if (level2 == 'true') {
+    showLevel2 = true;
+  }
+
+  if (level3 == 'true') {
+    showLevel3 = true;
+  }
+  viewData = {
+    showLevel1,
+    showLevel2,
+    showLevel3,
+  };
+
+  return res.render('prototypes/learner/v5/area-of-work/joined-levels', viewData);
+}
+
+export function areasJoinedLevelsPost(req, res) {
+  const { regConfig } = req.body;
+
+  let test;
+
+  return res.redirect('prototypes/learner/v5/area-of-work/levels');
+}
+
 // Other areas
 export function otherAreasGet(req, res) {
   let viewData, professionSelectOptions;

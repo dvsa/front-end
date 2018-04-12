@@ -7,6 +7,8 @@
 {% set hasBeenUpdated = workAreaHasBeenUpdated if workAreaHasBeenUpdated %}
 {% set setWorkAreaDigital = setWorkAreaDigital if setWorkAreaDigital %}
 {% set setWorkAreaCommercial = setWorkAreaCommercial if setWorkAreaCommercial %}
+{% set showRolesJoined = showRolesJoined if showRolesJoined %}
+
 
 {% block content %}
 
@@ -116,7 +118,12 @@
                             {% endif %}
                         </td>
                         <td class="key-value-list__item-action">
-                            <a href="/prototypes/learner/v5/your-profile/area-of-work">Change<span class="visuallyhidden"> your primary area of work</span></a>
+                            {% if showRolesJoined %}
+                                <a href="/prototypes/learner/v5/your-profile/area-of-work/joined-levels">Change<span class="visuallyhidden"> your primary area of work</span></a>
+                            {% else %}
+                                <a href="/prototypes/learner/v5/your-profile/area-of-work">Change<span class="visuallyhidden"> your primary area of work</span></a>
+                            {% endif %}
+
                         </td>
                     </tr>
 

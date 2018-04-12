@@ -7,6 +7,8 @@ exports.areasGet = areasGet;
 exports.areasPost = areasPost;
 exports.areasLevelsGet = areasLevelsGet;
 exports.areasLevelsPost = areasLevelsPost;
+exports.areasJoinedLevelsGet = areasJoinedLevelsGet;
+exports.areasJoinedLevelsPost = areasJoinedLevelsPost;
 exports.otherAreasGet = otherAreasGet;
 exports.otherAreasPost = otherAreasPost;
 let generalData = require('./data');
@@ -82,6 +84,42 @@ function areasLevelsGet(req, res) {
 }
 
 function areasLevelsPost(req, res) {
+  const { regConfig } = req.body;
+
+  let test;
+
+  return res.redirect('prototypes/learner/v5/area-of-work/levels');
+}
+
+// Joined levels
+function areasJoinedLevelsGet(req, res) {
+  let viewData, level1, level2, level3, showLevel1, showLevel2, showLevel3;
+
+  level1 = req.param('level1');
+  level2 = req.param('level2');
+  level3 = req.param('level3');
+
+  if (level1 == 'true') {
+    showLevel1 = true;
+  }
+
+  if (level2 == 'true') {
+    showLevel2 = true;
+  }
+
+  if (level3 == 'true') {
+    showLevel3 = true;
+  }
+  viewData = {
+    showLevel1,
+    showLevel2,
+    showLevel3
+  };
+
+  return res.render('prototypes/learner/v5/area-of-work/joined-levels', viewData);
+}
+
+function areasJoinedLevelsPost(req, res) {
   const { regConfig } = req.body;
 
   let test;

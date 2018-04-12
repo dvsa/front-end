@@ -18,23 +18,27 @@ $module: 'levels';
   // wrapper
   margin-bottom: 30px;
 
-  &__col {
+  @include m('4cols') {
+    .#{$module}__col {
+      width: 24%;
+    }
+  }
 
+  &__col {
     position: relative;
     width: 30%;
     float: left;
     border-right: 1px solid $grey-3;
 
-
-  }
-
-  &__list {
-
-    li {
-      // padding: 10px 0;
-
+    &:last-of-type {
+     border-right: 0;
     }
   }
+
+  /*&__list {
+    li {
+    }
+  }*/
 
   &__link {
     display: block;
@@ -75,15 +79,8 @@ $module: 'levels';
         content: "";
       }
     }
-
-
   }
 
-  &__col {
-
-
-  }
-
-
-
+  /*&__col {
+  }*/
 }

@@ -12,6 +12,8 @@ $module: 'discite';
     display:inline-block;
     float:left;
     padding:10px 8px 10px 0;
+    border: 1px solid orange;
+    padding-right: 300px;
   }
 }
 
@@ -67,11 +69,12 @@ $module: 'discite';
 
   &__properties {
     // div.discite__properties container for various data about the discite thing
-    @extend %disciteRowDiv;
-
+    // @extend %disciteRowDiv;
+    position: relative;
     width:100%;
     clear: both;
     min-height: 50px;
+
 
     @include media(desktop) {
       position: absolute;
@@ -80,6 +83,7 @@ $module: 'discite';
       float:none;
       top: 0;
       right: 0;
+      padding-top: 12px;
       padding-right: 0;
     }
   }
@@ -105,20 +109,25 @@ $module: 'discite';
 
   &__status {
     // div.discite__status usually a badge saying in progress|overdue|completed etc
-    @extend %disciteRowDiv;
+    // @extend %disciteRowDiv;
+    position: relative;
     width: 50%;
     float: right;
+
     text-align: right;
     padding-right: 0;
     padding-top: 6px;
+    background-color: red;
 
     @include media(desktop) {
       position: absolute;
       display:block;
       float:none;
-      padding-top: 16px;
-      top: 0;
+      padding: 0;
+      top: 10px;
       right: 0;
+      height: 31px;
+      background-color: blue;
     }
   }
 

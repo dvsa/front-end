@@ -73,6 +73,25 @@
 
         </fieldset>
 
+        <fieldset class="u-space-b30">
+
+            <legend class="heading-small">Job roles display from profile page...</legend>
+
+            <div class="multiple-choice">
+                <input id="roles1" type="radio" name="rolesConfig" value="splitRoles" checked="checked">
+                <label for="roles1">Show the top level work areas in their own page with radio buttons</label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="roles2" type="radio" name="rolesConfig" value="joinedRoles">
+                <label for="roles2">
+                    Show all work area levels in the 4 column "selector" interaction
+                    <span class="form-hint">(This only demonstrates the Commercial hierarchy)</span>
+                </label>
+            </div>
+
+        </fieldset>
+
         {% call components.formGroup() %}
 
             {{ components.button(text='Continue', group=true)}}

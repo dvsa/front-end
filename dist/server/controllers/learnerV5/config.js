@@ -26,10 +26,10 @@ function configGet(req, res) {
 }
 
 function configPost(req, res) {
-  const { regConfig, clearSession, scormConfig } = req.body;
+  const { regConfig, clearSession, scormConfig, rolesConfig } = req.body;
 
   console.log('regConfig');
-  let showAllStars, hideDetailStars, hideHomeStars, showMeTheScormScreenShot;
+  let showAllStars, hideDetailStars, hideHomeStars, showMeTheScormScreenShot, showRolesJoined;
 
   showAllStars = false;
   hideDetailStars = true;
@@ -55,13 +55,18 @@ function configPost(req, res) {
   }
   req.session.showMeTheScormScreenShot = showMeTheScormScreenShot;
 
+  console.log('rolesConfig = ' + rolesConfig);
+
+  if (rolesConfig == 'joinedRoles') {
+    showRolesJoined = true;
+    req.session.showRolesJoined = showRolesJoined;
+  }
+
   res.local = {
     testingLocals: 'testing 123'
   };
 
   res.locals.testingVars = 'my value';
-
-  global.anotherTestVar = 'ONE MILLIONS!';
 
   console.log(req.session);
 

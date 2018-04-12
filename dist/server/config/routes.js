@@ -461,6 +461,9 @@ router.post('/prototypes/learner/v5/your-profile/area-of-work', learnerV5Control
 router.get('/prototypes/learner/v5/your-profile/area-of-work/levels', learnerV5Controller.areasLevelsGet);
 router.post('/prototypes/learner/v5/your-profile/area-of-work/levels', learnerV5Controller.areasLevelsPost);
 
+router.get('/prototypes/learner/v5/your-profile/area-of-work/joined-levels', learnerV5Controller.areasJoinedLevelsGet);
+router.post('/prototypes/learner/v5/your-profile/area-of-work/joined-levels', learnerV5Controller.areasJoinedLevelsPost);
+
 router.get('/prototypes/learner/v5/your-profile/other-areas-of-work', learnerV5Controller.otherAreasGet);
 router.post('/prototypes/learner/v5/your-profile/other-areas-of-work', learnerV5Controller.otherAreasPost);
 

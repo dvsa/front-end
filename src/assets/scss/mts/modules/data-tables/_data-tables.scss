@@ -32,13 +32,13 @@
             padding: 6px;
             width: 60px;
 
-            &:hover {
-              cursor: pointer;
-            }
-
             @media(max-width: 640px) {
               top: 8px;
             }
+          }
+
+          &:hover {
+            cursor: pointer;
           }
 
           &.dataTables_empty {

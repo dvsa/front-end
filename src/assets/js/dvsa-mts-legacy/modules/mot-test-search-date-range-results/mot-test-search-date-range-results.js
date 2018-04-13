@@ -15,8 +15,7 @@ export class MOTTestSearchDateRangeResults {
     };
 
     if (!this.state.data || !this.elements.listMOTs.length) return;
-    // dataTables(window, $);
-    // dataTablesResponsive(window, $);
+
     this.initDatatable();
   }
 
@@ -34,7 +33,7 @@ export class MOTTestSearchDateRangeResults {
       lengthChange: true,
       filter: false,
       searching: true,
-      autoWidth: true,
+      autoWidth: false,
       bSort: false,
       sorting: [[1, 'desc']],
       info: false,
@@ -92,7 +91,10 @@ export class MOTTestSearchDateRangeResults {
     };
 
     if (this.state.data.searchType == 'tester') {
-      this.state.tableOptions.aoColumnDefs.push({ bVisible: false, aTargets: [10] });
+      this.state.tableOptions.columnDefs.push({
+        visible: false,
+        targets: [10],
+      });
     }
 
     this.elements.listMOTs.dataTable(this.state.tableOptions);

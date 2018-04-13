@@ -1,3 +1,4 @@
+import os from 'os';
 import path from 'path';
 import webpack from 'webpack';
 import ConcatPlugin from 'webpack-concat-plugin';
@@ -17,6 +18,7 @@ const config = {
     fonts: path.resolve('src', 'assets', 'fonts'),
     images: path.resolve('src', 'assets', 'img'),
     misc: path.resolve('src', 'assets', 'misc'),
+    mtsPublicAssets: path.join(os.homedir(), 'MOTDEV', 'mot', 'mot-web-frontend', 'public', 'assets'),
   }
 };
 
@@ -85,6 +87,51 @@ const getExtractTextPluginLoaders = () => {
     ]
   })
 };
+
+/**
+ * Get settings for copying files
+ * 
+ * @returns array containing all settings
+ * 
+ * @author Tameem Safi <t.safi@kainos.com>
+ * @since 1.2.2
+ */
+const getCopyWebpackPluginSettings = () => {
+  let copyWebpackPluginSettings = [
+    new CopyWebpackPlugin([
+      {
+        context: path.resolve(config.paths.fonts),
+        from: '**/*',
+        to: '../fonts'
+      },
+      {
+        context: path.resolve(config.paths.images),
+        from: '**/*',
+        to: '../images',
+      },
+      {
+        context: path.resolve(config.paths.misc),
+        from: '**/*',
+        to: '../misc'
+      }
+    ])
+  ];
+
+  // Check environment variable
+  // to copy public assets to mts
+  if(process.env.COPY_TO_MTS) {
+    copyWebpackPluginSettings.push(new CopyWebpackPlugin([
+      {
+        context: path.resolve('public'),
+        from: '**/*',
+        to: config.paths.mtsPublicAssets,
+        force: true,
+      }
+    ]));
+  }
+
+  return copyWebpackPluginSettings;
+}
 
 /**
  * Webpack configuration
@@ -159,22 +206,6 @@ export default {
     new ExtractTextPlugin({
       filename: '../stylesheets/[name].css'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(config.paths.fonts, '**/*'),
-        to: '../fonts',
-        flatten: true
-      },
-      {
-        from: path.resolve(config.paths.images, '**/*'),
-        to: '../images',
-        flatten: true
-      },
-      {
-        from: path.resolve(config.paths.misc, '**/*'),
-        to: '../misc',
-        flatten: true
-      }
-    ])
+    ...getCopyWebpackPluginSettings()
   ]
 };

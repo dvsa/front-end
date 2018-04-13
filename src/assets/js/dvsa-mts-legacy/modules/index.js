@@ -1,5 +1,6 @@
 import { initMOTTestSearchVTSResults } from './mot-test-search-vts-results';
 import { initMOTTestSearchDateRangeResults } from './mot-test-search-date-range-results';
+import { initMotTestSearchByVehichle } from './mot-test-search-by-vehicle';
 
 /**
  * MTS Legacy modules
@@ -10,4 +11,5 @@ import { initMOTTestSearchDateRangeResults } from './mot-test-search-date-range-
 export const initModules = () => {
   initMOTTestSearchVTSResults();
   initMOTTestSearchDateRangeResults();
+  initMotTestSearchByVehichle();
 };

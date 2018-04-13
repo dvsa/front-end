@@ -3,7 +3,7 @@ import 'datatables.net';
 import 'datatables.net-responsive';
 import './../../third-party/';
 
-export class MOTTestSearchVTSResults {
+export class MotTestSearchVTSResults {
   constructor() {
     this.elements = {
       listMOTs: $('#listMOTs'),
@@ -43,7 +43,7 @@ export class MOTTestSearchVTSResults {
       language: { search: 'Filter:' },
       // Sort descending by the 1st column (date/time)
       order: [[1, 'desc']],
-      autoWidth: true,
+      autoWidth: false,
       info: false,
       ajax: this.state.data.ajaxUrl,
       columns: [

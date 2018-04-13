@@ -1,0 +1,24 @@
+.dvsa-mot-tests-compare {
+  background-color: $panel-colour;
+  margin: 0 0 15px 0;
+  @include border-box;
+
+  &__inner {
+    padding: 15px;
+  }
+
+  &__row {
+    margin: 0 -15px;
+    @include clearfix;
+  }
+
+  &__column {
+    width: 50%;
+    padding: 0 15px;
+    float: left;
+  }
+
+  &__input {
+    width: 100%;
+  }
+}

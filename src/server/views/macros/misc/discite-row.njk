@@ -4,6 +4,7 @@
     headingURL='',
     headingTag='h3',
     description='',
+    modules='',
     addToLearningPlan=false,
     removeFromLearningPlan=false,
     headingSize='',
@@ -16,7 +17,8 @@
     workArea='',
     extraModifierClass='',
     dueBy='',
-    canBeBooked=false
+    canBeBooked=false,
+    removeFromLearningPlanURL=''
     )
 %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
@@ -56,9 +58,14 @@
 
         </div>
 
-        {% if description %}
+        {% if description or modules %}
             <div class="discite__desc {% if extraModifierClass %}discite__desc--{{ extraModifierClass }}{% endif %}">
-                {{ description }}
+            {% if description %}
+                <p class="discite__blurb">{{ description }}</p>
+            {% endif %}
+            {% if modules %}
+                <p class="discite__modules">{{ modules }}</p>
+            {% endif %}
             </div>
         {% endif %}
 
@@ -91,6 +98,9 @@
             {% endif %}
             {% if removeFromLearningPlan %}
                 <a href="#">Remove<span class="visuallyhidden"> from learning plan</span></a>
+            {% endif %}
+            {% if removeFromLearningPlanURL %}
+                <a href="{{ removeFromLearningPlanURL }}">Remove<span class="visuallyhidden"> from learning plan</span></a>
             {% endif %}
         </div>
 

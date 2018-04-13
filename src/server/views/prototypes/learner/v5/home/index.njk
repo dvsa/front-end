@@ -194,6 +194,21 @@
                 {% endif %}
 
                 {% if not hasBeenRemoved %}
+
+                {{ components.disciteRow(
+                    name='Digital awareness: digital by default',
+                    headingTag='h3',
+                    description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
+                    headingExtraClass='discite__heading',
+                    headingURL='/prototypes/learner/v5/resource?resourceID=3',
+                    type='Online',
+                    status='In progress',
+                    action='Resume',
+                    removeFromLearningPlanURL='/prototypes/learner/v5/actions?action=removedFromLearningPlan&id=1&status=started',
+                    duration='3 hours 30 minutes',
+                    cost='£Free'
+                ) }}
+
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
@@ -221,6 +236,29 @@
                     </ul>
                 </div>
                 {% endif %}
+
+                <div class="discite__item u-clearfix">
+                    <div class="discite__main">
+                        <a href="/prototypes/learner/v5/resource?resourceID=3">
+                        <h3 class="heading discite__heading">Digital awareness: digital by default</h3></a>
+                    </div>
+                    <div class="discite__properties u-clearfix">
+                        <ul class="discite__property">
+                            <li class="discite__property-item"><span class="visuallyhidden">Type:</span> Online</li>
+                            <li class="discite__property-item"><span class="visuallyhidden">Duration:</span> 3 hours 30 minutes</li>
+                            <li class="discite__property-item"><span class="visuallyhidden">Cost:</span> £Free</li>
+                        </ul>
+                        <div class="discite__status">
+                            <span class="badge badge--info">In progress</span>
+                        </div>
+                    </div>
+                    <div class="discite__desc">
+                        This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.
+                    </div>
+                    <div class="discite__action">
+                        <a href="#">Resume <span class="visuallyhidden">this module</span></a> <a href="/prototypes/learner/v5/actions?action=removedFromLearningPlan&amp;id=1&amp;status=started">Remove <span class="visuallyhidden">from learning plan</span></a>
+                    </div>
+                </div>
 
                 <div class="resource">
                     <ul class="resource__item u-clearfix">

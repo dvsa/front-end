@@ -6,14 +6,13 @@ $module: 'discite';
   position: relative;
   display:block;
   float:none;
-  padding:10px 0;
+  padding: 10px 0;
 
   @include media(desktop) {
     display:inline-block;
     float:left;
-    padding:10px 8px 10px 0;
-    border: 1px solid orange;
-    padding-right: 300px;
+    padding:10px 300px 10px 0;
+    padding-right: 300px !important;
   }
 }
 
@@ -37,10 +36,6 @@ $module: 'discite';
     // div.discite__main container for title and action
     @extend %disciteRowDiv;
 
-    @include media(desktop) {
-      padding-right: 300px;
-    }
-
     @include m('search') {
       @include media(desktop) {
         padding-right: 80px;
@@ -53,28 +48,35 @@ $module: 'discite';
   }
 
   &__desc {
-    // div.discite__info container 150~ish chars of information/descrition
+    // div.discite__info container 150~ish chars of information/description
     @extend %disciteRowDiv;
-
-    @include media(desktop) {
-      padding-right: 300px;
-    }
 
     @include m('search') {
       @include media(desktop) {
         padding-right: 140px;
       }
     }
+
+    p + p {
+      margin-top: 10px;
+    }
+  }
+
+  &__blurb {
+    margin: 0;
+  }
+
+  &__modules {
+    @include core-16;
+    margin: 0;
   }
 
   &__properties {
     // div.discite__properties container for various data about the discite thing
-    // @extend %disciteRowDiv;
     position: relative;
     width:100%;
     clear: both;
     min-height: 50px;
-
 
     @include media(desktop) {
       position: absolute;
@@ -113,11 +115,9 @@ $module: 'discite';
     position: relative;
     width: 50%;
     float: right;
-
     text-align: right;
     padding-right: 0;
     padding-top: 6px;
-    background-color: red;
 
     @include media(desktop) {
       position: absolute;
@@ -127,7 +127,6 @@ $module: 'discite';
       top: 10px;
       right: 0;
       height: 31px;
-      background-color: blue;
     }
   }
 
@@ -143,7 +142,7 @@ $module: 'discite';
       display:block;
       float:none;
       clear: both;
-      padding-right: 300px;
+      // padding-right: 300px;
     }
   }
 

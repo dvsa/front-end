@@ -103,7 +103,7 @@ export class DvsaManualMeta {
       // with delay to allow DOM to update
       setTimeout(() => {
         historySection.historyElement.scrollIntoView(true);
-      }, 500);
+      }, 150);
     });
   };
 

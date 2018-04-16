@@ -19,6 +19,8 @@ const config = {
     images: path.resolve('src', 'assets', 'img'),
     misc: path.resolve('src', 'assets', 'misc'),
     mtsPublicAssets: path.join(os.homedir(), 'MOTDEV', 'mot', 'mot-web-frontend', 'public', 'assets'),
+    manuals3456Assets: path.join(os.homedir(), 'MOTDEV', 'mot-manuals-transformer', 'manuals', 'class3457', 'assets'),
+    manuals12Assets: path.join(os.homedir(), 'MOTDEV', 'mot-manuals-transformer', 'manuals', 'class12', 'assets'),
   }
 };
 
@@ -125,6 +127,30 @@ const getCopyWebpackPluginSettings = () => {
         context: path.resolve('public'),
         from: '**/*',
         to: config.paths.mtsPublicAssets,
+        force: true,
+      }
+    ]));
+  }
+
+  // Check environment variable
+  // to copy public assets to manuals
+  if(process.env.COPY_TO_MANUALS) {
+    // Class 3457
+    copyWebpackPluginSettings.push(new CopyWebpackPlugin([
+      {
+        context: path.resolve('public'),
+        from: '**/*',
+        to: config.paths.manuals3456Assets,
+        force: true,
+      }
+    ]));
+
+    // Class 12
+    copyWebpackPluginSettings.push(new CopyWebpackPlugin([
+      {
+        context: path.resolve('public'),
+        from: '**/*',
+        to: config.paths.manuals12Assets,
         force: true,
       }
     ]));

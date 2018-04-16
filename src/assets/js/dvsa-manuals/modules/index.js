@@ -1,4 +1,5 @@
 import { initManualSmartSurvey } from './manual-smart-survey';
+import { initDvsaManualMeta } from './dvsa-manual-meta';
 
 /**
  * Manuals application modules
@@ -8,4 +9,5 @@ import { initManualSmartSurvey } from './manual-smart-survey';
  */
 export const initModules = () => {
   initManualSmartSurvey();
+  initDvsaManualMeta();
 };

@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'datatables.net';
 import 'datatables.net-responsive';
 
-export class MOTTestSearchDateRangeResults {
+export class MotTestSearchDateRangeResults {
   constructor() {
     this.elements = {
       listMOTs: $('#listMOTs'),

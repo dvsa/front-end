@@ -54,7 +54,7 @@ export class DvsaManualMeta {
   setupStateFromDOM = () => {
     this.elements.showHideLinks.forEach(showHideLinkElement => {
       const targetId = showHideLinkElement.getAttribute(this.attributes.target);
-      if(!targetId) return;
+      if (!targetId) return;
       const openText = showHideLinkElement.getAttribute(this.attributes.openText);
       showHideLinkElement.setAttribute(this.attributes.aria.controls, targetId);
       this.state.historySections.push({
@@ -79,7 +79,7 @@ export class DvsaManualMeta {
   onShowHideLinkClick = event => {
     event.preventDefault();
     const targetId = event.target.getAttribute(this.attributes.target);
-    if(!targetId) return;
+    if (!targetId) return;
     this.updateOpenStateOfHistorySection(targetId, historySection => {
       this.updateDOMBasedOnState();
     });
@@ -96,7 +96,7 @@ export class DvsaManualMeta {
   onTopLinkClick = event => {
     event.preventDefault();
     const targetId = event.target.getAttribute(this.attributes.target);
-    if(!targetId) return;
+    if (!targetId) return;
     this.updateOpenStateOfHistorySection(targetId, historySection => {
       this.updateDOMBasedOnState();
       historySection.historyElement.scrollIntoView(true);
@@ -114,7 +114,7 @@ export class DvsaManualMeta {
    * @since 1.2.3
    */
   updateOpenStateOfHistorySection = (targetId, callback) => {
-    if(!targetId) return;
+    if (!targetId) return;
     this.state.historySections.forEach((historySection, index) => {
       if (historySection.targetId === targetId) {
         this.state.historySections[index].open = !this.state.historySections[index].open;
@@ -133,7 +133,7 @@ export class DvsaManualMeta {
    */
   updateDOMBasedOnState = () => {
     this.state.historySections.forEach(historySection => {
-      if(!historySection.showHideLinkElement || !historySection.historyElement) return;
+      if (!historySection.showHideLinkElement || !historySection.historyElement) return;
       // Change show/hide text
       historySection.showHideLinkElement.textContent = historySection.open ? historySection.openText : historySection.hiddenText;
       // Show/hide history

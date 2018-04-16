@@ -99,7 +99,11 @@ export class DvsaManualMeta {
     if (!targetId) return;
     this.updateOpenStateOfHistorySection(targetId, historySection => {
       this.updateDOMBasedOnState();
-      historySection.historyElement.scrollIntoView(true);
+      // Scroll down to history
+      // with delay to allow DOM to update
+      setTimeout(() => {
+        historySection.historyElement.scrollIntoView(true);
+      }, 500);
     });
   };
 

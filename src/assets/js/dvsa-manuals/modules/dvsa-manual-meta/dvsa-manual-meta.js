@@ -17,6 +17,7 @@ export class DvsaManualMeta {
     this.attributes = {
       target: 'data-target',
       openText: 'data-open-text',
+      hiddenText: 'data-hidden-text',
       aria: {
         controls: 'aria-controls',
         expanded: 'aria-expanded',
@@ -41,6 +42,7 @@ export class DvsaManualMeta {
    */
   init = () => {
     this.setupStateFromDOM();
+    this.updateDOMBasedOnState();
     delegateEvent(document, 'click', `.${this.classnames.linkShowHide}`, this.onShowHideLinkClick);
     delegateEvent(document, 'click', `.${this.classnames.linkTop}`, this.onTopLinkClick);
   };
@@ -56,6 +58,7 @@ export class DvsaManualMeta {
       const targetId = showHideLinkElement.getAttribute(this.attributes.target);
       if (!targetId) return;
       const openText = showHideLinkElement.getAttribute(this.attributes.openText);
+      const hiddenText = showHideLinkElement.getAttribute(this.attributes.hiddenText);
       showHideLinkElement.setAttribute(this.attributes.aria.controls, targetId);
       this.state.historySections.push({
         targetId,
@@ -63,7 +66,7 @@ export class DvsaManualMeta {
         historyElement: document.querySelector(`#${targetId}`),
         open: false,
         openText,
-        hiddenText: showHideLinkElement.textContent,
+        hiddenText,
       });
     });
   };
@@ -98,12 +101,10 @@ export class DvsaManualMeta {
     const targetId = event.target.getAttribute(this.attributes.target);
     if (!targetId) return;
     this.updateOpenStateOfHistorySection(targetId, historySection => {
-      this.updateDOMBasedOnState();
-      // Scroll down to history
-      // with delay to allow DOM to update
-      setTimeout(() => {
+      this.updateDOMBasedOnState(() => {
+        // Scroll down to history
         historySection.historyElement.scrollIntoView(true);
-      }, 150);
+      });
     });
   };
 
@@ -132,14 +133,16 @@ export class DvsaManualMeta {
   /**
    * Updates the DOM based on the state
    *
+   * @param {Function} callback Callback to run after updating DOM has completed
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    * @since 1.2.3
    */
-  updateDOMBasedOnState = () => {
+  updateDOMBasedOnState = callback => {
     this.state.historySections.forEach(historySection => {
       if (!historySection.showHideLinkElement || !historySection.historyElement) return;
       // Change show/hide text
-      historySection.showHideLinkElement.textContent = historySection.open ? historySection.openText : historySection.hiddenText;
+      historySection.showHideLinkElement.innerHTML = historySection.open ? historySection.openText : historySection.hiddenText;
       // Show/hide history
       toggleClass(historySection.historyElement, this.classnames.openHistory, historySection.open);
       // Update aria
@@ -150,5 +153,9 @@ export class DvsaManualMeta {
         historySection.historyElement.setAttribute(this.attributes.aria.hidden, 'true');
       }
     });
+
+    if (typeof callback === 'function') {
+      callback();
+    }
   };
 }

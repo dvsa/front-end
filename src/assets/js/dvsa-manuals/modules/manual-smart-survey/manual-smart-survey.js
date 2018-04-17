@@ -58,11 +58,13 @@ export class ManualSmartSurvey {
    */
   setupAllIframes = () => {
     this.elements.smartSurveyElements.forEach(smartSurveyElement => {
+      let heading = smartSurveyElement.getAttribute(this.attributes.heading).trim();
+      heading = heading.replace(/\n/g, '');
       this.state.smartsurveys.push({
         attached: false,
         smartSurveyElement,
         src: smartSurveyElement.getAttribute(this.attributes.iframeSrc),
-        headingHash: md5(smartSurveyElement.getAttribute(this.attributes.heading).trim()),
+        headingHash: md5(heading),
       });
     });
     this.updateAllIframes();
@@ -102,6 +104,7 @@ export class ManualSmartSurvey {
   onPostMessageReceived = event => {
     if (!event || !event.data) return;
     const dataParsed = JSON.parse(event.data);
+    console.log('data', dataParsed);
     if (!dataParsed.event_id || !dataParsed.value) return;
     if (dataParsed.event_id === this.events.smartSurveyRadioClicked && dataParsed.value === 'No') {
       const headingHash = md5(dataParsed.heading);

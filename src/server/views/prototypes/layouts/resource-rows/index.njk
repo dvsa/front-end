@@ -499,6 +499,39 @@
 
         {% call components.columnFull() %}
 
+            {{ components.heading(text='When no modules (added for visual reference)', tag='h3', size='small', extraClass='') }}
+
+            <table class="u-space-b30 table--top">
+                <thead>
+                    <tr>
+                        <th class="table--fix-first">Course</th>
+                        <th>Type</th>
+                        <th>Duration</th>
+                        <th>Completion date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="/prototypes/learner/v4/resource?resourceID=15">Basic fire safety</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>{% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Disability Awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>12 Aug 2017</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Commercial awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>18 Mar 2018</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <table class="u-space-b30 table--top">
                 <thead>
                 <tr>
@@ -509,26 +542,99 @@
                 </tr>
                 </thead>
                 <tbody>
-                {% if fireTrainingComplete %}
                     <tr>
                         <td><a href="/prototypes/learner/v4/resource?resourceID=15">Basic fire safety</a></td>
                         <td>Online</td>
                         <td>1 hour</td>
                         <td>{% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</td>
                     </tr>
-                {% endif %}
-                <tr>
-                    <td><a href="#">Disability Awareness</a></td>
-                    <td>Online</td>
-                    <td>1 hour</td>
-                    <td>12 Aug 2017</td>
-                </tr>
-                <tr>
-                    <td><a href="#">Health and Safety Awareness</a></td>
-                    <td>Online</td>
-                    <td>1 hour 30 minutes</td>
-                    <td>10 Jan 2017</td>
-                </tr>
+                    <tr>
+                        <td><a href="#">Disability Awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>12 Aug 2017</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Health and Safety Awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour 30 minutes</td>
+                        <td>10 Jan 2017</td>
+                    </tr>
+                    <tr class="tr--no-border">
+                        <td><a href="#">Commercial awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>3 of 6 modules completed</td>
+                    </tr>
+                    <tr class="tr--no-border tr--cozy">
+                        <td>Commercial awareness: manager's guide</td>
+                        <td>Online</td>
+                        <td>5 minutes</td>
+                        <td>18th Mar 2018</td>
+                    </tr>
+                    <tr class="tr--no-border tr--cozy">
+                        <td>Commercial awareness: summary</td>
+                        <td>Online</td>
+                        <td>8 minutes</td>
+                        <td>18th Mar 2018</td>
+                    </tr>
+                    <tr class="tr--cozy">
+                        <td>How commercially aware are you?</td>
+                        <td>Video</td>
+                        <td>5 minutes</td>
+                        <td>18th Mar 2018</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {{ components.heading(text='When not the last item', tag='h3', size='small', extraClass='') }}
+
+            <table class="u-space-b30 table--top">
+                <thead>
+                    <tr>
+                        <th class="table--fix-first">Course</th>
+                        <th>Type</th>
+                        <th>Duration</th>
+                        <th>Completion date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="/prototypes/learner/v4/resource?resourceID=15">Basic fire safety</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>{% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Disability Awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>12 Aug 2017</td>
+                    </tr>
+                    <tr class="tr--no-border ">
+                        <td><a href="#">Commercial awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>2 of 6 modules completed</td>
+                    </tr>
+                    <tr class="tr--no-border tr--cozy">
+                        <td>Commercial awareness: manager's guide</td>
+                        <td>Online</td>
+                        <td>5 minutes</td>
+                        <td>18th Mar 2018</td>
+                    </tr>
+                    <tr class="tr--cozy">
+                        <td>Commercial awareness: summary</td>
+                        <td>Online</td>
+                        <td>8 minutes</td>
+                        <td>18th Mar 2018</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Health and Safety Awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour 30 minutes</td>
+                        <td>10 Jan 2017</td>
+                    </tr>
                 </tbody>
             </table>
 

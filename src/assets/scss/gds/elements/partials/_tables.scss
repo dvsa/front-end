@@ -55,3 +55,21 @@ table {
     padding: em(12, 16) em(20, 16) em(9, 16) 0;
   }
 }
+
+// for <Tr> on linked learning record items for modular courses
+table {
+
+  .tr--no-border {
+    td {
+      border-bottom: 0;
+    }
+  }
+
+  .tr--cozy {
+    td {
+      // padding: .5em 1.05263em .4em 0;
+      // padding: em(12, 19) em(20, 19) em(9, 19) 0;
+      padding: em(6, 19) em(20, 19) em(4.5, 19) 0;
+    }
+  }
+}

@@ -83,7 +83,7 @@ export class DvsaManualMeta {
     event.preventDefault();
     const targetId = event.target.getAttribute(this.attributes.target);
     if (!targetId) return;
-    this.updateOpenStateOfHistorySection(targetId, historySection => {
+    this.updateOpenStateOfHistorySection(targetId, false, historySection => {
       this.updateDOMBasedOnState();
     });
   };

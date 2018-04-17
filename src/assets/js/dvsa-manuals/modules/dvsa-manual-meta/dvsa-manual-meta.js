@@ -100,7 +100,7 @@ export class DvsaManualMeta {
     event.preventDefault();
     const targetId = event.target.getAttribute(this.attributes.target);
     if (!targetId) return;
-    this.updateOpenStateOfHistorySection(targetId, historySection => {
+    this.updateOpenStateOfHistorySection(targetId, true, historySection => {
       this.updateDOMBasedOnState(() => {
         // Scroll down to history
         historySection.historyElement.scrollIntoView(true);
@@ -118,11 +118,11 @@ export class DvsaManualMeta {
    * @author Tameem Safi <t.safi@kainos.com>
    * @since 1.2.3
    */
-  updateOpenStateOfHistorySection = (targetId, callback) => {
+  updateOpenStateOfHistorySection = (targetId, forceOpen = false, callback) => {
     if (!targetId) return;
     this.state.historySections.forEach((historySection, index) => {
       if (historySection.targetId === targetId) {
-        this.state.historySections[index].open = !this.state.historySections[index].open;
+        this.state.historySections[index].open = forceOpen ? true : !this.state.historySections[index].open;
         if (typeof callback === 'function') {
           callback(historySection);
         }

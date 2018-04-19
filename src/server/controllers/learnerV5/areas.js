@@ -134,3 +134,16 @@ export function otherAreasPost(req, res) {
 
   return res.redirect('/prototypes/learner/v5/your-profile');
 }
+
+// Other areas
+export function interestsGet(req, res) {
+  let viewData, professionSelectOptions;
+
+  professionSelectOptions = generalData.allProfessions;
+
+  viewData = {
+    professionSelectOptions,
+  };
+
+  return res.render('prototypes/learner/v5/area-of-work/interests', viewData);
+}

@@ -1,0 +1,83 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Areas of interest - Learning Platform for Government' %}
+
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v5' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v5/' %}
+{% set homePath = '/prototypes/learner/v5/' %}
+
+{% set professionSelectOptions = professionSelectOptions if professionSelectOptions %}
+{% set registrationJob2Error = registrationJob2Error if registrationJob2Error %}
+{% set registrationProfessionError = registrationProfessionError if registrationProfessionError %}
+{% set profession = profession if profession %}
+
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes' %}
+{% else %}
+    {% set buttonText = 'Continue' %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Areas of interest') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p class="lede">Select any other interests you have. This will help tailor your suggested learning.</p>
+
+            {% call components.formElement(name='registerProfession', method='POST', action="#") %}
+
+                <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
+
+                    {{ components.heading(text='Work areas that interest you', tag='h2', size='medium', extraClass='') }}
+
+                    {% for item in professionSelectOptions %}
+
+                        {% if item.value in profession %}
+                            {% set checked = true %}
+                        {% else %}
+                            {% set checked = '' %}
+                        {% endif %}
+                        {{ components.checkbox(text=item.text, value=item.value, id='profession'+item.value,name='profession', compareTo=item.value, isChecked=checked) }}
+                    {% endfor %}
+
+                </fieldset>
+
+                <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
+
+                    {{ components.heading(text='Other professional areas that interest you', tag='h2', size='medium', extraClass='') }}
+
+                    <div class="multiple-choice">
+                        <input id="professionLeadership" type="checkbox" name="leadership" value="2">
+                        <label for="professionLeadership">Leadership</label>
+                    </div>
+
+                    <div class="multiple-choice">
+                        <input id="professionContract" type="checkbox" name="contract" value="2">
+                        <label for="professionContract">Contract management</label>
+                    </div>
+
+                </fieldset>
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v5">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+

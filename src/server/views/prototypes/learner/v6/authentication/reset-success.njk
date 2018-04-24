@@ -1,0 +1,31 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Password reset complete - Learning Platform for Government' %}
+
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v6' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v6/' %}
+{% set homePath = '/prototypes/learner/v6/' %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">Password reset complete</h1>
+        <p class="font-medium">Your password has been changed</p>
+    </div>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">What happens next?</h2>
+
+            <p>We have sent you a confirmation email.</p>
+
+            <p>You can now <a href="/prototypes/learner/v6">sign into the Learning Platform for Government</a> with your new password.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

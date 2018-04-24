@@ -7,3 +7,4 @@ export * from './booking';
 export * from './actions';
 export * from './areas';
 export * from './scorms';
+export * from './authentication';

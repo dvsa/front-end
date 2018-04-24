@@ -627,6 +627,16 @@ router.post('/prototypes/learner/v6/booking/payment', learnerV6Controller.bookin
 router.get('/prototypes/learner/v6/booking/confirm', learnerV6Controller.bookingConfirmGet);
 router.get('/prototypes/learner/v6/booking/complete', learnerV6Controller.bookingCompleteGet);
 
+//******************************************************
+//      authentication, forgotten/reset password etd
+//******************************************************
+router.get('/prototypes/learner/v6/reset-password', learnerV6Controller.resetPasswordGet);
+router.post('/prototypes/learner/v6/reset-password', learnerV6Controller.resetPasswordPost);
+router.get('/prototypes/learner/v6/email-sent', learnerV6Controller.emailSentGet);
+router.get('/prototypes/learner/v6/enter-new-password', learnerV6Controller.enterNewPasswordGet);
+router.post('/prototypes/learner/v6/enter-new-password', learnerV6Controller.enterNewPasswordPost);
+router.get('/prototypes/learner/v6/reset-success', learnerV6Controller.resetSuccessGet);
+
 // SCORMS fire safety
 router.get('/prototypes/learner/v6/scorms/basic-fire-safety', learnerV6Controller.basicFireSafetyGet);
 router.post('/prototypes/learner/v6/scorms/basic-fire-safety', learnerV6Controller.basicFireSafetyPost);

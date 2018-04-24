@@ -19,7 +19,8 @@
     dueBy='',
     canBeBooked=false,
     removeFromLearningPlanURL='',
-    leaveFeedback=''
+    leaveFeedback='',
+    ignoreURL=''
     )
 %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
@@ -95,7 +96,7 @@
                 <span class="meta">Complete the previous module first</span>
             {% endif %}
             {% if action == 'Ignore' %}
-                <a href="#" class="font-xsmall">I do not want to leave feedback</a>
+                <a href="{{ ignoreURL }}" class="font-xsmall">I do not want to leave feedback</a>
             {% endif %}
             {% if action == 'Book' %}
                 <a href="#">Book<span class="visuallyhidden"> this module</span></a>

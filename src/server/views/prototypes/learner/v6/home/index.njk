@@ -35,9 +35,9 @@
                         {{ components.heading(text='Your learning', tag='h1', size='large', extraClass='heading--flush') }}
 
                         {% if fireTrainingComplete %}
-                            <p class="u-space-b5">You can <a href="/prototypes/learner/v6/learning-record">leave feedback on 3 items</a>.</p>
+                            <p class="u-space-b5">You can <a href="/prototypes/learner/v6/feedback">leave feedback on 3 items</a>.</p>
                         {% else %}
-                            <p class="u-space-b5">You can <a href="/prototypes/learner/v6/learning-record">leave feedback on 2 items</a>.</p>
+                            <p class="u-space-b5">You can <a href="/prototypes/learner/v6/feedback">leave feedback on 2 items</a>.</p>
                         {% endif %}
 
                     {%- endcall %}
@@ -77,7 +77,6 @@
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
-
 
             {% if hasLeftFeedback %}
 

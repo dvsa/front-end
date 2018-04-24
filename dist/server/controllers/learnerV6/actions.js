@@ -59,7 +59,8 @@ function actionsGet(req, res) {
   // hasLeftFeedback from feedback page
   if (action === 'hasLeftFeedback') {
     req.session.hasLeftFeedback = true;
-    redirectPath = '/prototypes/learner/v6/learning-record';
+    // redirectPath = '/prototypes/learner/v6/learning-record';
+    redirectPath = '/prototypes/learner/v6/home';
   }
 
   // work area/job title has been updated

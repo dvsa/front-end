@@ -30,7 +30,7 @@ export function homeGet(req, res) {
   addedToLearningPlan = req.session.addedToLearningPlan;
   removedFromLearningPlan = req.session.removedFromLearningPlan;
 
-  console.log('removedFromLearningPlanWarning = ' + removedFromLearningPlanWarning);
+  // console.log('removedFromLearningPlanWarning = ' + removedFromLearningPlanWarning);
 
   if (addedToLearningPlan) {
     hasBeenAdded = true;

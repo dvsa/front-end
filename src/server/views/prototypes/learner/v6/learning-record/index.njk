@@ -8,71 +8,11 @@
 {% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
 {#{% set fireTrainingCompleteBanner = fireTrainingCompleteBanner if fireTrainingCompleteBanner %}#}
 {% set trainingEndDate = trainingEndDate if trainingEndDate %}
-{% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
+{#{% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}#}
 
 {% block content %}
 
     {{ components.pageHeading('Learning record') }}
-
-    {% call components.gridRow() %}
-
-        {% call components.columnFull() %}
-
-            {% if hasLeftFeedback %}
-
-                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type='confirmation')}}
-
-            {% endif %}
-
-            {% if fireTrainingComplete %}
-                {{ components.banner(mainText='Leave feedback on completed courses', secondaryText='You can <a href="/prototypes/learner/v6/feedback">leave feedback on two completed courses</a>. Leaving feedback helps us improve our service.', type="info")}}
-            {% else %}
-                {{ components.banner(mainText='Leave feedback on completed courses', secondaryText='You can <a href="/prototypes/learner/v6/feedback">leave feedback on three completed courses</a>. Leaving feedback helps us improve our service.', type="info")}}
-            {% endif %}
-
-
-           {# {% if fireTrainingComplete %}
-                <div class="resource resource--feedback">
-                    <ul class="resource__item u-clearfix">
-                        <li class="resource__long">
-                            <a class="" href="/prototypes/learner/v6/resource?resourceID=15">Basic fire safety</a>
-                        </li>
-                        <li class="resource__leave">
-                            <a href="/prototypes/learner/v6/feedback/formal">Leave feedback</a>
-                            <a href="#" class="resource__cancel-feedback" title="Cancel, I don't want to leave any feedback.">Cancel<span class="visuallyhidden">, I don't want to leave feedback</span></a>
-                        </li>
-                    </ul>
-                </div>
-
-            {% endif %}
-
-            <div class="resource resource--feedback">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__long">
-                        <a class="" href="/prototypes/learner/v6/resource?resourceID=10">Andrew Shatte – Resilience</a>
-                    </li>
-                    <li class="resource__leave">
-                        <a href="/prototypes/learner/v6/feedback/informal">Leave feedback</a>
-                        <a href="#" class="resource__cancel-feedback" title="Cancel, I don't want to leave any feedback.">Cancel<span class="visuallyhidden">, I don't want to leave feedback</span></a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="resource resource--feedback">
-                <ul class="resource__item u-clearfix">
-                    <li class="resource__long">
-                        <a  href="#">Commercial Cycle 1: setting the direction. Extended course name to test wrapping of longer titles.</a>
-                    </li>
-                    <li class="resource__leave">
-                        <a href="/prototypes/learner/v6/feedback/formal">Leave feedback</a>
-                        <a href="#" class="resource__cancel-feedback">Cancel <span class="visuallyhidden">I don't want to leave feedback</span></a>
-                    </li>
-                </ul>
-            </div>#}
-
-
-        {%- endcall %}
-    {%- endcall %}
 
     {% call components.gridRow() %}
 

@@ -1,9 +1,9 @@
 {% extends 'layouts/default.layout.njk' %}
 
 {% set pageTitle = 'Learning record - Learning Platform for Government' %}
-{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v5' %}
-{% set signOutPath = '/prototypes/learner/v5/' %}
-{% set homePath = '/prototypes/learner/v5/home' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v6' %}
+{% set signOutPath = '/prototypes/learner/v6/' %}
+{% set homePath = '/prototypes/learner/v6/home' %}
 {% set hideHomeStars = hideHomeStars if hideHomeStars %}
 {% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
 {#{% set fireTrainingCompleteBanner = fireTrainingCompleteBanner if fireTrainingCompleteBanner %}#}
@@ -25,9 +25,9 @@
             {% endif %}
 
             {% if fireTrainingComplete %}
-                {{ components.banner(mainText='Leave feedback on completed courses', secondaryText='You can <a href="/prototypes/learner/v5/feedback">leave feedback on two completed courses</a>. Leaving feedback helps us improve our service.', type="info")}}
+                {{ components.banner(mainText='Leave feedback on completed courses', secondaryText='You can <a href="/prototypes/learner/v6/feedback">leave feedback on two completed courses</a>. Leaving feedback helps us improve our service.', type="info")}}
             {% else %}
-                {{ components.banner(mainText='Leave feedback on completed courses', secondaryText='You can <a href="/prototypes/learner/v5/feedback">leave feedback on three completed courses</a>. Leaving feedback helps us improve our service.', type="info")}}
+                {{ components.banner(mainText='Leave feedback on completed courses', secondaryText='You can <a href="/prototypes/learner/v6/feedback">leave feedback on three completed courses</a>. Leaving feedback helps us improve our service.', type="info")}}
             {% endif %}
 
 
@@ -35,10 +35,10 @@
                 <div class="resource resource--feedback">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__long">
-                            <a class="" href="/prototypes/learner/v5/resource?resourceID=15">Basic fire safety</a>
+                            <a class="" href="/prototypes/learner/v6/resource?resourceID=15">Basic fire safety</a>
                         </li>
                         <li class="resource__leave">
-                            <a href="/prototypes/learner/v5/feedback/formal">Leave feedback</a>
+                            <a href="/prototypes/learner/v6/feedback/formal">Leave feedback</a>
                             <a href="#" class="resource__cancel-feedback" title="Cancel, I don't want to leave any feedback.">Cancel<span class="visuallyhidden">, I don't want to leave feedback</span></a>
                         </li>
                     </ul>
@@ -49,10 +49,10 @@
             <div class="resource resource--feedback">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__long">
-                        <a class="" href="/prototypes/learner/v5/resource?resourceID=10">Andrew Shatte – Resilience</a>
+                        <a class="" href="/prototypes/learner/v6/resource?resourceID=10">Andrew Shatte – Resilience</a>
                     </li>
                     <li class="resource__leave">
-                        <a href="/prototypes/learner/v5/feedback/informal">Leave feedback</a>
+                        <a href="/prototypes/learner/v6/feedback/informal">Leave feedback</a>
                         <a href="#" class="resource__cancel-feedback" title="Cancel, I don't want to leave any feedback.">Cancel<span class="visuallyhidden">, I don't want to leave feedback</span></a>
                     </li>
                 </ul>
@@ -64,7 +64,7 @@
                         <a  href="#">Commercial Cycle 1: setting the direction. Extended course name to test wrapping of longer titles.</a>
                     </li>
                     <li class="resource__leave">
-                        <a href="/prototypes/learner/v5/feedback/formal">Leave feedback</a>
+                        <a href="/prototypes/learner/v6/feedback/formal">Leave feedback</a>
                         <a href="#" class="resource__cancel-feedback">Cancel <span class="visuallyhidden">I don't want to leave feedback</span></a>
                     </li>
                 </ul>
@@ -91,7 +91,7 @@
                 <tbody>
                     {% if fireTrainingComplete %}
                         <tr>
-                            <td><a href="/prototypes/learner/v5/resource?resourceID=15">Basic fire safety</a></td>
+                            <td><a href="/prototypes/learner/v6/resource?resourceID=15">Basic fire safety</a></td>
                             <td>Online</td>
                             <td>1 hour</td>
                             <td>{% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</td>

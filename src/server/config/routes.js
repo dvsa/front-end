@@ -9,6 +9,7 @@ import * as learnerV2Controller from './../controllers/learnerV2';
 import * as learnerV3Controller from './../controllers/learnerV3';
 import * as learnerV4Controller from './../controllers/learnerV4';
 import * as learnerV5Controller from './../controllers/learnerV5';
+import * as learnerV6Controller from './../controllers/learnerV6';
 // import
 
 const router = Router();
@@ -494,6 +495,112 @@ router.get('/prototypes/learner/v5/scorms/basic-fire-safety', learnerV5Controlle
 router.post('/prototypes/learner/v5/scorms/basic-fire-safety', learnerV5Controller.basicFireSafetyPost);
 // scorm done
 router.get('/prototypes/learner/v5/scorms/basic-fire-safety/complete', learnerV5Controller.scormCompleteGet);
+
+//******************************************************
+//
+//      v6 end-to-end learner journey custom routes
+//
+//******************************************************
+// learner config
+
+router.get('/prototypes/learner/v6/config', learnerV6Controller.configGet);
+router.post('/prototypes/learner/v6/config', learnerV6Controller.configPost);
+
+//******************************************************
+//      Various smaller sections
+//******************************************************
+// start
+router.get('/prototypes/learner/v6', learnerV6Controller.indexGet);
+router.post('/prototypes/learner/v6', learnerV6Controller.indexPost);
+// home
+router.get('/prototypes/learner/v6/home', learnerV6Controller.homeGet);
+// router.post('/prototypes/learner/v6/home', learnerV6Controller.homePost);
+
+// profile
+router.get('/prototypes/learner/v6/your-profile', learnerV6Controller.profileGet);
+// planned learning
+router.get('/prototypes/learner/v6/learning-plan', learnerV6Controller.plannedGet);
+// learning record
+router.get('/prototypes/learner/v6/learning-record', learnerV6Controller.recordGet);
+// suggested learning
+router.get('/prototypes/learner/v6/suggested-learning', learnerV6Controller.suggestedGet);
+
+// search
+router.get('/prototypes/learner/v6/search', learnerV6Controller.searchGet);
+router.post('/prototypes/learner/v6/search', learnerV6Controller.searchPost);
+
+// feedback
+router.get('/prototypes/learner/v6/feedback', learnerV6Controller.feedbackGet);
+router.post('/prototypes/learner/v6/feedback', learnerV6Controller.feedbackPost);
+
+// edit areas of work with levels
+router.get('/prototypes/learner/v6/your-profile/area-of-work', learnerV6Controller.areasGet);
+router.post('/prototypes/learner/v6/your-profile/area-of-work', learnerV6Controller.areasPost);
+
+router.get('/prototypes/learner/v6/your-profile/area-of-work/levels', learnerV6Controller.areasLevelsGet);
+router.post('/prototypes/learner/v6/your-profile/area-of-work/levels', learnerV6Controller.areasLevelsPost);
+
+router.get('/prototypes/learner/v6/your-profile/interests', learnerV6Controller.interestsGet);
+
+router.get('/prototypes/learner/v6/your-profile/area-of-work/joined-levels', learnerV6Controller.areasJoinedLevelsGet);
+router.post('/prototypes/learner/v6/your-profile/area-of-work/joined-levels', learnerV6Controller.areasJoinedLevelsPost);
+
+router.get('/prototypes/learner/v6/your-profile/other-areas-of-work', learnerV6Controller.otherAreasGet);
+router.post('/prototypes/learner/v6/your-profile/other-areas-of-work', learnerV6Controller.otherAreasPost);
+
+// Actions
+router.get('/prototypes/learner/v6/actions', learnerV6Controller.actionsGet);
+router.post('/prototypes/learner/v6/actions', learnerV6Controller.actionsPost);
+
+//******************************************************
+//      Registration stuff
+//******************************************************
+// registration, email
+router.get('/prototypes/learner/v6/registration', learnerV6Controller.registerEmailGet);
+router.post('/prototypes/learner/v6/registration', learnerV6Controller.registerEmailPost);
+// registration, name
+router.get('/prototypes/learner/v6/registration/personal-details', learnerV6Controller.registerPersonalGet);
+router.post('/prototypes/learner/v6/registration/personal-details', learnerV6Controller.registerPersonalPost);
+
+// registration, job, part 1, department
+router.get('/prototypes/learner/v6/registration/department', learnerV6Controller.registerDepartmentGet);
+router.post('/prototypes/learner/v6/registration/department', learnerV6Controller.registerDepartmentPost);
+// registration, job, part 2, profession
+router.get('/prototypes/learner/v6/registration/area-of-work', learnerV6Controller.registerAreaGet);
+router.post('/prototypes/learner/v6/registration/area-of-work', learnerV6Controller.registerAreaPost);
+// registration, job, part 3, grade
+router.get('/prototypes/learner/v6/registration/grade', learnerV6Controller.registerGradeGet);
+router.post('/prototypes/learner/v6/registration/grade', learnerV6Controller.registerGradePost);
+
+// registration, password
+router.get('/prototypes/learner/v6/registration/password', learnerV6Controller.registerPasswordGet);
+router.post('/prototypes/learner/v6/registration/password', learnerV6Controller.registerPasswordPost);
+// registration, review
+router.get('/prototypes/learner/v6/registration/review', learnerV6Controller.registerReviewGet);
+router.post('/prototypes/learner/v6/registration/review', learnerV6Controller.registerReviewPost);
+// registration, complete
+router.get('/prototypes/learner/v6/registration/complete', learnerV6Controller.registerCompleteGet);
+// router.post('/prototypes/learner/v6/registration/complete', learnerV6Controller.registerCompletePost);
+
+// registration, complete
+router.get('/prototypes/learner/v6/resource', learnerV6Controller.resourceGet);
+router.post('/prototypes/learner/v6/resource', learnerV6Controller.resourcePost);
+
+//******************************************************
+//      Booking stuff
+//******************************************************
+router.get('/prototypes/learner/v6/booking', learnerV6Controller.bookingDateGet);
+router.post('/prototypes/learner/v6/booking', learnerV6Controller.bookingDatePost);
+router.get('/prototypes/learner/v6/booking/payment', learnerV6Controller.bookingPaymentGet);
+router.post('/prototypes/learner/v6/booking/payment', learnerV6Controller.bookingPaymentPost);
+router.get('/prototypes/learner/v6/booking/confirm', learnerV6Controller.bookingConfirmGet);
+router.get('/prototypes/learner/v6/booking/complete', learnerV6Controller.bookingCompleteGet);
+
+// SCORMS fire safety
+router.get('/prototypes/learner/v6/scorms/basic-fire-safety', learnerV6Controller.basicFireSafetyGet);
+router.post('/prototypes/learner/v6/scorms/basic-fire-safety', learnerV6Controller.basicFireSafetyPost);
+// scorm done
+router.get('/prototypes/learner/v6/scorms/basic-fire-safety/complete', learnerV6Controller.scormCompleteGet);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

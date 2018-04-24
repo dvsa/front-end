@@ -18,7 +18,8 @@
     extraModifierClass='',
     dueBy='',
     canBeBooked=false,
-    removeFromLearningPlanURL=''
+    removeFromLearningPlanURL='',
+    leaveFeedback=''
     )
 %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
@@ -55,6 +56,9 @@
             {%  if status %}
                 <div class="discite__status"><span class="badge badge--info ">{{ status }}</span></div>
             {% endif %}
+            {%  if leaveFeedback %}
+                <div class="discite__status"><a class="" href="{{ leaveFeedback }}">Leave feedback</a></div>
+            {% endif %}
 
         </div>
 
@@ -89,6 +93,9 @@
             {% endif %}
             {% if action == 'invalid' %}
                 <span class="meta">Complete the previous module first</span>
+            {% endif %}
+            {% if action == 'Ignore' %}
+                <a href="#" class="font-xsmall">I do not want to leave feedback</a>
             {% endif %}
             {% if action == 'Book' %}
                 <a href="#">Book<span class="visuallyhidden"> this module</span></a>

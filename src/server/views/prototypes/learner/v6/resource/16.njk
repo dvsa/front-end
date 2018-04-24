@@ -1,0 +1,136 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Classroom training - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v6' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v6/' %}
+{% set homePath = '/prototypes/learner/v6/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Managing contractors') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. It is a foundation product in the commercial professions curriculum. </p>
+
+        <p>You'll find out about the key features of contract management, monitoring mechanisms and the contract management cycle. Other issues covered include performance management, good housekeeping, using subject matter experts, contract failure and remedies, and exiting or terminating contracts.</p>
+
+        <p>The day is highly participative and involves case studies and group exercises. This learning supports the:</p>
+
+        <ul>
+            <li>'Achieving commercial outcomes' competency indicators in the civil service competency framework</li>
+            <li>'Contract and supplier management' area in the procurement profession skills and competency framework</li>
+        </ul>
+
+        {{ components.heading(text='Learning outcomes', size='medium') }}
+
+        <p>On completing this learning, you'll be able to:</p>
+
+        <ul class="list-bullet u-space-b30">
+            <li>Explain the key features of contract management</li>
+            <li>Ensure contracts continue to meet organisational needs</li>
+            <li>Build effective supplier relationships</li>
+            <li>Assess suppliers using KPI's and deal with disputes positively</li>
+            <li>Understand the importance of negotiation</li>
+            <li>Understand change control, governance, risk management and how to exit and terminate contracts</li>
+            <li>Understand how intellectual property rights and assets can affect a contract</li>
+        </ul>
+
+    {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+        {% call components.formGroup() %}
+            {{ components.button(text='Book this course', start=false, group=true, url='/prototypes/learner/v6/booking/')}}
+        {%- endcall %}
+
+        <p>
+            <a href="/prototypes/learner/v6/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+        </p>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small">Key information</h2>
+
+            <table class="table-simple table--top">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                <tr>
+                    <th>Course type</th>
+                    <td>Classroom</td>
+                </tr>
+                <tr>
+                    <th>Level</th>
+                    <td>Administrative Assistant to Grade 6</td>
+                </tr>
+                <tr>
+                    <th>Key area</th>
+                    <td>Leadership</td>
+                </tr>
+                <tr>
+                    <th>Duration</th>
+                    <td>1 day</td>
+                </tr>
+                <tr>
+                    <th>Product code</th>
+                    <td>CSMC</td>
+                </tr>
+                <tr>
+                    <th>Cost</th>
+                    <td>£238 (ex VAT)</td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="u-space-b30"><a href="#" class="font-xsmall">See cost for group bookings</a> </p>
+
+            <h2 class="heading-small">Availability</h2>
+
+            <table class="table-simple table--top">
+                <caption class="visuallyhidden">Course availability</caption>
+                <tbody>
+                <tr>
+                    <th>Next date</th>
+                    <td>10 April 2018</td>
+                </tr>
+                <tr>
+                    <th>Places remaining</th>
+                    <td>12/20</td>
+                </tr>
+                <tr>
+                    <th>Location</th>
+                    <td>Islington, London</td>
+                </tr>
+                </tbody>
+            </table>
+            <p class="u-space-b30"><a href="#" class="font-xsmall">See more available dates</a> </p>
+
+            <h2 class="heading-small">Pre-learning</h2>
+            <ul class="">
+                <li><a href="#">Case study</a> </li>
+                <li><a href="#">MPA review (pre-reading)</a> </li>
+            </ul>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small heading--flush">User rating</h2>
+                {{ components.starRating(rating='76%', total='104') }}
+            {% endif %}
+
+        </aside>
+
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+
+{% endblock %}

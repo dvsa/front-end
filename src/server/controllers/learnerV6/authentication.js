@@ -1,9 +1,14 @@
-import { validateEmail } from './validation-functions';
+import { validateEmail, validateWord, isPassword } from './validation-functions';
 
 // Reset password GET, collect users email
 export function resetPasswordGet(req, res) {
-  let viewData;
-  viewData = {};
+  let viewData, emailError;
+
+  emailError = req.session.emailError;
+
+  viewData = {
+    emailError,
+  };
   return res.render('prototypes/learner/v6/authentication/reset-password', viewData);
 }
 
@@ -15,6 +20,7 @@ export function resetPasswordPost(req, res) {
   if (validateEmail(email)) {
     redirectPath = '/prototypes/learner/v6/email-sent';
   } else {
+    req.session.emailError = true;
     redirectPath = '/prototypes/learner/v6/reset-password';
   }
 
@@ -30,20 +36,56 @@ export function emailSentGet(req, res) {
 
 // enter new password
 export function enterNewPasswordGet(req, res) {
-  let viewData;
-  viewData = {};
+  let viewData, passwordError, passwordErrorTopMessage, passwordErrorInputMessageOne, passwordErrorInputMessageTwo;
+
+  passwordError = req.session.passwordError;
+  passwordErrorTopMessage = req.session.passwordErrorTopMessage;
+  passwordErrorInputMessageOne = req.session.passwordErrorInputMessageOne;
+  passwordErrorInputMessageTwo = req.session.passwordErrorInputMessageTwo;
+
+  // reset
+  req.session.passwordError = null;
+  req.session.passwordErrorTopMessage = null;
+  req.session.passwordErrorInputMessageOne = null;
+  req.session.passwordErrorInputMessageTwo = null;
+
+  viewData = {
+    passwordError,
+    passwordErrorTopMessage,
+    passwordErrorInputMessageOne,
+    passwordErrorInputMessageTwo,
+  };
   return res.render('prototypes/learner/v6/authentication/enter-new-password', viewData);
 }
 
 // Reset password POST
 export function enterNewPasswordPost(req, res) {
   const { newPassword, confirmNewPassword } = req.body;
-  let redirectPath;
+  let redirectPath, passwordError, passwordErrorTopMessage, passwordErrorInputMessageOne, passwordErrorInputMessageTwo;
 
-  if (newPassword.length > 8 && newPassword == confirmNewPassword) {
-    redirectPath = '/prototypes/learner/v6/reset-success';
-  } else {
+  if (!isPassword(newPassword)) {
+    passwordError = true;
+    passwordErrorTopMessage = 'Password is invalid';
+    passwordErrorInputMessageOne = 'Enter a valid password';
     redirectPath = '/prototypes/learner/v6/enter-new-password';
+  }
+
+  if (newPassword !== confirmNewPassword) {
+    passwordError = true;
+    passwordErrorTopMessage = 'Passwords do not match';
+    passwordErrorInputMessageTwo = 'Enter a matching password';
+    redirectPath = '/prototypes/learner/v6/enter-new-password';
+  }
+
+  if (passwordError === true) {
+    req.session.passwordError = true;
+    req.session.passwordErrorTopMessage = passwordErrorTopMessage;
+    req.session.passwordErrorInputMessageOne = passwordErrorInputMessageOne;
+    req.session.passwordErrorInputMessageTwo = passwordErrorInputMessageTwo;
+    redirectPath = '/prototypes/learner/v6/enter-new-password';
+  } else {
+    // all good!
+    redirectPath = '/prototypes/learner/v6/reset-success';
   }
 
   return res.redirect(redirectPath);

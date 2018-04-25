@@ -31,10 +31,6 @@
 
             {% call components.formElement(name='signIn', method='POST', action='/prototypes/learner/v6') %}
 
-                {#{{ components.field(label='Email address', id='email', hint="", group=true, error=emailError)}}
-
-                {{ components.field(label='Password', id='password', hint="", type="password", group=true, error=passwordError)}}#}
-
                 {{ components.field(label='Email address', id='email', hint="", group=true)}}
 
                 {{ components.field(label='Password', id='password', hint="", type="password", group=true)}}

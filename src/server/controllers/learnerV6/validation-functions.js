@@ -17,3 +17,10 @@ export const validatePostCode = postcode => {
 export const isNumeric = number => {
   return !isNaN(parseFloat(number)) && isFinite(number);
 };
+
+export const isPassword = password => {
+  // let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+  // let regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/;
+  let regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+  return regex.test(password);
+};

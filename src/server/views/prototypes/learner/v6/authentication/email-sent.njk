@@ -9,15 +9,12 @@
 
 {% block content %}
 
-    {#{{ components.pageHeading('Password reset email sent', 'Reset your password') }}#}
-
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
 
             <div class="govuk-box-highlight">
                 <h1 class="heading-large">Now check your email</h1>
-                <p class="font-large">A link to reset your password has been sent to <strong>[your_email]</strong></p>
             </div>
 
         {%- endcall %}
@@ -38,7 +35,7 @@
                 <summary>
                     <span class="summary">Haven't received the email?</span>
                 </summary>
-                <div class="panel-indent" id="dateDetails">
+                <div class="panel panel-border-narrow">
                     <div class="text">
                         <p>Check your spam folder.</p>
                         <p>If you don't see the email after 30 minutes, you can contact the Learning Platform for Government helpdesk on <a href="tel:+442036407985">020 3640 7985</a> or by email on <a href="mailto:support@civilservicelearning.uk">support@civilservicelearning.uk</a>.</p>

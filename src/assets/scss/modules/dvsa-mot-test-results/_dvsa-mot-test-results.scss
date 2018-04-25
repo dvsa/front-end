@@ -1,0 +1,97 @@
+.dvsa-mot-test-results {
+  border-top: 1px solid $border-colour;
+  @include border-box;
+
+  &__wrapper {
+
+  }
+
+  &__row {
+    margin: 0 -15px;
+
+    &:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__column {
+    float: left;
+    width: 33.33%;
+    padding: 15px;
+
+    &--half {
+      width: 66.66%;
+    }
+
+    @media(max-width: 850px) {
+      width: 100%;
+      padding: 0 15px 10px 15px;
+
+      &:first-child {
+        padding-top: 15px;
+      }
+
+      &:last-child {
+        padding-bottom: 15px;
+      }
+
+      &--half {
+        width: 100%;
+      }
+    }
+  }
+
+  &__seperator {
+    display: block;
+    background-color: $border-colour;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 1px;
+  }
+
+  &__heading {
+    @include bold-27;
+  }
+
+  &__status {
+    display: block;
+    @include bold-48;
+    margin: 5px 0 0 0;
+    
+    &--fail {
+      color: $error-colour;
+    }
+
+    &--pass {
+      color: $green;
+    }
+  }
+
+  &__rfr-list {
+    &-item {
+      padding-right: 85px;
+      
+      &--is-dangerous {
+        position: relative;
+      }
+    }
+
+    &-dangerous-label {
+      background-color: $error-colour;
+      color: white;
+      padding: 5px;
+      @include core-14;
+      border-radius: 5px;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      text-align: center;
+    }
+  }
+
+}

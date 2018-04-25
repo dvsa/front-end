@@ -1,0 +1,38 @@
+.dvsa-vehicle-summary {
+  @include border-box;
+
+  &__wrapper {
+
+  }
+
+  &__items {
+    list-style: none;
+    margin: 0 -15px;
+    @include clearfix;
+  }
+
+  &__item {
+    padding: 15px;
+    float: left;
+  }
+
+  &__heading {
+    display: block;
+    @include core-14;
+  }
+
+  &__value {
+    display: block;
+    @include bold-24;
+  }
+
+  &__panel {
+    padding: 15px;
+    background-color: $panel-colour;
+    @include clearfix;
+  }
+
+  &__more-link {
+    @include core-14;
+  }
+}

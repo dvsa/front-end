@@ -1,8 +1,3 @@
-// SUPPORTED >= IE7 http://css-tricks.com/attribute-selectors/
-[class*='message'] + [class*='message'] {
-  margin-top: -$gutter + 5px;
-}
-
 .message {
   padding: $gutter-half $gutter-half $gutter-half $gutter;
 
@@ -69,5 +64,16 @@
   &__heading {
     @include bold-24;
     max-width: 30em; // Like the .text class
+  }
+
+  &__title {
+    @include bold-19; 
+    margin: 0;
+  }
+
+  &__paragraph {
+    &--no-margin {
+      margin: 0;
+    }
   }
 }

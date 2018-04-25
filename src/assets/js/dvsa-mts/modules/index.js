@@ -7,6 +7,7 @@ import { initFormDisableDetailsHiddenFields } from './form-submit-disable-detail
 import { initOdometerReading } from './odometer-reading';
 import { initFormDisableOnSubmit } from './form-disable-on-submit';
 import { initMotTestSearch } from './mot-test-search';
+import { initDvsaBrakeTestConfiguration } from './dvsa-brake-test-configuration';
 
 /**
  * MTS Application modules
@@ -24,4 +25,5 @@ export const initModules = () => {
   initOdometerReading();
   initFormDisableOnSubmit();
   initMotTestSearch();
+  initDvsaBrakeTestConfiguration();
 };

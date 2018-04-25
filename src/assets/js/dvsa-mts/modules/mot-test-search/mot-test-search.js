@@ -48,7 +48,7 @@ export class MOTTestSearch {
       inputLabels: {
         vts: 'Site name',
         vtsDate: 'Site name',
-        tester: 'Tester name',
+        tester: 'Tester username',
         vrm: 'Vehicle registration',
         vin: 'Vehicle VIN',
         testNumber: 'MOT test number',

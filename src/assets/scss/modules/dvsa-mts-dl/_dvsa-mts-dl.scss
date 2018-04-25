@@ -1,0 +1,33 @@
+.dvsa-mts-dl {
+  display: block;
+  @include border-box;
+  margin: 0 0 10px 0;
+
+  &:last-of-type {
+    margin: 0;
+  }
+
+  &--half {
+    float: left;
+    width: 50%;
+  }
+
+  &__dt {
+    display: block;
+    @include core-16;
+  }
+
+  &__dd {
+    display: block;
+    @include bold-16;
+    margin: 0 0 10px 0;
+
+    &--block {
+      display: block;
+    }
+
+    &:last-of-type {
+      margin: 0;
+    }
+  }
+}

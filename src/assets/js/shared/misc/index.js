@@ -6,3 +6,4 @@ export * from './closest-parent';
 export * from './is-element-hidden-visible';
 export * from './trigger-events';
 export * from './is-element-in-viewport';
+export * from './toggle-attribute';

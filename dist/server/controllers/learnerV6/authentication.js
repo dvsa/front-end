@@ -9,6 +9,9 @@ exports.emailSentGet = emailSentGet;
 exports.enterNewPasswordGet = enterNewPasswordGet;
 exports.enterNewPasswordPost = enterNewPasswordPost;
 exports.resetSuccessGet = resetSuccessGet;
+exports.createNewPasswordGet = createNewPasswordGet;
+exports.createNewPasswordPost = createNewPasswordPost;
+exports.createSuccessGet = createSuccessGet;
 
 var _validationFunctions = require('./validation-functions');
 
@@ -79,14 +82,10 @@ function enterNewPasswordPost(req, res) {
     passwordError = true;
     passwordErrorTopMessage = 'Password is invalid';
     passwordErrorInputMessageOne = 'Enter a valid password';
-    redirectPath = '/prototypes/learner/v6/enter-new-password';
-  }
-
-  if (newPassword !== confirmNewPassword) {
+  } else if (newPassword !== confirmNewPassword) {
     passwordError = true;
     passwordErrorTopMessage = 'Passwords do not match';
     passwordErrorInputMessageTwo = 'Enter a matching password';
-    redirectPath = '/prototypes/learner/v6/enter-new-password';
   }
 
   if (passwordError === true) {
@@ -102,10 +101,69 @@ function enterNewPasswordPost(req, res) {
 
   return res.redirect(redirectPath);
 }
-
 // reset success
 function resetSuccessGet(req, res) {
   let viewData;
   viewData = {};
   return res.render('prototypes/learner/v6/authentication/reset-success', viewData);
+}
+
+// create new password
+function createNewPasswordGet(req, res) {
+  let viewData, passwordError, passwordErrorTopMessage, passwordErrorInputMessageOne, passwordErrorInputMessageTwo;
+
+  passwordError = req.session.passwordError;
+  passwordErrorTopMessage = req.session.passwordErrorTopMessage;
+  passwordErrorInputMessageOne = req.session.passwordErrorInputMessageOne;
+  passwordErrorInputMessageTwo = req.session.passwordErrorInputMessageTwo;
+
+  // reset
+  req.session.passwordError = null;
+  req.session.passwordErrorTopMessage = null;
+  req.session.passwordErrorInputMessageOne = null;
+  req.session.passwordErrorInputMessageTwo = null;
+
+  viewData = {
+    passwordError,
+    passwordErrorTopMessage,
+    passwordErrorInputMessageOne,
+    passwordErrorInputMessageTwo
+  };
+  return res.render('prototypes/learner/v6/authentication/create-new-password', viewData);
+}
+
+// Reset password POST
+function createNewPasswordPost(req, res) {
+  const { newPassword, confirmNewPassword } = req.body;
+  let redirectPath, passwordError, passwordErrorTopMessage, passwordErrorInputMessageOne, passwordErrorInputMessageTwo;
+
+  if (!(0, _validationFunctions.isPassword)(newPassword)) {
+    passwordError = true;
+    passwordErrorTopMessage = 'Password is invalid';
+    passwordErrorInputMessageOne = 'Enter a valid password';
+  } else if (newPassword !== confirmNewPassword) {
+    passwordError = true;
+    passwordErrorTopMessage = 'Passwords do not match';
+    passwordErrorInputMessageTwo = 'Enter a matching password';
+  }
+
+  if (passwordError === true) {
+    req.session.passwordError = true;
+    req.session.passwordErrorTopMessage = passwordErrorTopMessage;
+    req.session.passwordErrorInputMessageOne = passwordErrorInputMessageOne;
+    req.session.passwordErrorInputMessageTwo = passwordErrorInputMessageTwo;
+    redirectPath = '/prototypes/learner/v6/create-new-password';
+  } else {
+    // all good!
+    redirectPath = '/prototypes/learner/v6/create-success';
+  }
+
+  return res.redirect(redirectPath);
+}
+
+// create success
+function createSuccessGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v6/authentication/create-success', viewData);
 }

@@ -12,6 +12,7 @@ exports.searchGet = searchGet;
 exports.searchPost = searchPost;
 exports.feedbackGet = feedbackGet;
 exports.feedbackPost = feedbackPost;
+exports.termsGet = termsGet;
 
 var _validationFunctions = require('./validation-functions');
 
@@ -228,4 +229,11 @@ function feedbackPost(req, res) {
   req.session.hasLeftFeedback = true;
   redirectPath = '/prototypes/learner/v6/learning-record';
   return res.redirect(redirectPath);
+}
+
+// suggested learning GET
+function termsGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v6/terms-and-conditions/index', viewData);
 }

@@ -525,6 +525,9 @@ router.get('/prototypes/learner/v6/learning-record', learnerV6Controller.recordG
 // suggested learning
 router.get('/prototypes/learner/v6/suggested-learning', learnerV6Controller.suggestedGet);
 
+// profile
+router.get('/prototypes/learner/v6/terms-and-conditions', learnerV6Controller.termsGet);
+
 // search
 router.get('/prototypes/learner/v6/search', learnerV6Controller.searchGet);
 router.post('/prototypes/learner/v6/search', learnerV6Controller.searchPost);
@@ -541,6 +544,7 @@ router.get('/prototypes/learner/v6/your-profile/area-of-work/levels', learnerV6C
 router.post('/prototypes/learner/v6/your-profile/area-of-work/levels', learnerV6Controller.areasLevelsPost);
 
 router.get('/prototypes/learner/v6/your-profile/interests', learnerV6Controller.interestsGet);
+router.post('/prototypes/learner/v6/your-profile/interests', learnerV6Controller.interestsPost);
 
 router.get('/prototypes/learner/v6/your-profile/area-of-work/joined-levels', learnerV6Controller.areasJoinedLevelsGet);
 router.post('/prototypes/learner/v6/your-profile/area-of-work/joined-levels', learnerV6Controller.areasJoinedLevelsPost);

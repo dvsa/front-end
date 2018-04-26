@@ -137,13 +137,21 @@ export function otherAreasPost(req, res) {
 
 // Other areas
 export function interestsGet(req, res) {
-  let viewData, professionSelectOptions;
+  let viewData, extraInterests;
 
-  professionSelectOptions = generalData.allProfessions;
+  extraInterests = generalData.extraInterests;
 
   viewData = {
-    professionSelectOptions,
+    extraInterests,
   };
 
   return res.render('prototypes/learner/v6/area-of-work/interests', viewData);
+}
+
+export function interestsPost(req, res) {
+  const {} = req.body;
+
+  req.session.hasUpdatedInterests = true;
+
+  return res.redirect('/prototypes/learner/v6/your-profile');
 }

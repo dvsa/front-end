@@ -12,6 +12,7 @@ exports.areasJoinedLevelsPost = areasJoinedLevelsPost;
 exports.otherAreasGet = otherAreasGet;
 exports.otherAreasPost = otherAreasPost;
 exports.interestsGet = interestsGet;
+exports.interestsPost = interestsPost;
 let generalData = require('./data');
 
 // Primary areas of work radios areasGET
@@ -151,13 +152,21 @@ function otherAreasPost(req, res) {
 
 // Other areas
 function interestsGet(req, res) {
-  let viewData, professionSelectOptions;
+  let viewData, extraInterests;
 
-  professionSelectOptions = generalData.allProfessions;
+  extraInterests = generalData.extraInterests;
 
   viewData = {
-    professionSelectOptions
+    extraInterests
   };
 
   return res.render('prototypes/learner/v6/area-of-work/interests', viewData);
+}
+
+function interestsPost(req, res) {
+  const {} = req.body;
+
+  req.session.hasUpdatedInterests = true;
+
+  return res.redirect('/prototypes/learner/v6/your-profile');
 }

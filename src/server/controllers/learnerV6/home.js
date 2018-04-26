@@ -227,3 +227,10 @@ export function feedbackPost(req, res) {
   redirectPath = '/prototypes/learner/v6/learning-record';
   return res.redirect(redirectPath);
 }
+
+// suggested learning GET
+export function termsGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v6/terms-and-conditions/index', viewData);
+}

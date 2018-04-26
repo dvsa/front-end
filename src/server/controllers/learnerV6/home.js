@@ -229,8 +229,8 @@ export function feedbackPost(req, res) {
 }
 
 // suggested learning GET
-export function termsGet(req, res) {
+export function privacyGet(req, res) {
   let viewData;
   viewData = {};
-  return res.render('prototypes/learner/v6/terms-and-conditions/index', viewData);
+  return res.render('prototypes/learner/v6/privacy/index', viewData);
 }

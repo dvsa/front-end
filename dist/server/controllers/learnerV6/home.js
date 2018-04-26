@@ -12,7 +12,7 @@ exports.searchGet = searchGet;
 exports.searchPost = searchPost;
 exports.feedbackGet = feedbackGet;
 exports.feedbackPost = feedbackPost;
-exports.termsGet = termsGet;
+exports.privacyGet = privacyGet;
 
 var _validationFunctions = require('./validation-functions');
 
@@ -232,8 +232,8 @@ function feedbackPost(req, res) {
 }
 
 // suggested learning GET
-function termsGet(req, res) {
+function privacyGet(req, res) {
   let viewData;
   viewData = {};
-  return res.render('prototypes/learner/v6/terms-and-conditions/index', viewData);
+  return res.render('prototypes/learner/v6/privacy/index', viewData);
 }

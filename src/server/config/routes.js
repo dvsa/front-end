@@ -526,7 +526,7 @@ router.get('/prototypes/learner/v6/learning-record', learnerV6Controller.recordG
 router.get('/prototypes/learner/v6/suggested-learning', learnerV6Controller.suggestedGet);
 
 // profile
-router.get('/prototypes/learner/v6/terms-and-conditions', learnerV6Controller.termsGet);
+router.get('/prototypes/learner/v6/privacy', learnerV6Controller.privacyGet);
 
 // search
 router.get('/prototypes/learner/v6/search', learnerV6Controller.searchGet);

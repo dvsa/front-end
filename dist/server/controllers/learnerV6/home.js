@@ -119,7 +119,7 @@ function plannedGet(req, res) {
 
 // profile GET
 function profileGet(req, res) {
-  let viewData, workAreaHasBeenUpdated, setWorkAreaCommercial, setWorkAreaDigital, showRolesJoined, showUpdatedPrimaryWorkArea, hasAddedContractManagement, hasBeenUpdatedOther;
+  let viewData, workAreaHasBeenUpdated, setWorkAreaCommercial, setWorkAreaDigital, showRolesJoined, showUpdatedPrimaryWorkArea, hasAddedContractManagement, hasBeenUpdatedOther, hasBeenUpdatedInterests;
 
   workAreaHasBeenUpdated = req.session.workAreaHasBeenUpdated;
   showUpdatedPrimaryWorkArea = req.session.showUpdatedPrimaryWorkArea;
@@ -135,6 +135,9 @@ function profileGet(req, res) {
   hasBeenUpdatedOther = req.session.hasBeenUpdatedOther;
   req.session.hasBeenUpdatedOther = null;
 
+  hasBeenUpdatedInterests = req.session.hasBeenUpdatedInterests;
+  req.session.hasBeenUpdatedInterests = null;
+
   // display all roles columns joined
   showRolesJoined = req.session.showRolesJoined;
 
@@ -147,7 +150,8 @@ function profileGet(req, res) {
     showRolesJoined,
     showUpdatedPrimaryWorkArea,
     hasAddedContractManagement,
-    hasBeenUpdatedOther
+    hasBeenUpdatedOther,
+    hasBeenUpdatedInterests
   };
 
   return res.render('prototypes/learner/v6/profile/index', viewData);

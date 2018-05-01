@@ -205,6 +205,7 @@ function interestsPost(req, res) {
 
   req.session.hasUpdatedInterests = true;
   req.session.hasBeenUpdatedOther = true;
+  req.session.hasBeenUpdatedInterests = true;
   req.session.hasAddedContractManagement = true;
 
   return res.redirect('/prototypes/learner/v6/your-profile');

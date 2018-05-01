@@ -123,7 +123,8 @@ export function profileGet(req, res) {
     showRolesJoined,
     showUpdatedPrimaryWorkArea,
     hasAddedContractManagement,
-    hasBeenUpdatedOther;
+    hasBeenUpdatedOther,
+    hasBeenUpdatedInterests;
 
   workAreaHasBeenUpdated = req.session.workAreaHasBeenUpdated;
   showUpdatedPrimaryWorkArea = req.session.showUpdatedPrimaryWorkArea;
@@ -139,6 +140,9 @@ export function profileGet(req, res) {
   hasBeenUpdatedOther = req.session.hasBeenUpdatedOther;
   req.session.hasBeenUpdatedOther = null;
 
+  hasBeenUpdatedInterests = req.session.hasBeenUpdatedInterests;
+  req.session.hasBeenUpdatedInterests = null;
+
   // display all roles columns joined
   showRolesJoined = req.session.showRolesJoined;
 
@@ -152,6 +156,7 @@ export function profileGet(req, res) {
     showUpdatedPrimaryWorkArea,
     hasAddedContractManagement,
     hasBeenUpdatedOther,
+    hasBeenUpdatedInterests,
   };
 
   return res.render('prototypes/learner/v6/profile/index', viewData);

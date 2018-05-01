@@ -11,6 +11,8 @@
 {% set showRolesJoined = showRolesJoined if showRolesJoined %}
 {% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
 {% set hasBeenUpdatedOther = hasBeenUpdatedOther if hasBeenUpdatedOther %}
+{% set hasBeenUpdatedInterests = hasBeenUpdatedInterests if hasBeenUpdatedInterests %}
+
 
 {% block content %}
 
@@ -28,9 +30,16 @@
 
             {% if hasBeenUpdatedOther %}
 
-                {{ components.banner(mainText='Your other areas of work has been updated', secondaryText='', type="confirmation")}}
+                {#{{ components.banner(mainText='Your other areas of work has been updated', secondaryText='', type="confirmation")}}#}
+                {{ components.banner(mainText='Your interests have been updated', secondaryText='', type="confirmation")}}
 
             {% endif %}
+
+            {#{% if hasBeenUpdatedInterests %}
+
+                {{ components.banner(mainText='Your interests have been updated', secondaryText='', type="confirmation")}}
+
+            {% endif %}#}
 
             {{ components.heading(text='Personal details', tag='h2', size='medium', extraClass='') }}
 

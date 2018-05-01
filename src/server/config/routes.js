@@ -549,6 +549,10 @@ router.post('/prototypes/learner/v6/your-profile/interests', learnerV6Controller
 router.get('/prototypes/learner/v6/your-profile/area-of-work/joined-levels', learnerV6Controller.areasJoinedLevelsGet);
 router.post('/prototypes/learner/v6/your-profile/area-of-work/joined-levels', learnerV6Controller.areasJoinedLevelsPost);
 
+// As product manager for show and tell
+router.get('/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm', learnerV6Controller.areasJoinedLevelsPMGet);
+router.post('/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm', learnerV6Controller.areasJoinedLevelsPMPost);
+
 router.get('/prototypes/learner/v6/your-profile/other-areas-of-work', learnerV6Controller.otherAreasGet);
 router.post('/prototypes/learner/v6/your-profile/other-areas-of-work', learnerV6Controller.otherAreasPost);
 

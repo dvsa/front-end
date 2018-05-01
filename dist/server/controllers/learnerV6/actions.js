@@ -66,6 +66,8 @@ function actionsGet(req, res) {
   // work area/job title has been updated
   if (action == 'workAreaHasBeenUpdated') {
     req.session.workAreaHasBeenUpdated = true;
+    req.session.showUpdatedPrimaryWorkArea = true;
+    console.log('workAreaHasBeenUpdated!!!!');
     redirectPath = '/prototypes/learner/v6/your-profile';
   }
 

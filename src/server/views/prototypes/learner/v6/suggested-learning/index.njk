@@ -7,6 +7,10 @@
 {% set homePath = '/prototypes/learner/v6/home' %}
 {#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
 {% set hideHomeStars = 'true' %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{#{% set showUpdatedPrimaryWorkArea = true %}#}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+
 
 {% block content %}
 
@@ -59,6 +63,172 @@
         {%- endcall %}
 
     {%- endcall %}
+
+    {% if hasAddedContractManagement %}
+
+        {{ components.heading(text='From Contract management', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Various contract management items',
+                    url='/prototypes/learner/v6/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Audio',
+                    duration='30 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v6',
+                    intro='Lorem ipsum sonc dolor ad infinitum'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <p><a href="#">Show all suggestions from Contract management</a> </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {% endif %}
+
+
+    {% if showUpdatedPrimaryWorkArea %}
+
+        {{ components.heading(text='From Digital, Data and Technology', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='The Bottom Line',
+                    url='/prototypes/learner/v6/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Audio',
+                    duration='30 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v6',
+                    intro='Evan Davis hosts the business conversation show with people at the top giving insight into what matters'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Inspired, Marty Cagan',
+                    url='/prototypes/learner/v6/resource?resourceID=19',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='12 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v6',
+                    intro='Product management case studies and techniques'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Agile Product Ownership, Henrik Kniberg',
+                    url='/prototypes/learner/v6/resource?resourceID=20',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Video',
+                    duration='15 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v6',
+                    intro='Classic on planning a sprint and managing a backlog'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Good Product Manager/Bad Product Manager, Ben Horowitz',
+                    url='/prototypes/learner/v6/resource?resourceID=21',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Document',
+                    duration='5 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v6',
+                    intro='Classic on product manager thinking and doing'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Asking the right questions to frame the problem',
+                    url='/prototypes/learner/v6/resource?resourceID=22',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='5 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v6',
+                    intro='Getting to the core benefits of making a product or service'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Identifying a good service',
+                    url='/prototypes/learner/v6/resource?resourceID=23',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='15 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v6',
+                    intro='Classic on planning a sprint and managing a backlog'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <p><a href="#">Show all suggestions from Digital, data &amp; technology</a> </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {% endif %}
+
+
 
     {{ components.heading(text='From Commercial', tag='h2', size='medium', extraClass='heading--red-top') }}
 

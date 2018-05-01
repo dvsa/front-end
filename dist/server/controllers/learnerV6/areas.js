@@ -8,6 +8,8 @@ exports.areasPost = areasPost;
 exports.areasLevelsGet = areasLevelsGet;
 exports.areasLevelsPost = areasLevelsPost;
 exports.areasJoinedLevelsGet = areasJoinedLevelsGet;
+exports.areasJoinedLevelsPMGet = areasJoinedLevelsPMGet;
+exports.areasJoinedLevelsPMPost = areasJoinedLevelsPMPost;
 exports.areasJoinedLevelsPost = areasJoinedLevelsPost;
 exports.otherAreasGet = otherAreasGet;
 exports.otherAreasPost = otherAreasPost;
@@ -121,6 +123,41 @@ function areasJoinedLevelsGet(req, res) {
   return res.render('prototypes/learner/v6/area-of-work/joined-levels', viewData);
 }
 
+// Joined levels
+function areasJoinedLevelsPMGet(req, res) {
+  let viewData, level1, level2, level3, showLevel1, showLevel2, showLevel3;
+
+  level1 = req.param('level1');
+  level2 = req.param('level2');
+  level3 = req.param('level3');
+
+  if (level1 == 'true') {
+    showLevel1 = true;
+  }
+
+  if (level2 == 'true') {
+    showLevel2 = true;
+  }
+
+  if (level3 == 'true') {
+    showLevel3 = true;
+  }
+  viewData = {
+    showLevel1,
+    showLevel2,
+    showLevel3
+  };
+
+  return res.render('prototypes/learner/v6/area-of-work/joined-levels-pm', viewData);
+}
+function areasJoinedLevelsPMPost(req, res) {
+  const { regConfig } = req.body;
+
+  let test;
+
+  return res.redirect('prototypes/learner/v6/area-of-work/joined-levels-pm');
+}
+
 function areasJoinedLevelsPost(req, res) {
   const { regConfig } = req.body;
 
@@ -167,6 +204,8 @@ function interestsPost(req, res) {
   const {} = req.body;
 
   req.session.hasUpdatedInterests = true;
+  req.session.hasBeenUpdatedOther = true;
+  req.session.hasAddedContractManagement = true;
 
   return res.redirect('/prototypes/learner/v6/your-profile');
 }

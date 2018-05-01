@@ -116,24 +116,42 @@ export function plannedGet(req, res) {
 
 // profile GET
 export function profileGet(req, res) {
-  let viewData, workAreaHasBeenUpdated, setWorkAreaCommercial, setWorkAreaDigital, showRolesJoined;
+  let viewData,
+    workAreaHasBeenUpdated,
+    setWorkAreaCommercial,
+    setWorkAreaDigital,
+    showRolesJoined,
+    showUpdatedPrimaryWorkArea,
+    hasAddedContractManagement,
+    hasBeenUpdatedOther;
 
   workAreaHasBeenUpdated = req.session.workAreaHasBeenUpdated;
+  showUpdatedPrimaryWorkArea = req.session.showUpdatedPrimaryWorkArea;
   req.session.workAreaHasBeenUpdated = null;
+
+  hasAddedContractManagement = req.session.hasAddedContractManagement;
 
   setWorkAreaCommercial = req.session.setWorkAreaCommercial;
   setWorkAreaDigital = req.session.setWorkAreaDigital;
   req.session.setWorkAreaCommercial = null;
   req.session.setWorkAreadigital = null;
 
+  hasBeenUpdatedOther = req.session.hasBeenUpdatedOther;
+  req.session.hasBeenUpdatedOther = null;
+
   // display all roles columns joined
   showRolesJoined = req.session.showRolesJoined;
+
+  console.log('showUpdatedPrimaryWorkArea = ' + showUpdatedPrimaryWorkArea);
 
   viewData = {
     workAreaHasBeenUpdated,
     setWorkAreaCommercial,
     setWorkAreaDigital,
     showRolesJoined,
+    showUpdatedPrimaryWorkArea,
+    hasAddedContractManagement,
+    hasBeenUpdatedOther,
   };
 
   return res.render('prototypes/learner/v6/profile/index', viewData);
@@ -167,7 +185,10 @@ export function recordGet(req, res) {
 
 // suggested learning GET
 export function suggestedGet(req, res) {
-  let viewData, hideHomeStars;
+  let viewData, hideHomeStars, showUpdatedPrimaryWorkArea, hasAddedContractManagement;
+
+  showUpdatedPrimaryWorkArea = req.session.showUpdatedPrimaryWorkArea;
+  hasAddedContractManagement = req.session.hasAddedContractManagement;
 
   // hideHomeStars = req.session.hideHomeStars;
 
@@ -175,6 +196,8 @@ export function suggestedGet(req, res) {
 
   viewData = {
     hideHomeStars,
+    showUpdatedPrimaryWorkArea,
+    hasAddedContractManagement,
   };
 
   return res.render('prototypes/learner/v6/suggested-learning/index', viewData);

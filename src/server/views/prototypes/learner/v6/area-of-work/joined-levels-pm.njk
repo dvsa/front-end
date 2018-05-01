@@ -30,6 +30,40 @@
 
     {% call components.formElement(name='registerProfession', method='POST', action="#") %}
 
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <div class="levels-nav">
+
+                    <ul class="levels-nav__list">
+                        {% if level1 and not level2%}
+                        <li class="levels-nav__item">
+                            <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm" class="levels-nav__link">All work areas</a>
+                        </li>
+                        <li class="levels-nav__item">
+                            <span class="levels-nav__last">Digital, data &amp; technology</span>
+                        </li>
+                        {% endif %}
+                        {% if level1 and level2 and not level3 %}
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm" class="levels-nav__link">All work areas</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels-nav__link">Digital, data &amp; technology</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <span class="levels-nav__last">Product delivery</span>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
         {% call components.gridRow() %}
 
             {% call components.columnFull() %}

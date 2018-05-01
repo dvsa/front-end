@@ -1,19 +1,6 @@
 $module: 'levels';
 
-%disciteRowDiv {
-  @include box-sizing(border-box);
-  position: relative;
-  display:block;
-  float:none;
-  padding:10px 0;
-
-  @include media(desktop) {
-    display:inline-block;
-    float:left;
-    padding:10px 8px 10px 0;
-  }
-}
-
+/*
 .#{$module} {
   // wrapper
   margin-bottom: 30px;
@@ -34,11 +21,6 @@ $module: 'levels';
      border-right: 0;
     }
   }
-
-  /*&__list {
-    li {
-    }
-  }*/
 
   &__link {
     display: block;
@@ -80,7 +62,129 @@ $module: 'levels';
       }
     }
   }
+}
 
-  /*&__col {
-  }*/
+*/
+
+.#{$module} {
+  // wrapper
+  margin-bottom: 30px;
+
+  &__col {
+    width: 100%;
+    border-right: 1px solid $grey-3;
+    display: none;
+
+    &:last-of-type {
+      display: block;
+      float: none;
+    }
+
+    @include media(tablet) {
+      position: relative;
+      float: left;
+      width: 24%;
+      display: block;
+
+      &:last-of-type {
+        border-right: 0;
+        float: left;
+      }
+    }
+  }
+
+  // Just the linky bit
+  &__link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px 8px 8px;
+    color: #005ea5;
+
+    &:after {
+      position: absolute;
+      content: '\203A';
+      top: 7px;
+      right: 5px;
+      color: #003;
+    }
+
+    &:hover {
+      background: #f1f1f1;
+    }
+
+    @include m('selected') {
+      background-color: #005ea5;
+      color: #fff !important;
+
+      &:after {
+        color: #fff;
+      }
+
+      &:hover {
+        background-color: #005ea5;
+      }
+    }
+
+    @include m('unsure') {
+      @include bold-16;
+      &:after {
+        content: "";
+      }
+    }
+  }
+}
+
+
+%nav-link {
+  position: relative;
+  display: inline-block;
+  margin-right: 4px;
+  padding-left: 12px;
+
+  &:before {
+    position: absolute;
+    content: '\203A';
+    top: 0;
+    left: 0;
+    color: #003;
+  }
+}
+
+// mini breadcrumb thing above the columns
+.#{$module}-nav {
+
+  @include media(desktop) {
+    display: none;
+  }
+
+  &__list {
+    // ul.levels-nav__list
+    text-align: left;
+  }
+
+  &__item {
+    // li.levels-nav__item
+    display: inline-block;
+  }
+
+  &__link {
+    // a.levels-nav__last
+    @extend %nav-link;
+
+    &:first-of-type {
+      // padding-left: 0;
+
+      &:before {
+        // content:"";
+      }
+    }
+  }
+
+  &__last {
+    // span.levels-nav__last
+    @extend %nav-link;
+  }
+
 }

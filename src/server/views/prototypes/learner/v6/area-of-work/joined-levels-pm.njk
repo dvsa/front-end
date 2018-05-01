@@ -123,9 +123,11 @@
                             <li>
                                 <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Other</a>
                             </li>
+                            {% if level1 %}
                             <li>
                                 <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
                             </li>
+                            {% endif %}
                         </ul>
 
                     </div>
@@ -152,9 +154,11 @@
                             <li>
                                 <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels__link">User centred design</a>
                             </li>
+                            {% if level1 and level2 %}
                             <li>
                                 <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
                             </li>
+                            {%  endif %}
                         </ul>
 
                     </div>
@@ -177,9 +181,11 @@
                                 <li>
                                     <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link ">Associate product manager</a>
                                 </li>
+                                {% if level1 and level2 and level3 %}
                                 <li>
                                     <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
                                 </li>
+                                {% endif %}
                             </ul>
 
                         </div>
@@ -196,7 +202,7 @@
                                 <li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link">Senior product manager</a></li>
                                 <li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link">Product manager</a></li>
                                 <li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link">Associate product manager</a></li>
-                                <li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a></li>
+                                {#<li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a></li>#}
                             </ul>
 
                         </div>

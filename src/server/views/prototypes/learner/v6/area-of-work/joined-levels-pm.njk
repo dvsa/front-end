@@ -54,7 +54,21 @@
                                 <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels-nav__link">Digital, data &amp; technology</a>
                             </li>
                             <li class="levels-nav__item">
-                                <span class="levels-nav__last">Product delivery</span>
+                                <span class="levels-nav__last">Product and delivery</span>
+                            </li>
+                        {% endif %}
+                        {% if level1 and level2 and level3 %}
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm" class="levels-nav__link">All work areas</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels-nav__link">Digital, data &amp; technology</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels-nav__link">Product delivery</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <span class="levels-nav__last">Product manager</span>
                             </li>
                         {% endif %}
                     </ul>
@@ -152,13 +166,13 @@
 
                             <ul class="levels__list">
                                 <li>
-                                    <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link {% if level3 %} levels__link--selected {% endif %}">Business analyst</a>
+                                    <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link">Business analyst</a>
                                 </li>
                                 <li>
                                     <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link">Delivery manager</a>
                                 </li>
                                 <li>
-                                    <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link">Product manager</a>
+                                    <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link {% if level3 %} levels__link--selected {% endif %}">Product manager</a>
                                 </li>
                                 <li>
                                     <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link ">Associate product manager</a>

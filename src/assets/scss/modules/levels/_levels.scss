@@ -1,71 +1,5 @@
 $module: 'levels';
 
-/*
-.#{$module} {
-  // wrapper
-  margin-bottom: 30px;
-
-  @include m('4cols') {
-    .#{$module}__col {
-      width: 24%;
-    }
-  }
-
-  &__col {
-    position: relative;
-    width: 30%;
-    float: left;
-    border-right: 1px solid $grey-3;
-
-    &:last-of-type {
-     border-right: 0;
-    }
-  }
-
-  &__link {
-    display: block;
-    position: relative;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px 8px 8px;
-    color: #005ea5;
-
-    &:after {
-      position: absolute;
-      content: '\203A';
-      top: 7px;
-      right: 5px;
-      color: #003;
-    }
-
-    &:hover {
-      background: #f1f1f1;
-    }
-
-    @include m('selected') {
-      background-color: #005ea5;
-      color: #fff !important;
-
-      &:after {
-        color: #fff;
-      }
-
-      &:hover {
-        background-color: #005ea5;
-      }
-    }
-
-    @include m('unsure') {
-      @include bold-16;
-      &:after {
-        content: "";
-      }
-    }
-  }
-}
-
-*/
-
 .#{$module} {
   // wrapper
   margin-bottom: 30px;
@@ -141,12 +75,12 @@ $module: 'levels';
   position: relative;
   display: inline-block;
   margin-right: 4px;
-  padding-left: 12px;
+  padding: 4px 4px 4px 12px;
 
   &:before {
     position: absolute;
     content: '\203A';
-    top: 0;
+    top: 4px;
     left: 0;
     color: #003;
   }
@@ -154,6 +88,10 @@ $module: 'levels';
 
 // mini breadcrumb thing above the columns
 .#{$module}-nav {
+
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  // border-bottom: 1px solid $grey-3;
 
   @include media(desktop) {
     display: none;
@@ -167,24 +105,28 @@ $module: 'levels';
   &__item {
     // li.levels-nav__item
     display: inline-block;
+
+    &:first-of-type {
+
+      .#{$module}-nav__link {
+        margin-right: 0;
+        padding-left: 0;
+
+        &:before {
+          content:"";
+        }
+      }
+    }
   }
 
   &__link {
     // a.levels-nav__last
     @extend %nav-link;
-
-    &:first-of-type {
-      // padding-left: 0;
-
-      &:before {
-        // content:"";
-      }
-    }
   }
 
   &__last {
     // span.levels-nav__last
     @extend %nav-link;
+    @include bold-19;
   }
-
 }

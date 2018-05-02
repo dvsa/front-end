@@ -159,6 +159,14 @@ textarea {
     width: 50%;
   }
 
+  &.form-control-100 {
+    width: 100%;
+
+    @include media(tablet) {
+      width: 100%;
+    }
+  }
+
 }
 
 // Allow a qualifying element, remove rounded corners from inputs and textareas

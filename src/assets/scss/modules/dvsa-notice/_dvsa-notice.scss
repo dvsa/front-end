@@ -1,0 +1,53 @@
+.dvsa-notice {
+  @include border-box;
+  border: 5px solid $govuk-blue;
+  padding: 15px 15px 15px 50px;
+  position: relative;
+
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+
+  &:before {
+    content: ' ';
+    display: block;
+    background-image: url('../images/icons/dvsa-notice--default.png');
+    background-size: 100% 100%;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  &--success {
+    border-color: $green;
+
+    &:before {
+      background-image: url('../images/icons/dvsa-notice--success.png');
+    }
+  }
+
+  &--error {
+    border-color: $error-colour;
+
+    &:before {
+      background-image: url('../images/icons/dvsa-notice--error.png');
+    }
+  }
+
+  &__message {
+    margin: 0;
+    padding: 0;
+    color: $govuk-blue;
+    @include bold-19;
+
+    .dvsa-notice--success & {
+      color: $green;
+    }
+
+    .dvsa-notice--error & {
+      color: $error-colour;
+    }
+  }
+}

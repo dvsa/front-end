@@ -29,11 +29,11 @@ export class DvsaBrakeTestConfigurationClass12 {
       brakeTestType: '',
     };
 
-    if(!this.elements.base) return;
+    if (!this.elements.base) return;
 
     this.init();
   }
-  
+
   /**
    * Initializer
    *
@@ -46,7 +46,7 @@ export class DvsaBrakeTestConfigurationClass12 {
     this.elements.isSidecarAttachedInputs.forEach(inputElement => {
       addEventListenerToEl(inputElement, 'change', this.update);
     });
-  }
+  };
 
   /**
    * Check if sidecar attached 'yes' radio is selected
@@ -57,12 +57,12 @@ export class DvsaBrakeTestConfigurationClass12 {
   isSidecarAttached = () => {
     let isSideCarAttached = false;
     this.elements.isSidecarAttachedInputs.forEach(inputElement => {
-      if(inputElement.checked && inputElement.value === '1') {
+      if (inputElement.checked && inputElement.value === '1') {
         isSideCarAttached = true;
       }
     });
     return isSideCarAttached;
-  }
+  };
 
   /**
    * Check if weight is required for brake test type
@@ -76,7 +76,7 @@ export class DvsaBrakeTestConfigurationClass12 {
       this.state.brakeTestType === this.constants.PLATE ||
       this.state.brakeTestType === this.constants.FLOOR
     );
-  }
+  };
 
   /**
    * Updates the state based on DOM elements
@@ -86,7 +86,7 @@ export class DvsaBrakeTestConfigurationClass12 {
    */
   updateStateFromDOM = () => {
     this.state.brakeTestType = this.elements.brakeTestType.value;
-  }
+  };
 
   /**
    * Refresh the DOM based on the state
@@ -102,7 +102,7 @@ export class DvsaBrakeTestConfigurationClass12 {
     toggleDisabledAttribute(this.elements.vehicleWeightFront, !this.isWeightRequiredForBrakeTestType());
     toggleDisabledAttribute(this.elements.vehicleWeightRear, !this.isWeightRequiredForBrakeTestType());
     toggleDisabledAttribute(this.elements.riderWeight, !this.isWeightRequiredForBrakeTestType());
-  }
+  };
 
   /**
    * Update function
@@ -115,5 +115,5 @@ export class DvsaBrakeTestConfigurationClass12 {
   update = () => {
     this.updateStateFromDOM();
     this.refreshDOMFromState();
-  }
+  };
 }

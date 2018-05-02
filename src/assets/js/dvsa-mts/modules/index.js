@@ -4,7 +4,6 @@ import { initDoubleClickPrevention } from './double-click-prevention';
 import { initMarkRepairs } from './mark-repairs';
 import { initShowHideToggle } from './show-hide-toggle';
 import { initFormDisableDetailsHiddenFields } from './form-submit-disable-details-hidden-fields';
-import { initOdometerReading } from './odometer-reading';
 import { initFormDisableOnSubmit } from './form-disable-on-submit';
 import { initMotTestSearch } from './mot-test-search';
 import { initDvsaBrakeTestConfiguration } from './dvsa-brake-test-configuration';
@@ -22,7 +21,6 @@ export const initModules = () => {
   initMarkRepairs();
   initShowHideToggle();
   initFormDisableDetailsHiddenFields();
-  initOdometerReading();
   initFormDisableOnSubmit();
   initMotTestSearch();
   initDvsaBrakeTestConfiguration();

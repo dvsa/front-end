@@ -52,6 +52,11 @@
       background-image: file-url('icons/icon-pointer-2x.png');
     }
   }
+
+  &--create-special-notice {
+    margin-bottom: 15px;
+    background-color: red;
+  }
 }
 
 .button-warning {

@@ -120,9 +120,6 @@
                             <li>
                                 <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Property</a>
                             </li>
-                            <li>
-                                <a href="/prototypes/learner/v6/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Other</a>
-                            </li>
                             {% if level1 %}
                             <li>
                                 <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
@@ -159,6 +156,11 @@
                                 <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
                             </li>
                             {%  endif %}
+                            {% if level1 %}
+                                <li class="u-hide-large">
+                                    <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose all of these</a>
+                                </li>
+                            {% endif %}
                         </ul>
 
                     </div>
@@ -186,6 +188,11 @@
                                     <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
                                 </li>
                                 {% endif %}
+                                {% if level1 and level2 %}
+                                    <li class="u-hide-large">
+                                        <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose all of these</a>
+                                    </li>
+                                {%  endif %}
                             </ul>
 
                         </div>
@@ -203,6 +210,11 @@
                                 <li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link">Product manager</a></li>
                                 <li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link">Associate product manager</a></li>
                                 {#<li><a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a></li>#}
+                                {% if level1 and level2 and level3 %}
+                                    <li class="u-hide-large">
+                                        <a href="/prototypes/learner/v6/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose all of these</a>
+                                    </li>
+                                {% endif %}
                             </ul>
 
                         </div>

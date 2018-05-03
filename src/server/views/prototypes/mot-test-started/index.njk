@@ -1,0 +1,54 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test started' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT testing</span>
+      <span class="content-header__title">MOT test started</span>
+    </h1>
+  </header>
+
+
+  <p>
+    You have successfully started an MOT test for a
+    <strong>
+      <span id="vehicle-make-and-model">CITROEN RELAY</span>
+    </strong>, registration mark
+    <strong>
+      <span id="vehicle-registration-mark">AD33XCP</span>
+    </strong>
+  </p>
+
+  <div class="message message--information">
+    <p>MOT test started
+      <strong>3 May 2018, 11:04am</strong>
+    </p>
+  </div>
+
+  <p>You can download and print an inspection sheet for this vehicle:
+    <a target="_blank" id="print-inspection-sheet" href="#">
+      Vehicle inspection sheet (PDF, 505KB)
+    </a>
+  </p>
+
+  <p>Now sign out and inspect the vehicle.</p>
+
+
+  <form action="#" method="GET" novalidate>
+    <div class="form-group">
+      <button name="sign-out" id="sign-out" value="" type="submit" class="button">Sign out</button>
+    </div>
+  </form>
+
+  <nav class="module-content-navigation">
+    <ul class="content-navigation_secondary">
+      <li>
+        <a href="#" id="return_to_home">Continue to home</a>
+      </li>
+    </ul>
+  </nav>
+  
+{% endblock %}

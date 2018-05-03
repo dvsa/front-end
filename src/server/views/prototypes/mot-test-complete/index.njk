@@ -1,0 +1,44 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test completed' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type"></span>
+      <span class="content-header__title">MOT test complete</span>
+    </h1>
+  </header>
+
+  <div class="grid-row" id="reprintDialog">
+    <div class="column-full">
+      <!-- Tester -->
+      <p>
+        MOT test for vehicle registration
+        <strong>AD33XCP</strong>
+        is complete.
+      </p>
+
+      <div class="message message--information">
+        <h2 class="message__title">
+          What you need to do now
+        </h2>
+
+        <p>
+          Print the following documents and give them to the customer.
+        </p>
+      </div>
+      
+      <p>
+        <a id="reprint-certificate" target="_blank" class="button" href="/mot-test/249432962807/print-certificate">Print documents</a>
+      </p>
+
+      <p>
+        <a id="back-to-home-link" href="/" class="link">Back to user home</a>
+      </p>
+
+    </div>
+  </div>
+    
+{% endblock %}

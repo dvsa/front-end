@@ -1,0 +1,82 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Enter odometer reading' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type"></span>
+      <span class="content-header__title">Odometer reading</span>
+    </h1>
+  </header>
+
+  <header class="content-header">
+    <ul class="content-header__tertiary-list">
+      <li id="vehicleMakeModel" class="content-header__list-item--primary">PEUGEOT, TWEET</li>
+      <li id="vehicleRegistration" class="content-header__list-item">AA83LOX</li>
+      <li id="firstUsedDate" class="content-header__list-item">First used 6 Jun 2015</li>
+    </ul>
+  </header>
+
+  <div class="error-summary" role="alert" aria-labelledby="error-summary-example-heading-one" tabindex="-1" id="validation-message--failure">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-example-heading-one">
+      There was a problem
+    </h2>
+
+    <p>Odometer value must be entered to update odometer reading</p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form id="odometerResults" class="form-inline" method="POST">
+        <div class="form-group">
+
+          <fieldset>
+            <div class="form-group">
+              <div class="multiple-choice" data-target="enter-odometer-reading-panel">
+                <input type="radio" value="OK" name="resultType" id="odoInputRadio" aria-expanded="false" checked>
+                <label for="odoInputRadio">Odometer is visible and functional</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="enter-odometer-reading-panel">
+                <div class="form-group">
+                  <label class="form-label" for="odometer">Odometer reading</label>
+                  <input type="text" name="odometer" id="odometer" class="form-control" value="">
+                </div>
+
+                <div class="form-group">
+                  <label for="unit" class="form-label">Measurement units</label>
+                  <select id="unit" name="unit" class="form-control-select">
+                    <option value="mi">Miles</option>
+                    <option value="km">Kilometres</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="multiple-choice">
+                <input type="radio" value="NOT_READ" name="resultType" id="notReadable" aria-expanded="false">
+                <label for="notReadable">Odometer is unreadable</label>
+              </div>
+              <div class="multiple-choice">
+                <input type="radio" value="NO_METER" name="resultType" id="noOdometer" aria-expanded="false">
+                <label for="noOdometer">Odometer is not present</label>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+
+        <nav class="content-navigation">
+          <input type="submit" id="odometer_submit" name="submit" value="Update reading" class="button">
+          <ul class="content-navigation__secondary">
+            <li>
+              <a href="#">Cancel and return to MOT test results</a>
+            </li>
+          </ul>
+        </nav>
+      </form>
+    </div>
+  </div>
+  
+{% endblock %}

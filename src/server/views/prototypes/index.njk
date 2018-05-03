@@ -61,6 +61,56 @@
 
     {%- endcall %}
 
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Add/Edit odometer reading', tag='h2', size='medium', url='/prototypes/odometer-reading') }}
+      {{ components.paragraph(text='Adding and editing odometer reading in MTS application')}}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Add/Edit brake test', tag='h2', size='medium', url='/prototypes/brake-test') }}
+      {{ components.paragraph(text='Adding and editing MOT brake tests in MTS application')}}
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='MOT test result summary', tag='h2', size='medium', url='/prototypes/mot-test-summary') }}
+      {{ components.paragraph(text='MOT test result summary page after entering data in MTS')}}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Find a vehicle', tag='h2', size='medium', url='/prototypes/find-a-vehicle') }}
+      {{ components.paragraph(text='Vehicle search result for user to select from')}}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Confirm vehicle and start mot test', tag='h2', size='medium', url='/prototypes/confirm-vehicle-and-start-mot-test') }}
+      {{ components.paragraph(text='Confirm vehicle and start mot test page in MTS') }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='MOT test started', tag='h2', size='medium', url='/prototypes/mot-test-started') }}
+      {{ components.paragraph(text='MOT test started page in MTS')}}
+
+    {%- endcall %}
+
   {%- endcall %}
 
 {% endblock %}

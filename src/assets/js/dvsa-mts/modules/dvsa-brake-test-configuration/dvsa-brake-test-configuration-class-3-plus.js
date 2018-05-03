@@ -19,6 +19,7 @@ export class DvsaBrakeTestConfigurationClass3Plus {
       weightInputPanel: document.querySelector('#weightInputPanel'),
       parkingBrakeNumberOfAxlesContainer: document.querySelector('#parkingBrakeNumberOfAxlesContainer'),
       weightTypeNotApplicable: document.querySelector('#weightType-not-applicable'),
+      vehicleAxlesWrapper: document.querySelector('#vehicle-axles-wrapper'),
     };
 
     this.constants = {
@@ -169,6 +170,9 @@ export class DvsaBrakeTestConfigurationClass3Plus {
 
       // Toggle parking brake number of axles
       toggleClass(this.elements.parkingBrakeNumberOfAxlesContainer, this.classnames.jsHidden, !this.isParkingAxlesVisible());
+
+      // Hide whole section if both axle selects are not shown
+      toggleClass(this.elements.vehicleAxlesWrapper, this.classnames.jsHidden, !this.isWeightVisible() && !this.isParkingAxlesVisible());
     }
 
     // Toggle weight type not applicable
@@ -190,7 +194,7 @@ export class DvsaBrakeTestConfigurationClass3Plus {
    */
   isWeightAndAxlesVisible = () => {
     const serviceBrakeTestTypeCheck =
-      this.state.serviceBrakeTestType !== this.constants.DECEL && this.state.parkingBrakeTestType !== this.constants.GRADT;
+      this.state.serviceBrakeTestType !== this.constants.DECEL && this.state.serviceBrakeTestType !== this.constants.GRADT;
 
     const parkingBrakeTestTypeCheck =
       this.state.parkingBrakeTestType !== this.constants.DECEL && this.state.parkingBrakeTestType !== this.constants.GRADT;
@@ -208,7 +212,6 @@ export class DvsaBrakeTestConfigurationClass3Plus {
     const isNumberOfAxlesEqualTo3 = parseInt(this.state.numberOfAxles) === 3;
     const parkingBrakeTestTypeDecelCheck =
       this.state.parkingBrakeTestType !== this.constants.DECEL && this.state.parkingBrakeTestType !== this.constants.GRADT;
-      console.log(this.state.parkingBrakeTestType);
     return isNumberOfAxlesEqualTo3 && parkingBrakeTestTypeDecelCheck;
   };
 

@@ -1,0 +1,271 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test result summary' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT testing</span>
+      <span class="content-header__title">MOT test summary</span>
+    </h1>
+  </header>
+
+  <div class="dvsa-mot-test-results" id="testInformation">
+    <div class="dvsa-mot-test-results__wrapper">
+      <!-- dvsa-mot-test-results__row -->
+      <div class="dvsa-mot-test-results__row">
+        <div class="dvsa-mot-test-results__column">
+
+          <h2 class="dvsa-mot-test-results__heading">
+            Test information
+            <span class="visually-hidden">: result</span>
+          </h2>
+
+          <span class="dvsa-mot-test-results__status dvsa-mot-test-results__status--fail" id="testStatus">
+            Fail</span>
+        </div>
+
+        <div class="dvsa-mot-test-results__column">
+
+          <dl class="dvsa-mts-dl">
+            <dt class="dvsa-mts-dl__dt">
+              MOT test number </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="motTestNumber">
+              770330219411 </dd>
+          </dl>
+          <dl class="dvsa-mts-dl">
+            <dt class="dvsa-mts-dl__dt">
+              Issue date
+            </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="issueDate">
+              3 May 2018 </dd>
+          </dl>
+        </div>
+
+        <div class="dvsa-mot-test-results__column">
+
+          <dl class="dvsa-mts-dl">
+            <dt class="dvsa-mts-dl__dt">
+              VTS name and address
+            </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="vtsNameAndAddress">
+              VTS078738 - STAMFORD GROUP LTD
+              <br> 162, Dead Lane,
+              <br />Kingston upon Thames,
+              <br />Greater London,
+              <br />England,
+              <br />Greater London,
+              <br />KY15 6EA </dd>
+          </dl>
+        </div>
+      </div>
+      <!-- /dvsa-mot-test-results__row -->
+
+      <hr class="dvsa-mot-test-results__seperator">
+
+
+      <!-- dvsa-mot-test-results__row -->
+      <div class="dvsa-mot-test-results__row" id="vehicleSummary">
+        <div class="dvsa-mot-test-results__column">
+          <h2 class="dvsa-mot-test-results__heading">
+            Vehicle summary
+          </h2>
+        </div>
+
+        <div class="dvsa-mot-test-results__column">
+
+          <dl class="dvsa-mts-dl ">
+            <dt class="dvsa-mts-dl__dt">
+              Registration number </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="registrationNumber">
+              AA83LOX </dd>
+            <dt class="dvsa-mts-dl__dt">
+              VIN/Chassis number </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="vinChassisNumber">
+              XOLAAKAAAAA821583 </dd>
+            <dt class="dvsa-mts-dl__dt">
+              Test class </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="testClass">
+              1 </dd>
+            <dt class="dvsa-mts-dl__dt">
+              Approximate first use </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="aproxFirstUse">
+              6 June 2015 </dd>
+            <dt class="dvsa-mts-dl__dt">
+              Vehicle category </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="euClassification">
+              Not available </dd>
+          </dl>
+        </div>
+
+        <div class="dvsa-mot-test-results__column">
+
+          <dl class="dvsa-mts-dl ">
+            <dt class="dvsa-mts-dl__dt">
+              Make </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="make">
+              PEUGEOT </dd>
+            <dt class="dvsa-mts-dl__dt">
+              Model </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="model">
+              TWEET </dd>
+            <dt class="dvsa-mts-dl__dt">
+              Colour </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="colour">
+              Grey </dd>
+            <dt class="dvsa-mts-dl__dt">
+              Fuel type </dt>
+
+            <dd class="dvsa-mts-dl__dd" id="fuel-type">
+              Petrol </dd>
+          </dl>
+        </div>
+      </div>
+      <!-- /dvsa-mot-test-results__row -->
+
+      <hr class="dvsa-mot-test-results__seperator">
+
+      <div class="dvsa-mot-test-results__row" id="odometerReadingResults">
+        <div class="dvsa-mot-test-results__column">
+          <h2 class="dvsa-mot-test-results__heading">
+            Odometer reading
+          </h2>
+        </div>
+
+        <div class="dvsa-mot-test-results__column dvsa-mot-test-results__column--half">
+          <ul class="list">
+            <li id="odometerReading">
+              <p class="primary-item">
+                1 miles </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="dvsa-mot-test-results__seperator">
+
+      <div class="dvsa-mot-test-results__row" id="brakeResults">
+        <div class="dvsa-mot-test-results__column">
+          <h2 class="dvsa-mot-test-results__heading">
+            Brake results overall
+          </h2>
+        </div>
+
+        <div class="dvsa-mot-test-results__column dvsa-mot-test-results__column--half">
+          <p class="primary-item">
+            Fail </p>
+        </div>
+      </div>
+
+      <hr class="dvsa-mot-test-results__seperator">
+
+
+      <div class="dvsa-mot-test-results__row" id="fails">
+        <div class="dvsa-mot-test-results__column">
+          <h2 class="dvsa-mot-test-results__heading">
+            Fails </h2>
+        </div>
+
+        <div class="dvsa-mot-test-results__column dvsa-mot-test-results__column--half">
+
+          <ul class="dvsa-mot-test-results__rfr-list list list-bullet">
+            <li class="dvsa-mot-test-results__rfr-list-item primary-item " id="rfr-2224491710">
+              Roller brake test Neither brake control achieves an efficiency of 25% [3.3.A2b] </li>
+            <li class="dvsa-mot-test-results__rfr-list-item primary-item dvsa-mot-test-results__rfr-list-item--is-dangerous" id="rfr-2224491711">
+              Chain guard insecure [6.2.1c] Central Front Upper (Testing....)
+              <span class="dvsa-mot-test-results__rfr-list-dangerous-label">
+                Dangerous
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="dvsa-mot-test-results__seperator">
+
+      <div class="dvsa-mot-test-results__row" id="prses">
+        <div class="dvsa-mot-test-results__column">
+          <h2 class="dvsa-mot-test-results__heading">
+            PRS </h2>
+        </div>
+
+        <div class="dvsa-mot-test-results__column dvsa-mot-test-results__column--half">
+
+          <ul class="dvsa-mot-test-results__rfr-list list ">
+            <li class="dvsa-mot-test-results__rfr-list-item primary-item dvsa-mot-test-results__rfr-list-item--is-dangerous" id="rfr-2224491713">
+              Chain guard fouling another component [6.2.1c] Central Front Upper (test)
+              <span class="dvsa-mot-test-results__rfr-list-dangerous-label">
+                Dangerous
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="dvsa-mot-test-results__seperator">
+
+      <div class="dvsa-mot-test-results__row" id="advisoryText">
+        <div class="dvsa-mot-test-results__column">
+          <h2 class="dvsa-mot-test-results__heading">
+            Advisory text </h2>
+        </div>
+
+        <div class="dvsa-mot-test-results__column dvsa-mot-test-results__column--half">
+
+          <ul class="dvsa-mot-test-results__rfr-list list ">
+            <li class="dvsa-mot-test-results__rfr-list-item primary-item dvsa-mot-test-results__rfr-list-item--is-dangerous" id="rfr-2224491712">
+              Chain guard lightly rubbing [6.2.1c] Nearside Front Upper
+              <span class="dvsa-mot-test-results__rfr-list-dangerous-label">
+                Dangerous
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="dvsa-mot-test-results__seperator">
+
+    </div>
+  </div>
+
+  <form id="submit-test-results" method="POST">
+    <div class="row">
+      <div class="col-lg-12 btn-bar">
+
+
+        <div class="message message--information">
+          <p id="declarationStatement">
+            By saving this test result you confirm that you have carried out this MOT test in line with DVSA conditions for MOT testing.
+            </p>
+        </div>
+
+        <nav class="module-content-navigation">
+          <input type="submit" class="button" value="Save test result" id="confirm_test_result">
+
+          <ul class="content-navigation_secondary">
+            <li>
+              <a href="#" class="link" id="cancel_test_result">
+                Back to results entry
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+
+  </form>
+  
+{% endblock %}

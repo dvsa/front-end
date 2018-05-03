@@ -1,0 +1,97 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Find a vehicle' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT testing</span>
+      <span class="content-header__title">Find a vehicle</span>
+    </h1>
+  </header>
+
+  <form method="get" name="VehicleSearch" action="&#x23;" id="VehicleSearch">
+    <p id="main-message" class="result__group-heading">
+      <strong>1</strong> vehicle found with registration
+      <strong>AD33XCP</strong> and a VIN matching
+      <strong> PCXDAKAAAAA882103</strong>.</p>
+
+    <table id="results-table" class="result-table">
+      <thead>
+        <tr>
+          <th scope="col">Vehicle</th>
+          <th scope="col">Registration mark</th>
+          <th scope="col">VIN</th>
+          <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <strong>
+              CITROEN RELAY </strong>
+            <br/>
+            <span class="result-table__meta">
+              1 test, last tested 23 January 2018 </span>
+          </td>
+          <td class="tabular">AD33XCP</td>
+          <td class="tabular">PCXDAKAAAAA882103</td>
+          <td class="tabular">
+            <a href="#">
+              Select vehicle
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <details>
+      <summary aria-controls="details-content-1" tabindex="0" aria-expanded="false">
+        <span class="summary" id="search-again">Search again</span>
+      </summary>
+      <div class="panel-indent" id="details-content-1" aria-hidden="true">
+
+        <fieldset>
+          <div class="form-group" id="registration-field">
+            <label id="reg-label" for="reg-input" class="form-label">
+              Registration mark
+            </label>
+            <input type="text" name="registration" class="form-control&#x20;is-reg" id="reg-input" style="width&#x3A;&#x20;20ch" value="AD33XCP"
+              maxlength="13"> </div>
+
+          <div class="form-group ">
+            <label id="vin-label" for="vin-input" class="form-label">
+              VIN
+              <span class="form-hint">Enter the last 6 digits or the full VIN</span>
+            </label>
+            <input type="text" name="vin" id="vin-input" class="form-control&#x20;is-vin" style="width&#x3A;&#x20;30ch" value="&#x20;PCXDAKAAAAA882103"
+              maxlength="20"> </div>
+
+
+          <div class="form-group">
+            <input type="submit" value="Search" class="button" id="vehicle-search">
+          </div>
+        </fieldset>
+
+      </div>
+    </details>
+
+  </form>
+  <nav class="content-navigation">
+    <ul class="content-navigation__secondary">
+      <li>
+        <a id="cancel_vehicle_search" href="#">Cancel and return home</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="message--important">
+    <p id="new-vehicle-record-info">
+      If you can't find a vehicle you can
+      <a id="new-vehicle-record-link" href="#">create a new vehicle record</a>.
+    </p>
+    <p>Check that you have searched with the correct VIN and registration mark before you do this.</p>
+  </div>
+  
+{% endblock %}

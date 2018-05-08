@@ -208,6 +208,13 @@ export function suggestedGet(req, res) {
   return res.render('prototypes/learner/v6/suggested-learning/index', viewData);
 }
 
+// suggested learning full list GET
+export function suggestedFullGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v6/suggested-learning/full', viewData);
+}
+
 // search
 export function searchGet(req, res) {
   let viewData, searchTerm;

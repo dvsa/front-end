@@ -8,6 +8,7 @@ exports.plannedGet = plannedGet;
 exports.profileGet = profileGet;
 exports.recordGet = recordGet;
 exports.suggestedGet = suggestedGet;
+exports.suggestedFullGet = suggestedFullGet;
 exports.searchGet = searchGet;
 exports.searchPost = searchPost;
 exports.feedbackGet = feedbackGet;
@@ -201,6 +202,13 @@ function suggestedGet(req, res) {
   };
 
   return res.render('prototypes/learner/v6/suggested-learning/index', viewData);
+}
+
+// suggested learning full list GET
+function suggestedFullGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v6/suggested-learning/full', viewData);
 }
 
 // search

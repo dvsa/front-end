@@ -67,6 +67,8 @@
 
             <div class="resources">
 
+                <h2 class="heading-small" style="color:red!important">Deprecated, don't use <code>.resource</code>, use <code>.discite</code> instead</h2>
+
                 <div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
@@ -120,6 +122,8 @@
         {% call components.columnFull() %}
 
             {{ components.heading(text='Other learning:', tag='h3', size='medium', extraClass='') }}
+
+            <h2 class="heading-small" style="color:red!important">Deprecated, don't use <code>.resource</code>, use <code>.discite</code> instead</h2>
 
             <div class="resource">
                 <ul class="resource__item u-clearfix">
@@ -175,6 +179,8 @@
                     </li>
                 </ul>
             </div>#}
+
+            <h2 class="heading-small" style="color:red!important">Deprecated, don't use <code>.resource</code>, use <code>.discite</code> instead</h2>
 
             <div class="resource">
                 <ul class="resource__item u-clearfix">
@@ -234,6 +240,8 @@
                 </ul>
             </div>#}
 
+            <h2 class="heading-small" style="color:red!important">Deprecated, don't use <code>.resource</code>, use <code>.discite</code> instead</h2>
+
             <div class="resource">
                 <ul class="resource__item u-clearfix">
                     <li class="resource__main">
@@ -279,6 +287,8 @@
 
             {{ components.heading(text='Without filters column:', tag='h3', size='medium', extraClass='') }}
 
+            <h2 class="heading-small" style="color:red!important">Deprecated, don't use <code>.resource</code>, use <code>.discite</code> instead</h2>
+
         {%- endcall %}
 
     {%- endcall %}
@@ -310,6 +320,8 @@
         {% call components.columnFull() %}
 
             {{ components.heading(text='With filters column:', tag='h3', size='medium', extraClass='') }}
+
+            <h2 class="heading-small" style="color:red!important">Deprecated, don't use <code>.resource</code>, use <code>.discite</code> instead</h2>
 
         {%- endcall %}
 
@@ -1123,6 +1135,49 @@
         ) }}
 
         </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Two thirds width, as search results', tag='h3', size='medium', extraClass='') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            [Search filters]
+
+        {%- endcall %}
+
+        {% call components.columnTwoThirds() %}
+
+            <div class="learning">
+
+                {{ components.disciteRow(
+                    name='Windsor Leadership Trust - Director Developing Strategic Leadership Programme',
+                    headingTag='h3',
+                    description='This programme assists those progressing towards more senior leadership positions to develop their strategic thinking.',
+                    headingExtraClass='discite__heading',
+                    headingURL='#',
+                    type='Classroom',
+                    action='Book',
+                    workArea='Commercial',
+                    duration='3 days',
+                    cost='£4100',
+                    addToLearningPlan=true,
+                    extraModifierClass='search'
+                ) }}
+
+            </div>
 
         {%- endcall %}
 

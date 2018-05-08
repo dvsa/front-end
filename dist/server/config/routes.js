@@ -555,6 +555,7 @@ router.get('/prototypes/learner/v6/learning-plan', learnerV6Controller.plannedGe
 router.get('/prototypes/learner/v6/learning-record', learnerV6Controller.recordGet);
 // suggested learning
 router.get('/prototypes/learner/v6/suggested-learning', learnerV6Controller.suggestedGet);
+router.get('/prototypes/learner/v6/suggested-learning-full', learnerV6Controller.suggestedFullGet);
 
 // profile
 router.get('/prototypes/learner/v6/privacy', learnerV6Controller.privacyGet);

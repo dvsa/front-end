@@ -1,0 +1,36 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Reading list for: Course with lots of pre-learning items - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v6' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v6/' %}
+{% set homePath = '/prototypes/learner/v6/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Reading list for: Course with lots of pre-learning items') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p class="lede">This is a reading list for <a href="/prototypes/learner/v6/resource?resourceID=24">Course with lots of pre-learning items</a></p>
+
+            <p>It may help you understand some advanced topics on the course if you read the following items:</p>
+            <ul class="list-bullet">
+                <li><a href="#" target="_blank">This is an important document that will help you understand the topics in this course</a> (PDF, 412kb)</li>
+                <li><a href="#" target="_blank">A relevant blog post covering some of the stuff in the third module</a> (blog post)</li>
+                <li><a href="#http://localhost:3002/prototypes/learner/v6/resource?resourceID=4">Insightful Youtube video giving overview of some parts</a></li>
+                <li><a href="#">Another document that might help</a> (PDF, 331kb)</li>
+                <li><a href="#">This blog post would make a massice differene to your understanding</a> (blog post)</li>
+            </ul>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

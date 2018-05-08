@@ -31,6 +31,17 @@
 
   {%- endcall %}
 
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.heading(text='Booking elements', tag='h2', size='medium', url='/prototypes/layouts/booking') }}
+            {{ components.paragraph(text='Various interactions for the booking process.') }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
   {% call components.gridRow() %}
 
       {% call components.columnOneThird() %}

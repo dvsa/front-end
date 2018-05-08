@@ -1,0 +1,279 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Learning plan - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+{% set hasBeenAdded = hasBeenAdded if hasBeenAdded %}
+{% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
+{% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="u-space-y30 header-box u-border-bgrey2">
+
+                {% call components.gridRow() %}
+
+                    {% call components.columnHalf() %}
+
+                        {{ components.heading(text='Learning plan', tag='h1', size='large', extraClass='heading--flush') }}
+
+                        {#<p class="u-space-b5">You have <a href="#">one overdue required course</a> to complete.</p>#}
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v7/search") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                    {#<a href="#" class="search-box__advanced">Advanced search</a>#}
+
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
+
+                {%- endcall %}
+
+            </div>
+
+            {% if hasBeenAdded %}
+                {{ components.banner(mainText='Course successfully added', secondaryText='This course has successfully been added to your learning plan', type="confirmation")}}
+            {% endif %}
+            {% if hasBeenRemoved %}
+                {{ components.banner(mainText='Course successfully removed', secondaryText='The course has successfully been removed from your learning plan', type="confirmation")}}
+            {% endif %}
+
+            {% if willBeRemoved %}
+                {{ components.banner(mainText='Are you sure you want to remove this course?', secondaryText='You have already started this course and your progress may be lost. <br><a href="/prototypes/learner/v7/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">No, keep it</a>', type="warning")}}
+
+            {% endif %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <div class="resources">
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v7/resource?resourceID=5">Responsibility for information</a>
+                            <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Due by 18 Sep 2018</span>
+                        </li>
+                        <li class="resource__duration">
+                            <span>1 hour</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info ">In progress</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v7/resource?resourceID=6">Unconscious bias</a>
+                            <span class="resource__action">
+                                <a href="#">Start<span class="visuallyhidden"> course</span></a>
+                            </span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Due by 21 Oct 2018</span>
+                        </li>
+                        <li class="resource__duration">
+                            <span>2 hours</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            {{ components.heading(text='Other learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <div class="resources">
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a  class="resource__title" href="/prototypes/learner/v7/resource?resourceID=3">Digital awareness: digital by default</a>
+                            <span class="resource__action">
+                                <a href="#">Resume <span class="visuallyhidden"> course</span></a>
+                                <a href="/prototypes/learner/v7/actions?action=removedFromLearningPlan&status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='25%', total='10') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Online, 3 hours</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info ">In progress</span>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a  class="resource__title" href="/prototypes/learner/v7/resource?resourceID=7">Effective negotiation for senior managers</a>
+                            <span class="resource__action">
+                                <a href="#">Cancel <span class="visuallyhidden"> this booking</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='100%', total='82') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>Work area: commercial</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 2 hours</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="badge badge--info ">Booked</span>
+                            <span class="meta">21 Aug 2018</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v7/resource?resourceID=4">Simon Sinek - Start With Why - TED Talk Short Edited</a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v7/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='96%', total='486') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>Work area: digital</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Video, 30 minutes</span>
+                        </li>
+                        <li class="resource__status">
+                            <span class="visuallyhidden">Not started</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v7/resource?resourceID=2">What the civil service of tomorrow will look like</a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v7/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='77%', total='84') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>Work area: commercial</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Blog, 10 minutes</span>
+                        </li>
+                        <li class="resource__status"><span class="visuallyhidden">Not started</span></li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better" target="_blank">Higher base pay for commercial staff</a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v7/actions?action=removedFromLearningPlan">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='77%', total='351') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>Work area: commercial</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Blog, 10 minutes</span>
+                        </li>
+                        <li class="resource__status"><span class="visuallyhidden">Not started</span></li>
+                    </ul>
+                </div>
+
+                <div class="resource">
+                    <ul class="resource__item u-clearfix">
+                        <li class="resource__main">
+                            <a class="resource__title" href="/prototypes/learner/v7/resource?resourceID=9">Foreign contract compliance legal obligations</a>
+                            <span class="resource__action">
+                                <a href="/prototypes/learner/v7/booking/">Book now</a>
+                                <a href="/prototypes/learner/v7/actions?action=removedFromLearningPlan">Remove<span class="visuallyhidden"> from learning plan</span></a>
+                            </span>
+                        </li>
+                        {% if not hideHomeStars %}
+                            <li class="resource__rating">
+                                {{ components.starRating(rating='85%', total='83') }}
+                            </li>
+                        {% endif %}
+                        <li class="resource__info">
+                            <span>&nbsp;</span>
+                        </li>
+                        <li class="resource__info">
+                            <span>Classroom, 5 hours</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

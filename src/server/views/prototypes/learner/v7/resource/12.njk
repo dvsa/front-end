@@ -1,0 +1,60 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Blog article - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Capability in the Civil Service') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>In this module you consider how to work with potential providers and achieve what you require. You’ll learn about supply chains, pricing. </p>
+
+
+            {{ components.heading(text='Download document', tag='h2', size='small') }}
+
+            <ul class="u-space-b30">
+                <li>
+                    <a href="#" target="_blank">Capability in the Civil Service</a> (PDF, 412kb)
+                </li>
+            </ul>
+
+            <p>
+                <a href="/prototypes/learner/v7/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='76%', total='104') }}
+                {% endif %}
+            </aside>
+
+
+
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

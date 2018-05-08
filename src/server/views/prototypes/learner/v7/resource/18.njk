@@ -1,0 +1,43 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Blog article - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='The Bottom Line') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Radio4, The Bottom Line, Evan Davis hosts the business conversation show with people at the top giving insight into what matters</p>
+
+            <p><a href="https://www.bbc.co.uk/programmes/b006sz6t" target="_blank">Listen to the audio on BBC iPlayer</a> (external link)</p>
+
+            <p>
+                <a href="/prototypes/learner/v7/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+            </aside>
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

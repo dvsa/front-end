@@ -1,0 +1,173 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Diversity &amp; inclusion - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Diversity &amp; inclusion') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>This topic covers the role unconscious bias can play in the workplace, as well as the importance of equality, diversity and inclusion.</p>
+
+        <p>You also learn about the equality laws that are in place, and the duty to treat our customers fairly.</p>
+        <p>This diversity and inclusion topic contains 8 activities. You can do them all in one go or in stages. </p>
+
+        {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+        <p>On completing all the topics, you'll:</p>
+        <ul class="list-bullet u-space-b30">
+            <li>have an understanding of what unconscious bias is and how it can affect your work</li>
+            <li>be able to recognise different types of unconscious bias and their impact</li>
+            <li>know how to challenge your own thinking, and how to help create the right environment.</li>
+            <li>be aware of some of the strategies you can use to minimise the impact of unconscious bias on decision making</li>
+            <li>understand why we need legislation</li>
+            <li>be more aware of how stereotyping, bullying and harassment can affect work relationships and decisions</li>
+            <li>have insight into the barriers disabled customers may face and duties towards all of our customers</li>
+        </ul>
+
+        <p><strong>You must complete all 8 learning modules to finish this topic.</strong></p>
+
+        <div class="discite">
+
+            {{ components.disciteRow(
+                name='Introducing unconscious bias',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                status='Completed',
+                action='Retake',
+                duration='5 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Challenging unconscious bias in recruitment decisions',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                status='In Progress',
+                action='Resume',
+                duration='8 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Unconscious bias in the workplace',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Challenging unconscious bias',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Document',
+                action='Download',
+                isDocument=true,
+                duration='8 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, diversity and inclusion in the Civil Service',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Video',
+                action='Start',
+                duration='12 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, Diversity and Inclusion: The legal framework',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Resume',
+                status='In progress',
+                duration='5 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, diversity and inclusion: Our inclusive workplace',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, diversity and inclusion: Our customers',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='8 minutes',
+                extraModifierClass='module'
+            ) }}
+
+        </div>
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>AA to SCS</td>
+                    </tr>
+                    <tr>
+                        <th>Key area</th>
+                        <td>General</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>1 hour</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£Free</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

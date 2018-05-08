@@ -1,0 +1,77 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your grade - Learning Platform for Government' %}
+
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/' %}
+
+{% set gradeSelectOptions = gradeSelectOptions if gradeSelectOptions %}
+{% set registrationJob2Error = registrationJob2Error if registrationJob2Error %}
+{% set registrationGradeError = registrationGradeError if registrationGradeError %}
+{% set grade = grade if grade %}
+
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes'  %}
+{% else %}
+    {% set buttonText = 'Continue'  %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Your grade', 'Create an account') }}
+
+    {% if registrationJob2Error %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your information</h2>
+            <ul class="error-summary-list">
+                {% if registrationGradeError %}
+                    {% set registrationGradeErrorMessage = 'Selet your grade' %}
+                    <li><a href="#grade">You must select a grade</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='registerGrade', method='POST', action="#") %}
+
+                <!-- Grade -->
+                <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
+
+                {% for item in gradeSelectOptions %}
+                    {% if grade == item.value %}
+                        {% set checked = 'checked' %}
+                    {% else %}
+                        {% set checked = '' %}
+                    {% endif %}
+                    {{ components.radio(item.text, item.value, 'areaOfWork'+item.value, name='grade', isChecked=checked) }}
+                {% endfor %}
+
+                </fieldset>
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v7">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+

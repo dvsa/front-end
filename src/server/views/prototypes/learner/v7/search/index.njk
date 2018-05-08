@@ -1,0 +1,308 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Search results - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/home' %}
+{% set searchTerm = searchTerm if searchTerm %}
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.pageHeading('Search results') }}
+
+            {{ components.searchBox(actionPath='/prototypes/learner/v7/search') }}
+
+        <p class="lede">There were <strong>46</strong> results for <strong>senior management</strong></p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird(extraClass='filters-column') %}
+
+            {% call components.formElement(name='registerDepartment', method='POST', action="#") %}
+
+                <div class="filters">
+
+                    <div class="filter">
+                        <h2 class="filter__title">Learning type</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter3" type="checkbox" name="learningTypeBlog" value="blog">
+                                    <label for="typeFilter3" class="u-display-ib">Blog</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter2" type="checkbox" name="learningTypeClassroom" value="classroom">
+                                    <label for="typeFilter2" class="u-display-ib">Classroom</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter1" type="checkbox" name="learningTypeOnline" value="online">
+                                    <label for="typeFilter1" class="u-display-ib">Online</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="typeFilter4" type="checkbox" name="learningTypeVideo" value="video">
+                                    <label for="typeFilter4" class="u-display-ib">Video</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter">
+                        <h2 class="filter__title">Cost</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="costFilter" type="checkbox" name="learningCost" value="blog">
+                                    <label for="costFilter" class="u-display-ib">Show only free</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter">
+                        <h2 class="filter__title">Areas of work</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="areaPrimary" type="checkbox" name="areaFilter" value="digital">
+                                    <label for="areaPrimary" class="u-display-ib">Digital, Data &amp; Technology</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="areaLegal" type="checkbox" name="areaFilter" value="legal">
+                                    <label for="areaLegal" class="u-display-ib">Legal</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="areaLead" type="checkbox" name="areaFilter" value="leadership">
+                                    <label for="areaLead" class="u-display-ib">Leadership</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <input class="button" type="submit" value="Apply search filters">
+
+                </div>
+
+
+
+                {#<a href="#" class="remove-filters font-xsmall" onclick="removeFiltersColumn('filters-column', 'results-column');">Remove filters column</a>#}
+
+                {#<script>
+                    function removeFiltersColumn(filterColumnClass, resultColumnClass) {
+                        removeElementsByClass(filterColumnClass);
+                        expandResultsColumn(resultColumnClass);
+                    }
+                    function expandResultsColumn(className) {
+                        var element = document.getElementsByClassName(className);
+                        element[0].classList.remove('column-two-thirds');
+                        element[0].classList.add('column-full');
+                    }
+                    function removeElementsByClass(className){
+                        var elements = document.getElementsByClassName(className);
+                        while(elements.length > 0){
+                            elements[0].parentNode.removeChild(elements[0]);
+                        }
+                    }
+                </script>#}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.columnTwoThirds(extraClass='results-column') %}
+
+            <div class="results">
+
+                {{ components.disciteRow(
+                    name='APMG Change Management Foundation',
+                    id='9',
+                    headingTag='h3',
+                    description='In this module you consider how to work with potential providers and achieve what you require. You’ll learn about supply chains, pricing.',
+                    workArea='',
+                    type='Classoom',
+                    duration='5 hours',
+                    cost='£349',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='APMG Change Management Foundation & Practitioner',
+                    id='9',
+                    headingTag='h3',
+                    description='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo',
+                    workArea='Commercial',
+                    type='Online',
+                    duration='2 hours',
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='APMG International Managing Benefits™ Foundation & Practitioner certification',
+                    id='9',
+                    headingTag='h3',
+                    description='Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.',
+                    workArea='Commercial',
+                    type='Classroom',
+                    duration='4 hours',
+                    cost='£1055',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='APMG International Managing Benefits™ Practitioner certification',
+                    id='9',
+                    headingTag='h3',
+                    description='Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis partu.',
+                    workArea='Commercial',
+                    type='Classroom',
+                    duration='4 hours',
+                    cost='£2459',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Managing Successful Programmes (MSP®) Advanced Practitioner re-registration dissertation route',
+                    id='9',
+                    headingTag='h3',
+                    description='One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back.',
+                    workArea='Commercial',
+                    type='Classroom',
+                    duration='2 days',
+                    cost='£259',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Senior management strategy',
+                    id='9',
+                    headingTag='h3',
+                    description='Lorem. Ligula. Pede odio Eleifend. Dolor dignissim varius libero. Inceptos praesent. Nec eget viverra tellus elementum morbi fusce fermentum euismod volutpat turpis ad quis accumsan curae; tristique per Fermentum sociis.',
+                    workArea='Commercial',
+                    type='Online',
+                    duration='1 hour',
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Managing Successful Programmes (MSP®) Practitioner',
+                    id='9',
+                    headingTag='h3',
+                    description='Condimentum ligula convallis molestie aliquet eget, integer luctus rhoncus Aptent sagittis felis justo varius. Quam. Vulputate, nisl cubilia maecenas et sociosqu lobortis erat velit erat praesent tortor.',
+                    workArea='Digital',
+                    type='Classroom',
+                    duration='4 hours',
+                    cost='£1245',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Time management',
+                    id='9',
+                    headingTag='h3',
+                    description='Eget curabitur, vulputate quis primis, non tellus venenatis, felis a nostra mus primis. Ridiculus. A suspendisse massa ornare volutpat justo ligula scelerisque maecenas quam Cubilia torquent arcu ut tempus mattis.',
+                    workArea='Digital',
+                    type='Online',
+                    duration='2 hours',
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Ship Safety Management Office (SSMO) - Non Residential',
+                    id='9',
+                    headingTag='h3',
+                    description='Eget curabitur, vulputate quis primis, non tellus venenatis, felis a nostra mus primis. Ridiculus. A suspendisse massa ornare volutpat justo ligula scelerisque maecenas quam Cubilia torquent arcu ut tempus mattis.',
+                    workArea='HMRC',
+                    type='Classroom',
+                    duration='2 hours',
+                    cost='£1559',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#',
+                    action='Book'
+                ) }}
+
+                {{ components.disciteRow(
+                    name='Managing teams remotely',
+                    id='9',
+                    headingTag='h3',
+                    description='Eros dui dignissim nascetur nec maecenas sodales dis platea Mus, sit natoque tempor hendrerit cras massa egestas odio, aliquet quam.',
+                    workArea='Digital',
+                    type='Online',
+                    duration='2 hours 30 minutes',
+                    cost='£Free',
+                    headingExtraClass='discite__heading',
+                    addToLearningPlan=true,
+                    extraModifierClass='search',
+                    headingURL='#'
+                ) }}
+                
+            </div>
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.pagination(totalItems=46,currentPage=1) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+{% endblock %}

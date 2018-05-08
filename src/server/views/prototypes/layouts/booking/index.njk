@@ -1,0 +1,20 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Prototypes Index: layouts' %}
+
+{% block content %}
+
+    {{ components.pageHeading('Prototypes: booking elements ', 'LPG Front-End') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+{% endblock %}

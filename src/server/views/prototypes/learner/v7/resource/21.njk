@@ -1,0 +1,49 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Blog article - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Good Product Manager/Bad Product Manager, Ben Horowitz') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Classic on product manager thinking and doing</p>
+
+            {{ components.heading(text='Download document', tag='h3', size='small') }}
+
+            <ul class="u-space-b30">
+                <li>
+                    <a href="https://a16z.files.wordpress.com/2014/08/good-product-manager.pdf" target="_blank">Good Product Manager/Bad Product Manager</a> (PDF, 412kb)
+                </li>
+            </ul>
+
+            <p>
+                <a href="/prototypes/learner/v7/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+            </aside>
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

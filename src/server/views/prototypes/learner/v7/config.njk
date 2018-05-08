@@ -1,0 +1,112 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Prototypes Index' %}
+
+{% block content %}
+
+    {{ components.pageHeading('Learner journey, v7', 'LPG Front-End') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+        {% if configError %}
+
+            <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem</h2>
+                <ul class="error-summary-list">
+                    <li><a href="#config1">Pick one option from below to continue</a></li>
+                </ul>
+            </div>
+
+        {% endif %}
+
+    {% call components.formElement(name='registrtionConfig', method='POST', action="#") %}
+
+        <p>Basic user journey for learners with ability to register a new account.</p>
+
+        <p><strong>Sign in page</strong> will accept any legitimate email address and any password that is two or more characters long.</p>
+
+        <p>
+            If you want to get rid of everything and start again, then <a href="/prototypes/learner/v7/config?clearSession=true">clear v7 session</a>.
+        </p>
+
+        <fieldset class="u-space-b30">
+
+            <legend class="heading-small">Do you want to load the proper SCORM package?</legend>
+
+            <div class="multiple-choice">
+                <input id="scorm1" type="radio" name="scormConfig" value="bringItOn" checked="checked">
+                <label for="scorm1">
+                    Yes, bring it on!
+                    <span class="form-hint">A snip, at circa 10MB</span>
+                </label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="scorm2" type="radio" name="scormConfig" value="hellNo">
+                <label for="scorm2">
+                    Save me, I can't take it.
+                    <span class="form-hint">A very sensible 1MB~ish</span>
+                </label>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="u-space-b30 {% if configError %} form-group-error {% endif %}">
+
+            <legend class="heading-small"><strike>Where do you want to display the stars?</strike> <br>Stars disabled everywhere by default in this version</legend>
+
+            <div class="multiple-choice">
+                <input id="config1" type="radio" name="regConfig" value="all" disabled>
+                <label for="config1">Show all the stars everywhere</label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="config3" type="radio" name="regConfig" value="detailAndHome" checked="checked">
+                <label for="config3">Hide stars on home page AND course detail page</label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="config2" type="radio" name="regConfig" value="home" disabled>
+                <label for="config2">Hide stars only on the home page</label>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="u-space-b30">
+
+            <legend class="heading-small">Job roles display from profile page...</legend>
+
+            <div class="multiple-choice">
+                <input id="roles1" type="radio" name="rolesConfig" value="splitRoles" checked="checked">
+                <label for="roles1">Show the top level work areas in their own page with radio buttons</label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="roles2" type="radio" name="rolesConfig" value="joinedRoles">
+                <label for="roles2">
+                    Show all work area levels in the 4 column "selector" interaction
+                    <span class="form-hint">(This only demonstrates the Commercial hierarchy)</span>
+                </label>
+            </div>
+
+        </fieldset>
+
+        {% call components.formGroup() %}
+
+            {{ components.button(text='Continue', group=true)}}
+
+        {%- endcall %}
+
+        <p>
+            <a href="/prototypes/learner/v7">Cancel</a>
+        </p>
+
+    {%- endcall %}
+
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

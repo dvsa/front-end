@@ -1,0 +1,79 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Leave feedback - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+
+{% block content %}
+
+    {{ components.pageHeading('Leave feedback') }}
+
+    {% call components.formElement(name='feedbackForm', method='POST', action="#") %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnTwoThirds() %}
+
+                <p class="lede">You need to leave feedback on the following items. Leaving feedback helps us improve our service.</p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <div class="learning">
+
+                    {{ components.disciteRow(
+                        name='Andrew Shatte – Resilience',
+                        headingTag='h3',
+                        description='Resilience -- the ability to "bounce back" -- is a critical competency for success at work, for happiness at home and for balancing the two.',
+                        headingExtraClass='discite__heading',
+                        headingURL='http://localhost:3002/prototypes/learner/v7/resource?resourceID=10',
+                        type='Video',
+                        action='Ignore',
+                        leaveFeedback='/prototypes/learner/v7/feedback/informal',
+                        duration='2 hours 30 minutes',
+                        cost='£Free',
+                        ignoreURL='/prototypes/learner/v7/home'
+                    ) }}
+
+                    {{ components.disciteRow(
+                        name='Commercial Cycle 1: setting the direction. Extended course name to test wrapping of longer titles.',
+                        headingTag='h3',
+                        description='This si the course description, which should possible appear as an aide memoire along with the cost, durtion and type of learning.',
+                        headingExtraClass='discite__heading',
+                        headingURL='#',
+                        type='Classroom',
+                        action='Ignore',
+                        leaveFeedback='/prototypes/learner/v7/feedback/formal',
+                        duration='1 day',
+                        cost='£549',
+                        ignoreURL='/prototypes/learner/v7/home'
+                    ) }}
+
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+       {# {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <p>
+                    <a href="/prototypes/learner/v7/home">Back</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}#}
+
+    {%- endcall %}
+
+{% endblock %}

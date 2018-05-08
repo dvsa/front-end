@@ -1,0 +1,31 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Registration complete - Learning Platform for Government' %}
+
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v7' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v7/' %}
+{% set homePath = '/prototypes/learner/v7/' %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">Registration complete</h1>
+        <p class="font-medium">Your account with the Learning Platform for Government has been created</p>
+    </div>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">What happens next?</h2>
+
+            <p>We have sent you a confirmation email.</p>
+
+            <p>You can now <a href="/prototypes/learner/v7">sign into the Learning Platform for Government</a>.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

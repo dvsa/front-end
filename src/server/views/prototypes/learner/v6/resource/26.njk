@@ -33,21 +33,20 @@
             <li>Sagittis cursus lobortis in, interdum sit amet risus. </li>
         </ul>
 
-        {{ components.heading(text='Before you start', tag='h2', size='medium') }}
+        <details>
+            <summary><span class="summary">Advised reading list</span></summary>
+            <div class="panel panel-border-narrow">
+                <p>It may help you understand some advanced topics on the course if you read the following items:</p>
+                <ul class="list-bullet">
+                    <li><a href="#" target="_blank">This is an important document that will help you understand the topics in this course</a> (PDF, 412kb)</li>
+                    <li><a href="#" target="_blank">A relevant blog post covering some of the stuff in the third module</a> (blog post)</li>
+                    <li><a href="#http://localhost:3002/prototypes/learner/v6/resource?resourceID=4">Insightful Youtube video giving overview of some parts</a></li>
+                    <li><a href="#">Another document that might help</a> (PDF, 331kb)</li>
+                    <li><a href="#">This blog post would make a massice differene to your understanding</a> (blog post)</li>
+                </ul>
+            </div>
+        </details>
 
-        <p><strong>You must already have a <a href="#">Prince II Foundation</a> certificate.</strong></p>
-
-        {{ components.heading(text='Pre-learning requirements', tag='h3', size='small') }}
-
-        <p>You <strong>must</strong> read or complete the following:</p>
-        <ul class="list-bullet">
-            <li><a href="https://civilservicelearning.civilservice.gov.uk/sites/default/files/resources/csl_managing_contractors_case_study.pdf">CSL Managing Contractors Case Study</a> (PDF 289kb)<br>This document is a case study which was developed as part of the training course materials.  Delegates are required to read the case study prior to their attendance and prepare answers to 5 questions posed.  These questions/answers will then be discussed at the beginning of the workshop.  Further exercises during the training itself are also linked to the case study.</li>
-            <li><a href="https://civilservicelearning.civilservice.gov.uk/sites/default/files/resources/cross_government_review_of_major_contracts_summary_report1.pdf">Cross Government Review of Major Contracts Summary Report</a> (PDF 662kb)<br>This document provides background reading for delegates on why the area of managing contractors is so important to Government.</li>
-        </ul>
-
-        {{ components.heading(text='Pre-reading', tag='h3', size='small') }}
-
-        <p>There is an advised <a href="/prototypes/learner/v6/resource?resourceID=25">reading list</a> for this course.</p>
 
         <div class="notice u-space-y30">
             <i class="icon icon-important">
@@ -139,7 +138,7 @@
                 duration='8 minutes',
                 extraModifierClass='module'
             ) }}
-            
+
         </div>
 
     {%- endcall %}
@@ -180,11 +179,17 @@
                 {{ components.starRating(rating='68%', total='97') }}
             {% endif %}
 
-            {#<h2 class="heading-small">Pre-learning</h2>
+            <h2 class="heading-small">Pre-requisites</h2>
             <ul class="">
-                <li><a href="#">Case study</a> </li>
-                <li><a href="#">MPA review (pre-reading)</a> </li>
-            </ul>#}
+                <li><strong>You must already have a <a href="#">Prince II Foundation</a> certificate.</strong></li>
+            </ul>
+
+            <h2 class="heading-small">Pre-learning requirements</h2>
+            <p>You <strong>must</strong> read or complete the following:</p>
+            <ul class="list-bullet">
+                <li><a href="https://civilservicelearning.civilservice.gov.uk/sites/default/files/resources/csl_managing_contractors_case_study.pdf">CSL Managing Contractors Case Study</a> (PDF 289kb){#<br>Delegates are required to read the case study prior to their attendance and prepare answers to 5 questions posed.#}</li>
+                <li><a href="https://civilservicelearning.civilservice.gov.uk/sites/default/files/resources/cross_government_review_of_major_contracts_summary_report1.pdf">Cross Government Review of Major Contracts Summary Report</a> (PDF 662kb){#<br>Background reading for delegates on why the area of managing contractors is so important to Government.#}</li>
+            </ul>
 
         </aside>
 

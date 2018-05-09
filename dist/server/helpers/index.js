@@ -15,3 +15,15 @@ Object.keys(_prismCode).forEach(function (key) {
     }
   });
 });
+
+var _directories = require('./directories');
+
+Object.keys(_directories).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _directories[key];
+    }
+  });
+});

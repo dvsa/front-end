@@ -6,15 +6,15 @@ import { getDirectories, getAllFilePathsWithinPath } from './../helpers';
 
 /**
  * Add documentation content and links to the request object
- * 
+ *
  * @param {*} req Express request object
  * @param {*} res Express response object
  * @param {*} next Express next function
- * 
+ *
  * @author Tameem Safi <t.safi@kainos.com>
  */
 export const addDocumentationDataToRequestObject = (req, res, next) => {
-  if(!req.path.includes('documentation')) {
+  if (!req.path.includes('documentation')) {
     return next();
   }
 
@@ -37,7 +37,6 @@ export const addDocumentationDataToRequestObject = (req, res, next) => {
         content: '',
       });
     });
-
   });
 
   // Convert markdown to html
@@ -45,7 +44,6 @@ export const addDocumentationDataToRequestObject = (req, res, next) => {
   // Add content to request
 
   res.json(sections);
-  
 
   next();
-}
+};

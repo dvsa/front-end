@@ -27,3 +27,15 @@ Object.keys(_libraryNavigation).forEach(function (key) {
     }
   });
 });
+
+var _documentation = require('./documentation');
+
+Object.keys(_documentation).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _documentation[key];
+    }
+  });
+});

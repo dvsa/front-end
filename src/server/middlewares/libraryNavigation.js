@@ -1,31 +1,9 @@
 import path from 'path';
 import fs from 'fs';
-import nodeDir from 'node-dir';
 import { startCase } from 'lodash';
 
 import { CONFIG } from './../config/constants';
-
-export const isDirectory = source => fs.lstatSync(source).isDirectory();
-
-export const getDirectories = source => {
-  return fs
-    .readdirSync(source)
-    .map(name => path.join(source, name))
-    .filter(isDirectory);
-};
-
-export const getAllFilePathsWithinPath = async path => {
-  // Creates a promise since the function uses a callback
-  return new Promise((resolve, reject) => {
-    nodeDir.paths(path, (err, paths) => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve(paths.files);
-    });
-  });
-};
+import { getDirectories, getAllFilePathsWithinPath } from './../helpers';
 
 export const addLibraryNavigationItemsToRequestObject = async (req, res, next) => {
   let currentRoute = req.path;

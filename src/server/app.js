@@ -94,7 +94,11 @@ export const startApp = async () => {
     return etag(body, encoding);
   });
 
+  // Styleguide navigation
   app.use(Middlewares.addLibraryNavigationItemsToRequestObject);
+
+  // Documentation
+  app.use(Middlewares.addDocumentationDataToRequestObject);
 
   // Enable HTML Compression
   // Website: https://www.npmjs.com/package/express-minify-html

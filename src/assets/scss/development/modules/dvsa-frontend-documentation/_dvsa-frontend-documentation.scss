@@ -1,0 +1,33 @@
+.dvsa-frontend-documentation {
+  &__wrapper {
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 -15px;
+  }
+
+  &__left {
+    width: 200px;
+    border-right: 1px solid $panel-colour;
+    padding: 0 15px;
+
+    &-heading {
+      font-size: 19px;
+      line-height: 24px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      padding: 0;
+    }
+  }
+
+  &__right {
+    width: calc(100% - 200px);
+    padding: 0 15px;
+  }
+
+  &__links {
+    margin: 0 0 10px 0;
+    padding: 0;
+  }
+}

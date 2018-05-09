@@ -1,0 +1,81 @@
+.dvsa-full-width-footer {
+  @include border-box;
+
+  a {
+    color: $footer-link;
+  }
+
+  &__wrapper {
+    padding: 15px;
+  }
+
+  &__row {
+    @include clearfix;
+    margin: 0 -15px;
+  }
+
+  &__column {
+    float: left;
+    padding: 0 15px;
+
+    &--information {
+      width: calc(100% - 200px);
+      padding-top: 35
+      px;
+    }
+
+    &--crown-logo {
+      text-align: right;
+      width: 200px;
+    }
+  }
+
+  &__crown {
+    &-logo {
+      display: block;
+    }
+
+    &-logo-icon {
+
+    }
+
+    &-copyright-link {
+      display: block;
+      color: $footer-text;
+    }
+  }
+
+  &__inline-links {
+    @include clearfix;
+
+    &-item {
+      float: left;
+      margin: 0 15px 15px 0;
+    }
+
+    &-link {
+    }
+
+    &-text {
+      color: $footer-text;
+    }
+  }
+
+  &__open-government-licence {
+    &-logo {
+      display: inline-block;
+      margin: 0 10px 10px 0;
+    }
+
+    &-text {
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      color: $footer-text;
+    }
+  }
+
+  &__version-number {
+    display: block;
+    color: $footer-text;
+  }
+}

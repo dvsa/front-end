@@ -22,6 +22,13 @@
       
     {%- endcall %}
 
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Documentation', tag='h2', size='medium', url='/documentation') }}
+      {{ components.paragraph(text='Documentation on how to use the front-end framework with DVSA applications.') }}
+      
+    {%- endcall %}
+
   {%- endcall %}
 
 {% endblock %}

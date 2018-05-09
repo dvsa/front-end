@@ -1,0 +1,114 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = "What is the vehicle's registration number - MOT History" %}
+
+{% block content %}
+
+  {{
+    components.link(
+      text='Back',
+      url='/prototypes/moth',
+      back=true
+    )
+  }}
+
+  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+      There was a problem
+    </h2>
+
+    <ul class="error-summary-list">
+      <li>
+        <a href="#v5cInput">
+          Enter a valid V5C number
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">What is the vehicle's registration number?</h1>
+
+      <form method="POST" name="moth-search" id="EVL" action="/">
+        <fieldset>
+          <legend class="form-title heading-medium visuallyhidden">
+            Enter the vehicle registration
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label form-label-bold" for="regNumber">
+              <span>
+                <span class="sr-only">Enter your</span> Registration number (number plate)
+                <span class="sr-only">into this field only</span>
+              </span>
+              <span class="form-hint">For example, CU57ABC</span>
+            </label>
+
+            <input type="text" name="regNumber" id="regNumber" class="form-control" value="CU57ABC">
+          </div>
+
+          <div class="form-group">
+            <div class="multiple-choice" data-target="v5c-form">
+              <input id="showTestLocation" name="showTestLocation" type="checkbox" value="YES" checked>
+              <label for="showTestLocation">
+                I would like to see test locations
+              </label>
+            </div>
+            
+            <div class="panel panel-border-narrow js-hidden" id="v5c-form">
+              <p>
+                This field is only required if you would like to see the MOT test location along with the history, you will need to enter the vehichle V5C number.
+              </p>
+
+              <div class="form-group form-group-error">
+                <label class="form-label form-label-bold" for="v5cInput">
+                  Enter vehicle V5C
+                  <span class="form-hint">
+                    11 digits from the vehicle log book
+                  </span>
+
+                  <span class="error-message">
+                    Enter a valid V5C number
+                  </span>
+                </label>
+
+                <input class="form-control form-control-error" type="text" id="v5cInput" name="v5cInput" value="test">
+              </div>
+            </div>
+
+            <div class="multiple-choice" data-target="trailer-info-form">
+              <input id="showTrailerInfo" name="showTrailerInfo" type="checkbox" value="YES">
+              <label for="showTrailerInfo">
+                I would like to see trailer information
+              </label>
+            </div>
+
+            <div class="panel panel-border-narrow js-hidden" id="trailer-info-form">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam rerum accusamus inventore repellat quos!
+              </p>
+
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="trailerInput">
+                  Enter trailer ID
+                  <span class="form-hint">
+                    Some help text here
+                  </span>
+                </label>
+
+                <input class="form-control" type="text" id="trailerInput" name="trailerInput">
+              </div>
+            </div>
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" name="submit" class="button" value="Continue">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+{% endblock %}

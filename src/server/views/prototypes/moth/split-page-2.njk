@@ -1,0 +1,45 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = "What is the vehicle's registration number - MOT History" %}
+
+{% block content %}
+
+  {{
+    components.link(
+      text='Back',
+      url='/prototypes/moth',
+      back=true
+    )
+  }}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">What is the vehicle's registration number?</h1>
+
+      <form method="POST" name="moth-search" id="EVL" action="/">
+        <fieldset>
+          <legend class="form-title heading-medium visuallyhidden">
+            Enter the vehicle registration
+          </legend>
+
+          <div class="form-group">
+            <label class="form-label form-label-bold" for="regNumber">
+              <span>
+                <span class="sr-only">Enter your</span> Registration number (number plate)
+                <span class="sr-only">into this field only</span>
+              </span>
+              <span class="form-hint">For example, CU57ABC</span>
+            </label>
+
+            <input type="text" name="regNumber" id="regNumber" class="form-control" value="">
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <input type="submit" name="submit" class="button" value="Continue">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+{% endblock %}

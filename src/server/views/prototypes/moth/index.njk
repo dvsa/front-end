@@ -1,0 +1,56 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Enter site review' %}
+
+{% block content %}
+
+  {{ components.pageHeading(
+    heading='MOTH Pages',
+    secondary='MOT testing service'
+  ) }}
+
+  <h2 class="heading-medium">
+    
+  </h2>
+
+  {{ components.list(
+    type='bullet',
+    items=[
+      {
+        url: '/prototypes/moth/enter-reg-with-checkboxes',
+        text: 'Enter reg page with checkboxs'
+      },
+      {
+        url: '/prototypes/moth/enter-reg-with-checkboxes-errors',
+        text: 'Enter reg page with checkboxs including errors'
+      },
+      {
+        url: '/prototypes/moth/results-page-with-test-location',
+        text: 'Results page with test locations'
+      },
+      {
+        url: '/prototypes/moth/results-page-with-test-location-errors',
+        text: 'Results page with test locations including errors'
+      }
+    ]
+  ) }}
+
+  {{ components.list(
+    type='bullet',
+    items=[
+      {
+        url: '/prototypes/moth/split-page-1',
+        text: 'Split page 1'
+      },
+      {
+        url: '/prototypes/moth/split-page-2',
+        text: 'Split page 2'
+      },
+      {
+        url: '/prototypes/moth/split-page-3',
+        text: 'Split page 3'
+      }
+    ]
+  ) }}
+  
+{% endblock %}

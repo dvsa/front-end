@@ -1,0 +1,354 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = "What is the vehicle's registration number - MOT History" %}
+
+{% block content %}
+
+  {{
+    components.link(
+      text='Back',
+      url='/prototypes/moth',
+      back=true
+    )
+  }}
+
+  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+      There was a problem
+    </h2>
+
+    <ul class="error-summary-list">
+      <li>
+        <a href="#v5cInput">
+          Enter a valid V5C number
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  {{ components.pageHeading('NISSAN QASHQAI', 'EJ13YLS', extraClass='heading--small-margin-bottom') }}
+
+  {{ components.link(text='Check another vehicle', url='#', paragraph=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+      {{ components.heading(text='White', secondary='Colour', tag='h2', size='medium', extraClass='heading--no-margin-top heading--small-margin-bottom') }}
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+      {{ components.heading(text='Petrol', secondary='Fuel type', tag='h2', size='medium', extraClass='heading--no-margin-top heading--small-margin-bottom') }}
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+      {{ components.heading(text='2013 (13 reg)', secondary='Year of manufacture', tag='h2', size='medium', extraClass='heading--no-margin-top heading--small-margin-bottom') }}
+    {%- endcall %}
+
+  {%- endcall %}
+
+  {{ components.heading(text='9 February 2018', secondary='MOT valid until', tag='h2', size='large', extraClass='heading--no-margin-top') }}
+
+  <p>
+    <a href="#">Get an MOT reminder</a> by email or text
+  </p>
+
+  <p>
+    If you think the MOT expiry date or any of the vehicle details are wrong, <a href="#">contact DVSA</a>
+  </p>
+
+  <div class="js-accordion js-accordion--up-down-arrows">
+    <div class="js-accordion__top-section">
+      <button class="js-accordion__expand-button">
+        Open All
+      </button>
+    </div>
+    <div class="js-accordion__wrapper">
+
+      <div class="js-accordion__section js-accordion__section--open" data-section-category="mot-history">
+        <div class="js-accordion__header">
+          <div class="js-accordion__header-left">
+            <h2 class="js-accordion__title">
+              <button class="js-accordion__title-button">
+                MOT History
+              </button>
+            </h2>
+            <p class="js-accordion__description">
+              Mileage recorded at test, parts failed or had minor problems
+            </p>
+          </div>
+          <div class="js-accordion__header-right">
+            <button class="js-accordion__header-icon"></button>
+          </div>
+        </div>
+        <div class="js-accordion__content">
+          <div class="grid-row u-space-b30 u-pad-b15 u-border-bgrey2">
+            <div class="column-one-third">
+              <h3 class="heading-pairs heading-pairs--small-top">
+                <span>Date tested</span>
+                9 October 2022
+              </h3>
+
+              <h3 class="mot-result mot-result--pass u-space-b5">
+                Pass
+              </h3>
+            </div>
+
+            <div class="column-two-thirds">
+              <div class="grid-row">
+                <div class="column-half u-space-b15">
+                  <h3 class="heading-pairs heading-pairs--small-top">
+                    <span>Mileage</span>
+                    109,557 miles
+                  </h3>
+                </div>
+
+                <div class="column-half u-space-b15">
+                  <h3 class="heading-pairs heading-pairs--small-top">
+                    <span>MOT test number</span>
+                    0000 0000 0000
+                  </h3>
+                </div>
+              </div>
+
+
+              <div class="grid-row">
+                <div class="column-full">
+                  <div class="grid-row">
+                    <div class="column-half u-space-b15">
+                      <h3 class="heading-pairs heading-pairs--small-top">
+                        <span>Test location</span>
+                      </h3>
+
+                      <details class="u-space-t15" role="group" open>
+                        <summary role="button" aria-controls="test-location-details-0" aria-expanded="true">
+                          <span class="summary">
+                            View test location
+                          </span>
+                        </summary>
+
+                        <div class="panel panel-border-narrow" aria-hidden="false" id="test-location-details-0">
+                          <div class="form-group form-group-error">
+                            <label class="form-label form-label-bold" for="v5cInput">
+                              Enter vehicle V5C
+                              
+                              <span class="form-hint">
+                                11 digits from the vehicle log book
+                              </span>
+
+                              <span class="error-message">
+                                Enter a valid V5C number
+                              </span>
+                            </label>
+
+                            <input class="form-control form-control-100 form-control-error" type="text" id="v5cInput" name="v5cInput">
+                          </div>
+
+                          <input type="submit" name="submit" class="button" value="Show test location">
+                        </div>
+                      </details>
+                    </div>
+                    <div class="column-half u-space-b15">
+                      <h3 class="heading-pairs heading-pairs--small-top">
+                        <span>Expiry date</span>
+                        11 October 2029 </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="column-full u-space-t15">
+                  <h4 class="heading-subtle">Advisory notice item(s)</h4>
+                  <ul class="list-bullet bold-small">
+                    <li>Nearside Front Suspension component mounting prescribed area is corroded but not considered excessive inner wheel arch (2.4.A.3)</li>
+                    <li>Offside Front Suspension component mounting prescribed area is corroded but not considered excessive inner wheel arch (2.4.A.3)</li>
+                    <li>Oil leak ()</li>
+                    <li>Play in steering rack inner joint(s) ()</li>
+                    <li>Front registration plate deteriorated but not likely to be misread (6.3.1d)</li>
+                    <li>Rear registration plate deteriorated but not likely to be misread (6.3.1d)</li>
+                    <li>Rear Brakes imbalanced requirements only just met. It would appear that the braking system requires adjustment or repair. (3.7.B.5b)</li>
+                  </ul>
+
+                  <details class="u-space-t15" role="group">
+                    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+                      <span class="summary" onclick="dataLayer.push({'event': 'link-click', 'link': 'what-are-these', 'link-text': 'What are these?'});">
+                        What are advisories?
+                      </span>
+                    </summary>
+                    <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-0">
+                      <p>Advisory items are provided for advice. For some of these, if they became more serious, your vehicle may no longer
+                        be roadworthy and could require immediate attention.</p>
+                    </div>
+                  </details>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-row u-space-b30 u-pad-b15 u-border-bgrey2">
+            <div class="column-one-third">
+              <h3 class="heading-pairs heading-pairs--small-top">
+                <span>Date tested</span>
+                9 October 2022
+              </h3>
+
+              <h3 class="mot-result mot-result--pass u-space-b5">
+                Pass
+              </h3>
+            </div>
+
+            <div class="column-two-thirds">
+              <div class="grid-row">
+                <div class="column-half u-space-b15">
+                  <h3 class="heading-pairs heading-pairs--small-top">
+                    <span>Mileage</span>
+                    109,557 miles </h3>
+                </div>
+
+                <div class="column-half u-space-b15">
+                  <h3 class="heading-pairs heading-pairs--small-top">
+                    <span>MOT test number</span>
+                    0000 0000 0000
+                  </h3>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="column-full">
+                  <div class="grid-row">
+                    <div class="column-half u-space-b15">
+                      <h3 class="heading-pairs heading-pairs--small-top">
+                        <span>Test location</span>
+                      </h3>
+                      
+                      <details class="u-space-t15" role="group">
+                        <summary role="button" aria-controls="test-location-details-1" aria-expanded="false">
+                          <span class="summary">
+                            View test location
+                          </span>
+                        </summary>
+
+                        <div class="panel panel-border-narrow" aria-hidden="true" id="test-location-details-1">
+                          <div class="form-group">
+                            <label class="form-label form-label-bold" for="v5cInput">
+                              Enter vehicle V5C
+                              <span class="form-hint">
+                                11 digits from the vehicle log book
+                              </span>
+                            </label>
+
+                            <input class="form-control form-control-100" type="text" id="v5cInput" name="v5cInput">
+                          </div>
+
+                          <input type="submit" name="submit" class="button" value="Show test location">
+                        </div>
+                      </details>
+                    </div>
+                    <div class="column-half u-space-b15">
+                      <h3 class="heading-pairs heading-pairs--small-top">
+                        <span>Expiry date</span>
+                        11 October 2029 </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid-row">
+                <div class="column-full u-space-t15">
+                  <h4 class="heading-subtle">Advisory notice item(s)</h4>
+                  <ul class="list-bullet bold-small">
+                    <li>Nearside Front Suspension component mounting prescribed area is corroded but not considered excessive inner wheel arch (2.4.A.3)</li>
+                    <li>Offside Front Suspension component mounting prescribed area is corroded but not considered excessive inner wheel arch (2.4.A.3)</li>
+                    <li>Oil leak ()</li>
+                    <li>Play in steering rack inner joint(s) ()</li>
+                    <li>Front registration plate deteriorated but not likely to be misread (6.3.1d)</li>
+                    <li>Rear registration plate deteriorated but not likely to be misread (6.3.1d)</li>
+                    <li>Rear Brakes imbalanced requirements only just met. It would appear that the braking system requires adjustment or repair. (3.7.B.5b)</li>
+                  </ul>
+
+                  <details class="u-space-t15" role="group">
+                    <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+                      <span class="summary">
+                        What are advisories?
+                      </span>
+                    </summary>
+                    <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-0">
+                      <p>Advisory items are provided for advice. For some of these, if they became more serious, your vehicle may no longer
+                        be roadworthy and could require immediate attention.</p>
+                    </div>
+                  </details>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <div class="js-accordion__section" data-section-disable-restore-state="true" data-section-category="vehicle-recalls" data-recalls-accordion="true" data-recalls-ajax-endpoint="{{ appURL }}/api/v1/recalls" data-recalls-ajax-data='{"test_variable":"Test Content"}'>
+        <div class="js-accordion__header" data-recalls-accordion-header="true" data-section-content-id="vehicle-recalls-content">
+          <div class="js-accordion__header-left">
+            <h2 class="js-accordion__title">
+              <button class="js-accordion__title-button">
+                Outstanding vehicle recalls
+              </button>
+            </h2>
+            <p class="js-accordion__description">
+              Check if Nissan Qashqai EJ13YLS has outstanding safety recall
+            </p>
+          </div>
+          <div class="js-accordion__header-right">
+            <button class="js-accordion__header-icon"></button>
+          </div>
+        </div>
+        <div class="js-accordion__content" id="vehicle-recalls-content">
+          
+          <div class="recalls-accordion recalls-accordion--no-js">
+
+            <div class="recalls-accordion__error-message">
+              <p>
+                Sorry, something went wrong with the search. Please try again later.
+              </p>
+            </div>
+
+            <div class="recalls-accordion__no-js-alternative">
+              <form action="">
+              <input type="hidden" value="23323">
+                <h2 class="heading-medium heading heading--no-margin">
+                  No Javascript Detected
+                </h2>
+                <p>
+                  Please click on the button below in order to fetch the recalls data for this vehicle.
+                </p>
+                <p>
+                  <input class="button" type="submit" value="View Vehicle Recalls">
+                </p>
+              </form>
+            </div>
+
+            <div class="recalls-accordion__loading">
+              <h2 class="heading-medium heading heading--no-margin">
+                DVSA are checking for any recalls on this vehicle
+              </h2>
+              <p>
+                This may take a few seconds or so, please bear with us.
+              </p>
+              <img src="/images/loading-spinner.gif">
+            </div>
+
+            <div class="recalls-accordion__output">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure accusamus tempora expedita natus quos commodi esse dolor vitae cum officiis inventore nobis similique sequi corporis laboriosam, optio quibusdam dignissimos animi soluta ea atque. Ratione molestias, sapiente ea accusamus quas repudiandae natus! Saepe consectetur quos a nobis modi magni nesciunt culpa, deleniti et cum, ipsum illum dolorem nemo! Illo necessitatibus minus sed odit deserunt in a nesciunt animi nam, nihil iusto quaerat aliquid qui deleniti magnam obcaecati, repellendus veritatis ut ratione debitis. Facilis sunt voluptatum adipisci. Labore cum aliquid iste animi quam autem enim repellat non deleniti omnis, eaque ad quisquam officia harum iusto dicta impedit laborum, minus laudantium perferendis! Dolore cupiditate magnam quo laboriosam consequuntur possimus similique dolorem in asperiores perferendis dolor distinctio doloribus iste voluptates cumque vel ex, dignissimos sunt rem. Repellendus, sed quidem aliquid necessitatibus enim commodi eaque inventore nemo. Qui sit debitis enim fugit magni tempora molestias quis, totam nobis quos culpa ratione exercitationem a corrupti aliquam omnis sed obcaecati quas. Explicabo, ad deleniti. Eius blanditiis, magnam magni rerum iusto necessitatibus voluptates labore, quos nihil totam, repellat maiores numquam tempore aspernatur obcaecati! Deserunt ipsum possimus eaque excepturi delectus dignissimos molestias hic officia repellat cupiditate cumque, error expedita!
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  
+{% endblock %}

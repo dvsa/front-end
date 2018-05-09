@@ -61,6 +61,13 @@
 
     {%- endcall %}
 
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Text to speech', tag='h2', size='medium', url='/prototypes/text-to-speech')}}
+      {{ components.paragraph(text='Text to speech recongition prototype')}}
+
+    {%- endcall %}
+
   {%- endcall %}
 
 {% endblock %}

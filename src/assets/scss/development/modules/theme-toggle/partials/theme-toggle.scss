@@ -1,0 +1,70 @@
+.theme-toggle {
+<<<<<<< HEAD
+<<<<<<< HEAD
+  &__theme-swatch {
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    padding: 5px 10px;
+    color: #0b0c0c;
+
+    &--high-contrast-yellow {
+      color: #FCED20;
+      background-color: #000;
+    }
+
+    &--low-contrast-grey {
+      background-color: #CACFDD;
+      color: #343A3F;
+      border-color: #A1A5B0;      
+    }
+
+    &--sepia {
+      background-color: #F4EED9;
+      color: #1D1916;
+      border-color: #C3BEAC;
+    }
+
+    &--medium-contrast-yellow {
+      background-color: #FCED20;
+      border-color: #CABE00;
+=======
+  &__theme-preview {
+    border: 1px solid #eaeaea;
+=======
+  &__theme-swatch {
+    border: 1px solid #CCCCCC;
+>>>>>>> 096d384... Minor adjustments to text to speech / text to speech
+    background-color: white;
+    padding: 5px 10px;
+    color: #0b0c0c;
+
+    &--high-contrast-yellow {
+      color: #FCED20;
+      background-color: #000;
+    }
+
+    &--low-contrast-grey {
+      background-color: #CACFDD;
+      color: #343A3F;
+      border-color: #A1A5B0;      
+    }
+
+<<<<<<< HEAD
+    &--dark-theme {
+      background-color: yellow;
+      color: blue;
+>>>>>>> 5cb052b... Theme toggle updates
+=======
+    &--sepia {
+      background-color: #F4EED9;
+      color: #1D1916;
+      border-color: #C3BEAC;
+    }
+
+    &--medium-contrast-yellow {
+      background-color: #FCED20;
+      border-color: #CABE00;
+>>>>>>> 096d384... Minor adjustments to text to speech / text to speech
+    }
+  }
+}

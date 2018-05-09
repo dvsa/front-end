@@ -1,0 +1,357 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/speech-to-text' },
+  { text: 'Search for a defect' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {% if message %}
+
+      <div class="message--success">
+
+        <p><strong>This failure has been added:</strong><br>
+        {{ message.flash }}</p>
+
+      </div>
+
+    {% endif %}
+
+      <header class="content-header">
+
+        <h1>
+
+          <span class="content-header__title">Search for a defect</span>
+
+        </h1>
+
+        <ul class="content-header__tertiary-list">
+
+          <li class="content-header__list-item--primary">Renault, Clio</li>
+
+          <li class="content-header__list-item">FNZ 6610</li>
+
+          <li class="content-header__list-item">First used 25 Apr 2005</li>
+
+        </ul>
+
+      </header>
+
+      <div class="defect-summary">
+
+        <div class="defect-summary__total defect-summary__total--eu">
+
+          <h2 class="defect-summary__total-heading">Defects</h2>
+
+          <ul>
+
+            <li>
+
+              <span class="badge--alert">
+                {% if viewData.formData %}1{% else %}0{% endif %}</span> Failures
+
+            </li>
+
+            <li>
+
+              <span class="badge--warn">0</span> Minors
+
+            </li>
+
+            <li>
+
+              <span class="badge--info">0</span>PRS
+
+            </li>
+
+            <li>
+
+              <span class="badge">0</span>Advisories
+
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+      <form class='u-margin-bottom-20' role="search" method="post" action="/prototypes/speech-to-text/categories/brake-lights">
+
+        <fieldset class="search-bar">
+
+          <label class="search-bar__label sr-only" for="search-main">Search for a defect</label>
+
+          <div class="search-bar__control-group">
+
+            <input class="search-bar__search-input" type="search" title="Search" id="search-main" name="q" value="{{viewData.search}}">
+
+            <input class="search-bar__search-submit" type="submit" value="Search">
+
+            <button type="button" class='search-bar__search-voice'>Search using voice</button>
+
+          </div>
+
+        </fieldset>
+        
+      </form>
+
+      <div class="u-space-b30">
+
+        <h2 class="result__group-heading u-space-b0">Your search for <strong>"brake lights"</strong> returned <strong>19</strong> defects.</h2>
+
+        <p>
+
+          <a id="defect-categories-link-header" href="/prototypes/speech-to-text/categories/">Return to defect categories</a>
+
+        </p>
+
+      </div>
+
+      <div class="eu-defect eu-defect--interim">
+
+        <ul class="list-unstyled eu-defect__list eu-defect__list--interim">
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) missing</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="/prototypes/speech-to-text/add-major-failure/" class="button--info">PRS</a>
+
+                <a href="/prototypes/speech-to-text/add-major-failure/" class="button--alert">Major failure</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) insecure</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--warn">Minor defect</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) not working</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--info">PRS</a>
+
+                <a href="#" class="button--alert">Major failure</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) light intensity obviously reduced</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--warn">Minor defect</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li>
+
+          <div class="eu-defect__group-item">
+
+            <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) showing white light to the rear</span>
+
+            <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+              <a href="#" class="button--info">PRS</a>
+
+              <a href="#" class="button--alert">Major failure</a>
+
+            </div>
+
+          </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) all not working</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--info">PRS</a>
+
+                <a href="#" class="button--alert">Dangerous failure</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) light intensity significantly reduced</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--info">PRS</a>
+
+                <a href="#" class="button--alert">Major failure</a>
+
+              </div>
+              
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) all missing</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--info">PRS</a>
+
+                <a href="#" class="button--alert">Dangerous failure</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) likely to become detached</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--info">PRS</a>
+
+                <a href="#" class="button--alert">Major failure</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+          <li>
+
+            <div class="eu-defect__group-item">
+
+              <span class="eu-defect__name eu-defect__name--bold">Stop lamp(s) switch does not operate in accordance with the requirements</span>
+
+              <div class="eu-defect__options eu-defect__options--collapse-tablet">
+
+                <a href="#" class="button--warn">Minor defect</a>
+
+              </div>
+
+            </div>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="pager">
+
+        <div class="pager__controls">
+
+          <ul class="pager__list">
+
+            <li>1</li>
+
+            <li>
+
+              <a href="#">2</a>
+
+            </li>
+
+          </ul>
+
+          <a class="pager__next" href="#">Next</a>
+
+        </div>
+
+        <div class="pager__summary">Showing 1 – 10 of 19 defects</div>
+
+      </div>
+
+      <div class="panel-indent">
+
+        <p>
+
+          <a id="mot-test-defects__search__add-manual-advisory" href="#">Add a manual advisory</a>
+
+          - only do this if you have searched for a defect and can't find a match.
+
+        </p>
+
+      </div>
+
+      <nav class="content-navigation">
+
+        <a href="/prototypes/speech-to-text/" class="button">Finish and return to MOT test results</a>
+
+        <ul class="content-navigation__secondary">
+
+          <li>
+
+            <a id="defect-categories-link" href="/prototypes/speech-to-text/categories/">Return to defect categories</a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

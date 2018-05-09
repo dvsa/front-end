@@ -1,5 +1,5 @@
-import { MotTestSearchDateRangeResults } from './mot-test-search-date-range-results';
+import { MOTTestSearchDateRangeResults } from './mot-test-search-date-range-results';
 
-export const initMotTestSearchDateRangeResults = () => {
-  new MotTestSearchDateRangeResults();
+export const initMOTTestSearchDateRangeResults = () => {
+  new MOTTestSearchDateRangeResults();
 };

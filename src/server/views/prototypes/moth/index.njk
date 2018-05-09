@@ -10,7 +10,7 @@
   ) }}
 
   <h2 class="heading-medium">
-    
+    Checkboxes on first page
   </h2>
 
   {{ components.list(
@@ -23,7 +23,17 @@
       {
         url: '/prototypes/moth/enter-reg-with-checkboxes-errors',
         text: 'Enter reg page with checkboxs including errors'
-      },
+      }
+    ]
+  ) }}
+
+  <h2 class="heading-medium">
+    Form on the results page
+  </h2>
+
+  {{ components.list(
+    type='bullet',
+    items=[
       {
         url: '/prototypes/moth/results-page-with-test-location',
         text: 'Results page with test locations'
@@ -35,20 +45,50 @@
     ]
   ) }}
 
+  <h2 class="heading-medium">
+    Split journey to 2 questions
+  </h2>
+
   {{ components.list(
     type='bullet',
     items=[
       {
-        url: '/prototypes/moth/split-page-1',
+        url: '/prototypes/moth/split-page-1-of-2',
         text: 'Split page 1'
       },
       {
-        url: '/prototypes/moth/split-page-2',
+        url: '/prototypes/moth/split-page-2-of-2',
         text: 'Split page 2'
       },
       {
-        url: '/prototypes/moth/split-page-3',
+        url: '/prototypes/moth/split-page-2-of-2-errors',
+        text: 'Split page 2 with errors'
+      }
+    ]
+  ) }}
+
+  <h2 class="heading-medium">
+    Split journey to 3 questions
+  </h2>
+
+  {{ components.list(
+    type='bullet',
+    items=[
+      {
+        url: '/prototypes/moth/split-page-1-of-3',
+        text: 'Split page 1'
+      },
+      {
+        url: '/prototypes/moth/split-page-2-of-3',
+        text: 'Split page 2'
+      },
+      {
+        url: '/prototypes/moth/split-page-3-of-3',
         text: 'Split page 3'
+      },
+      {
+        url: '/prototypes/moth/split-page-3-of-3-errors',
+        text: 'Split page 3 with errors'
       }
     ]
   ) }}

@@ -12,6 +12,20 @@
     )
   }}
 
+  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+    <h2 class="heading-medium error-summary-heading" id="error-summary-heading">
+      There was a problem
+    </h2>
+
+    <ul class="error-summary-list">
+      <li>
+        <a href="#v5cInput">
+          Enter a valid V5C number
+        </a>
+      </li>
+    </ul>
+  </div>
+
   <div class="grid-row">
     <div class="column-two-thirds">
       <form action="">
@@ -20,24 +34,33 @@
             <h1 class="heading-large">
               Would you like to see the test locations?
             </h1>
+
+            <p class="lede">
+              If you would like to see the test location data along with the MOT history, then you are required to provide the V5C number for the vehicle.
+            </p>
           </legend>
 
           <div class="form-group">
             <div class="multiple-choice" data-target="v5c-form">
-              <input id="radio-1" type="radio" name="radio-group" value="yes">
+              <input id="radio-1" type="radio" name="radio-group" value="yes" checked>
               <label for="radio-1">Yes</label>
             </div>
 
             <div class="panel panel-border-narrow js-hidden" id="v5c-form">
-              <div class="form-group">
+              <div class="form-group form-group-error">
                 <label class="form-label form-label-bold" for="v5cInput">
                   Enter vehicle V5C
+                  
                   <span class="form-hint">
                     11 digits from the vehicle log book
                   </span>
+
+                  <span class="error-message">
+                    Enter a valid V5C number
+                  </span>
                 </label>
 
-                <input class="form-control" type="text" id="v5cInput" name="v5cInput">
+                <input class="form-control form-control-error" type="text" id="v5cInput" name="v5cInput">
               </div>
             </div>
 

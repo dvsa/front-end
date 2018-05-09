@@ -73,5 +73,21 @@
       vertical-align: text-bottom;
     }
   }
+
+  &__search-voice {
+    display: none;
+    border: 0;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 0;
+    text-decoration: underline;
+    color: #005ea5;
+    margin: 10px 0;
+    cursor: pointer;
+
+    &--is-supported {
+      display: block;
+    }
+  }
 }
 

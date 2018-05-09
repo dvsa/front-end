@@ -1,0 +1,123 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Defect search' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+        <h1>
+          <span class="content-header__title">Defect Search</span>
+        </h1>
+        <ul class="content-header__tertiary-list">
+          <li class="content-header__list-item--primary">Renault, Clio</li>
+          <li class="content-header__list-item">FNZ 6610</li>
+          <li class="content-header__list-item">Registered 1 Feb 2004</li>
+        </ul>
+      </header>
+
+      <div class="defect-summary">
+        <div class="defect-summary__total defect-summary__total--eu">
+          <h2 class="defect-summary__total-heading">Defects</h2>
+          <ul>
+            <li>
+            <span class="badge--alert">0</span> Failures</li>
+            <li>
+            <span class="badge--warn">0</span> Minors</li>
+            <li>
+            <span class="badge--info">0</span> PRS</li>
+            <li>
+            <span class="badge">0</span> Advisories</li>
+          </ul>
+        </div>
+      </div>
+
+      <form class='u-margin-bottom-20' role="search" method="get" action="#">
+
+        <fieldset class="search-bar">
+
+          <label class="search-bar__label sr-only" for="search-main">Search for a defect</label>
+
+          <div class="search-bar__control-group">
+
+            <input class="search-bar__search-input" type="search" title="Search" id="search-main" name="q">
+
+            <input class="search-bar__search-submit" type="submit" value="Search">
+
+            <button type="button" class='search-bar__search-voice'>Search using voice</button>
+
+          </div>
+
+        </fieldset>
+        
+      </form>
+
+      <div class="browse u-margin-bottom-30">
+
+        <div class="browse__cats">
+
+            <h3 class="browse__title hide-small">Categories</h3>
+
+            <ul class="browse__list">
+              
+              <li><a href="/prototypes/mot-test/categories/breaks">Body, structure and general items</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Brakes</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Steering</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Suspension</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Tyres</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Road wheels</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Seat belts and supplementary restraint systems</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Lamps, reflectors and electrical equipment</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Exhaust, fuel and emissions</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Driving controls and speed limiters</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Registration plates and VIN</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Drivers view of the road</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Items not tested</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Motor tricycles and quadricycles</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Non-component advisories</a></li>
+
+          </ul>
+
+        </div>
+        
+      </div>
+
+      <div class="panel panel-border-wide u-margin-bottom-30">
+
+        <p>
+
+          <a href="/prototypes/mot-test/">Add a manual advisory</a> - only do this if you have searhced for a defect and can't find a match.
+
+        </p>
+
+      </div>
+
+      {{ components.button(text='Finish and return to MOT test results', url='/prototypes/mot-test') }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

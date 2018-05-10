@@ -1,4 +1,9 @@
 .dvsa-frontend-documentation {
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
   &__wrapper {
     padding: 30px 15px;
     display: flex;
@@ -11,6 +16,9 @@
     width: 200px;
     border-right: 1px solid $panel-colour;
     padding: 0 15px;
+    position: sticky;
+    top: 15px;
+    will-change: min-height;
 
     &-heading {
       font-size: 19px;
@@ -29,5 +37,58 @@
   &__links {
     margin: 0 0 10px 0;
     padding: 0;
+  }
+
+  &__content {
+    @include core-19;
+
+    h1, h2, h3, h4 {
+      margin: 30px 0;
+    }
+
+    h1 {
+      @include bold-36; 
+    }
+
+    h2 {
+      @include bold-27;
+    }
+
+    h3 {
+      @include bold-24;
+    }
+
+    ol {
+      list-style-type: decimal;
+      padding-left: 20px;
+
+      li {
+        list-style-type: decimal;
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+
+      li {
+        list-style-type: disc;
+      }
+    }
+
+    code {
+      padding: 5px;
+      background-color: $panel-colour;
+    }
+
+    pre {
+      display: block;
+      margin: 0 0 15px 0;
+
+      code {
+        display: block;
+        padding: 10px;
+      }
+    }
   }
 }

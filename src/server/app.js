@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import session from 'express-session';
@@ -13,6 +14,7 @@ import etag from 'etag';
 import minifyHTML from 'express-minify-html';
 import helmet from 'helmet';
 import errorhandler from 'errorhandler';
+import terminus from '@godaddy/terminus';
 import _ from 'lodash';
 
 import { allRoutes } from './config/routes';
@@ -177,8 +179,14 @@ export const startApp = async () => {
   // Routes
   app.use('/', allRoutes);
 
-  // Start HTTP server
-  app.listen(CONFIG.port, () => {
+  // Create HTTP server
+  const server = http.createServer(app);
+
+  // Add graceful shutdown
+  terminus(server);
+
+  // Start listening for HTTP requests
+  server.listen(CONFIG.port, () => {
     if (!isTesting()) {
       console.log(`
         Port: ${CONFIG.port} 
@@ -186,4 +194,14 @@ export const startApp = async () => {
       `);
     }
   });
+
+  // Start HTTP server
+  // app.listen(CONFIG.port, () => {
+  //   if (!isTesting()) {
+  //     console.log(`
+  //       Port: ${CONFIG.port} 
+  //       Env: ${app.get('env')}
+  //     `);
+  //   }
+  // });
 };

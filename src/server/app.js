@@ -199,7 +199,7 @@ export const startApp = async () => {
   // app.listen(CONFIG.port, () => {
   //   if (!isTesting()) {
   //     console.log(`
-  //       Port: ${CONFIG.port} 
+  //       Port: ${CONFIG.port}
   //       Env: ${app.get('env')}
   //     `);
   //   }

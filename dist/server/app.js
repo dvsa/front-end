@@ -13,6 +13,10 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
+var _http = require('http');
+
+var _http2 = _interopRequireDefault(_http);
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -64,6 +68,10 @@ var _helmet2 = _interopRequireDefault(_helmet);
 var _errorhandler = require('errorhandler');
 
 var _errorhandler2 = _interopRequireDefault(_errorhandler);
+
+var _terminus = require('@godaddy/terminus');
+
+var _terminus2 = _interopRequireDefault(_terminus);
 
 var _lodash = require('lodash');
 
@@ -243,8 +251,14 @@ const startApp = exports.startApp = async () => {
   // Routes
   app.use('/', _routes.allRoutes);
 
-  // Start HTTP server
-  app.listen(_constants.CONFIG.port, () => {
+  // Create HTTP server
+  const server = _http2.default.createServer(app);
+
+  // Add graceful shutdown
+  (0, _terminus2.default)(server);
+
+  // Start listening for HTTP requests
+  server.listen(_constants.CONFIG.port, () => {
     if (!(0, _constants.isTesting)()) {
       console.log(`
         Port: ${_constants.CONFIG.port} 
@@ -252,4 +266,14 @@ const startApp = exports.startApp = async () => {
       `);
     }
   });
+
+  // Start HTTP server
+  // app.listen(CONFIG.port, () => {
+  //   if (!isTesting()) {
+  //     console.log(`
+  //       Port: ${CONFIG.port} 
+  //       Env: ${app.get('env')}
+  //     `);
+  //   }
+  // });
 };

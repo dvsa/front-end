@@ -1,5 +1,5 @@
 import { MotTestSearchVTSResults } from './mot-test-search-vts-results';
 
-export const initMotTestSearchVTSResults = () => {
+export const initMOTTestSearchVTSResults = () => {
   new MotTestSearchVTSResults();
 };

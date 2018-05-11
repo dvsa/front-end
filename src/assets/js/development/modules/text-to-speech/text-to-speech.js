@@ -4,174 +4,147 @@ import md5 from 'md5';
 
 // TextToSpeech :: element = HTML Element -> TextToSpeech object
 export class TextToSpeech {
-  constructor(element) {
-    // Retain scoped record to Element param
-    this.textToSpeechWrapper = element;
-
-    // Returns with warning if constructor is not populated correctly
-    if (!this.textToSpeechWrapper) {
+  constructor(wrapperElement) {
+    // Check element in constructor is passed
+    if (!wrapperElement) {
       return console.warn('Text-to-speech: Text to speech wrapper has not been defined.');
     }
 
-    // Assign and retain scoped access to various widget based components
-    this.playButton = this.textToSpeechWrapper.querySelector('.js-text-to-speech__button--play');
-    this.pauseButton = this.textToSpeechWrapper.querySelector('.js-text-to-speech__button--pause');
-    this.stopButton = this.textToSpeechWrapper.querySelector('.js-text-to-speech__button--stop');
-    this.speechText = this.textToSpeechWrapper.querySelector('.js-text-to-speech__content');
-
-    // If play button is not defined return with warning
-    if (!this.playButton) {
-      return console.warn('Text-to-speech: Play button was not been defined.');
-    }
-
-    // If pausebutton button is not defined return with warning
-    if (!this.pauseButton) {
-      return console.warn('Text-to-speech: Pause button was not been defined.');
-    }
-
-    // If stop button is not defined return with warning
-    if (!this.stopButton) {
-      return console.warn('Text-to-speech: Stop button was not been defined.');
-    }
-
-    // If stop button is not defined return with warning
-    if (!this.speechText) {
-      return console.warn('Text-to-speech: Speech text has not been defined.');
-    }
-
-    // Sets up a new speechSynthesis global object
-    this.synth = window.speechSynthesis;
-    this.synth.readingContext = {
-      id: '',
-      content: ''
+    // Object to store all DOM elements
+    this.elements = {
+      wrapperElement,
+      content: wrapperElement.querySelector('.js-text-to-speech__content'),
+      buttons: {
+        play: wrapperElement.querySelector('.js-text-to-speech__button--play'),
+        pause: wrapperElement.querySelector('.js-text-to-speech__button--pause'),
+        stop: wrapperElement.querySelector('.js-text-to-speech__button--stop'),
+      },
     };
+
+    // Create initial state
+    this.state = {
+      synth: window.speechSynthesis,
+      utterance: new SpeechSynthesisUtterance(),
+      isPlaying: false,
+      isPaused: false,
+    };
+
+    if (!this.elements.content || !this.elements.buttons.play || !this.elements.buttons.pause || !this.elements.buttons.stop) return;
 
     // Run widget setup
     this.setup();
   }
 
-  // inital component class setup
-  // setup :: -> void
+  /**
+   * Initializer
+   */
   setup() {
+    this.setupUtteranceSettings();
     // Event handler setup
-    addEventListenerToEl(this.playButton, 'click', this.playButtonClickHandler);
-    addEventListenerToEl(this.pauseButton, 'click', this.pauseButtonClickHandler);
-    addEventListenerToEl(this.stopButton, 'click', this.stopButtonClickHandler);
+    addEventListenerToEl(this.elements.buttons.play, 'click', this.playButtonClickHandler);
+    addEventListenerToEl(this.elements.buttons.pause, 'click', this.pauseButtonClickHandler);
+    addEventListenerToEl(this.elements.buttons.stop, 'click', this.stopButtonClickHandler);
   }
 
-  // Handles the play button click event
-  // playbuttonClickHandler :: e = event -> void
-  playButtonClickHandler = e => {
-    e.preventDefault();
-    // Check if utterance is currently reading &&
-    // ID is equal to THIS instances reading context ID &&
-    // is not paused
-    if (this.synth.speaking && 
-        this.synth.currentlyReading == this.contentUniqueIdentifier && 
-        !this.synth.paused) {
-      // Cancel all instances utterances (que)
-      this.synth.cancel();
-      // Start a new utterancec
-      this.readContent();
-    // If utterance speech is paused
-    } else if (this.synth.paused) {
-      this.synth.resume();
-    // If not reading an utterance
-    } else {
-      // Start a new utterancec
-      this.readContent();      
+  /**
+   * Setup SpeechSynthesisUtterance settings
+   */
+  setupUtteranceSettings = () => {
+    // Check if an instance of the SpeechSynthesisUtterance is created
+    if (!this.state.utterance) return;
+    let voices = this.state.synth.getVoices();
+    this.state.utterance.voice = voices[TEXT_TO_SPEECH_CONFIG.voice];
+    this.state.utterance.volume = TEXT_TO_SPEECH_CONFIG.volume;
+    this.state.utterance.rate = TEXT_TO_SPEECH_CONFIG.rate;
+    this.state.utterance.pitch = TEXT_TO_SPEECH_CONFIG.pitch;
+    this.state.utterance.lang = TEXT_TO_SPEECH_CONFIG.lang;
+    this.state.utterance.onend = this.synthHasStoppedPlaying;
+  };
+
+  /**
+   * Click hanlder for play button
+   *
+   * @param {Event} event - DOM Event object
+   * @return {void}
+   */
+  playButtonClickHandler = event => {
+    event.preventDefault();
+
+    if (this.state.isPaused && !this.state.isPlaying) {
+      // Resume playing
+      this.state.synth.resume();
+      // Update state
+      this.state.isPaused = false;
+      this.state.isPlaying = true;
+      return;
     }
+
+    this.readContent();
   };
 
-  // Handles the pause button click event
-  // pausebuttonClickHandler :: e = event -> void
-  pauseButtonClickHandler = e => {
-    e.preventDefault();
-    if (this.synth.speaking) this.synth.pause();
+  /**
+   * Handles the pause button click event
+   *
+   * @param {Event} event - DOM Event object
+   */
+  pauseButtonClickHandler = event => {
+    event.preventDefault();
+    this.state.synth.pause();
+    this.synthHasPaused();
   };
 
-  // Handles the stop button click event
-  // stopbuttonClickHandler :: e = event -> void
-  stopButtonClickHandler = e => {
-    e.preventDefault();
-    if (this.synth.speaking || this.synth.paused) this.synth.cancel();
+  /**
+   * Handles the stop button click event
+   *
+   * @param {Event} event - DOM Event object
+   */
+  stopButtonClickHandler = event => {
+    event.preventDefault();
+    this.state.synth.cancel();
+    this.synthHasStoppedPlaying();
   };
 
-  // Begins reading utterance
-  // readElementsContent :: () -> void
+  /**
+   * Begins reading utterance
+   */
   readContent = () => {
-    this.setReadingContent();
-    this.synth.speak(this.initSpeechSynthesisUtterance(this.synth.readingContext.content));
-  }
-
-  // Prepares utterance content
-  // setReadingContent :: () -> void
-  setReadingContent = () => {
-    this.synth.readingContext.id = md5(this.speechText.innerHTML);
-    this.synth.readingContext.content = this.getTextFromElm(this.speechText);
-  }
-
-  // Resets reading content
-  // ResetReadingContent :: () -> void
-  ResetReadingContent = () => this.synth.readingContext = {};
-
-  // Init a new SpeechSynthesisUtterance object
-  // initSpeechSynthesisUtterance :: config = object -> message = string
-  initSpeechSynthesisUtterance = (message, config = TEXT_TO_SPEECH_CONFIG) => {
-    // if message was not passed in
-    if (!message) {
-      return console.warn('Text to speech: utterance message was not defined');
-    }
-    
-    // sets up new SpeechSynthesisUtterance
-    let utterance = new SpeechSynthesisUtterance();
-    let voices = window.speechSynthesis.getVoices();
-    utterance.voice = voices[TEXT_TO_SPEECH_CONFIG.voice];
-    utterance.volume = TEXT_TO_SPEECH_CONFIG.volume;
-    utterance.rate = TEXT_TO_SPEECH_CONFIG.rate;
-    utterance.pitch = TEXT_TO_SPEECH_CONFIG.pitch;
-    utterance.lang = TEXT_TO_SPEECH_CONFIG.lang;
-    //Asigns text to be read
-    utterance.text = message;
-
-    // Resets reading content 
-    utterance.onend = event => this.ResetReadingContent();
-    
-    // Returns utterance
-    return utterance;
+    this.state.utterance.text = this.elements.content.innerText;
+    this.state.synth.cancel();
+    this.state.synth.speak(this.state.utterance);
+    this.synthHasStartedPlaying();
   };
 
-  // Reads & returns text from an HTML element
-  // getText :: elm = Element -> string
-  getTextFromElm = elm => {
-    // If elmement was not passed in / defined log an error
-    if (!elm) {
-      return console.log('Text to speech: method getText requires an element param');
-    }
+  /**
+   * Setup state to reflect synth is playing
+   */
+  synthHasStartedPlaying = () => {
+    this.state.isPlaying = true;
+    this.state.isPaused = false;
+  };
 
-    // Gets the inner text from element
-    let textString = elm.innerText;
+  /**
+   * Setup state to reflect synth has stopped playing
+   */
+  synthHasStoppedPlaying = () => {
+    this.state.isPlaying = false;
+    this.state.isPaused = false;
+  };
 
-    // If text string was not defined
-    if (!textString) {
-      return console.log(`Text to speech: failed to read text from ${elm}`);
-    }
-
-    // Return textstring
-    return textString;
+  /**
+   * Setup state to reflect synth is paused
+   */
+  synthHasPaused = () => {
+    this.state.isPlaying = false;
+    this.state.isPaused = true;
   };
 
   // Expermiental
   prepareContent = element => {
-    let test = Array.from(element.children)
-    .map((node, nodeIndex) => {
-        let inner = node.innerHTML
-        .split(" ")
-        .map((word, wordIndex) => {
-          return `<span id="${nodeIndex}-${wordIndex}">${word}</span>`
-        });
-        return `<${node.tagName.toLowerCase()}>${inner}</${node.tagName.toLowerCase()}>`;
+    let test = Array.from(element.children).map((node, nodeIndex) => {
+      let inner = node.innerHTML.split(' ').map((word, wordIndex) => {
+        return `<span id="${nodeIndex}-${wordIndex}">${word}</span>`;
+      });
+      return `<${node.tagName.toLowerCase()}>${inner}</${node.tagName.toLowerCase()}>`;
     });
-  }
-
+  };
 }

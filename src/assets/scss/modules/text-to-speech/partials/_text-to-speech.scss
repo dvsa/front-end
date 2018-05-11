@@ -1,21 +1,28 @@
 .js-text-to-speech {
-  padding: 10px;
-  background-color: white;
-  border-color: 1px solid black !important;
-  z-index: 10;
+
+  &__title {
+    font-size: 16px;
+    line-height: 1.42857143;
+    font-weight: bold;
+    float: left;
+    margin-right: 10px;
+  }
 
   &__button {
+    float: left;
+    display: inline-block;
+    border: 0;
+    background-color: transparent;
+    color: #005ea5;
+    text-decoration: underline;
+    font-size: 14px;
+    padding: 5px 0 0 0;
+    font-weight: 400;
+    margin-right: 10px;
 
-    &--play {
-
-    }
-
-    &--pause {
-
-    }
-
-    &--stop {
-
+    &:hover {
+      cursor: pointer;
+      color: #2b8cc4;      
     }
   }
 }

@@ -10,6 +10,5 @@ import { initModules } from './modules';
 import './../../scss/development.scss';
 
 domReady(function() {
-  console.log('test');
   initModules();
 });

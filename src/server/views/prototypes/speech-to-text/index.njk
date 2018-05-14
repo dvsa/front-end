@@ -1,0 +1,46 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Defect search' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+
+        <h1><span class="content-header__title">Defect search</span></h1>
+
+      </header>
+
+      <form role="search" method="get" action="#">
+
+        <fieldset class="search-bar">
+
+          <label class="search-bar__label" for="search-main">Search the MOT testing service</label>
+
+          <div class="search-bar__control-group">
+
+            <input class="search-bar__search-input" type="search" title="Search" id="search-main" name="q">
+
+            <input class="search-bar__search-submit" type="submit" value="Search">
+
+            <button type="button" class='search-bar__search-voice'>Search using voice</button>
+
+          </div>
+
+        </fieldset>
+        
+      </form>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

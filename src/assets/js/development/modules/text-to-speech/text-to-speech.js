@@ -9,7 +9,7 @@ export class TextToSpeech {
     if (!wrapperElement) {
       return console.warn('Text-to-speech: Text to speech wrapper has not been defined.');
     }
-
+    
     // Object to store all DOM elements
     this.elements = {
       wrapperElement,
@@ -76,9 +76,9 @@ export class TextToSpeech {
       return;
     } else if (this.state.isPlaying) {
       this.state.synth.pause();
-      this.toggleButtonState();        
+      this.toggleButtonState();
       return;
-    } 
+    }
 
     this.readContent();
   };
@@ -91,9 +91,9 @@ export class TextToSpeech {
       this.elements.buttons.play.innerText = 'Pause audio';
       return;
     }
-    
-    this.elements.buttons.play.innerText = 'Resume audio';   
-  }
+
+    this.elements.buttons.play.innerText = 'Resume audio';
+  };
 
   /**
    * Handles the pause button click event

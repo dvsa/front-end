@@ -1,11 +1,11 @@
-import { addEventListenerToEl } from '../../../shared/misc/events';
+import { addEventListenerToEl, removeAllEventsFromEl } from '../../../shared/misc/events';
 import { TEXT_TO_SPEECH_CONFIG } from './config';
 import md5 from 'md5';
 
 // TextToSpeech :: element = HTML Element -> TextToSpeech object
 export class TextToSpeech {
   constructor(wrapperElement) {
-    // Check element in constructor is passed
+    // Check if element is passed
     if (!wrapperElement) {
       return console.warn('Text-to-speech: Text to speech wrapper has not been defined.');
     }
@@ -71,16 +71,29 @@ export class TextToSpeech {
     event.preventDefault();
 
     if (this.state.isPaused && !this.state.isPlaying) {
-      // Resume playing
       this.state.synth.resume();
-      // Update state
-      this.state.isPaused = false;
-      this.state.isPlaying = true;
+      this.toggleButtonState();
       return;
-    }
+    } else if (this.state.isPlaying) {
+      this.state.synth.pause();
+      this.toggleButtonState();        
+      return;
+    } 
 
     this.readContent();
   };
+
+  toggleButtonState = () => {
+    this.state.isPaused = !this.state.isPaused;
+    this.state.isPlaying = !this.state.isPlaying;
+
+    if (this.state.isPlaying) {
+      this.elements.buttons.play.innerText = 'Pause audio';
+      return;
+    }
+    
+    this.elements.buttons.play.innerText = 'Resume audio';   
+  }
 
   /**
    * Handles the pause button click event
@@ -108,6 +121,7 @@ export class TextToSpeech {
    * Begins reading utterance
    */
   readContent = () => {
+    this.toggleButtonState();
     this.state.utterance.text = this.elements.content.innerText;
     this.state.synth.cancel();
     this.state.synth.speak(this.state.utterance);
@@ -136,15 +150,5 @@ export class TextToSpeech {
   synthHasPaused = () => {
     this.state.isPlaying = false;
     this.state.isPaused = true;
-  };
-
-  // Expermiental
-  prepareContent = element => {
-    let test = Array.from(element.children).map((node, nodeIndex) => {
-      let inner = node.innerHTML.split(' ').map((word, wordIndex) => {
-        return `<span id="${nodeIndex}-${wordIndex}">${word}</span>`;
-      });
-      return `<${node.tagName.toLowerCase()}>${inner}</${node.tagName.toLowerCase()}>`;
-    });
   };
 }

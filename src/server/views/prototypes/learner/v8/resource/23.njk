@@ -1,0 +1,43 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Blog article - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Identifying a good service') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Identifying a good service</p>
+
+            <p><a href="https://designnotes.blog.gov.uk/2016/04/22/identifying-a-good-service/" target="_blank">Read this blog article</a> (external link)</p>
+
+            <p>
+                <a href="/prototypes/learner/v8/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+
+            </aside>
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

@@ -1,0 +1,182 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Learning complete - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v8' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+
+{% set trainingEndDate = trainingEndDate if trainingEndDate %}
+{% set hideHomeStars = true %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">Online course complete</h1>
+        <h2 class="heading-large">Basic fire safety</h2>
+        <h3 class="heading-medium">Completed {% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</h3>
+    </div>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">What happens next?</h2>
+
+            <p>Your learning record has been updated and will display this learning.</p>
+
+            <p><a href="/prototypes/learner/v8/feedback/formal">Provide feedback</a> on this learning to help us improve it.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+
+
+{% block lowerHero %}
+
+    {% call components.lowerHero() %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <h2 class="heading-medium">Suggestions for you</h2>
+
+            <p>Tailored suggestions from the Learning Platform for Government or recommendations from colleagues.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Commercial awareness',
+                url='/prototypes/learner/v8/resource?resourceID=11',
+                starPercent='80%',
+                starTotal='128',
+                because='Work area: commercial',
+                type='Online',
+                duration='2 hours 20 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v8/resource?resourceID=1',
+                starPercent='76%',
+                starTotal='104',
+                because='Work area: commercial',
+                type='Classroom',
+                duration='2 days',
+                hideStars=hideHomeStars,
+                cost='£357',
+                version='v8',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing employees',
+                url='/prototypes/learner/v8/resource?resourceID=8',
+                starPercent='61%',
+                starTotal='25',
+                because='Work area: commercial',
+                type='Classroom',
+                duration='1 day',
+                hideStars=hideHomeStars,
+                cost='£199',
+                version='v8',
+                intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                url='/prototypes/learner/v8/resource?resourceID=4',
+                starPercent='76%',
+                starTotal='104',
+                type='Video',
+                duration='10 minutes',
+                cost='£Free',
+                because='Work area: HMRC',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='What the civil service of tomorrow will look like',
+                url='/prototypes/learner/v8/resource?resourceID=2',
+                starPercent='61%',
+                starTotal='25',
+                type='Blog',
+                cost='£Free',
+                duration='10 minutes',
+                because='Work area: HMRC',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Higher base pay for commercial staff',
+                url='https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better',
+                starPercent='95%',
+                starTotal='233',
+                because='Work area: HMRC',
+                type='Blog',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                cost='£Free',
+                targetBlank = true,
+                version='v8',
+                intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnHalf() %}
+
+                <p class="font-small"><a href="/prototypes/learner/v8/suggested-learning" class="">See more suggestions for you</a> </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

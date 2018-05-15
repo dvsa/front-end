@@ -1,0 +1,112 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Learning record - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+{% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
+{#{% set fireTrainingCompleteBanner = fireTrainingCompleteBanner if fireTrainingCompleteBanner %}#}
+{% set trainingEndDate = trainingEndDate if trainingEndDate %}
+{#{% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}#}
+
+{% block content %}
+
+    {{ components.pageHeading('Learning record') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+            {{ components.heading(text='Required learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <table class="u-space-b30 table--top">
+                <thead>
+                    <tr>
+                        <th class="table--fix-first">Course</th>
+                        <th>Type</th>
+                        <th>Duration</th>
+                        <th>Completion date</th>
+                    </tr>
+               </thead>
+                <tbody>
+                    {% if fireTrainingComplete %}
+                        <tr>
+                            <td><a href="/prototypes/learner/v8/resource?resourceID=15">Basic fire safety</a></td>
+                            <td>Online</td>
+                            <td>1 hour</td>
+                            <td>{% if trainingEndDate %}{{ trainingEndDate }}{% else %}8 Mar 2018{% endif %}</td>
+                        </tr>
+                    {% endif %}
+                    <tr>
+                        <td><a href="#">Disability Awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour</td>
+                        <td>12 Aug 2017</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Health and Safety Awareness</a></td>
+                        <td>Online</td>
+                        <td>1 hour 30 minutes</td>
+                        <td>10 Jan 2017</td>
+                    </tr>
+                </tbody>
+           </table>
+
+            {% if fireTrainingComplete %}
+                <p>You have completed 3 of your required learning courses .</p>
+            {% else %}
+                <p>You have completed 2 of your required learning courses .</p>
+            {% endif %}
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+            {{ components.heading(text='Other learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+            <table class="u-space-b30 table--top">
+                <thead>
+                <tr>
+                    <th class="table--fix-first">Course</th>
+                    <th>Type</th>
+                    <th>Duration</th>
+                    <th>Completion date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><a href="#">What the civil service of tomorrow will look like</a></td>
+                    <td>Blog</td>
+                    <td>-</td>
+                    <td>3 Aug 2017</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Growth Mindset</a></td>
+                    <td>Video</td>
+                    <td>15 minutes</td>
+                    <td>10 Jul 2017</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Capability in the Civil Service</a></td>
+                    <td>Document</td>
+                    <td>10 minutes</td>
+                    <td>12 Jan 2017</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Commercial awareness</a></td>
+                    <td>Online</td>
+                    <td>2 hours 30 minutes</td>
+                    <td>21 Mar 2017</td>
+                </tr>
+                </tbody>
+            </table>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

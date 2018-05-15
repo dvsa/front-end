@@ -1,0 +1,812 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suggestions for you - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set hideHomeStars = 'true' %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{#{% set showUpdatedPrimaryWorkArea = true %}#}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+        <div class="u-space-y30 header-box u-border-bgrey2">
+
+            {% call components.gridRow() %}
+
+                {% call components.columnHalf() %}
+
+                    {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
+
+                    <p class="u-space-b5">Tailored suggestions from the Learning Platform for Government and your organisation.</p>
+
+                {%- endcall %}
+
+
+                {% call components.columnHalf() %}
+
+                    <div class="search-box">
+
+                        {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v8/search") %}
+
+                            <div class="form-group search-box__group u-space-b">
+
+                                <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                                <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                <button type="submit" class="search-box__submit">Search</button>
+
+                                {#<a href="#" class="search-box__advanced">Advanced search</a>#}
+
+                            </div>
+
+                        {%- endcall %}
+
+                    </div>
+
+                {%- endcall %}
+
+            {%- endcall %}
+
+        </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            <p id="top">Suggestions based on your job role</p>
+            <ul class="list-bullet">
+                <li><a href="#seniorInteractionDesigner">Senior interaction designer</a> </li>
+                <li><a href="#interactionDesigner">Interaction designer</a> </li>
+                <li><a href="#userCenteredDesign">User centered design</a> </li>
+                <li><a href="#ddat">Digital, design &amp; technology</a> </li>
+            </ul>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <p>Suggestions based on your other areas of work</p>
+            <ul class="list-bullet">
+                <li><a href="#commercial">Commercial</a> </li>
+                <li><a href="#hmrc">HMRC</a> </li>
+            </ul>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <p>Suggestions based on your interests</p>
+            <ul class="list-bullet">
+                <li><a href="#contractManagement">Contract management</a> </li>
+            </ul>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <h2 class="heading heading-medium heading--red-top" id="seniorInteractionDesigner">From: Senior interaction designer</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Interaction design: prototyping for testing',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Classroom',
+                duration='1 day',
+                cost='£349',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Lorem ipsum sonc dolor ad infinitum'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='GDS prototyping workshop',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Classroom',
+                duration='4 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Leek combines greatly with iced steak. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Journey storyboarding',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Teleporters view from nuclear fluxs like small transformators.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Re-using and iterating our services through interaction design',
+                url='https://dwpdigital.blog.gov.uk/2018/01/15/re-using-and-iterating-our-services-through-interaction-design/',
+                starPercent='80%',
+                starTotal='128',
+                type='Blog',
+                duration='8 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Designing a new service to help landlords set up direct rent payments'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <h2 class="heading heading-medium heading--red-top" id="interactionDesigner">From: Interaction design</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='The Bottom Line',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Audio',
+                duration='30 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Evan Davis hosts the business conversation show with people at the top giving insight into what matters'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Agile Product Ownership, Henrik Kniberg',
+                url='/prototypes/learner/v8/resource?resourceID=20',
+                starPercent='80%',
+                starTotal='128',
+                type='Video',
+                duration='15 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Classic on planning a sprint and managing a backlog'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <h2 class="heading heading-medium heading--red-top" id="userCenteredDesign">From: User centred design</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Creating superior customer experiences &amp; UX with user-cenetred design',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Classrom',
+                duration='1 day',
+                cost='£699',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An intensive introduction on how to plan, create, evaluate and refine winning interactions with customers.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Essential design thinking - Videos and Methods',
+                url='#',
+                starPercent='76%',
+                starTotal='104',
+                type='Blog',
+                duration='10 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='The Verify team has been supporting local councils with end-to-end transformation of a service. It’s the first time GDS has had the opportunity to co-design with local government.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Reframing the challenge through Design in the Public Sector',
+                url='#',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                duration='15 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='The programme provides training to public sector staff on the application of design approaches to tackling complex challenges.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='GDS Training: UCD in government',
+                url='#',
+                starPercent='56%',
+                starTotal='114',
+                type='Classroom',
+                duration='4 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='GDS Service design training course into applicaiton of UCD principles in governent projects'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <h2 class="heading heading-medium heading--red-top" id="ddat">From: Digital, design &amp; technology</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v8/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v8/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v8/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {#{{ components.heading(text='From Contract management', tag='h2', size='medium', extraClass='heading--red-top') }}#}
+
+    <h2 class="heading heading-medium heading--red-top" id="contractManagement">From Contract management</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contract management in the Civil Service',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Blog',
+                duration='12 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Lorem ipsum sonc dolor ad infinitum'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contract management - the devi\'s in the detail',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Video',
+                duration='25 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Leek combines greatly with iced steak. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contracts, courgettes and confusion',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Blog',
+                duration='15 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Teleporters view from nuclear fluxs like small transformators.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contract management - procurment, people and privacy',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Classroom',
+                duration='4 hours',
+                cost='£449',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Contract Management focuses on the administration of contracts between organisations and their collaborators. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contractual obligations, obfuscation and ordnance',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Blog',
+                duration='8 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Hunger, fight, and passion.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing Performance and Obligations of Contracts',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Classroom',
+                duration='2 days',
+                cost='£2499',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Tried and tested techniques to achieve contractual certainty and either successful delivery or effective remedies.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {#{% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="/prototypes/learner/v8/suggested-learning-full">Show all suggestions from Contract management</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}#}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {#{{ components.heading(text='From Commercial', tag='h2', size='medium', extraClass='heading--red-top') }}#}
+
+    <h2 class="heading heading-medium heading--red-top" id="commercial">From Commercial</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Commercial awareness',
+                url='/prototypes/learner/v8/resource?resourceID=11',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours 20 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                url='/prototypes/learner/v8/resource?resourceID=4',
+                starPercent='76%',
+                starTotal='104',
+                type='Video',
+                duration='10 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='What the civil service of tomorrow will look like',
+                url='/prototypes/learner/v8/resource?resourceID=2',
+                starPercent='61%',
+                starTotal='25',
+                type='Blog',
+                duration='12 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Capability in the Civil Service',
+                url='/prototypes/learner/v8/resource?resourceID=12',
+                starPercent='56%',
+                starTotal='114',
+                type='Document',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Higher base pay for commercial staff',
+                url='https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better',
+                starPercent='95%',
+                starTotal='233',
+                type='Blog',
+                duration='5 minutes',
+                hideStars=hideHomeStars,
+                cost='£Free',
+                targetBlank = true,
+                version='v8',
+                intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
+            ) }}
+
+        {%- endcall %}
+
+        {#{% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Andrew Shatte – Resilience',
+                url='/prototypes/learner/v8/resource?resourceID=10',
+                starPercent='76%',
+                starTotal='104',
+                type='Video',
+                duration='10 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Years ago, Dr. Shatte and several of his colleagues discovered that psychological resilience is the key to rebounding from life’s setbacks.'
+            ) }}
+
+        {%- endcall %}#}
+
+    {%- endcall %}
+
+   {# {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="/prototypes/learner/v8/suggested-learning-full">Show all suggestions from Commercial</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}#}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {#{{ components.heading(text='From HMRC', tag='h2', size='medium', extraClass='heading--red-top') }}#}
+
+    <h2 class="heading heading-medium heading--red-top" id="hmrc">From HMRC</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v8/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v8/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v8/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Getting It Right: Scope and Change',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contract management: building relationships in business (MOOC)',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing Risks Issues and Dependencies',
+                url='/prototypes/learner/v8/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Risks can never be completely avoided; only ever managed and mitigated.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="/prototypes/learner/v8/suggested-learning-hmrc">Show all suggestions from HMRC</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

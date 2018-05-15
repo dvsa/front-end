@@ -1,0 +1,73 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Register for an account - Learning Platform for Government' %}
+
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set loggedOut = 'true' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/' %}
+{% set email = email if email %}
+{% set email2 = email2 if email2 %}
+{% set registrationEmailError = registrationEmailError if registrationEmailError %}
+{% set registrationEmailErrorMessage = registrationEmailErrorMessage if registrationEmailErrorMessage %}
+{% set registrationEmailErrorMessageTop = registrationEmailErrorMessageTop if registrationEmailErrorMessageTop %}
+{% set registrationEmailErrorMessageBottom = registrationEmailErrorMessageBottom if registrationEmailErrorMessageBottom %}
+{% set editMode = editMode if editMode %}
+{% if editMode %}
+    {% set buttonText = 'Save changes'  %}
+{% else %}
+    {% set buttonText = 'Continue'  %}
+{% endif %}
+
+{% block content %}
+
+    {{ components.pageHeading('Register for an account') }}
+
+    {% if registrationEmailError %}
+
+        <div class="error-summary" role="alert" aria-labelledby="nameErrors" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="nameErrors">There was a problem with your email address</h2>
+            <ul class="error-summary-list">
+                <li><a href="#email">{{ registrationEmailErrorMessage }}</a></li>
+            </ul>
+        </div>
+
+    {% endif %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {% call components.formElement(name='registerName', method='POST', action="#") %}
+
+                <p class="lede">You need to create an account before using the Learning Platform for Government. This will take less than 5 minutes.</p>
+
+                {{ components.field(label='Email address', id='email', hint="", group=true, value=email, error=registrationEmailErrorMessageTop)}}
+
+                {{ components.field(label='Confirm email address', id='email2', hint="", group=true, value=email2, error=registrationEmailErrorMessageBottom)}}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text=buttonText, group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v8">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <p>
+
+            </p>
+
+        {%- endcall  %}
+
+    {%- endcall %}
+
+{% endblock %}

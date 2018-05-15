@@ -1,0 +1,364 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suggestions for you - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set hideHomeStars = 'true' %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{#{% set showUpdatedPrimaryWorkArea = true %}#}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Suggestions for you from HMRC') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p id="top">Filter suggestions:</p>
+            <form>
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <legend class="visuallyhidden">Filter job suggestions</h1>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-1" type="radio" name="radio-inline-group" value="all" checked>
+                            <label for="radio-inline-1">Show all</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-2" type="radio" name="radio-inline-group" value="video">
+                            <label for="radio-inline-2">Video</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-3" type="radio" name="radio-inline-group" value="blog">
+                            <label for="radio-inline-3">Blog</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-4" type="radio" name="radio-inline-group" value="classroom">
+                            <label for="radio-inline-4">Classroom</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-5" type="radio" name="radio-inline-group" value="online">
+                            <label for="radio-inline-5">Online</label>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v8/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v8/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v8/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Getting It Right: Scope and Change',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contract management: building relationships in business (MOOC)',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing Risks Issues and Dependencies',
+                url='/prototypes/learner/v8/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Risks can never be completely avoided; only ever managed and mitigated.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v8/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v8/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v8/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Getting It Right: Scope and Change',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contract management: building relationships in business (MOOC)',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing Risks Issues and Dependencies',
+                url='/prototypes/learner/v8/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Risks can never be completely avoided; only ever managed and mitigated.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v8/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v8/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v8/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Getting It Right: Scope and Change',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

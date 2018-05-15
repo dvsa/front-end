@@ -1,0 +1,34 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Home page - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+
+
+{% block content %}
+
+    {{ components.pageHeading('Types of learning') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p>You shouldn't ever see this page, but the tempaltes it suports are listed below:</p>
+
+            <ul>
+                <li><a href="/prototypes/learner/v8/resource?resourceType=video">Video</a> </li>
+                <li><a href="/prototypes/learner/v8/resource?resourceType=blog">Blog</a> </li>
+                <li><a href="/prototypes/learner/v8/resource?resourceType=online">Online</a> </li>
+                <li><a href="/prototypes/learner/v8/resource?resourceType=classroom">Classroom</a> </li>
+            </ul>
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

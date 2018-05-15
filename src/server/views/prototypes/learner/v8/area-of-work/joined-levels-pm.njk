@@ -1,0 +1,248 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your primary area of work - Learning Platform for Government' %}
+
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set loggedOut = 'false' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/' %}
+
+{% set level1 = showLevel1 if showLevel1 %}
+{% set level2 = showLevel2 if showLevel2 %}
+{% set level3 = showLevel3 if showLevel3 %}
+{% set setWorkAreaDigital = setWorkAreaDigital if setWorkAreaDigital %}
+{% set setWorkAreaCommercial = setWorkAreaCommercial if setWorkAreaCommercial %}
+
+{% block content %}
+
+    <a class="link-back" href="/prototypes/learner/v8/your-profile/area-of-work">Back</a>
+
+    {{ components.pageHeading('Your primary area of work') }}
+
+    {% if setWorkAreaDigital %}
+        {{ components.heading(text='Digital, Data and Technology', tag='h2', size='medium', extraClass='') }}
+    {% endif %}
+    {% if setWorkAreaCommercial %}
+        {{ components.heading(text='Commercial', tag='h2', size='medium', extraClass='') }}
+    {% endif %}
+
+    <p>Choose the level or role that is most appropriate to you. This will help tailor your suggested learning.</p>
+
+    {% call components.formElement(name='registerProfession', method='POST', action="#") %}
+
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <div class="levels-nav">
+
+                    <ul class="levels-nav__list">
+                        {% if level1 and not level2%}
+                        <li class="levels-nav__item">
+                            <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm" class="levels-nav__link">All work areas</a>
+                        </li>
+                        <li class="levels-nav__item">
+                            <span class="levels-nav__last">Digital, data &amp; technology</span>
+                        </li>
+                        {% endif %}
+                        {% if level1 and level2 and not level3 %}
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm" class="levels-nav__link">All work areas</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels-nav__link">Digital, data &amp; technology</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <span class="levels-nav__last">Product and delivery</span>
+                            </li>
+                        {% endif %}
+                        {% if level1 and level2 and level3 %}
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm" class="levels-nav__link">All work areas</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels-nav__link">Digital, data &amp; technology</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels-nav__link">Product delivery</a>
+                            </li>
+                            <li class="levels-nav__item">
+                                <span class="levels-nav__last">Product manager</span>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <div class="levels levels--4cols u-clearfix">
+
+                    <div class="levels__col levels__col--0">
+
+                        <ul class="levels__list">
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Commercial</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Communications</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Corporate finance</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link {% if level1 %} levels__link--selected {% endif %}">Digital, Data and Technology</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Finance</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Fraud, error, debt and grants</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Human resources</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Internal audit</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Legal</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Project delivery</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true" class="levels__link">Property</a>
+                            </li>
+                            {% if level1 %}
+                            <li>
+                                <a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+
+                    </div>
+
+                    {% if level1 %}
+                    <div class="levels__col levels__col--1">
+
+                        <ul class="levels__list">
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels__link">Data</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels__link">IT Operations</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels__link {% if level2 %} levels__link--selected {% endif %}">Product and delivery</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels__link">QAT</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels__link">Technical</a>
+                            </li>
+                            <li>
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true" class="levels__link">User centred design</a>
+                            </li>
+                            {% if level1 and level2 %}
+                            <li>
+                                <a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
+                            </li>
+                            {%  endif %}
+                            {% if level1 %}
+                                <li class="u-hide-large">
+                                    <a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose all of these</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+
+                    </div>
+                    {% endif %}
+
+                    {% if level2 %}
+
+                        <div class="levels__col levels__col--2">
+
+                            <ul class="levels__list">
+                                <li>
+                                    <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link">Business analyst</a>
+                                </li>
+                                <li>
+                                    <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link">Delivery manager</a>
+                                </li>
+                                <li>
+                                    <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link {% if level3 %} levels__link--selected {% endif %}">Product manager</a>
+                                </li>
+                                <li>
+                                    <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm?level1=true&level2=true&level3=true" class="levels__link ">Associate product manager</a>
+                                </li>
+                                {% if level1 and level2 and level3 %}
+                                <li>
+                                    <a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a>
+                                </li>
+                                {% endif %}
+                                {% if level1 and level2 %}
+                                    <li class="u-hide-large">
+                                        <a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose all of these</a>
+                                    </li>
+                                {%  endif %}
+                            </ul>
+
+                        </div>
+
+                    {% endif %}
+
+                    {% if level3 %}
+
+                        <div class="levels__col levels__col--3">
+
+                            <ul class="levels__list">
+                                <li><a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link">Head of product</a></li>
+                                <li><a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link">Lead product manager</a></li>
+                                <li><a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link">Senior product manager</a></li>
+                                <li><a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link">Product manager</a></li>
+                                <li><a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link">Associate product manager</a></li>
+                                {#<li><a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose this level</a></li>#}
+                                {% if level1 and level2 and level3 %}
+                                    <li class="u-hide-large">
+                                        <a href="/prototypes/learner/v8/actions?action=workAreaHasBeenUpdated" class="levels__link levels__link--unsure">Choose all of these</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+
+                        </div>
+
+                    {% endif %}
+
+                </div>
+
+            {%- endcall %}
+
+
+        {%- endcall %}
+
+
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                <p>
+                    <a href="/prototypes/learner/v8/your-profile" class="back">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+

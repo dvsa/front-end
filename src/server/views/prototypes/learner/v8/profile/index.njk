@@ -1,0 +1,226 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your profile - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{% set hasBeenUpdated = workAreaHasBeenUpdated if workAreaHasBeenUpdated %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{% set setWorkAreaDigital = setWorkAreaDigital if setWorkAreaDigital %}
+{% set setWorkAreaCommercial = setWorkAreaCommercial if setWorkAreaCommercial %}
+{% set showRolesJoined = showRolesJoined if showRolesJoined %}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+{% set hasBeenUpdatedOther = hasBeenUpdatedOther if hasBeenUpdatedOther %}
+{% set hasBeenUpdatedInterests = hasBeenUpdatedInterests if hasBeenUpdatedInterests %}
+{% set showUpdatedOtherWorkArea = showUpdatedOtherWorkArea if showUpdatedOtherWorkArea %}
+
+
+{% block content %}
+
+    {{ components.pageHeading('Hello, Marjorie') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% if hasBeenUpdated %}
+
+                {{ components.banner(mainText='Your primary area of work has been updated', secondaryText='', type="confirmation")}}
+
+            {% endif %}
+
+            {% if hasBeenUpdatedOther %}
+
+                {#{{ components.banner(mainText='Your other areas of work has been updated', secondaryText='', type="confirmation")}}#}
+                {{ components.banner(mainText='Your interests have been updated', secondaryText='', type="confirmation")}}
+
+            {% endif %}
+
+            {% if showUpdatedOtherWorkArea %}
+
+                {{ components.banner(mainText='Your other areas of work have been updated', secondaryText='', type="confirmation")}}
+
+            {% endif %}
+
+            {#{% if hasBeenUpdatedInterests %}
+
+                {{ components.banner(mainText='Your interests have been updated', secondaryText='', type="confirmation")}}
+
+            {% endif %}#}
+
+            {{ components.heading(text='Personal details', tag='h2', size='medium', extraClass='') }}
+
+            <table class="key-value-list key-value-list--auto u-space-b30 table--top">
+
+                <thead class="visuallyhidden">
+                    <th>Detail</th>
+                    <th>Your entered value</th>
+                    <th>Action</th>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td class="key-value-list__key ">Name</td>
+                        <td class="key-value-list__value">
+                            {% if firstName %}
+                                {{ firstName }} {{ lastName }}
+                            {% else %}
+                                Marjorie Dawes
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your first  or last name</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Email</td>
+                        <td class="key-value-list__value">
+                            {% if email %}
+                                {{ email }}
+                            {% else %}
+                                m.dawes@&#8203;cabinetoffice.&#8203;gov.uk
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your email</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Password</td>
+                        <td class="key-value-list__value">&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your password</span></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            {{ components.heading(text='Job details', tag='h2', size='medium', extraClass='') }}
+
+            <table class="key-value-list key-value-list--auto u-space-b30 table--top">
+
+                <thead class="visuallyhidden">
+                    <th>Detail</th>
+                    <th>Your entered value</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="key-value-list__key ">Organisation</td>
+                        <td class="key-value-list__value">
+                            {% if departmentName %}
+                                {{ departmentName }}
+                            {% else %}
+                                Cabinet Office
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your organisation</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Primary area of work</td>
+                        <td class="key-value-list__value">
+                            {% if professionName %}
+                                {% for item in professionName %}
+                                    {{ item }}<br>
+                                {% endfor %}
+                            {% else %}
+
+                                {% if setWorkAreaCommercial %}
+                                    Commercial{% if hasBeenUpdated %}, Commercial Specialist{% endif %}
+                                {% else %}
+                                    Digital, Data and Technology{% if showUpdatedPrimaryWorkArea %}, Product manager{% endif %}
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            {#{% if showRolesJoined %}
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels">Change<span class="visuallyhidden"> your primary area of work</span></a>
+                            {% else %}
+                                <a href="/prototypes/learner/v8/your-profile/area-of-work/joined-levels-pm">Change<span class="visuallyhidden"> your primary area of work</span></a>
+                            {% endif %}#}
+
+                            <a href="/prototypes/learner/v8/your-profile/area-of-work">Change<span class="visuallyhidden"> your primary area of work</span></a>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Other areas of work</td>
+                        <td class="key-value-list__value">
+                            {% if professionName %}
+                                {% for item in professionName %}
+                                    {{ item }}<br>
+                                {% endfor %}
+                            {% else %}
+                                Legal<br>Communications
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="/prototypes/learner/v8/your-profile/other-areas-of-work">Change<span class="visuallyhidden"> your other areas of work</span></a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="key-value-list__key ">Interests</td>
+                        <td class="key-value-list__value">
+                            Leadership<br>
+                            {% if hasAddedContractManagement %} Contract management {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="/prototypes/learner/v8/your-profile/interests">Change<span class="visuallyhidden"> your interests</span></a>
+                        </td>
+                    </tr>
+
+                    {#<tr>#}
+                        {#<td class="key-value-list__key ">Interests</td>#}
+                        {#<td class="key-value-list__value" colspan="2">#}
+                            {#<ul class="interests">#}
+                                {#<li class="interests__item">#}
+                                    {#Customer service <a href="/prototypes/learner/v8/actions?action=hasRemovedInterest" class="interests__link">Remove<span class="visuallyhidden"> from my areas of interest</span></a>#}
+                                {#</li>#}
+                                {#<li class="interests__item">#}
+                                    {#Contract management <a href="/prototypes/learner/v8/actions?action=hasRemovedInterest" class="interests__link">Remove<span class="visuallyhidden"> from my areas of interest</span></a>#}
+                                {#</li>#}
+                                {#<li class="interests__item">#}
+                                    {#Leadership <a href="/prototypes/learner/v8/actions?action=hasRemovedInterest" class="interests__link">Remove<span class="visuallyhidden"> from my areas of interest</span></a>#}
+                                {#</li>#}
+                                {#<li class="interests__item">#}
+                                    {#<a href="/prototypes/learner/v8/your-profile/interests" class="interests__link--add">Add another<span class="visuallyhidden"> interest</span></a>#}
+                                    {#<br><span class="meta">You can add up to 10 different interests</span>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</td>#}
+                    {#</tr>#}
+
+                    <tr>
+                        <td class="key-value-list__key ">Grade</td>
+                        <td class="key-value-list__value">
+                            {% if gradeName %}
+                                {{ gradeName }}
+                            {% else %}
+                                Higher Executive Officer
+                            {% endif %}
+                        </td>
+                        <td class="key-value-list__item-action">
+                            <a href="#">Change<span class="visuallyhidden"> your job grade</span></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

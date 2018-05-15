@@ -1,0 +1,37 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your booking is complete - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+
+{% set courseDates = courseDates if courseDates %}
+{% set course = course if course %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">Booking request submitted</h1>
+        <p class="font-medium">You have completed your booking for <strong>Managing contractors</strong> on <strong>23 June 2018</strong></p>
+        <p>Your booking reference is <strong>HD244GH</strong></p>
+    </div>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">What happens next?</h2>
+
+            <p>You have been sent a confirmation email.</p>
+
+            <p>Your booking request has gone to the course provider for confirmation.</p>
+
+            <p>Once confirmed you will be notified and we will contat you with the course logistics.</p>
+
+            <p>You can now <a href="/prototypes/learner/v8/home">return to the home page</a>.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Select course date - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+
+{% set courseDates = courseDates if courseDates %}
+{% set course = course if course %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Select course date', secondary="Booking a course") }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="lede">Check on which dates you can attend and in which locations, then select a suitable option below.</p>
+
+            <h2 class="heading-small">Managing contractors</h2>
+
+            {% call components.formElement(name='bookingItems', method='POST', action="#") %}
+
+
+                <div class="div-table div-table--5 ">
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__th">Course dates</div>
+                        <div class="div-table__th">Duration</div>
+                        <div class="div-table__th">Location</div>
+                        <div class="div-table__th">Price</div>
+                        <div class="div-table__th"><span class="visuallyhidden">Action</span></div>
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">12 June 2018, 9:30am</div>
+                        <div class="div-table__cell">3 hours 30 minutes</div>
+                        <div class="div-table__cell">Birmingham</div>
+                        <div class="div-table__cell">£249</div>
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="course-radios">
+                                <input class="course-radios__button" id="option1" value="1" type="radio" name="courseSelect2">
+                                <label for="option1" class="course-radios__label"><span class="visuallyhidden">12 June 2018, Birmingham</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">23 June 2018, 9:30am</div>
+                        <div class="div-table__cell">3 hours 30 minutes</div>
+                        <div class="div-table__cell">Manchester</div>
+                        <div class="div-table__cell">£249</div>
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="course-radios">
+                                <input class="course-radios__button" id="option2" value="2" type="radio" name="courseSelect2">
+                                <label for="option2" class="course-radios__label"><span class="visuallyhidden">23 June 2018, Manchester</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">14 July 2018, 9:30am</div>
+                        <div class="div-table__cell">3 hours 30 minutes</div>
+                        <div class="div-table__cell">London</div>
+                        <div class="div-table__cell">£249</div>
+                        <div class="div-table__cell  div-table__cell--action">
+                            <div class="course-radios">
+                                <input class="course-radios__button" id="option3" value="3" type="radio" name="courseSelect2">
+                                <label for="option3" class="course-radios__label"><span class="visuallyhidden">14 July 2018, London</span></label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                {#<table class="u-space-b30 table--top">
+                    <thead>
+                        <tr>
+                            <th>Course dates</th>
+                            <th>Duration</th>
+                            <th>Location</th>
+                            <th>Price</th>
+                            <th><span class="visuallyhidden">Action</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12th June 2018, 9:30am</td>
+                            <td>3 hrs 30 min</td>
+                            <td>Birmingham</td>
+                            <td>£249</td>
+                            <td>
+                                <div class="course-radios">
+                                    <input class="course-radios__button" id="option1" value="1" type="radio" name="courseSelect">
+                                    <label for="option1" class="course-radios__label"><span class="visuallyhidden">12th June 2018, Birmingham</span></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>23rd June 2018, 9:30am</td>
+                            <td>3 hrs 30 min</td>
+                            <td>Manchester</td>
+                            <td>£249</td>
+                            <td>
+                                <div class="course-radios">
+                                    <input class="course-radios__button" id="option2" value="1" type="radio" name="courseSelect">
+                                    <label for="option2" class="course-radios__label"><span class="visuallyhidden">23rd June 2018, Manchester</span></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14th July 2018, 9:30am</td>
+                            <td>3 hrs 30 min</td>
+                            <td>London</td>
+                            <td>£249</td>
+                            <td>
+                                <div class="course-radios">
+                                    <input class="course-radios__button" id="option3" value="1" type="radio" name="courseSelect">
+                                    <label for="option3" class="course-radios__label"><span class="visuallyhidden">14th July 2018, London</span></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>#}
+
+                <!-- tabbed-section -->
+                <div class="tabbed-section">
+
+                    <div class="js-tabs nav-tabs">
+                        <ul>
+                            <li class="active"><a class="" href="#before-you-book">Before you book</a></li>
+                            <li><a class="" href="#terms-and-conditions">Terms and Conditions</a></li>
+                            <li><a class="" href="#refund-policy">Refund policy</a></li>
+                            <li><a class="" href="#accessibility">Accessibility</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="js-tab-content tab-content u-space-b30">
+
+                        <div class="js-tab-pane tab-pane" id="before-you-book">
+
+                            <h2 class="heading-medium js-hidden">Before you book</h2>
+
+                            <p>You are confirming that you have approval to book this course.</p>
+                            <p>You will be asked to provide payment details. If you need to raise a Purchase Order you will need the Provider Name and cost from the course description.</p>
+
+                        </div>
+
+                       {# <div class="js-tab-pane tab-pane" id="terms-and-conditions">
+                            <h2 class="heading-medium js-hidden">Terms and conditions</h2>
+                        </div>
+
+                        <div class="js-tab-pane tab-pane" id="refund-policy">
+                            <h2 class="heading-medium js-hidden">Refund policy</h2>
+                        </div>
+
+                        <div class="js-tab-pane tab-pane" id="accessibility">
+                            <h2 class="heading-medium js-hidden">Accessibility</h2>
+                        </div>#}
+
+                    </div>
+
+                </div><!-- end tabs -->
+
+                <div class="panel panel-border-wide u-space-b30">
+                    <p clase="cite">By booking this course you are agreeing to the terms and conditions.</p>
+                </div>
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Book selected course', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v8/resource?resourceType=classroom" class="link-back">Back</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

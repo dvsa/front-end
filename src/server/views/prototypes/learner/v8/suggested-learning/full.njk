@@ -1,0 +1,279 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suggestions for you from Digital, data &amp; technology - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set hideHomeStars = 'true' %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{#{% set showUpdatedPrimaryWorkArea = true %}#}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Suggestions for you from Digital, data &amp; technology') }}
+
+    <p>View suggestions based on your job role</p>
+    <ul class="list-bullet">
+        <li><a href="#seniorInteractionDesigner">Senior interaction designer</a> </li>
+        <li><a href="#interactionDesigner">Interaction designer</a> </li>
+        <li><a href="#userCenteredDesign">User centered design</a> </li>
+        <li><a href="#ddat">Digital, design &amp; technology</a> </li>
+    </ul>
+
+    <h2 class="heading heading-medium heading--red-top" id="seniorInteractionDesigner">From: Senior interaction designer</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Interaction design: prototyping for testing',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Classroom',
+                duration='1 day',
+                cost='£349',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Lorem ipsum sonc dolor ad infinitum'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='GDS prototyping workshop',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Classroom',
+                duration='4 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Leek combines greatly with iced steak. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Journey storyboarding',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Teleporters view from nuclear fluxs like small transformators.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Re-using and iterating our services through interaction design',
+                url='https://dwpdigital.blog.gov.uk/2018/01/15/re-using-and-iterating-our-services-through-interaction-design/',
+                starPercent='80%',
+                starTotal='128',
+                type='Blog',
+                duration='8 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Designing a new service to help landlords set up direct rent payments'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+    <h2 class="heading heading-medium heading--red-top" id="interactionDesigner">From: Interaction design</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='The Bottom Line',
+                url='/prototypes/learner/v8/resource?resourceID=18',
+                starPercent='80%',
+                starTotal='128',
+                type='Audio',
+                duration='30 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Evan Davis hosts the business conversation show with people at the top giving insight into what matters'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Agile Product Ownership, Henrik Kniberg',
+                url='/prototypes/learner/v8/resource?resourceID=20',
+                starPercent='80%',
+                starTotal='128',
+                type='Video',
+                duration='15 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Classic on planning a sprint and managing a backlog'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <h2 class="heading heading-medium heading--red-top" id="userCenteredDesign">From: User centred design</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Creating superior customer experiences &amp; UX with user-cenetred design',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Classrom',
+                duration='1 day',
+                cost='£699',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An intensive introduction on how to plan, create, evaluate and refine winning interactions with customers.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Essential design thinking - Videos and Methods',
+                url='#',
+                starPercent='76%',
+                starTotal='104',
+                type='Blog',
+                duration='10 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='The Verify team has been supporting local councils with end-to-end transformation of a service. It’s the first time GDS has had the opportunity to co-design with local government.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Reframing the challenge through Design in the Public Sector',
+                url='#',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                duration='15 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='The programme provides training to public sector staff on the application of design approaches to tackling complex challenges.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='GDS Training: UCD in government',
+                url='#',
+                starPercent='56%',
+                starTotal='114',
+                type='Classroom',
+                duration='4 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='GDS Service design training course into applicaiton of UCD principles in governent projects'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <h2 class="heading heading-medium heading--red-top" id="ddat">From: Digital, design &amp; technology</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v8/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v8/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v8/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v8',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

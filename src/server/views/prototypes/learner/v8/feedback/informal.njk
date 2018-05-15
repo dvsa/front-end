@@ -1,0 +1,163 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Leave detailed feedback - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v8' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{% set hideHomeStars = hideHomeStars if hideHomeStars %}
+
+{% block content %}
+
+    {{ components.pageHeading('Leave feedback') }}
+
+    {% call components.formElement(name='feedbackForm', method='POST', action="#") %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+                
+                <p class="lede">Leave your feedback for [name of course]</p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnHalf() %}
+
+                    <fieldset class="bar-rating u-space-b30">
+
+                        <legend class="heading-small">Content</legend>
+                        <p>Was the [video|blog] content comprehensive enough for you? </p>
+
+                        <div class="bar-rating__scale" aria-hidden="true">
+                            <span class="u-float-left">Not at all</span>
+                            <span class="u-float-right">Yes, completely</span>
+                        </div>
+
+                        <div class="bar-rating__wrapper">
+
+                            <input type="radio" class="bar-rating__input"  id="starContent5" name="ratingContent"  aria-label="5 out of 5 stars" value="5" />
+                            <label for="starContent5" title="The content was perfect - 5 stars">The content was perfect - 5 stars</label>
+
+                            <input type="radio" class="bar-rating__input"  id="starContent4" name="ratingContent"  aria-label="4 out of 5 stars" value="4" />
+                            <label for="starContent4" title="It was pretty good - 4 stars">It was pretty good - 4 stars</label>
+
+                            <input type="radio" class="bar-rating__input"  id="starContent3" name="ratingContent"  aria-label="3 out of 5 stars" value="3" />
+                            <label for="starContent3" title="It was OK - 3 stars">It was OK - 3 stars</label>
+
+                            <input type="radio" class="bar-rating__input"  id="starContent2" name="ratingContent"  aria-label="2 out of 5 stars" value="2" />
+                            <label for="starContent2" title="It wasn't great - 2 stars">It wasn't great - 2 stars</label>
+
+                            <input type="radio" class="bar-rating__input"  id="starContent1" name="ratingContent"  aria-label="1 out of 5 stars" value="1" />
+                            <label for="starContent1" title="This was definitely not for me - 1 star">This was definitely not for me - 1 star</label>
+
+                        </div>
+
+                        <div class="bar-rating__1to5" aria-hidden="true">
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
+                        </div>
+
+                    </fieldset>
+
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+    
+            {% call components.columnHalf() %}
+    
+                <fieldset class="bar-rating u-space-b30">
+    
+                    <legend class="heading-small">Relevance</legend>
+                    <p>Do you think the [video|blog] delivered the learning outcomes?</p>
+    
+                    <div class="bar-rating__scale" aria-hidden="true">
+                        <span class="u-float-left">Not at all</span>
+                        <span class="u-float-right">Yes, completely</span>
+                    </div>
+
+                    <div class="bar-rating__wrapper">
+
+                        <input type="radio" class="bar-rating__input"  id="starRelevance5" name="ratingRelevance"  aria-label="5 out of 5 stars" value="5" />
+                        <label for="starRelevance5" title="Yes completely - 5 stars">Yes completely - 5 stars</label>
+
+                        <input type="radio" class="bar-rating__input"  id="starRelevance4" name="ratingRelevance"  aria-label="4 out of 5 stars" value="4" />
+                        <label for="starRelevance4" title="It was pretty good - 4 stars">It was pretty good - 4 stars</label>
+
+                        <input type="radio" class="bar-rating__input"  id="starRelevance3" name="ratingRelevance"  aria-label="3 out of 5 stars" value="3" />
+                        <label for="starRelevance3" title="It was OK - 3 stars">It was OK - 3 stars</label>
+
+                        <input type="radio" class="bar-rating__input"  id="starRelevance2" name="ratingRelevance"  aria-label="2 out of 5 stars" value="2" />
+                        <label for="starRelevance2" title="It wasn't great - 2 stars">It wasn't great - 2 stars</label>
+
+                        <input type="radio" class="bar-rating__input"  id="starRelevance1" name="ratingRelevance"  aria-label="1 out of 5 stars" value="1" />
+                        <label for="starRelevance1" title="Not at all - 1 star">Not at all - 1 star</label>
+    
+                    </div>
+    
+                    <div class="bar-rating__1to5" aria-hidden="true">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </div>
+    
+                </fieldset>
+    
+            {%- endcall %}
+    
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <fieldset>
+                    <legend class="heading-small">Comments</legend>
+
+                    {% call components.formGroup() %}
+
+                        {{ components.textarea(label="Share your thoughts on this [video|blog] (optional)",id='feedbackComments', width='100')}}
+
+                    {%- endcall %}
+
+                </fieldset>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text="Leave feedback", group=true, url='/prototypes/learner/v8/actions?action=hasLeftFeedback')}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v8/feedback">Back</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

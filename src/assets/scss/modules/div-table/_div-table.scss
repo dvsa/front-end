@@ -3,11 +3,13 @@
   margin: 30px 0;
 
   &__row {
+    position: relative;
     border-bottom: 1px solid $grey-2;
     margin-bottom: 15px;
     padding-bottom: 15px;
 
     @include media(desktop) {
+      position: relative;
       display: table-row;
     }
   }
@@ -23,18 +25,30 @@
   }
 
   &__cell {
+    position: relative;
+    margin-bottom: 20px;
+
+    &--action {
+      margin-bottom: 0;
+    }
+
     @include media(desktop) {
       display: table-cell;
-      padding: 10px 40px 10px 0;
+      // padding: 10px 40px 10px 0;
+      padding: 20px 40px 15px 0;
       border-bottom: 1px solid $grey-2;
+      margin-bottom: 0;
 
       &:last-of-type {
         padding-right: 0;
       }
-    }
 
-    &--action {
-        margin-top: 10px;
+      &--action {
+        min-height: 40px;
+        min-width: 160px;
+        // margin-top: 10px;
+        // padding-top: 10px;
+      }
     }
   }
 }

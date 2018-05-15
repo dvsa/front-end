@@ -16,7 +16,15 @@
 
     {{ components.pageHeading(heading='Suggestions for you from Digital, data &amp; technology') }}
 
-    {{ components.heading(text='From: Senior interaction designer', tag='h2', size='medium', extraClass='heading--red-top') }}
+    <p>View suggestions based on your job role</p>
+    <ul class="list-bullet">
+        <li><a href="#seniorInteractionDesigner">Senior interaction designer</a> </li>
+        <li><a href="#interactionDesigner">Interaction designer</a> </li>
+        <li><a href="#userCenteredDesign">User centered design</a> </li>
+        <li><a href="#ddat">Digital, design &amp; technology</a> </li>
+    </ul>
+
+    <h2 class="heading heading-medium heading--red-top" id="seniorInteractionDesigner">From: Senior interaction designer</h2>
 
     {% call components.gridRow() %}
 
@@ -93,8 +101,7 @@
         {%- endcall %}
 
     {%- endcall %}
-
-    {{ components.heading(text='From: Interaction design', tag='h2', size='medium', extraClass='heading--red-top') }}
+    <h2 class="heading heading-medium heading--red-top" id="interactionDesigner">From: Interaction design</h2>
 
     {% call components.gridRow() %}
 
@@ -134,7 +141,7 @@
 
     {%- endcall %}
 
-    {{ components.heading(text='From: User centred design', tag='h2', size='medium', extraClass='heading--red-top') }}
+    <h2 class="heading heading-medium heading--red-top" id="userCenteredDesign">From: User centred design</h2>
 
     {% call components.gridRow() %}
 
@@ -212,7 +219,7 @@
 
     {%- endcall %}
 
-    {{ components.heading(text='From: Digital, data &amp; technology', tag='h2', size='medium', extraClass='heading--red-top') }}
+    <h2 class="heading heading-medium heading--red-top" id="ddat">From: Digital, design &amp; technology</h2>
 
     {% call components.gridRow() %}
 

@@ -15,7 +15,7 @@
   }
 }
 
-// dirty radio buttons, added to recreate some nasty implementation of radio buttons in Civ Serv Learning Platform pages
+// dirty radio buttons, added to recreate some nasty implementation of radio buttons in extant CSL pages
 .course-radios {
   position: relative;
   display: inline-block;
@@ -60,3 +60,114 @@
     background-color: $grey-3;
   }
 }
+
+// slightly better implementation
+.booking-radios {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 24px;
+
+  &__button {
+    // display:none;
+  }
+
+  &__label {
+    display: inline-block;
+    width: 80px;
+    height: 24px;
+    margin-left: -9999px;
+    line-height: 26px;
+
+    @include media(desktop) {
+      //
+    }
+
+    &:before {
+      position: absolute;
+      display:block;
+      content: "Select";
+      width: 80px;
+      text-align: center;
+      height: 24px;
+      border: 2px solid $mauve;
+      border-radius: 4px;
+      left: 1px;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__button:checked + &__label:before {
+    content: "Selected";
+    width: 80px;
+    height: 24px;
+    border: 2px solid $purple;
+    background-color: $grey-3;
+  }
+}
+
+// modifiers for booking tables
+// ugly, but vaguely logical
+.multiple-choice {
+
+  &--booking {
+    float: none;
+    padding-left: 0;
+
+    @include media(desktop) {
+      position: absolute;
+      left: 0;
+      top: 10px;
+    }
+  }
+
+  &__label {
+    position: relative;
+  }
+
+  &__input {
+    width: 1px;
+    height: 1px;
+
+    &:checked label {
+      border: 1px solid red !important;
+    }
+  }
+
+  &__spanner {
+    display: block;
+    position: relative;
+    width: 136px;
+    height: 24px;
+    // text-indent: 400px;
+    overflow: hidden;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: "Select";
+      width: 136px;
+      text-align: left;
+      height: 24px;
+      // border: 2px solid $mauve;
+      // border-radius: 4px;
+      left: 32px;
+      top: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.multiple-choice__input:checked + .multiple-choice__label {
+  .multiple-choice__spanner:before {
+    content: "Selected";
+  }
+}
+
+.multiple-choice__input:disabled + .multiple-choice__label {
+  .multiple-choice__spanner:before {
+    content: "Unavailable";
+  }
+}
+

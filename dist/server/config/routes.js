@@ -689,6 +689,9 @@ router.get('/prototypes/learner/v7/learning-record', learnerV7Controller.recordG
 // suggested learning
 router.get('/prototypes/learner/v7/suggested-learning', learnerV7Controller.suggestedGet);
 router.get('/prototypes/learner/v7/suggested-learning-full', learnerV7Controller.suggestedFullGet);
+router.get('/prototypes/learner/v7/suggested-learning-all', learnerV7Controller.suggestedAllGet);
+router.get('/prototypes/learner/v7/suggested-learning-hmrc', learnerV7Controller.suggestedAllHMRCGet);
+router.get('/prototypes/learner/v7/suggested-learning-hmrc-cols', learnerV7Controller.suggestedAllHMRCColsGet);
 
 // profile
 router.get('/prototypes/learner/v7/privacy', learnerV7Controller.privacyGet);

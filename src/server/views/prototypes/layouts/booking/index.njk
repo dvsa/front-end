@@ -10,6 +10,208 @@
 
         {% call components.columnFull() %}
 
+            {{ components.heading(text='Booking table', tag='h2', size='medium') }}
+
+            <form action="#" id="bookingItems" method="post" name="bookingItems">
+                <div class="div-table div-table--5">
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__th">
+                            Date
+                        </div>
+                        <div class="div-table__th">
+                            Time
+                        </div>
+                        <div class="div-table__th">
+                            Location
+                        </div>
+                        <div class="div-table__th">
+                            Availability
+                        </div>
+                        <div class="div-table__th">
+                            <span class="visuallyhidden">Action</span>
+                        </div>
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">
+                            12 June 2018
+                        </div>
+                        <div class="div-table__cell">
+                            9:30am to 4pm
+                        </div>
+                        <div class="div-table__cell">
+                            Frome
+                        </div>
+                        <div class="div-table__cell">
+                            Fully booked
+                        </div>
+                        {#<div class="div-table__cell div-table__cell--action">
+                            <div class="booking-radios">
+                                <input class="booking-radios__button" id="option1" name="courseSelect2" type="radio" value="1" disabled="disabled"> <label class="booking-radios__label" for="option1"><span class="visuallyhidden">12 June 2018, Birmingham</span></label>
+                            </div>
+                        </div>#}
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="multiple-choice multiple-choice--booking">
+                                <input class="multiple-choice__input" id="option1" type="radio" name="courseSelect2" value="1" disabled="disabled">
+                                <label for="option1" class="multiple-choice__label">
+                                    <span class="multiple-choice__spanner">
+                                        <span class="visuallyhidden">12 June 2018, Frome</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">
+                            23 June 2018
+                        </div>
+                        <div class="div-table__cell">
+                            9:30am to 4pm
+                        </div>
+                        <div class="div-table__cell">
+                            Manchester
+                        </div>
+                        <div class="div-table__cell">
+                            4 out of 12 places left
+                        </div>
+                        {#<div class="div-table__cell div-table__cell--action">
+                            <div class="booking-radios">
+                                <input class="booking-radios__button" id="option2" name="courseSelect2" type="radio" value="2">
+                                <label class="booking-radios__label" for="option2"><span class="visuallyhidden">23 June 2018, Manchester</span></label>
+                            </div>
+                        </div>#}
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="multiple-choice multiple-choice--booking">
+                                <input class="multiple-choice__input" id="option2" type="radio" name="courseSelect2" value="2">
+                                <label for="option2" class="multiple-choice__label">
+                                    <span class="multiple-choice__spanner">
+                                        <span class="visuallyhidden">23 June 2018, Manchester</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">
+                            14 July 2018
+                        </div>
+                        <div class="div-table__cell">
+                            10am to 4.30pm
+                        </div>
+                        <div class="div-table__cell">
+                            London
+                        </div>
+                        <div class="div-table__cell">
+                            9 out of 12 places left
+                        </div>
+                        {#<div class="div-table__cell div-table__cell--action">
+                            <div class="booking-radios">
+                                <input class="booking-radios__button" id="option3" name="courseSelect2" type="radio" value="3"> <label class="booking-radios__label" for="option3"><span class="visuallyhidden">14 July 2018, London</span></label>
+                            </div>
+                        </div>#}
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="multiple-choice multiple-choice--booking">
+                                <input class="multiple-choice__input" id="option3" type="radio" name="courseSelect2" value="3">
+                                <label for="option3" class="multiple-choice__label">
+                                    <span class="multiple-choice__spanner">
+                                        <span class="visuallyhidden">14 July 2018, London</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">
+                            28 July 2018
+                        </div>
+                        <div class="div-table__cell">
+                            10am to 4.30pm
+                        </div>
+                        <div class="div-table__cell">
+                            Birmingham
+                        </div>
+                        <div class="div-table__cell">
+                            10 out of 12 places left
+                        </div>
+                        {#<div class="div-table__cell div-table__cell--action">
+                            <div class="booking-radios">
+                                <input class="booking-radios__button" id="option4" name="courseSelect2" type="radio" value="4"> <label class="booking-radios__label" for="option4"><span class="visuallyhidden">28 July 2018, Birmingham</span></label>
+                            </div>
+                        </div>#}
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="multiple-choice multiple-choice--booking">
+                                <input class="multiple-choice__input" id="option4" type="radio" name="courseSelect2" value="4">
+                                <label for="option4" class="multiple-choice__label">
+                                    <span class="multiple-choice__spanner">
+                                        <span class="visuallyhidden">28 July 2018, Leeds</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Book selected course">
+                </div>
+                <p><a class="link-back" href="/prototypes/learner/v7/resource?resourceType=classroom">Back</a></p>
+            </form>
+
+            {{ components.heading(text='Payment options table', tag='h2', size='medium') }}
+
+            <form action="#" id="paymentOptions" method="post" name="paymentOptions">
+                <div class="div-table div-table--2">
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__th">
+                            Payment type
+                        </div>
+                        <div class="div-table__th">
+                            <span class="visuallyhidden">Action</span>
+                        </div>
+                    </div>
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">
+                            <strong>Purchase order</strong>
+                            <br>
+                            <a href="#" data-toggle-target="poInformation">How to pay by purchase order</a>
+                            <div data-target="">To find out your department's processes for raising a PO, search on your intranet for 'purchase order' or 'procurement'.</div>
+                        </div>
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="multiple-choice multiple-choice--booking">
+                                <input class="multiple-choice__input" id="paymentOption1" type="radio" name="paymentOptionItems" value="1">
+                                <label for="paymentOption1" class="multiple-choice__label">
+                                    <span class="multiple-choice__spanner">
+                                        <span class="visuallyhidden">Purchase order</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    {##}
+                    <div class="div-table__row u-clearfix">
+                        <div class="div-table__cell">
+                            <strong>Financial approver (FAP)</strong>
+                            <br>
+                            <a href="#">How to pay using a financial approver</a>
+                            <p></p>
+                        </div>
+                        <div class="div-table__cell div-table__cell--action">
+                            <div class="multiple-choice multiple-choice--booking">
+                                <input class="multiple-choice__input" id="paymentOption1" type="radio" name="paymentOptionItems" value="1">
+                                <label for="paymentOption1" class="multiple-choice__label">
+                                    <span class="multiple-choice__spanner">
+                                        <span class="visuallyhidden">Purchase order</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    {##}
+
+                </div>
+            </form>
+
 
 
         {%- endcall %}

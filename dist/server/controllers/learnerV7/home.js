@@ -9,6 +9,9 @@ exports.profileGet = profileGet;
 exports.recordGet = recordGet;
 exports.suggestedGet = suggestedGet;
 exports.suggestedFullGet = suggestedFullGet;
+exports.suggestedAllGet = suggestedAllGet;
+exports.suggestedAllHMRCGet = suggestedAllHMRCGet;
+exports.suggestedAllHMRCColsGet = suggestedAllHMRCColsGet;
 exports.searchGet = searchGet;
 exports.searchPost = searchPost;
 exports.feedbackGet = feedbackGet;
@@ -209,6 +212,27 @@ function suggestedFullGet(req, res) {
   let viewData;
   viewData = {};
   return res.render('prototypes/learner/v7/suggested-learning/full', viewData);
+}
+
+// suggested learning all list GET
+function suggestedAllGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v7/suggested-learning/all', viewData);
+}
+
+// suggested learning all list GET
+function suggestedAllHMRCGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v7/suggested-learning/hmrc', viewData);
+}
+
+// suggested learning all list GET
+function suggestedAllHMRCColsGet(req, res) {
+  let viewData;
+  viewData = {};
+  return res.render('prototypes/learner/v7/suggested-learning/hmrc-cols', viewData);
 }
 
 // search

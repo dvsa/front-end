@@ -9,7 +9,7 @@ export class TextToSpeech {
     if (!wrapperElement) {
       return console.warn('Text-to-speech: Text to speech wrapper has not been defined.');
     }
-    
+
     // Object to store all DOM elements
     this.elements = {
       wrapperElement,

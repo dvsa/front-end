@@ -38,6 +38,9 @@ export class TextToSpeech {
    * Initializer
    */
   setup() {
+    // Setup SpeechSynthesisUtterance
+    this.setupUtteranceSettings();
+
     // Build HTML
     this.elements.textToSpeech = this.buildComponent();
 
@@ -45,15 +48,12 @@ export class TextToSpeech {
     if (!this.elements.textToSpeech) return;
 
     // assign button references to state
-    this.elements.buttons.play = this.elements.textToSpeech.querySelector(TEXT_TO_SPEECH_CONFIG.classes.textToSpeechComponent.playBtn);
-    this.elements.buttons.stop = this.elements.textToSpeech.querySelector(TEXT_TO_SPEECH_CONFIG.classes.textToSpeechComponent.stopBtn);
+    this.elements.buttons.play = this.elements.textToSpeech.querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.textToSpeechComponent.playBtn}`);
+    this.elements.buttons.stop = this.elements.textToSpeech.querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.textToSpeechComponent.stopBtn}`);
 
     // If buttons are undefined return 
-    if (!this.elements.buttons.play || !this.elements.buttons.play) return;
+    if (!this.elements.buttons.play || !this.elements.buttons.stop) return;
 
-    // Setup SpeechSynthesisUtterance
-    this.setupUtteranceSettings();
-    
     // Event handler setup
     addEventListenerToEl(this.elements.buttons.play, 'click', this.playButtonClickHandler);
     addEventListenerToEl(this.elements.buttons.stop, 'click', this.stopButtonClickHandler);
@@ -138,20 +138,8 @@ export class TextToSpeech {
   toggleButtonState = () => {
     this.state.isPaused = !this.state.isPaused;
     this.state.isPlaying = !this.state.isPlaying;
-    this.updateButtonText();
+    this.elements.buttons.play.innerText = this.state.isPlaying ? TEXT_TO_SPEECH_CONFIG.content.pauseBtn : TEXT_TO_SPEECH_CONFIG.content.playBtn; 
   };
-
-  /**
-   * Update button text based on state changes
-   */
-  updateButtonText = () => {
-    if (this.state.isPlaying) {
-      this.elements.buttons.play.innerText = 'Pause audio';
-      return;
-    }
-
-    this.elements.buttons.play.innerText = 'Play audio';
-  }
 
   /**
    * Begins reading utterance

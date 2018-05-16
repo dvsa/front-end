@@ -2,7 +2,7 @@ import { TextToSpeech } from './text-to-speech';
 
 export const initTextToSpeech = () => {
   // Returns the first found element
-  let textToSpeechElements = document.querySelectorAll('.js-text-to-speech');
+  let textToSpeechElements = document.querySelectorAll('.js-text-to-speech-content');
 
   // Convers textToSpeechElements to array
   textToSpeechElements = Array.from(textToSpeechElements);

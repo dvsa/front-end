@@ -37,6 +37,7 @@ $filterPadding: 5px;
 
     @include bold-19;
 
+    position: relative;
     background-color: $grey-2;
     padding: $filterPadding;
   }
@@ -76,4 +77,51 @@ $filterPadding: 5px;
     }
 
   }
+
+  &-toggle {
+
+    .#{$module}__title {
+
+      .js-enabled & {
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: $grey-3;
+        }
+      }
+
+      &--open {
+        &:after {
+          position: absolute;
+          right: 0;
+          top: 4px;
+          content: "\25B2";
+        }
+      }
+
+      &--shut {
+        &:after {
+          content: "\25B2";
+        }
+
+      }
+    }
+
+    /*&--shut {
+
+      .#{$module}__title {
+
+
+      }
+
+      .#{$module}__list {
+
+      }
+    }*/
+  }
+}
+
+.js-enabled {
+
 }

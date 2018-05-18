@@ -21,7 +21,9 @@
     removeFromLearningPlanURL='',
     leaveFeedback='',
     ignoreURL='',
-    isDocument=''
+    isDocument='',
+    optional1=false,
+    optional2=false
     )
 %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
@@ -30,6 +32,9 @@
             {% if headingURL %}<a href="{{ headingURL }}">{% endif %}
                 {{ heading(text=name, tag=headingTag, size=headingSize, extraClass=headingExtraClass) }}
             {% if headingURL %}</a>{% endif %}
+            {%  if optional2 %}
+                <span class="meta">This module is optional</span>
+            {% endif %}
         </div>
 
         <div class="discite__properties {% if extraModifierClass %}discite__properties--{{ extraModifierClass }}{% endif %} u-clearfix">
@@ -60,6 +65,9 @@
             {% endif %}
             {%  if leaveFeedback %}
                 <div class="discite__status"><a class="" href="{{ leaveFeedback }}">Leave feedback</a></div>
+            {% endif %}
+            {%  if optional1 %}
+                <div class="discite__status"><span class="badge badge ">Optional</span></div>
             {% endif %}
 
         </div>

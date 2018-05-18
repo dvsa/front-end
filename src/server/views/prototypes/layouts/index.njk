@@ -44,11 +44,20 @@
 
   {% call components.gridRow() %}
 
-      {% call components.columnOneThird() %}
+      {% call components.columnHalf() %}
 
         {{ components.heading(text='Registration/account files for WSO2', tag='h2', size='medium') }}
         <ul>
             <li><a href="/prototypes/layouts/wso2/email1">Email v1 (working template)</a> </li>
+            <li><a href="/prototypes/layouts/wso2/email2">Email v2, with WSO2 content</a> </li>
+            <li><a href="/prototypes/layouts/wso2/password">Create password page</a> </li>
+        </ul>
+
+        {{ components.heading(text='Suggestions pages', tag='h2', size='medium') }}
+
+        <ul>
+            <li><a href="/prototypes/learner/v8/suggested-learning">Suggestions for you</a> </li>
+            <li>Firstly go to <a href="/prototypes/learner/v8/your-profile">your profile</a> and update <strong>Primary area of work</strong> and <strong>Interests</strong> to get the prototype to output suggestions based on these new values - revist the page above to see the two new sections.</li>
             <li><a href="/prototypes/layouts/wso2/email2">Email v2, with WSO2 content</a> </li>
             <li><a href="/prototypes/layouts/wso2/password">Create password page</a> </li>
         </ul>

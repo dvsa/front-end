@@ -75,7 +75,7 @@
                     </div>
 
                     <div class="filter">
-                        <h2 class="filter__title">Areas of work</h2>
+                        <h2 class="filter__title">Your areas of work</h2>
                         <span class="filter__toggle"></span>
                         <ul class="filter__list u-clearfix">
                             <li class="filter__item">
@@ -92,8 +92,75 @@
                             </li>
                             <li class="filter__item">
                                 <div class="multiple-choice filter__switch">
-                                    <input id="areaLead" type="checkbox" name="areaFilter" value="leadership">
-                                    <label for="areaLead" class="u-display-ib">Leadership</label>
+                                    <input id="areaDelivery" type="checkbox" name="areaFilter" value="delivery">
+                                    <label for="areaDelivery" class="u-display-ib">Project delivery</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter filter-toggle __filter-toggle--shut">
+                        <h2 class="filter__title filter__title--closed" tabindex="0" onclick="toggleVisibility(this, 'toggleOtherAreasList', 'js-hidden')">Other areas of work</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix js-hidden" id="toggleOtherAreasList">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasAnalysis" type="checkbox" name="otherAreasFilter" value="analysis">
+                                    <label for="otherAreasAnalysis" class="u-display-ib">Analysis</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreascommercial" type="checkbox" name="otherAreasFilter" value="commercial">
+                                    <label for="otherAreascommercial" class="u-display-ib">Commercial</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasCommunications" type="checkbox" name="otherAreasFilter" value="communications">
+                                    <label for="otherAreasCommunications" class="u-display-ib">Communications</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasCorporatefinance" type="checkbox" name="otherAreasFilter" value="corpFinance">
+                                    <label for="otherAreasCorporatefinance" class="u-display-ib">Corporate finance</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasFinance" type="checkbox" name="otherAreasFilter" value="finance">
+                                    <label for="otherAreasFinance" class="u-display-ib">Finance</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasFraud" type="checkbox" name="otherAreasFilter" value="fraud">
+                                    <label for="otherAreasFraud" class="u-display-ib">Fraud, error, debt and grants</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasHR" type="checkbox" name="otherAreasFilter" value="hr">
+                                    <label for="otherAreasHR" class="u-display-ib">Human resources</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasInternal" type="checkbox" name="otherAreasFilter" value="internal">
+                                    <label for="otherAreasInternal" class="u-display-ib">Internal audit</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasLegal" type="checkbox" name="otherAreasFilter" value="legal">
+                                    <label for="otherAreasLegal" class="u-display-ib">Legal</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasProperty" type="checkbox" name="otherAreasFilter" value="property">
+                                    <label for="otherAreasProperty" class="u-display-ib">Legal</label>
                                 </div>
                             </li>
                         </ul>
@@ -102,28 +169,6 @@
                     <input class="button" type="submit" value="Apply search filters">
 
                 </div>
-
-
-
-                {#<a href="#" class="remove-filters font-xsmall" onclick="removeFiltersColumn('filters-column', 'results-column');">Remove filters column</a>#}
-
-                {#<script>
-                    function removeFiltersColumn(filterColumnClass, resultColumnClass) {
-                        removeElementsByClass(filterColumnClass);
-                        expandResultsColumn(resultColumnClass);
-                    }
-                    function expandResultsColumn(className) {
-                        var element = document.getElementsByClassName(className);
-                        element[0].classList.remove('column-two-thirds');
-                        element[0].classList.add('column-full');
-                    }
-                    function removeElementsByClass(className){
-                        var elements = document.getElementsByClassName(className);
-                        while(elements.length > 0){
-                            elements[0].parentNode.removeChild(elements[0]);
-                        }
-                    }
-                </script>#}
 
             {%- endcall %}
 
@@ -288,7 +333,7 @@
                     extraModifierClass='search',
                     headingURL='#'
                 ) }}
-                
+
             </div>
         {%- endcall %}
 
@@ -304,5 +349,25 @@
 
     {%- endcall %}
 
+    <script>
+        function toggleVisibility(_this, id, className) {
+            event.preventDefault();
+            let toggleSwitch = _this;
+            let toggleItem = document.getElementById(id);
+            if (hasClass(toggleItem, className)) {
+                toggleSwitch.classList.add('toggle-switch--open');
+                toggleItem.classList.remove(className);
+            }
+            else  {
+                toggleSwitch.classList.remove('toggle-switch--open');
+                toggleItem.classList.add(className);
+            }
+            // return false;
+        }
+
+        function hasClass(target, className) {
+            return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
+        }
+    </script>
 
 {% endblock %}

@@ -12,7 +12,10 @@ export const isChrome = () => {
     isIEedge = winNav.userAgent.indexOf('Edge') > -1,
     isIOSChrome = winNav.userAgent.match('CriOS');
 
-  if ((isChromium !== null && typeof isChromium !== 'undefined' && vendorName === 'Google Inc.' && isOpera === false && isIEedge === false) || (isChromium)) {
+  if (
+    (isChromium !== null && typeof isChromium !== 'undefined' && vendorName === 'Google Inc.' && isOpera === false && isIEedge === false) ||
+    isChromium
+  ) {
     return true;
   }
 

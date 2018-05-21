@@ -1,17 +1,33 @@
 const textToSpeech = {
   classes: {
-    playBtn: 'js-text-to-speech__button--play',
-    stopBtn: 'js-text-to-speech__button--stop'
+    playBtn: 'text-to-speech__button--play',
   },
   content: {
-    title: 'Listen to this information.',    
+    title: 'Listen to this information.',
     playBtn: 'Play audio',
-    pauseBtn: 'Resume audio',
-    stopBtn: 'Stop audio'
-  }
-}
+    pauseBtn: 'Pause audio'
+  },
+};
 
 export const TEXT_TO_SPEECH_CONFIG = {
+  content: {
+    title: textToSpeech.content.title,
+    playBtn: textToSpeech.content.playBtn,
+    pauseBtn: textToSpeech.content.pauseBtn
+  },
+  classes: {
+    wrapper: {
+      wrapper: 'text-to-speech',
+    },
+    section: {
+      wrapper: 'text-to-speech__section',
+    },
+    controls: {
+      wrapper: 'text-to-speech__controls',
+      JSEnabled: 'text-to-speech__controls--js-enabled',      
+      playBtn: textToSpeech.classes.playBtn
+    }
+  },
   speechSettings: {
     voice: 7,
     volume: 1,
@@ -19,27 +35,8 @@ export const TEXT_TO_SPEECH_CONFIG = {
     pitch: 0,
     lang: 'en-uk',
   },
-  content: {
-    title: textToSpeech.content.title,
-    playBtn: textToSpeech.content.playBtn,
-    pauseBtn: textToSpeech.content.pauseBtn,
-    stopBtn: textToSpeech.content.stopBtn
-  },
-  classes: {
-    wrapper: {
-      wrapperClass: 'js-text-to-speech',
-      JSEnabled: 'js-text-to-speech--js-enabled'
-    },
-    textToSpeechComponent: {
-      playBtn: textToSpeech.classes.playBtn,
-      stopBtn: textToSpeech.classes.stopBtn
-    },
-  },
-  DOMElement: `<p class='js-text-to-speech__title'>
+  DOMElement: `<p class='text-to-speech__title'>
   <strong>${textToSpeech.content.title}</strong>
   </p>
-  <div class='js-text-to-speech__controls'>
-  <button class='js-text-to-speech__button ${textToSpeech.classes.playBtn}'>${textToSpeech.content.playBtn}</button>
-  <button class='js-text-to-speech__button ${textToSpeech.classes.stopBtn}'>${textToSpeech.content.stopBtn}</button>
-  </div>`
+  <button class='text-to-speech__button ${textToSpeech.classes.playBtn}'>${textToSpeech.content.playBtn}</button>`,
 };

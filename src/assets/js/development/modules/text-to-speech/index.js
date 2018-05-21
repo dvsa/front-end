@@ -1,8 +1,9 @@
 import { TextToSpeech } from './text-to-speech';
+import { TEXT_TO_SPEECH_CONFIG } from './config';
 
 export const initTextToSpeech = () => {
   // Returns the first found element
-  let textToSpeechElements = document.querySelectorAll('.js-text-to-speech-content');
+  let textToSpeechElements = document.querySelectorAll(`.${TEXT_TO_SPEECH_CONFIG.classes.wrapper.wrapper}`);
 
   // Convers textToSpeechElements to array
   textToSpeechElements = Array.from(textToSpeechElements);

@@ -1,0 +1,85 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your learning - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v8' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{% set isAdmin = isAdmin if isAdmin %}
+
+
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set removeMessage = removeMessage if removeMessage %}
+{% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
+{% set hideHomeStars = 'true' %}
+
+{% set hasBeenAdded = hasBeenAdded if hasBeenAdded %}
+{% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
+{% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
+{% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
+
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% if hasLeftFeedback %}
+
+                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type="confirmation")}}
+
+            {% endif %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+
+    <script>
+
+    function toggleVisibility(_this, id, className) {
+        event.preventDefault();
+        let toggleSwitch = _this;
+        let toggleItem = document.getElementById(id);
+        if (hasClass(toggleItem, className)) {
+           toggleSwitch.classList.add('toggle-switch--open');
+           toggleItem.classList.remove(className);
+        }
+        else  {
+            toggleSwitch.classList.remove('toggle-switch--open');
+            toggleItem.classList.add(className);
+        }
+        // return false;
+    }
+
+    function hasClass(target, className) {
+        return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
+    }
+
+    </script>
+
+{% endblock %}

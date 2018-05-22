@@ -16,48 +16,48 @@
 
     {% call components.gridRow() %}
 
-    {% call components.columnFull() %}
+        {% call components.columnFull() %}
 
-        <div class="u-space-y30 header-box u-border-bgrey2">
+            <div class="u-space-y30 header-box u-border-bgrey2">
 
-            {% call components.gridRow() %}
+                {% call components.gridRow() %}
 
-                {% call components.columnHalf() %}
+                    {% call components.columnHalf() %}
 
-                    {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
+                        {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
 
-                    <p class="u-space-b5">Tailored suggestions from the Learning Platform for Government and your organisation.</p>
+                        <p class="u-space-b5">Tailored suggestions from the Learning Platform for Government and your organisation.</p>
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v8/search") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                    {#<a href="#" class="search-box__advanced">Advanced search</a>#}
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
 
                 {%- endcall %}
 
-
-                {% call components.columnHalf() %}
-
-                    <div class="search-box">
-
-                        {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v8/search") %}
-
-                            <div class="form-group search-box__group u-space-b">
-
-                                <label class="visuallyhidden" for="searchInput">Search all available learning</label>
-
-                                <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
-
-                                <button type="submit" class="search-box__submit">Search</button>
-
-                                {#<a href="#" class="search-box__advanced">Advanced search</a>#}
-
-                            </div>
-
-                        {%- endcall %}
-
-                    </div>
-
-                {%- endcall %}
-
-            {%- endcall %}
-
-        </div>
+            </div>
 
         {%- endcall %}
 

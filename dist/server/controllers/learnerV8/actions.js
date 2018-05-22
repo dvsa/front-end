@@ -76,6 +76,11 @@ function actionsGet(req, res) {
     redirectPath = '/prototypes/learner/v8/your-profile';
   }
 
+  if (action == 'showPreFilteredResults') {
+    req.session.showPreFilteredResults = true;
+    redirectPath = '/prototypes/learner/v8/search';
+  }
+
   return res.redirect(redirectPath);
 }
 

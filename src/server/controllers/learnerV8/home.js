@@ -20,6 +20,9 @@ export function homeGet(req, res) {
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
 
+  let isAdmin = req.session.isAdmin;
+  console.log('isAdmin = ' + isAdmin);
+
   // req.session.removeMessage = false;
   hideHomeStars = req.session.hideHomeStars;
   action = req.param('action');
@@ -72,6 +75,7 @@ export function homeGet(req, res) {
     willBeRemoved,
     hasBeenRemoved,
     hasLeftFeedback,
+    isAdmin,
   };
 
   return res.render('prototypes/learner/v8/home/index', viewData);
@@ -243,12 +247,14 @@ export function suggestedAllHMRCColsGet(req, res) {
 
 // search
 export function searchGet(req, res) {
-  let viewData, searchTerm;
+  let viewData, searchTerm, showPreFilteredResults;
 
   searchTerm = req.session.searchTerm;
+  showPreFilteredResults = req.session.showPreFilteredResults;
 
   viewData = {
     searchTerm,
+    showPreFilteredResults,
   };
 
   return res.render('prototypes/learner/v8/search/index', viewData);

@@ -5,6 +5,8 @@
 {% set signOutPath = '/prototypes/learner/v8/' %}
 {% set homePath = '/prototypes/learner/v8/home' %}
 {% set searchTerm = searchTerm if searchTerm %}
+{% set showPreFilteredResults = showPreFilteredResults if showPreFilteredResults %}
+
 
 {% block content %}
 
@@ -16,7 +18,11 @@
 
             {{ components.searchBox(actionPath='/prototypes/learner/v8/search') }}
 
-        <p class="lede">There were <strong>46</strong> results for <strong>senior management</strong></p>
+            {% if showPreFilteredResults %}
+                <p class="lede">There were <strong>14</strong> results for <strong>HMRC</strong></p>
+            {% else %}
+                <p class="lede">There were <strong>46</strong> results for <strong>senior management</strong></p>
+            {% endif %}
 
         {%- endcall %}
 
@@ -80,20 +86,25 @@
                         <ul class="filter__list u-clearfix">
                             <li class="filter__item">
                                 <div class="multiple-choice filter__switch">
-                                    <input id="areaPrimary" type="checkbox" name="areaFilter" value="digital">
+                                    <input id="areaPrimary" type="checkbox" name="areaFilter" value="ddat">
                                     <label for="areaPrimary" class="u-display-ib">Digital, Data &amp; Technology</label>
                                 </div>
                             </li>
                             <li class="filter__item">
                                 <div class="multiple-choice filter__switch">
-                                    <input id="areaLegal" type="checkbox" name="areaFilter" value="legal">
-                                    <label for="areaLegal" class="u-display-ib">Legal</label>
+                                    <input id="areaCommercial" type="checkbox" name="areaFilter" value="commercial">
+                                    <label for="areaCommercial" class="u-display-ib">Commercial</label>
                                 </div>
                             </li>
                             <li class="filter__item">
                                 <div class="multiple-choice filter__switch">
-                                    <input id="areaDelivery" type="checkbox" name="areaFilter" value="delivery">
-                                    <label for="areaDelivery" class="u-display-ib">Project delivery</label>
+                                    {% if showPreFilteredResults %}
+                                        <input id="areaHMRC" type="checkbox" name="areaFilter" value="hmrc" checked>
+                                    {% else %}
+                                        <input id="areaHMRC" type="checkbox" name="areaFilter" value="hmrc">
+                                    {% endif %}
+
+                                    <label for="areaHMRC" class="u-display-ib">HMRC</label>
                                 </div>
                             </li>
                         </ul>
@@ -107,12 +118,6 @@
                                 <div class="multiple-choice filter__switch">
                                     <input id="otherAreasAnalysis" type="checkbox" name="otherAreasFilter" value="analysis">
                                     <label for="otherAreasAnalysis" class="u-display-ib">Analysis</label>
-                                </div>
-                            </li>
-                            <li class="filter__item">
-                                <div class="multiple-choice filter__switch">
-                                    <input id="otherAreascommercial" type="checkbox" name="otherAreasFilter" value="commercial">
-                                    <label for="otherAreascommercial" class="u-display-ib">Commercial</label>
                                 </div>
                             </li>
                             <li class="filter__item">
@@ -155,6 +160,12 @@
                                 <div class="multiple-choice filter__switch">
                                     <input id="otherAreasLegal" type="checkbox" name="otherAreasFilter" value="legal">
                                     <label for="otherAreasLegal" class="u-display-ib">Legal</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="otherAreasDevlivery" type="checkbox" name="otherAreasFilter" value="commercial">
+                                    <label for="otherAreasDevlivery" class="u-display-ib">Project delivery</label>
                                 </div>
                             </li>
                             <li class="filter__item">
@@ -343,7 +354,12 @@
 
         {% call components.columnFull() %}
 
-            {{ components.pagination(totalItems=46,currentPage=1) }}
+            {% if showPreFilteredResults %}
+                {{ components.pagination(totalItems=14,currentPage=1) }}
+            {% else %}
+                {{ components.pagination(totalItems=46,currentPage=1) }}
+            {% endif %}
+
 
         {%- endcall %}
 
@@ -355,16 +371,15 @@
             let toggleSwitch = _this;
             let toggleItem = document.getElementById(id);
             if (hasClass(toggleItem, className)) {
-                toggleSwitch.classList.add('toggle-switch--open');
+                toggleSwitch.classList.add('filter__title--closed');
                 toggleItem.classList.remove(className);
             }
             else  {
-                toggleSwitch.classList.remove('toggle-switch--open');
+                toggleSwitch.classList.remove('filter__title--closed');
                 toggleItem.classList.add(className);
             }
             // return false;
         }
-
         function hasClass(target, className) {
             return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
         }

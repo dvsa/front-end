@@ -6,6 +6,9 @@
 {% set mainContainerClass = 'has-lower-hero' %}
 {% set signOutPath = '/prototypes/learner/v8/' %}
 {% set homePath = '/prototypes/learner/v8/home' %}
+{% set isAdmin = isAdmin if isAdmin %}
+
+
 {#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
 {% set removeMessage = removeMessage if removeMessage %}
 {% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
@@ -16,11 +19,8 @@
 {% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
 {% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
 
-{% block content %}
 
-{% if willBeRemoved %}
-<span>willBeRemoved</span>
-{% endif %}
+{% block content %}
 
     {% call components.gridRow() %}
 

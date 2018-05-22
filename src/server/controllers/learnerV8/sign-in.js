@@ -62,6 +62,9 @@ export function indexPost(req, res) {
 
   if (validateEmail(email) && password.length >= 2) {
     return res.redirect('/prototypes/learner/v8/home');
+  } else if (email == 'admin') {
+    req.session.isAdmin = true;
+    return res.redirect('/prototypes/learner/v8/home');
   } else {
     signinError = true;
     req.session.signinError = signinError;

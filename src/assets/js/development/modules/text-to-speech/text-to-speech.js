@@ -7,13 +7,13 @@ export class TextToSpeech {
   constructor(textToSpeechWrapper) {
     // Check if element is passed
     if (!textToSpeechWrapper) console.warn('Text to speech wrapper not defined');
-    
+
     // Object to store / reference state
     this.state = {
       wrapper: textToSpeechWrapper,
       synth: window.speechSynthesis,
-      textToSpeechElements: [],      
-      current: ''
+      textToSpeechElements: [],
+      current: '',
     };
 
     // Gets all text to speech components in wrapper
@@ -22,7 +22,7 @@ export class TextToSpeech {
 
     // If speechSynthesis & SpeechSynthesisUtterance failed to set up return
     if (!this.state.synth) return;
-
+    
     // Run widget setup
     this.setup();
   }
@@ -31,7 +31,7 @@ export class TextToSpeech {
    * Initializer
    */
   setup() {
-   this.sections.forEach( (section, index) => {
+    this.sections.forEach((section, index) => {
       // Get utterance content
       let content = section.innerText;
       if (!content) return;
@@ -48,9 +48,7 @@ export class TextToSpeech {
       section.setAttribute('id', uniqueIdentifier);
 
       // Get play button ref
-      let playBtn = textToSpeechDOMComponent.querySelector(
-      `.${TEXT_TO_SPEECH_CONFIG.classes.controls.playBtn}`
-      );
+      let playBtn = textToSpeechDOMComponent.querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.controls.playBtn}`);
 
       if (!playBtn) return;
 
@@ -66,7 +64,7 @@ export class TextToSpeech {
       // Sets up utterance
       let utterance = this.setupUtteranceSettings(index);
       if (!utterance) return;
-      
+
       // Define and push this elements state
       this.state.textToSpeechElements.push({
         id: uniqueIdentifier,
@@ -76,9 +74,9 @@ export class TextToSpeech {
         playBtn,
         isPlaying: false,
         isPaused: false,
-        utterance
+        utterance,
       });
-   });
+    });
   }
 
   /**
@@ -96,7 +94,6 @@ export class TextToSpeech {
 
     // If event has taken place on the same element that is currently playing / paused
     if (caller.id == this.state.current.id) {
-
       // If state is paused
       if (this.state.current.isPaused) {
         this.state.synth.resume();
@@ -104,13 +101,13 @@ export class TextToSpeech {
       } else {
         // If state is playing
         this.state.synth.pause();
-        this.currentElementIsPaused(); 
+        this.currentElementIsPaused();
       }
 
       // Toggle button text
-      this.toggleButtonInnerText();  
+      this.toggleButtonInnerText();
 
-      // Return from method  
+      // Return from method
       return;
     }
 
@@ -120,7 +117,7 @@ export class TextToSpeech {
     // Assigns new reading context to state
     this.state.current = this.state.textToSpeechElements[caller.index];
 
-    // Begins reading 
+    // Begins reading
     this.readContent();
 
     // Toggle button text
@@ -128,20 +125,20 @@ export class TextToSpeech {
   };
 
   /**
-  * Setup utterance
-  *
-  * @param {Event} elementIndex - Index within DOM collection array
-  * @return {utterance} - SpeechSynthesisUtterance
-  */
+   * Setup utterance
+   *
+   * @param {Event} elementIndex - Index within DOM collection array
+   * @return {utterance} - SpeechSynthesisUtterance
+   */
   setupUtteranceSettings = elementIndex => {
     let utterance, voices;
-    
+
     // Defines new utterance object
     utterance = new SpeechSynthesisUtterance();
 
     // Creates voices object
     voices = this.state.synth.getVoices();
-    
+
     // Utterance config setup
     utterance.voice = voices[TEXT_TO_SPEECH_CONFIG.speechSettings.voice];
     utterance.volume = TEXT_TO_SPEECH_CONFIG.speechSettings.volume;
@@ -160,15 +157,15 @@ export class TextToSpeech {
   };
 
   /**
-  * Gets DOM related info on the calling event
-  *
-  * @param {Event} event - DOM Event object
-  * @return {obj} - Event caller information
-  */
+   * Gets DOM related info on the calling event
+   *
+   * @param {Event} event - DOM Event object
+   * @return {obj} - Event caller information
+   */
   getCallerInfo = event => {
     // Method var setup
     let elm, id, index;
-    
+
     // Gets the index of the current caller
     elm = closestParentOfEl(event.target, `.${TEXT_TO_SPEECH_CONFIG.classes.section.wrapper}`);
     id = elm.getAttribute('id');
@@ -181,31 +178,33 @@ export class TextToSpeech {
     return {
       elm,
       id,
-      index
+      index,
     };
-  }
+  };
 
   /**
-  * Toggles play / pause button inner text
-  */
+   * Toggles play / pause button inner text
+   */
   toggleButtonInnerText = () => {
     this.state.textToSpeechElements.map(element => {
-      element.isPlaying ? element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.pauseBtn : element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.playBtn;
+      element.isPlaying
+        ? (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.pauseBtn)
+        : (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.playBtn);
     });
   };
 
   /**
-  * Begins reading utterance
-  */
+   * Begins reading utterance
+   */
   readContent = () => {
     this.state.current.utterance.text = this.state.current.content;
-    this.state.current.isPlaying = true;    
+    this.state.current.isPlaying = true;
     this.state.synth.speak(this.state.current.utterance);
   };
 
   /**
-  * Builds and returns text to speech DOM element
-  */
+   * Builds and returns text to speech DOM element
+   */
   buildComponent = () => {
     let textToSpeechElm = document.createElement(`div`);
     textToSpeechElm.classList.add(TEXT_TO_SPEECH_CONFIG.classes.controls.wrapper);
@@ -214,18 +213,18 @@ export class TextToSpeech {
   };
 
   /**
-  * Set's current elements state to playing
-  */
+   * Set's current elements state to playing
+   */
   currentElementIsPlaying = () => {
-    this.state.current.isPaused = false;     
+    this.state.current.isPaused = false;
     this.state.current.isPlaying = true;
-  }
+  };
 
   /**
-  * Set's current elements state to paused
-  */
+   * Set's current elements state to paused
+   */
   currentElementIsPaused = () => {
-    this.state.current.isPaused = true;     
+    this.state.current.isPaused = true;
     this.state.current.isPlaying = false;
-  }
+  };
 }

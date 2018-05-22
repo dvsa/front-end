@@ -1,4 +1,4 @@
-import { addEventListenerToEl, removeAllEventsFromEl } from '../../../shared/misc/events';
+import { addEventListenerToEl } from '../../../shared/misc/events';
 import { toggleClass, closestParentOfEl } from '../../../shared/misc';
 import { TEXT_TO_SPEECH_CONFIG } from './config';
 import md5 from 'md5';

@@ -4,16 +4,8 @@
 
     &--js-enabled {
       display: block;
-      margin: 0 0 15px 0;
-      display: block;
+      margin: 0;
     }
-  }
-
-  &__title {
-    display: inline-block;
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0 10px 0 0;
   }
 
   &__button {
@@ -24,7 +16,7 @@
     background-color: transparent;
     color: #005ea5;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
 
     &--play {

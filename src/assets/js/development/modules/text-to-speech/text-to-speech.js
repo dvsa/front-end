@@ -13,7 +13,7 @@ export class TextToSpeech {
       wrapper: textToSpeechWrapper,
       synth: window.speechSynthesis,
       textToSpeechElements: [],
-      current: '',
+      current: ''
     };
 
     // Gets all text to speech components in wrapper
@@ -49,7 +49,6 @@ export class TextToSpeech {
 
       // Get play button ref
       let playBtn = textToSpeechDOMComponent.querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.controls.playBtn}`);
-
       if (!playBtn) return;
 
       // Play / Pause button event listener
@@ -58,8 +57,8 @@ export class TextToSpeech {
       // Set the index
       section.setAttribute('data-array-index', index);
 
-      // Append widget to DOM
-      section.appendChild(textToSpeechDOMComponent);
+      // Insert widget to top of section
+      section.insertBefore(textToSpeechDOMComponent, section.firstChild);
 
       // Sets up utterance
       let utterance = this.setupUtteranceSettings(index);
@@ -74,7 +73,7 @@ export class TextToSpeech {
         playBtn,
         isPlaying: false,
         isPaused: false,
-        utterance,
+        utterance
       });
     });
   }
@@ -94,6 +93,7 @@ export class TextToSpeech {
 
     // If event has taken place on the same element that is currently playing / paused
     if (caller.id == this.state.current.id) {
+
       // If state is paused
       if (this.state.current.isPaused) {
         this.state.synth.resume();
@@ -172,7 +172,7 @@ export class TextToSpeech {
     index = elm.getAttribute('data-array-index');
 
     // If elements are undefined return
-    if (!elm || !id || !index) return null;
+    if (!elm || !id || !index) return;
 
     // Return caller info object
     return {

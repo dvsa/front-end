@@ -8,4 +8,4 @@ export const initThemeToggle = () => {
 
   // Initialize new theme toggle
   new ThemeToggle(themeToggleDomELm);
-}
+};

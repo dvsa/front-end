@@ -8,12 +8,38 @@
 
     {% call components.columnFull() %}
 
-    <div class='theme-toggle'>
-      <ul class='theme-toggle__controls'>
-        <li><button class='theme-toggle__button theme-toggle__button--low-contrast'>Low contrast</button></li>
-        <li><button class='theme-toggle__button theme-toggle__button--dark-theme'>Dark theme</button></li>
-      </ul>
-    </div>
+    <details>
+      <summary><span class="summary">If you're having problems reading this page, change the colour</span></summary>
+      <div class="panel panel-border-narrow">
+        <div class='theme-toggle'>
+          <form class='theme-toggle__form'>
+            <div class='form-group'>
+              <legend>
+              <h1 class='heading-medium'>Pick a theme</h1>
+              </legend>
+              <div class="multiple-choice">
+                <input id="radio-1" type="radio" name="radio-group" value="default">
+                <label for="radio-1">
+                  <span class='theme-toggle__theme-preview'>Abc</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-2" type="radio" name="radio-group" value="Low contrast">
+                <label for="radio-2">
+                  <span class='theme-toggle__theme-preview theme-toggle__theme-preview--low-contrast'>Abc</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-3" type="radio" name="radio-group" value="Dark theme">
+                <label for="radio-3">
+                  <span class='theme-toggle__theme-preview theme-toggle__theme-preview--dark-theme'>Abc</span>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </details>
 
     <main id="content">
       <div class="grid-row">

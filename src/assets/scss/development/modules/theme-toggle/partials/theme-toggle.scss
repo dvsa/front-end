@@ -1,0 +1,22 @@
+.theme-toggle {
+  &__theme-preview {
+    border: 1px solid #eaeaea;
+    background-color: white;
+    padding: 10px 50px;
+
+    &--default {
+      color: black;
+      background-color: white;
+    }
+
+    &--low-contrast {
+      background-color: blue;
+      color: white;
+    }
+
+    &--dark-theme {
+      background-color: yellow;
+      color: blue;
+    }
+  }
+}

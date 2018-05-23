@@ -1,0 +1,10 @@
+.theme {
+  &__dark-theme {
+    color: blue;
+    background-color: yellow;
+  }
+  &__low-contrast {
+    background-color: blue;
+    color: white;
+  }
+}

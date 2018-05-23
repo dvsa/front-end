@@ -13,7 +13,7 @@ export class TextToSpeech {
       wrapper: textToSpeechWrapper,
       synth: window.speechSynthesis,
       textToSpeechElements: [],
-      current: ''
+      current: '',
     };
 
     // Gets all text to speech components in wrapper
@@ -22,7 +22,7 @@ export class TextToSpeech {
 
     // If speechSynthesis & SpeechSynthesisUtterance failed to set up return
     if (!this.state.synth) return;
-    
+
     // Run widget setup
     this.setup();
   }
@@ -73,7 +73,7 @@ export class TextToSpeech {
         playBtn,
         isPlaying: false,
         isPaused: false,
-        utterance
+        utterance,
       });
     });
   }
@@ -93,7 +93,6 @@ export class TextToSpeech {
 
     // If event has taken place on the same element that is currently playing / paused
     if (caller.id == this.state.current.id) {
-
       // If state is paused
       if (this.state.current.isPaused) {
         this.state.synth.resume();

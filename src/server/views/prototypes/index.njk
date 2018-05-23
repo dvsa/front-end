@@ -77,4 +77,15 @@
 
   {%- endcall %}
 
+  {% call components.gridRow() %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Toggle theme', tag='h2', size='medium', url='/prototypes/theme-toggle')}}
+      {{ components.paragraph(text='Toggle theme prototype')}}
+
+    {% endcall %}
+
+  {% endcall %}
+
 {% endblock %}

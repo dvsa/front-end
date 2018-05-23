@@ -29,32 +29,30 @@ export function adminEditPost(req, res) {
   return res.redirect('/prototypes/learner/v8/admin');
 }
 
-
 // admin add
 export function adminAddGet(req, res) {
-    let viewData;
+  let viewData;
 
-    viewData = {};
+  viewData = {};
 
-    return res.render('prototypes/learner/v8/admin/add', viewData);
+  return res.render('prototypes/learner/v8/admin/add', viewData);
 }
 export function adminAddPost(req, res) {
-    const {} = req.body;
+  const {} = req.body;
 
-    return res.redirect('/prototypes/learner/v8/admin-details');
+  return res.redirect('/prototypes/learner/v8/admin-details');
 }
-
 
 // admin add 2
 export function adminAddDetailsGet(req, res) {
-    let viewData;
+  let viewData;
 
-    viewData = {};
+  viewData = {};
 
-    return res.render('prototypes/learner/v8/admin/add-details', viewData);
+  return res.render('prototypes/learner/v8/admin/add-details', viewData);
 }
 export function adminAddDetailsPost(req, res) {
-    const {} = req.body;
+  const {} = req.body;
 
-    return res.redirect('/prototypes/learner/v8/admin');
+  return res.redirect('/prototypes/learner/v8/admin');
 }

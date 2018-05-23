@@ -5,10 +5,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.adminGet = adminGet;
 exports.adminPost = adminPost;
-exports.adminAddGet = adminAddGet;
-exports.adminAddPost = adminAddPost;
 exports.adminEditGet = adminEditGet;
 exports.adminEditPost = adminEditPost;
+exports.adminAddGet = adminAddGet;
+exports.adminAddPost = adminAddPost;
+exports.adminAddDetailsGet = adminAddDetailsGet;
+exports.adminAddDetailsPost = adminAddDetailsPost;
 
 var _validationFunctions = require('./validation-functions');
 
@@ -28,6 +30,20 @@ function adminPost(req, res) {
   return res.redirect('/prototypes/learner/v8/admin');
 }
 
+// admin edit
+function adminEditGet(req, res) {
+  let viewData;
+
+  viewData = {};
+
+  return res.render('prototypes/learner/v8/admin/edit', viewData);
+}
+function adminEditPost(req, res) {
+  const {} = req.body;
+
+  return res.redirect('/prototypes/learner/v8/admin');
+}
+
 // admin add
 function adminAddGet(req, res) {
   let viewData;
@@ -39,18 +55,18 @@ function adminAddGet(req, res) {
 function adminAddPost(req, res) {
   const {} = req.body;
 
-  return res.redirect('/prototypes/learner/v8/admin');
+  return res.redirect('/prototypes/learner/v8/admin-details');
 }
 
-// admin edit
-function adminEditGet(req, res) {
+// admin add 2
+function adminAddDetailsGet(req, res) {
   let viewData;
 
   viewData = {};
 
-  return res.render('prototypes/learner/v8/admin/edit', viewData);
+  return res.render('prototypes/learner/v8/admin/add-details', viewData);
 }
-function adminEditPost(req, res) {
+function adminAddDetailsPost(req, res) {
   const {} = req.body;
 
   return res.redirect('/prototypes/learner/v8/admin');

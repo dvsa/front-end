@@ -1,4 +1,6 @@
-.search-box {
+$module: 'search-box';
+
+.#{$module}  {
 
   background-color: $civil-service;
 
@@ -10,6 +12,10 @@
     @include media(desktop) {
       min-height: 60px;
       padding: 20px 58px 20px 10px;
+
+      @include m('sidebar') {
+
+      }
     }
   }
 
@@ -32,11 +38,12 @@
     background-image: url(/images/icon-search.png);
     background-repeat: no-repeat;
     background-position: 5px 50%;
+    background-size: 70%;
 
     @include media(desktop) {
       width: 38px;
       height: 38px;
-      background-position: 7px 50%;
+      background-position: 9px 48%;
     }
   }
 
@@ -52,5 +59,18 @@
 
   .form-group, p {
     margin-bottom: 0;
+  }
+
+  &--sidebar {
+
+    background-color: $white;
+
+    .#{$module}__group  {
+      padding: 10px 58px 10px 0;
+    }
+
+    .#{$module}__submit  {
+      top: 10px;
+    }
   }
 }

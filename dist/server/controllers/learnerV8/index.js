@@ -123,3 +123,15 @@ Object.keys(_authentication).forEach(function (key) {
     }
   });
 });
+
+var _admin = require('./admin');
+
+Object.keys(_admin).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _admin[key];
+    }
+  });
+});

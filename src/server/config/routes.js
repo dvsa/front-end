@@ -899,6 +899,16 @@ router.post('/prototypes/learner/v8/scorms/basic-fire-safety', learnerV8Controll
 // scorm done
 router.get('/prototypes/learner/v8/scorms/basic-fire-safety/complete', learnerV8Controller.scormCompleteGet);
 
+//******************************************************
+//      admin section
+//******************************************************
+router.get('/prototypes/learner/v8/admin', learnerV8Controller.adminGet);
+router.post('/prototypes/learner/v8/admin', learnerV8Controller.adminPost);
+router.get('/prototypes/learner/v8/admin/edit', learnerV8Controller.adminEditGet);
+router.post('/prototypes/learner/v8/admin/edit', learnerV8Controller.adminEditPost);
+router.get('/prototypes/learner/v8/admin/add', learnerV8Controller.adminAddGet);
+router.post('/prototypes/learner/v8/admin/add', learnerV8Controller.adminAddPost);
+
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
 

@@ -1,6 +1,6 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Your learning - Learning Platform for Government' %}
+{% set pageTitle = 'Content management - Learning Platform for Government' %}
 {% set blackBarTitle = 'Learning Platform for Government' %}
 {% set learnerPrototypeVersion = 'v8' %}
 {% set mainContainerClass = 'has-lower-hero' %}
@@ -8,29 +8,11 @@
 {% set homePath = '/prototypes/learner/v8/home' %}
 {% set isAdmin = isAdmin if isAdmin %}
 
-
-{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
 {% set removeMessage = removeMessage if removeMessage %}
-{% set fireTrainingComplete = fireTrainingComplete if fireTrainingComplete %}
-{% set hideHomeStars = 'true' %}
-
-{% set hasBeenAdded = hasBeenAdded if hasBeenAdded %}
-{% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
-{% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
-{% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
-
 
 {% block content %}
 
-    {% call components.gridRow() %}
-
-        {% call components.columnFull() %}
-
-
-
-        {%- endcall %}
-
-    {%- endcall %}
+    {{ components.pageHeading('Content management') }}
 
     {% call components.gridRow() %}
 
@@ -49,6 +31,268 @@
 
     {% call components.gridRow() %}
 
+        {% call components.columnTwoThirds() %}
+
+            {{ components.heading(text='All courses', tag='h2', size='medium', extraClass='') }}
+
+            <table class="dgu-datafiles">
+                <tbody>
+                <tr>
+                    <th class="title small">Course title</th>
+                    <th>Type</th>
+                    <th>Aded on</th>
+                    <th><span class="visuallyhidden">Actions</span></th>
+                </tr>
+                </tbody>
+                <tbody>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                <tr class="">
+                    <td class="title small">
+                        <a href="#">This is the name of my course</a>
+                    </td>
+                    <td>Online</td>
+                    <td>08 Feb 2018</td>
+                    <td>
+                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="u-space-y30">
+                {{ components.pagination(totalItems=148,currentPage=1) }}
+            </div>
+
+
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <h2 class="heading-small">Actions</h2>
+
+                <ul class="">
+                    <li><a href="/prototypes/learner/v8/admin/add">Add a new course</a></li>
+                </ul>
+
+                <h2 class="heading-small">Find a course</h2>
+
+                <div class="search-box search-box--sidebar">
+
+                    {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v8/search") %}
+
+                        <div class="form-group search-box__group u-space-b">
+
+                            <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                            <input class="form-control search-box__input" id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                            <button type="submit" class="search-box__submit">Search</button>
+
+                        </div>
+
+                    {%- endcall %}
+
+                </div>
+
+            </aside>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
         {% call components.columnFull() %}
 
 
@@ -56,30 +300,5 @@
         {%- endcall %}
 
     {%- endcall %}
-
-{% endblock %}
-
-    <script>
-
-    function toggleVisibility(_this, id, className) {
-        event.preventDefault();
-        let toggleSwitch = _this;
-        let toggleItem = document.getElementById(id);
-        if (hasClass(toggleItem, className)) {
-           toggleSwitch.classList.add('toggle-switch--open');
-           toggleItem.classList.remove(className);
-        }
-        else  {
-            toggleSwitch.classList.remove('toggle-switch--open');
-            toggleItem.classList.add(className);
-        }
-        // return false;
-    }
-
-    function hasClass(target, className) {
-        return new RegExp('(\\s|^)' + className + '(\\s|$)').test(target.className);
-    }
-
-    </script>
 
 {% endblock %}

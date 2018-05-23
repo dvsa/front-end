@@ -8,3 +8,4 @@ export * from './actions';
 export * from './areas';
 export * from './scorms';
 export * from './authentication';
+export * from './admin';

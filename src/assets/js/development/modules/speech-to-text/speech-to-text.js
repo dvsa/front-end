@@ -1,21 +1,21 @@
 import { addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
+import { SPEECH_TO_TEXT_CONFIG } from './config';
+import { TEXT_TO_SPEECH_CONFIG } from '../text-to-speech/config';
 
 export class SpeechToText {
   constructor(recordButton) {
     // Check if record button is passed
-    if (!recordButton) {
-      return console.warn('Speech to text: Class has been setup incorrectly');
-    }
-
+    if (!recordButton) console.warn('Speech to text has failed to initiate');
+    
     // Gets a reference to the components wrapper element
-    let wrapper = closestParentOfEl(recordButton, '.search-bar__control-group');
+    let wrapper = closestParentOfEl(recordButton, `.${SPEECH_TO_TEXT_CONFIG.classes.wrapper}`);
 
     // Object to store assiosated DOM Elements
     this.elements = {
       recordButton,
       wrapper: wrapper,
-      input: wrapper.querySelector('.search-bar__search-input'),
-      submitBtn: wrapper.querySelector('.search-bar__search-submit'),
+      input: wrapper.querySelector(`.${SPEECH_TO_TEXT_CONFIG.classes.input}`),
+      submitBtn: wrapper.querySelector(`.${SPEECH_TO_TEXT_CONFIG.classes.submitBtn}`),
     };
 
     // Object initialised to store state
@@ -30,16 +30,23 @@ export class SpeechToText {
     this.setup();
   }
 
+  /**
+  * Initial setup of control
+  */
   setup = () => {
     // Assigns the record button's click handler
-    addEventListenerToEl(this.elements.recordButton, 'click', this.handleListenButtonClickEvent);
+    addEventListenerToEl(this.elements.recordButton, 'click', this.listenBtnClickHandler);
+
     // Assigns various event handlers to the speechRecognition object
-    this.state.speechRecognition.onstart = this.handleSpeechStart;
-    this.state.speechRecognition.onend = this.handleSpeechEnd;
+    this.state.speechRecognition.onstart = this.isRecording;
+    this.state.speechRecognition.onend = this.isStoppedRecording;
     this.state.speechRecognition.onresult = this.handleOnSpeechResult;
   };
 
-  handleListenButtonClickEvent = event => {
+  /**
+  * Handles click event on listen button click
+  */
+  listenBtnClickHandler = event => {
     event.preventDefault();
 
     // If state is currently recording
@@ -54,17 +61,10 @@ export class SpeechToText {
     // Start listening for audio
     this.state.speechRecognition.start();
   };
-
-  handleSpeechStart = event => {
-    // Update state
-    this.isRecording();
-  };
-
-  handleSpeechEnd = event => {
-    // Update state
-    this.isStoppedRecording();
-  };
-
+  
+  /**
+  * Handles speech result event
+  */
   handleOnSpeechResult = event => {
     // Gets spoken result
     let resultString = event.results[0][0].transcript;
@@ -79,17 +79,23 @@ export class SpeechToText {
     this.elements.input.value = resultString;
   };
 
+  /**
+  * Toggles state to recording
+  */
   isRecording = () => {
     this.state.isRecording = true;
     this.elements.submitBtn.disabled = true;
     this.elements.input.disabled = true;
-    this.elements.recordButton.innerHTML = 'Cancel recording';
+    this.elements.recordButton.innerHTML = SPEECH_TO_TEXT_CONFIG.content.recording;
   };
 
+  /**
+  * Toggles state to NOT recording
+  */
   isStoppedRecording = () => {
     this.state.isRecording = false;
     this.elements.submitBtn.disabled = false;
     this.elements.input.disabled = false;
-    this.elements.recordButton.innerHTML = 'Start voice search';
+    this.elements.recordButton.innerHTML = SPEECH_TO_TEXT_CONFIG.content.init;
   };
 }

@@ -3,15 +3,17 @@ const textToSpeech = {
     playBtn: 'text-to-speech__button--play',
   },
   content: {
-    playBtn: 'Listen to this section',
-    pauseBtn: 'Pause audio',
+    init: 'Listen to this section',
+    resume: 'Resume audio',
+    pause: 'Pause audio',
   },
 };
 
 export const TEXT_TO_SPEECH_CONFIG = {
   content: {
-    playBtn: textToSpeech.content.playBtn,
-    pauseBtn: textToSpeech.content.pauseBtn,
+    init: textToSpeech.content.init,
+    play: textToSpeech.content.resume,
+    pause: textToSpeech.content.pause,
   },
   classes: {
     wrapper: {
@@ -33,5 +35,5 @@ export const TEXT_TO_SPEECH_CONFIG = {
     pitch: 0,
     lang: 'en-uk',
   },
-  DOMElement: `<button class='text-to-speech__button ${textToSpeech.classes.playBtn}'>${textToSpeech.content.playBtn}</button>`,
+  DOMElement: `<button class='text-to-speech__button ${textToSpeech.classes.playBtn}'>${textToSpeech.content.init}</button>`,
 };

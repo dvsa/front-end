@@ -82,6 +82,7 @@ export class TextToSpeech {
       // Define and push this elements state
       this.state.textToSpeechElements.push({
         id: uniqueIdentifier,
+        index,
         section,
         content,
         textToSpeechDOMComponent,
@@ -104,7 +105,7 @@ export class TextToSpeech {
 
     // Gets informational object on the caller
     let caller = this.getCallerInfo(event);
-    if (!caller) return console.warn('Failed to retrieve caller info');
+    if (!caller) console.warn('Failed to retrieve caller info');
 
     // If event has taken place on the same element that is currently playing / paused
     if (caller.id == this.state.current.id) {
@@ -119,7 +120,7 @@ export class TextToSpeech {
       }
 
       // Toggle button text
-      this.toggleButtonInnerText();
+      this.toggleButtonText();
 
       // Return from method
       return;
@@ -135,7 +136,7 @@ export class TextToSpeech {
     this.readContent();
 
     // Toggle button text
-    this.toggleButtonInnerText();
+    this.toggleButtonText();
   };
 
   /**
@@ -162,9 +163,15 @@ export class TextToSpeech {
 
     // Resets button state on utterance end
     utterance.onend = () => {
+      // Reset this elements state
       this.state.textToSpeechElements[elementIndex].isPlaying = false;
       this.state.textToSpeechElements[elementIndex].isPaused = false;
-      this.toggleButtonInnerText();
+
+      // if this element is currently playing reset current
+      if (this.state.current.index == elementIndex) this.state.current = '';
+
+      // Toggle button text
+      this.toggleButtonText();
     };
 
     return utterance;
@@ -199,11 +206,19 @@ export class TextToSpeech {
   /**
    * Toggles play / pause button inner text
    */
-  toggleButtonInnerText = () => {
+  toggleButtonText = () => {
     this.state.textToSpeechElements.map(element => {
+
+      // If element state is no longer playing or paused resort to default state
+      if (!element.isPlaying && !element.isPaused) {
+        element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.init;
+        return;
+      }
+
+      // Toggles between playing / paused state
       element.isPlaying
-        ? (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.pauseBtn)
-        : (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.playBtn);
+        ? (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.pause)
+        : (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.play);
     });
   };
 
@@ -220,14 +235,17 @@ export class TextToSpeech {
    * Builds and returns text to speech DOM element
    */
   buildComponent = () => {
+    // Builds out DOM Element
     let textToSpeechElm = document.createElement(`div`);
     textToSpeechElm.classList.add(TEXT_TO_SPEECH_CONFIG.classes.controls.wrapper);
     textToSpeechElm.innerHTML = TEXT_TO_SPEECH_CONFIG.DOMElement;
+
+    // Returns to caller
     return textToSpeechElm;
   };
 
   /**
-   * Set's current elements state to playing
+   * Sets current elements state to playing
    */
   currentElementIsPlaying = () => {
     this.state.current.isPaused = false;
@@ -235,7 +253,7 @@ export class TextToSpeech {
   };
 
   /**
-   * Set's current elements state to paused
+   * Sets current elements state to paused
    */
   currentElementIsPaused = () => {
     this.state.current.isPaused = true;

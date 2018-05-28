@@ -8,6 +8,54 @@
 
     {% call components.columnFull() %}
 
+    <details class='u-margin-top-15'>
+      <summary>
+        <span class="summary">Are you having problems reading this page?</span>
+      </summary>
+      <div class="panel panel-border-narrow">
+        <div class='theme-toggle'>       
+          <form class='theme-toggle__form'>
+            <div class='form-group'>
+              <legend class='u-margin-bottom-15'>
+                <h2 class='heading-medium'>Change colour scheme</h2>
+                <span class='body-text'>You can change the page's colour scheme by selecting an option</span>
+              </legend>
+              <div class="multiple-choice">
+                <input id="radio-default" type="radio" name="radio-group" value="Default" checked>
+                <label for="radio-default">
+                  <span class='theme-toggle__theme-swatch'>Default</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-highcontrast-yellow" type="radio" name="radio-group" value="High contrast yellow">
+                <label for="radio-highcontrast-yellow">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--high-contrast-yellow'>Abc...</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-lowcontrast-grey" type="radio" name="radio-group" value="Low contrast grey">
+                <label for="radio-lowcontrast-grey">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--low-contrast-grey'>Abc...</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-sepia" type="radio" name="radio-group" value="Sepia">
+                <label for="radio-sepia">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--sepia'>Abc...</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-highcontrast-yellow" type="radio" name="radio-group" value="Medium contrast yellow">
+                <label for="radio-highcontrast-yellow">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--medium-contrast-yellow'>Abc...</span>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </details>
+
     <main id="content" class='text-to-speech'>
       <div class="grid-row">
         <div class="column-two-thirds">
@@ -180,11 +228,11 @@
           </div>
 
           <section class='text-to-speech__section'>
-            <h3 id="section_1.1.2" class="heading-small ">1.1.2 Brake lever and pedal condition and travel</h3>
             <p>A motorcycle must only be failed for insufficient reserve travel if the brake lever is touching the handlebar or the brake pedal is fouling another part of the motorcycle. Motorcycles with servo-assisted braking systems should be checked with the engine running.</p>
             <p>On some motorcycles it may be possible to pull the brake lever back until it touches the handlebar. In such cases the extent of reserve travel should be assessed during the brake test.</p>
             <p>A brake pedal should be failed if its grooves or raised sections are worn smooth. However, a brake pedal shouldn’t be failed if the motorcycle has been manufactured with one that doesn’t have grooves or is fitted with anti-slip material. </p>
             <p>Where a brake pedal rubber is fitted, this is considered an anti-slip material. It's therefore not regarded as a defect if the design pattern is worn smooth.</p>
+            <h1>Another header</h1>
             <table class="table table--top">
               <thead>
               <tr>

@@ -83,7 +83,7 @@ export class SpeechToText {
     this.state.isRecording = true;
     this.elements.submitBtn.disabled = true;
     this.elements.input.disabled = true;
-    this.elements.recordButton.innerHTML = 'Stop recording';
+    this.elements.recordButton.innerHTML = 'Cancel recording';
   };
 
   isStoppedRecording = () => {

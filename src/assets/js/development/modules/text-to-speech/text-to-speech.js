@@ -57,8 +57,23 @@ export class TextToSpeech {
       // Set the index
       section.setAttribute('data-array-index', index);
 
-      // Insert widget to top of section
-      section.insertBefore(textToSpeechDOMComponent, section.firstChild);
+      // Reference to the first DOM element within section - element & type
+      let sectionFirstElm = {
+        element: section.firstChild.nextSibling,
+        type: section.firstChild.nextSibling.nodeName
+      };
+
+      // Creates reg exp pattern to detect headings
+      let headingPattern = new RegExp('h*[1-6]');
+
+      // Tests wether the first element in section is a heading
+      if (headingPattern.test(sectionFirstElm.type)) {
+        // Renders DOM Object after heading
+        section.insertBefore(textToSpeechDOMComponent, section.childNodes[2]);
+      } else {
+        // Renders DOM Object top of section
+        section.insertBefore(textToSpeechDOMComponent, sectionFirstElm.element);
+      }
 
       // Sets up utterance
       let utterance = this.setupUtteranceSettings(index);

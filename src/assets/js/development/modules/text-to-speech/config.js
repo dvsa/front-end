@@ -29,7 +29,7 @@ export const TEXT_TO_SPEECH_CONFIG = {
   speechSettings: {
     voice: 7,
     volume: 1,
-    rate: -1,
+    rate: -2,
     pitch: 0,
     lang: 'en-uk',
   },

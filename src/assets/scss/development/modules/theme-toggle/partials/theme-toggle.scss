@@ -1,22 +1,30 @@
 .theme-toggle {
-  &__theme-preview {
-    border: 1px solid #eaeaea;
+  &__theme-swatch {
+    border: 1px solid #CCCCCC;
     background-color: white;
-    padding: 10px 50px;
+    padding: 5px 10px;
+    color: #0b0c0c;
 
-    &--default {
-      color: black;
-      background-color: white;
+    &--high-contrast-yellow {
+      color: #FCED20;
+      background-color: #000;
     }
 
-    &--low-contrast {
-      background-color: blue;
-      color: white;
+    &--low-contrast-grey {
+      background-color: #CACFDD;
+      color: #343A3F;
+      border-color: #A1A5B0;      
     }
 
-    &--dark-theme {
-      background-color: yellow;
-      color: blue;
+    &--sepia {
+      background-color: #F4EED9;
+      color: #1D1916;
+      border-color: #C3BEAC;
+    }
+
+    &--medium-contrast-yellow {
+      background-color: #FCED20;
+      border-color: #CABE00;
     }
   }
 }

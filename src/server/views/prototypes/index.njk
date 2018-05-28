@@ -63,8 +63,8 @@
 
     {% call components.columnOneThird() %}
 
-      {{ components.heading(text='Text to speech', tag='h2', size='medium', url='/prototypes/text-to-speech')}}
-      {{ components.paragraph(text='Text to speech prototype')}}
+      {{ components.heading(text='Accessibility widgets', tag='h2', size='medium', url='/prototypes/accessibility')}}
+      {{ components.paragraph(text='Prototype contains a few accessibility enhancements')}}
 
     {%- endcall %}
 
@@ -76,16 +76,5 @@
     {%- endcall %}
 
   {%- endcall %}
-
-  {% call components.gridRow() %}
-
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Toggle theme', tag='h2', size='medium', url='/prototypes/theme-toggle')}}
-      {{ components.paragraph(text='Toggle theme prototype')}}
-
-    {% endcall %}
-
-  {% endcall %}
 
 {% endblock %}

@@ -44,7 +44,7 @@
 
         <fieldset class="search-bar">
 
-          <label class="search-bar__label" for="search-main">Search the MOT testing service</label>
+          <label class="search-bar__label sr-only" for="search-main">Search for a defect</label>
 
           <div class="search-bar__control-group">
 
@@ -60,93 +60,61 @@
         
       </form>
 
-      <div class='text'>
-        <p class='lede u-margin-bottom-5'>Your search for <strong>"Driver door catch"</strong> returned <strong>4</strong> defects</p>
-        <a href="#">Return to defect categories</a>
-      </div>
+      <div class="browse u-margin-bottom-30">
 
-      <div class="text">
-        <h2 class="heading-large" id="defects-search">Defects list - Search</h2>
-      </div>
+        <div class="browse__cats">
 
-      <div class="eu-defect eu-defect--interim">
-        <ul class="list-unstyled eu-defect__list eu-defect__list--interim">
-          <li>
-            <div class="eu-defect__group-item">
-              <span class="eu-defect__name   eu-defect__name--bold">Driver's door catch deteriorated cannot readily open or close</span>
-              <div class="eu-defect__options eu-defect__options--manual-ref">
-                <span class="eu-defect__manual-ref"><a href="#">6.2.1(a) (ii)</a> <span class="visuallyhidden">(Opens in new window)</span></span>                                                                            
-              </div>
-              <div class="eu-defect__options eu-defect__options--collapse-tablet">
-                <a href="#" class="button--info">PRS</a>                            
-                <a href="#" class="button--alert">Dangerous failure</a> 
-              </div>
-            </div>
-            <div class="eu-defect__group-item eu-defect__group-item--secondary">
-              <span class="eu-defect__name">Driver's door catch deteriorated can readily open or close</span>
-              <div class="eu-defect__options eu-defect__options--collapse-tablet">
-                <a href="#" class="button--plain">Advisory</a> 
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="eu-defect__group-item">
-              <span class="eu-defect__name eu-defect__name--bold">Driver's door catch insecure</span>
-              <div class="eu-defect__options eu-defect__options--manual-ref">
-                <span class="eu-defect__manual-ref"><a href="#">6.2.1(a) (ii)</a> <span class="visuallyhidden">(Opens in new window)</span></span>                                                                            
-              </div>
-              <div class="eu-defect__options eu-defect__options--collapse-tablet">
-                <a href="#" class="button--info">PRS</a>                            
-                <a href="#" class="button--alert">Major failure</a> 
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="eu-defect__group-item">
-              <span class="eu-defect__name eu-defect__name--bold">Driver's door catch insecure</span>
-              <div class="eu-defect__options eu-defect__options--manual-ref">
-                <span class="eu-defect__manual-ref"><a href="#">6.2.1(a) (ii)</a> <span class="visuallyhidden">(Opens in new window)</span></span>                                                                            
-              </div>
-              <div class="eu-defect__options eu-defect__options--collapse-tablet">
-                <a href="#" class="button--info">PRS</a>                            
-                <a href="#" class="button--alert">Major failure</a> 
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+            <h3 class="browse__title hide-small">Categories</h3>
 
-      <div class="pager">
-        <div class="pager__controls">
-          <ul class="pager__list">
-            <li>1</li>
-            <li>
-              <a href="#">2</a>
-            </li>
-            <li>
-              <a href="#">3</a>
-            </li>
-            <li>
-              <a href="#">4</a>
-            </li>
-            <li>
-              <a href="#">5</a>
-            </li>
+            <ul class="browse__list">
+              
+              <li><a href="/prototypes/mot-test/categories/breaks">Body, structure and general items</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Brakes</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Steering</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Suspension</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Tyres</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Road wheels</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Seat belts and supplementary restraint systems</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Lamps, reflectors and electrical equipment</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Exhaust, fuel and emissions</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Driving controls and speed limiters</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Registration plates and VIN</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Drivers view of the road</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Items not tested</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Motor tricycles and quadricycles</a></li>
+
+              <li><a href="/prototypes/mot-test/categories/breaks">Non-component advisories</a></li>
+
           </ul>
-          <a class="pager__next" href="#">Next</a>
+
         </div>
-        <div class="pager__summary">Showing 1 &ndash; 10 of 45 items</div>
+        
       </div>
 
-      <div class="panel panel-border-wide">
-        <p>Add a manual advisory - Only do this if you have searched for a defect and can't find a match.</p>
+      <div class="panel panel-border-wide u-margin-bottom-30">
+
+        <p>
+
+          <a href="/prototypes/mot-test/">Add a manual advisory</a> - only do this if you have searhced for a defect and can't find a match.
+
+        </p>
+
       </div>
 
-      <div class="u-margin-top-30">
-      {{ components.button(text='Continue', url='/prototypes/create-account/email') }}
-      </div>
-
-      {{ components.link(text='Cancel and return to sign in', url='#', paragraph=true) }}
+      {{ components.button(text='Finish and return to MOT test results', url='/prototypes/mot-test') }}
 
     {%- endcall %}
 

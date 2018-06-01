@@ -45,6 +45,7 @@ export class SpeechToText {
 
   /**
    * Handles click event on listen button click
+   * @param {Event} Event - DOM Event object
    */
   listenBtnClickHandler = event => {
     event.preventDefault();
@@ -64,6 +65,7 @@ export class SpeechToText {
 
   /**
    * Handles speech result event
+   * @param {Event} Event - DOM Event object
    */
   handleOnSpeechResult = event => {
     // Gets spoken result

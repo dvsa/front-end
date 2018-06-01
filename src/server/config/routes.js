@@ -6,6 +6,7 @@ import * as recallsController from './../controllers/api/v1/recalls.controller';
 import * as createAccountController from './../controllers/create-account';
 import * as suspendTestersController from './../controllers/annual-assessment-tool/suspend-testers';
 import * as motTestResultsController from './../controllers/mot-test/mot-test';
+import * as speechToTextController from './../controllers/speech-to-text-search/speech-to-text-search';
 
 const router = Router();
 
@@ -50,6 +51,12 @@ router.get('/prototypes/mot-test/comment/edit', motTestResultsController.getEdit
 router.post('/prototypes/mot-test/comment/edit', motTestResultsController.postEditTesterComment);
 router.post('/prototypes/mot-test/comment/remove/', motTestResultsController.destorySession);
 router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
+
+// Speech to text - add defect path
+router.get('/prototypes/speech-to-text/', speechToTextController.getSearchQuery);
+router.post('/prototypes/speech-to-text/categories/', speechToTextController.postSearchQuery);
+router.post('/prototypes/speech-to-text/add-major-failure/', speechToTextController.captureFormValues);
+router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.removeDefect);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

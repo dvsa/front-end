@@ -1,31 +1,38 @@
 .text-to-speech {
-  &__controls {
-    display: none;
-
-    &--js-enabled {
-      display: block;
-      margin: 0;
-    }
-  }
+  display: none;
 
   &__button {
-    display: inline-block;
+    display: block;
     border: 0;
     margin: 0;
-    padding: 0;
+    padding: 0;  
     background-color: transparent;
     color: #005ea5;
     text-decoration: underline;
     font-size: 16px;
     font-weight: 400;
 
-    &--play {
-      margin-right: 0;
-    }
-
     &:hover {
       cursor: pointer;
-      color: #2b8cc4;      
     }
   }
+
+  &__icon {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 5px;
+
+    &--play {
+      background: url('../images/text-to-speech-play.png') no-repeat;              
+    }
+
+    &--pause {
+      background: url('../images/text-to-speech-pause.png') no-repeat;              
+    }
+  }
+}
+
+.js-enabled .text-to-speech {
+  display: block;
 }

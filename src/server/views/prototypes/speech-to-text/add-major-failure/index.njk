@@ -1,0 +1,132 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/speech-to-text' },
+  { text: 'Search for a defect', url: '/prototypes/speech-to-text/categories/brake-lights' },
+  { text: 'Add major failure' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+
+        <h1>
+
+          <span class="content-header__type"></span>
+
+          <span class="content-header__title">Add major failure</span>
+
+        </h1>
+
+        <h2>
+
+          <span class="content-header__tertiary">Stop lamp(s) missing</span>
+
+        </h2>
+
+      </header>
+
+      <form name="itemDetailsForm" method="post" action="/prototypes/speech-to-text/add-major-failure/">
+
+        <fieldset>
+
+          <h3 class="heading-medium">Location</h3>
+
+          <div class="form-group">
+
+            <label for="locationLateral" class="form-label">Lateral</label>
+
+            <select name="locationLateral" id="locationLateral" class="form-control-select form-control-select--large">
+
+              <option value="n/a">n/a</option>
+
+              <option value="nearside">Nearside</option>
+
+              <option value="central">Central</option>
+
+              <option value="offside">Offside</option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="locationLongitudinal" class="form-label">Longitudinal</label>
+
+            <select name="locationLongitudinal" id="locationLongitudinal" class="form-control-select form-control-select--large">
+
+              <option value="n/a">n/a</option>
+
+              <option value="front">Front</option>
+
+              <option value="rear">Rear</option>
+
+            </select>
+
+          </div>
+
+          <div class="form-group">
+
+            <label for="locationVertical" class="form-label">Vertical</label>
+
+            <select name="locationVertical" id="locationVertical" class="form-control-select form-control-select--large">
+
+              <option value="n/a">n/a</option>
+
+              <option value="upper">Upper</option>
+
+              <option value="lower">Lower</option>
+
+              <option value="inner">Inner</option>
+
+              <option value="outer">Outer</option>
+
+            </select>
+
+          </div>
+
+        </fieldset>
+
+        <div class="form-group">
+
+          <h3 class=" heading-medium">Additional information</h3>
+
+          <label for="comment" class="form-label">Add any further comments if required</label>
+
+          <textarea type="text" name="comment" id="comment" class="form-control"> {{viewData.formData.comment}} </textarea>
+
+        </div>
+
+        <nav class="content-navigation">
+
+          <input type="hidden" name="confirmDetailPage" value="">
+
+          <button id="submit-defect" type="submit" class="button">Add major failure</button>
+
+          <ul class="content-navigation__secondary">
+
+            <li>
+
+              <a href="/prototypes/speech-to-text/categories/brake-lights" class="back-to-open-list">Cancel and return to search results</a>
+
+            </li>
+
+          </ul>
+
+        </nav>
+
+      </form>
+  
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

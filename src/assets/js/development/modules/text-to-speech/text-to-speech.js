@@ -17,11 +17,13 @@ export class TextToSpeech {
     };
 
     // Gets all text to speech components in wrapper
-    this.sections = Array.from(this.state.wrapper.querySelectorAll(`.${TEXT_TO_SPEECH_CONFIG.classes.section.wrapper}`));
-    if (!this.sections || !this.sections.length) return;
+    this.sections = this.state.wrapper.querySelectorAll(`.${TEXT_TO_SPEECH_CONFIG.classes.section.wrapper}`);
+
+    // Converts NodeList to array
+    this.sections = Array.from(this.sections);
 
     // If speechSynthesis & SpeechSynthesisUtterance failed to set up return
-    if (!this.state.synth) return;
+    if (!this.sections || !this.state.synth) return;
 
     // Run widget setup
     this.setup();
@@ -31,65 +33,63 @@ export class TextToSpeech {
    * Initializer
    */
   setup() {
+    // Loops through all sections
     this.sections.forEach((section, index) => {
+      // Init variable setup
+      let sectionContent, textToSpeechDOMComponent, id, playBtn, sectionFirstElm, utterance;
+
       // Get utterance content
-      let content = section.innerText;
-      if (!content) return;
+      sectionContent = section.innerText;
+      if (!sectionContent) return;
 
       // Build text to speech DOM element
-      let textToSpeechDOMComponent = this.buildComponent();
+      textToSpeechDOMComponent = this.buildComponent();
       if (!textToSpeechDOMComponent) return;
 
-      // Adds JS enabled class
-      textToSpeechDOMComponent.classList.add(TEXT_TO_SPEECH_CONFIG.classes.controls.JSEnabled);
-
       // Create an unique ID
-      let uniqueIdentifier = `text-to-speech-${md5(section.innerHTML)}`;
-      section.setAttribute('id', uniqueIdentifier);
+      id = `text-to-speech-${md5(section.innerHTML)}`;
+      section.setAttribute('id', id);
 
-      // Get play button ref
-      let playBtn = textToSpeechDOMComponent.querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.controls.playBtn}`);
-      if (!playBtn) return;
+      // Creates object to store audio play button properties
+      playBtn = {
+        elementRef: textToSpeechDOMComponent.querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.controls.playBtn}`),
+        iconRef: textToSpeechDOMComponent.querySelector('.text-to-speech__icon'),
+        content: textToSpeechDOMComponent.querySelector('.text-to-speech__button-content'),
+      };
 
-      // Play / Pause button event listener
-      addEventListenerToEl(playBtn, 'click', this.playPauseButtonClickHandler);
+      // Returns if DOM elements not found
+      if (!playBtn.elementRef || !playBtn.iconRef) return;
 
-      // Set the index
+      // Add Play / Pause button event listener
+      addEventListenerToEl(playBtn.elementRef, 'click', this.playPauseButtonClickHandler);
+
+      // Set data-array index with index value from forEach loop
       section.setAttribute('data-array-index', index);
 
       // Reference to the first DOM element within section - element & type
-      let sectionFirstElm = {
+      sectionFirstElm = {
         element: section.firstChild.nextSibling,
         type: section.firstChild.nextSibling.nodeName,
       };
 
-      // Creates reg exp pattern to detect headings
-      let headingPattern = new RegExp('h*[1-6]');
-
-      // Tests wether the first element in section is a heading
-      if (headingPattern.test(sectionFirstElm.type)) {
-        // Renders DOM Object after heading
-        section.insertBefore(textToSpeechDOMComponent, section.childNodes[2]);
-      } else {
-        // Renders DOM Object top of section
-        section.insertBefore(textToSpeechDOMComponent, sectionFirstElm.element);
-      }
-
-      // Sets up utterance
-      let utterance = this.setupUtteranceSettings(index);
-      if (!utterance) return;
+      // Tests wether the first element is a heading
+      this.testRegex(sectionFirstElm.type, new RegExp('h*[1-6]'))
+        ? section.insertBefore(textToSpeechDOMComponent, section.childNodes[2])
+        : section.insertBefore(textToSpeechDOMComponent, sectionFirstElm.element);
 
       // Define and push this elements state
       this.state.textToSpeechElements.push({
-        id: uniqueIdentifier,
+        id,
         index,
-        section,
-        content,
-        textToSpeechDOMComponent,
-        playBtn,
+        sectionContent,
+        utterance: this.setupUtteranceSettings(index),
+        button: {
+          element: playBtn.elementRef,
+          icon: playBtn.iconRef,
+          content: playBtn.content,
+        },
         isPlaying: false,
         isPaused: false,
-        utterance,
       });
     });
   }
@@ -98,13 +98,16 @@ export class TextToSpeech {
    * Click hanlder for play / pause button toggle
    *
    * @param {Event} event - DOM Event object
-   * @return {void}
    */
   playPauseButtonClickHandler = event => {
+    //Prevent default action
     event.preventDefault();
 
-    // Gets informational object on the caller
-    let caller = this.getCallerInfo(event);
+    // Gets event target's parent
+    let eventTargetParent = closestParentOfEl(event.target, `.${TEXT_TO_SPEECH_CONFIG.classes.section.wrapper}`);
+
+    // Gets informational object on the caller parent
+    let caller = this.getDOMElementAttributes(eventTargetParent, ['id', 'data-array-index']);
     if (!caller) console.warn('Failed to retrieve caller info');
 
     // If event has taken place on the same element that is currently playing / paused
@@ -113,14 +116,16 @@ export class TextToSpeech {
       if (this.state.current.isPaused) {
         this.state.synth.resume();
         this.currentElementIsPlaying();
-      } else {
-        // If state is playing
+      }
+
+      // If state is playing
+      else {
         this.state.synth.pause();
         this.currentElementIsPaused();
       }
 
-      // Toggle button text
-      this.toggleButtonText();
+      // Toggle button content
+      this.toggleButtonContent();
 
       // Return from method
       return;
@@ -130,13 +135,13 @@ export class TextToSpeech {
     this.state.synth.cancel();
 
     // Assigns new reading context to state
-    this.state.current = this.state.textToSpeechElements[caller.index];
+    this.state.current = this.state.textToSpeechElements[caller['data-array-index']];
 
     // Begins reading
     this.readContent();
 
-    // Toggle button text
-    this.toggleButtonText();
+    // Toggle button content
+    this.toggleButtonContent();
   };
 
   /**
@@ -170,8 +175,8 @@ export class TextToSpeech {
       // if this element is currently playing reset current
       if (this.state.current.index == elementIndex) this.state.current = '';
 
-      // Toggle button text
-      this.toggleButtonText();
+      // Toggle button content
+      this.toggleButtonContent();
     };
 
     return utterance;
@@ -180,44 +185,38 @@ export class TextToSpeech {
   /**
    * Gets DOM related info on the calling event
    *
-   * @param {Event} event - DOM Event object
-   * @return {obj} - Event caller information
+   * @param {Element} Element - DOM Event object
+   * @param {Array} Attributes - Array of strings containing attributes to be captured
+   * @return {Object} - Event caller information
    */
-  getCallerInfo = event => {
-    // Method var setup
-    let elm, id, index;
+  getDOMElementAttributes = (element, attributes) => {
+    // Init an empty object
+    var obj = {};
 
-    // Gets the index of the current caller
-    elm = closestParentOfEl(event.target, `.${TEXT_TO_SPEECH_CONFIG.classes.section.wrapper}`);
-    id = elm.getAttribute('id');
-    index = elm.getAttribute('data-array-index');
+    // loops through attributes array
+    attributes.forEach(attribute => {
+      // creates & assigns a new object key to a DOM element attribute
+      obj[attribute] = element.getAttribute(`${attribute}`);
+    });
 
-    // If elements are undefined return
-    if (!elm || !id || !index) return;
-
-    // Return caller info object
-    return {
-      elm,
-      id,
-      index,
-    };
+    // Returns object
+    return obj;
   };
 
   /**
    * Toggles play / pause button inner text
    */
-  toggleButtonText = () => {
-    this.state.textToSpeechElements.map(element => {
+  toggleButtonContent = () => {
+    this.state.textToSpeechElements.map(el => {
       // If element state is no longer playing or paused resort to default state
-      if (!element.isPlaying && !element.isPaused) {
-        element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.init;
+      if (!el.isPlaying && !el.isPaused) {
+        // Initialise button content
+        this.buttonContentInit(el);
         return;
       }
 
       // Toggles between playing / paused state
-      element.isPlaying
-        ? (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.pause)
-        : (element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.play);
+      el.isPlaying ? this.buttonContentPlaying(el) : this.buttonContentNotPlaying(el);
     });
   };
 
@@ -225,8 +224,8 @@ export class TextToSpeech {
    * Begins reading utterance
    */
   readContent = () => {
-    this.state.current.utterance.text = this.state.current.content;
-    this.state.current.isPlaying = true;
+    this.state.current.utterance.text = this.state.current.sectionContent;
+    this.currentElementIsPlaying();
     this.state.synth.speak(this.state.current.utterance);
   };
 
@@ -244,6 +243,39 @@ export class TextToSpeech {
   };
 
   /**
+   * Initialises / Resets button content
+   *
+   * @param {Element} Element - DOM Element object
+   */
+  buttonContentInit = element => {
+    element.button.content.innerText = TEXT_TO_SPEECH_CONFIG.content.init;
+    element.button.icon.classList.remove('text-to-speech__icon--pause');
+    element.button.icon.classList.add('text-to-speech__icon--play');
+  };
+
+  /**
+   * Lets button content to playing state
+   *
+   * @param {Element} Element - DOM Element object
+   */
+  buttonContentPlaying = element => {
+    element.button.content.innerText = TEXT_TO_SPEECH_CONFIG.content.pause;
+    element.button.icon.classList.remove('text-to-speech__icon--play');
+    element.button.icon.classList.add('text-to-speech__icon--pause');
+  };
+
+  /**
+   * Lets button content to not playing state
+   *
+   * @param {Element} Element - DOM Element object
+   */
+  buttonContentNotPlaying = element => {
+    element.button.content.innerText = TEXT_TO_SPEECH_CONFIG.content.play;
+    element.button.icon.classList.remove('text-to-speech__icon--pause');
+    element.button.icon.classList.add('text-to-speech__icon--play');
+  };
+
+  /**
    * Sets current elements state to playing
    */
   currentElementIsPlaying = () => {
@@ -258,4 +290,13 @@ export class TextToSpeech {
     this.state.current.isPaused = true;
     this.state.current.isPlaying = false;
   };
+
+  /**
+   * Returns boolean value if regex matches heading
+   *
+   * @param {String} string - String DOM element
+   * @param {Regex} Regex - Regex to string against
+   * @return {Boolean}
+   */
+  testRegex = (string, regex) => regex.test(string);
 }

@@ -6,7 +6,7 @@ export class SpeechToText {
   constructor(recordButton) {
     // Check if record button is passed
     if (!recordButton) console.warn('Speech to text has failed to initiate');
-    
+
     // Gets a reference to the components wrapper element
     let wrapper = closestParentOfEl(recordButton, `.${SPEECH_TO_TEXT_CONFIG.classes.wrapper}`);
 
@@ -31,8 +31,8 @@ export class SpeechToText {
   }
 
   /**
-  * Initial setup of control
-  */
+   * Initial setup of control
+   */
   setup = () => {
     // Assigns the record button's click handler
     addEventListenerToEl(this.elements.recordButton, 'click', this.listenBtnClickHandler);
@@ -44,8 +44,8 @@ export class SpeechToText {
   };
 
   /**
-  * Handles click event on listen button click
-  */
+   * Handles click event on listen button click
+   */
   listenBtnClickHandler = event => {
     event.preventDefault();
 
@@ -61,10 +61,10 @@ export class SpeechToText {
     // Start listening for audio
     this.state.speechRecognition.start();
   };
-  
+
   /**
-  * Handles speech result event
-  */
+   * Handles speech result event
+   */
   handleOnSpeechResult = event => {
     // Gets spoken result
     let resultString = event.results[0][0].transcript;
@@ -80,8 +80,8 @@ export class SpeechToText {
   };
 
   /**
-  * Toggles state to recording
-  */
+   * Toggles state to recording
+   */
   isRecording = () => {
     this.state.isRecording = true;
     this.elements.submitBtn.disabled = true;
@@ -90,8 +90,8 @@ export class SpeechToText {
   };
 
   /**
-  * Toggles state to NOT recording
-  */
+   * Toggles state to NOT recording
+   */
   isStoppedRecording = () => {
     this.state.isRecording = false;
     this.elements.submitBtn.disabled = false;

@@ -4,7 +4,7 @@ export class ThemeToggle {
   constructor(wrapper) {
     // If DOM Element ref is not passed - exit with warning
     if (!wrapper) console.warn('theme toggle wrapper failed to initialize.');
-    
+
     // Reference to form
     let form = wrapper.querySelector('.theme-toggle__form');
     if (!form) return;
@@ -38,10 +38,10 @@ export class ThemeToggle {
   };
 
   /**
-  * Change event handler for radio fieldset / set form changes
-  *
-  * @param {Event} event - DOM Event object
-  */
+   * Change event handler for radio fieldset / set form changes
+   *
+   * @param {Event} event - DOM Event object
+   */
   formChangeHandler = event => {
     event.preventDefault();
 
@@ -56,7 +56,10 @@ export class ThemeToggle {
     string type changed into array splitting items on a space
     array type changed into a string joining each item with a - char
     */
-    val = val.toLowerCase().split(' ').join('-');
+    val = val
+      .toLowerCase()
+      .split(' ')
+      .join('-');
     if (!val) console.warn('Failed to retreive radio value');
 
     // Ensure classname exists within sate.themeClasses map
@@ -71,16 +74,16 @@ export class ThemeToggle {
   };
 
   /**
-  * Sets theme class to document body
-  *
-  * @param {string} themeName - String class name
-  */
+   * Sets theme class to document body
+   *
+   * @param {string} themeName - String class name
+   */
   setNewTheme = themeName => {
     // If state.theme is set
     if (this.state.currentTheme) {
       // Remove current instance of theme class
       document.body.classList.remove(this.state.currentTheme);
-    };
+    }
 
     // Update state
     this.state.currentTheme = themeName;

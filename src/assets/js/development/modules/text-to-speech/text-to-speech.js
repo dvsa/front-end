@@ -60,7 +60,7 @@ export class TextToSpeech {
       // Reference to the first DOM element within section - element & type
       let sectionFirstElm = {
         element: section.firstChild.nextSibling,
-        type: section.firstChild.nextSibling.nodeName
+        type: section.firstChild.nextSibling.nodeName,
       };
 
       // Creates reg exp pattern to detect headings
@@ -208,7 +208,6 @@ export class TextToSpeech {
    */
   toggleButtonText = () => {
     this.state.textToSpeechElements.map(element => {
-
       // If element state is no longer playing or paused resort to default state
       if (!element.isPlaying && !element.isPaused) {
         element.playBtn.innerText = TEXT_TO_SPEECH_CONFIG.content.init;

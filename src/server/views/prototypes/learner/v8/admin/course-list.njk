@@ -1,0 +1,79 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Content management - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v8' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v8/' %}
+{% set homePath = '/prototypes/learner/v8/home' %}
+{% set isAdmin = isAdmin if isAdmin %}
+
+{% set removeMessage = removeMessage if removeMessage %}
+
+{% block content %}
+
+    {{ components.pageHeading('Content management') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% if hasLeftFeedback %}
+
+                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type="confirmation")}}
+
+            {% endif %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='All courses', tag='h2', size='medium', extraClass='') }}
+
+            <table class="">
+                <thead>
+                    <tr>
+                        <th class="title small">Course title</th>
+                        <th>Type</th>
+                        <th>Aded on</th>
+                        <th><span class="visuallyhidden">Actions</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td class="title small">
+                            <a href="#">This is the name of my course</a>
+                        </td>
+                        <td>Online</td>
+                        <td>08 Feb 2018</td>
+                        <td>
+                            <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="u-space-y30">
+                {{ components.pagination(totalItems=148,currentPage=1) }}
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

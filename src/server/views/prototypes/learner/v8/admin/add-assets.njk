@@ -15,11 +15,11 @@
 
 {% block content %}
 
-    {{ components.pageHeading('Course information', 'Add a new course') }}
+    {{ components.pageHeading('Course assets', 'Add a new course') }}
 
     {% call components.gridRow() %}
 
-        {% call components.columnTwoThirds() %}
+    {% call components.columnTwoThirds() %}
 
         {% call components.formElement(name='enterNewCourse', method='POST', action='#') %}
 

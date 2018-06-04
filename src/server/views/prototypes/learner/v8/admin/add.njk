@@ -1,18 +1,19 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Content management - Learning Platform for Government' %}
+{% set pageTitle = 'Course details - Learning Platform for Government' %}
 {% set blackBarTitle = 'Learning Platform for Government' %}
 {% set learnerPrototypeVersion = 'v8' %}
 {% set mainContainerClass = 'has-lower-hero' %}
 {% set signOutPath = '/prototypes/learner/v8/' %}
 {% set homePath = '/prototypes/learner/v8/home' %}
 {% set isAdmin = isAdmin if isAdmin %}
+{% set gradeSelectOptions = gradeSelectOptions if gradeSelectOptions %}
 
 {% set removeMessage = removeMessage if removeMessage %}
 
 {% block content %}
 
-    {{ components.pageHeading('Add a new course') }}
+    {{ components.pageHeading('Course details', 'Add a new course') }}
 
     {% call components.gridRow() %}
 
@@ -27,7 +28,6 @@
         {%- endcall %}
 
     {%- endcall %}
-
 
     {% call components.gridRow() %}
 
@@ -77,6 +77,22 @@
             <input class="form-control" id="courseCost" type="text" name="courseCost" value="£">
         </div>
 
+        <div class="form-group">
+            <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
+                <legend class="form-label">Levels</legend>
+
+                {% for item in gradeSelectOptions %}
+                    {% if grade == item.value %}
+                        {% set checked = 'checked' %}
+                    {% else %}
+                        {% set checked = '' %}
+                    {% endif %}
+                    {{ components.checkbox(item.text, item.value, 'areaOfWork'+item.value, name='grade', isChecked=checked) }}
+                {% endfor %}
+
+            </fieldset>
+        </div>
+
         {% call components.formGroup() %}
 
             {{ components.button(text='Continue', group=true)}}
@@ -84,7 +100,7 @@
         {%- endcall %}
 
         <p>
-            <a href="/prototypes/learner/v8">Cancel</a>
+            <a href="/prototypes/learner/v8/admin">Cancel</a>
         </p>
 
     {%- endcall %}
@@ -99,7 +115,8 @@
             <h2 class="heading-small">Actions</h2>
 
             <ul class="">
-                <li><a href="#">Add a new course</a></li>
+                <li><a href="/prototypes/learner/v8/admin/add">Add a new course</a></li>
+                <li><a href="/prototypes/learner/v8/admin/add-event">Add a new event</a></li>
             </ul>
 
             <h2 class="heading-small">Find a course</h2>

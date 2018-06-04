@@ -939,10 +939,27 @@ router.get('/prototypes/learner/v8/scorms/basic-fire-safety/complete', learnerV8
 //******************************************************
 router.get('/prototypes/learner/v8/admin', learnerV8Controller.adminGet);
 router.post('/prototypes/learner/v8/admin', learnerV8Controller.adminPost);
+
+router.get('/prototypes/learner/v8/course-list', learnerV8Controller.adminCourseListGet);
+router.post('/prototypes/learner/v8/course-list', learnerV8Controller.adminCourseListPost);
+
+router.get('/prototypes/learner/v8/events-list', learnerV8Controller.adminEventsListGet);
+router.post('/prototypes/learner/v8/events-list', learnerV8Controller.adminEventsListPost);
+
 router.get('/prototypes/learner/v8/admin/edit', learnerV8Controller.adminEditGet);
 router.post('/prototypes/learner/v8/admin/edit', learnerV8Controller.adminEditPost);
 router.get('/prototypes/learner/v8/admin/add', learnerV8Controller.adminAddGet);
 router.post('/prototypes/learner/v8/admin/add', learnerV8Controller.adminAddPost);
+router.get('/prototypes/learner/v8/admin/add-details', learnerV8Controller.adminAddDetailsGet);
+router.post('/prototypes/learner/v8/admin/add-details', learnerV8Controller.adminAddDetailsPost);
+
+router.get('/prototypes/learner/v8/admin/add-assets', learnerV8Controller.adminAddAssetsGet);
+router.post('/prototypes/learner/v8/admin/add-assets', learnerV8Controller.adminAddAssetsPost);
+
+router.get('/prototypes/learner/v8/admin/add-review', learnerV8Controller.adminAddReviewGet);
+router.post('/prototypes/learner/v8/admin/add-review', learnerV8Controller.adminAddReviewPost);
+router.get('/prototypes/learner/v8/admin/add-complete', learnerV8Controller.adminAddCompleteGet);
+router.post('/prototypes/learner/v8/admin/add-complete', learnerV8Controller.adminAddCompletePost);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

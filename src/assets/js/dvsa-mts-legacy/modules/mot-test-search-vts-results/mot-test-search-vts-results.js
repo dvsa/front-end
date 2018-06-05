@@ -1,13 +1,12 @@
 import $ from 'jquery';
+import escape from 'lodash/escape';
 import 'datatables.net';
 import 'datatables.net-responsive';
-import './../../third-party/';
 
 export class MotTestSearchVTSResults {
   constructor() {
     this.elements = {
       listMOTs: $('#listMOTs'),
-      infoPopup: $('.info-popup'),
     };
 
     this.state = {
@@ -28,7 +27,8 @@ export class MotTestSearchVTSResults {
    * @since 1.2.0
    */
   initMotTestSearchByVTSDataTable = () => {
-    // Usage info here: http://datatables.net/release-datatables/examples/basic_init/filter_only.html
+    // Usage info here:
+    // http://datatables.net/release-datatables/examples/basic_init/filter_only.html
     this.state.table = this.elements.listMOTs.dataTable({
       responsive: true,
       // Disable pagination
@@ -61,23 +61,13 @@ export class MotTestSearchVTSResults {
         {
           targets: [2],
           render: function(data, type, row) {
-            return (
-              '<a href="javascript:void(0)" class="info-popup" ' +
-              'data-sorting="' +
-              data.display_status +
-              '" data-toggle="popover" ' +
-              'data-placement="auto" role="button" data-content="' +
-              data.popover +
-              '">' +
-              data.display_status +
-              '</a>'
-            );
+            return data.display_status;
           },
         },
         {
           targets: [3],
           render: function(data, type, row) {
-            return '<a ' + data.id + '" href="' + data.url + '">' + data.text + '</a>';
+            return `<a ${data.id} href="${escape(data.url)}">${data.text}</a>`;
           },
         },
         {
@@ -96,14 +86,9 @@ export class MotTestSearchVTSResults {
       rowCallback: (nRow, aData, iDisplayIndex, iDisplayIndexFull) => {
         $('td:eq(5)', nRow).attr('title', aData['model']);
         $('td:eq(6)', nRow).attr('title', aData['display_test_type']);
-        $('td:eq(2) a', nRow).attr('href', $('td:eq(2) a', nRow).attr('href') + this.state.dataparamUrlSummaryPage);
+        $('td:eq(2) a', nRow).attr('href', $('td:eq(2) a', nRow).attr('href') + this.state.data.paramUrlSummaryPage);
       },
       drawCallback: oSettings => {
-        this.elements.infoPopup.popover({
-          placement: 'right',
-          html: true,
-          trigger: 'hover',
-        });
       },
       fnServerParams: data => {
         data.push({
@@ -120,25 +105,5 @@ export class MotTestSearchVTSResults {
     setInterval(() => {
       this.state.table.api().ajax.reload();
     }, 60000);
-
-    // The plan is to set up all popovers as clicks for touchscreens / hovers for laptops...
-    var is_touch_device = 'ontouchstart' in document.documentElement;
-
-    // If its not a touch-device - then use hovers...
-    if (!is_touch_device) {
-      // More info here http://getbootstrap.com/javascript/#popovers-examples
-      $('[data-toggle=popover]').popover({
-        placement: 'top',
-        html: true,
-        trigger: 'hover',
-      });
-      // Else - If it IS a touch-device use clicks (rather than hovers)...
-    } else {
-      $('[data-toggle=popover]').popover({
-        placement: 'top',
-        html: true,
-        trigger: 'click',
-      });
-    }
   };
 }

@@ -85,19 +85,26 @@ export class FormDisableOnSubmit {
     if (!formStateObject.submitted) {
       const submitInputValue = submitButton.getAttribute(this.attributes.value);
       const submitButtonName = submitButton.getAttribute(this.attributes.name);
+
       // Create hidden submit button
       const hiddenSubmitInputField = document.createElement('input');
       hiddenSubmitInputField.type = 'hidden';
       hiddenSubmitInputField.name = submitButtonName;
       hiddenSubmitInputField.value = submitInputValue;
+
       // Add hidden input field to form
       submitButton.parentNode.appendChild(hiddenSubmitInputField);
+
       // Reset submit button
       submitButton.name = '';
+      
       // Make button disabled
       submitButton.setAttribute(this.attributes.disabled, this.attributes.disabled);
+      
       // Mark form as submitted in state
       this.state.forms[formStateIndex].submitted = true;
+
+      return true;
     }
   };
 }

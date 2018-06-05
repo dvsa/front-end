@@ -25,6 +25,14 @@
       width: 66.66%;
     }
 
+    &--brake-test {
+      margin-top: -40px;
+
+      @media(max-width: 640px) {
+        margin-top: -20px;
+      }
+    }
+
     @media(max-width: 850px) {
       width: 100%;
       padding: 0 15px 10px 15px;
@@ -50,6 +58,10 @@
     padding: 0;
     width: 100%;
     height: 1px;
+
+    &--margin-bottom {
+      margin-bottom: 30px;
+    }
   }
 
   &__heading {

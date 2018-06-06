@@ -1,0 +1,20 @@
+.js-only,
+.js-only--block,
+.js-only--inline {
+  display: none !important;
+}
+
+.js-enabled {
+  .js-hidden {
+    display: none;
+  }
+
+  .js-only,
+  .js-only--inline {
+    display: inline-block !important;
+  }
+
+  .js-only--block {
+    display: block !important;
+  }
+}

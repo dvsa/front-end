@@ -8,6 +8,7 @@ import { initFormDisableOnSubmit } from './form-disable-on-submit';
 import { initMotTestSearch } from './mot-test-search';
 import { initDvsaBrakeTestConfiguration } from './dvsa-brake-test-configuration';
 import { initDvsaEnforcementTestSummary } from './dvsa-enforcement-test-summary';
+import { initDvsaDbt } from './dvsa-dbt';
 
 /**
  * MTS Application modules
@@ -26,4 +27,5 @@ export const initModules = () => {
   initMotTestSearch();
   initDvsaBrakeTestConfiguration();
   initDvsaEnforcementTestSummary();
+  initDvsaDbt();
 };

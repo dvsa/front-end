@@ -1,7 +1,4 @@
 .u {
-
-  @import 'partials/misc';
-
   @import 'partials/align';
   @import 'partials/clearfix';
   @import 'partials/float';
@@ -10,5 +7,6 @@
   @import 'partials/pad';
   @import 'partials/space';
   @import 'partials/text-meta';
-
 }
+
+@import 'partials/misc';

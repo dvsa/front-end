@@ -8,6 +8,7 @@ import { initFormDisableOnSubmit } from './form-disable-on-submit';
 import { initMotTestSearch } from './mot-test-search';
 import { initDvsaBrakeTestConfiguration } from './dvsa-brake-test-configuration';
 import { initDvsaEnforcementTestSummary } from './dvsa-enforcement-test-summary';
+import { initDvsaVehicleSearchForm } from './dvsa-vehicle-search-form';
 import { initDvsaDbt } from './dvsa-dbt';
 
 /**
@@ -27,5 +28,6 @@ export const initModules = () => {
   initMotTestSearch();
   initDvsaBrakeTestConfiguration();
   initDvsaEnforcementTestSummary();
+  initDvsaVehicleSearchForm();
   initDvsaDbt();
 };

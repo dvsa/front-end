@@ -18,11 +18,15 @@ select.form-control,
   border: 2px solid $black;
   -webkit-appearance: menulist;
   -moz-appearance: menulist; 
+
+  &.form-control-error {
+    border: 4px solid $error-colour;
+  }
 }
 
-.form-control {
-  border: 2px solid #0b0c0c;
-}
+// .form-control {
+//   border: 2px solid #0b0c0c;
+// }
 
 .form-control-select {
   width: 100%;

@@ -1,0 +1,91 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Confirm your booking - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v9' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+
+{% set courseDates = courseDates if courseDates %}
+{% set course = course if course %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Confirm your booking', secondary="Booking a course") }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <table class="key-value-list u-space-b30 table--top">
+                <tr>
+                    <th><strong>Course details</strong></th>
+                    <td class="key-value-list__value u-align-right"><a href="">Change</a> </td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">Course title</th>
+                    <td class="key-value-list__value">Managing contractors</td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">Start date</th>
+                    <td class="key-value-list__value">23 June 2018</td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">Duration</th>
+                    <td class="key-value-list__value">3 hours 30 minutes</td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">Location</th>
+                    <td class="key-value-list__value">Birmingham</td>
+                </tr>
+            </table>
+
+            <table class="key-value-list u-space-b30 table--top">
+                <tr>
+                    <th><strong>Payment details</strong></th>
+                    <td class="key-value-list__value u-align-right"><a href="">Change</a> </td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">Payment method</th>
+                    <td class="key-value-list__value">Purchase order</td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">PO number</th>
+                    <td class="key-value-list__value">045053453</td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">Amount</th>
+                    <td class="key-value-list__value">£238 (ex VAT)</td>
+                </tr>
+            </table>
+
+            <table class="key-value-list u-space-b30 table--top">
+                <tr>
+                    <th><strong>Accessibility details</strong></th>
+                    <td class="key-value-list__value u-align-right"><a href="">Change</a> </td>
+                </tr>
+                <tr>
+                    <th class="key-value-list__key">Accessibility needs</th>
+                    <td class="key-value-list__value">None</td>
+                </tr>
+            </table>
+
+
+
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Complete your booking', group=true, url='/prototypes/learner/v9/booking/complete')}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v9/resource?resourceType=classroom" class="link-back">Cancel booking request</a>
+                </p>
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

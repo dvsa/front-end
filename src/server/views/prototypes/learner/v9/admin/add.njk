@@ -1,0 +1,138 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Course details - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+{% set isAdmin = true %}
+{% set gradeSelectOptions = gradeSelectOptions if gradeSelectOptions %}
+
+{% set removeMessage = removeMessage if removeMessage %}
+
+{% block content %}
+
+    {{ components.pageHeading('Course details', 'Add a new course') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% if hasLeftFeedback %}
+
+                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type="confirmation")}}
+
+            {% endif %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% call components.formElement(name='enterNewCourse', method='POST', action='#') %}
+
+                {#{{ components.field(label='Course title', id='coursetitle', hint="", group=true)}}#}
+
+                <div class="form-group">
+                    <label class="form-label form-label-bold u-space-b15" for="coursetitle">Course title</label>
+                    <input class="form-control form-control-3-4" id="coursetitle" type="text" name="coursetitle" value="">
+                </div>
+
+                <div class="form-group">
+                    <fieldset>
+                        <legend class="form-label form-label-bold u-space-b15">Type of course</legend>
+
+                        <div class="multiple-choice">
+                            <input id="typeBlended" type="radio" name="courseTypeRadios" value="blog">
+                            <label for="typeBlended">Blended</label>
+                        </div>
+
+                        <div class="multiple-choice">
+                            <input id="typeBlog" type="radio" name="courseTypeRadios" value="blog">
+                            <label for="typeBlog">Blog</label>
+                        </div>
+
+                        <div class="multiple-choice">
+                            <input id="typeClassroom" type="radio" name="courseTypeRadios" value="classroom">
+                            <label for="typeClassroom">Classroom</label>
+                        </div>
+
+                        <div class="multiple-choice">
+                            <input id="typeOnline" type="radio" name="courseTypeRadios" value="online">
+                            <label for="typeOnline">Online</label>
+                        </div>
+
+                        <div class="multiple-choice">
+                            <input id="typeVideo" type="radio" name="courseTypeRadios" value="video">
+                            <label for="typeVideo">Video</label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <fieldset>
+                        <legend>
+                            <span class="form-label-bold">
+                              Course duration
+                              <span class="form-hint">Add the total course duration if known or it will be calculated from the sum of it's modules.</span>
+                            </span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="durationDays">Days</label>
+                                <input class="form-control" id="durationDays" name="durationDays" type="number" pattern="[0-9]*">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="durationHours">Hours</label>
+                                <input class="form-control" id="durationHours" name="durationHours" type="number" pattern="[0-9]*">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="durationMinutes">Minutes</label>
+                                <input class="form-control" id="durationMinutes" name="durationMinutes" type="number" pattern="[0-9]*">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label form-label-bold u-space-b15" for="courseCost">Cost</label>
+                    <input class="form-control" id="courseCost" type="text" name="courseCost" value="£">
+                </div>
+
+                <div class="form-group">
+                    <fieldset class="u-space-b30 {% if registrationJob2Error %} form-group-error {% endif %}">
+                        <legend class="form-label form-label-bold u-space-b15">Levels</legend>
+
+                        {% for item in gradeSelectOptions %}
+                            {% if grade == item.value %}
+                                {% set checked = 'checked' %}
+                            {% else %}
+                                {% set checked = '' %}
+                            {% endif %}
+                            {{ components.checkbox(item.text, item.value, 'areaOfWork'+item.value, name='grade', isChecked=checked) }}
+                        {% endfor %}
+
+                    </fieldset>
+                </div>
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Continue', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v9/admin">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

@@ -6,7 +6,7 @@
 {% set mainContainerClass = 'has-lower-hero' %}
 {% set signOutPath = '/prototypes/learner/v8/' %}
 {% set homePath = '/prototypes/learner/v8/home' %}
-{% set isAdmin = isAdmin if isAdmin %}
+{% set isAdmin = true %}
 
 {% set removeMessage = removeMessage if removeMessage %}
 
@@ -23,7 +23,7 @@
 
             {% call components.formElement(name='listAllCourses', method='POST', action="#") %}
             <div class="form-group">
-                <label class="form-label" for="courseTypes">Chose which courses to view</label>
+                <label class="form-label" for="courseTypes">Choose which courses to view</label>
                 <select class="form-control" id="courseTypes" name="courseList">
                     <option value="all">All</option>
                     <option>Analysis</option>
@@ -39,19 +39,15 @@
                     <option>Project delivery</option>option>
                     <option>Property</option>
                 </select>
-            </div>
 
-            <div class="form-group u-space-b">
-
-                <button type="submit" name="courseSubmit" class="button" value="courses">View courses</button>
-
+                <button type="submit" name="courseSubmit" class="button button--small" value="courses">View courses</button>
             </div>
 
             {%- endcall %}
 
             <h3 class="heading-medium">Most recently added courses</h3>
 
-            <table class="table--top">
+            <table class="table--top table--courses">
                 <thead>
                 <tr>
                     <th class="title small">Course title</th>
@@ -63,52 +59,52 @@
                 <tbody>
                 <tr class="">
                     <td class="title small">
-                        <a href="#">This is the name of my course</a>
+                        <a href="#">Contractor management</a>
                     </td>
                     <td>Online</td>
-                    <td>08 Feb 2018</td>
-                    <td>
-                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    <td>4 Jun 2018</td>
+                    <td class="u-align-right">
+                        <a href="#">Delete</a><br><a href="#">Edit</a>
                     </td>
                 </tr>
                 <tr class="">
                     <td class="title small">
-                        <a href="#">This is the name of my course</a>
+                        <a href="#">Business continuity basics</a>
                     </td>
                     <td>Online</td>
-                    <td>08 Feb 2018</td>
-                    <td>
-                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    <td>2 Jun 2018</td>
+                    <td class="u-align-right">
+                        <a href="#">Delete</a><br><a href="#">Edit</a>
                     </td>
                 </tr>
                 <tr class="">
                     <td class="title small">
-                        <a href="#">This is the name of my course</a>
+                        <a href="#">Digital skills - Using social media in public services</a>
                     </td>
                     <td>Online</td>
-                    <td>08 Feb 2018</td>
-                    <td>
-                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    <td>25 May 2018</td>
+                    <td class="u-align-right">
+                        <a href="#">Delete</a><br><a href="#">Edit</a>
                     </td>
                 </tr>
                 <tr class="">
                     <td class="title small">
-                        <a href="#">This is the name of my course</a>
+                        <a href="#">Digital skills - Listening to users</a>
                     </td>
                     <td>Online</td>
-                    <td>08 Feb 2018</td>
-                    <td>
-                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    <td>21 May 2018</td>
+                    <td class="u-align-right">
+                        <a href="#">Delete</a><br><a href="#">Edit</a>
                     </td>
                 </tr>
                 <tr class="">
                     <td class="title small">
-                        <a href="#">This is the name of my course</a>
+                        <a href="#">Digital skills - Transforming services with Agile</a>
                     </td>
                     <td>Online</td>
-                    <td>08 Feb 2018</td>
-                    <td>
-                        <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                    <td>21 May 2018</td>
+                    <td class="u-align-right">
+                        <a href="#">Delete</a><br><a href="#">Edit</a>
                     </td>
                 </tr>
                 </tbody>
@@ -118,25 +114,21 @@
 
             {% call components.formElement(name='listAllEvents', method='POST', action="#") %}
                 <div class="form-group">
-                    <label class="form-label" for="courseTypes">Chose which events to view</label>
+                    <label class="form-label" for="courseTypes">Choose which events to view</label>
                     <select class="form-control" id="courseTypes" name="eventsList">
                         <option value="all">All</option>
                         <option>Upcoming</option>
                         <option>Past</option>
                     </select>
-                </div>
 
-                <div class="form-group u-space-b">
-
-                    <button type="submit" name="eventsSubmit" class="button" value="events">View events</button>
+                    <button type="submit" name="eventsSubmit" class="button button--small" value="events">View events</button>
 
                 </div>
-
             {%- endcall %}
 
         <h3 class="heading-medium">Most recently added events</h3>
 
-        <table class="table--top">
+        <table class="table--top table--courses">
             <thead>
             <tr>
                 <th class="title small">Event</th>
@@ -151,8 +143,8 @@
                     <span class="meta"><a href="#">This is the name of the associated course</a></span>
                 </td>
                 <td>08 Feb 2018</td>
-                <td>
-                    <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                <td class="u-align-right">
+                    <a href="#">Delete</a><br><a href="#">Edit</a>
                 </td>
             </tr>
             <tr class="">
@@ -161,8 +153,8 @@
                     <span class="meta"><a href="#">This is the name of the associated course</a></span>
                 </td>
                 <td>08 Feb 2018</td>
-                <td>
-                    <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                <td class="u-align-right">
+                    <a href="#">Delete</a><br><a href="#">Edit</a>
                 </td>
             </tr>
             <tr class="">
@@ -171,8 +163,8 @@
                     <span class="meta"><a href="#">This is the name of the associated course</a></span>
                 </td>
                 <td>08 Feb 2018</td>
-                <td>
-                    <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                <td class="u-align-right">
+                    <a href="#">Delete</a><br><a href="#">Edit</a>
                 </td>
             </tr>
             <tr class="">
@@ -181,8 +173,8 @@
                     <span class="meta"><a href="#">This is the name of the associated course</a></span>
                 </td>
                 <td>08 Feb 2018</td>
-                <td>
-                    <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                <td class="u-align-right">
+                    <a href="#">Delete</a><br><a href="#">Edit</a>
                 </td>
             </tr>
             <tr class="">
@@ -191,8 +183,8 @@
                     <span class="meta"><a href="#">This is the name of the associated course</a></span>
                 </td>
                 <td>08 Feb 2018</td>
-                <td>
-                    <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                <td class="u-align-right">
+                    <a href="#">Delete</a><br><a href="#">Edit</a>
                 </td>
             </tr>
             <tr class="">
@@ -201,8 +193,8 @@
                     <span class="meta"><a href="#">This is the name of the associated course</a></span>
                 </td>
                 <td>08 Feb 2018</td>
-                <td>
-                    <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                <td class="u-align-right">
+                    <a href="#">Delete</a><br><a href="#">Edit</a>
                 </td>
             </tr>
             </tbody>
@@ -221,6 +213,7 @@
                 <ul class="">
                     <li><a href="/prototypes/learner/v8/admin/add">Add a new course</a></li>
                     <li><a href="/prototypes/learner/v8/admin/add-event">Add a new event</a></li>
+                    <li><a href="#">Manage taxonomies</a></li>
                 </ul>
 
                 <h2 class="heading-small">Find a course</h2>

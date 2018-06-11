@@ -22,3 +22,25 @@
         width: 460px;
     }
 }
+
+.table--courses {
+
+    tr {
+        td:first-of-type {
+            @include media(desktop) {
+                max-width: 260px;
+            }
+        }
+    }
+}
+
+.table--courses-big {
+
+    tr {
+        td:first-of-type {
+            @include media(desktop) {
+                max-width: 410px;
+            }
+        }
+    }
+}

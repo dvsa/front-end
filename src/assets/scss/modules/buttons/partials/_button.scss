@@ -25,4 +25,9 @@
         // background-color: $yellow;
         @include button($yellow);
     }
+
+    &--small {
+        @include core-16;
+
+    }
 }

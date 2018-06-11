@@ -1,0 +1,103 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Content management - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+{% set isAdmin = true %}
+
+{% set removeMessage = removeMessage if removeMessage %}
+
+{% block content %}
+
+    {{ components.pageHeading('Add a new course') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% if hasLeftFeedback %}
+
+                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type="confirmation")}}
+
+            {% endif %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+    {% call components.formElement(name='enterNewPassword', method='POST', action='#') %}
+
+        {{ components.field(label='New password', type='password', id='newPassword', hint="", group=true, error=passwordOneError)}}
+
+        {{ components.field(label='Re-type your new password', type='password', id='confirmNewPassword', hint="", group=true, error=passwordTwoError)}}
+
+        {% call components.formGroup() %}
+
+            {{ components.button(text='Continue', group=true)}}
+
+        {%- endcall %}
+
+        <p>
+            <a href="/prototypes/learner/v9">Cancel</a>
+        </p>
+
+    {%- endcall %}
+
+
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <h2 class="heading-small">Actions</h2>
+
+                <ul class="">
+                    <li><a href="#">Add a new course</a></li>
+                </ul>
+
+                <h2 class="heading-small">Find a course</h2>
+
+                <div class="search-box search-box--sidebar">
+
+                    {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v9/search") %}
+
+                        <div class="form-group search-box__group u-space-b">
+
+                            <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                            <input class="form-control search-box__input" id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                            <button type="submit" class="search-box__submit">Search</button>
+
+                        </div>
+
+                    {%- endcall %}
+
+                </div>
+
+            </aside>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

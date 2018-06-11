@@ -1,0 +1,14 @@
+.form-control-1-1 {
+  // full width form items
+  width: 100%;
+}
+
+.form-group {
+  position: relative;
+}
+.form-group__remove {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+}

@@ -98,3 +98,8 @@ body .button-get-started:hover {
   display: block;
   visibility: visible;
 }
+
+.long-link {
+  @include core-16;
+  word-wrap: break-word;
+}

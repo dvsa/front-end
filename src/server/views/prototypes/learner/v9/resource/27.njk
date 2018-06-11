@@ -1,0 +1,217 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Course with optional modules - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Course with optional modules') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymph</p>
+        <p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring whi</p>
+        <p>Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musi</p>
+
+        {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+        <p>On completing all the topics, you'll:</p>
+        <ul class="list-bullet u-space-b30">
+            <li>Cras quis nibh sodales, tincidunt sem sed, pulvinar magna. Donec massa velit, sagittis cursus lobortis in, interdum sit amet risus. </li>
+            <li>know how to challenge your own thinking, and how to help create the right environment.</li>
+            <li>be aware of some of the strategies you can use to minimise the impact</li>
+            <li>understand why we need legislation</li>
+            <li>Sagittis cursus lobortis in, interdum sit amet risus. </li>
+        </ul>
+
+        {{ components.heading(text='Before you start', tag='h2', size='medium') }}
+
+        <p><strong>You must already have a <a href="#">Prince II Foundation</a> certificate.</strong></p>
+
+        {{ components.heading(text='Pre-learning requirements', tag='h3', size='small') }}
+
+        <p>You <strong>must</strong> read or complete the following:</p>
+        <ul class="list-bullet">
+            <li><a href="https://civilservicelearning.civilservice.gov.uk/sites/default/files/resources/csl_managing_contractors_case_study.pdf">CSL Managing Contractors Case Study</a> (PDF 289kb)<br>This document is a case study which was developed as part of the training course materials.  Delegates are required to read the case study prior to their attendance and prepare answers to 5 questions posed.  These questions/answers will then be discussed at the beginning of the workshop.  Further exercises during the training itself are also linked to the case study.</li>
+            <li><a href="https://civilservicelearning.civilservice.gov.uk/sites/default/files/resources/cross_government_review_of_major_contracts_summary_report1.pdf">Cross Government Review of Major Contracts Summary Report</a> (PDF 662kb)<br>This document provides background reading for delegates on why the area of managing contractors is so important to Government.</li>
+        </ul>
+
+        {{ components.heading(text='Pre-reading', tag='h3', size='small') }}
+
+        <p>There is an advised <a href="/prototypes/learner/v9/resource?resourceID=25">reading list</a> for this course.</p>
+
+        <div class="notice u-space-y30">
+            <i class="icon icon-important">
+                <span class="visually-hidden">Warning</span>
+            </i>
+            <strong class="bold-small">This course has a 1 hour exam</strong>
+        </div>
+
+        <p><strong>You must complete all 8 required modules to finish this topic. There are 2 additional optional modules.</strong></p>
+
+        <div class="discite">
+
+            {{ components.disciteRow(
+                name='Introducing unconscious bias',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Challenging unconscious bias in recruitment decisions',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='8 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Unconscious bias in the workplace',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Challenging unconscious bias',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Document',
+                action='Download',
+                isDocument=true,
+                duration='8 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, diversity and inclusion in the Civil Service',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Video',
+                action='Start',
+                duration='12 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, Diversity and Inclusion: The legal framework',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, diversity and inclusion: Our inclusive workplace',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='Equality, diversity and inclusion: Our customers',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='8 minutes',
+                extraModifierClass='module'
+            ) }}
+
+            {{ components.disciteRow(
+                name='This is the first optional module',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='5 minutes',
+                extraModifierClass='module',
+                optional2=true
+            ) }}
+
+            {{ components.disciteRow(
+                name='This is another optional module',
+                headingTag='h3',
+                headingExtraClass='heading--text',
+                type='Online',
+                action='Start',
+                duration='8 minutes',
+                extraModifierClass='module',
+                optional2=true
+            ) }}
+
+        </div>
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small visuallyhidden">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>AA to SCS</td>
+                    </tr>
+                    <tr>
+                        <th>Key area</th>
+                        <td>General</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>1 hour</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£Free</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+            {#<h2 class="heading-small">Pre-learning</h2>
+            <ul class="">
+                <li><a href="#">Case study</a> </li>
+                <li><a href="#">MPA review (pre-reading)</a> </li>
+            </ul>#}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

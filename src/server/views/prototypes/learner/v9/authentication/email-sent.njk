@@ -1,0 +1,54 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Reset password - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v9' %}
+{% set homePath = '/prototypes/learner/v9/' %}
+{% set loggedOut = 'true' %}
+{% set signinError = signinError if signinError %}
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="govuk-box-highlight">
+                <h1 class="heading-large">Now check your email</h1>
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">What next?</h2>
+
+            <p>Check your email for the link to reset your password.</p>
+
+            <p>The link will expire in [time_limit].</p>
+
+            <details>
+                <summary>
+                    <span class="summary">Haven't received the email?</span>
+                </summary>
+                <div class="panel panel-border-narrow">
+                    <div class="text">
+                        <p>Check your spam folder.</p>
+                        <p>If you don't see the email after 30 minutes, you can contact the Learning Platform for Government helpdesk on <a href="tel:+442036407985">020 3640 7985</a> or by email on <a href="mailto:support@civilservicelearning.uk">support@civilservicelearning.uk</a>.</p>
+                    </div>
+                </div>
+            </details>
+
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+            <p><a class="font-xsmall meta" href="/prototypes/learner/v9/enter-new-password">(pretend you have the email and continue)</a></p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

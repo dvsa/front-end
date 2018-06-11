@@ -1,0 +1,49 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Blog article - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='What the civil service of tomorrow will look like') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Since Brexit, the question of whether the civil service has the right people, skills, and capabilities is the subject of heated debate. One man who must address these issues is Rupert McNeil, the head of Government HR says Jen Gold. </p>
+
+            <p><a href="https://www.instituteforgovernment.org.uk/blog/rupert-mcneil-what-civil-service-tomorrow-will-look" target="_blank">Read this blog article</a> (external link)</p>
+
+            <p>
+                <a href="/prototypes/learner/v9/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='76%', total='104') }}
+
+                {% endif %}
+
+            </aside>
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

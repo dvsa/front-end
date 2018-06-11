@@ -23,7 +23,9 @@
     ignoreURL='',
     isDocument='',
     optional1=false,
-    optional2=false
+    optional2=false,
+    startURL = '#',
+    bookedDate=''
     )
 %}
     <div class="discite__item u-clearfix {% if extraModifierClass %}discite__item--{{ extraModifierClass }}{% endif %}">
@@ -61,7 +63,11 @@
             </ul>
 
             {%  if status %}
-                <div class="discite__status"><span class="badge badge--info ">{{ status }}</span></div>
+                <div class="discite__status">
+                    <span class="badge badge--info ">{{ status }}</span>
+                    {% if bookedDate %}<span class="meta u-space-t5">{{ bookedDate }}</span>{% endif %}
+                </div>
+
             {% endif %}
             {%  if leaveFeedback %}
                 <div class="discite__status"><a class="" href="{{ leaveFeedback }}">Leave feedback</a></div>
@@ -96,7 +102,7 @@
                 <a href="#">Retake<span class="visuallyhidden"> this module</span></a>
             {% endif %}
             {% if action == 'Start' %}
-                <a href="#">Start<span class="visuallyhidden"> this module</span></a>
+                <a href="{{ startURL }}">Start<span class="visuallyhidden"> this module</span></a>
             {% endif %}
             {% if action == 'Download' %}
                 <a href="#">Download document</a> (PDF, 561kb)
@@ -112,6 +118,9 @@
             {% endif %}
             {% if action == 'Book' %}
                 <a href="#">Book<span class="visuallyhidden"> this module</span></a>
+            {% endif %}
+            {% if action == 'Cancel' %}
+                <a href="#">Cancel<span class="visuallyhidden"> your booking</span></a>
             {% endif %}
             {% if addToLearningPlan %}
                 <a href="#">Add to learning plan</a>

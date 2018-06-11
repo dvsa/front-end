@@ -13,19 +13,39 @@ export function adminGet(req, res) {
 export function adminPost(req, res) {
   const { courseList, eventsList, eventsSubmit, courseSubmit } = req.body;
 
-  console.log(eventsSubmit);
-  console.log(courseSubmit);
-  console.log(courseList);
-  console.log(eventsList);
+  let redirectPath;
 
-  return res.redirect('/prototypes/learner/v8/admin');
+  // console.log(eventsSubmit);
+  // console.log(courseSubmit);
+  // console.log(courseList);
+  // console.log(eventsList);
+
+  if (eventsSubmit == 'events') {
+    redirectPath = '/prototypes/learner/v8/admin/events-list';
+  } else if (courseSubmit == 'courses') {
+    redirectPath = '/prototypes/learner/v8/admin/course-list';
+  } else {
+    redirectPath = '/prototypes/learner/v8/admin';
+  }
+
+  return res.redirect(redirectPath);
 }
 
 // view all course
 export function adminCourseListGet(req, res) {
-  let viewData;
+  let viewData, titlesList, titleArray, randomItem, numberOfCourses;
 
-  viewData = {};
+  numberOfCourses = 114;
+  titlesList = generalData.courseTitles;
+  titleArray = [];
+  for (let i = 0; i < numberOfCourses; i++) {
+    randomItem = titlesList[Math.floor(Math.random() * titlesList.length)];
+    titleArray.push(randomItem);
+  }
+
+  viewData = {
+    titleArray,
+  };
 
   return res.render('prototypes/learner/v8/admin/course-list', viewData);
 }
@@ -147,7 +167,7 @@ export function adminAddAssetsGet(req, res) {
 export function adminAddAssetsPost(req, res) {
   const {} = req.body;
 
-  return res.redirect('/prototypes/learner/v8/add-assets');
+  return res.redirect('/prototypes/learner/v8/admin/add-review');
 }
 
 // admin review

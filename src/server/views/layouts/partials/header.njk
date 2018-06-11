@@ -38,6 +38,9 @@
                 <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/suggested-learning">Suggestions for you</a></li>
                 <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/learning-record">Learning record</a></li>
                 <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/your-profile">Profile</a></li>
+                {% if isAdmin %}
+                  <li><a href="/prototypes/learner/{% if learnerPrototypeVersion %}{{ learnerPrototypeVersion }}{% else %}v1{% endif %}/admin">Admin</a></li>
+                {% endif %}
                 <li><a href="{{ signOutPath }}">Sign out</a></li>
               </ul>
             {% endif %}

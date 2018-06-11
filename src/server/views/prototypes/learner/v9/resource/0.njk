@@ -1,0 +1,54 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Classroom training - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Resources index') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <ol class="list-number u-space-b30">
+                <li><a href="/prototypes/learner/v9/resource?resourceID=1">Managing contractors | Classroom</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=2">What the civil service of tomorrow will look like | Blog</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=3">Digital awareness: digital by default | Online</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=4">Simon Sinek - Start With Why - TED Talk Short Edited | Video</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=5">Responsibility for information | Online</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=6">Diversity &amp; inclusion | Online | Modular</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=7">Effective negotiation for senior managers | Classroom</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=8">Foreign contract compliance legal obligations | Classroom</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=9">Managing contractors | Classroom | Examined</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=10">Andrew Shatte | Video</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=11">Commercial awareness | Online</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=12">Capability in the Civil Service | Document</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=13">Outcomes and Benefits | Online</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=14">Growth Mindset | TED video</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=15">Basic fire safety | Online</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=16">Managing contractors | Classroom</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=17">Diversity &amp; inclusion | Online | Modular</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=18">The Bottom Line | Audio/iPlayer</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=19">Inspired, Marty Cagan | Blog</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=20">Agile Product Ownership, Henrik Kniberg | Video</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=21">Good Product Manager/Bad Product Manager, Ben Horowitz | Blog</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=22">Asking the right questions to frame the problem | Blog</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=23">Identifying a good service | Blog</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=24">Course with lots of pre-learning items | Modular | Online, info in main col</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=26">Course with lots of pre-learning items | Modular | Online, info in sidebar</a> </li>
+                <li><a href="/prototypes/learner/v9/resource?resourceID=27">Course with optional modules | Modular | Online</a> </li>
+            </ol>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

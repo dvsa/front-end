@@ -92,19 +92,14 @@
                             </li>
                             <li class="filter__item">
                                 <div class="multiple-choice filter__switch">
-                                    <input id="areaCommercial" type="checkbox" name="areaFilter" value="commercial">
-                                    <label for="areaCommercial" class="u-display-ib">Commercial</label>
+                                    <input id="areaCommercial" type="checkbox" name="areaFilter" value="legal">
+                                    <label for="areaCommercial" class="u-display-ib">Legal</label>
                                 </div>
                             </li>
                             <li class="filter__item">
                                 <div class="multiple-choice filter__switch">
-                                    {% if showPreFilteredResults %}
-                                        <input id="areaHMRC" type="checkbox" name="areaFilter" value="hmrc" checked>
-                                    {% else %}
-                                        <input id="areaHMRC" type="checkbox" name="areaFilter" value="hmrc">
-                                    {% endif %}
-
-                                    <label for="areaHMRC" class="u-display-ib">HMRC</label>
+                                    <input id="areaCommercial" type="checkbox" name="areaFilter" value="communications">
+                                    <label for="areaCommercial" class="u-display-ib">Communications</label>
                                 </div>
                             </li>
                         </ul>
@@ -172,6 +167,76 @@
                                 <div class="multiple-choice filter__switch">
                                     <input id="otherAreasProperty" type="checkbox" name="otherAreasFilter" value="property">
                                     <label for="otherAreasProperty" class="u-display-ib">Legal</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter">
+                        <h2 class="filter__title">Your organisation</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    {% if showPreFilteredResults %}
+                                        <input id="organisationHMRC" type="checkbox" name="organisationFilter" value="hmrc" checked>
+                                    {% else %}
+                                        <input id="organisationHMRC" type="checkbox" name="organisationFilter" value="hmrc">
+                                    {% endif %}
+                                    <label for="organisationFilter" class="u-display-ib">
+                                        HMRC
+                                        <span class="form-hint">Search for learning only within your organisation</span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter">
+                        <h2 class="filter__title">Your areas of interest</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="interestsLeadership" type="checkbox" name="interestFilter1" value="Leadership">
+                                    <label for="interestsLeadership" class="u-display-ib">Leadership</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="filter filter-toggle __filter-toggle--shut">
+                        <h2 class="filter__title filter__title--closed" tabindex="0" onclick="toggleVisibility(this, 'toggleOtherInterestsList', 'js-hidden')">Other areas of interest</h2>
+                        <span class="filter__toggle"></span>
+                        <ul class="filter__list u-clearfix js-hidden" id="toggleOtherInterestsList">
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="extraInterests1" name="extraInterests1" type="checkbox" value="1"> <label for="extraInterests1" class=" u-display-ib">Coaching &amp; mentoring</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="extraInterests2" name="extraInterests2" type="checkbox" value="2"> <label for="extraInterests2" class=" u-display-ib">Communications &amp; engagement</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="extraInterests3" name="extraInterests3" type="checkbox" value="3"> <label for="extraInterests3" class=" u-display-ib">Contract management</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="extraInterests4" name="extraInterests4" type="checkbox" value="4"> <label for="extraInterests4" class=" u-display-ib">Customer service</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="extraInterests5" name="extraInterests5" type="checkbox" value="5"> <label for="extraInterests5" class=" u-display-ib">Induction &amp; essential skills</label>
+                                </div>
+                            </li>
+                            <li class="filter__item">
+                                <div class="multiple-choice filter__switch">
+                                    <input id="extraInterests7" name="extraInterests7" type="checkbox" value="7"> <label for="extraInterests7" class=" u-display-ib">Well being &amp; Diversity</label>
                                 </div>
                             </li>
                         </ul>

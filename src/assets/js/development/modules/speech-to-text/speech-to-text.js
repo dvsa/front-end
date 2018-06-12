@@ -1,302 +1,102 @@
-import { addEventListenerToEl } from '../../../shared/misc/events';
-import { toggleClass, closestParentOfEl } from '../../../shared/misc';
-import { TEXT_TO_SPEECH_CONFIG } from './config';
-import md5 from 'md5';
+import { addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
+import { SPEECH_TO_TEXT_CONFIG } from './config';
 
-export class TextToSpeech {
-  constructor(textToSpeechWrapper) {
-    // Check if element is passed
-    if (!textToSpeechWrapper) console.warn('Text to speech wrapper not defined');
+export class SpeechToText {
+  constructor(recordButton) {
+    // Check if record button is passed
+    if (!recordButton) return;
 
-    // Object to store / reference state
-    this.state = {
-      wrapper: textToSpeechWrapper,
-      synth: window.speechSynthesis,
-      textToSpeechElements: [],
-      current: '',
+    // Gets a reference to the components wrapper element
+    let wrapper = closestParentOfEl(recordButton, `.${SPEECH_TO_TEXT_CONFIG.classes.wrapper}`);
+
+    // Object to store assiosated DOM Elements
+    this.elements = {
+      recordButton,
+      wrapper: wrapper,
+      input: wrapper.querySelector(`.${SPEECH_TO_TEXT_CONFIG.classes.input}`),
+      submitBtn: wrapper.querySelector(`.${SPEECH_TO_TEXT_CONFIG.classes.submitBtn}`),
     };
 
-    // Gets all text to speech components in wrapper
-    this.sections = this.state.wrapper.querySelectorAll(`.${TEXT_TO_SPEECH_CONFIG.classes.section.wrapper}`);
+    // Object initialised to store state
+    this.state = {
+      speechRecognition: new webkitSpeechRecognition(),
+      isRecording: false,
+    };
 
-    // Converts NodeList to array
-    this.sections = Array.from(this.sections);
+    // If any requried state elements are undefined return from class
+    if (!this.elements.wrapper || !this.elements.input || !this.elements.submitBtn) return;
 
-    // If speechSynthesis & SpeechSynthesisUtterance failed to set up return
-    if (!this.sections || !this.state.synth) return;
-
-    // Run widget setup
     this.setup();
   }
 
   /**
-   * Initializer
+   * Initial setup of control
    */
-  setup() {
-    // Loops through all sections
-    this.sections.forEach((section, index) => {
-      // Init variable setup
-      let sectionContent, textToSpeechDOMComponent, id, playBtn, sectionFirstElm, utterance;
+  setup = () => {
+    // Assigns the record button's click handler
+    addEventListenerToEl(this.elements.recordButton, 'click', this.listenBtnClickHandler);
 
-      // Get utterance content
-      sectionContent = section.innerText;
-      if (!sectionContent) return;
-
-      // Build text to speech DOM element
-      textToSpeechDOMComponent = this.buildComponent();
-      if (!textToSpeechDOMComponent) return;
-
-      // Create an unique ID
-      id = `text-to-speech-${md5(section.innerHTML)}`;
-      section.setAttribute('id', id);
-
-      // Creates object to store audio play button properties
-      playBtn = {
-        elementRef: textToSpeechDOMComponent.querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.controls.playBtn}`),
-        iconRef: textToSpeechDOMComponent.querySelector('.text-to-speech__icon'),
-        content: textToSpeechDOMComponent.querySelector('.text-to-speech__button-content'),
-      };
-
-      // Returns if DOM elements not found
-      if (!playBtn.elementRef || !playBtn.iconRef) return;
-
-      // Add Play / Pause button event listener
-      addEventListenerToEl(playBtn.elementRef, 'click', this.playPauseButtonClickHandler);
-
-      // Set data-array index with index value from forEach loop
-      section.setAttribute('data-array-index', index);
-
-      // Reference to the first DOM element within section - element & type
-      sectionFirstElm = {
-        element: section.firstChild.nextSibling,
-        type: section.firstChild.nextSibling.nodeName,
-      };
-
-      // Tests wether the first element is a heading
-      this.testRegex(sectionFirstElm.type, new RegExp('h*[1-6]'))
-        ? section.insertBefore(textToSpeechDOMComponent, section.childNodes[2])
-        : section.insertBefore(textToSpeechDOMComponent, sectionFirstElm.element);
-
-      // Define and push this elements state
-      this.state.textToSpeechElements.push({
-        id,
-        index,
-        sectionContent,
-        utterance: this.setupUtteranceSettings(index),
-        button: {
-          element: playBtn.elementRef,
-          icon: playBtn.iconRef,
-          content: playBtn.content,
-        },
-        isPlaying: false,
-        isPaused: false,
-      });
-    });
-  }
+    // Assigns various event handlers to the speechRecognition object
+    this.state.speechRecognition.onstart = this.isRecording;
+    this.state.speechRecognition.onend = this.isStoppedRecording;
+    this.state.speechRecognition.onresult = this.handleOnSpeechResult;
+  };
 
   /**
-   * Click hanlder for play / pause button toggle
-   *
-   * @param {Event} event - DOM Event object
+   * Handles click event on listen button click
+   * @param {Event} Event - DOM Event object
    */
-  playPauseButtonClickHandler = event => {
-    //Prevent default action
+  listenBtnClickHandler = event => {
     event.preventDefault();
 
-    // Gets event target's parent
-    let eventTargetParent = closestParentOfEl(event.target, `.${TEXT_TO_SPEECH_CONFIG.classes.section.wrapper}`);
-
-    // Gets informational object on the caller parent
-    let caller = this.getDOMElementAttributes(eventTargetParent, ['id', 'data-array-index']);
-    if (!caller) console.warn('Failed to retrieve caller info');
-
-    // If event has taken place on the same element that is currently playing / paused
-    if (caller.id == this.state.current.id) {
-      // If state is paused
-      if (this.state.current.isPaused) {
-        this.state.synth.resume();
-        this.currentElementIsPlaying();
-      }
-
-      // If state is playing
-      else {
-        this.state.synth.pause();
-        this.currentElementIsPaused();
-      }
-
-      // Toggle button content
-      this.toggleButtonContent();
-
-      // Return from method
+    // If state is currently recording
+    if (this.state.isRecording) {
+      // Cancel current recording session
+      this.state.speechRecognition.abort();
+      // Toggle state
+      this.isStoppedRecording();
       return;
     }
 
-    // Removes all utterances from the utterance que
-    this.state.synth.cancel();
-
-    // Assigns new reading context to state
-    this.state.current = this.state.textToSpeechElements[caller['data-array-index']];
-
-    // Begins reading
-    this.readContent();
-
-    // Toggle button content
-    this.toggleButtonContent();
+    // Start listening for audio
+    this.state.speechRecognition.start();
   };
 
   /**
-   * Setup utterance
-   *
-   * @param {Event} elementIndex - Index within DOM collection array
-   * @return {utterance} - SpeechSynthesisUtterance
+   * Handles speech result event
+   * @param {Event} Event - DOM Event object
    */
-  setupUtteranceSettings = elementIndex => {
-    let utterance, voices;
+  handleOnSpeechResult = event => {
+    // Gets spoken result
+    let resultString = event.results[0][0].transcript;
 
-    // Defines new utterance object
-    utterance = new SpeechSynthesisUtterance();
+    // If a value currently exists within input
+    if (this.elements.input.value.trim() != '') {
+      // Append new result to current
+      resultString = this.elements.input.value + ` ${resultString}`;
+    }
 
-    // Creates voices object
-    voices = this.state.synth.getVoices();
-
-    // Utterance config setup
-    utterance.voice = voices[TEXT_TO_SPEECH_CONFIG.speechSettings.voice];
-    utterance.volume = TEXT_TO_SPEECH_CONFIG.speechSettings.volume;
-    utterance.rate = TEXT_TO_SPEECH_CONFIG.speechSettings.rate;
-    utterance.pitch = TEXT_TO_SPEECH_CONFIG.speechSettings.pitch;
-    utterance.lang = TEXT_TO_SPEECH_CONFIG.speechSettings.lang;
-
-    // Resets button state on utterance end
-    utterance.onend = () => {
-      // Reset this elements state
-      this.state.textToSpeechElements[elementIndex].isPlaying = false;
-      this.state.textToSpeechElements[elementIndex].isPaused = false;
-
-      // if this element is currently playing reset current
-      if (this.state.current.index == elementIndex) this.state.current = '';
-
-      // Toggle button content
-      this.toggleButtonContent();
-    };
-
-    return utterance;
+    // Append new result
+    this.elements.input.value = resultString;
   };
 
   /**
-   * Gets DOM related info on the calling event
-   *
-   * @param {Element} Element - DOM Event object
-   * @param {Array} Attributes - Array of strings containing attributes to be captured
-   * @return {Object} - Event caller information
+   * Toggles state to recording
    */
-  getDOMElementAttributes = (element, attributes) => {
-    // Init an empty object
-    var obj = {};
-
-    // loops through attributes array
-    attributes.forEach(attribute => {
-      // creates & assigns a new object key to a DOM element attribute
-      obj[attribute] = element.getAttribute(`${attribute}`);
-    });
-
-    // Returns object
-    return obj;
+  isRecording = () => {
+    this.state.isRecording = true;
+    this.elements.submitBtn.disabled = true;
+    this.elements.input.disabled = true;
+    this.elements.recordButton.innerHTML = SPEECH_TO_TEXT_CONFIG.content.recording;
   };
 
   /**
-   * Toggles play / pause button inner text
+   * Toggles state to NOT recording
    */
-  toggleButtonContent = () => {
-    this.state.textToSpeechElements.map(el => {
-      // If element state is no longer playing or paused resort to default state
-      if (!el.isPlaying && !el.isPaused) {
-        // Initialise button content
-        this.buttonContentInit(el);
-        return;
-      }
-
-      // Toggles between playing / paused state
-      el.isPlaying ? this.buttonContentPlaying(el) : this.buttonContentNotPlaying(el);
-    });
+  isStoppedRecording = () => {
+    this.state.isRecording = false;
+    this.elements.submitBtn.disabled = false;
+    this.elements.input.disabled = false;
+    this.elements.recordButton.innerHTML = SPEECH_TO_TEXT_CONFIG.content.init;
   };
-
-  /**
-   * Begins reading utterance
-   */
-  readContent = () => {
-    this.state.current.utterance.text = this.state.current.sectionContent;
-    this.currentElementIsPlaying();
-    this.state.synth.speak(this.state.current.utterance);
-  };
-
-  /**
-   * Builds and returns text to speech DOM element
-   */
-  buildComponent = () => {
-    // Builds out DOM Element
-    let textToSpeechElm = document.createElement(`div`);
-    textToSpeechElm.classList.add(TEXT_TO_SPEECH_CONFIG.classes.controls.wrapper);
-    textToSpeechElm.innerHTML = TEXT_TO_SPEECH_CONFIG.DOMElement;
-
-    // Returns to caller
-    return textToSpeechElm;
-  };
-
-  /**
-   * Initialises / Resets button content
-   *
-   * @param {Element} Element - DOM Element object
-   */
-  buttonContentInit = element => {
-    element.button.content.innerText = TEXT_TO_SPEECH_CONFIG.content.init;
-    element.button.icon.classList.remove('text-to-speech__icon--pause');
-    element.button.icon.classList.add('text-to-speech__icon--play');
-  };
-
-  /**
-   * Lets button content to playing state
-   *
-   * @param {Element} Element - DOM Element object
-   */
-  buttonContentPlaying = element => {
-    element.button.content.innerText = TEXT_TO_SPEECH_CONFIG.content.pause;
-    element.button.icon.classList.remove('text-to-speech__icon--play');
-    element.button.icon.classList.add('text-to-speech__icon--pause');
-  };
-
-  /**
-   * Lets button content to not playing state
-   *
-   * @param {Element} Element - DOM Element object
-   */
-  buttonContentNotPlaying = element => {
-    element.button.content.innerText = TEXT_TO_SPEECH_CONFIG.content.play;
-    element.button.icon.classList.remove('text-to-speech__icon--pause');
-    element.button.icon.classList.add('text-to-speech__icon--play');
-  };
-
-  /**
-   * Sets current elements state to playing
-   */
-  currentElementIsPlaying = () => {
-    this.state.current.isPaused = false;
-    this.state.current.isPlaying = true;
-  };
-
-  /**
-   * Sets current elements state to paused
-   */
-  currentElementIsPaused = () => {
-    this.state.current.isPaused = true;
-    this.state.current.isPlaying = false;
-  };
-
-  /**
-   * Returns boolean value if regex matches heading
-   *
-   * @param {String} string - String DOM element
-   * @param {Regex} Regex - Regex to string against
-   * @return {Boolean}
-   */
-  testRegex = (string, regex) => regex.test(string);
 }

@@ -2,52 +2,39 @@
   margin-bottom: 20px;
 
   &__button {
-    position: relative;
     background-color: transparent;
     border: 0;
     color: #005ea5;
     font-size: 18px;
     display: inline-block;
+    text-decoration: underline;
+    padding-left: 0;
+    transition: color 0.3s ease-in-out;
     
     &--increase {
-      text-indent: -9999px;
-      width: 25px;
       font-size: 26px;
-
-      &::after {
-        text-decoration: underline;
-        text-indent: initial;
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: 'A';
-      }
-    }
-
-    &--decrease {
-      position: relative;      
-      text-indent: -9999px;
-      width: 25px;      
-
-      &::after {
-        text-decoration: underline;        
-        text-indent: initial;
-        position: absolute;
-        top: 0;
-        left: 0;
-        content: "A";
-      }
+      padding-left: 10px;
     }
 
     &--reset {
-      text-decoration: underline;
       font-size: 14px;
       display: block;
-      padding-left: 0;
     }
 
     &:hover {
       cursor: pointer;
     }
+
+    &--disabled {
+      color: #6F777B;      
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__icon {
+    font-style: normal;      
   }
 }

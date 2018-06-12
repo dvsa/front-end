@@ -1,38 +1,46 @@
 .text-to-speech {
-  display: none;
+  &__item {
+    position: relative;
+
+    &--highlight {
+      background-color: #ffbf47;      
+    }
+  }
 
   &__button {
-    display: block;
-    border: 0;
-    margin: 0;
-    padding: 0;  
     background-color: transparent;
-    color: #005ea5;
-    text-decoration: underline;
-    font-size: 16px;
-    font-weight: 400;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: -5%;
+    opacity: 0.4;
 
     &:hover {
       cursor: pointer;
+      opacity: 0.6;
+    }
+
+    &--playing {
+      opacity: 1;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
   &__icon {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
     display: inline-block;
-    margin-right: 5px;
 
     &--play {
-      background: url('../images/text-to-speech-play.png') no-repeat;              
-    }
-
-    &--pause {
-      background: url('../images/text-to-speech-pause.png') no-repeat;              
+      background: url('../images/audio_play.png') no-repeat;
     }
   }
 }
 
-.js-enabled .text-to-speech {
-  display: block;
+.text-to-speech-toggle {
+  margin-bottom: 20px;
 }

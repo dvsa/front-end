@@ -1,15 +1,15 @@
 import { initLibraryNavigation } from './library-page-navigation';
 import { initDevPreview } from './dev-preview';
-import { initTextToSpeech } from './text-to-speech';
+import { initTextToSpeechToggle } from './text-to-speech-toggle';
+import { initFontSizeToggle } from './font-size-toggle';
 import { initSpeechToText } from './speech-to-text';
 import { initThemeToggle } from './theme-toggle';
-import { initFontSizeToggle } from './font-size-toggle';
 
 export const initModules = () => {
   initLibraryNavigation();
   initDevPreview();
-  initTextToSpeech();
+  initTextToSpeechToggle();
+  initFontSizeToggle();
   initSpeechToText();
   initThemeToggle();
-  initFontSizeToggle();
 };

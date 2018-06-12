@@ -1,56 +1,16 @@
-import { TextToSpeech } from './text-to-speech';
-
-const textToSpeech = {
-  classes: {
-    playBtn: 'text-to-speech__button--play',
-  },
-  content: {
-    init: 'Listen to this section',
-    resume: 'Resume audio',
-    pause: 'Pause audio',
-  },
-};
-
 export const TEXT_TO_SPEECH_CONFIG = {
-  content: {
-    init: textToSpeech.content.init,
-    play: textToSpeech.content.resume,
-    pause: textToSpeech.content.pause,
-  },
   classes: {
-    wrapper: {
-      wrapper: 'text-to-speech',
-    },
-    section: {
-      wrapper: 'text-to-speech__section',
-    },
-    controls: {
-      wrapper: 'text-to-speech__controls',
-      playBtn: textToSpeech.classes.playBtn,
-      pauseBtn: textToSpeech.classes.pauseBtn,
-    },
-    controls: {
-      wrapper: 'text-to-speech__controls',
-      JSEnabled: 'text-to-speech__controls--js-enabled',      
-      playBtn: textToSpeech.classes.playBtn
-    }
+    wrapper: 'text-to-speech__wrapper',
+    readerItem: 'text-to-speech__item',
+    readerItemHighlight: 'text-to-speech__item--highlight',
+    audioBtn: 'text-to-speech__button',
+    audioBtnPlaying: 'text-to-speech__button--playing',
   },
-  speechSettings: {
-    voice: 7,
-    volume: 1,
-    rate: -2,
-    pitch: 0,
-    lang: 'en-uk',
+  audioBtnText: 'Play audio',
+  dataAttributes: {
+    readerID: 'data-item-id',
   },
-  speechSettings: {
-    voice: 7,
-    volume: 1,
-    rate: -2,
-    pitch: 0,
-    lang: 'en-uk',
-  },
-  DOMElement: `<button class='text-to-speech__button ${textToSpeech.classes.playBtn}'>
-    <i class='text-to-speech__icon text-to-speech__icon--play' role='presentation'></i> 
-    <span class='text-to-speech__button-content'>${textToSpeech.content.init}</span>
-  </button>`,
+  DOMTargets: ['p', 'ul'],
+  buttonInnerHtml: `<span class='sr-only'>Play Audio</span>
+  <i class='text-to-speech__icon text-to-speech__icon--play' role='presentation'></i>`,
 };

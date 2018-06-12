@@ -5,6 +5,8 @@ export const FONT_SIZE_TOGGLE_CONFIG = {
     resetBtn: 'font-size-toggle__button--reset',
     hidden: 'font-size-toggle__button--hidden',
   },
+  maxSize: 5,
+  minSize: -2,
   dataAttributes: {
     type: 'data-toggle-type',
   },

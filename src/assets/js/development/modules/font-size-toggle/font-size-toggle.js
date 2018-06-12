@@ -4,7 +4,7 @@ import { FONT_SIZE_TOGGLE_CONFIG } from './config';
 export class FontSizeToggle {
   constructor(wrapper) {
     // If DOM Element ref is not passed - exit with warning
-    if (!wrapper) console.warn('Failed to initialise font size toggle element');
+    if (!wrapper) return;
 
     // Constructor variable setup
     let increaseButton, decreaseButton, resetButton, targets;
@@ -15,7 +15,10 @@ export class FontSizeToggle {
     resetButton = wrapper.querySelector(`.${FONT_SIZE_TOGGLE_CONFIG.classes.resetBtn}`);
 
     // State object to keep track of font size toggle DOM elements
-    this.elements = {
+    this.state = {
+      currentSize: 0,
+      maxSize: FONT_SIZE_TOGGLE_CONFIG.maxSize,
+      minSize: FONT_SIZE_TOGGLE_CONFIG.minSize,
       buttons: {
         increaseButton,
         decreaseButton,
@@ -26,7 +29,7 @@ export class FontSizeToggle {
     };
 
     // If button elements do not exist return
-    if (!this.elements.buttons.increaseButton || !this.elements.buttons.decreaseButton || !this.elements.buttons.resetButton) return;
+    if (!this.state.buttons.increaseButton || !this.state.buttons.decreaseButton || !this.state.buttons.resetButton) return;
 
     // Class setup
     this.setup();
@@ -37,30 +40,43 @@ export class FontSizeToggle {
    */
   setup = () => {
     // Gets all DOM text based elements
-    this.elements.pageElements = this.getTargetDOMElements();
-    if (!this.elements.pageElements) return;
+    this.state.pageElements = this.getTargetDOMElements();
+    if (!this.state.pageElements) return;
 
     // Adds event listiners to DOM elements
-    addEventListenerToEl(this.elements.buttons.decreaseButton, 'click', this.increaseDecreaseClickHandler);
-    addEventListenerToEl(this.elements.buttons.increaseButton, 'click', this.increaseDecreaseClickHandler);
-    addEventListenerToEl(this.elements.buttons.resetButton, 'click', this.resetButtonClickHandler);
+    addEventListenerToEl(this.state.buttons.increaseButton, 'click', this.increaseClickHandler);
+    addEventListenerToEl(this.state.buttons.decreaseButton, 'click', this.decreaseClickHandler);
+    addEventListenerToEl(this.state.buttons.resetButton, 'click', this.resetButtonClickHandler);
   };
 
   /**
-   * Click event handler for smaller button click
+   * Increase button click handler
    *
    * @param {Event} event - DOM Event object
    */
-  increaseDecreaseClickHandler = event => {
+  increaseClickHandler = event => {
     // Prevent default click event
     event.preventDefault();
 
-    // Gets custom data-toggle-type attribute value
-    let toggleType = event.target.getAttribute(`${FONT_SIZE_TOGGLE_CONFIG.dataAttributes.type}`);
-    if (!toggleType) console.warn(`Could not find data attribute ${FONT_SIZE_TOGGLE_CONFIG.dataAttributes.type}`);
+    if (this.testRanges(this.state.currentSize + 1)) {
+      this.state.currentSize += 1;
+      this.updateDOMElements();
+    }
+  };
 
-    // Runs a font size increment / decrement based on toggle type
-    toggleType == 'increment' ? this.updateDOMElements(true) : this.updateDOMElements(false);
+  /**
+   * Decrease button click handler
+   *
+   * @param {Event} event - DOM Event object
+   */
+  decreaseClickHandler = event => {
+    // Prevent default click event
+    event.preventDefault();
+
+    if (this.testRanges(this.state.currentSize - 1)) {
+      this.state.currentSize -= 1;
+      this.updateDOMElements(false);
+    }
   };
 
   /**
@@ -72,18 +88,86 @@ export class FontSizeToggle {
     // Prevent default click event
     event.preventDefault();
 
+    // Resets buttons state
+    this.resetState();
+
     // Removes the style element from DOM elements
-    this.elements.pageElements.forEach(elm => this.removeAttribute(elm, 'style'));
+    this.convertToArray(this.state.pageElements).forEach(elm => this.removeAttribute(elm, 'style'));
   };
 
   /**
-   * Update font size of DOM elements
+   * Tests min / max sizes against an Int
+   *
+   * @param {Int} testInt - Int to test ranges against
+   */
+  testRanges = testInt => {
+    // Sets return variable to true
+    let isValidRange = true;
+
+    // If number is above maxSize
+    if (testInt > this.state.maxSize) {
+      // Disable increase button
+      this.disableButton(this.state.buttons.increaseButton);
+      this.enableButton(this.state.buttons.decreaseButton);
+
+      // set isValid to false
+      isValidRange = false;
+
+      // if number is less than min size
+    } else if (testInt < this.state.minSize) {
+      // Disable decrease button
+      this.disableButton(this.state.buttons.decreaseButton);
+      this.enableButton(this.state.buttons.increaseButton);
+
+      // set isValid to false
+      isValidRange = false;
+
+      // Renable buttons
+    } else {
+      this.resetState();
+    }
+
+    // Return boolean
+    return isValidRange;
+  };
+
+  /**
+   * Disbales button state
+   *
+   * @param {Element} btn - DOM Element object
+   */
+  disableButton = btn => {
+    btn.disabled = true;
+    btn.classList.add('font-size-toggle__button--disabled');
+  };
+
+  /**
+   * Enables button state
+   *
+   * @param {Element} btn - DOM Element object
+   */
+  enableButton = btn => {
+    btn.disabled = false;
+    btn.classList.remove('font-size-toggle__button--disabled');
+  };
+
+  /**
+   * Re-enables button's state
+   *
+   */
+  resetState = () => {
+    this.enableButton(this.state.buttons.decreaseButton);
+    this.enableButton(this.state.buttons.increaseButton);
+  };
+
+  /**
+   * Update DOM element's font size
    *
    * @param {Boolean} isIncrement - Boolean defining wether operation is an increment
    */
-  updateDOMElements = isIncrement => {
+  updateDOMElements = (isIncrement = true) => {
     // Loop through DOM Elements
-    this.elements.pageElements.forEach(element => {
+    this.convertToArray(this.state.pageElements).forEach(element => {
       // Gets fontsize / line height properties of elements
       let elmProps = {
         fontSize: parseInt(this.getComputedProperty(element, 'font-size'), 10),
@@ -114,5 +198,12 @@ export class FontSizeToggle {
   /**
    * Get Target DOM elements
    */
-  getTargetDOMElements = () => document.body.querySelectorAll(this.elements.targets);
+  getTargetDOMElements = () => document.body.querySelectorAll(this.state.targets);
+
+  /**
+   * Returns object to array
+   *
+   * @param {Object} obj - Object element
+   */
+  convertToArray = obj => Array.from(obj);
 }

@@ -1,10 +1,8 @@
 import { SpeechToText } from './speech-to-text';
-import { isChrome } from './isChrome';
 
 export const initSpeechToText = () => {
-  // Web speech API is only supported on chrome currently
-  // Returns if not Chrome
-  if (!isChrome()) return;
+  // Returns if API is not supported
+  if (!window.webkitSpeechRecognition) return;
 
   // Creates NodeList of every speech to text HTML element
   let speechToTextElements = document.querySelectorAll('.search-bar__search-voice');

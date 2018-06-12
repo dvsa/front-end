@@ -1,0 +1,9 @@
+.accessibility-controls-accordion {
+  display: none;
+}
+
+.js-enabled {
+  .accessibility-controls-accordion {
+    display: block;
+  }
+}

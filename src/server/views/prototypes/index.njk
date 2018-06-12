@@ -61,6 +61,20 @@
 
     {%- endcall %}
 
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Accessibility widgets', tag='h2', size='medium', url='/prototypes/accessibility')}}
+      {{ components.paragraph(text='Prototype contains a few accessibility enhancements')}}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Defect voice search', tag='h2', size='medium', url='/prototypes/speech-to-text')}}
+      {{ components.paragraph(text='Speech recongition prototype')}}
+
+    {%- endcall %}
+
   {%- endcall %}
 
 {% endblock %}

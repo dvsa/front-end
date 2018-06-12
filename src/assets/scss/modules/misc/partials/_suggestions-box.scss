@@ -4,27 +4,30 @@ $module: 'suggestions';
 
   &-box {
     border-top: 4px solid $civil-service;
-
   }
 
   &-items {
-
+    box-sizing: border-box;
     width: 48%;
     float: left;
     padding-bottom: 35px;
+    padding-left: 40px;
 
     &--left {
       border-right: 4px solid $civil-service;
-
     }
 
     &--right {
-      padding-left: 20px;
+      //
+    }
+
+    .tile {
+
     }
 
     .tile:last-of-type {
-      padding-bottom: 0;
-      margin-bottom: 0;
+      // padding-bottom: 0;
+      // margin-bottom: 0;
     }
 
   }

@@ -22,6 +22,12 @@
     top: 0;
     content: '\25BA';
   }
+
+  &.button {
+    &:before {
+      display: none;
+    }
+  }
 }
 
 .toggle-switch {

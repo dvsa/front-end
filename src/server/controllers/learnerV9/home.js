@@ -21,8 +21,7 @@ export function homeGet(req, res) {
   // console.log('anotherTestVar = ' + anotherTestVar);
 
   let isAdmin = req.session.isAdmin;
-  console.log('isAdmin = ' + isAdmin);
-  console.log('TESTING version 9');
+  // console.log('isAdmin = ' + isAdmin);
 
   // req.session.removeMessage = false;
   hideHomeStars = req.session.hideHomeStars;
@@ -200,16 +199,18 @@ export function recordGet(req, res) {
 
 // suggested learning GET
 export function suggestedGet(req, res) {
-  let viewData, hideHomeStars, showUpdatedPrimaryWorkArea, hasAddedContractManagement, templateVersion, accordion;
+  let viewData, hideHomeStars, showUpdatedPrimaryWorkArea, hasAddedContractManagement, templateVersion, type;
 
   showUpdatedPrimaryWorkArea = req.session.showUpdatedPrimaryWorkArea;
   hasAddedContractManagement = req.session.hasAddedContractManagement;
 
-  accordion = req.param('accordion');
-  console.log('accordion = ' + accordion);
+  type = req.param('type');
+  console.log('type = ' + type);
 
-  if (accordion == 'true') {
+  if (type == 'accordion') {
     templateVersion = 'prototypes/learner/v9/suggested-learning/index-boxed';
+  } else if (type == 'squares') {
+    templateVersion = 'prototypes/learner/v9/suggested-learning/index-squares';
   } else {
     templateVersion = 'prototypes/learner/v9/suggested-learning/index';
   }

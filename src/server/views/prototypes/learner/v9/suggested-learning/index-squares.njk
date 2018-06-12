@@ -1,0 +1,216 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suggestions for you - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set hideHomeStars = 'true' %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{#{% set showUpdatedPrimaryWorkArea = true %}#}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+
+
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="u-space-y30 header-box u-border-bgrey2">
+
+                {% call components.gridRow() %}
+
+                    {% call components.columnHalf() %}
+
+                        {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
+
+                        <p class="u-space-b5">Tailored suggestions from the Learning Platform for Government and your organisation.</p>
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v9/search") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
+
+                {%- endcall %}
+
+             </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow(extraClass='u-space-b0') %}
+
+        {% call components.columnFull() %}
+
+            <div class="suggestions-box">
+
+                <div class="suggestions-items suggestions-items--left">
+
+                    <h2 class="heading-medium">From Digital, data &amp; technology</h2>
+
+                    {{ components.tile(
+                        title='Digitl awareness',
+                        url='/prototypes/learner/v9/resource?resourceID=11',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Online',
+                        duration='2 hours 20 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+                    ) }}
+
+                    {{ components.tile(
+                        title='Interaction design: prototyping for testing',
+                        url='#',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Classroom',
+                        duration='1 day',
+                        cost='£349',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='An introduction to building rapid prototypes using tools and frameworks for user testing.'
+                    ) }}
+
+                </div>
+
+                <div class="suggestions-items suggestions-items--right">
+                    <h2 class="heading-medium">From Commercial</h2>
+
+                    {{ components.tile(
+                        title='Commercial awareness',
+                        url='/prototypes/learner/v9/resource?resourceID=11',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Online',
+                        duration='2 hours 20 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+                    ) }}
+
+                    {{ components.tile(
+                        title='What the civil service of tomorrow will look like',
+                        url='/prototypes/learner/v9/resource?resourceID=2',
+                        starPercent='61%',
+                        starTotal='25',
+                        type='Blog',
+                        duration='12 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='Rupert McNeil talks about what the civil service of tomorrow'
+                    ) }}
+
+                </div>
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow(extraClass='u-space-b0') %}
+
+        {% call components.columnFull() %}
+
+            <div class="suggestions-box">
+
+                <div class="suggestions-items suggestions-items--left">
+
+                    <h2 class="heading-medium">From HMRC</h2>
+
+                    {{ components.tile(
+                        title='Managing contractors',
+                        url='/prototypes/learner/v9/resource?resourceID=1',
+                        starPercent='61%',
+                        starTotal='25',
+                        type='Classroom',
+                        duration='1 day',
+                        cost='£465',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+                    ) }}
+
+
+                    {{ components.tile(
+                        title='Outcomes and Benefits',
+                        url='/prototypes/learner/v9/resource?resourceID=13',
+                        starPercent='80%',
+                        starTotal='237',
+                        type='Online',
+                        duration='1 hour',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+                    ) }}
+
+                </div>
+
+                <div class="suggestions-items suggestions-items--right">
+                    <h2 class="heading-medium">From Leadership</h2>
+
+                    {{ components.tile(
+                        title='Leadership in the Civil Service',
+                        url='/prototypes/learner/v9/resource?resourceID=18',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Blog',
+                        duration='12 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='Management and leadership in a 21st century civil servivce.'
+                    ) }}
+
+                    {{ components.tile(
+                        title='Leadership - senior leadership strategy, Part IV',
+                        url='/prototypes/learner/v9/resource?resourceID=18',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Video',
+                        duration='25 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v9',
+                        intro='Part IV of the strategic leadership series, looking at govnernance and delegation in senior management roles.'
+                    ) }}
+
+                </div>
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

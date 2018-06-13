@@ -1,0 +1,111 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Continuous improvement and lean - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Continuous improvement and lean') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>This topic provides you with an introduction to continuous improvement and lean. It will demonstrate how a collaborative team effort to systematically removing waste can lead to improved performance, making this topic ideal for senior customer-facing staff and managers.</p>
+        <p>During the course of your learning activities, you’ll see how lean principles can be applied to customer processes to eliminate different kinds of waste, which would otherwise distract time and resource from more valuable, useful work.</p>
+        <p>Ideally, you would’ve completed the ‘Introduction to continuous improvement’ and ‘Quality management’ topics, although there is no requirement to do them first. </p>
+
+        {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+        <p>On completing all the topics, you'll:</p>
+        <ul class="list-bullet u-space-b30">
+            <li>apply a number of continuous improvement techniques to your work</li>
+            <li>identify that factors that drive continuous improvement in a service environment</li>
+            <li>review your team’s performance and address specific aspects of their work if required.</li>
+        </ul>
+
+        {{ components.heading(text='Is this the right topic for you?', tag='h2', size='medium') }}
+
+        <p>To help you decide if this topic is right for you, you can access a sample of the resources that are made available when you book and purchase the full topic.</p>
+        <p><a href="#">Read the top tips guide.</a></p>
+
+        {{ components.heading(text='Pricing', tag='h3', size='small') }}
+
+        <p>This is a 2 day workshop with some online preparation and follow-up activities. See the ‘learning activities’ section above for full details.</p>
+
+        <p>The cost for 1 person is £397. VAT is not included.</p>
+
+        <p>You can also arrange a group booking for up to 12 people and run it on your own premises for a cost of £3,500 (which is about £292 per person). VAT is not included.</p>
+
+        <p>At an external venue for 12 people, it would cost £ 4,500. VAT is not included.</p>
+
+        <p>If you need to raise a purchase order (PO), you will need to quote KPMG as the provider and specify the above cost.</p>
+
+        <p>If you have any questions regarding this topic, please contact the helpdesk on 020 3640 7985.</p>
+
+        {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+            {% call components.formGroup() %}
+                {{ components.button(text='Book this course', start=false, group=true, url='/prototypes/learner/v9/booking/')}}
+            {%- endcall %}
+
+            <p>
+                <a href="/prototypes/learner/v9/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small visuallyhidden">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Classroom</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>EO to HEO/SEO</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>2 Days</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£397</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+            {#<h2 class="heading-small">Pre-learning</h2>
+            <ul class="">
+                <li><a href="#">Case study</a> </li>
+                <li><a href="#">MPA review (pre-reading)</a> </li>
+            </ul>#}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

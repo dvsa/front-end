@@ -64,13 +64,23 @@
 
 
     {# jump nav start #}
+
     {% call components.gridRow() %}
+
+        {% call components.columnOneQuarter() %}
+
+            <p id="top">Suggestions based on your department</p>
+            <ul class="list-bullet">
+                <li><a href="#DWP">DWP</a> </li>
+            </ul>
+
+        {%- endcall %}
 
         {% call components.columnOneQuarter() %}
 
             <p id="top">Suggestions based on your primary job role</p>
             <ul class="list-bullet">
-                <li><a href="#ddat">Digital, design &amp; technology</a> </li>
+                <li><a href="#ddat">Operational delivery</a> </li>
             </ul>
 
         {%- endcall %}
@@ -94,24 +104,201 @@
 
         {%- endcall %}
 
-        {% call components.columnOneQuarter() %}
-
-            <p id="top">Suggestions based on your department</p>
-            <ul class="list-bullet">
-                <li><a href="#hmrc">HMRC</a> </li>
-            </ul>
-
-        {%- endcall %}
-
     {%- endcall %}
 
-    <h2 class="heading heading-medium heading--red-top" id="ddat">From Digital, Data &amp; Technology</h2>
+    <h2 class="heading heading-medium heading--red-top" id="DWP">From DWP</h2>
 
     {% call components.gridRow() %}
 
         {% call components.columnOneThird() %}
 
+            {#{{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v9/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}#}
+
             {{ components.tile(
+                title='Unconscious bias',
+                url='/prototypes/learner/v9/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='3 hours',
+                cost='£249',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='Biased decision-making has no place in any modern, progressive organisation.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {#{{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v9/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}#}
+
+            {{ components.tile(
+                title='Tips for having difficult conversations',
+                url='/prototypes/learner/v9/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='Practicable help for managers facing difficult conversations with their staff.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+           {# {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v9/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}#}
+
+            {{ components.tile(
+                title='Interview techniques (as interviewee)',
+                url='https://projects.invisionapp.com/share/X4JAPY9RBCF#/screens/291474540',
+                starPercent='61%',
+                starTotal='25',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='Few things in life are more stressful than a job interview.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {#{% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Getting It Right: Scope and Change',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            #}{#{{ components.tile(
+                title='Contract management: building relationships in business (MOOC)',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
+            ) }}#}{#
+
+            {{ components.tile(
+                title='Interview techniques (as interviewee)',
+                url='https://projects.invisionapp.com/share/X4JAPY9RBCF#/screens/291474540',
+                starPercent='61%',
+                starTotal='25',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='Few things in life are more stressful than a job interview.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing Risks Issues and Dependencies',
+                url='/prototypes/learner/v9/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='Risks can never be completely avoided; only ever managed and mitigated.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}#}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from DWP</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p class="u-align-right u-space-b">
+                <a href="#top">Top</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <h2 class="heading heading-medium heading--red-top" id="ddat">From Operational delivery</h2>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {#{{ components.tile(
                 title='Interaction design: prototyping for testing',
                 url='#',
                 starPercent='80%',
@@ -122,13 +309,24 @@
                 hideStars=hideHomeStars,
                 version='v9',
                 intro='An introduction to building rapid prototypes using tools and frameworks for user testing.'
+            ) }}#}
+
+            {{ components.tile(
+                title='Continuous improvement and lean',
+                url='/prototypes/learner/v9/resource?resourceID=28',
+                hideStars=hideHomeStars,
+                type='Classroom',
+                duration='2 days',
+                cost='£397',
+                version='v9',
+                intro='During the course, you\'ll see how lean principles can be applied to customer processes to eliminate different kinds of waste'
             ) }}
 
         {%- endcall %}
 
         {% call components.columnOneThird() %}
 
-            {{ components.tile(
+            {#{{ components.tile(
                 title='GDS prototyping workshop',
                 url='#',
                 starPercent='80%',
@@ -139,13 +337,26 @@
                 hideStars=hideHomeStars,
                 version='v9',
                 intro='Find out how to use the new AlphaGov GDS prototyping kit.'
+            ) }}#}
+
+            {{ components.tile(
+                title='Verbal communication',
+                url='/prototypes/learner/v9/resource?resourceID=29',
+                starPercent='80%',
+                starTotal='128',
+                type='Classroom',
+                duration='3 hours',
+                cost='£199',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='This topic is designed to provide you with the most effective techniques for verbal communication'
             ) }}
 
         {%- endcall %}
 
         {% call components.columnOneThird() %}
 
-            {{ components.tile(
+            {#{{ components.tile(
                 title='Journey storyboarding',
                 url='#',
                 starPercent='80%',
@@ -156,6 +367,19 @@
                 hideStars=hideHomeStars,
                 version='v9',
                 intro='Storyboarding can be a useful addition to your research and design process, find out how best to use it to get the most out of your users and designers.'
+            ) }}#}
+
+            {{ components.tile(
+                title='Pursuing customer service excellence',
+                url='/prototypes/learner/v9/resource?resourceID=30',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v9',
+                intro='This topic is for experienced customer-facing staff of all grades who are familiar with the principles and practice of providing great customer service. '
             ) }}
 
         {%- endcall %}
@@ -173,7 +397,7 @@
                 starTotal='128',
                 type='Classrom',
                 duration='1 day',
-                cost='£699',
+                cost='£249',
                 hideStars=hideHomeStars,
                 version='v9',
                 intro='An intensive introduction on how to plan, create, evaluate and refine winning interactions with customers.'
@@ -211,27 +435,6 @@
                 hideStars=hideHomeStars,
                 version='v9',
                 intro='The programme provides training to public sector staff on the application of design approaches to tackling complex challenges.'
-            ) }}
-
-        {%- endcall %}
-
-    {%- endcall %}
-
-    {% call components.gridRow() %}
-
-        {% call components.columnOneThird() %}
-
-            {{ components.tile(
-                title='GDS Training: UCD in government',
-                url='#',
-                starPercent='56%',
-                starTotal='114',
-                type='Classroom',
-                duration='4 hour',
-                cost='£Free',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='GDS Service design training course into applicaiton of UCD principles in governent projects'
             ) }}
 
         {%- endcall %}
@@ -646,153 +849,6 @@
         {% call components.columnFull() %}
 
             <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from Leadership</a> </p>
-
-        {%- endcall %}
-
-    {%- endcall %}
-
-    {% call components.gridRow() %}
-
-        {% call components.columnFull() %}
-
-            <p class="u-align-right u-space-b">
-                <a href="#top">Top</a>
-            </p>
-
-        {%- endcall %}
-
-    {%- endcall %}
-
-    <h2 class="heading heading-medium heading--red-top" id="hmrc">From HMRC</h2>
-
-    {% call components.gridRow() %}
-
-        {% call components.columnOneThird() %}
-
-            {{ components.tile(
-                title='Managing contractors',
-                url='/prototypes/learner/v9/resource?resourceID=1',
-                starPercent='61%',
-                starTotal='25',
-                type='Classroom',
-                duration='1 day',
-                cost='£465',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
-            ) }}
-
-        {%- endcall %}
-
-        {% call components.columnOneThird() %}
-
-            {{ components.tile(
-                title='Outcomes and Benefits',
-                url='/prototypes/learner/v9/resource?resourceID=13',
-                starPercent='80%',
-                starTotal='237',
-                type='Online',
-                duration='1 hour',
-                cost='£Free',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
-            ) }}
-
-        {%- endcall %}
-
-        {% call components.columnOneThird() %}
-
-            {{ components.tile(
-                title='Growth Mindset',
-                url='/prototypes/learner/v9/resource?resourceID=14',
-                starPercent='61%',
-                starTotal='25',
-                type='Video',
-                cost='£Free',
-                duration='10 minutes',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
-            ) }}
-
-        {%- endcall %}
-
-    {%- endcall %}
-
-    {% call components.gridRow() %}
-
-        {% call components.columnOneThird() %}
-
-            {{ components.tile(
-                title='Getting It Right: Scope and Change',
-                url='#',
-                starPercent='80%',
-                starTotal='128',
-                type='Online',
-                duration='2 hours',
-                cost='£Free',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
-            ) }}
-
-        {%- endcall %}
-
-        {% call components.columnOneThird() %}
-
-            {#{{ components.tile(
-                title='Contract management: building relationships in business (MOOC)',
-                url='#',
-                starPercent='80%',
-                starTotal='128',
-                type='Online',
-                duration='3 hours',
-                cost='£Free',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
-            ) }}#}
-
-            {{ components.tile(
-                title='Interview techniques (as interviewee)',
-                url='https://projects.invisionapp.com/share/X4JAPY9RBCF#/screens/291474540',
-                starPercent='61%',
-                starTotal='25',
-                type='Online',
-                duration='3 hours',
-                cost='£Free',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='Learn to manage yourself in interview situations and o'
-            ) }}
-
-        {%- endcall %}
-
-        {% call components.columnOneThird() %}
-
-            {{ components.tile(
-                title='Managing Risks Issues and Dependencies',
-                url='/prototypes/learner/v9/resource?resourceType=classroom',
-                starPercent='61%',
-                starTotal='25',
-                type='Online',
-                duration='3 hours',
-                cost='£Free',
-                hideStars=hideHomeStars,
-                version='v9',
-                intro='Risks can never be completely avoided; only ever managed and mitigated.'
-            ) }}
-
-        {%- endcall %}
-
-    {%- endcall %}
-
-    {% call components.gridRow() %}
-
-        {% call components.columnFull() %}
-
-            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from HMRC</a> </p>
 
         {%- endcall %}
 

@@ -64,696 +64,759 @@
 
 
 
-            <div class="js-accordion">
-                <div class="js-accordion__top-section">
-                    <button class="js-accordion__expand-button">
-                        Open All
-                    </button>
+    <div class="js-accordion">
+        <div class="js-accordion__top-section">
+            <button class="js-accordion__expand-button">
+                Open All
+            </button>
+        </div>
+        <div class="js-accordion__wrapper">
+
+            <div class="js-accordion__section" data-section-category="category-four">
+                <div class="js-accordion__header">
+                    <div class="js-accordion__header-left">
+                        <h2 class="js-accordion__title">
+                            <button class="js-accordion__title-button">DWP</button>
+                        </h2>
+                        <p class="js-accordion__description">Suggestions based on your organisation</p>
+                    </div>
+                    <div class="js-accordion__header-right">
+                        <button class="js-accordion__header-icon"></button>
+                    </div>
                 </div>
-                <div class="js-accordion__wrapper">
-                    <div class="js-accordion__section" data-section-category="category-one">
-                        <div class="js-accordion__header">
-                            <div class="js-accordion__header-left">
-                                <h2 class="js-accordion__title">
-                                    <button class="js-accordion__title-button">Digital, design &amp; technology</button>
-                                </h2>
-                                <p class="js-accordion__description">Suggestions based on your primary job role</p>
-                            </div>
-                            <div class="js-accordion__header-right">
-                                <button class="js-accordion__header-icon"></button>
-                            </div>
-                        </div>
-                        <div class="js-accordion__content">
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Interaction design: prototyping for testing',
-                                        url='#',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Classroom',
-                                        duration='1 day',
-                                        cost='£349',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='An introduction to building rapid prototypes using tools and frameworks for user testing.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='GDS prototyping workshop',
-                                        url='#',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Classroom',
-                                        duration='4 hours',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Find out how to use the new AlphaGov GDS prototyping kit.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Journey storyboarding',
-                                        url='#',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Online',
-                                        duration='1 hour',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Storyboarding can be a useful addition to your research and design process, find out how best to use it to get the most out of your users and designers.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Creating superior customer experiences &amp; UX with user-cenetred design',
-                                        url='#',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Classrom',
-                                        duration='1 day',
-                                        cost='£699',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='An intensive introduction on how to plan, create, evaluate and refine winning interactions with customers.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Essential design thinking - Videos and Methods',
-                                        url='#',
-                                        starPercent='76%',
-                                        starTotal='104',
-                                        type='Blog',
-                                        duration='10 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='The Verify team has been supporting local councils with end-to-end transformation of a service. It’s the first time GDS has had the opportunity to co-design with local government.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Reframing the challenge through Design in the Public Sector',
-                                        url='#',
-                                        starPercent='61%',
-                                        starTotal='25',
-                                        type='Video',
-                                        duration='15 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='The programme provides training to public sector staff on the application of design approaches to tackling complex challenges.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='GDS Training: UCD in government',
-                                        url='#',
-                                        starPercent='56%',
-                                        starTotal='114',
-                                        type='Classroom',
-                                        duration='4 hour',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='GDS Service design training course into applicaiton of UCD principles in governent projects'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnFull() %}
-
-                                    <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults&searchType=ddat">Show all suggestions from Digital, data &amp; technology</a> </p>
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                        </div>
-                    </div>
-                    <div class="js-accordion__section" data-section-category="category-two">
-                        <div class="js-accordion__header">
-                            <div class="js-accordion__header-left">
-                                <h2 class="js-accordion__title">
-                                    <button class="js-accordion__title-button">Commercial</button>
-                                </h2>
-                                <p class="js-accordion__description">Suggestions based on your other areas of work</p>
-                            </div>
-                            <div class="js-accordion__header-right">
-                                <button class="js-accordion__header-icon"></button>
-                            </div>
-                        </div>
-                        <div class="js-accordion__content">
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Commercial awareness',
-                                        url='/prototypes/learner/v9/resource?resourceID=11',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Online',
-                                        duration='2 hours 20 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Simon Sinek - Start With Why - TED Talk Short Edited',
-                                        url='/prototypes/learner/v9/resource?resourceID=4',
-                                        starPercent='76%',
-                                        starTotal='104',
-                                        type='Video',
-                                        duration='10 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='What the civil service of tomorrow will look like',
-                                        url='/prototypes/learner/v9/resource?resourceID=2',
-                                        starPercent='61%',
-                                        starTotal='25',
-                                        type='Blog',
-                                        duration='12 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Capability in the Civil Service',
-                                        url='/prototypes/learner/v9/resource?resourceID=12',
-                                        starPercent='56%',
-                                        starTotal='114',
-                                        type='Document',
-                                        duration='1 hour',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Higher base pay for commercial staff',
-                                        url='https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better',
-                                        starPercent='95%',
-                                        starTotal='233',
-                                        type='Blog',
-                                        duration='5 minutes',
-                                        hideStars=hideHomeStars,
-                                        cost='£Free',
-                                        targetBlank = true,
-                                        version='v9',
-                                        intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Andrew Shatte – Resilience',
-                                        url='/prototypes/learner/v9/resource?resourceID=10',
-                                        starPercent='76%',
-                                        starTotal='104',
-                                        type='Video',
-                                        duration='10 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Years ago, Dr. Shatte and several of his colleagues discovered that psychological resilience is the key to rebounding from life’s setbacks.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnFull() %}
-
-                                    <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from Commercial</a> </p>
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-                        </div>
-                    </div>
-                    <div class="js-accordion__section" data-section-category="category-two">
-                        <div class="js-accordion__header">
-                            <div class="js-accordion__header-left">
-                                <h2 class="js-accordion__title">
-                                    <button class="js-accordion__title-button">Contract management, Leadership</button>
-                                </h2>
-                                <p class="js-accordion__description">Suggestions based on your interests</p>
-                            </div>
-                            <div class="js-accordion__header-right">
-                                <button class="js-accordion__header-icon"></button>
-                            </div>
-                        </div>
-                        <div class="js-accordion__content">
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Contract management in the Civil Service',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Blog',
-                                        duration='12 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Using contracts within the civil service guidelines and best-practices.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Contract management - the devi\'s in the detail',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Video',
-                                        duration='25 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Complex contract management pitfalls and how to avoid them.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Contracts, compliance and confusion',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Blog',
-                                        duration='15 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Injecting the fun back into contract management.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Contract management - procurment, people and privacy',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Classroom',
-                                        duration='4 hours',
-                                        cost='£449',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Contract Management focuses on the administration of contracts between organisations and their collaborators. '
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Contractual obligations, obfuscation and ordnance',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Blog',
-                                        duration='8 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='The world of contracts, tips from the master, Eric Mittens, Head Of Contracts at GOVUK.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Managing Performance and Obligations of Contracts',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Classroom',
-                                        duration='2 days',
-                                        cost='£2499',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Tried and tested techniques to achieve contractual certainty and either successful delivery or effective remedies.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Leadership in the Civil Service',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Blog',
-                                        duration='12 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Management and leadership in a 21st century civil servivce.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Leadership - senior leadership strategy, Part IV',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Video',
-                                        duration='25 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Part IV of the strategic leadership series, looking at govnernance and delegation in senior management roles.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Secrets of the modern business leaders',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Blog',
-                                        duration='15 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='How do they do it? Being a successful business leader takes more than just brains and an unswerving lust for power.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Governance, command and delegation',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Classroom',
-                                        duration='4 hours',
-                                        cost='£449',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Contract Management focuses on the administration of contracts between organisations and their collaborators. '
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Leadership: liars, leaders and lotharios',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Blog',
-                                        duration='8 minutes',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Hunger, fight, and passion. Cutting through the fog of leadership mystery.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Leadership: Performance and Obligations',
-                                        url='/prototypes/learner/v9/resource?resourceID=18',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Classroom',
-                                        duration='2 days',
-                                        cost='£2499',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Tried and tested techniques to achieve winning leadership certainty.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnFull() %}
-
-                                    <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from Contract management and Leadership</a> </p>
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-                        </div>
-                    </div>
-                    <div class="js-accordion__section" data-section-category="category-two">
-                        <div class="js-accordion__header">
-                            <div class="js-accordion__header-left">
-                                <h2 class="js-accordion__title">
-                                    <button class="js-accordion__title-button">HMRC</button>
-                                </h2>
-                                <p class="js-accordion__description">Suggestions based on your organisation</p>
-                            </div>
-                            <div class="js-accordion__header-right">
-                                <button class="js-accordion__header-icon"></button>
-                            </div>
-                        </div>
-                        <div class="js-accordion__content">
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Managing contractors',
-                                        url='/prototypes/learner/v9/resource?resourceID=1',
-                                        starPercent='61%',
-                                        starTotal='25',
-                                        type='Classroom',
-                                        duration='1 day',
-                                        cost='£465',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Outcomes and Benefits',
-                                        url='/prototypes/learner/v9/resource?resourceID=13',
-                                        starPercent='80%',
-                                        starTotal='237',
-                                        type='Online',
-                                        duration='1 hour',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Growth Mindset',
-                                        url='/prototypes/learner/v9/resource?resourceID=14',
-                                        starPercent='61%',
-                                        starTotal='25',
-                                        type='Video',
-                                        cost='£Free',
-                                        duration='10 minutes',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Getting It Right: Scope and Change',
-                                        url='#',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Online',
-                                        duration='2 hours',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {#{{ components.tile(
-                                        title='Contract management: building relationships in business (MOOC)',
-                                        url='#',
-                                        starPercent='80%',
-                                        starTotal='128',
-                                        type='Online',
-                                        duration='3 hours',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
-                                    ) }}#}
-
-                                    {{ components.tile(
-                                        title='Interview techniques (as interviewee)',
-                                        url='https://projects.invisionapp.com/share/X4JAPY9RBCF#/screens/291474540',
-                                        starPercent='61%',
-                                        starTotal='25',
-                                        type='Online',
-                                        duration='3 hours',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Learn to manage yourself in interview situations and o'
-                                    ) }}
-
-                                {%- endcall %}
-
-                                {% call components.columnOneThird() %}
-
-                                    {{ components.tile(
-                                        title='Managing Risks Issues and Dependencies',
-                                        url='/prototypes/learner/v9/resource?resourceType=classroom',
-                                        starPercent='61%',
-                                        starTotal='25',
-                                        type='Online',
-                                        duration='3 hours',
-                                        cost='£Free',
-                                        hideStars=hideHomeStars,
-                                        version='v9',
-                                        intro='Risks can never be completely avoided; only ever managed and mitigated.'
-                                    ) }}
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-
-                            {% call components.gridRow() %}
-
-                                {% call components.columnFull() %}
-
-                                    <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from HMRC</a> </p>
-
-                                {%- endcall %}
-
-                            {%- endcall %}
-                        </div>
-                    </div>
+                <div class="js-accordion__content">
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {#{{ components.tile(
+                                title='Managing contractors',
+                                url='/prototypes/learner/v9/resource?resourceID=1',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Classroom',
+                                duration='1 day',
+                                cost='£465',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+                            ) }}#}
+
+                            {{ components.tile(
+                                title='Unconscious bias',
+                                url='/prototypes/learner/v9/resource?resourceID=1',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Classroom',
+                                duration='3 hours',
+                                cost='£249',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Biased decision-making has no place in any modern, progressive organisation.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {#{{ components.tile(
+                                title='Outcomes and Benefits',
+                                url='/prototypes/learner/v9/resource?resourceID=13',
+                                starPercent='80%',
+                                starTotal='237',
+                                type='Online',
+                                duration='1 hour',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+                            ) }}#}
+
+                            {{ components.tile(
+                                title='Tips for having difficult conversations',
+                                url='/prototypes/learner/v9/resource?resourceID=13',
+                                starPercent='80%',
+                                starTotal='237',
+                                type='Online',
+                                duration='1 hour',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Practicable help for managers facing difficult conversations with their staff.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {#{{ components.tile(
+                                title='Interview techniques (as interviewee)',
+                                url='https://projects.invisionapp.com/share/X4JAPY9RBCF#/screens/291474540',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Online',
+                                duration='3 hours',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Few things in life are more stressful than a job interview.'
+                            ) }}#}
+
+                            {{ components.tile(
+                                title='Interview techniques (as interviewee)',
+                                url='https://projects.invisionapp.com/share/X4JAPY9RBCF#/screens/291474540',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Online',
+                                duration='3 hours',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Few things in life are more stressful than a job interview.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    <!--
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Getting It Right: Scope and Change',
+                                url='#',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Online',
+                                duration='2 hours',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {#{{ components.tile(
+                                title='Contract management: building relationships in business (MOOC)',
+                                url='#',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Online',
+                                duration='3 hours',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
+                            ) }}#}
+
+                            {{ components.tile(
+                                title='Growth Mindset',
+                                url='/prototypes/learner/v9/resource?resourceID=14',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Video',
+                                cost='£Free',
+                                duration='10 minutes',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Managing Risks Issues and Dependencies',
+                                url='/prototypes/learner/v9/resource?resourceType=classroom',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Online',
+                                duration='3 hours',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Risks can never be completely avoided; only ever managed and mitigated.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    -->
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnFull() %}
+
+                            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from DWP</a> </p>
+
+                        {%- endcall %}
+
+                    {%- endcall %}
                 </div>
             </div>
+
+            <div class="js-accordion__section" data-section-category="category-one">
+                <div class="js-accordion__header">
+                    <div class="js-accordion__header-left">
+                        <h2 class="js-accordion__title">
+                            {#<button class="js-accordion__title-button">Digital, design &amp; technology</button>#}
+                            <button class="js-accordion__title-button">Operational delivery</button>
+                        </h2>
+                        <p class="js-accordion__description">Suggestions based on your primary area of work</p>
+                    </div>
+                    <div class="js-accordion__header-right">
+                        <button class="js-accordion__header-icon"></button>
+                    </div>
+                </div>
+                <div class="js-accordion__content">
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                           {# {{ components.tile(
+                                title='Interaction design: prototyping for testing',
+                                url='#',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classroom',
+                                duration='1 day',
+                                cost='£349',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='An introduction to building rapid prototypes using tools and frameworks for user testing.'
+                            ) }}#}
+
+                            {{ components.tile(
+                                title='Continuous improvement and lean',
+                                url='/prototypes/learner/v9/resource?resourceID=28',
+                                hideStars=hideHomeStars,
+                                type='Classroom',
+                                duration='2 days',
+                                cost='£397',
+                                version='v9',
+                                intro='During the course, you\'ll see how lean principles can be applied to customer processes to eliminate different kinds of waste'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {#{{ components.tile(
+                                title='GDS prototyping workshop',
+                                url='#',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classroom',
+                                duration='4 hours',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Find out how to use the new AlphaGov GDS prototyping kit.'
+                            ) }}#}
+
+                            {{ components.tile(
+                                title='Verbal communication',
+                                url='/prototypes/learner/v9/resource?resourceID=29',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classroom',
+                                duration='3 hours',
+                                cost='£199',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='This topic is designed to provide you with the most effective techniques for verbal communication'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {#{{ components.tile(
+                                title='Journey storyboarding',
+                                url='#',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Online',
+                                duration='1 hour',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Storyboarding can be a useful addition to your research and design process, find out how best to use it to get the most out of your users and designers.'
+                            ) }}#}
+
+                            {{ components.tile(
+                                title='Pursuing customer service excellence',
+                                url='/prototypes/learner/v9/resource?resourceID=30',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Online',
+                                duration='1 hour',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='This topic is for experienced customer-facing staff of all grades who are familiar with the principles and practice of providing great customer service. '
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Creating superior customer experiences &amp; UX with user-cenetred design',
+                                url='#',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classrom',
+                                duration='1 day',
+                                cost='£249',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='An intensive introduction on how to plan, create, evaluate and refine winning interactions with customers.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Essential design thinking - Videos and Methods',
+                                url='#',
+                                starPercent='76%',
+                                starTotal='104',
+                                type='Blog',
+                                duration='10 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='The Verify team has been supporting local councils with end-to-end transformation of a service. It’s the first time GDS has had the opportunity to co-design with local government.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Reframing the challenge through Design in the Public Sector',
+                                url='#',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Video',
+                                duration='15 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='The programme provides training to public sector staff on the application of design approaches to tackling complex challenges.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnFull() %}
+
+                            {#<p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults&searchType=ddat">Show all suggestions from Digital, data &amp; technology</a> </p>#}
+                            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults&searchType=ddat">Show all suggestions from Operational delivery</a> </p>
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                </div>
+            </div>
+            <div class="js-accordion__section" data-section-category="category-two">
+                <div class="js-accordion__header">
+                    <div class="js-accordion__header-left">
+                        <h2 class="js-accordion__title">
+                            <button class="js-accordion__title-button">Commercial</button>
+                        </h2>
+                        <p class="js-accordion__description">Suggestions based on your other areas of work</p>
+                    </div>
+                    <div class="js-accordion__header-right">
+                        <button class="js-accordion__header-icon"></button>
+                    </div>
+                </div>
+                <div class="js-accordion__content">
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Commercial awareness',
+                                url='/prototypes/learner/v9/resource?resourceID=11',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Online',
+                                duration='2 hours 20 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                                url='/prototypes/learner/v9/resource?resourceID=4',
+                                starPercent='76%',
+                                starTotal='104',
+                                type='Video',
+                                duration='10 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='What the civil service of tomorrow will look like',
+                                url='/prototypes/learner/v9/resource?resourceID=2',
+                                starPercent='61%',
+                                starTotal='25',
+                                type='Blog',
+                                duration='12 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Capability in the Civil Service',
+                                url='/prototypes/learner/v9/resource?resourceID=12',
+                                starPercent='56%',
+                                starTotal='114',
+                                type='Document',
+                                duration='1 hour',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Higher base pay for commercial staff',
+                                url='https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better',
+                                starPercent='95%',
+                                starTotal='233',
+                                type='Blog',
+                                duration='5 minutes',
+                                hideStars=hideHomeStars,
+                                cost='£Free',
+                                targetBlank = true,
+                                version='v9',
+                                intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Andrew Shatte – Resilience',
+                                url='/prototypes/learner/v9/resource?resourceID=10',
+                                starPercent='76%',
+                                starTotal='104',
+                                type='Video',
+                                duration='10 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Years ago, Dr. Shatte and several of his colleagues discovered that psychological resilience is the key to rebounding from life’s setbacks.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnFull() %}
+
+                            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from Commercial</a> </p>
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+                </div>
+            </div>
+            <div class="js-accordion__section" data-section-category="category-three">
+                <div class="js-accordion__header">
+                    <div class="js-accordion__header-left">
+                        <h2 class="js-accordion__title">
+                            <button class="js-accordion__title-button">Interests {#Contract management, Leadership#}</button>
+                        </h2>
+                        <p class="js-accordion__description">Suggestions based on your interests; Contract management &amp Leadership</p>
+                    </div>
+                    <div class="js-accordion__header-right">
+                        <button class="js-accordion__header-icon"></button>
+                    </div>
+                </div>
+                <div class="js-accordion__content">
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Contract management in the Civil Service',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Blog',
+                                duration='12 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Using contracts within the civil service guidelines and best-practices.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Contract management - the devi\'s in the detail',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Video',
+                                duration='25 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Complex contract management pitfalls and how to avoid them.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Contracts, compliance and confusion',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Blog',
+                                duration='15 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Injecting the fun back into contract management.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Contract management - procurment, people and privacy',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classroom',
+                                duration='4 hours',
+                                cost='£449',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Contract Management focuses on the administration of contracts between organisations and their collaborators. '
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Contractual obligations, obfuscation and ordnance',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Blog',
+                                duration='8 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='The world of contracts, tips from the master, Eric Mittens, Head Of Contracts at GOVUK.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Managing Performance and Obligations of Contracts',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classroom',
+                                duration='2 days',
+                                cost='£2499',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Tried and tested techniques to achieve contractual certainty and either successful delivery or effective remedies.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Leadership in the Civil Service',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Blog',
+                                duration='12 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Management and leadership in a 21st century civil servivce.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Leadership - senior leadership strategy, Part IV',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Video',
+                                duration='25 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Part IV of the strategic leadership series, looking at govnernance and delegation in senior management roles.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Secrets of the modern business leaders',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Blog',
+                                duration='15 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='How do they do it? Being a successful business leader takes more than just brains and an unswerving lust for power.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Governance, command and delegation',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classroom',
+                                duration='4 hours',
+                                cost='£449',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Contract Management focuses on the administration of contracts between organisations and their collaborators. '
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Leadership: liars, leaders and lotharios',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Blog',
+                                duration='8 minutes',
+                                cost='£Free',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Hunger, fight, and passion. Cutting through the fog of leadership mystery.'
+                            ) }}
+
+                        {%- endcall %}
+
+                        {% call components.columnOneThird() %}
+
+                            {{ components.tile(
+                                title='Leadership: Performance and Obligations',
+                                url='/prototypes/learner/v9/resource?resourceID=18',
+                                starPercent='80%',
+                                starTotal='128',
+                                type='Classroom',
+                                duration='2 days',
+                                cost='£2499',
+                                hideStars=hideHomeStars,
+                                version='v9',
+                                intro='Tried and tested techniques to achieve winning leadership certainty.'
+                            ) }}
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+
+                    {% call components.gridRow() %}
+
+                        {% call components.columnFull() %}
+
+                            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults">Show all suggestions from Interests</a> </p>
+
+                        {%- endcall %}
+
+                    {%- endcall %}
+                </div>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

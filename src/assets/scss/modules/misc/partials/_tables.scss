@@ -44,3 +44,17 @@
         }
     }
 }
+
+.table--snuggled-row {
+
+    th, td {
+        border: 0;
+        padding-bottom: 4px;
+    }
+
+    + tr {
+        th, td {
+            padding-top: 0;
+        }
+    }
+}

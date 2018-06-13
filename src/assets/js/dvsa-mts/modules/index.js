@@ -10,6 +10,7 @@ import { initDvsaBrakeTestConfiguration } from './dvsa-brake-test-configuration'
 import { initDvsaEnforcementTestSummary } from './dvsa-enforcement-test-summary';
 import { initDvsaVehicleSearchForm } from './dvsa-vehicle-search-form';
 import { initDvsaDbt } from './dvsa-dbt';
+import { initDvsaSpecialNotices } from './dvsa-special-notices';
 
 /**
  * MTS Application modules
@@ -30,4 +31,5 @@ export const initModules = () => {
   initDvsaEnforcementTestSummary();
   initDvsaVehicleSearchForm();
   initDvsaDbt();
+  initDvsaSpecialNotices();
 };

@@ -75,6 +75,7 @@
     "readdir": "0.0.6",
     "require-dir": "^0.3.2",
     "rimraf": "^2.6.2",
+    "showdown": "^1.8.6",
     "smooth-scroll": "^12.1.5",
     "store": "^2.0.12"
   },

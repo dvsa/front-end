@@ -61,7 +61,7 @@ export class ShowHideToggle {
     if (!this.elements.showHideToggles) return;
     this.elements.showHideToggles.forEach(element => {
       const elementDetails = this.getElementDetails(element);
-      if (!elementDetails) return
+      if (!elementDetails) return;
       const hidden = elementDetails.targetState === this.targetStates.closed;
 
       element.setAttribute(this.attributes.closedText, element.textContent);
@@ -135,7 +135,7 @@ export class ShowHideToggle {
 
     this.updateAllShowHideToggles();
 
-    if(elementDetails.targetId) {
+    if (elementDetails.targetId) {
       const targetParent = document.querySelector(`#${elementDetails.targetId}Parent`);
 
       if (targetParent) {
@@ -157,7 +157,7 @@ export class ShowHideToggle {
         if (!elementDetails) return;
         const hidden = elementDetails.targetState === this.targetStates.closed;
         element.textContent = hidden ? elementDetails.closedText : elementDetails.openText;
-        if(elementDetails.diableToggleSwitchClass) return;
+        if (elementDetails.diableToggleSwitchClass) return;
         toggleClass(element, this.classnames.toggleSwitch, !hidden);
         toggleClass(element, this.classnames.toggleSwitchOpen, hidden);
       });
@@ -181,7 +181,8 @@ export class ShowHideToggle {
     const targetElement = targetId ? document.querySelector(`#${targetId}`) : false;
     const targetState = element.getAttribute(this.attributes.targetState);
     const toggleClass = element.getAttribute(this.attributes.toggleClass);
-    const targetElements = (toggleType === this.toggleTypes.class && toggleClass) ? Array.from(document.querySelectorAll(`.${toggleClass}`)): false;
+    const targetElements =
+      toggleType === this.toggleTypes.class && toggleClass ? Array.from(document.querySelectorAll(`.${toggleClass}`)) : false;
     const diableToggleSwitchClass = element.getAttribute(this.attributes.disableToggleSwitchClass);
     if (!targetElement && !targetElements) return;
     return {
@@ -193,7 +194,7 @@ export class ShowHideToggle {
       targetState,
       toggleClass,
       targetElements,
-      diableToggleSwitchClass
+      diableToggleSwitchClass,
     };
   };
 }

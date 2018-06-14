@@ -48,6 +48,8 @@
   @import 'utils/utils';
   @import 'validation-summary/validation-summary';
   @import 'key-value-list/key-value-list';
+  @import 'table-default/table-default';
+  @import 'table-reference/table-reference';
 }
 
 // Old modules does not follow best
@@ -71,8 +73,6 @@
 @import 'result-table/result-table';
 @import 'search-group/search-group';
 @import 'tab-lists/tab-lists';
-@import 'table-default/table-default';
-@import 'table-reference/table-reference';
 @import 'two-fa/two-fa';
 @import 'criteria/criteria';
 

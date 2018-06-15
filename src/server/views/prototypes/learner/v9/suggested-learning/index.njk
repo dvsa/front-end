@@ -67,9 +67,19 @@
 
     {% call components.gridRow() %}
 
+        {% call components.columnFull() %}
+
+            <p class="lede">Suggestions based on:</p>
+
+        {%- endcall  %}
+
+    {%- endcall  %}
+
+    {% call components.gridRow(extraClass="u-space-b30") %}
+
         {% call components.columnOneQuarter() %}
 
-            <p id="top">Suggestions based on your department</p>
+            <p id="top">your organisation</p>
             <ul class="list-bullet">
                 <li><a href="#DWP">DWP</a> </li>
             </ul>
@@ -78,7 +88,7 @@
 
         {% call components.columnOneQuarter() %}
 
-            <p id="top">Suggestions based on your primary job role</p>
+            <p id="top">your primary area of work</p>
             <ul class="list-bullet">
                 <li><a href="#ddat">Operational delivery</a> </li>
             </ul>
@@ -87,7 +97,7 @@
 
         {% call components.columnOneQuarter() %}
 
-            <p>Suggestions based on your other areas of work</p>
+            <p>your other areas of work</p>
             <ul class="list-bullet">
                 <li><a href="#commercial">Commercial</a> </li>
             </ul>
@@ -96,7 +106,7 @@
 
         {% call components.columnOneQuarter() %}
 
-            <p>Suggestions based on your interests</p>
+            <p>your interests</p>
             <ul class="list-bullet">
                 <li><a href="#contractManagement">Contract management</a> </li>
                 <li><a href="#leadership">Leadership</a> </li>
@@ -105,6 +115,18 @@
         {%- endcall %}
 
     {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p>
+                You can change these preferences in <a href="/prototypes/learner/v9/your-profile">your profile page</a>.
+            </p>
+
+        {%- endcall  %}
+
+    {%- endcall  %}
 
     <h2 class="heading heading-medium heading--red-top" id="DWP">From DWP</h2>
 
@@ -445,7 +467,7 @@
 
         {% call components.columnFull() %}
 
-            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults&searchType=ddat">Show all suggestions from Digital, data &amp; technology</a> </p>
+            <p><a href="/prototypes/learner/v9/actions?action=showPreFilteredResults&searchType=ddat">Show all suggestions from Operational delivery</a> </p>
 
         {%- endcall %}
 
@@ -504,7 +526,7 @@
         {% call components.columnOneThird() %}
 
             {{ components.tile(
-                title='What the civil service of tomorrow will look like',
+                title='The Freedom to Negotiate a Better Deal',
                 url='/prototypes/learner/v9/resource?resourceID=2',
                 starPercent='61%',
                 starTotal='25',
@@ -513,7 +535,7 @@
                 cost='£Free',
                 hideStars=hideHomeStars,
                 version='v9',
-                intro='Rupert McNeil talks about what the civil service of tomorrow will look like and ensuring we have the right skills and capabilities'
+                intro='Corporate CEOs and lobbyists have stripped freedoms from workers to negotiate a fair return on their work.'
             ) }}
 
         {%- endcall %}

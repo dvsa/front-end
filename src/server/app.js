@@ -11,7 +11,6 @@ import nunjucks from 'nunjucks';
 import nodeDir from 'node-dir';
 import compression from 'compression';
 import etag from 'etag';
-import minifyHTML from 'express-minify-html';
 import helmet from 'helmet';
 import errorhandler from 'errorhandler';
 import terminus from '@godaddy/terminus';
@@ -101,18 +100,6 @@ export const startApp = async () => {
 
   // Documentation
   app.use(Middlewares.addDocumentationDataToRequestObject);
-
-  // Enable HTML Compression
-  // Website: https://www.npmjs.com/package/express-minify-html
-  // app.use(
-  //   minifyHTML({
-  //     override: true,
-  //     exception_url: false,
-  //     htmlMinifier: {
-  //       removeComments: true,
-  //     },
-  //   })
-  // );
 
   // Add production middleware
   if (!isDevelopment()) {

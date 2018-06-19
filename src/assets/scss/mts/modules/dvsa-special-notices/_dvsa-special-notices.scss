@@ -94,4 +94,35 @@
       }
     }
   }
+
+  &__actions {
+    &:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__action-buttons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+
+    &-item {
+      display: block;
+      float: left;
+      margin: 0 10px 10px 0;
+
+      a {
+        margin: 0;
+      }
+    }
+  }
+
+  &__left-to-view-message {
+    display: block;
+    @include core-16;
+    font-style: italic;
+  }
 }

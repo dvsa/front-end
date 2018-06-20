@@ -9,6 +9,7 @@
     @include core-16;
     display: block;
     margin-bottom: 5px;
+    z-index: 1;
   }
 
   &__list {

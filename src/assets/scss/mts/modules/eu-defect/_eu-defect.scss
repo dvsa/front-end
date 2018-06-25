@@ -78,7 +78,7 @@
     width: 264px;
     text-align: right;
 
-    @include media(mobile) {
+    @media (max-width: 769px) {
       position: relative;
       top: auto;
       right: auto;
@@ -124,6 +124,7 @@
       right: auto;
       width: auto;
       text-align: left;
+      z-index: 50;
 
       @include media(desktop) {
         position: absolute;
@@ -140,6 +141,7 @@
       right: auto;
       width: auto;
       text-align: left;
+      z-index: 100;
 
       @include media(desktop) {
         position: absolute;

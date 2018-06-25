@@ -6,6 +6,7 @@ import 'datatables.net-responsive';
 export class MotTestSearchVTSResults {
   constructor() {
     this.elements = {
+      base: document.querySelector('.dvsa-table-responsive--search-vts'),
       listMOTs: $('#listMOTs'),
     };
 
@@ -14,7 +15,11 @@ export class MotTestSearchVTSResults {
       table: false,
     };
 
-    if (!this.state.data || !this.elements.listMOTs.length) return;
+    if (
+      !this.state.data ||
+      !this.elements.base ||
+      !this.elements.listMOTs.length
+    ) return;
 
     this.initMotTestSearchByVTSDataTable();
   }

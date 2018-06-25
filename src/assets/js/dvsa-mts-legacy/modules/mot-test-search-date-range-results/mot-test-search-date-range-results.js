@@ -5,6 +5,7 @@ import 'datatables.net-responsive';
 export class MotTestSearchDateRangeResults {
   constructor() {
     this.elements = {
+      base: document.querySelector('.dvsa-table-responsive--search-date-range'),
       listMOTs: $('#listMOTs'),
     };
 
@@ -14,7 +15,11 @@ export class MotTestSearchDateRangeResults {
       tableOptions: false,
     };
 
-    if (!this.state.data || !this.elements.listMOTs.length) return;
+    if (
+      !this.state.data ||
+      !this.elements.base ||
+      !this.elements.listMOTs.length
+    ) return;
 
     this.initDatatable();
   }

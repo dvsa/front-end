@@ -8,6 +8,7 @@ export class MotTestSearchByVehicle {
     };
 
     this.elements = {
+      base: document.querySelector('.dvsa-table-responsive--search-vehicle'),
       showHideContainer: document.querySelector('.show-hide-container'),
       listMOTs: document.querySelector('#listMOTs'),
     };
@@ -15,10 +16,11 @@ export class MotTestSearchByVehicle {
     this.state = {
       table: false,
     };
-    
-    console.log(this.elements);
 
-    if (!this.elements.listMOTs) return;
+    if (
+      !this.elements.base ||
+      !this.elements.listMOTs
+    ) return;
 
     this.init();
   }

@@ -3,31 +3,32 @@
 
 // RFR buttons
 .button {
+
   &--alert {
     @include button($red);
-    // @include core-16;
     margin: 0;
   }
 
   &--info {
     @include button($govuk-blue);
-    // @include core-16;
     margin: 0;
   }
 
   &--warn {
     @include button($yellow);
-    // @include core-16;
     margin: 0;
   }
 
   &--plain {
     @include button($white);
-    // @include core-16;
     border: 1px solid $black;
     box-shadow: 0 2px 0 $grey-1;
     padding: .2em .52em;
     margin: 0;
+  }
+
+  &--font-16 {
+    @include core-16;
   }
 
   &--right {

@@ -133,8 +133,7 @@ let allGrades = [
   { value: '7', text: 'Grade 6' },
   { value: '8', text: 'SCS pay band 1' },
   { value: '9', text: 'SCS pay band 2' },
-  { value: '10', text: 'Industrial' },
-  { value: '11', text: 'Other' },
+  { value: '10', text: 'Other' },
 ];
 
 module.exports.allGrades = allGrades;

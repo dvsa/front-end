@@ -44,7 +44,7 @@ let allCommercialRoles = [{ value: '1', text: 'Strategy and Policy Development' 
 
 module.exports.allCommercialRoles = allCommercialRoles;
 
-let allGrades = [{ value: '1', text: 'Administrative assistant' }, { value: '2', text: 'Administrative officer' }, { value: '3', text: 'Executive officer' }, { value: '4', text: 'Higher executive officer' }, { value: '5', text: 'Senior executive officer' }, { value: '6', text: 'Grade 7' }, { value: '7', text: 'Grade 6' }, { value: '8', text: 'SCS pay band 1' }, { value: '9', text: 'SCS pay band 2' }, { value: '10', text: 'Industrial' }, { value: '11', text: 'Other' }];
+let allGrades = [{ value: '1', text: 'Administrative assistant' }, { value: '2', text: 'Administrative officer' }, { value: '3', text: 'Executive officer' }, { value: '4', text: 'Higher executive officer' }, { value: '5', text: 'Senior executive officer' }, { value: '6', text: 'Grade 7' }, { value: '7', text: 'Grade 6' }, { value: '8', text: 'SCS pay band 1' }, { value: '9', text: 'SCS pay band 2' }, { value: '10', text: 'Other' }];
 
 module.exports.allGrades = allGrades;
 

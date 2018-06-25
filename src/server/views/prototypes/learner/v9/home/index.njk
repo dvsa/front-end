@@ -22,23 +22,25 @@
 
 {% block content %}
 
+<style>
+.highlight-box {
+padding: 10px;
+background: #fbfbfb;
+border: 1px solid #c1c1c1;
+}
+</style>
+
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
 
-            <div class="u-space-y30 header-box u-border-bgrey2">
+            <div class="u-space-y30 header-box __u-border-bgrey2">
 
                 {% call components.gridRow() %}
 
                     {% call components.columnHalf() %}
 
                         {{ components.heading(text='Your learning', tag='h1', size='large', extraClass='heading--flush') }}
-
-                        {% if fireTrainingComplete %}
-                            <p class="u-space-b5">You can <a href="/prototypes/learner/v9/feedback">leave feedback on 3 items</a>.</p>
-                        {% else %}
-                            <p class="u-space-b5">You can <a href="/prototypes/learner/v9/feedback">leave feedback on 2 items</a>.</p>
-                        {% endif %}
 
                     {%- endcall %}
 
@@ -72,6 +74,20 @@
         {%- endcall %}
 
     {%- endcall %}
+
+    {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                {% if fireTrainingComplete %}
+                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v9/feedback">leave feedback on 3 items</a>.</p>
+                {% else %}
+                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v9/feedback">leave feedback on 2 items</a>.</p>
+                {% endif %}
+
+            {%- endcall %}
+
+        {%- endcall %}
 
     {% call components.gridRow() %}
 
@@ -144,7 +160,7 @@
 
             </div>
 
-            {{ components.heading(text='Other learning', tag='h2', size='medium', extraClass='heading--red-top') }}
+            {{ components.heading(text='Your learning', tag='h2', size='medium', extraClass='heading--red-top') }}
 
             <div class="learning">
 
@@ -163,7 +179,6 @@
                     cost='£free',
                     startURL='/prototypes/learner/v9/scorms/basic-fire-safety'
                 ) }}
-
 
                 {#<div class="resource">
                     <ul class="resource__item u-clearfix">
@@ -191,6 +206,7 @@
                         </li>
                     </ul>
                 </div>#}
+
                 {% endif %}
 
                 {% if not hasBeenRemoved %}

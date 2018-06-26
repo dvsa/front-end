@@ -9,6 +9,7 @@ export class FormSubmitDisableDetailsHiddenFields {
 
     this.attributes = {
       disabled: 'disabled',
+      ignoreFormDisableDetails: 'data-ignore-form-disable-details',
     };
 
     this.init();
@@ -34,6 +35,11 @@ export class FormSubmitDisableDetailsHiddenFields {
    * @since 1.1.7
    */
   onFormSubmit = event => {
+    // Check if this form should be ignored
+    if(event.target && event.target.getAttribute(this.attributes.ignoreFormDisableDetails)) {
+      return;
+    }
+
     // Get the details elements
     const detailElements = Array.from(document.querySelectorAll(this.selectors.details));
 

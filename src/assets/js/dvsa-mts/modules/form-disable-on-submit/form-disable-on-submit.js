@@ -12,6 +12,7 @@ export class FormDisableOnSubmit {
       value: 'value',
       name: 'name',
       formStateIndex: 'data-form-state-index',
+      ignoreDisableFormSubmit: 'data-ignore-form-disable-submit-button',
     };
 
     this.elements = {
@@ -63,12 +64,24 @@ export class FormDisableOnSubmit {
    * @since 1.1.21
    */
   onFormSubmit = event => {
-    if (!event || !event.target) return;
+    if (!event || !event.target) {
+      return;
+    }
+
+     // Check if this form should be ignored
+     if(event.target.getAttribute(this.attributes.ignoreFormDisableSubmitButton)) {
+      return;
+    }
+
     const formElement = event.target;
     const formStateIndex = formElement.getAttribute(this.attributes.formStateIndex);
     const formStateObject = this.state.forms[formStateIndex] || false;
     const submitButton = formElement.querySelector(this.selectors.submitButton);
-    if (!submitButton || !formStateObject) return;
+
+    if (!submitButton || !formStateObject){
+      return;
+    }
+
     if (!formStateObject.submitted) {
       const submitInputValue = submitButton.getAttribute(this.attributes.value);
       const submitButtonName = submitButton.getAttribute(this.attributes.name);

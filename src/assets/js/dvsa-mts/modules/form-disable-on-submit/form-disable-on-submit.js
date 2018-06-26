@@ -68,8 +68,8 @@ export class FormDisableOnSubmit {
       return;
     }
 
-     // Check if this form should be ignored
-     if(event.target.getAttribute(this.attributes.ignoreFormDisableSubmitButton)) {
+    // Check if this form should be ignored
+    if (event.target.getAttribute(this.attributes.ignoreFormDisableSubmitButton)) {
       return;
     }
 
@@ -78,7 +78,7 @@ export class FormDisableOnSubmit {
     const formStateObject = this.state.forms[formStateIndex] || false;
     const submitButton = formElement.querySelector(this.selectors.submitButton);
 
-    if (!submitButton || !formStateObject){
+    if (!submitButton || !formStateObject) {
       return;
     }
 

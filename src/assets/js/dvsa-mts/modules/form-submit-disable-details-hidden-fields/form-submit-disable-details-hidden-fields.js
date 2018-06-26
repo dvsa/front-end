@@ -36,7 +36,7 @@ export class FormSubmitDisableDetailsHiddenFields {
    */
   onFormSubmit = event => {
     // Check if this form should be ignored
-    if(event.target && event.target.getAttribute(this.attributes.ignoreFormDisableDetails)) {
+    if (event.target && event.target.getAttribute(this.attributes.ignoreFormDisableDetails)) {
       return;
     }
 

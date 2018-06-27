@@ -16,6 +16,10 @@
   > .form-label,
   > .form-control {
     margin-left: 15px;
+    
+    @media(max-width: 640px) {
+      width: calc(100% - 20px);
+    }
   }
 }
 
@@ -24,6 +28,7 @@
 .form-time .validation-message {
   display: block;
   color: $error-colour;
+  font-weight: bold;
 }
 
 .block-label__meta {

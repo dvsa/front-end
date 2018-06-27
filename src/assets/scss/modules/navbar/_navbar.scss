@@ -1,0 +1,40 @@
+$module: 'navbar';
+
+.#{$module} {
+
+  &__list-items {
+    border-bottom: 1px solid #bfc1c3;
+
+    li {
+      display: inline-block;
+      font-size: 19px;
+      line-height: 1.31579;
+
+       a {
+         color: #0b0c0c;
+         display: inline-block;
+         padding: 15px 5px 10px 5px;
+         margin-right: 15px;
+         text-decoration: none;
+         font-weight: 700;
+         text-transform: none;
+
+         &:hover {
+           -webkit-box-shadow: inset 0px -5px 0px 0px #2b8cc4;
+           -moz-box-shadow: inset 0px -5px 0px 0px #2b8cc4;
+           box-shadow: inset 0px -5px 0px 0px #2b8cc4;
+         }
+       }
+
+      &.active {
+
+        a {
+          color: #005ea5;
+          -webkit-box-shadow: inset 0px -5px 0px 0px #005ea5;
+          -moz-box-shadow: inset 0px -5px 0px 0px #005ea5;
+          box-shadow: inset 0px -5px 0px 0px #005ea5;
+        }
+      }
+    }
+  }
+}

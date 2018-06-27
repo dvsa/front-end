@@ -1,0 +1,77 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Home page - Civil Service Learning Platform' %}
+{% set blackBarTitle = 'Civil Service Learning' %} {% set learnerPrototypeVersion = 'v1' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+
+
+{% block content %}
+
+    {{ components.pageHeading('Accessibility thingumy') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            {{ components.heading(text='Tell us about your accessibility requirements', tag='h2', size='medium', extraClass='') }}
+
+            <form>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>
+                            <h1 class="heading-medium">
+                                Do you have any accessibility requirements?
+                            </h1>
+                        </legend>
+                        <div class="multiple-choice" data-target="says-yes">
+                            <input id="accessYes" type="radio" name="radio-group" value="Yes">
+                            <label for="accessYes">Yes</label>
+                        </div>
+                        <div class="panel panel-border-narrow js-hidden" id="says-yes">
+                            <fieldset class="">
+                                <div class="multiple-choice">
+                                    <input id="profession0" name="profession" type="checkbox" value="0"> <label for="profession0">Sign language interpreter</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="profession1" name="profession" type="checkbox" value="1"> <label for="profession1">Large print versions</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="profession2" name="profession" type="checkbox" value="2"> <label for="profession2">Braille versions</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="profession3" name="profession" type="checkbox" value="3"> <label for="profession3">Assistive listening device</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="profession4" name="profession" type="checkbox" value="4"> <label for="profession4">Additional place for my assistant</label>
+                                </div>
+                                <div class="multiple-choice">
+                                    <input id="profession5" name="profession" type="checkbox" value="5"> <label for="profession5">Other</label>
+                                </div>
+                                <div class="form-group" style="float:left;margin-left:40px">
+                                    <label class="form-label visuallyhidden" for="firstName">Other requirements</label>
+                                    <input class="form-control" id="firstName" type="text" name="firstName" value="">
+                                    <p>If you have indicated ‘Other’ accessibility needs, you may be contacted by our helpdesk to confirm your specific requirements.</p>
+                                </div>
+
+
+                                <div class="multiple-choice">
+                                    <input id="profession6" name="profession" type="checkbox" value="6"> <label for="profession6">Save these requirements for use on future bookings. Your requirements are listed in your Profile and can be changed at any time.</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="multiple-choice" data-target="says-no">
+                            <input id="accessNo" type="radio" name="radio-group" value="No">
+                            <label for="accessNo">No</label>
+                        </div>
+                        <div class="panel panel-border-narrow js-hidden visuallyhidden" id="says-no"></div>
+                    </fieldset>
+                </div>
+            </form>
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

@@ -158,6 +158,25 @@ let extraInterests = [
 
 module.exports.extraInterests = extraInterests;
 
+let possibleTitles = [
+  'Learning Platform for Government',
+  'School of...',
+  'Your learning',
+  'Learning to support you',
+  'Learn in',
+  'The culture of learning',
+  'Learning support service',
+  'LearninGov',
+  'My learning',
+  'The learning service',
+  'My civil service learning',
+  'Continuous learning network',
+  'Career development network',
+  'Government learning community',
+  'Civil Service Learning Community',
+];
+module.exports.possibleTitles = possibleTitles;
+
 let courseTitles = [
   'A-Z of courses',
   'If you know the name of the course you are looking for, use this alphabetical listing of all CSL courses.',

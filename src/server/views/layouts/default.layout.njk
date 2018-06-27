@@ -4,6 +4,7 @@
 <main id="content" {{ 'class="' + mainContainerClass + '"' if mainContainerClass }}>
   {% include './partials/phase-banner.njk' %}
   {% include './partials/breadcrumbs.njk' %}
+  {% include './partials/new-nav.njk' %}
   {% block content %}{% endblock %}
 </main>
 {% block lowerHero %}{% endblock %}

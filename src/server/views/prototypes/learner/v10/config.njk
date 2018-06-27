@@ -92,6 +92,22 @@
 
         </fieldset>
 
+        <fieldset class="u-space-b30">
+
+            <legend class="heading-small">Use the new style nav?</legend>
+
+            <div class="multiple-choice">
+                <input id="newNavYes" type="radio" name="newNavConfig" value="newNavYes" checked="checked">
+                <label for="newNavYes">Hell yeah, hit me up with some sweet new nav.</label>
+            </div>
+
+            <div class="multiple-choice">
+                <input id="newNavNo" type="radio" name="newNavConfig" value="newNavNo">
+                <label for="newNavNo">No way dude, my eyes aren't ready!</label>
+            </div>
+
+        </fieldset>
+
         {% call components.formGroup() %}
 
             {{ components.button(text='Continue', group=true)}}

@@ -21,7 +21,7 @@ exports.privacyGet = privacyGet;
 var _validationFunctions = require('./validation-functions');
 
 function homeGet(req, res) {
-  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage, fireTrainingComplete, removedFromLearningPlanWarning, addedToLearningPlan, removedFromLearningPlan, hasBeenRemoved, willBeRemoved, hasBeenAdded, hasLeftFeedback, newNav;
+  let viewData, hideHomeStars, action, courseId, removeCheckMessage, removeMessage, fireTrainingComplete, removedFromLearningPlanWarning, addedToLearningPlan, removedFromLearningPlan, hasBeenRemoved, willBeRemoved, hasBeenAdded, hasLeftFeedback, newNav, useNewNav;
 
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
@@ -74,6 +74,7 @@ function homeGet(req, res) {
 
   // newNav = 'testing';
   newNav = true;
+  useNewNav = true;
 
   viewData = {
     hideHomeStars,
@@ -85,7 +86,8 @@ function homeGet(req, res) {
     hasBeenRemoved,
     hasLeftFeedback,
     isAdmin,
-    newNav
+    newNav,
+    useNewNav
   };
 
   return res.render('prototypes/learner/v10/home/index', viewData);
@@ -296,10 +298,10 @@ function feedbackPost(req, res) {
   let redirectPath;
 
   /*console.log('ratingPresentation = ' + ratingPresentation);
-  console.log('ratingContent = ' + ratingContent);
-  console.log('ratingRelevance = ' + ratingRelevance);
-  console.log('ratingInteractivity = ' + ratingInteractivity);
-  console.log('feedbackComments = ' + feedbackComments);*/
+    console.log('ratingContent = ' + ratingContent);
+    console.log('ratingRelevance = ' + ratingRelevance);
+    console.log('ratingInteractivity = ' + ratingInteractivity);
+    console.log('feedbackComments = ' + feedbackComments);*/
 
   req.session.hasLeftFeedback = true;
   redirectPath = '/prototypes/learner/v10/learning-record';

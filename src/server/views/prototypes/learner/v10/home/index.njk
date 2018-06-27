@@ -18,34 +18,27 @@
 {% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
 {% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
 {% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
-{% set newNav = newNav if newNav %}
+{#{% set newNav = newNav if newNav %}#}
 {#{% set newNav = true %}#}
+
+{#{% set useNewNav = useNewNav if useNewNav %}#}
+
+
 
 
 {% block content %}
-
-<style>
-.highlight-box {
-padding: 10px;
-background: #fbfbfb;
-border: 1px solid #c1c1c1;
-}
-</style>
-
-{#<p>newNav = {{ newNav }}</p>
-<p>
-    {% if newNav %}
-        <span>TRUE :)</span>
-    {% else %}
-        <span>false :(</span>
-    {% endif %}
-</p>#}
 
     {% call components.gridRow() %}
 
         {% call components.columnFull() %}
 
-            <div class="u-space-y30 header-box __u-border-bgrey2">
+            <div class="u-space-y30 header-box">
+
+            {% if useNewNav %}
+                <div>we're using new nav :)</div>
+            {% else %}
+                <div>we're NOT using new nav :(</div>
+            {% endif %}
 
                 {% call components.gridRow() %}
 

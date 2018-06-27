@@ -6,6 +6,7 @@ export function configGet(req, res) {
 
   clearSession = req.param('clearSession');
   console.log('clearSession = ' + clearSession);
+  console.log('testing config controller');
   if (clearSession === 'true') {
     req.session.destroy();
     // res.redirect('/prototypes/learner/v10/config');
@@ -19,15 +20,24 @@ export function configGet(req, res) {
 }
 
 export function configPost(req, res) {
-  const { regConfig, clearSession, scormConfig, rolesConfig } = req.body;
+  const { regConfig, clearSession, scormConfig, rolesConfig, newNavConfig } = req.body;
 
   console.log('regConfig');
-  let showAllStars, hideDetailStars, hideHomeStars, showMeTheScormScreenShot, showRolesJoined;
+  let showAllStars, hideDetailStars, hideHomeStars, showMeTheScormScreenShot, showRolesJoined, showNewNav;
 
   showAllStars = false;
   hideDetailStars = true;
   hideHomeStars = true;
   showMeTheScormScreenShot = false;
+
+  showNewNav = newNavConfig;
+  if (showNewNav == 'newNavYes') {
+    req.session.showNewNav = true;
+  } else {
+    req.session.showNewNav = null;
+  }
+
+  console.log('req.session.showNewNav = ' + showNewNav);
 
   // all | detailAndhome |  home
   if (regConfig == 'all') {

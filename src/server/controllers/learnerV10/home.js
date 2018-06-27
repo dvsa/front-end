@@ -16,7 +16,8 @@ export function homeGet(req, res) {
     willBeRemoved,
     hasBeenAdded,
     hasLeftFeedback,
-    newNav;
+    newNav,
+    useNewNav;
 
   // anotherTestVar = global.anotherTestVar;
   // console.log('anotherTestVar = ' + anotherTestVar);
@@ -69,6 +70,7 @@ export function homeGet(req, res) {
 
   // newNav = 'testing';
   newNav = true;
+  useNewNav = true;
 
   viewData = {
     hideHomeStars,
@@ -81,6 +83,7 @@ export function homeGet(req, res) {
     hasLeftFeedback,
     isAdmin,
     newNav,
+    useNewNav,
   };
 
   return res.render('prototypes/learner/v10/home/index', viewData);
@@ -299,10 +302,10 @@ export function feedbackPost(req, res) {
   let redirectPath;
 
   /*console.log('ratingPresentation = ' + ratingPresentation);
-  console.log('ratingContent = ' + ratingContent);
-  console.log('ratingRelevance = ' + ratingRelevance);
-  console.log('ratingInteractivity = ' + ratingInteractivity);
-  console.log('feedbackComments = ' + feedbackComments);*/
+    console.log('ratingContent = ' + ratingContent);
+    console.log('ratingRelevance = ' + ratingRelevance);
+    console.log('ratingInteractivity = ' + ratingInteractivity);
+    console.log('feedbackComments = ' + feedbackComments);*/
 
   req.session.hasLeftFeedback = true;
   redirectPath = '/prototypes/learner/v10/learning-record';

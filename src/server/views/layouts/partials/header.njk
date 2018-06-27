@@ -1,3 +1,11 @@
+{% set useNewNav = useNewNav if useNewNav %}
+
+{#{% if useNewNav %}
+  <div>we're using new nav :)</div>
+{% else %}
+  <div>we're NOT using new nav :(</div>
+{% endif %}#}
+
 <header id="global-header" class="with-proposition">
   <div class="header-wrapper">
     <div class="header-global">
@@ -87,6 +95,7 @@
     </div>
 
   </div>
+
 </header>
 
 {% if not hideLayoutPhaseBanner %}

@@ -1,0 +1,35 @@
+{% set useNewNav = useNewNav if useNewNav %}
+
+{#{% if useNewNav %}
+    <div>we're using new nav :)</div>
+{% else %}
+    <div>we're NOT using new nav :(</div>
+{% endif %}#}
+
+{% if useNewNav %}
+    {% call components.gridRow() %}
+        {% call components.columnFull() %}
+            <nav id="nav">
+                <div class="navbar">
+                    <ul class="navbar__list-items">
+                        <li class="active">
+                            <a href="/prototypes/learner/{{ learnerPrototypeVersion }}/home">Home</a>
+                        </li>
+                        <li>
+                            <a href="/prototypes/learner/{{ learnerPrototypeVersion }}/suggested-learning">Suggestions for you</a>
+                        </li>
+                        <li>
+                            <a href="/prototypes/learner/{{ learnerPrototypeVersion }}/learning-record">Learning record</a>
+                        </li>
+                        <li>
+                            <a href="/prototypes/learner/{{ learnerPrototypeVersion }}/profile">Profile</a>
+                        </li>
+                        <li>
+                            <a href="/prototypes/learner/{{ learnerPrototypeVersion }}/">Sign out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        {%- endcall %}
+    {%- endcall %}
+{% endif %}

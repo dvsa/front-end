@@ -1,0 +1,118 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Course modules - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+{% set isAdmin = true %}
+
+{% set removeMessage = removeMessage if removeMessage %}
+{% set tempBlockNumber = tempBlockNumber if tempBlockNumber %}
+{% set description = description if description%}
+{% set outcomes = outcomes if outcomes %}
+
+{% block content %}
+
+    {{ components.pageHeading('Course modules', 'Add a new course') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <h2 class="heading-medium">Previously added items</h2>
+
+            <p>This course does not have any modules added yet.</p>
+
+            {#<table class="table--top">
+                <thead>
+                    <tr>
+                        <th>File name and description</th>
+                        <th>Item details</th>
+                        <th><span class="visuallyhidden">Action</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            A learning doc
+                            <span class="meta">This is the optional longer description of my file that will sit underneath the name of the item.</span>
+                        </td>
+                        <td>name_of_PDF.PDF (412kb)</td>
+                        <td><a href="#">Remove</a> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Link to Youtube video
+                            <span class="meta">Here is another description that will be slightly longer than the one above slightly longer than the one above slightly longer than the one above </span>
+                        </td>
+                        <td><a href="#">http://www.youtube.com/F4hm20osE35mlq</a> </td>
+                        <td><a href="#">Remove</a> </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            This is the title of another item but it has no description which is probably normal
+                        </td>
+                        <td><a href="#">http://www.example.com/learning-items/path/to/file</a> </td>
+                        <td><a href="#">Remove</a> </td>
+                    </tr>
+                </tbody>
+            </table>#}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <h2 class="heading-medium">Add a new item</h2>
+
+            <p>You can add links to external sites, video files, Powerpoint slideshows, SCORM packages, PDFs or Word documents.</p>
+
+            {% call components.formElement(name='addNewItem', method='POST', action='#') %}
+
+                <div class="form-group">
+                    <label class="form-label" for="nameOfItem">Name of item</label>
+                    <input class="form-control form-control-3-4" name="nameOfItem" id="nameOfItem">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control form-control-3-4" name="description" id="description" rows="5"></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="form-label" for="file-input">Upload a file</label>
+                    <input type="file" id="file-input">
+                </div>
+
+                <p>OR:</p>
+
+                <div class="form-group">
+                    <label class="form-label  heading-small" for="link">Add a link</label>
+                    <input class="form-control form-control-3-4" id="link" type="text" name="link" value="">
+                </div>
+                <div class="form-group">
+                    <p><button class="button--info" type="submit" name="addRowEvent" value="addRow">Add another item</button> </p>
+                </div>
+
+                <div class="form-group">
+                    <input class="button " type="submit" value="Continue" name="submitForm">
+                </div>
+
+                <p>
+                    <a href="/prototypes/learner/v10/admin">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Your booking is complete - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set courseDates = courseDates if courseDates %}
+{% set course = course if course %}
+{% set hideHomeStars = 'true' %}
+
+{% block content %}
+
+    <div class="govuk-box-highlight">
+        <h1 class="heading-xlarge">Booking confirmed</h1>
+        <p class="font-medium">You have completed your booking for <strong>Interview tchniques (as interviewee</strong> on <strong>27 June 2018</strong></p>
+        <p>Your booking reference is <strong>HD244GH</strong></p>
+    </div>
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>The course has been added to your earning plan. We have also sent you a booking confirmation email.</p>
+
+            <p>Two weeks before the course, you will receive joining instructions. These may include details of an reading or learning you need to complete before attending.</p>
+
+            <p>You can now <a href="/prototypes/learner/v10/home">Return to home page</a>.</p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+
+{% block lowerHero %}
+
+    {% call components.lowerHero() %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <h2 class="heading-medium">Suggestions for you</h2>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Commercial awareness',
+                    url='/prototypes/learner/v10/resource?resourceID=11',
+                    starPercent='80%',
+                    starTotal='128',
+                    because='Work area: commercial',
+                    type='Online',
+                    duration='2 hours 20 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Managing contractors',
+                    url='/prototypes/learner/v10/resource?resourceID=1',
+                    starPercent='76%',
+                    starTotal='104',
+                    because='Work area: commercial',
+                    type='Classroom',
+                    duration='2 days',
+                    hideStars=hideHomeStars,
+                    cost='£357',
+                    version='v10',
+                    intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Managing employees',
+                    url='/prototypes/learner/v10/resource?resourceID=8',
+                    starPercent='61%',
+                    starTotal='25',
+                    because='Work area: commercial',
+                    type='Classroom',
+                    duration='1 day',
+                    hideStars=hideHomeStars,
+                    cost='£199',
+                    version='v10',
+                    intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

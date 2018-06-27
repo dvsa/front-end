@@ -1,0 +1,52 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Blog article - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Growth Mindset') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Carol Dweck researches “growth mindset” — the idea that we can grow our brain's capacity to learn and to solve problems.</p>
+
+            <p><a href="https://www.ted.com/talks/carol_dweck_the_power_of_believing_that_you_can_improve" target="_blank">Watch the video on the TED website</a> (external link)</p>
+
+            <p>
+                <a href="/prototypes/learner/v10/home" class="button">Return to Home</a>
+            </p>
+
+            <p>
+                <a href="/prototypes/learner/v10/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='76%', total='104') }}
+                {% endif %}
+
+            </aside>
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

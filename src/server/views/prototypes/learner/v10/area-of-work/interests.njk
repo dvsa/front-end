@@ -1,0 +1,77 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Interests - Learning Platform for Government' %}
+
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set loggedOut = 'false' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/' %}
+
+{% set extraInterests = extraInterests if extraInterests %}
+
+
+{% block content %}
+
+    {{ components.pageHeading('Interests') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p class="lede">Select any other interests you have. This will help tailor your suggested learning.</p>
+
+            {% call components.formElement(name='extraInterests', method='POST', action="#") %}
+
+                {#<fieldset class="u-space-b30">
+
+                    {{ components.heading(text='Work areas that interest you', tag='h2', size='medium', extraClass='') }}
+
+                    {% for item in extraInterests %}
+                        {{ components.checkbox(text=item.name, value=item.value, id='extraInterests'+item.value) }}
+                    {% endfor %}
+
+                </fieldset>#}
+
+                <fieldset class="u-space-b30">
+                    <h2 class="heading heading-medium">Work areas that interest you</h2>
+                    <div class="multiple-choice">
+                        <input id="extraInterests1" name="extraInterests1" type="checkbox" value="1"> <label for="extraInterests1">Coaching &amp; mentoring</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="extraInterests2" name="extraInterests2" type="checkbox" value="2"> <label for="extraInterests2">Communications &amp; engagement</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="extraInterests3" name="extraInterests3" type="checkbox" value="3"> <label for="extraInterests3">Contract management</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="extraInterests4" name="extraInterests4" type="checkbox" value="4"> <label for="extraInterests4">Customer service</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="extraInterests5" name="extraInterests5" type="checkbox" value="5"> <label for="extraInterests5">Induction &amp; essential skills</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="extraInterests6" name="extraInterests6" type="checkbox" value="6" checked> <label for="extraInterests6">Leadership</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="extraInterests7" name="extraInterests7" type="checkbox" value="7"> <label for="extraInterests7">Well being &amp; Diversity</label>
+                    </div>
+                </fieldset>
+
+                {% call components.formGroup() %}
+
+                    {{ components.button(text='Continue', group=true)}}
+
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v10/your-profile/">Cancel</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}
+

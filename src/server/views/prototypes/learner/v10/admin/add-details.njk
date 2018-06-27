@@ -1,0 +1,126 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Course information - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+{% set isAdmin = true %}
+
+{% set removeMessage = removeMessage if removeMessage %}
+{% set tempBlockNumber = tempBlockNumber if tempBlockNumber %}
+{% set description = description if description%}
+{% set outcomes = outcomes if outcomes %}
+
+{% block content %}
+
+    {{ components.pageHeading('Course information', 'Add a new course') }}
+
+    {% call components.formElement(name='enterNewCourse', method='POST', action='#') %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+                <div class="form-group">
+                    <label class="form-label form-label-bold" for="short">
+                        Short description
+                        <span class="form-hint">Limited to 160 characters for display in course tiles</span>
+                    </label>
+                    <textarea class="form-control form-control-3-4" name="short" id="short" rows="4">{{ outcomes }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label form-label-bold" for="description">Course description</label>
+                    <textarea class="form-control form-control-1-1" name="description" id="description" rows="5">{{ description }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label form-label-bold" for="outcomes">Learning outcomes</label>
+                    <textarea class="form-control form-control-1-1" name="outcomes" id="outcomes" rows="5">{{ outcomes }}</textarea>
+                </div>
+
+                {% for i in range(1, tempBlockNumber) -%}
+
+                    <div class="form-group">
+                        <a href="#" class="form-group__remove">Remove <span class="visuallyhidden">this custom item</span></a>
+                        <label class="form-label form-label-bold" for="customText_{{ i }}">Before you start{#({{ i }})#}</label>
+                        <textarea class="form-control form-control-1-1" name="customText_{{ i }}" id="customText_{{ i }}" rows="5"></textarea>
+                    </div>
+
+                {%- endfor %}
+
+                <div class="form-group">
+                    <label class="form-label form-label-bold" for="courseTypes">Add a custom item</label>
+                    <select class="form-control" id="courseTypes" name="eventsList">
+                        <option>Select an item to add</option>
+                        <option>Assessments</option>
+                        <option>Before you start</option>
+                        <option>Pre-learning requirements</option>
+                        <option>Pre-reading</option>
+                    </select>
+
+                    <button type="submit" name="addRowEvent" class="button button--small button--info" value="addRow">Add selected item</button>
+
+                </div>
+
+                <div class="form-group">
+                    <input class="button " type="submit" value="Continue" name="submitForm">
+                </div>
+
+                <p>
+                    <a href="/prototypes/learner/v10/admin">Cancel</a>
+                </p>
+
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <h2 class="heading-small">Attached files</h2>
+
+                <p>You can add documents to be linked in any of these sections</p>
+
+                <ul class="">
+                    <li>No documents have been attached yet</li>
+                </ul>
+
+                <ul class="list-bullet">
+                    <li>
+                        Management Structures In The Civil Service
+                        <a href="/documents/management_structures_in_the_civil_service.pdf" class="long-link">/documents/management_structures_in_the_civil_service.pdf</a>
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h2 class="heading-small">Add a new file</h2>
+
+                <div class="form-group">
+                    <label class="form-label" for="fileName">File name</label>
+                    <input class="form-control form-control-1-1" type="text" name="fileName" id="fileName">
+                </div>
+
+                <div class="">
+                    <label class="form-label" for="fileFile">File</label>
+                    <input class="" type="file" name="fileFile" id="fileFile">
+                </div>
+
+
+                <div class="form-group">
+                    <button type="submit" name="addRowEvent" class="button button--small button--info" value="addRow">Upload item</button>
+                </div>
+
+
+
+            </aside>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {%- endcall %} {# end form #}
+
+{% endblock %}

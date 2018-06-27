@@ -1,0 +1,95 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Basic fire safety - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set resourceID = resourceID if resourceID %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Basic fire safety') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>The Fire Safety Order requires that fire safety training is provided to staff when they commence employment and that refresher training is provided on a regular basis.</p>
+
+        <p>Fire is often the biggest safety risk any businesses ever has. Without fire safety training your insurances may not be valid and your staff are left vulnerable.</p>
+
+        <p>Don't think a fire won't happen to you, last year there were over 33,000 recorded fires in UK businesses and community buildings. Protect your staff now and give them the best chance of escape if a fire does happen.</p>
+
+        {{ components.heading(text='Learning outcomes', size='medium') }}
+
+        <p>On completing this learning, you'll have knowledge of:</p>
+
+        <ul class="list-bullet u-space-b30">
+            <li>The common causes of fire</li>
+            <li>The behaviour of fire</li>
+            <li>Fire prevention</li>
+            <li>What to do if a fire breaks out</li>
+            <li>How to use fire extinguishers</li>
+            <li>Emergency evacuation procedures</li>
+        </ul>
+
+    {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+        <input type="hidden" name="resourceID" value="{{ resourceID }}">
+
+        {% call components.formGroup() %}
+            {{ components.button(text='Start this learning', start=false, group=true)}}
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>AA to Grade 6</td>
+                    </tr>
+                    <tr>
+                        <th>Key area</th>
+                        <td>Digital</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>1 hour</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£Free</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

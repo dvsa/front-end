@@ -2,10 +2,10 @@
 
 {% set pageTitle = 'Your learning - Learning Platform for Government' %}
 {% set blackBarTitle = 'Learning Platform for Government' %}
-{% set learnerPrototypeVersion = 'v9' %}
+{% set learnerPrototypeVersion = 'v10' %}
 {% set mainContainerClass = 'has-lower-hero' %}
-{% set signOutPath = '/prototypes/learner/v9/' %}
-{% set homePath = '/prototypes/learner/v9/home' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
 {% set isAdmin = isAdmin if isAdmin %}
 
 
@@ -18,6 +18,8 @@
 {% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
 {% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
 {% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
+{% set newNav = newNav if newNav %}
+{#{% set newNav = true %}#}
 
 
 {% block content %}
@@ -29,6 +31,15 @@ background: #fbfbfb;
 border: 1px solid #c1c1c1;
 }
 </style>
+
+{#<p>newNav = {{ newNav }}</p>
+<p>
+    {% if newNav %}
+        <span>TRUE :)</span>
+    {% else %}
+        <span>false :(</span>
+    {% endif %}
+</p>#}
 
     {% call components.gridRow() %}
 
@@ -48,7 +59,7 @@ border: 1px solid #c1c1c1;
 
                         <div class="search-box">
 
-                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v9/search") %}
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v10/search") %}
 
                                 <div class="form-group search-box__group u-space-b">
 
@@ -80,9 +91,9 @@ border: 1px solid #c1c1c1;
             {% call components.columnFull() %}
 
                 {% if fireTrainingComplete %}
-                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v9/feedback">leave feedback on 3 items</a>.</p>
+                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v10/feedback">leave feedback on 3 items</a>.</p>
                 {% else %}
-                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v9/feedback">leave feedback on 2 items</a>.</p>
+                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v10/feedback">leave feedback on 2 items</a>.</p>
                 {% endif %}
 
             {%- endcall %}
@@ -114,7 +125,7 @@ border: 1px solid #c1c1c1;
             {% endif %}
 
             {% if willBeRemoved %}
-                {{ components.banner(mainText='Are you sure you want to remove this course?', secondaryText='If you remove this course, it will be deleted from your learning plan. <br><br><a href="/prototypes/learner/v9/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/prototypes/learner/v9/home">No, keep it</a>', type="warning")}}
+                {{ components.banner(mainText='Are you sure you want to remove this course?', secondaryText='If you remove this course, it will be deleted from your learning plan. <br><br><a href="/prototypes/learner/v10/actions?action=removedFromLearningPlan">Yes, remove this course</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/prototypes/learner/v10/home">No, keep it</a>', type="warning")}}
              {% endif %}
 
         {%- endcall %}
@@ -134,7 +145,7 @@ border: 1px solid #c1c1c1;
                     name='Diversity &amp; inclusion',
                     headingTag='h3',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=6',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=6',
                     type='Online',
                     status='In progress',
                     action='Resume',
@@ -148,12 +159,12 @@ border: 1px solid #c1c1c1;
                     name='Basic fire safety',
                     headingTag='h3',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=15',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=15',
                     type='Online',
                     action='Start',
                     duration='30 Minutes',
                     dueBy='18 Sep 2018',
-                    startURL='/prototypes/learner/v9/scorms/basic-fire-safety'
+                    startURL='/prototypes/learner/v10/scorms/basic-fire-safety'
                 ) }}
 
                 {% endif %}
@@ -170,23 +181,23 @@ border: 1px solid #c1c1c1;
                     name='Commercial awareness',
                     headingTag='h3',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=3',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=3',
                     type='Video',
                     action='Remove',
                     duration='10 Minutes',
                     dueBy='18 Sep 2018',
                     workArea='Commercial',
                     cost='£free',
-                    startURL='/prototypes/learner/v9/scorms/basic-fire-safety'
+                    startURL='/prototypes/learner/v10/scorms/basic-fire-safety'
                 ) }}
 
                 {#<div class="resource">
                     <ul class="resource__item u-clearfix">
                         <li class="resource__main">
-                            <a  class="resource__title" href="/prototypes/learner/v9/resource?resourceID=3">Commercial awareness</a>
+                            <a  class="resource__title" href="/prototypes/learner/v10/resource?resourceID=3">Commercial awareness</a>
                             <span class="resource__action">
                                 <a href="#">Resume <span class="visuallyhidden"> course</span></a>
-                                <a href="/prototypes/learner/v9/actions?action=removedFromLearningPlan&id=1&status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
+                                <a href="/prototypes/learner/v10/actions?action=removedFromLearningPlan&id=1&status=started">Remove <span class="visuallyhidden"> from learning plan</span></a>
                             </span>
                         </li>
                         {% if not hideHomeStars %}
@@ -216,11 +227,11 @@ border: 1px solid #c1c1c1;
                     headingTag='h3',
                     description='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of success.',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=3',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=3',
                     type='Online',
                     status='In progress',
                     action='Resume',
-                    removeFromLearningPlanURL='/prototypes/learner/v9/actions?action=removedFromLearningPlan&id=1&status=started',
+                    removeFromLearningPlanURL='/prototypes/learner/v10/actions?action=removedFromLearningPlan&id=1&status=started',
                     duration='3 hours 30 minutes',
                     cost='£Free'
                 ) }}
@@ -232,11 +243,11 @@ border: 1px solid #c1c1c1;
                     headingTag='h3',
                     description='Negotiators will be provided with concise information on how to get the best out of negotiation whether or not the situation is contentious.',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=7',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=7',
                     type='Classroom',
                     status='Booked',
                     action='Cancel',
-                    removeFromLearningPlanURL='/prototypes/learner/v9/actions?action=removedFromLearningPlan&id=1&status=started',
+                    removeFromLearningPlanURL='/prototypes/learner/v10/actions?action=removedFromLearningPlan&id=1&status=started',
                     duration='4 hours',
                     cost='£189',
                     workArea='Commercial',
@@ -249,10 +260,10 @@ border: 1px solid #c1c1c1;
                         name='Simon Sinek - Start With Why - TED Talk Short Edited',
                         headingTag='h3',
                         headingExtraClass='discite__heading',
-                        headingURL='/prototypes/learner/v9/resource?resourceID=4?test=true',
+                        headingURL='/prototypes/learner/v10/resource?resourceID=4?test=true',
                         type='Video',
                         action='Remove',
-                        removeFromLearningPlanURL='/prototypes/learner/v9/actions?action=removedFromLearningPlan&id=1&status=started',
+                        removeFromLearningPlanURL='/prototypes/learner/v10/actions?action=removedFromLearningPlan&id=1&status=started',
                         duration='30 minutes',
                         cost='£Free',
                         workArea='Digital'
@@ -268,10 +279,10 @@ border: 1px solid #c1c1c1;
                         name='Simon Sinek - Start With Why - TED Talk Short Edited',
                         headingTag='h3',
                         headingExtraClass='discite__heading',
-                        headingURL='/prototypes/learner/v9/resource?resourceID=4',
+                        headingURL='/prototypes/learner/v10/resource?resourceID=4',
                         type='Video',
                         action='Remove',
-                        removeFromLearningPlanURL='/prototypes/learner/v9/actions?action=removedFromLearningPlan',
+                        removeFromLearningPlanURL='/prototypes/learner/v10/actions?action=removedFromLearningPlan',
                         duration='30 minutes',
                         cost='£Free',
                         workArea='Digital'
@@ -283,10 +294,10 @@ border: 1px solid #c1c1c1;
                     name='The Freedom to Negotiate a Better Deal',
                     headingTag='h3',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=2',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=2',
                     type='Blog',
                     action='Remove',
-                    removeFromLearningPlanURL='/prototypes/learner/v9/actions?action=removedFromLearningPlan',
+                    removeFromLearningPlanURL='/prototypes/learner/v10/actions?action=removedFromLearningPlan',
                     duration='10 minutes',
                     cost='£Free',
                     workArea='Commercial'
@@ -296,10 +307,10 @@ border: 1px solid #c1c1c1;
                     name='Negotiation Skills for Product Managers: 5 Things You Need to Know',
                     headingTag='h3',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=2',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=2',
                     type='Blog',
                     action='Remove',
-                    removeFromLearningPlanURL='/prototypes/learner/v9/actions?action=removedFromLearningPlan',
+                    removeFromLearningPlanURL='/prototypes/learner/v10/actions?action=removedFromLearningPlan',
                     duration='15 minutes',
                     cost='£Free',
                     workArea='Commercial'
@@ -309,10 +320,10 @@ border: 1px solid #c1c1c1;
                     name='Foreign contract compliance legal obligations',
                     headingTag='h3',
                     headingExtraClass='discite__heading',
-                    headingURL='/prototypes/learner/v9/resource?resourceID=2',
+                    headingURL='/prototypes/learner/v10/resource?resourceID=2',
                     type='Blog',
                     action='Book',
-                    removeFromLearningPlanURL='/prototypes/learner/v9/actions?action=removedFromLearningPlan',
+                    removeFromLearningPlanURL='/prototypes/learner/v10/actions?action=removedFromLearningPlan',
                     duration='5 hours',
                     modules='This course comprises of 11 modules',
                     cost='£149',
@@ -326,7 +337,7 @@ border: 1px solid #c1c1c1;
                     <a href="#" class="toggle-switch" onclick="toggleVisibility(this, 'toggleOtherContent', 'js-hidden')">Show <span class="more">more</span><span class="less">less</span></a>
                 </div>
 
-            {#<p class="u-space-t30"><a href="/prototypes/learner/v9/learning-plan" class="">See more learning in your Learning plan</a> </p>#}
+            {#<p class="u-space-t30"><a href="/prototypes/learner/v10/learning-plan" class="">See more learning in your Learning plan</a> </p>#}
 
         {%- endcall %}
 
@@ -356,7 +367,7 @@ border: 1px solid #c1c1c1;
 
                 {{ components.tile(
                     title='Commercial awareness',
-                    url='/prototypes/learner/v9/resource?resourceID=11',
+                    url='/prototypes/learner/v10/resource?resourceID=11',
                     starPercent='80%',
                     starTotal='128',
                     because='Work area: commercial',
@@ -364,7 +375,7 @@ border: 1px solid #c1c1c1;
                     duration='2 hours 20 minutes',
                     cost='£Free',
                     hideStars=hideHomeStars,
-                    version='v9',
+                    version='v10',
                     intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
                 ) }}
 
@@ -374,7 +385,7 @@ border: 1px solid #c1c1c1;
 
                 {{ components.tile(
                     title='Managing contractors',
-                    url='/prototypes/learner/v9/resource?resourceID=1',
+                    url='/prototypes/learner/v10/resource?resourceID=1',
                     starPercent='76%',
                     starTotal='104',
                     because='Work area: commercial',
@@ -382,7 +393,7 @@ border: 1px solid #c1c1c1;
                     duration='2 days',
                     hideStars=hideHomeStars,
                     cost='£357',
-                    version='v9',
+                    version='v10',
                     intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
                 ) }}
 
@@ -392,7 +403,7 @@ border: 1px solid #c1c1c1;
 
                 {{ components.tile(
                     title='Managing employees',
-                    url='/prototypes/learner/v9/resource?resourceID=8',
+                    url='/prototypes/learner/v10/resource?resourceID=8',
                     starPercent='61%',
                     starTotal='25',
                     because='Work area: commercial',
@@ -400,7 +411,7 @@ border: 1px solid #c1c1c1;
                     duration='1 day',
                     hideStars=hideHomeStars,
                     cost='£199',
-                    version='v9',
+                    version='v10',
                     intro='Introduces you to the different factors tristique purus sit amet nisi elementum, vel congue nisi pulvinar.'
                 ) }}
 
@@ -414,7 +425,7 @@ border: 1px solid #c1c1c1;
 
                 {{ components.tile(
                     title='Simon Sinek - Start With Why - TED Talk Short Edited',
-                    url='/prototypes/learner/v9/resource?resourceID=4',
+                    url='/prototypes/learner/v10/resource?resourceID=4',
                     starPercent='76%',
                     starTotal='104',
                     type='Video',
@@ -422,7 +433,7 @@ border: 1px solid #c1c1c1;
                     cost='£Free',
                     because='Work area: HMRC',
                     hideStars=hideHomeStars,
-                    version='v9',
+                    version='v10',
                     intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
                 ) }}
 
@@ -432,7 +443,7 @@ border: 1px solid #c1c1c1;
 
                 {{ components.tile(
                     title='The Freedom to Negotiate a Better Deal',
-                    url='/prototypes/learner/v9/resource?resourceID=2',
+                    url='/prototypes/learner/v10/resource?resourceID=2',
                     starPercent='61%',
                     starTotal='25',
                     type='Blog',
@@ -440,7 +451,7 @@ border: 1px solid #c1c1c1;
                     duration='10 minutes',
                     because='Work area: HMRC',
                     hideStars=hideHomeStars,
-                    version='v9',
+                    version='v10',
                     intro='Corporate CEOs and lobbyists have stripped freedoms from workers to negotiate a fair return on their work.'
                 ) }}
 
@@ -459,7 +470,7 @@ border: 1px solid #c1c1c1;
                     hideStars=hideHomeStars,
                     cost='£Free',
                     targetBlank = true,
-                    version='v9',
+                    version='v10',
                     intro='How principled negotiation will get you better results and double your team\'s speed.'
                 ) }}
 
@@ -471,7 +482,7 @@ border: 1px solid #c1c1c1;
 
             {% call components.columnHalf() %}
 
-                <p class="font-small"><a href="/prototypes/learner/v9/suggested-learning" class="">See more suggestions for you</a> </p>
+                <p class="font-small"><a href="/prototypes/learner/v10/suggested-learning" class="">See more suggestions for you</a> </p>
 
             {%- endcall %}
 

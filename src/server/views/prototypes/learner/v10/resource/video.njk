@@ -1,0 +1,58 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Video item - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Simon Sinek - Start With Why - TED Talk Short Edited') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container u-space-b30'><iframe src='https://www.youtube.com/embed/IPYeCltXpxw' frameborder='0' allowfullscreen></iframe></div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>This talk explores the idea that starting with 'why' helps motivate people to achieve an end goal and increases the chances of  success. It's helpful if you are thinking about how you communicate about your work or setting strategy for a team or project. </p>
+
+            <p>
+                <a href="/prototypes/learner/v10/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='68%', total='97') }}
+                {% endif %}
+                <p><a href="/prototypes/learner/v10/transcript">Transcript</a></p>
+
+            </aside>
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

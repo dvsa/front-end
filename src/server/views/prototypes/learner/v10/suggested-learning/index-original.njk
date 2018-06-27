@@ -1,0 +1,568 @@
+]{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suggestions for you - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set hideHomeStars = 'true' %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{#{% set showUpdatedPrimaryWorkArea = true %}#}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="u-space-y30 header-box u-border-bgrey2">
+
+                {% call components.gridRow() %}
+
+                    {% call components.columnHalf() %}
+
+                        {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
+
+                        <p class="u-space-b5">Tailored suggestions from the Learning Platform for Government and your organisation.</p>
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v10/search") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                    {#<a href="#" class="search-box__advanced">Advanced search</a>#}
+
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
+
+                {%- endcall %}
+
+             </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% if hasAddedContractManagement %}
+
+        {{ components.heading(text='From Contract management', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Contract management in the Civil Service',
+                    url='/prototypes/learner/v10/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='12 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Lorem ipsum sonc dolor ad infinitum'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Contract management - the devi\'s in the detail',
+                    url='/prototypes/learner/v10/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Video',
+                    duration='25 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='This course seeks to demonstrate the capabilities of the GDS prototyping kit '
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Contracts, compliance and confusion',
+                    url='/prototypes/learner/v10/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='15 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Contract compliance can be a complex issue, this course uncovers some general bet-practices process to ease the journey.'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Contract management - procurment, people and privacy',
+                    url='/prototypes/learner/v10/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Classroom',
+                    duration='4 hours',
+                    cost='£449',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Contract Management focuses on the administration of contracts between organisations and their collaborators. '
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Contractual obligations, obfuscation and ordnance',
+                    url='/prototypes/learner/v10/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='8 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Hunger, fight, and passion.'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Managing Performance and Obligations of Contracts',
+                    url='/prototypes/learner/v10/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Classroom',
+                    duration='2 days',
+                    cost='£2499',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Tried and tested techniques to achieve contractual certainty and either successful delivery or effective remedies.'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <p><a href="/prototypes/learner/v10/suggested-learning-full">Show all suggestions from Contract management</a> </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {% endif %}
+
+
+    {% if showUpdatedPrimaryWorkArea %}
+
+        {{ components.heading(text='From Digital, Data and Technology, Product manager', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='The Bottom Line',
+                    url='/prototypes/learner/v10/resource?resourceID=18',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Audio',
+                    duration='30 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Evan Davis hosts the business conversation show with people at the top giving insight into what matters'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Inspired, Marty Cagan',
+                    url='/prototypes/learner/v10/resource?resourceID=19',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='12 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Product management case studies and techniques'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Agile Product Ownership, Henrik Kniberg',
+                    url='/prototypes/learner/v10/resource?resourceID=20',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Video',
+                    duration='15 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Classic on planning a sprint and managing a backlog'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Good Product Manager/Bad Product Manager, Ben Horowitz',
+                    url='/prototypes/learner/v10/resource?resourceID=21',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Document',
+                    duration='5 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Classic on product manager thinking and doing'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Asking the right questions to frame the problem',
+                    url='/prototypes/learner/v10/resource?resourceID=22',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='5 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Getting to the core benefits of making a product or service'
+                ) }}
+
+            {%- endcall %}
+
+            {% call components.columnOneThird() %}
+
+                {{ components.tile(
+                    title='Identifying a good service',
+                    url='/prototypes/learner/v10/resource?resourceID=23',
+                    starPercent='80%',
+                    starTotal='128',
+                    type='Blog',
+                    duration='15 minutes',
+                    cost='£Free',
+                    hideStars=hideHomeStars,
+                    version='v10',
+                    intro='Classic on planning a sprint and managing a backlog'
+                ) }}
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.gridRow() %}
+
+            {% call components.columnFull() %}
+
+                <p><a href="/prototypes/learner/v10/suggested-learning-full">Show all suggestions from Digital, data &amp; technology</a> </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+    {% endif %}
+
+
+
+    {{ components.heading(text='From Commercial', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Commercial awareness',
+                url='/prototypes/learner/v10/resource?resourceID=11',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours 20 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                url='/prototypes/learner/v10/resource?resourceID=4',
+                starPercent='76%',
+                starTotal='104',
+                type='Video',
+                duration='10 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='The Freedom to Negotiate a Better Deal',
+                url='/prototypes/learner/v10/resource?resourceID=2',
+                starPercent='61%',
+                starTotal='25',
+                type='Blog',
+                duration='12 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='Corporate CEOs and lobbyists have stripped freedoms from workers to negotiate a fair return on their work.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Capability in the Civil Service',
+                url='/prototypes/learner/v10/resource?resourceID=12',
+                starPercent='56%',
+                starTotal='114',
+                type='Document',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Higher base pay for commercial staff',
+                url='https://www.civilserviceworld.com/articles/news/new-government-commercial-organisation-employ-hundreds-senior-commercial-staff-better',
+                starPercent='95%',
+                starTotal='233',
+                type='Blog',
+                duration='5 minutes',
+                hideStars=hideHomeStars,
+                cost='£Free',
+                targetBlank = true,
+                version='v10',
+                intro='This blog explores the idea that starting with \'why\' helps motivate people to achieve an end goal and increases the chances of success.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Andrew Shatte – Resilience',
+                url='/prototypes/learner/v10/resource?resourceID=10',
+                starPercent='76%',
+                starTotal='104',
+                type='Video',
+                duration='10 minutes',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='Years ago, Dr. Shatte and several of his colleagues discovered that psychological resilience is the key to rebounding from life’s setbacks.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="/prototypes/learner/v10/suggested-learning-full">Show all suggestions from Commercial</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {{ components.heading(text='From HMRC', tag='h2', size='medium', extraClass='heading--red-top') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing contractors',
+                url='/prototypes/learner/v10/resource?resourceID=1',
+                starPercent='61%',
+                starTotal='25',
+                type='Classroom',
+                duration='1 day',
+                cost='£465',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='An introduction to contract management principles, this course is suitable if you have responsibility for managing contracts or suppliers. '
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Outcomes and Benefits',
+                url='/prototypes/learner/v10/resource?resourceID=13',
+                starPercent='80%',
+                starTotal='237',
+                type='Online',
+                duration='1 hour',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='This topic introduces you to the role of projects in government, helping you to understand what we mean by outcomes and benefits and how these are achieved and realised.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Growth Mindset',
+                url='/prototypes/learner/v10/resource?resourceID=14',
+                starPercent='61%',
+                starTotal='25',
+                type='Video',
+                cost='£Free',
+                duration='10 minutes',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='Carol Dweck researches “growth mindset” — the idea that we can grow our brain\'s capacity to learn and to solve problems.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Getting It Right: Scope and Change',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='2 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='As a project develops, change is inevitable. Changes occurring in the scope of a project are perfectly natural, not a sign of something going wrong.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Contract management: building relationships in business (MOOC)',
+                url='#',
+                starPercent='80%',
+                starTotal='128',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='A MOOC or massive open online course is a free online learning activity open to everyone.'
+            ) }}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            {{ components.tile(
+                title='Managing Risks Issues and Dependencies',
+                url='/prototypes/learner/v10/resource?resourceType=classroom',
+                starPercent='61%',
+                starTotal='25',
+                type='Online',
+                duration='3 hours',
+                cost='£Free',
+                hideStars=hideHomeStars,
+                version='v10',
+                intro='Risks can never be completely avoided; only ever managed and mitigated.'
+            ) }}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <p><a href="/prototypes/learner/v10/suggested-learning-full">Show all suggestions from HMRC</a> </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

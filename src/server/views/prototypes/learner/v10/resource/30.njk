@@ -1,0 +1,115 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Pursuing customer service excellence - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Pursuing customer service excellence') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>This topic is for experienced customer-facing staff of all grades who are familiar with the principles and practice of providing great customer service. It aims to stretch and challenge you by looking at how to solve complex customer service issues and raise the service performance of your teams.</p>
+        <p>By sharing experiences with – and learning from – your fellow professionals, there is a real focus on self-improvement as well as considering the role you may be able to play in mentoring and coaching others.</p>
+
+        {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+        <p>On completing all the topics, you'll:</p>
+        <ul class="list-bullet u-space-b30">
+            <li>solve complex customer service issues</li>
+            <li>identify areas where you and your team can improve</li>
+            <li>assess your performance against best practice</li>
+        </ul>
+
+        {{ components.heading(text='Is this topic right for you?', tag='h2', size='medium') }}
+
+        <p>To help you decide if this topic is right for you, you can access a sample of the resources that are made available when you book and purchase the full topic.</p>
+
+        {{ components.heading(text='Learning activities', tag='h2', size='medium') }}
+
+        <p>During this 3 hour workshop, you’ll discuss the tools required to continue improving your customer service mentality. You will also be encouraged to discuss challenging customer service situations which you’ve had to contend with.</p>
+
+            <p>Note: Some of the learning activities in this topic use digital media, for which you will need specific computing requirements. For more information, please refer to the ‘Terms and Conditions’ tab on the next page and read the technical specification before you purchase.</p>
+
+        {{ components.heading(text='Pricing', tag='h3', size='small') }}
+
+        <p>This is a 3 hour workshop with some online preparation and follow-up activities. See the ‘learning activities’ section above for full details.</p>
+
+        <p>   The cost for 1 person is £299. VAT is not included.</p>
+
+        <p>   You can also arrange a group booking for up to 24 people and run it on your own premises for a cost of £4,500 (which is about £188 per person). VAT is not included.</p>
+
+        <p>   At an external venue for 24 people, it would cost £ 5,500. VAT is not included.</p>
+
+        <p>   If you need to raise a purchase order (PO), you will need to quote KPMG as the provider and specify the above cost.</p>
+
+        <p>   If you have any questions regarding this topic, please contact the helpdesk on 020 3640 7985.</p>
+
+        {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+            {% call components.formGroup() %}
+                {{ components.button(text='Book this course', start=false, group=true, url='/prototypes/learner/v10/booking/')}}
+            {%- endcall %}
+
+            <p>
+                <a href="/prototypes/learner/v10/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small visuallyhidden">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Classroom</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>EO, HEO/SEO, Grade 6/7</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>3 hours</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£299</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+            {#<h2 class="heading-small">Pre-learning</h2>
+            <ul class="">
+                <li><a href="#">Case study</a> </li>
+                <li><a href="#">MPA review (pre-reading)</a> </li>
+            </ul>#}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

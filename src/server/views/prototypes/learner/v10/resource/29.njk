@@ -1,0 +1,114 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Verbal communication - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Verbal communication') }}
+
+    {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+        <p>This topic is designed to provide you with the most effective techniques for verbal communication, showing how to plan and structure individual conversations to get the most out of them.</p>
+        <p>This means considering points such as crafting a compelling message, building rapport and how even the inflection of your voice can affect the outcome of a conversation.</p>
+        <p>During a 3-hour workshop, you’ll be shown how to adapt your communication style as a situation dictates, as well as the value of active listening and effective questioning.</p>
+
+        {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+        <p>On completing all the topics, you'll:</p>
+        <ul class="list-bullet u-space-b30">
+            <li>be a more purposeful communicator, able to steer a conversation in the appropriate direction</li>
+            <li>be able to get your message across with clarity and enthusiasm</li>
+            <li>have a more flexible verbal communication style that you can adapt to the needs of different audiences</li>
+        </ul>
+
+        {{ components.heading(text='Preparation', tag='h2', size='medium') }}
+
+        <p>You should allow time before the workshop to discuss the learning outcomes with your line manager and agree follow-up activities, so you can put your new skills to use.</p>
+
+        {{ components.heading(text='Learning activities', tag='h2', size='medium') }}
+
+        <p>Note: Some of the learning activities in this topic use digital media, for which you will need specific computing requirements. For more information, please refer to the ‘Terms and Conditions’ tab on the next page and read the technical specification before you purchase.</p>
+
+        {{ components.heading(text='Pricing', tag='h3', size='small') }}
+
+        <p>This is a 3-hour course and comes with pre-workshop learning estimated to take 2.5 hours.  The individual delegate cost is £199.
+
+        <p>   VAT is not included.</p>
+
+        <p>   You can also book this course as a group booking for up to 16 people and run it on your own premises at a total cost of £1,500 (or as little as £94 a person).</p>
+
+        <p>   A group booking for up to 16 people at an external venue will cost £2,500 (or as little as £156 each).</p>
+
+        <p>    VAT is not included. Please contact the helpdesk on 020 3640 7985 if you have any questions regarding this topic.</p>
+
+        <p>    The case studies used in this workshop are generic to the Civil Service. If you want to use department specific case studies and job descriptions, please specify when booking.</p>
+
+        {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+            {% call components.formGroup() %}
+                {{ components.button(text='Book this course', start=false, group=true, url='/prototypes/learner/v10/booking/')}}
+            {%- endcall %}
+
+            <p>
+                <a href="/prototypes/learner/v10/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.columnOneThird() %}
+
+        <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+            <h2 class="heading-small visuallyhidden">Key information</h2>
+
+            <table class="table-simple table--top u-space-b30">
+                <caption class="visuallyhidden">Details about the course</caption>
+                <tbody>
+                    <tr>
+                        <th>Course type</th>
+                        <td>Classroom</td>
+                    </tr>
+                    <tr>
+                        <th>Level</th>
+                        <td>AO to EO</td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>3 hours</td>
+                    </tr>
+                    <tr>
+                        <th>Cost</th>
+                        <td>£199</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            {% if not hideDetailStars %}
+                <h2 class="heading-small">User rating</h2>
+                {{ components.starRating(rating='68%', total='97') }}
+            {% endif %}
+
+            {#<h2 class="heading-small">Pre-learning</h2>
+            <ul class="">
+                <li><a href="#">Case study</a> </li>
+                <li><a href="#">MPA review (pre-reading)</a> </li>
+            </ul>#}
+
+        </aside>
+
+    {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

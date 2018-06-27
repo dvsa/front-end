@@ -1,0 +1,47 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Blog article - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Asking the right questions to frame the problem') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Getting to the core benefits of making a product or service.</p>
+
+            <p><a href="http://www.hollidazed.co.uk/2015/07/28/frame-the-problem/" target="_blank">Read this blog article</a> (external link)</p>
+
+            <p>
+                <a href="/prototypes/learner/v10/home" class="button">Return to Home</a>
+            </p>
+
+            <p>
+                <a href="/prototypes/learner/v10/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+            </p>
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <p class="u-space-t15">
+                    <a href="#">Leave feedback</a>
+                </p>
+
+            </aside>
+
+        {% endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

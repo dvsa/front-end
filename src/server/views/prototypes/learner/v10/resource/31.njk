@@ -1,0 +1,129 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Interview techniques (as interviewee) - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Interview techniques (as interviewee)') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+            <p>Discover the skills of performing well at interviews. This topic sets out how you can give yourself the best possible chance of being offered the role.</p>
+
+            <p>It covers preparing properly, creating a favourable first impression and knowing how to answer the types of question you’re likely to be asked. It also offers advice on body language and nerves, as well as what questions you might want to ask the panel.</p>
+
+            {{ components.heading(text='Activities', tag='h2', size='medium') }}
+
+            <p>The online learning activities include a self-assessment questionnaire, tutorials, tasks and videos. These are followed by a 3 hour workshop, which includes interview role-play and feedback. </p>
+
+            {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+            <p>On completing all the topics, you'll:</p>
+            <ul class="list-bullet u-space-b30">
+                <li>know how to best prepare for an interview</li>
+                <li>feel more confident about interviews</li>
+                <li>know how to perform better at interviews</li>
+            </ul>
+
+            <div class="notice u-space-y30">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small">By proceeding, you are confirming that you have gained approval to book this course and have a purchase order number.</strong>
+            </div>
+
+            <details class="u-space-b30">
+                <summary><span class="summary">How to get a purchase order number</span></summary>
+                <div class="panel panel-border-narrow">
+                    <p>To find out your department's process for setting up a purchase order number, search your intranet for 'purchase order' or  'procurement' or ask your manager. </p>
+                </div>
+            </details>
+
+
+            {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+                {% call components.formGroup() %}
+                    {{ components.button(text='View availability', start=false, group=true, url='/prototypes/learner/v10/booking/')}}
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v10/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <h2 class="heading-small visuallyhidden">Key information</h2>
+
+                <table class="table-simple table--top u-space-b30">
+                    <caption class="visuallyhidden">Details about the course</caption>
+                    <tbody>
+                        <tr>
+                            <th>Course type</th>
+                            <td>Classroom</td>
+                        </tr>
+                        <tr>
+                            <th>Duration</th>
+                            <td>1 day</td>
+                        </tr>
+                        <tr>
+                            <th>Dates & locations</th>
+                            <td>
+                                London<br>
+                                12 Jun 2018<br>
+                                27 Jun 2018
+                                <br><br>
+                                Manchester<br>
+                                23 Jun 2018
+                                <br><br>
+                                Birmingham<br>
+                                24 Jun 2018
+                        <tr>
+                            <th>Level</th>
+                            <td>EO to Grade 6</td>
+                        </tr>
+                        <tr class="table--snuggled-row">
+                            <th>Cost</th>
+                            <td>£299 (ex VAT)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a href="#" class="font-xsmall">See cost for group bookings</a> </td>
+                        </tr>
+
+                        <tr class="table--snuggled-row">
+                            <th colspan="2">Pre-learning requirements</th>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><a href="#" class="font-xsmall">See all pre-learning</a> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='68%', total='97') }}
+                {% endif %}
+
+            </aside>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

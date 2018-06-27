@@ -1,0 +1,221 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Suggestions for you - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+{#{% set hideHomeStars = hideHomeStars if hideHomeStars %}#}
+{% set hideHomeStars = 'true' %}
+{% set showUpdatedPrimaryWorkArea = showUpdatedPrimaryWorkArea if showUpdatedPrimaryWorkArea %}
+{#{% set showUpdatedPrimaryWorkArea = true %}#}
+{% set hasAddedContractManagement = hasAddedContractManagement if hasAddedContractManagement %}
+
+
+
+{% block content %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            <div class="u-space-y30 header-box u-border-bgrey2">
+
+                {% call components.gridRow() %}
+
+                    {% call components.columnHalf() %}
+
+                        {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
+
+                        <p class="u-space-b5">Tailored suggestions from the Learning Platform for Government and your organisation.</p>
+
+                    {%- endcall %}
+
+
+                    {% call components.columnHalf() %}
+
+                        <div class="search-box">
+
+                            {% call components.formElement(name='searchLearning', method='POST', action="/prototypes/learner/v10/search") %}
+
+                                <div class="form-group search-box__group u-space-b">
+
+                                    <label class="visuallyhidden" for="searchInput">Search all available learning</label>
+
+                                    <input class="form-control search-box__input"id="searchInput" type="search" name="searchInput" value="" placeholder="Search CSL">
+
+                                    <button type="submit" class="search-box__submit">Search</button>
+
+                                </div>
+
+                            {%- endcall %}
+
+                        </div>
+
+                    {%- endcall %}
+
+                {%- endcall %}
+
+             </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow(extraClass='u-space-b0') %}
+
+        {% call components.columnFull() %}
+
+            <div class="suggestions-box">
+
+                <div class="suggestions-items suggestions-items--left">
+
+                    <h2 class="heading-medium">From DWP</h2>
+
+                    {{ components.tile(
+                        title='Unconscious bias',
+                        url='/prototypes/learner/v10/resource?resourceID=1',
+                        starPercent='61%',
+                        starTotal='25',
+                        type='Classroom',
+                        duration='3 hours',
+                        cost='£249',
+                        hideStars=hideHomeStars,
+                        version='v10',
+                        intro='Biased decision-making has no place in any modern, progressive organisation.'
+                    ) }}
+
+                    {{ components.tile(
+                        title='Interview techniques (as interviewee)',
+                        url='/prototypes/learner/v10/resource?resourceID=31',
+                        starPercent='61%',
+                        starTotal='25',
+                        type='Online',
+                        duration='3 hours',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v10',
+                        intro='Few things in life are more stressful than a job interview. Learn some basic techniques designed to help you fly through your interview, from presentation skills, talking through past achievements and asking the right questions.'
+                    ) }}
+
+                    <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from DWP</a></p>
+
+                </div>
+
+                <div class="suggestions-items suggestions-items--right">
+                    <h2 class="heading-medium">From Operational delivery</h2>
+
+                    {{ components.tile(
+                        title='Continuous improvement and lean',
+                        url='/prototypes/learner/v10/resource?resourceID=28',
+                        hideStars=hideHomeStars,
+                        type='Classroom',
+                        duration='2 days',
+                        cost='£397',
+                        version='v10',
+                        intro='During the course, you\'ll see how lean principles can be applied to customer processes to eliminate different kinds of waste'
+                    ) }}
+
+                    {{ components.tile(
+                        title='Verbal communication',
+                        url='/prototypes/learner/v10/resource?resourceID=29',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Classroom',
+                        duration='3 hours',
+                        cost='£199',
+                        hideStars=hideHomeStars,
+                        version='v10',
+                        intro='This topic is designed to provide you with the most effective techniques for verbal communication'
+                    ) }}
+
+                    <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Operational delivery</a> </p>
+
+                </div>
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow(extraClass='u-space-b0') %}
+
+        {% call components.columnFull() %}
+
+            <div class="suggestions-box">
+
+                <div class="suggestions-items suggestions-items--left">
+
+                    <h2 class="heading-medium">From Commercial</h2>
+
+                    {{ components.tile(
+                        title='Commercial awareness',
+                        url='/prototypes/learner/v10/resource?resourceID=11',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Online',
+                        duration='2 hours 20 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v10',
+                        intro='In this module you consider how to work with potential providers and achieve what you require. You\’ll learn about supply chains, pricing. '
+                    ) }}
+
+                    {{ components.tile(
+                        title='Simon Sinek - Start With Why - TED Talk Short Edited',
+                        url='/prototypes/learner/v10/resource?resourceID=4',
+                        starPercent='76%',
+                        starTotal='104',
+                        type='Video',
+                        duration='10 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v10',
+                        intro='This talk explores the idea that starting with "why" helps motivate people to achieve an end goal and increases the chances of  success.'
+                    ) }}
+
+                    <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Commercial</a> </p>
+
+                </div>
+
+                <div class="suggestions-items suggestions-items--right">
+                    <h2 class="heading-medium">From your Interests</h2>
+
+                    {{ components.tile(
+                        title='Contract management in the Civil Service',
+                        url='/prototypes/learner/v10/resource?resourceID=18',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Blog',
+                        duration='12 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v10',
+                        intro='Using contracts within the civil service guidelines and best-practices.'
+                    ) }}
+
+                    {{ components.tile(
+                        title='Leadership - senior leadership strategy, Part IV',
+                        url='/prototypes/learner/v10/resource?resourceID=18',
+                        starPercent='80%',
+                        starTotal='128',
+                        type='Video',
+                        duration='25 minutes',
+                        cost='£Free',
+                        hideStars=hideHomeStars,
+                        version='v10',
+                        intro='Part IV of the strategic leadership series, looking at govnernance and delegation in senior management roles.'
+                    ) }}
+
+                    <p class=""><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from your Interests</a> </p>
+
+                </div>
+
+            </div>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

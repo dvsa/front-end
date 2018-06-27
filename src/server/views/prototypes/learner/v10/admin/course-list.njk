@@ -1,0 +1,112 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Content management - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %}
+{% set learnerPrototypeVersion = 'v10' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v10/' %}
+{% set homePath = '/prototypes/learner/v10/home' %}
+{% set isAdmin = true %}
+{% set titleArray = titleArray if titleArray %}
+
+{% set removeMessage = removeMessage if removeMessage %}
+
+{% block content %}
+
+    {{ components.pageHeading('Content management') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {% if hasLeftFeedback %}
+
+                {{ components.banner(mainText='Thank you for your feedback', secondaryText='Leaving feedback helps us improve our service.', type="confirmation")}}
+
+            {% endif %}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+            {{ components.heading(text='All courses', tag='h2', size='medium', extraClass='') }}
+
+            <table class="table--top table--courses-big" id="courseTable">
+                <thead>
+                    <tr>
+                        <th class="title small">Course title</th>
+                        <th class="">Type</th>
+                        <th class="">Added on</th>
+                        <th><span class="visuallyhidden">Actions</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </ul>
+
+                {% set i = 1 %}
+                {% for title in titleArray %}
+
+                    <tr class="">
+                        <td class="title small">
+                            <a href="#">{{ title }}</a>
+                        </td>
+                        <td>Online</td>
+                        <td>{{ [1,2,3,4,5,6,7,8,9,10,12,14,15,16,17,18,21,23,24,26,29,27] | random }} {{ ['May', 'April', 'March', 'February'] | random }} 2018</td>
+                        <td class="u-align-right">
+                            <a href="#">Delete</a>&nbsp; &nbsp; &nbsp;<a href="#">Edit</a>
+                        </td>
+                    </tr>
+
+                    {% set i = i + 1 %}
+
+                {%- endfor %}
+
+                </tbody>
+            </table>
+
+            {#<div class="u-space-y30">
+                {{ components.pagination(totalItems=148,currentPage=4) }}
+            </div>#}
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnFull() %}
+
+
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" class="init">
+
+        $.extend( true, $.fn.dataTable.defaults, {
+            "searching": false,
+            "lengthChange" : false
+        } );
+
+        $(document).ready(function() {
+            $('#courseTable').DataTable({
+                buttons: [{
+                    extend: 'columnsToggle',
+                    columns: [0,1,2]
+                }]
+            });
+        } );
+    </script>
+
+
+{% endblock %}

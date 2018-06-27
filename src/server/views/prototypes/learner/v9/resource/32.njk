@@ -1,0 +1,137 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Interview techniques (as interviewee) - Learning Platform for Government' %}
+{% set blackBarTitle = 'Learning Platform for Government' %} {% set learnerPrototypeVersion = 'v9' %}
+{% set mainContainerClass = 'has-lower-hero' %}
+{% set signOutPath = '/prototypes/learner/v9/' %}
+{% set homePath = '/prototypes/learner/v9/home' %}
+
+{% set resourceType = resourceType if resourceType %}
+{% set hideDetailStars = hideDetailStars if hideDetailStars %}
+
+
+{% block content %}
+
+    {{ components.pageHeading(heading='Interview techniques (as interviewee)') }}
+
+    {% call components.gridRow() %}
+
+        {% call components.columnTwoThirds() %}
+
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+
+        <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+
+        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+
+        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.</p>
+
+        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat. Sed</p>
+
+            {{ components.heading(text='Learning outcomes', tag='h2', size='medium') }}
+
+            <p>On completing all the topics, you'll:</p>
+            <ul class="list-bullet u-space-b30">
+                <li>As so oh since amidst much one some far onto grotesquely wanton naked well but unkind however revealed spelled</li>
+                <li>Darn flatly less alas perfectly because a goose infectiously waved the and goodness frugally as hysterically aboard led darn amongst preparatory laconic immature past</li>
+                <li>Before house much jeez set or pangolin that demure quickly overate that much cocky satisfactory grasshopper some up gosh wistful the more ouch beyond unique alas or</li>
+                <li>One boa up flung gloated wombat comparably plentiful fretful trying less convenient one angelfish this the glared and wow jeepers warthog more around manatee pre-set concomitant until a</li>
+                <li>Inexhaustible said much less yet resignedly grumbled rabbit effortlessly more wow asinine so cracked overshot as this wherever juggled anteater pouted</li>
+                <li>Versus and up yikes jeepers neglectfully less bid sedulous far amidst wildebeest amongst since gerbil sat before and the goodness desolately gosh</li>
+                <li>Accordingly save ouch therefore since far since resolute the up that crud agreeable moth curiously far bet rigorous lucid and one unkindly this disagreed forbade antelope into</li>
+                <li>Sought lubberly a less alas including far aboard so more tyrannical aside gosh shivered dolorously more</li>
+                <li>The this more cast flamingo oh tastefully and some earthworm yellow less leered and the imprecise quit but</li>
+            </ul>
+
+            <div class="notice u-space-y30">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small">By proceeding, you are confirming that you have gained approval to book this course and have a purchase order number.</strong>
+            </div>
+
+            <details class="u-space-b30">
+                <summary><span class="summary">How to get a purchase order number</span></summary>
+                <div class="panel panel-border-narrow">
+                    <p>To find out your department's process for setting up a purchase order number, search your intranet for 'purchase order' or  'procurement' or ask your manager. </p>
+                </div>
+            </details>
+
+
+            {% call components.formElement(name='startLearning', method='POST', action="#") %}
+
+                {% call components.formGroup() %}
+                    {{ components.button(text='View availability', start=false, group=true, url='/prototypes/learner/v9/booking/')}}
+                {%- endcall %}
+
+                <p>
+                    <a href="/prototypes/learner/v9/actions?action=addedToLearningPlan&type=blog">Add to learning plan</a>
+                </p>
+
+            {%- endcall %}
+
+        {%- endcall %}
+
+        {% call components.columnOneThird() %}
+
+            <aside class="govuk-related-items govuk-related-items--flush govuk-related-items--keylined" role="complementary">
+                <h2 class="heading-small visuallyhidden">Key information</h2>
+
+                <table class="table-simple table--top u-space-b30">
+                    <caption class="visuallyhidden">Details about the course</caption>
+                    <tbody>
+                        <tr>
+                            <th>Course type</th>
+                            <td>Classroom</td>
+                        </tr>
+                        <tr>
+                            <th>Duration</th>
+                            <td>1 day</td>
+                        </tr>
+                        <tr>
+                            <th>Dates & locations</th>
+                            <td>
+                                London<br>
+                                12 Jun 2018<br>
+                                27 Jun 2018
+                                <br><br>
+                                Manchester<br>
+                                23 Jun 2018
+                                <br><br>
+                                Birmingham<br>
+                                24 Jun 2018
+                        <tr>
+                            <th>Level</th>
+                            <td>EO to Grade 6</td>
+                        </tr>
+                        <tr class="table--snuggled-row">
+                            <th>Cost</th>
+                            <td>£299 (ex VAT)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><a href="#" class="font-xsmall">See cost for group bookings</a> </td>
+                        </tr>
+
+                        <tr class="table--snuggled-row">
+                            <th colspan="2">Pre-learning requirements</th>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><a href="#" class="font-xsmall">See all pre-learning</a> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                {% if not hideDetailStars %}
+                    <h2 class="heading-small">User rating</h2>
+                    {{ components.starRating(rating='68%', total='97') }}
+                {% endif %}
+
+            </aside>
+
+        {%- endcall %}
+
+    {%- endcall %}
+
+{% endblock %}

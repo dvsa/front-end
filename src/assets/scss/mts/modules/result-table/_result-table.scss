@@ -1,6 +1,16 @@
 .result-table {
   margin-bottom: $gutter;
 
+  &--test-quality-information {
+    thead {
+      tr:first-child {
+        th {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
   &__first-row {
     background-color: $grey-3;
   }

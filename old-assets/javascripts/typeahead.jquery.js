@@ -1,5 +1,5 @@
 /*!
- * typeahead.js 0.11.1
+ * typeahead.js 0.11.0
  * https://github.com/twitter/typeahead.js
  * Copyright 2013-2015 Twitter, Inc. and other contributors; Licensed MIT
  */
@@ -457,7 +457,7 @@
             }
         }
         Input.normalizeQuery = function(str) {
-            return _.toStr(str).replace(/^\s*/g, "").replace(/\s{2,}/g, " ");
+            return (str || "").replace(/^\s*/g, "").replace(/\s{2,}/g, " ");
         };
         _.mixin(Input.prototype, EventEmitter, {
             _onBlur: function onBlur() {
@@ -615,7 +615,7 @@
                 this.$hint.off(".tt");
                 this.$input.off(".tt");
                 this.$overflowHelper.remove();
-                this.$hint = this.$input = this.$overflowHelper = $("<div>");
+                this.$hint = this.$input = this.$overflowHelper = null;
             }
         });
         return Input;
@@ -823,7 +823,7 @@
                 return this.$el.is(":empty");
             },
             destroy: function destroy() {
-                this.$el = $("<div>");
+                this.$el = null;
             }
         });
         return Dataset;
@@ -843,7 +843,7 @@
                 suggestion: templates.suggestion || suggestionTemplate
             };
             function suggestionTemplate(context) {
-                return $("<div>").text(displayFn(context));
+                return "<div><p>" + displayFn(context) + "</p></div>";
             }
         }
         function isValidName(str) {
@@ -979,7 +979,7 @@
             },
             destroy: function destroy() {
                 this.$node.off(".tt");
-                this.$node = $("<div>");
+                this.$node = null;
                 _.each(this.datasets, destroyDataset);
                 function destroyDataset(dataset) {
                     dataset.destroy();

@@ -46,11 +46,7 @@ export class MotTestSearchVinVrm {
       compareExpanded: false,
     };
 
-    if (
-      !this.state.data ||
-      !this.elements.base ||
-      !this.elements.listMOTs
-    ) return;
+    if (!this.state.data || !this.elements.base || !this.elements.listMOTs) return;
 
     console.log('test/vrn');
 
@@ -67,7 +63,7 @@ export class MotTestSearchVinVrm {
     this.expandCompareIfRequired();
     this.initDataTable();
     delegateEvent(this.elements.listMOTs, 'click', `.${this.classnames.compare}`, this.onCompareClick);
-  }
+  };
 
   /**
    * Click handler for test number click
@@ -112,7 +108,10 @@ export class MotTestSearchVinVrm {
    * @since 1.2.9
    */
   expandCompareIfRequired = (force = false) => {
-    if (!elHasClass(this.elements.compareBase, this.classnames.jsHidden) && !elHasClass(this.elements.compareBase, this.classnames.hideSmall)) {
+    if (
+      !elHasClass(this.elements.compareBase, this.classnames.jsHidden) &&
+      !elHasClass(this.elements.compareBase, this.classnames.hideSmall)
+    ) {
       return;
     }
 

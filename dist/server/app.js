@@ -57,10 +57,6 @@ var _etag = require('etag');
 
 var _etag2 = _interopRequireDefault(_etag);
 
-var _expressMinifyHtml = require('express-minify-html');
-
-var _expressMinifyHtml2 = _interopRequireDefault(_expressMinifyHtml);
-
 var _helmet = require('helmet');
 
 var _helmet2 = _interopRequireDefault(_helmet);
@@ -176,18 +172,6 @@ const startApp = exports.startApp = async () => {
   // Documentation
   app.use(Middlewares.addDocumentationDataToRequestObject);
 
-  // Enable HTML Compression
-  // Website: https://www.npmjs.com/package/express-minify-html
-  // app.use(
-  //   minifyHTML({
-  //     override: true,
-  //     exception_url: false,
-  //     htmlMinifier: {
-  //       removeComments: true,
-  //     },
-  //   })
-  // );
-
   // Add production middleware
   if (!(0, _constants.isDevelopment)()) {
     // Helmet middleware
@@ -271,7 +255,7 @@ const startApp = exports.startApp = async () => {
   // app.listen(CONFIG.port, () => {
   //   if (!isTesting()) {
   //     console.log(`
-  //       Port: ${CONFIG.port} 
+  //       Port: ${CONFIG.port}
   //       Env: ${app.get('env')}
   //     `);
   //   }

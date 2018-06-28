@@ -36,6 +36,7 @@
     "axios": "^0.17.1",
     "basic-auth": "^2.0.0",
     "body-parser": "^1.18.2",
+    "classlist.js": "^1.1.20150312",
     "compression": "^1.7.2",
     "connect-flash": "^0.1.1",
     "consolidate": "^0.10.0",
@@ -65,8 +66,7 @@
     "readdir": "0.0.6",
     "showdown": "^1.8.6",
     "smooth-scroll": "^12.1.5",
-    "store": "^2.0.12",
-    "classlist.js": "^1.1.20150312"
+    "store": "^2.0.12"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",
@@ -79,6 +79,7 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-watch": "^2.0.7",
     "chai": "^4.1.2",
+    "concurrently": "^3.5.1",
     "copy-webpack-plugin": "^4.5.1",
     "copyfiles": "^2.0.0",
     "cpx": "^1.5.0",
@@ -97,6 +98,7 @@
     "postcss-loader": "^2.1.5",
     "prettier": "^1.13.6",
     "recursive-readdir": "^2.2.2",
+    "rimraf": "^2.6.2",
     "run-sequence": "^2.2.1",
     "sass-loader": "^6.0.7",
     "sass-module-importer": "^1.4.0",

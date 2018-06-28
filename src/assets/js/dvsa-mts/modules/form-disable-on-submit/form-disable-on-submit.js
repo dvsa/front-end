@@ -97,10 +97,10 @@ export class FormDisableOnSubmit {
 
       // Reset submit button
       submitButton.name = '';
-      
+
       // Make button disabled
       submitButton.setAttribute(this.attributes.disabled, this.attributes.disabled);
-      
+
       // Mark form as submitted in state
       this.state.forms[formStateIndex].submitted = true;
 

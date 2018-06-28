@@ -15,11 +15,7 @@ export class MotTestSearchDateRangeResults {
       tableOptions: false,
     };
 
-    if (
-      !this.state.data ||
-      !this.elements.base ||
-      !this.elements.listMOTs.length
-    ) return;
+    if (!this.state.data || !this.elements.base || !this.elements.listMOTs.length) return;
 
     this.initDatatable();
   }

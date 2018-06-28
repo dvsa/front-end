@@ -15,11 +15,7 @@ export class MotTestSearchVTSResults {
       table: false,
     };
 
-    if (
-      !this.state.data ||
-      !this.elements.base ||
-      !this.elements.listMOTs.length
-    ) return;
+    if (!this.state.data || !this.elements.base || !this.elements.listMOTs.length) return;
 
     this.initMotTestSearchByVTSDataTable();
   }
@@ -93,8 +89,7 @@ export class MotTestSearchVTSResults {
         $('td:eq(6)', nRow).attr('title', aData['display_test_type']);
         $('td:eq(2) a', nRow).attr('href', $('td:eq(2) a', nRow).attr('href') + this.state.data.paramUrlSummaryPage);
       },
-      drawCallback: oSettings => {
-      },
+      drawCallback: oSettings => {},
       fnServerParams: data => {
         data.push({
           name: this.state.data.CSRF.paramName,

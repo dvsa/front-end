@@ -17,10 +17,7 @@ export class MotTestSearchByVehicle {
       table: false,
     };
 
-    if (
-      !this.elements.base ||
-      !this.elements.listMOTs
-    ) return;
+    if (!this.elements.base || !this.elements.listMOTs) return;
 
     this.init();
   }

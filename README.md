@@ -6,6 +6,7 @@ You can view a live demo here:
 
 ## Docker setup for development
 
+:
 **You will need the latest version of docker installed**
 
 ### Running development mode

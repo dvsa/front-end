@@ -136,6 +136,7 @@ main {
 
 // Text
 p,
+
 .body-text {
   margin-top: em(5, 16);
   margin-bottom: em(20, 16);
@@ -149,6 +150,14 @@ p,
 
 .body-text {
   display: block;
+}
+
+//highlight
+
+.highlight {
+  background-color: $highlight-colour;
+  padding: em(10, 16);
+  margin-bottom: em(1, 16);
 }
 
 // Lede, or intro text
@@ -172,6 +181,12 @@ p,
   text-decoration: underline;
 }
 
+.link-bold {
+  color: $link-colour;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .link:visited {
   color: $link-visited-colour;
 }
@@ -184,6 +199,24 @@ p,
   color: $link-colour;
 }
 
+//Top scroll link
+
+.scroll-top{
+  color: $link-colour;
+  position: relative;
+  display: inline-block;
+  padding:10px 10px 10px 24px;
+  margin-left:10px;
+}
+
+.scroll-top:before {
+  position: absolute;
+  display: block;
+  content: "\02191";
+  left:10px;
+  width:8px;
+  top:8px;
+ }
 // Back link styles - with left pointing arrow
 
 .link-back {

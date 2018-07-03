@@ -1,8 +1,10 @@
 .tile {
   width: 100%;
   border-bottom: 1px solid $grey-1;
-  margin-bottom: 30px;
-  padding-bottom: 15px;
+  margin-bottom: 10px;
+  padding: 10px 10px 15px;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
 
   @include media(tablet) {
     max-width: 360px;
@@ -12,10 +14,29 @@
   @include media(desktop) {
     max-width: 360px;
     border-bottom: 0;
+    min-height:310px;
+    padding: 10px 10px 10px;
+    margin-bottom: 30px;
+  }
+
+  h4 {
+    margin-top:10px;
+
+    @include media(desktop) {
+      margin-top:0;
+    }
+
+    @include media(tablet) {
+      // margin-top:10px;
+    }
   }
 
   p {
     margin: 4px 0;
+  }
+
+  &__description {
+    // min-height:96px;
   }
 
   &__actions {

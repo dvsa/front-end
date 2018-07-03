@@ -69,8 +69,8 @@ export function homeGet(req, res) {
   // console.log('removeMessage = ' + removeMessage + ' and id = ' + courseId);
 
   // newNav = 'testing';
-  newNav = true;
-  useNewNav = true;
+  // newNav = true;
+  // useNewNav = true;
 
   viewData = {
     hideHomeStars,

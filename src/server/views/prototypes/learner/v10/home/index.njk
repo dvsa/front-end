@@ -18,13 +18,6 @@
 {% set hasBeenRemoved = hasBeenRemoved if hasBeenRemoved %}
 {% set willBeRemoved  = willBeRemoved  if willBeRemoved  %}
 {% set hasLeftFeedback = hasLeftFeedback if hasLeftFeedback %}
-{#{% set newNav = newNav if newNav %}#}
-{#{% set newNav = true %}#}
-
-{#{% set useNewNav = useNewNav if useNewNav %}#}
-
-
-
 
 {% block content %}
 
@@ -34,17 +27,11 @@
 
             <div class="u-space-y30 header-box">
 
-            {% if useNewNav %}
-                <div>we're using new nav :)</div>
-            {% else %}
-                <div>we're NOT using new nav :(</div>
-            {% endif %}
-
                 {% call components.gridRow() %}
 
                     {% call components.columnTwoThirds() %}
 
-                        {{ components.heading(text='Government learning community', tag='h1', size='large', extraClass='heading--flush') }}
+                        {{ components.heading(text='Learning Platform for Government', tag='h1', size='large', extraClass='heading--flush') }}
 
                     {%- endcall %}
 
@@ -72,7 +59,6 @@
 
                 {%- endcall %}
 
-
             </div>
 
         {%- endcall %}
@@ -84,9 +70,9 @@
             {% call components.columnFull() %}
 
                 {% if fireTrainingComplete %}
-                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v10/feedback">leave feedback on 3 items</a>.</p>
+                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v10/feedback" class="bold-medium">leave feedback on 3 items</a>.</p>
                 {% else %}
-                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v10/feedback">leave feedback on 2 items</a>.</p>
+                    <p class="u-space-b5 highlight-box">You can <a href="/prototypes/learner/v10/feedback" class="bold-small small">leave feedback on 2 items</a>.</p>
                 {% endif %}
 
             {%- endcall %}

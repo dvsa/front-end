@@ -1,10 +1,25 @@
 {% set useNewNav = useNewNav if useNewNav %}
+{#{% set testVar = global.testVar if global.testVar %}
+{% set someVar = njglobals.someVar if njglobals.someVar %}
+{% set someVar = njglobals.someVar if njglobals.someVar %}#}
+
+{% set testingVar = env2.testingVar if env2.testingVar %}
 
 {#{% if useNewNav %}
     <div>we're using new nav :)</div>
 {% else %}
     <div>we're NOT using new nav :(</div>
 {% endif %}#}
+
+{#<div>
+    test var  = {{ testVar }}
+    <br>
+    someVar1 = {{ njglobals.someVar }}
+    <br>
+    someVar2 = {{ globals.someVar }}
+    <br>
+    testingVar = {{ testingVar }}
+</div>#}
 
 {% if useNewNav %}
     {% call components.gridRow() %}
@@ -33,3 +48,4 @@
         {%- endcall %}
     {%- endcall %}
 {% endif %}
+

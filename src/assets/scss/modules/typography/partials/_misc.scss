@@ -19,3 +19,10 @@ sup,
 .sub {
     bottom: -0.25em;
 }
+
+.test-bold {
+    @include bold-24;
+    position: relative;
+    overflow: hidden;
+}
+

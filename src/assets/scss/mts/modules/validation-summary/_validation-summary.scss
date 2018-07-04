@@ -30,6 +30,14 @@
   .heading-medium {
     margin: 0 0 10px 0;
   }
+
+  li {
+    a {
+      color: $error-colour;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
 }
 
 .__sign-in .validation-summary {

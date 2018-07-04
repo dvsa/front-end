@@ -20,9 +20,29 @@ sup,
     bottom: -0.25em;
 }
 
-.test-bold {
-    @include bold-24;
-    position: relative;
-    overflow: hidden;
+//highlight - move to modules
+
+.highlight {
+  background-color: $highlight-colour;
+  padding: em(10, 16);
+  margin-bottom: em(1, 16);
 }
 
+//Top scroll link - move to modules
+
+.scroll-top{
+  color: $link-colour;
+  position: relative;
+  display: inline-block;
+  padding:10px 10px 10px 24px;
+  margin-left:10px;
+}
+
+.scroll-top:before {
+  position: absolute;
+  display: block;
+  content: "\02191";
+  left:10px;
+  width:8px;
+  top:8px;
+ }

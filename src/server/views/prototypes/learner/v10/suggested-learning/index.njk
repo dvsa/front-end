@@ -28,8 +28,6 @@
 
                         {{ components.heading(text='Suggestions for you', tag='h1', size='large', extraClass='heading--flush') }}
 
-                        <p class="u-space-b5">Tailored suggestions from the Learning Platform for Government and your organisation.</p>
-
                     {%- endcall %}
 
 
@@ -68,11 +66,11 @@
 
     {% call components.gridRow() %}
 
-        {% call components.columnFull() %}
+      {% call components.columnFull() %}
 
-            <p class="lede">Suggestions based on:</p>
+          <p class="u-space-b5">Tailored suggestions are based on your:</p>
 
-        {%- endcall  %}
+      {%- endcall %}
 
     {%- endcall  %}
 
@@ -80,7 +78,7 @@
 
         {% call components.columnOneQuarter() %}
 
-            <p id="top">your organisation</p>
+            <p id="top">organisation</p>
             <ul class="list-bullet">
                 <li><a href="#DWP">DWP</a> </li>
             </ul>
@@ -89,7 +87,7 @@
 
         {% call components.columnOneQuarter() %}
 
-            <p id="top">your primary area of work</p>
+            <p id="top">primary area of work</p>
             <ul class="list-bullet">
                 <li><a href="#ddat">Operational delivery</a> </li>
             </ul>
@@ -98,7 +96,7 @@
 
         {% call components.columnOneQuarter() %}
 
-            <p>your other areas of work</p>
+            <p>other areas of work</p>
             <ul class="list-bullet">
                 <li><a href="#commercial">Commercial</a> </li>
             </ul>
@@ -107,7 +105,7 @@
 
         {% call components.columnOneQuarter() %}
 
-            <p>your interests</p>
+            <p>interests</p>
             <ul class="list-bullet">
                 <li><a href="#contractManagement">Contract management</a> </li>
                 <li><a href="#leadership">Leadership</a> </li>
@@ -121,7 +119,7 @@
 
         {% call components.columnFull() %}
 
-            <p>
+            <p class="highlight">
                 You can change these preferences in <a href="/prototypes/learner/v10/your-profile">your profile page</a>.
             </p>
 
@@ -297,7 +295,7 @@
 
         {% call components.columnFull() %}
 
-            <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from DWP</a> </p>
+            <p class="bold"><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from DWP</a> </p>
 
         {%- endcall %}
 
@@ -308,7 +306,7 @@
         {% call components.columnFull() %}
 
             <p class="u-align-right u-space-b">
-                <a href="#top">Top</a>
+              <a href="#top" class="scroll-top"> Back to top</a>
             </p>
 
         {%- endcall %}
@@ -468,7 +466,7 @@
 
         {% call components.columnFull() %}
 
-            <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults&searchType=ddat">Show all suggestions from Operational delivery</a> </p>
+            <p class="bold"><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults&searchType=ddat">Show all suggestions from Operational delivery</a> </p>
 
         {%- endcall %}
 
@@ -479,7 +477,7 @@
         {% call components.columnFull() %}
 
             <p class="u-align-right u-space-b">
-                <a href="#top">Top</a>
+              <a href="#top" class="scroll-top"> Back to top</a>
             </p>
 
         {%- endcall %}
@@ -603,7 +601,7 @@
 
         {% call components.columnFull() %}
 
-            <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Commercial</a> </p>
+            <p class="bold"><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Commercial</a> </p>
 
         {%- endcall %}
 
@@ -614,7 +612,7 @@
         {% call components.columnFull() %}
 
             <p class="u-align-right u-space-b">
-                <a href="#top">Top</a>
+              <a href="#top" class="scroll-top"> Back to top</a>
             </p>
 
         {%- endcall %}
@@ -737,7 +735,7 @@
 
         {% call components.columnFull() %}
 
-            <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Contract management</a> </p>
+            <p class="bold"><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Contract management</a> </p>
 
         {%- endcall %}
 
@@ -748,7 +746,7 @@
         {% call components.columnFull() %}
 
             <p class="u-align-right u-space-b">
-                <a href="#top">Top</a>
+              <a href="#top" class="scroll-top"> Back to top</a>
             </p>
 
         {%- endcall %}
@@ -871,7 +869,7 @@
 
         {% call components.columnFull() %}
 
-            <p><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Leadership</a> </p>
+            <p class="bold"><a href="/prototypes/learner/v10/actions?action=showPreFilteredResults">Show all suggestions from Leadership</a> </p>
 
         {%- endcall %}
 
@@ -882,7 +880,7 @@
         {% call components.columnFull() %}
 
             <p class="u-align-right u-space-b">
-                <a href="#top">Top</a>
+              <a href="#top" class="scroll-top"> Back to top</a>
             </p>
 
         {%- endcall %}

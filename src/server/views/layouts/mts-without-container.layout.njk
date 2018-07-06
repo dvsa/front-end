@@ -1,0 +1,8 @@
+{% set bodyClass = 'mts-body-wrapper' %}
+{% extends './base.layout.njk' %}
+
+{% block bodyContentWrapper %}
+  {% filter prismFullpage %}
+    {% block content %}{% endblock %}
+  {% endfilter %}
+{% endblock %}

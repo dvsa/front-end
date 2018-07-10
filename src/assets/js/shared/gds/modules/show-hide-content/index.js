@@ -25,7 +25,7 @@ export class ShowHideContent {
 
   /**
    * Setup the show hide component
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   setup() {
@@ -36,7 +36,7 @@ export class ShowHideContent {
 
   /**
    * Delegate click events
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   addEvents() {
@@ -46,9 +46,9 @@ export class ShowHideContent {
 
   /**
    * Handle the click event
-   * 
+   *
    * @param {Event} event DOM event object
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   clickEventHandler = event => {
@@ -57,13 +57,13 @@ export class ShowHideContent {
 
   /**
    * Toggle the radio content based on group name
-   * 
+   *
    * @param {String} groupName Name of radio group
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  toggleRadioContentForGroup = (groupName) => {
-    if(!groupName) {
+  toggleRadioContentForGroup = groupName => {
+    if (!groupName) {
       return;
     }
 
@@ -73,21 +73,21 @@ export class ShowHideContent {
     let selectedRadioElement = null;
 
     radios.forEach(radioElement => {
-      if(radioElement.checked) {
+      if (radioElement.checked) {
         selectedRadioElement = radioElement;
       }
       this.toggleContent(radioElement, false);
     });
 
-    if(selectedRadioElement) {
+    if (selectedRadioElement) {
       this.toggleContent(selectedRadioElement, true);
     }
-  }
+  };
 
   /**
    * Loops through each radio/checkbox element in the dom
    * and refreshes the state of it to reflect the elements checked state
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   refreshAllRadiosAndCheckboxes() {
@@ -98,7 +98,7 @@ export class ShowHideContent {
     this.radioElements.forEach(element => {
       const name = element.getAttribute('name');
 
-      if(name && radioGroupNames.indexOf(name) === -1) {
+      if (name && radioGroupNames.indexOf(name) === -1) {
         radioGroupNames.push(name);
       }
     });
@@ -118,7 +118,7 @@ export class ShowHideContent {
    *
    * @param {DOMElement} element The radio/checkbox
    * @param {Boolean} force force show/hide the content
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   toggleContent = (element, force = null) => {
@@ -143,7 +143,7 @@ export class ShowHideContent {
    *
    * @param {DOMElement} element The radio/checkbox
    * @returns {Object} An object with id and element
-   * 
+   *
    * @author Tameem Safi <t.safi@kainos.com>
    */
   getTargetFromElement(element) {

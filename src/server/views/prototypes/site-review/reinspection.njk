@@ -1,0 +1,48 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Premises' %}
+
+{% block content %}
+
+
+          <h4 class="heading-medium">Did you do a reinspection?</h4>
+          <form action="form">
+          <div class="form-group" style="margin-top: 5px;">
+            <fieldset>
+                <div class="multiple-choice" data-target="VRM">
+                    <input id="r-radio-1" name="radio-inline-group1" type="radio" value="Yes" aria-controls="VRM" aria-expanded="false"> <label for="r-radio-1">Yes</label>
+                </div>
+                <div class="panel panel-border-narrow js-hidden" id="VRM" aria-hidden="true">
+                    <label class="form-label" for="VRM">Registration mark of the reinspected vehicle</label>
+                    <input class="form-control" name="VRM" type="text" id="VRM">
+                </div>
+                <div class="multiple-choice" data-target="reinspection-blocked">
+                <input id="r-radio-2" name="radio-inline-group1" type="radio" value="No" aria-controls="reinspection-blocked" aria-expanded="false"> <label for="r-radio-2">No</label>
+                </div>
+                <div class="form-group" style="margin-top: 5px; margin-bottom: 0px;">
+                    <div class="js-hidden" id="reinspection-blocked" aria-hidden="true">
+
+                        <fieldset>
+                          <h4 class="heading-medium">Was the reinspection blocked?</h4>
+                            <div class="multiple-choice">
+                                <input id="No" name="radio-inline-group2" type="radio" value="No"> <label for="No">No</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="Yes" name="radio-inline-group2" type="radio" value="Yes"> <label for="Yes">Yes</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </fieldset>
+          </div>
+        </div>
+
+      
+
+
+  <input class="button" type="submit" value="Continue">
+
+
+
+</form>
+{% endblock %}

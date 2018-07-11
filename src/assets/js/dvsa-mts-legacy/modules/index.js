@@ -1,5 +1,5 @@
-import { initMOTTestSearchVTSResults } from './mot-test-search-vts-results';
-import { initMOTTestSearchDateRangeResults } from './mot-test-search-date-range-results';
+import { initMotTestSearchVTSResults } from './mot-test-search-vts-results';
+import { initMotTestSearchDateRangeResults } from './mot-test-search-date-range-results';
 import { initMotTestSearchByVehichle } from './mot-test-search-by-vehicle';
 
 /**
@@ -9,7 +9,7 @@ import { initMotTestSearchByVehichle } from './mot-test-search-by-vehicle';
  * @author Tameem Safi <t.safi@kainos.com>
  */
 export const initModules = () => {
-  initMOTTestSearchVTSResults();
-  initMOTTestSearchDateRangeResults();
+  initMotTestSearchVTSResults();
+  initMotTestSearchDateRangeResults();
   initMotTestSearchByVehichle();
 };

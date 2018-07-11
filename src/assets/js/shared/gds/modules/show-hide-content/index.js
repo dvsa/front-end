@@ -16,19 +16,28 @@ export class ShowHideContent {
     this.radioElements = Array.from(document.querySelectorAll(this.radioSelector));
     this.checkboxElements = Array.from(document.querySelectorAll(this.checkboxSelector));
 
+    // Check to make sure this component has not loaded
+    if (window.__dvsaShowHideContentLoaded__) return;
+
+    // Call setup
     this.setup();
   }
 
   /**
    * Setup the show hide component
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
    */
   setup() {
-    this.resetAllAriaAttributes();
+    window.__dvsaShowHideContentLoaded__ = true;
+    this.refreshAllRadiosAndCheckboxes();
     this.addEvents();
   }
 
   /**
    * Delegate click events
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
    */
   addEvents() {
     delegateEvent(document, 'click', this.radioSelector, this.clickEventHandler);
@@ -37,41 +46,70 @@ export class ShowHideContent {
 
   /**
    * Handle the click event
+   *
+   * @param {Event} event DOM event object
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
    */
   clickEventHandler = event => {
-    if (!event.target) return;
-    const element = event.target;
-    let type = element.getAttribute('type');
-    switch (type) {
-      case 'radio': {
-        let radioGroupName = element.getAttribute('name');
-        // Refresh all radios for this group
-        if (radioGroupName) {
-          let radioInputsForGroup = Array.from(document.querySelectorAll(`input[type="radio"][name="${radioGroupName}"]`));
-          radioInputsForGroup.forEach(radio => {
-            this.toggleContentBasedOnCheckState(radio);
-          });
-        }
-        return;
+    this.refreshAllRadiosAndCheckboxes();
+  };
+
+  /**
+   * Toggle the radio content based on group name
+   *
+   * @param {String} groupName Name of radio group
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
+   */
+  toggleRadioContentForGroup = groupName => {
+    if (!groupName) {
+      return;
+    }
+
+    const selector = `input[type="radio"][name="${groupName}"]`;
+    const radios = Array.from(document.querySelectorAll(selector));
+
+    let selectedRadioElement = null;
+
+    radios.forEach(radioElement => {
+      if (radioElement.checked) {
+        selectedRadioElement = radioElement;
       }
-      case 'checkbox': {
-        // Refresh current checkbox
-        this.toggleContentBasedOnCheckState(element);
-        return;
-      }
-      default: {
-        return;
-      }
+      this.toggleContent(radioElement, false);
+    });
+
+    if (selectedRadioElement) {
+      this.toggleContent(selectedRadioElement, true);
     }
   };
 
   /**
    * Loops through each radio/checkbox element in the dom
    * and refreshes the state of it to reflect the elements checked state
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
    */
-  resetAllAriaAttributes() {
-    this.radioElements.forEach(this.toggleContentBasedOnCheckState);
-    this.checkboxElements.forEach(this.toggleContentBasedOnCheckState);
+  refreshAllRadiosAndCheckboxes() {
+    // Temp variable to store all unique group names
+    const radioGroupNames = [];
+
+    // Get all unique radio group names
+    this.radioElements.forEach(element => {
+      const name = element.getAttribute('name');
+
+      if (name && radioGroupNames.indexOf(name) === -1) {
+        radioGroupNames.push(name);
+      }
+    });
+
+    // Toggle content for all radio groups
+    radioGroupNames.forEach(name => {
+      this.toggleRadioContentForGroup(name);
+    });
+
+    // Toggle content for all checkboxes
+    this.checkboxElements.forEach(this.toggleContent);
   }
 
   /**
@@ -79,20 +117,25 @@ export class ShowHideContent {
    * based on if the radio/checkbox is check or unchecked.
    *
    * @param {DOMElement} element The radio/checkbox
+   * @param {Boolean} force force show/hide the content
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
    */
-  toggleContentBasedOnCheckState = element => {
+  toggleContent = (element, force = null) => {
     if (!element) return;
 
     let targetInfo = this.getTargetFromElement(element);
     if (!targetInfo || !targetInfo.element || !targetInfo.id) return;
 
+    const contentVisible = typeof force === 'boolean' ? force : element.checked;
+
     // Refresh aria tags
     element.setAttribute(this.ariaControlsAttributeName, targetInfo.id);
-    element.setAttribute(this.ariaExpandedAtributeName, element.checked ? 'true' : 'false');
+    element.setAttribute(this.ariaExpandedAtributeName, contentVisible ? 'true' : 'false');
 
     // Refresh target aria/class
-    toggleClass(targetInfo.element, this.contentHiddenClass, !element.checked);
-    targetInfo.element.setAttribute(this.ariaHiddenAttributeName, element.checked ? 'false' : 'true');
+    toggleClass(targetInfo.element, this.contentHiddenClass, !contentVisible);
+    targetInfo.element.setAttribute(this.ariaHiddenAttributeName, contentVisible ? 'false' : 'true');
   };
 
   /**
@@ -100,6 +143,8 @@ export class ShowHideContent {
    *
    * @param {DOMElement} element The radio/checkbox
    * @returns {Object} An object with id and element
+   *
+   * @author Tameem Safi <t.safi@kainos.com>
    */
   getTargetFromElement(element) {
     if (!element) return false;

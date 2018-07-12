@@ -68,6 +68,13 @@
 
     {%- endcall %}
 
+    {% call components.columnOneThird() %}
+
+      {{ components.heading(text='Accessibility enhancements - Chrome only', tag='h2', size='medium', url='/prototypes/speech-to-text') }}
+      {{ components.paragraph(text='User journey demoing the text to speech, speech to text, font size increase & theme toggle widgets.')}}
+
+    {%- endcall %}
+
   {%- endcall %}
 
 {% endblock %}

@@ -13,6 +13,7 @@ import { initMotTestSearch } from './mot-test-search';
  *
  * @since 1.2.0
  * @author Tameem Safi <t.safi@kainos.com>
+ * @author James Nelson <j.nelson@kainos.com>
  */
 export const initModules = () => {
   initCritieraValidation();

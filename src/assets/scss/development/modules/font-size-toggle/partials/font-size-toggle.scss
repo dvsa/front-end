@@ -1,0 +1,40 @@
+.font-size-toggle {
+  margin-bottom: 20px;
+
+  &__button {
+    background-color: transparent;
+    border: 0;
+    color: #005ea5;
+    font-size: 18px;
+    display: inline-block;
+    text-decoration: underline;
+    padding-left: 0;
+    transition: color 0.3s ease-in-out;
+    
+    &--increase {
+      font-size: 26px;
+      padding-left: 10px;
+    }
+
+    &--reset {
+      font-size: 14px;
+      display: block;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--disabled {
+      color: #6F777B;      
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__icon {
+    font-style: normal;      
+  }
+}

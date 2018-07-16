@@ -1,0 +1,30 @@
+.theme-toggle {
+  &__theme-swatch {
+    border: 1px solid #CCCCCC;
+    background-color: white;
+    padding: 5px 10px;
+    color: #0b0c0c;
+
+    &--high-contrast-yellow {
+      color: #FCED20;
+      background-color: #000;
+    }
+
+    &--low-contrast-grey {
+      background-color: #CACFDD;
+      color: #343A3F;
+      border-color: #A1A5B0;      
+    }
+
+    &--sepia {
+      background-color: #F4EED9;
+      color: #1D1916;
+      border-color: #C3BEAC;
+    }
+
+    &--medium-contrast-yellow {
+      background-color: #FCED20;
+      border-color: #CABE00;
+    }
+  }
+}

@@ -2,76 +2,43 @@
 
 {% set pageTitle = 'Prototypes Index' %}
 
+{% set listItemsWIP = [
+  { text: 'Accessibility enhancements (Chrome Only)', url: '/prototypes/speech-to-text' },
+  { text: 'MOTH accordions', url: '/moth-accordions' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Report MOT fraud', url: '/prototypes/report-fraud' }
+] %}
+
+{% set listItemsFinal = [
+  { text: 'Annual assessment admin tool', url: '/prototypes/annual-assessment-admin-tool' },
+  { text: 'Brake test review', url: '/prototypes/brake-test-review' },
+  { text: 'Create account', url: '/prototypes/create-account' },
+  { text: 'Enforcement site review', url: '/prototypes/site-review' },
+  { text: 'Manuals', url: '/manuals' }
+] %}
+
 {% block content %}
 
   {{ components.pageHeading('Prototypes', 'DVSA Front-End') }}
+  {{ components.paragraph(text="Prototypes within the final column are ready 
+  for implementation. Please consult a member of the service design team 
+  before implementing prototypes from the 'Work in progress' column.", lead='true', limitWidth=true)}}
 
   {% call components.gridRow() %}
 
-    {% call components.columnOneThird() %}
+    {% call components.columnHalf() %}
 
-      {{ components.heading(text='MOTH Accordions', tag='h2', size='medium', url='/moth-accordions') }}
-      {{ components.paragraph(text='A prototype mockup of the moth history page with accordions.') }}
-      
-    {%- endcall %}
+      {{ components.heading(text='Work in progress', tag='h3', size='medium') }}
 
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Manuals', tag='h2', size='medium', url='/manuals') }}
-      {{ components.paragraph(text='A prototype mockup of the manuals.') }}
-      
-    {%- endcall %}
-
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Create Account', tag='h2', size='medium', url='/prototypes/create-account') }}
-      {{ components.paragraph(text='Creating an account user journey prototype.') }}
-      
-    {%- endcall %}
-
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Report MOT fraud', tag='h2', size='medium', url='/prototypes/report-fraud') }}
-      {{ components.paragraph(text='Report an MOT fraud user journey prototype') }}
-      
-    {%- endcall %}
-
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Annual Assessment Admin Tool', tag='h2', size='medium', url='/prototypes/annual-assessment-admin-tool') }}
-      {{ components.paragraph(text='Admin Assessment tool user journey')}}
+      {{ components.list(items=listItemsWIP, type='bullet')}}
 
     {%- endcall %}
 
-    {% call components.columnOneThird() %}
+    {% call components.columnHalf() %}
 
-      {{ components.heading(text='MOT test results', tag='h2', size='medium', url='/prototypes/mot-test') }}
-      {{ components.paragraph(text='Adding comments to defects user journey')}}
+      {{ components.heading(text='Final', tag='h3', size='medium') }}
 
-    {%- endcall %}
-
-  {%- endcall %}
-
-  {% call components.gridRow() %}
-
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Enforcement site review', tag='h2', size='medium', url='/prototypes/site-review') }}
-      {{ components.paragraph(text='Enforcement site review form prototype')}}
-
-    {%- endcall %}
-
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Brake test review', tag='h2', size='medium', url='/prototypes/brake-test-review') }}
-      {{ components.paragraph(text='The review summary page of brake test')}}
-
-    {%- endcall %}
-
-    {% call components.columnOneThird() %}
-
-      {{ components.heading(text='Accessibility enhancements - Chrome only', tag='h2', size='medium', url='/prototypes/speech-to-text') }}
-      {{ components.paragraph(text='User journey demoing the text to speech, speech to text, font size increase & theme toggle widgets.')}}
+      {{ components.list(items=listItemsFinal, type='bullet')}}
 
     {%- endcall %}
 

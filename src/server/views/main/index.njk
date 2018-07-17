@@ -24,4 +24,17 @@
 
   {%- endcall %}
 
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+      {{ components.heading(text='About the Design System', tag='h2', size='medium') }}
+      {{ components.paragraph(text='The MOT testing service Design System generates versioned images, 
+      CSS and JavaScript for the MOT testing service and provides a platform to document pattern usage, 
+      design principles, user insight and allow for rapid prototyping.') }}
+
+    {% endcall %}
+
+  {% endcall %}
+
 {% endblock %}

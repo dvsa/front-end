@@ -1,10 +1,10 @@
 {% extends 'layouts/library.layout.njk' %}
 
-{% set pageTitle = 'MOT Library - Hidden Text' %}
+{% set pageTitle = 'MOT Library - Progressive disclosure' %}
 
 {% block content %}
 
-  {{ components.heading(text='Hidden Text', tag='h2', size='medium') }}
+  {{ components.heading(text='Progressive disclosure', tag='h2', size='medium') }}
 
   {% call components.displayCode() %}
     {% call components.hiddenText(summary='Help with nationality') %}

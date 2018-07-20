@@ -1,0 +1,158 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Site review - VTS079774' %}
+
+{% block content %}
+
+<form action="enter-meta-data">
+  <div class="form-group">
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/manuals">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              WILLETTA AREDONDO
+            </a>
+          </li>
+          <li>
+            <a href="/">
+                VTS079774
+            </a>
+          </li>
+          <li>
+            Site review
+          </li>
+        </ol>
+      </div>
+
+      <legend>
+      <h1 class="heading-xlarge heading heading--page-heading ">
+            <span class="heading-secondary">Site review</span>
+            Choose section
+          </h1>
+      </legend>
+
+      <div class="action-panel">
+        <div class="clear-float">
+          <div class="action-panel__container">
+            <h3 class="action-panel__heading">Premises</h3>
+          </div>
+          <div class="action-panel__container--last">
+            <a href="premises" class="button">Review premises</a>
+          </div>
+        </div>
+      </div>
+      <div class="js-brakeTestSummary defect-summary">
+          <div id="rfrList" class="">
+              <h3 class="defect-summary__heading">
+                  <span class="defect-summary__heading-type" style="padding-left: 0px;"><span class="badge" style="background-color: #00823B">&nbsp;</span> Satisfactory</span>
+              </h3>
+              <ol>
+                <li class="defect">
+                  <div>
+                      <h4 class="defect__title">Comment: all good</h4>
+                  </div>
+                </li>
+              </ol>
+            </div>
+       </div>
+
+      <div class="action-panel">
+        <div class="clear-float">
+          <div class="action-panel__container">
+            <h3 class="action-panel__heading">Management and quality</h3>
+          </div>
+          <div class="action-panel__container--last">
+            <a href="management-and-quality" class="button">Review management and quality</a>
+          </div>
+        </div>
+      </div>
+      <div class="js-brakeTestSummary defect-summary">
+          <div id="rfrList" class="">
+              <h3 class="defect-summary__heading">
+                  <span class="defect-summary__heading-type" style="padding-left: 0px;"><span class="badge--warn">&nbsp;</span> Improve</span>
+              </h3>
+              <ol>
+                <li class="defect">
+                  <div>
+                      <h4 class="defect__title">Advice given: supervise testers more regularly</h4>
+                  </div>
+                </li>
+              </ol>
+            </div>
+       </div>
+
+
+      <div class="action-panel">
+        <div class="clear-float">
+          <div class="action-panel__container">
+            <h3 class="action-panel__heading">People</h3>
+          </div>
+          <div class="action-panel__container--last">
+            <a href="People" class="button">Review people</a>
+          </div>
+        </div>
+      </div>
+      <div class="js-brakeTestSummary defect-summary">
+          <div id="rfrList" class="">
+              <h3 class="defect-summary__heading">
+                  <span class="defect-summary__heading-type" style="padding-left: 0px;"><span class="badge--alert">&nbsp;</span> Unsatisfactory</span>
+              </h3>
+              <ol>
+                <li class="defect">
+                  <div>
+                      <h4 class="defect__title">Advice given: supervise testers more regularly</h4>
+                  </div>
+                </li>
+              </ol>
+            </div>
+       </div>
+
+      <div class="action-panel">
+        <div class="clear-float">
+          <div class="action-panel__container">
+            <h3 class="action-panel__heading">Compliance</h3>
+          </div>
+          <div id="" class="action-panel__container">
+            <span class="action-panel__value">
+                Not recorded
+            </span>
+          </div>
+          <div class="action-panel__container--last">
+            <a href="compliance" class="button">Review compliance</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-panel">
+        <div class="clear-float">
+          <div class="action-panel__container">
+            <h3 class="action-panel__heading">Activity</h3>
+          </div>
+          <div id="" class="action-panel__container">
+            <span class="action-panel__value">
+                Not recorded
+            </span>
+          </div>
+          <div class="action-panel__container--last">
+            <a href="add-activity" class="button">Add activity</a>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <div>
+      <input class="button" type="submit" value="Save and continue"><br />
+      <a href="abort-site-review">Abort site review</a>
+</div>
+
+
+
+</form>
+{% endblock %}

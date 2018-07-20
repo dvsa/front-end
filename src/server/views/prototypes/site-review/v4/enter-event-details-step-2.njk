@@ -1,0 +1,100 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Event summary' %}
+
+{% block content %}
+
+  <div class="form-group">
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/manuals">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              WILLETTA AREDONDO
+            </a>
+          </li>
+          <li>
+            <a href="/">
+                VTS079774
+            </a>
+          </li>
+          <li>
+            Site review
+          </li>
+        </ol>
+      </div>
+
+
+      <div class="container">
+
+
+                  <!-- titles -->
+          <header class="content-header">
+          <h1>
+              <span class="content-header__type">Create event</span>
+              <span class="content-header__title">Record an event outcome</span>
+                          <span class="content-header__progress">Step 2 of 3</span>
+                  </h1>
+          </header>                        <!-- /titles -->
+
+                                  <div class="row contents">
+                          <div class="col-lg-12">
+
+
+
+      <form action="enter-event-details-step-3">
+          <fieldset>
+              <legend class="form-title heading-large visuallyhidden">Outcome of the event</legend>
+
+              <div class="form-group">
+                  <label for="selectStandard" class="form-label">
+                      Event outcome
+                                  </label>
+                  <select name="outcomeCode" id="outcomeCode" class="form-control">
+                      <option value="">Please select</option>
+                      <option value="AWL">Advisory Warning Letter </option><option value="NADAE">Appeals: appeal disallowed</option><option value="NAPRJ">Appeals: appeal rejected</option><option value="NAPU">Appeals: appeal upheld</option><option value="NAPFW">Appeals: appeal upheld but Formal Warning issued</option><option value="NAPWD">Appeals: appeal withdrawn</option><option value="NAPDC">Appeals: Disqualification to short term cessation</option><option value="DAR">Disciplinary Action report (DAR)</option><option value="NTDSQ">Disqualification of NT</option><option value="NTCFW">Formal Warning to NT</option><option value="NFA">No further action</option><option value="NTSTC">Short term cessation of NT</option>            </select>
+              </div>
+
+              <div class="form-group ">
+                  <label for="textareaStandard" class="form-label">
+                      Notes (optional)
+                      <span class="form-hint">Please enter any supporting information below</span>
+                  </label>
+                      <textarea type="text" name="notes" id="notes" class="form-control form-control--flex-v"></textarea>
+              </div>
+
+          </fieldset>
+
+
+          <nav class="content-navigation">
+
+              <input type="submit" value="Continue" id="continue" class="button">
+
+              <ul class="content-navigation__secondary">
+                  <li>
+                      <a href="/event/add/person/431724/record/" id="back">Back</a>
+                  </li>
+              </ul>
+
+          </nav>
+
+      </form>                    </div>
+                      </div>
+
+                  <!-- end-sidebar-wrapper -->
+                              <!-- /end-sidebar-wrapper -->
+
+              </div>
+
+
+  </div>
+
+
+
+</form>
+{% endblock %}

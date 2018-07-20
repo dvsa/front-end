@@ -1,0 +1,99 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Event summary' %}
+
+{% block content %}
+
+  <div class="form-group">
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/manuals">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              WILLETTA AREDONDO
+            </a>
+          </li>
+          <li>
+            <a href="/">
+                VTS079774
+            </a>
+          </li>
+          <li>
+            Site review
+          </li>
+        </ol>
+      </div>
+
+
+      <header class="content-header">
+      <h1>
+          <span class="content-header__type">Create event</span>
+          <span class="content-header__title">Event summary</span>
+          <span class="content-header__progress">Step 3 of 3</span>
+      </h1>
+      </header>
+
+    <div class="row contents">
+      <div class="col-lg-12">
+          <div class="text">
+              <p class="lede">Please check the details below before you record the event.</p>
+          </div>
+
+          <form action="event-created">
+              <table class="key-value-list">
+                  <tbody>
+                  <tr>
+                      <th scope="col" class="key-value-list__key">Date of event</th>
+                      <td class="key-value-list__value">
+                          18th June 2018            </td>
+                      <td class="key-value-list__item-action">
+                          <a href="/event/add/person/431724/record/">Change<span class="visuallyhidden"> event</span></a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th scope="col" class="key-value-list__key">Event</th>
+                      <td class="key-value-list__value">
+                          Appeal against VT30 issue            </td>
+                      <td class="key-value-list__item-action">
+                          <a href="/event/add/person/431724/record/">Change<span class="visuallyhidden"> event</span></a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <th scope="col" class="key-value-list__key">Outcome</th>
+                      <td class="key-value-list__value">
+                          Advisory Warning Letter                 <span class="key-value-list__meta">
+                                              </span>
+                      </td>
+                      <td class="key-value-list__item-action">
+                          <a href="/event/add/person/431724/outcome/">Change<span class="visuallyhidden"> event outcome</span></a>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+
+              <nav class="content-navigation">
+                  <input type="submit" value="Record event" id="continue" class="button">
+
+                  <ul class="content-navigation__secondary">
+                      <li>
+                          <a href="/event/add/person/431724/outcome/">Back</a>
+                      </li>
+                  </ul>
+              </nav>
+
+          </form>
+      </div>
+  </div>
+
+
+ </div>
+
+
+
+</form>
+{% endblock %}

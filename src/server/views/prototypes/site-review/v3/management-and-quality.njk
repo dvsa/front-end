@@ -1,0 +1,60 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Management control and quality checks' %}
+
+{% block content %}
+
+<form action="people">
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <h1 class="heading-medium">
+          What is the assessment of the management control and quality checks?
+        </h1>
+
+        <details style="margin-bottom: 10px;">
+          <summary><span class="summary">Clues for management control and quality checks</span></summary>
+          <div class="panel panel-border-narrow">
+                <p>The VTS is a safe working environment where the test bay is clearly defined and MOT equipment is easily accessible and in good order</p>
+                <p>The equipment is calibrated and there is a system to ensure that calibrations are planned and carried out in a timely fashion</p>
+                <p>The MOT test bay and site meet the Requirements of Authorisation</p>
+          </div>
+        </details>
+
+
+      </legend>
+      <div class="multiple-choice">
+        <input id="example-multiple-satisfactory" type="radio" name="radio-two-targets-group" value="Satisfactory">
+        <label for="example-multiple-satisfactory">
+          Satisfactory
+        </label>
+      </div>
+      <div class="multiple-choice" data-target="advice-given-panel">
+        <input id="example-multiple-improve" type="radio" name="radio-two-targets-group" value="Improve">
+        <label for="example-multiple-improve">
+          Improve
+        </label>
+      </div>
+      <div class="multiple-choice" data-target="advice-given-panel">
+        <input id="example-multiple-unsatisfactory" type="radio" name="radio-two-targets-group" value="Unsatisfactory">
+        <label for="example-multiple-unsatisfactory">
+          Unsatisfactory
+        </label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="advice-given-panel">
+        <label class="form-label" for="advice-given-textarea">
+          Advice given
+        </label>
+        <textarea class="form-control" name="advice-given-textarea" id="advice-given-textarea" rows="5"></textarea>
+      </div>
+    </fieldset>
+  </div>
+
+  <div>
+      <input class="button" type="submit" value="Save and continue">
+  </div>
+
+
+
+</form>
+{% endblock %}

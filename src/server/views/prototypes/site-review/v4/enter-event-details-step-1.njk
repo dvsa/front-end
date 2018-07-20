@@ -1,0 +1,102 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Enter event details' %}
+
+{% block content %}
+
+<form action="enter-event-details-step-2">
+  <div class="form-group">
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/manuals">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              WILLETTA AREDONDO
+            </a>
+          </li>
+          <li>
+            <a href="/">
+                VTS079774
+            </a>
+          </li>
+          <li>
+            Site review
+          </li>
+        </ol>
+      </div>
+
+      <div class="message--success">
+          <p><strong>Site review has been saved</strong></p>
+      </div>
+
+    <header class="content-header">
+    <h1 class="heading-medium">
+      <span class="content-header__type">Site review</span>
+      <span class="content-header__title">Record an event</span>
+      <span class="content-header__progress">Step 1 of 3</span>
+    </h1>
+    </header>
+
+     <div class="form-group">
+      <label class="form-label" for="select-box">
+        Type of event
+      </label>
+      <select class="form-control" id="select-box" name="select-box">
+          <option value="">Please select</option>
+          <option value="AA">Annual Assessment</option><option value="APPL">Appeal against disciplinary action</option><option value="VT19I">Appeal against VT20 issue</option><option value="VT19">Appeal against VT30 issue</option><option value="CONVC">Convictions: MOT, motor trade, criminal</option><option value="VT6">Demonstration test</option><option value="DSV">Directed Site Visit</option><option value="INTM">Intelligence marker</option><option value="REPUT">Loss of repute/convictions</option>
+          <option value="MEMO">Memo</option><option value="VT55R">MOT Compliance Survey</option><option value="AE">MOT Management Training</option><option value="INC">Mystery Shopper</option><option value="NTTDA">NTT Directed Retraining: classes 1,2</option><option value="NTTD">NTT Directed Retraining: classes 3,4,5,7</option><option value="NTT2">NTT Initial: classes 3,4,5,7</option><option value="NTTMC">NTT Motorcycle</option><option value="NTTRA">NTT Refresher: classes 1,2</option>
+          <option value="NTTR">NTT Refresher: classes 3,4,5,7</option><option value="RFW">Review of Formal Warning</option><option value="SA">Site Assessment</option><option value="SI">Special Investigation</option><option value="VT55">Targeted Re-inspection</option><option value="NTTA">Tester training assessment</option>
+      </select>
+     </div>
+
+    <div class="form-group">
+        <fieldset>
+            <legend class="form-label">
+                Date of event
+            </legend>
+            <div class="form-date">
+
+                <span class="form-hint">For example, 31 03 2015
+                                        </span>
+
+                <div class="form-group form-group-day">
+                    <label for="date1-day">Day</label>
+                    <input type="text" id="date1-day" name="day" class="form-control" value="" style="background-color: rgb(213, 255, 202);">
+                </div>
+                <div class="form-group form-group-month">
+                    <label for="date1-month">Month</label>
+                    <input type="text" id="date1-month" name="month" class="form-control" value="" style="background-color: rgb(213, 255, 202);">
+                </div>
+                <div class="form-group form-group-year">
+                    <label for="date1-year">Year</label>
+                    <input type="text" id="date1-year" name="year" class="form-control" value="" style="background-color: rgb(213, 255, 202);">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <nav class="content-navigation">
+
+            <input type="submit" value="Continue" id="continue" class="button">
+
+            <ul class="content-navigation__secondary">
+                <li>
+                    <a href="#" id="back">
+                        Cancel and return to event history
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+  </div>
+
+
+
+</form>
+{% endblock %}

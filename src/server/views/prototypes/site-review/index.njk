@@ -1,0 +1,166 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+
+      <header class="content-header"> 
+        <h1 class="heading-xlarge heading heading--page-heading ">
+            <span class="heading-secondary">Vehicle testing station</span>
+            Site review
+        </h1> 
+      </header>
+
+      
+      <div class='text u-clearfix'>
+        
+        <p><a href='/prototypes/'>Print the MOT inspection sheet</a> for this test.</p>
+
+        <p>See <a href='/prototypes/'>testing advice</a> for this vechicle.</p>
+
+      </div>
+
+      {% if flashMessage != '' %}
+        <div class="message--success">
+          <p>{{ flashMessage }}</p>
+        </div>
+      {% endif %}
+
+      <div class='u-margin-bottom-30'>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+              <h3 class="action-panel__heading">Compliance</h3>
+            </div>
+
+            <div class="action-panel__container">
+              <h3 class="action-panel__value">Not recorded</h3>
+            </div>
+
+            <div class="action-panel__container--last">
+              {{ components.button(text='Add reading', url='#') }}
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+            <div class="action-panel__container">
+              <h3 class="action-panel__heading">Premises</h3>
+            </div>
+
+            <div class="action-panel__container--last">
+              {{ components.button(text='Add a defect', url='/prototypes/mot-test/categories/') }}
+            </div>
+
+          </div>
+        </div>
+
+        <div class="action-panel">
+          <div class="clear-float">
+            <div class="action-panel__container">
+              <h3 class="action-panel__heading">Management and quality</h3>
+            </div>
+
+            <div class="action-panel__container">
+              <h3 class="action-panel__value">Not recorded</h3>
+            </div>
+
+            <div class="action-panel__container--last">
+              {{ components.button(text='Add break tests', url='#') }}
+            </div>
+
+          </div>
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container--twothirds">
+              <h3 class="action-panel__heading">Testers comments</h3>
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {% if viewData.comment %}
+                {{ components.button(text='Edit comment', url='/prototypes/mot-test/comment/edit') }}
+
+              {% else %}
+
+                {{ components.button(text='Add comment', url='/prototypes/mot-test/comment') }}
+
+              {% endif %}
+
+            </div>
+          </div>
+
+        </div>
+
+        {% if viewData.comment %}
+
+          <div class='dvsa-tester-comments'>
+
+            <p class='dvsa-tester-comments__content'>{{ viewData.comment }}</p>
+
+            <ul class='dvsa-tester-comments__actions-list'>
+
+              <li class='dvsa-tester-comments__action'>
+
+                <a class='dvsa-tester-comments__link dvsa-tester-comments__link--bolden' href='/prototypes/mot-test/comment/edit'>Edit</a>
+
+              </li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>or</li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>
+
+                <a class='dvsa-tester-comments__link' href='/prototypes/mot-test/comment/remove'>Remove</a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        {% endif %}
+
+      </div>
+
+      <form action="/prototypes/mot-test/review" method="GET">
+
+        {% if viewData.comment %}
+
+          {{ components.button(text='Review test') }}
+
+        {% else %}
+
+          {{ components.button(text='Review test', disabled=true) }}
+
+        {% endif %}
+
+      </form>
+
+      {{ components.link(text='Cancel test', url='/prototypes/', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

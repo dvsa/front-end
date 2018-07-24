@@ -31,6 +31,10 @@ var _motTest = require('./../controllers/mot-test/mot-test');
 
 var motTestResultsController = _interopRequireWildcard(_motTest);
 
+var _speechToTextSearch = require('./../controllers/speech-to-text-search/speech-to-text-search');
+
+var speechToTextController = _interopRequireWildcard(_speechToTextSearch);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
@@ -68,6 +72,12 @@ router.get('/prototypes/mot-test/comment/edit', motTestResultsController.getEdit
 router.post('/prototypes/mot-test/comment/edit', motTestResultsController.postEditTesterComment);
 router.post('/prototypes/mot-test/comment/remove/', motTestResultsController.destorySession);
 router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
+
+// Speech to text - add defect path
+router.get('/prototypes/speech-to-text/', speechToTextController.getSearchQuery);
+router.post('/prototypes/speech-to-text/categories/', speechToTextController.postSearchQuery);
+router.post('/prototypes/speech-to-text/add-major-failure/', speechToTextController.captureFormValues);
+router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.removeDefect);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

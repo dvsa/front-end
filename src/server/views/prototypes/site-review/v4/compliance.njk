@@ -32,14 +32,19 @@
   </ol>
 </div>
 
-<form action="compliance-error">
+<form action="compliance-error-no-selection">
+
+  <h1 class="heading-medium">
+      Compliance 
+  </h1>
+    
   <div class="form-group">
     <fieldset>
 
       <legend class="u-margin-bottom-20">
-        <h1 class="heading-medium">
-          What is the assessment of the compliance?
-        </h1> 
+        <span class="form-label-bold">
+            What is the assessment of the compliance?
+        </span>
 
         <details>
           <summary><span class="summary">Clues for the compliance</span></summary>
@@ -61,6 +66,7 @@
       <div class="panel js-hidden u-margin-bottom-20" id="satisfactory-comment-panel">
         <label class="form-label" for="satisfactory-textarea">
           Comment
+          <span class="form-hint">(optional)</span>
         </label>
         <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5"></textarea>
       </div>

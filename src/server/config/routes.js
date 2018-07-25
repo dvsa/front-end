@@ -60,7 +60,9 @@ router.post('/prototypes/speech-to-text/add-major-failure/', speechToTextControl
 router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.removeDefect);
 
 // Site review: Summary view
+//router.get('/prototypes/site-review/enter-details', siteReview.getDetails);
 router.post('/prototypes/site-review/enter-details', siteReview.postDetails);
+
 router.get('/prototypes/site-review/summary/', siteReview.getSummary);
 
 // Create route from view path

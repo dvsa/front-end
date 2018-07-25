@@ -1,12 +1,13 @@
 import { Router } from 'express';
 
-import * as mainController from './../controllers/main.controller';
-import * as miscController from './../controllers/misc.controller';
-import * as recallsController from './../controllers/api/v1/recalls.controller';
-import * as createAccountController from './../controllers/create-account';
-import * as suspendTestersController from './../controllers/annual-assessment-tool/suspend-testers';
-import * as motTestResultsController from './../controllers/mot-test/mot-test';
-import * as speechToTextController from './../controllers/speech-to-text-search/speech-to-text-search';
+import * as mainController from '../controllers/main.controller';
+import * as miscController from '../controllers/misc.controller';
+import * as recallsController from '../controllers/api/v1/recalls.controller';
+import * as createAccountController from '../controllers/create-account';
+import * as suspendTestersController from '../controllers/annual-assessment-tool/suspend-testers';
+import * as motTestResultsController from '../controllers/mot-test/mot-test';
+import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
+import * as siteReview from '../controllers/site-review/site-review';
 
 const router = Router();
 
@@ -57,6 +58,10 @@ router.get('/prototypes/speech-to-text/', speechToTextController.getSearchQuery)
 router.post('/prototypes/speech-to-text/categories/', speechToTextController.postSearchQuery);
 router.post('/prototypes/speech-to-text/add-major-failure/', speechToTextController.captureFormValues);
 router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.removeDefect);
+
+// Site review: Summary view
+router.post('/prototypes/site-review/enter-details', siteReview.postDetails);
+router.get('/prototypes/site-review/summary/', siteReview.getSummary);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

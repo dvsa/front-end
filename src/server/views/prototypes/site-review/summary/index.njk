@@ -11,9 +11,10 @@
   { text: 'Summary' }
 ] %}
 
+{% block content %} 
 
-{% block content %}
 
+{% set notGiven = "Not given" %}
  
 <form action="enter-event-details-step-1">
   <div class="form-group">
@@ -78,14 +79,15 @@
         AE representative's User ID
       </th>
       <td class="table-summary__value--tabular">
-       <strong>{{ viewData["ae-representatives-user-id"] }}</strong><br/>
+       <strong>{{  formDetails.notGiven }}</strong><br/>
+       <strong>{{ viewData['ae-representatives-user-id'] }}</strong><br/>
       </td>
     </tr>
     <tr>
       <th class="table-summary__key">
         AE representative's full name
       </th>
-      <td class="table-summary__value--tabular">
+      <td class="table-summary__value--tabular"> 
         <strong>{{ viewData["ae-representatives-full-name"] }}</strong><br/>
       </td>
     </tr>
@@ -93,8 +95,8 @@
       <th class="table-summary__key">
         AE representative's role
       </th>
-      <td class="table-summary__value--tabular">
-        <strong>{{ viewData["ae-representatives-role"] }}</strong><br/>
+      <td class="table-summary__value--tabular"> 
+        <strong>{{ viewData["ae-representatives-role"] }} </strong><br/>
       </td>
     </tr>
     <tr>
@@ -102,7 +104,7 @@
         Date of site visit
       </th>
       <td class="table-summary__value--tabular">
-        <strong>14 July 2018</strong>
+        <strong>{{ viewData.dobDay }} {{ viewData.dobMonth }} {{ viewData.dobYear }}</strong>
       </td>
     </tr>
   </tbody>

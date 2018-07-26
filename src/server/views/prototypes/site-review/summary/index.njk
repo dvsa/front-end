@@ -17,7 +17,6 @@
 
 {% block content %} 
 
-
 {% set notGiven = "Not given" %}
  
 <form action="enter-event-details-step-1">
@@ -39,7 +38,12 @@
       </th>
       <td class="table-summary__value--tabular">
          <strong>{{ viewData.compliance.commitedLevel }}</strong><br/>
-        Comment:{{ viewData.compliance.commitedComment }}
+
+         {% if viewData.compliance.commitedComment %} 
+            {{"Comment" if viewData.compliance.satisfactory.isChecked else "Advice given"}}: 
+            {{viewData.compliance.commitedComment}}
+         {% endif %}   
+          
       </td>
     </tr>
     <tr>
@@ -48,7 +52,10 @@
       </th>
       <td class="table-summary__value--tabular">
         <strong>  {{ viewData.premises.commitedLevel }}</strong><br/>
-        Comment: {{ viewData.premises.commitedComment }}
+        {% if viewData.premises.commitedComment %} 
+            {{"Comment" if viewData.premises.satisfactory.isChecked else "Advice given"}}: 
+            {{viewData.premises.commitedComment}}
+         {% endif %}   
       </td>
     </tr>
     <tr>
@@ -57,7 +64,10 @@
       </th>
       <td class="table-summary__value--tabular">
         <strong>{{ viewData['management-and-quality'].commitedLevel }}</strong><br/>
-        Comment: {{ viewData['management-and-quality'].commitedComment }}
+        {% if viewData['management-and-quality'].commitedComment %} 
+          {{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Advice given"}}: 
+          {{viewData['management-and-quality'].commitedComment}}
+        {% endif %}   
       </td>
     </tr>
     <tr>
@@ -66,7 +76,10 @@
       </th>
       <td class="table-summary__value--tabular">
         <strong>{{ viewData.people.commitedLevel }}</strong><br/>
-        Comment: {{ viewData.people.commitedComment }}
+          {% if viewData.people.commitedComment %} 
+          {{"Comment" if viewData.people.satisfactory.isChecked else "Advice given"}}: 
+          {{viewData.people.commitedComment}}
+        {% endif %}  
       </td>
     </tr>
     <tr>
@@ -74,19 +87,20 @@
         Activity
       </th>
       <td class="table-summary__value--tabular">
-       
+      
         <strong>
-          {% if activityPerformed %}
+          {% if (viewData.activity.commitedTestNum) %}
             Activity performed
-          {% else %}
+          {% elif (viewData.activity.commitedReason) %}
             No activity performed
           {% endif %} 
         </strong><br/>
-        {% if activityPerformed %}
-          MOT test number: <strong>{{ viewData.activity.motTestNum }}</strong>
-          {% else %} 
-          Reason given: <strong>{{ viewData.activity.reasonCommited }}</strong>
+        {% if (viewData.activity.commitedTestNum) %}
+          MOT test number: <strong>{{viewData.activity.commitedTestNum }}</strong>
+          {% elif (viewData.activity.commitedReason) %} 
+          Reason given: <strong>{{ viewData.activity.commitedReason }}</strong>
         {% endif %} 
+      
       </td>
     </tr>
     <tr>
@@ -94,7 +108,7 @@
         AE representative's User ID
       </th>
       <td class="table-summary__value--tabular">
-       <strong>{{  viewData.testerDetails.testerRepId }}</strong><br/>
+       <strong>{{ viewData.testerDetails.testerUserId }}</strong><br/>
       </td>
     </tr>
     <tr>
@@ -129,7 +143,7 @@
 </div>
 
 <div class="form-group"> 
-    <a href="choose-section">Cancel</a>
+    <a href="enter-details">Back</a>
 </div> 
 
 <div>

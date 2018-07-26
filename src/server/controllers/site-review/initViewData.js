@@ -5,11 +5,13 @@
  */
 export const initViewData = () => {
   return {
-    testerDetails: {},
+    testerDetails: {
+      initialDate: '20 July 2018',
+    },
     activity: {
-      activityPerformed: true,
-      motTestNum: '1234567890',
-      reasonCommited: 'Test not necessary',
+      activityPerformed: false,
+      motTestNum: '',
+      reasonCommited: '',
       errors: [],
     },
     compliance: {
@@ -22,7 +24,6 @@ export const initViewData = () => {
       },
       improve: {
         isChecked: false,
-
         comment: '',
       },
       unsatisfactory: {

@@ -7,7 +7,7 @@ import * as createAccountController from '../controllers/create-account';
 import * as suspendTestersController from '../controllers/annual-assessment-tool/suspend-testers';
 import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
-import * as siteReviewController from './../controllers/site-review/site-review';
+import * as siteReviewController from '../controllers/site-review/site-review';
 
 const router = Router();
 
@@ -93,12 +93,12 @@ router.post('/prototypes/site-review/assessment/premises', [
   siteReviewController.postAssessment,
 ]);
 
+// Site review: Summary view
+router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
+//router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
+router.post('/prototypes/site-review/enter-details', siteReviewController.postDetails);
+
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
-
-// Site review: Summary view
-router.get('/prototypes/site-review/summary/', siteReviewController.getSummary);
-router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
-router.post('/prototypes/site-review/enter-details', siteReviewController.postDetails);
 
 export const allRoutes = router;

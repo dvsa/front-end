@@ -63,7 +63,10 @@
         <ol>
           <li class="defect">
             <div>
-              <h4 class="defect__title">{{"Comment" if viewData.compliance.satisfactory.isChecked else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
+              <h4 class="defect__title">
+               {{"Comment" if viewData.compliance.satisfactory.isChecked else "Advice given"}}: 
+              {{viewData.compliance.commitedComment}}
+              </h4>
             </div>
           </li>
         </ol>
@@ -98,7 +101,12 @@
       <ol>
         <li class="defect">
           <div>
-            <h4 class="defect__title">{{"Comment" if viewData.premises.satisfactory.isChecked else "Advice given"}}: {{viewData.premises.commitedComment}}</h4>
+            <h4 class="defect__title">
+            {% if viewData.premises.commitedComment %} 
+              {{"Comment" if viewData.premises.satisfactory.isChecked else "Advice given"}}: 
+              {{viewData.premises.commitedComment}}
+            {% endif %}  
+            </h4>
           </div>
         </li>
       </ol>
@@ -127,12 +135,17 @@
   <div class="js-brakeTestSummary defect-summary">
     <div id="rfrList" class="">
       <h3 class="defect-summary__heading">
-          <span class="defect-summary__heading-type" style="padding-left: 0px;">{{viewData['management-and-quality'].commitedLevel}}</span>
+          <span class="defect-summary__heading-type" style="padding-left: 0px;">
+          {{viewData['management-and-quality'].commitedLevel}}</span>
       </h3>
       <ol>
         <li class="defect">
           <div>
-            <h4 class="defect__title">{{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Advice given"}}: {{viewData['management-and-quality'].commitedComment}}</h4>
+            <h4 class="defect__title"> 
+            {% if viewData['management-and-quality'].commitedComment %} 
+              {{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Advice given"}}: 
+              {{viewData['management-and-quality'].commitedComment}}
+            {% endif %} 
           </div>
         </li>
       </ol>
@@ -162,12 +175,17 @@
   <div class="js-brakeTestSummary defect-summary">
     <div id="rfrList" class="">
       <h3 class="defect-summary__heading">
-          <span class="defect-summary__heading-type" style="padding-left: 0px;">{{viewData.people.commitedLevel}}</span>
+          <span class="defect-summary__heading-type" style="padding-left: 0px;">
+          {{viewData.people.commitedLevel}}</span>
       </h3>
       <ol>
         <li class="defect">
           <div>
-            <h4 class="defect__title">{{"Comment" if viewData.people.satisfactory.isChecked else "Advice given"}}:{{ viewData.people.commitedComment }}</h4>
+            <h4 class="defect__title">
+          {% if viewData.people.commitedComment %} 
+            {{"Comment" if viewData.people.satisfactory.isChecked else "Advice given"}}: 
+            {{viewData.people.commitedComment}}
+          {% endif %}  
           </div>
         </li>
       </ol>
@@ -226,7 +244,7 @@
 {% endif %}
 
 <p>
-  <a href="./prototypes/site-review">Cancel test</a>
+  <a href="./prototypes/site-review">Return to the site overview</a>
 </p>
 
 {% endblock %}

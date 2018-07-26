@@ -3,6 +3,7 @@ import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js
 import { initViewData } from './initViewData.js';
 import { getLastInUrl } from './helpers/getLastInUrl.js';
 import { getMonth } from './helpers/getMonth.js';
+import { runInNewContext } from 'vm';
 
 //export * from './routes.js';
 export * from './validators/validation.js';
@@ -19,7 +20,6 @@ export const clearReviewSession = (req, res) => {
   if (req.session.viewData) {
     req.session.viewData = initViewData();
   }
-
   // Renders view
   return res.render('prototypes/site-review/index');
 };
@@ -83,44 +83,29 @@ export const getChooseSection = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const getDetails = (req, res) => {
-  console.log('get details');
-  // Redirect to section on successful post
-  return res.redirect('/prototypes/site-review/enter-details');
-};
 
 export const postDetails = (req, res) => {
-  // Add initial data to req body
-  const testerDetails = req.body;
+  req.session.viewData = req.session.viewData || {};
 
-  //testerDetails.date = date;
+  const testerDetails = req.body || {};
+  
+  // create a friendly date from the three numbers input
   const dateString = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
-  /*   if (dateString.indexOf('undefined') >= 0) {
-    testerDetails.date = req.session.testerDetails.date;
+  if (dateString.indexOf('undefined') >= 0) {
+    testerDetails.date = req.session.viewData.initialDate;
   } else {
     testerDetails.date = dateString;
-  } */
-
-  //console.log('session: ', req.session);
-  console.log(req.session);
-  //req.session.testerDetails = testerDetails;
-  //req.session.viewData.testerDetails = testerDetails;
+  }
+  
+  // AdAppend initial data to viewdata
   req.session.viewData.testerDetails = testerDetails;
-  console.log('updated session:', req.session.viewData);
-
-  //console.log(req.session.viewData)
-  //req.session.viewData = req.session.viewData || {};
-  // Apply all form info to Viewdata in session
-  //req.session.viewData.testerDetails = testerDetails;
-
-  // Now set template data to be all our form data from the whole journey
-  //viewData = req.session.viewData;
-  return res.redirect('/prototypes/site-review/summary/');
+  return res.redirect('/prototypes/site-review/summary');
 };
 
 export const getSummary = (req, res) => {
-  console.log('SESSION 2:', req.session);
-  res.render('./prototypes/site-review/summary/index', { viewData: req.session.viewData });
+  return res.render('./prototypes/site-review/summary/index', {
+    viewData: req.session.viewData,
+  });
 };

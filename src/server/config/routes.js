@@ -7,7 +7,6 @@ import * as createAccountController from '../controllers/create-account';
 import * as suspendTestersController from '../controllers/annual-assessment-tool/suspend-testers';
 import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
-import * as siteReview from '../controllers/site-review/site-review';
 import * as siteReviewController from './../controllers/site-review/site-review';
 
 const router = Router();
@@ -60,40 +59,35 @@ router.post('/prototypes/speech-to-text/categories/', speechToTextController.pos
 router.post('/prototypes/speech-to-text/add-major-failure/', speechToTextController.captureFormValues);
 router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.removeDefect);
 
-// Site review: Summary view
-//router.get('/prototypes/site-review/enter-details', siteReview.getDetails);
-router.post('/prototypes/site-review/enter-details', siteReview.postDetails);
-router.get('/prototypes/site-review/summary/', siteReview.getSummary);
-
 // Site review paths
-router.get('/prototypes/site-review-new/', siteReviewController.clearReviewSession);
-router.get('/prototypes/site-review-new/choose-section', siteReviewController.getChooseSection);
-router.get('/prototypes/site-review-new/assessment/activity', siteReviewController.getAssessment);
-router.get('/prototypes/site-review-new/assessment/compliance', siteReviewController.getAssessment);
-router.get('/prototypes/site-review-new/assessment/management-and-quality', siteReviewController.getAssessment);
-router.get('/prototypes/site-review-new/assessment/people', siteReviewController.getAssessment);
-router.get('/prototypes/site-review-new/assessment/premises', siteReviewController.getAssessment);
-router.post('/prototypes/site-review-new/assessment/activity', [
+router.get('/prototypes/site-review/', siteReviewController.clearReviewSession);
+router.get('/prototypes/site-review/choose-section', siteReviewController.getChooseSection);
+router.get('/prototypes/site-review/assessment/activity', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/compliance', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/management-and-quality', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/people', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/premises', siteReviewController.getAssessment);
+router.post('/prototypes/site-review/assessment/activity', [
   siteReviewController.validateActivity,
   siteReviewController.populateActivity,
   siteReviewController.postAssessment,
 ]);
-router.post('/prototypes/site-review-new/assessment/compliance', [
+router.post('/prototypes/site-review/assessment/compliance', [
   siteReviewController.unpopulateAssessmentType,
   siteReviewController.validateAssessmentPost,
   siteReviewController.postAssessment,
 ]);
-router.post('/prototypes/site-review-new/assessment/management-and-quality', [
+router.post('/prototypes/site-review/assessment/management-and-quality', [
   siteReviewController.unpopulateAssessmentType,
   siteReviewController.validateAssessmentPost,
   siteReviewController.postAssessment,
 ]);
-router.post('/prototypes/site-review-new/assessment/people', [
+router.post('/prototypes/site-review/assessment/people', [
   siteReviewController.unpopulateAssessmentType,
   siteReviewController.validateAssessmentPost,
   siteReviewController.postAssessment,
 ]);
-router.post('/prototypes/site-review-new/assessment/premises', [
+router.post('/prototypes/site-review/assessment/premises', [
   siteReviewController.unpopulateAssessmentType,
   siteReviewController.validateAssessmentPost,
   siteReviewController.postAssessment,
@@ -101,5 +95,10 @@ router.post('/prototypes/site-review-new/assessment/premises', [
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
+
+// Site review: Summary view
+router.get('/prototypes/site-review/summary/', siteReviewController.getSummary);
+router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
+router.post('/prototypes/site-review/enter-details', siteReviewController.postDetails);
 
 export const allRoutes = router;

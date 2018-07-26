@@ -76,7 +76,6 @@ export const validateAssessmentPost = (req, res, next) => {
       // Ensure textarea is populated (mandatory)
       if (!isPopulated(req.body['unsatisfactory-advice-textarea'])) {
         // Add an error
-        console.log(req.session.viewData[assessmentType]);
         req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'This textarea is mandatory' });
       }
 

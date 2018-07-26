@@ -1,47 +1,126 @@
 //import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
 import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js';
 import { initViewData } from './initViewData.js';
-import { getMonth } from './helpers/helpers';
+import { getLastInUrl } from './helpers/getLastInUrl.js';
+import { getMonth } from './helpers/getMonth.js';
 
-export * from './routes';
-export * from './validators/validation';
-export * from './helpers';
+//export * from './routes.js';
+export * from './validators/validation.js';
+export * from './helpers/index.js';
 
-// Not used yet
+/**
+ * GET request middleware - clears session and returns to site review landing view
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const clearReviewSession = (req, res) => {
+  // Resets session data if exists
+  if (req.session.viewData) {
+    req.session.viewData = initViewData();
+  }
+
+  // Renders view
+  return res.render('prototypes/site-review/index');
+};
+
+/**
+ *
+ * GET request middleware - gets the assessment view
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getAssessment = (req, res) => {
+  let assessmentType = getLastInUrl(req);
+
+  // If assessmentType type doesnt exist
+  if (!assessmentType) {
+    // Re-render previous view
+    return res.render('/prototypes/site-review/choose-section/');
+  }
+
+  // Set session viewData
+  req.session.viewData = req.session.viewData || initViewData();
+
+  // Renders categories view
+  return res.render(`prototypes/site-review/assessment/${assessmentType}/index`, { viewData: req.session.viewData });
+};
+
+/**
+ * POST request middleware - posts an assessment
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const postAssessment = (req, res) => {
+  let assessmentType = getLastInUrl(req);
+
+  if (req.session.viewData[assessmentType].errors.length) {
+    return res.redirect(`/prototypes/site-review/assessment/${assessmentType}`);
+  }
+
+  // Redirect to section on successful post
+  return res.redirect('/prototypes/site-review/choose-section/');
+};
+
+/**
+ *
+ * GET request middleware - gets the choose section view
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getChooseSection = (req, res) => {
+  // Render choose section index
+  req.session.viewData = req.session.viewData || initViewData();
+  return res.render('prototypes/site-review/choose-section/index', { viewData: req.session.viewData });
+};
+
+/**
+ * Get request middleware - Gets the enter details form
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const getDetails = (req, res) => {
-  req.session.viewData = initialData();
-  const viewData = req.session;
-  console.log('viewdata', viewData);
-  res.render('./prototypes/site-review/enter-details/index', { viewData: viewData || {} });
+  console.log('get details');
+  // Redirect to section on successful post
+  return res.redirect('/prototypes/site-review/enter-details');
 };
 
 export const postDetails = (req, res) => {
   // Add initial data to req body
-  const viewData = initViewData();
   const testerDetails = req.body;
 
   //testerDetails.date = date;
   const dateString = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
-  if (dateString.indexOf('undefined') >= 0) {
-    testerDetails.date = testerDetails.date;
+  /*   if (dateString.indexOf('undefined') >= 0) {
+    testerDetails.date = req.session.testerDetails.date;
   } else {
     testerDetails.date = dateString;
-  }
+  } */
 
+  //console.log('session: ', req.session);
+  console.log(req.session);
+  //req.session.testerDetails = testerDetails;
+  //req.session.viewData.testerDetails = testerDetails;
+  req.session.viewData.testerDetails = testerDetails;
+  console.log('updated session:', req.session.viewData);
+
+  //console.log(req.session.viewData)
+  //req.session.viewData = req.session.viewData || {};
   // Apply all form info to Viewdata in session
-  viewData.testerDetails = testerDetails;
-  req.session.viewData = viewData;
+  //req.session.viewData.testerDetails = testerDetails;
 
   // Now set template data to be all our form data from the whole journey
   //viewData = req.session.viewData;
-  console.log(req.session.viewData);
   return res.redirect('/prototypes/site-review/summary/');
 };
 
 export const getSummary = (req, res) => {
-  //req.session.viewData = req.body;
-  const viewData = req.session.viewData;
-  res.render('./prototypes/site-review/summary/index', { viewData: viewData });
+  console.log('SESSION 2:', req.session);
+  res.render('./prototypes/site-review/summary/index', { viewData: req.session.viewData });
 };

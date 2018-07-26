@@ -5,12 +5,7 @@
  */
 export const initViewData = () => {
   return {
-    testerDetails: {
-      date: '26 July 2018',
-      testDay: '10',
-      testMonth: 'July',
-      testYear: '2018',
-    },
+    testerDetails: {},
     activity: {
       activityPerformed: true,
       motTestNum: '1234567890',
@@ -18,8 +13,8 @@ export const initViewData = () => {
       errors: [],
     },
     compliance: {
-      commitedLevel: 'Satisfactory',
-      commitedComment: 'Information given in writing to site manager',
+      commitedLevel: '',
+      commitedComment: '',
       errors: [],
       satisfactory: {
         isChecked: true,
@@ -36,8 +31,8 @@ export const initViewData = () => {
       },
     },
     'management-and-quality': {
-      commitedLevel: 'Unsatisfactory',
-      commitedComment: 'Corrective advice given to testing staff',
+      commitedLevel: '',
+      commitedComment: '',
       errors: [],
       satisfactory: {
         isChecked: true,
@@ -53,8 +48,8 @@ export const initViewData = () => {
       },
     },
     people: {
-      commitedLevel: 'Satisfactory',
-      commitedComment: 'Information given in writing to site manager',
+      commitedLevel: '',
+      commitedComment: '',
       errors: [],
       satisfactory: {
         isChecked: true,
@@ -70,8 +65,8 @@ export const initViewData = () => {
       },
     },
     premises: {
-      commitedLevel: 'Satisfactory',
-      commitedComment: 'Information given in writing to site manager',
+      commitedLevel: '',
+      commitedComment: '',
       errors: [],
       satisfactory: {
         isChecked: true,
@@ -79,11 +74,11 @@ export const initViewData = () => {
       },
       improve: {
         isChecked: false,
-        comment: 'Improvements advised for premises',
+        comment: '',
       },
       unsatisfactory: {
         isChecked: false,
-        comment: 'Urgent improvements advised for premises',
+        comment: '',
       },
     },
   };

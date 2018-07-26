@@ -4,6 +4,8 @@
 
 {% block content %}
 
+{{ viewData.people.satisfactory.isChecked }}
+
 <div class="breadcrumbs">
   <ol>
     <li>
@@ -45,8 +47,8 @@
       {% endif %}
     </div>
     <div class="action-panel__container--last">
-      <a href="/prototypes/site-review-new/assessment/compliance" class="button">
-        {{ "Edit" if viewData.compliance.commitedLevel else 'Record'}} results
+      <a href="/prototypes/site-review/assessment/compliance" class="button">
+        {{ "Edit" if viewData.compliance.commitedLevel else 'Record'}} outcome
       </a>
     </div>
   </div>
@@ -61,7 +63,7 @@
         <ol>
           <li class="defect">
             <div>
-              <h4 class="defect__title">{{"Comment" if viewData.compliance.satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
+              <h4 class="defect__title">{{"Comment" if viewData.compliance.satisfactory.isChecked else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
             </div>
           </li>
         </ol>
@@ -81,8 +83,8 @@
       {% endif %}
     </div>
     <div class="action-panel__container--last">
-      <a href="/prototypes/site-review-new/assessment/premises" class="button">
-      {{ "Edit" if viewData.premises.commitedLevel else 'Record'}} results
+      <a href="/prototypes/site-review/assessment/premises" class="button">
+      {{ "Edit" if viewData.premises.commitedLevel else 'Record'}} outcome
       </a>
     </div>
   </div>
@@ -96,7 +98,7 @@
       <ol>
         <li class="defect">
           <div>
-            <h4 class="defect__title">{{"Comment" if viewData.premises.satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
+            <h4 class="defect__title">{{"Comment" if viewData.premises.satisfactory.isChecked else "Advice given"}}: {{viewData.premises.commitedComment}}</h4>
           </div>
         </li>
       </ol>
@@ -115,8 +117,8 @@
       {% endif %}
     </div>
     <div class="action-panel__container--last">
-      <a href="/prototypes/site-review-new/assessment/management-and-quality" class="button">
-        {{ "Edit" if viewData['management-and-quality'].commitedLevel else 'Record'}} results
+      <a href="/prototypes/site-review/assessment/management-and-quality" class="button">
+        {{ "Edit" if viewData['management-and-quality'].commitedLevel else 'Record'}} outcome
       </a>
     </div>
   </div>
@@ -130,7 +132,7 @@
       <ol>
         <li class="defect">
           <div>
-            <h4 class="defect__title">{{"Comment" if viewData['management-and-quality'].satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
+            <h4 class="defect__title">{{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Advice given"}}: {{viewData['management-and-quality'].commitedComment}}</h4>
           </div>
         </li>
       </ol>
@@ -150,8 +152,8 @@
       {% endif %}
     </div>
     <div class="action-panel__container--last">
-      <a href="/prototypes/site-review-new/assessment/people" class="button">
-      {{ "Edit" if viewData.people.commitedLevel else 'Record'}} results
+      <a href="/prototypes/site-review/assessment/people" class="button">
+      {{ "Edit" if viewData.people.commitedLevel else 'Record'}} outcome
       </a>
     </div>
   </div>
@@ -165,7 +167,7 @@
       <ol>
         <li class="defect">
           <div>
-            <h4 class="defect__title">{{"Comment" if viewData.people.satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
+            <h4 class="defect__title">{{"Comment" if viewData.people.satisfactory.isChecked else "Advice given"}}:{{ viewData.people.commitedComment }}</h4>
           </div>
         </li>
       </ol>
@@ -184,8 +186,8 @@
       {% endif %}
     </div>
     <div class="action-panel__container--last">
-      <a href="/prototypes/site-review-new/assessment/activity" class="button">
-        {{ "Edit" if viewData.activity.isCompleted else 'Record'}} results
+      <a href="/prototypes/site-review/assessment/activity" class="button">
+        {{ "Edit" if viewData.activity.isCompleted else 'Record'}} activity
       </a>
     </div>
   </div>
@@ -218,13 +220,13 @@
 </br>
 
 {% if (viewData.activity.isCompleted) or (viewData.compliance.commitedLevel) or (viewData['management-and-quality'].commitedLevel) or (viewData.people.commitedLevel) or (viewData.premises.commitedLevel) %}
-  <input class="button" type="submit" value="Continue">
+  <a class="button" href="/prototypes/site-review/enter-details" type="submit" value="Continue">Continue</a>
   {% else %}
-  <input class="button" type="submit" value="Continue" disabled="true">
+  <a class="button" type="submit" value="Continue" disabled="true">Continue</a>
 {% endif %}
 
 <p>
-  <a href="/prototypes/site-review-new/">Cancel test</a>
+  <a href="./prototypes/site-review">Cancel test</a>
 </p>
 
 {% endblock %}

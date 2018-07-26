@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+<<<<<<< HEAD
 import * as mainController from '../controllers/main.controller';
 import * as miscController from '../controllers/misc.controller';
 import * as recallsController from '../controllers/api/v1/recalls.controller';
@@ -8,6 +9,16 @@ import * as suspendTestersController from '../controllers/annual-assessment-tool
 import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
 import * as siteReview from '../controllers/site-review/site-review';
+=======
+import * as mainController from './../controllers/main.controller';
+import * as miscController from './../controllers/misc.controller';
+import * as recallsController from './../controllers/api/v1/recalls.controller';
+import * as createAccountController from './../controllers/create-account';
+import * as suspendTestersController from './../controllers/annual-assessment-tool/suspend-testers';
+import * as motTestResultsController from './../controllers/mot-test/mot-test';
+import * as speechToTextController from './../controllers/speech-to-text-search/speech-to-text-search';
+import * as siteReviewController from './../controllers/site-review/site-review';
+>>>>>>> Created the first half of the site review journey
 
 const router = Router();
 
@@ -62,8 +73,37 @@ router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.re
 // Site review: Summary view
 //router.get('/prototypes/site-review/enter-details', siteReview.getDetails);
 router.post('/prototypes/site-review/enter-details', siteReview.postDetails);
-
 router.get('/prototypes/site-review/summary/', siteReview.getSummary);
+
+// Site review paths
+router.get('/prototypes/site-review-new/', siteReviewController.clearReviewSession);
+router.get('/prototypes/site-review-new/choose-section', siteReviewController.getChooseSection);
+router.get('/prototypes/site-review-new/assessment/activity', siteReviewController.getAssessment);
+router.get('/prototypes/site-review-new/assessment/compliance', siteReviewController.getAssessment);
+router.get('/prototypes/site-review-new/assessment/management-and-quality', siteReviewController.getAssessment);
+router.get('/prototypes/site-review-new/assessment/people', siteReviewController.getAssessment);
+router.get('/prototypes/site-review-new/assessment/premises', siteReviewController.getAssessment);
+router.post('/prototypes/site-review-new/assessment/activity', [siteReviewController.validateActivity, siteReviewController.populateActivity, siteReviewController.postAssessment]);
+router.post('/prototypes/site-review-new/assessment/compliance', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review-new/assessment/management-and-quality', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review-new/assessment/people', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review-new/assessment/premises', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

@@ -3,6 +3,10 @@ import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js
 import { initViewData } from './initViewData.js';
 import { getMonth } from './helpers/helpers';
 
+export * from './routes';
+export * from './validators/validation';
+export * from './helpers';
+
 // Not used yet
 export const getDetails = (req, res) => {
   req.session.viewData = initialData();
@@ -10,7 +14,6 @@ export const getDetails = (req, res) => {
   console.log('viewdata', viewData);
   res.render('./prototypes/site-review/enter-details/index', { viewData: viewData || {} });
 };
-
 
 export const postDetails = (req, res) => { 
   

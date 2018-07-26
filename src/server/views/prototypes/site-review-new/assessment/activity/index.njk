@@ -1,0 +1,94 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Action' %}
+
+{% block content %}
+
+{{ viewData.activity.formData.activityPerformedDropdown }}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/">
+          VTS079774
+      </a>
+    </li>
+    <li>
+      Site review
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  Activity
+</h1>
+
+<form method="post" action="/prototypes/site-review-new/assessment/activity">
+  <div class="form-group {{ 'form-group-error' if viewData.activity.errors[0]['radioGroup'] }}">
+    <fieldset>
+      <legend>
+        <span class='form-label-bold'>Did you perform an activity?</span>
+        {% if viewData.activity.errors[0]['radioGroup'] %}
+          <span class="error-message">{{viewData.activity.errors[0]['radioGroup']}}</span>
+        {% endif %}
+      </legend>
+
+      <div class="multiple-choice" data-target="advice-given-panel">
+        <input id="example-multiple-yes" type="radio" name="radio-activity" value="yes" {{"checked='true'" if viewData.activity.formData.activityIsPerformed}}>
+        <label for="example-multiple-yes">Yes</label>
+      </div>
+
+      <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="advice-given-panel">
+        <label class="form-label" for="test-number">
+          Test number of the MOT test you perfomed activity against
+        </label>
+        {% if viewData.activity.errors[0]['testNumber'] %}
+          <span class="error-message">{{ viewData.activity.errors[0]['testNumber'] }}</span>
+        {% endif %}
+        <input class="form-control" id="test-number" type="text" name="test-number" value="{{ viewData.activity.formData.testNum }}">
+      </div>
+
+      <div class="multiple-choice" data-target="activity-blocked-panel">
+        <input id="example-multiple-no" type="radio" name="radio-activity" value="no" {{"checked='true'" if viewData.activity.formData.activityIsNotPerformed}}>
+        <label for="example-multiple-no">No</label>
+      </div>
+
+      <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['activityDropdown'] }}" id="activity-blocked-panel">
+          <div class="form-group">
+            <label class="form-label" for="reinspection-options">
+              Why activity was not performed?
+            </label>
+            {% if viewData.activity.errors[0]['activityDropdown'] %}
+              <span class="error-message">{{ viewData.activity.errors[0]['activityDropdown'] }}</span>
+            {% endif %}
+            <select class="form-control" id="reinspection-options" name="reinspection-options">
+              <option>Please select</option>
+              <option value="1" {{'selected' if viewData.activity.formData.reason == 1}}>It wasn't necessary</option>
+              <option value="2" {{'selected' if viewData.activity.formData.reason == 2}}>Blocked by pseudo customer</option>
+              <option value="3" {{'selected' if viewData.activity.formData.reason == 3}}>Blocked by vehicle owner</option>
+              <option value="4" {{'selected' if viewData.activity.formData.reason == 4}}>I felt under threat from the garage staff</option>
+              <option value="5" {{'selected' if viewData.activity.formData.reason == 5}}>other</option>
+            </select>
+          </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div>
+      <input class="button" type="submit" value="Save and return"><br /> <br />
+      <a href="choose-section">Cancel</a>
+  </div>
+
+</form>
+{% endblock %}

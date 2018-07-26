@@ -10,12 +10,12 @@ import { getLastInUrl } from './helpers/getLastInUrl';
 export const clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {
-    req.session.viewData = {};
+    req.session.viewData = initViewData();
   };
 
   // Renders view
   return res.render('prototypes/site-review-new/index');
-}
+};
 
 /**
  * GET request middleware - gets the assessment view
@@ -64,5 +64,6 @@ export const postAssessment = (req, res) => {
  */
 export const getChooseSection = (req, res) => {
   // Render choose section index
-  return res.render('prototypes/site-review-new/choose-section/index', { viewData: req.session.viewData || initViewData() });
+  req.session.viewData = req.session.viewData || initViewData();
+  return res.render('prototypes/site-review-new/choose-section/index', { viewData: req.session.viewData });
 };

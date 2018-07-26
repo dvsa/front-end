@@ -126,7 +126,7 @@ export const validateAssessmentPost = (req, res, next) => {
 export const validateActivity = (req, res, next) => {
   // Reset formData
   req.session.viewData.activity.formData = {};
-  
+
   // Resets errors
   req.session.viewData.activity.errors = [];
 
@@ -150,15 +150,13 @@ export const validateActivity = (req, res, next) => {
 
     // Assigns text input to variable
     req.session.viewData.activity.formData.testNum = req.body['test-number'];
-  } 
-  
-  else {
+  } else {
     // Set activity response to false
-    req.session.viewData.activity.formData.activityIsNotPerformed = true;  
-    
+    req.session.viewData.activity.formData.activityIsNotPerformed = true;
+
     // Assigns activity dropdown value
     req.session.viewData.activity.formData.reason = req.body['reinspection-options'];
-  };
+  }
 
   // If yes radio was selected & text input is not populated
   if (activityRadioResponse == 'yes' && !isPopulated(req.session.viewData.activity.formData.testNum)) {
@@ -173,7 +171,7 @@ export const validateActivity = (req, res, next) => {
     req.session.viewData.activity.errors.push({
       activityDropdown: 'You must select why the activity was not performed',
     });
-  };
+  }
 
   // Calls the next middleware method in the stack
   next();

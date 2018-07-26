@@ -83,7 +83,11 @@ router.get('/prototypes/site-review-new/assessment/compliance', siteReviewContro
 router.get('/prototypes/site-review-new/assessment/management-and-quality', siteReviewController.getAssessment);
 router.get('/prototypes/site-review-new/assessment/people', siteReviewController.getAssessment);
 router.get('/prototypes/site-review-new/assessment/premises', siteReviewController.getAssessment);
-router.post('/prototypes/site-review-new/assessment/activity', [siteReviewController.validateActivity, siteReviewController.populateActivity, siteReviewController.postAssessment]);
+router.post('/prototypes/site-review-new/assessment/activity', [
+  siteReviewController.validateActivity,
+  siteReviewController.populateActivity,
+  siteReviewController.postAssessment,
+]);
 router.post('/prototypes/site-review-new/assessment/compliance', [
   siteReviewController.unpopulateAssessmentType,
   siteReviewController.validateAssessmentPost,

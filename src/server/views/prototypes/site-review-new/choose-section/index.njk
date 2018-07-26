@@ -61,7 +61,7 @@
         <ol>
           <li class="defect">
             <div>
-                <h4 class="defect__title">Comment: {{viewData.compliance.commitedComment}}</h4>
+              <h4 class="defect__title">{{"Comment" if viewData.compliance.satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
             </div>
           </li>
         </ol>
@@ -96,7 +96,7 @@
       <ol>
         <li class="defect">
           <div>
-              <h4 class="defect__title">Comment: {{viewData.premises.commitedComment}}</h4>
+            <h4 class="defect__title">{{"Comment" if viewData.premises.satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
           </div>
         </li>
       </ol>
@@ -130,7 +130,7 @@
       <ol>
         <li class="defect">
           <div>
-              <h4 class="defect__title">Comment: {{viewData['management-and-quality'].commitedComment}}</h4>
+            <h4 class="defect__title">{{"Comment" if viewData['management-and-quality'].satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
           </div>
         </li>
       </ol>
@@ -165,7 +165,7 @@
       <ol>
         <li class="defect">
           <div>
-              <h4 class="defect__title">Comment: {{viewData.people.commitedComment}}</h4>
+            <h4 class="defect__title">{{"Comment" if viewData.people.satisfactory else "Advice given"}}: {{viewData.compliance.commitedComment}}</h4>
           </div>
         </li>
       </ol>
@@ -217,10 +217,14 @@
 {% endif %}
 </br>
 
-<input class="button" type="submit" value="Continue">
+{% if (viewData.activity.isCompleted) or (viewData.compliance.commitedLevel) or (viewData['management-and-quality'].commitedLevel) or (viewData.people.commitedLevel) or (viewData.premises.commitedLevel) %}
+  <input class="button" type="submit" value="Continue">
+  {% else %}
+  <input class="button" type="submit" value="Continue" disabled="true">
+{% endif %}
+
 <p>
   <a href="/prototypes/site-review-new/">Cancel test</a>
 </p>
-
 
 {% endblock %}

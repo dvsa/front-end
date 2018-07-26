@@ -1,6 +1,5 @@
 import { Router } from 'express';
 
-<<<<<<< HEAD
 import * as mainController from '../controllers/main.controller';
 import * as miscController from '../controllers/misc.controller';
 import * as recallsController from '../controllers/api/v1/recalls.controller';
@@ -9,16 +8,7 @@ import * as suspendTestersController from '../controllers/annual-assessment-tool
 import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
 import * as siteReview from '../controllers/site-review/site-review';
-=======
-import * as mainController from './../controllers/main.controller';
-import * as miscController from './../controllers/misc.controller';
-import * as recallsController from './../controllers/api/v1/recalls.controller';
-import * as createAccountController from './../controllers/create-account';
-import * as suspendTestersController from './../controllers/annual-assessment-tool/suspend-testers';
-import * as motTestResultsController from './../controllers/mot-test/mot-test';
-import * as speechToTextController from './../controllers/speech-to-text-search/speech-to-text-search';
 import * as siteReviewController from './../controllers/site-review/site-review';
->>>>>>> Created the first half of the site review journey
 
 const router = Router();
 

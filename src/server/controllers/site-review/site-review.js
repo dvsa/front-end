@@ -15,26 +15,25 @@ export const getDetails = (req, res) => {
   res.render('./prototypes/site-review/enter-details/index', { viewData: viewData || {} });
 };
 
-export const postDetails = (req, res) => { 
-  
+export const postDetails = (req, res) => {
   // Add initial data to req body
   const viewData = initViewData();
-  const testerDetails = req.body; 
-  
+  const testerDetails = req.body;
+
   //testerDetails.date = date;
-  const dateString = `${testerDetails.testDay} ${getMonth( testerDetails.testMonth-1)} ${testerDetails.testYear}`;
- 
+  const dateString = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
+
   // Check we have a valid date string
-  if ( dateString.indexOf('undefined') >= 0 ) {
-      testerDetails.date = testerDetails.date;
+  if (dateString.indexOf('undefined') >= 0) {
+    testerDetails.date = testerDetails.date;
   } else {
     testerDetails.date = dateString;
-  } 
+  }
 
   // Apply all form info to Viewdata in session
   viewData.testerDetails = testerDetails;
   req.session.viewData = viewData;
-  
+
   // Now set template data to be all our form data from the whole journey
   //viewData = req.session.viewData;
   console.log(req.session.viewData);

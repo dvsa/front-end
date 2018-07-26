@@ -9,7 +9,7 @@ export const initViewData = () => {
       date: '26 July 2018',
       testDay: '10',
       testMonth: 'July',
-      testYear: '2018'
+      testYear: '2018',
     },
     activity: {
       activityPerformed: true,
@@ -87,8 +87,8 @@ export const initViewData = () => {
       },
     },
   };
-}
-    /* testerName: 'James',
+};
+/* testerName: 'James',
     'self-completed': true,
     'ae-representatives-user-id': 'Testers ID',
     'ae-representatives-full-name': 'Martin',

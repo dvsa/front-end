@@ -10,7 +10,7 @@ import { getLastInUrl } from './getLastInUrl';
 export const unpopulateAssessmentType = (req, res, next) => {
   // Gets text string after last '/' in URL
   let assessmentType = getLastInUrl(req);
-  
+
   // Resets assessment types session data
   req.session.viewData[assessmentType].commitedLevel = '';
   req.session.viewData[assessmentType].commitedComment = '';

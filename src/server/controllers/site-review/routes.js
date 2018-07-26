@@ -11,7 +11,7 @@ export const clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {
     req.session.viewData = initViewData();
-  };
+  }
 
   // Renders view
   return res.render('prototypes/site-review-new/index');

@@ -11,6 +11,10 @@
   { text: 'Summary' }
 ] %}
 
+ {{ activityPerformed }}
+ {% set activityPerformed = viewData.activity.activityPerformed %} 
+
+
 {% block content %} 
 
 
@@ -34,8 +38,8 @@
         Compliance
       </th>
       <td class="table-summary__value--tabular">
-         <strong>{{ viewData.outcomes.compliance.outcome }}</strong><br/>
-        Advice given: {{ viewData.outcomes.compliance.advice }}
+         <strong>{{ viewData.compliance.commitedLevel }}</strong><br/>
+        Comment:{{ viewData.compliance.commitedComment }}
       </td>
     </tr>
     <tr>
@@ -43,8 +47,8 @@
         Premises
       </th>
       <td class="table-summary__value--tabular">
-        <strong> {{ viewData.outcomes.premises.outcome }}</strong><br/>
-        Advice given: {{ viewData.outcomes.premises.advice }}
+        <strong>  {{ viewData.premises.commitedLevel }}</strong><br/>
+        Comment: {{ viewData.premises.commitedComment }}
       </td>
     </tr>
     <tr>
@@ -52,8 +56,8 @@
         Management and quality
       </th>
       <td class="table-summary__value--tabular">
-        <strong>{{ viewData.outcomes.management.outcome }}</strong><br/>
-        Advice given: {{ viewData.outcomes.management.advice }}
+        <strong>{{ viewData['management-and-quality'].commitedLevel }}</strong><br/>
+        Comment: {{ viewData['management-and-quality'].commitedComment }}
       </td>
     </tr>
     <tr>
@@ -61,8 +65,8 @@
         People
       </th>
       <td class="table-summary__value--tabular">
-        <strong>{{ viewData.outcomes.people.outcome }}</strong><br/>
-        Advice given: {{ viewData.outcomes.people.advice }}
+        <strong>{{ viewData.people.commitedLevel }}</strong><br/>
+        Comment: {{ viewData.people.commitedComment }}
       </td>
     </tr>
     <tr>
@@ -70,8 +74,19 @@
         Activity
       </th>
       <td class="table-summary__value--tabular">
-        <strong>{{ viewData.outcomes.activity.outcome }}</strong><br/>
-        MOT test number: <strong>{{ viewData.outcomes.activity.detail }}</strong>
+       
+        <strong>
+          {% if activityPerformed %}
+            Activity performed
+          {% else %}
+            No activity performed
+          {% endif %} 
+        </strong><br/>
+        {% if activityPerformed %}
+          MOT test number: <strong>{{ viewData.activity.motTestNum }}</strong>
+          {% else %} 
+          Reason given: <strong>{{ viewData.activity.reasonCommited }}</strong>
+        {% endif %} 
       </td>
     </tr>
     <tr>
@@ -79,8 +94,7 @@
         AE representative's User ID
       </th>
       <td class="table-summary__value--tabular">
-       <strong>{{  formDetails.notGiven }}</strong><br/>
-       <strong>{{ viewData['ae-representatives-user-id'] }}</strong><br/>
+       <strong>{{  viewData.testerDetails.testerRepId }}</strong><br/>
       </td>
     </tr>
     <tr>
@@ -88,7 +102,7 @@
         AE representative's full name
       </th>
       <td class="table-summary__value--tabular"> 
-        <strong>{{ viewData["ae-representatives-full-name"] }}</strong><br/>
+        <strong>{{  viewData.testerDetails.testerName }}</strong><br/>
       </td>
     </tr>
     <tr>
@@ -96,7 +110,7 @@
         AE representative's role
       </th>
       <td class="table-summary__value--tabular"> 
-        <strong>{{ viewData["ae-representatives-role"] }} </strong><br/>
+        <strong>{{  viewData.testerDetails.testerRole }}</strong><br/>
       </td>
     </tr>
     <tr>
@@ -104,7 +118,7 @@
         Date of site visit
       </th>
       <td class="table-summary__value--tabular">
-        <strong>{{ viewData.dobDay }} {{ viewData.dobMonth }} {{ viewData.dobYear }}</strong>
+        <strong>{{ viewData.testerDetails.date}}</strong>
       </td>
     </tr>
   </tbody>
@@ -116,11 +130,10 @@
 
 <div class="form-group"> 
     <a href="choose-section">Cancel</a>
-</div>
-  
+</div> 
 
-  <div>
-  </div>
+<div>
+</div>
 
 
 

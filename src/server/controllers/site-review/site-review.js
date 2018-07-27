@@ -105,6 +105,8 @@ export const postDetails = (req, res) => {
 };
 
 export const getSummary = (req, res) => {
+  console.log(req.session.viewData);
+  console.log(req.session);
   return res.render('./prototypes/site-review/summary/index', {
     viewData: req.session.viewData,
   });

@@ -3,7 +3,6 @@ import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js
 import { initViewData } from './initViewData.js';
 import { getLastInUrl } from './helpers/getLastInUrl.js';
 import { getMonth } from './helpers/getMonth.js';
-import { runInNewContext } from 'vm';
 
 //export * from './routes.js';
 export * from './validators/validation.js';
@@ -105,14 +104,17 @@ export const postDetails = (req, res) => {
   const dateString = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
-  if (!dateString.indexOf('undefined')) {
-    testerDetails.date = req.session.viewData.initialDate;
+  if (dateString.indexOf('undefined') == 1) {
+    testerDetails.date = '02 August 2018';
   } else {
     testerDetails.date = dateString;
   }
 
   // Append form data to viewdata in session
   req.session.viewData.testerDetails = testerDetails;
+
+  //console.log(req.session.viewData)
+  console.log(!req.session.viewData.testerDetails.date.indexOf('undefined'));
   return res.redirect('/prototypes/site-review/summary');
 };
 

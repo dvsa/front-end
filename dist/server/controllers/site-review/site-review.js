@@ -37,8 +37,6 @@ var _getLastInUrl = require('./helpers/getLastInUrl.js');
 
 var _getMonth = require('./helpers/getMonth.js');
 
-var _vm = require('vm');
-
 /**
  * GET request middleware - clears session and returns to site review landing view
  *
@@ -48,6 +46,7 @@ var _vm = require('vm');
 
 
 //export * from './routes.js';
+//import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
 const clearReviewSession = exports.clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {
@@ -64,7 +63,6 @@ const clearReviewSession = exports.clearReviewSession = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-//import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
 const getAssessment = exports.getAssessment = (req, res) => {
   let assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
 
@@ -139,14 +137,17 @@ const postDetails = exports.postDetails = (req, res) => {
   const dateString = `${testerDetails.testDay} ${(0, _getMonth.getMonth)(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
-  if (!dateString.indexOf('undefined')) {
-    testerDetails.date = req.session.viewData.initialDate;
+  if (dateString.indexOf('undefined') == 1) {
+    testerDetails.date = '02 August 2018';
   } else {
     testerDetails.date = dateString;
   }
 
   // Append form data to viewdata in session
   req.session.viewData.testerDetails = testerDetails;
+
+  //console.log(req.session.viewData)
+  console.log(!req.session.viewData.testerDetails.date.indexOf('undefined'));
   return res.redirect('/prototypes/site-review/summary');
 };
 

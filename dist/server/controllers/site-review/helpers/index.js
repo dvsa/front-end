@@ -16,14 +16,14 @@ Object.keys(_populateActivity).forEach(function (key) {
   });
 });
 
-var _unPopulateAssessmentType = require('./unPopulateAssessmentType');
+var _unpopulateAssessmentType = require('./unpopulateAssessmentType');
 
-Object.keys(_unPopulateAssessmentType).forEach(function (key) {
+Object.keys(_unpopulateAssessmentType).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
-      return _unPopulateAssessmentType[key];
+      return _unpopulateAssessmentType[key];
     }
   });
 });

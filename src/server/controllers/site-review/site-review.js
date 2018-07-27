@@ -78,7 +78,22 @@ export const getChooseSection = (req, res) => {
 };
 
 /**
- * Get request middleware - Posts details form to summary
+ *
+ * GET request middleware - gets the choose section view
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getDetails = (req, res) => {
+  // Render choose section index
+  req.session.viewData = req.session.viewData || initViewData();
+  return res.render('prototypes/site-review/enter-details/index', { viewData: req.session.viewData });
+};
+
+
+
+/**
+ * Get request middleware - Posts details form to summary view
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
@@ -88,25 +103,22 @@ export const postDetails = (req, res) => {
   req.session.viewData = req.session.viewData || {};
 
   const testerDetails = req.body || {};
-
-  // create a friendly date from the three numbers input
+  // Create a friendly date from the three numbers input
   const dateString = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
-  if (dateString.indexOf('undefined') >= 0) {
+  if (!dateString.indexOf('undefined')) {
     testerDetails.date = req.session.viewData.initialDate;
   } else {
     testerDetails.date = dateString;
   }
 
-  // Append initial data to viewdata
+  // Append form data to viewdata in session
   req.session.viewData.testerDetails = testerDetails;
   return res.redirect('/prototypes/site-review/summary');
 };
 
 export const getSummary = (req, res) => {
-  console.log(req.session.viewData);
-  console.log(req.session);
   return res.render('./prototypes/site-review/summary/index', {
     viewData: req.session.viewData,
   });

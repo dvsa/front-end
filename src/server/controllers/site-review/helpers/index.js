@@ -1,3 +1,3 @@
 export * from './populateActivity';
-export * from './unPopulateAssessmentType';
+export * from './unpopulateAssessmentType';
 export * from './getMonth';

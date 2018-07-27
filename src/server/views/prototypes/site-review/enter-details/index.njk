@@ -43,38 +43,59 @@
           </div>
         </fieldset>
       </div>
+ 
+
+    <div class="form-group {{ 'form-group-error' if viewData.compliance.errors[0]['radioGroup'] }}">
+
+    <fieldset>
+      <legend>
+        <span class='form-label-bold'>Was the site review conducted by two DVSA examiners?</span>
+        {% if viewData.compliance.errors[0]['radioGroup'] %}
+          <span class="error-message">{{viewData.compliance.errors[0]['radioGroup']}}</span>
+        {% endif %}
+      </legend>
 
 
-      <div class="form-group">
-        <fieldset class="inline">
-          <legend>
-              Was the site review conducted by two DVSA examiners?
-          </legend>
-          <div class="multiple-choice">
-            <input id="radio-inline-1" type="radio" name="completedBySelf" value="No" checked="checked">
-            <label for="radio-inline-1">No</label>
-          </div>
-          <div class="multiple-choice">
-            <input id="radio-inline-2" type="radio" name="completedBySelf" value="Yes">
-            <label for="radio-inline-2">Yes</label>
-          </div>
-        </fieldset>
+      <div class="multiple-choice" data-target="yes-panel">
+        <input id="twoExaminers-no" type="radio" name="twoExaminers" value="no" {{ "checked" if (viewData.testerDetails.twoExaminers === 'no') else "checked='false'"  }}>
+        <label for="twoExaminers-no">No</label>
       </div>
 
+      <div class="multiple-choice" data-target="no-panel">
+        <input id="twoExaminers-yes" type="radio" name="twoExaminers" value="yes" {{"checked" if (viewData.testerDetails.twoExaminers === 'yes')}}>
+        <label for="twoExaminers-yes">Yes</label>
+      </div>
+      <div class="js-hidden" id="no-panel">
+        <div class="panel panel-border-narrow">
+          {% if viewData.compliance.errors[0]['textareaImprove'] %}
+          <span class="error-message">{{ viewData.compliance.errors[0]['textareaImprove'] }}</span>
+          {% endif %}
+         <div class="{{ 'form-group-error' if viewData.compliance.errors[0]['textareaImprove'] }}">
+          <label class="form-label" for="examiner-user-id">Examiner's User ID</label>
+          <input class="form-control form-control-1-8" id="examiner-user-id" maxlength="50" name="examinerId" type="text" value="{{ viewData.testerDetails.examinerId }}">
+        </div>
+        </div> 
+      </div> 
+      
+    </fieldset>
+  </div>
+    
 
-      <fieldset>
+
+  <!--   <fieldset> 
       <div class="form-group">
         <label class="form-label" for="examiner-user-id">Examiner's User ID</label>
         <input class="form-control form-control-1-8" id="examiner-user-id" maxlength="50" name="examinerId" type="text" value="{{ viewData.testerDetails.examinerId }}">
       </div>
-    </fieldset>
-
-      <fieldset>
+    </fieldset> -->
+    
+    <fieldset>
       <div class="form-group">
         <label class="form-label" for="ae-representatives-user-id">AE representative's User ID</label>
         <input class="form-control form-control-1-8" id="ae-representatives-user-id" maxlength="50" name="testerRepId" type="text" value="{{ viewData.testerDetails.testerRepId }}">
       </div>
     </fieldset>
+   
 
     <fieldset>
       <div class="form-group">
@@ -88,14 +109,7 @@
         <label class="form-label" for="ae-representatives-role">AE representative's role</label>
         <input class="form-control" id="ae-representatives-role" maxlength="100" name="testerRole" type="text" value="{{ viewData.testerDetails.testerRole }}">
       </div>
-    </fieldset>
-
-    <fieldset>
-      <div class="form-group">
-        <label class="form-label" for="testers-user-id">Tester's User ID</label>
-        <input class="form-control form-control-1-8" id="testers-user-id" maxlength="50" name="testerUserId" type="text" value="{{viewData.testerDetails.testerUserId}}">
-      </div>
-    </fieldset>
+    </fieldset> 
 
 
     </div>

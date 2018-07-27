@@ -88,13 +88,14 @@
       
         <strong>
           {% if (viewData.activity.commitedTestNum) %}
-            Activity performed
+          Activity performed
           {% elif (viewData.activity.commitedReason) %}
-            No activity performed
+          No activity performed
           {% endif %} 
         </strong><br/>
         {% if (viewData.activity.commitedTestNum) %}
-          MOT test number: <strong>{{viewData.activity.commitedTestNum }}</strong>
+          MOT test number: <strong>{{viewData.activity.commitedTestNum }}</strong><br />
+          Tester's User ID: <strong>KUCE6924</strong>
           {% elif (viewData.activity.commitedReason) %} 
           Reason given: <strong>{{ viewData.activity.commitedReason }}</strong>
         {% endif %} 
@@ -137,6 +138,7 @@
         <strong>{{  viewData.testerDetails.testerRole }}</strong><br/>
       </td>
     </tr>
+
     <tr>
       <th class="table-summary__key">
         Date of site visit

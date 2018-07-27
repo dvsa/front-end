@@ -113,8 +113,6 @@ export const postDetails = (req, res) => {
   // Append form data to viewdata in session
   req.session.viewData.testerDetails = testerDetails;
 
-  //console.log(req.session.viewData)
-  console.log(!req.session.viewData.testerDetails.date.indexOf('undefined'));
   return res.redirect('/prototypes/site-review/summary');
 };
 

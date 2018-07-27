@@ -90,8 +90,6 @@ export const getDetails = (req, res) => {
   return res.render('prototypes/site-review/enter-details/index', { viewData: req.session.viewData });
 };
 
-
-
 /**
  * Get request middleware - Posts details form to summary view
  *

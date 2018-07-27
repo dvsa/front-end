@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getSummary = exports.postDetails = exports.getChooseSection = exports.postAssessment = exports.getAssessment = exports.clearReviewSession = undefined;
+exports.getSummary = exports.postDetails = exports.getDetails = exports.getChooseSection = exports.postAssessment = exports.getAssessment = exports.clearReviewSession = undefined;
 
 var _validation = require('./validators/validation.js');
 
@@ -112,7 +112,20 @@ const getChooseSection = exports.getChooseSection = (req, res) => {
 };
 
 /**
- * Get request middleware - Posts details form to summary
+ *
+ * GET request middleware - gets the choose section view
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+const getDetails = exports.getDetails = (req, res) => {
+  // Render choose section index
+  req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
+  return res.render('prototypes/site-review/enter-details/index', { viewData: req.session.viewData });
+};
+
+/**
+ * Get request middleware - Posts details form to summary view
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
@@ -122,25 +135,22 @@ const postDetails = exports.postDetails = (req, res) => {
   req.session.viewData = req.session.viewData || {};
 
   const testerDetails = req.body || {};
-
-  // create a friendly date from the three numbers input
+  // Create a friendly date from the three numbers input
   const dateString = `${testerDetails.testDay} ${(0, _getMonth.getMonth)(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
-  if (dateString.indexOf('undefined') >= 0) {
+  if (!dateString.indexOf('undefined')) {
     testerDetails.date = req.session.viewData.initialDate;
   } else {
     testerDetails.date = dateString;
   }
 
-  // Append initial data to viewdata
+  // Append form data to viewdata in session
   req.session.viewData.testerDetails = testerDetails;
   return res.redirect('/prototypes/site-review/summary');
 };
 
 const getSummary = exports.getSummary = (req, res) => {
-  console.log(req.session.viewData);
-  console.log(req.session);
   return res.render('./prototypes/site-review/summary/index', {
     viewData: req.session.viewData
   });

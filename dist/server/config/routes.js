@@ -99,7 +99,7 @@ router.post('/prototypes/site-review/assessment/premises', [siteReviewController
 
 // Site review: Summary view
 router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
-//router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
+router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
 router.post('/prototypes/site-review/enter-details', siteReviewController.postDetails);
 
 // Create route from view path

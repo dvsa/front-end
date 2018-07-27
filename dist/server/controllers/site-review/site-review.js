@@ -1,13 +1,43 @@
-//import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
-import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js';
-import { initViewData } from './initViewData.js';
-import { getLastInUrl } from './helpers/getLastInUrl.js';
-import { getMonth } from './helpers/getMonth.js';
-import { runInNewContext } from 'vm';
+'use strict';
 
-//export * from './routes.js';
-export * from './validators/validation.js';
-export * from './helpers/index.js';
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getSummary = exports.postDetails = exports.getChooseSection = exports.postAssessment = exports.getAssessment = exports.clearReviewSession = undefined;
+
+var _validation = require('./validators/validation.js');
+
+Object.keys(_validation).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _validation[key];
+    }
+  });
+});
+
+var _index = require('./helpers/index.js');
+
+Object.keys(_index).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _index[key];
+    }
+  });
+});
+
+var _addToSession = require('../speech-to-text-search/helpers/add-to-session.js');
+
+var _initViewData = require('./initViewData.js');
+
+var _getLastInUrl = require('./helpers/getLastInUrl.js');
+
+var _getMonth = require('./helpers/getMonth.js');
+
+var _vm = require('vm');
 
 /**
  * GET request middleware - clears session and returns to site review landing view
@@ -15,10 +45,13 @@ export * from './helpers/index.js';
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const clearReviewSession = (req, res) => {
+
+
+//export * from './routes.js';
+const clearReviewSession = exports.clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {
-    req.session.viewData = initViewData();
+    req.session.viewData = (0, _initViewData.initViewData)();
   }
   // Renders view
   return res.render('prototypes/site-review/index');
@@ -31,8 +64,9 @@ export const clearReviewSession = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const getAssessment = (req, res) => {
-  let assessmentType = getLastInUrl(req);
+//import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
+const getAssessment = exports.getAssessment = (req, res) => {
+  let assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
 
   // If assessmentType type doesnt exist
   if (!assessmentType) {
@@ -41,7 +75,7 @@ export const getAssessment = (req, res) => {
   }
 
   // Set session viewData
-  req.session.viewData = req.session.viewData || initViewData();
+  req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
 
   // Renders categories view
   return res.render(`prototypes/site-review/assessment/${assessmentType}/index`, { viewData: req.session.viewData });
@@ -53,8 +87,8 @@ export const getAssessment = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const postAssessment = (req, res) => {
-  let assessmentType = getLastInUrl(req);
+const postAssessment = exports.postAssessment = (req, res) => {
+  let assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
 
   if (req.session.viewData[assessmentType].errors.length) {
     return res.redirect(`/prototypes/site-review/assessment/${assessmentType}`);
@@ -71,9 +105,9 @@ export const postAssessment = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const getChooseSection = (req, res) => {
+const getChooseSection = exports.getChooseSection = (req, res) => {
   // Render choose section index
-  req.session.viewData = req.session.viewData || initViewData();
+  req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
   return res.render('prototypes/site-review/choose-section/index', { viewData: req.session.viewData });
 };
 
@@ -84,13 +118,13 @@ export const getChooseSection = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 
-export const postDetails = (req, res) => {
+const postDetails = exports.postDetails = (req, res) => {
   req.session.viewData = req.session.viewData || {};
 
   const testerDetails = req.body || {};
 
   // create a friendly date from the three numbers input
-  const dateString = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
+  const dateString = `${testerDetails.testDay} ${(0, _getMonth.getMonth)(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
   if (dateString.indexOf('undefined') >= 0) {
@@ -104,8 +138,8 @@ export const postDetails = (req, res) => {
   return res.redirect('/prototypes/site-review/summary');
 };
 
-export const getSummary = (req, res) => {
+const getSummary = exports.getSummary = (req, res) => {
   return res.render('./prototypes/site-review/summary/index', {
-    viewData: req.session.viewData,
+    viewData: req.session.viewData
   });
 };

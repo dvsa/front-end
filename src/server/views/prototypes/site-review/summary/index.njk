@@ -38,7 +38,7 @@
          <strong>{{ viewData.compliance.commitedLevel }}</strong><br/>
 
          {% if viewData.compliance.commitedComment %} 
-            {{"Comment" if viewData.compliance.satisfactory.isChecked else "Advice given"}}: 
+            {{"Comment" if viewData.compliance.satisfactory.isChecked else "Actions required"}}: 
             {{viewData.compliance.commitedComment}}
          {% endif %}   
           
@@ -51,7 +51,7 @@
       <td class="table-summary__value--tabular">
         <strong>  {{ viewData.premises.commitedLevel }}</strong><br/>
         {% if viewData.premises.commitedComment %} 
-            {{"Comment" if viewData.premises.satisfactory.isChecked else "Advice given"}}: 
+            {{"Comment" if viewData.premises.satisfactory.isChecked else "Actions required"}}: 
             {{viewData.premises.commitedComment}}
          {% endif %}   
       </td>
@@ -63,7 +63,7 @@
       <td class="table-summary__value--tabular">
         <strong>{{ viewData['management-and-quality'].commitedLevel }}</strong><br/>
         {% if viewData['management-and-quality'].commitedComment %} 
-          {{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Advice given"}}: 
+          {{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Actions required"}}: 
           {{viewData['management-and-quality'].commitedComment}}
         {% endif %}   
       </td>
@@ -75,7 +75,7 @@
       <td class="table-summary__value--tabular">
         <strong>{{ viewData.people.commitedLevel }}</strong><br/>
           {% if viewData.people.commitedComment %} 
-          {{"Comment" if viewData.people.satisfactory.isChecked else "Advice given"}}: 
+          {{"Comment" if viewData.people.satisfactory.isChecked else "Actions required"}}: 
           {{viewData.people.commitedComment}}
         {% endif %}  
       </td>
@@ -101,12 +101,24 @@
       
       </td>
     </tr>
+
+     {% if (viewData.testerDetails.examinerId) %}
+      <tr>
+          <th class="table-summary__key">
+            Examiner's User ID
+          </th>
+          <td class="table-summary__value--tabular">
+          <strong>{{ viewData.testerDetails.examinerId }}</strong><br/>
+          </td>
+      </tr> 
+     {% endif %}
+
     <tr>
       <th class="table-summary__key">
         AE representative's User ID
       </th>
       <td class="table-summary__value--tabular">
-       <strong>{{ viewData.testerDetails.testerUserId }}</strong><br/>
+       <strong>{{ viewData.testerDetails.testerRepId }}</strong><br/>
       </td>
     </tr>
     <tr>
@@ -137,7 +149,7 @@
 </table>
 
 <div class="u-margin-bottom-20">
-  <a href="/prototypes/site-review" class="button">Save and continue</a> 
+  <a href="https://int.dev.mot-testing.service.gov.uk/vehicle-testing-station/79774" class="button">Save and continue</a> 
 </div> 
 <div class="u-margin-bottom-20"> 
   <a href="enter-details">Back</a>

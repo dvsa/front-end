@@ -78,7 +78,7 @@ export const getChooseSection = (req, res) => {
 };
 
 /**
- * Get request middleware - Gets the enter details form
+ * Get request middleware - Posts details form to summary
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
@@ -99,7 +99,7 @@ export const postDetails = (req, res) => {
     testerDetails.date = dateString;
   }
 
-  // AdAppend initial data to viewdata
+  // Append initial data to viewdata
   req.session.viewData.testerDetails = testerDetails;
   return res.redirect('/prototypes/site-review/summary');
 };

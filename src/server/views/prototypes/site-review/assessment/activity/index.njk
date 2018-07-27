@@ -51,7 +51,7 @@
 
       <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="advice-given-panel">
         <label class="form-label" for="test-number">
-          Test number of the MOT test you perfomed activity against
+          MOT test number for orginial test 
         </label>
         {% if viewData.activity.errors[0]['testNumber'] %}
           <span class="error-message">{{ viewData.activity.errors[0]['testNumber'] }}</span>
@@ -73,20 +73,22 @@
               <span class="error-message">{{ viewData.activity.errors[0]['activityDropdown'] }}</span>
             {% endif %}
             <select class="form-control" id="reinspection-options" name="reinspection-options">
-              <option>Please select</option>
+              <option value="0">Please select</option>
               <option value="1" {{'selected' if viewData.activity.formData.reason == 1}}>It wasn't necessary</option>
               <option value="2" {{'selected' if viewData.activity.formData.reason == 2}}>Blocked by pseudo customer</option>
               <option value="3" {{'selected' if viewData.activity.formData.reason == 3}}>Blocked by vehicle owner</option>
               <option value="4" {{'selected' if viewData.activity.formData.reason == 4}}>I felt under threat from the garage staff</option>
-              <option value="5" {{'selected' if viewData.activity.formData.reason == 5}}>other</option>
+              <option value="5" {{'selected' if viewData.activity.formData.reason == 5}}>Other</option>
             </select>
           </div>
       </div>
     </fieldset>
   </div>
 
-  <div>
-      <input class="button" type="submit" value="Save and return"><br /> <br />
+  <div class="form-group u-margin-bottom-15">
+      <input class="button" type="submit" value="Save and return">
+  </div>
+  <div class="form-group">
       <a href="/prototypes/site-review/choose-section/">Back</a>
   </div>
 

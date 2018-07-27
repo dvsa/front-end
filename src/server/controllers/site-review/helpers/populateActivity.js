@@ -35,10 +35,10 @@ export const populateActivity = (req, res, next) => {
       'Blocked by pseudo customer',
       'Blocked by vehicle owner',
       'I felt under threat from the garage staff',
-      'other',
+      'Other',
     ];
 
-    req.session.viewData.activity.commitedReason = reasons[req.session.viewData.activity.commitedReason];
+    req.session.viewData.activity.commitedReason = reasons[req.session.viewData.activity.formData.reason - 1];
   }
 
   // Set view to be completed

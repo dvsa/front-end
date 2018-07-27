@@ -37,7 +37,7 @@
 
     <fieldset>
       <legend>
-        <span class='form-label-bold'>Record the Management and quality review result</span>
+        <span class='form-label-bold'>Record the Management and quality outcome</span>
         {% if viewData['management-and-quality'].errors[0]['radioGroup'] %}
           <span class="error-message">{{viewData['management-and-quality'].errors[0]['radioGroup']}}</span>
         {% endif %}
@@ -67,7 +67,7 @@
           <span class="error-message">{{ viewData['management-and-quality'].errors[0]['textareaImprove'] }}</span>
         {% endif %}
         <div class="{{ 'form-group-error' if viewData['management-and-quality'].errors[0]['textareaImprove'] }}">
-          <label class="form-label" for="improve-textarea">Advice given</label>
+          <label class="form-label" for="improve-textarea">Actions required</label>
           <textarea class="form-control" name="improve-textarea" id="improve-textarea" rows="5">{{viewData['management-and-quality'].improve.comment}}</textarea>
         </div>
       </div>
@@ -81,7 +81,7 @@
           <span class="error-message">{{ viewData['management-and-quality'].errors[0]['textareaUnsatisfactory'] }}</span>
         {% endif %}
         <div class="{{ 'form-group-error' if viewData['management-and-quality'].errors[0]['textareaUnsatisfactory'] }}">
-          <label class="form-label" for="unsatisfactory-advice-textarea">Advice given</label>
+          <label class="form-label" for="unsatisfactory-advice-textarea">Actions required</label>
           <textarea class="form-control" name="unsatisfactory-advice-textarea" id="unsatisfactory-advice-textarea" rows="5">{{viewData['management-and-quality'].unsatisfactory.comment}}</textarea>
         </div>
       </div>
@@ -89,7 +89,7 @@
   </div>
 
   <details style="margin-bottom: 10px;">
-    <summary><span class="summary">Clues for the Management and quality</span></summary>
+    <summary><span class="summary">Management and quality guidance</span></summary>
       <div class="panel panel-border-narrow">
         <p>The VTS is a safe working environment where the test bay is clearly defined and MOT equipment is easily accessible and in good order</p>
         <p>The equipment is calibrated and there is a system to ensure that calibrations are planned and carried out in a timely fashion</p>

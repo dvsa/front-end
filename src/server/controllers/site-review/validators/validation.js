@@ -164,8 +164,8 @@ export const validateActivity = (req, res, next) => {
       testNumber: 'You must add a test number',
     });
   }
-  // If no radio was selected & dropdown selection was not made
-  else if (activityRadioResponse == 'no' && !req.session.viewData.activity.formData.reason) {
+  // If no radio was selected & reason was not selected
+  else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
     // Create new error and push to stack
     req.session.viewData.activity.errors.push({
       activityDropdown: 'You must select why the activity was not performed',

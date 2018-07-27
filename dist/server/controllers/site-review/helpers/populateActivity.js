@@ -35,9 +35,9 @@ const populateActivity = exports.populateActivity = (req, res, next) => {
       req.session.viewData.activity.commitedActivityPerformed = false;
       req.session.viewData.activity.commitedReason = req.body['reinspection-options'];
 
-      let reasons = ["It wasn't necessary", 'Blocked by pseudo customer', 'Blocked by vehicle owner', 'I felt under threat from the garage staff', 'other'];
+      let reasons = ["It wasn't necessary", 'Blocked by pseudo customer', 'Blocked by vehicle owner', 'I felt under threat from the garage staff', 'Other'];
 
-      req.session.viewData.activity.commitedReason = reasons[req.session.viewData.activity.commitedReason];
+      req.session.viewData.activity.commitedReason = reasons[req.session.viewData.activity.formData.reason - 1];
     }
 
   // Set view to be completed

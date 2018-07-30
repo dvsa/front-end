@@ -1,4 +1,3 @@
-//import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
 import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js';
 import { initViewData } from './initViewData.js';
 import { getLastInUrl } from './helpers/getLastInUrl.js';

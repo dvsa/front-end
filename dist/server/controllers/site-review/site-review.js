@@ -46,7 +46,6 @@ var _getMonth = require('./helpers/getMonth.js');
 
 
 //export * from './routes.js';
-//import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
 const clearReviewSession = exports.clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {

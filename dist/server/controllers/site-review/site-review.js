@@ -123,7 +123,7 @@ const getDetails = exports.getDetails = (req, res) => {
 };
 
 /**
- * Get request middleware - Posts details form to summary view
+ * Get request middleware - Posts details form summary view
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
@@ -148,6 +148,13 @@ const postDetails = exports.postDetails = (req, res) => {
 
   return res.redirect('/prototypes/site-review/summary');
 };
+
+/**
+ * Get request middleware - Handle redirect to summary view
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 
 const getSummary = exports.getSummary = (req, res) => {
   return res.render('./prototypes/site-review/summary/index', {

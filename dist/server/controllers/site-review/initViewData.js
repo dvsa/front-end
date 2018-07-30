@@ -24,7 +24,7 @@ const initViewData = exports.initViewData = () => {
       commitedComment: '',
       errors: [],
       satisfactory: {
-        isChecked: true,
+        isChecked: false,
         comment: ''
       },
       improve: {
@@ -41,7 +41,7 @@ const initViewData = exports.initViewData = () => {
       commitedComment: '',
       errors: [],
       satisfactory: {
-        isChecked: true,
+        isChecked: false,
         comment: ''
       },
       improve: {
@@ -58,7 +58,7 @@ const initViewData = exports.initViewData = () => {
       commitedComment: '',
       errors: [],
       satisfactory: {
-        isChecked: true,
+        isChecked: false,
         comment: ''
       },
       improve: {
@@ -75,7 +75,7 @@ const initViewData = exports.initViewData = () => {
       commitedComment: '',
       errors: [],
       satisfactory: {
-        isChecked: true,
+        isChecked: false,
         comment: ''
       },
       improve: {
@@ -89,16 +89,3 @@ const initViewData = exports.initViewData = () => {
     }
   };
 };
-/* testerName: 'James',
-    'self-completed': true,
-    'ae-representatives-user-id': 'Testers ID',
-    'ae-representatives-full-name': 'Martin',
-    'testers-user-id': 'Tester',
-    date: {
-      day: '14',
-      month: '05',
-      year: '2018',
-    }, */
-/*   };
-};
- */

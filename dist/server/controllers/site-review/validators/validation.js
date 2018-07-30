@@ -47,7 +47,7 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
   // If radio value is not populated
   if (!radioValue) {
     // Push a new error to session errors
-    req.session.viewData[assessmentType].errors.push({ radioGroup: 'You must choose a result' });
+    req.session.viewData[assessmentType].errors.push({ radioGroup: 'You must choose an outcome' });
     // Calls the next middleware method in the stack
     next();
   }
@@ -61,7 +61,7 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isPopulated(req.body['improve-textarea'])) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaImprove: 'You must provide advice' });
+        req.session.viewData[assessmentType].errors.push({ textareaImprove: 'You must provide actions' });
       }
 
       // If textarea exceeds limit of 2500
@@ -83,7 +83,7 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isPopulated(req.body['unsatisfactory-advice-textarea'])) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'This textarea is mandatory' });
+        req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'You must provide actions' });
       }
 
       // If textarea exceeds limit of 2500

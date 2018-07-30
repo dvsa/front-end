@@ -17,7 +17,7 @@
       </a>
     </li>
     <li>
-      <a href="/">
+      <a href="/prototypes/site-review/choose-section/">
           VTS079774
       </a>
     </li>
@@ -42,10 +42,9 @@
           <span class="error-message">{{viewData.compliance.errors[0]['radioGroup']}}</span>
         {% endif %}
       </legend>
-
-
+      
       <div class="multiple-choice" data-target="satisfactory-comment-panel">
-        <input id="example-multiple-satisfactory" type="radio" name="radio-assessment-group" value="Satisfactory" {{"checked='true'" if viewData.compliance.satisfactory.isChecked}}>
+        <input id="example-multiple-satisfactory" type="radio" name="radio-assessment-group" value="Satisfactory" {{"checked='true'" if viewData.compliance.satisfactory.isChecked }}>
         <label for="example-multiple-satisfactory">Satisfactory</label>
       </div>
       <div class="panel panel-border-narrow js-hidden" id="satisfactory-comment-panel">
@@ -97,10 +96,10 @@
     </div>
   </details>
 
-  <div class="form-group u-margin-bottom-20">
-    <input class="button" type="submit" value="Save and return"/><br><br>
+  <div class="form-group u-margin-bottom-15">
+    <input class="button" type="submit" value="Save and return"/>
    </div>
-  <div class="form-group u-margin-bottom-20">
+  <div class="form-group">
        <a href="/prototypes/site-review/choose-section/">Back</a>
   </div>
 

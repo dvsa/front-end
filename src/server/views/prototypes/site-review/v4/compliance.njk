@@ -22,23 +22,33 @@
       </a>
     </li>
     <li>
-      Site review
+      <a href="/">
+          Site review
+      </a>
+    </li>
+    <li>
+      Compliance
     </li>
   </ol>
 </div>
 
-<form action="choose-section-premises-done">
+<form action="compliance-error-no-selection">   
+
+  <h1 class="heading-medium">
+      Compliance 
+  </h1>
+    
   <div class="form-group">
     <fieldset>
-      <legend>
-        <h1 class="heading-medium">
-          What is the assessment of the compliance?
-        </h1>
 
+      <legend class="u-margin-bottom-20">
+        <span class="form-label-bold">
+            What is the assessment of the compliance?
+        </span>
 
-        <details style="margin-bottom: 10px;">
+        <details>
           <summary><span class="summary">Clues for the compliance</span></summary>
-          <div class="panel panel-border-narrow">
+          <div class="panel ">
                 <p>The VTS is a safe working environment where the test bay is clearly defined and MOT equipment is easily accessible and in good order</p>
                 <p>The equipment is calibrated and there is a system to ensure that calibrations are planned and carried out in a timely fashion</p>
                 <p>The MOT test bay and site meet the Requirements of Authorisation</p>
@@ -53,9 +63,9 @@
           Satisfactory
         </label>
       </div>
-      <div class="panel panel-border-narrow js-hidden" id="satisfactory-comment-panel">
+      <div class="panel js-hidden u-margin-bottom-20" id="satisfactory-comment-panel">
         <label class="form-label" for="satisfactory-textarea">
-          Comment
+          Comment (optional)
         </label>
         <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5"></textarea>
       </div>
@@ -67,7 +77,7 @@
           Improve
         </label>
       </div>
-      <div class="panel panel-border-narrow js-hidden" id="improve-advice-panel">
+      <div class="panel js-hidden u-margin-bottom-20" id="improve-advice-panel">
         <label class="form-label" for="improve-textarea">
           Advice given
         </label>
@@ -81,21 +91,22 @@
           Unsatisfactory
         </label>
       </div>
-      <div class="panel panel-border-narrow js-hidden" id="unsatisfactory-advice-panel">
+      <div class="panel  js-hidden u-margin-bottom-20" id="unsatisfactory-advice-panel">
         <label class="form-label" for="unsatisfactory-advice-textarea">
           Advice given
         </label>
         <textarea class="form-control" name="unsatisfactory-advice-textarea" id="unsatisfactory-advice-textarea" rows="5"></textarea>
       </div>
-
-
     </fieldset>
   </div>
 
-  <div>
-    <input class="button" type="submit" value="Save and continue"><br><br>
+  <div class="form-group u-margin-bottom-20">
+    <input class="button" type="submit" value="Save and continue">
+  </div>
+  <div class="form-group">
     <a href="choose-section">Cancel</a>
   </div>
+ 
 
 
 

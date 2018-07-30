@@ -1,0 +1,246 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Site review - VTS079774' %}
+
+{% block content %}
+
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/">
+          VTS079774
+      </a>
+    </li>
+    <li>
+      Site review
+    </li>
+  </ol>
+</div>
+
+<legend>
+  <h1 class="heading-xlarge heading heading--page-heading">
+    <span class="heading-secondary">Site review</span>
+    Record a site review
+  </h1>
+</legend>
+
+<div class="u-margin-bottom-30">
+  
+  <div class="action-panel">
+    <div class="action-panel__container">
+      <h3 class="action-panel__heading">Compliance</h3>
+    </div>
+    <div class="action-panel__container">
+      {% if not viewData.compliance.commitedLevel %}
+        <span class="action-panel__value">Not recorded</span>
+      {% endif %}
+    </div>
+    <div class="action-panel__container--last">
+      <a href="/prototypes/site-review/assessment/compliance" class="button">
+        {{ "Edit" if viewData.compliance.commitedLevel else 'Record'}} outcome
+      </a>
+    </div>
+</div>
+{% if viewData.compliance.commitedLevel %}
+  <div class="defect-summary">
+    <div>
+      <h3 class="defect-summary__heading">
+          <span class="defect-summary__heading-type" style="padding-left: 0px;">{{viewData.compliance.commitedLevel}}</span>
+      </h3>
+      {% if viewData.compliance.commitedComment %}
+      <ol>
+        <li class="defect">
+          <div>
+            <h4 class="defect__title">
+              {{"Comment" if viewData.compliance.satisfactory.isChecked else "Actions required"}}: 
+              {{viewData.compliance.commitedComment}}
+            </h4>
+          </div>
+        </li>
+      </ol>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  
+  <div class="action-panel">
+      <div class="action-panel__container">
+        <h3 class="action-panel__heading">Premises</h3>
+      </div>
+      <div class="action-panel__container">
+        {% if not viewData.premises.commitedLevel %}
+        <span class="action-panel__value">Not recorded</span>
+        {% endif %}
+      </div>
+      <div class="action-panel__container--last">
+        <a href="/prototypes/site-review/assessment/premises" class="button">
+          {{ "Edit" if viewData.premises.commitedLevel else 'Record'}} outcome
+        </a>
+      </div>
+  </div>
+  {% if viewData.premises.commitedLevel %}
+  <div class="defect-summary">
+    <div>
+      <h3 class="defect-summary__heading">
+        <span class="defect-summary__heading-type" style="padding-left: 0px;">{{viewData.premises.commitedLevel}}</span>
+      </h3>
+      {% if viewData.premises.commitedComment %}
+      <ol>
+        <li class="defect">
+          <div>
+            <h4 class="defect__title">
+              {{"Comment" if viewData.premises.satisfactory.isChecked else "Actions required"}}: 
+              {{viewData.premises.commitedComment}}
+            </h4>
+          </div>
+        </li>
+      </ol>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  
+  <div class="action-panel">
+      <div class="action-panel__container">
+        <h3 class="action-panel__heading">Management and quality</h3>
+      </div>
+      <div class="action-panel__container">
+      {% if not viewData['management-and-quality'].commitedLevel %}
+        <span class="action-panel__value">Not recorded</span>
+      {% endif %}
+    </div>
+    <div class="action-panel__container--last">
+      <a href="/prototypes/site-review/assessment/management-and-quality" class="button">
+        {{ "Edit" if viewData['management-and-quality'].commitedLevel else 'Record'}} outcome
+      </a>
+    </div>
+</div>
+{% if viewData['management-and-quality'].commitedLevel %}
+  <div class="defect-summary">
+    <div>
+      <h3 class="defect-summary__heading">
+          <span class="defect-summary__heading-type" style="padding-left: 0px;">
+          {{viewData['management-and-quality'].commitedLevel}}</span>
+      </h3>
+      {% if viewData['management-and-quality'].commitedComment %} 
+      <ol>
+        <li class="defect">
+          <div>
+            <h4 class="defect__title"> 
+              {{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Actions required"}}: 
+              {{viewData['management-and-quality'].commitedComment}}
+            </div>
+          </li>
+        </ol>
+      {% endif %} 
+    </div>
+  </div>
+{% endif %}
+
+
+<div class="action-panel">
+    <div class="action-panel__container">
+      <h3 class="action-panel__heading">People</h3>
+    </div>
+    <div class="action-panel__container">
+      {% if not viewData.people.commitedLevel %}
+        <span class="action-panel__value">Not recorded</span>
+      {% endif %}
+    </div>
+    <div class="action-panel__container--last">
+      <a href="/prototypes/site-review/assessment/people" class="button">
+      {{ "Edit" if viewData.people.commitedLevel else 'Record'}} outcome
+      </a>
+    </div>
+</div>
+{% if viewData.people.commitedLevel %}
+  <div class="defect-summary">
+    <div>
+      <h3 class="defect-summary__heading">
+          <span class="defect-summary__heading-type" style="padding-left: 0px;">
+          {{viewData.people.commitedLevel}}</span>
+      </h3>
+      {% if viewData.people.commitedComment %} 
+      <ol>
+        <li class="defect">
+          <div>
+            <h4 class="defect__title">
+            {{"Comment" if viewData.people.satisfactory.isChecked else "Actions required"}}: 
+            {{viewData.people.commitedComment}}
+          </div>
+        </li>
+      </ol>
+      {% endif %}  
+    </div>
+  </div>
+{% endif %}
+
+<div class="action-panel">
+    <div class="action-panel__container">
+      <h3 class="action-panel__heading">Activity</h3>
+    </div>
+    <div class="action-panel__container">
+      {% if not viewData.activity.isCompleted %}
+        <span class="action-panel__value">Not recorded</span>
+      {% endif %}
+    </div>
+    <div class="action-panel__container--last">
+      <a href="/prototypes/site-review/assessment/activity" class="button">
+        {{ "Edit" if viewData.activity.isCompleted else 'Record'}} activity
+      </a>
+    </div>
+</div>
+
+{% if viewData.activity.isCompleted %}
+  <div class="defect-summary">
+    <div>
+      <h3 class="defect-summary__heading">
+        {% if viewData.activity.commitedActivityPerformed %}
+          <span class="defect-summary__heading-type" style="padding-left: 0px;">Activity performed</span>
+        {% else %}
+          <span class="defect-summary__heading-type" style="padding-left: 0px;">Activity not performed</span>
+        {% endif %}
+      </h3>
+      <ol>
+        <li class="defect">
+          <div>
+              {% if viewData.activity.commitedActivityPerformed %}
+                <h4 class="defect__title">MOT Test number: {{viewData.activity.commitedTestNum}}</h4>
+              {% else %}
+                <h4 class="defect__title">Reason given: {{viewData.activity.commitedReason}}</h4>
+              {% endif %}
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+{% endif %}
+
+</div>
+
+
+<div class="form-group u-margin-bottom-20">
+  {% if (viewData.activity.isCompleted) and (viewData.compliance.commitedLevel) and (viewData['management-and-quality'].commitedLevel) and (viewData.people.commitedLevel) and (viewData.premises.commitedLevel) %}
+    <a class="button" href="/prototypes/site-review/enter-details" type="submit" value="Continue">Continue</a>
+    {% else %}
+    <a class="button" type="submit" value="Continue" disabled="true">Continue</a>
+  {% endif %}
+</div>
+
+<div class="form-group u-margin-bottom-20">
+  <a href="https://int.dev.mot-testing.service.gov.uk/vehicle-testing-station/79774">Return to the site overview</a>
+</div>
+ 
+
+{% endblock %}

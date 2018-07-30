@@ -1,0 +1,108 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Compliance' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/choose-section/">
+          VTS079774
+      </a>
+    </li>
+    <li>
+      Site review
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  People
+</h1>
+
+<form method="post" action="/prototypes/site-review/assessment/people">
+  <div class="form-group {{ 'form-group-error' if viewData.people.errors[0]['radioGroup'] }}">
+
+    <fieldset>
+      <legend>
+        <span class='form-label-bold'>Record the people review outcome</span>
+        {% if viewData.people.errors[0]['radioGroup'] %}
+          <span class="error-message">{{viewData.people.errors[0]['radioGroup']}}</span>
+        {% endif %}
+      </legend>
+
+
+      <div class="multiple-choice" data-target="satisfactory-comment-panel">
+        <input id="example-multiple-satisfactory" type="radio" name="radio-assessment-group" value="Satisfactory" {{"checked='true'" if viewData.people.satisfactory.isChecked}}>
+        <label for="example-multiple-satisfactory">Satisfactory</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="satisfactory-comment-panel">
+        {% if viewData.people.errors[0]['textareaSatisfactory'] %}
+          <span class="error-message">{{ viewData.people.errors[0]['textareaSatisfactory'] }}</span>
+        {% endif %}
+        <div class="{{ 'form-group-error' if viewData.people.errors[0]['textareaSatisfactory'] }}">
+          <label class="form-label" for="satisfactory-textarea">Comment (Optional)</label>
+          <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5">{{viewData.people.satisfactory.comment}}</textarea>
+        </div>
+      </div>
+
+      <div class="multiple-choice" data-target="improve-advice-panel">
+        <input id="example-multiple-improve" type="radio" name="radio-assessment-group" value="Improve" {{"checked='true'" if viewData.people.improve.isChecked}}>
+        <label for="example-multiple-improve">Improve</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="improve-advice-panel">
+        {% if viewData.people.errors[0]['textareaImprove'] %}
+          <span class="error-message">{{ viewData.people.errors[0]['textareaImprove'] }}</span>
+        {% endif %}
+        <div class="{{ 'form-group-error' if viewData.people.errors[0]['textareaImprove'] }}">
+          <label class="form-label" for="improve-textarea">Actions required</label>
+          <textarea class="form-control" name="improve-textarea" id="improve-textarea" rows="5">{{viewData.people.improve.comment}}</textarea>
+        </div>
+      </div>
+
+      <div class="multiple-choice" data-target="unsatisfactory-advice-panel">
+        <input id="example-multiple-unsatisfactory" type="radio" name="radio-assessment-group" value="Unsatisfactory" {{"checked='true'" if viewData.people.unsatisfactory.isChecked}}>
+        <label for="example-multiple-unsatisfactory">Unsatisfactory</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="unsatisfactory-advice-panel">
+        {% if viewData.people.errors[0]['textareaUnsatisfactory'] %}
+          <span class="error-message">{{ viewData.people.errors[0]['textareaUnsatisfactory'] }}</span>
+        {% endif %}
+        <div class="{{ 'form-group-error' if viewData.people.errors[0]['textareaUnsatisfactory'] }}">
+          <label class="form-label" for="unsatisfactory-advice-textarea">Actions required</label>
+          <textarea class="form-control" name="unsatisfactory-advice-textarea" id="unsatisfactory-advice-textarea" rows="5">{{viewData.people.unsatisfactory.comment}}</textarea>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <details class="u-margin-bottom-10">
+    <summary><span class="summary">People guidance</span></summary>
+      <div class="panel panel-border-narrow">
+        <p>The VTS is a safe working environment where the test bay is clearly defined and MOT equipment is easily accessible and in good order</p>
+        <p>The equipment is calibrated and there is a system to ensure that calibrations are planned and carried out in a timely fashion</p>
+        <p>The MOT test bay and site meet the Requirements of Authorisation</p>
+    </div>
+  </details>
+
+  <div class="form-group u-margin-bottom-15">
+    <input class="button" type="submit" value="Save and return"/>
+  </div>
+  <div class="form-group">
+    <a href="/prototypes/site-review/choose-section/">Back</a>
+  </div>
+
+</form>
+{% endblock %}

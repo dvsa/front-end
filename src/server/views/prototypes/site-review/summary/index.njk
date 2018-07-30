@@ -1,0 +1,163 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Willetta Aredondo', url: '/' },
+  { text: 'VTS079774', url: '/' },
+  { text: 'Site review', url: '/prototypes/site-review' },
+  { text: 'Enter details', url: '/prototypes/site-review/enter-details' },
+  { text: 'Summary' }
+] %}
+
+ {{ activityPerformed }}
+ {% set activityPerformed = viewData.activity.activityPerformed %} 
+
+
+{% block content %} 
+
+{% set notGiven = "Not given" %}
+ 
+  <div class="form-group">
+      <legend>
+        <h1 class="heading-medium">
+          Check details of the site review before you save
+        </h1>
+      </legend>
+
+  </div>
+
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+    <tr>
+      <th class="table-summary__key">
+        Compliance
+      </th>
+      <td class="table-summary__value--tabular">
+         <strong>{{ viewData.compliance.commitedLevel }}</strong><br/>
+
+         {% if viewData.compliance.commitedComment %} 
+            {{"Comment" if viewData.compliance.satisfactory.isChecked else "Actions required"}}: 
+            {{viewData.compliance.commitedComment}}
+         {% endif %}   
+          
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Premises
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>  {{ viewData.premises.commitedLevel }}</strong><br/>
+        {% if viewData.premises.commitedComment %} 
+            {{"Comment" if viewData.premises.satisfactory.isChecked else "Actions required"}}: 
+            {{viewData.premises.commitedComment}}
+         {% endif %}   
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Management and quality
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>{{ viewData['management-and-quality'].commitedLevel }}</strong><br/>
+        {% if viewData['management-and-quality'].commitedComment %} 
+          {{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Actions required"}}: 
+          {{viewData['management-and-quality'].commitedComment}}
+        {% endif %}   
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        People
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>{{ viewData.people.commitedLevel }}</strong><br/>
+          {% if viewData.people.commitedComment %} 
+          {{"Comment" if viewData.people.satisfactory.isChecked else "Actions required"}}: 
+          {{viewData.people.commitedComment}}
+        {% endif %}  
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Activity
+      </th>
+      <td class="table-summary__value--tabular">
+      
+        <strong>
+          {% if (viewData.activity.commitedTestNum) %}
+          Activity performed
+          {% elif (viewData.activity.commitedReason) %}
+          No activity performed
+          {% endif %} 
+        </strong><br/>
+        {% if (viewData.activity.commitedTestNum) %}
+          MOT test number: <strong>{{viewData.activity.commitedTestNum }}</strong><br />
+          Tester's User ID: <strong>KUCE6924</strong>
+          {% elif (viewData.activity.commitedReason) %} 
+          Reason given: <strong>{{ viewData.activity.commitedReason }}</strong>
+        {% endif %} 
+      
+      </td>
+    </tr>
+
+     {% if (viewData.testerDetails.examinerId) %}
+      <tr>
+          <th class="table-summary__key">
+            Examiner's User ID
+          </th>
+          <td class="table-summary__value--tabular">
+          <strong>{{ viewData.testerDetails.examinerId }}</strong><br/>
+          </td>
+      </tr> 
+     {% endif %}
+
+    <tr>
+      <th class="table-summary__key">
+        AE representative's User ID
+      </th>
+      <td class="table-summary__value--tabular">
+       <strong>{{ viewData.testerDetails.testerRepId }}</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's full name
+      </th>
+      <td class="table-summary__value--tabular"> 
+        <strong>{{  viewData.testerDetails.testerName }}</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's role
+      </th>
+      <td class="table-summary__value--tabular"> 
+        <strong>{{  viewData.testerDetails.testerRole }}</strong><br/>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="table-summary__key">
+        Date of site visit
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>{{ viewData.testerDetails.date }}</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="u-margin-bottom-20">
+  <a href="https://int.dev.mot-testing.service.gov.uk/vehicle-testing-station/79774" class="button">Save and continue</a> 
+</div> 
+<div class="form-group"> 
+  <a href="enter-details">Back</a>
+</div> 
+
+<div>
+</div>
+
+{% endblock %}

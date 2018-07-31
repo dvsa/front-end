@@ -112,10 +112,11 @@ const wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPrismForFullPage
   // Return the new HTML
   // Combination of the preview and prism code highlighting
   return `
+   
     <!-- content -->
     ${code}
     <!-- content -->
-
+    <!--
     <div class="dev-preview__floating-button">
       <span class="dev-preview__floating-button-text">
         View HTML Markup
@@ -133,6 +134,6 @@ const wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPrismForFullPage
       <div class="dev-preview__code">
         ${prismCode}
       </div>
-    </div>
+    </div> -->
   `;
 };

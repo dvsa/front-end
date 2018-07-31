@@ -1,6 +1,6 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPreviwAndPrism = exports.highlightCode = undefined;
@@ -19,7 +19,9 @@ var _pretty = require('pretty');
 
 var _pretty2 = _interopRequireDefault(_pretty);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Prettifies and highlights code using prismjs
@@ -112,10 +114,11 @@ const wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPrismForFullPage
   // Return the new HTML
   // Combination of the preview and prism code highlighting
   return `
+   
     <!-- content -->
     ${code}
     <!-- content -->
-
+    <!--
     <div class="dev-preview__floating-button">
       <span class="dev-preview__floating-button-text">
         View HTML Markup
@@ -133,6 +136,6 @@ const wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPrismForFullPage
       <div class="dev-preview__code">
         ${prismCode}
       </div>
-    </div>
+    </div> -->
   `;
 };

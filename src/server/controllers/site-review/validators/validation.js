@@ -175,8 +175,6 @@ export const validateActivity = (req, res, next) => {
   next();
 };
 
-
-
 /**
  * Validation middleware function used to populate errors on
  * site review assessment POST
@@ -186,23 +184,21 @@ export const validateActivity = (req, res, next) => {
  * @param {Express.Next} - Express Next object
  */
 export const validateDetails = (req, res, next) => {
-
   // Date keys
   const day = req.body['testDay'];
   const month = req.body['testMonth'];
   const year = req.body['testYear'];
 
   // Validation rules for date - return booleans for each
-  const dayValid = ( (day.length <= 2) && (day.length != 0 ) );
-  const monthValid = ( (month.length >= 1) && (month.length <= 2) && ( month <= 12 ) );
-  const yearValid = ( (year.length == 4) && (/^\d+$/.test(year)) );
+  const dayValid = day.length <= 2 && day.length != 0;
+  const monthValid = month.length >= 1 && month.length <= 2 && month <= 12;
+  const yearValid = year.length == 4 && /^\d+$/.test(year);
   const dateValid = dayValid && monthValid && yearValid;
- 
-  
+
   // Number of examiners
   let twoExaminers = req.body['twoExaminers']; // yes or no
   let examinerId = req.body['examinerId']; // yes or no
-  
+
   // Persists form fields on reload
   req.session.viewData.testerDetails = { ...req.body };
   // New array for errors
@@ -215,14 +211,13 @@ export const validateDetails = (req, res, next) => {
 
   // Validation switch on examiners question. May need additional case for 'no'
   switch (twoExaminers) {
-    
-      // If two examiners...
-      case 'yes':
+    // If two examiners...
+    case 'yes':
       // Ensure Examiners' ID is populated (mandatory)
-       if (!isPopulated(examinerId)) {
-          // Add an error
-          req.session.viewData.testerDetails.errors.push({ provideID: 'You must provide the Examiner\'s User ID'});
-        }
+      if (!isPopulated(examinerId)) {
+        // Add an error
+        req.session.viewData.testerDetails.errors.push({ provideID: "You must provide the Examiner's User ID" });
+      }
       break;
   }
 

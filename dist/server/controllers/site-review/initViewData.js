@@ -11,7 +11,16 @@ Object.defineProperty(exports, "__esModule", {
 const initViewData = exports.initViewData = () => {
   return {
     testerDetails: {
-      initialDate: '20 July 2018'
+      initialDate: '20 July 2018',
+      testDay: '',
+      testMonth: '',
+      testYear: '',
+      examinerId: '',
+      testerRepId: '',
+      testerName: '',
+      testerRole: '',
+      twoExaminers: 'no',
+      errors: []
     },
     activity: {
       activityPerformed: false,

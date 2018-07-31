@@ -96,7 +96,6 @@ export const getDetails = (req, res) => {
  */
 
 export const postDetails = (req, res) => {
-  
   // If there are errors, reload details page
   if (req.session.viewData.testerDetails.errors.length) {
     return res.redirect(`/prototypes/site-review/enter-details`);
@@ -107,14 +106,14 @@ export const postDetails = (req, res) => {
   const testerDetails = req.body || {};
   // Create a friendly date from the three numbers input
   let testDate = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
-  
+
   // Check we have a valid date string
   if (testDate.indexOf('undefined') == 1) {
     testDate = '02 August 2018';
-  }  
-  
+  }
+
   // Append form data to viewdata in session
-  req.session.viewData.testerDetails.date = testDate; 
+  req.session.viewData.testerDetails.date = testDate;
 
   // No errors - Successful post
   return res.redirect('/prototypes/site-review/summary');

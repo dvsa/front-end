@@ -1,5 +1,4 @@
 import { getLastInUrl } from '../helpers/getLastInUrl';
-
 /**
  * Returns boolean based on string length
  *
@@ -170,6 +169,56 @@ export const validateActivity = (req, res, next) => {
     req.session.viewData.activity.errors.push({
       activityDropdown: 'You must select why the activity was not performed',
     });
+  }
+
+  // Calls the next middleware method in the stack
+  next();
+};
+
+/**
+ * Validation middleware function used to populate errors on
+ * site review assessment POST
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ * @param {Express.Next} - Express Next object
+ */
+export const validateDetails = (req, res, next) => {
+  // Date keys
+  const day = req.body['testDay'];
+  const month = req.body['testMonth'];
+  const year = req.body['testYear'];
+
+  // Validation rules for date - return booleans for each
+  const dayValid = day.length <= 2 && day.length != 0;
+  const monthValid = month.length >= 1 && month.length <= 2 && month <= 12;
+  const yearValid = year.length == 4 && /^\d+$/.test(year);
+  const dateValid = dayValid && monthValid && yearValid;
+
+  // Number of examiners
+  let twoExaminers = req.body['twoExaminers']; // yes or no
+  let examinerId = req.body['examinerId']; // yes or no
+
+  // Persists form fields on reload
+  req.session.viewData.testerDetails = { ...req.body };
+  // New array for errors
+  req.session.viewData.testerDetails.errors = [];
+
+  // Set property for two examiners result to check
+  req.session.viewData.testerDetails.twoExaminers = twoExaminers;
+  // Add examiner ID to session
+  req.session.viewData.testerDetails.examinerId = examinerId;
+
+  // Validation switch on examiners question. May need additional case for 'no'
+  switch (twoExaminers) {
+    // If two examiners...
+    case 'yes':
+      // Ensure Examiners' ID is populated (mandatory)
+      if (!isPopulated(examinerId)) {
+        // Add an error
+        req.session.viewData.testerDetails.errors.push({ provideID: "You must provide the Examiner's User ID" });
+      }
+      break;
   }
 
   // Calls the next middleware method in the stack

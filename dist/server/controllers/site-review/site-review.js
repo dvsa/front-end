@@ -46,7 +46,6 @@ var _getMonth = require('./helpers/getMonth.js');
 
 
 //export * from './routes.js';
-//import { renderViewWithValuesOrRedirect, renderWithErrorsOrRedirectWithSession } from './helpers';
 const clearReviewSession = exports.clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {
@@ -130,22 +129,26 @@ const getDetails = exports.getDetails = (req, res) => {
  */
 
 const postDetails = exports.postDetails = (req, res) => {
-  req.session.viewData = req.session.viewData || {};
+  // If there are errors, reload details page
+  if (req.session.viewData.testerDetails.errors.length) {
+    return res.redirect(`/prototypes/site-review/enter-details`);
+  }
 
+  // Add friendly date to viewData
+  //req.session.viewData = req.session.viewData || {};
   const testerDetails = req.body || {};
   // Create a friendly date from the three numbers input
-  const dateString = `${testerDetails.testDay} ${(0, _getMonth.getMonth)(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
+  let testDate = `${testerDetails.testDay} ${(0, _getMonth.getMonth)(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
 
   // Check we have a valid date string
-  if (dateString.indexOf('undefined') == 1) {
-    testerDetails.date = '02 August 2018';
-  } else {
-    testerDetails.date = dateString;
+  if (testDate.indexOf('undefined') == 1) {
+    testDate = '02 August 2018';
   }
 
   // Append form data to viewdata in session
-  req.session.viewData.testerDetails = testerDetails;
+  req.session.viewData.testerDetails.date = testDate;
 
+  // No errors - Successful post
   return res.redirect('/prototypes/site-review/summary');
 };
 

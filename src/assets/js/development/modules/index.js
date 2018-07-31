@@ -7,7 +7,7 @@ import { initThemeToggle } from './theme-toggle';
 
 export const initModules = () => {
   initLibraryNavigation();
-  initDevPreview();
+  //initDevPreview();
   initTextToSpeechToggle();
   initFontSizeToggle();
   initSpeechToText();

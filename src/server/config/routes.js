@@ -96,7 +96,7 @@ router.post('/prototypes/site-review/assessment/premises', [
 // Site review: Summary view
 router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
 router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
-router.post('/prototypes/site-review/enter-details', siteReviewController.postDetails);
+router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

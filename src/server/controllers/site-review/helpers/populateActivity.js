@@ -10,6 +10,8 @@ export const populateActivity = (req, res, next) => {
   req.session.viewData.activity.isCompleted = false;
   req.session.viewData.activity.commitedTestNum = '';
   req.session.viewData.activity.commitedReason = null;
+  req.session.viewData.activity.commitedOtherReason = '';
+  req.session.viewData.activity.commitedAdditionalReason = '';
 
   // If errors exist
   if (req.session.viewData.activity.errors.length) {
@@ -22,15 +24,13 @@ export const populateActivity = (req, res, next) => {
     // Set commited data
     req.session.viewData.activity.commitedActivityPerformed = true;
     req.session.viewData.activity.commitedTestNum = req.body['test-number'];
-  }
-
-  // If no was selected
-  else {
+  } else {
     // Set commited data
     req.session.viewData.activity.commitedActivityPerformed = false;
     req.session.viewData.activity.commitedReason = req.body['reinspection-options'];
 
-    let reasons = [
+    // Makes an array of reasons
+    const reasons = [
       "It wasn't necessary",
       'Blocked by pseudo customer',
       'Blocked by vehicle owner',
@@ -38,7 +38,10 @@ export const populateActivity = (req, res, next) => {
       'Other',
     ];
 
+    // Map commited reason from an int to string
     req.session.viewData.activity.commitedReason = reasons[req.session.viewData.activity.formData.reason - 1];
+
+    req.session.viewData.activity.commitedOtherReason = req.body['activity-unperformed-comment'];
   }
 
   // Set view to be completed

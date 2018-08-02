@@ -102,8 +102,6 @@ export class MarkRepairs {
     if (!element) return;
 
     // Make the button disabled
-    //element.setAttribute(this.attributes.disabled, this.attributes.disabled);
-    // If button has to be disabled, use a boolean on the element directly.
     element.disabled = true;
 
     // Find rfr form
@@ -137,8 +135,8 @@ export class MarkRepairs {
     axios
       .post(url, formData, axiosConfig)
       .then(response => {
+        const { data } = response;
         if (data && data.success) {
-          const { data } = response;
           toggleClass(rfrItem, this.classnames.hasStatus, false);
           toggleClass(rfrItem, this.classnames.hasSuccess, data.action === this.responseActions.repair);
           this.updateCount(data.defectType, data.action);

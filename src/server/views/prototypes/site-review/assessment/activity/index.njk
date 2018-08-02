@@ -72,7 +72,8 @@
             {% if viewData.activity.errors[0]['activityDropdown'] %}
               <span class="error-message">{{ viewData.activity.errors[0]['activityDropdown'] }}</span>
             {% endif %}
-            <select class="form-control" id="reinspection-options" name="reinspection-options">
+            <div>
+              <select class="form-control" id="reinspection-options" name="reinspection-options">
               <option value="0">Please select</option>
               <option value="1" {{'selected' if viewData.activity.formData.reason == 1}}>It wasn't necessary</option>
               <option value="2" {{'selected' if viewData.activity.formData.reason == 2}}>Blocked by pseudo customer</option>
@@ -80,6 +81,13 @@
               <option value="4" {{'selected' if viewData.activity.formData.reason == 4}}>I felt under threat from the garage staff</option>
               <option value="5" {{'selected' if viewData.activity.formData.reason == 5}}>Other</option>
             </select>
+            </div>
+            <div style="margin-top: 10px;">
+                <label class="form-label" for="textarea">
+                    Comment about reason of not doing the activity
+                </label>
+                <textarea class="form-control" name="textarea" id="textarea" rows="5"></textarea>
+            </div>
           </div>
       </div>
     </fieldset>

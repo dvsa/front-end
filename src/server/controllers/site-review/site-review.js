@@ -3,7 +3,6 @@ import { initViewData } from './initViewData.js';
 import { getLastInUrl } from './helpers/getLastInUrl.js';
 import { getMonth } from './helpers/getMonth.js';
 
-//export * from './routes.js';
 export * from './validators/validation.js';
 export * from './helpers/index.js';
 

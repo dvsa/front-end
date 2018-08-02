@@ -18,9 +18,18 @@ export const initViewData = () => {
       errors: [],
     },
     activity: {
-      activityPerformed: false,
+      isCompleted: false,
+      activityIsNotPeformed: false,
+      activityIsPerformed: false,
       motTestNum: '',
-      reasonCommited: '',
+      commitedReason: '',
+      commitedOtherReason: '',
+      formData: {
+        activityPerformed: '',
+        testNum: '',
+        reason: '',
+        otherReason: '',
+      },
       errors: [],
     },
     compliance: {

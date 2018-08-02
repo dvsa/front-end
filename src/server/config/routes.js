@@ -67,6 +67,8 @@ router.get('/prototypes/site-review/assessment/compliance', siteReviewController
 router.get('/prototypes/site-review/assessment/management-and-quality', siteReviewController.getAssessment);
 router.get('/prototypes/site-review/assessment/people', siteReviewController.getAssessment);
 router.get('/prototypes/site-review/assessment/premises', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
+router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
 router.post('/prototypes/site-review/assessment/activity', [
   siteReviewController.validateActivity,
   siteReviewController.populateActivity,
@@ -92,10 +94,6 @@ router.post('/prototypes/site-review/assessment/premises', [
   siteReviewController.validateAssessmentPost,
   siteReviewController.postAssessment,
 ]);
-
-// Site review: Summary view
-router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
-router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
 router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
 
 // Create route from view path

@@ -4,7 +4,6 @@
 
 {% block content %}
 
-
 <div class="breadcrumbs">
   <ol>
     <li>
@@ -215,11 +214,12 @@
       <ol>
         <li class="defect">
           <div>
-              {% if viewData.activity.commitedActivityPerformed %}
-                <h4 class="defect__title">MOT Test number: {{viewData.activity.commitedTestNum}}</h4>
-              {% else %}
-                <h4 class="defect__title">Reason given: {{viewData.activity.commitedReason}}</h4>
-              {% endif %}
+            {% if viewData.activity.commitedActivityPerformed %}
+              <h4 class="defect__title">MOT Test number: {{viewData.activity.commitedTestNum}}</h4>
+            {% else %}
+              <h4 class="defect__title">Reason given: {{viewData.activity.commitedReason}}</h4>
+              <p class='u-margin-bottom-5'>Comment: {{viewData.activity.commitedOtherReason}}</p>
+            {% endif %}
           </div>
         </li>
       </ol>
@@ -228,7 +228,6 @@
 {% endif %}
 
 </div>
-
 
 <div class="form-group u-margin-bottom-20">
   {% if (viewData.activity.isCompleted) and (viewData.compliance.commitedLevel) and (viewData['management-and-quality'].commitedLevel) and (viewData.people.commitedLevel) and (viewData.premises.commitedLevel) %}
@@ -239,7 +238,7 @@
 </div>
 
 <div class="form-group u-margin-bottom-20">
-  <a href="https://int.dev.mot-testing.service.gov.uk/vehicle-testing-station/79774">Return to VTS overview</a>
+  <a href="/prototypes/site-review/">Return to VTS overview</a>
 </div>
  
 

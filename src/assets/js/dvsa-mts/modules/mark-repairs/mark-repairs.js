@@ -102,12 +102,15 @@ export class MarkRepairs {
     if (!element) return;
 
     // Make the button disabled
-    element.setAttribute(this.attributes.disabled, this.attributes.disabled);
+    //element.setAttribute(this.attributes.disabled, this.attributes.disabled);
+    // If button has to be disabled, use a boolean on the element directly.
+    element.disabled = true;
 
     // Find rfr form
     const rfrForm = closestParentOfEl(element, this.selectors.rfrForm);
     const rfrItem = closestParentOfEl(element, this.selectors.rfrItem);
     const itemStatus = rfrItem.querySelector(this.selectors.itemStatus);
+
     if (!rfrForm || !rfrItem || !itemStatus) return console.warn('Could not find RFR form, RFR item and status DOM elements');
 
     const url = rfrForm.getAttribute(this.attributes.action) || element.getAttribute(this.attributes.url);
@@ -134,21 +137,20 @@ export class MarkRepairs {
     axios
       .post(url, formData, axiosConfig)
       .then(response => {
-        const { data } = response;
         if (data && data.success) {
+          const { data } = response;
           toggleClass(rfrItem, this.classnames.hasStatus, false);
           toggleClass(rfrItem, this.classnames.hasSuccess, data.action === this.responseActions.repair);
           this.updateCount(data.defectType, data.action);
           this.updateBrakeTest(data.brakeTestOutcome, data.brakesTested, data.brakeTestResults, data.disableSubmitButton);
+          element.disabled = false;
         } else {
           itemStatus.innerHTML = tryAgainMessage;
         }
       })
       .catch(error => {
         itemStatus.innerHTML = tryAgainMessage;
-      })
-      .finally(() => {
-        element.removeAttribute(this.attributes.disabled);
+        element.disabled = false;
       });
   };
 
@@ -233,7 +235,6 @@ export class MarkRepairs {
    */
   updateBrakeTest = (testStatus, tested, results, disableReviewTestButton) => {
     if (!this.elements.actionPanel) return console.warn('Could not find brake tests action panel');
-
     // Update test status
     if (this.elements.brakeTest.testStatus) {
       this.elements.brakeTest.testStatus.textContent = testStatus;
@@ -264,12 +265,12 @@ export class MarkRepairs {
       }
     }
 
-    // Update button disabled state
+    // Update button disabled state - boolean on element
     if (this.elements.brakeTest.reviewTestButton) {
       if (disableReviewTestButton === true) {
-        this.elements.brakeTest.reviewTestButton.setAttribute(this.attributes.disabled, this.attributes.disabled);
+        this.elements.brakeTest.reviewTestButton.disabled = true;
       } else {
-        this.elements.brakeTest.reviewTestButton.removeAttribute(this.attributes.disabled);
+        this.elements.brakeTest.reviewTestButton.disabled = false;
       }
     }
   };

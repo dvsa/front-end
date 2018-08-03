@@ -1,0 +1,134 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test configuration' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test', url: '/prototypes/mot-test' },
+  { text: 'Brake test configuration' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      <header class="content-header">
+ 
+        <h1 class="heading-xlarge" style="margin-bottom: 30px">
+            <span class="heading-secondary">MOT testing</span>
+             Brake test configuration 
+        </h1>
+
+      </header>
+
+      <div class="grid-row">
+
+        <div class="column-one-third">
+          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+              <span class="heading__secondary">Registration number</span>
+              CQ64BHK
+          </h2>
+        </div>
+
+        <div class="column-one-third">
+          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+              <span class="heading__secondary">Make</span>
+              Mercedes Sprinter
+          </h2>
+        </div> 
+        <div class="column-one-third">
+          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+              <span class="heading__secondary">First used</span>
+              25 Apr 2005
+          </h2>
+        </div>
+
+    </div> 
+    
+     {% call components.form(action='/prototypes/create-account/contact-details', method='POST') %}
+
+        
+
+        {{ components.heading(text='Address', tag='h2') }}
+        
+        {{ components.field(label='Home address', id='address1', group=true, groupCompound=true, value=values.address1, error=errors.address1.msg) }}
+
+        {{ components.field(label='Address line 2', labelVisuallyHidden=true, id='address2', group=true, groupCompound=true, value=values.address2) }}
+
+        {{ components.field(label='Address line 3', labelVisuallyHidden=true, id='address3', group=true, groupCompound=true, value=values.address3) }}
+
+        {{ components.field(label='Town or city', id='townOrCity', group=true, groupCompound=true, width=25, value=values.townOrCity, error=errors.townOrCity.msg) }}
+
+        {{ components.field(label='Postcode', id='postCode', group=true, groupCompound=true, width=12.5, value=values.postCode, error=errors.postCode.msg) }}
+
+        {{ components.heading(text='Phone number', tag='h2') }}
+
+        {{ components.field(label='Enter your home, mobile or work number', id='phoneNumber', group=true, value=values.phoneNumber, error=errors.phoneNumber.msg) }}
+
+    <div class="form-group"> 
+      <fieldset>
+        <legend>
+          <span class="form-label-bold">Vehicle weight type</span> 
+        </legend>
+
+
+        <div class="multiple-choice">
+          <input id="weight-type-1" type="radio" name="radio-assessment-group" value="weight-type-1" checked aria-controls="weight-type-panel-1">
+          <label for="weight-type-1">DGW (design gross weight from manufacturers' plate)</label>
+        </div>
+         
+        <div class="multiple-choice">
+          <input id="weight-type-2" type="radio" name="radio-assessment-group" value="weight-type-2" aria-controls="weight-type-panel-2">
+          <label for="weight-type-2">Presented weight</label>
+        </div> 
+      </fieldset>
+    </div>
+
+
+    <div class="form-group"> 
+      <fieldset>
+        <legend>
+          <span class="form-label-bold">Vehicle weight type</span> 
+        </legend> 
+
+        <div class="multiple-choice" data-target="weight-type-panel-1">
+          <input id="weight-type-1" type="radio" name="radio-assessment-group" value="weight-type-" aria-controls="weight-type-panel-1" aria-expanded="false">
+          <label for="weight-type-1">DGW (design gross weight from manufacturers' plate)</label>
+        </div>
+        <div class="panel panel-border-narrow js-hidden" id="weight-type-panel-1" aria-hidden="true"> 
+          <span class="error-message">Error</span>
+          <div class="form-group-error">
+            <label class="form-label" for="satisfactory-textarea">Comment (Optional)</label>
+            <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="multiple-choice" data-target="improve-advice-panel">
+          <input id="example-multiple-improve" type="radio" name="radio-assessment-group" value="Improve" aria-controls="improve-advice-panel" aria-expanded="false">
+          <label for="example-multiple-improve">Improve</label>
+        </div>
+        <div class="panel panel-border-narrow js-hidden" id="improve-advice-panel" aria-hidden="true">
+          
+          <div class="">
+            <label class="form-label" for="improve-textarea">Actions required</label>
+            <textarea class="form-control" name="improve-textarea" id="improve-textarea" rows="5"></textarea>
+          </div>
+        </div>  
+      </fieldset>
+    </div>
+
+
+
+        {% include './partials/form-submit-button.njk' %}
+
+      {%- endcall %}
+
+      {{ components.link(text='Cancel', url='/prototypes/') }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test class 7 - Page 2 (Decelerometer - Decelerometer)' %}
+
+{% block content %}
+
+<header class="content-header">
+  <h1>
+    <span class="content-header__type"></span>
+    <span class="content-header__title">Add brake test results</span>
+  </h1>
+</header>
+
+<div class="dvsa-vehicle-summary vehicle-summary">
+  <div class="dvsa-vehicle-summary__wrapper">
+    <ul class="dvsa-vehicle-summary__items">
+      <li class="dvsa-vehicle-summary__item" id="registrationNumber">
+        <span class="dvsa-vehicle-summary__heading">
+          Registration number
+        </span>
+
+        <span class="dvsa-vehicle-summary__value">
+          AD33XCP </span>
+      </li>
+
+      <li class="dvsa-vehicle-summary__item" id="make">
+        <span class="dvsa-vehicle-summary__heading">
+          Make
+        </span>
+
+        <span class="dvsa-vehicle-summary__value">
+          CITROEN, RELAY </span>
+      </li>
+    </ul>
+
+    <div class="dvsa-vehicle-summary__panel" id="vehicle-summary-more">
+
+      <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+        <dt class="dvsa-mts-dl__dt">
+          VIN/Chassis </dt>
+
+        <dd class="dvsa-mts-dl__dd" id="VINChassis">
+          PCXDAKAAAAA882103 </dd>
+        <dt class="dvsa-mts-dl__dt">
+          Transmission </dt>
+
+        <dd class="dvsa-mts-dl__dd" id="transmission">
+          N/A </dd>
+        <dt class="dvsa-mts-dl__dt">
+          Fuel type </dt>
+
+        <dd class="dvsa-mts-dl__dd" id="fuelType">
+          Diesel </dd>
+      </dl>
+      <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+        <dt class="dvsa-mts-dl__dt">
+          Body type </dt>
+
+        <dd class="dvsa-mts-dl__dd" id="bodyType">
+          Panel Van </dd>
+        <dt class="dvsa-mts-dl__dt">
+          Cylinder capacity </dt>
+
+        <dd class="dvsa-mts-dl__dd" id="cylinderCapacity">
+          2198 </dd>
+        <dt class="dvsa-mts-dl__dt">
+          First used </dt>
+
+        <dd class="dvsa-mts-dl__dd" id="firstUsed">
+          10 March 2016 </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+
+
+<form method="POST">
+  <fieldset>
+    <legend>
+      <h3 class="heading-medium">
+        Efficiency %
+      </h3>
+    </legend>
+
+
+    <div class="form-group ">
+      <label for="serviceBrake1Efficiency" id="Service-brake" class="">
+        Service brake
+        <span class="form-hint">
+        </span>
+        <span class="validation-message">
+
+        </span>
+
+      </label>
+
+      <input type="text" id="serviceBrake1Efficiency" name="serviceBrake1Efficiency" value="" class="form-control&#x20;" title=""
+      />
+    </div>
+  </fieldset>
+
+
+  <fieldset>
+    <legend>
+      <h3 class="heading-medium">
+        Efficiency %
+      </h3>
+    </legend>
+
+
+    <div class="form-group ">
+      <label for="parkingBrakeEfficiency" id="Parking-brake" class="">
+        Parking brake
+        <span class="form-hint">
+        </span>
+        <span class="validation-message">
+
+        </span>
+
+      </label>
+
+      <input type="text" id="parkingBrakeEfficiency" name="parkingBrakeEfficiency" value="" class="form-control&#x20;" title=""
+      />
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <input type="hidden" id="vehicleClass" name="vehicleClass" value="7" />
+    <input type="submit" id="brake_test_results_submit" name="submit" value="Submit" class="button" />
+
+    <p>
+      <a id="brake_test_results_cancel" href="#">
+        Cancel
+      </a>
+    </p>
+  </div>
+</form>
+  
+{% endblock %}

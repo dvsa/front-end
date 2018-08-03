@@ -1,0 +1,88 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Brake test class 12' %}
+
+{% block content %}
+
+  {{ components.pageHeading(
+    heading='New brake test pages',
+    secondary='MOT testing service'
+  ) }}
+
+  {{ components.heading(
+    text='Class 1 and 2 vehicles'
+  ) }}
+
+  {{ components.list(
+    type='bullet',
+    items=[
+      {
+        url: '/prototypes/brake-test/class-12-page-1',
+        text: 'Page 1'
+      },
+      {
+        url: '/prototypes/brake-test/class-12-page-2-roller-plate',
+        text: 'Page 2 (Roller/Plate)'
+      },
+      {
+        url: '/prototypes/brake-test/class-12-page-2-gradient',
+        text: 'Page 2 (Gradient)'
+      },
+      {
+        url: '/prototypes/brake-test/class-12-page-2-floor',
+        text: 'Page 2 (Floor)'
+      },
+      {
+        url: '/prototypes/brake-test/class-12-page-2-decelerometer',
+        text: 'Page 2 (Decelerometer)'
+      },
+      {
+        url: '/prototypes/brake-test/class-12-page-3',
+        text: 'Page 3'
+      }
+    ]
+  ) }}
+
+  {{ components.heading(
+    text='Class 7 vehicles'
+  ) }}
+
+  {{ components.list(
+    type='bullet',
+    items=[
+      {
+        url: '/prototypes/brake-test/class-7-page-1',
+        text: 'Page 1'
+      },
+      {
+        url: '/prototypes/brake-test/class-7-page-2-roller-roller',
+        text: 'Page 2 (Roller - Roller)'
+      },
+      {
+        url: '/prototypes/brake-test/class-7-page-2-decelerometer-decelerometer',
+        text: 'Page 2 (Parking Decelerometer)'
+      },
+      {
+        url: '/prototypes/brake-test/class-7-page-2-parking-gradient',
+        text: 'Page 2 (Parking Gradient)'
+      },
+      {
+        url: '/prototypes/brake-test/class-7-page-2-parking-decelerometer',
+        text: 'Page 2 (Parking Decelerometer)'
+      },
+      {
+        url: '/prototypes/brake-test/class-7-page-2-parking-decelerometer',
+        text: 'Page 2 (Parking Decelerometer)'
+      },
+      {
+        url: '/prototypes/brake-test/class-7-page-2-parking-plate',
+        text: 'Page 2 (Parking Plate)'
+      },
+      {
+        url: '/prototypes/brake-test/class-7-page-3-results',
+        text: 'Page 3 (Results)'
+      }
+    ]
+  ) }}
+  
+{% endblock %}

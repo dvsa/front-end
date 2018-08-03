@@ -1,0 +1,288 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test class 12 - Page 2 (Roller/Plate)' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT testing</span>
+      <span class="content-header__title">Add brake test results</span>
+    </h1>
+  </header>
+
+  <div class="dvsa-vehicle-summary vehicle-summary">
+    <div class="dvsa-vehicle-summary__wrapper">
+      <ul class="dvsa-vehicle-summary__items">
+        <li class="dvsa-vehicle-summary__item" id="registrationNumber">
+          <span class="dvsa-vehicle-summary__heading">
+            Registration number
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            AA83LOX </span>
+        </li>
+
+        <li class="dvsa-vehicle-summary__item" id="make">
+          <span class="dvsa-vehicle-summary__heading">
+            Make
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            PEUGEOT, TWEET </span>
+        </li>
+      </ul>
+
+      <div class="dvsa-vehicle-summary__panel" id="vehicle-summary-more">
+
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            VIN/Chassis </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="VINChassis">
+            XOLAAKAAAAA821583 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Transmission </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="transmission">
+            N/A </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Fuel type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="fuelType">
+            Petrol </dd>
+        </dl>
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            Body type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="bodyType">
+            Motorcycle </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Cylinder capacity </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="cylinderCapacity">
+            125 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            First used </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="firstUsed">
+            6 June 2015 </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
+  <fieldset>
+    <legend>
+      <h3 class="heading-medium">
+        Vehicle weights
+      </h3>
+    </legend>
+
+
+    <dl class="dvsa-mts-dl ">
+      <dt class="dvsa-mts-dl__dt">
+        Machine weight front </dt>
+
+      <dd class="dvsa-mts-dl__dd">
+        200 kg </dd>
+      <dt class="dvsa-mts-dl__dt">
+        Machine weight rear </dt>
+
+      <dd class="dvsa-mts-dl__dd">
+        200 kg </dd>
+      <dt class="dvsa-mts-dl__dt">
+        Rider weight </dt>
+
+      <dd class="dvsa-mts-dl__dd">
+        200 kg </dd>
+      <dt class="dvsa-mts-dl__dt">
+        Sidecar Weight </dt>
+
+      <dd class="dvsa-mts-dl__dd">
+        200 kg </dd>
+    </dl>
+  </fieldset>
+
+  <form method="POST">
+    <fieldset>
+      <legend>
+        <h2 class="heading-large">
+          Brake effort
+        </h2>
+
+        <p class="lede">
+          Brake effort is recorded in kilograms
+        </p>
+      </legend>
+
+      <h3 class="heading-medium">
+        Brake control
+      </h3>
+
+      <div class="form-group">
+        <div class="panel panel-narrow">
+
+          <h4 class="heading-small">
+            Control one</h4>
+
+          <div class="grid-row">
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="control1EffortFront">
+                  Front control one
+                </label>
+
+                <input type="number" id="control1EffortFront" name="control1EffortFront" value="" class="form-control form-control-100" pattern="\d{0,4}"
+                  maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="control1LockFront" value="0">
+
+                  <input type="checkbox" id="control1LockFront" name="control1LockFront" value="1">
+
+                  <label for="control1LockFront">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="control1EffortRear">
+                  Rear control one
+                </label>
+
+                <input type="number" id="control1EffortRear" name="control1EffortRear" value="" class="form-control form-control-100" pattern="\d{0,4}"
+                  maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="control1LockRear" value="0">
+
+                  <input type="checkbox" id="control1LockRear" name="control1LockRear" value="1">
+
+                  <label for="control1LockRear">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="control1EffortSidecar">
+                  Sidecar control one
+                </label>
+
+                <input type="number" id="control1EffortSidecar" name="control1EffortSidecar" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+              </div>
+            </div>
+          </div>
+
+
+          <h4 class="heading-small">
+            Control two</h4>
+
+          <div class="grid-row">
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="control2EffortFront">
+                  Front control two
+                </label>
+
+                <input type="number" id="control2EffortFront" name="control2EffortFront" value="" class="form-control form-control-100" pattern="\d{0,4}"
+                  maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="control2LockFront" value="0">
+
+                  <input type="checkbox" id="control2LockFront" name="control2LockFront" value="1">
+
+                  <label for="control2LockFront">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="control2EffortRear">
+                  Rear control two
+                </label>
+
+                <input type="number" id="control2EffortRear" name="control2EffortRear" value="" class="form-control form-control-100" pattern="\d{0,4}"
+                  maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="control2LockRear" value="0">
+
+                  <input type="checkbox" id="control2LockRear" name="control2LockRear" value="1">
+
+                  <label for="control2LockRear">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="control2EffortSidecar">
+                  Sidecar control two
+                </label>
+
+                <input type="number" id="control2EffortSidecar" name="control2EffortSidecar" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+
+
+
+    <div class="form-group">
+      <input type="hidden" id="vehicleClass" name="vehicleClass" value="1" />
+      <input type="submit" id="brake_test_results_submit" name="submit" value="Submit" class="button" />
+
+      <p>
+        <a id="brake_test_results_cancel" href="#">
+          Cancel
+        </a>
+      </p>
+    </div>
+
+  </form>
+  
+{% endblock %}

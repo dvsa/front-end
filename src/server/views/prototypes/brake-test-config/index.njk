@@ -5,7 +5,7 @@
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
   { text: 'MOT test', url: '/prototypes/mot-test' },
-  { text: 'Brake test configuration' }
+  { text: 'Brake test configuration'  }
 ] %}
 
 {% block content %}
@@ -47,7 +47,7 @@
 
     </div> 
     
-     {% call components.form(action='/prototypes/brake-test-review/', method='POST') %}
+     {% call components.form(action='/prototypes/brake-test-config/', method='POST') %}
 
        <div class="form-group"> 
 

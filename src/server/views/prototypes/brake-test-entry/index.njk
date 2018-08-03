@@ -1,0 +1,62 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test summary' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test', url: '/prototypes/mot-test' },
+  { text: 'Brake test configuration', url: '/prototypes/brake-test-config' },
+  { text: 'Brake test entry' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+       
+      <header class="content-header">
+ 
+        <h1 class="heading-xlarge" style="margin-bottom: 30px">
+            <span class="heading-secondary">MOT testing</span>
+             Brake test entry 
+        </h1>
+
+      </header>
+
+      <div class="grid-row">
+
+        <div class="column-one-third">
+          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+              <span class="heading__secondary">Registration number</span>
+              CQ64BHK
+          </h2>
+        </div>
+
+        <div class="column-one-third">
+          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+              <span class="heading__secondary">Make</span>
+              Mercedes Sprinter
+          </h2>
+        </div> 
+        <div class="column-one-third">
+          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+              <span class="heading__secondary">First used</span>
+              25 Apr 2005
+          </h2>
+        </div>
+
+    </div> 
+  
+      <nav class="content-navigation">
+          <a href="/prototypes/brake-test-summary" class="button">Save and continue to summary</a>
+      </nav>
+
+      {{ components.link(text='Back', url='/prototypes/brake-test-config') }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

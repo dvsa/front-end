@@ -1,6 +1,6 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Action' %}
+{% set pageTitle = 'Activity' %}
 
 {% block content %}
 
@@ -56,7 +56,7 @@
         {% if viewData.activity.errors[0]['testNumber'] %}
           <span class="error-message">{{ viewData.activity.errors[0]['testNumber'] }}</span>
         {% endif %}
-        <input class="form-control" id="test-number" type="text" name="test-number" value="{{ viewData.activity.formData.testNum }}">
+        <input class="form-control" id="test-number" type="number" name="test-number" value="{{ viewData.activity.formData.testNum }}">
       </div>
 
       <div class="multiple-choice" data-target="activity-blocked-panel">

@@ -8,6 +8,7 @@ import * as suspendTestersController from '../controllers/annual-assessment-tool
 import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
 import * as siteReviewController from '../controllers/site-review/site-review';
+import * as brakeTestController from '../controllers/brake-test/brake-test';
 
 const router = Router();
 
@@ -95,6 +96,12 @@ router.post('/prototypes/site-review/assessment/premises', [
   siteReviewController.postAssessment,
 ]);
 router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
+
+
+// Brake tests
+router.post('/prototypes/brake-test-config', [  
+  brakeTestController.postBrakeConfig,
+]);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

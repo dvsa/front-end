@@ -5,7 +5,7 @@
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
   { text: 'MOT test', url: '/prototypes/mot-test' },
-  { text: 'Brake test configuration' }
+  { text: 'Brake test configuration'  }
 ] %}
 
 {% block content %}
@@ -47,7 +47,55 @@
 
     </div> 
     
-     {% call components.form(action='/prototypes/create-account/contact-details', method='POST') %}
+     {% call components.form(action='/prototypes/brake-test-config/', method='POST') %}
+
+       <div class="form-group"> 
+
+        <fieldset> 
+          <legend>
+          <h3 class="heading-medium">
+            Brake test type
+          </h3>
+        </legend>
+
+        <div class="form-group">
+            <label for="serviceBrake1TestType" class="form-label form-label-bold">
+              Service brake test type
+            </label> 
+
+            <div class="form-group">
+              <label for="serviceBrake1TestType">
+              </label>
+              <select id="serviceBrake1TestType" name="serviceBrake1TestType" class="form-control">
+                <option id="serviceBrake1TestType_ROLLR" value="ROLLR" selected>Roller</option>
+                <option id="serviceBrake1TestType_PLATE" value="PLATE">Plate</option>
+                <option id="serviceBrake1TestType_GRADT" value="GRADT">Gradient</option>
+                <option id="serviceBrake1TestType_FLOOR" value="FLOOR">Floor</option>
+                <option id="serviceBrake1TestType_DECEL" value="DECEL">Decelerometer</option>
+              </select>
+            </div>
+        </div>  
+
+        <div class="form-group">
+              <label for="parkingBrakeTestType" class="form-label form-label-bold">
+                Parking brake test type
+              </label> 
+              <div class="form-group">
+                <label for="parkingBrakeTestType">
+                </label>
+                <select id="parkingBrakeTestType" name="parkingBrakeTestType" class="form-control   ">
+                  <option id="parkingBrakeTestType_ROLLR" value="ROLLR" selected>Roller</option>
+                  <option id="parkingBrakeTestType_PLATE" value="PLATE">Plate</option>
+                  <option id="parkingBrakeTestType_GRADT" value="GRADT">Gradient</option>
+                  <option id="parkingBrakeTestType_FLOOR" value="FLOOR">Floor</option>
+                  <option id="parkingBrakeTestType_DECEL" value="DECEL">Decelerometer</option>
+                </select>
+              </div>
+        </div> 
+        </fieldset>
+         
+    </div>
+
 
        
     <div class="form-group"> 

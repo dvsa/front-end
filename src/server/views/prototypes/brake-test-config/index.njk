@@ -23,29 +23,12 @@
 
       </header>
 
-      <div class="grid-row">
-
-        <div class="column-one-third">
-          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-              <span class="heading__secondary">Registration number</span>
-              CQ64BHK
-          </h2>
-        </div>
-
-        <div class="column-one-third">
-          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-              <span class="heading__secondary">Make</span>
-              Mercedes Sprinter
-          </h2>
-        </div> 
-        <div class="column-one-third">
-          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-              <span class="heading__secondary">First used</span>
-              25 Apr 2005
-          </h2>
-        </div>
-
-    </div> 
+      <ul class='content-header__tertiary-list u-margin-bottom-35'> 
+        <li class='content-header__list-item--primary'>BHW, 790</li> 
+        <li class='content-header__list-item'>AJ30CTK</li> 
+        <li class='content-header__list-item'>First used 25 Apr 2005</li> 
+      </ul>
+ 
  
      {% call components.form(action='/prototypes/brake-test-config/', method='POST') %}
 
@@ -179,9 +162,7 @@
         <div class="form-group" id="numberOfAxlesContainer">
             <label for="numberOfAxles" class="form-label form-label-bold">
               Number of axles
-            </label>
-  
-  
+            </label> 
             <div class="form-group">
               <label for="numberOfAxles">
               </label>

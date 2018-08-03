@@ -1,12 +1,12 @@
 {% extends 'layouts/mts.layout.njk' %}
 
-{% set pageTitle = 'Brake test summary' %}
+{% set pageTitle = 'Brake test configuration' %}
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
   { text: 'MOT test', url: '/prototypes/mot-test' },
-  { text: 'Brake test configuration', url: '/prototypes/brake-test-config' },
-  { text: 'Brake test entry' }
+  { text: 'MOT test configuration', url: '/prototypes/brake-test-config' },
+  { text: 'Brake test entry'  }
 ] %}
 
 {% block content %}
@@ -15,45 +15,191 @@
 
     {% call components.columnFull() %}
       
-       
       <header class="content-header">
  
         <h1 class="heading-xlarge" style="margin-bottom: 30px">
             <span class="heading-secondary">MOT testing</span>
-             Brake test entry 
+             Brake test entry
         </h1>
 
       </header>
 
       <div class="grid-row">
+          <div class="column-one-third">
+              <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                  <span class="heading__secondary">Registration number</span>
+                  CQ64BHK
+              </h2>
+            </div>
+    
+            <div class="column-one-third">
+              <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                  <span class="heading__secondary">Make</span>
+                  Mercedes Sprinter
+              </h2>
+            </div> 
+            <div class="column-one-third">
+              <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                  <span class="heading__secondary">First used</span>
+                  25 Apr 2005
+              </h2>
+            </div>  
+      </div>
 
-        <div class="column-one-third">
-          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-              <span class="heading__secondary">Registration number</span>
-              CQ64BHK
-          </h2>
+    
+    <h2 class="heading-large">
+      Brake effort
+    </h2>
+     <p>Brake effort is recorded in kilograms</p>
+
+     {% call components.form(action='/prototypes/brake-test-entry', method='POST') %}
+     <fieldset>
+        <legend></legend>
+        <h3 class="heading-medium">
+          <legend>Service brake effort for</legend>
+        </h3>
+        <legend></legend>
+        <div class="panel">
+          <h3 class="heading-small">
+            Axle 1
+          </h3>
+      
+          <div class="grid-row">
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortNearsideAxle1">Nearside axle 1</label> <input class="form-control form-control-100" id="serviceBrakeEffortNearsideAxle1" max="9999" maxlength="4" name="serviceBrakeEffortNearsideAxle1" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="serviceBrakeLockNearsideAxle1" type="hidden" value="0"> <input id="serviceBrakeLockNearsideAxle1" name="serviceBrakeLockNearsideAxle1" type="checkbox" value="1"> <label for="serviceBrakeLockNearsideAxle1">Lock</label>
+                </div>
+              </div>
+            </div>
+      
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortOffsideAxle1">Offside axle 1</label> <input class="form-control form-control-100" id="serviceBrakeEffortOffsideAxle1" max="9999" maxlength="4" name="serviceBrakeEffortOffsideAxle1" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="serviceBrakeLockOffsideAxle1" type="hidden" value="0"> <input id="serviceBrakeLockOffsideAxle1" name="serviceBrakeLockOffsideAxle1" type="checkbox" value="1"> <label for="serviceBrakeLockOffsideAxle1">Lock</label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="column-one-third">
-          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-              <span class="heading__secondary">Make</span>
-              Mercedes Sprinter
-          </h2>
-        </div> 
-        <div class="column-one-third">
-          <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-              <span class="heading__secondary">First used</span>
-              25 Apr 2005
-          </h2>
+      
+        <div class="panel">
+          <h3 class="heading-small">
+            Axle 2
+          </h3>
+      
+          <div class="grid-row">
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortNearsideAxle2">Nearside axle 2</label> <input class="form-control form-control-100" id="serviceBrakeEffortNearsideAxle2" max="9999" maxlength="4" name="serviceBrakeEffortNearsideAxle2" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="serviceBrakeLockNearsideAxle2" type="hidden" value="0"> <input id="serviceBrakeLockNearsideAxle2" name="serviceBrakeLockNearsideAxle2" type="checkbox" value="1"> <label for="serviceBrakeLockNearsideAxle2">Lock</label>
+                </div>
+              </div>
+            </div>
+      
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortOffsideAxle2">Offside axle 2</label> <input class="form-control form-control-100" id="serviceBrakeEffortOffsideAxle2" max="9999" maxlength="4" name="serviceBrakeEffortOffsideAxle2" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="serviceBrakeLockOffsideAxle2" type="hidden" value="0"> <input id="serviceBrakeLockOffsideAxle2" name="serviceBrakeLockOffsideAxle2" type="checkbox" value="1"> <label for="serviceBrakeLockOffsideAxle2">Lock</label>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      
+        <div class="panel">
+          <h3 class="heading-small">
+            Axle 3
+          </h3>
+      
+          <div class="grid-row">
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortNearsideAxle3">Nearside axle 3</label> <input class="form-control form-control-100" id="serviceBrakeEffortNearsideAxle3" max="9999" maxlength="4" name="serviceBrakeEffortNearsideAxle3" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="serviceBrakeLockNearsideAxle3" type="hidden" value="0"> <input id="serviceBrakeLockNearsideAxle3" name="serviceBrakeLockNearsideAxle3" type="checkbox" value="1"> <label for="serviceBrakeLockNearsideAxle3">Lock</label>
+                </div>
+              </div>
+            </div>
+      
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortOffsideAxle3">Offside axle 3</label> <input class="form-control form-control-100" id="serviceBrakeEffortOffsideAxle3" max="9999" maxlength="4" name="serviceBrakeEffortOffsideAxle3" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="serviceBrakeLockOffsideAxle3" type="hidden" value="0"> <input id="serviceBrakeLockOffsideAxle3" name="serviceBrakeLockOffsideAxle3" type="checkbox" value="1"> <label for="serviceBrakeLockOffsideAxle3">Lock</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      
+      <fieldset class="u-margin-bottom-20">
+        <legend></legend>
+        <h3 class="heading-medium">
+          <legend>Parking brake effort for</legend>
+        </h3>
+        <legend></legend>
+        <div class="panel">
+          <h3 class="heading-small">
+            Primary axle
+          </h3>
+      
+          <div class="grid-row">
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="parkingBrakeEffortNearside">Nearside axle</label> <input class="form-control form-control-100" id="parkingBrakeEffortNearside" max="9999" maxlength="4" name="parkingBrakeEffortNearside" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="parkingBrakeLockNearside" type="hidden" value="0"> <input id="parkingBrakeLockNearside" name="parkingBrakeLockNearside" type="checkbox" value="1"> <label for="parkingBrakeLockNearside">Lock</label>
+                </div>
+              </div>
+            </div>
+      
+            <div class="column-one-third">
+              <div class="form-group">
+                <label class="form-label form-label-bold" for="parkingBrakeEffortOffside">Offside axle</label> <input class="form-control form-control-100" id="parkingBrakeEffortOffside" max="9999" maxlength="4" name="parkingBrakeEffortOffside" pattern="\d{0,4}" required="" type="number" value="">
+              </div>
+      
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input name="parkingBrakeLockOffside" type="hidden" value="0"> <input id="parkingBrakeLockOffside" name="parkingBrakeLockOffside" type="checkbox" value="1"> <label for="parkingBrakeLockOffside">Lock</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
 
-    </div> 
-  
-      <nav class="content-navigation">
-          <a href="/prototypes/brake-test-summary" class="button">Save and continue to summary</a>
-      </nav>
+        {% include './partials/form-submit-button.njk' %}
 
-      {{ components.link(text='Back', url='/prototypes/brake-test-config') }}
+      {%- endcall %}
+
+      {{ components.link(text='Cancel', url='/prototypes/') }}
 
     {%- endcall %}
 

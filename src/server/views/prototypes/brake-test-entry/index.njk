@@ -40,12 +40,34 @@
      <fieldset>
         <legend></legend>
         <h3 class="heading-medium">
-          <legend>Service brake effort for</legend>
+          <legend>Service brake effort for:</legend>
         </h3> 
-        <div class="panel">
-          <h3 class="heading-small">
+          <h2 class="heading-medium">
             Axle 1
-          </h3>
+          </h2>
+
+          <div class="form-group">
+              <fieldset class="inline">
+                <legend>
+                  <p class="heading-small">
+                    Steered axle
+                  </p>
+                </legend>  
+                <div class="multiple-choice">
+                  <input id="steered-no-1" type="radio" name="brakeLineType" value="no"> 
+                  <label for="steered-no-1">
+                    No
+                  </label>
+                </div>
+      
+                <div class="multiple-choice">
+                  <input id="steered-yes-1" type="radio" name="brakeLineType" value="yes">
+                  <label for="steered-yes-1">
+                    Yes
+                  </label>
+                </div>
+              </fieldset>
+            </div>
       
           <div class="grid-row">
             <div class="column-one-third">
@@ -72,12 +94,33 @@
               </div>
             </div>
           </div>
-        </div>
       
-        <div class="panel">
-          <h3 class="heading-small">
+          <h3 class="heading-medium">
             Axle 2
           </h3>
+
+          <div class="form-group">
+              <fieldset class="inline">
+                <legend>
+                  <p class="heading-small">
+                    Steered axle
+                  </p>
+                </legend>  
+                <div class="multiple-choice">
+                  <input id="steered-no-2" type="radio" name="brakeLineType" value="no"> 
+                  <label for="steered-no-2">
+                    No
+                  </label>
+                </div>
+      
+                <div class="multiple-choice">
+                  <input id="steered-yes-2" type="radio" name="brakeLineType" value="yes">
+                  <label for="steered-yes-2">
+                    Yes
+                  </label>
+                </div>
+              </fieldset>
+            </div>
       
           <div class="grid-row">
             <div class="column-one-third">
@@ -104,16 +147,13 @@
               </div>
             </div>
           </div>
-        </div> 
       </fieldset>
       
       <fieldset class="u-margin-bottom-20">
         <legend></legend>
         <h3 class="heading-medium">
-          <legend>Parking brake effort for</legend>
+          <legend>Parking brake effort for:</legend>
         </h3>
-        <legend></legend>
-        <div class="panel">
           <h3 class="heading-small">
             Primary axle
           </h3>
@@ -143,7 +183,6 @@
               </div>
             </div>
           </div>
-        </div>
       </fieldset>
 
         {% include './partials/form-submit-button.njk' %}

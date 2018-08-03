@@ -47,15 +47,64 @@
 
     </div> 
     
-     {% call components.form(action='/prototypes/create-account/contact-details', method='POST') %}
+     {% call components.form(action='/prototypes/brake-test-review/', method='POST') %}
+
+       <div class="form-group"> 
+
+        <fieldset> 
+          <legend>
+          <h3 class="heading-medium">
+            Brake test type
+          </h3>
+        </legend>
+
+        <div class="form-group">
+            <label for="serviceBrake1TestType" class="form-label form-label-bold">
+              Service brake test type
+            </label> 
+
+            <div class="form-group">
+              <label for="serviceBrake1TestType">
+              </label>
+              <select id="serviceBrake1TestType" name="serviceBrake1TestType" class="form-control">
+                <option id="serviceBrake1TestType_ROLLR" value="ROLLR" selected>Roller</option>
+                <option id="serviceBrake1TestType_PLATE" value="PLATE">Plate</option>
+                <option id="serviceBrake1TestType_GRADT" value="GRADT">Gradient</option>
+                <option id="serviceBrake1TestType_FLOOR" value="FLOOR">Floor</option>
+                <option id="serviceBrake1TestType_DECEL" value="DECEL">Decelerometer</option>
+              </select>
+            </div>
+        </div>  
+
+        <div class="form-group">
+              <label for="parkingBrakeTestType" class="form-label form-label-bold">
+                Parking brake test type
+              </label> 
+              <div class="form-group">
+                <label for="parkingBrakeTestType">
+                </label>
+                <select id="parkingBrakeTestType" name="parkingBrakeTestType" class="form-control   ">
+                  <option id="parkingBrakeTestType_ROLLR" value="ROLLR" selected>Roller</option>
+                  <option id="parkingBrakeTestType_PLATE" value="PLATE">Plate</option>
+                  <option id="parkingBrakeTestType_GRADT" value="GRADT">Gradient</option>
+                  <option id="parkingBrakeTestType_FLOOR" value="FLOOR">Floor</option>
+                  <option id="parkingBrakeTestType_DECEL" value="DECEL">Decelerometer</option>
+                </select>
+              </div>
+        </div> 
+        </fieldset>
+         
+    </div>
+
 
        
     <div class="form-group"> 
       <fieldset>
         <legend>
-          <span class="form-label-bold">Vehicle weight type</span> 
-        </legend>
-
+          <h3 class="heading-medium u-margin-top-10">
+              Vehicle weight type
+          </h3>
+        </legend> 
 
         <div class="multiple-choice">
           <input id="weight-type-1" type="radio" name="radio-assessment-group" value="weight-type-1" checked aria-controls="weight-type-panel-1">
@@ -69,40 +118,97 @@
       </fieldset>
     </div>
 
-
-    <div class="form-group"> 
-      <fieldset>
-        <legend>
-          <span class="form-label-bold">Vehicle weight type</span> 
-        </legend> 
-
-        <div class="multiple-choice" data-target="weight-type-panel-1">
-          <input id="weight-type-1" type="radio" name="radio-assessment-group" value="weight-type-" aria-controls="weight-type-panel-1" aria-expanded="false">
-          <label for="weight-type-1">DGW (design gross weight from manufacturers' plate)</label>
-        </div>
-        <div class="panel panel-border-narrow js-hidden" id="weight-type-panel-1" aria-hidden="true"> 
-          <span class="error-message">Error</span>
-          <div class="form-group-error">
-            <label class="form-label" for="satisfactory-textarea">Comment (Optional)</label>
-            <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5"></textarea>
-          </div>
-        </div>
-
-        <div class="multiple-choice" data-target="improve-advice-panel">
-          <input id="example-multiple-improve" type="radio" name="radio-assessment-group" value="Improve" aria-controls="improve-advice-panel" aria-expanded="false">
-          <label for="example-multiple-improve">Improve</label>
-        </div>
-        <div class="panel panel-border-narrow js-hidden" id="improve-advice-panel" aria-hidden="true">
-          
-          <div class="">
-            <label class="form-label" for="improve-textarea">Actions required</label>
-            <textarea class="form-control" name="improve-textarea" id="improve-textarea" rows="5"></textarea>
-          </div>
-        </div>  
-      </fieldset>
+    <div class="form-goup">
+        <fieldset>
+            <legend>
+              <h3 class="heading-medium u-margin-top-20">
+                Vehicle weight
+              </h3>
+            </legend>
+            <div class="form-group">
+              <label for="vehicleWeight" class="form-label form-label-bold">
+                Enter weight in kilograms
+              </label>
+              <input type="text" id="vehicleWeight" name="vehicleWeight" value="3500" class="form-control " /> </div>
+  
+              <div class="form-group">
+                <div class="multiple-choice">
+                  <input id="weightIsUnladen" name="waste-types" type="checkbox" value="1">
+    
+                  <label for="weightIsUnladen">
+                    Unladen
+                  </label>
+                </div>
+              </div>
+          </fieldset>
     </div>
 
+    <div class="form-group">
+        <fieldset class="inline">
+          <legend>
+            <h3 class="heading-medium u-margin-top-20">
+              Brake line type
+            </h3>
+          </legend>
 
+          <div class="multiple-choice">
+            <input id="brakeLineTypeDual" type="radio" name="brakeLineType" value="dual" checked>
+
+            <label for="brakeLineTypeDual">
+              Dual
+            </label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="brakeLineTypeSingle" type="radio" name="brakeLineType" value="single">
+
+            <label for="brakeLineTypeSingle">
+              Single
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+          <legend>
+              <h3 class="heading-medium u-margin-top-20">
+                Vehicle axles
+              </h3>
+           </legend>
+
+        <div class="form-group" id="numberOfAxlesContainer">
+            <label for="numberOfAxles" class="form-label form-label-bold">
+              Number of axles
+            </label>
+  
+  
+            <div class="form-group">
+              <label for="numberOfAxles">
+              </label>
+              <select id="numberOfAxles" name="numberOfAxles" class="form-control">
+                <option id="numberOfAxles_2" value="2" selected>2 axles</option>
+                <option id="numberOfAxles_3" value="3">3 axles</option>
+              </select>
+            </div>
+            
+          </div>
+  
+          <div class="form-group" id="parkingBrakeNumberOfAxlesContainer">
+            <label for="parkingBrakeNumberOfAxles" class="form-label form-label-bold">
+              Parking brake number of axles
+            </label>
+            <div class="form-group">
+              <label for="parkingBrakeNumberOfAxles">
+              </label>
+              <select id="parkingBrakeNumberOfAxles" name="parkingBrakeNumberOfAxles" class="form-control   ">
+                <option id="parkingBrakeNumberOfAxles_1" value="1" selected>1 axles</option>
+                <option id="parkingBrakeNumberOfAxles_2" value="2">2 axles</option>
+              </select>
+            </div>
+          </div> 
+
+      </div>
+ 
 
         {% include './partials/form-submit-button.njk' %}
 

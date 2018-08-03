@@ -97,11 +97,8 @@ router.post('/prototypes/site-review/assessment/premises', [
 ]);
 router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
 
-
 // Brake tests
-router.post('/prototypes/brake-test-config', [  
-  brakeTestController.postBrakeConfig,
-]);
+router.post('/prototypes/brake-test-config', [brakeTestController.postBrakeConfig]);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

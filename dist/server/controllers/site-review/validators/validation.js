@@ -49,7 +49,7 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
   // If radio value is not populated
   if (!radioValue) {
     // Push a new error to session errors
-    req.session.viewData[assessmentType].errors.push({ radioGroup: 'You must choose an outcome' });
+    req.session.viewData[assessmentType].errors.push({ radioGroup: 'Choose an outcome' });
     // Calls the next middleware method in the stack
     next();
   }
@@ -63,13 +63,13 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isPopulated(req.body['improve-textarea'])) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaImprove: 'You must provide actions' });
+        req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Provide actions' });
       }
 
       // If textarea exceeds limit of 2500
       else if (!isLessThan(req.body['improve-textarea'], 250)) {
           // Add an error
-          req.session.viewData[assessmentType].errors.push({ textareaImprove: 'You are not allowed more than 250 characters' });
+          req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Enter up to 250 characters' });
         } else {
           req.session.viewData[assessmentType].commitedLevel = 'Improve';
           req.session.viewData[assessmentType].commitedComment = req.body['improve-textarea'];
@@ -85,13 +85,13 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isPopulated(req.body['unsatisfactory-advice-textarea'])) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'You must provide actions' });
+        req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Provide actions' });
       }
 
       // If textarea exceeds limit of 2500
       else if (!isLessThan(req.body['unsatisfactory-advice-textarea'], 250)) {
           // Add an error
-          req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'You are not allowed more than 250 characters' });
+          req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Enter up to 250 characters' });
         } else {
           req.session.viewData[assessmentType].commitedLevel = 'Unsatisfactory';
           req.session.viewData[assessmentType].commitedComment = req.body['unsatisfactory-advice-textarea'];
@@ -107,7 +107,7 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isLessThan(req.body['satisfactory-textarea'], 2500)) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaSatisfactory: 'You are not allowed more than 250 characters' });
+        req.session.viewData[assessmentType].errors.push({ textareaSatisfactory: 'Enter up to 250 characters' });
       } else {
         req.session.viewData[assessmentType].commitedLevel = 'Satisfactory';
         req.session.viewData[assessmentType].commitedComment = req.body['satisfactory-textarea'];
@@ -145,7 +145,7 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
   if (!activityRadioResponse) {
     // Create new error and push to stack
     req.session.viewData.activity.errors.push({
-      radioGroup: 'You must choose a result'
+      radioGroup: 'Choose a result'
     });
     // Calls the next middleware method in the stack
     next();
@@ -170,14 +170,14 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
   if (activityRadioResponse == 'yes' && !isPopulated(req.session.viewData.activity.formData.testNum)) {
     // Create new error and push to stack
     req.session.viewData.activity.errors.push({
-      testNumber: 'You must add a test number'
+      testNumber: 'Add a test number'
     });
   }
   // If no radio was selected & reason was not selected
   else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
       // Create new error and push to stack
       req.session.viewData.activity.errors.push({
-        activityDropdown: 'You must select why the activity was not performed'
+        activityDropdown: 'Select why the activity was not performed'
       });
     }
 
@@ -226,7 +226,7 @@ const validateDetails = exports.validateDetails = (req, res, next) => {
       // Ensure Examiners' ID is populated (mandatory)
       if (!isPopulated(examinerId)) {
         // Add an error
-        req.session.viewData.testerDetails.errors.push({ provideID: "You must provide the Examiner's User ID" });
+        req.session.viewData.testerDetails.errors.push({ provideID: "Provide the Examiner's User ID" });
       }
       break;
   }

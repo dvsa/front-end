@@ -14,7 +14,12 @@
 
     {% call components.columnFull() %}
 
-   
+      {{ components.dvsaBanner(
+        mainText='Prototype Preview',
+        secondaryText='The design on this user journey is not final yet',
+        type='error'
+      ) }}
+
       <header class="content-header">
 
         <h1><span class="content-header__title">MOT test results</span></h1>
@@ -157,7 +162,7 @@
 
             <div class="action-panel__container">
 
-              <h3 class="action-panel__heading">Brake test</h3>
+              <h3 class="action-panel__heading">Break test</h3>
 
             </div>
 
@@ -169,7 +174,7 @@
 
             <div class="action-panel__container--last">
 
-              {{ components.button(text='Add brake tests', url='/prototypes/brake-test-config') }}
+              {{ components.button(text='Add break tests', url='/prototypes/brake-test-config') }}
 
             </div>
 
@@ -177,6 +182,61 @@
 
         </div>
 
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container--twothirds">
+
+              <h3 class="action-panel__heading">Testers comments</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {% if viewData.comment %}
+
+                {{ components.button(text='Edit comment', url='/prototypes/mot-test/comment/edit') }}
+
+              {% else %}
+
+                {{ components.button(text='Add comment', url='/prototypes/mot-test/comment') }}
+
+              {% endif %}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {% if viewData.comment %}
+
+          <div class='dvsa-tester-comments'>
+
+            <p class='dvsa-tester-comments__content'>{{ viewData.comment }}</p>
+
+            <ul class='dvsa-tester-comments__actions-list'>
+
+              <li class='dvsa-tester-comments__action'>
+
+                <a class='dvsa-tester-comments__link dvsa-tester-comments__link--bolden' href='/prototypes/mot-test/comment/edit'>Edit</a>
+
+              </li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>or</li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>
+
+                <a class='dvsa-tester-comments__link' href='/prototypes/mot-test/comment/remove'>Remove</a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        {% endif %}
 
       </div>
 

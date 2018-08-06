@@ -39,6 +39,10 @@ var _siteReview = require('../controllers/site-review/site-review');
 
 var siteReviewController = _interopRequireWildcard(_siteReview);
 
+var _brakeTest = require('../controllers/brake-test/brake-test');
+
+var brakeTestController = _interopRequireWildcard(_brakeTest);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
@@ -91,16 +95,18 @@ router.get('/prototypes/site-review/assessment/compliance', siteReviewController
 router.get('/prototypes/site-review/assessment/management-and-quality', siteReviewController.getAssessment);
 router.get('/prototypes/site-review/assessment/people', siteReviewController.getAssessment);
 router.get('/prototypes/site-review/assessment/premises', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
+router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
 router.post('/prototypes/site-review/assessment/activity', [siteReviewController.validateActivity, siteReviewController.populateActivity, siteReviewController.postAssessment]);
 router.post('/prototypes/site-review/assessment/compliance', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
 router.post('/prototypes/site-review/assessment/management-and-quality', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
 router.post('/prototypes/site-review/assessment/people', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
 router.post('/prototypes/site-review/assessment/premises', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
-
-// Site review: Summary view
-router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
-router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
 router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
+
+// Brake tests
+router.post('/prototypes/brake-test-config', brakeTestController.postBrakeConfig);
+router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

@@ -139,7 +139,7 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
   req.session.viewData.activity.errors = [];
 
   // Sets up variable for catching radio value
-  let activityRadioResponse = req.body['radio-activity'];
+  const activityRadioResponse = req.body['radio-activity'].toLowerCase();
 
   // If radio selection not made
   if (!activityRadioResponse) {
@@ -147,23 +147,32 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
     req.session.viewData.activity.errors.push({
       radioGroup: 'Choose a result'
     });
+
     // Calls the next middleware method in the stack
     next();
   }
 
-  // If response is equal to yes
-  if (activityRadioResponse == 'yes') {
-    // Set activity response to true
-    req.session.viewData.activity.formData.activityIsPerformed = true;
+  switch (activityRadioResponse) {
+    case 'yes':
+      // Set activity response to true
+      req.session.viewData.activity.formData.activityIsPerformed = true;
 
-    // Assigns text input to variable
-    req.session.viewData.activity.formData.testNum = req.body['test-number'];
-  } else {
-    // Set activity response to false
-    req.session.viewData.activity.formData.activityIsNotPerformed = true;
+      // Asigns text input to variable
+      req.session.viewData.activity.formData.testNum = req.body['test-number'];
 
-    // Assigns activity dropdown value
-    req.session.viewData.activity.formData.reason = req.body['reinspection-options'];
+      // Break from switch statement
+      break;
+    case 'no':
+      // Set activity response to false
+      req.session.viewData.activity.formData.activityIsNotPerformed = true;
+
+      // Asigns activity dropdown value
+      req.session.viewData.activity.formData.reason = req.body['reinspection-options'];
+
+      req.session.viewData.activity.formData.otherReason = req.body['activity-unperformed-comment'];
+
+      // Break from switch statement
+      break;
   }
 
   // If yes radio was selected & text input is not populated
@@ -173,13 +182,22 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
       testNumber: 'Add a test number'
     });
   }
-  // If no radio was selected & reason was not selected
+
+  // If option no radio was selected & reason 5 (other was selected) was not selected
   else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
       // Create new error and push to stack
       req.session.viewData.activity.errors.push({
         activityDropdown: 'Select why the activity was not performed'
       });
     }
+
+    // If option no radio was select & reason 5 (other was selected) & other textarea is not populated
+    else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '5' && !req.session.viewData.activity.formData.otherReason) {
+        // Create new error and push to stack
+        req.session.viewData.activity.errors.push({
+          otherReason: 'Add why the activity was not performed'
+        });
+      }
 
   // Calls the next middleware method in the stack
   next();
@@ -211,11 +229,13 @@ const validateDetails = exports.validateDetails = (req, res, next) => {
 
   // Persists form fields on reload
   req.session.viewData.testerDetails = _extends({}, req.body);
+
   // New array for errors
   req.session.viewData.testerDetails.errors = [];
 
   // Set property for two examiners result to check
   req.session.viewData.testerDetails.twoExaminers = twoExaminers;
+
   // Add examiner ID to session
   req.session.viewData.testerDetails.examinerId = examinerId;
 

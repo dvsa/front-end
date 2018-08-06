@@ -24,8 +24,8 @@
       </header>
 
       <ul class='content-header__tertiary-list u-margin-bottom-35'> 
-        <li class='content-header__list-item--primary'>BHW, 790</li> 
-        <li class='content-header__list-item'>AJ30CTK</li> 
+        <li class='content-header__list-item--primary'>Ford, Focus</li> 
+        <li class='content-header__list-item'>AC74TCY</li> 
         <li class='content-header__list-item'>First used 25 Apr 2005</li> 
       </ul>
  
@@ -91,12 +91,15 @@
 
         <div class="multiple-choice">
           <input id="weight-type-1" type="radio" name="radio-assessment-group" value="weight-type-1" checked aria-controls="weight-type-panel-1">
-          <label for="weight-type-1">DGW (design gross weight from manufacturers' plate)</label>
+          <label for="weight-type-1">Brake test weight (from manufacturer or other reliable data)</label>
         </div>
-         
         <div class="multiple-choice">
           <input id="weight-type-2" type="radio" name="radio-assessment-group" value="weight-type-2" aria-controls="weight-type-panel-2">
-          <label for="weight-type-2">Presented weight</label>
+          <label for="weight-type-2">Presented weight (measured during ATL brake test)</label>
+        </div> 
+        <div class="multiple-choice">
+          <input id="weight-type-3" type="radio" name="radio-assessment-group" value="weight-type-3" aria-controls="weight-type-panel-3">
+          <label for="weight-type-3">Not known</label>
         </div> 
       </fieldset>
     </div>
@@ -112,17 +115,8 @@
               <label for="vehicleWeight" class="form-label">
                 Enter weight in kilograms
               </label>
-              <input type="text" id="vehicleWeight" name="vehicleWeight" value="3500" class="form-control " /> </div>
+              <input type="text" id="vehicleWeight" name="vehicleWeight" value="3000" class="form-control " /> </div>
   
-              <div class="form-group">
-                <div class="multiple-choice">
-                  <input id="weightIsUnladen" name="waste-types" type="checkbox" value="1">
-    
-                  <label for="weightIsUnladen">
-                    Unladen
-                  </label>
-                </div>
-              </div>
           </fieldset>
     </div>
 
@@ -195,7 +189,7 @@
 
       {%- endcall %}
 
-      {{ components.link(text='Cancel', url='/prototypes/') }}
+      {{ components.link(text='Cancel', url='/prototypes/mot-test') }}
 
     {%- endcall %}
 

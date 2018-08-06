@@ -1,0 +1,113 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Premises' %}
+
+{% block content %}
+
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/">
+          VTS079774
+      </a>
+    </li>
+    <li>
+        <a href="../v4/choose-section">
+           Site review
+        </a>
+    </li>
+     <li>
+          Premises
+    </li>
+  </ol>
+</div>
+
+
+<form action="choose-section-premises-done">
+
+  <h1 class="heading-medium">
+      Premises 
+  </h1>
+
+  <div class="form-group">
+    <fieldset>
+      <legend class="u-margin-bottom-20">
+        <span class="form-label-bold">
+          What is the assessment of the premises?
+        </span>
+
+        <details style="margin-bottom: 10px;">
+          <summary><span class="summary">Clues for premises</span></summary>
+          <div class="panel panel-border-narrow">
+                <p>The VTS is a safe working environment where the test bay is clearly defined and MOT equipment is easily accessible and in good order</p>
+                <p>The equipment is calibrated and there is a system to ensure that calibrations are planned and carried out in a timely fashion</p>
+                <p>The MOT test bay and site meet the Requirements of Authorisation</p>
+          </div>
+        </details>
+      </legend>
+
+      <div class="multiple-choice" data-target="satisfactory-comment-panel">
+        <input id="example-multiple-satisfactory" type="radio" name="radio-two-targets-group" value="Satisfactory">
+        <label for="example-multiple-satisfactory">
+          Satisfactory
+        </label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="satisfactory-comment-panel">
+        <label class="form-label" for="satisfactory-textarea">
+          Comment
+        </label>
+        <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5"></textarea>
+      </div>
+
+
+      <div class="multiple-choice" data-target="improve-advice-panel">
+        <input id="example-multiple-improve" type="radio" name="radio-two-targets-group" value="Improve">
+        <label for="example-multiple-improve">
+          Improve
+        </label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="improve-advice-panel">
+        <label class="form-label" for="improve-textarea">
+          Advice given
+        </label>
+        <textarea class="form-control" name="improve-textarea" id="improve-textarea" rows="5"></textarea>
+      </div>
+
+
+      <div class="multiple-choice" data-target="unsatisfactory-advice-panel">
+        <input id="example-multiple-unsatisfactory" type="radio" name="radio-two-targets-group" value="Unsatisfactory">
+        <label for="example-multiple-unsatisfactory">
+          Unsatisfactory
+        </label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="unsatisfactory-advice-panel">
+        <label class="form-label" for="unsatisfactory-advice-textarea">
+          Advice given
+        </label>
+        <textarea class="form-control" name="unsatisfactory-advice-textarea" id="unsatisfactory-advice-textarea" rows="5"></textarea>
+      </div>
+
+
+    </fieldset>
+  </div>
+
+  <div>
+      <input class="button" type="submit" value="Save and continue"><br><br>
+      <a href="choose-section">Cancel</a>
+  </div>
+
+
+
+</form>
+{% endblock %}

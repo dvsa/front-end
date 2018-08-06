@@ -1,0 +1,47 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Site review updated' %}
+
+{% block content %}
+
+<form action="index">
+    <div class="breadcrumbs">
+      <ol>
+        <li>
+          <a href="/manuals">
+            Home
+          </a>
+        </li>
+        <li>
+          <a href="/">
+            WILLETTA AREDONDO
+          </a>
+        </li>
+        <li>
+          <a href="/">
+              VTS079774
+          </a>
+        </li>
+        <li>
+          Site review
+        </li>
+      </ol>
+    </div>
+
+  <div class="form-group" style="margin-top: 20px;">
+
+  <div class="message--success">
+      <p><strong>Site review has been aborted</strong></p>
+  </div>
+
+
+  </div>
+
+  <div>
+      <input class="button" type="submit" value="Continue">
+  </div>
+
+
+
+</form>
+{% endblock %}

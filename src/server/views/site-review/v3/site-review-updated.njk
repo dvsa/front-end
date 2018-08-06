@@ -1,0 +1,31 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Site review updated' %}
+
+{% block content %}
+
+<form action="site-review-summary">
+  <div class="form-group" style="margin-top: 20px;">
+
+  <div class="message--success">
+      <p><strong>Site review has been saved</strong></p>
+      <p>Event has been created</p>
+  </div>
+
+  <legend>
+    <h2 class="heading-medium">
+      Compare re-inspection results with the most recent test of that vehicle.
+    </h1>
+  </legend>
+
+
+  </div>
+
+  <div>
+      <input class="button" type="submit" value="Compare tests">
+  </div>
+
+
+
+</form>
+{% endblock %}

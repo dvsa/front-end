@@ -1,0 +1,263 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results' }
+] %}
+
+{% block content %}
+ 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.dvsaBanner(
+        mainText='Prototype Preview',
+        secondaryText='The design on this user journey is not final yet',
+        type='error'
+      ) }}
+
+      <header class="content-header">
+
+        <h1><span class="content-header__title">MOT test results</span></h1>
+
+      </header>
+
+      <header class='content-header'>
+
+        <ul class='content-header__tertiary-list u-margin-bottom-35'>
+
+          <li class='content-header__list-item--primary'>BHW, 790</li>
+
+          <li class='content-header__list-item'>AJ30CTK</li>
+
+          <li class='content-header__list-item'>First used 25 Apr 2005</li>
+
+        </ul>
+
+      </header>
+      
+      <div class='text u-clearfix'>
+        
+        <p><a href='/prototypes/'>Print the MOT inspection sheet</a> for this test.</p>
+
+        <p>See <a href='/prototypes/'>testing advice</a> for this vechicle.</p>
+
+      </div>
+
+      {% if flashMessage != '' %}
+
+        <div class="message--success">
+
+          <p> {{ flashMessage }} </p>
+
+        </div>
+
+      {% endif %}
+
+      <div class='u-margin-bottom-30'>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Odometer</h3>
+
+            </div>
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__value">Not recorded</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add reading', url='#') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="action-panel js-brakeTestActionPanel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Defects</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add a defect', url='/prototypes/mot-test/categories/') }}
+
+            </div>
+
+          </div>
+
+        </div>
+        <div class="defect-summary">
+          <div id="rfrList" class="">
+              <h3 class="defect-summary__heading">
+          <span class="badge--alert js-numberOfFailures">1</span>
+          <span class="defect-summary__heading-type">Failures</span>
+      </h3>
+        <ol>
+              <li class="js-rfrItem defect">
+        
+                <div class="defect-status">
+                <div class="js-itemStatus defect-status__inner"></div>
+                </div>
+                
+                <div>
+                    <strong class="defect__is-dangerous" aria-hidden="true">Major failure</strong>
+                    <h4 class="defect__title">Electronic braking system warning device inoperative</h4>
+                    <p class="defect__meta"></p>
+                    <strong class="visuallyhidden">Major failure</strong>
+                    <h5 class="visuallyhidden">Position</h5>
+                    <ul class="defect__positions">
+                            <li>Location not recorded</li>
+                    </ul>
+                </div>
+                <h5 class="visuallyhidden">Actions</h5>
+        
+                <ul class="defect__edit"> 
+                    <li class="defect__marked-undo">
+                        <span>Repaired</span>
+                        <form class="js-rfrForm" data-ignore-form-disable-submit-button="true" method="POST" action="http://localhost:3000/user" data-form-state-index="0">
+                            <input type="hidden" name="_csrf_token" value="7A400ABA-BA1A-B898-4CB7-3F8F71D8B8DF">
+                            <input class="js-buttonMarkRepaired button--link button--right" type="submit" value="Undo">
+                            <input type="hidden" name="defectId" value="12">
+                            <input type="hidden" name="defectType" value="failure">
+                            <input type="hidden" name="defectText" value="Electronic braking system warning device inoperative">
+                        </form>
+                    </li> 
+                    <li class="defect__mark-repaired">
+                        <form class="js-rfrForm" data-ignore-form-disable-submit-button="true" method="POST" action="http://localhost:3000/user" data-form-state-index="1">
+                            <input type="hidden" name="_csrf_token" value="7A400ABA-BA1A-B898-4CB7-3F8F71D8B8DF">
+                            <input class="js-buttonMarkRepaired button button--small button--right" type="submit" value="Mark as repaired">
+                            <input type="hidden" name="defectId" value="12">
+                            <input type="hidden" name="defectType" value="failure">
+                            <input type="hidden" name="defectText" value="Electronic braking system warning device inoperative">
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        </div>
+      </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Break test</h3>
+
+            </div>
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__value">Not recorded</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add break tests', url='/prototypes/brake-test-config') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container--twothirds">
+
+              <h3 class="action-panel__heading">Testers comments</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {% if viewData.comment %}
+
+                {{ components.button(text='Edit comment', url='/prototypes/mot-test/comment/edit') }}
+
+              {% else %}
+
+                {{ components.button(text='Add comment', url='/prototypes/mot-test/comment') }}
+
+              {% endif %}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {% if viewData.comment %}
+
+          <div class='dvsa-tester-comments'>
+
+            <p class='dvsa-tester-comments__content'>{{ viewData.comment }}</p>
+
+            <ul class='dvsa-tester-comments__actions-list'>
+
+              <li class='dvsa-tester-comments__action'>
+
+                <a class='dvsa-tester-comments__link dvsa-tester-comments__link--bolden' href='/prototypes/mot-test/comment/edit'>Edit</a>
+
+              </li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>or</li>
+
+              <li class='dvsa-tester-comments__action dvsa-tester-comments__action--inline dvsa-tester-comments__action--last'>
+
+                <a class='dvsa-tester-comments__link' href='/prototypes/mot-test/comment/remove'>Remove</a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+        {% endif %}
+
+      </div>
+
+      <form action="/prototypes/mot-test/review" method="GET">
+
+        {% if viewData.comment %}
+
+          {{ components.button(text='Review test') }}
+
+        {% else %}
+
+          {{ components.button(text='Review test', disabled=true) }}
+
+        {% endif %}
+
+      </form>
+
+      {{ components.link(text='Cancel test', url='/prototypes/', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

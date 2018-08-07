@@ -1,0 +1,93 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Activity' %}
+
+{% block content %}
+
+{{ viewData.activity.formData.activityPerformedDropdown }}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="#">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="VE-view">
+          VTS079774
+      </a>
+    </li>
+    <li>
+      Site review
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  Activity
+</h1>
+
+<form action="choose-section-premises-done">
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class='form-label-bold'>Did you perform an activity?</span>
+      </legend>
+
+      <div class="multiple-choice" data-target="advice-given-panel">
+        <input id="example-multiple-yes" type="radio" name="radio-activity" value="yes">
+        <label for="example-multiple-yes">Yes</label>
+      </div>
+
+      <div class="panel panel-border-narrow js-hidden" id="advice-given-panel">
+        <label class="form-label" for="test-number">
+          MOT test number for original test 
+        </label>
+        <input class="form-control" id="test-number" type="number" name="test-number" pattern="[0-9]*" value="">
+      </div>
+
+      <div class="multiple-choice" data-target="activity-blocked-panel">
+        <input id="example-multiple-no" type="radio" name="radio-activity" value="no">
+        <label for="example-multiple-no">No</label>
+      </div>
+
+      <div class="panel panel-border-narrow js-hidden" id="activity-blocked-panel">
+          <div class="form-group">
+            <label class="form-label" for="reinspection-options">
+              Why activity was not performed?
+            </label>
+            <div class='form-group'>
+              <select class="form-control" id="reinspection-options" name="reinspection-options">
+                <option value="0">Please select</option>
+                <option value="1">It wasn't necessary</option>
+                <option value="2">Blocked by pseudo customer</option>
+                <option value="3">Blocked by vehicle owner</option>
+                <option value="4">I felt under threat from the garage staff</option>
+                <option value="5">Other</option>
+              </select>
+            </div>
+            <div class='form-group'>
+              <label class='form-label' for='activity-unperformed-comment'>Comment on reason of not doing the activity</label>
+              <textarea class="form-control" name="activity-unperformed-comment" id="activity-unperformed-comment" rows="5"></textarea>
+            </div>
+          </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="form-group u-margin-bottom-15">
+      <input class="button" type="submit" value="Save and return">
+  </div>
+  <div class="form-group">
+      <a href="choose-section">Back</a>
+  </div>
+
+</form>
+{% endblock %}

@@ -19,56 +19,63 @@ export class MessagesFilter {
       messageWrap,
       messageItems,
     };
-    
+
     // Get values for state
     const currFilters = [];
-    const allFilters = [...this.elements.checkboxes].map( (checkbox) => checkbox.attributes['data-type'].value );
+    const allFilters = [...this.elements.checkboxes].map(checkbox => checkbox.attributes['data-type'].value);
     const checkBoxes = [...this.elements.checkboxes];
 
     // Populate state
     this.state = {
-       allFilters,
-       currFilters: allFilters
+      allFilters,
+      currFilters: allFilters,
     };
 
     this.init();
-
   }
-  
+
   init = () => {
-    console.log(this.state.allFilters)
-    console.log('inited state: ', this.state); 
+    console.log(this.state.allFilters);
+    console.log('inited state: ', this.state);
     // Attach listeners to checkboxes
-    this.elements.checkboxes.forEach( (checkbox) => { 
+    this.elements.checkboxes.forEach(checkbox => {
       addEventListenerToEl(checkbox, 'change', this.handleCheck);
     });
   };
 
-  handleCheck = e => {   
+  handleCheck = e => {
+    // Empty state
+    const newFilters = [];
 
-        // Empty state 
-        const newFilters = [];
+    // Map through checkboxes in DOM. Get their data value
+    this.elements.checkboxes.forEach(checkbox => {
+      // If it's checked, store filter value in state
+      if (checkbox.checked) {
+        const filterType = checkbox.attributes['data-type'].value;
+        newFilters.push(filterType);
+      }
+    });
 
-        // Map through checkboxes in DOM. Get their data value
-        this.elements.checkboxes.forEach( (checkbox) => { 
-          // If it's checked, store filter value in state
-          if( checkbox.checked ) {
-              const filterType = checkbox.attributes['data-type'].value; 
-              newFilters.push(filterType);
-            }
-        });
-        
-        // Update state with new filters
-        this.state.currFilters = newFilters;
-        console.log(this.state.currFilters);
+    // Update state with new filters
+    this.state.currFilters = newFilters;
+    console.log(this.state.currFilters);
 
-        // State updated > filter messages by state
-        this.filterMessages( this.state.currFilters ) 
-      
+    // State updated > filter messages by state
+    this.filterMessages(this.state.currFilters);
   };
 
-  filterMessages = type => {
-    console.log(type); 
+  filterMessages = filterOpts => {
+    console.log(filterOpts);
+    console.log(this.elements.messageItems);
 
+    this.elements.messageItems.forEach(item => {
+      const messageType = item.attributes['data-type'].value;
+      if (!filterOpts.includes(messageType)) {
+        console.log('not needed');
+        item.classList.add('hidden');
+      } else {
+        item.classList.remove('hidden');
+      }
+    });
   };
 }

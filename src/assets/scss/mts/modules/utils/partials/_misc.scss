@@ -61,3 +61,8 @@
 .a-r {
   text-align: right;
 }
+
+// Apply to container of items which fade out
+.u-fade-items { 
+    transition: all .5s ease-in-out; 
+}

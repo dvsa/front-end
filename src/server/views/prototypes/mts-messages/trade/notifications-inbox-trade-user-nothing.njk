@@ -1,0 +1,71 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Messages') }}
+
+      <div class='u-clearfix'>
+
+        <div class="c-tab-list">
+          <ul class="c-tab-list__tabs">          
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Messages (2)</span>
+            </li>
+            <li>
+              <a href="/prototypes/mts-messages/trade/notifications-archived-trade-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
+            </li>
+          </ul>
+
+          <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
+
+            <h3 class="heading-large">Messages</h3>
+              
+            <div class="form-group u-margin-bottom-30">
+              <fieldset>
+                <legend class="visually-hidden">Choose which message type to view</legend>
+                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                  <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+                  <label for="waste-type-1">Special notices</label>
+                </div>
+                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;" onclick="location.href = '/prototypes/mts-messages/trade/notifications-inbox-trade-user';">
+                  <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+                  <label for="waste-type-2">System messages</label>
+                </div>
+                <div class="multiple-choice" style="display: inline-block; clear: none" onclick="location.href = '/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-news';">
+                  <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+                  <label for="waste-type-3">News</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <p>Select a message type to view</p>
+
+            <div clas="message-panel js-filter-message-panel">
+            
+            </div>
+
+          </div>
+        </div>
+
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/mts-messages/trade', paragraph=true) }}
+        </div>
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

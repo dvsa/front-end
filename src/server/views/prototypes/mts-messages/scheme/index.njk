@@ -1,11 +1,11 @@
 {% extends 'layouts/mts.layout.njk' %}
 
-{% set pageTitle = 'Create a notification' %}
+{% set pageTitle = 'Create a message' %}
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Notifications', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
-  { text: 'Create a notification'}
+  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
+  { text: 'Create a message'}
 ] %}
 
 {% block content %}
@@ -14,17 +14,15 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='What type of notification is it?', secondary='Create a notification') }}
+      {{ components.pageHeading(heading='Choose a message type', secondary='Create a message') }}
 
       <div class='text u-clearfix'>
-
-        {{ components.paragraph(text='You can only create the following types of notifications', lead=true) }}
 
         <form>
           <div class="form-group">
             <fieldset>
               <legend class="visuallyhidden">
-                <h1 class="heading-medium">Choose notification message type</h1>
+                <h1 class="heading-medium">Choose message message type</h1>
               </legend>
               <div class="multiple-choice">
                 <input id="radio-1" type="radio" name="radio-group" value="Special notice">
@@ -32,16 +30,16 @@
               </div>
               <div class="multiple-choice">
                 <input id="radio-2" type="radio" name="radio-group" value="Advice and guidance">
-                <label for="radio-2">Advice and guidance</label>
+                <label for="radio-2">News</label>
               </div>
             </fieldset>
           </div>
         </form>
         <div class="u-margin-top-10 u-margin-bottom-30">
-          {{ components.button(text='Continue', url='/prototypes/mts-messages/create-message-user') }}
+          {{ components.button(text='Continue', url='/prototypes/mts-messages/scheme/create-message-user') }}
         </div>
 
-        {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages', paragraph=true) }}
+        {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages/scheme', paragraph=true) }}
 
       </div>
 

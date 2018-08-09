@@ -4,8 +4,8 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Notifications', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
-  { text: 'Create a notification'}
+  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
+  { text: 'Create a message'}
 ] %}
 
 {% block content %}
@@ -14,20 +14,20 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Review notification message', secondary='Create a notification') }}
+      {{ components.pageHeading(heading='Review and publish the message', secondary='Create a message') }}
 
       <div class="message--success">
-          <p>Notification successfully saved as a draft in special notices.</p>
+          <p>Message successfully saved as a draft in special notices.</p>
       </div>
 
       <div class='u-clearfix'>
 
         <div class='text'>
-          {{ components.paragraph(text='You can continue with your notification message or safely leave and return at a later', lead=true) }}
+          {{ components.paragraph(text='Continue reviewing the message or safely leave and return later.', lead=true) }}
         </div>
 
         <table class="table-summary">
-          <caption class="heading-medium">Notification type</caption>
+          <caption class="heading-medium">Message type</caption>
           <tbody>
             <tr>
               <th class="table-summary__key">
@@ -43,11 +43,11 @@
         </table>
 
         <table class="table-summary">
-          <caption class="heading-medium">Recipients</caption>
+          <caption class="heading-medium">Audience</caption>
           <tbody>
             <tr>
               <th class="table-summary__key">
-                Users and roles
+                Roles
               </th>
               <td class="table-summary__value">
                 <ul>
@@ -70,7 +70,7 @@
         </table>
 
         <table class="table-summary">
-          <caption class="heading-medium">Notification details</caption>
+          <caption class="heading-medium">Message content and publish date</caption>
           <tbody>
             <tr>
               <th class="table-summary__key">
@@ -94,10 +94,10 @@
             </tr>
             <tr>
               <th class="table-summary__key">
-                Acknowledgment period
+                Acknowledge by
               </th>
               <td class="table-summary__value">
-                10
+                1 August 2018
                 <a href="#" class="table-summary__action" title="Action Key">Change<span class="visuallyhidden"> Key</span>
                 </a>
               </td>
@@ -130,27 +130,27 @@
         </table>
 
         <h3 class="heading heading--medium heading-medium">
-          Preview your notification
+          Preview the message
         </h3>
-        <p class="text">Get to see what the special notice notification looks like before it’s published.</p>
+        <p class="text">Check before publishing that the details are correct and what the message will look like.</p>
         <div class="u-margin-top-10 u-margin-bottom-30">
-          <a href="/prototypes/mts-messages/create-message-preview" class="button button--info">Preview notification</a>
+          <a href="/prototypes/mts-messages/scheme/create-message-preview" class="button button--info">Preview</a>
         </div>
 
         <h3 class="heading heading--medium heading-medium">
-          Now publish your notification
+          Now publish the message
         </h3>
-        <p class="text">By publishing this notification you are confirming that the details you are providing are correct.</p>
+        <p class="text">By publishing this message you are confirming that the details you are providing are correct.</p>
         <ul class="list-unstyled content-navigation__split u-clearfix">
             <li class="content-navigation__split--left">
-                <a class=" button" href="/prototypes/mts-messages/create-message-confirmation">Publish notification</a>
+                <a class=" button" href="/prototypes/mts-messages/scheme/create-message-confirmation">Publish</a>
             </li>
             <li class="content-navigation__split--right">
-                <a class="button button--alert" href="/prototypes/mts-messages/remove-message">Remove notification</a>
+                <a class="button button--alert" href="/prototypes/mts-messages/scheme/remove-message">Remove</a>
             </li>
         </ul>
 
-        {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+        {{ components.link(text='Return to home', url='/prototypes/mts-messages/scheme', paragraph=true) }}
 
       </div>
 

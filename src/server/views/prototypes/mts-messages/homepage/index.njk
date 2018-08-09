@@ -1,0 +1,42 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MTS messages' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='MTS messages') }}
+
+      <div class='u-clearfix'>
+
+      <h3 class="heading-medium">Homepage designs</h3>
+      <p>User testing - iteration 1</p>
+      <ul>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-old">Option 0 - original but extended</a>
+        </li>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-001">Option 1</a>
+        </li>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-002">Option 2</a>
+        </li>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-003">Option 3</a>
+        </li>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-004">Option 4</a>
+        </li>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-005">Option 5</a>
+        </li>
+      </ul>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

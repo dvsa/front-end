@@ -1,0 +1,35 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a message' %}
+
+{% block content %}
+
+<header class="transaction-header">
+  <h1 class="transaction-header__title">Successfully removed the message</h1>
+</header>
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <div class='text u-clearfix'>
+
+        <h3 class="heading heading--medium heading-medium">
+          What next?
+        </h3>
+
+        <h3 class="heading heading--medium heading-medium">
+          Anything else helpful?
+        </h3>
+
+        {{ components.link(text='View messages', url='/prototypes/mts-messages/scheme/notifications-inbox-scheme-user', paragraph=true) }}
+
+        {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

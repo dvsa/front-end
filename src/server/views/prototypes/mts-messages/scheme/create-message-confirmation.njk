@@ -1,0 +1,46 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a message' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="transaction-header">
+        <h1 class="transaction-header__title">Successfully published Preparation for the EU roadworthiness directive</h1>
+      </header>
+
+      <div class='text u-clearfix'>
+
+        <p>You can view the published message in your inbox.</p>
+
+        <h3 class="heading heading--medium heading-medium">
+          What happens next?
+        </h3>
+
+        <p>Confirmation pages reassure users that they have completed a transaction and helps them understand what to expect next.</p>
+
+        <p>Your confirmation page must include:</p>
+
+        <ul class="list list-bullet">
+          <li>a reference number, if there is one</li>
+          <li>details of what happens next and when</li>
+          <li>contact details for the service</li>
+          <li>links to information or services that users are likely to need next</li>
+          <li>a link to your feedback page</li>
+          <li>a way for users to save a record of the transaction, for example, as a PDF</li>
+        </ul>
+
+        {{ components.link(text='View messages', url='/prototypes/mts-messages/scheme/notifications-inbox-scheme-user', paragraph=true) }}
+
+        {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

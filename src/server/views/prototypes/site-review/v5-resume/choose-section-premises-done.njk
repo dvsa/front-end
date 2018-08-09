@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<form action="enter-meta-data">
+<form action="summary">
   <div class="form-group">
 
       <div class="breadcrumbs">
@@ -101,63 +101,49 @@
         </ol>
       </div>
   
-      <div class="action-panel">
-          <div class="action-panel__container">
-            <h3 class="action-panel__heading">People</h3>
-          </div>
-          <div class="action-panel__container--last">
-            <a href="assessment-people" class="button">Edit</a>
-          </div>
-      </div>  
+<div class="action-panel">
+    <div class="action-panel__container">
+      <h3 class="action-panel__heading">People</h3>
+    </div>
+    <div class="action-panel__container">
+        <span class="action-panel__value">Not recorded</span>
+    </div>
+    <div class="action-panel__container--last">
+      <a href="assessment-people" class="button">
+      Record outcome
+      </a>
+    </div>
+</div>
 
-      <div class="defect-summary">
-        <h3 class="defect-summary__heading">
-            <span>Unsatisfactory</span>
-        </h3>
-        <ol>
-          <li class="defect">
-            <div>
-                Advice given: Improve training and documentation
-            </div>
-          </li>
-        </ol>
-      </div>
-  
-      <div class="action-panel">
-          <div class="action-panel__container">
-            <h3 class="action-panel__heading">Activity</h3>
-          </div>
-          <div class="action-panel__container--last">
-            <a href="assessment-activity" class="button">Edit</a>
-          </div>
-      </div>  
+<div class="action-panel">
+    <div class="action-panel__container">
+      <h3 class="action-panel__heading">Activity</h3>
+    </div>
+    <div class="action-panel__container">
+        <span class="action-panel__value">Not recorded</span>
+    </div>
+    <div class="action-panel__container--last">
+      <a href="assessment-activity" class="button">
+        Record activity
+      </a>
+    </div>
+</div>
 
-      <div class="defect-summary">
-        <h3 class="defect-summary__heading">
-            <span>Activity performed</span>
-        </h3>
-        <ol>
-          <li class="defect">
-            <div>
-                Test number: 1234 5678 9012
-            </div>
-          </li>
-        </ol>
-      </div>
     
   </div>
 
   <div class="u-margin-bottom-20">
-        <a href="vt59" class="button" type="submit">Continue</a>
-        <a href="abort-are-you-sure" style="float:right; margin-right: 20px;">Abort</a>
+      <a href="summary" class="button" type="submit">Continue</a>
+      <a href="abort-are-you-sure" class="button" type="submit" style="background-color:#b10e1e; float:right;">Abort</a>
   </div>
+
    <div class="u-margin-bottom-20">
        
   </div>
   
 
 <div class="form-group u-margin-bottom-20">
-  <a href="VE-view">Cancel</a>
+  <a href="site-review-summary-VE-view">Cancel</a>
 </div>
 
 </form>

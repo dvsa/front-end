@@ -33,29 +33,32 @@
             </li>
           </ul>
 
-          <div class="js-message-list" style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
+          <div class="js-filter-wrapper" style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
 
-            <h3 class="heading-large">Notifications</h3>
-              
-            <div class="js-filter-message form-group u-margin-bottom-30">
-              <fieldset>
-                <legend class="visually-hidden">Choose which notification type to view</legend>
-                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
-                  <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal" checked>
-                  <label for="waste-type-1">Special notices</label>
-                </div>
-                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
-                  <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines" checked>
-                  <label for="waste-type-2">System messages</label>
-                </div>
-                <div class="multiple-choice" style="display: inline-block; clear: none">
-                  <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural" checked>
-                  <label for="waste-type-3">Advice and guidance</label>
-                </div>
-              </fieldset>
-            </div>
+            
+            <form class="form js-message-filters">
+              <div class="form-group u-margin-bottom-30">
+                <fieldset>
+                  <legend class="visually-hidden">Choose which notification type to view</legend>
+                  <h3 class="heading-large">Notifications</h3>
+                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                    <input data-type="special" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
+                    <label for="type-special">Special notices</label>
+                  </div>
+                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                    <input data-type="system"  class="js-message-filter" id="type-system" name="type" type="checkbox" value="system" checked>
+                    <label for="type-system">System messages</label>
+                  </div>
+                  <div class="multiple-choice" style="display: inline-block; clear: none">
+                    <input data-type="advice"  class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
+                    <label for="type-advice">Advice and guidance</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
             
             <h3 class="heading-small">Acknowledgment required</h3>
+            <span id="showing"></span>
 
             <ul class="c-tab-list__items" class="u-margin-bottom-30">
               <li class="c-tab-list__row c-tab-list__row--unread" style="border-bottom: 1px solid #dee0e2; background-color: #f8f8f8">
@@ -76,12 +79,12 @@
               </li>
             </ul>
             
-            <div class="message-panel js-filter-message-panel">
+            <div class="message-panel">
 
               <h3 class="heading-small">All notification messages</h3>
               
-              <ul class="c-tab-list__items u-margin-bottom-30 js-message-list">
-                <li data-message="special" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+              <ul class="c-tab-list__items u-margin-bottom-30 js-filtered-messages">
+                <li data-type="special" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
                   <div class="c-tab-list__item-left" style="padding-right: 32px;">
                     <div class="c-tab-list__item-link">Preparation for the EU roadworthiness directive</div>
                     <ul class="defect__positions">
@@ -94,7 +97,7 @@
                   </div>
                 </li>
                 
-                <li data-message="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <li data-type="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
                   <div class="c-tab-list__item-left" style="padding-right: 32px;">
                     <div class="c-tab-list__item-link">New test quality information available</div>
                     <ul class="defect__positions">
@@ -107,7 +110,7 @@
                   </div>
                 </li>
                 
-                <li data-message="system" class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                <li data-type="system" class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
                   <div class="c-tab-list__item-left">
                     <div class="c-tab-list__item-link">Site manager nomination</div>
                     <ul class="defect__positions">
@@ -121,7 +124,7 @@
                   </div>
                 </li>
                 
-                <li data-message="advice" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <li data-type="advice" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
                   <div class="c-tab-list__item-left" style="padding-right: 32px;">
                     <div class="c-tab-list__item-link">MOT inspection manual guidance on cars and passenger vehicles</div>
                     <ul class="defect__positions">
@@ -134,7 +137,7 @@
                   </div>
                 </li>
                 
-                <li data-message="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <li data-type="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
                   <div class="c-tab-list__item-left" style="padding-right: 32px;">
                     <div class="c-tab-list__item-link">Tester nomination</div>
                     <ul class="defect__positions">
@@ -148,7 +151,7 @@
                   </div>
                 </li>
                 
-                <li data-message="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <li data-type="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
                   <div class="c-tab-list__item-left" style="padding-right: 32px;">
                     <div class="c-tab-list__item-link">Test outside opening hours </div>
                     <ul class="defect__positions">

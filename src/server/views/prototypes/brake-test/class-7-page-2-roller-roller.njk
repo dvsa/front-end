@@ -1,0 +1,346 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test class 7 - Page 2 (Roller - Roller)' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type"></span>
+      <span class="content-header__title">Add brake test results</span>
+    </h1>
+  </header>
+
+  <div class="dvsa-vehicle-summary vehicle-summary">
+    <div class="dvsa-vehicle-summary__wrapper">
+      <ul class="dvsa-vehicle-summary__items">
+        <li class="dvsa-vehicle-summary__item" id="registrationNumber">
+          <span class="dvsa-vehicle-summary__heading">
+            Registration number
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            AD33XCP </span>
+        </li>
+
+        <li class="dvsa-vehicle-summary__item" id="make">
+          <span class="dvsa-vehicle-summary__heading">
+            Make
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            CITROEN, RELAY </span>
+        </li>
+      </ul>
+
+      <div class="dvsa-vehicle-summary__panel" id="vehicle-summary-more">
+
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            VIN/Chassis </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="VINChassis">
+            PCXDAKAAAAA882103 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Transmission </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="transmission">
+            N/A </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Fuel type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="fuelType">
+            Diesel </dd>
+        </dl>
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            Body type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="bodyType">
+            Panel Van </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Cylinder capacity </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="cylinderCapacity">
+            2198 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            First used </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="firstUsed">
+            10 March 2016 </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
+  <form method="POST">
+    <fieldset>
+      <legend>
+        <h2 class="heading-large">
+          Brake effort
+        </h2>
+
+        <p class="lede">
+          Brake effort is recorded in kilograms
+        </p>
+      </legend>
+
+
+      <h3 class="heading-medium">
+        Service brake for</h3>
+
+      <div class="form-group">
+        <div class="panel panel-narrow">
+
+
+          <h3 class="heading-small">
+            Axle 1</h3>
+
+
+          <div class="grid-row">
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortNearsideAxle1">
+                  Nearside axle 1
+                </label>
+
+                <input type="number" id="serviceBrakeEffortNearsideAxle1" name="serviceBrakeEffortNearsideAxle1" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" required maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="serviceBrakeLockNearsideAxle1" value="0">
+
+                  <input type="checkbox" id="serviceBrakeLockNearsideAxle1" name="serviceBrakeLockNearsideAxle1" value="1">
+
+                  <label for="serviceBrakeLockNearsideAxle1">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortOffsideAxle1">
+                  Offside axle 1
+                </label>
+
+                <input type="number" id="serviceBrakeEffortOffsideAxle1" name="serviceBrakeEffortOffsideAxle1" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" required maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="serviceBrakeLockOffsideAxle1" value="0">
+
+                  <input type="checkbox" id="serviceBrakeLockOffsideAxle1" name="serviceBrakeLockOffsideAxle1" value="1">
+
+                  <label for="serviceBrakeLockOffsideAxle1">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="heading-small">
+            Axle 2</h3>
+
+
+          <div class="grid-row">
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortNearsideAxle2">
+                  Nearside axle 2
+                </label>
+
+                <input type="number" id="serviceBrakeEffortNearsideAxle2" name="serviceBrakeEffortNearsideAxle2" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" required maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="serviceBrakeLockNearsideAxle2" value="0">
+
+                  <input type="checkbox" id="serviceBrakeLockNearsideAxle2" name="serviceBrakeLockNearsideAxle2" value="1">
+
+                  <label for="serviceBrakeLockNearsideAxle2">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortOffsideAxle2">
+                  Offside axle 2
+                </label>
+
+                <input type="number" id="serviceBrakeEffortOffsideAxle2" name="serviceBrakeEffortOffsideAxle2" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" required maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="serviceBrakeLockOffsideAxle2" value="0">
+
+                  <input type="checkbox" id="serviceBrakeLockOffsideAxle2" name="serviceBrakeLockOffsideAxle2" value="1">
+
+                  <label for="serviceBrakeLockOffsideAxle2">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="heading-small">
+            Axle 3</h3>
+
+
+          <div class="grid-row">
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortNearsideAxle3">
+                  Nearside axle 3
+                </label>
+
+                <input type="number" id="serviceBrakeEffortNearsideAxle3" name="serviceBrakeEffortNearsideAxle3" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" required maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="serviceBrakeLockNearsideAxle3" value="0">
+
+                  <input type="checkbox" id="serviceBrakeLockNearsideAxle3" name="serviceBrakeLockNearsideAxle3" value="1">
+
+                  <label for="serviceBrakeLockNearsideAxle3">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-one-third">
+
+              <div class="form-group ">
+                <label class="form-label form-label-bold" for="serviceBrakeEffortOffsideAxle3">
+                  Offside axle 3
+                </label>
+
+                <input type="number" id="serviceBrakeEffortOffsideAxle3" name="serviceBrakeEffortOffsideAxle3" value="" class="form-control form-control-100"
+                  pattern="\d{0,4}" required maxlength="4" max="9999" />
+              </div>
+
+              <div class="form-group">
+
+                <div class="multiple-choice">
+                  <input type="hidden" name="serviceBrakeLockOffsideAxle3" value="0">
+
+                  <input type="checkbox" id="serviceBrakeLockOffsideAxle3" name="serviceBrakeLockOffsideAxle3" value="1">
+
+                  <label for="serviceBrakeLockOffsideAxle3">
+                    Lock
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+
+
+    <h2 class="heading-medium">
+      Parking brake effort for
+    </h2>
+
+    <div class="form-group">
+      <div class="panel panel-border-narrow">
+
+        <h3 class="heading-small">
+          Primary axle</h3>
+
+        <div class="grid-row">
+          <div class="column-one-third">
+
+            <div class="form-group ">
+              <label class="form-label form-label-bold" for="parkingBrakeEffortNearside">
+                Nearside axle
+              </label>
+
+              <input type="number" id="parkingBrakeEffortNearside" name="parkingBrakeEffortNearside" value="" class="form-control form-control-100"
+                pattern="\d{0,4}" required maxlength="4" max="9999" />
+            </div>
+
+            <div class="form-group">
+
+              <div class="multiple-choice">
+                <input type="hidden" name="parkingBrakeLockNearside" value="0">
+
+                <input type="checkbox" id="parkingBrakeLockNearside" name="parkingBrakeLockNearside" value="1">
+
+                <label for="parkingBrakeLockNearside">
+                  Lock
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="column-one-third">
+
+            <div class="form-group ">
+              <label class="form-label form-label-bold" for="parkingBrakeEffortOffside">
+                Offside axle
+              </label>
+
+              <input type="number" id="parkingBrakeEffortOffside" name="parkingBrakeEffortOffside" value="" class="form-control form-control-100"
+                pattern="\d{0,4}" required maxlength="4" max="9999" />
+            </div>
+
+            <div class="form-group">
+
+              <div class="multiple-choice">
+                <input type="hidden" name="parkingBrakeLockOffside" value="0">
+
+                <input type="checkbox" id="parkingBrakeLockOffside" name="parkingBrakeLockOffside" value="1">
+
+                <label for="parkingBrakeLockOffside">
+                  Lock
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="hidden" id="vehicleClass" name="vehicleClass" value="7" />
+      <input type="submit" id="brake_test_results_submit" name="submit" value="Submit" class="button" />
+
+      <p>
+        <a id="brake_test_results_cancel" href="#">
+          Cancel
+        </a>
+      </p>
+    </div>
+  </form>
+  
+{% endblock %}

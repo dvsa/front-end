@@ -1,0 +1,123 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
+
+{% block content %}
+
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        VTS079774
+      </a>
+    </li>
+    <li>
+      Notify of changes to equipment
+    </li>
+  </ol>
+</div>
+
+
+<form action="">
+
+  <h1 class="heading-xlarge heading heading--page-heading ">
+        <span class="heading-secondary">Notify of changes to equipment</span>
+          Confirm details of change to equipment
+  </h1>
+
+  <p class="lede">
+    Check that the information is correct before submitting the notification of changes.
+  </p>
+
+<div>
+
+  <table class='u-margin-bottom-30 u-clearfix'>
+    <tbody>
+      <tr>
+        <td>
+          Equipment Type
+        </td>
+        <td class='u-font-bold'>
+          Roller brake tester
+        </td>
+        <td class='u-align-right'>
+          <a href="#" class="table-summary__action" title="Change equipment type">Change<span class="visuallyhidden"> equipment type</span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Will the layout of the premises change?
+        </td>
+        <td class='u-font-bold'>
+          No
+        </td>
+        <td class='u-align-right'>
+          <a href="#" class="table-summary__action" title="Change premises declaration">Change<span class="visuallyhidden"> premises declaration</span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Is the equipment DVSA approved?
+        </td>
+        <td class='u-font-bold'>
+          Yes
+        </td>
+        <td class='u-align-right'>
+          <a href="#" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Can the equipment test the same vehicle classes?
+        </td>
+        <td class='u-font-bold'>
+          Yes
+        </td>
+        <td class='u-align-right'>
+          <a href="#" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="heading heading--medium  heading-medium">Declaration</h2>
+
+  <div class="text">
+    <p>I understand that the changes will be checked by DVSA at the next visit.</p>
+    <p>The Vehicle Examiner will need to confirm:</p>
+      <ul class="list list-bullet">
+        <li>The equipment layout and dimensions conform to the requirements for authorisation</li>
+        <li>The equipment has been calibrated correctly</li>
+      </ul>
+    <p>
+      By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+    </p>
+
+    <div class="notice u-margin-bottom-30">
+      <i class="icon icon-important">
+        <span class="visually-hidden">Warning</span>
+      </i>
+      <strong class="bold-small">If the changes do not meet the Requirements for Authorisation, approval will not be given and the VTS may have to cease testing.</strong>
+    </div>
+
+  </div>
+
+  <div>
+      <a href="/prototypes/vts-changes/v2/vts-6-confirmation" class="button">Accept and submit notification of changes</a><br><br>
+      <a href="/prototypes/vts-changes/v2/vts-4-classes">Back</a>
+  </div>
+
+  
+</form>
+{% endblock %}

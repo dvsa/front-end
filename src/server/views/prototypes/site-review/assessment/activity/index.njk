@@ -1,6 +1,6 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Action' %}
+{% set pageTitle = 'Activity' %}
 
 {% block content %}
 
@@ -56,7 +56,7 @@
         {% if viewData.activity.errors[0]['testNumber'] %}
           <span class="error-message">{{ viewData.activity.errors[0]['testNumber'] }}</span>
         {% endif %}
-        <input class="form-control" id="test-number" type="text" name="test-number" value="{{ viewData.activity.formData.testNum }}">
+        <input class="form-control" id="test-number" type="number" name="test-number" value="{{ viewData.activity.formData.testNum }}">
       </div>
 
       <div class="multiple-choice" data-target="activity-blocked-panel">
@@ -64,7 +64,7 @@
         <label for="example-multiple-no">No</label>
       </div>
 
-      <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['activityDropdown'] }}" id="activity-blocked-panel">
+      <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['activityDropdown'] or viewData.activity.errors[0]['otherReason'] }}" id="activity-blocked-panel">
           <div class="form-group">
             <label class="form-label" for="reinspection-options">
               Why activity was not performed?
@@ -72,14 +72,23 @@
             {% if viewData.activity.errors[0]['activityDropdown'] %}
               <span class="error-message">{{ viewData.activity.errors[0]['activityDropdown'] }}</span>
             {% endif %}
-            <select class="form-control" id="reinspection-options" name="reinspection-options">
-              <option value="0">Please select</option>
-              <option value="1" {{'selected' if viewData.activity.formData.reason == 1}}>It wasn't necessary</option>
-              <option value="2" {{'selected' if viewData.activity.formData.reason == 2}}>Blocked by pseudo customer</option>
-              <option value="3" {{'selected' if viewData.activity.formData.reason == 3}}>Blocked by vehicle owner</option>
-              <option value="4" {{'selected' if viewData.activity.formData.reason == 4}}>I felt under threat from the garage staff</option>
-              <option value="5" {{'selected' if viewData.activity.formData.reason == 5}}>Other</option>
-            </select>
+            <div class='form-group'>
+              <select class="form-control" id="reinspection-options" name="reinspection-options">
+                <option value="0">Please select</option>
+                <option value="1" {{'selected' if viewData.activity.formData.reason == 1}}>It wasn't necessary</option>
+                <option value="2" {{'selected' if viewData.activity.formData.reason == 2}}>Blocked by pseudo customer</option>
+                <option value="3" {{'selected' if viewData.activity.formData.reason == 3}}>Blocked by vehicle owner</option>
+                <option value="4" {{'selected' if viewData.activity.formData.reason == 4}}>I felt under threat from the garage staff</option>
+                <option value="5" {{'selected' if viewData.activity.formData.reason == 5}}>Other</option>
+              </select>
+            </div>
+            <div class='form-group'>
+              <label class='form-label' for='activity-unperformed-comment'>Comment on reason for not doing the activity</label>
+              {% if viewData.activity.errors[0]['otherReason'] %}
+                <span class="error-message">{{ viewData.activity.errors[0]['otherReason'] }}</span>
+              {% endif %}
+              <textarea class="form-control" name="activity-unperformed-comment" id="activity-unperformed-comment" rows="5">{{ viewData.activity.formData.otherReason }}</textarea>
+            </div>
           </div>
       </div>
     </fieldset>

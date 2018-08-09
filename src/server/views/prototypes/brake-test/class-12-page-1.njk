@@ -1,0 +1,184 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test class 12 - Page 1' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT testing</span>
+      <span class="content-header__title">Brake test configuration</span>
+    </h1>
+  </header>
+
+  <div class="dvsa-vehicle-summary vehicle-summary">
+    <div class="dvsa-vehicle-summary__wrapper">
+      <ul class="dvsa-vehicle-summary__items">
+        <li class="dvsa-vehicle-summary__item" id="registrationNumber">
+          <span class="dvsa-vehicle-summary__heading">
+            Registration number
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            AA83LOX </span>
+        </li>
+
+        <li class="dvsa-vehicle-summary__item" id="make">
+          <span class="dvsa-vehicle-summary__heading">
+            Make
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            PEUGEOT, TWEET </span>
+        </li>
+      </ul>
+
+      <div class="dvsa-vehicle-summary__panel" id="vehicle-summary-more">
+
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            VIN/Chassis </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="VINChassis">
+            XOLAAKAAAAA821583 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Transmission </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="transmission">
+            N/A </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Fuel type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="fuelType">
+            Petrol </dd>
+        </dl>
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            Body type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="bodyType">
+            Motorcycle </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Cylinder capacity </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="cylinderCapacity">
+            125 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            First used </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="firstUsed">
+            6 June 2015 </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="dvsa-brake-test-configuration dvsa-brake-test-configuration--class-1-2">
+    <form method="POST">
+      <fieldset>
+        <legend>
+          <h3 class="heading-medium">
+            Break test type
+          </h3>
+        </legend>
+
+        <div class="form-group">
+          <label for="brakeTestType" class="form-label form-label-bold">
+            Select brake test type
+          </label>
+
+
+          <div class="form-group">
+            <label for="brakeTestType">
+            </label>
+            <select id="brakeTestType" name="brakeTestType" class="form-control   ">
+              <option id="brakeTestType_ROLLR" value="ROLLR" selected>Roller</option>
+              <option id="brakeTestType_PLATE" value="PLATE">Plate</option>
+              <option id="brakeTestType_GRADT" value="GRADT">Gradient</option>
+              <option id="brakeTestType_FLOOR" value="FLOOR">Floor</option>
+              <option id="brakeTestType_DECEL" value="DECEL">Decelerometer</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset id="weights">
+        <legend>
+          <h3 class="heading-medium">
+            Vehicle weights
+          </h3>
+        </legend>
+
+        <div class="form-group">
+          <label for="vehicleWeightFront" class="form-label form-label-bold">
+            Machine weight front in kilograms
+          </label>
+
+          <input type="text" id="vehicleWeightFront" name="vehicleWeightFront" value="" class="form-control " /> </div>
+
+        <div class="form-group">
+          <label for="vehicleWeightRear" class="form-label form-label-bold">
+            Machine weight rear in kilograms
+          </label>
+
+          <input type="text" id="vehicleWeightRear" name="vehicleWeightRear" value="" class="form-control " /> </div>
+
+        <div class="form-group">
+          <label for="riderWeight" class="form-label form-label-bold">
+            Rider weight in kilograms
+            <small>(optional)</small>
+          </label>
+
+          <input type="text" id="riderWeight" name="riderWeight" value="" class="form-control " /> </div>
+      </fieldset>
+
+      <fieldset id="sidecar-seection">
+        <legend>
+          <h3 class="heading-medium">
+            Is there a sidecar attached?
+          </h3>
+        </legend>
+
+        <div class="form-group">
+
+          <div class="multiple-choice" data-target="sidecarWeightGroup">
+            <input id="isSidecarAttachedYes" type="radio" name="isSidecarAttached" value="1">
+
+            <label for="isSidecarAttachedYes">
+              Yes
+            </label>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="sidecarWeightGroup">
+            <label class="form-label" for="sidecarWeight">
+              Sidecar weight in kilogram
+            </label>
+
+            <input class="form-control" name="sidecarWeight" type="text" id="sidecarWeight" value="">
+          </div>
+
+          <div class="multiple-choice">
+            <input id="isSidecarAttachedNo" type="radio" name="isSidecarAttached" value="0" checked>
+
+            <label for="isSidecarAttachedNo">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group">
+        <input type="hidden" id="vehicleClass" name="vehicleClass" value="1" />
+        <input type="submit" id="brake_test_results_submit" name="submit" value="Next" class="button" />
+
+        <p>
+          <a id="brake_test_results_cancel" href="#" class="link">
+            Cancel
+          </a>
+        </p>
+      </div>
+    </form>
+  </div>
+  
+{% endblock %}

@@ -11,19 +11,13 @@
 
 {% block content %}
 
-{{ viewData.testerName }} 
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  Enter details
+</h1>
+
 
 <form action="/prototypes/site-review/enter-details" method="POST">
-  
-    
-    <fieldset>
-      <legend>
-        <h1 class="heading-medium">
-          Enter details of the site review
-        </h1>
-    </legend>
-
-
     <div class="form-group">
       <fieldset>
           <legend class="form-label">Date of site visit <span class="form-hint">For example, 31 3 1980</span></legend>

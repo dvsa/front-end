@@ -43,9 +43,6 @@ var _getMonth = require('./helpers/getMonth.js');
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-
-
-//export * from './routes.js';
 const clearReviewSession = exports.clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {

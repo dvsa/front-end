@@ -4,9 +4,11 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'MOT test results', url: '/prototypes/mot-test' },
-  { text: 'Brake test' }
+  { text: 'Brake test configuration', url: '/prototypes/brake-test-config' },
+  { text: 'Brake test entry', url: '/prototypes/brake-test-entry' },
+  { text: 'Brake test summary' }
 ] %}
+
 
 {% block content %}
 
@@ -14,27 +16,23 @@
 
     {% call components.columnFull() %}
       
-      <header class="content-header">
-
-        <h1><span class="content-header__title">Brake test summary</span></h1>
-
-      </header>
-
-      <header class='content-header'>
-
-        <ul class='content-header__tertiary-list u-margin-bottom-35'>
-
-          <li class='content-header__list-item--primary'>BHW, 790</li>
-
-          <li class='content-header__list-item'>AJ30CTK</li>
-
-          <li class='content-header__list-item'>First used 25 Apr 2005</li>
-
-        </ul>
+        <header class="content-header">
+ 
+        <h1 class="heading-xlarge" style="margin-bottom: 30px">
+            <span class="heading-secondary">MOT testing</span>
+             Brake test summary 
+        </h1>
 
       </header>
 
-      <div class="text">
+      <ul class='content-header__tertiary-list u-margin-bottom-35'> 
+        <li class='content-header__list-item--primary'>Ford, Focus</li> 
+        <li class='content-header__list-item'>AC74TCY</li> 
+        <li class='content-header__list-item'>First used 25 Apr 2005</li> 
+      </ul>
+     
+
+    <div class="text">
 
         <table class="table-summary">
           <caption class="heading-medium">Service brake</caption>
@@ -52,7 +50,7 @@
                 Brake efficiency
               </th>
               <td class="table-summary__value numeric">
-                22%
+                28%
               </td>
 
             </tr>
@@ -84,7 +82,7 @@
                 Axle 1
               </th>
               <td class="table-summary__value numeric">
-                56%
+                6%
               </td>
 
             </tr>
@@ -139,10 +137,10 @@
       </div>
 
       <nav class="content-navigation">
-          <a href="/mot-test/125112196570" class="button">Finish and return to MOT test results</a>
+          <a href="/prototypes/mot-test" class="button">Finish and return to MOT test results</a>
       </nav>
 
-      {{ components.link(text='Edit brake test', url='/prototypes/') }}
+      {{ components.link(text='Edit results', url='/prototypes/brake-test-entry') }}
 
     {%- endcall %}
 

@@ -1,10 +1,13 @@
 export const FILTER_CONFIG = {
-  classes: {
-    component: 'js-filter-wrapper',
-    messageList: 'js-filter-message-panel',
-    filters: 'js-message-filters',
+  selectors: {
+    component: '.js-filter-wrapper',
+    messageList: '.js-filtered-messages',
+    checkboxes: '.js-message-filter', 
+    filteredView: '.js-message-panel',
+    emptyNotice: 'message-panel__notice' // used inside a method, so omit the dot
   },
-  dataAttributes: {
-    type: 'data-message', // 'special', 'advice', 'system'
-  },
+  data: {
+    emptyNotice: 'No messages to show',
+    messages: '[data-type]'
+  }
 };

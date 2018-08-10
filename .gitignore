@@ -10,6 +10,7 @@ spider.txt
 public
 npm-debug.log
 /tmp/
+ngrok
 
 # Logs
 logs

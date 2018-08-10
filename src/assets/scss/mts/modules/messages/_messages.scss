@@ -67,11 +67,78 @@
   }
 }
 
-// MTS Messages
+// MTS Filtered Messages
 
-.message-panel__notice {
-  text-align: center;
-  font-weight: 600;
-  padding: 1em;
-  color: $secondary-text-colour;
+
+.message-panel {
+  @include core-16;
+  position: relative;
+  border-top: 1px solid $grey-2;
+  padding: 15px;
+  background-color: $white;
+  transition: background-color .4s ease-in-out;
+
+  &__message-title {
+    font-weight: bold;
+    position: relative;
+  } 
+
+  &__message {
+    background: #fff;
+    clear: both;
+    border-top: 1px solid $grey-3;
+    position: relative;
+  }
+
+  &__message--unread {
+    background: $grey-4; 
+    
+    .message-panel__message-title {
+      font-weight: bold;
+    }
+
+    .message-panel__message-title:before {
+      position: absolute;
+      left: -20px;
+      top: -4px;
+      font-size: 28px;
+      color: $mot-blue;
+      content: "\2022";
+    }
+
+  } 
+  
+  // Empty view notice
+  &__notice {
+    text-align: center;
+    font-weight: 600;
+    padding: 1em;
+    color: $secondary-text-colour;
+  }
+
+  // Meta details for each message
+  &__message-details {
+    @extend %contain-floats;
+    color: $secondary-text-colour;
+    padding-top: 5px;
+    
+    li {
+      font-size: 16px;
+      color: #0b0c0c;
+      @include media(tablet) {
+        display: inline-block;
+        width: 30%;
+      }
+      
+      @include media(false, 740px) {
+        display: block;
+        width: 100%;
+      }
+      
+      @include media(false, 640px) {
+        display: inline-block;
+        width: 30%;
+      }
+    }
+  }
 }

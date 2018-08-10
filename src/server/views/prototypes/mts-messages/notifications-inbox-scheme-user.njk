@@ -33,23 +33,22 @@
             </li>
           </ul>
 
-          <div class="js-filter-wrapper" style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
-
+          <div class="message-filters js-filter-wrapper">
             
-            <form class="form js-message-filters">
-              <div class="form-group u-margin-bottom-30">
+            <form class="form">
+              <div class="form-group u-margin-bottom-30 inline">
                 <fieldset>
                   <legend class="visually-hidden">Choose which notification type to view</legend>
                   <h3 class="heading-large">Notifications</h3>
-                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                  <div class="multiple-choice multiple-choice--inline">
                     <input data-type="special" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
                     <label for="type-special">Special notices</label>
                   </div>
-                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                  <div class="multiple-choice multiple-choice--inline">
                     <input data-type="system"  class="js-message-filter" id="type-system" name="type" type="checkbox" value="system" checked>
                     <label for="type-system">System messages</label>
                   </div>
-                  <div class="multiple-choice" style="display: inline-block; clear: none">
+                  <div class="multiple-choice multiple-choice--inline">
                     <input data-type="advice"  class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
                     <label for="type-advice">Advice and guidance</label>
                   </div>
@@ -60,19 +59,19 @@
             <h3 class="heading-small">Acknowledgment required</h3> 
 
             <ul class="c-tab-list__items" class="u-margin-bottom-30">
-              <li class="c-tab-list__row c-tab-list__row--unread" style="border-bottom: 1px solid #dee0e2; background-color: #f8f8f8">
-                <div class="c-tab-list__item-left" style="padding: 40px 32px 40px 32px;">
+              <li class="message-panel__message  message-panel__message--unread">
+                <div class="c-tab-list__item-left">
                   <div class="c-tab-list__item-link">Preparation for the EU roadworthiness directive</div>
-                  <ul class="defect__positions">
-                    <li style="font-size: 16px; color: #0b0c0c;">Date received: 16 May 2018</li>
-                    <li style="font-size: 16px; color: #0b0c0c;">Type: Special notice</li>
-                    <li style="font-size: 16px; color: #0b0c0c;">Action: Acknowledgment required</li>
+                  <ul class="message-panel__message-details">
+                    <li>Date received: 16 May 2018</li>
+                    <li>Type: Special notice</li>
+                    <li>Action: Acknowledgment required</li>
                   </ul>
                 </div>
-                <div class="c-tab-list__item-right" style="left: 60%; top: 30px;">
+                <div class="c-tab-list__item-right">
                   <strong class="defect__is-dangerous" aria-hidden="true">4 days remaining</strong>
                 </div>
-                <div class="c-tab-list__item-right" style="top: 30px;">
+                <div class="c-tab-list__item-right">
                   <a href="/prototypes/mts-messages/notification-published" class="">View notification</a>
                 </div>
               </li>
@@ -80,40 +79,15 @@
             
             <div class="message-panel js-message-panel"> 
               <h3 class="heading-small">All notification messages</h3> 
-              <ul class="c-tab-list__items u-margin-bottom-30 js-filtered-messages u-fade-items">
-                <li data-type="special" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                    <div class="c-tab-list__item-link">Preparation for the EU roadworthiness directive</div>
-                    <ul class="defect__positions">
-                      <li style="font-size: 16px;">Date received: 16 July 2018</li>
-                      <li style="font-size: 16px;">Type: Special notice</li>
-                    </ul>
-                  </div>
-                  <div class="c-tab-list__item-right">
-                    <a href="#" class="">View notification</a>
-                  </div>
-                </li>
-                
-                <li data-type="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                    <div class="c-tab-list__item-link">New test quality information available</div>
-                    <ul class="defect__positions">
-                      <li style="font-size: 16px;">Date received: 1 June 2018</li>
-                      <li style="font-size: 16px;">Type: System message</li>
-                    </ul>
-                  </div>
-                  <div class="c-tab-list__item-right">
-                    <a href="#" class="">View notification</a>
-                  </div>
-                </li>
-                
-                <li data-type="system" class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+              <ul class="c-tab-list__items u-margin-bottom-30 u-fade-items message-panel__messages js-message-list">
+                <li data-type="special" class="message-panel__message">
                   <div class="c-tab-list__item-left">
-                    <div class="c-tab-list__item-link">Site manager nomination</div>
-                    <ul class="defect__positions">
-                      <li style="font-size: 16px; color: #0b0c0c;">Date received: 1 April 2018</li>
-                      <li style="font-size: 16px; color: #0b0c0c;">Type: System message</li>
-                      <li style="font-size: 16px; color: #0b0c0c;">Action: Accept or reject</li>
+                    <h4 class="message-panel__message-title">
+                      Preparation for the EU roadworthiness directive
+                    </h4>
+                    <ul class="message-panel__message-details">
+                      <li>Date received: 16 July 2018</li>
+                      <li>Type: Special notice</li>
                     </ul>
                   </div>
                   <div class="c-tab-list__item-right">
@@ -121,23 +95,55 @@
                   </div>
                 </li>
                 
-                <li data-type="advice" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                    <div class="c-tab-list__item-link">MOT inspection manual guidance on cars and passenger vehicles</div>
-                    <ul class="defect__positions">
-                      <li style="font-size: 16px;">Date received: 23 April 2018</li>
-                      <li style="font-size: 16px;">Type: Advice and guidance</li>
-                    </ul>
-                  </div>
-                  <div class="c-tab-list__item-right">
-                    <a href="#" class="">View notification</a>
-                  </div>
-                </li>
+                <li data-type="system" class="message-panel__message">
+                    <div class="c-tab-list__item-left">
+                      <h4 class="message-panel__message-title">
+                        Preparation for the EU roadworthiness directive
+                      </h4>
+                      <ul class="message-panel__message-details">
+                        <li>Date received: 16 July 2018</li>
+                        <li>Type: System notice</li>
+                      </ul>
+                    </div>
+                    <div class="c-tab-list__item-right">
+                      <a href="#" class="">View notification</a>
+                    </div>
+                  </li>
                 
-                <li data-type="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <li data-type="special" class="message-panel__message">
+                      <div class="c-tab-list__item-left">
+                        <h4 class="message-panel__message-title">
+                          Preparation for the EU roadworthiness directive
+                        </h4>
+                        <ul class="message-panel__message-details">
+                          <li>Date received: 16 July 2018</li>
+                          <li>Type: Special notice</li>
+                        </ul>
+                      </div>
+                      <div class="c-tab-list__item-right">
+                        <a href="#" class="">View notification</a>
+                      </div>
+                    </li>
+                
+                    <li data-type="advice" class="message-panel__message">
+                        <div class="c-tab-list__item-left">
+                          <h4 class="message-panel__message-title">
+                            Preparation for the EU roadworthiness directive
+                          </h4>
+                          <ul class="message-panel__message-details">
+                            <li>Date received: 16 July 2018</li>
+                            <li>Type: Advice and guidance</li>
+                          </ul>
+                        </div>
+                        <div class="c-tab-list__item-right">
+                          <a href="#" class="">View notification</a>
+                        </div>
+                      </li>
+                
+                <li data-type="system" class="message-panel__message  message-panel__message" >
                   <div class="c-tab-list__item-left" style="padding-right: 32px;">
                     <div class="c-tab-list__item-link">Tester nomination</div>
-                    <ul class="defect__positions">
+                    <ul class="message-panel__message-details">
                       <li style="font-size: 16px;">Date received: 12 March 2018</li>
                       <li style="font-size: 16px;">Type: System message</li>
                       <li style="font-size: 16px;">Action: Accept or reject</li>
@@ -148,10 +154,10 @@
                   </div>
                 </li>
                 
-                <li data-type="system" class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                <li data-type="system" class="message-panel__message  message-panel__message" >
+                  <div class="c-tab-list__item-left">
                     <div class="c-tab-list__item-link">Test outside opening hours </div>
-                    <ul class="defect__positions">
+                    <ul class="message-panel__message-details">
                       <li style="font-size: 16px;">Date received: 4 February 2018</li>
                       <li style="font-size: 16px;">Type: System message</li>
                     </ul>
@@ -162,7 +168,6 @@
                 </li>
                 
               </ul>
-              
             </div>
           </div>
         </div>

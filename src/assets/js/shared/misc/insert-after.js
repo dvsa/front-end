@@ -12,5 +12,5 @@
  * @author Martin DM <martind@kainos.com>
  */
 export const insertAfter = (newEl, refEl) => {
-    refEl.parentNode.insertBefore(newEl, refEl.nextSibling);
-}
+  refEl.parentNode.insertBefore(newEl, refEl.nextSibling);
+};

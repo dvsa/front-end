@@ -9,6 +9,7 @@ import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
 import * as siteReviewController from '../controllers/site-review/site-review';
 import * as brakeTestController from '../controllers/brake-test/brake-test';
+import * as messagingController from '../controllers/mts-messages';
 
 const router = Router();
 
@@ -100,6 +101,17 @@ router.post('/prototypes/site-review/enter-details', [siteReviewController.valid
 // Brake tests
 router.post('/prototypes/brake-test-config', brakeTestController.postBrakeConfig);
 router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
+
+// MTS Messaging
+router.param('messageIndex', messagingController.isValidMessage);
+router.get('/prototypes/messaging', [messagingController.setupMessages, messagingController.getMessages]);
+router.get('/prototypes/messaging/:messageIndex', messagingController.getMessage);
+router.get('/prototypes/messaging/acknowledge/:messageIndex', [
+  messagingController.unpinSpecialNotice,
+  messagingController.acknowledgeMessage,
+]);
+router.get('/prototypes/messaging/accept/:messageIndex', messagingController.acceptMessage);
+router.get('/prototypes/messaging/reject/:messageIndex', messagingController.rejectMessage);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

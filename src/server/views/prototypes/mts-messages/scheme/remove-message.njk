@@ -14,16 +14,16 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Remove message', secondary='Messages') }}
+      {{ components.pageHeading(heading='Delete message', secondary='Messages') }}
 
       <div class='text u-clearfix'>
 
-        {{ components.paragraph(text='Confirm that you want to remove <strong>MOT special notice 05-18: Preparation for the EU roadworthiness directive</stong>', lead=true) }}
+        {{ components.paragraph(text='Confirm that you want to delete <strong>MOT special notice 05-18: Preparation for the EU roadworthiness directive</stong>', lead=true) }}
 
-        <p>Removing a message will remove it from all users list.</p>
+        <p>Deteting a message will remove it from all users.</p>
 
         <div class="u-margin-top-10 u-margin-bottom-30">
-          <a class="button button--alert" href="/prototypes/mts-messages/scheme/remove-message-confirmation">Remove notification</a>
+          <a class="button button--alert" href="/prototypes/mts-messages/scheme/remove-message-confirmation">Delete message</a>
         </div>
 
         {{ components.link(text='Cancel and return to messages', url='/prototypes/mts-messages/notifications-inbox-scheme-user', paragraph=true) }}

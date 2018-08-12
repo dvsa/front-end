@@ -1,0 +1,157 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'AE search results' %}
+
+{% block content %}
+
+
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/prototypes/ae-search">
+              Search Authorised Examiner information
+            </a>
+          </li>
+          <li>
+            AE search results
+          </li>
+        </ol>
+      </div>
+
+      <h1 class="heading-xlarge" style="margin-bottom: 30px">
+            <span class="heading-secondary">Authorised Examiner search</span>
+            Results with "Fit, Company, Birmingham"
+      </h1>
+
+<!-- TODO hacky margins above and below to try and make consistent with https://int.dev.mot-testing.service.gov.uk/vehicle-testing-station/search 
+... the default left too much margin above details and not enough below. -->
+<h2 id="summaryLine" class="result__group-heading">
+    <strong>105</strong> Authorised Examiners found <strong></strong></h2>
+
+<form action="">
+
+
+<table class="govuk-table result-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col"><a href="">Authorised Examiner</a></th>
+      <th class="govuk-table__header" scope="col"><a href="">Name/trading name</a></th>
+      <th class="govuk-table__header" scope="col"><a href="">Type</a></th>
+      <th class="govuk-table__header" scope="col"><a href="">City/postcode</a></th>
+      <th class="govuk-table__header" scope="col"><a href="">Status</a></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE80126</a></td>
+      <td class="govuk-table__cell ">Fast Fit Services Ltd<br/><span class="result-table__meta">t/a Fast Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B1 2SS</span></td>
+      <td class="govuk-table__cell ">Approved</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE38450</a></td>
+      <td class="govuk-table__cell ">Quick Fit Fitters Ltd<br/><span class="result-table__meta">t/a Quick Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B6 3JK</span></td>
+      <td class="govuk-table__cell ">Approved</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE47284</a></td>
+      <td class="govuk-table__cell ">Speedy Fit Ltd<br/><span class="result-table__meta">t/a Speedy Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B32 7CH</span></td>
+      <td class="govuk-table__cell ">Applied</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE49375</a></td>
+      <td class="govuk-table__cell ">Faster Fit Garage Limited<br/><span class="result-table__meta">t/a Faster Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B7 1ST</span></td>
+      <td class="govuk-table__cell ">Approved</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE10937</a></td>
+      <td class="govuk-table__cell ">Fit and forget Ltd<br/><span class="result-table__meta">t/a n/a</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B5 3BY</span></td>
+      <td class="govuk-table__cell ">Lapsed</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE80126</a></td>
+      <td class="govuk-table__cell ">Fast Fit Services Ltd<br/><span class="result-table__meta">t/a Fast Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B23 8DF</span></td>
+      <td class="govuk-table__cell ">Approved</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE38450</a></td>
+      <td class="govuk-table__cell ">Quick Fit Fitters Ltd<br/><span class="result-table__meta">t/a Quick Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B18 0DF</span></td>
+      <td class="govuk-table__cell ">Approved</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE47284</a></td>
+      <td class="govuk-table__cell ">Speedy Fit Ltd<br/><span class="result-table__meta">t/a Speedy Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B11 7VT</span></td>
+      <td class="govuk-table__cell ">Applied</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE49375</a></td>
+      <td class="govuk-table__cell ">Faster Fit Garage Limited<br/><span class="result-table__meta">t/a Faster Fit</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B2 3NY</span></td>
+      <td class="govuk-table__cell ">Approved</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">AE10937</a></td>
+      <td class="govuk-table__cell ">Fit and forget Ltd<br/><span class="result-table__meta">t/a n/a</span></td>
+      <td class="govuk-table__cell ">Company</td>
+      <td class="govuk-table__cell ">Birmingham<br/><span class="result-table__meta">B4 9PL</span></td>
+      <td class="govuk-table__cell ">Lapsed</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="pager">
+  <div class="pager__controls">
+    <ul class="pager__list">
+      <li>1</li>
+      <li>
+        <a href="#">2</a>
+      </li>
+      <li>
+        <a href="#">3</a>
+      </li>
+      <li>
+        <a href="#">4</a>
+      </li>
+      <li>
+        <a href="#">5</a>
+      </li>
+    </ul>
+    <a class="pager__next" href="#">Next</a>
+  </div>
+  <div class="pager__summary">Showing 1 &ndash; 10 of 105 items</div>
+</div>
+
+<nav class="content-navigation">
+    <ul class="content-navigation__secondary">
+        <li>
+          <a href="/prototypes/ae-search">Return to search</a>
+        </li>
+    </ul>
+</nav>
+
+
+</form>
+{% endblock %}

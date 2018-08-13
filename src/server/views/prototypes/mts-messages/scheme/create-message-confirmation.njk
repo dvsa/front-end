@@ -1,0 +1,30 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a message' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="transaction-header">
+        <h1 class="transaction-header__title">Successfully published</h1>
+        <p>Issue <strong>04-2018</strong></p>
+      </header>
+
+      <div class='text u-clearfix'>
+
+        <p>You can view the published message in your inbox.</p>
+
+        {{ components.link(text='View messages', url='/prototypes/mts-messages/scheme/notifications-inbox-scheme-user', paragraph=true) }}
+
+        {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+        <h1>
+          <span class="content-header__type">News</span>
+          <span class="content-header__title">New way for you to get MOT news</span>
+        </h1>
+        <h2 class="content-header__tertiary">Published 23 April 2018</h2>
+      </header>
+
+      <div class='text u-clearfix'>
+
+        <p class="lede">From October onwards you'll be able to see all MOT special notices, notifications and news by DVSA as soon as you sign in the MTS.</p>
+
+        <p>We've added a 'Messages' view that will show you all special notices, notifications and any MOT related news. This is to ensure that every MOT tester will find out about any changes and news that impact their work.</p>
+
+        <p>To find out more what we've been working on from the <a href="https://mattersoftesting.blog.gov.uk/mot-services-were-working-on-6-july-2018/">latest Matters of Testing blog post</a>.</p>
+
+      </div>
+
+      {{ components.link(text='Back to messages', url='/prototypes/mts-messages/trade/notifications-inbox-trade-user-news-read', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

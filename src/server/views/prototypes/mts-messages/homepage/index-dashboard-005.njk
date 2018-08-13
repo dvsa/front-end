@@ -1,0 +1,237 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+   <div class="o-wrapper phase-banner">
+      <p>
+         <strong class="phase-tag">BETA</strong>
+         <span>
+         This is a new service – your
+         <a id="feedback-link" target="_blank" href="http://www.smartsurvey.co.uk/s/MTSFeedback/">feedback</a>
+         will help us to improve it.
+         </span>
+      </p>
+   </div>
+   <section class="c-home-hero">
+     <div class="o-wrapper u-clearfix">
+        <div class="c-home-hero__content">
+           <h1 class="c-home-hero__title">
+              Your home
+           </h1>
+        </div>
+        <div id="hero-actions" class="c-home-hero__actions">
+           <a href="/vehicle-search" class="button button-start" id="action-start-mot-test">Start MOT test
+           </a>
+           <ul class="c-action-list">
+              <li class="c-action-list__item">
+                 <a class="c-action-list__link" href="/replacement-certificate-vehicle-search" id="action-start-certificate-reissue">
+                 Replacement/duplicate certificate
+                 </a>
+              </li>
+              <li class="c-action-list__item">
+                 <a class="c-action-list__link" href="/forms" id="mot-forms">
+                 MOT forms
+                 </a>
+              </li>
+           </ul>
+        </div>
+     </div>
+  </section>
+  <main id="content">
+     <div class="container">
+        <div class="row contents">
+           <div class="col-lg-12">
+              <div class="grid-row">
+                 <div class="column-half">
+
+                     <section class="c-home-block" id="special-notice-list" style="margin-bottom: 30px;">
+
+                        <h2 class="c-home-block__title">
+                           <a href="/prototypes/mts-messages/trade/notifications-inbox-trade-user">Messages</a>
+                        </h2>
+
+                        <hr style="background: #dee0e2;">
+
+                        <div class="grid-row">
+                           <div class="column-half">
+                              
+                                 <div class="data">
+                                   <span class="data-item bold-xxlarge">8</span>
+                                   <span class="data-item bold-xsmall">Unread messages</span>
+                                 </div>
+                              
+                           </div>
+                           <div class="column-half">
+                              
+                                 <div class="data">
+                                   <span class="data-item bold-xxlarge">2</span>
+                                   <span class="data-item bold-xsmall">Require action</span>
+                                 </div>
+                              
+                           </div>
+                        </div>
+
+
+                        <ul class="c-tab-list__items" style="margin-bottom: 40px;">
+                           <h3 class="heading-small">Must be acknowledged</h3>
+                           <li class="c-tab-list__row c-tab-list__row--read" style="border-bottom: 1px solid #dee0e2; background-color: #ffffff;">
+                              <div class="c-tab-list__item-left" style="padding-right: 5px; padding-left: 0;">
+                                 <div class="c-tab-list__item-link">
+                                    <a href="#">Preparation for the EU roadworthiness directive</a>
+                              </div>
+                              <div class="defect__is-dangerous" style="font-weight: 700;" aria-hidden="true">Due in 4 days</div>
+                              <ul class="defect__positions">
+                                 <li style="font-size: 16px; color: #0b0c0c; width: 50%;">16 May 2018</li>
+                                 <li style="font-size: 16px; color: #0b0c0c; width: 49%;">Acknowledgment required</li>
+                              </ul>
+                            </div>
+                            
+                          </li>
+                        </ul>
+
+                        <ul class="c-tab-list__items" style="margin-bottom: 0px;">
+                           <h3 class="heading-small">Unread messages</h3>
+                          
+                          <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff;">
+                            <div class="c-tab-list__item-left" style="padding-right: 5px; padding-left: 0;">
+                              <div class="c-tab-list__item-link">
+                                 <a href="#">Preparation for the EU roadworthiness directive</a>
+                              </div>
+                              <ul class="defect__positions">
+                                <li style="font-size: 16px; color: #0b0c0c;  width: 50%;">16 July 2018</li>
+                              </ul>
+                            </div>
+                          </li>
+
+                          <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff;">
+                            <div class="c-tab-list__item-left" style="padding-right: 5px; padding-left: 0;">
+                              <div class="c-tab-list__item-link">
+                                 <a href="#">New test quality information available</a>
+                              </div>
+                              <ul class="defect__positions">
+                                <li style="font-size: 16px; color: #0b0c0c; width: 50%;">1 June 2018</li>
+                              </ul>
+                            </div>
+                          </li>
+
+                          <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff;">
+                            <div class="c-tab-list__item-left" style="padding-right: 5px; padding-left: 0;">
+                              <div class="c-tab-list__item-link">
+                                 <a href="#">Site manager nomination
+                                 </a>
+                              </div>
+                              <ul class="defect__positions">
+                                <li style="font-size: 16px; color: #0b0c0c; width: 50%;">1 April 2018</li>
+                                <li style="font-size: 16px; color: #0b0c0c; width: 49%;">Accept or reject</li>
+                              </ul>
+                            </div>
+                          </li>
+
+                          <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff; border-bottom: 1px solid #dee0e2;">
+                            <div class="c-tab-list__item-left" style="padding-right: 5px; padding-left: 0;">
+                              <div class="c-tab-list__item-link">
+                                 <a href="#">MOT inspection manual guidance on cars and passenger vehicles</a>
+                              </div>
+                              <ul class="defect__positions">
+                                <li style="font-size: 16px; color: #0b0c0c; width: 50%">23 April 2018</li>
+                              </ul>
+                            </div>
+                          </li>
+                       </ul>
+
+                     </section>
+                     <section>
+                        <p><a href="/prototypes/mts-messages/trade/notifications-inbox-trade-user">View all messages</a></p>
+                     </section>
+
+                  </div>
+                 <div class="column-half">
+                    <section class="c-home-block" id="ae-vts-list_0">
+                       <header class="c-home-block__header ae-header">
+                          <h2 class="c-home-block__title ae-title">
+                             <a href="/authorised-examiner/78004">LIVER &amp; PARTNER LIMITED</a>
+                          </h2>
+                          <p class="c-home-block__subtitle">
+                             Authorised Examiner number: AE078004
+                          </p>
+                       </header>
+                       <div class="u-space-b15">
+                          <p>Your vehicle testing stations</p>
+                          <ul class="o-bordered-list vts-list">
+                             <li class="o-bordered-list__item">
+                                <a href="/vehicle-testing-station/66450" class="site-link">
+                                (VTS066450) OSWALDTWISTLE MOTOR WORKS
+                                </a>
+                                <div class="u-text-meta vts-roles">
+                                   TESTER
+                                </div>
+                             </li>
+                          </ul>
+                       </div>
+                       <div class="c-slots">
+                          <span class="c-slots__count c-slots__count--sm">42</span>
+                          <span class="c-slots__subtext">
+                          slots available
+                          </span>
+                       </div>
+                    </section>
+                    <section class="c-home-block">
+                       <header class="c-home-block__head">
+                          <h2 class="c-home-block__title">Your performance</h2>
+                       </header>
+                       <ul>
+                          <li>
+                             <a id="action-view-performance-dashboard" href="/stats">
+                             Performance dashboard
+                             </a>
+                          </li>
+                       </ul>
+                    </section>
+                    <div class="c-home-block">
+                       <header class="c-home-block__head">
+                          <h2 class="c-home-block__title">Training</h2>
+                       </header>
+                       <p>Practice on any class of vehicle without using slots or recording the outcome.</p>
+                       <p>
+                          <a href="/training-test-vehicle-search" class="button" id="action-start-mot-demonstration">
+                          Start training test
+                          </a>
+                       </p>
+                    </div>
+                    <section class="c-home-block">
+                       <header class="c-home-block__head">
+                          <h2 class="c-home-block__title">Contingency Tests</h2>
+                       </header>
+                       <ul>
+                          <li class="u-space-b10">
+                             <a id="action-view-performance-dashboard" href="/contingency">
+                             Record contingency test
+                             </a>
+                          </li>
+                          <li class="u-space-b10">
+                             <a href="/forms/contingency-pass-certificate" target="_blank">
+                             CT20 Pass Certificate</a>
+                          </li>
+                          <li>
+                             <a href="/forms/contingency-fail-certificate" target="_blank">
+                             CT30 Refusal Notice</a>
+                          </li>
+                       </ul>
+                    </section>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </main>
+
+  
+{% endblock %}

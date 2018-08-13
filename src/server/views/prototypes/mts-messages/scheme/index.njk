@@ -1,0 +1,50 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a message' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
+  { text: 'Create a message'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Select a message type', secondary='Create a message') }}
+
+      <div class='text u-clearfix'>
+
+        <form>
+          <div class="form-group">
+            <fieldset>
+              <legend class="visuallyhidden">
+                <h1 class="heading-medium">Choose message message type</h1>
+              </legend>
+              <div class="multiple-choice">
+                <input id="radio-1" type="radio" name="radio-group" value="Special notice">
+                <label for="radio-1">Special notice</label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-2" type="radio" name="radio-group" value="Advice and guidance">
+                <label for="radio-2">News</label>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          {{ components.button(text='Continue', url='/prototypes/mts-messages/scheme/create-message-user') }}
+        </div>
+
+        {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages/scheme', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

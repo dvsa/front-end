@@ -1,5 +1,5 @@
 import { FILTER_CONFIG } from './config';
-import { addEventListenerToEl } from '../../../shared/misc/events'; 
+import { addEventListenerToEl } from '../../../shared/misc/events';
 
 export class MessagesFilter {
   // constructor runs on instantiated
@@ -53,7 +53,7 @@ export class MessagesFilter {
 
   init = () => {
     // Attach listeners to checkboxes
-    let checkboxes = Array.from(this.elements.checkboxes); 
+    let checkboxes = Array.from(this.elements.checkboxes);
     checkboxes.forEach(checkbox => {
       addEventListenerToEl(checkbox, 'change', this.handleCheck);
     });

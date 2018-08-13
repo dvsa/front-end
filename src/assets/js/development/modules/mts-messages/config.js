@@ -40,5 +40,5 @@ export const FILTER_CONFIG = {
 =======
 >>>>>>> Merged from master
     messages: '[data-type]',
-  }
+  },
 };

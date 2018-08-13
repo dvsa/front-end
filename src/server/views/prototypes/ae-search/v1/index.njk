@@ -1,0 +1,143 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'AE search' %}
+
+{% block content %}
+
+
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="">
+        Home
+      </a>
+    </li>
+    <li>
+      Search Authorised Examiner information
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge" style="margin-bottom: 30px">
+      <span class="heading-secondary">Authorised examiner search</span>
+      Search for AE information by...
+</h1>
+
+<!-- TODO hacky margins above and below to try and make consistent with https://int.dev.mot-testing.service.gov.uk/vehicle-testing-station/search 
+... default left too much margin above details and not enough below. -->
+
+<details style="margin-bottom:30px;">
+  <summary><span class="summary">Help with AE search</span></summary>
+  <div class="panel panel-border-narrow">
+    <p>You can narrow the number of AE matches found by adding more of these optional search filters. 
+    You may enter part or all of a search term (with 3 or more characters), wildcards are not needed.</p>
+  </div>
+</details>
+
+<form action="ae-search-results">
+
+  <div class="form-group">
+    <label class="form-label" for="ae-number">
+      AE Number
+      <span class="form-hint">For example, A12345</span>
+    </label>
+    <input class="form-control form-control-1-4" id="ae-number" type="text" name="ae-number" value="">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="ae-name">
+      AE Name (or part name)
+      <span class="form-hint">For example, MOT Centres Ltd</span>
+    </label>
+    <input class="form-control" id="ae-name" type="text" name="ae-name" value="">
+  </div>
+
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="body-text">Entity type</span>
+      </legend>
+      <div class="multiple-choice">
+        <input id="entity-type-1" name="entity-types" type="checkbox" value="entity-company">
+        <label for="entity-type-1">Company</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="entity-type-2" name="entity-types" type="checkbox" value="entity-partnership">
+        <label for="entity-type-2">Partnership</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="entity-type-3" name="entity-types" type="checkbox" value="entity-public-body">
+        <label for="entity-type-3">Public Body</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="entity-type-4" name="entity-types" type="checkbox" value="entity-sole-trader">
+        <label for="entity-type-4">Sole trader</label>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class="body-text">Status</span>
+      </legend>
+      <div class="multiple-choice">
+        <input id="status-1" name="ae-statuses" type="checkbox" value="status-applied">
+        <label for="status-1">Applied</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-2" name="ae-statuses" type="checkbox" value="status-approved">
+        <label for="status-2">Approved</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-3" name="ae-statuses" type="checkbox" value="status-lapsed">
+        <label for="status-3">Lapsed</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-4" name="ae-statuses" type="checkbox" value="status-rejected">
+        <label for="status-4">Rejected</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-5" name="ae-statuses" type="checkbox" value="status-retracted">
+        <label for="status-5">Retracted</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-6" name="ae-statuses" type="checkbox" value="status-surrendered">
+        <label for="status-6">Surrendered</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="status-7" name="ae-statuses" type="checkbox" value="status-withdrawn">
+        <label for="status-7">Withdrawn</label>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="ae-city">
+      City/Town
+      <span class="form-hint">For example, Bristol</span>
+    </label>
+    <input class="form-control" id="ae-city" type="text" name="ae-city" value="">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label" for="ae-postcode">
+      Postcode (full or part)
+      <span class="form-hint">For example, BS1</span>
+    </label>
+    <input class="form-control form-control-1-8" id="ae-postcode" type="text" name="ae-postcode" value="">
+  </div>
+
+
+  <div>
+      <a href="/prototypes/ae-search/ae-search-results" class="button">Search</a><br><br>
+      <a href="">Back</a>
+  </div>
+
+
+
+
+</form>
+
+{% endblock %}

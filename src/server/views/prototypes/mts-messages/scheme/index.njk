@@ -1,11 +1,10 @@
 {% extends 'layouts/mts.layout.njk' %}
 
-{% set pageTitle = 'Create a message' %}
+{% set pageTitle = 'Create a notification' %}
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
-  { text: 'Create a message'}
+  { text: 'Messages' }
 ] %}
 
 {% block content %}
@@ -14,32 +13,164 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Select a message type', secondary='Create a message') }}
+      {{ components.pageHeading(heading='Messages') }}
 
-      <div class='text u-clearfix'>
+      <div class='u-clearfix'>
 
-        <form>
-          <div class="form-group">
-            <fieldset>
-              <legend class="visuallyhidden">
-                <h1 class="heading-medium">Choose message message type</h1>
-              </legend>
-              <div class="multiple-choice">
-                <input id="radio-1" type="radio" name="radio-group" value="Special notice">
-                <label for="radio-1">Special notice</label>
-              </div>
-              <div class="multiple-choice">
-                <input id="radio-2" type="radio" name="radio-group" value="Advice and guidance">
-                <label for="radio-2">News</label>
-              </div>
-            </fieldset>
+        <p>
+          <a href="/prototypes/mts-messages/scheme/create-message-type" class="button" id="action-create-a-notification">
+            Create a message
+          </a>
+        </p>
+
+        <div class="c-tab-list">
+          <ul class="c-tab-list__tabs">          
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Messages (2)</span>
+            </li>
+            <li>
+              <a href="/prototypes/mts-messages/scheme/notifications-archived-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
+            </li>
+            <li>
+              <a href="/prototypes/mts-messages/scheme/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft (2)</a>
+            </li>
+            
+            <li>
+              <a href="/prototypes/mts-messages/scheme/notifications-removed-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Removed</a>
+            </li>
+            
+          </ul>
+
+          <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
+
+            <h3 class="heading-large">Messages</h3>
+              
+            <div class="form-group u-margin-bottom-30">
+              <fieldset>
+                <legend class="visually-hidden">Choose which notification type to view</legend>
+                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                  <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal" checked>
+                  <label for="waste-type-1">Special notices</label>
+                </div>
+                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;" onclick="location.href = '/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-news';">
+                  <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines" checked>
+                  <label for="waste-type-2">Notifications</label>
+                </div>
+                <div class="multiple-choice" style="display: inline-block; clear: none">
+                  <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural" checked>
+                  <label for="waste-type-3">News</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div clas="message-panel js-filter-message-panel">
+
+            <ul class="c-tab-list__items u-margin-bottom-30"">
+              <h3 class="heading-small">All messages</h3>
+              
+              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">Changes to the MOT testing guide</div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px;">Date received: 16 July 2018</li>
+                    <li style="font-size: 16px;">Type: Special notice</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="#" class="">View message</a>
+                </div>
+              </li>
+
+              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">New test quality information available</div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px;">Date received: 1 June 2018</li>
+                    <li style="font-size: 16px;">Type: Notification</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="#" class="">View message</a>
+                </div>
+              </li>
+
+              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">Preparation for the EU roadworthiness directive</div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px;">Date received: 16 May 2018</li>
+                    <li style="font-size: 16px;">Type: Special notice</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="/prototypes/mts-messages/scheme/notification-sn-acknowledged" class="">View message</a>
+                </div>
+              </li>
+
+              <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">Site manager nomination</div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px; color: #0b0c0c;">Date received: 1 April 2018</li>
+                    <li style="font-size: 16px; color: #0b0c0c;">Type: Notification</li>
+                    <li style="font-size: 16px; color: #0b0c0c;">Action: Accept or reject</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="#" class="">View message</a>
+                </div>
+              </li>
+
+              <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">New way for you to get MOT news</div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px; color: #0b0c0c;">Date received: 23 April 2018</li>
+                    <li style="font-size: 16px; color: #0b0c0c;">Type: News</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="/prototypes/mts-messages/trade/notification-news-from-unread" class="">View message</a>
+                </div>
+              </li>
+
+              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">Tester nomination</div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px;">Date received: 12 March 2018</li>
+                    <li style="font-size: 16px;">Type: Notification</li>
+                    <li style="font-size: 16px;">Action: Accept or reject</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="#" class="">View message</a>
+                </div>
+              </li>
+
+              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">Test outside opening hours </div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px;">Date received: 4 February 2018</li>
+                    <li style="font-size: 16px;">Type: Notification</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="#" class="">View message</a>
+                </div>
+              </li>
+
+            </ul>
+            
+            </div>
+
           </div>
-        </form>
-        <div class="u-margin-top-10 u-margin-bottom-30">
-          {{ components.button(text='Continue', url='/prototypes/mts-messages/scheme/create-message-user') }}
         </div>
 
-        {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages/scheme', paragraph=true) }}
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/mts-messages/trade', paragraph=true) }}
+        </div>
 
       </div>
 

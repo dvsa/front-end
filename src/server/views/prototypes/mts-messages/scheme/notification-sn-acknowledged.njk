@@ -4,8 +4,7 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
-  { text: 'Create a message'}
+  { text: 'Messages' }
 ] %}
 
 {% block content %}
@@ -14,11 +13,6 @@
 
     {% call components.columnFull() %}
 
-      <div class="banner banner--info">
-          <span class="banner__heading-large">This is a preview of the message</span>
-          <span><a href="/prototypes/mts-messages/scheme/create-message-review">Go back to the review page</a> to amend any details or publish the message</span>
-      </div>
-
       <header class="content-header">
         <h1>
           <span class="content-header__type">Special notice</span>
@@ -26,12 +20,6 @@
         </h1>
         <h2 class="content-header__tertiary">Published 1 August 2018</h2>
       </header>
-
-      <div class="text">
-        <div class="panel panel-border-wide">
-            <p>This message must be acknowledged by <strong>11 August 2018</strong></p>
-        </div>
-      </div>
 
       <div class='text u-clearfix'>
 
@@ -94,23 +82,11 @@
 
       </div>
 
-      <div class="notice text u-margin-top-10 u-margin-bottom-30">
-        <i class="icon icon-important">
-          <span class="visually-hidden">Warning</span>
-        </i>
-        <strong class="bold-small">By acknowledging this message, you confirm that you have read, understood and agree to test in accordance to the new legislative changes associated to this special notice.</strong>
-      </div>
+      <p>
+        <a class="button button--alert" href="/prototypes/mts-messages/scheme/remove-message">Remove</a>
+      </p>
 
-      <div class="u-margin-top-10 u-margin-bottom-30">
-        <input class="button" type="submit" value="Acknowledge special notice" disabled="disabled" aria-disabled="true">
-      </div>
-
-      <hr style="height: 10px;">
-
-      <div class="u-margin-top-10 u-margin-bottom-30">
-        <a href="/prototypes/mts-messages/scheme/create-message-review">Back to review message</a>
-      </div>
-
+      {{ components.link(text='Back to messages', url='/prototypes/mts-messages/scheme', paragraph=true) }}
 
     {%- endcall %}
 

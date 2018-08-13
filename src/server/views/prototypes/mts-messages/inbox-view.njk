@@ -23,7 +23,7 @@
         </a>
       </p>
 
-        <div class="c-tab-list">
+        <div>
           <ul class="c-tab-list__tabs">          
             <li>
               <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Notifications (2)</span>
@@ -65,20 +65,29 @@
              
             <div class="message-panel"> 
                 <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
-                <ul class="c-tab-list__items u-margin-bottom-30 u-fade-items message-panel__messages">
+                <ul class="c-tab-list__items u-margin-bottom-30  message-panel__messages">
                   
                   <li data-type="special" class="message-panel__message message-panel__message--pinned">
-                    <div class="c-tab-list__item-left">
+
+                 {#  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <p>govuk-grid-column-one-half</p>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <p>govuk-grid-column-one-half</p>
+  </div>
+</div> #}
+                    <div class="message-panel__inner">
                       <h4 class="message-panel__message-title">
                        Tester nomination
                       </h4>
                       <span class="message-panel__alert" aria-hidden="true">4 days remaining</span>
-                      <ul class="message-panel__message-details">
+                      <ul class="message-panel__details">
                         <li>Date received: 16 July 2018</li>
                         <li>Type: Special notice</li>
                       </ul>
                     </div>
-                    <div class="c-tab-list__item-right">
+                    <div class="message-panel__view">
                       <a href="#" class="">View notification</a>
                     </div>
                   </li>   
@@ -89,107 +98,107 @@
             
             <div class="message-panel js-message-panel"> 
               <h3 class="heading-small message-panel__title js-message-list-title">All notification messages</h3>
-              <ul class="c-tab-list__items u-margin-bottom-30 u-fade-items message-panel__messages js-message-list">
+              <ul class="c-tab-list__items u-margin-bottom-30  message-panel__messages js-message-list">
                 <li data-type="special" class="message-panel__message message-panel__message--unread">
-                  <div class="c-tab-list__item-left">
+                  <div class="message-panel__inner">
                     <h4 class="message-panel__message-title">
                      Tester nomination
                     </h4>
                     <span class="message-panel__alert" aria-hidden="true">2 days remaining</span>
-                    <ul class="message-panel__message-details">
+                    <ul class="message-panel__details">
                       <li>Date received: 16 July 2018</li>
                       <li>Type: Special notice</li>
                     </ul>
                   </div>
-                  <div class="c-tab-list__item-right">
+                  <div class="message-panel__view">
                     <a href="#" class="">View notification</a>
                   </div>
                 </li> 
                 <li data-type="system" class="message-panel__message">
-                    <div class="c-tab-list__item-left">
+                    <div class="message-panel__inner">
                       <h4 class="message-panel__message-title">
                         Preparation for the EU roadworthiness directive
                       </h4>
-                      <ul class="message-panel__message-details">
+                      <ul class="message-panel__details">
                         <li>Date received: 16 July 2018</li>
                         <li>Type: System notice</li>
                       </ul>
                     </div>
-                    <div class="c-tab-list__item-right">
+                    <div class="message-panel__view">
                       <a href="#" class="">View notification</a>
                     </div>
                 </li>
                 <li data-type="special" class="message-panel__message message-panel__message--unread">
-                    <div class="c-tab-list__item-left">
+                    <div class="message-panel__inner">
                       <h4 class="message-panel__message-title">
                         Preparation for the EU roadworthiness directive
                       </h4>
-                      <ul class="message-panel__message-details">
+                      <ul class="message-panel__details">
                         <li>Date received: 16 July 2018</li>
                         <li>Type: Special notice</li>
                       </ul>
                     </div>
-                    <div class="c-tab-list__item-right">
+                    <div class="message-panel__view">
                       <a href="#" class="">View notification</a>
                     </div>
                 </li>
                 <li data-type="advice" class="message-panel__message">
-                    <div class="c-tab-list__item-left">
+                    <div class="message-panel__inner">
                       <h4 class="message-panel__message-title">
                       Test outside opening hours 
 
                       </h4>
-                      <ul class="message-panel__message-details">
+                      <ul class="message-panel__details">
                         <li>Date received: 16 July 2018</li>
                         <li>Type: Advice and guidance</li>
                       </ul>
                     </div>
-                    <div class="c-tab-list__item-right">
+                    <div class="message-panel__view">
                       <a href="#" class="">View notification</a>
                     </div>
               </li>
                 
               <li data-type="system" class="message-panel__message">
-              <div class="c-tab-list__item-left">
+              <div class="message-panel__inner">
                 <h4 class="message-panel__message-title">
                 Notification message
                 </h4>
-                <ul class="message-panel__message-details">
+                <ul class="message-panel__details">
                   <li>Date received: 16 July 2018</li>
                   <li>Type: Notification</li>
                 </ul>
               </div>
-              <div class="c-tab-list__item-right">
+              <div class="message-panel__view">
                 <a href="#" class="">View notification</a>
               </div>
             </li>
 
             <li data-type="reminder" class="message-panel__message">
-              <div class="c-tab-list__item-left">
+              <div class="message-panel__inner">
                 <h4 class="message-panel__message-title">
                 Reminder message
                 </h4>
-                <ul class="message-panel__message-details">
+                <ul class="message-panel__details">
                   <li>Date received: 16 July 2018</li>
                   <li>Type: Reminder</li>
                 </ul>
               </div>
-              <div class="c-tab-list__item-right">
+              <div class="message-panel__view">
                 <a href="#" class="">View notification</a>
               </div>
             </li>
 
                 <li data-type="advice" class="message-panel__message">
-                      <div class="c-tab-list__item-left">
+                      <div class="message-panel__inner">
                         <h4 class="message-panel__message-title">
                           Preparation for the EU roadworthiness directive
                         </h4>
-                        <ul class="message-panel__message-details">
+                        <ul class="message-panel__details">
                           <li>Date received: 16 July 2018</li>
                           <li>Type: Advice and guidance</li>
                         </ul>
                       </div>
-                      <div class="c-tab-list__item-right">
+                      <div class="message-panel__view">
                         <a href="#" class="">View notification</a>
                       </div>
                   </li>

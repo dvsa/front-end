@@ -91,12 +91,17 @@
   &__message-title {
     font-weight: bold;
     position: relative;
+    @include media(desktop) { 
+      display: inline; 
+    }
   } 
 
   &__alert {
-    font-weight: bold;
-    display: block;
-    color: $mellow-red;
+    font-weight: bold; 
+    color: $mellow-red; 
+    @include media(desktop) { 
+      float: right; 
+    }
   }
 
   &__message--pinned { 
@@ -104,11 +109,8 @@
   }
 
   &__message--unread {
-    background: $grey-4; 
-    
-    .message-panel__message-title {
-      font-weight: bold;
-    }
+    background: $grey-4;  
+     
 
     .message-panel__message-title:before {
       position: absolute;
@@ -125,11 +127,35 @@
   &__notice {
     padding: 1em 0;
   }
+ 
+  &__inner {
+    padding: 6px;
+    padding-left: 28px;
+    @include media(tablet) {
+      padding: 10px 160px 4px 28px;
+    }
+    @include media(desktop) {
+      padding: 10px 170px 4px 28px;
+    }
+  }
+
+  &__view  {
+    position: relative;
+    padding: 0 0 10px 28px;
+
+    @include media(tablet) {  
+      position: absolute;
+      right: 0;
+      width: 150px;
+      padding: 10px 0;
+      top: 2px;
+    } 
+  }
 
   // Meta details for each message
-  &__message-details {
+  &__details {
     @extend %contain-floats;
-    padding-top: 5px;
+    padding: 6px 0;
     color: $grey-1;
     
     li {

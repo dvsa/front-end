@@ -1,6 +1,7 @@
 import { FILTER_CONFIG } from './config';
 import { addEventListenerToEl } from '../../../shared/misc/events';
 
+
 export class MessagesFilter {
   // constructor runs on instantiated
   constructor(filterMessagesComponent) {

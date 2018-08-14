@@ -30,80 +30,85 @@
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs">          
             <li>
-              <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Messages</span>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active">Messages</span>
             </li>
             <li>
-              <a href="/prototypes/mts-messages/notifications-archived-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
+              <a href="/prototypes/mts-messages/notifications-archived-scheme-user" class="c-tab-list__tab-link">Archived</a>
             </li>
           </ul>
 
-          <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
+          <div class="message-filters js-filter-wrapper">
+ 
+           <div class="message-filters__inputs">
+            <form class="form">
+              <div class="form-group u-margin-bottom-30 inline">
+                <fieldset>
+                  <legend class="visually-hidden">Choose which notification type to view</legend>
+                  <h3 class="heading-large">Notifications</h3>
+                  <div class="multiple-choice multiple-choice--inline">
+                    <input data-type="special" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
+                    <label for="type-special">Special notices</label>
+                  </div>
+                  <div class="multiple-choice multiple-choice--inline">
+                      <input data-type="reminder" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="reminder" checked>
+                      <label for="type-reminder">Reminders</label>
+                    </div>
+                  <div class="multiple-choice multiple-choice--inline">
+                    <input data-type="system"  class="js-message-filter" id="type-system" name="type" type="checkbox" value="system" checked>
+                    <label for="type-system">System messages</label>
+                  </div>
+                  <div class="multiple-choice multiple-choice--inline">
+                    <input data-type="advice"  class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
+                    <label for="type-advice">Advice and guidance</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </div>
 
-            <h3 class="heading-large">Messages</h3>
-              
-            <div class="form-group u-margin-bottom-30">
-              <fieldset>
-                <legend class="visually-hidden">Choose which notification type to view</legend>
-                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
-                  <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal" checked>
-                  <label for="waste-type-1">Special notices</label>
-                </div>
-                <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
-                  <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines" checked>
-                  <label for="waste-type-2">Notifcations</label>
-                </div>
-                <div class="multiple-choice" style="display: inline-block; clear: none">
-                  <input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural" checked>
-                  <label for="waste-type-3">News</label>
-                </div>
-              </fieldset>
-            </div>
-
-            <ul class="c-tab-list__items" style="margin-bottom: 40px;">
+          <div class="message-panel"> 
 
               {% if viewData.isPinnedCount > 0 %}
+                <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
 
-                <h3 class="heading-small">Acknowledgment required</h3>
-              
-                {% for message in viewData.messages %}
+            <ul class="message-panel__messages u-margin-bottom-30"> 
+               {% for message in viewData.messages %}
 
                   {% if message.state.isPinned %}
 
-                    <li class="c-tab-list__row {{'c-tab-list__row--read' if message.state.isRead else 'c-tab-list__row--unread'}}" style="border-bottom: 1px solid #dee0e2; background-color: #f8f8f8">
-                      <div class="c-tab-list__item-left" style="padding: 40px 32px 40px 32px;">
-                        <div class="c-tab-list__item-link"> {{ message.title }} </div>
-                        <ul class="defect__positions">
-                          <li style="font-size: 16px; color: #0b0c0c;">Date received: {{ message.date.received }}</li>
-                          <li style="font-size: 16px; color: #0b0c0c;">Type: {{message.type}} </li>
+                    <li data-type="special" class="message-panel__message {{ 'message-panel__message--unread' if message.state.isRead}}">
+                      <div class="message-panel__inner">
+                        <h4 class="message-panel__message-title"> {{ message.title }} </h4>
+                        {% if message.date.due %}
+                        <span class="message-panel__alert" aria-hidden="true">Due in {{message.date.due.asInt}} days</span>
+                        {% endif %}
+                      
+                        <ul class="message-panel__details">
+                          <li>Date received: {{ message.date.received }}</li>
+                          <li>Type: {{message.type}} </li>
                           {% if message.type=='Special notice' and not message.state.acknowledged %}
-                            <li style="font-size: 16px; color: #0b0c0c;">Action: Acknowledgment required</li>
-                          {% elseif message.type!='Special notice' and not message.state.accepted and not message.state.rejected %}
-                            <li style="font-size: 16px; color: #0b0c0c;">Action: Accept or reject</li>
+                            <li>Action: Acknowledgment required</li>
+                          {% elif message.type!='Special notice' and not message.state.accepted and not message.state.rejected %}
+                            <li>Action: Accept or reject</li>
                           {% endif %}
                         </ul>
                       </div>
-
-                      {% if message.date.due %}
-                        <div class="c-tab-list__item-right" style="left: 60%; top: 30px;">
-                          <strong class="defect__is-dangerous" aria-hidden="true">Due in {{message.date.due.asInt}} days</strong>
-                        </div>
-                      {% endif %}
-                      
-                      <div class="c-tab-list__item-right" style="top: 30px;">
-                        <a href="/prototypes/messaging/{{message.id}}" class="">View message</a>
-                      </div>
+                      <div class="message-panel__view">
+                        <a href="/prototypes/messaging/{{message.id}}" class="">View notification</a>
+                      </div> 
                     </li>
 
                   {% endif %}
-
-                {% endfor %}
-
-              {% endif %}
-
+                {% endfor %} 
+ 
             </ul>
+          </div>
 
-            <ul class="c-tab-list__items u-margin-bottom-30">
+             <div class="message-panel js-message-panel"> 
               <h3 class="heading-small">All messages</h3>
+              
+              <h3 class="heading-small message-panel__title js-message-list-title">All messages</h3>
+
 
               {% for message in viewData.messages %}
 

@@ -9,10 +9,10 @@ import { data } from '../data';
  */
 const addPinnedItems = message => {
   // If message is a special notice and is not currently acknowledged
-  if (message.type=='Special notice' && message.state.acknowledged==false) {
+  if (message.type == 'Special notice' && message.state.acknowledged == false) {
     // Set message state to isPinned
     message.state.isPinned = true;
-  };
+  }
 
   // return message
   return message;
@@ -52,9 +52,7 @@ export const setupMessages = (req, res, next) => {
   if (req.session.viewData) return next();
 
   // Adds pinned items, adds indices
-  const updatedData = data
-  .map(addPinnedItems)
-  .map(addIndices);
+  const updatedData = data.map(addPinnedItems).map(addIndices);
 
   // Setup viewData
   const viewData = {

@@ -11,6 +11,7 @@ export const FILTER_CONFIG = {
   },
   data: {
     emptyNotice: 'Select a message type to view',
+<<<<<<< HEAD
     messages: '[data-type]',
 =======
   classes: {
@@ -36,6 +37,8 @@ export const FILTER_CONFIG = {
   },
   data: {
     emptyNotice: 'No messages to show',
+=======
+>>>>>>> Merged from master
     messages: '[data-type]',
-  },
+  }
 };

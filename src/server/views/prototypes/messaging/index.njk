@@ -24,8 +24,7 @@
         </div>
 
       {% endif %}
-
-      <div class='u-clearfix'>
+ 
 
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs">          
@@ -43,8 +42,8 @@
             <form class="form">
               <div class="form-group u-margin-bottom-30 inline">
                 <fieldset>
-                  <legend class="visually-hidden">Choose which notification type to view</legend>
-                  <h3 class="heading-large">Notifications</h3>
+                  <legend class="visually-hidden">Choose which message type to view</legend>
+                  <h3 class="heading-large">Messages</h3>
                   <div class="multiple-choice multiple-choice--inline">
                     <input data-type="special" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
                     <label for="type-special">Special notices</label>
@@ -68,15 +67,15 @@
 
           <div class="message-panel"> 
 
-              {% if viewData.isPinnedCount > 0 %}
-                <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
+            {% if viewData.isPinnedCount > 0 %}
+            <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
 
             <ul class="message-panel__messages u-margin-bottom-30"> 
                {% for message in viewData.messages %}
 
                   {% if message.state.isPinned %}
 
-                    <li data-type="special" class="message-panel__message {{ 'message-panel__message--unread' if message.state.isRead}}">
+                    <li data-type="special" class="message-panel__message message-panel__message--pinned {{ '' if message.state.isRead else 'message-panel__message--unread' }}">
                       <div class="message-panel__inner">
                         <h4 class="message-panel__message-title"> {{ message.title }} </h4>
                         {% if message.date.due %}
@@ -99,57 +98,54 @@
                     </li>
 
                   {% endif %}
-                {% endfor %} 
- 
+                {% endfor %}
             </ul>
+               {% endif %}
           </div>
 
-             <div class="message-panel js-message-panel"> 
-              <h3 class="heading-small">All messages</h3>
-              
-              <h3 class="heading-small message-panel__title js-message-list-title">All messages</h3>
-
+          <div class="message-panel js-message-panel"> 
+             <h3 class="heading-small message-panel__title js-message-list-title">
+             All messages</h3>
+            
+              <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
 
               {% for message in viewData.messages %}
 
                 {% if not message.state.isPinned %}
-                
-                <li class="c-tab-list__row {{'c-tab-list__row--read' if message.state.isRead else 'c-tab-list__row--unread'}}" style="background-color: #ffffff">
-                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                    <div class="c-tab-list__item-link"> {{message.title}} </div>
-                    <ul class="defect__positions">
-                      <li style="font-size: 16px;">Date received: {{message.date.received}} </li>
-                      <li style="font-size: 16px;">Type: {{message.type}} </li>
-                      {% if message.type=='Special notice' and not message.state.acknowledged %}
-                        <li style="font-size: 16px; color: #0b0c0c;">Action: Acknowledgment required</li>
-                      {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %}
-                        <li style="font-size: 16px; color: #0b0c0c;">Action: Accept or reject</li>
+                  <li data-type="special" class="message-panel__message {{'' if message.state.isRead else 'message-panel__message--unread'}}">
+                    <div class="c-tab-list__item-left">
+                    <h4 class="message-panel__message-title">
+                     {{message.title}}
+                    </h4>
+                      {% if message.date.due %}
+                        <span class="message-panel__alert" aria-hidden="true">2 days remaining</span>
                       {% endif %}
-                    </ul>
-                  </div>
-
-                  <div class="c-tab-list__item-right">
-                    <a href="/prototypes/messaging/{{message.id}}" class="">View message</a>
-                  </div>
-                </li>
-
-                {% endif %}
-
-              {% endfor %}
-
-            </ul>
-
-          </div>
-        </div>
+                      <ul class="message-panel__details">
+                        <li>Date received: {{message.date.received}} </li>
+                        <li>Type: {{message.type}} </li>
+                        {% if message.type=='Special notice' and not message.state.acknowledged %}
+                          <li>Action: Acknowledgment required</li>
+                        {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %}
+                          <li>Action: Accept or reject</li>
+                        {% endif %}
+                      </ul>
+                    </div>
+                    <div class="message-panel__view">
+                      <a href="/prototypes/messaging/{{message.id}}" class="">View message</a>
+                    </div> 
+                  </li>
+                  {% endif %}
+                {% endfor %} 
+              </ul>
+          </div> 
 
         <div class="u-margin-top-30 u-margin-bottom-30">
           {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
         </div>
 
-      </div>
+    </div>
 
-    {%- endcall %}
-
-  {%- endcall %}
+    {%- endcall %} 
+    {%- endcall %} 
   
 {% endblock %}

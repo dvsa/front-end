@@ -8,21 +8,14 @@ export class MessagesFilter {
     if (!filterMessagesComponent) return;
 
     // DOM elements
-    const component = filterMessagesComponent;
-    console.log(component);
-    const messageList = document.querySelector('.js-message-list');
-    console.log(messageList);
+    const component = filterMessagesComponent; 
+    const messageList = document.querySelector('.js-message-list'); 
 
     const checkboxes = component.querySelectorAll(FILTER_CONFIG.selectors.checkboxes);
     const messageItems = [...messageList.querySelectorAll(FILTER_CONFIG.data.messages)];
     const filteredView = component.querySelector(FILTER_CONFIG.selectors.filteredView);
     const emptyMessageTarget = document.querySelector(FILTER_CONFIG.selectors.messageList);
-
-    //
-    const messageWrap = component.querySelector('.js-filtered-messages');
-    const checkboxes = component.querySelectorAll('.js-message-filter');
-    const messageItems = [...messageWrap.querySelectorAll('[data-type]')];
-    
+  
     // Construct new DOM node for empty view
     const emptyMessageEl = document.createElement('p');
     emptyMessageEl.classList.add(`${FILTER_CONFIG.selectors.emptyNotice}`);

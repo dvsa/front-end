@@ -2,22 +2,13 @@ import { MessagesFilter } from './filter-messages';
 import { FILTER_CONFIG } from './config';
 
 export const initMessageFilter = () => {
-  let filterMessagesComponent = document.querySelectorAll('.js-filter-wrapper');
-  let messageFilters = document.querySelectorAll('.js-message-filters');
-  let messageList = document.querySelectorAll('.js-filtered-messages');
+  // Check elements exist
+  let filterMessagesComponent = document.querySelectorAll('.js-filter-wrapper'),
+    i;
+  if (filterMessagesComponent.length < 1) return;
 
-  if (!messageList || !messageFilters || !filterMessagesComponent) return;
-
-  filterMessagesComponent.forEach(filterMessagesComponent => {
-    new MessagesFilter(filterMessagesComponent);
-  });
+  // If elements exist, initiate the component
+  for (i = 0; i < filterMessagesComponent.length; ++i) {
+    new MessagesFilter(filterMessagesComponent[i]);
+  }
 };
-
-/*
-
-import the const module itself
-
-export an init const which checks for existence of the 
-right dom els and create new instance of the class
-
-*/

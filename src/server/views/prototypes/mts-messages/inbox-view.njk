@@ -35,6 +35,7 @@
 
           <div class="message-filters js-filter-wrapper">
             
+          <div class="message-filters__inputs">
             <form class="form">
               <div class="form-group u-margin-bottom-30 inline">
                 <fieldset>
@@ -59,10 +60,11 @@
                 </fieldset>
               </div>
             </form>
+          </div>
             
              
             <div class="message-panel"> 
-                <h3 class="heading-small">Acknowledgment required</h3>
+                <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
                 <ul class="c-tab-list__items u-margin-bottom-30 u-fade-items message-panel__messages">
                   
                   <li data-type="special" class="message-panel__message message-panel__message--pinned">
@@ -86,7 +88,7 @@
 
             
             <div class="message-panel js-message-panel"> 
-              <h3 class="heading-small">All notification messages</h3>
+              <h3 class="heading-small message-panel__title js-message-list-title">All notification messages</h3>
               <ul class="c-tab-list__items u-margin-bottom-30 u-fade-items message-panel__messages js-message-list">
                 <li data-type="special" class="message-panel__message message-panel__message--unread">
                   <div class="c-tab-list__item-left">
@@ -145,22 +147,37 @@
                     <div class="c-tab-list__item-right">
                       <a href="#" class="">View notification</a>
                     </div>
-                  </li>
+              </li>
                 
-                       <li data-type="system" class="message-panel__message">
-                        <div class="c-tab-list__item-left">
-                          <h4 class="message-panel__message-title">
-                          Notification message
-                          </h4>
-                          <ul class="message-panel__message-details">
-                            <li>Date received: 16 July 2018</li>
-                            <li>Type: Notification</li>
-                          </ul>
-                        </div>
-                        <div class="c-tab-list__item-right">
-                          <a href="#" class="">View notification</a>
-                        </div>
-                      </li>
+              <li data-type="system" class="message-panel__message">
+              <div class="c-tab-list__item-left">
+                <h4 class="message-panel__message-title">
+                Notification message
+                </h4>
+                <ul class="message-panel__message-details">
+                  <li>Date received: 16 July 2018</li>
+                  <li>Type: Notification</li>
+                </ul>
+              </div>
+              <div class="c-tab-list__item-right">
+                <a href="#" class="">View notification</a>
+              </div>
+            </li>
+
+            <li data-type="reminder" class="message-panel__message">
+              <div class="c-tab-list__item-left">
+                <h4 class="message-panel__message-title">
+                Reminder message
+                </h4>
+                <ul class="message-panel__message-details">
+                  <li>Date received: 16 July 2018</li>
+                  <li>Type: Reminder</li>
+                </ul>
+              </div>
+              <div class="c-tab-list__item-right">
+                <a href="#" class="">View notification</a>
+              </div>
+            </li>
 
                 <li data-type="advice" class="message-panel__message">
                       <div class="c-tab-list__item-left">

@@ -1,11 +1,10 @@
 import { FILTER_CONFIG } from './config';
-import { addEventListenerToEl } from '../../../shared/misc/events';
-import { insertAfter } from './../../../shared/misc';
+import { addEventListenerToEl } from '../../../shared/misc/events'; 
 
 export class MessagesFilter {
   // constructor runs on instantiated
   constructor(filterMessagesComponent) {
-    // Exit if all required els are not present
+    // Exit if required els are not present
     if (!filterMessagesComponent) return;
 
     // DOM elements
@@ -49,16 +48,18 @@ export class MessagesFilter {
 
   init = () => {
     // Attach listeners to checkboxes
-    this.elements.checkboxes.forEach(checkbox => {
+    let checkboxes = Array.from(this.elements.checkboxes); 
+    checkboxes.forEach(checkbox => {
       addEventListenerToEl(checkbox, 'change', this.handleCheck);
     });
   };
 
   handleCheck = e => {
     // Empty state
-    const newFilters = []; 
+    const newFilters = [];
     // Map through checkboxes - Get their data value
-    this.elements.checkboxes.forEach(checkbox => {
+    let checkboxes = Array.from(this.elements.checkboxes);
+    checkboxes.forEach(checkbox => {
       // If it's checked, store filter value in state
       if (checkbox.checked) {
         const filterType = checkbox.attributes['data-type'].value;
@@ -73,7 +74,9 @@ export class MessagesFilter {
   };
 
   filterMessages = filterOpts => {
-    this.elements.messageItems.forEach(item => {
+    // Show or hide each message based on its data type. Matches against filters active in state.
+    let messagesItems = Array.from(this.elements.messageItems);
+    messagesItems.forEach(item => {
       const messageType = item.attributes['data-type'].value;
       if (!filterOpts.includes(messageType)) {
         item.classList.add('hidden');
@@ -82,8 +85,11 @@ export class MessagesFilter {
       }
     });
 
-    // Show or hide 'Empty inbox' notice
-    const displayValue = this.state.currFilters.length ? 'none' : 'block';
-    document.querySelector('.message-panel__notice').style.display = displayValue;
+    // Show or hide 'Empty inbox' notice and section title
+    const displayEmptyMessage = this.state.currFilters.length ? 'none' : 'block';
+    const displayInboxTitle = this.state.currFilters.length ? 'block' : 'none';
+    const listTitle = document.querySelector(FILTER_CONFIG.selectors.listTitle);
+    listTitle.style.display = displayInboxTitle;
+    document.querySelector('.message-panel__notice').style.display = displayEmptyMessage;
   };
 }

@@ -1,6 +1,5 @@
 .message {
   padding: $gutter-half $gutter-half $gutter-half $gutter;
-
   &,
   &--failure,
   &--success,
@@ -70,6 +69,10 @@
 // MTS Filtered Messages
 
 .message-panel {
+ 
+  &__title {
+    margin-bottom: 15px;
+  }
 
   @include core-16;
   position: relative;
@@ -137,10 +140,6 @@
         float: left;
       }
       
-      @include media(false, 740px) {
-         
-      }
-      
       @include media(false, 640px) {
         display: inline;
         width: auto;
@@ -148,5 +147,11 @@
         float: none;
       }
     }
+  }
+}
+
+.lte-ie8 & {
+  .message-filters__inputs {
+    display: none; 
   }
 }

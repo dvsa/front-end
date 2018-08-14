@@ -68,6 +68,46 @@
 
 // MTS Filtered Messages
 
+// TODO: Make more generic for use across all tabs, or replace all tabs with govuk component.
+
+.message-filters {
+
+  &__tab {
+    margin-top: -5px;
+    margin-bottom: -1px;
+    padding-top: 14px;
+    padding-right: 19px;
+    padding-bottom: 16px;
+    padding-left: 19px;
+    color: #0b0c0c;
+    background-color: #f8f8f8;
+    border: none;
+    font-size: 18px;
+    line-height: 0.75;
+    font-weight: 400;
+    text-decoration: none;
+    
+    &--active {
+    border: 1px solid #bfc1c3;
+    border-bottom: 0;
+    background-color: #fff;
+    line-height: 1.3;
+    }
+  }
+}
+
+.message-filters__tab-panel {
+  border: 1px solid #bfc1c3;
+  padding: 12px;
+  
+  @include media(tablet) { 
+    padding: 20px;
+  }
+  @include media(desktop) { 
+    padding: 20px 30px;
+  }
+}
+
 .message-panel {
  
   &__title {

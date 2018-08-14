@@ -11,6 +11,18 @@ export const getMessages = (req, res) => {
 };
 
 /**
+ * GET Middleware - Renders multiple messages view with messages data
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ * @param {Express.Response} next - Express next object
+ */
+export const getArchive = (req, res) => {
+  // Renders the messaging archived view
+  return res.render(`prototypes/messaging/archive/index`, { viewData: req.session.viewData, flashMessage: req.flash('flash-message') });
+};
+
+/**
  * GET Middleware - Renders view for a single message with message data
  *
  * @param {Express.Request} req - Express request object

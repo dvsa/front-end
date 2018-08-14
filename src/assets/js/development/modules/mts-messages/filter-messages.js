@@ -1,7 +1,6 @@
 import { FILTER_CONFIG } from './config';
 import { addEventListenerToEl } from '../../../shared/misc/events';
 
-
 export class MessagesFilter {
   // constructor runs on instantiated
   constructor(filterMessagesComponent) {
@@ -10,9 +9,12 @@ export class MessagesFilter {
 
     // DOM elements
     const component = filterMessagesComponent;
-    const messageWrap = component.querySelector(FILTER_CONFIG.selectors.messageList);
+    console.log(component);
+    const messageList = document.querySelector('.js-message-list');
+    console.log(messageList);
+
     const checkboxes = component.querySelectorAll(FILTER_CONFIG.selectors.checkboxes);
-    const messageItems = [...messageWrap.querySelectorAll(FILTER_CONFIG.data.messages)];
+    const messageItems = [...messageList.querySelectorAll(FILTER_CONFIG.data.messages)];
     const filteredView = component.querySelector(FILTER_CONFIG.selectors.filteredView);
     const emptyMessageTarget = document.querySelector(FILTER_CONFIG.selectors.messageList);
 
@@ -33,7 +35,7 @@ export class MessagesFilter {
     this.elements = {
       component,
       checkboxes,
-      messageWrap,
+      messageList,
       messageItems,
       filteredView,
       emptyMessageTarget,

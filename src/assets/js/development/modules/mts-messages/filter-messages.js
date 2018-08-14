@@ -15,6 +15,11 @@ export class MessagesFilter {
     const filteredView = component.querySelector(FILTER_CONFIG.selectors.filteredView);
     const emptyMessageTarget = document.querySelector(FILTER_CONFIG.selectors.messageList);
 
+    //
+    const messageWrap = component.querySelector('.js-filtered-messages');
+    const checkboxes = component.querySelectorAll('.js-message-filter');
+    const messageItems = [...messageWrap.querySelectorAll('[data-type]')];
+    
     // Construct new DOM node for empty view
     const emptyMessageEl = document.createElement('p');
     emptyMessageEl.classList.add(`${FILTER_CONFIG.selectors.emptyNotice}`);

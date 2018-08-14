@@ -69,25 +69,35 @@
 
 // MTS Filtered Messages
 
-
 .message-panel {
+
   @include core-16;
   position: relative;
   border-top: 1px solid $grey-2;
   padding: 15px;
   background-color: $white;
   transition: background-color .4s ease-in-out;
+  
+  &__message {
+    background: #fff;
+    clear: both;
+    border-top: 1px solid $grey-3;
+    position: relative;
+  }
 
   &__message-title {
     font-weight: bold;
     position: relative;
   } 
 
-  &__message {
-    background: #fff;
-    clear: both;
-    border-top: 1px solid $grey-3;
-    position: relative;
+  &__alert {
+    font-weight: bold;
+    display: block;
+    color: $mellow-red;
+  }
+
+  &__message--pinned { 
+    background: $grey-4;
   }
 
   &__message--unread {
@@ -106,38 +116,36 @@
       content: "\2022";
     }
 
-  } 
+  }
   
   // Empty view notice
   &__notice {
-    text-align: center;
-    font-weight: 600;
-    padding: 1em;
-    color: $secondary-text-colour;
+    padding: 1em 0;
   }
 
   // Meta details for each message
   &__message-details {
     @extend %contain-floats;
-    color: $secondary-text-colour;
     padding-top: 5px;
+    color: $grey-1;
     
     li {
-      font-size: 16px;
-      color: #0b0c0c;
+      font-size: 14px;
       @include media(tablet) {
         display: inline-block;
-        width: 30%;
+        min-width: 33%; 
+        float: left;
       }
       
       @include media(false, 740px) {
-        display: block;
-        width: 100%;
+         
       }
       
       @include media(false, 640px) {
-        display: inline-block;
-        width: 30%;
+        display: inline;
+        width: auto;
+        padding-right: 10px;
+        float: none;
       }
     }
   }

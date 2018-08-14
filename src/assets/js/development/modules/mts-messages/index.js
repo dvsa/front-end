@@ -6,9 +6,6 @@ export const initMessageFilter = () => {
   let messageFilters = document.querySelectorAll('.js-message-filters');
   let messageList = document.querySelectorAll('.js-filtered-messages');
 
-  console.log('messages: ', messageList);
-  console.log('filters: ', messageFilters);
-
   if (!messageList || !messageFilters || !filterMessagesComponent) return;
 
   filterMessagesComponent.forEach(filterMessagesComponent => {

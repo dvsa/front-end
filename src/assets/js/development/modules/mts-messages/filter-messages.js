@@ -56,8 +56,7 @@ export class MessagesFilter {
 
   handleCheck = e => {
     // Empty state
-    const newFilters = [];
-
+    const newFilters = []; 
     // Map through checkboxes - Get their data value
     this.elements.checkboxes.forEach(checkbox => {
       // If it's checked, store filter value in state

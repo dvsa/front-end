@@ -7,7 +7,7 @@ export const FILTER_CONFIG = {
     emptyNotice: 'message-panel__notice', // used inside a method, so omit the dot
   },
   data: {
-    emptyNotice: 'No messages to show',
+    emptyNotice: 'Select a message type to view',
     messages: '[data-type]',
-  },
+  }
 };

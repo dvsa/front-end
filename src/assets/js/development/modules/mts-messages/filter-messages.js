@@ -45,7 +45,7 @@ export class MessagesFilter {
     // Populate state
     this.state = {
       allFilters,
-      currFilters: allFilters
+      currFilters: allFilters,
     };
 
     this.init();

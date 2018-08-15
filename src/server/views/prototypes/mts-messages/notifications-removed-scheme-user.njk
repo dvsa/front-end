@@ -1,0 +1,77 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Notifications' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Notifications') }}
+
+      <div class='u-clearfix'>
+
+      <p>
+        <a href="/prototypes/mts-messages/create-message-type" class="button" id="action-create-a-notification">
+          Create a notification
+        </a>
+      </p>
+
+        <div class="c-tab-list">
+          <ul class="c-tab-list__tabs">          
+            <li>
+              <a href="/prototypes/mts-messages/notifications-inbox-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Notifications (2)</a>
+            </li>
+            <li>
+              <a href="/prototypes/mts-messages/notifications-archived-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
+            </li>
+            <li>
+              <a href="/prototypes/mts-messages/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft (2)</a>
+            </li>
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Removed</span>
+            </li>
+            
+          </ul>
+
+          <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
+
+            <h3 class="heading-large">Removed</h3>
+
+            <ul class="c-tab-list__items u-margin-bottom-30">
+
+              <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <div class="c-tab-list__item-link">Preparation for the EU roadworthiness directive</div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px; color: #0b0c0c;">Date removed: 3 April 2018</li>
+                    <li style="font-size: 16px; color: #0b0c0c;">Type: Special notice</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right">
+                  <a href="/prototypes/mts-messages/notification-published" class="">View notification</a>
+                </div>
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+        </div>
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

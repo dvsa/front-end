@@ -54,10 +54,8 @@ export const validateAssessmentPost = (req, res, next) => {
       if (!isPopulated(req.body['improve-textarea'])) {
         // Add an error
         req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Provide actions' });
-      }
-
-      // If textarea exceeds limit of 2500
-      else if (!isLessThan(req.body['improve-textarea'], 250)) {
+      } else if (!isLessThan(req.body['improve-textarea'], 250)) {
+        // If textarea exceeds limit of 2500
         // Add an error
         req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Enter up to 250 characters' });
       } else {
@@ -76,10 +74,8 @@ export const validateAssessmentPost = (req, res, next) => {
       if (!isPopulated(req.body['unsatisfactory-advice-textarea'])) {
         // Add an error
         req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Provide actions' });
-      }
-
-      // If textarea exceeds limit of 2500
-      else if (!isLessThan(req.body['unsatisfactory-advice-textarea'], 250)) {
+      } else if (!isLessThan(req.body['unsatisfactory-advice-textarea'], 250)) {
+        // If textarea exceeds limit of 2500
         // Add an error
         req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Enter up to 250 characters' });
       } else {
@@ -171,22 +167,18 @@ export const validateActivity = (req, res, next) => {
     req.session.viewData.activity.errors.push({
       testNumber: 'Add a test number',
     });
-  }
-
-  // If option no radio was selected & reason 5 (other was selected) was not selected
-  else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
+  } else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
+    // If option no radio was selected & reason 5 (other was selected) was not selected
     // Create new error and push to stack
     req.session.viewData.activity.errors.push({
       activityDropdown: 'Select why the activity was not performed',
     });
-  }
-
-  // If option no radio was select & reason 5 (other was selected) & other textarea is not populated
-  else if (
+  } else if (
     activityRadioResponse == 'no' &&
     req.session.viewData.activity.formData.reason == '5' &&
     !req.session.viewData.activity.formData.otherReason
   ) {
+    // If option no radio was select & reason 5 (other was selected) & other textarea is not populated
     // Create new error and push to stack
     req.session.viewData.activity.errors.push({
       otherReason: 'Add why the activity was not performed',

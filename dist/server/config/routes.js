@@ -43,6 +43,10 @@ var _brakeTest = require('../controllers/brake-test/brake-test');
 
 var brakeTestController = _interopRequireWildcard(_brakeTest);
 
+var _mtsMessages = require('../controllers/mts-messages');
+
+var messagingController = _interopRequireWildcard(_mtsMessages);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
@@ -107,6 +111,15 @@ router.post('/prototypes/site-review/enter-details', [siteReviewController.valid
 // Brake tests
 router.post('/prototypes/brake-test-config', brakeTestController.postBrakeConfig);
 router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
+
+// MTS Messaging
+router.param('messageIndex', messagingController.isValidMessage);
+router.get('/prototypes/messaging', [messagingController.setupMessages, messagingController.getMessages]);
+router.get('/prototypes/messaging/archive', [messagingController.setupMessages, messagingController.getArchive]);
+router.get('/prototypes/messaging/:messageIndex', messagingController.getMessage);
+router.get('/prototypes/messaging/acknowledge/:messageIndex', [messagingController.unpinSpecialNotice, messagingController.acknowledgeMessage]);
+router.get('/prototypes/messaging/accept/:messageIndex', messagingController.acceptMessage);
+router.get('/prototypes/messaging/reject/:messageIndex', messagingController.rejectMessage);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

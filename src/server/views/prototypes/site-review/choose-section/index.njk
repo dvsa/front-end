@@ -43,21 +43,20 @@
   </div>
 
   {% if viewData.compliance.commitedLevel %}
-  <div class="defect-summary">
-    <div>
-      <h2 class="defect-summary__heading">{{viewData.compliance.commitedLevel}}</h2>
+  <div class="action-panel__summary"> 
+      <h2 class="action-panel__summary-heading">{{viewData.compliance.commitedLevel}}</h2>
       {% if viewData.compliance.commitedComment %}
-      <ol>
-        <li class="defect">
-          <h4 class="defect__title">
-            {{"Comment" if viewData.compliance.satisfactory.isChecked else "Actions required"}}: 
-            {{viewData.compliance.commitedComment}}
-          </h4>
+      
+      <ol class="action-panel__summary-list">
+        <li class="action-panel__summary-list-item">
+        <span class="action-panel__summary-list-item-content">
+            {{"Comment" if viewData.compliance.satisfactory.isChecked else "Actions required"}}:
+            {{viewData.compliance.commitedComment}} 
+        </span>
         </li>
       </ol>
       {% endif %}
     </div>
-  </div>
   {% endif %}
     
   <div class="action-panel">
@@ -77,20 +76,18 @@
   </div>
 
   {% if viewData.premises.commitedLevel %}
-  <div class="defect-summary">
-    <div>
-      <h2 class="defect-summary__heading">{{viewData.premises.commitedLevel}}</h2>
+  <div class="action-panel__summary"> 
+      <h2 class="action-panel__summary-heading">{{viewData.premises.commitedLevel}}</h2>
       {% if viewData.premises.commitedComment %}
-      <ol>
-        <li class="defect">
-          <span class="defect__title">
+      <ol class="action-panel__summary-list">
+        <li class="action-panel__summary-list-item">
+        <span class="action-panel__summary-list-item-content">
             {{"Comment" if viewData.premises.satisfactory.isChecked else "Actions required"}}: 
             {{viewData.premises.commitedComment}}
           </span>
         </li>
       </ol>
       {% endif %}
-    </div>
   </div>
   {% endif %}
     
@@ -110,14 +107,14 @@
     </div>
   </div>
   {% if viewData['management-and-quality'].commitedLevel %}
-  <div class="defect-summary">
-    <h2 class="defect-summary__heading">
+  <div class="action-panel__summary">
+    <h2 class="action-panel__summary-heading">
       {{viewData['management-and-quality'].commitedLevel}}
     </h2>
     {% if viewData['management-and-quality'].commitedComment %} 
-    <ol>
-      <li class="defect">
-        <span class="defect__title"> 
+   <ol class="action-panel__summary-list">
+        <li class="action-panel__summary-list-item">
+        <span class="action-panel__summary-list-item-content">
           {{"Comment" if viewData['management-and-quality'].satisfactory.isChecked else "Actions required"}}: 
           {{viewData['management-and-quality'].commitedComment}}
         </span>
@@ -144,12 +141,12 @@
     </div>
   </div>
   {% if viewData.people.commitedLevel %}
-  <div class="defect-summary">
-    <h3 class="defect-summary__heading">{{viewData.people.commitedLevel}}</h3>
+  <div class="action-panel__summary">
+    <h3 class="action-panel__summary-heading">{{viewData.people.commitedLevel}}</h3>
     {% if viewData.people.commitedComment %} 
-    <ol>
-      <li class="defect">
-        <span class="defect__title">
+    <ol class="action-panel__summary-list">
+        <li class="action-panel__summary-list-item">
+        <span class="action-panel__summary-list-item-content">
         {{"Comment" if viewData.people.satisfactory.isChecked else "Actions required"}}: 
         {{viewData.people.commitedComment}}</span>
       </li>
@@ -175,20 +172,20 @@
   </div>
 
   {% if viewData.activity.isCompleted %}
-  <div class="defect-summary">
-    <h2 class="defect-summary__heading">
+  <div class="action-panel__summary">
+    <h2 class="action-panel__summary-heading">
       {% if viewData.activity.commitedActivityPerformed %}
-        <span class="defect-summary__heading-type" style="padding-left: 0px;">Activity performed</span>
+        <span class="action-panel__summary-heading-type" style="padding-left: 0px;">Activity performed</span>
       {% else %}
-        <span class="defect-summary__heading-type" style="padding-left: 0px;">Activity not performed</span>
+        <span class="action-panel__summary-heading-type" style="padding-left: 0px;">Activity not performed</span>
       {% endif %}
     </h2>
-    <ol>
-      <li class="defect">
-        {% if viewData.activity.commitedActivityPerformed %}
-          <span class="defect__title">MOT Test number: {{viewData.activity.commitedTestNum}}</span>
-        {% else %}
-          <span class="defect__title">Reason given: {{viewData.activity.commitedReason}}</span>
+    <ol class="action-panel__summary-list">
+        <li class="action-panel__summary-list-item">
+        {% if viewData.activity.commitedActivityPerformed %} 
+        <span class="action-panel__summary-list-item-content">MOT Test number: {{viewData.activity.commitedTestNum}}</span>
+        {% else %} 
+        <span class="action-panel__summary-list-item-content">Reason given: {{viewData.activity.commitedReason}}</span>
           <p class='u-margin-bottom-5'>Comment: {{viewData.activity.commitedOtherReason}}</p>
         {% endif %}
       </li>

@@ -93,8 +93,7 @@
     }
 
     @include media(mobile) {
-      @include bold-19();
-      text-align: left;
+      @include bold-19(); 
       margin-top: 10px;
     }
   }
@@ -103,17 +102,9 @@
   &__value {
     @include bold-36();
     line-height: 1;
+    display: block;  
   }
 
-  &__value,
-  &__meta {
-    display: block;
-    text-align: right;
-
-    @include media(tablet) {
-      text-align: left;
-    }
-  }
 
   &__secondary-action {
     @include core-16();
@@ -147,5 +138,41 @@
         }
       }
     }
+  }
+
+  &__summary {
+      @extend %contain-floats;
+      @include core-16;
+      background-color: #e7e7e7;
+      border: 1px solid $grey-2;
+      margin-bottom: $gutter-half; 
+    
+      &-heading {
+        @include bold-24;
+        border-top: 1px solid $grey-2;
+        padding: 12px 15px;
+        background-color: #f1f1f1;
+      }
+    
+      &__heading--small {
+        @include bold-19;
+      }
+
+      &-list-item {
+          @include core-16;
+          position: relative;
+          border-top: 1px solid $grey-2;
+          padding: 15px;
+          background-color: $white;
+          transition: background-color .4s ease-in-out;
+
+          &-content {
+            @include bold-16;
+            display: block;
+            @include media(tablet) {
+              margin-right: 220px;
+            }
+          }
+      }
   }
 }

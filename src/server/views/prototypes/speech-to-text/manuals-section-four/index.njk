@@ -1,0 +1,2692 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'MOT Manuals Section 4 Lamps, reflectors and electrical equipment' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    <details class='u-margin-top-15 accessibility-controls-accordion'>
+      <summary>
+        <span class="summary">Are you having problems reading this page?</span>
+      </summary>
+      <div class="panel panel-border-narrow">
+        <div class='text-to-speech-toggle'>
+          <form class='text-to-speech-toggle__form'>
+            <div class='form-group'>
+              <legend class='u-margin-bottom-15'>
+                <h2 class='heading-medium'>Turn on text to speech reader</h2>
+                <span class='body-text'>You can turn on or off text to speech reader mode by selecting an option</span>
+              </legend>
+              <div class="multiple-choice">
+                <input id="radio-toggle-reader-off" type="radio" name="text-to-speech-reader" value="off" checked>
+                <label for="radio-toggle-reader-off">Turn off</label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-toggle-reader-on" type="radio" name="text-to-speech-reader" value="on">
+                <label for="radio-toggle-reader-on">Turn on</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class='font-size-toggle'>
+          <h2 class='heading-medium'>Change font size</h2>
+          <div class='font-size-toggle__controls'>
+            <button class='font-size-toggle__button font-size-toggle__button--decrease' type='button'>
+              <span class='sr-only'>Decrease font size</span>
+              <i class='font-size-toggle__icon' role='presentation'>A</i>
+            </button>
+            <button class='font-size-toggle__button font-size-toggle__button--increase' type='button'>
+              <span class='sr-only'>Increase font size</span>
+              <i class='font-size-toggle__icon' role='presentation'>A</i>
+            </button>
+            <button class='font-size-toggle__button font-size-toggle__button--reset'>Revert font size to default</button>
+          </div>
+        </div>
+        <div class='theme-toggle'>       
+          <form class='theme-toggle__form'>
+            <div class='form-group'>
+              <legend class='u-margin-bottom-15'>
+                <h2 class='heading-medium'>Change colour scheme</h2>
+                <span class='body-text'>You can change the page's colour scheme by selecting an option</span>
+              </legend>
+              <div class="multiple-choice">
+                <input id="radio-default" type="radio" name="radio-group" value="Default" checked>
+                <label for="radio-default">
+                  <span class='theme-toggle__theme-swatch'>Default</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-highcontrast-yellow" type="radio" name="radio-group" value="High contrast yellow">
+                <label for="radio-highcontrast-yellow">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--high-contrast-yellow'>Abc...</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-lowcontrast-grey" type="radio" name="radio-group" value="Low contrast grey">
+                <label for="radio-lowcontrast-grey">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--low-contrast-grey'>Abc...</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-sepia" type="radio" name="radio-group" value="Sepia">
+                <label for="radio-sepia">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--sepia'>Abc...</span>
+                </label>
+              </div>
+              <div class="multiple-choice">
+                <input id="radio-highcontrast-yellow" type="radio" name="radio-group" value="Medium contrast yellow">
+                <label for="radio-highcontrast-yellow">
+                  <span class='theme-toggle__theme-swatch theme-toggle__theme-swatch--medium-contrast-yellow'>Abc...</span>
+                </label>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </details>
+
+    <main id="content">
+      <div class="grid-row">
+        <div class="column-two-thirds">
+          <h1 class="heading-xlarge heading heading--page-heading">Section 4 Lamps, reflectors and electrical equipment</h1>
+          <div class="">
+            <ul>
+              <li>
+                <a href="#section_4.1">
+                  <span class="level-2">4.1 Headlamps</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.1.1">
+                  <span class="level-3">4.1.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.1.2">
+                  <span class="level-3">4.1.2 Headlamp alignment</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.1.3">
+                  <span class="level-3">4.1.3 Switching</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.1.4">
+                  <span class="level-3">4.1.4 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.1.5">
+                  <span class="level-3">4.1.5 Levelling devices</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.1.6">
+                  <span class="level-3">4.1.6 Headlamp cleaning devices</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.2">
+                  <span class="level-2">4.2 Front and rear position lamps, side marker lamps and end-outline marker lamps</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.2.1">
+                  <span class="level-3">4.2.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.2.2">
+                  <span class="level-3">4.2.2 Switching</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.2.3">
+                  <span class="level-3">4.2.3 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.3">
+                  <span class="level-2">4.3 Stop lamps</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.3.1">
+                  <span class="level-3">4.3.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.3.2">
+                  <span class="level-3">4.3.2 Switching</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.3.3">
+                  <span class="level-3">4.3.3 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.4">
+                  <span class="level-2">4.4 Direction indicators and hazard warning lamps</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.4.1">
+                  <span class="level-3">4.4.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.4.2">
+                  <span class="level-3">4.4.2 Switching</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.4.3">
+                  <span class="level-3">4.4.3 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.4.4">
+                  <span class="level-3">4.4.4 Flashing frequency</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.5">
+                  <span class="level-2">4.5 Front and rear fog lamps</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.5.1">
+                  <span class="level-3">4.5.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <span class="level-3">4.5.2 Not in use</span>
+              </li>
+              <li>
+                <a href="#section_4.5.3">
+                <span class="level-3">4.5.3 Switching</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.5.4">
+                  <span class="level-3">4.5.4 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.6">
+                  <span class="level-2">4.6 Reversing lamps</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.6.1">
+                  <span class="level-3">4.6.1 Condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.6.2">
+                  <span class="level-3">4.6.2 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.6.3">
+                  <span class="level-3">4.6.3 Switching</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.7">
+                  <span class="level-2">4.7 Rear registration plate lamps</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.7.1">
+                  <span class="level-3">4.7.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.7.2">
+                  <span class="level-3">4.7.2 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.8">
+                  <span class="level-2">4.8 Rear reflectors</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.8.1">
+                  <span class="level-3">4.8.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.8.2">
+                  <span class="level-3">4.8.2 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.9">
+                  <span class="level-2">4.9 ‘Tell-tales’ mandatory for lighting equipment</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.9.1">
+                  <span class="level-3">4.9.1 Presence, condition and operation</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.9.2">
+                  <span class="level-3">4.9.2 Compliance with requirements</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.10">
+                  <span class="level-2">4.10  Trailer electrical socket</span>
+                </a>
+              </li>
+              <li>
+                <a href="#section_4.11">
+                  <span class="level-2">4.11  Electrical wiring</span>
+                </a>
+              </li>
+              <li>
+                <span class="level-2">4.12  Not in use</span>
+              </li>
+              <li>
+                <a href="#section_4.13">
+                  <span class="level-2">4.13  Battery(ies)</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class='text-to-speech__wrapper'>
+            <section>
+              <h2 id="section_4.1" class="heading-medium ">4.1 Headlamps</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.1.1" class="heading-small ">4.1.1 Presence, condition and operation</h3>
+                <p>You must test all mandatory headlamps. </p>
+                <p>‘Mandatory headlamps’ are a matched pair of main beam headlamps and a matched pair of dipped-beam headlamps. These can be separate or a single pair of headlamps. 
+                Lamps are matched if they:</p>
+                <ul class="list-bullet">
+                  <li>emit light of substantially the same colour and intensity</li>
+                  <li>are the same size and shape that they are symmetrical to each other</li>
+                </ul>
+                <p>You don't need to test headlamps on vehicles if:</p>
+                <ul class="list-bullet">
+                  <li>they're not fitted with front or rear position lamps</li>
+                  <li>they have front or rear position lamps that are permanently disconnected, painted over or masked </li>
+                </ul>
+                <p>Vehicles first used before 1 January 1931 don't need headlamps. </p>
+                <p>Buses first used before 1&nbsp;October&nbsp;1969 only need one headlamp. If 2 are fitted, neither the main beam or dipped beams need to be a matched pair.</p>
+                <p>Repairs to lamps must be assessed for security, colour, light output, durability and beam aim.</p>
+                <p>Tricycle and quadricycle headlamps must be:</p>
+                <ul class="list-bullet">
+                  <li>mounted centrally – if there's only one lamp</li>
+                  <li>mounted symmetrically about the centre – if they're adjacent to another lamp, such as there's one dipped beam lamp and one main beam lamp</li>
+                  <li>mounted symmetrically – if there's 2 lamps</li>
+                </ul>
+                <p>The following must have a pair of main beam headlamps and a pair of dipped beam headlamps – can be separate or a single pair of headlamps:</p>
+                <ul class="list-bullet">
+                  <li>tricycles and quadricycles with a maximum width over 1,300mm</li>
+                  <li>motorcycle derived tricycles with a maximum width over 1,700mm</li>
+                </ul>
+                <p>Tricycles and quadricycles classed as mopeds don't need a main beam headlamp.</p>
+                <p>A ‘light source’ means any bulb, LED or other means of emitting light.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>A headlamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>with up to ½ light sources not functioning in the case of LED</li>
+                        </ol>
+
+                        </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>missing, inoperative or more than ½ not functioning in the case of LED</li>
+                        </ol>
+                        </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="2">
+                          <li>Headlamp reflector or lens:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                        <li>slightly defective</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>seriously defective or missing</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="3">
+                          <li>Lamp not securely attached</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.1.1 Presence, condition and operation" data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.1 Presence, condition and operation">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.1 Presence, condition and operation" frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <artcle class='text-to-speech__section'>
+                <h3 id="section_4.1.2" class="heading-small ">4.1.2 Headlamp alignment</h3>
+                <p>You must inspect all dipped beam headlamps fitted. </p>
+                <p>The type of headlamp will determine whether the aim must be checked on dipped or main beam (see Diagrams 1, 2 and 3).</p>
+                <p>A flat top or other alternative headlamp dipped beam pattern is acceptable as long as all of the beam upper edge, including any ‘peak’ is contained within the appropriate tolerance band.</p>
+                <p>It's acceptable for masks or converter kits to be fitted to right hand dip headlamps to temporarily alter the lamp for use in the UK by removing the beam ‘kick-up’ to the right. </p>
+                <p>If driver’s beam aim controls are fitted, you should test the beam aim without altering the control setting. If this would result in failure for beam aim being too low, you should re-check the beam aim with the control set at its ‘highest’ position.</p>
+                <p>On vehicles with hydro-pneumatic suspension systems, it's necessary to have the engine running when checking headlamp aim.</p>
+                <p>To check the aim:</p>
+                <ol class="list-number">
+                  <li>Position the vehicle on the designated headlamp aim standing area.</li>
+                  <li>Align the headlamp aim testing equipment to the vehicle in accordance with the manufacturer’s instructions.</li>
+                  <li>Determine the appropriate headlamp beam image and its aim (see Diagrams 1, 2 and 3).</li>
+                </ol>
+                <p>For complex lens systems – meaning those that have more than one lamp behind a single lens – make sure the test equipment is aligned exactly on the centre of the dipped beam pocket. </p>
+                <p>You mustn’t carry out repairs during an MOT test, but you can make minor adjustments to the headlamp aim.</p>
+                <h5 class="heading-subtle ">European type – check on dipped beam</h5>
+                <p>European type lamps have one of the following:</p>
+                <ul class="list-bullet">
+                  <li>an asymmetric dipped beam pattern with</li>
+                  <ul class="list-bullet"> 
+                    <li>a horizontal cut-off on the right</li>
+                    <li>a wedge of light above the horizontal towards the left, known as the 'kick up' </li>
+                  </ul>
+                  <li>lens may have European approval mark</li>
+                </ul>
+                <p>For European type lamp to pass, you must make sure that:</p>
+                <ul class="list-bullet">
+                  <li>beam image 'kick up' is visible on the screen</li>
+                  <li>for headlamps with centres at 850mm or less from the ground, the beam image horizontal cut-off is between the 0.5% and 2.75% horizontal lines </li>
+                  <li>for headlamps with centres more than 850mm from the ground, the beam image horizontal cut-off is between the 1.25% and 2.75% horizontal lines</li>
+                  <li>white light doesn't show in the zone formed by the 0% vertical and 0.5% horizontal line</li>
+                </ul>
+                <h5 class="heading-subtle">British American headlamp – check on main beam</h5>
+                <p>British American type headlamps are checked on main beam if they have an asymmetric main beam pattern with a central area of maximum intensity, known as a ‘hot spot’.</p>
+                <p>The generally also have a circular lens marked with a figure ‘1’ followed by an arrow indicating the direction of dip.</p>
+                <p>You must fail a British American type lamp if the 'hot spot' is:</p>
+                <ul class="list-bullet">
+                  <li>above the horizontal 0% line</li>
+                  <li>below the horizontal 2% line for headlamps with centres at 850mm or less from the ground </li>
+                  <li>below the horizontal 2.75% line for headlamps with centres more than 850mm from the ground</li>
+                  <li>to the right of the vertical 0% line</li>
+                  <li>to the left of the vertical 2% line</li>
+                </ul>
+                <p>For a British American type lamp to pass, you must also make sure the brightest part of the image moves downwards when the lamp is dipped. </p>
+                <h5 class="heading-subtle">British American headlamp – check on dipped beam</h5>
+                <p>Check British American headlamps on dipped beam if they have: </p>
+                <ul class="list-bullet">
+                  <li>an asymmetric dipped beam pattern with a flat-topped area of high intensity extending above and parallel with the horizontal 0% line on the nearside</li>
+                  <li>a circular lens marked with the figure 2 – it might also have an arrow showing the direction of dip</li>
+                </ul>
+                <p>You must fail this lamp if the 'hot spot':</p>
+                <ul class="list-bullet">
+                  <li>upper edge is above the horizontal 0% line</li>
+                  <li>upper edge is below the horizontal 2.75% line</li>
+                  <li>right-hand edge is to the right of the vertical 0% line</li>
+                  <li>right-hand edge is to the left of the vertical 2% line </li>
+                </ul>
+                <table class="table table--top">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span></th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>The aim of a headlamp is not within limits laid down in the requirements</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="2">
+                          <li>Headlamp aim unable to be tested</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.1.2 Headlamp alignment" data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.2 Headlamp alignment">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.2 Headlamp alignment" frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.1.3" class="heading-small">4.1.3 Switching</h3>
+                <p>Dipped or main beam headlamps must immediately light up when they're switched on (depending on the position of the dip switch). </p>
+                <p>Headlamps must switch immediately between main beam and dipped beam when you move the dip switch.</p>
+                <p>Moving the dip switch must do one of the following:</p>
+                <ul class="list-bullet">
+                  <li>extinguish all main beam headlamps and leave on at least one pair of dipped-beam headlamps</li>
+                  <li>deflect the main beams to make them dipped beams </li>
+                </ul>
+                <p>Dipped beam headlamps can remain on or switch off when main beam is selected.</p>
+                <p>Headlamps aren't needed on vehicles first used before 1 January 1931.  </p>
+                <p>When optional headlamps are fitted: </p>
+                <ul class="list-bullet"> 
+                  <li>if one is fitted it must dip </li>
+                  <li>if 2 are fitted, either both must dip or one must dip and the other switch off</li>
+                </ul>
+                <table class="table table--top">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Headlamp ‘on’ switch does not operate in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td>Minor</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="2">
+                          <li>Headlamp ‘dip’ switch does not operate in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.1.3 Switching"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.3 Switching">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.3 Switching"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.1.4" class="heading-small ">4.1.4 Compliance with requirements</h3>
+                <p>You must inspect all 'mandatory' headlamps fitted. </p>
+                <p>Mandatory headlamps consist of a matched pair of main beam headlamps and a matched pair of dipped-beam headlamps. These can
+                  be separate or a single pair of headlamps. Lamps are matched if they:</p>
+                <ul class="list-bullet">
+                  <li>emit light of substantially the same colour and intensity</li>
+                  <li>are the same size and shape that they are symmetrical to each other</li>
+                </ul>
+                <p>Vehicles first used before 1 January 1931 don't need headlamps.</p>
+                <p>Buses first used before 1&nbsp;October&nbsp;1969 only need one headlamp. If 2 are fitted, neither the main beam or dipped
+                  beams need to form matched pair.</p>
+                <p>The colour of the light headlamps emit must be one of the following:</p>
+                <ul class="list-bullet">
+                  <li>white</li>
+                  <li>predominantly white with blue tinge</li>
+                  <li>yellow</li>
+                </ul>
+                <p>In a four-headlamp system the outer headlamps don’t need to emit the same colour light as the inner pair.</p>
+                <p>The precise position of lamps isn’t part of the inspection, but you should check visually that they are at about the same
+                  height and the same distance from each side of the vehicle.</p>
+                <p>Existing halogen headlamp units shouldn’t be converted to be used with HID bulbs. If such a conversion has been done, you
+                  must fail the headlamp.</p>
+                <p>Tricycle and quadricycle headlamps must be:</p>
+                <ul class="list-bullet">
+                  <li>mounted centrally – if there's only one lamp</li>
+                  <li>mounted symmetrically about the centre – if they're adjacent to another lamp, such as there's one dipped beam lamp and
+                    one main beam lamp</li>
+                  <li>mounted symmetrically – if there's 2 lamps</li>
+                </ul>
+                <p>The following must have a pair of main beam headlamps and a pair of dipped beam headlamps – can be separate or a single pair
+                  of headlamps:</p>
+                <ul class="list-bullet">
+                  <li>tricycles and quadricycles with a maximum width over 1,300mm</li>
+                  <li>motorcycle derived tricycles with a maximum width over 1,700mm</li>
+                </ul>
+                <p>Tricycles and quadricycles classed as mopeds don’t need main beam headlamps.</p>
+                <p>A ‘light source’ means any bulb, LED or other means of emitting light.</p>
+                <p>Repairs to lamps must be assessed for security, colour, light output and durability.</p>
+                <table class="table table--top">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Headlamp emitted colour, position or intensity not in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="2">
+                          <li>Product on the lens or light source which obviously reduces light intensity or changes emitted colour to other
+                            than white or yellow</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="3">
+                          <li>Light source and lamp not compatible</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.1.4 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.4 Compliance with requirements">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.4 Compliance with requirements"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">
+                    Top of page
+                  </a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.1.5" class="heading-small">4.1.5 Levelling devices</h3>
+                <p>Make sure any manual headlamp levelling devices (driver controls) work by:</p>
+                <ul class="list-bullet">
+                  <li>switching on the dipped beam headlamps</li>
+                  <li>operating the manual levelling device</li>
+                  <li>checking that the headlamp beams move up and down </li>
+                  <li>returning the levelling device control to its original position</li>
+                </ul>
+                <p>Vehicles with high intensity discharge
+                  <span class="bold"> </span>(HID) or LED dipped beam headlamps may be fitted with a suspension or headlamp self-levelling system. If these systems
+                  have been fitted, they must work. </p>
+                <p>Sometimes it isn't easy to determine if the self-levelling systems work. In such cases you should give the benefit of the
+                  doubt.</p>
+                <p>You can identify HID headlamps from:</p>
+                <ul class="list-bullet">
+                  <li>‘DCR’ mark on the headlamp lens or body</li>
+                  <li>an igniter module or inverter behind the headlamp </li>
+                  <li>taking a few seconds to reach full intensity</li>
+                  <li>a bluish tinge to the light</li>
+                </ul>
+                <p>HID headlamps use high voltage. You should take care when inspecting these headlamps.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Headlamp levelling device inoperative</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="2">
+                          <li>Manual levelling device cannot be operated from the driver’s seat</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.1.5 Levelling devices"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.5 Levelling devices">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.5 Levelling devices"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.1.6" class="heading-small ">4.1.6 Headlamp cleaning devices</h3>
+                <p>You must inspect vehicles first used on or after 1 September 2009 equipped with headlamp washers. </p>
+                <p>You can identify HID headlamps from:</p>
+                <ul class="list-bullet">
+                  <li>‘DCR’ mark on the headlamp lens or body</li>
+                  <li>an igniter module or inverter behind the headlamp </li>
+                  <li>taking a few seconds to reach full intensity</li>
+                  <li> a bluish tinge to the light</li>
+                </ul>
+                <p>HID headlamps use high voltage. You should take care when inspecting these headlamps.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Headlamp cleaning device: </li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>inoperative</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>inoperative in the case of LED or gas discharge systems (HID)</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.1.6 Headlamp cleaning devices" data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.6 Headlamp cleaning devices">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.1.6 Headlamp cleaning devices" frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section>
+              <h2 id="section_4.2" class="heading-medium ">4.2 Front and rear position lamps, side marker lamps and end-outline marker lamps</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.2.1" class="heading-small ">4.2.1 Presence, condition and operation</h3>
+                <p>This inspection is for: </p>
+                <ul class="list-bullet">
+                  <li>mandatory position lamps</li>
+                  <li>mandatory end-outline marker lamps</li>
+                  <li>daytime running lamps (DRLs) fitted to vehicles first used on or after 1 March 2018</li>
+                </ul>
+                <p>Vehicles don't need to be fitted with position lamps, or they can have such lamps permanently disconnected, painted over
+                  or masked. In this situation you should issue an advisory notice. These vehicles don't need end-outline marker lamps. </p>
+                <h5 class="heading-subtle">All lamps</h5>
+                <p>Repairs to lamps must be assessed for security, colour, light output and durability. </p>
+                <h5 class="heading-subtle">Front and rear position lamps</h5>
+                <p>Vehicles must have 2 front and 2 rear position lamps, except for tricycles or quadricycles that are less than 1,300mm wide.</p>
+                <p>Daytime running lamps (DRLs) or headlamps may function as front position lamps. If the DRLs function as front position lamps,
+                  they should dim when rear position lamps are switched on and may turn off when headlamps are switched on. </p>
+                <p>Front position lamps can switch off when the front fog lamps are switched on. </p>
+                <p>The front and rear position lamps must light up at the same time with the registration plate lamps and end-outline marker
+                  lamps.</p>
+                <p>Tricycles and quadricycles less than 1,300mm wide must have at least one front and one rear position lamp. However, if the
+                  maximum vehicle width is more than 1,300mm, it must have 2 front and 2 rear position lamps. </p>
+                <p>Tricycle and quadricycle lamps must be:</p>
+                <ul class="list-bullet">
+                  <li>mounted centrally – if there's one lamp</li>
+                  <li>mounted symmetrically – if there's 2 lamps</li>
+                  <li>mounted symmetrically about the centre – if there's a single front position lamp next to another front lamp, such as a
+                    headlamp </li>
+                </ul>
+                <p> </p>
+                <p>Buses first used before 1 April 1955 only need one rear position lamp. The lamp must be on the centre line or to the offside.</p>
+                <h5 class="heading-subtle ">End-outline marker lamps</h5>
+                <p>You must inspect end-outline marker lamps on vehicles first used on or after 1&nbsp;April&nbsp;1991 that are wider than 2,100mm.</p>
+                <p>Class 3 vehicles don't need end-outline marker lamps. </p>
+                <p>The front and rear end outline marker lamps on each side can be combined in one lamp.</p>
+                <h5 class="heading-subtle ">Daytime running lamps</h5>
+                <p>You only need to inspect daytime running lamps (DRLs) if they're fitted as original equipment to vehicles first used on or
+                  after 1 March 2018. </p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>A lamp missing or inoperative.</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="2">
+                          <li>Defective lens.</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="3">
+                          <li>Lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not securely attached</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>likely to become detached</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.2.1 Presence, condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.2.1 Presence, condition and operation">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.2.1 Presence, condition and operation"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.2.2" class="heading-small">4.2.2 Switching </h3>
+                <p>It must be possible to switch on the position lamps from the driver's seat with a single operation of the switch. The position
+                  lamps must light up at the same time as the registration plate lamps and any end-outline marker lamps where they are fitted.</p>
+                <p>Some vehicles have position lamps that come on automatically when the engine is running.</p>
+                <p>Daytime running lamps (DRLs) or headlamps may function as front position lamps. If the DRLs function as front position lamps,
+                  they should dim when rear position lamps are switched on and may turn off when headlamps are switched on. </p>
+                <p>The front position lamps may turn off when the headlamps or front fog lamps are switched on.</p>
+                <p>If position lamps are combined with direction indicators, position lamps should switch off when the relevant direction indicator
+                  is flashing. </p>
+                <p>The front and rear position lamps must light up at the same time with the end-outline marker lamps where they are fitted.</p>
+                <p>You only need to inspect daytime running lamps (DRLs) if they're fitted as original equipment to vehicles first used on or
+                  after 1 March 2018. </p>
+                <p>DRLs must switch on and off when the engine is switched on and off. </p>
+                <p>DRLs might not operate when:</p>
+                <ul class="list-bullet">
+                  <li>the parking brake is on</li>
+                  <li>the park position is selected on automatic transmissions</li>
+                </ul>
+                <p>If DRLs have been manually switched off, sometimes they don't light up until the vehicle is travelling faster than 10 kilometres
+                  per hour (6.2mph) or the vehicle has travelled 100m (328ft). </p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Switch does not operate in accordance with the requirements or the rear position lamps can be switched off when
+                            the headlamps are on</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="2">
+                          <li>Function of the switch impaired</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.2.2 Switching "
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.2.2 Switching ">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.2.2 Switching "
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.2.3" class="heading-small">4.2.3 Compliance with requirements</h3>
+                <p>You must inspect: </p>
+                <ul class="list-bullet">
+                  <li>mandatory position lamps</li>
+                  <li>mandatory end-outline marker lamps</li>
+                  <li>daytime running lamps (DRLs) fitted to vehicles first used on or after 1 March 2018</li>
+                </ul>
+                <h5 class="heading-subtle ">All lamps</h5>
+                <p>The precise position of lamps isn’t part of the inspection. You should check visually that they are at about the same height
+                  and distance from each side of the vehicle. </p>
+                <p>A ‘light source’ means any bulb, LED or other means of emitting light.</p>
+                <p>You must assess repairs to lamps for security, colour, light output and durability. </p>
+                <h5 class="heading-subtle ">Position lamps</h5>
+                <p>Rear position lamps must emit a steady red light. </p>
+                <p>For front position lamps, the following colour of light is acceptable: </p>
+                <ul class="list-bullet">
+                  <li>white light</li>
+                  <li>predominantly white light with a blue tinge</li>
+                  <li>yellow light – if combined in a yellow headlamp</li>
+                </ul>
+                <p>If position lamps are combined with direction indicators, the position lamps should switch off when the relevant direction
+                  indicator is flashing.</p>
+                <h5 class="heading-subtle">End-outline marker lamps</h5>
+                <p>Vehicles first used on or after 1&nbsp;April&nbsp;1991 that are wider than 2,100mm must have their end-outline marker lamps
+                  inspected. </p>
+                <p>Class 3 vehicles don't need end-outline marker lamps.</p>
+                <p>There must be:
+                  <span class="bold"> </span>
+                </p>
+                <ul class="list-bullet">
+                  <li>2 white lamps visible from the front and positioned at windscreen upper edge level or higher</li>
+                  <li>2 red lamps visible from the rear and positioned as high as is practicable </li>
+                </ul>
+                <p>The front and rear end outline marker lamps on each side can be combined in one lamp.</p>
+                <h5 class="heading-subtle ">Daytime running lamps</h5>
+                <p>You only need to inspect daytime running lamps (DRLs) fitted as original equipment to vehicles first used on or after 1 March
+                  2018. </p>
+                <p>There mustn’t be more than 2 DRLs fitted and they must emit white light.</p>
+                <p>DRLs might not operate when:</p>
+                <ul class="list-bullet">
+                  <li>the engine isn’t running</li>
+                  <li>the parking brake is on</li>
+                  <li>the park position is selected on automatic vehicles</li>
+                </ul>
+                <p>If DRLs have been manually switched off, sometimes they don't light up until the vehicle is travelling faster than 10km/h
+                  (6.2mph) or the vehicle has travelled 100m (328ft). </p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>emitted colour, position or intensity not in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>showing red light to the front, white light to the rear or has heavily reduced light intensity</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="2">
+                          <li>A lamp with a product on the lens or light source:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>which obviously reduces light intensity or changes emitted colour</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>which shows red light to the front, white light to the rear or has heavily reduced light intensity</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.2.3 Compliance with requirements" data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.2.3 Compliance with requirements">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.2.3 Compliance with requirements" frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section>
+              <h2 id="section_4.3" class="heading-medium">4.3 Stop lamps</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.3.1" class="heading-small">4.3.1 Presence, condition and operation</h3>
+                <p>You must inspect all stop lamps fitted.</p>
+                <p>Stop lamps must show a steady red light.</p>
+                <p>Stop lamps aren't needed for vehicles that:</p>
+                <ul class="list-bullet">
+                  <li>don't have front and rear position lamps</li>
+                  <li>have front and rear position lamps that are permanently disconnected, painted over or masked</li>
+                  <li>were first used before 1 January 1936</li>
+                </ul>
+                <p>Vehicles first used on or after 1&nbsp;January&nbsp;1971 must have 2 stop lamps, one on each side. </p>
+                <p>Vehicles first used before 1&nbsp;January&nbsp;1971 may be fitted with only 1 stop lamp, which can be mounted centrally or
+                  towards the offside. </p>
+                <p>Additional stop lamps, over and above the mandatory requirements, must be tested. However, if you aren't sure if they are
+                  connected, you should give the benefit of the doubt.</p>
+                <p>A ‘light source’ means any bulb, LED or other means of emitting light.</p>
+                <p>You must assess repairs to lamps for security, colour, light output and durability. </p>
+                <p>Tricycles and quadricycles:</p>
+                <ul class="list-bullet">
+                  <li>not wider than 1,300mm can have only one stop lamp</li>
+                  <li>with 2 service brake controls – both controls must operate the stop lamp(s)</li>
+                  <li>with 2 stop lamps – must be mounted symmetrically</li>
+                  <li>with 1 stop lamp – must be mounted centrally</li>
+                </ul>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Stop lamp(s):</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>with a multiple light source up to 1/2 not functioning</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>missing, inoperative or in the case of a multiple light source more than 1/2 not functioning</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Major</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="3">
+                          <li>all missing or inoperative</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Dangerous</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="2">
+                          <li>A lens defective:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>which has no effect on emitted light</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>such that the emitted light is adversely affected</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="3">
+                          <li>A stop lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not securely attached</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>likely to become detached</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.3.1 Presence, condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.3.1 Presence, condition and operation">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.3.1 Presence, condition and operation"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.3.2" class="heading-small ">4.3.2 Switching</h3>
+                <p>All stop lamps must light up immediately when the brake is applied and switch off immediately when the brake is released.</p>
+                <p>Vehicles first used on or after 1&nbsp;January&nbsp;1971 must have 2 stop lamps, one on each side. </p>
+                <p>Vehicles first used before 1&nbsp;January&nbsp;1971 can be fitted with only 1 stop lamp. The lamp can be mounted centrally
+                  or towards the offside.</p>
+                <p>Additional stop lamps, over and above the mandatory requirements, must be tested. However, if you aren't sure that they're
+                  connected, you should give the benefit of the doubt.</p>
+                <p>Vehicles first used before 1&nbsp;September&nbsp;1965 may have a stop lamp combined with a direction indicator lamp.</p>
+                <p>Tricycles and quadricycles:</p>
+                <ul class="list-bullet">
+                  <li>not wider than 1,300mm can have only one stop lamp</li>
+                  <li>with 2 service brake controls - both controls must operate the stop lamp(s)</li>
+                  <li>with 2 stop lamps - must be mounted symmetrically</li>
+                  <li>with 1 stop lamp - must be mounted centrally</li>
+                </ul>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Stop lamp(s):</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>switch does not operate in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>switch with a delay in operation</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Major</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="3">
+                          <li>remain on when the brakes are released</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Dangerous</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.3.2 Switching" data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.3.2 Switching">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.3.2 Switching" frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.3.3" class="heading-small ">4.3.3 Compliance with requirements</h3>
+                <p>You must inspect all stop lamps. </p>
+                <p>Stop lamps aren’t needed for vehicles that:</p>
+                <ul class="list-bullet">
+                  <li>don't have front and rear position lamps</li>
+                  <li>have front and rear position lamps permanently disconnected, painted over or masked</li>
+                  <li>were first used before 1 January 1936</li>
+                </ul>
+                <p>Vehicles first used on or after 1&nbsp;January&nbsp;1971 must have 2 stop lamps, one on each side. </p>
+                <p>Vehicles first used before 1&nbsp;January&nbsp;1971 can be fitted with only one stop lamp. The lamp can be mounted centrally
+                  or towards the offside.</p>
+                <p>Additional stop lamps, over and above the obligatory requirements, must be tested. However, if you aren't sure that they're
+                  connected, you should give the benefit of the doubt.</p>
+                <p>You must assess repairs to lamps for security, colour, light output and durability. </p>
+                <p>Tricycles and quadricycles
+                  <span class="bold">:</span>
+                </p>
+                <ul class="list-bullet">
+                  <li>not wider than 1,300mm can have only one stop lamp</li>
+                  <li>with 2 service brake controls – both controls must operate the stop lamp(s)</li>
+                  <li>with 2 stop lamps – must be mounted symmetrically</li>
+                  <li>with 1 stop lamp – must be mounted centrally</li>
+                </ul>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>A stop lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>emitted colour, position or intensity not in accordance with the requirements </li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>showing white light to the rear or significantly reduced light intensity</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.3.3 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.3.3 Compliance with requirements">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.3.3 Compliance with requirements"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section>
+              <h2 id="section_4.4" class="heading-medium ">4.4 Direction indicators and hazard warning lamps</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.4.1" class="heading-small">4.4.1 Presence, condition and operation</h3>
+                <p>You must inspect all direction indicators and hazard warning lamps.</p>
+                <p>Direction indicators and hazard warning lamps aren’t needed for vehicles that:</p>
+                <ul class="list-bullet">
+                  <li>don't have front and rear position lamps</li>
+                  <li>have front and rear position lamps that are permanently disconnected, painted over or masked</li>
+                  <li>were first used before 1 January 1936</li>
+                </ul>
+                <p>Direction indicators must be amber.
+                  <span class="bold"> </span>
+                </p>
+                <p>Vehicles first used before 1 September 1965 may have white front indicators and red rear indicators, if the direction indicators
+                  are combined with stop lamps or combined with front or rear position lamps.</p>
+                <p>Vehicles first used before 1&nbsp;April&nbsp;1986 don’t need to have hazard warning devices.</p>
+                <p>Vehicles first used on or after 1&nbsp;April&nbsp;1986 must be fitted with an amber side repeater indicator on each side.
+                  </p>
+                <p>The side repeater can be part of the front direction indicator if it has one of the following:</p>
+                <ul class="list-bullet">
+                  <li>a wraparound lens marked either with an ‘E’ mark in a circle or an ‘e’ mark in a rectangle with a number 5 above it</li>
+                  <li>an amber light coming through the front lens when viewed from 1m to the side of the rear bumper </li>
+                </ul>
+                <p>Semaphore arms may flash but don't need to.</p>
+                <p>A ‘light source’ means any bulb, LED or other means of emitting light.</p>
+                <p>You must assess repairs to lamps for security, colour, light output and durability. </p>
+                <p>Tricycles and quadricycles classed as mopeds don't need hazard warning lamps. Only 'bodied' mopeds must have direction indicators.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>A direction indicator:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>lamp with a multiple light source up to 1/2 not functioning</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>lamp missing, inoperative or in the case of a multiple light source more than 1/2 not functioning</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major
+                      </td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="2">
+                          <li>A lens defective:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>which has no effect on emitted light</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>such that the emitted light is adversely affected</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major
+                      </td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="3">
+                          <li>A lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not securely attached</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>likely to become detached</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major
+                      </td>
+                    </tr>
+                  </tbody>
+                </table> 
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.4.1 Presence, condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.1 Presence, condition and operation">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.1 Presence, condition and operation"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.4.2" class="heading-small ">4.4.2 Switching</h3>
+                <p>Hazard warning lamps
+                  <span class="bold"> </span>must operate using only one switch and with the engine or ignition switch in both the on and off positions.</p>
+                <p>For tricycles and quadricycles, hazard warning lamps must work both with the engine running and switched off. This may be
+                  by use of an engine kill switch or by turning the ignition off. </p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Indicator or hazard warning switch:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>does not operate in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>inoperative</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.4.2 Switching"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.2 Switching">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.2 Switching"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">
+                    Top of page
+                  </a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.4.3" class="heading-small">4.4.3 Compliance with requirements</h3>
+                <p>Direction indicators must be amber.
+                  <span class="bold"> </span>
+                </p>
+                <p>Vehicles first used before 1 September 1965 may have white front indicators and red rear indicators, if the direction indicators
+                  are combined with stop lamps or combined with front or rear position lamps.</p>
+                <p>On vehicles first used on or after 1 September 1965 with direction indicators combined with position lamps, the position
+                  lamp must go out when its direction indicator is flashing. The direction indicator must flash amber only, with no white
+                  or red light.</p>
+                <p>A semaphore arm must light up when switched on, but it doesn’t need to flash.</p>
+                <p>The precise position of lamps isn’t part of the inspection. You should check visually that they are at about the same height
+                  and distance from each side of the vehicle. </p>
+                <p>You must assess repairs to lamps for security, colour, light output and durability.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Lamp emitted colour, position or intensity not in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.4.3 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.3 Compliance with requirements">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.3 Compliance with requirements"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+                <h3 id="section_4.4.4" class="heading-small ">4.4.4 Flashing frequency</h3>
+                <p>Indicators must flash at between 60 and 120 times per minute. Semaphore type direction indicators don't need to flash.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Rate of flashing not between 60 and 120 times per minute</li>
+                        </ol>
+                      </td>
+                      <td>Minor</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.4.4 Flashing frequency"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.4 Flashing frequency">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.4.4 Flashing frequency"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section>
+              <h2 id="section_4.5" class="heading-medium ">4.5 Front and rear fog lamps</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.5.1" class="heading-small ">4.5.1 Presence, condition and operation</h3>
+                <p>You only need to inspect:</p>
+                <ul class="list-bullet">
+                  <li>front fog lamps fitted to vehicles first used on or after 1 March 2018 </li>
+                  <li>the 1 rear fog lamp which must be fitted to the centre or offside of vehicles first used on or after 1 April 1980 </li>
+                </ul>
+                <p>A rear fog lamp isn't needed on:</p>
+                <ul class="list-bullet">
+                  <li>vehicles not fitted with front and rear position lamps</li>
+                  <li>vehicles with permanently disconnected, painted over or masked front and rear position lamps</li>
+                  <li>tricycles and quadricycles</li>
+                </ul>
+                <p>Front and rear fog lamps are permitted to operate independently of any other lamps or ignition systems. </p>
+                <p>Fog lamps must produce a steady light which is:</p>
+                <ul class="list-bullet">
+                  <li>white – for front fog lamps</li>
+                  <li>red – for rear fog lamps </li>
+                </ul>
+                <p>Rear fog lamps may be combined with the rear position lamps.</p>
+                <p>A ‘light source’ means any bulb, LED or other means of emitting light.</p>
+                <p>You must assess repairs to lamps for security, colour, light output and durability.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li></li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>A front or rear fog lamp with a multiple light source up to 1/2 not functioning</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>An obligatory rear fog lamp missing, or a front or rear fog lamp inoperative or in the case of a multiple light
+                            source more than 1/2 not functioning</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="2">
+                          <li>A lens defective:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>which has no effect on emitted light</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>such that emitted light is adversely affected</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="3">
+                          <li>A front or rear fog lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not securely attached</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>likely to become detached</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.5.1 Presence, condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.5.1 Presence, condition and operation">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.5.1 Presence, condition and operation"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+              <h3 id="section_4.5.2" class="heading-small ">4.5.2 Not in use</h3>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.5.3" class="heading-small ">4.5.3 Switching</h3>
+                <p>Front and rear fog lamp switches may be combined or independent switches. </p>
+                <p>The switch or switches must:</p>
+                <ul class="list-bullet">
+                  <li>be secure</li>
+                  <li>be able to be operated from the normal driving position</li>
+                  <li>operate the fog lamps as intended</li>
+                </ul>
+                <p>Rear fog lamps may be combined with the rear position lamps.</p>
+                <p>Front and rear fog lamps are permitted to operate independently of any other lamps or ignition systems.</p>
+                <p>The function of a fog lamp mustn't be adversely affected by the operation of any other lamp.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Front or rear fog lamp switch:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not operating in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>inoperative</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.5.3 Switching"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.5.3 Switching">
+                  <iframe src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.5.3 Switching"
+                    frameborder="0" class="manual-smart-survey__iframe"></iframe>
+                </div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.5.4" class="heading-small ">4.5.4 Compliance with requirements</h3>
+                <p>You must inspect:</p>
+                <ul class="list-bullet">
+                  <li>all front fog lamps fitted to vehicles first used on or after 1 March 2018 </li>
+                  <li>the 1 rear fog lamp which must be fitted to the centre or offside of vehicles first used on or after 1 April 1980</li>
+                </ul>
+                <p>Fog lamps must produce a steady light which is:</p>
+                <ul class="list-bullet">
+                  <li>white – for front fog lamps</li>
+                  <li>red – for rear fog lamps </li>
+                </ul>
+                <p>Rear fog lamps may be combined with the rear position lamps.</p>
+                <p>A rear fog lamp isn't needed on:</p>
+                <ul class="list-bullet">
+                  <li>vehicles not fitted with front and rear position lamps</li>
+                  <li>vehicles with permanently disconnected, painted over or masked front and rear position lamps that are </li>
+                  <li>tricycles and quadricycles</li>
+                </ul>
+                <p>You must assess repairs to lamps for security, colour, light output and durability.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Front or rear fog lamp emitted colour, position or intensity not in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.5.4 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.5.4 Compliance with requirements"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section>
+              <h2 id="section_4.6" class="heading-medium ">4.6 Reversing lamps</h2>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.6.1" class="heading-small ">4.6.1 Condition and operation</h3>
+                <p>You must inspect all reversing lamps fitted to vehicles first used from 1 September 2009.</p>
+                <p>Reversing lamps must show a white light to the rear. On some vehicles it may be necessary to have the engine running before
+                  the reversing lamps will work.</p>
+                <p>One or two reversing lamps may be fitted, but they must all work.</p>
+                <p>Buses over 6m long
+                  <span class="bold"> </span>may have 4 reversing lamps which may be:</p>
+                <ul class="list-bullet">
+                  <li>all showing white light to the rear</li>
+                  <li>2 showing white light to the rear and one on each side</li>
+                </ul>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>A reversing lamp inoperative</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha" start="2">
+                          <li>A reversing lamp lens defective</li>
+                        </ol>
+                      </td>
+                      <td>Minor</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="3">
+                          <li>A reversing lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not securely attached</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>likely to become detached</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.6.1 Condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.6.1 Condition and operation"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.6.2" class="heading-small">4.6.2 Compliance with requirements</h3>
+                <p>You must inspect all reversing lamps fitted to vehicles first used from 1 September 2009.</p>
+                <p>Reversing lamps must show a white light to the rear. On some vehicles it may be necessary to have the engine running before
+                  the reversing lamps will work.</p>
+                <p>One or two reversing lamps may be fitted, but they must all work.</p>
+                <p>Buses over 6m long may have 4 reversing lamps which may be:</p>
+                <ul class="list-bullet">
+                  <li>all showing white light to the rear</li>
+                  <li>2 showing white light to the rear and 1 on each side</li>
+                </ul>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Reversing lamp emitted colour, position or intensity not in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.6.2 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.6.2 Compliance with requirements"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.6.3" class="heading-small ">4.6.3 Switching</h3>
+                <p>You must inspect all reversing lamps fitted to vehicles first used from 1 September 2009.</p>
+                <p>Reversing lamps must operate automatically when reverse gear is selected and extinguish when reverse gear is deselected.
+                  </p>
+                <p>On some vehicles it may be necessary to have the engine running before the reversing lamps will work.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Reversing lamp switch not operating in accordance with the requirements.</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.6.3 Switching"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.6.3 Switching"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+                </article>
+              </section>
+
+              <section>
+              <h2 id="section_4.7" class="heading-medium ">4.7 Rear registration plate lamps</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.7.1" class="heading-small ">4.7.1 Presence, condition and operation</h3>
+                <p>You must inspect the registration plate lamps on all vehicles fitted with front and rear position lamps.</p>
+                <p>Registration plate lamps must light up the rear registration plate. Some vehicles may have these lamps fitted behind the
+                  number plate. </p>
+                <p>A ‘light source’ means any bulb, LED or other means of emitting light.</p>
+                <p>Tricycles and quadricycles classed as mopeds don't need a rear registration plate lamp.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>A rear registration plate lamp throwing direct white light to the rear</li>
+                        </ol>
+                      </td>
+                      <td>Minor</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="2">
+                          <li>A rear registration plate lamp or light source missing or inoperative:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>in the case of multiple lamps or light sources</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>in the case of a single lamp or all lamps</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="3">
+                          <li>A registration plate lamp:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not securely attached</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>likely to become detached</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.7.1 Presence, condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.7.1 Presence, condition and operation"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.7.2" class="heading-small ">4.7.2 Compliance with requirements</h3>
+                <p>You must inspect the registration plate lamps on all vehicles fitted with front and rear position lamps.</p>
+                <p>Registration plate lamps must operate at the same time as the position lamps.</p>
+                <p>Tricycles and quadricycles classed as mopeds don’t need a rear registration plate lamp.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>Rear registration plate lamp does not illuminate simultaneously with the position lamps</li>
+                        </ol>
+                      </td>
+                      <td>Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.7.2 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.7.2 Compliance with requirements"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section>
+              <h2 id="section_4.8" class="heading-medium ">4.8 Rear reflectors</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.8.1" class="heading-small ">4.8.1 Presence, condition and operation</h3>
+                <p>You must inspect the 2 mandatory red rear reflectors that must be fitted. </p>
+                <p>Rear reflectors aren't needed on vehicles:</p>
+                <ul class="list-bullet">
+                  <li>not fitted with front and rear position lamps</li>
+                  <li>have front and rear position lamps permanently disconnected, painted over or masked </li>
+                </ul>
+                <p>Reflective tape isn’t an acceptable substitute for a rear reflector.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Reflector defective or damaged:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>by up to 50% of the reflecting surface </li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>by more than 50% of the reflecting surface</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha" start="2">
+                          <li>Reflector:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>not securely attached</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>likely to become detached</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.8.1 Presence, condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.8.1 Presence, condition and operation"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.8.2" class="heading-small ">4.8.2 Compliance with requirements</h3>
+                <p>You must inspect the 2 mandatory red rear reflectors that must be fitted. </p>
+                <p>Rear reflectors aren't needed on vehicles:</p>
+                <ul class="list-bullet">
+                  <li>not fitted with front and rear position lamps</li>
+                  <li>have front and rear position lamps permanently disconnected, painted over or masked </li>
+                </ul>
+                <p>Reflectors must be symmetrically mounted. Although the precise position of mandatory rear reflectors isn’t part of the inspection,
+                  check visually that they are at about the same height and distance from each side of the vehicle.</p>
+                <p>Tricycles and quadricycles:</p>
+                <ul class="list-bullet">
+                  <li>wider than 1,000mm must have 2 rear reflectors mounted symmetrically</li>
+                  <li>not more than 1,000mm wide only need one centrally mounted rear reflector</li>
+                </ul>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>Reflector:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>colour or position not in accordance with the requirements</li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>missing or reflecting white to the rear</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.8.2 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.8.2 Compliance with requirements"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section>
+              <h2 id="section_4.9" class="heading-medium ">4.9 ‘Tell-tales’ mandatory for lighting equipment'</h2>
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.9.1" class="heading-small ">4.9.1 Presence, condition and operation</h3>
+                <p>You must inspect the following lighting ‘tell-tales’:</p>
+                <ul class="list-bullet">
+                  <li>headlamp main beam</li>
+                  <li>direction indicators</li>
+                  <li>hazard warning lamps</li>
+                  <li>rear fog lamps</li>
+                </ul>
+                <p>A main beam ‘tell-tale’ is only required on vehicles first used on or after 1 April 1986. Class 3 vehicles don't need to
+                  have the main-beam tell-tale inspected.</p>
+                <p>A direction indicator ‘tell-tale’ can be audible or visual.</p>
+                <p>A hazard warning ‘tell-tale’ must be a flashing light.</p>
+                <p>A rear fog ‘tell-tale’ is only required where a rear fog lamp is mandatory.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="borderless">
+                      <td class="borderless">
+                        <ol class="list-alpha">
+                          <li>A mandatory tell-tale:</li>
+                        </ol>
+                      </td>
+                      <td class="borderless"></td>
+                    </tr>
+                    <tr class="borderless">
+                      <td class="borderless no-top-border">
+                        <ol class="list-roman">
+                          <li>for direction indicators or hazard warning missing or inoperative </li>
+                        </ol>
+                      </td>
+                      <td class="borderless no-top-border">Minor</td>
+                    </tr>
+                    <tr>
+                      <td class="no-top-border">
+                        <ol class="list-roman" start="2">
+                          <li>for main beam headlamp or rear fog lamp missing or inoperative</li>
+                        </ol>
+                      </td>
+                      <td class="no-top-border">Major</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.9.1 Presence, condition and operation"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.9.1 Presence, condition and operation"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+
+              <article class='text-to-speech__section'>
+                <h3 id="section_4.9.2" class="heading-small ">4.9.2 Compliance with requirements</h3>
+                <p>You must inspect the ‘tell-tale’ for hazard warning lamps, which must be a flashing light.</p>
+                <table class="table table--top ">
+                  <thead>
+                    <tr>
+                      <th class="vertically-aligned vertically-aligned">
+                        <span class="bold">Defect</span>
+                      </th>
+                      <th class="vertically-aligned">
+                        <span class="bold">Category</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <ol class="list-alpha">
+                          <li>A hazard warning lamp tell-tale is not a flashing light</li>
+                        </ol>
+                      </td>
+                      <td>Minor</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.9.2 Compliance with requirements"
+                  data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.9.2 Compliance with requirements"></div>
+                <div class="font-small font-xsmall u-align-right">
+                  <a href="#top">Top of page</a>
+                </div>
+              </article>
+            </section>
+
+            <section class='text-to-speech__section'>
+              <h2 id="section_4.10" class="heading-medium ">4.10 Trailer electrical socket</h2>
+              <p>You must only inspect the trailer electrical socket on vehicles fitted with a towing coupling. </p>
+              <p>If there's no tow ball or pin, but the attachment brackets are still in place, you must assess the electrical sockets if
+                the tow ball or pin has been:</p>
+              <ul class="list-bullet">
+                <li>detached</li>
+                <li>unbolted</li>
+                <li>otherwise removed</li>
+              </ul>
+              <p>You don't need to assess the electrical sockets if the attachment brackets have been deliberately made unfit for further
+                use.</p>
+              <p>You don't need to assess the trailer electrical socket if you need tools or specialist equipment to remove access panels
+                in the bumper or bodywork to gain access to the socket. </p>
+              <p>A trailer electrical socket with a defective or missing cover flap that incorporates a lug and spring to hold the plug in
+                place isn’t considered to be a defect. </p>
+              <p>On vehicles fitted with a trailer 13 pin Euro-socket, use an approved device to check that the socket is wired to correctly
+                operate the trailer: </p>
+              <ul class="list-bullet">
+                <li>position lamps </li>
+                <li>stop lamps </li>
+                <li>direction indicators </li>
+                <li>rear fog lamp</li>
+              </ul>
+              <table class="table table--top ">
+                <thead>
+                  <tr>
+                    <th class="vertically-aligned vertically-aligned">
+                      <span class="bold">Defect</span>
+                    </th>
+                    <th class="vertically-aligned">
+                      <span class="bold">Category</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="borderless">
+                    <td class="borderless">
+                      <ol class="list-alpha">
+                        <li>A trailer electrical socket:</li>
+                      </ol>
+                    </td>
+                    <td class="borderless"></td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman">
+                        <li>insecure</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Minor</td>
+                  </tr>
+                  <tr>
+                    <td class="no-top-border">
+                      <ol class="list-roman" start="2">
+                        <li>likely to become detached</li>
+                      </ol>
+                    </td>
+                    <td class="no-top-border">Major</td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless">
+                      <ol class="list-alpha" start="2">
+                        <li>Trailer electrical socket wiring:</li>
+                      </ol>
+                    </td>
+                    <td class="borderless"></td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman">
+                        <li>insulation damaged or deteriorated </li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Minor</td>
+                  </tr>
+                  <tr>
+                    <td class="no-top-border">
+                      <ol class="list-roman" start="2">
+                        <li>insulation damaged or deteriorated and likely to cause a short-circuit</li>
+                      </ol>
+                    </td>
+                    <td class="no-top-border">Major</td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless">
+                      <ol class="list-alpha" start="3">
+                        <li>A 13-pin trailer socket:</li>
+                      </ol>
+                    </td>
+                    <td class="borderless"></td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman">
+                        <li>not functioning correctly</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Major</td>
+                  </tr>
+                  <tr>
+                    <td class="no-top-border">
+                      <ol class="list-roman" start="2">
+                        <li>not functioning at all</li>
+                      </ol>
+                    </td>
+                    <td class="no-top-border">Dangerous</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.10 Trailer electrical socket"
+                data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.10 Trailer electrical socket"></div>
+              <div class="font-small font-xsmall u-align-right">
+                <a href="#top">Top of page</a>
+              </div>
+            </section>
+
+            <section class='text-to-speech__section'>
+              <h2 id="section_4.11" class="heading-medium ">4.11 Electrical wiring</h2>
+              <p>You must inspect all visible electrical wiring, other than on Class 3 vehicles.</p>
+              <table class="table table--top ">
+                <thead>
+                  <tr>
+                    <th class="vertically-aligned vertically-aligned">
+                      <span class="bold">Defect</span>
+                    </th>
+                    <th class="vertically-aligned">
+                      <span class="bold">Category</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="borderless">
+                    <td class="borderless">
+                      <ol class="list-alpha">
+                        <li>Electrical wiring:</li>
+                      </ol>
+                    </td>
+                    <td class="borderless"></td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman">
+                        <li>insecure or inadequately secured</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Minor</td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman" start="2">
+                        <li>insecure and in contact with sharp edges or connectors likely to become disconnected</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Major</td>
+                  </tr>
+                  <tr>
+                    <td class="no-top-border">
+                      <ol class="list-roman" start="3">
+                        <li>likely to touch hot or rotating parts, drag on the ground or the connectors for braking or steering disconnected</li>
+                      </ol>
+                    </td>
+                    <td class="no-top-border">Dangerous</td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless">
+                      <ol class="list-alpha" start="2">
+                        <li>Electrical wiring:</li>
+                      </ol>
+                    </td>
+                    <td class="borderless"></td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman">
+                        <li>slightly deteriorated</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Minor</td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman" start="2">
+                        <li>heavily deteriorated</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Major</td>
+                  </tr>
+                  <tr>
+                    <td class="no-top-border">
+                      <ol class="list-roman" start="3">
+                        <li>for braking or steering components extremely deteriorated</li>
+                      </ol>
+                    </td>
+                    <td class="no-top-border">Dangerous</td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless">
+                      <ol class="list-alpha" start="3">
+                        <li>Electrical wiring insulation:</li>
+                      </ol>
+                    </td>
+                    <td class="borderless"></td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman">
+                        <li>damaged or deteriorated</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Minor</td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman" start="2">
+                        <li>so damaged or deteriorated it is likely to cause a short-circuit</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Major</td>
+                  </tr>
+                  <tr>
+                    <td class="no-top-border">
+                      <ol class="list-roman" start="3">
+                        <li>in such a condition there is an imminent risk of fire or formation of sparks</li>
+                      </ol>
+                    </td>
+                    <td class="no-top-border">Dangerous</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.11 Electrical wiring"
+                data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.11 Electrical wiring"></div>
+              <div class="font-small font-xsmall u-align-right">
+                <a href="#top">Top of page</a>
+              </div>
+            </section>
+
+            <h2 id="section_4.12" class="heading-medium ">4.12 Not in use</h2>
+
+            <section class='text-to-speech__section'>
+              <h2 id="section_4.13" class="heading-medium ">4.13 Battery(ies)</h2>
+              <p>You must inspect the battery(ies) on all vehicles including electric and hybrid vehicles. The check does not apply to Class
+                3 vehicles.</p>
+              <table class="table table--top ">
+                <thead>
+                  <tr>
+                    <th class="vertically-aligned vertically-aligned">
+                      <span class="bold">Defect</span>
+                    </th>
+                    <th class="vertically-aligned">
+                      <span class="bold">Category</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="borderless">
+                    <td class="borderless">
+                      <ol class="list-alpha">
+                        <li>A battery insecure:</li>
+                      </ol>
+                    </td>
+                    <td class="borderless"></td>
+                  </tr>
+                  <tr class="borderless">
+                    <td class="borderless no-top-border">
+                      <ol class="list-roman">
+                        <li>but not likely to fall from carrier</li>
+                      </ol>
+                    </td>
+                    <td class="borderless no-top-border">Minor</td>
+                  </tr>
+                  <tr>
+                    <td class="no-top-border">
+                      <ol class="list-roman" start="2">
+                        <li>and likely to fall from carrier or cause a short circuit</li>
+                      </ol>
+                    </td>
+                    <td class="no-top-border">Major</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <ol class="list-alpha" start="2">
+                        <li>A battery leaking</li>
+                      </ol>
+                    </td>
+                    <td>Major</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="manual-smart-survey" data-heading="Class 3+ - Section 4 Lamps, reflectors and electrical equipment - 4.13 Battery(ies)" data-iframe-src="https://www.smartsurvey.co.uk/s/OC378/?heading=Class+3%2B - Section+4+Lamps%2C+reflectors+and+electrical+equipment - 4.13 Battery(ies)"></div>
+              <div class="font-small font-xsmall u-align-right">
+                <a href="#top">Top of page</a>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        
+        <div class="column-one-third">
+          <aside class="govuk-related-items" id="sideMenu">
+            <h2 class="heading-medium">MOT manual</h2>
+            <ul class="list-small">
+              <li>
+                <a href="Introduction.html">Introduction</a>
+              </li>
+            </ul>
+            <ol class="list-decimal list-decimal--side list-small" start="0">
+              <li>
+                <a href="Section-0-Identification-of-the-vehicle.html">Identification of the vehicle</a>
+              </li>
+              <li>
+                <a href="Section-1-Brakes.html">Brakes</a>
+              </li>
+              <li>
+                <a href="Section-2-Steering.html">Steering</a>
+              </li>
+              <li>Not in use</li>
+              <li>
+                <a href="Section-4-Lamps-reflectors-and-electrical-equipment.html">Lamps, reflectors and electrical equipment</a>
+              </li>
+              <li>
+                <a href="Section-5-Wheels-tyres-and-suspension.html">Wheels, tyres and suspension</a>
+              </li>
+              <li>
+                <a href="Section-6-Structure-and-attachments.html">Structure and attachments</a>
+              </li>
+              <li>
+                <a href="Section-7-Audible-warning.html">Audible warning</a>
+              </li>
+              <li>
+                <a href="Section-8-Exhaust-noise.html">Exhaust noise</a>
+              </li>
+            </ol>
+            <h3 class="bold">Appendix A</h3>
+            <ul class="list-small">
+              <li>
+                <a href="Appendix-A.html">Structural integrity and corrosion</a>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

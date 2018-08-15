@@ -6,6 +6,9 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import { domReady } from './../shared/misc';
 import { initModules } from './modules';
 
+// Development styles
+import './../../scss/development.scss';
+
 domReady(function() {
-  new initModules();
+  initModules();
 });

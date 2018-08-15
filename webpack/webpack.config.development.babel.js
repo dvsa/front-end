@@ -4,7 +4,7 @@ import common from './webpack.config.common.babel';
 import merge from 'webpack-merge';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-module.exports = merge(common, {
+export default merge(common, {
   watch: true,
   output: {
     filename: '[name].bundle.js',
@@ -28,6 +28,6 @@ module.exports = merge(common, {
     //   analyzerPort: 8888,
     //   // Relative to output path
     //   reportFilename: './../../tmp/webpack-bundle-report.html'
-    // })
+    // }),
   ]
 });

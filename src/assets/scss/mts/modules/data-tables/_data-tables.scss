@@ -5,6 +5,119 @@
 //  Namespaced to prevent conflict, ideally this
 //  will go on body or a high-level element
 .data-tables {
+  &,
+  * {
+    box-sizing: border-box;
+  }
+
+  table.collapsed {
+    tbody {
+      tr {
+        td:first-child {
+          padding-left: 90px;
+          position: relative;
+  
+          &:before {
+            top: 12px;
+            left: 4px;
+            display: block;
+            position: absolute;
+            color: white;
+            text-align: center;
+            line-height: 14px;
+            font-size: 14px;
+            letter-spacing: 1;
+            content: 'Expand';
+            background-color: $green;
+            padding: 6px;
+            width: 60px;
+
+            @media(max-width: 640px) {
+              top: 8px;
+            }
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &.dataTables_empty {
+            padding-left: 0;
+            
+            &:before {
+              display: none;
+            }
+          }
+        }
+  
+        &.parent {
+          td:first-child {
+            &:before {
+              content: 'Collapse';
+              background-color: $error-colour;
+            }
+          }
+        }
+  
+        &.child {
+          td:first-child {
+            padding-left: 0;
+  
+            &:before {
+              display: none;
+            }
+          }
+  
+          ul {
+            li {
+              margin-bottom: 5px;
+  
+              &:last-child {
+                margin-bottom: 0;
+              }
+              
+              .dtr-title {
+                display: block;
+                font-weight: bold;
+              }
+      
+              .dtr-data {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .dataTables_filter {
+    width: 200px;
+    float: right;
+    padding-right: 1px;
+    
+    label {
+      .form-control { 
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+  }
+
+  .dataTables_info {
+    float: left;
+  }
+
+  .dataTables_length {
+    margin: 0 0 10px 0;
+  }
+
   .dataTables_paginate {
     margin: 10px 0;
     text-align: right;
@@ -24,6 +137,10 @@
         text-decoration: none;
         color: inherit;
         cursor: default;
+      }
+
+      &.disabled {
+        opacity: 0.2;
       }
     }
     a.previous {
@@ -70,6 +187,7 @@
     .sorting_desc,
     .sorting_asc {
       position: relative;
+      padding-right: 20px;
       &:after,
       &:before {
         position: absolute;
@@ -83,6 +201,7 @@
       &:after {
         content: '\25b2';
         top: 1.4em;
+        right: 10px;
         @media (max-width: 640px) {
           top: 1em;
         }
@@ -92,6 +211,7 @@
       &:after {
         content: '\25bc';
         top: 1.4em;
+        right: 10px;
         @media (max-width: 640px) {
           top: 1em;
         }
@@ -101,6 +221,7 @@
       &:before {
         content: '\25b2';
         top: 1em;
+        right: 10px;
         @media (max-width: 640px) {
           top: .6em;
         }
@@ -108,6 +229,7 @@
       &:after {
         content: '\25bc';
         top: 2em;
+        right: 10px;
         @media (max-width: 640px) {
           top: 1.6em;
         }

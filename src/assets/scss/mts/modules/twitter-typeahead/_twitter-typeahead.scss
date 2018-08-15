@@ -4,16 +4,16 @@
   .tt-input {
     background-position: left;
     background-repeat: no-repeat;
-    background-image: file-url('icons/icon-search.png');
+    background-image: file-url('icons/icon-search.png') !important;
     padding-left: $gutter;
     
     @include device-pixel-ratio() {
-      background-image: file-url('icons/icon-search-2x.png');
+      background-image: file-url('icons/icon-search-2x.png') !important;
       background-size: 27px 27px;
     }
   }
 
-  .tt-dropdown-menu {
+  .tt-menu {
     @include box-shadow(0 5px 5px rgba(0, 0, 0, .2));
     position: absolute;
     top: 100%;
@@ -89,12 +89,12 @@
 
   & > .form-control-1-4 + .tt-dropdown-menu,
   & > .form-control-1-4 + pre + .tt-dropdown-menu {
-      width: 25%;
+    width: 25%;
   }
 
   & > .form-control-1-8 + .tt-dropdown-menu,
   & > .form-control-1-8 + pre + .tt-dropdown-menu {
-      width: 12.5%;
+    width: 12.5%;
   }
 
 }

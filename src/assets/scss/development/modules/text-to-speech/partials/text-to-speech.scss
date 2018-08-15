@@ -1,0 +1,46 @@
+.text-to-speech {
+  &__item {
+    position: relative;
+
+    &--highlight {
+      background-color: #ffbf47;      
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: -5%;
+    opacity: 0.4;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.6;
+    }
+
+    &--playing {
+      opacity: 1;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+
+    &--play {
+      background: url('../images/audio_play.png') no-repeat;
+    }
+  }
+}
+
+.text-to-speech-toggle {
+  margin-bottom: 20px;
+}

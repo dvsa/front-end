@@ -1,0 +1,43 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review index' %}
+
+
+{% block content %}
+
+
+  {{ components.pageHeading('Prototypes v5', 'Site review') }}
+
+
+<div class="text u-clearfix">
+
+  </div>
+
+
+<div class="grid-row">
+
+  <div class="column-one-half">
+      
+    <ul class="list list-bullet">
+      
+      <li>
+        Vehicle Examiner (VE)
+        <ul>
+          <li><a href="VE-view-VTS-overview">start a site review</a></li>
+          <li><a href="/prototypes/site-review/v5-resume/">resume a site review</a></li>
+       </ul>
+      </li>
+      
+      <li>
+        <a href="AE-view">Authorised Examiner (AE)</a>
+      </li>
+      
+    </ul>
+  
+
+  </div>
+
+  
+  </div>
+
+{% endblock %}

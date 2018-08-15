@@ -1,11 +1,15 @@
 import { Router } from 'express';
 
-import * as mainController from './../controllers/main.controller';
-import * as miscController from './../controllers/misc.controller';
-import * as recallsController from './../controllers/api/v1/recalls.controller';
-import * as createAccountController from './../controllers/create-account';
-import * as suspendTestersController from './../controllers/annual-assessment-tool/suspend-testers';
-import * as motTestResultsController from './../controllers/mot-test/mot-test';
+import * as mainController from '../controllers/main.controller';
+import * as miscController from '../controllers/misc.controller';
+import * as recallsController from '../controllers/api/v1/recalls.controller';
+import * as createAccountController from '../controllers/create-account';
+import * as suspendTestersController from '../controllers/annual-assessment-tool/suspend-testers';
+import * as motTestResultsController from '../controllers/mot-test/mot-test';
+import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
+import * as siteReviewController from '../controllers/site-review/site-review';
+import * as brakeTestController from '../controllers/brake-test/brake-test';
+import * as messagingController from '../controllers/mts-messages';
 
 const router = Router();
 
@@ -50,6 +54,65 @@ router.get('/prototypes/mot-test/comment/edit', motTestResultsController.getEdit
 router.post('/prototypes/mot-test/comment/edit', motTestResultsController.postEditTesterComment);
 router.post('/prototypes/mot-test/comment/remove/', motTestResultsController.destorySession);
 router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
+
+// Speech to text - add defect path
+router.get('/prototypes/speech-to-text/', speechToTextController.getSearchQuery);
+router.post('/prototypes/speech-to-text/categories/', speechToTextController.postSearchQuery);
+router.post('/prototypes/speech-to-text/add-major-failure/', speechToTextController.captureFormValues);
+router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.removeDefect);
+
+// Site review paths
+router.get('/prototypes/site-review/', siteReviewController.clearReviewSession);
+router.get('/prototypes/site-review/choose-section', siteReviewController.getChooseSection);
+router.get('/prototypes/site-review/assessment/activity', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/compliance', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/management-and-quality', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/people', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/premises', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
+router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
+router.post('/prototypes/site-review/assessment/activity', [
+  siteReviewController.validateActivity,
+  siteReviewController.populateActivity,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review/assessment/compliance', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review/assessment/management-and-quality', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review/assessment/people', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review/assessment/premises', [
+  siteReviewController.unpopulateAssessmentType,
+  siteReviewController.validateAssessmentPost,
+  siteReviewController.postAssessment,
+]);
+router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
+
+// Brake tests
+router.post('/prototypes/brake-test-config', brakeTestController.postBrakeConfig);
+router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
+
+// MTS Messaging
+router.param('messageIndex', messagingController.isValidMessage);
+router.get('/prototypes/messaging', [messagingController.setupMessages, messagingController.getMessages]);
+router.get('/prototypes/messaging/archive', [messagingController.setupMessages, messagingController.getArchive]);
+router.get('/prototypes/messaging/:messageIndex', messagingController.getMessage);
+router.get('/prototypes/messaging/acknowledge/:messageIndex', [
+  messagingController.unpinSpecialNotice,
+  messagingController.acknowledgeMessage,
+]);
+router.get('/prototypes/messaging/accept/:messageIndex', messagingController.acceptMessage);
+router.get('/prototypes/messaging/reject/:messageIndex', messagingController.rejectMessage);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

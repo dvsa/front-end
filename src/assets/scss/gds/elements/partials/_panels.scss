@@ -6,8 +6,8 @@
   @extend %contain-floats;
   clear: both;
   border-left-style: solid;
+  border-left-width: 5px;
   border-color: $border-colour;
-
   padding: em(15, 19);
   margin-bottom: em(15, 19);
 
@@ -19,6 +19,13 @@
   :last-child {
     margin-bottom: 0;
   }
+}
+
+.panel--error-parent {
+  border-color: $border-colour;
+  border-width: 5px;
+  padding: 15px;
+  padding-bottom: 0;
 }
 
 .panel-border-wide {

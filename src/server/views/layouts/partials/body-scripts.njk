@@ -1,9 +1,12 @@
 <!-- body-scripts -->
-<!--[if (gte IE 9) | (!IE)]><!--><script type="text/javascript" src="/javascripts/dvsa.bundle.js"></script><!--<![endif]-->
-
-<!-- development-only -->
-<!--[if (gte IE 9) | (!IE)]><!--><script type="text/javascript" src="/javascripts/development.bundle.js"></script><!--<![endif]-->
-<!-- /development-only -->
+<!--[if (gte IE 9) | (!IE)]><!-->
+<script type="text/javascript" src="/javascripts/vendor.bundle.js"></script>
+<script type="text/javascript" src="/javascripts/dvsa.bundle.js"></script>
+<script type="text/javascript" src="/javascripts/dvsa-mts.bundle.js"></script>
+<script type="text/javascript" src="/javascripts/dvsa-mts-legacy.bundle.js"></script>
+<script type="text/javascript" src="/javascripts/dvsa-manuals.bundle.js"></script>
+<script type="text/javascript" src="/javascripts/development.bundle.js"></script>
+<!--<![endif]-->
 
 {% block bodyScripts %}{% endblock %}
 <!-- /body-scripts -->

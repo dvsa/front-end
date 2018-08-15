@@ -1,0 +1,257 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test class 7 - Page 1' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT testing</span>
+      <span class="content-header__title">Brake test configuration</span>
+    </h1>
+  </header>
+
+  <div class="dvsa-vehicle-summary vehicle-summary">
+    <div class="dvsa-vehicle-summary__wrapper">
+      <ul class="dvsa-vehicle-summary__items">
+        <li class="dvsa-vehicle-summary__item" id="registrationNumber">
+          <span class="dvsa-vehicle-summary__heading">
+            Registration number
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            AD33XCP </span>
+        </li>
+
+        <li class="dvsa-vehicle-summary__item" id="make">
+          <span class="dvsa-vehicle-summary__heading">
+            Make
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            CITROEN, RELAY </span>
+        </li>
+      </ul>
+
+      <div class="dvsa-vehicle-summary__panel" id="vehicle-summary-more">
+
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            VIN/Chassis </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="VINChassis">
+            PCXDAKAAAAA882103 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Transmission </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="transmission">
+            N/A </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Fuel type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="fuelType">
+            Diesel </dd>
+        </dl>
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            Body type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="bodyType">
+            Panel Van </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Cylinder capacity </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="cylinderCapacity">
+            2198 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            First used </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="firstUsed">
+            10 March 2016 </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="">
+    <form method="POST"> 
+      <fieldset>
+        <legend>
+          <h3 class="heading-medium">
+            Brake test type
+          </h3>
+        </legend>
+
+        <div class="form-group">
+          <label for="serviceBrake1TestType" class="form-label form-label-bold">
+            Service brake test type
+          </label> 
+
+          <div class="form-group">
+            <label for="serviceBrake1TestType">
+            </label>
+            <select id="serviceBrake1TestType" name="serviceBrake1TestType" class="form-control">
+              <option id="serviceBrake1TestType_ROLLR" value="ROLLR" selected>Roller</option>
+              <option id="serviceBrake1TestType_PLATE" value="PLATE">Plate</option>
+              <option id="serviceBrake1TestType_GRADT" value="GRADT">Gradient</option>
+              <option id="serviceBrake1TestType_FLOOR" value="FLOOR">Floor</option>
+              <option id="serviceBrake1TestType_DECEL" value="DECEL">Decelerometer</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="parkingBrakeTestType" class="form-label form-label-bold">
+            Parking brake test type
+          </label>
+
+
+          <div class="form-group">
+            <label for="parkingBrakeTestType">
+            </label>
+            <select id="parkingBrakeTestType" name="parkingBrakeTestType" class="form-control   ">
+              <option id="parkingBrakeTestType_ROLLR" value="ROLLR" selected>Roller</option>
+              <option id="parkingBrakeTestType_PLATE" value="PLATE">Plate</option>
+              <option id="parkingBrakeTestType_GRADT" value="GRADT">Gradient</option>
+              <option id="parkingBrakeTestType_FLOOR" value="FLOOR">Floor</option>
+              <option id="parkingBrakeTestType_DECEL" value="DECEL">Decelerometer</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-group" id="vehicleWeightFields">
+        <fieldset>
+          <legend>
+            <h3 class="heading-medium">
+              Vehicle weight type
+            </h3>
+
+          </legend>
+
+          <div class="multiple-choice">
+            <input type="radio" name="weightType" id="weightType-DGW" value="DGW" checked>
+
+            <label for="weightType-DGW">
+              DGW (design gross weight from manufacturers plate) </label>
+          </div>
+          <div class="multiple-choice">
+            <input type="radio" name="weightType" id="weightType-KERB" value="KERB">
+
+            <label for="weightType-KERB">
+              Presented weight (measured during ATL brake test) </label>
+          </div>
+        </fieldset>
+
+        <fieldset id="weightInputPanel">
+          <legend>
+            <h3 class="heading-medium">
+              Vehicle Weight
+            </h3>
+          </legend>
+
+          <div class="form-group">
+            <label for="vehicleWeight" class="form-label form-label-bold">
+              Enter weight in kilograms
+            </label>
+
+            <input type="text" id="vehicleWeight" name="vehicleWeight" value="3500" class="form-control " /> </div>
+
+          <div class="form-group">
+            <div class="multiple-choice">
+              <input id="weightIsUnladen" name="waste-types" type="checkbox" value="1">
+
+              <label for="weightIsUnladen">
+                Unladen
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset class="inline">
+          <legend>
+            <h3 class="heading-medium">
+              Brake line type
+            </h3>
+          </legend>
+
+          <div class="multiple-choice">
+            <input id="brakeLineTypeDual" type="radio" name="brakeLineType" value="dual" checked>
+
+            <label for="brakeLineTypeDual">
+              Dual
+            </label>
+          </div>
+
+          <div class="multiple-choice">
+            <input id="brakeLineTypeSingle" type="radio" name="brakeLineType" value="single">
+
+            <label for="brakeLineTypeSingle">
+              Single
+            </label>
+          </div>
+        </fieldset>
+      </div>
+
+      <fieldset id="vehicle-axles-wrapper">
+        <legend>
+          <h3 class="heading-medium">
+            Vehicle axles
+          </h3>
+        </legend>
+
+        <div class="form-group" id="numberOfAxlesContainer">
+          <label for="numberOfAxles" class="form-label form-label-bold">
+            Number of axles
+          </label>
+
+
+          <div class="form-group">
+            <label for="numberOfAxles">
+            </label>
+            <select id="numberOfAxles" name="numberOfAxles" class="form-control   ">
+              <option id="numberOfAxles_2" value="2" selected>2 axles</option>
+              <option id="numberOfAxles_3" value="3">3 axles</option>
+            </select>
+          </div>
+          
+        </div>
+
+        <div class="form-group" id="parkingBrakeNumberOfAxlesContainer">
+          <label for="parkingBrakeNumberOfAxles" class="form-label form-label-bold">
+            Parking brake number of axles
+          </label>
+
+
+          <div class="form-group">
+            <label for="parkingBrakeNumberOfAxles">
+            </label>
+            <select id="parkingBrakeNumberOfAxles" name="parkingBrakeNumberOfAxles" class="form-control   ">
+              <option id="parkingBrakeNumberOfAxles_1" value="1" selected>1 axles</option>
+              <option id="parkingBrakeNumberOfAxles_2" value="2">2 axles</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <input type="hidden" id="vehicleClass" name="vehicleClass" value="7" />
+      <input type="submit" id="brake_test_results_submit" name="submit" value="Next" class="button" />
+
+      <p>
+        <a id="brake_test_results_cancel" href="#">
+          Cancel
+        </a>
+      </p>
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    window.__BRAKE_TEST_CONFIGURATION_DATA = {
+      vehicleClass: '7',
+    };
+  </script>
+  
+{% endblock %}

@@ -1,0 +1,214 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Notifications' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Notifications') }}
+
+      <div class='u-clearfix'>
+
+      <p>
+        <a href="/prototypes/mts-messages/create-message-type" class="button" id="action-create-a-notification">
+          Create a notification
+        </a>
+      </p>
+
+        <div>
+          <ul class="c-tab-list__tabs">          
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Notifications (2)</span>
+            </li>
+            <li>
+              <a href="/prototypes/mts-messages/notifications-archived-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
+            </li>
+          </ul>
+
+          <div class="message-filters js-filter-wrapper">
+            
+          <div class="message-filters__inputs">
+            <form class="form">
+              <div class="form-group u-margin-bottom-30 inline">
+                <fieldset>
+                  <legend class="visually-hidden">Choose which notification type to view</legend>
+                  <h3 class="heading-large">Notifications</h3>
+                  <div class="multiple-choice multiple-choice--inline">
+                    <input data-type="special" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
+                    <label for="type-special">Special notices</label>
+                  </div>
+                  <div class="multiple-choice multiple-choice--inline">
+                      <input data-type="reminder" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="reminder" checked>
+                      <label for="type-reminder">Reminders</label>
+                    </div>
+                  <div class="multiple-choice multiple-choice--inline">
+                    <input data-type="system"  class="js-message-filter" id="type-system" name="type" type="checkbox" value="system" checked>
+                    <label for="type-system">System messages</label>
+                  </div>
+                  <div class="multiple-choice multiple-choice--inline">
+                    <input data-type="advice"  class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
+                    <label for="type-advice">Advice and guidance</label>
+                  </div>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+            
+             
+            <div class="message-panel"> 
+                <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
+                <ul class="c-tab-list__items u-margin-bottom-30  message-panel__messages">
+                  
+                  <li data-type="special" class="message-panel__message message-panel__message--pinned">
+ 
+                    <div class="message-panel__inner">
+                      <h4 class="message-panel__message-title">
+                       Tester nomination
+                      </h4>
+                      <span class="message-panel__alert" aria-hidden="true">4 days remaining</span>
+                      <ul class="message-panel__details">
+                        <li>Date received: 16 July 2018</li>
+                        <li>Type: Special notice</li>
+                      </ul>
+                    </div>
+                    <div class="message-panel__view">
+                      <a href="#" class="">View notification</a>
+                    </div>
+                  </li>   
+                  
+                </ul>
+              </div>
+
+            
+            <div class="message-panel js-message-panel"> 
+              <h3 class="heading-small message-panel__title js-message-list-title">All notification messages</h3>
+              <ul class="c-tab-list__items u-margin-bottom-30  message-panel__messages js-message-list">
+                <li data-type="special" class="message-panel__message message-panel__message--unread">
+                  <div class="message-panel__inner">
+                    <h4 class="message-panel__message-title">
+                     Tester nomination
+                    </h4>
+                    <span class="message-panel__alert" aria-hidden="true">2 days remaining</span>
+                    <ul class="message-panel__details">
+                      <li>Date received: 16 July 2018</li>
+                      <li>Type: Special notice</li>
+                    </ul>
+                  </div>
+                  <div class="message-panel__view">
+                    <a href="#" class="">View notification</a>
+                  </div>
+                </li> 
+                <li data-type="system" class="message-panel__message">
+                    <div class="message-panel__inner">
+                      <h4 class="message-panel__message-title">
+                        Preparation for the EU roadworthiness directive
+                      </h4>
+                      <ul class="message-panel__details">
+                        <li>Date received: 16 July 2018</li>
+                        <li>Type: System notice</li>
+                      </ul>
+                    </div>
+                    <div class="message-panel__view">
+                      <a href="#" class="">View notification</a>
+                    </div>
+                </li>
+                <li data-type="special" class="message-panel__message message-panel__message--unread">
+                    <div class="message-panel__inner">
+                      <h4 class="message-panel__message-title">
+                        Preparation for the EU roadworthiness directive
+                      </h4>
+                      <ul class="message-panel__details">
+                        <li>Date received: 16 July 2018</li>
+                        <li>Type: Special notice</li>
+                      </ul>
+                    </div>
+                    <div class="message-panel__view">
+                      <a href="#" class="">View notification</a>
+                    </div>
+                </li>
+                <li data-type="advice" class="message-panel__message">
+                    <div class="message-panel__inner">
+                      <h4 class="message-panel__message-title">
+                      Test outside opening hours 
+
+                      </h4>
+                      <ul class="message-panel__details">
+                        <li>Date received: 16 July 2018</li>
+                        <li>Type: Advice and guidance</li>
+                      </ul>
+                    </div>
+                    <div class="message-panel__view">
+                      <a href="#" class="">View notification</a>
+                    </div>
+              </li>
+                
+              <li data-type="system" class="message-panel__message">
+              <div class="message-panel__inner">
+                <h4 class="message-panel__message-title">
+                Notification message
+                </h4>
+                <ul class="message-panel__details">
+                  <li>Date received: 16 July 2018</li>
+                  <li>Type: Notification</li>
+                </ul>
+              </div>
+              <div class="message-panel__view">
+                <a href="#" class="">View notification</a>
+              </div>
+            </li>
+
+            <li data-type="reminder" class="message-panel__message">
+              <div class="message-panel__inner">
+                <h4 class="message-panel__message-title">
+                Reminder message
+                </h4>
+                <ul class="message-panel__details">
+                  <li>Date received: 16 July 2018</li>
+                  <li>Type: Reminder</li>
+                </ul>
+              </div>
+              <div class="message-panel__view">
+                <a href="#" class="">View notification</a>
+              </div>
+            </li>
+
+                <li data-type="advice" class="message-panel__message">
+                      <div class="message-panel__inner">
+                        <h4 class="message-panel__message-title">
+                          Preparation for the EU roadworthiness directive
+                        </h4>
+                        <ul class="message-panel__details">
+                          <li>Date received: 16 July 2018</li>
+                          <li>Type: Advice and guidance</li>
+                        </ul>
+                      </div>
+                      <div class="message-panel__view">
+                        <a href="#" class="">View notification</a>
+                      </div>
+                  </li>
+                
+              </ul>
+            </div>
+
+          </div>
+        </div>
+          
+          <div class="u-margin-top-30 u-margin-bottom-30">
+            {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+          </div>
+          
+        </div>
+        
+        {%- endcall %}
+        
+        {%- endcall %}
+        
+        {% endblock %}

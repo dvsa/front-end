@@ -1,0 +1,191 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test class 12 - Page 3 (Results)' %}
+
+{% block content %}
+
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT testing</span>
+      <span class="content-header__title">Brake test summary</span>
+    </h1>
+  </header>
+
+  <div class="dvsa-vehicle-summary vehicle-summary">
+    <div class="dvsa-vehicle-summary__wrapper">
+      <ul class="dvsa-vehicle-summary__items">
+        <li class="dvsa-vehicle-summary__item" id="registrationNumber">
+          <span class="dvsa-vehicle-summary__heading">
+            Registration number
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            AD33XCP </span>
+        </li>
+
+        <li class="dvsa-vehicle-summary__item" id="make">
+          <span class="dvsa-vehicle-summary__heading">
+            Make
+          </span>
+
+          <span class="dvsa-vehicle-summary__value">
+            CITROEN, RELAY </span>
+        </li>
+      </ul>
+
+      <div class="dvsa-vehicle-summary__panel" id="vehicle-summary-more">
+
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            VIN/Chassis </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="VINChassis">
+            PCXDAKAAAAA882103 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Transmission </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="transmission">
+            N/A </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Fuel type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="fuelType">
+            Diesel </dd>
+        </dl>
+        <dl class="dvsa-mts-dl dvsa-mts-dl--half">
+          <dt class="dvsa-mts-dl__dt">
+            Body type </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="bodyType">
+            Panel Van </dd>
+          <dt class="dvsa-mts-dl__dt">
+            Cylinder capacity </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="cylinderCapacity">
+            2198 </dd>
+          <dt class="dvsa-mts-dl__dt">
+            First used </dt>
+
+          <dd class="dvsa-mts-dl__dd" id="firstUsed">
+            10 March 2016 </dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+
+
+  <fieldset>
+    <legend>
+      <h3 class="heading-medium">
+        Service brake </h3>
+    </legend>
+
+    <table class="table result" id="service-brake-results">
+      <thead>
+        <tr>
+          <th>Service brake item</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Brake efficiency</td>
+          <td>23%</td>
+        </tr>
+        <tr>
+          <td>Brake lock</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="dvsa-notice dvsa-notice--error" id="service-brake-result" role="alert" tabindex="-1">
+      <p class="dvsa-notice__message">
+        Service brake test
+        <strong>fail</strong>
+      </p>
+    </div>
+
+  </fieldset>
+  <fieldset>
+    <legend>
+      <h3 class="heading-medium">
+        Imbalance </h3>
+    </legend>
+
+    <table class="table result" id="brake-imbalance-results">
+      <thead>
+        <tr>
+          <th>Brake imbalance</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      </tbody>
+    </table>
+
+
+    <div class="dvsa-notice dvsa-notice--important" id="brake-imbalance-result" role="alert" tabindex="-1">
+      <p class="dvsa-notice__message">
+        Brake imbalance test
+        <strong>not performed</strong>
+      </p>
+    </div>
+
+  </fieldset>
+  <fieldset>
+    <legend>
+      <h3 class="heading-medium">
+        Parking brake </h3>
+    </legend>
+
+    <table class="table result" id="parking-brake-results">
+      <thead>
+        <tr>
+          <th>Parking brake item</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Brake efficiency</td>
+          <td>23%</td>
+        </tr>
+        <tr>
+          <td>Brake lock</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="dvsa-notice dvsa-notice--success" id="parking-brake-result" role="alert" tabindex="-1">
+      <p class="dvsa-notice__message">
+        Parking brake test
+        <strong>pass</strong>
+      </p>
+    </div>
+
+  </fieldset>
+  <div class="message message--information">
+    <p>
+      Other brake performance related defects like 'grab' or 'judder' can be added as a
+      <a href="#">Reason for Rejection</a>
+    </p>
+  </div>
+
+  <div class="form-group">
+    <a href="#" id="brake_test_summary_done" class="button">
+      Done
+    </a>
+  </div>
+
+  <p>
+    <a href="#" id="addBrakeTestResults">Edit</a>
+  </p>
+  
+{% endblock %}

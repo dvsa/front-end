@@ -1,0 +1,81 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
+
+{% block content %}
+
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        VTS079774
+      </a>
+    </li>
+    <li>
+      Notify of changes to equipment
+    </li>
+  </ol>
+</div>
+
+
+<form action="">
+
+  <h1 class="heading-xlarge heading heading--page-heading ">
+        <span class="heading-secondary">Notify of changes to equipment</span>
+        <label for="radio-inline-group">
+          Is the new equipment approved by DVSA?
+        </label>
+  </h1>
+
+  <div class="form-group">
+    <fieldset class="inline">
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+        <label for="radio-inline-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+        <label for="radio-inline-2">No</label>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="panel panel-border-wide u-margin-bottom-30">
+    <p >
+      Replacement equipment must be on the <a href="https://www.gov.uk/government/publications/mot-centre-approved-testing-equipment">current DVSA approved list</a>.
+    </p>
+  </div>
+
+  <!--div class="form-group">
+
+    <details style="margin-bottom:30px;">
+      <summary><span class="summary">Help on changes to layout of the premises</span></summary>
+      <div class="panel panel-border-narrow">
+        <p>The proposed change will not be acceptable if it reduces clearances or dimensions (including those for access) below the limits specified in the Requirements for Authorisation or, for features approved only as `acceptable variations', below their existing values. </p>
+      </div>
+    </details>
+
+  </div-->
+
+
+  </div>
+
+  <div>
+      <a href="/prototypes/vts-changes/v2/vts-4-classes" class="button">Continue</a><br><br>
+      <a href="/prototypes/vts-changes/v2/vts-2-layout">Back</a>
+  </div>
+
+  
+</form>
+{% endblock %}

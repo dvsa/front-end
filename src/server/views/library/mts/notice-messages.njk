@@ -1,0 +1,55 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Notice messages' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Success',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="message--success">
+    <p><strong>This failure has been added:</strong><br> Passenger grab handle insecure</p>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Failure',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="message--failure">
+    <p><strong>This is a message:</strong><br> Lorem ipsum dolor sit amet.</p>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Information',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="message--information">
+    <p><strong>This is a message:</strong><br> Lorem ipsum dolor sit amet.</p>
+  </div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Important',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="message--important">
+    <p><strong>This is a message:</strong><br> Lorem ipsum dolor sit amet.</p>
+  </div>
+  {%- endcall %}
+
+{% endblock %}

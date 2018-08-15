@@ -1,0 +1,52 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% block content %}
+
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/">
+          VTS079774
+      </a>
+    </li>
+    <li>
+      Site review
+    </li>
+  </ol>
+</div>
+
+
+<form action="choose-section">
+  <div class="form-group">
+
+      <legend>
+        <h1 class="heading-xlarge heading heading--page-heading ">
+          <span class="heading-secondary">No reviews recorded</span>
+          Assess the site and record results
+        </h1>
+      </legend>
+
+  </div>
+
+
+  <div>
+      <input class="button" type="submit" value="Continue">
+  </div>
+
+
+
+</form>
+{% endblock %}

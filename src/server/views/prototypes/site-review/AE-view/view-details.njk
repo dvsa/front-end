@@ -1,0 +1,143 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'WILLETTA AREDONDO', url: '/' },
+  { text: 'VTS079774', url: '/' },
+  { text: 'Site details', url: '/prototypes/site-review/AE-view/' },
+  { text: 'Site review summary' }
+
+] %}
+
+ {{ activityPerformed }}
+ {% set activityPerformed = viewData.activity.activityPerformed %} 
+
+
+{% block content %} 
+
+{% set notGiven = "Not given" %}
+ 
+  <div class="form-group">
+      <legend>
+        <h1 class="heading-medium">
+          Site review summary
+        </h1>
+      </legend>
+
+  </div>
+
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+    <tr>
+      <th class="table-summary__key">
+        Compliance
+      </th>
+      <td class="table-summary__value--tabular">
+         <strong>Satisfactory</strong><br/>
+
+         {% if viewData.compliance.commitedComment %} 
+            {{"Comment" if viewData.compliance.satisfactory.isChecked else "Actions required"}}: 
+            {{viewData.compliance.commitedComment}}
+         {% endif %}   
+          
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Premises
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Improve</strong><br/>
+ 
+            Actions required: remove obstacles in the bay
+            
+           
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Management and quality
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Satisfactory</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        People
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Satisfactory</strong><br/> 
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Activity
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>
+            Activity performed
+        </strong><br>
+          MOT test number: <strong>3452 7541 0463</strong><br>
+          Tester's User ID: <strong>KUCE6924</strong>
+      </td>
+    </tr>
+
+     {% if (viewData.testerDetails.examinerId) %}
+      <tr>
+          <th class="table-summary__key">
+            Examiner's User ID
+          </th>
+          <td class="table-summary__value--tabular">
+          <strong>DREW666</strong><br/>
+          </td>
+      </tr> 
+     {% endif %}
+
+    <tr>
+      <th class="table-summary__key">
+        AE representative's User ID
+      </th>
+      <td class="table-summary__value--tabular">
+       <strong>CHGW0079</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's full name
+      </th>
+      <td class="table-summary__value--tabular"> 
+        <strong>Ben Chgw</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's role
+      </th>
+      <td class="table-summary__value--tabular"> 
+        <strong>Manager</strong><br/>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="table-summary__key">
+        Date of site visit
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>1 October 2018</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="u-margin-bottom-20">
+  <a href="index" class="button">Back</a> 
+</div> 
+
+
+<div>
+</div>
+
+{% endblock %}

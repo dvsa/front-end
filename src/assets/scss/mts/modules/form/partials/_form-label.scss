@@ -8,3 +8,7 @@
   text-transform: none;
   margin-bottom: 5px;
 }
+
+.form-label-bold {
+  @include bold-16;
+}

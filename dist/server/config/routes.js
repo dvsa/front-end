@@ -7,29 +7,45 @@ exports.allRoutes = undefined;
 
 var _express = require('express');
 
-var _main = require('./../controllers/main.controller');
+var _main = require('../controllers/main.controller');
 
 var mainController = _interopRequireWildcard(_main);
 
-var _misc = require('./../controllers/misc.controller');
+var _misc = require('../controllers/misc.controller');
 
 var miscController = _interopRequireWildcard(_misc);
 
-var _recalls = require('./../controllers/api/v1/recalls.controller');
+var _recalls = require('../controllers/api/v1/recalls.controller');
 
 var recallsController = _interopRequireWildcard(_recalls);
 
-var _createAccount = require('./../controllers/create-account');
+var _createAccount = require('../controllers/create-account');
 
 var createAccountController = _interopRequireWildcard(_createAccount);
 
-var _suspendTesters = require('./../controllers/annual-assessment-tool/suspend-testers');
+var _suspendTesters = require('../controllers/annual-assessment-tool/suspend-testers');
 
 var suspendTestersController = _interopRequireWildcard(_suspendTesters);
 
-var _motTest = require('./../controllers/mot-test/mot-test');
+var _motTest = require('../controllers/mot-test/mot-test');
 
 var motTestResultsController = _interopRequireWildcard(_motTest);
+
+var _speechToTextSearch = require('../controllers/speech-to-text-search/speech-to-text-search');
+
+var speechToTextController = _interopRequireWildcard(_speechToTextSearch);
+
+var _siteReview = require('../controllers/site-review/site-review');
+
+var siteReviewController = _interopRequireWildcard(_siteReview);
+
+var _brakeTest = require('../controllers/brake-test/brake-test');
+
+var brakeTestController = _interopRequireWildcard(_brakeTest);
+
+var _mtsMessages = require('../controllers/mts-messages');
+
+var messagingController = _interopRequireWildcard(_mtsMessages);
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
@@ -68,6 +84,42 @@ router.get('/prototypes/mot-test/comment/edit', motTestResultsController.getEdit
 router.post('/prototypes/mot-test/comment/edit', motTestResultsController.postEditTesterComment);
 router.post('/prototypes/mot-test/comment/remove/', motTestResultsController.destorySession);
 router.get('/prototypes/mot-test/review', motTestResultsController.getReview);
+
+// Speech to text - add defect path
+router.get('/prototypes/speech-to-text/', speechToTextController.getSearchQuery);
+router.post('/prototypes/speech-to-text/categories/', speechToTextController.postSearchQuery);
+router.post('/prototypes/speech-to-text/add-major-failure/', speechToTextController.captureFormValues);
+router.get('/prototypes/speech-to-text/remove-defect', speechToTextController.removeDefect);
+
+// Site review paths
+router.get('/prototypes/site-review/', siteReviewController.clearReviewSession);
+router.get('/prototypes/site-review/choose-section', siteReviewController.getChooseSection);
+router.get('/prototypes/site-review/assessment/activity', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/compliance', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/management-and-quality', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/people', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/assessment/premises', siteReviewController.getAssessment);
+router.get('/prototypes/site-review/summary', siteReviewController.getSummary);
+router.get('/prototypes/site-review/enter-details', siteReviewController.getDetails);
+router.post('/prototypes/site-review/assessment/activity', [siteReviewController.validateActivity, siteReviewController.populateActivity, siteReviewController.postAssessment]);
+router.post('/prototypes/site-review/assessment/compliance', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
+router.post('/prototypes/site-review/assessment/management-and-quality', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
+router.post('/prototypes/site-review/assessment/people', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
+router.post('/prototypes/site-review/assessment/premises', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
+router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
+
+// Brake tests
+router.post('/prototypes/brake-test-config', brakeTestController.postBrakeConfig);
+router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
+
+// MTS Messaging
+router.param('messageIndex', messagingController.isValidMessage);
+router.get('/prototypes/messaging', [messagingController.setupMessages, messagingController.getMessages]);
+router.get('/prototypes/messaging/archive', [messagingController.setupMessages, messagingController.getArchive]);
+router.get('/prototypes/messaging/:messageIndex', messagingController.getMessage);
+router.get('/prototypes/messaging/acknowledge/:messageIndex', [messagingController.unpinSpecialNotice, messagingController.acknowledgeMessage]);
+router.get('/prototypes/messaging/accept/:messageIndex', messagingController.acceptMessage);
+router.get('/prototypes/messaging/reject/:messageIndex', messagingController.rejectMessage);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

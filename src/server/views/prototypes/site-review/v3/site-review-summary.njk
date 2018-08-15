@@ -1,0 +1,72 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% block content %}
+
+<form action="site-review-updated">
+  <div class="form-group">
+
+      <legend>
+        <h1 class="heading-medium">
+          Check details before you save them
+        </h1>
+      </legend>
+
+  </div>
+
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+    <tr>
+      <th class="table-summary__key">
+        Premises
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Satisfactory</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Management control and quality checks
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Satisfactory</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        People
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong style="color:red;">Unsatisfactory</strong><br/>
+        Advice given: supervise testers more regularly
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Compliance Checks
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Satisfactory</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Date of review
+      </th>
+      <td class="table-summary__value--tabular">
+        14 July 2018
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+  <div>
+      <input class="button" type="submit" value="Save and continue">
+  </div>
+
+
+
+</form>
+{% endblock %}

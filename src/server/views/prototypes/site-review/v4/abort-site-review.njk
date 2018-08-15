@@ -1,0 +1,139 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Enter event details' %}
+
+{% block content %}
+
+<form action="abort-site-review-aborted">
+  <div class="form-group">
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/manuals">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              WILLETTA AREDONDO
+            </a>
+          </li>
+          <li>
+            <a href="/">
+                VTS079774
+            </a>
+          </li>
+          <li>
+            Site review
+          </li>
+        </ol>
+      </div>
+
+      <header class="content-header">
+          <h1 class="heading-medium">
+              <span class="content-header__type">Site review</span>
+              <span class="content-header__title">Abort site review</span>
+          </h1>
+          </header>
+
+          <div class="text">
+              <p class="lede">Abort the site review if you can't continue.</p>
+              <p>This will produce a record showing the reason for aborting.</p>
+          </div>
+
+          <div class="text">
+
+          <h2 class="heading-medium">Why are you aborting the site review?</h2>
+
+          <form action="/mot-test/327661242214/cancel" method="POST" data-form-state-index="0">
+                  <legend class="u-space-b15">Choose a reason from the list</legend>
+
+                  <div id="reasonForCancelId" class="form-group">
+
+                          <div class="multiple-choice" data-target="reason5">
+                              <input type="radio" id="reasonForCancel5" value="5" name="reasonForCancelId" data-abandoned="">
+                              <label for="reasonForCancel5">
+                                  VTS incident                    </label>
+                          </div>
+
+
+                          <div class="multiple-choice" data-target="reason6">
+                              <input type="radio" id="reasonForCancel6" value="6" name="reasonForCancelId" data-abandoned="">
+                              <label for="reasonForCancel6">
+                                  Threat from garage staff                    </label>
+                          </div>
+
+
+                          <div class="multiple-choice" data-target="reason12">
+                              <input type="radio" id="reasonForCancel12" value="12" name="reasonForCancelId" data-abandoned="">
+                              <label for="reasonForCancel12">
+                                  Test equipment issue                    </label>
+                          </div>
+
+
+                          <div class="multiple-choice" data-target="reason13">
+                              <input type="radio" id="reasonForCancel13" value="13" name="reasonForCancelId" data-abandoned="">
+                              <label for="reasonForCancel13">
+                                  Accident or illness of tester                    </label>
+                          </div>
+
+
+                          <div class="multiple-choice" data-target="reason21">
+                              <input type="radio" id="reasonForCancel21" value="21" name="reasonForCancelId" data-abandoned="1" aria-controls="reason21" aria-expanded="false">
+                              <label for="reasonForCancel21">
+                                  Inspection may be dangerous or cause damage                    </label>
+                          </div>
+
+
+                          <div class="multiple-choice" data-target="reason25">
+                              <input type="radio" id="reasonForCancel25" value="25" name="reasonForCancelId" data-abandoned="">
+                              <label for="reasonForCancel25">
+                                  Aborted by VE                    </label>
+                          </div>
+
+
+                          <div class="multiple-choice" data-target="reason28">
+                              <input type="radio" id="reasonForCancel28" value="28" name="reasonForCancelId" data-abandoned="">
+                              <label for="reasonForCancel28">
+                                  Vehicle registered in error                    </label>
+                          </div>
+
+
+                  </div>
+
+                  <div class="form-group js-hidden" id="reason21" aria-hidden="true">
+
+
+                          <label for="cancelComment">How might this be dangerous or cause damage?</label><br>
+                          <textarea rows="5" cols="50" id="cancelComment" name="cancelComment"></textarea>
+
+                                              <div id="declarationStatement" class="message">
+                                  <p>By cancelling this test you confirm that you have carried the MOT test to the point of the cancellation in line with DVSA conditions for MOT testing.</p>
+                              </div>
+
+
+
+                              </div>
+
+                  <nav class="content-navigation">
+                      <input type="submit" id="mot_test_cancel_confirm" value="Abort test" class="button-warning">
+                      <ul class="content-navigation__secondary">
+                          <li>
+                              <a href="choose-section-premises-done" id="returnToMotTest">Return to site review</a>
+                          </li>
+                      </ul>
+                  </nav>
+
+              </fieldset>
+          </form>
+
+          </div>
+
+
+  </div>
+
+
+
+</form>
+{% endblock %}

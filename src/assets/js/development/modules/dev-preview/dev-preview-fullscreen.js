@@ -57,6 +57,12 @@ export class DevPreviewFullscreen {
     delegateEvent(document, 'click', this.selectors.devPreviewFullscreenButton, this.onFullscreenPreviewClick);
   };
 
+  /**
+   * Setup the initial state
+   *
+   * @author Tameem Safi <t.safi@kainos.com
+   * @since 1.1.18
+   */
   setupState = () => {
     this.elements.previewElements.forEach(devPreviewElement => {
       const fullscreenButton = devPreviewElement.querySelector(this.selectors.devPreviewFullscreenButton);
@@ -73,8 +79,13 @@ export class DevPreviewFullscreen {
 
       const index = this.state.previewElements.length - 1;
 
-      devPreviewElement.setAttribute(this.attributes.stateItemId, index);
-      fullscreenButton.setAttribute(this.attributes.stateItemId, index);
+      if (devPreviewElement) {
+        devPreviewElement.setAttribute(this.attributes.stateItemId, index);
+      }
+
+      if (fullscreenButton) {
+        fullscreenButton.setAttribute(this.attributes.stateItemId, index);
+      }
     });
   };
 

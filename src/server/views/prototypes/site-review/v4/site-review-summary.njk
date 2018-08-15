@@ -1,0 +1,133 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/">
+          VTS079774
+      </a>
+    </li>
+    <li>
+      Site review
+    </li>
+  </ol>
+</div>
+
+
+<form action="enter-event-details-step-1">
+  <div class="form-group">
+
+      <legend>
+        <h1 class="heading-medium">
+          Check details of the site review before you save
+        </h1>
+      </legend>
+
+  </div>
+
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+    <tr>
+      <th class="table-summary__key">
+        Premises
+      </th>
+      <td class="table-summary__value--tabular">
+        <span class="badge" style="background-color: #00823B">&nbsp;</span> <strong>Satisfactory</strong><br/>
+        Comment: all good
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Management control and quality checks
+      </th>
+      <td class="table-summary__value--tabular">
+        <span class="badge--warn">&nbsp;</span> <strong>Improve</strong><br/>
+        Advice given: supervise testers more regularly
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        People
+      </th>
+      <td class="table-summary__value--tabular">
+        <span class="badge--alert">&nbsp;</span> <strong>Unsatisfactory</strong><br/>
+        Advice given: train testers
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Compliance Checks
+      </th>
+      <td class="table-summary__value--tabular">
+        <span class="badge" style="background-color: #00823B">&nbsp;</span> <strong>Satisfactory</strong><br/>
+        Advice given: supervise testers more regularly
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Activity
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Yes</strong><br/>
+        MOT test number <strong>9876 5243 9237</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's User ID
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>DREW9272</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's full name
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Rafał Drewnowski</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's role
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Owner of the garage</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Date of site visit
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>14 July 2018</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+  <div>
+    <input class="button" type="submit" value="Save and continue"><br/><br/>
+    <a href="choose-section">Cancel</a>
+  </div>
+
+
+
+</form>
+{% endblock %}

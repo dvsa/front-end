@@ -1,154 +1,50 @@
 {% extends 'layouts/default.layout.njk' %}
 
-{% set pageTitle = 'Enter site review' %}
+{% set pageTitle = 'Site review index' %}
+
 
 {% block content %}
 
-  {% call components.gridRow() %}
 
-    {% call components.columnFull() %}
-      
-      {{ components.pageHeading(heading='Enter site review', secondary='Vehicle Testing Station') }}
+{{ components.pageHeading('Prototypes', 'Site review') }}
 
-      <form class='u-margin-bottom-30'>
+<div class="text u-clearfix">
+  <p>
+     Content (wording) of the prototypes is work in progress and will change this week (6-10/08)
+  </p>
+</div>
 
-        <div class="form-group">
-          <fieldset>
-            <legend>
-              <h1 class="heading-medium">Premises</h1>
-            </legend>
-            <div class='u-margin-bottom-10'>
-              {% call components.hiddenText(summary='Clues for premises?', spaceBelow=true) %}
-                <p>
-                The VTS staff has a clear understanding of their testing responsibilities and security 
-                requirements relevant to the MOT service
-                </p>
+<div class="grid-row">
+  <div class="column-one-half">
+    <ul class="list list-bullet">
+      <li>
+        Vehicle Examiner (VE)
+        <ul class="list list-bullet">
+          <li><a href="/prototypes/site-review/v5/VE-view-VTS-overview">start a site review</a> - update: 08/08/2018</li>
+          <li><a href="/prototypes/site-review/v5-resume/">resume a site review</a> - update: 09/08/2018</li>
+        </ul>
+      </li>
 
-                <p>
-                The AE has an effective Quality Management system that is appropriate to its operation
-                and would identify and rectify failures or weaknesses in test quality
-                </p>
 
-                <p>The VTS demonstrates a positive culture of quality, communication and improvement</p>
-              {%- endcall %}
-            </div>
-            <div class="multiple-choice">
-              <input id="premises-satisfactory" type="radio" name="radio-premises" value="Satisfactory">
-              <label for="premises-satisfactory">Satisfactory</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="premises-improve" type="radio" name="radio-premises" value="Improve">
-              <label for="premises-improve">Improve</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="premises-unsatisfactory" type="radio" name="radio-premises" value="Unsatisfactory">
-              <label for="premises-unsatisfactory">Unsatisfactory</label>
-            </div>
-          </fieldset>
-        </div>
+      <li>
+        <a href="/prototypes/site-review/v5/AE-view-VTS-overview">Authorised Examiner (AE)</a> - update: 08/08/2018
+      </li>
+    </ul>
 
-        <div class="form-group">
-          <fieldset>
-            <legend>
-              <h1 class="heading-medium">Management Control and Quality Checks</h1>
-            </legend>
-            <div class='u-margin-bottom-10'>
-              {% call components.hiddenText(summary='Clues for Management Control and Quality Checks?', spaceBelow=true) %}
-                <p>
-                The VTS staff has a clear understanding of their testing responsibilities and security 
-                requirements relevant to the MOT service
-                </p>
+    <h2 class="heading heading--medium heading-medium">
+      Previous versions
+    </h2>
 
-                <p>
-                The AE has an effective Quality Management system that is appropriate to its operation
-                and would identify and rectify failures or weaknesses in test quality
-                </p>
+    <ul class="list list-bullet">
+      <li>
+        <a href="/prototypes/site-review/VE-view">Vehicle Examiner (VE) flow</a> - update: 03/08/2018
+      </li>
 
-                <p>The VTS demonstrates a positive culture of quality, communication and improvement</p>
-              {%- endcall %}
-            </div>
-            <div class="multiple-choice">
-              <input id="management-control-satisfactory" type="radio" name="radio-managementControl" value="Satisfactory">
-              <label for="management-control-satisfactory">Satisfactory</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="management-control-improve" type="radio" name="radio-managementControl" value="Improve">
-              <label for="management-control-improve">Improve</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="management-control-unsatisfactory" type="radio" name="radio-managementControl" value="Unsatisfactory">
-              <label for="management-control-unsatisfactory">Unsatisfactory</label>
-            </div>
-          </fieldset>
-        </div>
+      <li>
+        <a href="/prototypes/site-review/AE-view/">Authorised Examiner (AE) flow</a> - update: 02/08/2018
+      </li>
+    </ul>
+  </div>
+</div>
 
-        <div class="form-group">
-          <fieldset>
-            <legend>
-              <h1 class="heading-medium">Compliance Checks</h1>
-            </legend>
-            <div class='u-margin-bottom-10'>
-              {% call components.hiddenText(summary='Clues for compliance checks?', spaceBelow=true) %}
-                <p>Is the AE stated on the VT9 correct</p>
-
-                <p>Are the vehicles registered for test on site?</p>
-              {%- endcall %}
-            </div>
-            <div class="multiple-choice">
-              <input id="compliance-satisfactory" type="radio" name="radio-compliance" value="Satisfactory">
-              <label for="compliance-satisfactory">Satisfactory</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="compliance-improve" type="radio" name="radio-compliance" value="Improve">
-              <label for="compliance-improve">Improve</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="compliance-unsatisfactory" type="radio" name="radio-compliance" value="Unsatisfactory">
-              <label for="compliance-unsatisfactory">Unsatisfactory</label>
-            </div>
-          </fieldset>
-        </div>
-
-        <div class="form-group">
-          <fieldset>
-            <legend>
-              <h1 class="heading-medium">Do you need a reinspection?</h1>
-            </legend>
-            <div class="multiple-choice">
-              <input id="inspection-true" type="radio" name="group-reinspection" value="Satisfactory">
-              <label for="inspection-true">Yes</label>
-            </div>
-            <div class="multiple-choice">
-              <input id="inspection-false" type="radio" name="group-reinspection" value="Improve">
-              <label for="inspection-false">No</label>
-            </div>
-          </fieldset>
-        </div>
-
-        {{ components.textarea(label="Advice given", id='ae-advice-given', group='true') }}
-
-        {{ components.field(label="AE representative's User ID", width=12.5, id='ae-representatives-user-id', group='true')}}
-
-        {{ components.field(label="AE representative's full name (if AE user ID not entered)", id='ae-representatives-full-name', group='true')}}
-
-        {{ components.field(label="AE representative's role", id='ae-representatives-role', group='true')}}
-
-        {{ components.field(label="Tester's User ID", width=12.5, id='testers-user-id', group='true')}}
-
-        {% call components.formGroup(label='Date of assessment', labelBold=false, hint='For example, 31 3 1980', id='dateOfAssessment') %}
-          
-          {{ components.formDate() }}
-
-        {%- endcall %}
-
-        {{ components.button(text='Continue') }}
-
-      </form>
-
-      {{ components.link(text='Cancel and return to site details', url='/prototypes/') }}
-
-    {%- endcall %}
-
-  {%- endcall %}
-  
 {% endblock %}

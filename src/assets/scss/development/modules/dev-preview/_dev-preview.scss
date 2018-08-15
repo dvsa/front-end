@@ -37,6 +37,7 @@
     padding: 10px;
     width: 100%;
     text-align: center;
+    z-index: 101; // Fixes overlap issue on defect options
 
     &:hover {
       cursor: pointer;

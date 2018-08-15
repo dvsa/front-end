@@ -1,7 +1,27 @@
-import Prism from 'prismjs';
-import Normalizer from 'prismjs/plugins/normalize-whitespace/prism-normalize-whitespace';
-import { minify } from 'html-minifier';
-import pretty from 'pretty';
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+});
+exports.wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPreviwAndPrism = exports.highlightCode = undefined;
+
+var _prismjs = require('prismjs');
+
+var _prismjs2 = _interopRequireDefault(_prismjs);
+
+var _prismNormalizeWhitespace = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
+
+var _prismNormalizeWhitespace2 = _interopRequireDefault(_prismNormalizeWhitespace);
+
+var _htmlMinifier = require('html-minifier');
+
+var _pretty = require('pretty');
+
+var _pretty2 = _interopRequireDefault(_pretty);
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 /**
  * Prettifies and highlights code using prismjs
@@ -12,8 +32,8 @@ import pretty from 'pretty';
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-export const highlightCode = code => {
-  let nw = new Normalizer({
+const highlightCode = (exports.highlightCode = code => {
+  let nw = new _prismNormalizeWhitespace2.default({
     'remove-trailing': true,
     'remove-indent': false,
     'left-trim': true,
@@ -22,7 +42,7 @@ export const highlightCode = code => {
 
   // Minifies the html code
   // This is done to normalize it before making it pretty
-  let cleanHTML = minify(code, {
+  let cleanHTML = (0, _htmlMinifier.minify)(code, {
     html5: true,
     collapseWhitespace: true,
     preserveLineBreaks: true,
@@ -32,14 +52,14 @@ export const highlightCode = code => {
   let normalizedCode = nw.normalize(cleanHTML);
 
   // Make the HTML code pretty
-  let prettyCode = pretty(normalizedCode);
+  let prettyCode = (0, _pretty2.default)(normalizedCode);
 
   // Highlight the code using prismjs
-  let highlightedCode = Prism.highlight(prettyCode, Prism.languages.markup);
+  let highlightedCode = _prismjs2.default.highlight(prettyCode, _prismjs2.default.languages.markup);
 
   // Create the code highlighting output
   return `<pre><code class="line-numbers language-html">${highlightedCode}</code></pre>`;
-};
+});
 
 /**
  * Wraps the code in a preview div used for styleguide pages
@@ -50,7 +70,7 @@ export const highlightCode = code => {
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-export const wrapCodeWithPreviwAndPrism = code => {
+const wrapCodeWithPreviwAndPrism = (exports.wrapCodeWithPreviwAndPrism = code => {
   // Highlight the code using prismjs
   let prismCode = highlightCode(code);
 
@@ -76,7 +96,7 @@ export const wrapCodeWithPreviwAndPrism = code => {
     </div>
     <!-- /dev-preview -->
   `;
-};
+});
 
 /**
  * Wraps the code in a div used for full page peviews
@@ -87,17 +107,18 @@ export const wrapCodeWithPreviwAndPrism = code => {
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-export const wrapCodeWithPrismForFullPagePreview = code => {
+const wrapCodeWithPrismForFullPagePreview = (exports.wrapCodeWithPrismForFullPagePreview = code => {
   // Highlight the code using prismjs
   let prismCode = highlightCode(code);
 
   // Return the new HTML
   // Combination of the preview and prism code highlighting
   return `
+   
     <!-- content -->
     ${code}
     <!-- content -->
-
+    <!--
     <div class="dev-preview__floating-button">
       <span class="dev-preview__floating-button-text">
         View HTML Markup
@@ -115,6 +136,6 @@ export const wrapCodeWithPrismForFullPagePreview = code => {
       <div class="dev-preview__code">
         ${prismCode}
       </div>
-    </div>
+    </div> -->
   `;
-};
+});

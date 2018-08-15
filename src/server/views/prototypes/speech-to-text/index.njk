@@ -1,0 +1,202 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+
+        <h1><span class="content-header__title">MOT test results</span></h1>
+
+      </header>
+
+      <header class='content-header'>
+
+        <ul class='content-header__tertiary-list u-margin-bottom-35'>
+
+          <li class='content-header__list-item--primary'>Renault, Clio</li>
+
+          <li class='content-header__list-item'>FNZ 6610</li>
+
+          <li class='content-header__list-item'>First used 25 Apr 2005</li>
+
+        </ul>
+
+      </header>
+      
+      <div class='text u-clearfix'>
+        
+        <p><a href='/prototypes/'>Print the MOT inspection sheet</a> for this test.</p>
+
+        <p>See <a href='/prototypes/'>testing advice</a> for this vechicle.</p>
+
+      </div>
+
+      <div class='u-margin-bottom-30'>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Odometer</h3>
+
+            </div>
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__value">Not recorded</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add reading', url='#') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Defects</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add a defect', url='/prototypes/speech-to-text/categories/') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {% if viewData.formData %}
+
+        <div class="defect-summary">
+
+          <div id="" class=" ">
+
+            <h3 class="defect-summary__heading">
+
+              <span class="badge--alert">1</span>
+
+              <span class="defect-summary__heading-type">Failures</span>
+
+            </h3>
+
+            <ol>
+
+              <li class="defect">
+
+                <strong class="defect__is-dangerous" aria-hidden="true">Major failure</strong>
+
+                <strong class="defect__title">Stop lamp(s) missing</strong>
+
+                {% if viewData.formData.comment %}
+
+                <p class='defect-meta'> {{viewData.formData.comment}} </p>
+
+                {% endif %}
+
+                <strong class="visuallyhidden">Major failure</strong>
+
+                <h4 class="visuallyhidden">Position</h4>
+
+                <ul class="defect__positions">
+
+                  <li>Lateral: <span class="defect__property-list-value"> {{viewData.formData.locationLateral}} </span></li>
+
+                  <li>Longitudinal: <span class="defect__property-list-value"> {{viewData.formData.locationLongitudinal}} </span></li>
+
+                  <li>Vertical: <span class="defect__property-list-value"> {{viewData.formData.locationVertical}} </span></li>
+
+                </ul>
+
+                <h4 class="visuallyhidden">Actions</h4>
+
+                <ul class="defect__edit">
+
+                  <li> <a href="/prototypes/speech-to-text/add-major-failure/" class="">Edit</a></li>
+
+                  <li>or <a href="/prototypes/speech-to-text/remove-defect" class="">Remove</a></li>
+
+                </ul>
+
+              </li>
+
+            </ol>
+
+          </div>
+
+        </div>
+
+        {% endif %}
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Break test</h3>
+
+            </div>
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__value">Not recorded</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add break tests', url='#') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <form action="/prototypes/mot-test/review" method="GET">
+
+        {% if viewData.comment %}
+
+          {{ components.button(text='Review test') }}
+
+        {% else %}
+
+          {{ components.button(text='Review test', disabled=true) }}
+
+        {% endif %}
+
+      </form>
+
+      {{ components.link(text='Cancel test', url='/prototypes/', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

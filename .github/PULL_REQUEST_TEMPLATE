@@ -1,0 +1,23 @@
+# New PR ~ front end
+
+***
+
+**Before submitting a PR, ensure** - 
+
+- [ ] All Styleguide components remain functional.
+- [ ] CSS updates did not unwillingly affect styleguide components. 
+- [ ] Unnecessary console logs are removed.
+- [ ] Unnecessary white space is removed.
+- [ ] Code has been indented correctly.
+- [ ] You haven't added inline styles.
+- [ ] You haven't added inline JavaScript.
+- [ ] Your changes (if any significant) have been cross browser tested.
+- [ ] Another FED has reviewed.
+
+* Mark done with an 'X' *
+
+***
+
+## Notes
+
+_If there is something worth mentioning..._

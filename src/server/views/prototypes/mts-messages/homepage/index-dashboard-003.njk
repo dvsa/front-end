@@ -1,0 +1,228 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+   <div class="o-wrapper phase-banner">
+      <p>
+         <strong class="phase-tag">BETA</strong>
+         <span>
+         This is a new service – your
+         <a id="feedback-link" target="_blank" href="http://www.smartsurvey.co.uk/s/MTSFeedback/">feedback</a>
+         will help us to improve it.
+         </span>
+      </p>
+   </div>
+   <section class="c-home-hero">
+      <div class="o-wrapper u-clearfix">
+         <div class="c-home-hero__content">
+            <h1 class="c-home-hero__title">
+               Your home
+            </h1>
+         </div>
+         <div id="hero-actions" class="c-home-hero__actions">
+            <ul class="c-action-list">
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/authorised-examiner/search">
+                  AE information
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/vehicle-testing-station/search">
+                  Site information
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/user-admin/search" id="action-start-user-search">
+                  User search
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/replacement-certificate-vehicle-search" id="action-start-certificate-reissue">
+                  Replacement/duplicate certificate
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/vehicle/search">
+                  Vehicle information
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/mot-test-search">
+                  MOT tests
+                  </a> (comparison of tests available)
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/user-admin/demo-test-requests" id="demo-test-requests">
+                  Demo test requests
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/survey/reports" id="generate-survey-report">
+                  Generate survey report
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/security-card-order-report-list" id="action-security-card-order-report-list">
+                  Security card order list
+                  </a>
+               </li>
+               <li class="c-action-list__item">
+                  <a class="c-action-list__link" href="/annual-assessment-admin" id="annual-assessment-admin-tool">
+                  Annual assessment admin tool
+                  </a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </section>
+   
+   <main id="content">
+   
+      <div class="container">
+   
+         <div class="row contents">
+            <div class="col-lg-12">
+               <div class="grid-row">
+                  <div class="column-half">
+
+                     <section class="c-home-block" id="special-notice-list">
+
+                        <h2 class="c-home-block__title">
+                           Messages
+                        </h2>
+
+                        <hr>
+
+                        <h2 class="heading-small" style="margin-bottom: 20px;">
+                           Special notices
+                        </h2>
+
+                        <div class="grid-row">
+                           <div class="column-half">
+                              <div class="data" style="margin-top: 0;">
+                                <span class="data-item bold-xlarge">1</span>
+                                <span class="data-item">unread messages</span>
+                              </div>
+                              <p><a href="/prototypes/mts-messages/notifications-inbox-scheme-user">View special notices</a></p>
+                           </div>
+                           <div class="column-half">
+                              <div class="grid-row">
+                                 <div class="column-full" style="padding-left: 0; margin-bottom: 22px;">
+                                    <strong class="heading-small">4</strong>
+                                    <span>days remaining to view</span>
+                                 </div>
+                                 <div class="column-full" style="padding-left: 0;">
+                                    <strong class="heading-small">2</strong>
+                                    <span>require acknowledgment</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <hr>
+
+                        <h2 class="heading-small" style="margin-bottom: 20px;">
+                           System messages
+                        </h2>
+
+                        <div class="grid-row">
+                           <div class="column-half">
+                              <div class="data" style="margin-top: 0;">
+                                <span class="data-item bold-xlarge">11</span>
+                                <span class="data-item">unread messages</span>
+                              </div>
+                              <p><a href="/prototypes/mts-messages/notifications-inbox-scheme-user">View system messages</a></p>
+                           </div>
+                           <div class="column-half">
+                              <div class="grid-row">
+                                 <div class="column-full" style="padding-left: 0; margin-bottom: 22px;">
+                                    <strong class="heading-small">9</strong>
+                                    <span>require action</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
+                        <hr>
+
+                        <h2 class="heading-small" style="margin-bottom: 20px;">
+                           News
+                        </h2>
+
+                        <div class="grid-row">
+                           <div class="column-half">
+                              <div class="data" style="margin-top: 0;">
+                                <span class="data-item bold-xlarge">2</span>
+                                <span class="data-item">unread messages</span>
+                              </div>
+                              <p><a href="/prototypes/mts-messages/notifications-inbox-scheme-user">View news</a></p>
+                           </div>
+                        </div>
+
+                        <hr>
+
+                     </section>
+                     <section>
+                        <p><a href="/prototypes/mts-messages/notifications-inbox-scheme-user">View all messages</a></p>
+                     </section>
+
+                  </div>
+                  <div class="column-half">
+                     <section class="c-home-block">
+                        <header class="c-home-block__head">
+                           <h2 class="c-home-block__title">Authorised Examiner management</h2>
+                        </header>
+                        <ul>
+                           <li class="u-space-b10">
+                              <a href="/authorised-examiner/create" id="createAuthorisedExaminerLink">
+                              Create an Authorised Examiner
+                              </a>
+                           </li>
+                           <li>
+                              <a href="/vehicle-testing-station/create" id="action-create-vts">
+                              Create a site
+                              </a>
+                           </li>
+                        </ul>
+                     </section>
+                     <div class="c-home-block">
+                        <header class="c-home-block__head">
+                           <h2 class="c-home-block__title">Training</h2>
+                        </header>
+                        <p>Practice on any class of vehicle without using slots or recording the outcome.</p>
+                        <p>
+                           <a href="/training-test-vehicle-search" class="button" id="action-start-mot-demonstration">
+                           Start training test
+                           </a>
+                        </p>
+                     </div>
+                     <div class="c-home-block">
+                        <header class="c-home-block__head">
+                           <h2 class="c-home-block__title">Non-MOT test</h2>
+                        </header>
+                        <p>A non-MOT test will produce a test number and VT32/VE certificate. It will not show on a vehicle's MOT history.</p>
+                        <p>
+                           <a href="/non-mot-test-vehicle-search" class="button" id="action-start-non-mot">
+                           Start a non-MOT test
+                           </a>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+      </div>
+
+   </main>
+
+  
+{% endblock %}

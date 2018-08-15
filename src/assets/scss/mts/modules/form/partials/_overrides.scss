@@ -5,6 +5,10 @@
   width: 100%;
   margin: -20px 0 30px;
   padding: 10px 15px;
+
+  @media(max-width: 640px) {
+    margin-top: -5px;
+  }
 }
 
 select.form-control,
@@ -14,6 +18,7 @@ select.form-control,
   border: 2px solid $black;
   -webkit-appearance: menulist;
   -moz-appearance: menulist; 
+  background: none;
 }
 
 .form-control {

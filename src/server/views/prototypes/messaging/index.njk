@@ -35,32 +35,36 @@
               <a href="/prototypes/messaging/archive" class="c-tab-list__tab-link message-filters__tab">Archived</a>
             </li>
           </ul>
-
+          
           <div class="message-filters__tab-panel js-filter-wrapper">
- 
-            <div class="message-filters__inputs">
-              <form class="form">
-                <div class="form-group u-margin-bottom-30 inline">
-                  <fieldset>
-                    <legend class="visually-hidden">Choose which message type to view</legend>
-                    <h3 class="heading-small">Filter messages</h3>
+            
+            
+            <div class="message-panel"> 
+                <div class="message-filters__inputs">
+                  <form class="form">
+                    <div class="form-group u-margin-bottom-30 inline">
+                      <fieldset>
+                        <legend class="visually-hidden">Choose which message type to view</legend>
+                        <h3 class="heading-small">Filter messages</h3>
 
-                    <div class="multiple-choice multiple-choice--inline">
-                      <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
-                      <label for="type-special">Special notices</label>
+                        <div class="multiple-choice multiple-choice--inline">
+                          <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
+                          <label for="type-special">Special notices</label>
+                        </div>
+                        <div class="multiple-choice multiple-choice--inline">
+                            <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="reminder" checked>
+                            <label for="type-reminder">Notifications</label>
+                          </div>
+                      
+                        <div class="multiple-choice multiple-choice--inline">
+                          <input data-type="News" class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
+                          <label for="type-advice">News</label>
+                        </div>
+                      </fieldset>
                     </div>
-                    <div class="multiple-choice multiple-choice--inline">
-                        <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="reminder" checked>
-                        <label for="type-reminder">Notifications</label>
-                      </div>
-                   
-                    <div class="multiple-choice multiple-choice--inline">
-                      <input data-type="News" class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
-                      <label for="type-advice">News</label>
-                    </div>
-                  </fieldset>
-                </div>
-              </form>
+                  </form>
+                </div> 
+               
             </div>
 
             <div class="message-panel"> 

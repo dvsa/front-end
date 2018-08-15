@@ -17,14 +17,11 @@
 
       {% if flashMessage != '' %}
 
-        <div class="message--success">
-
-          <p> {{ flashMessage }} </p>
-
+        <div class="message--success"> 
+          <p> {{ flashMessage }} </p> 
         </div>
 
-      {% endif %}
- 
+      {% endif %} 
 
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs message-filters__tabs">          
@@ -36,44 +33,18 @@
             </li>
           </ul>
 
-          <div class="message-filters__tab-panel js-filter-wrapper">
- 
-            <div class="message-filters__inputs">
-              <form class="form">
-                <div class="form-group u-margin-bottom-30 inline">
-                  <fieldset>
-                    <legend class="visually-hidden">Choose which message type to view</legend>
-                    <h3 class="heading-small">Filter messages</h3>
+          <div class="message-filters__tab-panel"> 
 
-                    <div class="multiple-choice multiple-choice--inline">
-                      <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
-                      <label for="type-special">Special notices</label>
-                    </div>
-                    <div class="multiple-choice multiple-choice--inline">
-                        <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="reminder" checked>
-                        <label for="type-reminder">Notifications</label>
-                      </div>
-                   
-                    <div class="multiple-choice multiple-choice--inline">
-                      <input data-type="News" class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
-                      <label for="type-advice">News</label>
-                    </div>
-                  </fieldset>
-                </div>
-              </form>
-            </div> 
-
-
-            <div class="message-panel js-message-panel"> 
-              <h3 class="heading-small message-panel__title js-message-list-title">
+            <div class="message-panel"> 
+              <h3 class="heading-small message-panel__title">
               Archived messages</h3>
             
-                <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
+                <ul class="u-margin-bottom-30 message-panel__messages">
 
                 {% for message in viewData.archive %}
 
                   {% if not message.state.isPinned %}
-                    <li data-type="{{ message.type }}" class="message-panel__message {{'' if message.state.isRead else 'message-panel__message--unread'}}">
+                    <li data-type="{{ message.type }}" class="message-panel__message">
                       <div class="message-panel__inner">
                         <h4 class="message-panel__message-title">
                         {{message.title}}
@@ -96,17 +67,16 @@
                     {% endif %}
                   {% endfor %} 
                 </ul>
-            </div> 
-
+            </div>  
           </div>
 
-        <div class="u-margin-top-30 u-margin-bottom-30">
-          {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
-        </div>
+          <div class="u-margin-top-30 u-margin-bottom-30">
+            {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+          </div>
 
     </div>
 
     {%- endcall %} 
-    {%- endcall %} 
+  {%- endcall %} 
   
 {% endblock %}

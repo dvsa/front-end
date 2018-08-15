@@ -1,5 +1,6 @@
 // Gets message data object
 import { data } from '../data';
+import { archiveData } from '../archiveData';
 
 /**
  * addPinnedItems - Adds is pinned state to special notices
@@ -54,9 +55,13 @@ export const setupMessages = (req, res, next) => {
   // Adds pinned items, adds indices
   const updatedData = data.map(addPinnedItems).map(addIndices);
 
+  // Set up some archive messages
+  const updatedArchive = archiveData.map(addPinnedItems).map(addIndices);
+
   // Setup viewData
   const viewData = {
     messages: updatedData,
+    archive: updatedArchive,
     isPinnedCount: updatedData.filter(filterPinned).length,
   };
 

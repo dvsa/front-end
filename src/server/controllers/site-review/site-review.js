@@ -115,7 +115,7 @@ export const postDetails = (req, res) => {
   req.session.viewData.testerDetails.date = testDate;
 
   // No errors - Successful post
-  return res.redirect('/prototypes/site-review/summary');
+  return res.redirect('/prototypes/site-review/choose-section');
 };
 
 /**

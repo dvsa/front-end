@@ -145,11 +145,11 @@
       @include core-16;
       background-color: #e7e7e7;
       border: 1px solid $grey-2;
+      border-top: 0;
       margin-bottom: $gutter-half; 
     
       &-heading {
         @include bold-24;
-        border-top: 1px solid $grey-2;
         padding: 12px 15px;
         background-color: #f1f1f1;
       }
@@ -167,7 +167,6 @@
           transition: background-color .4s ease-in-out;
 
           &-content {
-            @include bold-16;
             display: block;
             @include media(tablet) {
               margin-right: 220px;

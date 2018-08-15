@@ -1,0 +1,34 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Site review' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Willetta Aredondo', url: '/' },
+  { text: 'VTS079774', url: '/' },
+  { text: 'Site review' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+      {{ components.pageHeading(heading='Are you sure you want to abort', secondary='Site review') }}
+
+      <div class="u-margin-bottom-30">
+
+        <a class='button button--alert' href="/prototypes/site-review/">Abort site review</a>
+
+      </div>
+
+      <a href="/prototypes/site-review/choose-section">Return to site review</a>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}
+
+

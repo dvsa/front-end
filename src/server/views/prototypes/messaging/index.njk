@@ -63,49 +63,49 @@
               </form>
             </div>
 
-            <div class="message-panel"> 
 
-              {% if viewData.isPinnedCount > 0 %}
+            {% if viewData.isPinnedCount > 0 %}
+              <div class="message-panel"> 
               <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
 
-              <ul class="message-panel__messages u-margin-bottom-30"> 
-                {% for message in viewData.messages %}
+                <ul class="message-panel__messages u-margin-bottom-15"> 
+                  {% for message in viewData.messages %}
 
-                    {% if message.state.isPinned %}
+                      {% if message.state.isPinned %}
 
-                      <li data-type="special" class="message-panel__message message-panel__message--pinned {{ '' if message.state.isRead else 'message-panel__message--unread' }}">
-                        <div class="message-panel__inner">
-                          <h4 class="message-panel__message-title"> {{ message.title }} </h4>
-                          {% if message.date.due %}
-                          <span class="message-panel__alert" aria-hidden="true">Due in {{message.date.due.asInt}} days</span>
-                          {% endif %}
-                        
-                          <ul class="message-panel__details">
-                            <li>Date received: {{ message.date.received }}</li>
-                            <li>Type: {{message.type}} </li>
-                            {% if message.type=='Special notice' and not message.state.acknowledged %}
-                              <li>Action: Acknowledgment required</li>
-                            {% elif message.type!='Special notice' and not message.state.accepted and not message.state.rejected %}
-                              <li>Action: Accept or reject</li>
+                        <li data-type="special" class="message-panel__message message-panel__message--pinned {{ '' if message.state.isRead else 'message-panel__message--unread' }}">
+                          <div class="message-panel__inner">
+                            <h4 class="message-panel__message-title"> {{ message.title }} </h4>
+                            {% if message.date.due %}
+                            <span class="message-panel__alert" aria-hidden="true">Due in {{message.date.due.asInt}} days</span>
                             {% endif %}
-                          </ul>
-                        </div>
-                        <div class="message-panel__view">
-                          <a href="/prototypes/messaging/{{message.id}}" class="">View notification</a>
-                        </div> 
-                      </li>
+                          
+                            <ul class="message-panel__details">
+                              <li>Date received: {{ message.date.received }}</li>
+                              <li>Type: {{message.type}} </li>
+                              {% if message.type=='Special notice' and not message.state.acknowledged %}
+                                <li>Action: Acknowledgment required</li>
+                              {% elif message.type!='Special notice' and not message.state.accepted and not message.state.rejected %}
+                                <li>Action: Accept or reject</li>
+                              {% endif %}
+                            </ul>
+                          </div>
+                          <div class="message-panel__view">
+                            <a href="/prototypes/messaging/{{message.id}}" class="">View message</a>
+                          </div> 
+                        </li>
 
-                    {% endif %}
-                  {% endfor %}
-              </ul>
-                {% endif %}
-            </div>
+                      {% endif %}
+                    {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
   
             <div class="message-panel js-message-panel"> 
              <h3 class="heading-small message-panel__title js-message-list-title">
              All messages</h3>
             
-              <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
+              <ul class="u-margin-bottom-20 message-panel__messages js-message-list">
 
               {% for message in viewData.messages %}
 

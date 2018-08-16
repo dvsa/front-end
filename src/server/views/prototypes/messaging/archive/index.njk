@@ -4,7 +4,7 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Messages: Archive' }
+  { text: 'Messages' }
 ] %}
 
 {% block content %}
@@ -13,20 +13,23 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Messages: Archive') }}
+      {{ components.pageHeading(heading='Archived') }}
 
       {% if flashMessage != '' %}
 
-        <div class="message--success"> 
-          <p> {{ flashMessage }} </p> 
+        <div class="message--success">
+
+          <p> {{ flashMessage }} </p>
+
         </div>
 
-      {% endif %} 
+      {% endif %}
+ 
 
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs message-filters__tabs">          
             <li>
-              <a href="/prototypes/messaging" class="c-tab-list__tab-link  message-filters__tab">Messages</a>
+              <a href="/prototypes/messaging" class="c-tab-list__tab-link  message-filters__tab">Inbox</a>
             </li>
             <li>
               <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Archived</span>
@@ -36,28 +39,17 @@
           <div class="message-filters__tab-panel"> 
 
             <div class="message-panel"> 
-<<<<<<< HEAD
-<<<<<<< HEAD
-              <h3 class="heading-small message-panel__title js-message-list-title">
-<<<<<<< HEAD
-              Archived messages</h3> 
+
+              {% if viewData.archive.length %}
+                <h3 class="heading-small message-panel__title">
+                Archived</h3> 
+                {% else %}
+                <p class="message-panel__notice u-margin-bottom-10">No archived messages</p> 
+              {% endif %}
+
+               {% if viewData.archive.length %}
               
-=======
-              Archived messages</h3>
-            
->>>>>>> Archive messages - WIP
-                <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
-=======
-=======
->>>>>>> 448e7e36893caa7b6d3e1242bfd48e6113fc50e5
-              <h3 class="heading-small message-panel__title">
-              Archived messages</h3>
-            
                 <ul class="u-margin-bottom-30 message-panel__messages">
-<<<<<<< HEAD
->>>>>>> Archive view WIP
-=======
->>>>>>> 448e7e36893caa7b6d3e1242bfd48e6113fc50e5
 
                 {% for message in viewData.archive %}
 
@@ -85,16 +77,19 @@
                     {% endif %}
                   {% endfor %} 
                 </ul>
-            </div>  
+
+                {% endif %}
+            </div> 
+
           </div>
 
-          <div class="u-margin-top-30 u-margin-bottom-30">
-            {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
-          </div>
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+        </div>
 
     </div>
 
     {%- endcall %} 
-  {%- endcall %} 
+    {%- endcall %} 
   
 {% endblock %}

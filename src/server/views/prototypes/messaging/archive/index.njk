@@ -36,45 +36,18 @@
             </li>
           </ul>
 
-          <div class="message-filters__tab-panel js-filter-wrapper">
- 
-            <div class="message-filters__inputs">
-              <form class="form">
-                <div class="form-group u-margin-bottom-30 inline">
-                  <fieldset>
-                    <legend class="visually-hidden">Choose which message type to view</legend>
-                    <h3 class="heading-small">Filter messages</h3>
+          <div class="message-filters__tab-panel"> 
 
-                    <div class="multiple-choice multiple-choice--inline">
-                      <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
-                      <label for="type-special">Special notices</label>
-                    </div>
-                    <div class="multiple-choice multiple-choice--inline">
-                        <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="reminder" checked>
-                        <label for="type-reminder">Notifications</label>
-                      </div>
-                   
-                    <div class="multiple-choice multiple-choice--inline">
-                      <input data-type="News" class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
-                      <label for="type-advice">News</label>
-                    </div>
-                  </fieldset>
-                </div>
-              </form>
-            </div> 
-
-
-            <div class="message-panel js-message-panel"> 
+            <div class="message-panel"> 
               <h3 class="heading-small message-panel__title js-message-list-title">
-              All messages</h3>
-            
+              Archived messages</h3> 
               
                 <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
 
                 {% for message in viewData.messages %}
 
                   {% if not message.state.isPinned %}
-                    <li data-type="{{ message.type }}" class="message-panel__message {{'' if message.state.isRead else 'message-panel__message--unread'}}">
+                    <li data-type="{{ message.type }}" class="message-panel__message">
                       <div class="message-panel__inner">
                         <h4 class="message-panel__message-title">
                         {{message.title}}
@@ -86,7 +59,7 @@
                           {% if message.type=='Special notice' and not message.state.acknowledged %}
                             <li>Action: Acknowledgment required</li>
                           {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %}
-                            <li>Action: Accept or reject</li>
+                           
                           {% endif %}
                         </ul>
                       </div>

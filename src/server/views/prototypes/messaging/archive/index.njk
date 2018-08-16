@@ -4,7 +4,7 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Messages' }
+  { text: 'Messages: Archive' }
 ] %}
 
 {% block content %}
@@ -17,19 +17,16 @@
 
       {% if flashMessage != '' %}
 
-        <div class="message--success">
-
-          <p> {{ flashMessage }} </p>
-
+        <div class="message--success"> 
+          <p> {{ flashMessage }} </p> 
         </div>
 
-      {% endif %}
- 
+      {% endif %} 
 
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs message-filters__tabs">          
             <li>
-              <a href="/prototypes/messaging" class="c-tab-list__tab-link  message-filters__tab">Inbox</a>
+              <a href="/prototypes/messaging" class="c-tab-list__tab-link  message-filters__tab">Messages</a>
             </li>
             <li>
               <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Archived</span>
@@ -39,12 +36,30 @@
           <div class="message-filters__tab-panel"> 
 
             <div class="message-panel"> 
+<<<<<<< HEAD
+<<<<<<< HEAD
               <h3 class="heading-small message-panel__title js-message-list-title">
+<<<<<<< HEAD
               Archived messages</h3> 
               
+=======
+              Archived messages</h3>
+            
+>>>>>>> Archive messages - WIP
                 <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
+=======
+=======
+>>>>>>> 448e7e36893caa7b6d3e1242bfd48e6113fc50e5
+              <h3 class="heading-small message-panel__title">
+              Archived messages</h3>
+            
+                <ul class="u-margin-bottom-30 message-panel__messages">
+<<<<<<< HEAD
+>>>>>>> Archive view WIP
+=======
+>>>>>>> 448e7e36893caa7b6d3e1242bfd48e6113fc50e5
 
-                {% for message in viewData.messages %}
+                {% for message in viewData.archive %}
 
                   {% if not message.state.isPinned %}
                     <li data-type="{{ message.type }}" class="message-panel__message">
@@ -70,17 +85,16 @@
                     {% endif %}
                   {% endfor %} 
                 </ul>
-            </div> 
-
+            </div>  
           </div>
 
-        <div class="u-margin-top-30 u-margin-bottom-30">
-          {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
-        </div>
+          <div class="u-margin-top-30 u-margin-bottom-30">
+            {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+          </div>
 
     </div>
 
     {%- endcall %} 
-    {%- endcall %} 
+  {%- endcall %} 
   
 {% endblock %}

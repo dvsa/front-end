@@ -1,0 +1,237 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Service reports' %}
+
+{% block content %}
+
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="#">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="AE-view">
+          VTS079774
+      </a>
+    </li>
+    <li>
+      Site details
+    </li>
+  </ol>
+</div>
+
+
+<div class="grid-row">
+
+<header class="content-header">
+    <h1 class="heading-xlarge heading heading--page-heading">
+        <span class="heading-secondary">City Fixes Ltd.</span> Service reports
+    </h1>
+</header>
+
+<table class="result-table _result-table--controls" id="dataTable">
+    <thead>
+        <tr>
+            <th class="">Site ID</th>
+            <th class="tabular" scope="col">Vehicle testing station</th>
+            <th class="" scope="col">Site review</th>
+            <th class="" scope="col">Risk rating</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr>
+            <td class="tabular" style="vertical-align: top;">S000002</td>
+            <td class="tabular">
+                <a href="#">John's Garage</a>
+                <span class="result-table__meta">67 Main Road, Bristol, BS8 2NT</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Improve</strong>
+                <span class="result-table__meta">
+                    Date: 26 Feb 2018<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="tabular" style="vertical-align: top;">S000003</td>
+            <td class="tabular">
+                <a href="#">Joe's Garage</a>
+                <span class="result-table__meta">12 Zappa Lane, BAth, BA11 1JF</span>
+                <a href="#">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Satisfactory</strong>
+                <span class="result-table__meta">
+                    Date: 2 Jan 2017<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="tabular" style="vertical-align: top;">S003448</td>
+            <td class="tabular">
+                <a href="#">Dave's Chop Shop</a>
+                <span class="result-table__meta">12 Thing Lane, Somewhereville, SM1 3ED</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Improve</strong>
+                <span class="result-table__meta">
+                    Date: 1 Feb 2016<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--warn">Amber</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="tabular" style="vertical-align: top;">S002442</td>
+            <td class="tabular">
+                <a href="#">Venture Motors, Holloway</a>
+                <span class="result-table__meta">1 Archway Lane, Holloway, London, N5 2WE</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Unsatisfactory</strong>
+                <span class="result-table__meta">
+                    Date: 14 Jan 2016<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--alert">Red</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="tabular" style="vertical-align: top;">S000991</td>
+            <td class="tabular">
+                <a href="#">Venture Motors, Vauxhall</a>
+                <span class="result-table__meta">118 Big Road, London, SW9 6TH</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Improve</strong>
+                <span class="result-table__meta">
+                    Date: 6 Sep 2017<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="tabular" style="vertical-align: top;">S004012</td>
+            <td class="tabular">
+                <a href="#">Venture Motors, Highbury</a>
+                <span class="result-table__meta">28 Mountgrove Road, N5 2LH</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Satisfactory</strong>
+                <span class="result-table__meta">
+                    Date: 11 Feb 2018<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+        <tr>
+            <td class="tabular" style="vertical-align: top;">S004567</td>
+            <td class="tabular">
+                <a href="#">Venture Motors, Shoreditch</a>
+                <span class="result-table__meta">229 Hoxton Street, London, E2 1UK</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Satisfactory</strong>
+                <span class="result-table__meta">
+                     Date: 14 Jan 2016<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+            <tr>
+            <td class="tabular" style="vertical-align: top;">S000189</td>
+            <td class="tabular">
+                <a href="#">Venture Motors, Brixton</a>
+                <span class="result-table__meta">414 Coldharbour Lane, London, SW9 3EE</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Satisfactory</strong>
+                <span class="result-table__meta">
+                    Date: 9 Jan 2016<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+            <tr>
+            <td class="tabular" style="vertical-align: top;">S002442</td>
+            <td class="tabular">
+                <a href="#">Adventure Motors, Bath</a>
+                <span class="result-table__meta">6 Rain Lane, Bath, BA11 3EF</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Satisfactory</strong>
+                <span class="result-table__meta">
+                    Date: 9 Mar 2018<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+            <tr>
+            <td class="tabular" style="vertical-align: top;">S000562</td>
+            <td class="tabular">
+                <a href="#">Adventure Motors, Frome</a>
+                <span class="result-table__meta">12 Thing Lane, Frome, Ba11 1JF</span>
+                <a href="#" class="inline-link">Test logs</a> <a href="#" class="inline-link">Test quality information</a> <a href="#" class="inline-link">Testers annual assessments</a>
+            </td>
+            <td class="">
+                <strong>Satisfactory</strong>
+                <span class="result-table__meta">
+                    Date: 21 Jan 2018<br/>
+                    <a href="AE-view-view-details">View summary</a>
+                </span>
+            </td>
+            <td class="" style="vertical-align: top;">
+                <span class="badge--success">Green</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+{% endblock %}

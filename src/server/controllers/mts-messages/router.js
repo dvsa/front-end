@@ -3,7 +3,6 @@
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
- * @param {Express.Response} next - Express next object
  */
 export const getMessages = (req, res) => {
   // Renders the messaging index view
@@ -15,7 +14,6 @@ export const getMessages = (req, res) => {
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
- * @param {Express.Response} next - Express next object
  */
 export const getArchive = (req, res) => {
   // Renders the messaging archived view
@@ -27,7 +25,6 @@ export const getArchive = (req, res) => {
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
- * @param {Express.Response} next - Express next object
  */
 export const getMessage = (req, res) => {
   // Set the message's isRead state to true

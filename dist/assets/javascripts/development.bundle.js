@@ -8,6 +8,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *   Timestamp: August 15th 2018, 12:05:23 pm
 =======
  *   Timestamp: August 7th 2018, 11:23:18 am
@@ -21,6 +22,9 @@
 =======
  *   Timestamp: August 16th 2018, 12:27:12 pm
 >>>>>>> Built production. SASS changes for Messages.
+=======
+ *   Timestamp: August 16th 2018, 12:27:12 pm
+>>>>>>> 448e7e36893caa7b6d3e1242bfd48e6113fc50e5
  *   Source: https://github.com/dvsa/front-end
  * 
  */

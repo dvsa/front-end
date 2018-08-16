@@ -7,12 +7,15 @@ exports.setupMessages = undefined;
 
 var _data = require('../data');
 
+var _archiveData = require('../archiveData');
+
 /**
  * addPinnedItems - Adds is pinned state to special notices
  *
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
+// Gets message data object
 const addPinnedItems = message => {
   // If message is a special notice and is not currently acknowledged
   if (message.type == 'Special notice' && message.state.acknowledged == false) {
@@ -30,7 +33,6 @@ const addPinnedItems = message => {
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
-// Gets message data object
 const filterPinned = message => message.state.isPinned;
 
 /**
@@ -61,11 +63,16 @@ const setupMessages = exports.setupMessages = (req, res, next) => {
   // Adds pinned items, adds indices
   const updatedData = _data.data.map(addPinnedItems).map(addIndices);
 
+  // Set up some archive messages
+  const updatedArchive = _archiveData.archiveData;
+
   // Setup viewData
   const viewData = {
     messages: updatedData,
+    archive: updatedArchive,
     isPinnedCount: updatedData.filter(filterPinned).length
   };
+  console.log(updatedArchive);
 
   // Set session viewData
   req.session.viewData = viewData;

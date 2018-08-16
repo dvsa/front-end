@@ -104,19 +104,19 @@
     padding: 20px;
   }
   @include media(desktop) { 
-    padding: 20px 30px;
+    padding: 20px 16px;
   }
 }
 
-.message-panel {
+.message-panel {  
  
   &__title {
     margin-bottom: 15px;
   }
 
   @include core-16;
-  position: relative; 
-  padding: 15px;
+  position: relative;
+  padding: 6px 0;
   background-color: $white;
   transition: background-color .4s ease-in-out;
   
@@ -127,8 +127,7 @@
     position: relative;
   }
 
-  &__message-title {
-    font-weight: bold;
+  &__message-title { 
     position: relative;
     @include media(desktop) { 
       display: inline; 
@@ -139,27 +138,48 @@
     font-weight: bold; 
     color: $mellow-red; 
     @include media(desktop) { 
-      float: right; 
+      position: absolute;
+      left: 54%;
+      padding-left: 8px;
     }
   }
 
   &__message--pinned { 
     background: $grey-4;
+
+    .message-panel__inner { 
+        
+        @include media(desktop) {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        } 
+    }
+    .message-panel__view {
+      @include media(desktop) {
+        top: 32px;
+        
+      } 
+    }
   }
 
   &__message--unread {
     background: $grey-4;  
-     
 
-    .message-panel__message-title:before {
-      position: absolute;
-      left: -20px;
-      top: -4px;
-      font-size: 28px;
-      color: $mot-blue;
-      content: "\2022";
+    .message-panel__message-title {
+      font-weight: bold; 
+      &:before {
+        position: absolute;
+        left: -20px;
+        top: -4px;
+        font-size: 28px;
+        color: $black;
+        content: "\2022";
+      }
     }
-
+    .message-panel__details {
+      color: $black;
+    } 
+    
   }
   
   // Empty view notice
@@ -175,7 +195,7 @@
     }
     @include media(desktop) {
       padding: 10px 170px 4px 28px;
-    }
+    } 
   }
 
   &__view  {
@@ -194,11 +214,12 @@
   // Meta details for each message
   &__details {
     @extend %contain-floats;
-    padding: 6px 0;
+    padding: 6px 0;  
     color: $grey-1;
     
     li {
-      font-size: 14px;
+      font-size: 16px;
+      line-height: 1.25;
       @include media(tablet) {
         display: inline-block;
         min-width: 33%; 

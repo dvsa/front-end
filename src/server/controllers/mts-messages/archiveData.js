@@ -1,7 +1,7 @@
 // JSON represenation of messages
-export const data = [
+export const archiveData = [
   {
-    title: 'Preparation for the EU roadworthiness directive',
+    title: 'Guidance for preparation for the EU roadworthiness directive',
     date: {
       received: '16 May 2018',
       published: '1 May 2018',
@@ -13,7 +13,6 @@ export const data = [
     type: 'Special notice',
     dayCount: 4,
     state: {
-      inArchive: true,
       acknowledged: false,
       isRead: false,
     },
@@ -51,7 +50,7 @@ export const data = [
     <p>Following implementation of the MOT changes, the helpdesk will then operate as normal, Monday to Friday, 8am to 6pm on 0300 123 9000 and Saturday 8am to 2pm on 0330 123 5654.</p>`,
   },
   {
-    title: 'Changes to the MOT testing guide',
+    title: 'We have changes to the MOT testing guide',
     date: {
       received: '16 July 2018',
       published: '1 August 2018',
@@ -59,14 +58,13 @@ export const data = [
     type: 'Special notice',
     dayCount: false,
     state: {
-      inArchive: false,
       acknowledged: true,
       isRead: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },
   {
-    title: 'New test quality information available',
+    title: 'Several updates to test quality information',
     date: {
       received: '1 July 2018',
       published: '12 June 2018',
@@ -74,7 +72,6 @@ export const data = [
     type: 'Notification',
     dayCount: false,
     state: {
-      inArchive: false,
       accepted: false,
       rejected: false,
       isRead: true,
@@ -82,7 +79,7 @@ export const data = [
     messagePreview: `<h1>Preview placeholder</h1>`,
   },
   {
-    title: 'Site manager nomination',
+    title: '2018 Site manager nomination',
     date: {
       received: '1 April 2018',
       published: '12 March 2018',
@@ -90,7 +87,6 @@ export const data = [
     type: 'Notification',
     dayCount: false,
     state: {
-      inArchive: false,
       accepted: false,
       rejected: false,
       isRead: false,
@@ -98,7 +94,7 @@ export const data = [
     messagePreview: `<h1>Preview placeholder</h1>`,
   },
   {
-    title: 'New way for you to get MOT news',
+    title: 'There is a new way for you to get MOT news',
     date: {
       received: '23 April 2018',
       published: '23 April 2018',
@@ -106,29 +102,13 @@ export const data = [
     type: 'News',
     state: {
       isRead: false,
-      inArchive: true,
     },
     messagePreview: `<p class="lede">From October onwards you'll be able to see all MOT special notices, notifications and news by DVSA as soon as you sign in the MTS.</p>
     <p>We've added a 'Messages' view that will show you all special notices, notifications and any MOT related news. This is to ensure that every MOT tester will find out about any changes and news that impact their work.</p>
     <p>To find out more what we've been working on from the <a href="https://mattersoftesting.blog.gov.uk/mot-services-were-working-on-6-july-2018/">latest Matters of Testing blog post</a>.</p>`,
   },
   {
-    title: 'Tester nomination',
-    date: {
-      received: '12 March 2018',
-      published: '2 Feb 2018',
-    },
-    type: 'Notification',
-    state: {
-      inArchive: false,
-      accepted: false,
-      rejected: false,
-      isRead: true,
-    },
-    messagePreview: `<h1>Preview placeholder</h1>`,
-  },
-  {
-    title: 'Test outside opening hours',
+    title: 'How to test outside opening hours',
     date: {
       received: '4 February 2018',
       published: '1 February 2018',
@@ -138,7 +118,6 @@ export const data = [
       accepted: true,
       rejected: false,
       isRead: true,
-      inArchive: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },

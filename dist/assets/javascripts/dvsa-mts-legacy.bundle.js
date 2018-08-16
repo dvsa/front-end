@@ -5,9 +5,13 @@
  *   Author: Tameem Safi <https://github.com/tameemsafi>
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>
 <<<<<<< HEAD
+<<<<<<< HEAD
  
 =======
  *   Timestamp: August 16th 2018, 12:16:55 pm
+=======
+ *   Timestamp: August 16th 2018, 12:27:12 pm
+>>>>>>> Built production. SASS changes for Messages.
  *   Source: https://github.com/dvsa/front-end
  * 
 >>>>>>> Archive data WIP

@@ -1,23 +1,26 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 // JSON represenation of messages
-export const data = [
-  {
-    title: 'Preparation for the EU roadworthiness directive',
-    date: {
-      received: '16 May 2018',
-      published: '1 May 2018',
-      due: {
-        asInt: 4,
-        asString: '11 August 2018',
-      },
-    },
-    type: 'Special notice',
-    dayCount: 4,
-    state: {
-      inArchive: true,
-      acknowledged: false,
-      isRead: false,
-    },
-    messagePreview: `<h2 class='heading-medium'>Overview</h2>
+const archiveData = exports.archiveData = [{
+  title: 'Guidance for preparation for the EU roadworthiness directive',
+  date: {
+    received: '16 May 2018',
+    published: '1 May 2018',
+    due: {
+      asInt: 4,
+      asString: '11 August 2018'
+    }
+  },
+  type: 'Special notice',
+  dayCount: 4,
+  state: {
+    acknowledged: false,
+    isRead: false
+  },
+  messagePreview: `<h2 class='heading-medium'>Overview</h2>
     <p>On 20 May 2018, DVSA will introduce changes required by the EU roadworthiness directive.</p>
     <h2 class='heading-medium'><span class="number">1. </span> Use the training environment (available 24 hours a day until Sunday 27 May)</h2>
     <p>As an MOT tester, it’s essential that you’re prepared for the changes to the MOT on 20 May. One of the main ways is to log into the <a rel="external" href="https://training.mot-testing.service.gov.uk/">training environment</a> before 20 May 2018 - this facility lets you carry out simulated tests with real vehicle information.</p>
@@ -48,98 +51,72 @@ export const data = [
     <p>You can find a <a href="https://www.gov.uk/government/publications/mot-changes-from-may-2018-guidance-for-mot-testers/other-important-information-for-mot-testers">list of important information for MOT testers</a> following feedback from the training environment and testers’ manuals.</p>
     <p>In addition, the helpdesk will be open on Sunday 20 May 2018 from 9am to 3pm.</p>
     <p>You should call 0330 123 5654 if you need help with entering test results or have any questions when carrying out tests.</p>
-    <p>Following implementation of the MOT changes, the helpdesk will then operate as normal, Monday to Friday, 8am to 6pm on 0300 123 9000 and Saturday 8am to 2pm on 0330 123 5654.</p>`,
+    <p>Following implementation of the MOT changes, the helpdesk will then operate as normal, Monday to Friday, 8am to 6pm on 0300 123 9000 and Saturday 8am to 2pm on 0330 123 5654.</p>`
+}, {
+  title: 'We have changes to the MOT testing guide',
+  date: {
+    received: '16 July 2018',
+    published: '1 August 2018'
   },
-  {
-    title: 'Changes to the MOT testing guide',
-    date: {
-      received: '16 July 2018',
-      published: '1 August 2018',
-    },
-    type: 'Special notice',
-    dayCount: false,
-    state: {
-      inArchive: false,
-      acknowledged: true,
-      isRead: true,
-    },
-    messagePreview: `<h1>Preview placeholder</h1>`,
+  type: 'Special notice',
+  dayCount: false,
+  state: {
+    acknowledged: true,
+    isRead: true
   },
-  {
-    title: 'New test quality information available',
-    date: {
-      received: '1 July 2018',
-      published: '12 June 2018',
-    },
-    type: 'Notification',
-    dayCount: false,
-    state: {
-      inArchive: false,
-      accepted: false,
-      rejected: false,
-      isRead: true,
-    },
-    messagePreview: `<h1>Preview placeholder</h1>`,
+  messagePreview: `<h1>Preview placeholder</h1>`
+}, {
+  title: 'Several updates to test quality information',
+  date: {
+    received: '1 July 2018',
+    published: '12 June 2018'
   },
-  {
-    title: 'Site manager nomination',
-    date: {
-      received: '1 April 2018',
-      published: '12 March 2018',
-    },
-    type: 'Notification',
-    dayCount: false,
-    state: {
-      inArchive: false,
-      accepted: false,
-      rejected: false,
-      isRead: false,
-    },
-    messagePreview: `<h1>Preview placeholder</h1>`,
+  type: 'Notification',
+  dayCount: false,
+  state: {
+    accepted: false,
+    rejected: false,
+    isRead: true
   },
-  {
-    title: 'New way for you to get MOT news',
-    date: {
-      received: '23 April 2018',
-      published: '23 April 2018',
-    },
-    type: 'News',
-    state: {
-      isRead: false,
-      inArchive: true,
-    },
-    messagePreview: `<p class="lede">From October onwards you'll be able to see all MOT special notices, notifications and news by DVSA as soon as you sign in the MTS.</p>
+  messagePreview: `<h1>Preview placeholder</h1>`
+}, {
+  title: '2018 Site manager nomination',
+  date: {
+    received: '1 April 2018',
+    published: '12 March 2018'
+  },
+  type: 'Notification',
+  dayCount: false,
+  state: {
+    accepted: false,
+    rejected: false,
+    isRead: false
+  },
+  messagePreview: `<h1>Preview placeholder</h1>`
+}, {
+  title: 'There is a new way for you to get MOT news',
+  date: {
+    received: '23 April 2018',
+    published: '23 April 2018'
+  },
+  type: 'News',
+  state: {
+    isRead: false
+  },
+  messagePreview: `<p class="lede">From October onwards you'll be able to see all MOT special notices, notifications and news by DVSA as soon as you sign in the MTS.</p>
     <p>We've added a 'Messages' view that will show you all special notices, notifications and any MOT related news. This is to ensure that every MOT tester will find out about any changes and news that impact their work.</p>
-    <p>To find out more what we've been working on from the <a href="https://mattersoftesting.blog.gov.uk/mot-services-were-working-on-6-july-2018/">latest Matters of Testing blog post</a>.</p>`,
+    <p>To find out more what we've been working on from the <a href="https://mattersoftesting.blog.gov.uk/mot-services-were-working-on-6-july-2018/">latest Matters of Testing blog post</a>.</p>`
+}, {
+  title: 'How to test outside opening hours',
+  date: {
+    received: '4 February 2018',
+    published: '1 February 2018'
   },
-  {
-    title: 'Tester nomination',
-    date: {
-      received: '12 March 2018',
-      published: '2 Feb 2018',
-    },
-    type: 'Notification',
-    state: {
-      inArchive: false,
-      accepted: false,
-      rejected: false,
-      isRead: true,
-    },
-    messagePreview: `<h1>Preview placeholder</h1>`,
+  type: 'Notification',
+  state: {
+    accepted: true,
+    rejected: false,
+    isRead: true
   },
-  {
-    title: 'Test outside opening hours',
-    date: {
-      received: '4 February 2018',
-      published: '1 February 2018',
-    },
-    type: 'Notification',
-    state: {
-      accepted: true,
-      rejected: false,
-      isRead: true,
-      inArchive: true,
-    },
-    messagePreview: `<h1>Preview placeholder</h1>`,
-  },
-];
+  messagePreview: `<h1>Preview placeholder</h1>`
+}];

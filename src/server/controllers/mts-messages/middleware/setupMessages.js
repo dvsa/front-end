@@ -49,7 +49,6 @@ const addIndices = (message, index) => {
  * @param {Express.Response} next - Express next object
  */
 export const setupMessages = (req, res, next) => {
-  console.log('test');
   // if viewData already exists return to next middleware method
   if (req.session.viewData) return next();
 
@@ -57,8 +56,7 @@ export const setupMessages = (req, res, next) => {
   const updatedData = data.map(addPinnedItems).map(addIndices);
 
   // Set up some archive messages
-  const updatedArchive = archiveData.map(addPinnedItems).map(addIndices);
- 
+  const updatedArchive = archiveData;
 
   // Setup viewData
   const viewData = {
@@ -66,6 +64,7 @@ export const setupMessages = (req, res, next) => {
     archive: updatedArchive,
     isPinnedCount: updatedData.filter(filterPinned).length,
   };
+  console.log(updatedArchive);
 
   // Set session viewData
   req.session.viewData = viewData;

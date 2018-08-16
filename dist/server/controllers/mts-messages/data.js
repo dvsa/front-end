@@ -17,7 +17,7 @@ const data = exports.data = [{
   type: 'Special notice',
   dayCount: 4,
   state: {
-    inArchive: false,
+    inArchive: true,
     acknowledged: false,
     isRead: false
   },

@@ -4,7 +4,7 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Notifications' }
+  { text: 'Messages' }
 ] %}
 
 {% block content %}
@@ -13,30 +13,30 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Notifications') }}
+      {{ components.pageHeading(heading='Messages') }}
 
       <div class='u-clearfix'>
 
       <p>
-        <a href="/prototypes/mts-messages/create-message-type" class="button" id="action-create-a-notification">
-          Create a notification
+        <a href="/prototypes/mts-messages/scheme/create-message-type" class="button" id="action-create-a-notification">
+          Create a message
         </a>
       </p>
 
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs">          
             <li>
-              <a href="/prototypes/mts-messages/notifications-inbox-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Notifications (2)</a>
+              <a href="/prototypes/mts-messages/scheme" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Messages (2)</a>
             </li>
             <li>
               <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Archived</span>
             </li>
             <li>
-              <a href="/prototypes/mts-messages/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft (2)</a>
+              <a href="/prototypes/mts-messages/scheme/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft (2)</a>
             </li>
             
             <li>
-              <a href="/prototypes/mts-messages/notifications-removed-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Removed</a>
+              <a href="/prototypes/mts-messages/scheme/notifications-removed-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Removed</a>
             </li>
             
           </ul>
@@ -52,11 +52,11 @@
                   <div class="c-tab-list__item-link">New test quality information available</div>
                   <ul class="defect__positions">
                     <li style="font-size: 16px;">Date received: 1 June 2018</li>
-                    <li style="font-size: 16px;">Type: System message</li>
+                    <li style="font-size: 16px;">Type: Notification</li>
                   </ul>
                 </div>
                 <div class="c-tab-list__item-right">
-                  <a href="#" class="">View notification</a>
+                  <a href="#" class="">View message</a>
                 </div>
               </li>
 
@@ -65,11 +65,11 @@
                   <div class="c-tab-list__item-link">Site manager nomination</div>
                   <ul class="defect__positions">
                     <li style="font-size: 16px;">Date received: 1 April 2018</li>
-                    <li style="font-size: 16px;">Type: System message</li>
+                    <li style="font-size: 16px;">Type: Notification</li>
                   </ul>
                 </div>
                 <div class="c-tab-list__item-right">
-                  <a href="#" class="">View notification</a>
+                  <a href="#" class="">View message</a>
                 </div>
               </li>
 
@@ -78,11 +78,11 @@
                   <div class="c-tab-list__item-link">Tester nomination</div>
                   <ul class="defect__positions">
                     <li style="font-size: 16px;">Date received: 12 March 2018</li>
-                    <li style="font-size: 16px;">Type: System message</li>
+                    <li style="font-size: 16px;">Type: Notification</li>
                   </ul>
                 </div>
                 <div class="c-tab-list__item-right">
-                  <a href="#" class="">View notification</a>
+                  <a href="#" class="">View message</a>
                 </div>
               </li>
 
@@ -91,11 +91,11 @@
                   <div class="c-tab-list__item-link">Test outside opening hours </div>
                   <ul class="defect__positions">
                     <li style="font-size: 16px;">Date received: 4 February 2018</li>
-                    <li style="font-size: 16px;">Type: System message</li>
+                    <li style="font-size: 16px;">Type: Notification</li>
                   </ul>
                 </div>
                 <div class="c-tab-list__item-right">
-                  <a href="#" class="">View notification</a>
+                  <a href="#" class="">View message</a>
                 </div>
               </li>
 

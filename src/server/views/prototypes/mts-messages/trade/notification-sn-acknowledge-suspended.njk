@@ -4,8 +4,7 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
-  { text: 'Create a message'}
+  { text: 'Messages' }
 ] %}
 
 {% block content %}
@@ -14,9 +13,9 @@
 
     {% call components.columnFull() %}
 
-      <div class="banner banner--info">
-          <span class="banner__heading-large">This is a preview of the message</span>
-          <span><a href="/prototypes/mts-messages/scheme/create-message-review">Go back to the review page</a> to amend any details or publish the message</span>
+      <div class="banner--error">
+          <span class="banner__heading-large">This special notice message is overdue</span>
+          <span>To continue testing you must acknowledge this message</span>
       </div>
 
       <header class="content-header">
@@ -102,15 +101,10 @@
       </div>
 
       <div class="u-margin-top-10 u-margin-bottom-30">
-        <input class="button" type="submit" value="Acknowledge special notice" disabled="disabled" aria-disabled="true">
+        {{ components.button(text='Acknowledge special notice', url='/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-acknowledged-system-message') }}
       </div>
 
-      <hr style="height: 10px;">
-
-      <div class="u-margin-top-10 u-margin-bottom-30">
-        <a href="/prototypes/mts-messages/scheme/create-message-review">Back to review message</a>
-      </div>
-
+      {{ components.link(text='Back to messages', url='/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-read', paragraph=true) }}
 
     {%- endcall %}
 

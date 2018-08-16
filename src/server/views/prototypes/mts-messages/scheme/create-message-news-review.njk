@@ -1,0 +1,140 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
+  { text: 'Create a message'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Review and publish the message', secondary='Create a message') }}
+
+      <div class="message--success">
+          <p>Message successfully saved as a draft.</p>
+      </div>
+
+      <div class='u-clearfix'>
+
+        <div class='text'>
+          {{ components.paragraph(text='Continue reviewing the message or safely leave and return later.', lead=true) }}
+        </div>
+
+        <table class="table-summary">
+          <caption class="heading-medium">Message type</caption>
+          <tbody>
+            <tr>
+              <th class="table-summary__key">
+                Type
+              </th>
+              <td class="table-summary__value">
+                News
+                <a href="#" class="table-summary__action" title="Action Key">Change<span class="visuallyhidden"> Key</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table-summary">
+          <caption class="heading-medium">Audience</caption>
+          <tbody>
+            <tr>
+              <th class="table-summary__key">
+                Roles
+              </th>
+              <td class="table-summary__value">
+                <ul>
+                  <li>DVSA roles</li>
+                  <li>VEHICLE EXAMINER</li>
+                  <li>SCHEME MANAGER</li>
+                  <li>SCHEME USER</li>
+                  <li>SITE MANAGER</li>
+                  <li>SITE ADMIN</li>
+                  <li>Class 3</li>
+                  <li>Class 4</li>
+                  <li>Class 5</li>
+                </ul>
+                <a href="#" class="table-summary__action" title="Action Key">Change<span class="visuallyhidden"> Key</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table-summary">
+          <caption class="heading-medium">Message content and publish date</caption>
+          <tbody>
+            <tr>
+              <th class="table-summary__key">
+                External publish date
+              </th>
+              <td class="table-summary__value">
+                1 August 2018
+                <a href="#" class="table-summary__action" title="Action Key">Change<span class="visuallyhidden"> Key</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Message title
+              </th>
+              <td class="table-summary__value">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit
+                <a href="#" class="table-summary__action" title="Action Key">Change<span class="visuallyhidden"> Key</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Message content
+              </th>
+              <td class="table-summary__value">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Duis volutpat eget velit at feugiat</p>
+                <p>Maecenas porta consectetur tortor et hendrerit. Donec mollis tincidunt neque ut molestie.</p>
+                <p>Curabitur ultricies, quam sit amet venenatis fermentum, augue tellus elementum quam, ut porttitor massa ex non mauris.</p>
+                <p>Praesent aliquam dictum lacus et efficitur. Vivamus vel augue iaculis, accumsan purus eget, dapibus sapien.</p>
+                <a href="#" class="table-summary__action" title="Action Key">Change<span class="visuallyhidden"> Key</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="heading heading--medium heading-medium">
+          Preview the message
+        </h3>
+        <p class="text">Check before publishing that the details are correct and what the message will look like.</p>
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a href="/prototypes/mts-messages/scheme/create-message-news-preview" class="button button--info">Preview</a>
+        </div>
+
+        <h3 class="heading heading--medium heading-medium">
+          Now publish the message
+        </h3>
+        <p class="text">By publishing this message you are confirming that the details you are providing are correct.</p>
+        <ul class="list-unstyled content-navigation__split u-clearfix">
+            <li class="content-navigation__split--left">
+                <a class=" button" href="/prototypes/mts-messages/scheme/create-message-confirmation">Publish</a>
+            </li>
+            <li class="content-navigation__split--right">
+                <a class="button button--alert" href="/prototypes/mts-messages/scheme/remove-message">Remove</a>
+            </li>
+        </ul>
+
+        {{ components.link(text='Return to home', url='/prototypes/mts-messages/scheme', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

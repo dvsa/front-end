@@ -1,6 +1,5 @@
 // Gets message data object
 import { data } from '../data';
-import { archiveData } from '../archiveData';
 
 /**
  * addPinnedItems - Adds is pinned state to special notices
@@ -53,21 +52,26 @@ export const setupMessages = (req, res, next) => {
   if (req.session.viewData) return next();
 
   // Adds pinned items, adds indices
-  const updatedData = data.map(addPinnedItems).map(addIndices);
+  const messages = data.map(addPinnedItems).map(addIndices);
 
-  // Set up some archive messages
-  const updatedArchive = archiveData;
+  // Add two messages to the archive to start
+  const archive = [];
+  archive.push(messages[4]);
+  archive.push(messages[5]);
+
+  // Remove those two from inbox
+  messages.splice(4, 2);
 
   // Setup viewData
   const viewData = {
-    messages: updatedData,
-    archive: updatedArchive,
-    isPinnedCount: updatedData.filter(filterPinned).length,
+    messages,
+    archive,
+    isPinnedCount: messages.filter(filterPinned).length,
   };
-  console.log(updatedArchive);
 
   // Set session viewData
   req.session.viewData = viewData;
+  console.log('setup');
 
   // Run next middleware stack
   next();

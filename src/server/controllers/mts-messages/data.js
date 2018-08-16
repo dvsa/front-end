@@ -13,7 +13,6 @@ export const data = [
     type: 'Special notice',
     dayCount: 4,
     state: {
-      inArchive: true,
       acknowledged: false,
       isRead: false,
     },
@@ -59,7 +58,6 @@ export const data = [
     type: 'Special notice',
     dayCount: false,
     state: {
-      inArchive: false,
       acknowledged: true,
       isRead: true,
     },
@@ -74,7 +72,6 @@ export const data = [
     type: 'Notification',
     dayCount: false,
     state: {
-      inArchive: false,
       accepted: false,
       rejected: false,
       isRead: true,
@@ -90,7 +87,6 @@ export const data = [
     type: 'Notification',
     dayCount: false,
     state: {
-      inArchive: false,
       accepted: false,
       rejected: false,
       isRead: false,
@@ -106,7 +102,6 @@ export const data = [
     type: 'News',
     state: {
       isRead: false,
-      inArchive: true,
     },
     messagePreview: `<p class="lede">From October onwards you'll be able to see all MOT special notices, notifications and news by DVSA as soon as you sign in the MTS.</p>
     <p>We've added a 'Messages' view that will show you all special notices, notifications and any MOT related news. This is to ensure that every MOT tester will find out about any changes and news that impact their work.</p>
@@ -120,7 +115,6 @@ export const data = [
     },
     type: 'Notification',
     state: {
-      inArchive: false,
       accepted: false,
       rejected: false,
       isRead: true,
@@ -138,7 +132,34 @@ export const data = [
       accepted: true,
       rejected: false,
       isRead: true,
-      inArchive: true,
+    },
+    messagePreview: `<h1>Preview placeholder</h1>`,
+  },
+  {
+    title: '2018 Regulations',
+    date: {
+      received: '4 February 2018',
+      published: '1 February 2018',
+    },
+    type: 'News',
+    state: {
+      accepted: true,
+      rejected: false,
+      isRead: true,
+    },
+    messagePreview: `<h1>Preview placeholder</h1>`,
+  },
+  {
+    title: 'Updated regulations',
+    date: {
+      received: '4 February 2018',
+      published: '1 February 2018',
+    },
+    type: 'News',
+    state: {
+      accepted: true,
+      rejected: false,
+      isRead: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },

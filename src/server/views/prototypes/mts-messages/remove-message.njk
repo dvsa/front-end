@@ -1,0 +1,37 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Notifications', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
+  { text: 'Remove notification'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Remove notification', secondary='Notifications') }}
+
+      <div class='text u-clearfix'>
+
+        {{ components.paragraph(text='Confirm that you want to remove this special notice MOT special notice 05-18: Preparation for the EU roadworthiness directive', lead=true) }}
+
+        <p>Removing a special notice will remove it from all users list.</p>
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a class="button button--alert" href="/prototypes/mts-messages/remove-message-confirmation">Remove notification</a>
+        </div>
+
+        {{ components.link(text='Cancel and return to notifications', url='/prototypes/mts-messages/notifications-inbox-scheme-user', paragraph=true) }}
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

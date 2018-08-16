@@ -64,16 +64,14 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       if (!isPopulated(req.body['improve-textarea'])) {
         // Add an error
         req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Provide actions' });
+      } else if (!isLessThan(req.body['improve-textarea'], 250)) {
+        // If textarea exceeds limit of 2500
+        // Add an error
+        req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Enter up to 250 characters' });
+      } else {
+        req.session.viewData[assessmentType].commitedLevel = 'Improve';
+        req.session.viewData[assessmentType].commitedComment = req.body['improve-textarea'];
       }
-
-      // If textarea exceeds limit of 2500
-      else if (!isLessThan(req.body['improve-textarea'], 250)) {
-          // Add an error
-          req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Enter up to 250 characters' });
-        } else {
-          req.session.viewData[assessmentType].commitedLevel = 'Improve';
-          req.session.viewData[assessmentType].commitedComment = req.body['improve-textarea'];
-        }
 
       req.session.viewData[assessmentType][radioValue].comment = req.body['improve-textarea'];
       req.session.viewData[assessmentType][radioValue].isChecked = true;
@@ -86,16 +84,14 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       if (!isPopulated(req.body['unsatisfactory-advice-textarea'])) {
         // Add an error
         req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Provide actions' });
+      } else if (!isLessThan(req.body['unsatisfactory-advice-textarea'], 250)) {
+        // If textarea exceeds limit of 2500
+        // Add an error
+        req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Enter up to 250 characters' });
+      } else {
+        req.session.viewData[assessmentType].commitedLevel = 'Unsatisfactory';
+        req.session.viewData[assessmentType].commitedComment = req.body['unsatisfactory-advice-textarea'];
       }
-
-      // If textarea exceeds limit of 2500
-      else if (!isLessThan(req.body['unsatisfactory-advice-textarea'], 250)) {
-          // Add an error
-          req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Enter up to 250 characters' });
-        } else {
-          req.session.viewData[assessmentType].commitedLevel = 'Unsatisfactory';
-          req.session.viewData[assessmentType].commitedComment = req.body['unsatisfactory-advice-textarea'];
-        }
 
       req.session.viewData[assessmentType][radioValue].comment = req.body['unsatisfactory-advice-textarea'];
       req.session.viewData[assessmentType][radioValue].isChecked = true;
@@ -181,23 +177,19 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
     req.session.viewData.activity.errors.push({
       testNumber: 'Add a test number'
     });
-  }
-
-  // If option no radio was selected & reason 5 (other was selected) was not selected
-  else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
-      // Create new error and push to stack
-      req.session.viewData.activity.errors.push({
-        activityDropdown: 'Select why the activity was not performed'
-      });
-    }
-
+  } else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
+    // If option no radio was selected & reason 5 (other was selected) was not selected
+    // Create new error and push to stack
+    req.session.viewData.activity.errors.push({
+      activityDropdown: 'Select why the activity was not performed'
+    });
+  } else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '5' && !req.session.viewData.activity.formData.otherReason) {
     // If option no radio was select & reason 5 (other was selected) & other textarea is not populated
-    else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '5' && !req.session.viewData.activity.formData.otherReason) {
-        // Create new error and push to stack
-        req.session.viewData.activity.errors.push({
-          otherReason: 'Add why the activity was not performed'
-        });
-      }
+    // Create new error and push to stack
+    req.session.viewData.activity.errors.push({
+      otherReason: 'Add why the activity was not performed'
+    });
+  }
 
   // Calls the next middleware method in the stack
   next();

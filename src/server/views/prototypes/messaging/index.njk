@@ -1,0 +1,149 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Messages') }}
+
+      {% if flashMessage != '' %}
+
+        <div class="message--success">
+
+          <p> {{ flashMessage }} </p>
+
+        </div>
+
+      {% endif %}
+ 
+
+        <div class="c-tab-list">
+          <ul class="c-tab-list__tabs message-filters__tabs">          
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Inbox</span>
+            </li>
+            <li>
+              <a href="/prototypes/messaging/archive" class="c-tab-list__tab-link message-filters__tab">Archived</a>
+            </li>
+          </ul>
+
+          <div class="message-filters__tab-panel js-filter-wrapper">
+ 
+            <div class="message-filters__inputs">
+              <form class="form">
+                <div class="form-group u-margin-bottom-30 inline">
+                  <fieldset>
+                    <legend class="visually-hidden">Choose which message type to view</legend>
+                    <h3 class="heading-small">Filter messages</h3>
+
+                    <div class="multiple-choice multiple-choice--inline">
+                      <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
+                      <label for="type-special">Special notices</label>
+                    </div>
+                    <div class="multiple-choice multiple-choice--inline">
+                        <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="reminder" checked>
+                        <label for="type-reminder">Notifications</label>
+                      </div>
+                   
+                    <div class="multiple-choice multiple-choice--inline">
+                      <input data-type="News" class="js-message-filter" id="type-advice" name="type" type="checkbox" value="advice" checked>
+                      <label for="type-advice">News</label>
+                    </div>
+                  </fieldset>
+                </div>
+              </form>
+            </div>
+
+
+            {% if viewData.isPinnedCount > 0 %}
+              <div class="message-panel"> 
+              <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
+
+                <ul class="message-panel__messages u-margin-bottom-15"> 
+                  {% for message in viewData.messages %}
+
+                      {% if message.state.isPinned %}
+
+                        <li data-type="special" class="message-panel__message message-panel__message--pinned {{ '' if message.state.isRead else 'message-panel__message--unread' }}">
+                          <div class="message-panel__inner">
+                            <h4 class="message-panel__message-title"> {{ message.title }} </h4>
+                            {% if message.date.due %}
+                            <span class="message-panel__alert" aria-hidden="true">Due in {{message.date.due.asInt}} days</span>
+                            {% endif %}
+                          
+                            <ul class="message-panel__details">
+                              <li>Date received: {{ message.date.received }}</li>
+                              <li>Type: {{message.type}} </li>
+                              {% if message.type=='Special notice' and not message.state.acknowledged %}
+                                <li>Action: Acknowledgment required</li>
+                              {% elif message.type!='Special notice' and not message.state.accepted and not message.state.rejected %}
+                                <li>Action: Accept or reject</li>
+                              {% endif %}
+                            </ul>
+                          </div>
+                          <div class="message-panel__view">
+                            <a href="/prototypes/messaging/{{message.id}}" class="">View message</a>
+                          </div> 
+                        </li>
+
+                      {% endif %}
+                    {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+  
+            <div class="message-panel js-message-panel"> 
+             <h3 class="heading-small message-panel__title js-message-list-title">
+             All messages</h3>
+            
+              <ul class="u-margin-bottom-20 message-panel__messages js-message-list">
+
+              {% for message in viewData.messages %}
+
+                {% if not message.state.isPinned %}
+                  <li data-type="{{ message.type }}" class="message-panel__message {{'' if message.state.isRead else 'message-panel__message--unread'}}">
+                    <div class="message-panel__inner">
+                      <h4 class="message-panel__message-title">
+                      {{message.title}}
+                      </h4>
+                    
+                      <ul class="message-panel__details">
+                        <li>Date received: {{message.date.received}} </li>
+                        <li>Type: {{message.type}} </li>
+                        {% if message.type=='Special notice' and not message.state.acknowledged %}
+                          <li>Action: Acknowledgment required</li>
+                        {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %}
+                          <li>Action: Accept or reject</li>
+                        {% endif %}
+                      </ul>
+                    </div>
+                    <div class="message-panel__view">
+                      <a href="/prototypes/messaging/{{message.id}}" class="">View message</a>
+                    </div> 
+                  </li>
+                  {% endif %}
+                {% endfor %} 
+              </ul>
+            </div> 
+
+          </div>
+
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+        </div>
+
+    </div>
+
+    {%- endcall %} 
+    {%- endcall %} 
+  
+{% endblock %}

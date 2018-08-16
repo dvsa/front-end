@@ -1,0 +1,136 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'WILLETTA AREDONDO', url: '#' },
+  { text: 'VTS079774', url: '#' },
+  { text: 'Site details', url: 'AE-view/' },
+  { text: 'Site review summary' }
+
+] %}
+
+ {{ activityPerformed }}
+ {% set activityPerformed = viewData.activity.activityPerformed %} 
+
+
+{% block content %} 
+ 
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review outcome</span>
+  Improve
+</h1>
+
+
+
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+     <tr>
+      <th class="table-summary__key">
+        Compliance
+      </th>
+      <td class="table-summary__value--tabular">
+         <strong>Satisfactory</strong><br/>
+         Comment: certificate should be printed immediately after recording test results.
+     </td>
+     <td></td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Premises
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Satisfactory</strong><br/>
+            Comment: -        
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        Management and quality
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Satisfactory</strong><br/>
+        Comment: N/A
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th class="table-summary__key">
+        People
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>Improve</strong><br/>
+        Advice given: Improve training and documentation
+      </td>
+      <td>
+      </td>
+       <tr>
+          <th class="table-summary__key">
+            DVSA examiner
+          </th>
+          <td class="table-summary__value--tabular">
+          <strong>Michael Drewster</strong><br/>
+          </td>
+          <td></td>
+      </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative
+      </th>
+      <td class="table-summary__value--tabular"> 
+        <strong>Ben Chgw</strong><br/>
+      </td>
+        <td></td>
+   </tr>
+    <tr>
+      <th class="table-summary__key">
+        AE representative's role
+      </th>
+      <td class="table-summary__value--tabular"> 
+        <strong>Manager</strong><br/>
+      </td>
+         <td></td>
+   </tr>
+
+    <tr>
+      <th class="table-summary__key">
+        Date of site visit
+      </th>
+      <td class="table-summary__value--tabular">
+        <strong>1 October 2018</strong>
+      </td>
+         <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="text panel panel-border-wide" style="margin-top: 60px;margin-bottom: 60px;">
+    <p>
+        It is in your best interest to act on this advice. It is either best practice or advice to prevent further disciplinary action. 
+    </p>
+    <p>
+        Check the <a href="#">MOT Testing Guide</a> for details of the current scheme requirements and disciplinary procedures.  
+    </p>
+    <p>
+        You will find the procedures for testing and the minimum standards in the <a href="#">Inspection Manual</a>. 
+    </p>
+    <p>
+        If you’re responsible for operating an MOT Testing Station you might read the <a href="#">VTS Best Practice Guide</a>. It suggests how to manage your site and reduce the VTS risk rating.  
+    </p>
+    <p>
+        For further advice regarding the MOT Scheme contact the DVSA Customer Service Centre on 0300 123 9000. 
+    </p>
+</div>
+
+<div class="u-margin-bottom-20">
+  <a href="AE-view" class="button">Back</a> 
+</div> 
+
+
+<div>
+</div>
+
+{% endblock %}

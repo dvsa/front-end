@@ -104,7 +104,7 @@
     padding: 20px;
   }
   @include media(desktop) { 
-    padding: 20px 30px;
+    padding: 20px 16px;
   }
 }
 
@@ -132,8 +132,7 @@
     position: relative;
   }
 
-  &__message-title {
-    font-weight: bold;
+  &__message-title { 
     position: relative;
     @include media(desktop) { 
       display: inline; 
@@ -144,30 +143,47 @@
     font-weight: bold; 
     color: $mellow-red; 
     @include media(desktop) { 
-      float: right; 
+      position: absolute;
+      left: 55%;
     }
   }
 
   &__message--pinned { 
     background: $grey-4;
+
+    .message-panel__inner { 
+        padding: 6px;
+        padding-left: 28px;
+        @include media(desktop) {
+          padding: 26px 170px 26px 28px;
+        } 
+    }
+    .message-panel__view {
+      @include media(desktop) {
+        top: 16px;
+        
+      } 
+    }
   }
 
   &__message--unread {
     background: $grey-4;  
-     
 
-    .message-panel__message-title:before {
-      position: absolute;
-      left: -20px;
-      top: -4px;
-      font-size: 28px;
-      color: $mot-blue;
-      content: "\2022";
+    .message-panel__message-title {
+      font-weight: bold; 
+      &:before {
+        position: absolute;
+        left: -20px;
+        top: -4px;
+        font-size: 28px;
+        color: $black;
+        content: "\2022";
+      }
     }
-
     .message-panel__details {
       color: $black;
-    }
+    } 
+    
   }
   
   // Empty view notice
@@ -183,7 +199,7 @@
     }
     @include media(desktop) {
       padding: 10px 170px 4px 28px;
-    }
+    } 
   }
 
   &__view  {

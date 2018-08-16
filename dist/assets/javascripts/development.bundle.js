@@ -6,6 +6,7 @@
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
  *   Timestamp: August 15th 2018, 12:05:23 pm
 =======
  *   Timestamp: August 7th 2018, 11:23:18 am
@@ -13,6 +14,9 @@
 =======
  *   Timestamp: August 7th 2018, 11:46:14 am
 >>>>>>> Built production
+=======
+ *   Timestamp: August 16th 2018, 12:16:55 pm
+>>>>>>> Archive data WIP
  *   Source: https://github.com/dvsa/front-end
  * 
  */

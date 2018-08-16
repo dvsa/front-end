@@ -4,7 +4,13 @@
  *   Version: 1.2.21
  *   Author: Tameem Safi <https://github.com/tameemsafi>
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>
+<<<<<<< HEAD
  
+=======
+ *   Timestamp: August 16th 2018, 12:16:55 pm
+ *   Source: https://github.com/dvsa/front-end
+ * 
+>>>>>>> Archive data WIP
  */
 webpackJsonp([3],{175:function(e,t,n){var r,a;/*! DataTables 1.10.19
  * ©2008-2018 SpryMedia Ltd - datatables.net/license

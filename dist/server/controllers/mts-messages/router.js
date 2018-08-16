@@ -8,7 +8,6 @@ Object.defineProperty(exports, "__esModule", {
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
- * @param {Express.Response} next - Express next object
  */
 const getMessages = exports.getMessages = (req, res) => {
   // Renders the messaging index view
@@ -20,7 +19,6 @@ const getMessages = exports.getMessages = (req, res) => {
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
- * @param {Express.Response} next - Express next object
  */
 const getArchive = exports.getArchive = (req, res) => {
   // Renders the messaging archived view
@@ -32,7 +30,6 @@ const getArchive = exports.getArchive = (req, res) => {
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
- * @param {Express.Response} next - Express next object
  */
 const getMessage = exports.getMessage = (req, res) => {
   // Set the message's isRead state to true

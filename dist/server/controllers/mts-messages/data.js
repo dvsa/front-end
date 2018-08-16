@@ -17,6 +17,7 @@ const data = exports.data = [{
   type: 'Special notice',
   dayCount: 4,
   state: {
+    inArchive: false,
     acknowledged: false,
     isRead: false
   },
@@ -61,7 +62,8 @@ const data = exports.data = [{
   type: 'Special notice',
   dayCount: false,
   state: {
-    acknowledged: false,
+    inArchive: false,
+    acknowledged: true,
     isRead: true
   },
   messagePreview: `<h1>Preview placeholder</h1>`
@@ -74,6 +76,7 @@ const data = exports.data = [{
   type: 'Notification',
   dayCount: false,
   state: {
+    inArchive: false,
     accepted: false,
     rejected: false,
     isRead: true
@@ -88,6 +91,7 @@ const data = exports.data = [{
   type: 'Notification',
   dayCount: false,
   state: {
+    inArchive: false,
     accepted: false,
     rejected: false,
     isRead: false
@@ -101,7 +105,8 @@ const data = exports.data = [{
   },
   type: 'News',
   state: {
-    isRead: false
+    isRead: false,
+    inArchive: true
   },
   messagePreview: `<p class="lede">From October onwards you'll be able to see all MOT special notices, notifications and news by DVSA as soon as you sign in the MTS.</p>
     <p>We've added a 'Messages' view that will show you all special notices, notifications and any MOT related news. This is to ensure that every MOT tester will find out about any changes and news that impact their work.</p>
@@ -114,6 +119,7 @@ const data = exports.data = [{
   },
   type: 'Notification',
   state: {
+    inArchive: false,
     accepted: false,
     rejected: false,
     isRead: true
@@ -129,7 +135,8 @@ const data = exports.data = [{
   state: {
     accepted: true,
     rejected: false,
-    isRead: true
+    isRead: true,
+    inArchive: true
   },
   messagePreview: `<h1>Preview placeholder</h1>`
 }];

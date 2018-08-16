@@ -58,7 +58,7 @@ export const data = [
     type: 'Special notice',
     dayCount: false,
     state: {
-      acknowledged: true,
+      acknowledged: false,
       isRead: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,

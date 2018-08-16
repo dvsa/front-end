@@ -58,7 +58,7 @@ export const setupMessages = (req, res, next) => {
 
   // Set up some archive messages
   const updatedArchive = archiveData.map(addPinnedItems).map(addIndices);
-  console.log('test', updatedArchive);
+ 
 
   // Setup viewData
   const viewData = {

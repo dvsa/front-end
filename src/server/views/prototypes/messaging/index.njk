@@ -45,7 +45,7 @@
                     <div class="form-group u-margin-bottom-30 inline">
                       <fieldset>
                         <legend class="visually-hidden">Choose which message type to view</legend>
-                        <h3 class="heading-small">Filter messages</h3>
+                        <h3 class="heading-large u-margin-top-10">Messages</h3>
 
                         <div class="multiple-choice multiple-choice--inline">
                           <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
@@ -70,7 +70,7 @@
 
             {% if viewData.isPinnedCount > 0 %}
               <div class="message-panel"> 
-              <h3 class="heading-small message-panel__title">Acknowledgment required</h3>
+              <h3 class="heading-small message-panel__title u-margin-top-10"> Must be acknowledged</h3>
 
                 <ul class="message-panel__messages u-margin-bottom-15"> 
                   {% for message in viewData.messages %}
@@ -106,7 +106,7 @@
             {% endif %}
   
             <div class="message-panel js-message-panel"> 
-             <h3 class="heading-small message-panel__title js-message-list-title">
+             <h3 class="heading-small message-panel__title js-message-list-title u-margin-top-10">
              All messages</h3>
             
               <ul class="u-margin-bottom-20 message-panel__messages js-message-list">

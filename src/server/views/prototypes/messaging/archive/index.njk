@@ -17,14 +17,11 @@
 
       {% if flashMessage != '' %}
 
-        <div class="message--success">
-
-          <p> {{ flashMessage }} </p>
-
+        <div class="message--success"> 
+          <p> {{ flashMessage }} </p> 
         </div>
 
-      {% endif %}
- 
+      {% endif %} 
 
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs message-filters__tabs">          
@@ -39,6 +36,7 @@
           <div class="message-filters__tab-panel"> 
 
             <div class="message-panel"> 
+<<<<<<< HEAD
               <h3 class="heading-small message-panel__title js-message-list-title">
 <<<<<<< HEAD
               Archived messages</h3> 
@@ -48,6 +46,12 @@
             
 >>>>>>> Archive messages - WIP
                 <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
+=======
+              <h3 class="heading-small message-panel__title">
+              Archived messages</h3>
+            
+                <ul class="u-margin-bottom-30 message-panel__messages">
+>>>>>>> Archive view WIP
 
                 {% for message in viewData.archive %}
 
@@ -75,17 +79,16 @@
                     {% endif %}
                   {% endfor %} 
                 </ul>
-            </div> 
-
+            </div>  
           </div>
 
-        <div class="u-margin-top-30 u-margin-bottom-30">
-          {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
-        </div>
+          <div class="u-margin-top-30 u-margin-bottom-30">
+            {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+          </div>
 
     </div>
 
     {%- endcall %} 
-    {%- endcall %} 
+  {%- endcall %} 
   
 {% endblock %}

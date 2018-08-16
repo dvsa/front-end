@@ -108,15 +108,20 @@
   }
 }
 
-.message-panel {
+.message-panel { 
+
+  border-top: 1px solid #bfc1c3; 
+  &:first-child {
+    border-top: none;
+  }
  
   &__title {
     margin-bottom: 15px;
   }
 
   @include core-16;
-  position: relative; 
-  padding: 15px;
+  position: relative;
+  padding: 15px 0;
   background-color: $white;
   transition: background-color .4s ease-in-out;
   
@@ -160,6 +165,9 @@
       content: "\2022";
     }
 
+    .message-panel__details {
+      color: $black;
+    }
   }
   
   // Empty view notice
@@ -194,7 +202,7 @@
   // Meta details for each message
   &__details {
     @extend %contain-floats;
-    padding: 6px 0;
+    padding: 6px 0;  
     color: $grey-1;
     
     li {

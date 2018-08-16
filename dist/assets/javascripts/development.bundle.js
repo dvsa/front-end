@@ -4,7 +4,11 @@
  *   Version: 1.2.21
  *   Author: Tameem Safi <https://github.com/tameemsafi>
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>
+<<<<<<< HEAD
  *   Timestamp: August 15th 2018, 12:05:23 pm
+=======
+ *   Timestamp: August 7th 2018, 11:23:18 am
+>>>>>>> Built production
  *   Source: https://github.com/dvsa/front-end
  * 
  */

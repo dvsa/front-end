@@ -40,11 +40,16 @@
 
             <div class="message-panel"> 
               <h3 class="heading-small message-panel__title js-message-list-title">
+<<<<<<< HEAD
               Archived messages</h3> 
               
+=======
+              Archived messages</h3>
+            
+>>>>>>> Archive messages - WIP
                 <ul class="u-margin-bottom-30 message-panel__messages js-message-list">
 
-                {% for message in viewData.messages %}
+                {% for message in viewData.archive %}
 
                   {% if not message.state.isPinned %}
                     <li data-type="{{ message.type }}" class="message-panel__message">

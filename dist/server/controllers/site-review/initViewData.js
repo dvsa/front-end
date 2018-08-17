@@ -27,13 +27,9 @@ const initViewData = exports.initViewData = () => {
       activityIsNotPeformed: false,
       activityIsPerformed: false,
       motTestNum: '',
-      commitedReason: '',
-      commitedOtherReason: '',
       formData: {
         activityPerformed: '',
-        testNum: '',
-        reason: '',
-        otherReason: ''
+        testNum: ''
       },
       errors: []
     },

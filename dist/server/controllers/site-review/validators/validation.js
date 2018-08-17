@@ -162,9 +162,6 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
       // Set activity response to false
       req.session.viewData.activity.formData.activityIsNotPerformed = true;
 
-      // Asigns activity dropdown value
-      req.session.viewData.activity.formData.reason = req.body['reinspection-options'];
-
       req.session.viewData.activity.formData.otherReason = req.body['activity-unperformed-comment'];
 
       // Break from switch statement
@@ -177,13 +174,7 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
     req.session.viewData.activity.errors.push({
       testNumber: 'Add a test number'
     });
-  } else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '0') {
-    // If option no radio was selected & reason 5 (other was selected) was not selected
-    // Create new error and push to stack
-    req.session.viewData.activity.errors.push({
-      activityDropdown: 'Select why the activity was not performed'
-    });
-  } else if (activityRadioResponse == 'no' && req.session.viewData.activity.formData.reason == '5' && !req.session.viewData.activity.formData.otherReason) {
+  } else if (activityRadioResponse == 'no' && !req.session.viewData.activity.formData.otherReason) {
     // If option no radio was select & reason 5 (other was selected) & other textarea is not populated
     // Create new error and push to stack
     req.session.viewData.activity.errors.push({
@@ -215,33 +206,11 @@ const validateDetails = exports.validateDetails = (req, res, next) => {
   const yearValid = year.length == 4 && /^\d+$/.test(year);
   const dateValid = dayValid && monthValid && yearValid;
 
-  // Number of examiners
-  let twoExaminers = req.body['twoExaminers']; // yes or no
-  let examinerId = req.body['examinerId']; // yes or no
-
   // Persists form fields on reload
   req.session.viewData.testerDetails = _extends({}, req.body);
 
   // New array for errors
   req.session.viewData.testerDetails.errors = [];
-
-  // Set property for two examiners result to check
-  req.session.viewData.testerDetails.twoExaminers = twoExaminers;
-
-  // Add examiner ID to session
-  req.session.viewData.testerDetails.examinerId = examinerId;
-
-  // Validation switch on examiners question. May need additional case for 'no'
-  switch (twoExaminers) {
-    // If two examiners...
-    case 'yes':
-      // Ensure Examiners' ID is populated (mandatory)
-      if (!isPopulated(examinerId)) {
-        // Add an error
-        req.session.viewData.testerDetails.errors.push({ provideID: "Provide the Examiner's User ID" });
-      }
-      break;
-  }
 
   // Calls the next middleware method in the stack
   next();

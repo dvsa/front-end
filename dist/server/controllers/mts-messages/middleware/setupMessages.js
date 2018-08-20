@@ -7,15 +7,12 @@ exports.setupMessages = undefined;
 
 var _data = require('../data');
 
-var _archiveData = require('../archiveData');
-
 /**
  * addPinnedItems - Adds is pinned state to special notices
  *
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
-// Gets message data object
 const addPinnedItems = message => {
   // If message is a special notice and is not currently acknowledged
   if (message.type == 'Special notice' && message.state.acknowledged == false) {
@@ -33,6 +30,7 @@ const addPinnedItems = message => {
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
+// Gets message data object
 const filterPinned = message => message.state.isPinned;
 
 /**
@@ -61,21 +59,26 @@ const setupMessages = exports.setupMessages = (req, res, next) => {
   if (req.session.viewData) return next();
 
   // Adds pinned items, adds indices
-  const updatedData = _data.data.map(addPinnedItems).map(addIndices);
+  const messages = _data.data.map(addPinnedItems).map(addIndices);
 
-  // Set up some archive messages
-  const updatedArchive = _archiveData.archiveData;
+  // Add two messages to the archive to start
+  const archive = [];
+  archive.push(messages[4]);
+  archive.push(messages[5]);
+
+  // Remove those two from inbox
+  messages.splice(4, 2);
 
   // Setup viewData
   const viewData = {
-    messages: updatedData,
-    archive: updatedArchive,
-    isPinnedCount: updatedData.filter(filterPinned).length
+    messages,
+    archive,
+    isPinnedCount: messages.filter(filterPinned).length
   };
-  console.log(updatedArchive);
 
   // Set session viewData
   req.session.viewData = viewData;
+  console.log('setup');
 
   // Run next middleware stack
   next();

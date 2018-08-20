@@ -15,6 +15,7 @@ export const data = [
     state: {
       acknowledged: false,
       isRead: false,
+      isArchived: false,
     },
     messagePreview: `<h2 class='heading-medium'>Overview</h2>
     <p>On 20 May 2018, DVSA will introduce changes required by the EU roadworthiness directive.</p>
@@ -60,6 +61,7 @@ export const data = [
     state: {
       acknowledged: true,
       isRead: true,
+      isArchived: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },
@@ -75,6 +77,7 @@ export const data = [
       accepted: false,
       rejected: false,
       isRead: true,
+      isArchived: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },
@@ -90,6 +93,7 @@ export const data = [
       accepted: false,
       rejected: false,
       isRead: false,
+      isArchived: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },
@@ -129,7 +133,7 @@ export const data = [
     },
     type: 'Notification',
     state: {
-      accepted: true,
+      accepted: false,
       rejected: false,
       isRead: true,
     },
@@ -143,9 +147,10 @@ export const data = [
     },
     type: 'News',
     state: {
-      accepted: true,
+      accepted: false,
       rejected: false,
       isRead: true,
+      isArchived: true,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },
@@ -157,9 +162,10 @@ export const data = [
     },
     type: 'News',
     state: {
-      accepted: true,
+      accepted: false,
       rejected: false,
       isRead: true,
+      isArchived: false,
     },
     messagePreview: `<h1>Preview placeholder</h1>`,
   },

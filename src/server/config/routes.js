@@ -104,6 +104,7 @@ router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
 
 // MTS Messaging
 router.param('messageIndex', messagingController.isValidMessage);
+router.get('/prototypes/messaging/archive/:messageIndex', messagingController.archiveMessage);
 router.get('/prototypes/messaging/archive', [messagingController.setupMessages, messagingController.getArchive]);
 router.get('/prototypes/messaging', [messagingController.setupMessages, messagingController.getMessages]);
 router.get('/prototypes/messaging/:messageIndex', messagingController.getMessage);

@@ -71,8 +71,7 @@ export const setupMessages = (req, res, next) => {
 
   // Set session viewData
   req.session.viewData = viewData;
-  console.log('setup');
 
-  // Run next middleware stack
+  // Run next middleware
   next();
 };

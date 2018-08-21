@@ -63,7 +63,7 @@ export const acceptMessage = (req, res, next) => {
   req.message.state.rejected = false;
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully accepted.`);
-   // Redirect to messages dashboard
+  // Redirect to messages dashboard
   return res.redirect('/prototypes/messaging/');
 };
 
@@ -94,7 +94,6 @@ export const rejectMessage = (req, res, next) => {
  * @param {Express.Response} next - Express next object
  */
 export const archiveMessage = (req, res, next) => {
-
   const messageId = req.message.id;
   const viewData = req.session.viewData;
 

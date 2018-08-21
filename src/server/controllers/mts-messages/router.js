@@ -29,7 +29,6 @@ export const getArchive = (req, res) => {
 export const getMessage = (req, res) => {
   // Set the message's isRead state to true
   req.message.state.isRead = true;
-  console.log(req.message.state);
   // Navigate to message view
   return res.render('prototypes/messaging/view/index', { viewData: req.message });
 };
@@ -64,8 +63,7 @@ export const acceptMessage = (req, res, next) => {
   req.message.state.rejected = false;
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully accepted.`);
-  console.log(req.message);
-  // Redirect to messages dashboard
+   // Redirect to messages dashboard
   return res.redirect('/prototypes/messaging/');
 };
 
@@ -96,6 +94,7 @@ export const rejectMessage = (req, res, next) => {
  * @param {Express.Response} next - Express next object
  */
 export const archiveMessage = (req, res, next) => {
+
   const messageId = req.message.id;
   const viewData = req.session.viewData;
 
@@ -121,7 +120,7 @@ export const archiveMessage = (req, res, next) => {
 
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully archived.`);
- 
+
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messaging/');
-}; 
+};

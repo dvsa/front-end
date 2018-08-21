@@ -54,25 +54,16 @@ export const setupMessages = (req, res, next) => {
   // Adds pinned items, adds indices
   const messages = data.map(addPinnedItems).map(addIndices);
 
-  // Add two messages to the archive to start
-  const archive = [];
-  archive.push(messages[4]);
-  archive.push(messages[5]);
-
-  // Remove those two from inbox
-  messages.splice(4, 2);
-
   // Setup viewData
   const viewData = {
     messages,
-    archive,
+    archive: [],
     isPinnedCount: messages.filter(filterPinned).length,
   };
 
   // Set session viewData
   req.session.viewData = viewData;
-  console.log('setup');
 
-  // Run next middleware stack
+  // Run next middleware
   next();
 };

@@ -129,7 +129,7 @@ export const data = [
     },
     type: 'Notification',
     state: {
-      accepted: true,
+      accepted: false,
       rejected: false,
       isRead: true,
     },
@@ -143,7 +143,7 @@ export const data = [
     },
     type: 'News',
     state: {
-      accepted: true,
+      accepted: false,
       rejected: false,
       isRead: true,
     },
@@ -157,7 +157,7 @@ export const data = [
     },
     type: 'News',
     state: {
-      accepted: true,
+      accepted: false,
       rejected: false,
       isRead: true,
     },

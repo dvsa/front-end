@@ -9,7 +9,9 @@
 
 {% set message = viewData %}
 
-{% block content %}
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
 
   {% call components.gridRow() %}
 
@@ -49,21 +51,24 @@
         </div>
 
         <div class="u-margin-top-10 u-margin-bottom-30">
-          <a class="button " href="/prototypes/messaging/acknowledge/{{message.id}}" role="button">Acknowledge special notice</a>
+          <a class="button" href="/prototypes/messaging/acknowledge/{{message.id}}" role="button">Acknowledge special notice</a>
         </div>
 
-      {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %}
-
+      {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %} 
         <ul class="list-unstyled content-navigation__split u-clearfix">
           <li class="content-navigation__split--left">
-            <a class=" button" href="/prototypes/messaging/accept/{{message.id}}">Accept</a>
+            <a class="button" href="/prototypes/messaging/accept/{{message.id}}">Accept</a>
           </li>
           <li class="content-navigation__split--right">
             <a class="button button--alert" href="/prototypes/messaging/reject/{{message.id}}">Reject</a>
           </li>
-        </ul>
-      
+        </ul> 
       {% endif %}
+
+      
+      {% if canBeArchived %}
+        <a class="button" href="/prototypes/messaging/archive/{{message.id}}">Archive this message</a>
+      {% endif %} 
 
       {{ components.link(text='Back to messages', url='/prototypes/messaging', paragraph=true) }}
 

@@ -18,7 +18,6 @@
 
     {% call components.columnFull() %}
 
-
       <header class="content-header">
         <h1>
           <span class="content-header__type">{{message.type}}</span>
@@ -56,6 +55,7 @@
           <a class="button" href="/prototypes/messaging/acknowledge/{{message.id}}" role="button">Acknowledge special notice</a>
         </div>
 
+      {{ message.state.isArchived }}
       {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %} 
         <ul class="list-unstyled content-navigation__split u-clearfix">
           <li class="content-navigation__split--left">

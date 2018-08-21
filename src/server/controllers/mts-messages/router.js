@@ -87,35 +87,24 @@ export const rejectMessage = (req, res, next) => {
 };
 
 /**
- * GET Middleware - Sets a message to archive
+ * GET Middleware - Archives a message
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
 export const archiveMessage = (req, res, next) => {
-  const messageId = req.message.id;
-  const viewData = req.session.viewData;
+  // Helper variables
+  const messageData = req.session.viewData.messages;
+  const archiveData = req.session.viewData.archive;
 
-  // Reference new archive from existing archive
-  const currentArchive = viewData.archive;
+  req.message.state.isArchived = true;
 
-  // Message to be archived
-  const archivedMessage = req.message;
+  // Splices the message from session.messages
+  messageData.splice(req.message.id, 1);
 
-  // Get current message, set to archived state
-  //const archivedMessage = viewData.messages.filter(message => message.id == messageId);
-  archivedMessage.isArchived = true;
-
-  // Take message out of Messages array
-  const updatedMessages = viewData.messages.filter(message => message.id !== messageId);
-
-  // Add message to a new Archive array
-  const updatedArchive = currentArchive.concat(archivedMessage);
-
-  // Update viewdata with new messages arrays
-  req.session.viewData.archive = updatedArchive;
-  req.session.viewData.messages = updatedMessages;
+  // Appends to session.archive
+  archiveData.push(req.message);
 
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully archived.`);

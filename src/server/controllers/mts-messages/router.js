@@ -29,6 +29,7 @@ export const getArchive = (req, res) => {
 export const getMessage = (req, res) => {
   // Set the message's isRead state to true
   req.message.state.isRead = true;
+  console.log(req.message.state);
   // Navigate to message view
   return res.render('prototypes/messaging/view/index', { viewData: req.message });
 };
@@ -63,7 +64,7 @@ export const acceptMessage = (req, res, next) => {
   req.message.state.rejected = false;
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully accepted.`);
-
+  console.log(req.message);
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messaging/');
 };
@@ -78,7 +79,7 @@ export const acceptMessage = (req, res, next) => {
 export const rejectMessage = (req, res, next) => {
   // Set message as rejected
   req.message.state.accepted = false;
-  req.message.state.rejected = true; 
+  req.message.state.rejected = true;
 
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully rejected.`);
@@ -95,30 +96,32 @@ export const rejectMessage = (req, res, next) => {
  * @param {Express.Response} next - Express next object
  */
 export const archiveMessage = (req, res, next) => {
- 
   const messageId = req.message.id;
   const viewData = req.session.viewData;
 
-  // Base new archive on existing archive
+  // Reference new archive from existing archive
   const currentArchive = viewData.archive;
 
+  // Message to be archived
+  const archivedMessage = req.message;
+
   // Get current message, set to archived state
-  const archivedMessage = viewData.messages.filter(message => message.id == messageId);
+  //const archivedMessage = viewData.messages.filter(message => message.id == messageId);
   archivedMessage.isArchived = true;
-  
+
   // Take message out of Messages array
   const updatedMessages = viewData.messages.filter(message => message.id !== messageId);
 
   // Add message to a new Archive array
-  const updatedArchive = currentArchive.concat(archivedMessage); 
+  const updatedArchive = currentArchive.concat(archivedMessage);
 
-  // Update viewdata with new messages
+  // Update viewdata with new messages arrays
   req.session.viewData.archive = updatedArchive;
   req.session.viewData.messages = updatedMessages;
 
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully archived.`);
-
+ 
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messaging/');
-};
+}; 

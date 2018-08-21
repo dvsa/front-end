@@ -106,7 +106,7 @@ router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
 router.param('messageIndex', messagingController.isValidMessage);
 router.param('archMessageIndex', messagingController.isValidArchMessage);
 router.get('/prototypes/messaging/archive/:archMessageIndex', messagingController.archiveMessage);
-router.get('/prototypes/messaging/archive', [messagingController.setupMessages, messagingController.getArchive]);
+router.get('/prototypes/messaging/archive', [messagingController.getArchive]);
 router.get('/prototypes/messaging/:messageIndex', messagingController.getMessage);
 router.get('/prototypes/messaging', [messagingController.setupMessages, messagingController.getMessages]);
 router.get('/prototypes/messaging/acknowledge/:messageIndex', [

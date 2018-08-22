@@ -7,3 +7,4 @@ export * from './is-element-hidden-visible';
 export * from './trigger-events';
 export * from './is-element-in-viewport';
 export * from './insert-after';
+export * from './convert-to-array';

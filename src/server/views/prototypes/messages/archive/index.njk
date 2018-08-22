@@ -3,7 +3,7 @@
 {% set pageTitle = 'Create a notification' %}
 
 {% set pageBreadcrumbItems = [
-  { text: 'Home', url: '/prototypes' },
+  { text: 'Home', url: '/prototypes/messages' },
   { text: 'Messages' }
 ] %}
 
@@ -28,7 +28,7 @@
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs message-filters__tabs">          
             <li>
-              <a href="/prototypes/messaging" class="c-tab-list__tab-link  message-filters__tab">Inbox</a>
+              <a href="/prototypes/messages/received" class="c-tab-list__tab-link  message-filters__tab">Received</a>
             </li>
             <li>
               <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Archived</span>
@@ -52,26 +52,28 @@
 
                 {% for message in viewData.archive %}
 
-                  <li data-type="{{ message.type }}" class="message-panel__message">
+                  <li class="message-panel__message">
                     <div class="message-panel__inner">
-                      <h4 class="message-panel__message-title">
-                      {{message.title}}
-                      </h4>
-                    
-                      <ul class="message-panel__details">
-                        <li>Date received: {{message.date.received}} </li>
-                        <li>Type: {{message.type}} </li>
-                        {% if message.type=='Special notice' and not message.state.acknowledged %}
-                          <li>Action: Acknowledgment required</li>
-                        {% elseif message.type=='Notification' and not message.state.accepted and not message.state.rejected %}
-                          
-                        {% endif %}
+                      <div class='message-panel__message-type'>
+                        <span class='visually-hidden'>Type:</span>Notfication
+                      </div>
+                      <div class="grid-row">
+                        <div class="message-panel__col">
+                          <h4 class="message-panel__message-title">{{ message.title }}</h4>
+                        </div>
+                      </div>
+                      <ul class="grid-row message-panel__details">
+                        <li class="message-panel__col">
+                          <span class='visually-hidden'>Date received::</span> 
+                          {{ message.date.received }}
+                        </li>
                       </ul>
+                      <div class="message-panel__view">
+                        <a href="/prototypes/messages/{{message.id}}" class="">View message</a>
+                      </div> 
                     </div>
-                    <div class="message-panel__view">
-                      <a href="/prototypes/messaging/{{message.id}}" class="">View message</a>
-                    </div> 
                   </li>
+
                   {% endfor %} 
                 </ul>
 
@@ -81,7 +83,7 @@
           </div>
 
         <div class="u-margin-top-30 u-margin-bottom-30">
-          {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}
+          {{ components.link(text='Return to home', url='/prototypes/messages', paragraph=true) }}
         </div>
 
     </div>

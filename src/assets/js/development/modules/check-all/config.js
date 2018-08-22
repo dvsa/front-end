@@ -1,6 +1,6 @@
 export const CHECK_ALL_CONFIG = {
-  classes: { 
+  classes: {
     groupContainer: 'js-check-all-group',
-    checkAll: 'js-check-all'
-  } 
+    checkAll: 'js-check-all',
+  },
 };

@@ -1,6 +1,5 @@
-import { addEventListenerToEl, closestParentOfEl } from '../../../shared/misc';
-import { CHECK_ALL_CONFIG } from './config';
-
+import { addEventListenerToEl } from '../../../shared/misc';
+import { CHECK_ALL_CONFIG } from './index';
 export class CheckAll {
   constructor(wrapper) {
     // If DOM Element does not exist, exit

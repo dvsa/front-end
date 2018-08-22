@@ -1,5 +1,11 @@
 import { CheckAll } from './check-all';
-import { CHECK_ALL_CONFIG } from './config';
+
+export const CHECK_ALL_CONFIG = {
+  classes: {
+    groupContainer: 'js-check-all-group',
+    checkAll: 'js-check-all',
+  },
+};
 
 export const initCheckAll = () => {
   let components = document.querySelectorAll(`.${CHECK_ALL_CONFIG.classes.groupContainer}`);

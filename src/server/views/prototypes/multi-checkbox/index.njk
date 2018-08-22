@@ -1,0 +1,121 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages', url: '/prototypes/messaging/' },
+  { text: 'Create a message'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Enter content, publish date and audience', secondary='Create a message') }}
+
+      <div class='u-clearfix'>
+        
+        <form action="/prototypes/site-review/enter-details" method="POST">
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label">
+                  Select audience
+              </legend>
+
+              <div class="multiple-choice" data-target="dvsa-user-roles">
+                <input id="dvsa-user-roles-1" name="dvsa-user-roles-1" type="checkbox" value="DVSA user roles">
+                <label for="dvsa-user-roles-1">DVSA roles</label>
+              </div>
+
+              <div class="multiple-choice" data-target="vts-user-roles">
+                <input id="vts-user-roles-1" name="vts-user-roles-1" type="checkbox" value="VTS user roles">
+                <label for="vts-user-roles-1">VTS roles</label>
+              </div>
+
+              <div class="multiple-choice" data-target="mot-testers">
+                <input id="mot-testers-roles-1" name="mot-testers-1" type="checkbox" value="MOT testers">
+                <label for="mot-testers-roles-1">MOT testers</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden js-check-all-group" id="mot-testers">
+                <span class="body-text">Select all that apply</span>
+                <div class="multiple-choice js-show">
+                  <input id="mot-testers-2" class="js-check-all" name="mot-testers-2" type="checkbox" value="All MOT testers">
+                  <label for="mot-testers-2">All MOT testers</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-3" name="mot-testers-3" type="checkbox" value="Class 1">
+                  <label for="mot-testers-3">Class 1</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-4" name="mot-testers-4" type="checkbox" value="Class 2">
+                  <label for="mot-testers-4">Class 2</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-5" name="mot-testers-5" type="checkbox" value="Class 3">
+                  <label for="mot-testers-5">Class 3</label>
+                </div> 
+                <div class="multiple-choice">
+                  <input id="mot-testers-6" name="mot-testers-6" type="checkbox" value="Class 4">
+                  <label for="mot-testers-6">Class 4</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-7" name="mot-testers-7" type="checkbox" value="Class 5">
+                  <label for="mot-testers-7">Class 5</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-8" name="mot-testers-8" type="checkbox" value="Class 7">
+                  <label for="mot-testers-8">Class 7</label>
+                </div>
+
+              </div>
+
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label">Check-all component</legend> 
+              <div class="panel panel-border-narrow js-check-all-group">
+                <span class="body-text">Select all that apply</span>
+                <div class="multiple-choice js-show">
+                  <input id="opt-all" class="js-check-all" name="all-options" type="checkbox" value="All options">
+                  <label for="opt-all">All options</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="opt1" name="opt1" type="checkbox" value="">
+                  <label for="opt1">Option 1</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="opt2" name="opt2" type="checkbox" value="">
+                  <label for="opt2">Option 2</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="opt3" name="opt3" type="checkbox" value="">
+                  <label for="opt3">Option 3</label>
+                </div> 
+              </div>
+            </fieldset>
+          </div>
+  
+        </div>
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          {{ components.button(text='Save and continue to review', url='/prototypes/mts-messages/scheme/create-message-sn-review') }}
+        </div>
+
+        {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages', paragraph=true) }}
+       
+      </form>
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

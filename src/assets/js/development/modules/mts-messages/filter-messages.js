@@ -32,7 +32,7 @@ export class MessagesFilter {
       messageList,
       messageItems,
       filteredView,
-      emptyMessageTarget, 
+      emptyMessageTarget,
     };
 
     // Get values for state
@@ -48,21 +48,20 @@ export class MessagesFilter {
     this.init();
   }
 
-  init = () => {  
-    
+  init = () => {
     // Attach listeners to checkboxes
     //let checkboxes = Array.from(this.elements.checkboxes);
     this.elements.checkboxes.forEach(checkbox => {
       addEventListenerToEl(checkbox, 'change', this.handleCheck);
     });
-    
+
     // Check if window.location is filtering
-    const filterSpecialNotices = ( getQueryVariable('filter') == 'sn' ); 
+    const filterSpecialNotices = getQueryVariable('filter') == 'sn';
     if (filterSpecialNotices) {
-      this.filterSpecialNotices()
+      this.filterSpecialNotices();
     }
   };
-  
+
   filterSpecialNotices = () => {
     const newFilters = [];
 
@@ -71,7 +70,7 @@ export class MessagesFilter {
     this.elements.checkboxes.forEach(checkbox => {
       // Uncheck all boxes that arent SNs
       checkbox.checked = false;
-      if ( checkbox.attributes['data-type'].value == specialNoticeValue ) {
+      if (checkbox.attributes['data-type'].value == specialNoticeValue) {
         checkbox.checked = true;
       }
       newFilters.push(specialNoticeValue);

@@ -12,15 +12,21 @@ Object.defineProperty(exports, "__esModule", {
  * @param {Int} messageID - Message ID number
  */
 const isValidMessage = exports.isValidMessage = (req, res, next, messageID) => {
-  // If messages on req.session.viewData non existent or message
-  // does not exist
-  if (!req.session.viewData.messages || !req.session.viewData.messages[messageID]) {
-    // redirect back to messaging view
+  // Helper variables
+  const messages = req.session.viewData.messages;
+  const archive = req.session.viewData.archive;
+
+  // Finds message in either inbox or archive (Can only find one)
+  const inboxMsg = messages.find(msg => msg.id == messageID);
+  const archiveMsg = archive.find(msg => msg.id == messageID);
+
+  // If message not found
+  if (!inboxMsg && !archiveMsg) {
     return res.redirect('/prototypes/messaging/');
   }
 
-  // Attatches message to req.message
-  req.message = req.session.viewData.messages[messageID];
+  // req.message equals either inboxMessage or archiveMessage
+  req.message = inboxMsg || archiveMsg;
 
   // Run next middleware stack
   next();

@@ -125,7 +125,7 @@ export const validateActivity = (req, res, next) => {
   req.session.viewData.activity.errors = [];
 
   // Sets up variable for catching radio value
-  const activityRadioResponse = req.body['radio-activity'].toLowerCase();
+  const activityRadioResponse = req.body['radio-activity'];
 
   // If radio selection not made
   if (!activityRadioResponse) {
@@ -137,6 +137,8 @@ export const validateActivity = (req, res, next) => {
     // Calls the next middleware method in the stack
     next();
   }
+
+  activityRadioResponse = activityRadioResponse.toLowerCase();
 
   switch (activityRadioResponse) {
     case 'yes':

@@ -22,7 +22,7 @@ const isValidMessage = exports.isValidMessage = (req, res, next, messageID) => {
 
   // If message not found
   if (!inboxMsg && !archiveMsg) {
-    return res.redirect('/prototypes/messaging/');
+    return res.redirect('/prototypes/messaging/received');
   }
 
   // req.message equals either inboxMessage or archiveMessage

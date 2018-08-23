@@ -15,6 +15,7 @@ const data = exports.data = [{
     }
   },
   type: 'Special notice',
+  issueNum: '07-18',
   dayCount: 4,
   state: {
     acknowledged: false,
@@ -53,12 +54,13 @@ const data = exports.data = [{
     <p>You should call 0330 123 5654 if you need help with entering test results or have any questions when carrying out tests.</p>
     <p>Following implementation of the MOT changes, the helpdesk will then operate as normal, Monday to Friday, 8am to 6pm on 0300 123 9000 and Saturday 8am to 2pm on 0330 123 5654.</p>`
 }, {
-  title: 'Changes to the MOT testing guide',
+  title: 'Class 1 and 2 test standard change',
   date: {
     received: '16 July 2018',
     published: '1 August 2018'
   },
   type: 'Special notice',
+  issueNum: '09-18',
   dayCount: false,
   state: {
     acknowledged: true,
@@ -140,8 +142,6 @@ const data = exports.data = [{
   },
   type: 'News',
   state: {
-    accepted: false,
-    rejected: false,
     isRead: true
   },
   messagePreview: `<h1>Preview placeholder</h1>`
@@ -153,8 +153,6 @@ const data = exports.data = [{
   },
   type: 'News',
   state: {
-    accepted: false,
-    rejected: false,
     isRead: true
   },
   messagePreview: `<h1>Preview placeholder</h1>`

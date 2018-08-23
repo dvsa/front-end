@@ -121,17 +121,14 @@
 
                   <li data-type="{{'Special notice' if message.type=="Special notice" else 'Notification'}}" class="message-panel__message {{ '' if message.state.isRead else 'message-panel__message--unread' }}">
                     <div class="message-panel__inner">
+                      {% if message.type=='Special notice' %}
                       <div class='message-panel__message-type'>
-                        <span class='visually-hidden'>Type:</span> {{ 'Special notice' if message.type=="Special notice" else 'Notfication'}} {{message.issueNum}}
+                        <span class='visually-hidden'>Type:</span> Special notice {{message.issueNum}}
                       </div>
+                      {% endif %}
                       <div class="grid-row">
-                        <div class="message-panel__col message-panel__col--six">
+                        <div class="message-panel__col">
                           <h4 class="message-panel__message-title">{{ message.title }}</h4>
-                        </div>
-                        <div class='message-panel__col message-panel__col--four'>
-                          {% if message.date.due %}
-                            <span class="message-panel__alert">Due in {{message.date.due.asInt}} days</span>
-                          {% endif %}
                         </div>
                       </div>
                       <ul class="grid-row message-panel__details">

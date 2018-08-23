@@ -116,6 +116,8 @@ router.get('/prototypes/messages/accept/:messageIndex', messagingController.acce
 router.get('/prototypes/messages/reject/:messageIndex', messagingController.rejectMessage);
 router.get('/prototypes/messages/archive/:messageIndex', messagingController.archiveMessage);
 
+router.get('/prototypes/mts-messages', messagingController.resetMessages);
+
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
 

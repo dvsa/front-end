@@ -119,11 +119,13 @@
     display: block;
     font-weight: normal;
     font-size: 16px;
+    color: #6f777b;
   }
 
   &__message {
     border-top: 1px solid $grey-3;
     position: relative;
+    background-color: white;
   }
 
   &__message-title { 
@@ -142,8 +144,8 @@
   }
 
   &__message--pinned { 
-    background: $grey-4;
-
+    border-bottom: 1px solid $grey-3;    
+    
     .message-panel__inner { 
       @include media(desktop) {
         padding-top: 60px;
@@ -174,7 +176,8 @@
         content: "\2022";
       }
     }
-    .message-panel__details {
+    .message-panel__details,
+    .message-panel__message-type {
       color: $black;
     }
   }

@@ -125,7 +125,7 @@ export const validateActivity = (req, res, next) => {
   req.session.viewData.activity.errors = [];
 
   // Sets up variable for catching radio value
-  const activityRadioResponse = req.body['radio-activity'];
+  let activityRadioResponse = req.body['radio-activity'];
 
   // If radio selection not made
   if (!activityRadioResponse) {

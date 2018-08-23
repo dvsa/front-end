@@ -1,0 +1,109 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<style>
+    .circle-table {
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-color: #B10E1E;
+    border-radius: 20%;
+    margin-right: 5px;
+    }  
+
+    .circle {
+    height: 25px;
+    width: 25px;
+    background-color: #B10E1E;
+    border-radius: 20%;
+    margin-right: 5px;
+    }  
+</style>
+
+<main id="content">
+
+   
+        <div class="container">
+
+  
+                            <div id="global-breadcrumb" class="header-context">
+    <nav>
+        <ol class="group">
+            <li id="breadcrumb-0"><a href="/prototypes/correct-test-record/v1/home-page">Home</a></li>
+
+                            <li id="breadcrumb-1">
+                                            MOT testing                                    </li>
+                    </ol>
+    </nav>
+</div>
+
+                            <header class="content-header">
+    <h1>
+        <span class="content-header__type">MOT testing</span>
+        <span class="content-header__title">Testing information</span>
+            </h1>
+    </header>                       
+
+    <div class="row contents">
+        <div class="col-lg-12">
+
+  
+                        
+<div></div>
+    
+<h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+    <span class="heading-secondary">
+        Vehicle    </span>
+    Peugeot 3008 SUV</h1>
+
+    <div class="grid-row">
+    <div class="column-three-quarters">
+        <div class="grid-row">
+            <div class="column-one-third" style="width:30%">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">Colour</span>
+                    <div class="circle"></div>
+
+                    Red                </h2>
+            </div>
+
+            <div class="column-one-third" style="width:37.5%">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">VIN</span>
+                    GAULAGAAAAA495118               </h2>
+            </div>
+
+            <div class="column-one-third" style="width:32.5%; float:right">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">Registration number</span>
+                    TH10 CZR               </h2>
+            </div>
+        </div>
+        <div style="margin-top:30px;">
+            <p class="lede">MOT expiration date: 17 August 2018</p>
+            <p>Testing this vehicle today will not preserve the current expiry date.</p>
+            <p>To preserve the date the earliest the vehicle can be tested is 28 January 2019.</p>
+        </div>
+        <br>
+        <div>
+            <a class="button" id="confirm-start-test" href="/prototypes/correct-test-record/v1/mot-test-started" style="margin-bottom:30px">Confirm and start test</a>
+        </div>
+
+        <div>
+            <a  id="back-to-confirm-vehicle" href="/prototypes/correct-test-record/v1/confirm-vehicle-details" style="margin-top:30px">Return to confirm vehicle page</a>
+        </div>
+    </div>
+</div>            
+
+</main>
+
+{% endblock %}

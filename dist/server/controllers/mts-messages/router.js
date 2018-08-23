@@ -117,3 +117,21 @@ const archiveMessage = exports.archiveMessage = (req, res, next) => {
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messages/received/');
 };
+
+/**
+ * GET Middleware - Resets viewData messages
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ * @param {Express.Response} next - Express next object
+ */
+const resetMessages = exports.resetMessages = (req, res, next) => {
+  // If session viewData is set
+  if (req.session.viewData) {
+    // unset it
+    req.session.viewData = null;
+  }
+
+  // Render view
+  return res.render('prototypes/mts-messages/index');
+};

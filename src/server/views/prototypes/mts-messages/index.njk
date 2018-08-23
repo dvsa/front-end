@@ -5,13 +5,12 @@
 {% block content %}
 
   {% call components.gridRow() %}
+    
+    {{ components.pageHeading(heading='MTS messages') }}
 
-    {% call components.columnFull() %}
+    {% call components.columnHalf() %}
 
-      {{ components.pageHeading(heading='MTS messages') }}
-
-      <h3 class="heading-medium">User journey screens</h3>
-      <p>User testing - iteration 1</p>
+      <h3 class="heading-medium u-margin-top-5">User journey screens - iteration 1</h3>
       <ul>
         <li>
           <a href="/prototypes/mts-messages/homepage">Homepage options</a>
@@ -28,6 +27,25 @@
         </li>
         <li>
           <a href="/prototypes/messages/received">Messages inbox</a>
+        </li>
+      </ul>
+
+    {%- endcall %}
+
+    {% call components.columnHalf() %}
+ 
+      <p>Home page options</p>
+      <ul>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-008">Home page 1</a>
+        </li>
+      <ul>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-009">Home page 2</a>
+        </li>
+      <ul>
+        <li>
+          <a href="/prototypes/mts-messages/homepage/index-dashboard-010">Home page 3</a>
         </li>
       </ul>
 

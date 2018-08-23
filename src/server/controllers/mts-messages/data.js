@@ -42,7 +42,7 @@ export const data = [
     title: 'MOT Testing guide',
     date: {
       received: '18 June 2018',
-      published: '18th June 2018',
+      published: '18 June 2018',
     },
     type: 'Special notice',
     issueNum: '08-18',
@@ -63,8 +63,8 @@ export const data = [
   {
     title: 'EU roadworthiness directive updates',
     date: {
-      received: '8th May 2018',
-      published: '8th May 2018',
+      received: '8 May 2018',
+      published: '8 May 2018',
     },
     type: 'Special notice',
     issueNum: '06-18',
@@ -180,10 +180,10 @@ export const data = [
   {
     title: 'Test outside opening hours',
     date: {
-      received: '5th May 2018',
-      published: '4th May 2018',
+      received: '5 May 2018',
+      published: '4 May 2018',
     },
-    type: 'Notification',
+    type: 'News',
     state: {
       accepted: false,
       rejected: false,
@@ -194,8 +194,8 @@ export const data = [
   {
     title: 'Site manager nomination',
     date: {
-      received: '1st May 2018',
-      published: '1st May 2018',
+      received: '1 May 2018',
+      published: '1 May 2018',
     },
     type: 'Notification',
     dayCount: false,

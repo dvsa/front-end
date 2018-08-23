@@ -28,7 +28,7 @@
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs message-filters__tabs">          
             <li>
-              <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Messages</span>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Received</span>
             </li>
             <li>
               <a href="/prototypes/messages/archive" class="c-tab-list__tab-link message-filters__tab">Archived</a>
@@ -43,8 +43,7 @@
                     <div class="form-group u-margin-bottom-30 inline">
                       <fieldset>
                         <legend class="visually-hidden">Choose which message type to view</legend>
-                        <h3 class="heading-large u-margin-top-10">Messages</h3>
-
+                        <h3 class="heading-large u-margin-top-10">Received messages</h3> 
                         <div class="multiple-choice multiple-choice--inline">
                           <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
                           <label for="type-special">Special notices</label>
@@ -111,7 +110,12 @@
   
             <div class="message-panel js-message-panel"> 
              <h3 class="heading-small message-panel__title js-message-list-title u-margin-top-10">
-             All other messages</h3>
+              {%  if viewData.isPinnedCount > 0 %}
+                All other messages
+              {% else %}
+                All messages
+              {% endif %}
+             </h3>
             
               <ul class="message-panel__messages js-message-list">
 

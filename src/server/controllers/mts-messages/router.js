@@ -125,7 +125,7 @@ export const resetMessages = (req, res, next) => {
   if (req.session.viewData) {
     // unset it
     req.session.viewData = null;
-  };
+  }
 
   // Render view
   return res.render('prototypes/mts-messages/index');

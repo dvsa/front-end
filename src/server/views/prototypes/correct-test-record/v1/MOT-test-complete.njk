@@ -1,0 +1,56 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+
+<main id="content">
+
+   
+    <div class="container">
+            <div id="global-breadcrumb" class="header-context">
+            <nav>
+                <ol class="group">
+                    <li id="breadcrumb-0"><a href="/prototypes/correct-test-record/v1/home-page">Home</a></li>
+                    <li id="breadcrumb-1">MOT testing</li>
+                </ol>
+            </nav>
+            </div>
+            
+            <div class="dvsa-banner dvsa-banner--confirmation dvsa-banner dvsa-banner--confirm ">
+                <h1 class="dvsa-banner__heading-large">MOT test complete</h1>
+                <p class="dvsa-banner__secondary-text">MOT test for vehicle registration TH10CZR is complete</p>
+            </div>
+
+            <div>
+                <h3 class="heading heading--medium heading-medium">What happens next?</h3>
+                <p>Print the following documents and give them to the customer.</p>
+                <ul>
+                                                    <li>
+                                <div id="pass-certificate-item">Test certificate for AF38TVG</div>
+                            </li>
+                        
+                        
+                                            </ul>
+            </div>
+
+            <div style="margin-top: 20px; margin-bottom: 20px;">
+                <a class="button" id="#" href="#">Print certifcate</a>
+            </div>
+
+            <div>
+                <a href="/prototypes/correct-test-record/v1/home-page">Back to user home</a>
+            </div>                          
+    </div>
+</div>            
+
+</main>
+
+{% endblock %}

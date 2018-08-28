@@ -2,32 +2,16 @@
 
 {% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
 
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes' },
+  { text: 'Notify of changes to equipment'  }
+] %}
+
 {% block content %}
 
-<div class="breadcrumbs">
-  <ol>
-    <li>
-      <a href="/manuals">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="/">
-        WILLETTA AREDONDO
-      </a>
-    </li>
-    <li>
-      <a href="/">
-        VTS079774
-      </a>
-    </li>
-    <li>
-      Notify of changes to equipment
-    </li>
-  </ol>
-</div>
-
-<form action="">
+  {% call components.form(action='/prototypes/vts-changes/changes-02-type', method='POST') %} 
 
   <h1 class="heading-large ">
         <span class="heading-secondary">Notify of changes to equipment</span>
@@ -62,9 +46,8 @@
   </div>
 
 
-  <div class="form-group">
-
-    <details >
+  <div class="form-group u-margin-bottom-30"> 
+    <details>
       <summary><span class="summary">I can't find the type of equipment I'm changing</span></summary>
       <div class="panel panel-border-narrow">
         <p>The renewal of mobile testing equipment does not have to be notified to DVSA provided that the replacement is on the <a href="https://www.gov.uk/government/publications/mot-centre-approved-testing-equipment">current DVSA approved list</a> and will not affect the range of vehicles that can be tested. </p>
@@ -81,15 +64,16 @@
     </details>
 
   </div>
+ 
 
-
-  </div>
-
-  <div>
-      <a href="/prototypes/vts-changes/v2/vts-2-layout" class="button">Continue</a><br><br>
-      <a href="/prototypes/vts-changes/v2/">Back</a>
-  </div>
-
+  <div class="u-margin-bottom-15">
+    <input type="submit" value="Continue" class="button"/> 
+  </div> 
+  <div class="u-margin-bottom-15">
+    <a href="/prototypes/vts-changes/changes-01-start">Back</a>
+  </div> 
   
-</form>
-{% endblock %}
+  {% endcall %}
+ 
+  {% endblock %}
+

@@ -2,14 +2,19 @@
 
 {% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
 
-{% block content %}
-
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/manuals' },
   { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
-  { text: 'VTS079774', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes' },
   { text: 'Notify of changes to equipment'  }
 ] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
 
 <h1 class="heading-large ">
       <span class="heading-secondary">Vehicle testing station</span>
@@ -29,9 +34,13 @@
   </div>
 
   <div class="u-margin-bottom-15">
-    <a href="/prototypes/vts-changes/v2/vts-1-equipment" class="button">Continue</a><br><br>
-    <a href="">Back</a>
+    <a href="/prototypes/vts-changes/changes-02-type" class="button">Continue</a>
+  </div>
+  <div class="u-margin-bottom-10">
+    <a href="/prototypes/vts-changes/">Back</a>
   </div>
 
+{%- endcall %}
+{%- endcall %}  
 
 {% endblock %}

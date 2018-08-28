@@ -2,33 +2,15 @@
 
 {% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
 
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes' },
+  { text: 'Notify of changes to equipment'  }
+] %}
+ 
 {% block content %}
-
-<div class="breadcrumbs">
-  <ol>
-    <li>
-      <a href="/manuals">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="/">
-        WILLETTA AREDONDO
-      </a>
-    </li>
-    <li>
-      <a href="/">
-        VTS079774
-      </a>
-    </li>
-    <li>
-      Notify of changes to equipment
-    </li>
-  </ol>
-</div>
-
-
-<form action="">
+ 
 
   <h1 class="heading-large ">
         <span class="heading-secondary">Notify of changes to equipment</span>
@@ -37,6 +19,7 @@
         </label>
   </h1>
 
+   {% call components.form(action='/prototypes/vts-changes/changes-05-classes', method='POST') %} 
   <div class="form-group">
     <fieldset class="inline">
       <div class="multiple-choice">
@@ -62,14 +45,14 @@
     </details>
 
   </div>
- 
-  </div>
-
-  <div>
-      <a href="/prototypes/vts-changes/v2/vts-5-review" class="button">Continue</a><br><br>
-      <a href="/prototypes/vts-changes/v2/vts-3-approved">Back</a>
-  </div>
-
   
-</form>
-{% endblock %}
+
+  <div class="u-margin-bottom-15">
+     <input type="submit" value="Continue" class="button"/> 
+  </div>
+  <div class="u-margin-bottom-10">
+    <a href="/prototypes/vts-changes/changes-04-layout">Back</a>
+  </div>
+
+  {% endcall %} 
+  {% endblock %}

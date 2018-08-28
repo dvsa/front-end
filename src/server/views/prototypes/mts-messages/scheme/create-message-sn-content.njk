@@ -14,11 +14,68 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Enter content and publish date', secondary='Create a message') }}
+      {{ components.pageHeading(heading='Enter content, publish date and audience', secondary='Create a message') }}
 
       <div class='u-clearfix'>
         
         <form action="/prototypes/site-review/enter-details" method="POST">
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label">
+                  Select audience
+              </legend>
+
+              <div class="multiple-choice" data-target="dvsa-user-roles">
+                <input id="dvsa-user-roles-1" name="dvsa-user-roles-1" type="checkbox" value="DVSA user roles">
+                <label for="dvsa-user-roles-1">DVSA roles</label>
+              </div>
+
+              <div class="multiple-choice" data-target="vts-user-roles">
+                <input id="vts-user-roles-1" name="vts-user-roles-1" type="checkbox" value="VTS user roles">
+                <label for="vts-user-roles-1">VTS roles</label>
+              </div>
+
+              <div class="multiple-choice" data-target="mot-testers">
+                <input id="mot-testers-roles-1" name="mot-testers-1" type="checkbox" value="MOT testers">
+                <label for="mot-testers-roles-1">MOT testers</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden js-check-all-group" id="mot-testers">
+                <span class="body-text">Select all that apply</span>
+                <div class="multiple-choice">
+                  <input id="mot-testers-2" class="js-check-all" name="mot-testers-2" type="checkbox" value="All MOT testers">
+                  <label for="mot-testers-2">All MOT testers</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-3" name="mot-testers-3" type="checkbox" value="Class 1">
+                  <label for="mot-testers-3">Class 1</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-4" name="mot-testers-4" type="checkbox" value="Class 2">
+                  <label for="mot-testers-4">Class 2</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-5" name="mot-testers-5" type="checkbox" value="Class 3">
+                  <label for="mot-testers-5">Class 3</label>
+                </div> 
+                <div class="multiple-choice">
+                  <input id="mot-testers-6" name="mot-testers-6" type="checkbox" value="Class 4">
+                  <label for="mot-testers-6">Class 4</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-7" name="mot-testers-7" type="checkbox" value="Class 5">
+                  <label for="mot-testers-7">Class 5</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="mot-testers-8" name="mot-testers-8" type="checkbox" value="Class 7">
+                  <label for="mot-testers-8">Class 7</label>
+                </div>
+
+              </div>
+
+            </fieldset>
+          </div> 
 
           <div class="form-group">
             <fieldset>
@@ -62,21 +119,13 @@
 
           <div class="form-group">
             <fieldset>
-              <legend class="form-label">Must be acknowledged by <span class="form-hint">For example, 31 3 1980</span></legend>
-              <div class="form-date">
-                <div class="form-group form-group-day">
-                  <label class="" for="date1-day" id="form-group-dayDay">Day <span class="validation-message"></span></label>
-                  <input class="form-control" id="date1-day" maxlength="2" name="testDay" title="" max="31" min="01" type="text" value="{{ viewData.testerDetails.testDay }}">
-                </div>
-                <div class="form-group form-group-month">
-                  <label class="" for="date1-month" id="form-group-monthMonth">Month <span class="validation-message"></span></label>
-                  <input class="form-control" id="date1-month" maxlength="2" max="" min="" name="testMonth"  title="" type="text" value="{{ viewData.testerDetails.testMonth }}">
-                </div>
-                <div class="form-group form-group-year">
-                  <label class="" for="date1-year" id="form-group-yearYear">Year <span class="validation-message"></span></label>
-                  <input class="form-control" id="date1-year" maxlength="4" name="testYear" title="" type="text" pattern="[0-9]*" value="{{ viewData.testerDetails.testYear }}">
-                </div>
-              </div>
+              <label for="textOneEight" class="form-label">
+                Number of days to acknowledge by <span class="form-hint">For example: 10</span>
+              </label>
+                  <input type="text" name="textOneEight" id="textOneEight" class="
+                  form-control
+                   form-control-1-8
+              " value="">
             </fieldset>
           </div>
 
@@ -89,94 +138,105 @@
             </fieldset>
           </div>
 
-          <div class="form-group">
-            <fieldset>
-              <label class="form-label" for="textarea">
-                Message content
-              </label>
-              <textarea class="form-control" style="width: 100%;" name="textarea" id="textarea" rows="15"></textarea>
-            </fieldset>
-          </div>
+          {% call components.gridRow() %}
 
-          <details>
-            <summary><span class="summary">Help with formatting the message</span></summary>
-            <div class="panel panel-border-narrow">
-              <table class="table" style="font-size: 0.8em">
-                <thead>
-                <tr>
-                    <th scope="col">Use this</th>
-                    <th scope="col">To get this effect</th>
-                </tr>
-                </thead>
-                <tbody id="markdown-guide">
-                    <tr><td><kbd>*italic*</kbd></td><td><em>Italic</em></td></tr>
-                    <tr><td><kbd>**bold**</kbd></td><td><strong>bold</strong></td></tr>
-                    <tr><td><kbd>***bold-italic***</kbd></td><td><strong><em>bold-italic</em></strong></td></tr>
-                    <tr><td><kbd>#Large header</kbd></td><td><h1>Large header</h1></td></tr>
-                    <tr><td><kbd>##Medium header</kbd></td><td><h2>Medium header</h2></td></tr>
-                    <tr><td><kbd>###Small header</kbd></td><td><h3>small header</h3></td></tr>
-                    <tr><td>Press the space bar twice, then press enter</td><td>Start a new line</td></tr>
-                    <tr><td>Press enter twice</td><td>Start a new paragraph</td></tr>
-                    <tr><td><kbd>[google](http://google.co.uk)</kbd></td><td><a href="http://google.co.uk">google</a></td></tr>
-                <tr>
-                    <td>
-                        <kbd>
-                        - car <br>
-                        - HGV <br>
-                        - motorcycle
-                        </kbd>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>car</li>
-                            <li>HGV</li>
-                            <li>motorcycle</li>
-                        </ul>
-                    </td>
-                </tr>
+            {% call components.columnHalf() %}
+
+              <div class="form-group">
+                <fieldset>
+                  <label class="form-label" for="textarea">
+                    Message content
+                  </label>
+                  <textarea class="form-control" style="width: 100%; resize: vertical;" name="textarea" id="textarea" rows="25"></textarea>
+                </fieldset>
+              </div>
+
+            {%- endcall %}
+
+            {% call components.columnHalf() %}
+
+            <h3 class="heading-medium">
+              Message formatting help
+            </h3>
+
+              <table class="table-summary" style="font-size: 0.8em">
+                    <thead>
+                    <tr>
+                        <th scope="col">Use this</th>
+                        <th scope="col">To get this effect</th>
+                    </tr>
+                    </thead>
+                    <tbody id="markdown-guide">
+                        <tr><td><kbd>*italic*</kbd></td><td><em>Italic</em></td></tr>
+                        <tr><td><kbd>**bold**</kbd></td><td><strong>bold</strong></td></tr>
+                        <tr><td><kbd>***bold-italic***</kbd></td><td><strong><em>bold-italic</em></strong></td></tr>
+                        <tr><td><kbd>#Large header</kbd></td><td><h1>Large header</h1></td></tr>
+                        <tr><td><kbd>##Medium header</kbd></td><td><h2>Medium header</h2></td></tr>
+                        <tr><td><kbd>###Small header</kbd></td><td><h3>small header</h3></td></tr>
+                        <tr><td>Press the space bar twice, then press enter</td><td>Start a new line</td></tr>
+                        <tr><td>Press enter twice</td><td>Start a new paragraph</td></tr>
+                        <tr><td><kbd>[google](http://google.co.uk)</kbd></td><td><a href="http://google.co.uk">google</a></td></tr>
                     <tr>
                         <td>
                             <kbd>
-                                1. Odometer reading <br>
-                                2. Brake test results <br>
-                                3. Reasons for rejection
+                            - car <br>
+                            - HGV <br>
+                            - motorcycle
                             </kbd>
                         </td>
                         <td>
-                            <ol>
-                                <li>Odometer reading</li>
-                                <li>Brake test results</li>
-                                <li>Reasons for rejection</li>
-                            </ol>
+                            <ul>
+                                <li>car</li>
+                                <li>HGV</li>
+                                <li>motorcycle</li>
+                            </ul>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            Press the space bar four times before a bullet/list item <br>
-                            <kbd>
-                                1. Odometer reading <br>
-                                &nbsp; 1. There is no odometer<br>
-                                2. Brake test results
-                            </kbd>
-                        </td>
-                        <td>
-                            Indented bullets<br>
-                            <ol>
-                                <li>Odometer reading</li>
-                                <ol><li>There is no odometer</li></ol>
-                                <li>Brake test results</li>
-                            </ol>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
-          </details>
+                        <tr>
+                            <td>
+                                <kbd>
+                                    1. Odometer reading <br>
+                                    2. Brake test results <br>
+                                    3. Reasons for rejection
+                                </kbd>
+                            </td>
+                            <td>
+                                <ol>
+                                    <li>Odometer reading</li>
+                                    <li>Brake test results</li>
+                                    <li>Reasons for rejection</li>
+                                </ol>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Press the space bar four times before a bullet/list item <br>
+                                <kbd>
+                                    1. Odometer reading <br>
+                                    &nbsp; 1. There is no odometer<br>
+                                    2. Brake test results
+                                </kbd>
+                            </td>
+                            <td>
+                                Indented bullets<br>
+                                <ol>
+                                    <li>Odometer reading</li>
+                                    <ol><li>There is no odometer</li></ol>
+                                    <li>Brake test results</li>
+                                </ol>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            {%- endcall %}
+
+          {%- endcall %}
 
         </div>
 
         <div class="u-margin-top-10 u-margin-bottom-30">
-          {{ components.button(text='Review and save as draft', url='/prototypes/mts-messages/scheme/create-message-sn-review') }}
+          {{ components.button(text='Save and continue to review', url='/prototypes/mts-messages/scheme/create-message-sn-review') }}
         </div>
 
         {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages', paragraph=true) }}

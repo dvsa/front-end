@@ -1,5 +1,6 @@
 import { FILTER_CONFIG } from './config';
 import { addEventListenerToEl } from '../../../shared/misc/events';
+import { getQueryVariable } from '../../../shared/misc/get-query';
 
 export class MessagesFilter {
   // constructor runs on instantiated
@@ -11,7 +12,7 @@ export class MessagesFilter {
     const component = filterMessagesComponent;
     const messageList = document.querySelector('.js-message-list');
 
-    const checkboxes = component.querySelectorAll(FILTER_CONFIG.selectors.checkboxes);
+    const checkboxes = [...component.querySelectorAll(FILTER_CONFIG.selectors.checkboxes)];
     const messageItems = [...messageList.querySelectorAll(FILTER_CONFIG.data.messages)];
     const filteredView = component.querySelector(FILTER_CONFIG.selectors.filteredView);
     const emptyMessageTarget = document.querySelector(FILTER_CONFIG.selectors.messageList);
@@ -36,7 +37,7 @@ export class MessagesFilter {
 
     // Get values for state
     const currFilters = [];
-    const allFilters = [...this.elements.checkboxes].map(checkbox => checkbox.attributes['data-type'].value);
+    const allFilters = this.elements.checkboxes.map(checkbox => checkbox.attributes['data-type'].value);
 
     // Populate state
     this.state = {
@@ -49,25 +50,49 @@ export class MessagesFilter {
 
   init = () => {
     // Attach listeners to checkboxes
-    let checkboxes = Array.from(this.elements.checkboxes);
-    checkboxes.forEach(checkbox => {
+    //let checkboxes = Array.from(this.elements.checkboxes);
+    this.elements.checkboxes.forEach(checkbox => {
       addEventListenerToEl(checkbox, 'change', this.handleCheck);
     });
+
+    // Check if window.location is filtering
+    const filterSpecialNotices = getQueryVariable('filter') == 'sn';
+    if (filterSpecialNotices) {
+      this.filterSpecialNotices();
+    }
+  };
+
+  filterSpecialNotices = () => {
+    const newFilters = [];
+
+    // String to find on the checkboxes' data-type attribute
+    const specialNoticeValue = 'Special notice';
+    this.elements.checkboxes.forEach(checkbox => {
+      // Uncheck all boxes that arent SNs
+      checkbox.checked = false;
+      if (checkbox.attributes['data-type'].value == specialNoticeValue) {
+        checkbox.checked = true;
+      }
+      newFilters.push(specialNoticeValue);
+    });
+
+    // Update state with new SN filter
+    this.state.currFilters = newFilters;
+    // State updated > filter messages by state
+    this.filterMessages(this.state.currFilters);
   };
 
   handleCheck = e => {
     // Empty state
     const newFilters = [];
     // Map through checkboxes - Get their data value
-    let checkboxes = Array.from(this.elements.checkboxes);
-    checkboxes.forEach(checkbox => {
+    this.elements.checkboxes.forEach(checkbox => {
       // If it's checked, store filter value in state
       if (checkbox.checked) {
         const filterType = checkbox.attributes['data-type'].value;
         newFilters.push(filterType);
       }
     });
-
     // Update state with new filters
     this.state.currFilters = newFilters;
     // State updated > filter messages by state

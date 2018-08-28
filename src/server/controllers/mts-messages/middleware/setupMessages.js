@@ -52,17 +52,18 @@ export const setupMessages = (req, res, next) => {
   if (req.session.viewData) return next();
 
   // Adds pinned items, adds indices
-  const updatedData = data.map(addPinnedItems).map(addIndices);
+  const messages = data.map(addPinnedItems).map(addIndices);
 
   // Setup viewData
   const viewData = {
-    messages: updatedData,
-    isPinnedCount: updatedData.filter(filterPinned).length,
+    messages,
+    archive: [],
+    isPinnedCount: messages.filter(filterPinned).length,
   };
 
   // Set session viewData
   req.session.viewData = viewData;
 
-  // Run next middleware stack
+  // Run next middleware
   next();
 };

@@ -4,7 +4,7 @@
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
-  { text: 'Messages', url: '/prototypes/mts-messages/notifications-inbox-scheme-user' },
+  { text: 'Messages', url: '/prototypes/messaging/' },
   { text: 'Create a message'}
 ] %}
 
@@ -14,17 +14,16 @@
 
     {% call components.columnFull() %}
 
-      {{ components.pageHeading(heading='Select audience', secondary='Create a message') }}
+      {{ components.pageHeading(heading='Enter content, publish date and audience', secondary='Create a message') }}
 
-      <div class='text u-clearfix'>
+      <div class='u-clearfix'>
+        
+        <form action="/prototypes/site-review/enter-details" method="POST">
 
-        <form>
           <div class="form-group">
             <fieldset>
-              <legend class="visuallyhidden">
-                <h1 class="heading-medium">
-                  Select all that apply
-                </h1>
+              <legend class="form-label">
+                  Select audience
               </legend>
 
               <div class="multiple-choice" data-target="dvsa-user-roles">
@@ -42,14 +41,14 @@
                 <label for="mot-testers-roles-1">MOT testers</label>
               </div>
 
-              <div class="panel panel-border-narrow js-hidden" id="mot-testers">
+              <div class="panel panel-border-narrow js-hidden js-check-all-group" id="mot-testers">
                 <span class="body-text">Select all that apply</span>
-                <div class="multiple-choice">
-                  <input id="mot-testers-2" name="mot-testers-2" type="checkbox" value="All MOT testers">
-                  <label for="mot-testerss-2">All MOT testers</label>
+                <div class="multiple-choice js-show">
+                  <input id="mot-testers-2" class="js-check-all" name="mot-testers-2" type="checkbox" value="All MOT testers">
+                  <label for="mot-testers-2">All MOT testers</label>
                 </div>
                 <div class="multiple-choice">
-                  <input id="dvsa-user-roles-3" name="mot-testers-3" type="checkbox" value="Class 1">
+                  <input id="mot-testers-3" name="mot-testers-3" type="checkbox" value="Class 1">
                   <label for="mot-testers-3">Class 1</label>
                 </div>
                 <div class="multiple-choice">
@@ -57,9 +56,9 @@
                   <label for="mot-testers-4">Class 2</label>
                 </div>
                 <div class="multiple-choice">
-                  <input id="dmot-testers-5" name="mot-testers-5" type="checkbox" value="Class 3">
-                  <label for="mot-testerss-5">Class 3</label>
-                </div>
+                  <input id="mot-testers-5" name="mot-testers-5" type="checkbox" value="Class 3">
+                  <label for="mot-testers-5">Class 3</label>
+                </div> 
                 <div class="multiple-choice">
                   <input id="mot-testers-6" name="mot-testers-6" type="checkbox" value="Class 4">
                   <label for="mot-testers-6">Class 4</label>
@@ -77,12 +76,41 @@
 
             </fieldset>
           </div>
-        </form>
-        <div class="u-margin-top-10 u-margin-bottom-30">
-          {{ components.button(text='Continue', url='/prototypes/mts-messages/scheme/create-message-sn-content') }}
+
+          <div class="form-group">
+            <fieldset>
+              <legend class="form-label">Check-all component</legend> 
+              <div class="panel panel-border-narrow js-check-all-group">
+                <span class="body-text">Select all that apply</span>
+                <div class="multiple-choice js-show">
+                  <input id="opt-all" class="js-check-all" name="all-options" type="checkbox" value="All options">
+                  <label for="opt-all">All options</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="opt1" name="opt1" type="checkbox" value="">
+                  <label for="opt1">Option 1</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="opt2" name="opt2" type="checkbox" value="">
+                  <label for="opt2">Option 2</label>
+                </div>
+                <div class="multiple-choice">
+                  <input id="opt3" name="opt3" type="checkbox" value="">
+                  <label for="opt3">Option 3</label>
+                </div> 
+              </div>
+            </fieldset>
+          </div>
+  
         </div>
 
-        {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages/scheme', paragraph=true) }}
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          {{ components.button(text='Save and continue to review', url='/prototypes/mts-messages/scheme/create-message-sn-review') }}
+        </div>
+
+        {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages', paragraph=true) }}
+       
+      </form>
 
       </div>
 

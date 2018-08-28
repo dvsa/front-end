@@ -104,15 +104,19 @@ router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
 
 // MTS Messaging
 router.param('messageIndex', messagingController.isValidMessage);
-router.get('/prototypes/messaging', [messagingController.setupMessages, messagingController.getMessages]);
-router.get('/prototypes/messaging/archive', [messagingController.setupMessages, messagingController.getArchive]);
-router.get('/prototypes/messaging/:messageIndex', messagingController.getMessage);
-router.get('/prototypes/messaging/acknowledge/:messageIndex', [
+
+router.get('/prototypes/messages/archive', messagingController.getArchive);
+router.get('/prototypes/messages/received', [messagingController.setupMessages, messagingController.getMessages]);
+router.get('/prototypes/messages/:messageIndex', messagingController.getMessage);
+router.get('/prototypes/messages/acknowledge/:messageIndex', [
   messagingController.unpinSpecialNotice,
   messagingController.acknowledgeMessage,
 ]);
-router.get('/prototypes/messaging/accept/:messageIndex', messagingController.acceptMessage);
-router.get('/prototypes/messaging/reject/:messageIndex', messagingController.rejectMessage);
+router.get('/prototypes/messages/accept/:messageIndex', messagingController.acceptMessage);
+router.get('/prototypes/messages/reject/:messageIndex', messagingController.rejectMessage);
+router.get('/prototypes/messages/archive/:messageIndex', messagingController.archiveMessage);
+
+router.get('/prototypes/mts-messages', messagingController.resetMessages);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

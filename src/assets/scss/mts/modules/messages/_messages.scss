@@ -104,32 +104,34 @@
     padding: 20px;
   }
   @include media(desktop) { 
-    padding: 20px 30px;
+    padding: 20px 16px;
   }
 }
 
 .message-panel {
- 
+  position: relative;
+
   &__title {
     margin-bottom: 15px;
   }
 
-  @include core-16;
-  position: relative; 
-  padding: 15px;
-  background-color: $white;
-  transition: background-color .4s ease-in-out;
-  
-  &__message {
-    background: #fff;
-    clear: both;
-    border-top: 1px solid $grey-3;
-    position: relative;
+  &__message-type {
+    display: block;
+    font-weight: normal;
+    font-size: 16px;
+    color: #6f777b;
   }
 
-  &__message-title {
-    font-weight: bold;
+  &__message {
+    border-top: 1px solid $grey-3;
     position: relative;
+    background-color: white;
+  }
+
+  &__message-title { 
+    position: relative;
+    font-size: 19px;
+
     @include media(desktop) { 
       display: inline; 
     }
@@ -138,28 +140,46 @@
   &__alert {
     font-weight: bold; 
     color: $mellow-red; 
-    @include media(desktop) { 
-      float: right; 
-    }
+    font-size: 19px;
   }
 
   &__message--pinned { 
-    background: $grey-4;
+    border-bottom: 1px solid $grey-3;    
+    
+    .message-panel__inner { 
+      @include media(desktop) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      } 
+    }
+
+    .message-panel__view {
+      @include media(desktop) {
+        top: 80px;
+        bottom: 0;
+      } 
+    }
   }
 
   &__message--unread {
     background: $grey-4;  
-     
 
-    .message-panel__message-title:before {
-      position: absolute;
-      left: -20px;
-      top: -4px;
-      font-size: 28px;
-      color: $mot-blue;
-      content: "\2022";
+    .message-panel__message-title {
+      font-weight: bold; 
+
+      &:before {
+        position: absolute;
+        left: -20px;
+        top: -4px;
+        font-size: 28px;
+        color: $black;
+        content: "\2022";
+      }
     }
-
+    .message-panel__details,
+    .message-panel__message-type {
+      color: $black;
+    }
   }
   
   // Empty view notice
@@ -168,40 +188,48 @@
   }
  
   &__inner {
-    padding: 6px;
-    padding-left: 28px;
-    @include media(tablet) {
-      padding: 10px 160px 4px 28px;
-    }
-    @include media(desktop) {
-      padding: 10px 170px 4px 28px;
-    }
+    padding: 10px 10px 10px 30px;
   }
 
   &__view  {
-    position: relative;
-    padding: 0 0 10px 28px;
-
-    @include media(tablet) {  
+    @include media(desktop) {  
       position: absolute;
-      right: 0;
-      width: 150px;
-      padding: 10px 0;
-      top: 2px;
-    } 
+      right: 20px;
+      bottom: 16px;
+    }
+  }
+
+  &__col {
+    display: block;
+    padding: 0 15px;    
+
+    @include media(desktop) {
+      float: left;
+      box-sizing: border-box;
+      width: 100%;
+  
+      &--four {
+        width: 38%;
+      }
+  
+      &--six {
+        width: 60%;
+      }
+    }
   }
 
   // Meta details for each message
   &__details {
     @extend %contain-floats;
-    padding: 6px 0;
+    padding: 6px 0;  
     color: $grey-1;
     
-    li {
-      font-size: 14px;
+    &-item {
+      font-size: 16px;
+      line-height: 1.25;
+
       @include media(tablet) {
-        display: inline-block;
-        min-width: 33%; 
+        min-width: 50%; 
         float: left;
       }
       

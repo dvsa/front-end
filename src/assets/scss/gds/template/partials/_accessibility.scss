@@ -20,6 +20,19 @@
   visibility: hidden;
 }
 
+/* Only show when JS enabled 
+*  (Use on enhancements only)
+*/
+.js-show {
+  display: none;
+  visibility: hidden;
+  // Show when JS loads
+  .js-enabled & {
+    display: block;
+    visibility: visible;
+  }
+}
+
 /* Hide only visually, but have it available for screenreaders */
 .visually-hidden,
 .visuallyhidden {
@@ -66,7 +79,6 @@ a:link:focus {
 }
 
 /* Make skiplinks visible when they are tabbed to */
-
 .skiplink {
   position: absolute;
   left: -9999em;

@@ -1,0 +1,91 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes/messages' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Archived') }}
+
+      {% if flashMessage != '' %}
+
+        <div class="message--success">
+
+          <p> {{ flashMessage }} </p>
+
+        </div>
+
+      {% endif %}
+ 
+        <div class="c-tab-list">
+          <ul class="c-tab-list__tabs message-filters__tabs">          
+            <li>
+              <a href="/prototypes/messages/received" class="c-tab-list__tab-link  message-filters__tab">Received</a>
+            </li>
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Archived</span>
+            </li>
+          </ul>
+
+          <div class="message-filters__tab-panel"> 
+
+            <div class="message-panel"> 
+
+              {% if viewData.archive.length %}
+                <h3 class="heading-small message-panel__title">
+                Archived</h3> 
+                {% else %}
+                <p class="message-panel__notice u-margin-bottom-10">No archived messages</p> 
+              {% endif %}
+
+               {% if viewData.archive.length %}
+              
+                <ul class="message-panel__messages">
+
+                {% for message in viewData.archive %}
+
+                  <li class="message-panel__message">
+                    <div class="message-panel__inner">
+                      <div class="grid-row">
+                        <div class="message-panel__col">
+                          <h4 class="message-panel__message-title">{{ message.title }}</h4>
+                        </div>
+                      </div>
+                      <ul class="grid-row message-panel__details">
+                        <li class="message-panel__col">
+                          <span class='visually-hidden'>Date received::</span> 
+                          {{ message.date.received }}
+                        </li>
+                      </ul>
+                      <div class="message-panel__view">
+                        <a href="/prototypes/messages/{{message.id}}" class="">View message</a>
+                      </div> 
+                    </div>
+                  </li>
+
+                  {% endfor %} 
+                </ul>
+
+                {% endif %}
+            </div> 
+
+          </div>
+
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/messages', paragraph=true) }}
+        </div>
+
+    </div>
+
+    {%- endcall %} 
+    {%- endcall %} 
+  
+{% endblock %}

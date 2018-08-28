@@ -5,7 +5,7 @@ export const FILTER_CONFIG = {
     checkboxes: '.js-message-filter',
     filteredView: '.js-message-panel',
     listTitle: '.js-message-list-title',
-    emptyNotice: 'message-panel__notice', // used inside a method, so omit the dot
+    emptyNotice: 'message-panel__notice', // used inside a classList method, so omit the dot
   },
   data: {
     emptyNotice: 'Select a message type to view',

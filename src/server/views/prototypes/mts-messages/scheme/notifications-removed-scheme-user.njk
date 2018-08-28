@@ -9,6 +9,12 @@
 
 {% block content %}
 
+<style>
+.c-tab-list__row--unread .c-tab-list__item-link:before {
+    color: #005ea5 !important;
+}
+</style>
+
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
@@ -26,7 +32,7 @@
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs">          
             <li>
-              <a href="/prototypes/mts-messages/scheme" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Received</a>
+              <a href="/prototypes/mts-messages/scheme" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Inbox</a>
             </li>
             <li>
               <a href="/prototypes/mts-messages/scheme/notifications-archived-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
@@ -40,70 +46,59 @@
             
           </ul>
 
-          <div class="message-filters__tab-panel js-filter-wrapper">
-    
-            <h3 class="heading-large u-margin-top-10">Removed messages</h3> 
+          <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
 
-            <div class="message-panel js-message-panel">
+            <h2 class="heading-large">Removed messages</h2>
+
+            <div clas="message-panel js-filter-message-panel">
             
-              <p class="message-panel__notice" style="display: none;">Select a message type to view</p><ul class="message-panel__messages js-message-list">
-                
-                  <li data-type="Notification" class="message-panel__message message-panel__message--unread">
-                    <div class="message-panel__inner">
-                      
-                      <div class="message-panel__message-type">
-                        <span class="visually-hidden">Type:</span> Special notice
-                      </div>
-                      
-                      <div class="grid-row">
-                        <div class="message-panel__col">
-                          <h4 class="message-panel__message-title">Preparation for the EU roadworthiness directive</h4>
-                        </div>
-                      </div>
-                      <ul class="grid-row message-panel__details">
-                        <li class="message-panel__col message-panel__col--four">
-                          <span class="visually-hidden">Date received::</span> 
-                          3 April 2018
-                        </li>
-                        <li class="message-panel__col message-panel__col--four">
-                          <span class="visually-hidden">Status:</span> 
-                          Draft
-                        </li>
-                        
-                      </ul>
-                      <div class="message-panel__view">
-                        <a href="/prototypes/mts-messages/scheme/notification-draft-removed" class="">View message</a>
-                      </div> 
-                    </div>
-                  </li>
+              <ul class="c-tab-list__items u-margin-bottom-30">
 
-                  <li data-type="Notification" class="message-panel__message ">
-                    <div class="message-panel__inner">
-                      
-                      <div class="grid-row">
-                        <div class="message-panel__col">
-                          <h4 class="message-panel__message-title">MOT inspection manual guidance on cars and passenger vehicles</h4>
-                        </div>
-                      </div>
-                      <ul class="grid-row message-panel__details">
-                        <li class="message-panel__col message-panel__col--four">
-                          <span class="visually-hidden">Date received:</span> 
-                          23 April 2018
-                        </li>
-                        <li class="message-panel__col message-panel__col--four">
-                          <span class="visually-hidden">Status:</span> 
-                          Published
-                        </li>
-                        
-                      </ul>
-                      <div class="message-panel__view">
-                        <a href="#" class="">View message</a>
-                      </div> 
+                <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                  <div class="c-tab-list__item-left" style="padding-right: 20px;">
+                    <div class="message-panel__message-type">
+                      <span class="visually-hidden">Type:</span> Special notice
                     </div>
-                  </li>
+                    <div class="c-tab-list__item-link"><a href="#" class="">Preparation for the EU roadworthiness directive</a></div>
+
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px; color: #0b0c0c;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Date received:</span> 
+                        16 May 2018
+                      </li>
+                      <li style="font-size: 16px; color: #0b0c0c;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Status:</span> 
+                        Draft
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+
+                <li data-type="Notification" class="message-panel__message ">
+                  <div class="message-panel__inner">
+                    
+                    <div class="grid-row">
+                      <div class="message-panel__col">
+                        <h4 class="message-panel__message-title"><a href="/prototypes/mts-messages/scheme/create-message-news-review" class="">MOT inspection manual guidance on cars and passenger vehicles</a></h4>
+                      </div>
+                    </div>
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Date received::</span> 
+                        23 April 2018
+                      </li>
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Status:</span> 
+                        Published
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
                  
               </ul>
-            </div> 
+            </div>
 
           </div>
 

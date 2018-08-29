@@ -7,23 +7,10 @@ export const initViewData = () => {
   return {
     errors: [],
     questions: {
-      question1: { 
-      },
-      question2: {
-        answered: '',
-      },
-      question3: {
-        answered: '',
-      },
-      question4: {
-        answered: '',
-      },
-      question5: {
-        answered: '',
-      },
-      question5: {
-        answered: '',
-      },
+      type: {},
+      approved: {},
+      layout: {},
+      classes: {},
     },
   };
 };

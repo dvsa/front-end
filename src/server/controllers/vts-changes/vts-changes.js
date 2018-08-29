@@ -7,18 +7,16 @@ export const getRoot = (req, res) => {
 };
 
 export const postEquipment = (req, res) => {
+
   // Get submitted values
   const formData = req.body;
-  const answers = {
-    headlamp: formData['headlamp'],
-    plate: formData['plate'],
-    roller: formData['roller'],
-    wheel: formData['wheel'],
-    ramp: formData['ramp'],
-  };
+
+  // Remove any that are null (eg submit button)
+  delete formData['null'];
+
   // Add answers to session. Redirect to next question
-  req.session.viewData.questions.type = answers;
-  const viewData = req.session.viewData;
+  req.session.viewData.questions.type = formData;
+   
   return res.redirect(`/prototypes/vts-changes/changes-03-approved`);
 };
 
@@ -29,10 +27,30 @@ export const postApprovedEquipment = (req, res) => {
     value: formData['dvsa-approved'],
   };
 
-  // Add answers to session. Redirect to next question
+  // Add answers to session.
   req.session.viewData.questions.approved = answer;
   const viewData = req.session.viewData;
-  console.log(viewData);
+
+  // If 'no', render notice
+  if (answer.value === 'no') {
+    return res.redirect('/prototypes/vts-changes/change-notice');
+  }
+
+  // If 'yes', direct to next question
+  return res.redirect('/prototypes/vts-changes/changes-04-layout');
+};
+
+export const postUnapprovedEquipment = (req, res) => {
+  // Get submitted values
+  const formData = req.body;
+  const answer = {
+    value: formData['unapproved-detail'],
+  };
+
+  // Add answers to session.
+  req.session.viewData.questions.unapprovedDetails = answer;
+
+  // Either answer leads to next question.
   return res.redirect('/prototypes/vts-changes/changes-04-layout');
 };
 
@@ -45,8 +63,12 @@ export const postLayoutChange = (req, res) => {
 
   // Add answers to session. Redirect to next question
   req.session.viewData.questions.layout = answer;
-  const viewData = req.session.viewData;
-  console.log(viewData);
+
+  // If 'yes', render notice
+  if (answer.value === 'yes') {
+    return res.redirect('/prototypes/vts-changes/change-notice');
+  }
+
   return res.redirect('/prototypes/vts-changes/changes-05-classes');
 };
 
@@ -54,21 +76,40 @@ export const postClasses = (req, res) => {
   // Get submitted values
   const formData = req.body;
   const answer = {
-    value: formData['same-class'],
+    value: formData['20lass'],
   };
   // Add answers to session. Redirect to next question
   req.session.viewData.questions.classes = answer;
-  const viewData = req.session.viewData;
+
+  // If 'no', render notice
+  if (answer.value === 'no') {
+    return res.redirect('/prototypes/vts-changes/change-notice');
+  }
+
   return res.redirect('/prototypes/vts-changes/summary');
 };
 
 export const getSummary = (req, res) => {
-  console.log(req.session.viewData);
-  console.log('summary');
+
+  // If types not set...
+  if (!req.session.viewData.questions.type.length) {
+
+      // Populate types from session data
+      const answers = req.session.viewData.questions.type;
+      const types = [];
+      for (var answer in answers) {
+        if (answers.hasOwnProperty(answer)) {
+            // Convert first leter to uppercase
+            let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
+            types.push(capAnswer);
+          }
+        }
+        // Add types to viewdata
+        req.session.viewData.questions.type = types; 
+      } 
   return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
 };
 
 export const getConfirmation = (req, res) => { 
-  console.log('conf');
   return res.render('./prototypes/vts-changes/confirmation/index');
 };

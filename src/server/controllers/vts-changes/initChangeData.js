@@ -9,7 +9,9 @@ export const initViewData = () => {
     questions: {
       type: {},
       approved: {},
+      unapprovedDetails: {},
       layout: {},
+      layoutDetails: {},
       classes: {},
     },
   };

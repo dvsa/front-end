@@ -29,7 +29,10 @@
         <td class='u-font-bold'>
 
           {% for type in viewData.questions.type %}
-             {{ type }}
+             {{type}}
+             {% if not (loop.last) %}
+             ,
+             {% endif %}
           {% endfor %}
         </td>
         <td class='u-align-right'>

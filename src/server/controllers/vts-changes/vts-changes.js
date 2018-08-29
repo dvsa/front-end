@@ -7,7 +7,6 @@ export const getRoot = (req, res) => {
 };
 
 export const postEquipment = (req, res) => {
-
   // Get submitted values
   const formData = req.body;
 
@@ -16,7 +15,7 @@ export const postEquipment = (req, res) => {
 
   // Add answers to session. Redirect to next question
   req.session.viewData.questions.type = formData;
-   
+
   return res.redirect(`/prototypes/vts-changes/changes-03-approved`);
 };
 
@@ -90,26 +89,24 @@ export const postClasses = (req, res) => {
 };
 
 export const getSummary = (req, res) => {
-
   // If types not set...
   if (!req.session.viewData.questions.type.length) {
-
-      // Populate types from session data
-      const answers = req.session.viewData.questions.type;
-      const types = [];
-      for (var answer in answers) {
-        if (answers.hasOwnProperty(answer)) {
-            // Convert first leter to uppercase
-            let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
-            types.push(capAnswer);
-          }
-        }
-        // Add types to viewdata
-        req.session.viewData.questions.type = types; 
-      } 
+    // Populate types from session data
+    const answers = req.session.viewData.questions.type;
+    const types = [];
+    for (var answer in answers) {
+      if (answers.hasOwnProperty(answer)) {
+        // Convert first leter to uppercase
+        let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
+        types.push(capAnswer);
+      }
+    }
+    // Add types to viewdata
+    req.session.viewData.questions.type = types;
+  }
   return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
 };
 
-export const getConfirmation = (req, res) => { 
+export const getConfirmation = (req, res) => {
   return res.render('./prototypes/vts-changes/confirmation/index');
 };

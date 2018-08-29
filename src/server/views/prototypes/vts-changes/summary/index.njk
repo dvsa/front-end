@@ -20,7 +20,7 @@
     Check that the information is correct before submitting the notification of changes.
   </p> 
 
-  <table class='u-margin-bottom-30 u-clearfix'>
+  <table class='u-margin-bottom-30'>
     <tbody>
       <tr>
         <td>
@@ -29,10 +29,7 @@
         <td class='u-font-bold'>
 
           {% for type in viewData.questions.type %}
-             {{type}}
-             {% if not (loop.last) %}
-             ,
-             {% endif %}
+             {{type}}{{ ", " if not (loop.last) }}
           {% endfor %}
         </td>
         <td class='u-align-right'>

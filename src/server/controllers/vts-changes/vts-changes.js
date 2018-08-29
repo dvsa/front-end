@@ -1,11 +1,25 @@
 import { initViewData } from './initChangeData.js';
 
+/**
+ * GET Middleware - Initialise session for Stage 1
+ * 
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const getRoot = (req, res) => {
   // Reset session to dummy data from home page if not present
   req.session.viewData = req.session.viewData || initViewData();
   return res.render('./prototypes/vts-changes/changes-01-start', { viewData: req.session.viewData });
 };
 
+
+/**
+ * POST Middleware - Declare types of equipment being changed
+ * 
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const postEquipment = (req, res) => {
   // Get submitted values
   const formData = req.body;
@@ -19,6 +33,14 @@ export const postEquipment = (req, res) => {
   return res.redirect(`/prototypes/vts-changes/changes-03-approved`);
 };
 
+
+/**
+ * POST Middleware - Declare whether equipment is DVSA approved.
+ * Conditionally render next stage or notice depending on 'yes' or 'no'
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const postApprovedEquipment = (req, res) => {
   // Get submitted values
   const formData = req.body;
@@ -39,20 +61,14 @@ export const postApprovedEquipment = (req, res) => {
   return res.redirect('/prototypes/vts-changes/changes-04-layout');
 };
 
-export const postUnapprovedEquipment = (req, res) => {
-  // Get submitted values
-  const formData = req.body;
-  const answer = {
-    value: formData['unapproved-detail'],
-  };
 
-  // Add answers to session.
-  req.session.viewData.questions.unapprovedDetails = answer;
-
-  // Either answer leads to next question.
-  return res.redirect('/prototypes/vts-changes/changes-04-layout');
-};
-
+/**
+ * POST Middleware - Declare whether premises layout change is needed.
+ * Conditionally render next stage depending on 'yes' or 'no'
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const postLayoutChange = (req, res) => {
   // Get submitted values
   const formData = req.body;
@@ -71,11 +87,18 @@ export const postLayoutChange = (req, res) => {
   return res.redirect('/prototypes/vts-changes/changes-05-classes');
 };
 
+/**
+ * POST Middleware - Declare same vehicle class capability of equipment change.
+ * Conditionally render next stage depending on 'yes' or 'no'
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const postClasses = (req, res) => {
   // Get submitted values
   const formData = req.body;
   const answer = {
-    value: formData['20lass'],
+    value: formData['same-class'],
   };
   // Add answers to session. Redirect to next question
   req.session.viewData.questions.classes = answer;
@@ -88,6 +111,13 @@ export const postClasses = (req, res) => {
   return res.redirect('/prototypes/vts-changes/summary');
 };
 
+
+/**
+ * GET Middleware - Render summary with collected viewdata. Normalise casing on Types.
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const getSummary = (req, res) => {
   // If types not set...
   if (!req.session.viewData.questions.type.length) {
@@ -107,6 +137,13 @@ export const getSummary = (req, res) => {
   return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
 };
 
+
+/**
+ * GET Middleware - Render confirmation
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
 export const getConfirmation = (req, res) => {
   return res.render('./prototypes/vts-changes/confirmation/index');
 };

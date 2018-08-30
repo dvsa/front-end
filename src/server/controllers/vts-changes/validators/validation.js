@@ -45,7 +45,7 @@ export const validateApproved = (req, res, next) => {
   // If form data is empty...
   if (isEmpty(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions.approved.errors.push({ approvedError: 'Is the equipment DVSA approved?' });
+    req.session.viewData.questions.approved.errors.push({ approvedError: 'Select an answer' });
     console.log('approval errors added');
     return next();
   }
@@ -73,13 +73,40 @@ export const validateLayout = (req, res, next) => {
   // If form data is empty...
   if (isEmpty(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions.layout.errors.push({ layoutError: 'Select whether the equipment will change the layout of the premises' });
+    req.session.viewData.questions.layout.errors.push({ layoutError: 'Select an answer' });
     console.log('layout errors added');
     return next();
   }
   // If no errors, empty errors and pass on
-  console.log('validated');
   req.session.viewData.questions.layout.errors = [];
+  return next();
+};
+
+
+/**
+ * Validation middleware function used to populate errors on
+ * Classes question
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ * @param {Express.Next} - Express Next object
+ */
+export const validateClasses = (req, res, next) => {
+  // Get submitted values
+  const formData = req.body;
+  // Remove any that are null (eg submit button)
+  delete formData['null'];
+
+  // If form data is empty...
+  if (isEmpty(formData)) {
+    // Pass on with errors in session
+    req.session.viewData.questions.classes.errors.push({ classesError: 'Select an answer' });
+    console.log('classes errors added');
+    return next();
+  }
+  // If no errors, empty errors and pass on
+  console.log('validated classes');
+  req.session.viewData.questions.classes.errors = [];
   return next();
 };
 

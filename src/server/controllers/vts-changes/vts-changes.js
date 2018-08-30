@@ -77,7 +77,7 @@ export const postApproved = (req, res) => {
 
 /**
  * POST Middleware - Declare whether premises layout change is needed.
- * Conditionally render next stage depending on 'yes' or 'no'
+ * Conditionally render next question or a notice.
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
@@ -90,8 +90,8 @@ export const postLayout = (req, res) => {
   // Add answers to session.
   req.session.viewData.questions.layout.answer = answer;
   
-
   const data = req.session.viewData.questions.layout;
+
   // If there were errors in the session, return to question
   if (data.errors[0]) {
     const typeError = data.errors[0]['layoutError'];
@@ -101,33 +101,38 @@ export const postLayout = (req, res) => {
   // If 'yes', render notice
   if (answer === 'yes') {
     return res.redirect('/prototypes/vts-changes/change-notice');
-  } 
+  }
   return res.redirect('/prototypes/vts-changes/classes');
 };
 
 /**
- * POST Middleware - Declare same vehicle class capability of equipment change.
- * Conditionally render next stage depending on 'yes' or 'no'
- *
+ * POST Middleware - Declare whether Equipment can test the same class
+ * Conditionally render next question or a notice.
+ * 
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
 export const postClasses = (req, res) => {
-  // Get submitted values
-  const formData = req.body;
-  const answer = {
-    value: formData['same-class'],
-  };
-  // Add answers to session. Redirect to next question
-  req.session.viewData.questions.classes = answer;
+  
+  // Get submitted values for answer
+  const answer = req.body['same-class'];
+  const errors = req.session.viewData.questions.classes.errors;
 
+  // If there were errors in the session, return to question
+  if (errors[0]) {
+    const typeError = errors[0]['classesError'];
+    return res.redirect(`/prototypes/vts-changes/classes`);
+  }
+  
+  // Add answers to session
+  req.session.viewData.questions.classes.answer = answer;
   // If 'no', render notice
-  if (answer.value === 'no') {
+  if (answer === 'no') {
     return res.redirect('/prototypes/vts-changes/change-notice');
   }
-
   return res.redirect('/prototypes/vts-changes/summary');
 };
+
 
 /**
  * GET Middleware - Render 'Equipment types' question
@@ -139,6 +144,7 @@ export const getType = (req, res) => {
   req.session.viewData = req.session.viewData || initViewData(); 
   return res.render('./prototypes/vts-changes/type/index', { viewData: req.session.viewData });
 };
+
 
 /**
  * GET Middleware - Render 'Approval' question
@@ -162,29 +168,40 @@ export const getLayout = (req, res) => {
   return res.render('./prototypes/vts-changes/layout/index', { viewData: req.session.viewData });
 };
 
+/**
+ * GET Middleware - Render 'Classes' question
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getClasses = (req, res) => {
+  req.session.viewData = req.session.viewData || initViewData();
+  return res.render('./prototypes/vts-changes/classes/index', { viewData: req.session.viewData });
+};
+
 
 /**
- * GET Middleware - Render summary with collected viewdata. Normalise casing on Types.
+ * GET Middleware - Render summary with answers.
+ *  Normalises casing on Types.
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
 export const getSummary = (req, res) => {
-  // If types not set...
-  if (!req.session.viewData.questions.type.length) {
+
     // Populate types from session data
-    const answers = req.session.viewData.questions.type;
+    const answers = req.session.viewData.questions.type.answer; 
     const types = [];
-    for (var answer in answers) {
+     for (var answer in answers) {
       if (answers.hasOwnProperty(answer)) {
         // Convert first leter to uppercase
         let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
         types.push(capAnswer);
       }
-    }
-    // Add types to viewdata
-    req.session.viewData.questions.type = types;
-  }
+    } 
+    // Add new types to viewdata
+    req.session.viewData.questions.type.answer = types;
+
   return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
 };
 

@@ -8,7 +8,7 @@ export const initViewData = () => {
     errors: [],
     questions: {
       type: {
-        answer: {},
+        answer: [],
         errors: [],
       },
       approved: {

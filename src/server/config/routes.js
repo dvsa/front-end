@@ -126,7 +126,8 @@ router.get('/prototypes/vts-changes/approved', vtsChangeController.getApproved);
 router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateApproved, vtsChangeController.postApproved]);
 router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateLayout, vtsChangeController.postLayout]);
 router.get('/prototypes/vts-changes/layout', vtsChangeController.getLayout);
-router.post('/prototypes/vts-changes/changes-05-classes', vtsChangeController.postClasses);
+router.get('/prototypes/vts-changes/classes', vtsChangeController.getClasses);
+router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateClasses, vtsChangeController.postClasses]);
 router.get('/prototypes/vts-changes/summary', vtsChangeController.getSummary);
 
 // Create route from view path

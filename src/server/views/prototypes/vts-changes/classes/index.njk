@@ -19,9 +19,14 @@
         </label>
   </h1>
 
-   {% call components.form(action='/prototypes/vts-changes/changes-05-classes', method='POST') %} 
-  <div class="form-group">
-    <fieldset class="inline">
+   {% call components.form(action='/prototypes/vts-changes/classes', method='POST') %} 
+  
+  <div class="form-group {{ 'form-group-error' if viewData.questions.classes.errors[0]['classesError'] }}">
+    {% if viewData.questions.classes.errors[0]['classesError'] %}
+      <span class="error-message">{{ viewData.questions.classes.errors[0]['classesError'] }}</span>
+    {% endif %}
+  
+    <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
         <input id="radio-inline-1" type="radio" name="same-class" value="yes">
         <label for="radio-inline-1">Yes</label>

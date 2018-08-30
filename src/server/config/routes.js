@@ -119,8 +119,8 @@ router.get('/prototypes/messages/archive/:messageIndex', messagingController.arc
 router.get('/prototypes/mts-messages', messagingController.resetMessages);
 
 // VTS changes
-router.get('/prototypes/vts-changes/changes-01-start', vtsChangeController.getRoot);
-router.post('/prototypes/vts-changes/changes-02-type', vtsChangeController.postEquipment);
+router.get('/prototypes/vts-changes/changes-01-start', vtsChangeController.resetSession);
+router.post('/prototypes/vts-changes/changes-02-type', [vtsChangeController.validateType, vtsChangeController.postEquipment]);
 router.post('/prototypes/vts-changes/changes-03-approved', vtsChangeController.postApprovedEquipment);
 router.post('/prototypes/vts-changes/changes-04-layout', vtsChangeController.postLayoutChange);
 router.post('/prototypes/vts-changes/changes-05-classes', vtsChangeController.postClasses);

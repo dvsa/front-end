@@ -7,8 +7,12 @@ export const initViewData = () => {
   return {
     errors: [],
     questions: {
-      type: {},
-      approved: {},
+      type: {
+        errors: [],
+      },
+      approved: {
+        errors: [],
+      },
       unapprovedDetails: {},
       layout: {},
       layoutDetails: {},

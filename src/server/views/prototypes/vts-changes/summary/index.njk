@@ -28,7 +28,7 @@
         </td>
         <td class='u-font-bold'>
 
-          {% for type in viewData.questions.type %}
+          {% for type in viewData.questions.type.answers %}
              {{type}}{{ ", " if not (loop.last) }}
           {% endfor %}
         </td>

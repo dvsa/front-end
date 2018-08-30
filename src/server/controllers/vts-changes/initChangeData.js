@@ -8,15 +8,23 @@ export const initViewData = () => {
     errors: [],
     questions: {
       type: {
+        answer: {},
         errors: [],
       },
       approved: {
+        answer: {},
+        errors: [],
+      },
+      layout: {
+        answer: {},
+        errors: [],
+      },
+      classes: {
+        answer: {},
         errors: [],
       },
       unapprovedDetails: {},
-      layout: {},
       layoutDetails: {},
-      classes: {},
     },
   };
 };

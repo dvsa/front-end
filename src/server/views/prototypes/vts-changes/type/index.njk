@@ -11,21 +11,22 @@
 
 {% block content %}
 
-  {% call components.form(action='/prototypes/vts-changes/changes-02-type', method='POST') %} 
+  {% call components.form(action='/prototypes/vts-changes/type', method='POST') %} 
 
   <h1 class="heading-large ">
-        <span class="heading-secondary">Notify of changes to equipment</span>
-        <label for="select-box">
-          What type of equipment are you changing?
-        </label>
+      <span class="heading-secondary">Notify of changes to equipment</span>
+      <label for="select-box">
+        What type of equipment are you changing?
+      </label>
   </h1>
-
-
-  <div class="form-group form-group-error"> 
-
-    <span class="error-message">Select an equipment type</span>
  
-    <fieldset>
+  <div class="form-group {{ 'form-group-error' if viewData.questions.type.errors[0]['typeError'] }}">  
+    
+    {% if viewData.questions.type.errors[0]['typeError'] %}
+      <span class="error-message">{{ viewData.questions.type.errors[0]['typeError'] }}</span>
+    {% endif %}
+  
+    <fieldset class="u-margin-top-15">
       <div class="multiple-choice">
         <input id="equipment-type-1" name="headlamp" type="checkbox">
         <label for="equipment-type-1">Headlamp beam tester</label>
@@ -74,7 +75,7 @@
     <input type="submit" value="Continue" class="button"/> 
   </div> 
   <div class="u-margin-bottom-15">
-    <a href="/prototypes/vts-changes/changes-01-start">Back</a>
+    <a href="/prototypes/vts-changes/start">Back</a>
   </div> 
   
   {% endcall %}

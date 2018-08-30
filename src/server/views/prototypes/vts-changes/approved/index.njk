@@ -18,10 +18,14 @@
         </label>
   </h1>
 
-  {% call components.form(action='/prototypes/vts-changes/changes-03-approved', method='POST') %} 
+  {% call components.form(action='/prototypes/vts-changes/approved', method='POST') %} 
   
-  <div class="form-group">
-    <fieldset class="inline">
+  <div class="form-group {{ 'form-group-error' if viewData.questions.approved.errors[0]['approvedError'] }}">
+    {% if viewData.questions.approved.errors[0]['approvedError'] %}
+      <span class="error-message">{{ viewData.questions.approved.errors[0]['approvedError'] }}</span>
+    {% endif %}
+  
+    <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
         <input id="radio-inline-1" type="radio" name="dvsa-approved" value="yes">
         <label for="radio-inline-1">Yes</label>
@@ -41,7 +45,7 @@
     <input type="submit" value="Continue" class="button"/> 
   </div> 
   <div class="u-margin-bottom-15">
-    <a href="/prototypes/vts-changes/changes-02-type">Back</a>
+    <a href="/prototypes/vts-changes/type">Back</a>
   </div>
   
   

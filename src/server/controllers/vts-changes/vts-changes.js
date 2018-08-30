@@ -1,4 +1,5 @@
 import { initViewData } from './initChangeData.js';
+import { isEmpty } from './helpers/helpers';
 
 export * from './validators/validation.js';
 
@@ -11,33 +12,36 @@ export * from './validators/validation.js';
  */
 export const resetSession = (req, res) => {
   // Reset session to dummy data from home page if not present
-  req.session.viewData = req.session.viewData || initViewData();
-  return res.render('./prototypes/vts-changes/changes-01-start', { viewData: req.session.viewData });
+  req.session.viewData = initViewData();
+  return res.render('./prototypes/vts-changes/start', { viewData: req.session.viewData });
 };
-  
+
 /**
  * POST Middleware - Declare types of equipment being changed
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const postEquipment = (req, res) => {
-  
+export const postType = (req, res) => {
+ 
   // Get submitted values
   const formData = req.body;
   // Remove any that are null (eg submit button)
-  delete formData['null'];
+  delete formData['null']; 
+  const answer = formData;
+  const data = req.session.viewData.questions.type;
 
   // Add answers to session
-  req.session.viewData.questions.type = formData;
+  req.session.viewData.questions.type.answer = answer;
 
-  const typeErrors = req.session.viewData.errors;
-  
-  if ( typeErrors.length ) {
-    console.log('Errors:', typeErrors);
-    return res.redirect(`/prototypes/vts-changes/changes-02-type`);
+  // If there were errors in the session
+  if (data.errors[0]) {
+    const typeError = data.errors[0]['typeError'];
+    return res.redirect(`/prototypes/vts-changes/type`);
   }
-  return res.redirect(`/prototypes/vts-changes/changes-03-approved`);
+  
+  // Proceed to next question
+  return res.redirect(`/prototypes/vts-changes/approved`);
 };
 
 /**
@@ -47,24 +51,28 @@ export const postEquipment = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const postApprovedEquipment = (req, res) => {
+export const postApproved = (req, res) => {
+
   // Get submitted values
   const formData = req.body;
-  const answer = {
-    value: formData['dvsa-approved'],
-  };
+  const answer = formData['dvsa-approved'];
+  const data = req.session.viewData.questions.approved;
 
-  // Add answers to session.
-  req.session.viewData.questions.approved = answer;
-  const viewData = req.session.viewData;
+  // Add answers to session
+  req.session.viewData.questions.approved.answer = answer;
 
-  // If 'no', render notice
-  if (answer.value === 'no') {
-    return res.redirect('/prototypes/vts-changes/change-notice');
+  // If there were errors in the session, return to question
+  if (data.errors[0]) {
+    const typeError = data.errors[0]['approvedError'];
+    return res.redirect(`/prototypes/vts-changes/approved`);
   }
-
+    
+  // If 'no', render notice
+  if (answer === 'no') {
+    return res.redirect('/prototypes/vts-changes/change-notice');
+  } 
   // If 'yes', direct to next question
-  return res.redirect('/prototypes/vts-changes/changes-04-layout');
+  return res.redirect('/prototypes/vts-changes/layout');
 };
 
 /**
@@ -74,22 +82,27 @@ export const postApprovedEquipment = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const postLayoutChange = (req, res) => {
+export const postLayout = (req, res) => {
+  
   // Get submitted values
   const formData = req.body;
-  const answer = {
-    value: formData['layout-change'],
-  };
+  const answer =  formData['layout-change'];
+  // Add answers to session.
+  req.session.viewData.questions.layout.answer = answer;
+  
 
-  // Add answers to session. Redirect to next question
-  req.session.viewData.questions.layout = answer;
-
-  // If 'yes', render notice
-  if (answer.value === 'yes') {
-    return res.redirect('/prototypes/vts-changes/change-notice');
+  const data = req.session.viewData.questions.layout;
+  // If there were errors in the session, return to question
+  if (data.errors[0]) {
+    const typeError = data.errors[0]['layoutError'];
+    return res.redirect(`/prototypes/vts-changes/layout`);
   }
 
-  return res.redirect('/prototypes/vts-changes/changes-05-classes');
+  // If 'yes', render notice
+  if (answer === 'yes') {
+    return res.redirect('/prototypes/vts-changes/change-notice');
+  } 
+  return res.redirect('/prototypes/vts-changes/classes');
 };
 
 /**
@@ -115,6 +128,40 @@ export const postClasses = (req, res) => {
 
   return res.redirect('/prototypes/vts-changes/summary');
 };
+
+/**
+ * GET Middleware - Render 'Equipment types' question
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getType = (req, res) => { 
+  req.session.viewData = req.session.viewData || initViewData(); 
+  return res.render('./prototypes/vts-changes/type/index', { viewData: req.session.viewData });
+};
+
+/**
+ * GET Middleware - Render 'Approval' question
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getApproved = (req, res) => {
+  req.session.viewData = req.session.viewData || initViewData();
+  return res.render('./prototypes/vts-changes/approved/index', { viewData: req.session.viewData });
+};
+
+/**
+ * GET Middleware - Render 'Layout' question
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getLayout = (req, res) => {
+  req.session.viewData = req.session.viewData || initViewData();
+  return res.render('./prototypes/vts-changes/layout/index', { viewData: req.session.viewData });
+};
+
 
 /**
  * GET Middleware - Render summary with collected viewdata. Normalise casing on Types.

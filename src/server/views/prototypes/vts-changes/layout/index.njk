@@ -13,7 +13,7 @@
 {% block content %}
 
 
-  {% call components.form(action='/prototypes/vts-changes/changes-04-layout', method='POST') %} 
+  {% call components.form(action='/prototypes/vts-changes/layout', method='POST') %} 
   <h1 class="heading-large ">
         <span class="heading-secondary">Notify of changes to equipment</span>
         <label for="radio-inline-group">
@@ -21,8 +21,12 @@
         </label>
   </h1> 
 
-  <div class="form-group">
-    <fieldset class="inline">
+  <div class="form-group {{ 'form-group-error' if viewData.questions.layout.errors[0]['layoutError'] }}">
+    {% if viewData.questions.layout.errors[0]['layoutError'] %}
+      <span class="error-message">{{ viewData.questions.layout.errors[0]['layoutError'] }}</span>
+    {% endif %}
+  
+    <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
         <input id="radio-inline-1" type="radio" name="layout-change" value="yes">
         <label for="radio-inline-1">Yes</label>

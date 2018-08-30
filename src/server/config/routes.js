@@ -119,10 +119,13 @@ router.get('/prototypes/messages/archive/:messageIndex', messagingController.arc
 router.get('/prototypes/mts-messages', messagingController.resetMessages);
 
 // VTS changes
-router.get('/prototypes/vts-changes/changes-01-start', vtsChangeController.resetSession);
-router.post('/prototypes/vts-changes/changes-02-type', [vtsChangeController.validateType, vtsChangeController.postEquipment]);
-router.post('/prototypes/vts-changes/changes-03-approved', vtsChangeController.postApprovedEquipment);
-router.post('/prototypes/vts-changes/changes-04-layout', vtsChangeController.postLayoutChange);
+router.get('/prototypes/vts-changes/start', vtsChangeController.resetSession);
+router.get('/prototypes/vts-changes/type', vtsChangeController.getType);
+router.post('/prototypes/vts-changes/type', [vtsChangeController.validateType, vtsChangeController.postType]);
+router.get('/prototypes/vts-changes/approved', vtsChangeController.getApproved);
+router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateApproved, vtsChangeController.postApproved]);
+router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateLayout, vtsChangeController.postLayout]);
+router.get('/prototypes/vts-changes/layout', vtsChangeController.getLayout);
 router.post('/prototypes/vts-changes/changes-05-classes', vtsChangeController.postClasses);
 router.get('/prototypes/vts-changes/summary', vtsChangeController.getSummary);
 

@@ -27,7 +27,6 @@ export const validateType = (req, res, next) => {
   return next();
 };
 
-
 /**
  * Validation middleware function used to populate errors on
  * Approved equipment question
@@ -55,7 +54,6 @@ export const validateApproved = (req, res, next) => {
   return next();
 };
 
-
 /**
  * Validation middleware function used to populate errors on
  * Layout change question
@@ -81,7 +79,6 @@ export const validateLayout = (req, res, next) => {
   req.session.viewData.questions.layout.errors = [];
   return next();
 };
-
 
 /**
  * Validation middleware function used to populate errors on
@@ -109,6 +106,3 @@ export const validateClasses = (req, res, next) => {
   req.session.viewData.questions.classes.errors = [];
   return next();
 };
-
-
-

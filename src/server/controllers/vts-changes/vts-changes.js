@@ -23,11 +23,10 @@ export const resetSession = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postType = (req, res) => {
- 
   // Get submitted values
   const formData = req.body;
   // Remove any that are null (eg submit button)
-  delete formData['null']; 
+  delete formData['null'];
   const answer = formData;
   const data = req.session.viewData.questions.type;
 
@@ -39,7 +38,7 @@ export const postType = (req, res) => {
     const typeError = data.errors[0]['typeError'];
     return res.redirect(`/prototypes/vts-changes/type`);
   }
-  
+
   // Proceed to next question
   return res.redirect(`/prototypes/vts-changes/approved`);
 };
@@ -52,7 +51,6 @@ export const postType = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postApproved = (req, res) => {
-
   // Get submitted values
   const formData = req.body;
   const answer = formData['dvsa-approved'];
@@ -66,11 +64,11 @@ export const postApproved = (req, res) => {
     const typeError = data.errors[0]['approvedError'];
     return res.redirect(`/prototypes/vts-changes/approved`);
   }
-    
+
   // If 'no', render notice
   if (answer === 'no') {
-    return res.redirect('/prototypes/vts-changes/change-notice');
-  } 
+    return res.redirect('/prototypes/vts-changes/unapproved-notice');
+  }
   // If 'yes', direct to next question
   return res.redirect('/prototypes/vts-changes/layout');
 };
@@ -83,13 +81,12 @@ export const postApproved = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postLayout = (req, res) => {
-  
   // Get submitted values
   const formData = req.body;
-  const answer =  formData['layout-change'];
+  const answer = formData['layout-change'];
   // Add answers to session.
   req.session.viewData.questions.layout.answer = answer;
-  
+
   const data = req.session.viewData.questions.layout;
 
   // If there were errors in the session, return to question
@@ -108,12 +105,11 @@ export const postLayout = (req, res) => {
 /**
  * POST Middleware - Declare whether Equipment can test the same class
  * Conditionally render next question or a notice.
- * 
+ *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
 export const postClasses = (req, res) => {
-  
   // Get submitted values for answer
   const answer = req.body['same-class'];
   const errors = req.session.viewData.questions.classes.errors;
@@ -123,7 +119,7 @@ export const postClasses = (req, res) => {
     const typeError = errors[0]['classesError'];
     return res.redirect(`/prototypes/vts-changes/classes`);
   }
-  
+
   // Add answers to session
   req.session.viewData.questions.classes.answer = answer;
   // If 'no', render notice
@@ -133,18 +129,16 @@ export const postClasses = (req, res) => {
   return res.redirect('/prototypes/vts-changes/summary');
 };
 
-
 /**
  * GET Middleware - Render 'Equipment types' question
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const getType = (req, res) => { 
-  req.session.viewData = req.session.viewData || initViewData(); 
+export const getType = (req, res) => {
+  req.session.viewData = req.session.viewData || initViewData();
   return res.render('./prototypes/vts-changes/type/index', { viewData: req.session.viewData });
 };
-
 
 /**
  * GET Middleware - Render 'Approval' question
@@ -179,7 +173,6 @@ export const getClasses = (req, res) => {
   return res.render('./prototypes/vts-changes/classes/index', { viewData: req.session.viewData });
 };
 
-
 /**
  * GET Middleware - Render summary with answers.
  *  Normalises casing on Types.
@@ -188,19 +181,18 @@ export const getClasses = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const getSummary = (req, res) => {
-
-    // Populate types from session data
-    const answers = req.session.viewData.questions.type.answer; 
-    const types = [];
-     for (var answer in answers) {
-      if (answers.hasOwnProperty(answer)) {
-        // Convert first leter to uppercase
-        let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
-        types.push(capAnswer);
-      }
-    } 
-    // Add new types to viewdata
-    req.session.viewData.questions.type.answer = types;
+  // Populate types from session data
+  const answers = req.session.viewData.questions.type.answer;
+  const types = [];
+  for (var answer in answers) {
+    if (answers.hasOwnProperty(answer)) {
+      // Convert first leter to uppercase
+      let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
+      types.push(capAnswer);
+    }
+  }
+  // Add new types to viewdata
+  req.session.viewData.questions.type.answer = types;
 
   return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
 };

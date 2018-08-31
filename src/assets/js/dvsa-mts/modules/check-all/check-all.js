@@ -21,6 +21,8 @@ export class CheckAll {
       },
     };
 
+    console.log('here');
+
     this.init();
   }
 

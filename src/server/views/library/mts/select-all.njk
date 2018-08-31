@@ -1,0 +1,53 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Select all' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Default',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <form>
+    <legend>
+      <h3 class="heading-medium">Select all checkbox</h3>
+      <span class="body-text">Select all that apply</span>
+    </legend>
+    <fieldset class="js-check-all-group">
+      <div class="multiple-choice js-show">
+        <input id="class-all" class="js-check-all" name="class-all" type="checkbox" value="All MOT testers">
+        <label for="class-all">All MOT testers</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-1" name="class-1" type="checkbox" value="Class 1">
+        <label for="class-1">Class 1</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-2" name="class-2" type="checkbox" value="Class 2">
+        <label for="class-2">Class 2</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-3" name="class-3" type="checkbox" value="Class 3">
+        <label for="class-3">Class 3</label>
+      </div> 
+      <div class="multiple-choice">
+        <input id="class-4" name="class-4" type="checkbox" value="Class 4">
+        <label for="class-4">Class 4</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-5" name="class-5" type="checkbox" value="Class 5">
+        <label for="class-5">Class 5</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="class-6" name="class-6" type="checkbox" value="Class 7">
+        <label for="class-6">Class 6</label>
+      </div>
+
+    </fieldset>
+  </form>
+  {%- endcall %}
+
+{% endblock %}

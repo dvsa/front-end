@@ -7,6 +7,8 @@ import { initFormDisableDetailsHiddenFields } from './form-submit-disable-detail
 import { initOdometerReading } from './odometer-reading';
 import { initFormDisableOnSubmit } from './form-disable-on-submit';
 import { initMotTestSearch } from './mot-test-search';
+import { initCheckAll } from './check-all';
+import { initMessageFilter } from './filter-messages';
 
 /**
  * MTS Application modules
@@ -14,6 +16,7 @@ import { initMotTestSearch } from './mot-test-search';
  * @since 1.2.0
  * @author Tameem Safi <t.safi@kainos.com>
  * @author James Nelson <j.nelson@kainos.com>
+ * @author Martin Di Martino <martind@kainos.com>
  */
 export const initModules = () => {
   initCritieraValidation();
@@ -25,4 +28,6 @@ export const initModules = () => {
   initOdometerReading();
   initFormDisableOnSubmit();
   initMotTestSearch();
+  initCheckAll();
+  initMessageFilter();
 };

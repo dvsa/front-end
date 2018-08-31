@@ -108,6 +108,10 @@
     margin-bottom: 15px;
   }
 
+  &__message-title {
+    position: relative;
+  }
+
   &__message-type {
     display: block;
     font-weight: normal;

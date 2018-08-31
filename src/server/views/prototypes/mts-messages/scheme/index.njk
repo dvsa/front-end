@@ -9,6 +9,12 @@
 
 {% block content %}
 
+<style>
+.c-tab-list__row--unread .c-tab-list__item-link:before {
+    color: #005ea5 !important;
+}
+</style>
+
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}

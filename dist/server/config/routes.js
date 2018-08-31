@@ -116,7 +116,7 @@ router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
 router.param('messageIndex', messagingController.isValidMessage);
 
 router.get('/prototypes/messages/archive', messagingController.getArchive);
-router.get('/prototypes/messages/received', [messagingController.setupMessages, messagingController.getMessages]);
+router.get('/prototypes/messages/inbox', [messagingController.setupMessages, messagingController.getMessages]);
 router.get('/prototypes/messages/:messageIndex', messagingController.getMessage);
 router.get('/prototypes/messages/acknowledge/:messageIndex', [messagingController.unpinSpecialNotice, messagingController.acknowledgeMessage]);
 router.get('/prototypes/messages/accept/:messageIndex', messagingController.acceptMessage);

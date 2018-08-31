@@ -48,7 +48,7 @@ export class CheckAll {
 
     // Gets a count of all checked items
     let checkedCount = this.countCheckedItems();
-    
+
     // If a 'Select all' operation has occured
     if (isSelectAll || checkedCount == this.state.elements.count) {
       // Toggle state of all check items
@@ -85,12 +85,9 @@ export class CheckAll {
    * @returns {Int} - Number of counted checkbox items
    */
   countCheckedItems = () => {
-    return this.state.elements.checkboxes
-    .filter(this.excludeCheckAll)
-    .filter(checkbox => {
+    return this.state.elements.checkboxes.filter(this.excludeCheckAll).filter(checkbox => {
       return checkbox.checked;
-    })
-    .length
+    }).length;
   };
 
   /**

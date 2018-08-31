@@ -47,152 +47,122 @@
             
           </ul>
 
-          <div class="message-filters__tab-panel js-filter-wrapper">
+          <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
+
+            <h2 class="heading-large">Inbox</h2>
+
+            <div clas="message-panel js-filter-message-panel">
+
+              <h3 class="heading-small">Select message type</h3>
+
+              <div class="form-group u-margin-bottom-20">
+                <fieldset>
+                  <legend class="visually-hidden">Choose which notification type to view</legend>
+                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                    <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal" checked>
+                    <label for="waste-type-1">Special notices</label>
+                  </div>
+                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;" onclick="location.href = '/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-news';">
+                    <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines" checked>
+                    <label for="waste-type-2">Notifications</label>
+                  </div>
+                </fieldset>
+              </div>
             
-            <div class="message-panel"> 
-                <div class="message-filters__inputs">
-                  <form class="form" data-form-state-index="0">
-                    <div class="form-group u-margin-bottom-30 inline">
-                      <fieldset>
-                        <legend class="visually-hidden">Choose which message type to view</legend>
-                        <h3 class="heading-large u-margin-top-10">Received messages</h3> 
-                        <div class="multiple-choice multiple-choice--inline">
-                          <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked="">
-                          <label for="type-special">Special notices</label>
-                        </div>
-                        <div class="multiple-choice multiple-choice--inline">
-                          <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="notification" checked="">
-                          <label for="type-reminder">Notifications</label>
-                        </div>
-                      </fieldset>
-                    </div>
-                  </form>
-                </div> 
-               
-            </div>
+              <ul class="c-tab-list__items u-margin-bottom-30">
 
-            <div class="message-panel js-message-panel"> 
-             <h3 class="heading-small message-panel__title js-message-list-title u-margin-top-10">
-                All messages
-             </h3>
-            
-              <p class="message-panel__notice" style="display: none;">Select a message type to view</p><ul class="message-panel__messages js-message-list">
-                  <li data-type="Special notice" class="message-panel__message ">
-                    <div class="message-panel__inner">
-                      
-                      <div class="message-panel__message-type">
-                        <span class="visually-hidden">Type:</span> Special notice 09-18
-                      </div>
-                      
-                      <div class="grid-row">
-                        <div class="message-panel__col">
-                          <h4 class="message-panel__message-title">Class 1 and 2 test standard change</h4>
-                        </div>
-                      </div>
-                      <ul class="grid-row message-panel__details">
-                        <li class="message-panel__col message-panel__col--six">
-                          <span class="visually-hidden">Date received::</span> 
-                          22 June 2018
-                        </li>
-                        
-                      </ul>
-                      <div class="message-panel__view">
-                        <a href="/prototypes/messages/0" class="">View message</a>
-                      </div> 
+                <li data-type="Special notice" class="message-panel__message ">
+                  <div class="message-panel__inner">
+                    
+                    <div class="message-panel__message-type">
+                      <span class="visually-hidden">Type:</span> Special notice 09-18
                     </div>
-                  </li>
+                    
+                    <div class="grid-row">
+                      <div class="message-panel__col">
+                        <h4 class="message-panel__message-title"><a href="/prototypes/messages/0" class="">Class 1 and 2 test standard change</a></h4>
+                      </div>
+                    </div>
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--six">
+                        <span class="visually-hidden">Date received:</span> 
+                        22 June 2018
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
 
-                  <li data-type="Special notice" class="message-panel__message ">
-                    <div class="message-panel__inner">
-                      
-                      <div class="message-panel__message-type">
-                        <span class="visually-hidden">Type:</span> Special notice 08-18
-                      </div>
-                      
-                      <div class="grid-row">
-                        <div class="message-panel__col">
-                          <h4 class="message-panel__message-title">MOT Testing guide</h4>
-                        </div>
-                      </div>
-                      <ul class="grid-row message-panel__details">
-                        <li class="message-panel__col message-panel__col--six">
-                          <span class="visually-hidden">Date received::</span> 
-                          18 June 2018
-                        </li>
-                        
-                      </ul>
-                      <div class="message-panel__view">
-                        <a href="/prototypes/messages/1" class="">View message</a>
-                      </div> 
+                <li data-type="Special notice" class="message-panel__message ">
+                  <div class="message-panel__inner">
+                    
+                    <div class="message-panel__message-type">
+                      <span class="visually-hidden">Type:</span> Special notice 08-18
                     </div>
-                  </li>
+                    
+                    <div class="grid-row">
+                      <div class="message-panel__col">
+                        <h4 class="message-panel__message-title"><a href="#">MOT Testing guide</a></h4>
+                      </div>
+                    </div>
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--six">
+                        <span class="visually-hidden">Date received:</span> 
+                        18 June 2018
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
 
-                  <li data-type="Special notice" class="message-panel__message ">
-                    <div class="message-panel__inner">
-                      
-                      <div class="message-panel__message-type">
-                        <span class="visually-hidden">Type:</span> Special notice 06-18
-                      </div>
-                      
-                      <div class="grid-row">
-                        <div class="message-panel__col">
-                          <h4 class="message-panel__message-title">EU roadworthiness directive updates</h4>
-                        </div>
-                      </div>
-                      <ul class="grid-row message-panel__details">
-                        <li class="message-panel__col message-panel__col--six">
-                          <span class="visually-hidden">Date received::</span> 
-                          8 May 2018
-                        </li>
-                        
-                      </ul>
-                      <div class="message-panel__view">
-                        <a href="/prototypes/mts-messages/scheme/notification-published" class="">View message</a>
-                      </div> 
+                <li data-type="Special notice" class="message-panel__message ">
+                  <div class="message-panel__inner">
+                    
+                    <div class="message-panel__message-type">
+                      <span class="visually-hidden">Type:</span> Special notice 06-18
                     </div>
-                  </li>
-                
-                  <li data-type="Notification" class="message-panel__message message-panel__message--unread">
-                    <div class="message-panel__inner">
-                      
-                      <div class="grid-row">
-                        <div class="message-panel__col">
-                          <h4 class="message-panel__message-title">New way for you to get MOT news</h4>
-                        </div>
+                    
+                    <div class="grid-row">
+                      <div class="message-panel__col">
+                        <h4 class="message-panel__message-title"><a href="/prototypes/mts-messages/scheme/notification-published" class="">EU roadworthiness directive updates</a></h4>
                       </div>
-                      <ul class="grid-row message-panel__details">
-                        <li class="message-panel__col message-panel__col--six">
-                          <span class="visually-hidden">Date received::</span> 
-                          23 March 2018
-                        </li>
-                        
-                      </ul>
-                      <div class="message-panel__view">
-                        <a href="/prototypes/messages/5" class="">View message</a>
-                      </div> 
                     </div>
-                  </li>
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--six">
+                        <span class="visually-hidden">Date received:</span> 
+                        8 May 2018
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
 
-                  <li data-type="Notification" class="message-panel__message ">
-                    <div class="message-panel__inner">
-                      
-                      <div class="grid-row">
-                        <div class="message-panel__col">
-                          <h4 class="message-panel__message-title">2018 Regulations</h4>
-                        </div>
+                <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">New way for you to get MOT news</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px; color: #0b0c0c;"><span class="visually-hidden">Date received: </span>23 March 2018</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li data-type="Notification" class="message-panel__message ">
+                  <div class="message-panel__inner">
+                    
+                    <div class="grid-row">
+                      <div class="message-panel__col">
+                        <h4 class="message-panel__message-title"><a href="#">2018 Regulations</a></h4>
                       </div>
-                      <ul class="grid-row message-panel__details">
-                        <li class="message-panel__col message-panel__col--six">
-                          <span class="visually-hidden">Date received::</span> 
-                          4 February 2018
-                        </li>
-                        
-                      </ul>
-                      <div class="message-panel__view">
-                        <a href="/prototypes/messages/7" class="">View message</a>
-                      </div> 
                     </div>
-                  </li>
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--six">
+                        <span class="visually-hidden">Date received:</span> 
+                        4 February 2018
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
                  
               </ul>
             </div> 

@@ -67,18 +67,11 @@
 }
 
 // MTS Filtered Messages
-
-// TODO: Make more generic for use across all tabs, or replace all tabs with govuk component.
-
 .message-filters {
-
   &__tab {
     margin-top: -5px;
     margin-bottom: -1px;
-    padding-top: 14px;
-    padding-right: 19px;
-    padding-bottom: 16px;
-    padding-left: 19px;
+    padding: 15px 20px;
     color: #0b0c0c;
     background-color: #f8f8f8;
     border: none;
@@ -98,19 +91,19 @@
 
 .message-filters__tab-panel {
   border: 1px solid #bfc1c3;
-  padding: 12px;
+  padding: 15px;
+  padding-bottom: 30px;
   
   @include media(tablet) { 
     padding: 20px;
   }
+
   @include media(desktop) { 
-    padding: 20px 16px;
+    padding: 20px 20px 30px;
   }
 }
 
 .message-panel {
-  position: relative;
-
   &__title {
     margin-bottom: 15px;
   }
@@ -120,45 +113,21 @@
     font-weight: normal;
     font-size: 16px;
     color: #6f777b;
+    margin-bottom: 5px;
   }
 
   &__message {
-    border-top: 1px solid $grey-3;
-    position: relative;
+    border: 1px solid $grey-3;
+    border-width: 1px 0 1px 0;
     background-color: white;
+    margin-top: -1px;
+    padding: 10px 10px 10px 30px;    
   }
-
-  &__message-title { 
-    position: relative;
-    font-size: 19px;
-
-    @include media(desktop) { 
-      display: inline; 
-    }
-  } 
 
   &__alert {
     font-weight: bold; 
     color: $mellow-red; 
     font-size: 19px;
-  }
-
-  &__message--pinned { 
-    border-bottom: 1px solid $grey-3;    
-    
-    .message-panel__inner { 
-      @include media(desktop) {
-        padding-top: 60px;
-        padding-bottom: 60px;
-      } 
-    }
-
-    .message-panel__view {
-      @include media(desktop) {
-        top: 80px;
-        bottom: 0;
-      } 
-    }
   }
 
   &__message--unread {
@@ -172,7 +141,7 @@
         left: -20px;
         top: -4px;
         font-size: 28px;
-        color: $black;
+        color: #005ea5;
         content: "\2022";
       }
     }
@@ -184,19 +153,8 @@
   
   // Empty view notice
   &__notice {
-    padding: 1em 0;
-  }
- 
-  &__inner {
-    padding: 10px 10px 10px 30px;
-  }
-
-  &__view  {
-    @include media(desktop) {  
-      position: absolute;
-      right: 20px;
-      bottom: 16px;
-    }
+    margin: 15px 0 0;
+    padding: 0;
   }
 
   &__col {
@@ -221,25 +179,9 @@
   // Meta details for each message
   &__details {
     @extend %contain-floats;
-    padding: 6px 0;  
     color: $grey-1;
-    
-    &-item {
-      font-size: 16px;
-      line-height: 1.25;
-
-      @include media(tablet) {
-        min-width: 50%; 
-        float: left;
-      }
-      
-      @include media(false, 640px) {
-        display: inline;
-        width: auto;
-        padding-right: 10px;
-        float: none;
-      }
-    }
+    margin-top: 5px;
+    font-size: 16px;
   }
 }
 

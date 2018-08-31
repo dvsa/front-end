@@ -110,10 +110,9 @@ export const postLayout = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postClasses = (req, res) => {
-
   // Get submitted values for answer
   const answer = req.body['same-class'];
-  
+
   // If there were errors in the session, return to question
   const errors = req.session.viewData.questions.classes.errors;
   if (errors[0]) {
@@ -182,7 +181,6 @@ export const getClasses = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const getSummary = (req, res) => {
-  
   // Populate types from session data
   const answers = req.session.viewData.questions.type.answer;
   const types = [];

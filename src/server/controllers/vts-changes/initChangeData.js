@@ -5,7 +5,7 @@
  */
 export const initViewData = () => {
   return {
-    errors: [],
+    typeNames: [],
     questions: {
       type: {
         answer: [],
@@ -23,8 +23,6 @@ export const initViewData = () => {
         answer: {},
         errors: [],
       },
-      unapprovedDetails: {},
-      layoutDetails: {},
     },
   };
 };

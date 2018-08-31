@@ -23,19 +23,28 @@ export const resetSession = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postType = (req, res) => {
-  // Get submitted values
+  // Get submitted values and clean up nulls...
   const formData = req.body;
-  // Remove any that are null (eg submit button)
   delete formData['null'];
-  const answer = formData;
-  const data = req.session.viewData.questions.type;
+  // ...add to session
+  req.session.viewData.questions.type.answer = formData;
 
-  // Add answers to session
-  req.session.viewData.questions.type.answer = answer;
+  // Push each answer into array of types for display in Summary
+  const answers = formData;
+  const types = [];
+  for (var answer in answers) {
+    if (answers.hasOwnProperty(answer)) {
+      // Convert first leter to uppercase
+      let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
+      types.push(capAnswer);
+    }
+  }
+  // Add array of types to session
+  req.session.viewData.typeNames = types;
 
-  // If there were errors in the session
-  if (data.errors[0]) {
-    const typeError = data.errors[0]['typeError'];
+  // If there were errors in the session from validator, return to question
+  const errors = req.session.viewData.questions.type.errors[0];
+  if (errors) {
     return res.redirect(`/prototypes/vts-changes/type`);
   }
 
@@ -57,7 +66,7 @@ export const postApproved = (req, res) => {
   const data = req.session.viewData.questions.approved;
 
   // Add answers to session
-  req.session.viewData.questions.approved.answer = answer;
+  req.session.viewData.questions.approved.answer = formData;
 
   // If there were errors in the session, return to question
   if (data.errors[0]) {
@@ -85,7 +94,7 @@ export const postLayout = (req, res) => {
   const formData = req.body;
   const answer = formData['layout-change'];
   // Add answers to session.
-  req.session.viewData.questions.layout.answer = answer;
+  req.session.viewData.questions.layout.answer = formData;
 
   const data = req.session.viewData.questions.layout;
 
@@ -111,7 +120,8 @@ export const postLayout = (req, res) => {
  */
 export const postClasses = (req, res) => {
   // Get submitted values for answer
-  const answer = req.body['same-class'];
+  const formData = req.body;
+  const answer = formData['same-class'];
   const errors = req.session.viewData.questions.classes.errors;
 
   // If there were errors in the session, return to question
@@ -121,7 +131,7 @@ export const postClasses = (req, res) => {
   }
 
   // Add answers to session
-  req.session.viewData.questions.classes.answer = answer;
+  req.session.viewData.questions.classes.answer = formData;
   // If 'no', render notice
   if (answer === 'no') {
     return res.redirect('/prototypes/vts-changes/change-notice');
@@ -137,6 +147,7 @@ export const postClasses = (req, res) => {
  */
 export const getType = (req, res) => {
   req.session.viewData = req.session.viewData || initViewData();
+  console.log(req.session.viewData);
   return res.render('./prototypes/vts-changes/type/index', { viewData: req.session.viewData });
 };
 
@@ -181,19 +192,6 @@ export const getClasses = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const getSummary = (req, res) => {
-  // Populate types from session data
-  const answers = req.session.viewData.questions.type.answer;
-  const types = [];
-  for (var answer in answers) {
-    if (answers.hasOwnProperty(answer)) {
-      // Convert first leter to uppercase
-      let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
-      types.push(capAnswer);
-    }
-  }
-  // Add new types to viewdata
-  req.session.viewData.questions.type.answer = types;
-
   return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
 };
 

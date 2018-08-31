@@ -24,27 +24,27 @@
     
     {% if viewData.questions.type.errors[0]['typeError'] %}
       <span class="error-message">{{ viewData.questions.type.errors[0]['typeError'] }}</span>
-    {% endif %}
+    {% endif %} 
   
     <fieldset class="u-margin-top-15">
       <div class="multiple-choice">
-        <input id="equipment-type-1" name="headlamp" type="checkbox">
+        <input id="equipment-type-1" name="headlamp" type="checkbox" {{ 'checked' if viewData.questions.type.answer['headlamp'] }}>
         <label for="equipment-type-1">Headlamp beam tester</label>
       </div>
       <div class="multiple-choice">
-        <input id="equipment-type-2" name="plate" type="checkbox">
+        <input id="equipment-type-2" name="plate" type="checkbox" {{ 'checked' if viewData.questions.type.answer['plate'] }}>
         <label for="equipment-type-2">Plate brake tester</label>
       </div>
       <div class="multiple-choice">
-        <input id="equipment-type-3" name="roller" type="checkbox">
+        <input id="equipment-type-3" name="roller" type="checkbox" {{ 'checked' if viewData.questions.type.answer['roller'] }}>
         <label for="equipment-type-3">Roller brake tester</label>
       </div>
       <div class="multiple-choice">
-        <input id="equipment-type-4" name="wheel" type="checkbox">
+        <input id="equipment-type-4" name="wheel" type="checkbox" {{ 'checked' if viewData.questions.type.answer['wheel'] }}>
         <label for="equipment-type-4">Wheel play detector</label>
       </div>
       <div class="multiple-choice">
-        <input id="equipment-type-5" name="ramp" type="checkbox">
+        <input id="equipment-type-5" name="ramp" type="checkbox" {{ 'checked' if viewData.questions.type.answer['ramp'] }}>
         <label for="equipment-type-5">Ramp, hoist or lift</label>
       </div>
     </fieldset>

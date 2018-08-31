@@ -27,8 +27,7 @@
           Equipment type(s)
         </td>
         <td class='u-font-bold'>
-
-          {% for type in viewData.questions.type.answer %}
+          {% for type in viewData.typeNames %}
              {{type}}{{ ", " if not (loop.last) }}
           {% endfor %}
         </td>

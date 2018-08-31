@@ -28,11 +28,11 @@
   
     <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
-        <input id="radio-inline-1" type="radio" name="layout-change" value="yes">
+        <input id="radio-inline-1" type="radio" name="layout-change" value="yes" {{ 'checked' if viewData.questions.layout.answer['layout-change'] == 'yes' }}>
         <label for="radio-inline-1">Yes</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-inline-2" type="radio" name="layout-change" value="no">
+        <input id="radio-inline-2" type="radio" name="layout-change" value="no" {{ 'checked' if viewData.questions.layout.answer['layout-change'] == 'no' }}>
         <label for="radio-inline-2">No</label>
       </div>
     </fieldset>

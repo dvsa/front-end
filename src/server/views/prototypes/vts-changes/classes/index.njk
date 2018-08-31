@@ -25,14 +25,14 @@
     {% if viewData.questions.classes.errors[0]['classesError'] %}
       <span class="error-message">{{ viewData.questions.classes.errors[0]['classesError'] }}</span>
     {% endif %}
-  
+    
     <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
-        <input id="radio-inline-1" type="radio" name="same-class" value="yes">
+        <input id="radio-inline-1" type="radio" name="same-class" value="yes" {{ 'checked' if viewData.questions.classes.answer['same-class'] == 'yes' }}>
         <label for="radio-inline-1">Yes</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-inline-2" type="radio" name="same-class" value="no">
+        <input id="radio-inline-2" type="radio" name="same-class" value="no" {{ 'checked' if viewData.questions.classes.answer['same-class'] == 'no' }}>
         <label for="radio-inline-2">No</label>
       </div>
     </fieldset>

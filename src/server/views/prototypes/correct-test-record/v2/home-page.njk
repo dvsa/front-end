@@ -1,0 +1,203 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+   <div class="o-wrapper phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      <span>
+          This is a new service – your
+          <a id="feedback-link" target="_blank" href="http://www.smartsurvey.co.uk/s/MTSFeedback/">feedback</a>
+          will help us to improve it.
+      </span>
+    </p>
+</div>
+<section class="c-home-hero">
+    <div class="o-wrapper u-clearfix">
+        <div class="c-home-hero__content">
+            <h1 class="c-home-hero__title">
+                Your home
+            </h1>
+
+                    </div>
+
+        
+    <div id="hero-actions" class="c-home-hero__actions">
+
+                        <a href="/prototypes/correct-test-record/v2/vehicle-search" class="button button-start" id="action-start-mot-test">Start MOT test
+    </a>
+        
+        
+        
+                <ul class="c-action-list">
+        
+                                                                <li class="c-action-list__item">
+                    <a class="c-action-list__link" href="/replacement-certificate-vehicle-search" id="action-start-certificate-reissue">
+                        Replacement/duplicate certificate
+                    </a>
+                </li>
+                                                                                                    <li class="c-action-list__item">
+                    <a class="c-action-list__link" href="/forms" id="mot-forms">
+                        MOT forms
+                    </a>
+                </li>
+                                                        </ul>
+    </div>
+
+    </div>
+
+</section>
+
+
+    <main id="content">
+
+        <div class="container">
+
+                            <div class="row contents">
+                    <div class="col-lg-12">
+                        
+
+
+<div class="grid-row">
+    <div class="column-half">
+            <section class="c-home-block" id="special-notice-list">
+        <header class="c-home-block__head">
+            <h2 class="c-home-block__title">
+                <a id="action-view-all-special-notices" href="special-notices">Special notices</a>
+            </h2>
+        </header>
+
+        <a href="special-notices" class="c-mailbox-status" id="unread-special-notice-link">
+            <span class="c-mailbox-status__count">0</span>
+            <span class="c-mailbox-status__type">
+                unread
+                            </span>
+        </a>
+
+            </section>
+
+        <section class="c-home-block" id="notification-list">
+
+    <header class="c-home-block__head">
+        <h2 class="c-home-block__title">
+            <a href="/notification/list">Notifications</a>
+        </h2>
+    </header>
+
+    
+    <div class="c-mailbox-status" id="unread-notification-count">
+        <strong class="c-mailbox-status__count">0</strong>
+        <span class="c-mailbox-status__type">unread</span>
+    </div>
+
+    
+    <div class="u-space-b15 u-pad-t10">
+        <a href="/notification/list">
+            View all notifications
+        </a>
+    </div>
+
+</section>
+    </div>
+
+    <div class="column-half">
+                    <section class="c-home-block" id="ae-vts-list_0">
+            <header class="c-home-block__header ae-header">
+                <h2 class="c-home-block__title ae-title">
+                    <a href="/authorised-examiner/48496">SALVADOR ESPEJO</a>
+                </h2>
+                <p class="c-home-block__subtitle">
+                    Authorised Examiner number: AE048496
+                </p>
+            </header>
+
+            <div class="u-space-b15">
+                                    <p>Your vehicle testing stations</p>
+                    <ul class="o-bordered-list vts-list">
+                                                    <li class="o-bordered-list__item">
+                                <a href="/vehicle-testing-station/77860" class="site-link">
+                                    (VTS077860) INTEREST SERVICE STATION
+                                </a>
+                                <div class="u-text-meta vts-roles">
+                                    TESTER, SITE-ADMIN
+                                </div>
+                            </li>
+                                            </ul>
+                            </div>
+
+            <div class="c-slots">
+                <span class="c-slots__count c-slots__count--sm">21102</span>
+                <span class="c-slots__subtext">
+                    slots available
+                </span>
+            </div>
+        </section>
+    
+                    <section class="c-home-block">
+    <header class="c-home-block__head">
+        <h2 class="c-home-block__title">Your performance</h2>
+    </header>
+    <ul>
+        <li>
+            <a id="action-view-performance-dashboard" href="/stats">
+                Performance dashboard
+            </a>
+        </li>
+    </ul>
+</section>        
+        
+        
+        <div class="c-home-block">
+    <header class="c-home-block__head">
+        <h2 class="c-home-block__title">Training</h2>
+    </header>
+
+    <p>Practice on any class of vehicle without using slots or recording the outcome.</p>
+
+    <p>
+        <a href="/training-test-vehicle-search" class="button" id="action-start-mot-demonstration">
+            Start training test
+        </a>
+    </p>
+</div>
+        
+                    <section class="c-home-block">
+    <header class="c-home-block__head">
+        <h2 class="c-home-block__title">Contingency Tests</h2>
+    </header>
+    <ul>
+        <li class="u-space-b10">
+            <a id="action-view-performance-dashboard" href="/contingency">
+                Record contingency test
+            </a>
+        </li>
+        <li class="u-space-b10">
+            <a href="/forms/contingency-pass-certificate" target="_blank">
+                CT20 Pass Certificate</a>
+        </li>
+        <li>
+            <a href="/forms/contingency-fail-certificate" target="_blank">
+                CT30 Refusal Notice</a>
+        </li>
+    </ul>
+</section>           
+</div>
+                    </div>
+                </div>
+
+
+        </div>
+
+
+    </main>
+
+  
+{% endblock %}

@@ -26,13 +26,13 @@
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs">          
             <li>
-              <a href="/prototypes/mts-messages/scheme" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Messages (2)</a>
+              <a href="/prototypes/mts-messages/scheme" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Inbox</a>
             </li>
             <li>
               <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Archived</span>
             </li>
             <li>
-              <a href="/prototypes/mts-messages/scheme/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft (2)</a>
+              <a href="/prototypes/mts-messages/scheme/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft</a>
             </li>
             
             <li>
@@ -43,66 +43,52 @@
 
           <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
 
-            <h3 class="heading-large">Archived</h3>
+            <h2 class="heading-large">Archived messages</h2>
 
-            <ul class="c-tab-list__items u-margin-bottom-30"">
+            <div clas="message-panel js-filter-message-panel">
+            
+              <ul class="c-tab-list__items u-margin-bottom-30">
+                
+                  <li data-type="Notification" class="message-panel__message ">
+                    <div class="message-panel__inner">
+                      
+                      <div class="grid-row">
+                        <div class="message-panel__col">
+                          <h4 class="message-panel__message-title"><a href="/prototypes/messages/5" class="">New way for you to get MOT news</a></h4>
+                        </div>
+                      </div>
+                      <ul class="grid-row message-panel__details">
+                        <li style="font-size: 16px;" class="message-panel__col message-panel__col--six">
+                          <span class="visually-hidden">Date received:</span> 
+                          23 March 2018
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </li>
 
-              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                  <div class="c-tab-list__item-link">New test quality information available</div>
-                  <ul class="defect__positions">
-                    <li style="font-size: 16px;">Date received: 1 June 2018</li>
-                    <li style="font-size: 16px;">Type: Notification</li>
-                  </ul>
-                </div>
-                <div class="c-tab-list__item-right">
-                  <a href="#" class="">View message</a>
-                </div>
-              </li>
-
-              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                  <div class="c-tab-list__item-link">Site manager nomination</div>
-                  <ul class="defect__positions">
-                    <li style="font-size: 16px;">Date received: 1 April 2018</li>
-                    <li style="font-size: 16px;">Type: Notification</li>
-                  </ul>
-                </div>
-                <div class="c-tab-list__item-right">
-                  <a href="#" class="">View message</a>
-                </div>
-              </li>
-
-              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                  <div class="c-tab-list__item-link">Tester nomination</div>
-                  <ul class="defect__positions">
-                    <li style="font-size: 16px;">Date received: 12 March 2018</li>
-                    <li style="font-size: 16px;">Type: Notification</li>
-                  </ul>
-                </div>
-                <div class="c-tab-list__item-right">
-                  <a href="#" class="">View message</a>
-                </div>
-              </li>
-
-              <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
-                <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                  <div class="c-tab-list__item-link">Test outside opening hours </div>
-                  <ul class="defect__positions">
-                    <li style="font-size: 16px;">Date received: 4 February 2018</li>
-                    <li style="font-size: 16px;">Type: Notification</li>
-                  </ul>
-                </div>
-                <div class="c-tab-list__item-right">
-                  <a href="#" class="">View message</a>
-                </div>
-              </li>
-
-            </ul>
+                  <li data-type="Notification" class="message-panel__message ">
+                    <div class="message-panel__inner">
+                      
+                      <div class="grid-row">
+                        <div class="message-panel__col">
+                          <h4 class="message-panel__message-title"><a href="/prototypes/messages/7" class="">2018 Regulations</a></h4>
+                        </div>
+                      </div>
+                      <ul class="grid-row message-panel__details">
+                        <li style="font-size: 16px;" class="message-panel__col message-panel__col--six">
+                          <span class="visually-hidden">Date received:</span> 
+                          4 February 2018
+                        </li>
+                        
+                      </ul>
+                    </div>
+                  </li>
+                 
+              </ul>
+            </div> 
 
           </div>
-        </div>
 
         <div class="u-margin-top-30 u-margin-bottom-30">
           {{ components.link(text='Return to home', url='/prototypes/mts-messages', paragraph=true) }}

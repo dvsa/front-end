@@ -9,6 +9,12 @@
 
 {% block content %}
 
+<style>
+.c-tab-list__row--unread .c-tab-list__item-link:before {
+    color: #005ea5 !important;
+}
+</style>
+
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
@@ -26,13 +32,13 @@
         <div class="c-tab-list">
           <ul class="c-tab-list__tabs">          
             <li>
-              <a href="/prototypes/mts-messages/scheme" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Messages (2)</a>
+              <a href="/prototypes/mts-messages/scheme" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Inbox</a>
             </li>
             <li>
               <a href="/prototypes/mts-messages/scheme/notifications-archived-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
             </li>
             <li>
-              <a href="/prototypes/mts-messages/scheme/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft (2)</a>
+              <a href="/prototypes/mts-messages/scheme/notifications-draft-scheme-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Draft</a>
             </li>
             <li>
               <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Removed</span>
@@ -42,26 +48,60 @@
 
           <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
 
-            <h3 class="heading-large">Removed</h3>
+            <h2 class="heading-large">Removed messages</h2>
 
-            <ul class="c-tab-list__items u-margin-bottom-30"">
+            <div clas="message-panel js-filter-message-panel">
+            
+              <ul class="c-tab-list__items u-margin-bottom-30">
 
-              <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
-                <div class="c-tab-list__item-left" style="padding-right: 32px;">
-                  <div class="c-tab-list__item-link">Preparation for the EU roadworthiness directive</div>
-                  <ul class="defect__positions">
-                    <li style="font-size: 16px; color: #0b0c0c;">Date removed: 3 April 2018</li>
-                    <li style="font-size: 16px; color: #0b0c0c;">Type: Special notice</li>
-                  </ul>
-                </div>
-                <div class="c-tab-list__item-right">
-                  <a href="/prototypes/mts-messages/notification-published" class="">View message</a>
-                </div>
-              </li>
+                <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                  <div class="c-tab-list__item-left" style="padding-right: 20px;">
+                    <div class="message-panel__message-type">
+                      <span class="visually-hidden">Type:</span> Special notice
+                    </div>
+                    <div class="c-tab-list__item-link"><a href="#" class="">Preparation for the EU roadworthiness directive</a></div>
 
-            </ul>
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px; color: #0b0c0c;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Date received:</span> 
+                        16 May 2018
+                      </li>
+                      <li style="font-size: 16px; color: #0b0c0c;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Status:</span> 
+                        Draft
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+
+                <li data-type="Notification" class="message-panel__message ">
+                  <div class="message-panel__inner">
+                    
+                    <div class="grid-row">
+                      <div class="message-panel__col">
+                        <h4 class="message-panel__message-title"><a href="/prototypes/mts-messages/scheme/create-message-news-review" class="">MOT inspection manual guidance on cars and passenger vehicles</a></h4>
+                      </div>
+                    </div>
+                    <ul class="grid-row message-panel__details">
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Date received:</span> 
+                        23 April 2018
+                      </li>
+                      <li style="font-size: 16px;" class="message-panel__col message-panel__col--four">
+                        <span class="visually-hidden">Status:</span> 
+                        Published
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </li>
+                 
+              </ul>
+            </div>
 
           </div>
+
         </div>
 
         <div class="u-margin-top-30 u-margin-bottom-30">

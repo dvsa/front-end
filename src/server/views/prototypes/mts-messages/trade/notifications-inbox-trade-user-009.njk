@@ -1,0 +1,189 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+<style>
+.c-tab-list__row--unread .c-tab-list__item-link:before {
+    color: #005ea5 !important;
+}
+</style>
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Messages') }}
+
+      <div class='u-clearfix'>
+
+        <div class="c-tab-list">
+          <ul class="c-tab-list__tabs">          
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; border: 1px solid #bfc1c3; border-bottom: 0; color: #0b0c0c; background-color: #fff; font-size: 19px; line-height: 1.31579;">Inbox</span>
+            </li>
+            <li>
+              <a href="/prototypes/mts-messages/trade/notifications-archived-trade-user" class="c-tab-list__tab-link" style="margin-top: -5px; margin-bottom: -1px; padding-top: 14px; padding-right: 19px; padding-bottom: 16px; padding-left: 19px; color: #0b0c0c; background-color: #f8f8f8; font-size: 19px; line-height: 0.75; font-weight: 400; text-decoration: none;">Archived</a>
+            </li>
+          </ul>
+
+          <div style="border: 1px solid #bfc1c3; padding-right: 20px; padding-left: 20px;">
+
+            <h2 class="heading-large">Inbox</h2>
+
+            <ul class="c-tab-list__items u-margin-bottom-30">
+              <h3 class="heading-small">Special notice acknowledgment required</h3>
+              <li class="c-tab-list__row c-tab-list__row--unread" style="border-bottom: 1px solid #dee0e2; background-color: #f8f8f8">
+                <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px; color: #0b0c0c;"><span class="visually-hidden">Message type: </span>Special notice 09-18</li>
+                  </ul>
+                  <div class="c-tab-list__item-link"><a href="/prototypes/mts-messages/trade/notification-sn-acknowledge" class="">Class 1 and 2 test standard change</a></div>
+                  <ul class="defect__positions">
+                    <li style="font-size: 16px; color: #0b0c0c;"><span class="visually-hidden">Date received: </span>16 July 2018</li>
+                    <li>&nbsp;</li>
+                    <li style="font-size: 16px; color: #0b0c0c;"><span class="visually-hidden">Action: </span>Action required</li>
+                  </ul>
+                </div>
+                <div class="c-tab-list__item-right" style="left: 60%; top: 30px;">
+                  <strong class="defect__is-dangerous" aria-hidden="true">Due in 4 days</strong>
+                </div>
+                
+              </li>
+            </ul>
+
+            <div clas="message-panel js-filter-message-panel">
+
+              <h3 class="heading-small">Select message type</h3>
+
+              <div class="form-group u-margin-bottom-20">
+                <fieldset>
+                  <legend class="visually-hidden">Choose which notification type to view</legend>
+                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;">
+                    <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal" checked>
+                    <label for="waste-type-1">Special notices</label>
+                  </div>
+                  <div class="multiple-choice" style="display: inline-block; clear: none; margin-right: 30px;" onclick="location.href = '/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-news';">
+                    <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines" checked>
+                    <label for="waste-type-2">Notifications</label>
+                  </div>
+                </fieldset>
+              </div>
+
+              <ul class="c-tab-list__items u-margin-bottom-30">
+
+                <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">Test outside opening hours</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Date received: </span>8 August 2018</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">Test outside opening hours</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Date received: </span>18 July 2018</li>
+                    </ul>
+                  </div>
+                </li>
+                
+                <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Type: </span>Special notice 08-18</li>
+                    </ul>
+                    <div class="c-tab-list__item-link"><a href="#" class="">Updates to the MOT testing guide</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Date received: </span>16 June 2018</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">New test quality information available</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Date received: </span>1 June 2018</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">Site manager nomination</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px; color: #0b0c0c;"><span class="visually-hidden">Date received: </span>1 May 2018</li>
+                      <li>&nbsp;</li>
+                      <li style="font-size: 16px; color: #0b0c0c;"><span class="visually-hidden">Action: </span>Action required</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="c-tab-list__row c-tab-list__row--unread" style="background-color: #f8f8f8">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">New way for you to get MOT news</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px; color: #0b0c0c;"><span class="visually-hidden">Date received: </span>23 April 2018</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Type: </span>Special notice 06-18</li>
+                    </ul>
+                    <div class="c-tab-list__item-link"><a href="#" class="">MOT standards are changing</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Date received: </span>2 April 2018</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">Tester nomination</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Date received: </span>12 March 2018</li>
+                      <li>&nbsp;</li>
+                      <li style="font-size: 16px;"><span class="visually-hidden">Action: </span>Action required</li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="c-tab-list__row c-tab-list__row--read" style="background-color: #ffffff">
+                  <div class="c-tab-list__item-left" style="padding-right: 32px;">
+                    <div class="c-tab-list__item-link"><a href="#" class="">Test outside opening hours</a></div>
+                    <ul class="defect__positions">
+                      <li style="font-size: 16px;"><span class="visually-hidden">Date received: </span>4 February 2018</li>
+                    </ul>
+                  </div>
+                </li>
+
+              </ul>
+            
+            </div>
+
+          </div>
+        </div>
+
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/mts-messages/trade', paragraph=true) }}
+        </div>
+
+      </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

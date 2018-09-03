@@ -8,14 +8,14 @@
 
     {% call components.columnFull() %}
 
-      <header class="transaction-header">
-        <h1 class="transaction-header__title">Successfully published</h1>
-        <p>Issue <strong>04-2018</strong></p>
+      <header class="transaction-header" id="successBanner">
+          <h1 class="transaction-header__title">Message successfully published</h1>
+          <p class="transaction-header__next-step">Special notice issue number: <strong>04-18</strong></p>
       </header>
 
       <div class='text u-clearfix'>
 
-        <p>You can view the published message in your inbox.</p>
+        <p>You can view the published message in your received inbox.</p>
 
         {{ components.link(text='View messages', url='/prototypes/mts-messages/scheme', paragraph=true) }}
 

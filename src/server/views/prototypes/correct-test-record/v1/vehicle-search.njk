@@ -1,0 +1,107 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<main id="content">
+
+        <div class="container">
+
+                            <div id="global-breadcrumb" class="header-context">
+    <nav>
+        <ol class="group">
+            <li id="breadcrumb-0"><a href="/prototypes/correct-test-record/v1/home-page">Home</a></li>
+
+                    <li id="breadcrumb-1">
+                                            MOT testing   </li>
+        </ol>
+    </nav>
+</div>
+
+    <header class="content-header">
+        <h1>
+            <span class="content-header__type">MOT testing</span>
+            <span class="content-header__title">Find a vehicle</span>
+            </h1>
+    </header>                        
+
+        <div class="row contents">
+        <div class="col-lg-12">
+
+                    
+
+    <form method="get" name="VehicleSearch" action="#" id="VehicleSearch" data-form-state-index="0">
+    <div class="text">
+        <p class="lede">Enter the registration mark and Vehicle Identification Number (VIN) to search for a vehicle.</p>
+    </div>
+
+    <fieldset>
+        <div class="form-group" id="registration-field">
+            <label id="reg-label" for="reg-input" class="form-label">
+                Registration mark
+            </label>
+            <input type="text" name="registration" class="form-control is-reg" id="reg-input" style="width: 20ch" value="" maxlength="13">        
+        </div>
+
+        <div class="form-group ">
+            <label id="vin-label" for="vin-input" class="form-label">
+                VIN
+                <span class="form-hint">Enter the last 6 digits or the full VIN</span>
+            </label>
+            <input type="text" name="vin" id="vin-input" class="form-control is-vin" style="width: 30ch" value="" maxlength="20">        
+        </div>
+
+            <div class="form-group">
+                <details role="group">
+                    <summary aria-controls="details-content-0" tabindex="0" aria-expanded="false" role="button">
+                        <span class="summary">Can't provide the registration mark or VIN?</span>
+                    </summary>
+                    <div class="panel-indent" id="details-content-0" aria-hidden="true">
+                        <div class="text">
+                            <p>If a vehicle has a registration mark and VIN, you must enter both to find it.</p>
+
+                            <p>However, you can look up vehicles that have just a VIN, or just a registration mark.</p>
+
+                            <h2 class="heading-small">VIN is missing</h2>
+
+                            <p>Search by entering the registration mark. You will see results where the vehicle has no VIN recorded.</p>
+
+                            <h2 class="heading-small">Registration mark is missing</h2>
+
+                            <p>Search by entering the VIN. You will see results where the vehicle has no registration mark recorded.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        
+        <div class="form-group">
+            <a class="button" href="/prototypes/correct-test-record/v1/vehicle-results" role="button">Search</a>
+        </div>
+    </fieldset>
+
+
+</form>
+    <nav class="content-navigation">
+        <ul class="content-navigation__secondary">
+            <li>
+                <a id="cancel_vehicle_search" href="/prototypes/correct-test-record/v1/home-page">Cancel and return home</a>
+            </li>
+        </ul>
+    </nav>
+
+                    
+                </div>
+
+        </div>
+
+    </main>
+
+  
+{% endblock %}

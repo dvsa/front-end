@@ -18,12 +18,12 @@
 
       <div class='text u-clearfix'>
 
-        {{ components.paragraph(text='Confirm that you want to remove <strong>MOT special notice 05-18: Preparation for the EU roadworthiness directive</stong>', lead=true) }}
+        {{ components.paragraph(text='Confirm that you want to remove <strong>Special notice: Preparation for the EU roadworthiness directive</strong>', lead=true) }}
 
         <p>This action will remove the message and you will not be able to edit or publish it</p>
 
         <div class="u-margin-top-10 u-margin-bottom-30">
-          <a class="button button--alert" href="/prototypes/mts-messages/scheme/remove-message-confirmation">Remove message</a>
+          {{ components.button(text='Remove message', url='/prototypes/mts-messages/scheme/remove-message-confirmation') }}
         </div>
 
         {{ components.link(text='Cancel and return to messages', url='/prototypes/mts-messages/notifications-inbox-scheme-user', paragraph=true) }}

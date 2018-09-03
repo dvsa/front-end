@@ -1,0 +1,59 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<main id="content">
+
+        <div class="container">
+
+                            <div id="global-breadcrumb" class="header-context">
+</div>
+
+    <header class="content-header">
+        <h1>
+            <span class="content-header__type">MOT testing</span>
+            <span class="content-header__title">Correct test record prototypes</span>
+            </h1>
+    </header>                        
+
+        <div class="row contents">
+        <div class="col-lg-12">
+
+        <h1 class="content-header__type"> 
+                Prototype versions
+        </h1>
+        
+        <div>
+            <h1 class="content-header" style="font-size:24px; font-weight:700:"> 
+                Full journey - No logo
+            </h1>
+            <a href="/prototypes/correct-test-record/v1/home-page">Version 1</a>
+        </div>
+        <br>
+        <div>
+            <h1 class="content-header" style="font-size:24px; font-weight:700:"> 
+                Full journey - With car manufactuer
+            </h1>
+            <a href="/prototypes/correct-test-record/v2/home-page">Version 1</a>
+        </div>
+                    
+
+
+
+                    
+                </div>
+
+        </div>
+
+    </main>
+
+  
+{% endblock %}

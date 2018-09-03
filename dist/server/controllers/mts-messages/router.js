@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
  */
 const getMessages = exports.getMessages = (req, res) => {
   // Renders the messaging index view
-  return res.render(`prototypes/messages/received/index`, { viewData: req.session.viewData, flashMessage: req.flash('flash-message') });
+  return res.render(`prototypes/messages/inbox/index`, { viewData: req.session.viewData, flashMessage: req.flash('flash-message') });
 };
 
 /**
@@ -53,7 +53,7 @@ const acknowledgeMessage = exports.acknowledgeMessage = (req, res, next) => {
   req.flash('flash-message', `${req.message.type} successfully acknowledged.`);
 
   // Redirect to messages dashboard
-  return res.redirect('/prototypes/messages/received/');
+  return res.redirect('/prototypes/messages/inbox/');
 };
 
 /**
@@ -69,7 +69,7 @@ const acceptMessage = exports.acceptMessage = (req, res, next) => {
   // Creates success flash message
   req.flash('flash-message', `${req.message.type} successfully accepted.`);
   // Redirect to messages dashboard
-  return res.redirect('/prototypes/messages/received/');
+  return res.redirect('/prototypes/messages/inbox/');
 };
 
 /**
@@ -88,7 +88,7 @@ const rejectMessage = exports.rejectMessage = (req, res, next) => {
   req.flash('flash-message', `${req.message.type} successfully rejected.`);
 
   // Redirect to messages dashboard
-  return res.redirect('/prototypes/messages/received/');
+  return res.redirect('/prototypes/messages/inbox/');
 };
 
 /**
@@ -115,7 +115,7 @@ const archiveMessage = exports.archiveMessage = (req, res, next) => {
   req.flash('flash-message', `${req.message.type} successfully archived.`);
 
   // Redirect to messages dashboard
-  return res.redirect('/prototypes/messages/received/');
+  return res.redirect('/prototypes/messages/inbox/');
 };
 
 /**

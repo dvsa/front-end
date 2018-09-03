@@ -2,51 +2,37 @@
 
 {% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
 
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes' },
+  { text: 'Notify of changes to equipment'  }
+] %}
+ 
 {% block content %}
-
-<div class="breadcrumbs">
-  <ol>
-    <li>
-      <a href="/manuals">
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="/">
-        WILLETTA AREDONDO
-      </a>
-    </li>
-    <li>
-      <a href="/">
-        VTS079774
-      </a>
-    </li>
-    <li>
-      Notify of changes to equipment
-    </li>
-  </ol>
-</div>
-
-  <h1 class="heading-large">Confirm details of change to equipment </h1>
+ 
+  <h1 class="heading-large">
+      <span class="heading-secondary">Notify of changes to equipment</span> 
+      Confirm details of change to equipment 
+  </h1>
 
   <p class="lede">
     Check that the information is correct before submitting the notification of changes.
-  </p>
+  </p> 
 
-<div>
- 
-
-  <table class='u-margin-bottom-30 u-clearfix'>
+  <table class='u-margin-bottom-30'>
     <tbody>
       <tr>
         <td>
-          Equipment Type
+          Equipment type(s)
         </td>
         <td class='u-font-bold'>
-          Roller brake tester
+          {% for type in viewData.typeNames %}
+             {{type}}{{ ", " if not (loop.last) }}
+          {% endfor %}
         </td>
         <td class='u-align-right'>
-          <a href="#" class="table-summary__action" title="Change equipment type">Change<span class="visuallyhidden"> equipment type</span></a>
+          <a href="./type" class="table-summary__action" title="Change equipment type">Change<span class="visuallyhidden"> equipment type</span></a>
         </td>
       </tr>
       <tr>
@@ -57,7 +43,7 @@
           No
         </td>
         <td class='u-align-right'>
-          <a href="#" class="table-summary__action" title="Change premises declaration">Change<span class="visuallyhidden"> premises declaration</span></a>
+          <a href="./layout" class="table-summary__action" title="Change premises declaration">Change<span class="visuallyhidden"> premises declaration</span></a>
         </td>
       </tr>
       <tr>
@@ -68,7 +54,7 @@
           Yes
         </td>
         <td class='u-align-right'>
-          <a href="#" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
+          <a href="./approved" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
         </td>
       </tr>
       <tr>
@@ -79,7 +65,7 @@
           Yes
         </td>
         <td class='u-align-right'>
-          <a href="#" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
+          <a href="./classes" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
         </td>
       </tr>
     </tbody>
@@ -97,22 +83,24 @@
      <p>
       By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
     </p>
-
-   
+ 
 
     <div class="notice u-margin-bottom-30">
       <i class="icon icon-important">
         <span class="visually-hidden">Warning</span>
       </i>
-      <strong class="bold-small">If the changes do not meet the Requirements for Authorisation, approval will not be given and the VTS may have to cease testing.</strong>
-    </div>
-
+      <strong>If the changes do not meet the Requirements for Authorisation, approval will not be given and the VTS may have to cease testing.</strong>
+    </div> 
   </div>
+ 
 
-  <div>
-      <a href="/prototypes/vts-changes/v2/vts-6-confirmation" class="button">Accept and submit notification of changes</a><br><br>
-      <a href="/prototypes/vts-changes/v2/vts-4-classes">Back</a>
+
+  <div class="u-margin-bottom-10">
+      <a href="/prototypes/vts-changes/confirmation" class="button">Accept and submit notification of changes</a><br><br>
   </div>
-
-</form>
+  <div class="u-margin-bottom-10">
+    <a href="/prototypes/vts-changes/changes-05-classes">Back</a>
+  </div>
+  
+ 
 {% endblock %}

@@ -122,12 +122,16 @@ router.get('/prototypes/mts-messages', messagingController.resetMessages);
 router.get('/prototypes/vts-changes/start', vtsChangeController.resetSession);
 router.get('/prototypes/vts-changes/type', vtsChangeController.getType);
 router.post('/prototypes/vts-changes/type', [vtsChangeController.validateType, vtsChangeController.postType]);
+//router.post('/prototypes/vts-changes/type', [vtsChangeController.validateType, vtsChangeController.postType]);
 router.get('/prototypes/vts-changes/approved', vtsChangeController.getApproved);
-router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateApproved, vtsChangeController.post]);
-router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateLayout, vtsChangeController.postLayout]);
+router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateApproved, vtsChangeController.postStage]);
+//router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateApproved, vtsChangeController.postApproved]);
+router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateLayout, vtsChangeController.postStage]);
+//router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateLayout, vtsChangeController.postLayout]);
 router.get('/prototypes/vts-changes/layout', vtsChangeController.getLayout);
 router.get('/prototypes/vts-changes/classes', vtsChangeController.getClasses);
 router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateClasses, vtsChangeController.postClasses]);
+//router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateClasses, vtsChangeController.postClasses]);
 router.get('/prototypes/vts-changes/summary', vtsChangeController.getSummary);
 
 // Create route from view path

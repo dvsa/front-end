@@ -20,10 +20,10 @@
       </label>
   </h1>
  
-  <div class="form-group {{ 'form-group-error' if viewData.questions.type.errors[0]['typeError'] }}">  
+  <div class="form-group {{ 'form-group-error' if viewData.questions.type.errors[0]['error'] }}">  
     
-    {% if viewData.questions.type.errors[0]['typeError'] %}
-      <span class="error-message">{{ viewData.questions.type.errors[0]['typeError'] }}</span>
+    {% if viewData.questions.type.errors[0]['error'] %}
+      <span class="error-message">{{ viewData.questions.type.errors[0]['error'] }}</span>
     {% endif %} 
   
     <fieldset class="u-margin-top-15">

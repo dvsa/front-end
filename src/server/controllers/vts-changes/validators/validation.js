@@ -17,7 +17,7 @@ export const validateType = (req, res, next) => {
   // If form data is empty...
   if (isEmpty(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions.type.errors.push({ typeError: 'Choose an equipment type' });
+    req.session.viewData.questions.type.errors.push({ error: 'Choose an equipment type' });
     return next();
   }
   // If no errors, reset and pass on

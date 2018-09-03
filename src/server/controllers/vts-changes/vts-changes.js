@@ -211,7 +211,7 @@ export const postStage = (req, res) => {
   const stageName = getLastInUrl(req);
   // Get submitted values for answer
   const formData = req.body;
-  const answer = formData[answerName];
+  const answer = formData[stageName];
   const errors = req.session.viewData.questions[`${stageName}`].errors[0];
   console.log(stageName);
 
@@ -232,14 +232,18 @@ export const postStage = (req, res) => {
       // If 'yes', direct to next question
       return res.redirect('/prototypes/vts-changes/layout');
 
+  switch (stageName) {
+    case 'approved':
       console.log('approved');
-
+      
       break;
-
-    case 'layout':
+      
+      case 'layout':
+      console.log('layout');
       break;
-
-    case 'classes':
+      
+      case 'classes':
+      console.log('classes!');
       break;
   }
 

@@ -20,18 +20,18 @@
 
   {% call components.form(action='/prototypes/vts-changes/approved', method='POST') %} 
   
-  <div class="form-group {{ 'form-group-error' if viewData.questions.approved.errors[0]['approvedError'] }}">
-    {% if viewData.questions.approved.errors[0]['approvedError'] %}
-      <span class="error-message">{{ viewData.questions.approved.errors[0]['approvedError'] }}</span>
+  <div class="form-group {{ 'form-group-error' if viewData.questions.approved.errors[0]['error'] }}">
+    {% if viewData.questions.approved.errors[0]['error'] %}
+      <span class="error-message">{{ viewData.questions.approved.errors[0]['error'] }}</span>
     {% endif %}  
 
     <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
-        <input id="radio-inline-1" type="radio" name="dvsa-approved" value="yes" {{ 'checked' if viewData.questions.approved.answer['dvsa-approved'] == 'yes' }}>
+        <input id="radio-inline-1" type="radio" name="approved" value="yes" {{ 'checked' if viewData.questions.approved.answer['approved'] == 'yes' }}>
         <label for="radio-inline-1">Yes</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-inline-2" type="radio" name="dvsa-approved" value="no" {{ 'checked' if viewData.questions.approved.answer['dvsa-approved'] == 'no' }}>
+        <input id="radio-inline-2" type="radio" name="approved" value="no" {{ 'checked' if viewData.questions.approved.answer['approved'] == 'no' }}>
         <label for="radio-inline-2">No</label>
       </div>
     </fieldset>

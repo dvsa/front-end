@@ -123,7 +123,7 @@ router.get('/prototypes/vts-changes/start', vtsChangeController.resetSession);
 router.get('/prototypes/vts-changes/type', vtsChangeController.getType);
 router.post('/prototypes/vts-changes/type', [vtsChangeController.validateType, vtsChangeController.postType]);
 router.get('/prototypes/vts-changes/approved', vtsChangeController.getApproved);
-router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateApproved, vtsChangeController.postApproved]);
+router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateApproved, vtsChangeController.post]);
 router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateLayout, vtsChangeController.postLayout]);
 router.get('/prototypes/vts-changes/layout', vtsChangeController.getLayout);
 router.get('/prototypes/vts-changes/classes', vtsChangeController.getClasses);

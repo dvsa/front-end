@@ -63,16 +63,16 @@ export const postType = (req, res) => {
 export const postApproved = (req, res) => {
   // Get submitted values
   const formData = req.body;
-  const errors = req.session.viewData.questions.approved.errors[0]
-  
+  const errors = req.session.viewData.questions.approved.errors[0];
+
   // Add answers to session
   req.session.viewData.questions.approved.answer = formData;
-  
+
   // If there were errors in the session, return to question
   if (errors) {
     return res.redirect(`/prototypes/vts-changes/approved`);
   }
-  
+
   // If 'no', render notice
   const answer = formData['dvsa-approved'];
   if (answer === 'no') {
@@ -94,20 +94,19 @@ export const postLayout = (req, res) => {
   const formData = req.body;
   // Add answers to session.
   req.session.viewData.questions.layout.answer = formData;
-  
+
   // If there were errors in the session, return to question
   const errors = req.session.viewData.questions.layout.errors[0];
-  if (errors) { 
+  if (errors) {
     return res.redirect(`/prototypes/vts-changes/layout`);
   }
-  
+
   // If 'yes', render notice
   const answer = formData['layout-change'];
   if (answer === 'yes') {
     return res.redirect('/prototypes/vts-changes/change-notice');
   }
   return res.redirect('/prototypes/vts-changes/classes');
-
 };
 
 /**
@@ -124,9 +123,9 @@ export const postClasses = (req, res) => {
   const errors = req.session.viewData.questions.classes.errors[0];
 
   // If there were errors in the session, return to question
-   if (errors) {
+  if (errors) {
     return res.redirect(`/prototypes/vts-changes/classes`);
-  } 
+  }
   // Add answers to session
   req.session.viewData.questions.classes.answer = formData;
   // If 'no', render notice
@@ -136,7 +135,6 @@ export const postClasses = (req, res) => {
   return res.redirect('/prototypes/vts-changes/summary');
 };
 
- 
 /**
  * GET Middleware - Render 'Equipment types' question
  *
@@ -190,7 +188,7 @@ export const getClasses = (req, res) => {
  */
 export const getSummary = (req, res) => {
   return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
-}; 
+};
 
 /**
  * GET Middleware - Render confirmation
@@ -202,8 +200,6 @@ export const getConfirmation = (req, res) => {
   return res.render('./prototypes/vts-changes/confirmation/index');
 };
 
-
-
 /**
  * POST Middleware - Declare whether Equipment can test the same class
  * Conditionally render next question or a notice.
@@ -212,7 +208,6 @@ export const getConfirmation = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postStage = (req, res) => {
-
   const stageName = getLastInUrl(req);
   // Get submitted values for answer
   const formData = req.body;
@@ -221,29 +216,33 @@ export const postStage = (req, res) => {
   console.log(stageName);
 
   // If there were errors in the session, return to question
-   if (errors) {
+  if (errors) {
     return res.redirect(`/prototypes/vts-changes/${answerName}`);
-  } 
+  }
   // Add answers to session
-  req.session.viewData.questions.[`${stageName}`].answer = formData;
-
-  switch(stageName) {
-  
-      case 'approved':
+  req.session.viewData.questions[`${stageName}`].answer = formData;
+  console.log(formData);
+  switch (stageName) {
+    case 'approved':
+      // If 'no', render notice
+      if (answer === 'no') {
+        console.log('NO!!');
+        return res.redirect('/prototypes/vts-changes/unapproved-notice');
+      }
+      // If 'yes', direct to next question
+      return res.redirect('/prototypes/vts-changes/layout');
 
       console.log('approved');
 
       break;
-    
-      case 'layout':
 
+    case 'layout':
       break;
 
-      case 'classes':
-
+    case 'classes':
       break;
   }
-  
+
   // If 'no', render notice
   if (answer === 'no') {
     return res.redirect('/prototypes/vts-changes/change-notice');

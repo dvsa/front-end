@@ -21,18 +21,18 @@
         </label>
   </h1> 
 
-  <div class="form-group {{ 'form-group-error' if viewData.questions.layout.errors[0]['layoutError'] }}">
-    {% if viewData.questions.layout.errors[0]['layoutError'] %}
-      <span class="error-message">{{ viewData.questions.layout.errors[0]['layoutError'] }}</span>
+  <div class="form-group {{ 'form-group-error' if viewData.questions.layout.errors[0]['error'] }}">
+    {% if viewData.questions.layout.errors[0]['error'] %}
+      <span class="error-message">{{ viewData.questions.layout.errors[0]['error'] }}</span>
     {% endif %}
   
     <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
-        <input id="radio-inline-1" type="radio" name="layout-change" value="yes" {{ 'checked' if viewData.questions.layout.answer['layout-change'] == 'yes' }}>
+        <input id="radio-inline-1" type="radio" name="layout" value="yes" {{ 'checked' if viewData.questions.layout.answer['layout'] == 'yes' }}>
         <label for="radio-inline-1">Yes</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-inline-2" type="radio" name="layout-change" value="no" {{ 'checked' if viewData.questions.layout.answer['layout-change'] == 'no' }}>
+        <input id="radio-inline-2" type="radio" name="layout" value="no" {{ 'checked' if viewData.questions.layout.answer['layout'] == 'no' }}>
         <label for="radio-inline-2">No</label>
       </div>
     </fieldset>

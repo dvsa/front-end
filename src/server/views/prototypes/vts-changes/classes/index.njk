@@ -21,18 +21,18 @@
 
    {% call components.form(action='/prototypes/vts-changes/classes', method='POST') %} 
   
-  <div class="form-group {{ 'form-group-error' if viewData.questions.classes.errors[0]['classesError'] }}">
-    {% if viewData.questions.classes.errors[0]['classesError'] %}
-      <span class="error-message">{{ viewData.questions.classes.errors[0]['classesError'] }}</span>
+  <div class="form-group {{ 'form-group-error' if viewData.questions.classes.errors[0]['error'] }}">
+    {% if viewData.questions.classes.errors[0]['error'] %}
+      <span class="error-message">{{ viewData.questions.classes.errors[0]['error'] }}</span>
     {% endif %}
     
     <fieldset class="inline u-margin-top-15">
       <div class="multiple-choice">
-        <input id="radio-inline-1" type="radio" name="same-class" value="yes" {{ 'checked' if viewData.questions.classes.answer['same-class'] == 'yes' }}>
+        <input id="radio-inline-1" type="radio" name="classes" value="yes" {{ 'checked' if viewData.questions.classes.answer['classes'] == 'yes' }}>
         <label for="radio-inline-1">Yes</label>
       </div>
       <div class="multiple-choice">
-        <input id="radio-inline-2" type="radio" name="same-class" value="no" {{ 'checked' if viewData.questions.classes.answer['same-class'] == 'no' }}>
+        <input id="radio-inline-2" type="radio" name="classes" value="no" {{ 'checked' if viewData.questions.classes.answer['classes'] == 'no' }}>
         <label for="radio-inline-2">No</label>
       </div>
     </fieldset>

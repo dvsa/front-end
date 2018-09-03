@@ -42,7 +42,8 @@ export const validateApproved = (req, res, next) => {
   // If form data is empty...
   if (isEmpty(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions.approved.errors.push({ approved: 'Select an answer' }); 
+    req.session.viewData.questions.approved.errors.push({ error: 'Select an answer' });
+    console.log('added errors: ',req.session.viewData.questions.approved.errors[0]);
     return next();
   }
   // If no errors, empty errors and pass on
@@ -67,7 +68,7 @@ export const validateLayout = (req, res, next) => {
   // If form data is empty...
   if (isEmpty(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions.layout.errors.push({ layout: 'Select an answer' });
+    req.session.viewData.questions.layout.errors.push({ error: 'Select an answer' });
     return next();
   }
   // If no errors, empty errors and pass on
@@ -92,7 +93,7 @@ export const validateClasses = (req, res, next) => {
   // If form data is empty...
   if (isEmpty(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions.classes.errors.push({ classes: 'Select an answer' });
+    req.session.viewData.questions.classes.errors.push({ error: 'Select an answer' });
     return next();
   }
   // If no errors, empty errors and pass on

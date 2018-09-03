@@ -45,11 +45,13 @@
 
                 {% for message in viewData.archive %}
 
-                  <li class="message-panel__message">
+                  <li class="message-panel__message message-panel__message--unread">
                     <div class="message-panel__inner">
                       <div class="grid-row">
                         <div class="message-panel__col">
-                          <a href="/prototypes/messages/{{message.id}}" class="message-panel__message-title">{{ message.title }}</a>
+                          <div class="message-panel__message-title">
+                            <a href="/prototypes/messages/{{message.id}}">{{ message.title }}</a>
+                          </div>
                         </div>
                       </div>
                       <ul class="grid-row message-panel__details">
@@ -64,7 +66,12 @@
                   {% endfor %} 
                 </ul>
 
+                {% else %}
+
+                  <p class="message-panel__notice">No messages have been archived.</p>
+
                 {% endif %}
+
             </div> 
 
           </div>

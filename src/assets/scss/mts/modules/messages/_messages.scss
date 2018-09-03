@@ -97,15 +97,15 @@
   @include media(tablet) { 
     padding: 20px;
   }
-
-  @include media(desktop) { 
-    padding: 20px 20px 30px;
-  }
 }
 
 .message-panel {
   &__title {
     margin-bottom: 15px;
+  }
+
+  &__message-title {
+    position: relative;
   }
 
   &__message-type {
@@ -153,7 +153,7 @@
   
   // Empty view notice
   &__notice {
-    margin: 15px 0 0;
+    margin: 0;
     padding: 0;
   }
 

@@ -54,7 +54,9 @@
                         </div>
                         <div class="grid-row">
                           <div class="message-panel__col message-panel__col--six">
-                            <a href="/prototypes/messages/{{message.id}}" class="message-panel__message-title">{{ message.title }}</a>
+                            <div class="message-panel__message-title">
+                              <a href="/prototypes/messages/{{message.id}}">{{ message.title }}</a>
+                            </div>
                           </div>
                           <div class='message-panel__col message-panel__col--four'>
                             {% if message.date.due %}
@@ -84,7 +86,7 @@
   
             <div class="message-panel js-message-panel"> 
 
-              <form>
+              <form class='js-show'>
                 <fieldset>
                   <div class="form-group inline u-margin-bottom-30">
                     <legend class="heading-small">Select message type</legend>
@@ -114,7 +116,9 @@
                     {% endif %}
                     <div class="grid-row">
                       <div class="message-panel__col">
-                        <a class="message-panel__message-title" href="/prototypes/messages/{{message.id}}">{{message.title}}</a>
+                        <div class="message-panel__message-title">
+                          <a href="/prototypes/messages/{{message.id}}">{{message.title}}</a>
+                        </div>
                       </div>
                     </div>
                     <ul class="grid-row message-panel__details">

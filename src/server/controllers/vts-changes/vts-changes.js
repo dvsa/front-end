@@ -201,3 +201,52 @@ export const getSummary = (req, res) => {
 export const getConfirmation = (req, res) => {
   return res.render('./prototypes/vts-changes/confirmation/index');
 };
+
+
+
+/**
+ * POST Middleware - Declare whether Equipment can test the same class
+ * Conditionally render next question or a notice.
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const postStage = (req, res) => {
+
+  const stageName = getLastInUrl(req);
+  // Get submitted values for answer
+  const formData = req.body;
+  const answer = formData[answerName];
+  const errors = req.session.viewData.questions[`${stageName}`].errors[0];
+  console.log(stageName);
+
+  // If there were errors in the session, return to question
+   if (errors) {
+    return res.redirect(`/prototypes/vts-changes/${answerName}`);
+  } 
+  // Add answers to session
+  req.session.viewData.questions.[`${stageName}`].answer = formData;
+
+  switch(stageName) {
+  
+      case 'approved':
+
+      console.log('approved');
+
+      break;
+    
+      case 'layout':
+
+      break;
+
+      case 'classes':
+
+      break;
+  }
+  
+  // If 'no', render notice
+  if (answer === 'no') {
+    return res.redirect('/prototypes/vts-changes/change-notice');
+  }
+  return res.redirect('/prototypes/vts-changes/summary');
+};

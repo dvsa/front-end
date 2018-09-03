@@ -7,7 +7,6 @@ export * from './validators/validation.js';
 /**
  * GET Middleware - Initialise session for Stage 1
  *
- *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
@@ -53,141 +52,77 @@ export const postType = (req, res) => {
   return res.redirect(`/prototypes/vts-changes/approved`);
 };
 
-/**
- * POST Middleware - Declare whether equipment is DVSA approved.
- * Conditionally render next stage or notice depending on 'yes' or 'no'
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const postApproved = (req, res) => {
-  // Get submitted values
-  const formData = req.body;
-  const errors = req.session.viewData.questions.approved.errors[0];
-
-  // Add answers to session
-  req.session.viewData.questions.approved.answer = formData;
-
-  // If there were errors in the session, return to question
-  if (errors) {
-    return res.redirect(`/prototypes/vts-changes/approved`);
-  }
-
-  // If 'no', render notice
-  const answer = formData['dvsa-approved'];
-  if (answer === 'no') {
-    return res.redirect('/prototypes/vts-changes/unapproved-notice');
-  }
-  // If 'yes', direct to next question
-  return res.redirect('/prototypes/vts-changes/layout');
-};
 
 /**
- * POST Middleware - Declare whether premises layout change is needed.
+ * POST Middleware - Handle each Y/N answer.
  * Conditionally render next question or a notice.
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const postLayout = (req, res) => {
-  // Get submitted values
-  const formData = req.body;
-  // Add answers to session.
-  req.session.viewData.questions.layout.answer = formData;
-
-  // If there were errors in the session, return to question
-  const errors = req.session.viewData.questions.layout.errors[0];
-  if (errors) {
-    return res.redirect(`/prototypes/vts-changes/layout`);
-  }
-
-  // If 'yes', render notice
-  const answer = formData['layout-change'];
-  if (answer === 'yes') {
-    return res.redirect('/prototypes/vts-changes/change-notice');
-  }
-  return res.redirect('/prototypes/vts-changes/classes');
-};
-
-/**
- * POST Middleware - Declare whether Equipment can test the same class
- * Conditionally render next question or a notice.
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const postClasses = (req, res) => {
+export const postStage = (req, res) => {
+  
+  // Name of the stage being posted
+  const stageName = getLastInUrl(req);
   // Get submitted values for answer
   const formData = req.body;
-  const answer = formData['same-class'];
-  const errors = req.session.viewData.questions.classes.errors[0];
+  const answer = formData[stageName];
+  const errors = req.session.viewData.questions[`${stageName}`].errors[0];
 
   // If there were errors in the session, return to question
   if (errors) {
-    return res.redirect(`/prototypes/vts-changes/classes`);
+    return res.redirect(`/prototypes/vts-changes/${stageName}`);
   }
-  // Add answers to session
-  req.session.viewData.questions.classes.answer = formData;
-  // If 'no', render notice
-  if (answer === 'no') {
-    return res.redirect('/prototypes/vts-changes/change-notice');
+
+  // Add submktted answers to session
+  req.session.viewData.questions[`${stageName}`].answer = formData;
+
+  // Check stage for the 'correct' answer, and redirect to next stage or show a Notice
+  switch (stageName) {
+
+    case 'approved':
+      // If 'no', render notice
+      if (answer === 'no') {
+        return res.redirect('/prototypes/vts-changes/unapproved-notice');
+      }
+      // If 'yes', direct to next question
+      return res.redirect('/prototypes/vts-changes/layout');
+      break;
+
+    case 'layout':
+     // If 'yes', render notice
+     if (answer === 'yes') {
+      return res.redirect('/prototypes/vts-changes/change-notice');
+     }
+     // If 'no', direct to next question
+     return res.redirect('/prototypes/vts-changes/classes');
+     break; 
+   
+    case 'classes':
+     // If 'yes', render notice
+     if (answer === 'no') {
+      return res.redirect('/prototypes/vts-changes/change-notice');
+     }
+     // if yes, go to summary
+     return res.redirect('/prototypes/vts-changes/summary');
+     break;
+
+    default:
+     break;
   }
-  return res.redirect('/prototypes/vts-changes/summary');
+
 };
 
 /**
- * GET Middleware - Render 'Equipment types' question
+ * GET Middleware - Render Y/N questions
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const getType = (req, res) => {
+export const getStage = (req, res) => {
   req.session.viewData = req.session.viewData || initViewData();
-  return res.render('./prototypes/vts-changes/type/index', { viewData: req.session.viewData });
-};
-
-/**
- * GET Middleware - Render 'Approval' question
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getApproved = (req, res) => {
-  req.session.viewData = req.session.viewData || initViewData();
-  return res.render('./prototypes/vts-changes/approved/index', { viewData: req.session.viewData });
-};
-
-/**
- * GET Middleware - Render 'Layout' question
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getLayout = (req, res) => {
-  req.session.viewData = req.session.viewData || initViewData();
-  return res.render('./prototypes/vts-changes/layout/index', { viewData: req.session.viewData });
-};
-
-/**
- * GET Middleware - Render 'Classes' question
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getClasses = (req, res) => {
-  req.session.viewData = req.session.viewData || initViewData();
-  return res.render('./prototypes/vts-changes/classes/index', { viewData: req.session.viewData });
-};
-
-/**
- * GET Middleware - Render summary with answers.
- *  Normalises casing on Types.
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getSummary = (req, res) => {
-  return res.render('./prototypes/vts-changes/summary/index', { viewData: req.session.viewData });
+  const stageName = getLastInUrl(req);
+  return res.render(`./prototypes/vts-changes/${stageName}/index`, { viewData: req.session.viewData });
 };
 
 /**
@@ -198,58 +133,4 @@ export const getSummary = (req, res) => {
  */
 export const getConfirmation = (req, res) => {
   return res.render('./prototypes/vts-changes/confirmation/index');
-};
-
-/**
- * POST Middleware - Declare whether Equipment can test the same class
- * Conditionally render next question or a notice.
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const postStage = (req, res) => {
-  const stageName = getLastInUrl(req);
-  // Get submitted values for answer
-  const formData = req.body;
-  const answer = formData[stageName];
-  const errors = req.session.viewData.questions[`${stageName}`].errors[0];
-  console.log(stageName);
-
-  // If there were errors in the session, return to question
-  if (errors) {
-    return res.redirect(`/prototypes/vts-changes/${answerName}`);
-  }
-  // Add answers to session
-  req.session.viewData.questions[`${stageName}`].answer = formData;
-  console.log(formData);
-  switch (stageName) {
-    case 'approved':
-      // If 'no', render notice
-      if (answer === 'no') {
-        console.log('NO!!');
-        return res.redirect('/prototypes/vts-changes/unapproved-notice');
-      }
-      // If 'yes', direct to next question
-      return res.redirect('/prototypes/vts-changes/layout');
-
-  switch (stageName) {
-    case 'approved':
-      console.log('approved');
-      
-      break;
-      
-      case 'layout':
-      console.log('layout');
-      break;
-      
-      case 'classes':
-      console.log('classes!');
-      break;
-  }
-
-  // If 'no', render notice
-  if (answer === 'no') {
-    return res.redirect('/prototypes/vts-changes/change-notice');
-  }
-  return res.redirect('/prototypes/vts-changes/summary');
 };

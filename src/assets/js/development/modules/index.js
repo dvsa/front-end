@@ -6,7 +6,6 @@ import { initSpeechToText } from './speech-to-text';
 import { initThemeToggle } from './theme-toggle';
 
 export const initModules = () => {
-  initMessageFilter();
   initTextToSpeechToggle();
   initFontSizeToggle();
   initSpeechToText();

@@ -10,6 +10,7 @@ import * as speechToTextController from '../controllers/speech-to-text-search/sp
 import * as siteReviewController from '../controllers/site-review/site-review';
 import * as brakeTestController from '../controllers/brake-test/brake-test';
 import * as messagingController from '../controllers/mts-messages';
+import * as vtsChangeController from '../controllers/vts-changes';
 
 const router = Router();
 
@@ -115,8 +116,19 @@ router.get('/prototypes/messages/acknowledge/:messageIndex', [
 router.get('/prototypes/messages/accept/:messageIndex', messagingController.acceptMessage);
 router.get('/prototypes/messages/reject/:messageIndex', messagingController.rejectMessage);
 router.get('/prototypes/messages/archive/:messageIndex', messagingController.archiveMessage);
-
 router.get('/prototypes/mts-messages', messagingController.resetMessages);
+
+// VTS changes
+router.get('/prototypes/vts-changes/start', vtsChangeController.resetSession);
+router.get('/prototypes/vts-changes/type', vtsChangeController.getStage);
+router.post('/prototypes/vts-changes/type', [vtsChangeController.validateType, vtsChangeController.postType]);
+router.get('/prototypes/vts-changes/approved', vtsChangeController.getStage);
+router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateStage, vtsChangeController.postStage]);
+router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateStage, vtsChangeController.postStage]);
+router.get('/prototypes/vts-changes/layout', vtsChangeController.getStage);
+router.get('/prototypes/vts-changes/classes', vtsChangeController.getStage);
+router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateStage, vtsChangeController.postStage]);
+router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

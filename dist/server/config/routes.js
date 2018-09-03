@@ -47,6 +47,10 @@ var _mtsMessages = require('../controllers/mts-messages');
 
 var messagingController = _interopRequireWildcard(_mtsMessages);
 
+var _vtsChanges = require('../controllers/vts-changes');
+
+var vtsChangeController = _interopRequireWildcard(_vtsChanges);
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
@@ -122,8 +126,19 @@ router.get('/prototypes/messages/acknowledge/:messageIndex', [messagingControlle
 router.get('/prototypes/messages/accept/:messageIndex', messagingController.acceptMessage);
 router.get('/prototypes/messages/reject/:messageIndex', messagingController.rejectMessage);
 router.get('/prototypes/messages/archive/:messageIndex', messagingController.archiveMessage);
-
 router.get('/prototypes/mts-messages', messagingController.resetMessages);
+
+// VTS changes
+router.get('/prototypes/vts-changes/start', vtsChangeController.resetSession);
+router.get('/prototypes/vts-changes/type', vtsChangeController.getStage);
+router.post('/prototypes/vts-changes/type', [vtsChangeController.validateType, vtsChangeController.postType]);
+router.get('/prototypes/vts-changes/approved', vtsChangeController.getStage);
+router.post('/prototypes/vts-changes/approved', [vtsChangeController.validateStage, vtsChangeController.postStage]);
+router.post('/prototypes/vts-changes/layout', [vtsChangeController.validateStage, vtsChangeController.postStage]);
+router.get('/prototypes/vts-changes/layout', vtsChangeController.getStage);
+router.get('/prototypes/vts-changes/classes', vtsChangeController.getStage);
+router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateStage, vtsChangeController.postStage]);
+router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

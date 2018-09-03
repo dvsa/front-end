@@ -1,5 +1,14 @@
-import { isEmpty } from '../helpers/helpers';
-import { getLastInUrl } from '../../site-review/helpers/getLastInUrl.js';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.validateStage = exports.validateType = undefined;
+
+var _helpers = require('../helpers/helpers');
+
+var _getLastInUrl = require('../../site-review/helpers/getLastInUrl.js');
+
 /**
  * Validation middleware function used to populate errors on
  * equipment type
@@ -8,14 +17,14 @@ import { getLastInUrl } from '../../site-review/helpers/getLastInUrl.js';
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-export const validateType = (req, res, next) => {
+const validateType = exports.validateType = (req, res, next) => {
   // Get submitted values
   const formData = req.body;
   // Remove any that are null (eg submit button)
   delete formData['null'];
 
   // If form data is empty...
-  if (isEmpty(formData)) {
+  if ((0, _helpers.isEmpty)(formData)) {
     // Pass on with errors in session
     req.session.viewData.questions.type.errors.push({ error: 'Choose an equipment type' });
     return next();
@@ -33,15 +42,15 @@ export const validateType = (req, res, next) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-export const validateStage = (req, res, next) => {
-  const stageName = getLastInUrl(req);
+const validateStage = exports.validateStage = (req, res, next) => {
+  const stageName = (0, _getLastInUrl.getLastInUrl)(req);
   // Get submitted values
   const formData = req.body;
   // Remove any that are null (eg submit button)
   delete formData['null'];
 
   // If form data is empty...
-  if (isEmpty(formData)) {
+  if ((0, _helpers.isEmpty)(formData)) {
     // Pass on with errors in session
     req.session.viewData.questions[`${stageName}`].errors.push({ error: 'Select an answer' });
     return next();

@@ -52,7 +52,6 @@ export const postType = (req, res) => {
   return res.redirect(`/prototypes/vts-changes/approved`);
 };
 
-
 /**
  * POST Middleware - Handle each Y/N answer.
  * Conditionally render next question or a notice.
@@ -61,7 +60,6 @@ export const postType = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postStage = (req, res) => {
-  
   // Name of the stage being posted
   const stageName = getLastInUrl(req);
   // Get submitted values for answer
@@ -79,7 +77,6 @@ export const postStage = (req, res) => {
 
   // Check stage for the 'correct' answer, and redirect to next stage or show a Notice
   switch (stageName) {
-
     case 'approved':
       // If 'no', render notice
       if (answer === 'no') {
@@ -90,27 +87,26 @@ export const postStage = (req, res) => {
       break;
 
     case 'layout':
-     // If 'yes', render notice
-     if (answer === 'yes') {
-      return res.redirect('/prototypes/vts-changes/change-notice');
-     }
-     // If 'no', direct to next question
-     return res.redirect('/prototypes/vts-changes/classes');
-     break; 
-   
+      // If 'yes', render notice
+      if (answer === 'yes') {
+        return res.redirect('/prototypes/vts-changes/change-notice');
+      }
+      // If 'no', direct to next question
+      return res.redirect('/prototypes/vts-changes/classes');
+      break;
+
     case 'classes':
-     // If 'yes', render notice
-     if (answer === 'no') {
-      return res.redirect('/prototypes/vts-changes/change-notice');
-     }
-     // if yes, go to summary
-     return res.redirect('/prototypes/vts-changes/summary');
-     break;
+      // If 'yes', render notice
+      if (answer === 'no') {
+        return res.redirect('/prototypes/vts-changes/change-notice');
+      }
+      // if yes, go to summary
+      return res.redirect('/prototypes/vts-changes/summary');
+      break;
 
     default:
-     break;
+      break;
   }
-
 };
 
 /**

@@ -1,28 +1,20 @@
 {% extends 'layouts/mts-without-container.layout.njk' %}
-
-{% set pageTitle = 'homepage' %}
-
-{% set pageBreadcrumbItems = [
+ {% set pageTitle = 'homepage' %}
+ {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
   { text: 'MOT test results', url: '/prototypes/mot-test' },
   { text: 'Brake test' }
 ] %}
-
-{% block content %}
-
-<main id="content">
-
-   
-    <a href="/prototypes/recalls/V1/year-of-manufactuer" class="link-back">Back</a> 
-
-    <header class="content-header">
+ {% block content %}
+ <main id="content">
+    
+    <a href="/prototypes/recalls/V2/year-of-manufactuer" class="link-back">Back</a> 
+     <header class="content-header">
         <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
-                Land Rover Range Rover Sport 2016</h1>
+                Ford Focus 2013</h1>
     </header> 
-
-    <p class="lede"><strong>3 recalls</strong> for Land Rover Range Rover Sport 2016</p>                      
-
-        <div class="js-accordion js-accordion--up-down-arrows">
+     <p class="lede"><strong>3 recalls</strong> for Ford Focus 2013</p>                      
+         <div class="js-accordion js-accordion--up-down-arrows">
   <div class="js-accordion__top-section">
     <button class="js-accordion__expand-button">
       Open All
@@ -91,17 +83,12 @@
                                                     <tbody>
                                                         <tr>
                                                         <th class="key-value-list__key">
-                                                            <a href="#">Land Rover Range Rover Sport</a>
+                                                            <a href="#">Ford Ka</a>
                                                         </th>
                                                         </tr>
                                                         <tr>
                                                         <th class="key-value-list__key">
-                                                        <a href="#">Land Rover Range Rover</a>
-                                                        </th>
-                                                        </tr>
-                                                        <tr>
-                                                        <th class="key-value-list__key">
-                                                            <a href="#">Land Rover Discovery</a>
+                                                        <a href="#">Ford Fiesta</a>
                                                         </th>
                                                         </tr>
                                                     </tbody>
@@ -113,8 +100,7 @@
                         </div>
                     </div>
                     </div>
-
-                </div>
+                 </div>
             </div>
             <div class="js-accordion__section" data-section-category="category-two">
                 <div class="js-accordion__header">
@@ -151,8 +137,7 @@
                     </div>
                     <div class="js-accordion__content">
                         <div >
-
-                            <div class="grid-row">
+                             <div class="grid-row">
                         <div class="column-two-thirds">
                             <header>
                                 <h1 class="heading heading--small heading-small">Summary</h1>
@@ -178,22 +163,7 @@
                                         <tbody>
                                             <tr>
                                             <th class="key-value-list__key">
-                                                <a href="#">Land Rover Range Rover</a>
-                                            </th>
-                                            </tr>
-                                            <tr>
-                                            <th class="key-value-list__key">
-                                            <a href="#">Land Rover Range Rover Evoque</a>
-                                            </th>
-                                            </tr>
-                                            <tr>
-                                            <th class="key-value-list__key">
-                                                <a href="#">Land Rover Range Rover Sport</a>
-                                            </th>
-                                            </tr>
-                                            <tr>
-                                            <th class="key-value-list__key">
-                                                <a href="#">Land Rover Discovery</a>
+                                                <a href="#">Ford Fiesta</a>
                                             </th>
                                             </tr>
                                         </tbody>
@@ -268,17 +238,7 @@
                                         <tbody>
                                             <tr>
                                             <th class="key-value-list__key">
-                                                <a href="#">Land Rover Range Rover Sport</a>
-                                            </th>
-                                            </tr>
-                                            <tr>
-                                            <th class="key-value-list__key">
-                                            <a href="#">Land Rover Range Rover</a>
-                                            </th>
-                                            </tr>
-                                            <tr>
-                                            <th class="key-value-list__key">
-                                                <a href="#">Land Rover Range Rover Sport</a>
+                                                <a href="#">Ford Ka</a>
                                             </th>
                                             </tr>
                                         </tbody>
@@ -295,12 +255,7 @@
             </div>
         <br>
         <div>
-            <a class="button" id="search-again" href="/prototypes/recalls/V1/vehicle-make" style="margin-bottom:30px">Search again</a>
+            <a class="button" id="search-again" href="/prototypes/recalls/V2/type-of-recall" style="margin-bottom:30px">Search for another vehicle</a>
         </div>
-
-
-</main>
-
-
-{% endblock %}
-	
+ </main>
+ {% endblock %} 

@@ -1,0 +1,59 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+
+<main id="content">
+
+   
+    <a href="#" class="link-back">Back</a> 
+
+    <header class="content-header">
+        <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                What type of recall information are you looking for?</h1>
+    </header>                       
+
+    <div class="row contents">
+        <div class="col-lg-12">
+
+    <div class="grid-row">
+    <div class="column-three-quarters">
+
+       <form>
+            <div class="form-group">
+                <fieldset >
+
+                <div class="multiple-choice">
+                    <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                    <label for="radio-inline-1">Vehicle saftey recalls</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                    <label for="radio-inline-2">Non-Mechanical vehicles</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="radio-inline-3" type="radio" name="radio-inline-group" value="No">
+                    <label for="radio-inline-3">Other recalled equipment</label>
+                </div>
+                </fieldset>
+            </div>
+        </form>
+        <br>
+        <div>
+            <a class="button" id="choose-model" href="/prototypes/recalls/V1/vehicle-make" style="margin-bottom:30px">Continue</a>
+        </div>
+
+    </div>
+</div>            
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+
+<main id="content">
+
+   
+    <a href="/prototypes/recalls/V1/type-of-recall" class="link-back">Back</a> 
+
+    <header class="content-header">
+        <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                What is the component model?</h1>
+    </header>                       
+
+    <div class="row contents">
+        <div class="col-lg-12">
+
+    <div class="grid-row">
+    <div class="column-three-quarters">
+        <div class="form-group">
+            <label class="form-label" for="select-box">
+                Model
+            </label>
+            <select class="form-control" id="select-box" name="select-box">
+                <option value="zero">Choose a Model</option>
+                <option value="one">120/70 ZR (58W) Pilot Power</option>
+                <option value="two">255/35R2097Y</option>
+                <option value="four">275/70 R 22.5</option>
+                <option value="five">275/75 R 17.5</option>
+                <option value="six">315?80 R 22.5 XCER2+ 156/150L</option>
+                <option value="seven">33X12.50R15108R</option>
+                <option value="eight">385/55 R 22.5 XTA2 Energy remi</option>
+                <option value="nine">AXIOBIB 1F 800/70</option>
+                <option value="ten">Cargobib 600/50</option>
+                <option value="eleven">Cargobib 600/55</option>
+                <option value="twelve">Cargobib 650/50</option>
+                <option value="thirteen">LT235/70R16104S</option>
+                <option value="fourteen">LT235/75R16104S</option>
+                <option value="fifteen">XM28 710/70</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <a class="button" id="choose-make" href="/prototypes/recalls/V2/results-page" style="margin-bottom:30px">Continue</a>
+        </div>
+
+    </div>
+</div>            
+
+</main>
+
+{% endblock %}

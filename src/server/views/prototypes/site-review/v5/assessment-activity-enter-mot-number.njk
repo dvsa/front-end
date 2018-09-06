@@ -31,32 +31,23 @@
 
 <h1 class="heading-xlarge heading heading--page-heading">
   <span class="heading-secondary">Site review</span>
-  Activity
+  What is the original MOT test number?
 </h1>
 
-<form action="choose-section-premises-done">
+<form action="summary">
   <div class="form-group">
     <fieldset>
-      <legend>
-        <span class='form-label-bold'>Did you perform an activity?</span>
-      </legend>
 
-      <div class="multiple-choice" data-target="advice-given-panel">
-        <input id="example-multiple-yes" type="radio" name="radio-activity" value="yes">
-        <label for="example-multiple-yes">Yes</label>
-      </div>
-
-      <div class="multiple-choice" data-target="activity-blocked-panel">
-        <input id="example-multiple-no" type="radio" name="radio-activity" value="no">
-        <label for="example-multiple-no">No</label>
-      </div>
-      
-      </div>
+        <label class="form-label" for="test-number">
+          MOT test number 
+        </label>
+        <input class="form-control" id="test-number" type="text" name="test-number" pattern="[0-9]*" value="">
+  
     </fieldset>
   </div>
 
   <div class="form-group u-margin-bottom-15">
-      <input class="button" type="submit" value="Save and return">
+      <input class="button" type="submit" value="Save and continue">
   </div>
   <div class="form-group">
       <a href="choose-section">Back</a>

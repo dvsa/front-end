@@ -37,7 +37,7 @@
   Activity
 </h1>
 
-<form action="choose-section-premises-done">
+<form method='POST' action="/prototypes/site-review/v5/assessment-activity">
   <div class="form-group">
     <fieldset>
       <legend>
@@ -45,13 +45,13 @@
       </legend>
 
       <div class="multiple-choice" data-target="advice-given-panel">
-        <input id="example-multiple-yes" type="radio" name="radio-activity" value="yes">
-        <label for="example-multiple-yes">Yes</label>
+        <input id="activity-yes" type="radio" name="radio-activity" value="yes">
+        <label for="activity-yes">Yes</label>
       </div>
 
       <div class="multiple-choice" data-target="activity-blocked-panel">
-        <input id="example-multiple-no" type="radio" name="radio-activity" value="no">
-        <label for="example-multiple-no">No</label>
+        <input id="activity-no" type="radio" name="radio-activity" value="no">
+        <label for="activity-no">No</label>
       </div>
       
       </div>

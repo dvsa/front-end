@@ -139,6 +139,6 @@ export const branchOnActivity = (req, res) => {
   } else if (radioResponse === 'yes') {
     return res.redirect('/prototypes/site-review/v5/assessment-activity-enter-mot-number');
   } else {
-    return res.redirect('/prototypes/site-review/v5/assessment-activity-choose-reason');    
+    return res.redirect('/prototypes/site-review/v5/assessment-activity-choose-reason');
   }
 };

@@ -79,7 +79,6 @@ const postType = exports.postType = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 const postStage = exports.postStage = (req, res) => {
-
   // Name of the stage being posted
   const stageName = (0, _getLastInUrl.getLastInUrl)(req);
   // Get submitted values for answer
@@ -97,7 +96,6 @@ const postStage = exports.postStage = (req, res) => {
 
   // Check stage for the 'correct' answer, and redirect to next stage or show a Notice
   switch (stageName) {
-
     case 'approved':
       // If 'no', render notice
       if (answer === 'no') {

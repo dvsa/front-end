@@ -1,14 +1,11 @@
-.u {
-
-  @import 'partials/misc';
-
+.u{
   @import 'partials/align';
   @import 'partials/clearfix';
   @import 'partials/float';
   @import 'partials/full-width';
   @import 'partials/hidden';
   @import 'partials/pad';
-  @import 'partials/space';
+  @import 'partials/space'; 
   @import 'partials/text-meta';
-
 }
+@import 'partials/misc';

@@ -1,5 +1,6 @@
 // Gets message data object
 import { data } from '../data';
+import * as filters from '../helpers/filters';
 
 /**
  * addPinnedItems - Adds is pinned state to special notices
@@ -17,14 +18,6 @@ const addPinnedItems = message => {
   // return message
   return message;
 };
-
-/**
- * filterPinned - Filters for pinned messages
- *
- * @param {message} Object - Object containing message info
- * @returns {Object} message - Message object
- */
-const filterPinned = message => message.state.isPinned;
 
 /**
  * addIndices - Updates messages objects indicies
@@ -58,7 +51,9 @@ export const setupMessages = (req, res, next) => {
   const viewData = {
     messages,
     archive: [],
-    isPinnedCount: messages.filter(filterPinned).length,
+    isPinnedCount: [],
+    isActionedCount: [],
+    isNewsCount: [],
   };
 
   // Set session viewData

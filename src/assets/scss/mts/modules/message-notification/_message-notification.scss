@@ -1,0 +1,46 @@
+.message-notification {
+  background-color: #DEE0E2;
+  padding: 20px 15px;
+  margin-bottom: 20px;
+  display: block;
+  text-decoration: none;
+  color: #0b0c0c !important;
+
+  &__message-type-count {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1;
+
+    @include media(tablet) {
+      float: left;   
+      margin-right: 30px;
+      min-width: 50px;
+      text-align: right;
+      margin-bottom: -10px;
+    }
+  }
+
+  &__message-type-title,
+  &__message-type-info {
+    display: block;
+  }
+
+  &__message-type-title {
+    font-weight: 700;
+    font-size: 24px;
+
+    @include media(tablet) { 
+      padding-top: 8px;      
+    }
+  }
+
+  &__message-type-info {
+    font-weight: normal;
+    font-style: normal
+  }
+
+  &--high-priority {
+    background-color: #B10E1E;
+    color: white !important;
+  }
+}

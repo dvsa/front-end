@@ -45,6 +45,7 @@ textarea {
 .form-group {
   @extend %contain-floats;
   @include box-sizing(border-box);
+  clear: left;
 }
 
 // Form section is used to wrap .form-group and has twice its margin

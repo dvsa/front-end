@@ -111,6 +111,7 @@ router.post('/prototypes/site-review/assessment/management-and-quality', [siteRe
 router.post('/prototypes/site-review/assessment/people', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
 router.post('/prototypes/site-review/assessment/premises', [siteReviewController.unpopulateAssessmentType, siteReviewController.validateAssessmentPost, siteReviewController.postAssessment]);
 router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
+router.post('/prototypes/site-review/v5/assessment-activity', siteReviewController.branchOnActivity);
 
 // Brake tests
 router.post('/prototypes/brake-test-config', brakeTestController.postBrakeConfig);

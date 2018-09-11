@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getSummary = exports.postDetails = exports.getDetails = exports.getChooseSection = exports.postAssessment = exports.getAssessment = exports.clearReviewSession = undefined;
+exports.branchOnActivity = exports.getSummary = exports.postDetails = exports.getDetails = exports.getChooseSection = exports.postAssessment = exports.getAssessment = exports.clearReviewSession = undefined;
 
 var _validation = require('./validators/validation.js');
 
@@ -160,4 +160,16 @@ const getSummary = exports.getSummary = (req, res) => {
   return res.render('./prototypes/site-review/summary/index', {
     viewData: req.session.viewData
   });
+};
+
+const branchOnActivity = exports.branchOnActivity = (req, res) => {
+  const radioResponse = req.body['radio-activity'];
+
+  if (!radioResponse) {
+    return res.redirect('/prototypes/site-review/v5/assessment-activity');
+  } else if (radioResponse === 'yes') {
+    return res.redirect('/prototypes/site-review/v5/assessment-activity-enter-mot-number');
+  } else {
+    return res.redirect('/prototypes/site-review/v5/assessment-activity-choose-reason');
+  }
 };

@@ -66,3 +66,8 @@
 .u-fade-items { 
     transition: all .5s ease-in-out; 
 }
+
+.pre-wrap {
+  white-space: normal;
+  word-wrap: break-word; 
+}

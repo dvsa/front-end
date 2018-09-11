@@ -130,3 +130,15 @@ export const getSummary = (req, res) => {
     viewData: req.session.viewData,
   });
 };
+
+export const branchOnActivity = (req, res) => {
+  const radioResponse = req.body['radio-activity'];
+
+  if (!radioResponse) {
+    return res.redirect('/prototypes/site-review/v5/assessment-activity');
+  } else if (radioResponse === 'yes') {
+    return res.redirect('/prototypes/site-review/v5/assessment-activity-enter-mot-number');
+  } else {
+    return res.redirect('/prototypes/site-review/v5/assessment-activity-choose-reason');
+  }
+};

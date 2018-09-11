@@ -98,6 +98,7 @@ router.post('/prototypes/site-review/assessment/premises', [
   siteReviewController.postAssessment,
 ]);
 router.post('/prototypes/site-review/enter-details', [siteReviewController.validateDetails, siteReviewController.postDetails]);
+router.post('/prototypes/site-review/v5/assessment-activity', siteReviewController.branchOnActivity);
 
 // Brake tests
 router.post('/prototypes/brake-test-config', brakeTestController.postBrakeConfig);

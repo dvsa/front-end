@@ -119,8 +119,9 @@ router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
 // MTS Messaging
 router.param('messageIndex', messagingController.isValidMessage);
 
+router.get('/prototypes/messages/homepage', [messagingController.setupMessages, messagingController.setNotificationCounts, messagingController.getHomepage]);
 router.get('/prototypes/messages/archive', messagingController.getArchive);
-router.get('/prototypes/messages/inbox', [messagingController.setupMessages, messagingController.getMessages]);
+router.get('/prototypes/messages/inbox', messagingController.getMessages);
 router.get('/prototypes/messages/:messageIndex', messagingController.getMessage);
 router.get('/prototypes/messages/acknowledge/:messageIndex', [messagingController.unpinSpecialNotice, messagingController.acknowledgeMessage]);
 router.get('/prototypes/messages/accept/:messageIndex', messagingController.acceptMessage);

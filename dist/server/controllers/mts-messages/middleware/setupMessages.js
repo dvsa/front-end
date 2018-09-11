@@ -7,12 +7,19 @@ exports.setupMessages = undefined;
 
 var _data = require('../data');
 
+var _filters = require('../helpers/filters');
+
+var filters = _interopRequireWildcard(_filters);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
 /**
  * addPinnedItems - Adds is pinned state to special notices
  *
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
+// Gets message data object
 const addPinnedItems = message => {
   // If message is a special notice and is not currently acknowledged
   if (message.type == 'Special notice' && message.state.acknowledged == false) {
@@ -23,15 +30,6 @@ const addPinnedItems = message => {
   // return message
   return message;
 };
-
-/**
- * filterPinned - Filters for pinned messages
- *
- * @param {message} Object - Object containing message info
- * @returns {Object} message - Message object
- */
-// Gets message data object
-const filterPinned = message => message.state.isPinned;
 
 /**
  * addIndices - Updates messages objects indicies
@@ -65,7 +63,9 @@ const setupMessages = exports.setupMessages = (req, res, next) => {
   const viewData = {
     messages,
     archive: [],
-    isPinnedCount: messages.filter(filterPinned).length
+    isPinnedCount: [],
+    isActionedCount: [],
+    isNewsCount: []
   };
 
   // Set session viewData

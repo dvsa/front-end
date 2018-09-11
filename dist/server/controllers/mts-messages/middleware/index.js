@@ -39,3 +39,15 @@ Object.keys(_unpinSpecialNotice).forEach(function (key) {
     }
   });
 });
+
+var _setNotificationCounts = require('./setNotificationCounts');
+
+Object.keys(_setNotificationCounts).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function () {
+      return _setNotificationCounts[key];
+    }
+  });
+});

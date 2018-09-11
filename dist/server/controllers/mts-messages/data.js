@@ -185,8 +185,6 @@ const data = exports.data = [{
   },
   type: 'News',
   state: {
-    accepted: false,
-    rejected: false,
     isRead: false
   },
   messagePreview: `<p>Tester Rodney Hylands registered a vehicle for test at 18:45 on 4 May 2018 at VTS: VTS066450, 13, Weather Gardens, Farnham, Surrey, England, Surrey, HR6 8ZY. This test was undertaken outside the declared hours for testing and you may wish to query the reason or alter your declared opening times.</p> `
@@ -238,7 +236,7 @@ const data = exports.data = [{
   },
   type: 'News',
   state: {
-    isRead: true
+    isRead: false
   },
   messagePreview: `<p>You can now view the latest test quality information for:</p> <strong>OSWALDTWISTLE MOTOR WORKS</strong><br/>VTS066450<br/>13, Weather Gardens, Farnham, Surrey, England, Surrey, HR6 8ZY<br/><br/> <p>This information will help you identify anomalies and improve MOT test quality at your site.</p> `
 }];

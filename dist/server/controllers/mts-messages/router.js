@@ -4,6 +4,16 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 /**
+ * GET Middleware - Renders homepage view with messages data
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+const getHomepage = exports.getHomepage = (req, res) => {
+  return res.render('prototypes/messages/homepage/index', { viewData: req.session.viewData });
+};
+
+/**
  * GET Middleware - Renders multiple messages view with messages data
  *
  * @param {Express.Request} req - Express request object
@@ -32,6 +42,11 @@ const getArchive = exports.getArchive = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 const getMessage = exports.getMessage = (req, res) => {
+  if (req.message.type === 'News') {
+    req.message.state.accepted = true;
+    req.message.state.rejected = true;
+  }
+
   // Set the message's isRead state to true
   req.message.state.isRead = true;
   // Navigate to message view

@@ -73,10 +73,14 @@ if (document.querySelector('#autocomplete-manufacturers')) {
     source: manufacturers,
   });
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 };
 >>>>>>> minor patch up work for autocomplete
+=======
+}
+>>>>>>> Rebase conflict fixes
 
 if (document.querySelector('#autocomplete-landRoverModels')) {
   accessibleAutocomplete({
@@ -85,7 +89,11 @@ if (document.querySelector('#autocomplete-landRoverModels')) {
     source: landRoverModels,
   });
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 };
 >>>>>>> minor patch up work for autocomplete
+=======
+}
+>>>>>>> Rebase conflict fixes

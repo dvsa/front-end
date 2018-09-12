@@ -42,14 +42,18 @@ const landRoverModels = [
   'Range Rover Velar',
 ];
 
-accessibleAutocomplete({
-  element: document.querySelector('#autocomplete-manufacturers'),
-  id: 'autocomplete-manufacturers', // To match it to the existing <label>.
-  source: manufacturers,
-});
+if (document.querySelector('#autocomplete-manufacturers')) {
+  accessibleAutocomplete({
+    element: document.querySelector('#autocomplete-manufacturers'),
+    id: 'autocomplete-manufacturers', // To match it to the existing <label>.
+    source: manufacturers,
+  });
+};
 
-accessibleAutocomplete({
-  element: document.querySelector('#autocomplete-landRoverModels'),
-  id: 'autocomplete-landrovermodels', // To match it to the existing <label>.
-  source: landRoverModels,
-});
+if (document.querySelector('#autocomplete-landRoverModels')) {
+  accessibleAutocomplete({
+    element: document.querySelector('#autocomplete-landRoverModels'),
+    id: 'autocomplete-landrovermodels', // To match it to the existing <label>.
+    source: landRoverModels,
+  });
+};

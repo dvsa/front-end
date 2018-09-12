@@ -13,10 +13,13 @@
 
     @include media(tablet) {
       float: left;   
-      margin-right: 30px;
-      min-width: 50px;
+      margin-right: 15px;
+      padding-bottom: 12px;
+      min-width: 80px;
       text-align: right;
-      margin-bottom: -10px;
+      font-size: 60px;
+      position: relative;
+      top: 5px;
     }
   }
 

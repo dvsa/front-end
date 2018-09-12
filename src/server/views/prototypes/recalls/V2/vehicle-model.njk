@@ -1,23 +1,15 @@
 {% extends 'layouts/mts-without-container.layout.njk' %}
-<<<<<<< HEAD
  {% set pageTitle = 'homepage' %}
  {% set pageBreadcrumbItems = [
-=======
-
-{% set pageTitle = 'homepage' %}
-
-{% set pageBreadcrumbItems = [
->>>>>>> routes complete
   { text: 'Home', url: '/prototypes' },
   { text: 'MOT test results', url: '/prototypes/mot-test' },
   { text: 'Brake test' }
 ] %}
-<<<<<<< HEAD
  {% block content %}
  <main id="content">
     
     <a href="/prototypes/recalls/V1/vehicle-make" class="link-back">Back</a> 
-     <header class="content-header">
+     <header classs="content-header">
         <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
                 What is the vehicle model?</h1>
     </header>                       
@@ -28,60 +20,12 @@
       <div class="form-group form-control-1-2" id="autocomplete-landRoverModels">
           <label for="autocomplete">Model</label>
           <div id="autocomplete-landrovermodels"></div> 
-=======
-
-{% block content %}
-
-
-<main id="content">
-
-   
-    <a href="/prototypes/recalls/V2/vehicle-make" class="link-back">Back</a> 
-
-    <header class="content-header">
-        <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
-                What is the vehicle model?</h1>
-    </header>                       
-
-    <div class="row contents">
-        <div class="col-lg-12">
-
-    <div class="grid-row">
-    <div class="column-three-quarters">
-        <div class="form-group">
-            <label class="form-label" for="select-box">
-                Model
-            </label>
-            <select class="form-control" id="select-box" name="select-box">
-                <option value="one">Choose a Model</option>
-                <option value="two">All New Discovery</option>
-                <option value="four">Defender</option>
-                <option value="five">Discovery</option>
-                <option value="six">Discovery Sport</option>
-                <option value="seven">Freelander</option>
-                <option value="eight">Land Rover</option>
-                <option value="nine">Range Rover</option>
-                <option value="ten">Range Rover Evoque</option>
-                <option value="eleven">Range Rover Sport</option>
-                <option value="twelve">Range Rover Velar</option>
-            </select>
->>>>>>> routes complete
         </div>
         <br>
         <div>
             <a class="button" id="choose-make" href="/prototypes/recalls/V2/year-of-manufactuer" style="margin-bottom:30px">Continue</a>
         </div>
-<<<<<<< HEAD
      </div>
 </div>            
  </main>
  {% endblock %} 
-=======
-
-    </div>
-</div>            
-
-</main>
-
-{% endblock %}
->>>>>>> routes complete

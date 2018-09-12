@@ -72,7 +72,11 @@ if (document.querySelector('#autocomplete-manufacturers')) {
     id: 'autocomplete-manufacturers', // To match it to the existing <label>.
     source: manufacturers,
   });
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> minor patch up work for autocomplete
 
 if (document.querySelector('#autocomplete-landRoverModels')) {
   accessibleAutocomplete({
@@ -80,4 +84,8 @@ if (document.querySelector('#autocomplete-landRoverModels')) {
     id: 'autocomplete-landrovermodels', // To match it to the existing <label>.
     source: landRoverModels,
   });
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> minor patch up work for autocomplete

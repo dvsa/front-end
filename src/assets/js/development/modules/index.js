@@ -4,6 +4,7 @@ import { initTextToSpeechToggle } from './text-to-speech-toggle';
 import { initFontSizeToggle } from './font-size-toggle';
 import { initSpeechToText } from './speech-to-text';
 import { initThemeToggle } from './theme-toggle';
+import autocomplete from './autocomplete';
 
 export const initModules = () => {
   initTextToSpeechToggle();

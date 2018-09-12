@@ -1,0 +1,79 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+ {% set pageTitle = 'homepage' %}
+ {% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+ {% block content %}
+ <main id="content">
+<div class="container">
+  <div class="breadcrumbs">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__list-item">
+        <a class="breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="breadcrumbs__list-item">
+        <a class="breadcrumbs__link" href="#">Driving and transport</a>
+      </li>
+      <li class="breadcrumbs__list-item" aria-current="page">Vehicle safety recalls</li>
+    </ol>
+  </div>
+   
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Check vehicle recalls</h1>
+         <p>Find out if there’s been a safety recall for:</p>
+         <ul class="list list-bullet">
+          <li>3-wheel and 4-wheel cars</li>  
+          <li>motorcycles, quadricycles and tricycles</li>
+          <li>lorries, buses, coaches and minibus</li>
+          <li>caravans and horse boxes</li>
+          <li>child car seats</li>
+          <li>seat belts and harnesses</li>
+          <li>tyres and other customizable vehicle components</li>
+          <li>agricultural equipment</li>
+          <li>Non-motorised vehicles eg. bicyles </li>
+        </ul>
+         <p class="body">You can only get results for recalls announced in England, Scotland or Wales since 1992</p>
+         <a href="type-of-recall" role="button" class="button button-start margin-top-2 margin-bottom-8" style="width: 200px;">
+          Start now
+        </a>
+         <h2 class="heading-medium">Before you start</h2>
+         <p class="body">You’ll need  to know the:</p>
+         <ul class="list list-bullet">
+          <li>Manufacturer</li>  
+          <li>Model</li>
+          <li>Date of manufacture</li>
+        </ul>
+       </div>
+       <div class="column-one-third">
+         <aside class="app-related-items" role="complementary">
+          <h2 class="heading-medium" id="subsection-title">
+            Related content
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="listfont-size-16">
+              <li>
+                <a href="#">
+                  Check MOT History
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Get MOT reminders
+                </a>
+              </li>
+              <li>
+                <a href="#" class="govuk-!-font-weight-bold">
+                  More
+                  <span class="visually-hidden">in Subsection</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+       </div>
+    </div>
+</main>
+ {% endblock %} 

@@ -1,0 +1,42 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+
+<main id="content">
+
+   
+    <a href="/prototypes/recalls/V2/vehicle-type" class="link-back">Back</a> 
+
+    <header class="content-header">
+        <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                What is the vehicle manufactuer?</h1>
+    </header>                       
+
+    <div class="row contents">
+        <div class="col-lg-12">
+
+    <div class="grid-row">
+    <div class="column-three-quarters">
+    <div class="form-group form-control-1-2" id="autocomplete-manufacturers">
+    <label for="autocomplete">Manufactuer</label>
+    <div id="autocomplete-manufactuers"></div> 
+    </div>
+        <br>
+        <div>
+            <a class="button" id="choose-make" href="/prototypes/recalls/V2/vehicle-model" style="margin-bottom:30px">Continue</a>
+        </div>
+    </div>
+</div>            
+
+</main>
+
+{% endblock %}

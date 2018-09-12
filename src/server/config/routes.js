@@ -11,6 +11,7 @@ import * as siteReviewController from '../controllers/site-review/site-review';
 import * as brakeTestController from '../controllers/brake-test/brake-test';
 import * as messagingController from '../controllers/mts-messages';
 import * as vtsChangeController from '../controllers/vts-changes';
+import * as recalls from '../controllers/recalls';
 
 const router = Router();
 
@@ -135,6 +136,8 @@ router.get('/prototypes/vts-changes/layout', vtsChangeController.getStage);
 router.get('/prototypes/vts-changes/classes', vtsChangeController.getStage);
 router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateStage, vtsChangeController.postStage]);
 router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
+// Recalls
+router.post('/prototypes/recalls/V1/type-of-recall', [recalls.validateType, recalls.postRecallType]);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

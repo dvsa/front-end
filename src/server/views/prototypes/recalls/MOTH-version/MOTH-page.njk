@@ -1,0 +1,385 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<main id="content" role="main"> <a class="link-back" href="enter-reg">Back</a>
+    <h1 class="heading-xlarge" style="margin-bottom: 20px;"> <span class="heading-secondary">EJ13YLL</span>Ford FOCUS</h1>
+    <p><a href="enter-reg">Check another vehicle</a></p>
+    <div class="grid-row">
+        <div class="column-quarter">
+            <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Colour </span>White</h1>
+        </div>
+        <div class="column-quarter">
+            <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Fuel type </span>Petrol</h1>
+        </div>
+        <div class="column-quarter">
+            <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Year of manufacture </span>2013 (13 reg)</h1>
+        </div>
+    </div>
+    <br>
+    <h1 class="heading-large" style="margin-top: 0px;"> <span class="heading-secondary">MOT valid until</span> 12 May 2019
+
+</h1>
+    <p><a href="#">Get an MOT reminder</a> by email or text</p>
+
+    <p>If you think the MOT expiry date or any of the vehicle details are wrong, <a href="">contact DVSA</a></p>
+
+    <div class="js-accordion js-accordion--up-down-arrows">
+  <div class="js-accordion__top-section">
+    <button class="js-accordion__expand-button">
+      Open All
+    </button>
+  </div>
+  <div class="js-accordion__wrapper">
+    <div class="js-accordion__section" data-section-category="category-one">
+      <div class="js-accordion__header">
+        <div class="js-accordion__header-left">
+          <h2 class="js-accordion__title">
+            <button class="js-accordion__title-button">
+              MOT History
+            </button>
+          </h2>
+          <p class="js-accordion__description">
+            Mileage recorded at test, parts failed or had minor problems
+          </p>
+        </div>
+        <div class="js-accordion__header-right">
+          <button class="js-accordion__header-icon"></button>
+        </div>
+      </div>
+      <div class="js-accordion__content">
+ 
+         <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 12 May 2018 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #28a197;">PASS</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 29,611 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Expiry date</span> 12 May 2019 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span> Halfords Autocentre<br>
+                                    160 Bromley Rd<br>
+                                    London<br>
+                                    SE6 2NZ </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 3995 7555 7274 </h1>
+                            </div>
+                        </div>
+
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Monitor and repair if necessary (advisories):</span>
+                            <ul class="list list-bullet">
+                                <li>Child seat fitted not allowing full inspection of adult belt</li>
+                                <li>Drive shaft which forms part of the suspension support bearing slightly worn </li>
+                                <li>Engine bay obscured by covers</li>
+                            </ul>
+                        </h1>
+                    </div>
+                </div>
+
+ <hr>
+
+          
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 May 2018 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #B10E1E;">FAIL</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 29,611 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 5864 4990 1701 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span> Halfords Autocentre<br>
+                                    160 Bromley Rd<br>
+                                    London<br>
+                                    SE6 2NZ </h1>
+                            </div>
+                        </div>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">
+                            Do not drive until repaired (dangerous defects):</span>
+
+                            <ul class="list list-bullet">
+                                    <li>Steering gear casing  fixing holes in chassis elongated to the extent that
+                                    attachment is seriously affected</li>
+                            </ul>
+                        </h1>
+
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Repair immediately (major defects):</span>
+                            <ul class="list list-bullet">
+                                <li>Relative movement between steering wheel and column indicating looseness</li>
+<li>Windscreen or window damaged or seriously discoloured and a ecting the driver’s view of the road or of an obligatory external mirror</li>
+                            </ul>
+                        </h1>
+                    </div>
+                </div>
+
+ 
+
+                <hr>
+
+  
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 27 May 2017 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #28a197;">PASS</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 27,815 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Expiry date</span> 27 May 2018 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span> Hopfields Auto Repairs<br>
+                                    2-10 Raymouth Rd<br>
+                                    London<br>
+                                    SE16 2DB </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 3766 9868 0212 </h1>
+                            </div>
+                        </div>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Advisories:</span>
+                            <ul class="list list-bullet">
+                                <li>Offside Front Track rod end ball joint has slight play (2.2.B.1f)</li>
+                                <li>Rear spare wheel slight loose</li>
+                            </ul>
+                        </h1>
+
+                        <details class="u-space-t15" role="group">
+                    <summary role="button" aria-controls="details-content-8" aria-expanded="false">
+                        <span class="summary" onclick="dataLayer.push({'event': 'link-click', 'link': 'what-are-these', 'link-text': 'What are these?'});">
+                                                            What are advisories?
+                                                    </span>
+                    </summary>
+                    <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-8">
+                                                                                                    <p>Advisory items are provided for advice. For some of these, if they became
+                                more serious, your vehicle may no longer be roadworthy and could require
+                                immediate attention.</p>
+                                            </div>
+                </details>
+                    </div>
+                </div>
+
+ 
+                <hr>
+
+       
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 25 May 2016 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #28a197;">PASS</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 23,715 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Expiry date</span> 27 May 2017 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span> Hopfields Auto Repairs<br>
+                                    2-10 Raymouth Rd<br>
+                                    London<br>
+                                    SE16 2DB </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 3766 9868 0212 </h1>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+       
+
+                <hr>
+
+
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 12 May 2015 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #28a197;">PASS</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 21,394 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Expiry date</span> 11 May 2016 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span> Caledonian Autos<br>
+                                    21 Caledonian Rd<br>
+                                    London<br>
+                                    N7 0AB </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 6053 6283 5134 </h1>
+                            </div>
+                        </div>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Advisories:</span>
+                            <ul class="list list-bullet">
+                                <li>Nearside Track rod end ball joint has slight play (2.2.B.1f)</li>
+                            </ul>
+                        </h1>
+
+                        <details class="u-space-t15" role="group">
+                    <summary role="button" aria-controls="details-content-8" aria-expanded="false">
+                        <span class="summary" onclick="dataLayer.push({'event': 'link-click', 'link': 'what-are-these', 'link-text': 'What are these?'});">
+                                                            What are advisories?
+                                                    </span>
+                    </summary>
+                    <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-8">
+                                                                                                    <p>Advisory items are provided for advice. For some of these, if they became
+                                more serious, your vehicle may no longer be roadworthy and could require
+                                immediate attention.</p>
+                                            </div>
+                </details>
+
+                    </div>
+                </div>
+
+            
+
+                <hr>
+
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 26 March 2014 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #28a197;">PASS</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 18,319 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Expiry date</span> 10 April 2015 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span> Kwik Fit<br>
+                                    136-142 New Kent Rd<br>
+                                    London<br>
+                                    SE1 6TU </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 1050 7518 4032 </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    
+
+                <hr>
+
+         
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 9 April 2013 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #28a197;">PASS</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 11,723 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Expiry date</span> 10 April 2014 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span> Kwik Fit<br>
+                                    387 Bethnal Green Rd<br>
+                                    London<br>
+                                    E2 0AN </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 1479 2969 3048 </h1>
+                            </div>
+                        </div>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Advisories:</span>
+                            <ul class="list list-bullet">
+                                <li>Parking brake lever has little reserve travel (3.1.6b)</li>
+                                <li>Items removed from driver's view prior to test</li>
+                            </ul>
+                        </h1>
+
+                        <details class="u-space-t15" role="group">
+                    <summary role="button" aria-controls="details-content-8" aria-expanded="false">
+                        <span class="summary" onclick="dataLayer.push({'event': 'link-click', 'link': 'what-are-these', 'link-text': 'What are these?'});">
+                                                            What are advisories?
+                                                    </span>
+                    </summary>
+                    <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-8">
+                                                                                                    <p>Advisory items are provided for advice. For some of these, if they became
+                                more serious, your vehicle may no longer be roadworthy and could require
+                                immediate attention.</p>
+                                            </div>
+                </details>
+
+                    </div>
+                </div>
+
+      </div>
+    </div>
+    <div class="js-accordion__section" data-section-category="category-two">
+      <div class="js-accordion__header">
+        <div class="js-accordion__header-left">
+          <h2 class="js-accordion__title">
+            <button class="js-accordion__title-button">
+              Outstanding vehicle recalls
+            </button>
+          </h2>
+          <p class="js-accordion__description">
+            Check if Nissan Qashqai EJ13YLS has outstanding safety recall
+          </p>
+        </div>
+        <div class="js-accordion__header-right">
+          <button class="js-accordion__header-icon"></button>
+        </div>
+      </div>
+      <div class="js-accordion__content">
+
+        <div class="text">
+                    <h1 class="heading-large" style="margin-top: 15px; color: #B10E1E;">Outstanding recall found</h1>
+
+                    <p>As of <span class="bold">17 September 2017</span> there's an outstanding manufacturer's safety recall on <span class="bold">Nissan Qashqai EJ13YLS</span>.</p>
+                    <p>There can be a delay before we receive information about safety recalls. If you are concerned, contact your vehicle manufacturer’s dealership.</p>
+                    <p>If you’ve had the recalled component repaired recently, it can take up to three weeks for the manufacturer to update their records. </p>
+                     <p><a href="/prototypes/recalls/MOTH-version/results-page">View Ford focus recall history</a></p>
+                </div>
+              </div>
+ 
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+{% endblock %}

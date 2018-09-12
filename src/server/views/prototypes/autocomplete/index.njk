@@ -1,4 +1,9 @@
-{% extends 'layouts/default.layout.njk' %} {% set pageTitle = 'VTS details' %} {% block content %}
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'VTS details' %}
+
+{% block content %}
+
 <div class="breadcrumbs">
   <ol>
     <li>
@@ -18,25 +23,22 @@
 
 <div class="grid-row">
   <div class="column-full">
-    <header class="content-header">
-      <h1 class="heading-large">
-        <span class="heading-secondary">Vehicle Testing Station</span> DILENA GROUP
-      </h1>
 
-      <h2 class="heading heading--large heading-large">
-        <span class="heading-secondary">66, Anthropology Court, Kingswood, Gloucestershire, England, Gloucestershire, B4 8TE</span>
-      </h2>
-    </header>
+    <form>
+      <fieldset>
+        <legend class="heading heading--medium heading-medium">Autocomplete</legend>
+        <div class="form-group" id="autocomplete-manufacturers">
+          <label for="autocomplete">Select your manufactuer</label>
+          <div id="autocomplete-manufactuers"></div> 
+        </div>
+        <div class="form-group" id="autocomplete-landRoverModels">
+          <label for="autocomplete">Select your model</label>
+          <div id="autocomplete-landrovermodels"></div> 
+        </div>
+      </fieldset>
+    </form>
     
-        <h3 class="heading heading--medium heading-medium">
-          Site review
-        </h3> 
-
-        <label for="autocomplete">Select your country</label>
-        <div id="autocomplete-container"></div> 
-     
-  </div>
- 
+  </div> 
 </div>
 
 <div class="u-margin-bottom-10 u-margin-top-20"> 

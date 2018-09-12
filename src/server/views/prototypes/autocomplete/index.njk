@@ -1,0 +1,51 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'VTS details' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="#">Home</a>
+    </li>
+
+    <li>
+      <a href="#">WILLETTA AREDONDO</a>
+    </li>
+
+    <li>
+      <a href="/prototypes/vts-changes">VTS079774</a>
+    </li> 
+    <li>Site details </li>
+  </ol>
+</div>
+
+<div class="grid-row">
+  <div class="column-full">
+
+    <form>
+      <fieldset>
+        <legend class="heading heading--medium heading-medium">Autocomplete</legend>
+        <div class="form-group" id="autocomplete-manufacturers">
+          <label for="autocomplete">Select your manufactuer</label>
+          <div id="autocomplete-manufactuers"></div> 
+        </div>
+        <div class="form-group" id="autocomplete-landRoverModels">
+          <label for="autocomplete">Select your model</label>
+          <div id="autocomplete-landrovermodels"></div> 
+        </div>
+      </fieldset>
+    </form>
+    
+  </div> 
+</div>
+
+<div class="u-margin-bottom-10 u-margin-top-20"> 
+    <a class="btn-link" href="/vehicle-testing-station/search" id="search-again">Return to search</a>
+</div>
+<div class="u-margin-bottom-10"> 
+    <a href="/" id="return-to-home">Return home</a> 
+</div>
+
+{% endblock %}

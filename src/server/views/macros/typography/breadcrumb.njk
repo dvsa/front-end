@@ -1,6 +1,6 @@
-{% macro breadcrumb(items=false) %}
+{% macro breadcrumb(items=false, muted=false) %}
   {% if items %}
-    <div class="breadcrumbs">
+    <div class="breadcrumbs {{'breadcrumbs--muted' if muted}}">
       <ol>
           {% for item in items %}
           <li>

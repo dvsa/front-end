@@ -1,0 +1,97 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<main id="content">
+<div class="container">
+  <div class="breadcrumbs">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__list-item">
+        <a class="breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="breadcrumbs__list-item">
+        <a class="breadcrumbs__link" href="#">Driving and transport</a>
+      </li>
+      <li class="breadcrumbs__list-item" aria-current="page">Vehicle safety recalls</li>
+    </ol>
+  </div>
+
+  
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">Check the MOT history of a vehicle</h1>
+
+        <p>Check the past results of a vehicle’s MOT tests, including:</p>
+
+        <ul class="list list-bullet">
+          <li>if it passed or failed</li>  
+          <li>the mileage recorded when it was tested</li>
+          <li>where each test was done</li>
+          <li>what parts failed at each test, and if any parts had minor problems</li>
+          <li>when its next MOT is due</li>
+        </ul>
+
+        <p class="body">You can only get results for recalls announced in England, Scotland or Wales since 2005</p>
+
+        <a href="enter-reg" role="button" class="button button-start margin-top-2 margin-bottom-8" style="width: 200px;">
+          Start now
+        </a>
+
+        <h2 class="heading-medium">Before you start</h2>
+
+        <p class="body">You need the vehicle’s number plate (registration number).</p>
+
+        <p class="body">You can see the results as soon as the MOT centre has recorded the test result.</p>
+
+        <p class="body">You can see the test location 14 days after the test. You’ll need the 11-digit number from the vehicle’s log book (V5C).</p>
+
+        <div class="panel panel-border-wide">
+            <p>
+                It can take up to 8 weeks to register a lasting power of attorney if there are no mistakes in the application.
+            </p>
+        </div>
+
+      </div>
+
+      <div class="column-one-third">
+
+
+        <aside class="app-related-items" role="complementary">
+          <h2 class="heading-medium" id="subsection-title">
+            Related content
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="listfont-size-16">
+              <li>
+                <a href="#">
+                  Check MOT History
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Get MOT reminders
+                </a>
+              </li>
+              <li>
+                <a href="#" class="govuk-!-font-weight-bold">
+                  More
+                  <span class="visually-hidden">in Subsection</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
+      </div>
+    </div>
+</main>
+
+{% endblock %}

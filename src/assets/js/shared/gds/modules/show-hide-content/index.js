@@ -7,7 +7,6 @@ export class ShowHideContent {
     this.ariaControlsAttributeName = 'aria-controls';
     this.ariaExpandedAtributeName = 'aria-expanded';
     this.ariaHiddenAttributeName = 'aria-hidden';
-    this.targetAttributeName = 'data-target';
     this.dataTargetSelector = '.multiple-choice';
     this.radioSelector = this.dataTargetSelector + ' > input[type="radio"]';
     this.checkboxSelector = this.dataTargetSelector + ' > input[type="checkbox"]';
@@ -125,17 +124,31 @@ export class ShowHideContent {
     if (!element) return;
 
     let targetInfo = this.getTargetFromElement(element);
+
+    // Reference elements with ids matching the <input>'s data-aside attribute
+    let asideId = `aside-${element.dataset.aside}`;
+    let asideEl = document.getElementById(asideId);
+
     if (!targetInfo || !targetInfo.element || !targetInfo.id) return;
 
     const contentVisible = typeof force === 'boolean' ? force : element.checked;
 
-    // Refresh aria tags
+    // Refresh aria tags on parent elements
     element.setAttribute(this.ariaControlsAttributeName, targetInfo.id);
     element.setAttribute(this.ariaExpandedAtributeName, contentVisible ? 'true' : 'false');
+    element.setAttribute(this.ariaControlsAttributeName, asideEl);
 
-    // Refresh target aria/class
+    // Refresh target visibily classes
     toggleClass(targetInfo.element, this.contentHiddenClass, !contentVisible);
+    toggleClass(asideEl, this.contentHiddenClass, !contentVisible);
+
+    // Refresh target aria attrs
     targetInfo.element.setAttribute(this.ariaHiddenAttributeName, contentVisible ? 'false' : 'true');
+    asideEl.setAttribute(this.ariaHiddenAttributeName, contentVisible ? 'false' : 'true');
+
+    if (!asideEl) {
+      return;
+    }
   };
 
   /**

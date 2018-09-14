@@ -159,7 +159,13 @@ textarea {
   @include media(tablet) {
     width: 50%;
   }
+}
 
+.password-field {
+  -webkit-text-security: disc;
+  resize: none;
+  white-space: nowrap;
+  font-family: $passwordFont;
 }
 
 // Allow a qualifying element, remove rounded corners from inputs and textareas

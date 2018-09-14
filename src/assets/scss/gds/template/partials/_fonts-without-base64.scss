@@ -31,3 +31,12 @@
   src: url('#{$fonts-dir}GDSTransportTabular-Bold.woff') format("woff");
   font-weight: 700;
 }
+
+@font-face {
+  font-family: 'dotsfont';
+  src: url('#{$fonts-dir}dotsfont.eot');
+  src: url('#{$fonts-dir}dotsfont.eot?#iefix') format('embedded-opentype'),
+       url('#{$fonts-dir}dotsfont.woff') format('woff'),
+       url('#{$fonts-dir}dotsfont.ttf') format('truetype'),
+       url('#{$fonts-dir}dotsfont.svg#dotsfontregular') format('svg');
+}

@@ -124,10 +124,14 @@ export class ShowHideContent {
     if (!element) return;
 
     let targetInfo = this.getTargetFromElement(element);
-
-    // Reference elements with ids matching the <input>'s data-aside attribute
-    let asideId = `aside-${element.dataset.aside}`;
-    let asideEl = document.getElementById(asideId);
+    let hasAside = false;
+    let asideEl;
+    // Reference elements with ids matching the <input>'s data-aside attribute (on the radio input)
+    if (element.dataset.aside) {
+      hasAside = true;
+      const asideId = `aside-${element.dataset.aside}`;
+      let asideEl = document.getElementById(asideId);
+    }
 
     if (!targetInfo || !targetInfo.element || !targetInfo.id) return;
 
@@ -136,18 +140,19 @@ export class ShowHideContent {
     // Refresh aria tags on parent elements
     element.setAttribute(this.ariaControlsAttributeName, targetInfo.id);
     element.setAttribute(this.ariaExpandedAtributeName, contentVisible ? 'true' : 'false');
-    element.setAttribute(this.ariaControlsAttributeName, asideEl);
 
     // Refresh target visibily classes
     toggleClass(targetInfo.element, this.contentHiddenClass, !contentVisible);
-    toggleClass(asideEl, this.contentHiddenClass, !contentVisible);
 
     // Refresh target aria attrs
     targetInfo.element.setAttribute(this.ariaHiddenAttributeName, contentVisible ? 'false' : 'true');
-    asideEl.setAttribute(this.ariaHiddenAttributeName, contentVisible ? 'false' : 'true');
 
-    if (!asideEl) {
-      return;
+    if (asideEl) {
+      // Toggle 'aside' element
+      console.log(asideEl);
+      element.setAttribute(this.ariaControlsAttributeName, asideEl);
+      toggleClass(asideEl, this.contentHiddenClass, !contentVisible);
+      asideEl.setAttribute(this.ariaHiddenAttributeName, contentVisible ? 'false' : 'true');
     }
   };
 

@@ -1,0 +1,91 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Cancel the test' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Cancel test'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Cancel the test') }}
+
+      <form action="/mot-test/433510753465/cancel" method="POST" data-form-state-index="0">
+        <input type="hidden" name="status" value="ABORTED">
+        <input type="hidden" name="_csrf_token" value="5085793E-CE3C-19CD-E49D-5E002DE673E9"><input type="hidden" name="prgToken" value="83A8FCA0-DDB0-6331-8897-6F376170DB45">        
+        <div id="reasonForCancelId" class="form-group">
+            
+            <fieldset class="u-margin-bottom-20">
+                <legend class="u-space-b15">
+                <span class="heading-medium">
+                    Why are you cancelling the test?
+                </span>
+                
+                </legend> 
+    
+                <div class="multiple-choice" data-target="reason-6">
+                    <input type="radio" id="reasonForCancel6" data-aside="" value="6" name="reasonForCancelId" data-abandoned="">
+                    <label for="reasonForCancel6">
+                        Incorrect location                </label>
+                </div>      
+    
+                <div class="multiple-choice" data-target="reason-13">
+                    <input type="radio" id="reasonForCancel13" data-aside="" value="13" name="reasonForCancelId" data-abandoned="">
+                    <label for="reasonForCancel13">
+                        Accident or illness of tester                </label>
+                </div>      
+    
+                <div class="multiple-choice" data-target="reason-21">
+                    <input type="radio" id="reasonForCancel21" data-aside="21" value="21" name="reasonForCancelId" data-abandoned="1" aria-controls="[object HTMLDivElement]" aria-expanded="false">
+                    <label for="reasonForCancel21">
+                        Inspection may be dangerous or cause damage</label>
+                </div>
+
+                <div class="panel panel-border-narrow js-hidden" aria-hidden="true" id="reason-21"> 
+                    <div class="form-group ">
+                            <label for="cancelComment">
+                                    How might this be dangerous or cause damage?
+                            </label>
+                            <textarea rows="5" class="form-control" id="cancelComment" name="cancelComment"></textarea>
+                    </div>
+                </div>
+
+                <div class="multiple-choice" data-target="reason-25">
+                    <input type="radio" id="reasonForCancel25" data-aside="" value="25" name="reasonForCancelId" data-abandoned="">
+                    <label for="reasonForCancel25">
+                        Aborted by VE</label>
+                </div>      
+    
+                <div class="multiple-choice" data-target="reason-28">
+                    <input type="radio" id="reasonForCancel28" data-aside="" value="28" name="reasonForCancelId" data-abandoned="">
+                    <label for="reasonForCancel28">
+                        Vehicle registered in error</label>
+                </div>
+              
+              </fieldset>
+            
+        </div> 
+                <div class="text js-hidden" aria-hidden="true" id="aside-21">  
+                <div class="message u-margin-bottom-10"> 
+                    <p>By cancelling this test you confirm that you have carried the MOT test to the point of the cancellation in line with DVSA conditions for MOT testing.</p>
+                </div>
+            </div> 
+            
+            <div class="u-margin-top-10 u-margin-bottom-30">
+              {{ components.button(text='Continue', url='/prototypes/mts-messages/create-message-user') }}
+            </div>
+    
+            {{ components.link(text='Cancel and return to home', url='/prototypes/mts-messages', paragraph=true) }} 
+    </form>
+     
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

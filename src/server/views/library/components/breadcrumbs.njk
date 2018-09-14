@@ -8,10 +8,20 @@
   { text: 'This page title' }
 ] %}
 
+{% set defectSearchHistory = [
+  { text: 'Home' },
+  { text: 'Subsection one'},
+  { text: 'This page title' }
+] %}
+
 {% block content %}
 
   {{ components.heading(text='Breadcrumbs', tag='h2', size='medium') }}
 
   {{ components.breadcrumb(items=pageBreadcrumbItems) | prism }}
+
+  {{ components.heading(text='Breadcrumbs (Muted)', tag='h2', size='medium') }}
+
+  {{ components.breadcrumb(items=defectSearchHistory, muted=true) | prism }}
 
 {% endblock %}

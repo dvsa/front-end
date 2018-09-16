@@ -3,7 +3,7 @@
 .sign-in-form .form-group {
     input, textarea {
       height: 40px;
-      line-height: 1.5;
+      line-height: 1.8;
     } 
 }
 
@@ -12,7 +12,7 @@
   resize: none;
   white-space: nowrap;
   font-family: $passwordFont;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 3px;
   overflow: hidden;
 }

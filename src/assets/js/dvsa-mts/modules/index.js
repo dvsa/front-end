@@ -9,6 +9,7 @@ import { initFormDisableOnSubmit } from './form-disable-on-submit';
 import { initMotTestSearch } from './mot-test-search';
 import { initCheckAll } from './check-all';
 import { initMessageFilter } from './filter-messages';
+import { initMtsLogin } from './mts-login';
 
 /**
  * MTS Application modules
@@ -30,4 +31,5 @@ export const initModules = () => {
   initMotTestSearch();
   initCheckAll();
   initMessageFilter();
+  initMtsLogin();
 };

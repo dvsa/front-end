@@ -1,3 +1,22 @@
+// Sign-in form
+// Normalise height of textarea vs input
+.sign-in-form .form-group {
+    input, textarea {
+      height: 40px;
+      line-height: 1.8;
+    } 
+}
+
+.password-field {
+  -webkit-text-security: disc; 
+  resize: none;
+  white-space: nowrap;
+  font-family: $passwordFont;
+  font-size: 14px;
+  letter-spacing: 3px;
+  overflow: hidden;
+}
+
 // Negates the need for the ".form-group-compound" modifier
 .form-group + .panel-indent {
   @include box-sizing(border-box);

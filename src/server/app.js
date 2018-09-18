@@ -64,6 +64,7 @@ export const startApp = async () => {
           // Returns a reject promise response
           return reject(err);
         }
+        console.log(paths.files);
         // Returns a resolved promise resonse
         return resolve(paths.files);
       });

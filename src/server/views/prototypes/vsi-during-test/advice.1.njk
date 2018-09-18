@@ -1,0 +1,56 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Testing advice for this vehicle' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing', url: '/prototypes/vsi-during-test' },
+  { text: 'Testing advice for this vehicle'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
+    <ul class="content-header__tertiary-list u-margin-bottom-35"> 
+        <li class="content-header__list-item--primary">Peugeot 3008 SUV</li> 
+        <li class="content-header__list-item">TH10 CZR</li> 
+        <li class="content-header__list-item">First used	7 June 2011</li> 
+    </ul>
+  
+    <div class="text"> 
+ 
+     <h3 class="heading heading-medium">Special features</h3>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum esse quaerat, sequi iste repellat enim consectetur consequuntur consequatur vero rem id eaque quo adipisci qui placeat perspiciatis sunt voluptatem inventore.</p>
+    
+     <h4 class="heading heading-medium">Roller brake test</h4>
+     <p>Lorem ipsum dolor sit amet consectetur, id eaque quo adipisci qui placeat perspiciatis sunt voluptatem inventore.</p>
+
+    <div class="message">
+      <h3 class="heading-small u-margin-top-10">Testing advice is a new feature</h3>
+      <p>Let us know how it can be improved - <a href="#">leave feedback</a></p>
+    </div>
+    
+    </div>
+ 
+
+    <nav class="content-navigation">
+        <ul class="list-unstyled content-navigation__split u-clearfix">
+          <li class="content-navigation__split--left"> 
+            <a class="button" id="print-advice" href="./prototypes">Print testing advice</a>        
+          </li> 
+        </ul>
+
+        <div class="content-navigation__secondary"> 
+          <a href="./prototypes/vsi-during-test">Back to confirm vehicle</a>
+        </div>
+    </nav>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

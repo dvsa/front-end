@@ -30,6 +30,10 @@
     margin-top: $gutter * 2;
   }
 
+  &--thin {
+    padding: 8px;
+  }
+
   // Elements
   &__heading {
     @include bold-24;

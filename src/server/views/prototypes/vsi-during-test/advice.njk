@@ -13,10 +13,9 @@
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
+ 
+    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin u-margin-top-15') }}
 
-    {{ components.dvsaBanner(type='confirmation',  secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
-
-    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
     <ul class="content-header__tertiary-list u-margin-bottom-35"> 
         <li class="content-header__list-item--primary">Peugeot 3008 SUV</li> 
         <li class="content-header__list-item">TH10 CZR</li> 
@@ -46,7 +45,7 @@
           </li> 
         </ul>
 
-        <div class="content-navigation__secondary"> 
+        <div class="content-navigation__secondary u-margin-top-10"> 
           <a href="./prototypes/vsi-during-test">Back to confirm vehicle</a>
         </div>
     </nav>

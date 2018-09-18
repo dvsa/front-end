@@ -1,15 +1,14 @@
 .heading {
 
-  &--page-heading {
-
-  }
-
   &--no-margin {
     margin: 0;
   }
 
   &--no-margin-top {
     margin-top: 0;
+  }
+  &--no-margin-bottom {
+    margin-bottom: 0;
   }
 
   &--small-margin-bottom {

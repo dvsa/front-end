@@ -1,0 +1,24 @@
+.task-list {
+  &__cell {
+    min-width: 300px;
+  }
+
+  &__badge {
+    @extend %badge;
+    background-color: #666;
+    color: white;
+
+    &--warn {
+      background-color: $yellow;
+      color: #3c3c3c;      
+    }
+
+    &--info {
+      background-color: $link-colour;
+    }
+
+    &--success {
+      background-color: $green;
+    }
+  }
+}

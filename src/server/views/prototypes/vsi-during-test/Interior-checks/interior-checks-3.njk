@@ -15,7 +15,7 @@
 
     {{ components.pageHeading(heading='Interior Checks', secondary='MOT Inspection') }}
 
-    <details>
+    <details class="u-margin-bottom-30">
       <summary>
         <span class="summary">View testing advice</span>
       </summary>
@@ -27,12 +27,36 @@
       </div>
     </details>
 
-    <h2 class="heading heading--medium heading-medium">Defect Categories</h2>
+    <div class="eu-defect eu-defect--interim">
+      <h2 class="eu-defect__title">Engine MIL: malfunction indicator lamp</h2>
+      <ul class="list-unstyled eu-defect__list eu-defect__list--interim">
+        <li>
+          <div class="eu-defect__group-item">
+            <span class="eu-defect__name eu-defect__name--bold">
+            Inoperative or indicating a malfunction - diesel vehicle, see manual for requirements
+            </span>
+
+            <div class="eu-defect__options eu-defect__options--manual-ref">
+              <span class="eu-defect__manual-ref">
+                <a href="#">8.2.2.2 (g)</a>
+                <span class="visuallyhidden">(Opens in new window)</span>
+              </span>
+            </div>
+
+            <div class="eu-defect__options eu-defect__options--collapse-tablet">
+              <a href="/prototypes/vsi-during-test/inspection/inspection-2" class="button--info">PRS</a>
+              <a href="/prototypes/vsi-during-test/inspection/inspection-2" class="button--alert">Major failure</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
  
     <nav class="content-navigation">
         <ul class="list-unstyled content-navigation__split u-clearfix">
           <li class="content-navigation__split--left"> 
-            <a class="button" id="confirm-start-test" href="advice">Return to inspection</a>        
+            <a class="button" id="confirm-start-test" href="/prototypes/vsi-during-test/inspection/">Return to inspection</a>        
           </li>
         </ul>
     </nav>

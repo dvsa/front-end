@@ -34,111 +34,118 @@
 
     <h2 class="heading heading--medium heading-medium">Vehicle inspection</h2>
 
-    <table>
+    <table class="task-list">
       <tbody>
         <tr>
-          <th>
-            <a href="#">Interior Checks</a>
+          <th class="task-list__cell">
+            <a href="/prototypes/vsi-during-test/interior-checks/interior-checks-1">Interior Checks</a>
           </th>
-          <td>
+          <td class="task-list__cell">
+            <span class="task-list__badge">Advice</span>
           </td>
-          <td class="a-r"></td>
+          <td class="task-list__cell a-r"></td>
         </tr>
         <tr>
-          <th>
-            <a href="#">Front Exterior Checks</a>
+          <th class="task-list__cell">
+            <a href="/prototypes/vsi-during-test/front-exterior-checks/front-exterior-checks-1">Front Exterior Checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell a-r"></td>
         </tr>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">OS Exterior Checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell a-r"></td>
         </tr>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">Rear Exterior Checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell"></td>
         </tr>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">NS Exterior Checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell a-r"></td>
         </tr>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">Under Bonnet checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell">
+            <span class="task-list__badge">Advice</span>
+          </td>
+          <td class="task-list__cell a-r"></td>
         </tr>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">Front Under Vehicle checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell a-r"></td>
         </tr>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">Rear Under Vehicle checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell a-r"></td>
         </tr>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">Emissions checks</a>
           </th>
-          <td></td>
-          <td class="a-r"></td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell a-r"></td>
         </tr>
       </tbody>
     </table>
 
     <h2 class="heading heading--medium heading-medium">Odometer</h2>
 
-    <table>
+    <table class="task-list">
       <tbody>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">Add reading</a>
           </th>
-          <td class="a-r">Not recorded</td>
+          <td class="task-list__cell"></td>
+          <td class="task-list__cell a-r">Not recorded</td>
         </tr>
       </tbody>
     </table>
 
     <h2 class="heading heading--medium heading-medium">Brake test</h2>
 
-    <table class="u-margin-bottom-45">
+    <table class="task-list u-margin-bottom-45">
       <tbody>
         <tr>
-          <th>
+          <th class="task-list__cell">
             <a href="#">Add reading</a>
           </th>
-          <td class="a-r">Not recorded</td>
+          <td class="task-list__cell">
+            <span class="task-list__badge">Advice</span>
+          </td>
+          <td class="task-list__cell a-r">Not recorded</td>
         </tr>
       </tbody>
     </table>
 
-    <nav class="content-navigation">
-        <ul class="list-unstyled content-navigation__split u-clearfix">
-          <li class="content-navigation__split--left"> 
-            <a class="button" id="confirm-start-test" href="advice">Review test</a>        
-          </li>
-          <li class="content-navigation__split--right">
-            <a class="button button--alert" id="refuse-to-test" href="#">Cancel test</a>
-          </li> 
-        </ul>
-    </nav>
+    <form class="content-navigation" action="/prototypes/vsi-during-text/interior-checks/interior-checks-1" method="get" data-form-state-index="0">
+      <div class="content-navigation__split">
+        <div class="content-navigation__split--left u-float-left">
+          <input id="reviewTest" type="submit" class="button" value="Review test" disabled="disabled">
+        </div>
+        <div class="content-navigation__split--right u-float-right">
+          <a class="button button--alert" id="refuse-to-test" href="/prototypes">Cancel test</a>
+        </div>
+      </div>
+    </form>
 
     {% endcall %}
 

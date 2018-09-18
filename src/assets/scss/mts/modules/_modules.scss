@@ -54,6 +54,8 @@
   @import 'panel-indent/panel-indent';
 }
 
+@import 'task-list/task-list';
+
 // Old modules does not follow best
 // practice so cannot be wrapped with body class
 @import 'badge/badge';  

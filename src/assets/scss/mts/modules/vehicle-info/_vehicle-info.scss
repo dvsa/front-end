@@ -11,12 +11,25 @@
         &--red {
             background: firebrick;
         }
-    }
+        &--blue {
+            background: navy;
+        }
+    } 
 
     &__logo { 
         padding-left: 20px;
         position: relative;
-        top: -12px;
+        @include media(desktop) {
+            top: -12px;
+            padding: 32px;
+        }
+    }
+
+    &__detail {
+        font-size: 14px;
+        @include media(desktop) {
+            font-size: 20px;
+        }
     }
 
 }

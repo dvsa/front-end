@@ -13,40 +13,31 @@
 
     {% call components.columnFull() %}
 
-    {{ components.pageHeading(heading='Confirm vehicle and start test', extraClass='u-margin-top-15  u-margin-bottom-30') }}
+    {{ components.pageHeading(heading='Confirm vehicle and start test', extraClass='u-margin-top-15 u-margin-bottom-30') }}
     
-    <div class="text">
-      <p>Check that you have the right vehicle before starting the test</p>
-    </div>
-{# 
-       {{ components.vehicleHeader(vehicle='Peugeot 3008 SUV', color='', vin='', reg='', logoUrl='') }} 
-     #}
-  
-    <div class="grid-row">
-
-      <div class="vehicle-info-banner">
+    <div class="vehicle-info-banner">
         <div class="column-three-quarters">
-
-            <h2 class="heading-medium u-margin-top-10">
-              <span class="heading__secondary">Vehicle</span>  Peugeot 3008 SUV
+  
+            <h2 class="heading-medium heading--no-margin-top">
+              <span class="heading__secondary">Vehicle</span> Peugeot 3008 SUV
             </h2>
-
+  
             <div class="grid-row">
               <div class="column-one-third">
-                  <h3 class="heading heading-small heading--no-margin">
+                  <h3 class="heading heading-small heading--no-margin vehicle-info-banner__detail">
                       <span class="heading__secondary">Color</span> 
-                      <span class="vehicle-info-banner__color vehicle-info-banner__color--red">Red</span> 
+                      <span class="vehicle-info-banner__color vehicle-info-banner__color--blue">Blue</span> 
                     </h3> 
               </div>
           
               <div class="column-one-third">
-                <h3 class="heading heading-small heading--no-margin">
-                  <span class="heading__secondary">VIN</span> GAULAGAAAAA495118
+                <h3 class="heading heading-small heading--no-margin u-text-break vehicle-info-banner__detail">
+                  <span class="heading__secondary">VIN</span> GAULAGAAAAA11951
                 </h3>
               </div>
           
               <div class="column-one-third">
-                <h3 class="heading heading-small heading--no-margin">
+                <h3 class="heading heading-small heading--no-margin vehicle-info-banner__detail">
                   <span class="heading__secondary">Registration number</span> TH10 CZR
                 </h3>
               </div>
@@ -56,7 +47,15 @@
         <div class="column-one-quarter vehicle-info-banner__logo"> 
             <img src="http://www.car-logos.org/wp-content/uploads/2011/09/peug.png" class="img-fluid">
         </div>
-      </div>
+      </div>      
+    <div class="text">
+      <p>Check that you have the right vehicle before starting the test</p>
+    </div>
+ 
+  
+    <div class="grid-row">
+
+     
      
   </div>
 
@@ -137,7 +136,7 @@
           </li> 
         </ul>
 
-        <div class="content-navigation__secondary"> 
+        <div class="content-navigation__secondary u-margin-top-10"> 
           <a href="/prototypes">Cancel and return to find a vehicle</a>
         </div>
     </nav>

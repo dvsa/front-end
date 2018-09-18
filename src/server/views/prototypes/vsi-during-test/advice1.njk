@@ -13,9 +13,11 @@
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
- 
-    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin u-margin-top-15') }}
 
+    {{ components.dvsaBanner(secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>16 September 2018</strong>', type='confirmation', thin='true') }}
+
+    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
+    
     <ul class="content-header__tertiary-list u-margin-bottom-35"> 
         <li class="content-header__list-item--primary">Peugeot 3008 SUV</li> 
         <li class="content-header__list-item">TH10 CZR</li> 
@@ -24,17 +26,17 @@
   
     <div class="text"> 
  
-      <h3 class="heading heading-medium">Special features</h3>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum esse quaerat, sequi iste repellat enim consectetur consequuntur consequatur vero rem id eaque quo adipisci qui placeat perspiciatis sunt voluptatem inventore.</p>
-      
-      <h4 class="heading heading-medium">Roller brake test</h4>
-      <p>Lorem ipsum dolor sit amet consectetur, id eaque quo adipisci qui placeat perspiciatis sunt voluptatem inventore.</p>
+     <h3 class="heading heading-medium">Special features</h3>
+     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum esse quaerat, sequi iste repellat enim consectetur consequuntur consequatur vero rem id eaque quo adipisci qui placeat perspiciatis sunt voluptatem inventore.</p>
+    
+     <h4 class="heading heading-medium">Roller brake test</h4>
+     <p>Lorem ipsum dolor sit amet consectetur, id eaque quo adipisci qui placeat perspiciatis sunt voluptatem inventore.</p>
 
-      <div class="message">
-        <h3 class="heading-small u-margin-top-10">Testing advice is a new feature</h3>
-        <p>Let us know how it can be improved - <a href="#">leave feedback</a></p>
-      </div>
-      
+    <div class="message">
+      <h3 class="heading-small u-margin-top-10">Testing advice is a new feature</h3>
+      <p>Let us know how it can be improved - <a href="#">leave feedback</a></p>
+    </div>
+    
     </div>
  
 
@@ -45,7 +47,7 @@
           </li> 
         </ul>
 
-        <div class="content-navigation__secondary u-margin-top-10"> 
+        <div class="content-navigation__secondary"> 
           <a href="./prototypes/vsi-during-test">Back to confirm vehicle</a>
         </div>
     </nav>

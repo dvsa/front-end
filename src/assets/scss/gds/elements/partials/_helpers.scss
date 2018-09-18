@@ -3,3 +3,8 @@
 .visually-hidden, .visuallyhidden {
   @include visually-hidden;
 }
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}

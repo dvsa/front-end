@@ -1,0 +1,148 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Testing advice for this vehicle' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing', url: '/prototypes/vsi-during-test' },
+  { text: 'Testing advice for this vehicle'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {{ components.dvsaBanner(type='confirmation',  secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
+
+    {{ components.pageHeading(heading='Mot Inspection') }}
+
+    <h2 class="heading heading--medium heading-medium">Testing advice</h2>
+
+    <details>
+      <summary>
+        <span class="summary">View testing advice</span>
+      </summary>
+      <div class="panel panel-border-narrow">
+        <h3 class="heading heading--small heading-small">Engine waiting light</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
+    </details>
+
+    <h2 class="heading heading--medium heading-medium">Vehicle inspection</h2>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>
+            <a href="#">Interior Checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">Front Exterior Checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">OS Exterior Checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">Rear Exterior Checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">NS Exterior Checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">Under Bonnet checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">Front Under Vehicle checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">Rear Under Vehicle checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+        <tr>
+          <th>
+            <a href="#">Emissions checks</a>
+          </th>
+          <td></td>
+          <td class="a-r"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="heading heading--medium heading-medium">Odometer</h2>
+
+    <table>
+      <tbody>
+        <tr>
+          <th>
+            <a href="#">Add reading</a>
+          </th>
+          <td class="a-r">Not recorded</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="heading heading--medium heading-medium">Brake test</h2>
+
+    <table class="u-margin-bottom-45">
+      <tbody>
+        <tr>
+          <th>
+            <a href="#">Add reading</a>
+          </th>
+          <td class="a-r">Not recorded</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <nav class="content-navigation">
+        <ul class="list-unstyled content-navigation__split u-clearfix">
+          <li class="content-navigation__split--left"> 
+            <a class="button" id="print-advice" href="./prototypes">Print testing advice</a>        
+          </li> 
+        </ul>
+
+        <div class="content-navigation__secondary"> 
+          <a href="./prototypes/vsi-during-test">Back to confirm vehicle</a>
+        </div>
+    </nav>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

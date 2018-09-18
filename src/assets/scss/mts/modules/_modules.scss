@@ -51,14 +51,12 @@
   @import 'key-value-list/key-value-list';
   @import 'table-default/table-default';
   @import 'table-reference/table-reference';
-  @import 'panel-indent/panel-indent';
-  // TODO
-  // Move back to section below
-  @import 'badge/badge';  
+  @import 'panel-indent/panel-indent';  
 }
 
 // Old modules does not follow best
 // practice so cannot be wrapped with body class
+@import 'badge/badge';  
 @import 'browse/browse';
 @import 'data-paging/data-paging';
 @import 'defect/defect';

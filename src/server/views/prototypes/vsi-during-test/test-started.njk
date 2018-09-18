@@ -1,0 +1,40 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test started' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing', url: '/prototypes/vsi-during-test' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {{ components.dvsaBanner(type='confirmation', mainText='MOT test started', secondaryText='For <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
+
+    <div class="text"> 
+      <h3 class="heading heading-medium">What you need to do now</h3>
+      <p>A vehicle inspection sheet has been created for this test. You can use this to help you during the test.</p>
+      <a class="button" id="print-inpection" href="./prototypes">Print inspection sheet</a>
+      <p>You can now sign out and inspect the vehicle</p>
+    </div>
+
+    <nav class="content-navigation">
+      <ul>
+        <li>
+          <a href="./prototypes/vsi-during-test">Sign out</a>
+        </li>
+        <li>
+          <a href="./prototypes/vsi-during-test">Return to homee</a>
+        </li>
+      </ul>
+    </nav>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

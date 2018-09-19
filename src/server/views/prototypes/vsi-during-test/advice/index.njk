@@ -1,6 +1,6 @@
 {% extends 'layouts/mts.layout.njk' %}
 
-{% set pageTitle = 'Testing advice for this vehicle' %}
+{% set pageTitle = 'Brake test configuration' %}
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
@@ -14,7 +14,7 @@
 
     {% call components.columnFull() %}
  
-    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin u-margin-top-15') }}
+    {{ components.pageHeading(heading='Brake test configuration', secondaryText='', extraClass='heading--no-margin u-margin-top-15') }}
 
     <ul class="content-header__tertiary-list u-margin-bottom-35"> 
         <li class="content-header__list-item--primary">Peugeot 3008 SUV</li> 
@@ -38,8 +38,8 @@
     <nav class="content-navigation">
         <ul class="list-unstyled content-navigation__split u-clearfix">
           <li class="content-navigation__split--left"> 
-            <a class="button" id="print-advice" href="./prototypes">Continue</a>        
-          </li> 
+            <a class="button" id="print-advice" href="../mot-inspection">Continue</a>        
+          </li>
         </ul>
 
         <div class="content-navigation__secondary u-margin-top-10"> 

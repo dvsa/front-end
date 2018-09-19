@@ -1,0 +1,144 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Brake test summary' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing', url: '/prototypes/vsi-during-test' },
+  { text: 'Brake test'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+
+    {{ components.dvsaBanner(type='confirmation', secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
+    
+    <header class="content-header">
+    {{ components.pageHeading(heading='Brake test summary', secondary='MOT inspection', extraClass='u-margin-bottom-15 u-margin-top-15') }}
+    </header>
+
+    <ul class="content-header__tertiary-list">
+        <li class="content-header__list-item--primary">Peugeot 3008 SUV</li> 
+        <li class="content-header__list-item">TH10 CZR</li> 
+        <li class="content-header__list-item">First used	7 June 2011</li> 
+    </ul>
+
+    <div class="text">
+
+        <table class="table-summary">
+          <caption class="heading-medium">Service brake</caption>
+          <tbody>
+            <tr>
+              <th class="table-summary__key">
+                Service brake test outcome
+              </th>
+              <td class="table-summary__value numeric">
+                <span class="badge--success">Pass</span>
+              </td>
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Brake efficiency
+              </th>
+              <td class="table-summary__value numeric">
+                28%
+              </td>
+
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Brake lock
+              </th>
+              <td class="table-summary__value numeric">
+                100%
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table-summary">
+          <caption class="heading-medium">Imbalance</caption>
+          <tbody>
+            <tr>
+              <th class="table-summary__key">
+                Brake imbalance test outcome
+              </th>
+              <td class="table-summary__value numeric">
+                <span class="badge--success">Pass</span>
+              </td>
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Axle 1
+              </th>
+              <td class="table-summary__value numeric">
+                6%
+              </td>
+
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Axle 2
+              </th>
+              <td class="table-summary__value numeric">
+                67%
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table-summary">
+          <caption class="heading-medium">Parking brake</caption>
+          <tbody>
+            <tr>
+              <th class="table-summary__key">
+                Parking brake test outcome
+              </th>
+              <td class="table-summary__value numeric">
+                <span class="badge--alert">Fail</span>
+              </td>
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Brake efficiency
+              </th>
+              <td class="table-summary__value numeric">
+                3%
+              </td>
+
+            </tr>
+            <tr>
+              <th class="table-summary__key">
+                Brake lock
+              </th>
+              <td class="table-summary__value numeric">
+                0%
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="message">
+        <p class="text">Other brake performance related defects like 'grab' or 'judder' can be added as a <a href="#">reason for rejection</a></p>
+      </div>
+
+      <nav class="content-navigation">
+          <a href="../mot-inspection?brakes=true&odometer=68050" class="button">Finish and return to MOT test results</a>
+      </nav>
+
+      {{ components.link(text='Edit results', url='/prototypes/vsi-during-test/brake-test/') }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Confirm Vehicle and Start Test' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    <header class="content-header">
+      <h1>
+        <span class="content-header__title">Add major failure</span>
+      </h1>
+      <h2>
+        <span class="content-header__tertiary">Engine MIL inoperative or indicates a malfunction</span>
+      </h2>
+    </header>
+
+    <form>
+      <fieldset>
+        <legend class="heading heading--medium heading-medium">Location</legend>
+        <div class="form-group">
+          <label class="form-label" for="lateral">Lateral</label>
+          <input class="form-control" id="lateral" type="text" name="lateral" value="N/a">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="longitudinal">Longitudinal</label>
+          <input class="form-control" id="longitudinal" type="text" name="longitudinal" value="N/a">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vertical">Vertical</label>
+          <input class="form-control" id="vertical" type="text" name="vertical" value="N/a">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend class="heading heading--medium heading-medium">Additional information</legend>
+          <label class="form-label" for="textarea">Add any further comment if required?</label>
+          <textarea class="form-control" name="textarea" id="textarea" rows="5"></textarea>
+      </fieldset>
+    </form>
+ 
+    <nav class="content-navigation">
+        <ul class="list-unstyled content-navigation__split u-clearfix">
+          <li class="content-navigation__split--left"> 
+            <a class="button" id="confirm-start-test" href="/prototypes/vsi-during-test/interior-checks/interior-checks-3">Add major failure</a>        
+          </li>
+        </ul>
+
+        <div class="content-navigation__secondary"> 
+          <a href="/prototypes/vsi-during-test/interior-checks/interior-checks-3">Cancel and return to defects</a>
+        </div>
+    </nav>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

@@ -1,12 +1,16 @@
 .task-list {
   &__cell {
-    min-width: 300px;
+
+    @include media (tablet) {
+      min-width: 300px;      
+    }
   }
 
   &__badge {
     @extend %badge;
     background-color: #666;
     color: white;
+    border-radius: 0 !important;
 
     &--warn {
       background-color: $yellow;
@@ -19,6 +23,10 @@
 
     &--success {
       background-color: $green;
+    }
+
+    &--alert {
+      background-color: $mellow-red;
     }
   }
 }

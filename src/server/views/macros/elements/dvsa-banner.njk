@@ -1,8 +1,5 @@
 {% macro dvsaBanner(mainText='', headingType='h1', secondaryText=false, type, thin=false) %}
-<<<<<<< HEAD
   
-=======
->>>>>>> 48a6ee87bc8cce4fd03ae374677a7a645c7eab05
     <div class="dvsa-banner {{ 'dvsa-banner--' + type if type }} {{'dvsa-banner--thin' if thin}}">
         <{{headingType}} class="dvsa-banner__heading-large">{{ mainText }}</{{headingType}}>
         {% if secondaryText %}

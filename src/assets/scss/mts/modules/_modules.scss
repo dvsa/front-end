@@ -51,17 +51,12 @@
   @import 'key-value-list/key-value-list';
   @import 'table-default/table-default';
   @import 'table-reference/table-reference';
-<<<<<<< HEAD
   @import 'panel-indent/panel-indent';
-=======
-  @import 'panel-indent/panel-indent';  
->>>>>>> 48a6ee87bc8cce4fd03ae374677a7a645c7eab05
 }
-
-@import 'task-list/task-list';
 
 // Old modules does not follow best
 // practice so cannot be wrapped with body class
+@import 'task-list/task-list';
 @import 'badge/badge';  
 @import 'browse/browse';
 @import 'data-paging/data-paging';
@@ -93,8 +88,4 @@
 @import 'organisation-logo/organisation-logo';
 @import 'pager/pager';
 @import 'search-bar/search-bar';
-<<<<<<< HEAD
 @import 'vehicle-info/vehicle-info';
-=======
-@import 'vehicle-info/vehicle-info';
->>>>>>> 48a6ee87bc8cce4fd03ae374677a7a645c7eab05

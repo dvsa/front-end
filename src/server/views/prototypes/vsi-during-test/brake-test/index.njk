@@ -29,7 +29,7 @@
       </h2>
        <p>Brake effort is recorded in kilograms</p>
   
-       {% call components.form(action='summary', method='GET') %}
+       {% call components.form(action='/prototypes/vsi-during-test/brake-test/summary', method='GET') %}
        <fieldset>
          
          <legend>
@@ -169,7 +169,7 @@
         
               <div class="column-one-third">
                 <div class="form-group">
-                  <label class="form-label " for="parkingBrakeEffortOffside">Offside axle</label> <input class="form-control form-control-100" id="parkingBrakeEffortOffside" max="9999" maxlength="4" name="parkingBrakeEffortOffside" pattern="\d{0,4}"  type="number" value="">
+                  <label class="form-label" for="parkingBrakeEffortOffside">Offside axle</label> <input class="form-control form-control-100" id="parkingBrakeEffortOffside" max="9999" maxlength="4" name="parkingBrakeEffortOffside" pattern="\d{0,4}"  type="number" value="">
                 </div>
         
                 <div class="form-group">
@@ -184,9 +184,8 @@
         
         {%- endcall %}
 
-        {{ components.link(text='Cancel', url='/prototypes/vsi-during-test/inspection') }}
+        {{ components.link(text='Cancel', url='/prototypes/vsi-during-test/inspection/inspection-4') }}
    
-
     {% endcall %}
 
   {% endcall %}

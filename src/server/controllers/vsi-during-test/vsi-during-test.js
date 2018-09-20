@@ -9,7 +9,7 @@ import { isEmpty } from '../vts-changes/helpers/helpers.js';
  */
 export const postOdometer = (req, res) => {
   req.session.viewData = req.body || initData();
-  return res.redirect('/prototypes/vsi-during-test/mot-inspection');
+  return res.redirect('/prototypes/vsi-during-test/inspection');
 };
 
 /**
@@ -21,5 +21,5 @@ export const postOdometer = (req, res) => {
 export const getMotInspection = (req, res) => {
   req.session.viewData = req.session.viewData || initData();
   console.log(req.session.viewData);
-  return res.render('/prototypes/vsi-during-test/mot-inspection/index', { viewData: req.session.viewData });
+  return res.render('./prototypes/vsi-during-test/inspection/index', { viewData: req.session.viewData });
 };

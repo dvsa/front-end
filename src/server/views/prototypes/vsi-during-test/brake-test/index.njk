@@ -29,7 +29,7 @@
       </h2>
        <p>Brake effort is recorded in kilograms</p>
   
-       {% call components.form(action='./vsi-during-test/odometer', method='POST') %}
+       {% call components.form(action='summary', method='GET') %}
        <fieldset>
          
          <legend>
@@ -184,7 +184,7 @@
         
         {%- endcall %}
 
-        {{ components.link(text='Cancel', url='/prototypes/mot-test') }}
+        {{ components.link(text='Cancel', url='/prototypes/vsi-during-test/inspection') }}
    
 
     {% endcall %}

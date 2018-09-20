@@ -141,9 +141,9 @@ router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
 router.post('/prototypes/recalls/V1/type-of-recall', [recalls.validateType, recalls.postRecallType]);
 
 // VSI During test
-router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
-router.get('/prototypes/vsi-during-test/mot-inspection', vsiDuringTestController.getMotInspection);
-
+/* router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
+router.get('/prototypes/vsi-during-test/inspection', vsiDuringTestController.getMotInspection);
+ */
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
 

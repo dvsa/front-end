@@ -24,12 +24,12 @@
         <li class="content-header__list-item">First used	7 June 2011</li> 
     </ul>
 
-    <h2 class="heading-large">
+      <h2 class="heading-large">
         Brake effort
       </h2>
        <p>Brake effort is recorded in kilograms</p>
   
-       {% call components.form(action='./brake-test/summary', method='GET') %}
+       {% call components.form(action='./vsi-during-test/odometer', method='POST') %}
        <fieldset>
          
          <legend>

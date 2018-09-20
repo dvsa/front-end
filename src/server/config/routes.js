@@ -11,6 +11,7 @@ import * as siteReviewController from '../controllers/site-review/site-review';
 import * as brakeTestController from '../controllers/brake-test/brake-test';
 import * as messagingController from '../controllers/mts-messages';
 import * as vtsChangeController from '../controllers/vts-changes';
+import * as vsiDuringTestController from '../controllers/vsi-during-test';
 import * as recalls from '../controllers/recalls';
 
 const router = Router();
@@ -138,6 +139,10 @@ router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateStag
 router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
 // Recalls
 router.post('/prototypes/recalls/V1/type-of-recall', [recalls.validateType, recalls.postRecallType]);
+
+// VSI During test
+router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
+router.get('/prototypes/vsi-during-test/mot-inspection', vsiDuringTestController.getMotInspection);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

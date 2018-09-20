@@ -23,7 +23,7 @@
         <li class="content-header__list-item">First used	7 June 2011</li> 
     </ul>
 
-       {% call components.form(action='/prototypes/vsi-during-test/brake-test', method='GET') %}
+       {% call components.form(action='/prototypes/vsi-during-test/brake-test', method='POST') %}
 
        <div class="form-group"> 
 
@@ -184,9 +184,7 @@
               </select>
             </div>
           </div> 
-
       </div>
- 
 
         {% include './partials/form-submit-button.njk' %}
 

@@ -51,6 +51,10 @@ var _vtsChanges = require('../controllers/vts-changes');
 
 var vtsChangeController = _interopRequireWildcard(_vtsChanges);
 
+var _vsiDuringTest = require('../controllers/vsi-during-test');
+
+var vsiDuringTestController = _interopRequireWildcard(_vsiDuringTest);
+
 var _recalls2 = require('../controllers/recalls');
 
 var recalls = _interopRequireWildcard(_recalls2);
@@ -148,6 +152,10 @@ router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
 // Recalls
 router.post('/prototypes/recalls/V1/type-of-recall', [recalls.validateType, recalls.postRecallType]);
 
+// VSI During test
+/* router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
+router.get('/prototypes/vsi-during-test/inspection', vsiDuringTestController.getMotInspection);
+ */
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
 

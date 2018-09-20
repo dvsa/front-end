@@ -1,0 +1,380 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Defect Categories' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.dvsaBanner(type='confirmation',  secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
+
+      {{ components.pageHeading(heading='MOT test summary', secondary="MOT inspection") }}
+
+      <section class='dvsa-summary'>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading dvsa-summary__heading--remove-margin-bottom'>Test information</h2>
+
+              <p class='dvsa-summary__test-result dvsa-summary__test-result--fail'>Fail</p>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list dvsa-summary__data-list--first'>
+
+                <dt class='dvsa-summary__data-list-title'>Mot test number</dt>
+
+                <dd class='dvsa-summary__data-list-value'>377601145136</dd>
+
+              </dl>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list dvsa-summary__data-list--first'>
+
+                <dt class='dvsa-summary__data-list-title'>VTS name and address</dt>
+
+                <dd class='dvsa-summary__data-list-value'>
+
+                  <span class='dvsa-summary__address-line'>VTS072740 - TIFFNER AUTOSALES</span>
+
+                  <span class='dvsa-summary__address-line'>134, Poision Vale,</span>
+
+                  <span class='dvsa-summary__address-line'>Aberdeen,</span>
+
+                  <span class='dvsa-summary__address-line'>Aberdeenshire,</span>
+
+                  <span class='dvsa-summary__address-line'>Scotland</span>
+
+                  <span class='dvsa-summary__address-line'>CA15 8HW</span>
+
+                </dd>
+
+              </dl>
+
+            </div>
+
+          </div>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third dvsa-summary__col--push-one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>Issue date</dt>
+
+                <dd class='dvsa-summary__data-list-value'>14 September 2018</dd>
+
+              </dl>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>Expiry date</dt>
+
+                <dd class='dvsa-summary__data-list-value'>16 September 2018</dd>
+
+              </dl>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>Vechicle summary</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list dvsa-summary__data-list--first'>
+
+                <dt class='dvsa-summary__data-list-title'>Registration number</dt>
+
+                <dd class='dvsa-summary__data-list-value'>TH10 CZR</dd>
+              
+              </dl>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>VIN/Chassis number</dt>
+
+                <dd class='dvsa-summary__data-list-value'>GAULAGAAAAA11951</dd>
+
+              </dl>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>Test class</dt>
+
+                <dd class='dvsa-summary__data-list-value'>4</dd>
+
+              </dl>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>Approximate first use</dt>
+
+                <dd class='dvsa-summary__data-list-value'>7 June 2011</dd>
+
+              </dl>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <dl class='dvsa-summary__data-list dvsa-summary__data-list--first'>
+              
+                <dt class='dvsa-summary__data-list-title'>Make</dt>
+
+                <dd class='dvsa-summary__data-list-value'>Peugeot</dd>
+
+              </dl>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>Model</dt>
+
+                <dd class='dvsa-summary__data-list-value'>3008 SUV</dd>
+
+              </dl>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>Colour</dt>
+
+                <dd class='dvsa-summary__data-list-value'>Blue</dd>
+
+              </dl>
+
+              <dl class='dvsa-summary__data-list'>
+
+                <dt class='dvsa-summary__data-list-title'>Fuel type</dt>
+
+                <dd class='dvsa-summary__data-list-value'>Diesel</dd>
+
+              </dl>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>Odometer reading</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>4800 miles</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>Break results overall</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>Pass</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>Dangerous failure</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+             <p class='dvsa-summary__paragraph'>Stop lamp(s) remain on when the brakes are released</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>Major failure</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>None recorded</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>Minor defects</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds dvsa-summary__col--remove-padding-right-tablet'>
+
+              <ul class='dvsa-summary__defect-list'>
+
+                <li class='dvsa-summary__defect-list-item'>Stop lamps(s) switch does not operate in accordance with the requriements</li>
+
+                <li class='dvsa-summary__defect-list-item dvsa-summary__defect-list-item--last'>Stop lamps(s) switch does not operate in accordance with the requriements</li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>PRS</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>None recorded</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class='dvsa-summary__section'>
+
+          <div class='dvsa-summary__row'>
+
+            <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+              <h2 class='dvsa-summary__heading'>Advisory notices</h2>
+
+            </div>
+
+            <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+              <p class='dvsa-summary__paragraph'>None recorded</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {% if viewData.comment %}
+
+          <div class='dvsa-summary__section'>
+
+            <div class='dvsa-summary__row'>
+
+              <div class='dvsa-summary__col dvsa-summary__col--one-third'>
+
+                <h2 class='dvsa-summary__heading'>Tester comments</h2>
+
+              </div>
+
+              <div class='dvsa-summary__col dvsa-summary__col--two-thirds'>
+
+                <p class='dvsa-summary__paragraph'>{{ viewData.comment }}</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        {% endif %}
+
+      </section>
+
+      <div class='message--important'>
+
+        <p>By saving this test result you confirm that you have carried out this MOT test in line with DVSA conditions for MOT testing.</p>
+
+      </div>
+
+      <form action='/prototypes/mot-test' method='GET'>
+
+        {{ components.button(text='Save test result') }}
+
+      </form>
+
+      {{ components.link(text='Back to results entry', url='/prototypes/mot-test', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

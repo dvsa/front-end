@@ -51,11 +51,12 @@
   @import 'key-value-list/key-value-list';
   @import 'table-default/table-default';
   @import 'table-reference/table-reference';
-  @import 'panel-indent/panel-indent';  
+  @import 'panel-indent/panel-indent';
 }
 
 // Old modules does not follow best
 // practice so cannot be wrapped with body class
+@import 'task-list/task-list';
 @import 'badge/badge';  
 @import 'browse/browse';
 @import 'data-paging/data-paging';

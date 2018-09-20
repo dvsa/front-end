@@ -1,9 +1,6 @@
 .task-list {
   &__cell {
-
-    @include media (tablet) {
-      min-width: 300px;      
-    }
+    width: 50%;
   }
 
   &__badge {

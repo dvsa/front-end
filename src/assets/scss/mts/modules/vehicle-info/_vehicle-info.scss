@@ -1,0 +1,34 @@
+.vehicle-info-banner {
+    &__color {
+        display: block;
+        height: 30px;
+        width: 30px;
+        text-indent: 40px;
+        border-radius: 3px;
+        position: relative;
+
+        &--red {
+            background: firebrick;
+        }
+        &--blue {
+            background: navy;
+        }
+    } 
+
+    &__logo { 
+        padding-left: 20px;
+        position: relative;
+        @include media(desktop) {
+            top: -12px;
+            padding: 32px;
+        }
+    }
+
+    &__detail {
+        font-size: 14px;
+        @include media(desktop) {
+            font-size: 20px;
+        }
+    }
+
+}

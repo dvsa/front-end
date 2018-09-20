@@ -1,0 +1,62 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Confirm Vehicle and Start Test' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {{ components.pageHeading(heading='Front Exterior Checks', secondary='MOT Inspection') }}
+
+    <h2 class="heading heading--medium heading-medium">Defect Categories</h2>
+
+    <div class="browse u-margin-bottom-30">
+
+      <div class="browse">
+
+        <div class="browse__cats">
+
+          <h3 class="browse__title hide-small">Front exterior checks</h3>
+
+          <ul class="browse__list">
+
+            <li><a href="#">Registration plate</a></li>
+
+            <li><a href="#">Bonnet</a></li>
+
+            <li><a href="#">Body condition</a></li>
+
+            <li><a href="/prototypes/vsi-during-test/front-exterior-checks/front-exterior-checks-2">Lamps</a></li>
+
+            <li><a href="#">Headlamp aim</a></li>
+
+            <li><a href="#">View to the front</a></li>
+
+          </ul>
+
+        </div>
+        
+      </div>
+
+    </div>
+ 
+    <nav class="content-navigation">
+        <ul class="list-unstyled content-navigation__split u-clearfix">
+          <li class="content-navigation__split--left"> 
+            <a class="button" href="/prototypes/vsi-during-test/inspection/inspection-3">Return to MOT inspection</a>        
+          </li>
+        </ul>
+    </nav>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

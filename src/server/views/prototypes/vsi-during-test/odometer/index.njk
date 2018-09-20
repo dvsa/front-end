@@ -1,0 +1,82 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Odometer reading' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing', url: '/prototypes/vsi-during-test' },
+  { text: 'Testing advice for this vehicle'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {{ components.dvsaBanner(type='confirmation',  secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
+    
+    {{ components.pageHeading(heading='Odometer reading', secondary='MOT inspection', extraClass='u-margin-bottom-15 u-margin-top-15') }}
+    <ul class="content-header__tertiary-list">
+        <li class="content-header__list-item--primary">Peugeot 3008 SUV</li> 
+        <li class="content-header__list-item">TH10 CZR</li> 
+        <li class="content-header__list-item">First used	7 June 2011</li> 
+    </ul>
+ 
+      <form id="odometerResults" class="u-margin-top-25" action="./inspection/inspection-4" method="GET">
+
+        <div class="text">
+      
+          <div class="form-group">
+              <fieldset class="u-space-b15 hide-if-odometer-not-readable-or-present">
+                  <label class="form-label">Odometer reading</label>
+                  <label class="block-label js-hidden selected" for="odoInputRadio" data-target="__odoValue">
+                      <input type="radio" name="resultType" id="odoInputRadio" value="OK" checked="" aria-controls="__odoValue" aria-expanded="true" aria-hidden="false">Odometer is visible and functional
+                  </label>
+                  <input type="text" name="odometer" id="odometer" class="form-control" style="background-color: rgb(213, 255, 202);">
+              </fieldset>
+
+               <fieldset class="u-space-b30 hide-if-odometer-not-readable-or-present">
+                  <label for="unit" class="form-label">Measurement units</label>
+                  <select id="unit" name="unit" class="form-control-select">
+                      <option value="mi">Miles</option>
+                      <option value="km">Kilometres</option>
+                  </select>
+               </fieldset>
+
+               <fieldset>
+                   <div class="form-group">
+                       <div class="multiple-choice">
+                           <input type="radio" value="NOT_READ" name="resultType" id="notReadable" aria-expanded="false">
+                           <label for="notReadable">Odometer is unreadable</label>
+                       </div>
+                       <div class="multiple-choice">
+                           <input type="radio" value="NO_METER" name="resultType" id="noOdometer" aria-expanded="false">
+                           <label for="noOdometer">Odometer is not present</label>
+                       </div>
+                   </div>
+               </fieldset> 
+          </div> 
+          <nav class="content-navigation">
+            <ul class="list-unstyled content-navigation__split u-clearfix">
+              <li class="content-navigation__split--left"> 
+                <input type="submit" id="odometer_submit" name="submit" value="Add odometer reading" class="button">    
+              </li>
+            </ul>
+    
+            <div class="content-navigation__secondary u-margin-top-10"> 
+              <a href="/prototypes/vsi-during-test/inspection/inspection-3">Cancel and return to MOT inspection</a>
+            </div>
+          </nav>
+              
+        </div>
+
+      </form> 
+
+   
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

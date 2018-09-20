@@ -1,0 +1,29 @@
+.task-list {
+  &__cell {
+    width: 50%;
+  }
+
+  &__badge {
+    @extend %badge;
+    background-color: #666;
+    color: white;
+    border-radius: 0 !important;
+
+    &--warn {
+      background-color: $yellow;
+      color: #3c3c3c;      
+    }
+
+    &--info {
+      background-color: $link-colour;
+    }
+
+    &--success {
+      background-color: $green;
+    }
+
+    &--alert {
+      background-color: $mellow-red;
+    }
+  }
+}

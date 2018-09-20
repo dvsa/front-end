@@ -57,6 +57,7 @@
 
 // Old modules does not follow best
 // practice so cannot be wrapped with body class
+@import 'task-list/task-list';
 @import 'badge/badge';  
 @import 'browse/browse';
 @import 'data-paging/data-paging';
@@ -88,3 +89,4 @@
 @import 'organisation-logo/organisation-logo';
 @import 'pager/pager';
 @import 'search-bar/search-bar';
+@import 'vehicle-info/vehicle-info';

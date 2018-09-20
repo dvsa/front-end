@@ -1,0 +1,151 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Confirm Vehicle and Start Test' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {{ components.pageHeading(heading='Front Exterior Checks', secondary='MOT Inspection') }}
+
+    <h2 class="heading heading--medium heading-medium">Defect Categories</h2>
+
+    <div class="breadcrumbs breadcrumbs--muted">
+      <ol>
+        <li>Front Exterior Checks</li>
+        <li>Lamps</li>
+        <li>Headlamps</li>
+        <li>Headlamp</li>
+      </ol>
+    </div>
+
+    <div class="eu-defect eu-defect--interim">
+      <h2 class="eu-defect__title">Headlamp: lens</h2>
+      <ul class="list-unstyled eu-defect__list eu-defect__list--interim">
+
+        <li>
+          <div class="eu-defect__group-item">
+            <span class="eu-defect__name eu-defect__name--bold">Missing</span>
+
+            <div class="eu-defect__options eu-defect__options--manual-ref">
+              <span class="eu-defect__manual-ref">
+                <a href="#">
+                4.1.1 (b) (ii)
+                </a>
+                <span class="visuallyhidden">(Opens in new window)</span>
+              </span>
+            </div>
+
+            <div class="eu-defect__options eu-defect__options--collapse-tablet">
+              <a href="#" class="button--info">PRS</a>
+              <a href="#" class="button--alert">Major failure</a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="eu-defect__group-item">
+            <span class="eu-defect__name eu-defect__name--bold">Seriously defective</span>
+
+            <div class="eu-defect__options eu-defect__options--manual-ref">
+              <span class="eu-defect__manual-ref">
+              <a href="#">4.1.1 (b) (ii)</a>
+              <span class="visuallyhidden">(Opens in new window)</span>
+              </span>
+            </div>
+
+            <div class="eu-defect__options eu-defect__options--collapse-tablet">
+              <a href="#" class="button--info">PRS</a>
+              <a href="#" class="button--alert">Major failure</a>
+            </div>
+          </div>
+ 
+        </li>
+
+        <li>
+          <div class="eu-defect__group-item">
+            <span class="eu-defect__name eu-defect__name--bold">Slightly defective</span>
+
+            <div class="eu-defect__options eu-defect__options--manual-ref">
+              <span class="eu-defect__manual-ref">
+              <a href="#">4.1.1 (b) (i)</a>
+              <span class="visuallyhidden">(Opens in new window)</span>
+              </span>
+            </div>
+
+            <div class="eu-defect__options eu-defect__options--collapse-tablet">
+              <a href="/prototypes/vsi-during-test/front-exterior-checks/add-minor-defect" class="button--warn">Minor defect</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="eu-defect eu-defect--interim">
+      <h2 class="eu-defect__title">Headlamp: product on lens</h2>
+      <ul class="list-unstyled eu-defect__list eu-defect__list--interim">
+
+        <li>
+          <div class="eu-defect__group-item">
+            <span class="eu-defect__name eu-defect__name--bold">Light output severely reduced</span>
+
+            <div class="eu-defect__options eu-defect__options--manual-ref">
+              <span class="eu-defect__manual-ref">
+                <a href="#">4.1.4 (b)</a>
+                <span class="visuallyhidden">(Opens in new window)</span>
+              </span>
+            </div>
+
+            <div class="eu-defect__options eu-defect__options--collapse-tablet">
+              <a href="#" class="button--info">PRS</a>
+              <a href="#" class="button--alert">Major failure</a>
+            </div>
+          </div>
+          <div class="eu-defect__group-item eu-defect__group-item--secondary">
+            <span class="eu-defect__name">Not seriously reducing light output</span>
+            <div class="eu-defect__options eu-defect__options--interim">
+              <a href="#" class="button--plain"> Advisory</a>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <div class="eu-defect__group-item">
+            <span class="eu-defect__name eu-defect__name--bold">
+            Changes emitted colour to other than white or yellow
+            </span>
+
+            <div class="eu-defect__options eu-defect__options--manual-ref">
+              <span class="eu-defect__manual-ref">
+                <a href="#">4.1.4 (b)</a>
+                <span class="visuallyhidden">(Opens in new window)</span>
+              </span>
+            </div>
+
+            <div class="eu-defect__options eu-defect__options--collapse-tablet">
+              <a href="#" class="button--info">PRS</a>
+              <a href="#" class="button--alert">Major failure</a>
+            </div>
+          </div>
+ 
+        </li>
+      </ul>
+    </div>
+
+    <div class="u-margin-bottom-20">
+      <a class="button" id="confirm-start-test" href="/prototypes/vsi-during-test/inspection/inspection-3">Finish and return to front exterior checks</a>        
+    </div>
+    <a id="confirm-start-test" href="/prototypes/vsi-during-test/front-exterior-checks/front-exterior-checks-1">Return to MOT inspection</a>  
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

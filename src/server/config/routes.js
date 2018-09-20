@@ -11,6 +11,7 @@ import * as siteReviewController from '../controllers/site-review/site-review';
 import * as brakeTestController from '../controllers/brake-test/brake-test';
 import * as messagingController from '../controllers/mts-messages';
 import * as vtsChangeController from '../controllers/vts-changes';
+import * as vsiDuringTestController from '../controllers/vsi-during-test';
 import * as recalls from '../controllers/recalls';
 
 const router = Router();

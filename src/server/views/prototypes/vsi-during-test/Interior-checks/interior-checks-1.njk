@@ -1,0 +1,79 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Confirm Vehicle and Start Test' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    {{ components.pageHeading(heading='Interior Checks', secondary='MOT Inspection') }}
+
+    <details>
+      <summary>
+        <span class="summary">View testing advice</span>
+      </summary>
+      <div class="panel panel-border-narrow">
+          <h3 class="heading heading-small">Electomechanical Parking Brake (EPB)</h3>
+          <p>
+            The EPB application procedure is the same for non-ATL, ATL and OPTL layouts.  To operate the EPB pull the EPB switch and the parking brake will automatically apply.  A warning lamp on the dash flashes and then illuminates.  If required further application of the EPB can be achieved by a second operation of the switch.  To release the EPB either drive off in the normal way or, with the ignition on, apply the service brake then push the EPB switch (failure to do so results in a warning tone and a warning lamp illuminating on the dash).  The warning lamp will extinguish after the EPB has fully released.  Note: The EPB applied warning light will remain illuminated for approx 30secs after the vehicle is parked.        </p>
+      </div>
+    </details>
+
+    <h2 class="heading heading--medium heading-medium">Defect Categories</h2>
+
+    <div class="browse u-margin-bottom-30">
+
+      <div class="browse">
+
+        <div class="browse__cats">
+
+          <h3 class="browse__title hide-small">Interior checks</h3>
+
+          <ul class="browse__list">
+
+            <li><a href="#">Seats and seat belts</a></li>
+
+            <li><a href="/prototypes/vsi-during-test/interior-checks/interior-checks-2">Warning lamps</a></li>
+
+            <li><a href="#">Switches</a></li>
+
+            <li><a href="#">View to the front</a></li>
+
+            <li><a href="#">Brake controls</a></li>
+
+            <li><a href="#">Steering wheel and column</a></li>
+
+            <li><a href="#">Doors, horn, mirrors</a></li>
+
+            <li><a href="#">Speedometer</a></li>
+
+            <li><a href="#">Lamps</a></li>
+
+          </ul>
+
+        </div>
+        
+      </div>
+
+    </div>
+ 
+    <nav class="content-navigation">
+        <ul class="list-unstyled content-navigation__split u-clearfix">
+          <li class="content-navigation__split--left"> 
+            <a class="button" id="confirm-start-test" href="/prototypes/vsi-during-test/inspection/inspection-2">Return to MOT inspection</a>        
+          </li>
+        </ul>
+    </nav>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

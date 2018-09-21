@@ -21,16 +21,18 @@
     border-top: 1px solid $grey-1;
     border-bottom: 1px solid $grey-1;
     padding: 0;
-    margin: 0;
+    margin: 0
   }
 
   &__list-item {
     position: relative;
     clear: both;
     margin: 4px 0;
-    padding: 12px 0;
     border-bottom: 2px solid $grey-3;
-
+    .breadcrumbs {
+      padding-top: 8px;
+    }
+    
     &:last-of-type {
       border-bottom: 0;
       margin-bottom: 0;
@@ -46,7 +48,7 @@
       margin-top: -15px;
 
       @include media(desktop) {
-        margin-top: -5px;                
+        margin-top: -5px;
       }
     }
   }

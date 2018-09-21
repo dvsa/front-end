@@ -1,10 +1,10 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-manuals
- *   Version: 1.2.26
+ *   Version: 1.2.27
  *   Author: Tameem Safi <https://github.com/tameemsafi>
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>
- *   Timestamp: September 20th 2018, 11:16:35 pm
+ *   Timestamp: September 21st 2018, 10:24:00 am
  *   Source: https://github.com/dvsa/front-end
  * 
  */

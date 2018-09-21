@@ -94,14 +94,14 @@
 
     <table class="task-list u-margin-top-5">
       <tbody>
-        <tr>
-          <th class="task-list__cell">
-            <a href="../odometer">Edit reading</a>
-          </th>
-          <td class="task-list__cell">
-            <span class="u-float-right"><strong>56050</strong></span>
-          </td>
-        </tr>
+          <tr>
+              <th class="task-list__cell">
+                <a href="../odometer">Edit reading</a>
+              </th>
+              <td class="task-list__cell"> 
+                <span class="u-float-right"> <strong>{{ viewData.odometer if viewData.odometer else '10000'}}</strong></span>
+              </td>
+          </tr>
       </tbody>
     </table>
 

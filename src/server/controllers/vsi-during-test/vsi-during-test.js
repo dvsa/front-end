@@ -44,7 +44,6 @@ export const postBrakes = (req, res) => {
   return res.render('./prototypes/vsi-during-test/inspection/inspection-4', { viewData: req.session.viewData });
 };
 
-
 export const getAdvice = (req, res) => {
   const fullPreviousUrl = req.header('Referer');
   let backButton = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);

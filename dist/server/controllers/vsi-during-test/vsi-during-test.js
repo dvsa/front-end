@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getAdvice = exports.getOdometer = exports.getInspectionWithOdometer = exports.postOdometer = undefined;
+exports.getAdvice = exports.postBrakes = exports.getOdometer = exports.getInspectionWithOdometer = exports.postOdometer = undefined;
 
 var _initData = require('./initData.js');
 
@@ -29,6 +29,7 @@ const postOdometer = exports.postOdometer = (req, res) => {
 const getInspectionWithOdometer = exports.getInspectionWithOdometer = (req, res) => {
   return res.render('./prototypes/vsi-during-test/inspection/inspection-4', { viewData: req.session.viewData });
 };
+
 /**
  * GET Middleware - Persist entered odometer reading when returning to /odometer
  *
@@ -38,6 +39,17 @@ const getInspectionWithOdometer = exports.getInspectionWithOdometer = (req, res)
 const getOdometer = exports.getOdometer = (req, res) => {
   req.session.viewData = req.session.viewData || (0, _initData.initData)();
   return res.render('./prototypes/vsi-during-test/odometer/index', { viewData: req.session.viewData });
+};
+
+/**
+ * GET Middleware - Persist entered odometer reading when returning to /odometer
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+const postBrakes = exports.postBrakes = (req, res) => {
+  req.session.viewData = req.session.viewData || (0, _initData.initData)();
+  return res.render('./prototypes/vsi-during-test/inspection/inspection-4', { viewData: req.session.viewData });
 };
 
 const getAdvice = exports.getAdvice = (req, res) => {

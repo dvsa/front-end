@@ -5,6 +5,6 @@
  */
 export const initData = () => {
   return {
-    odometer: '11',
+    odometer: '',
   };
 };

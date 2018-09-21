@@ -34,6 +34,6 @@ export const getOdometer = (req, res) => {
 
 export const getAdvice = (req, res) => {
   const fullPreviousUrl = req.header('Referer');
-  let backButton = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf("/prototypes") + 1);
-  return res.render('prototypes/vsi-during-test/advice/index', {viewData: {backButton} });
+  let backButton = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
+  return res.render('prototypes/vsi-during-test/advice/index', { viewData: { backButton } });
 };

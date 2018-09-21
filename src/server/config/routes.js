@@ -140,15 +140,12 @@ router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
 // Recalls
 router.post('/prototypes/recalls/V1/type-of-recall', [recalls.validateType, recalls.postRecallType]);
 
-<<<<<<< HEAD
 // VSI during test
 router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
 router.get('/prototypes/vsi-during-test/odometer', vsiDuringTestController.getOdometer);
 router.get('/prototypes/vsi-during-test/inspection/inspection-4', vsiDuringTestController.getInspectionWithOdometer);
-=======
 // VSI Routes
 router.get('/prototypes/vsi-during-test/advice', vsiDuringTestController.getAdvice);
->>>>>>> minor content updates. Session on advice page setup
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

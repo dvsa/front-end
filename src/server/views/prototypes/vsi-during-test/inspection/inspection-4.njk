@@ -19,10 +19,9 @@
     {{ components.pageHeading(heading='MOT Inspection') }}
 
     <h2 class="heading heading--medium heading-medium">Testing advice</h2>
-    
-    <p>
-      <a href="./prototypes/vsi-during-test/advice">View testing advice</a>
-    </p>
+
+    <a href="/prototypes/vsi-during-test/advice">View testing advice</a>
+
 
     <h2 class="heading heading--medium heading-medium">Vehicle inspection</h2>
 
@@ -100,8 +99,13 @@
           <th class="task-list__cell">
             <a href="../odometer">{{ "Edit reading" if viewData.odometer else "Add reading" }}</a>
           </th>
+<<<<<<< HEAD
           <td class="task-list__cell"> 
             <span class="u-float-right"> {{ viewData.odometer if viewData.odometer else 'Not recorded'}}</span>
+=======
+          <td class="task-list__cell">
+            <span class="u-float-right"><strong>56050</strong></span>
+>>>>>>> minor content updates. Session on advice page setup
           </td>
         </tr>
       </tbody>

@@ -3,31 +3,39 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getMotInspection = exports.postOdometer = undefined;
+exports.getOdometer = exports.getInspectionWithOdometer = exports.postOdometer = undefined;
 
 var _initData = require('./initData.js');
 
 var _helpers = require('../vts-changes/helpers/helpers.js');
 
 /**
- * POST Middleware - Initialise session for Stage 1
+ * POST Middleware - Take inputted odometer reading and persist on inspection sheet #4
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
 const postOdometer = exports.postOdometer = (req, res) => {
   req.session.viewData = req.body || (0, _initData.initData)();
-  return res.redirect('/prototypes/vsi-during-test/inspection');
+  return res.redirect('/prototypes/vsi-during-test/inspection/inspection-4');
 };
 
 /**
- * GET Middleware - Initialise session for Stage 1
+ * GET Middleware - Pick up GET from redirect on POSTing odometer
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getMotInspection = exports.getMotInspection = (req, res) => {
+const getInspectionWithOdometer = exports.getInspectionWithOdometer = (req, res) => {
+  return res.render('./prototypes/vsi-during-test/inspection/inspection-4', { viewData: req.session.viewData });
+};
+/**
+ * GET Middleware - Persist entered odometer reading when returning to /odometer
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+const getOdometer = exports.getOdometer = (req, res) => {
   req.session.viewData = req.session.viewData || (0, _initData.initData)();
-  console.log(req.session.viewData);
-  return res.render('./prototypes/vsi-during-test/inspection/index', { viewData: req.session.viewData });
+  return res.render('./prototypes/vsi-during-test/odometer/index', { viewData: req.session.viewData });
 };

@@ -98,10 +98,10 @@
       <tbody>
         <tr>
           <th class="task-list__cell">
-            <a href="../odometer">Edit reading</a>
+            <a href="../odometer">{{ "Edit reading" if viewData.odometer else "Add reading" }}</a>
           </th>
-          <td class="task-list__cell">
-            <span class="u-float-right">56050</span>
+          <td class="task-list__cell"> 
+            <span class="u-float-right"> {{ viewData.odometer if viewData.odometer else 'Not recorded'}}</span>
           </td>
         </tr>
       </tbody>

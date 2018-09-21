@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getOdometer = exports.getInspectionWithOdometer = exports.postOdometer = undefined;
+exports.getAdvice = exports.getOdometer = exports.getInspectionWithOdometer = exports.postOdometer = undefined;
 
 var _initData = require('./initData.js');
 
@@ -38,4 +38,10 @@ const getInspectionWithOdometer = exports.getInspectionWithOdometer = (req, res)
 const getOdometer = exports.getOdometer = (req, res) => {
   req.session.viewData = req.session.viewData || (0, _initData.initData)();
   return res.render('./prototypes/vsi-during-test/odometer/index', { viewData: req.session.viewData });
+};
+
+const getAdvice = exports.getAdvice = (req, res) => {
+  const fullPreviousUrl = req.header('Referer');
+  let backButton = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
+  return res.render('prototypes/vsi-during-test/advice/index', { viewData: { backButton } });
 };

@@ -1,8 +1,8 @@
 export const initMtsLogin = () => {
   const passwordField = document.querySelector('.sign-in-form .password-field');
-  
+
   if (!passwordField) return;
-  
+
   //Submit form when enter is pressed
   passwordField.onkeypress = event => {
     const keyName = event.key;
@@ -13,10 +13,10 @@ export const initMtsLogin = () => {
     }
   };
 
-  // Disables the context menu 
+  // Disables the context menu
   passwordField.oncontextmenu = event => {
-    if(event.preventDefault !== undefined) event.preventDefault();
-    if(event.stopPropagation !== undefined) event.stopPropagation();
+    if (event.preventDefault !== undefined) event.preventDefault();
+    if (event.stopPropagation !== undefined) event.stopPropagation();
   };
 
   // Prevent keyboard shortcuts to copy to clipboard
@@ -28,7 +28,7 @@ export const initMtsLogin = () => {
 
   // Prevents drag interaction to another field from passwordField
   passwordField.ondragstart = event => event.preventDefault();
-  
+
   // Prevents copying (including via shortcut) to clipboard from password field
   passwordField.oncopy = event => false;
 

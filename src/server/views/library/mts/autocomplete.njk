@@ -1,21 +1,22 @@
-{% extends 'layouts/mts.layout.njk' %}
+{% extends 'layouts/library-mts.layout.njk' %}
 
-{% set pageTitle = 'homepage' %}
+{% set pageTitle = 'MOT Library - Brake tests panel' %}
 
 {% block content %}
 
-  {{ components.link(text='Back', url='/prototypes/recalls/V2/vehicle-type', back=true) }}
+  {{ components.heading(
+    text='Autocomplete',
+    tag='h2',
+    size='medium'
+  ) }}
 
-  {% call components.gridRow() %}
-
-    {% call components.columnFull() %}
-
-    <div class="text">
-
-      <form class="u-margin-top-30">
-        <label class="heading-large heading heading--page-heading heading--small-margin-bottom" for="vehicle-make">What is the vehicle manufacturer?</label>
-        <div class="autocomplete-wrapper u-margin-top-15">
-          <select class="select-autocomplete" name="vehicle-make" id="vehicle-make">
+  {% call components.displayCode() %}
+    <form>
+      <fieldset>
+        <div class="form-group">
+        <label for="last-location">What is the vehicle manufacturer?</label>
+        <div class="autocomplete-wrapper">
+          <select class="select-autocomplete" name="last-location" id="last-location">
             <option value="0"></option>
             <option value="Alfa Romeo">Alfa Romeo</option>
             <option value="Allied Vehicles">Allied Vehicles</option>
@@ -69,16 +70,8 @@
             <option value="VW">VW</option>
           </select>
         </div>
-
-        <div class="u-margin-top-45">
-          <a class="button" id="choose-make" href="/prototypes/recalls/V2/vehicle-model" style="margin-bottom:30px">Continue</a>
-        </div>
-
-      </form>
-    </div>
-
-    {% endcall %}
-
+      </div>
+    </fieldset>
+  </form>
   {% endcall %}
-
 {% endblock %}

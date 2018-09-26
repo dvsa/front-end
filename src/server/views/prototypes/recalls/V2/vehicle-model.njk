@@ -1,27 +1,44 @@
-{% extends 'layouts/mts-without-container.layout.njk' %}
- {% set pageTitle = 'homepage' %}
- {% set pageBreadcrumbItems = [
-  { text: 'Home', url: '/prototypes' },
-  { text: 'MOT test results', url: '/prototypes/mot-test' },
-  { text: 'Brake test' }
-] %}
- {% block content %}
- <main id="content">
-    
-    <a href="/prototypes/recalls/V1/vehicle-make" class="link-back">Back</a>                     
-     <div class="row contents">
-        <div class="col-lg-12">
-     <div class="grid-row">
-    <div class="column-three-quarters">
-      <div class="form-group form-control-2-3" id="autocomplete-landRoverModels" style="margin-top:50px;">
-          <label class="heading-large heading heading--page-heading heading--small-margin-bottom" for="autocomplete">What is the vehicle model?</label>
-          <div id="autocomplete-landrovermodels" style="margin-top:20px;"></div> 
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% block content %}
+
+  {{ components.link(text='Back', url='/prototypes/recalls/V2/vehicle-make', back=true) }}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    <div class="text">
+
+      <form class="u-margin-top-30">
+        <label class="heading-large heading heading--page-heading heading--small-margin-bottom" for="vehicle-make">What is the vehicle model?</label>
+        <div class="autocomplete-wrapper u-margin-top-15">
+          <select class="select-autocomplete" name="vehicle-make" id="vehicle-make">
+            <option value="0"></option>
+            <option value="All New Discovery">All New Discovery</option>
+            <option value="Defender">Defender</option>
+            <option value="Discovery">Discovery</option>
+            <option value="Discovery Sport">Discovery Sport</option>
+            <option value="Freelander">Freelander</option>
+            <option value="Land Rover">Land Rover</option>
+            <option value="Range Rover">Range Rover</option>
+            <option value="Range Rover Evoque">Range Rover Evoque</option>
+            <option value="Range Rover Sport">Range Rover Sport</option>
+            <option value="Range Rover Velar">Range Rover Velar</option>
+          </select>
         </div>
-        <br>
-        <div>
-            <a class="button" id="choose-make" href="/prototypes/recalls/V2/year-of-manufactuer" style="margin-bottom:30px">Continue</a>
+
+        <div class="u-margin-top-45">
+          <a class="button" id="choose-make" href="/prototypes/recalls/V2/year-of-manufactuer" style="margin-bottom:30px">Continue</a>
         </div>
-     </div>
-</div>            
- </main>
- {% endblock %} 
+
+      </form>
+    </div>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

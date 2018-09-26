@@ -26,6 +26,26 @@ export const initMtsLogin = () => {
     }
   };
 
+  // Prevents whitespace characters from being pasted into the field
+  passwordField.onpaste = event => {
+    let clipboardData, pastedData;
+
+    // Stop data actually being pasted into field by default
+    event.stopPropagation();
+    event.preventDefault();
+
+    // Get pasted data via clipboard API
+    clipboardData = event.clipboardData || window.clipboardData;
+    pastedData = clipboardData.getData('Text');
+
+    // carry out the paste with manipulated data to remove whitespace characters
+    passwordField.value = pastedData
+      .replace('\n', '')
+      .replace('\v', '')
+      .replace('\f', '')
+      .replace('\r', '');
+  };
+
   // Prevents drag interaction to another field from passwordField
   passwordField.ondragstart = event => event.preventDefault();
   

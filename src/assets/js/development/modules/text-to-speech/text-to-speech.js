@@ -9,6 +9,7 @@ export class TextToSpeech {
       elements: [],
       current: {},
       targets: TEXT_TO_SPEECH_CONFIG.DOMTargets,
+      currentlyPlayed: {}
     };
 
     // Sets up the module
@@ -87,6 +88,9 @@ export class TextToSpeech {
     // If failed to get ID return with warning
     if (!dataContentID) return console.warn('Failed to retrieve data content id attribute');
 
+    // Needed for bug in Safari
+    this.state.currentlyPlayed = dataContentID;
+
     // Begins playing utterance
     this.state.synth.speak(this.state.elements[dataContentID].utterance);
   };
@@ -134,8 +138,6 @@ export class TextToSpeech {
       // Sets the current playing state
       this.state.current = this.state.elements[utterance.id];
 
-      // console.log(this.state.current);
-
       // Resets all reader instances
       this.resetAll();
 
@@ -155,15 +157,20 @@ export class TextToSpeech {
       // Resets all reader instances
       this.resetAll();
 
-      // Removes highlight CSS class
-      this.state.current.element.classList.remove(`${TEXT_TO_SPEECH_CONFIG.classes.readerItemHighlight}`);
-      this.state.current.element
-        .querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.audioBtn}`)
-        .classList.remove(`${TEXT_TO_SPEECH_CONFIG.classes.audioBtnPlaying}`);
-
       // Removes current reading instance
       this.state.current = {};
     };
+
+    utterance.onerror = () => {
+      // Forces a call on onend
+      utterance.onend();
+
+      // Sets the current playing state
+      this.state.current = this.state.elements[this.state.currentlyPlayed];
+
+      // Forces utterance to start
+      this.state.current.utterance.onstart();
+    }
 
     // Returns utterance
     return utterance;
@@ -177,6 +184,12 @@ export class TextToSpeech {
     this.state.elements.map(obj => {
       obj.isPlaying = false;
       obj.isHighlighted = false;
+
+      // Removes highlight CSS class
+      obj.element.classList.remove(`${TEXT_TO_SPEECH_CONFIG.classes.readerItemHighlight}`);
+      obj.element
+        .querySelector(`.${TEXT_TO_SPEECH_CONFIG.classes.audioBtn}`)
+        .classList.remove(`${TEXT_TO_SPEECH_CONFIG.classes.audioBtnPlaying}`);
     });
   };
 }

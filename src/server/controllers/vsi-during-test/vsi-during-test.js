@@ -8,8 +8,8 @@ export const initViewData = (req, res, next) => {
 
 export const getPrevUrl = (req, res, next) => {
   const fullPreviousUrl = req.header('Referer');
-  req.session.prevUrl = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
-  console.log('1', req.session.prevUrl)
+  req.session.viewData = req.session.viewData || initData();
+  req.session.viewData.prevUrl = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
   next();
 };
 
@@ -70,6 +70,6 @@ export const postBrakes = (req, res) => {
 };
 
 export const getAdvice = (req, res) => {
-  console.log('Prev: ', req.session.viewData)
+  req.session.viewData = req.session.viewData || initData();
   return res.render('prototypes/vsi-during-test/advice/index', { viewData: req.session.viewData });
 };

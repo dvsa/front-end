@@ -9,6 +9,7 @@ export const initViewData = (req, res, next) => {
 export const getPrevUrl = (req, res, next) => {
   const fullPreviousUrl = req.header('Referer');
   req.session.prevUrl = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
+  console.log('1', req.session.prevUrl)
   next();
 };
 
@@ -32,9 +33,9 @@ export const getInspection5 = (req, res) => {
   return res.render('prototypes/vsi-during-test/inspection/inspection-5', { viewData: req.session.viewData });
 };
 
-export const getSummary = (req,res) => {
-  return res.render('prototypes/vsi-during-test/summary/index',  { viewData: req.session.viewData })
-}
+export const getSummary = (req, res) => {
+  return res.render('prototypes/vsi-during-test/summary/index', { viewData: req.session.viewData });
+};
 
 /**
  * POST Middleware - Take inputted odometer reading and persist on inspection sheet #4
@@ -69,5 +70,6 @@ export const postBrakes = (req, res) => {
 };
 
 export const getAdvice = (req, res) => {
-  return res.render('prototypes/vsi-during-test/advice/index', { viewData: req.session.prevUrl });
+  console.log('Prev: ', req.session.viewData)
+  return res.render('prototypes/vsi-during-test/advice/index', { viewData: req.session.viewData });
 };

@@ -1,5 +1,5 @@
 export const initMtsLogin = () => {
-  const passwordField = document.querySelector('js-password-behaviour');
+  const passwordField = document.querySelector('.js-password-behaviour');
 
   if (!passwordField) return;
 

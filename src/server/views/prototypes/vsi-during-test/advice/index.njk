@@ -14,8 +14,7 @@
 
     {% call components.columnFull() %}
 
-    {{ components.dvsaBanner(secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>16 September 2018</strong>', type='confirmation', thin='true') }}
-    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
+   {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
   
     <div class="text"> 
  
@@ -32,16 +31,15 @@
     </div>
  
 
-    <nav class="content-navigation">
-        <ul class="list-unstyled content-navigation__split u-clearfix">
-          <li class="content-navigation__split--left"> 
-            <a class="button" id="print-advice" href="./">Print testing advice</a>        
-          </li> 
-        </ul>
-
-        <div class="content-navigation__secondary"> 
-          <a href="{{ viewData.backButton }}">Back</a>
-        </div>
+    <nav>
+      <ul>
+        <li class="u-margin-bottom-15"> 
+            <a class="button" id="back-button" href="{{ viewData.backButton }}">Back</a>      
+        </li> 
+        <li> 
+          <a id="print-advice" target="_blank" href="./">Print testing advice</a>        
+        </li> 
+      </ul>
     </nav>
 
     {% endcall %}

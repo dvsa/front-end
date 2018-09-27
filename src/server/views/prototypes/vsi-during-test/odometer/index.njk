@@ -29,11 +29,8 @@
       
           <div class="form-group">
               <fieldset class="u-space-b15 hide-if-odometer-not-readable-or-present">
-                  <label class="form-label">Odometer reading</label>
-                  <label class="block-label js-hidden selected" for="odoInputRadio" data-target="__odoValue">
-                      <input type="radio" name="resultType" id="odoInputRadio" value="OK" checked="" aria-controls="__odoValue" aria-expanded="true" aria-hidden="false">Odometer is visible and functional
-                  </label>
-                  <input type="text" name="odometer" id="odometer" class="form-control" value="{{ viewData.odometer }}" style="background-color: rgb(213, 255, 202);">
+                  <label class="form-label" for="odometer">Odometer reading</label> 
+                  <input type="number" name="odometer" id="odometer" class="form-control" value="{{ viewData.odometer }}" style="background-color: rgb(213, 255, 202);">
               </fieldset>
 
                <fieldset class="u-space-b30 hide-if-odometer-not-readable-or-present">

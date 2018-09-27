@@ -10,6 +10,7 @@ Object.defineProperty(exports, "__esModule", {
  */
 const initData = exports.initData = () => {
   return {
-    odometer: ''
+    odometer: '',
+    prevUrl: ''
   };
 };

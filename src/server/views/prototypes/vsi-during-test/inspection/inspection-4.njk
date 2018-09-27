@@ -16,6 +16,15 @@
 
     {{ components.dvsaBanner(type='confirmation',  secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
 
+    <div class="grid-row">
+      <div class="column-one-half vehicle-info-banner__details">
+          <p class="u-margin-0"><strong>VIN</strong> <span>GAULAGAAAAA11951</span></p> 
+      </div> 
+      <div class="column-one-half vehicle-info-banner__details"> 
+        <p class="u-margin-0"><strong>Registration number</strong> TH10 CZR</p>
+      </div>
+    </div>
+
     {{ components.pageHeading(heading='MOT Inspection') }}
 
     <h2 class="heading heading--medium heading-medium">Testing advice</h2>
@@ -44,6 +53,11 @@
     </table>
 
     <h2 class="heading heading--medium heading-medium">Vehicle inspection</h2>
+
+    <div class="search-bar__control-group u-margin-bottom-30">
+      <input class="search-bar__search-input" type="search" placeholder="Search for a defect" title="Search" id="search-main" name="search">
+      <input class="search-bar__search-submit" type="submit" value="Search">
+    </div>
 
     <table class="task-list u-margin-top-5">
       <tbody>

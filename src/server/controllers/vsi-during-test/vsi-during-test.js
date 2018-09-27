@@ -44,8 +44,8 @@ export const getSummary = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const postOdometer = (req, res) => {
-  req.session.viewData = req.body;
-  return res.redirect(`${req.session.prevUrl}`);
+  req.session.viewData.odometer = req.body.odometer;
+  return res.redirect(`${req.session.viewData.prevUrl}`);
 };
 
 /**

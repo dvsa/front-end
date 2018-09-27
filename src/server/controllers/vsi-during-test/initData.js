@@ -6,6 +6,6 @@
 export const initData = () => {
   return {
     odometer: '',
-    prevUrl: ''
+    prevUrl: '',
   };
 };

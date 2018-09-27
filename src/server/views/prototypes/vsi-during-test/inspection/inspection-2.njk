@@ -22,6 +22,27 @@
 
     <a href="/prototypes/vsi-during-test/advice">View testing advice</a>
 
+    <h2 class="heading heading--medium heading-medium">Odometer</h2>
+
+    <table class="task-list u-margin-top-5">
+      <tbody>
+        <tr>
+          <th class="task-list__cell">
+            <a href="/prototypes/vsi-during-test/odometer">{{ "Edit reading" if viewData.odometer else "Add reading" }}</a>
+          </th>
+          <td class="task-list__cell">
+            <span class="u-float-right">
+              {% if viewData.odometer %}
+                <strong>{{ viewData.odometer }}</strong>
+              {% else %}
+                Not recorded
+              {% endif %}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
     <h2 class="heading heading--medium heading-medium">Vehicle inspection</h2>
 
     <table class="task-list u-margin-top-5">
@@ -84,21 +105,6 @@
             <a href="#">Emissions checks</a>
           </th>
           <td class="task-list__cell"></td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2 class="heading heading--medium heading-medium">Odometer</h2>
-
-    <table class="task-list u-margin-top-5">
-      <tbody>
-        <tr>
-          <th class="task-list__cell">
-            <a href="../odometer">Add reading</a>
-          </th>
-          <td class="task-list__cell">
-            <span class="u-float-right">Not recorded</span>
-          </td>
         </tr>
       </tbody>
     </table>

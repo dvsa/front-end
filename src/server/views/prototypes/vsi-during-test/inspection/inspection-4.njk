@@ -22,6 +22,26 @@
 
     <a href="/prototypes/vsi-during-test/advice">View testing advice</a>
 
+    <h2 class="heading heading--medium heading-medium">Odometer</h2>
+
+    <table class="task-list u-margin-top-5">
+      <tbody>
+        <tr>
+          <th class="task-list__cell">
+            <a href="/prototypes/vsi-during-test/odometer">{{ "Edit reading" if viewData.odometer else "Add reading" }}</a>
+          </th>
+          <td class="task-list__cell">
+            <span class="u-float-right">
+              {% if viewData.odometer %}
+                <strong>{{ viewData.odometer }}</strong>
+              {% else %}
+                Not recorded
+              {% endif %}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
     <h2 class="heading heading--medium heading-medium">Vehicle inspection</h2>
 
@@ -33,7 +53,7 @@
           </th>
           <td class="task-list__cell">
             <span class="task-list__badge">Advice</span>
-             <span class="task-list__badge task-list__badge--alert u-float-right">FAILURE</span>
+            <span class="task-list__badge task-list__badge--alert u-float-right">FAILURE</span>
           </td>
         </tr>
         <tr>
@@ -91,47 +111,26 @@
       </tbody>
     </table>
 
-    <h2 class="heading heading--medium heading-medium">Odometer</h2>
-
-    <table class="task-list u-margin-top-5">
-      <tbody>
-        <tr>
-          <th class="task-list__cell">
-            <a href="../odometer">{{ "Edit reading" if viewData.odometer else "Add reading" }}</a>
-          </th>
-          <td class="task-list__cell">
-            <span class="u-float-right">
-              {% if viewData.odometer %}
-              <strong>{{ viewData.odometer }}</strong>
-              {% else %}
-              Not recorded
-              {% endif %}
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
     <h2 class="heading heading--medium heading-medium">Brake test</h2>
-    
+
     <table class="task-list u-margin-top-5 u-margin-bottom-45">
       <tbody>
         <tr>
           <th class="task-list__cell">
-            <a href="/prototypes/vsi-during-test/brake-test/brake-test-config">Add reading</a>
+            <a href="../brake-test/brake-test-config">Edit reading</a>
           </th>
           <td class="task-list__cell">
-            <span class="task-list__badge">Advice</span>
-            <span class="u-float-right">Not recorded</span>
+            <span class="task-list__badge">Advice</span> 
+            <span class="task-list__badge task-list__badge--alert u-float-right">FAILURE</span>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <form class="content-navigation" action="/prototypes/vsi-during-text/interior-checks/interior-checks-1" method="get" data-form-state-index="0">
+    <form class="content-navigation" action="/prototypes/vsi-during-test/summary" method="GET" data-form-state-index="0">
       <div class="content-navigation__split">
         <div class="content-navigation__split--left u-float-left">
-          <input id="reviewTest" type="submit" class="button" value="Review test" disabled="disabled">
+          <input id="reviewTest" type="submit" class="button" value="Review test">
         </div>
         <div class="content-navigation__split--right u-float-right">
           <a class="button button--alert" id="refuse-to-test" href="/prototypes">Cancel test</a>

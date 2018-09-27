@@ -1,6 +1,13 @@
 .task-list {
   &__cell {
     width: 50%;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+
+    @include media(desktop) { 
+      padding-top: 12px !important; 
+      padding-bottom: 9px !important;
+    }
   }
 
   &__badge {

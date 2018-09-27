@@ -1,6 +1,46 @@
 import { initData } from './initData.js';
 import { isEmpty } from '../vts-changes/helpers/helpers.js';
 
+export const initViewData = (req, res, next) => {
+  req.session.viewData = req.session.viewData || initData();
+  next();
+};
+
+export const getPrevUrl = (req, res, next) => {
+  const fullPreviousUrl = req.header('Referer');
+  req.session.prevUrl = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
+  next();
+};
+
+export const getInspection1 = (req, res) => {
+  console.log('here');
+  return res.render('prototypes/vsi-during-test/inspection/index', {viewData: req.session.viewData });
+};
+
+export const getInspection2 = (req, res) => {
+  console.log('here');
+  
+  return res.render('prototypes/vsi-during-test/inspection/inspection-2', {viewData: req.session.viewData });
+};
+
+export const getInspection3 = (req, res) => {
+  console.log('here');
+  
+  return res.render('prototypes/vsi-during-test/inspection/inspection-3', {viewData: req.session.viewData });
+};
+
+export const getInspection4 = (req, res) => {
+  console.log('here');
+  
+  return res.render('prototypes/vsi-during-test/inspection/inspection-4', {viewData: req.session.viewData });
+};
+
+export const getInspection5 = (req, res) => {
+  console.log('here');
+  
+  return res.render('prototypes/vsi-during-test/inspection/inspection-5', {viewData: req.session.viewData });
+};
+
 /**
  * POST Middleware - Take inputted odometer reading and persist on inspection sheet #4
  *
@@ -8,18 +48,8 @@ import { isEmpty } from '../vts-changes/helpers/helpers.js';
  * @param {Express.Response} res - Express response object
  */
 export const postOdometer = (req, res) => {
-  req.session.viewData = req.body || initData();
-  return res.redirect('/prototypes/vsi-during-test/inspection/inspection-4');
-};
-
-/**
- * GET Middleware - Pick up GET from redirect on POSTing odometer
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getInspectionWithOdometer = (req, res) => {
-  return res.render('./prototypes/vsi-during-test/inspection/inspection-4', { viewData: req.session.viewData });
+  req.session.viewData = req.body;
+  return res.redirect(`${req.session.prevUrl}`);
 };
 
 /**
@@ -29,7 +59,6 @@ export const getInspectionWithOdometer = (req, res) => {
  * @param {Express.Response} res - Express response object
  */
 export const getOdometer = (req, res) => {
-  req.session.viewData = req.session.viewData || initData();
   return res.render('./prototypes/vsi-during-test/odometer/index', { viewData: req.session.viewData });
 };
 
@@ -45,7 +74,5 @@ export const postBrakes = (req, res) => {
 };
 
 export const getAdvice = (req, res) => {
-  const fullPreviousUrl = req.header('Referer');
-  let backButton = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
-  return res.render('prototypes/vsi-during-test/advice/index', { viewData: { backButton } });
+  return res.render('prototypes/vsi-during-test/advice/index', { viewData: req.session.prevUrl });
 };

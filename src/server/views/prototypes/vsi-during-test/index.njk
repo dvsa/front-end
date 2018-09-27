@@ -13,8 +13,8 @@
 
     {% call components.columnFull() %}
     
-    {{ components.pageHeading(heading='Confirm vehicle and start test', extraClass='u-margin-top-15 u-margin-bottom-30') }}
-    
+    {{ components.pageHeading(heading='Confirm vehicle and start test', extraClass='u-margin-top-15 u-margin-bottom-30') }} 
+
     <div class="vehicle-info-banner grid-row">
         <div class="column-three-quarters">
   
@@ -73,6 +73,9 @@
   </table>
 
   <div class="panel panel-border-narrow u-margin-bottom-20">
+
+    {% components.dvsaBanner(mainText='This vehicle has testing advice', headingType='h1', secondaryText='', type, thin=false, contentMode=true) %}
+
 
      <h4 class="heading heading-small">This vehicle has testing advice</h4>
      <ul class="list list-bullet">

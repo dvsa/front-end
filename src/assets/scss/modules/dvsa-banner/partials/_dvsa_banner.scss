@@ -34,6 +34,10 @@
     padding: 8px;
   }
 
+  &--content {
+    text-align: left;
+  }
+
   // Elements
   &__heading {
     @include bold-24;

@@ -9,7 +9,7 @@ export class TextToSpeech {
       elements: [],
       current: {},
       targets: TEXT_TO_SPEECH_CONFIG.DOMTargets,
-      currentlyPlayed: {}
+      currentlyPlayed: {},
     };
 
     // Sets up the module
@@ -170,7 +170,7 @@ export class TextToSpeech {
 
       // Forces utterance to start
       this.state.current.utterance.onstart();
-    }
+    };
 
     // Returns utterance
     return utterance;

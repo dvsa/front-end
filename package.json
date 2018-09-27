@@ -24,7 +24,8 @@
   "author": "Tameem Safi <https://github.com/tameemsafi>",
   "contributors": [
     "Tameem Safi <https://github.com/tameemsafi>",
-    "James Nelson <j.nelson@kainos.com>"
+    "James Nelson <j.nelson@kainos.com>",
+    "Martin D Marriott <martind@kainos.com>"
   ],
   "license": "MIT",
   "engines": {

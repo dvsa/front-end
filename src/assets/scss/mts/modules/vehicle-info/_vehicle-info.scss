@@ -16,7 +16,7 @@
     } 
 
     &__logo { 
-        padding-left: 20px;
+        padding-left: 20px; 
         position: relative;
         @include media(desktop) {
             top: -12px;
@@ -32,3 +32,8 @@
     }
 
 }
+
+.vehicle-info-col {
+    @include grid-column(2 / 4);
+  }
+

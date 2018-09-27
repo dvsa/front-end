@@ -13,33 +13,28 @@ export const getPrevUrl = (req, res, next) => {
 };
 
 export const getInspection1 = (req, res) => {
-  console.log('here');
-  return res.render('prototypes/vsi-during-test/inspection/index', {viewData: req.session.viewData });
+  return res.render('prototypes/vsi-during-test/inspection/index', { viewData: req.session.viewData });
 };
 
 export const getInspection2 = (req, res) => {
-  console.log('here');
-  
-  return res.render('prototypes/vsi-during-test/inspection/inspection-2', {viewData: req.session.viewData });
+  return res.render('prototypes/vsi-during-test/inspection/inspection-2', { viewData: req.session.viewData });
 };
 
 export const getInspection3 = (req, res) => {
-  console.log('here');
-  
-  return res.render('prototypes/vsi-during-test/inspection/inspection-3', {viewData: req.session.viewData });
+  return res.render('prototypes/vsi-during-test/inspection/inspection-3', { viewData: req.session.viewData });
 };
 
 export const getInspection4 = (req, res) => {
-  console.log('here');
-  
-  return res.render('prototypes/vsi-during-test/inspection/inspection-4', {viewData: req.session.viewData });
+  return res.render('prototypes/vsi-during-test/inspection/inspection-4', { viewData: req.session.viewData });
 };
 
 export const getInspection5 = (req, res) => {
-  console.log('here');
-  
-  return res.render('prototypes/vsi-during-test/inspection/inspection-5', {viewData: req.session.viewData });
+  return res.render('prototypes/vsi-during-test/inspection/inspection-5', { viewData: req.session.viewData });
 };
+
+export const getSummary = (req,res) => {
+  return res.render('prototypes/vsi-during-test/summary/index',  { viewData: req.session.viewData })
+}
 
 /**
  * POST Middleware - Take inputted odometer reading and persist on inspection sheet #4

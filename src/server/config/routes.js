@@ -145,6 +145,7 @@ router.get('/prototypes/vsi-during-test/inspection/inspection-2', vsiDuringTestC
 router.get('/prototypes/vsi-during-test/inspection/inspection-3', vsiDuringTestController.getInspection3);
 router.get('/prototypes/vsi-during-test/inspection/inspection-4', vsiDuringTestController.getInspection4);
 router.get('/prototypes/vsi-during-test/inspection/inspection-5', vsiDuringTestController.getInspection5);
+router.get('/prototypes/vsi-during-test/summary', vsiDuringTestController.getSummary);
 router.get('/prototypes/vsi-during-test/inspection', [vsiDuringTestController.initViewData, vsiDuringTestController.getInspection1]);
 router.get('/prototypes/vsi-during-test/advice', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getAdvice]);
 router.get('/prototypes/vsi-during-test/odometer', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getOdometer]);

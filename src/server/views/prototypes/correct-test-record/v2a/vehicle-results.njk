@@ -1,0 +1,157 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<style>
+ .circle-table {
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-color: #B10E1E;
+    border-radius: 20%;
+    margin-right: 5px;
+    }  
+
+    .circle {
+    height: 25px;
+    width: 25px;
+    background-color: #B10E1E;
+    border-radius: 20%;
+    margin-right: 5px;
+    } 
+</style>
+
+<main id="content">
+
+        <div class="container">
+
+                            <div id="global-breadcrumb" class="header-context">
+    <nav>
+        <ol class="group">
+            <li id="breadcrumb-0"><a href="/prototypes/correct-test-record/v2a/home-page">Home</a></li>
+
+                            <li id="breadcrumb-1">
+                                            MOT testing                                    </li>
+                    </ol>
+    </nav>
+</div>
+
+    <header class="content-header">
+        <h1>
+            <span class="content-header__type">MOT testing</span>
+            <span class="content-header__title">Find a vehicle</span>
+        </h1>
+    </header>                   
+
+        <div class="row contents">
+            <div class="col-lg-12">
+                <div style="border-bottom: 1px solid #bfc1c3">
+                    <p id="main-message" class="result__group-heading" ><strong>1</strong> vehicle found with registration <strong>TH10CZR</strong> and a VIN matching <strong> GAULAGAAAAA495118</strong>.</p>
+                </div>
+            <div class="grid-row">
+                <div class="column-three-quarters">   
+            <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                <span class="heading-secondary">
+                    Vehicle    </span>
+                Peugeot 3008 SUV</h1>
+
+    
+        <div class="grid-row">
+            <div class="column-one-third" style="width:30%">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">Colour</span>
+                    <div class="circle"></div>
+
+                    Red                </h2>
+            </div>
+
+            <div class="column-one-third" style="width:37.5%">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">VIN</span>
+                    GAULAGAAAAA495118               </h2>
+            </div>
+
+            <div class="column-one-third" style="width:32.5%; float:right">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">Registration number</span>
+                    TH10 CZR               </h2>
+            </div>
+        </div>
+    </div>
+    <div class="column-one-quarter">
+                <img src="http://www.car-brand-names.com/wp-content/uploads/2015/05/Peugeot-logo.png" style="width:170px;height:150px; padding-top:50px;">
+            </div>
+</div>
+            
+
+                    <p style="margin-bottom:5px">5 tests, last tested 24 August 2018</p>
+
+                    <br>
+                    <div style="border-bottom: 1px solid #bfc1c3">
+                        <a class="button" href="/prototypes/correct-test-record/v2a/confirm-vehicle-details" role="button" style="margin-bottom:30px">
+                        Select vehicle</a>
+                    </div>
+
+    <details role="group" style="margin-top:15px;">
+        <summary aria-controls="details-content-1" tabindex="0" aria-expanded="false" role="button">
+            <span class="summary" id="search-again">Search again</span>
+        </summary>
+    <div class="panel-indent" id="details-content-1" aria-hidden="true">
+
+    <fieldset>
+        <div class="form-group" id="registration-field">
+            <label id="reg-label" for="reg-input" class="form-label">
+                Registration mark
+            </label>
+            <input type="text" name="registration" class="form-control is-reg" id="reg-input" style="width: 20ch" value="TH10CZR" maxlength="13">        </div>
+
+        <div class="form-group ">
+            <label id="vin-label" for="vin-input" class="form-label">
+                VIN
+                <span class="form-hint">Enter the last 6 digits or the full VIN</span>
+            </label>
+            <input type="text" name="vin" id="vin-input" class="form-control is-vin" style="width: 30ch" value=" GAULAGAAAAA495118" maxlength="20">        </div>
+
+        
+        <div class="form-group">
+            <a class="button" href="#" role="button">
+                        Select vehicle</a>
+        </div>
+    </fieldset>
+
+        </div>
+    </details>
+
+</form>
+    <nav class="content-navigation">
+        <ul class="content-navigation__secondary">
+            <li>
+                <a id="cancel_vehicle_search" href="/prototypes/correct-test-record/v2a/home-page">Cancel and return home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="message--important">
+        <p id="new-vehicle-record-info">
+            If you can't find a vehicle you can
+            <a id="new-vehicle-record-link" href="#">create a new vehicle record</a>.
+        </p>
+        <p>Check that you have searched with the correct VIN and registration mark before you do this.</p>
+    </div>
+                    </div>
+                </div>
+
+        </div>
+
+    </main>
+
+  
+{% endblock %}

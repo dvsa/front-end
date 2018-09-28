@@ -14,7 +14,16 @@
 
     {% call components.columnFull() %}
 
-   {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
+    <div class="vehicle-details-summary u-flex-row">
+      <div class="u-flex-col-half">
+          <p class="u-margin-0"><strong>VIN</strong> <span>GAULAGAAAAA11951</span></p> 
+      </div> 
+      <div class="u-flex-col-half">
+        <p class="u-margin-0"><strong>Registration number</strong> TH10 CZR</p>
+      </div>
+    </div>
+
+   {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='u-margin-bottom-15') }}
   
     <div class="text"> 
  

@@ -39,6 +39,11 @@
     background: $hero-colour;
   }
 
+  &--content {
+    text-align: left;
+    background: $hero-colour;
+  }
+
   // Elements
   &__heading {
     @include bold-24;

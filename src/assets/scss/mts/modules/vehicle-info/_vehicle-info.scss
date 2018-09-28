@@ -1,3 +1,7 @@
+.vehicle-details-summary {
+
+}
+
 .vehicle-info-banner {
   * {
     box-sizing: border-box;
@@ -66,8 +70,7 @@
   }
 
   &__detail {
-    font-size: 17px;
-
+    font-size: 17px; 
     @include media(desktop) {
       font-size: 21px;
     }

@@ -176,7 +176,7 @@
 }
 
 .browse--no-media-break {
-  @media screen and (min-width: 610px) {
+  @media screen and (min-width: 600px) {
     .browse--two {
       div[class^=browse__cats],
       div[class^=browse__cats]:last-child {

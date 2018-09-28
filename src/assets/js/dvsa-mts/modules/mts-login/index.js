@@ -42,10 +42,10 @@ export const initMtsLogin = () => {
 
       // carry out the paste with manipulated data to remove whitespace characters
       passwordField.value = pastedData
-        .replace('\n', '')
-        .replace('\v', '')
-        .replace('\f', '')
-        .replace('\r', '');
+        .replace(/\n/g, '')
+        .replace(/\v/g, '')
+        .replace(/\f/g, '')
+        .replace(/\r/g, '');
     }
   };
 

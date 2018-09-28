@@ -73,3 +73,8 @@
     }
   }
 }
+
+.vehicle-info-col {
+    @include grid-column(2 / 4);
+  }
+

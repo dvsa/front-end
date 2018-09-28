@@ -174,3 +174,31 @@
     }
   }
 }
+
+.browse--no-media-break {
+  @media screen and (min-width: 610px) {
+    .browse--two {
+      div[class^=browse__cats],
+      div[class^=browse__cats]:last-child {
+        display: block !important;
+        width: 49% !important;
+      }
+
+      .browse__list a {
+        padding-right: 15px;
+      }
+    }
+    .browse--three {
+      div[class^=browse__cats],
+      div[class^=browse__cats]:last-child {
+        display: block !important;
+        width: 33% !important;
+      }
+
+      .browse__list a {
+        padding-right: 20px;
+      }
+    }
+  }
+}
+   

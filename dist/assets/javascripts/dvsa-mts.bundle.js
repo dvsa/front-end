@@ -1,10 +1,10 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-mts
- *   Version: 1.2.31
+ *   Version: 1.2.32
  *   Author: Tameem Safi <https://github.com/tameemsafi>
  *   Contributors: Tameem Safi <https://github.com/tameemsafi>, James Nelson <j.nelson@kainos.com>, Martin D Marriott <martind@kainos.com>
- *   Timestamp: September 28th 2018, 12:09:23 pm
+ *   Timestamp: September 28th 2018, 2:23:28 pm
  *   Source: https://github.com/dvsa/front-end
  * 
  */

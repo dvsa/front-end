@@ -66,15 +66,9 @@
   }
 
   &__detail {
-    font-size: 17px;
-
+    font-size: 17px; 
     @include media(desktop) {
       font-size: 21px;
     }
   }
 }
-
-.vehicle-info-col {
-    @include grid-column(2 / 4);
-  }
-

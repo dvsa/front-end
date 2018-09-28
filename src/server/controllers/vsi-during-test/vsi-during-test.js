@@ -37,10 +37,6 @@ export const getSummary = (req, res) => {
   return res.render('prototypes/vsi-during-test/summary/index', { viewData: req.session.viewData });
 };
 
-export const getSummary = (req,res) => {
-  return res.render('prototypes/vsi-during-test/summary/index',  { viewData: req.session.viewData })
-}
-
 /**
  * POST Middleware - Take inputted odometer reading and persist on inspection sheet #4
  *

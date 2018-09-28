@@ -29,9 +29,14 @@
   &--content {
     margin-top: $gutter * 2;
   }
-
+  
   &--thin {
     padding: 8px;
+  }
+  
+  &--information {
+    text-align: left;
+    background: $hero-colour;
   }
 
   // Elements

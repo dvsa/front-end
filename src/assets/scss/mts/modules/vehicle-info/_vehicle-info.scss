@@ -1,11 +1,28 @@
 .vehicle-info-banner {
+
+    &__details {
+        margin-bottom: 20px;
+        
+        
+        .heading-medium, p {
+            font-size: 22px;
+            
+            @include media(desktop) {
+                //font-size: 22px;
+            }
+        }
+
+    }
+
     &__color {
         display: block;
         height: 30px;
-        width: 30px;
-        text-indent: 40px;
+        width: 50px;
+        text-indent: 58px;
         border-radius: 3px;
         position: relative;
+        line-height: 1.6;
+        font-weight: normal;
 
         &--red {
             background: firebrick;
@@ -16,7 +33,7 @@
     } 
 
     &__logo { 
-        padding-left: 20px;
+        padding-left: 20px; 
         position: relative;
         @include media(desktop) {
             top: -12px;
@@ -25,10 +42,12 @@
     }
 
     &__detail {
-        font-size: 14px;
+        font-size: 17px;
         @include media(desktop) {
-            font-size: 20px;
+            font-size: 21px;
         }
     }
+    
+   
 
 }

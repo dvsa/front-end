@@ -14,7 +14,16 @@
 
     {% call components.columnFull() %}
 
-   {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
+    <div class="vehicle-details-summary u-flex-row">
+      <div class="u-flex-col-half">
+          <p class="u-margin-0"><strong>VIN</strong> <span>GAULAGAAAAA11951</span></p> 
+      </div> 
+      <div class="u-flex-col-half">
+        <p class="u-margin-0"><strong>Registration number</strong> TH10 CZR</p>
+      </div>
+    </div>
+
+   {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='') }}
   
     <div class="text"> 
  
@@ -33,7 +42,7 @@
     <nav>
       <ul>
         <li class="u-margin-bottom-15"> 
-            <a class="button" id="back-button" href="{{ viewData.prevUrl }}">Back</a>  
+            <a class="button button--touch" id="back-button" href="{{ viewData.prevUrl }}">Back</a>  
         </li> 
         <li> 
           <a id="print-advice" target="_blank" href="javascript:window.open('./advice/print-advice', 'Testing advice')">Print testing advice</a>        

@@ -14,12 +14,18 @@
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
-
-    {{ components.dvsaBanner(secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>16 September 2018</strong>', type='confirmation', thin='true') }}
-
-    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='heading--no-margin') }}
-
     
+    <div class="vehicle-details-summary u-flex-row">
+      <div class="u-flex-col-half">
+          <p class="u-margin-0"><strong>VIN</strong> <span>GAULAGAAAAA11951</span></p> 
+      </div> 
+      <div class="u-flex-col-half">
+        <p class="u-margin-0"><strong>Registration number</strong> TH10 CZR</p>
+      </div>
+    </div>
+ 
+    {{ components.pageHeading(heading='Testing advice for this vehicle', extraClass='u-margin-top-15') }} 
+
     <div class="text">
         <h3 class="heading heading-medium">Special features</h3>
         <p>This vehicle may be fitted with an Electomechanical Parking Brake (EPB). The EPB on these models can be tested with the RBT rollers both for non-ATL (running singularly) or if using an ATL both together. Non-ATL - With rear wheels in rollers activate the EPB and test each wheel in turn. Record the maximum efforts. ATL - With both wheels in the rollers start the rollers and wait until the Park Brake Function light (P with a line through it) has illuminated (after approx 5-7 seconds), activate the EPB and record the efforts. Note: In this test mode the EPB is applied incrementally and it may require up to four operations of the switch to achieve maximum efforts. </p>
@@ -30,15 +36,18 @@
         <p>a) two wheel drive is engaged</p>
         <p><strong>and/or</strong></p>
         <p>b) it is a type you know can be roller brake tested without causing damage.</p> 
-    </div>
+    </div> 
 
-    
-    <nav>
-        <a class="button" id="vsi-continue" href="../inspection">Continue</a>    
-        <div class="u-margin-bottom-20 u-margin-top-15"> 
-          <a href="../">Cancel test</a>
-         </div>
-        <div>  
+    <nav class="content-navigation">
+        <ul class="list-unstyled content-navigation__split u-clearfix">
+            <li class="content-navigation__split--left"> 
+              <a class="button button--touch" id="vsi-continue" href="../test-started">Confirm and start test</a>     
+            </li>
+          <li class="content-navigation__split--right"> 
+              <a class="button button--alert button--touch" id="vsi-refuse-test" href="../">Refuse to test</a>    
+          </li> 
+        </ul>
+        <div class="u-margin-top-15">
           <a id="print-advice" target="_blank" href="javascript:window.open('./print-advice', 'Testing advice')">Print testing advice</a>        
         </div>
     </nav>

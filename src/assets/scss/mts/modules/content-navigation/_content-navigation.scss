@@ -31,28 +31,27 @@
   }
 
   &__split {
-    li {
-      display: inline;
-      float: left;
-      width: 50%;
-  
-      @include media(mobile) {
-        float: none;
-        display: block;
+    li { 
+      width: 100%;
+      list-style: none;
+      display: block; 
+      @include media(smallMobile) {  
+        display: inline;
+        width: auto;
       }
     }
 
     // The following allows for
     // left/right green/red split buttons
-    &--left {
-      text-align: left;
+    &--left { 
+      @include media(smallMobile) {  
+        float: left; 
+      }
     }
 
-    &--right {
-      text-align: right;
-  
-      @include media(mobile) {
-        text-align: left;
+    &--right {  
+      @include media(smallMobile) {
+        float: right;
       }
   
       .button {

@@ -16,11 +16,11 @@
 
     {{ components.dvsaBanner(type='confirmation', secondaryText='MOT test started for <strong>Peugeot 3008 SUV</strong> on <strong>14th September 2018, 9:30am</strong>') }}
  
-    <div class="grid-row">
-      <div class="column-one-half vehicle-info-banner__details">
+    <div class="vehicle-details-summary u-flex-row">
+      <div class="u-flex-col-half">
           <p class="u-margin-0"><strong>VIN</strong> <span>GAULAGAAAAA11951</span></p> 
       </div> 
-      <div class="column-one-half vehicle-info-banner__details"> 
+      <div class="u-flex-col-half">
         <p class="u-margin-0"><strong>Registration number</strong> TH10 CZR</p>
       </div>
     </div>
@@ -53,6 +53,13 @@
     </table>
 
     <h2 class="heading heading--medium heading-medium">Vehicle inspection</h2>
+
+    <div class="search-bar__control-group u-margin-bottom-30">
+        <form action="/prototypes/vsi-during-text/inspection/inspection-2" method="POST">
+          <input class="search-bar__search-input" type="search" placeholder="Search for a defect" title="Search" id="search-main" name="search">
+          <input class="search-bar__search-submit" type="submit" value="Search">
+        </form>
+    </div>
 
     <table class="task-list u-margin-top-5">
       <tbody>
@@ -135,14 +142,14 @@
     </table>
 
     <form class="content-navigation" action="/prototypes/vsi-during-text/interior-checks/interior-checks-1" method="get" data-form-state-index="0">
-      <div class="content-navigation__split">
-        <div class="content-navigation__split--left u-float-left">
-          <input id="reviewTest" type="submit" class="button" value="Review test" disabled="disabled">
-        </div>
-        <div class="content-navigation__split--right u-float-right">
-          <a class="button button--alert" id="refuse-to-test" href="/prototypes">Cancel test</a>
-        </div>
-      </div>
+      <ul class="list-unstyled content-navigation__split u-clearfix">
+        <li class="content-navigation__split--left u-float-left">
+          <input id="reviewTest" type="submit" class="button button--touch" value="Review test" disabled="disabled">
+        </li>
+        <li class="content-navigation__split--right u-float-right">
+          <a class="button button--alert button--touch" id="refuse-to-test" href="/prototypes">Cancel test</a>
+        </li>
+      </ul>
     </form>
 
     {% endcall %}

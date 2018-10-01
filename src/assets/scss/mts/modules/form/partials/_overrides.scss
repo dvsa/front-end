@@ -8,9 +8,8 @@
 }
 
 .password-field {
-  -webkit-text-security: disc; 
+  -webkit-text-security: disc;
   resize: none;
-  white-space: nowrap;
   font-family: $passwordFont;
   font-size: 14px;
   letter-spacing: 3px;

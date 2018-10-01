@@ -33,10 +33,10 @@
 }
 
 @font-face {
-  font-family: 'dotsfont';
-  src: url('#{$fonts-dir}dotsfont.eot');
-  src: url('#{$fonts-dir}dotsfont.eot?#iefix') format('embedded-opentype'),
-       url('#{$fonts-dir}dotsfont.woff') format('woff'),
-       url('#{$fonts-dir}dotsfont.ttf') format('truetype'),
-       url('#{$fonts-dir}dotsfont.svg#dotsfontregular') format('svg');
+  font-family: 'text-security-disc';
+  src: url('#{$fonts-dir}text-security-disc.eot');
+  src: url('#{$fonts-dir}text-security-disc.eot?#iefix') format('embedded-opentype'),
+  url('#{$fonts-dir}text-security-disc.woff') format('woff'),
+  url('#{$fonts-dir}text-security-disc.ttf') format('truetype'),
+  url('#{$fonts-dir}text-security-disc.svg#text-security') format('svg');
 }

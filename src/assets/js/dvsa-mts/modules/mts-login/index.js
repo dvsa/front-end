@@ -57,4 +57,18 @@ export const initMtsLogin = () => {
 
   // Prevents copying (including via shortcut) to clipboard from password field
   passwordField.oncut = event => false;
+
+  passwordField.onfocus = event => {
+    if (passwordField.value === '') {
+      passwordField.style.color = '#FFF';
+    }
+  };
+
+  passwordField.onkeyup = event => {
+    if (passwordField.value === '') {
+      passwordField.style.color = '#FFF';
+    } else {
+      passwordField.style.color = '#000';
+    }
+  };
 };

@@ -13,46 +13,40 @@
 
     {% call components.columnFull() %}
     
-    {{ components.pageHeading(heading='Confirm vehicle and start test', extraClass='u-margin-top-15 u-margin-bottom-30') }}
-    
+    {{ components.pageHeading(heading='Confirm vehicle and start test', extraClass='u-margin-top-15 u-margin-bottom-30') }} 
+
     <div class="vehicle-info-banner grid-row">
-        <div class="column-three-quarters">
-  
-            <h2 class="heading-medium heading--no-margin-top">
-              <span class="heading__secondary">Vehicle</span> Peugeot 3008 SUV
-            </h2>
-  
-            <div class="grid-row">
-              <div class="column-one-third">
-                  <h3 class="heading heading-small heading--no-margin vehicle-info-banner__detail">
-                      <span class="heading__secondary">Color</span> 
-                      <span class="vehicle-info-banner__color vehicle-info-banner__color--blue">Blue</span> 
-                    </h3> 
-              </div>
-          
-              <div class="column-one-third">
-                <h3 class="heading heading-small heading--no-margin u-text-break vehicle-info-banner__detail">
-                  <span class="heading__secondary">VIN</span> GAULAGAAAAA11951
-                </h3>
-              </div>
-          
-              <div class="column-one-third">
-                <h3 class="heading heading-small heading--no-margin vehicle-info-banner__detail">
-                  <span class="heading__secondary">Registration number</span> TH10 CZR
-                </h3>
-              </div>
+      <div class="vehicle-info-banner__details-wrapper">
+          <div class="grid-row">
+            <div class="vehicle-info-banner__details">
+                <h4 class="heading-medium u-margin-0">Vehicle</h4>
+                <p class="u-margin-bottom-15">Peugeot 3008 SUV</p> 
+              
+                <h4 class="heading-medium u-margin-0">Color</h4>
+                <span class="vehicle-info-banner__color vehicle-info-banner__color--blue">Blue</span>  
             </div>
-            
-        </div> 
-        <div class="column-one-quarter vehicle-info-banner__logo"> 
-            <img src="http://www.car-logos.org/wp-content/uploads/2011/09/peug.png" class="img-fluid">
-        </div>
-      </div>      
+        
+            <div class="vehicle-info-banner__details">
+                <h4 class="heading-medium u-margin-0">VIN</h4>
+                <p class="u-margin-bottom-15">GAULAGAAAAA11951</p> 
+              
+                <h4 class="heading-medium u-margin-0">Registration number</h4>
+                <p class="u-margin-0">
+                  TH10 CZR
+                </p> 
+            </div>
+          </div>
+          
+      </div> 
+      <div class="vehicle-info-banner__logo-wrapper"> 
+          <img src="https://upload.wikimedia.org/wikipedia/en/8/88/Peugeot_Logo.png" alt="Peugeot" class="img-fluid">
+      </div>
+    </div>  
+
     <div class="text">
       <p>Check that you have the right vehicle before starting the test</p>
     </div>
  
-
   <h4 class="heading heading--small heading-small">
       Vehicle Specification
   </h4>
@@ -70,19 +64,8 @@
         </tr>
     </tbody>
 
-  </table>
-
-  <div class="panel panel-border-narrow u-margin-bottom-20">
-
-     <h4 class="heading heading-small">This vehicle has testing advice</h4>
-     <ul class="list list-bullet">
-       <li>Roller brake test</li>
-       <li>Special features</li>
-       <li>Engine warning light</li>
-     </ul>
-     <p><strong><a href="./advice">See advice for carrying out an MOT test on the vehicle</a></strong></p>
-     
-  </div>
+  </table> 
+ 
 
 
   <h4 class="heading heading--small heading-small u-margin-top-30">
@@ -120,15 +103,8 @@
   
     </table>
 
-    <nav class="content-navigation">
-      <ul class="list-unstyled content-navigation__split u-clearfix">
-          <li class="content-navigation__split--left"> 
-            <a class="button" id="confirm-start-test" href="/prototypes/vsi-during-test/test-started">Confirm and start test</a>        
-          </li>
-          <li class="content-navigation__split--right">
-            <a class="button button--alert" id="refuse-to-test" href="/prototypes">Refuse to test</a>
-          </li> 
-        </ul>
+
+        <a class="button button--touch" id="confirm-start-test" href="/prototypes/vsi-during-test/advice/advice-sheet">Confirm and continue</a>
 
         <div class="content-navigation__secondary u-margin-top-10"> 
           <a href="/prototypes">Cancel and return to find a vehicle</a>

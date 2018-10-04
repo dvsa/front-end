@@ -178,7 +178,7 @@
             <div class="form-group">
               <label for="parkingBrakeNumberOfAxles">
               </label>
-              <select id="parkingBrakeNumberOfAxles" name="parkingBrakeNumberOfAxles" class="form-control   ">
+              <select id="parkingBrakeNumberOfAxles" name="parkingBrakeNumberOfAxles" class="form-control">
                 <option id="parkingBrakeNumberOfAxles_1" value="1" selected>1 axles</option>
                 <option id="parkingBrakeNumberOfAxles_2" value="2">2 axles</option>
               </select>
@@ -186,11 +186,13 @@
           </div> 
       </div>
 
+      <div class="u-margin-bottom-15 u-margin-top-25">
         {% include './partials/form-submit-button.njk' %}
+      </div>
 
       {%- endcall %}
 
-      {{ components.link(text='Cancel', url='/prototypes/vsi-during-test/inspection/inspection-4') }}
+      {{ components.link(text='Cancel and return to MOT inspection', url='/prototypes/vsi-during-test/inspection/inspection-3') }}
 
     {%- endcall %}
 

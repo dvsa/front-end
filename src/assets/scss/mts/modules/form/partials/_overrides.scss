@@ -19,7 +19,12 @@
 .password-field:-ms-input-placeholder {
   color: #FFF
 }
+
 .password-field::-webkit-input-placeholder {
+   color: #FFF
+ }
+
+.password-field::-moz-placeholder {
   color: #FFF
 }
 

@@ -1,0 +1,51 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Message notifications' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Default',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+
+  <div class="column-half">
+
+      <section id="special-notice-list"> 
+
+      <a class="message-notification message-notification--high-priority" href="/prototypes/messages/inbox">
+        <h3 class="row">
+          <span class="message-notification__message-type-count">1</span>
+          <span class="message-notification__message-type-title">special notices</span>
+          <span class="message-notification__message-type-info">5 days to acknowledge</span>
+        </h3>
+      </a>
+
+      <a class="message-notification" href="/prototypes/messages/inbox"> 
+        <h3 class="row">
+          <span class="message-notification__message-type-count">2</span>
+          <span class="message-notification__message-type-title">role nominations</span>
+          <span class="message-notification__message-type-info">waiting to be accepted or rejected</span>
+        </h3>
+      </a>
+
+      <a class="message-notification" href="/prototypes/messages/inbox"> 
+        <h3 class="row">
+          <span class="message-notification__message-type-count">3</span>
+          <span class="message-notification__message-type-title">further notifications</span>
+          <span class="message-notification__message-type-info">waiting to be read</span>
+        </h3>
+      </a>
+        
+      </section>
+   
+
+  </div>
+
+  {%- endcall %}
+
+
+{% endblock %}

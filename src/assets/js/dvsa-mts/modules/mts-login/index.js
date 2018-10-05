@@ -47,6 +47,14 @@ export const initMtsLogin = () => {
         .replace(/\f/g, '')
         .replace(/\r/g, '');
     }
+
+    //Change the font colour of the field depending on whether the field has a value
+    // (IE and Edge will show an extra dotfont symbol when the field is empty)
+    if (passwordField.value === '') {
+      passwordField.style.color = '#FFF';
+    } else {
+      passwordField.style.color = '#000';
+    }
   };
 
   // Prevents drag interaction to another field from passwordField
@@ -64,6 +72,8 @@ export const initMtsLogin = () => {
     }
   };
 
+  //Change the font colour of the field depending on whether the field has a value
+  // (IE and Edge will show an extra dotfont symbol when the field is empty)
   passwordField.onkeyup = event => {
     if (passwordField.value === '') {
       passwordField.style.color = '#FFF';

@@ -1,0 +1,69 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Activity' %}
+
+{% block content %}
+
+{{ viewData.activity.formData.activityPerformedDropdown }}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="#">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/VE-view-VTS-overview">
+        DILENA GROUP
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/choose-section">Record a site review</a>
+    </li>
+    <li>
+      Activity
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  Activity
+</h1>
+
+<form method='POST' action="/prototypes/site-review/v5/assessment-activity">
+  <div class="form-group">
+    <fieldset>
+      <legend>
+        <span class='form-label-bold'>Did you perform an activity?</span>
+      </legend>
+
+      <div class="multiple-choice" data-target="advice-given-panel">
+        <input id="activity-yes" type="radio" name="radio-activity" value="yes">
+        <label for="activity-yes">Yes</label>
+      </div>
+
+      <div class="multiple-choice" data-target="activity-blocked-panel">
+        <input id="activity-no" type="radio" name="radio-activity" value="no">
+        <label for="activity-no">No</label>
+      </div>
+      
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="form-group u-margin-bottom-15">
+      <input class="button" type="submit" value="Save and return">
+  </div>
+  <div class="form-group">
+      <a href="choose-section">Back</a>
+  </div>
+
+</form>
+{% endblock %}

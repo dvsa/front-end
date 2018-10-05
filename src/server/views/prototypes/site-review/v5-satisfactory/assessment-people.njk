@@ -1,0 +1,99 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Compliance' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="#">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/VE-view-VTS-overview">
+        DILENA GROUP
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/choose-section">Record a site review</a>
+    </li>
+    <li>
+      People
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  People
+</h1>
+
+<form action="choose-section-premises-done">
+  <div class="form-group ">
+
+    <fieldset>
+      <legend>
+        <span class='form-label-bold'>Record the people review outcome</span>
+      </legend>
+
+
+      <div class="multiple-choice" data-target="satisfactory-comment-panel">
+        <input id="example-multiple-satisfactory" type="radio" name="radio-assessment-group" value="Satisfactory">
+        <label for="example-multiple-satisfactory">Satisfactory</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="satisfactory-comment-panel">
+        <div>
+          <label class="form-label" for="satisfactory-textarea">Comment (optional)</label>
+          <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="multiple-choice" data-target="improve-advice-panel">
+        <input id="example-multiple-improve" type="radio" name="radio-assessment-group" value="Improve" >
+        <label for="example-multiple-improve">Improve</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="improve-advice-panel">
+        <div>
+          <label class="form-label" for="improve-textarea">Actions required</label>
+          <textarea class="form-control" name="improve-textarea" id="improve-textarea" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="multiple-choice" data-target="unsatisfactory-advice-panel">
+        <input id="example-multiple-unsatisfactory" type="radio" name="radio-assessment-group" value="Unsatisfactory">
+        <label for="example-multiple-unsatisfactory">Unsatisfactory</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="unsatisfactory-advice-panel">
+        <div>
+          <label class="form-label" for="unsatisfactory-advice-textarea">Actions required</label>
+          <textarea class="form-control" name="unsatisfactory-advice-textarea" id="unsatisfactory-advice-textarea" rows="5"></textarea>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <details class="u-margin-bottom-10">
+    <summary><span class="summary">People guidance</span></summary>
+      <div class="panel panel-border-narrow">
+        <p>The AE has a stable and well trained work force. New recruits are vetted and undergo an appropriate introductory regime and supervision.</p>
+        <p>All mandatory training requirements are managed and systems are in place to ensure standards in testing and customer service is maintained.</p>
+        <p>There are appropriate policies in place to encourage integrity in operation and support to MOT staff.</p>
+    </div>
+  </details>
+
+  <div class="form-group u-margin-bottom-15">
+    <input class="button" type="submit" value="Save and return"/>
+  </div>
+  <div class="form-group">
+    <a href="choose-section">Back</a>
+  </div>
+
+</form>
+{% endblock %}

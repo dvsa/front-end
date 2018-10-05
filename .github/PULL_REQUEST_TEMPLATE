@@ -2,17 +2,19 @@
 
 ***
 
-**Before submitting a PR, ensure** - 
+**Before submitting a PR for PRODUCTION in MTS, ensure ** - 
 
-- [ ] All Styleguide components remain functional.
-- [ ] CSS updates did not unwillingly affect styleguide components. 
-- [ ] Unnecessary console logs are removed.
-- [ ] Unnecessary white space is removed.
-- [ ] Code has been indented correctly.
+- [ ] This solution is documented and approved against ACs in the Jira ticket.
+- [ ] Your changes are browser tested. Please update details in the Jira ticket.
+- [ ] Branch name include Jira ticket ref.
+- [ ] `npm run start-dev` runs successfully with changes.
+
+** Style **
+- [ ] CSS updates will not unwillingly affect other components - please mention if they may so we can test.
+- [ ] Console logs are removed.
+- [ ] Code has been indented for readability.
 - [ ] You haven't added inline styles.
 - [ ] You haven't added inline JavaScript.
-- [ ] Your changes (if any significant) have been cross browser tested.
-- [ ] Another FED has reviewed.
 
 * Mark done with an 'X' *
 

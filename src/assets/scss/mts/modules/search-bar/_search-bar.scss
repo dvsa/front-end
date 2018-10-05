@@ -8,26 +8,33 @@
     display: block;
   }
 
+
+
   &__control-group {
     @include box-sizing(border-box);
-    display: inline-block;
-    padding-right: 203px;
+    display: inline-block; 
     position: relative;
-    width: 100%;
-    
-    @include media(775px) {
-      max-width: 75%;
+    width: 100%; 
+
+    &--three-quarters {
+      @include media(775px) {
+        max-width: 75%;
+      }
     }
+    
   }
+
+ 
 
   &__search-input {
     @include box-sizing(border-box);
     @include border-radius(0);
     line-height: $search-line-height;
     padding: $search-padding;
-    height: 40px;
+    height: 42px;
     background-color: $white;
-    width: 100%;
+    width: 75%;
+    width: calc(100% - 204px); 
     border: 1px solid $border-colour;
     // Grrr, damn your specificity alphaGov!
     &[type='search'] {
@@ -47,16 +54,10 @@
 
   &__search-submit {
     @include button();
-    font-weight: 700;
-    line-height: $search-line-height;
-    padding: $search-padding;
+    font-weight: 700;  
     height: 40px;
-    margin: 0;
-    vertical-align: top;
+    margin: 0; 
     width: 200px;
-    position: absolute;
-    top: 0;
-    right: 0;
   }
 
   &__secondary-action {

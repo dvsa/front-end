@@ -28,10 +28,14 @@
     box-shadow: 0 2px 0 $grey-1;
     padding: .2em .52em;
     margin: 0;
-  }
+  } 
 
   &--right {
     margin-right: 0;
+  } 
+
+  &--touch {   
+    padding: em(10) em(41);
   }
 
   &--on-blue {
@@ -52,6 +56,7 @@
       background-image: file-url('icons/icon-pointer-2x.png');
     }
   }
+
 }
 
 .button-warning {

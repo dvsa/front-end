@@ -1,0 +1,70 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Activity' %}
+
+{% block content %}
+
+{{ viewData.activity.formData.activityPerformedDropdown }}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="#">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/VE-view-VTS-overview">
+        DILENA GROUP
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/choose-section">Record a site review</a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/assessment-activity">Activity</a>
+    </li>
+    <li>
+      Why didn't you complete the activity
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  Why didn't you complete an activity?
+</h1>
+
+<form action="summary">
+  <div class='form-group'>
+   <label class='form-label' for='reason-options'>Select a reason</label>
+    <select class="form-control" id="reason-options" name="reason-options">
+    <option value="0">Please select</option>
+    <option value="1">It wasn't necessary</option>
+    <option value="2">Blocked by pseudo customer</option>
+    <option value="3">Blocked by vehicle owner</option>
+    <option value="4">I felt under threat from the garage staff</option>
+    <option value="5">Other</option>
+    </select>
+</div>
+
+<div class='form-group'>
+    <label class='form-label' for='activity-unperformed-comment'>Comment on reason of not doing the activity</label>
+    <textarea class="form-control" name="activity-unperformed-comment" id="activity-unperformed-comment" rows="5"></textarea>
+</div>
+ 
+
+  <div class="form-group u-margin-bottom-15">
+      <input class="button" type="submit" value="Save and continue">
+  </div>
+  <div class="form-group">
+      <a href="choose-section">Back</a>
+  </div>
+
+</form>
+{% endblock %}

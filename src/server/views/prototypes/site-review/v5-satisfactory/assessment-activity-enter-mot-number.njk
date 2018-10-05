@@ -1,0 +1,100 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Activity' %}
+
+{% block content %}
+
+{{ viewData.activity.formData.activityPerformedDropdown }}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="#">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        WILLETTA AREDONDO
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/VE-view-VTS-overview">
+        DILENA GROUP
+      </a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/choose-section">Record a site review</a>
+    </li>
+    <li>
+      <a href="/prototypes/site-review/v5/assessment-activity">Activity</a>
+    </li>
+    <li>
+      Details of the activity
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Activity</span>
+  Details of the activity
+</h1>
+
+<form action="summary">
+  <div class="form-group">
+    <fieldset>
+      <div style="margin-bottom: 10px;">
+
+        <label class="form-label-bold" for="test-number">
+          MOT test number 
+        </label>
+        <input class="form-control" id="test-number" type="text" name="test-number" pattern="[0-9]*" value="">
+      </div> 
+    </div>
+
+      <span class='form-label-bold'>Record the people review outcome</span>
+      <div class="multiple-choice" data-target="satisfactory-comment-panel">
+        <input id="example-multiple-satisfactory" type="radio" name="radio-assessment-group" value="Satisfactory">
+        <label for="example-multiple-satisfactory">Satisfactory</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="satisfactory-comment-panel">
+        <div>
+          <label class="form-label" for="satisfactory-textarea">Comment (optional)</label>
+          <textarea class="form-control" name="satisfactory-textarea" id="satisfactory-textarea" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="multiple-choice" data-target="improve-advice-panel">
+        <input id="example-multiple-improve" type="radio" name="radio-assessment-group" value="Improve" >
+        <label for="example-multiple-improve">Improve</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="improve-advice-panel">
+        <div>
+          <label class="form-label" for="improve-textarea">Actions required</label>
+          <textarea class="form-control" name="improve-textarea" id="improve-textarea" rows="5"></textarea>
+        </div>
+      </div>
+
+      <div class="multiple-choice" data-target="unsatisfactory-advice-panel"  style="margin-bottom: 40px;">
+        <input id="example-multiple-unsatisfactory" type="radio" name="radio-assessment-group" value="Unsatisfactory">
+        <label for="example-multiple-unsatisfactory">Unsatisfactory</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="unsatisfactory-advice-panel">
+        <div>
+          <label class="form-label" for="unsatisfactory-advice-textarea">Actions required</label>
+          <textarea class="form-control" name="unsatisfactory-advice-textarea" id="unsatisfactory-advice-textarea" rows="5"></textarea>
+        </div>
+      </div>
+    </div>
+    </fieldset>
+  </div>
+
+  <div class="form-group u-margin-bottom-15">
+      <input class="button" type="submit" value="Save and continue">
+  </div>
+  <div class="form-group">
+      <a href="choose-section">Back</a>
+  </div>
+
+</form>
+{% endblock %}

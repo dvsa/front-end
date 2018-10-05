@@ -1,34 +1,78 @@
+.vehicle-details-summary {
+
+}
+
 .vehicle-info-banner {
-    &__color {
-        display: block;
-        height: 30px;
-        width: 30px;
-        text-indent: 40px;
-        border-radius: 3px;
-        position: relative;
+  * {
+    box-sizing: border-box;
+  }
 
-        &--red {
-            background: firebrick;
-        }
-        &--blue {
-            background: navy;
-        }
-    } 
+  &__details-wrapper,
+  &__logo-wrapper,
+  &__details {
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
-    &__logo { 
-        padding-left: 20px;
-        position: relative;
-        @include media(desktop) {
-            top: -12px;
-            padding: 32px;
-        }
+  &__details-wrapper {
+    width: 100%;
+
+    @media screen and (min-width: 600px) {
+      width: 75%;
     }
+  }
 
-    &__detail {
-        font-size: 14px;
-        @include media(desktop) {
-            font-size: 20px;
-        }
+  &__logo-wrapper {
+    display: none;
+
+    @media screen and (min-width: 600px) {
+      display: block;
+      width: 25%;
     }
+  }
 
+  &__details {
+    width: 49%;
+    margin-bottom: 20px;
+        
+    .heading-medium, p {
+      font-size: 22px;    
+    }
+  }
+
+  &__color {
+    display: block;
+    height: 30px;
+    width: 50px;
+    text-indent: 58px;
+    border-radius: 3px;
+    position: relative;
+    line-height: 1.6;
+    font-weight: normal;
+
+    &--red {
+      background: firebrick;
+    }
+    &--blue {
+      background: navy;
+    }
+  } 
+
+  &__logo { 
+    padding-left: 20px; 
+    position: relative;
+
+    @include media(desktop) {
+      top: -12px;
+      padding: 32px;
+    }
+  }
+
+  &__detail {
+    font-size: 17px; 
+    @include media(desktop) {
+      font-size: 21px;
+    }
+  }
 }

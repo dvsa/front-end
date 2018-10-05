@@ -1,0 +1,38 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'VT59 question' %}
+
+{% block content %}
+
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span>
+  VT59
+</h1>
+
+          <h4 class="heading-medium">Did you issue a VTS Advisory Form  (VT59)?</h4>
+          <form action="summary">
+          <div class="form-group">
+            <fieldset>
+                <div class="multiple-choice">
+                    <input id="r-radio-1" name="radio-inline-group1" type="radio" value="Yes"> <label for="r-radio-1">Yes</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="r-radio-2" name="radio-inline-group1" type="radio" value="No"> <label for="r-radio-2">No</label>
+                </div>
+            </fieldset>
+          </div>
+        </div>
+
+      
+
+<div class="u-margin-bottom-20">
+    <input class="button" type="submit" value="Continue">
+</div>
+<div class="form-group"> 
+  <a href="choose-section-premises-done">Back</a>
+</div> 
+
+</form>
+{% endblock %}

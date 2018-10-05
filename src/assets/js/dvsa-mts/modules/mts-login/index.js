@@ -3,7 +3,7 @@ export const initMtsLogin = () => {
 
   //Change the font colour of the field depending on whether the field has a value to hide font
   //This is because IE and Edge will show an extra whitespace character (which shows up with font applied) when the field is empty
-  let setFontColour = function() {
+  const setFontColour = () => {
     if (passwordField.value === '') {
       passwordField.style.color = '#FFF';
     } else {

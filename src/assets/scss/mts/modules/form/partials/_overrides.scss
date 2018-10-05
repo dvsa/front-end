@@ -8,13 +8,24 @@
 }
 
 .password-field {
-  -webkit-text-security: disc; 
+  caret-color: black;
   resize: none;
-  white-space: nowrap;
   font-family: $passwordFont;
   font-size: 14px;
   letter-spacing: 3px;
   overflow: hidden;
+}
+
+.password-field:-ms-input-placeholder {
+  color: #FFF
+}
+
+.password-field::-webkit-input-placeholder {
+   color: #FFF
+ }
+
+.password-field::-moz-placeholder {
+  color: #FFF
 }
 
 // Negates the need for the ".form-group-compound" modifier

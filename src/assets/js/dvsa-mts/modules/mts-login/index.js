@@ -1,6 +1,16 @@
 export const initMtsLogin = () => {
   const passwordField = document.querySelector('.js-password-behaviour');
 
+  //Change the font colour of the field depending on whether the field has a value to hide font
+  //This is because IE and Edge will show an extra whitespace character (which shows up with font applied) when the field is empty
+  let setFontColour = function() {
+    if (passwordField.value === '') {
+      passwordField.style.color = '#FFF';
+    } else {
+      passwordField.style.color = '#000';
+    }
+  };
+
   if (!passwordField) return;
 
   //Submit form when enter is pressed
@@ -48,13 +58,8 @@ export const initMtsLogin = () => {
         .replace(/\r/g, '');
     }
 
-    //Change the font colour of the field depending on whether the field has a value
-    // (IE and Edge will show an extra dotfont symbol when the field is empty)
-    if (passwordField.value === '') {
-      passwordField.style.color = '#FFF';
-    } else {
-      passwordField.style.color = '#000';
-    }
+    //Set the font colour based on the value of the field after pasting
+    setFontColour();
   };
 
   // Prevents drag interaction to another field from passwordField
@@ -66,19 +71,13 @@ export const initMtsLogin = () => {
   // Prevents copying (including via shortcut) to clipboard from password field
   passwordField.oncut = event => false;
 
+  //On IE, a whitespace character will show up when the field is focused with the font applied. This is to hide that
   passwordField.onfocus = event => {
-    if (passwordField.value === '') {
-      passwordField.style.color = '#FFF';
-    }
+    setFontColour();
   };
 
-  //Change the font colour of the field depending on whether the field has a value
-  // (IE and Edge will show an extra dotfont symbol when the field is empty)
+  //Set the required font colour after each character input
   passwordField.onkeyup = event => {
-    if (passwordField.value === '') {
-      passwordField.style.color = '#FFF';
-    } else {
-      passwordField.style.color = '#000';
-    }
+    setFontColour();
   };
 };

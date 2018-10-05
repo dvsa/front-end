@@ -2,7 +2,7 @@
 
 ***
 
-**Before submitting a PR for production MTS code, ensure ** - 
+**Before submitting a PR for PRODUCTION in MTS, ensure ** - 
 
 - [ ] This solution is documented and approved against ACs in the Jira ticket.
 - [ ] Your changes are browser tested. Please update details in the Jira ticket.

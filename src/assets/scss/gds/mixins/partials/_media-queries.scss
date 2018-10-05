@@ -21,6 +21,7 @@
 //     }
 //   }
 
+$mobile-breakpoint: 550px !default;
 $tablet-breakpoint: 641px !default;
 $desktop-breakpoint: 769px !default;
 
@@ -41,6 +42,10 @@ $desktop-breakpoint: 769px !default;
   } @else if $size == tablet {
     @media (min-width: $tablet-breakpoint){
       @content;
+    }
+  } @else if $size == smallMobile {
+      @media (min-width: $mobile-breakpoint){
+        @content;
     }
   } @else if $size == mobile {
     @media (max-width: $tablet-breakpoint - 1px){

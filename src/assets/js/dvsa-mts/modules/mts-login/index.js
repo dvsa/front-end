@@ -77,7 +77,7 @@ export const initMtsLogin = () => {
   };
 
   //Set the required font colour after each character input
-  passwordField.onkeyup = event => {
+  passwordField.oninput = event => {
     setFontColour();
   };
 };

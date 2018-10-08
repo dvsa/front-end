@@ -1,0 +1,174 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+
+        <h1><span class="content-header__title">MOT test results</span></h1>
+
+      </header>
+
+      <header class='content-header'>
+
+        <ul class='content-header__tertiary-list u-margin-bottom-35'>
+
+          <li class='content-header__list-item--primary'>Peugeot 3008 SUV</li>
+
+          <li class='content-header__list-item'>TH10 CZR</li>
+
+          <li class='content-header__list-item'>First used 29 September 2010</li>
+
+        </ul>
+
+      </header>
+      
+      <div class='text u-clearfix'>
+        
+        <p><a href='#'>Print the MOT inspection sheet</a> for this test.</p>
+
+        <p>See <a href='#'>testing advice</a> for this vechicle.</p>
+
+      </div>
+
+      <div class='u-margin-bottom-30'>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Odometer</h3>
+
+            </div>
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__value">44,000 miles</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Edit reading', url='#') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Defects</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Add a defect', url='#') }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="defect-summary">
+            <div id="rfrList" class="">
+        
+                <h3 class="defect-summary__heading">
+                    <span class="badge  badge--plain  js-numberOfAdvisories">1</span>
+                    <span class="defect-summary__heading-type">Advisories</span>
+                </h3>
+                <ol>
+                    <li class="js-rfrItem defect ">
+            <div>
+
+                 <h4 class="defect__title">Tyre has a cut but not deep enough to reach the ply or cords</h4>
+                    <p class="defect__meta"></p>
+                <h5 class="visuallyhidden">Position</h5>
+                    <ul class="defect__positions">
+                        <li>Lateral: <span class="defect__property-list-value">Nearside</span></li>
+                        <li>Longitudinal: <span class="defect__property-list-value">Front</span></li>
+                        <li>Vertical: <span class="defect__property-list-value">n/a</span></li>
+                    </ul>
+                </div>
+
+                <h5 class="visuallyhidden">Actions</h5>
+                    <ul class="defect__edit">
+                        <li> <a href="#" class="">Edit</a></li>
+                        <li>or <a href="#" class="">Remove</a></li>
+                    </ul>
+                </li>
+                </ol>
+             </div>
+        </div>
+
+        <div class="action-panel">
+
+          <div class="clear-float">
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__heading">Brake test</h3>
+
+            </div>
+
+            <div class="action-panel__container">
+
+              <h3 class="action-panel__value">Passed</h3>
+
+            </div>
+
+            <div class="action-panel__container--last">
+
+              {{ components.button(text='Edit brake tests', url='#') }}
+                <span class="action-panel__secondary-action">or
+                    <a href="#">
+                        view brake test results</a>
+                </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <form action="/prototypes/correct-test-record/v1a/review-test" method="GET">
+
+        {% if viewData.comment %}
+
+          {{ components.button(text='Review test') }}
+
+        {% else %}
+
+          {{ components.button(text='Review test') }}
+
+        {% endif %}
+
+      </form>
+
+      {{ components.link(text='Cancel test', url='#', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

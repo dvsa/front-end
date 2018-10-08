@@ -1,0 +1,50 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+
+<main id="content">
+
+   
+    <div class="container">
+            <div id="global-breadcrumb" class="header-context">
+            <nav>
+                <ol class="group">
+                    <li id="breadcrumb-0"><a href="/prototypes/correct-test-record/v1a/home-page">Home</a></li>
+                    <li id="breadcrumb-1">MOT testing</li>
+                </ol>
+            </nav>
+            </div>
+            
+            <div class="dvsa-banner dvsa-banner--confirmation dvsa-banner dvsa-banner--confirm ">
+                <h1 class="dvsa-banner__heading-large">MOT test started</h1>
+                <p class="dvsa-banner__secondary-text">You have successfully started an MOT test for a VAUXHALL INSIGNIA, regristration mark AG57FSN on 3 July 2018, 12:20pm</p>
+            </div>
+
+            <div>
+                <h3 class="heading heading--medium heading-medium">What happens next?</h3>
+                <p>You can download and print inspection sheet for this vehicle: <a href="#">Vehicle inspection sheet (PDF: 505BK)</a></p>
+                <p>Now sign out and inspect the vehicle. </p>
+            </div>
+
+            <div>
+                <a class="button" id="#" href="#">Sign out</a>
+            </div>
+
+            <div>
+                <a href="/prototypes/correct-test-record/v1a/test-in-progress">Continue to home</a>
+            </div>                          
+    </div>
+</div>            
+
+</main>
+
+{% endblock %}

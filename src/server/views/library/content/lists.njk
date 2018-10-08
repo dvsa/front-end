@@ -18,11 +18,23 @@
   
   {{ components.list(
     items=[
+    { text: 'Aliquam blandit aliquet ex' },
+    { text: 'Quisque non scelerisque mi' },
+    { text: 'Vestibulum congue erat id justo tempor' }
+    ],
+    type='bullet'
+    ) | prism }}
+    
+
+  {{ components.heading(text='Numbered List', tag='h2', size='medium') }}
+  
+  {{ components.list(
+    items=[
       { text: 'Aliquam blandit aliquet ex' },
       { text: 'Quisque non scelerisque mi' },
       { text: 'Vestibulum congue erat id justo tempor' }
     ],
-    type='bullet'
+    type='number'
   ) | prism }}
 
   {{ components.heading(text='Links List', tag='h2', size='medium') }}

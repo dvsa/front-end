@@ -1,0 +1,203 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<style>
+    .circle-table {
+    float: left;
+    height: 20px;
+    width: 20px;
+    background-color: #B10E1E;
+    border-radius: 20%;
+    margin-right: 5px;
+    }  
+
+    .circle {
+    height: 25px;
+    width: 25px;
+    background-color: #B10E1E;
+    border-radius: 20%;
+    margin-right: 5px;
+    }  
+</style>
+
+<main id="content">
+
+   
+        <div class="container">
+
+  
+                            <div id="global-breadcrumb" class="header-context">
+    <nav>
+        <ol class="group">
+            <li id="breadcrumb-0"><a href="/prototypes/correct-test-record/v1/home-page">Home</a></li>
+
+                            <li id="breadcrumb-1">
+                                            MOT testing                                    </li>
+                    </ol>
+    </nav>
+</div>
+
+                            <header class="content-header">
+    <h1>
+        <span class="content-header__type">MOT testing</span>
+        <span class="content-header__title">Confirm vehicle and start test</span>
+            </h1>
+    </header>                       
+
+                            <div class="row contents">
+                    <div class="col-lg-12">
+
+  
+                        
+<div></div>
+<form method="post" name="StartTestConfirmation" id="StartTestConfirmation" action="/start-test-confirmation/3o2Y7--GlHI/0/1" data-form-state-index="0">
+    <input type="hidden" name="_csrf_token" value="4C621A77-EE4C-31DD-91A5-D89F0A738E38"><input type="hidden" name="prgToken" value="5939F7BF-5EE3-8193-29FE-319859A82C3F">    <input type="hidden" name="motTestType" value="NT">
+
+            <div class="text">
+            <p class="lede">Check that you have the right vehicle before starting the test.</p>
+        </div>
+    
+        <div class="grid-row">
+                <div class="column-three-quarters">   
+            <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                <span class="heading-secondary">
+                    Vehicle    </span>
+                Peugeot 3008 SUV</h1>
+
+    
+        <div class="grid-row">
+            <div class="column-one-third" style="width:30%">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">Colour</span>
+                    <div class="circle"></div>
+
+                    Red                </h2>
+            </div>
+
+            <div class="column-one-third" style="width:37.5%">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">VIN</span>
+                    GAULAGAAAAA495118               </h2>
+            </div>
+
+            <div class="column-one-third" style="width:32.5%; float:right">
+                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
+                    <span class="heading__secondary">Registration number</span>
+                    TH10 CZR               </h2>
+            </div>
+        </div>
+    </div>
+    <div class="column-one-quarter">
+                <img src="http://www.car-brand-names.com/wp-content/uploads/2015/05/Peugeot-logo.png" style="width:170px;height:150px; padding-top:50px;">
+            </div>
+</div>           
+
+        <h2 class="heading-medium">Vehicle specification</h2>
+    <table class="table-summary">
+        <tbody>
+        <tr>
+            <th scope="row" class="table-summary__key">Engine</th>
+            <td class="table-summary__value">
+                Petrol, 1753                                    <a href="#" id="change-vehicle-engine" class="table-summary__action">Change<span class="visuallyhidden"> engine or fuel type</span></a>
+                            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="table-summary__key">Brake test weight</th>
+            <td class="table-summary__value" id="vehicleWeight">
+                1690 kg            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <h2 class="heading-medium">Vehicle registration </h2>
+    <table class="table-summary">
+        <tbody>
+        <tr>
+            <th scope="row" class="table-summary__key">Registration mark</th>
+            <td class="table-summary__value" id="vehicleRegistrationNumber">
+                TH10CZR            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="table-summary__key">VIN</th>
+            <td class="table-summary__value" id="vehicleVINnumber">
+                GAULAGAAAAA495118            </td>
+        </tr>
+        <tr>
+            <th scope="row" class="table-summary__key">Country of registration</th>
+            <td class="table-summary__value">
+                GB, UK, ENG, CYM, SCO (UK) - Great Britain                                    <a href="#" id="change-vehicle-country-of-registration" class="table-summary__action">Change<span class="visuallyhidden"> country of registration</span></a>
+                            </td>
+        </tr>
+        <tr>
+                            <th scope="row" class="table-summary__key">
+                    MOT test class
+                </th>
+                <td class="table-summary__value">
+                    4                                                                <a href="#" id="change-vehicle-class" class="table-summary__action">Change<span class="visuallyhidden"> test class</span></a>
+                                    </td>
+            
+                    </tr>
+        <tr>
+            <th scope="row" class="table-summary__key">
+                Vehicle category
+            </th>
+            <td class="table-summary__value">
+                                    M1                            </td>
+        </tr>
+        <tr>
+                            <th scope="row" class="table-summary__key">
+                    Date of first use
+                </th>
+                <td class="table-summary__value">
+                    29 September 2010                                                        </td>
+            
+                    </tr>
+        <tr>
+            <th scope="row" class="table-summary__key">MOT expiration date</th>
+            <td class="table-summary__value">
+                23 August 2019            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    
+    <fieldset>
+        <div class="form-group">
+            <nav class="content-navigation">
+                <ul class="list-unstyled content-navigation__split u-clearfix">
+                    <li class="content-navigation__split--left">
+                                                                                    
+                                                                            <a class="button" id="confirm-start-test" href="/prototypes/correct-test-record/v2a/testing-information">Confirm and start test</a>                                                                                </li>
+                                            <li class="content-navigation__split--right">
+                                                                        <a class="button button--alert" id="refuse-to-test" href="#">Refuse to test</a>
+
+                                            </li>
+                </ul>
+
+                <ul class="content-navigation__secondary">
+                    <li>
+                        <br>
+                        <a href="/prototypes/correct-test-record/v2a/vehicle-search">Cancel and return to find a vehicle</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </fieldset>
+</form>                    </div>
+                </div>
+                        
+
+        </div>
+
+    </main>
+
+{% endblock %}

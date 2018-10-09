@@ -100,7 +100,7 @@
     "cssnano-preset-advanced": "^4.0.0-rc.2",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
-    "imagemin-webpack-plugin": "^2.1.5",
+    "imagemin-webpack-plugin": "^2.3.0",
     "jest": "^22.4.4",
     "mocha": "^4.1.0",
     "node-sass": "^4.9.0",

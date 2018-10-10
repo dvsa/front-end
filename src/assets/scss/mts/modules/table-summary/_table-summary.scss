@@ -20,6 +20,10 @@
     padding: em(12, 16) em(20, 16) em(9, 16) 0;    
     font-weight: 700;
   }
+  
+  &__heading {
+    font-weight: 700;
+  }
 
   &__value {
     &,

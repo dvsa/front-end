@@ -1,0 +1,78 @@
+{% extends 'layouts/mts.layout.njk' %}
+{% set pageTitle = 'MOT test history' %}
+{% block content %}
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Site review</span> Compare inspections
+</h1>
+
+<h2 class="heading heading--large heading-medium">
+    Inspected vehicle
+</h2>
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <th class="key-value-list__value">Inspector</th>
+      <td class="key-value-list__value">John Morris, MORR6734</td>
+      <td class="key-value-list__value">Harry Enforsmith, Vehicle Exminer</td>
+    </tr>
+    <tr>
+      <th class="key-value-list__key">Start of the inspection</th>
+      <td class="key-value-list__value">10/10/2018, 09:11</td>
+      <td class="key-value-list__value">10/10/2019, 11:36</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table class="table-summary">
+  <tbody> 
+      <tr>
+          <th class="table-summary__key">
+            Key
+            <span class="table-summary__meta">meta data</span>
+          </th>
+          <td class="table-summary__value">
+            Value
+            <span class="table-summary__meta">meta data</span>
+            <a href="#" class="table-summary__action" title="Action Key">Action<span class="visuallyhidden"> Key</span>
+            </a></td>
+        </tr>
+    <tr>
+      <th>
+          Lorem ipsum dolor sit amet  elit. Corrupti quam iure ut 
+      </th>
+      <td>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti quam iure ut 
+      </td>
+      <td>
+        <strong> Lorem  elit. Corrupti quam iure ut  </strong>
+      </td>
+    </tr> 
+    <tr>
+      <th>
+        Key
+      </th>
+      <td>
+        Value
+      </td>
+      <td>
+        <strong>More data</strong>
+      </td>
+    </tr> 
+    <tr>
+      <th>
+        Key
+      </th>
+      <td>
+          Lorem ipsum dolor sit amet  elit. Corrupti quam iure ut 
+      </td>
+      <td>
+        <strong>More data</strong>
+      </td>
+    </tr> 
+    </tbody>
+  </table>
+
+{% endblock %}

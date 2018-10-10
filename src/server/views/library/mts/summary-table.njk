@@ -14,11 +14,6 @@
     text='Used to present back information already in the service, for example, people, vehicles, tests, Vehicle Testing Stations and Authorised Examiners.'
   ) }}
 
-  {{ components.heading(
-    text='Visual hierarchy',
-    tag='h4',
-    size='small'
-  ) }}
 
   {{ components.paragraph(
     text='The key uses a bold weight to enable scanning of property names.'
@@ -98,6 +93,7 @@
   </table>
   {%- endcall %}
 
+
   {{ components.heading(
     text='Key value table',
     tag='h2',
@@ -107,13 +103,7 @@
   {{ components.paragraph(
     text="Used to present back information captured when 'creating a thing', 'adding a thing' or 'changing a compound thing'."
   ) }}
-
-  {{ components.heading(
-    text='Visual hierarchy',
-    tag='h4',
-    size='small'
-  ) }}
-
+ 
   {{ components.paragraph(
     text='The value uses a bold weight to enable scanning of the data entered.'
   ) }}
@@ -223,5 +213,35 @@
     </tbody>
   </table>
   {%- endcall %}
+
+
+  {{ components.heading(
+    text='Content Table',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text='Instead of the `key-value-list` table, use a summary table as below for displaying arbitrary content where more than two columns are needed.'
+  ) }}
+
+  {% call components.displayCode() %}
+  <table class="table-summary">
+    <tbody>
+      <tr>
+        <th class="table-summary__heading">Harry Enforsmith</th>
+        <td>Vehicle Examiner</td> 
+        <td>ENFB8075 </td> 
+      </tr>
+      <tr>
+        <th class="table-summary__heading">Bob Martin</th>
+        <td>Tester</td> 
+        <td>MAR0445</td> 
+      </tr> 
+    </tbody>
+  </table>
+  {%- endcall %}
+
+  
 
 {% endblock %}

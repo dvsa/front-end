@@ -1,0 +1,94 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+ {% set pageTitle = 'homepage' %}
+ {% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+ {% block content %}
+ <main id="content">
+     <a href="#" class="link-back">Back</a> 
+
+     <div class="error-summary" role="alert" aria-labelledby="error-summary-example-heading-one" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-example-heading-one">
+            There was a problem
+        </h2>
+        <ul class="error-summary-list">
+            <li>
+                <a href="#example-personal-details">
+                    Please select an option
+                </a>
+            </li>
+        </ul>
+    </div>
+
+     <header class="content-header">
+        <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                What type of recall information are you looking for?</h1>
+    </header>                       
+     <div class="row contents">
+        <div class="col-lg-12">
+     <div class="grid-row">
+    <div class="column-three-quarters">
+        <form action="#">
+            <div class="form-group form-group-error">
+                <fieldset>
+                <span class="error-message">Please select an option</span>
+                 <div class="multiple-choice">
+                    
+                    <input id="recalls-vehicle" type="radio" name="radio-recalls-group" value="vehicle">
+                    <label for="recalls-vehicle">Vehicle saftey recalls</label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="recalls-other" type="radio" name="radio-recalls-group" value="other">
+                    <label for="recalls-other">Other recalled equipment<span class="form-hint">For example, tyres or child seats</span></label>
+                </div>
+                </fieldset>
+            </div>
+          <input class="button" type="submit" value="Continue">
+        </form>
+        <br>
+
+        <h3 class="heading-medium">Download recall information</h3>
+            <p>
+                <a href="" rel="external">
+                    Full download of recalls data as a CSV (spreadsheet) file (1KB)
+                </a>
+            </p>
+            
+            <details>
+                <summary><span class="summary">What's in this file?</span></summary>
+                    <div class="panel panel-border-narrow">
+                        <p>
+                            This file contains:
+                        </p>
+                        <ul class="list list-bullet">
+                            <li>Recall information for all vehicle manufacturers from 1992 to present</li>
+                            <li>Recall description, remendies and numbers affect</li>
+                        </ul>
+                    </div>
+            </details>
+            <br>
+            <p>
+                <a href="">Recalls data guide (PDF)</a>
+            </p>
+
+            <details>
+                <summary><span class="summary">What's in this file?</span></summary>
+                    <div class="panel panel-border-narrow">
+                        <p>
+                            This file contains:
+                        </p>
+                        <ul class="list list-bullet">
+                            <li>a breakdown of how to use recalls data provided</li>
+                            <li>the DVSA role in managing vehicle safety recalls</li>
+                            <li>why the DVSA release this information to the public</li>
+                        </ul>
+                    </div>
+            </details>
+
+    </div>
+</div>  
+           
+ </main>
+ {% endblock %} 

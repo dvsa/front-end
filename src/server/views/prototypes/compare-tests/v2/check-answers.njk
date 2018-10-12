@@ -1,0 +1,154 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Compare tests</span> Check answers
+</h1>
+
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <th>Inspector</th>
+      <td style="font-weight: bold;">John Morris, MORR6734</td>
+      <td style="font-weight: bold;">Harry Enforsmith, Vehicle Examiner</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Test number</th>
+      <td style="font-weight: bold;">7363 8263 2176 3182</td>
+      <td style="font-weight: bold;">0384 7252 2463 9634</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Start of the inspection</th>
+      <td style="font-weight: bold;">10/10/2018, 09:11</td>
+      <td style="font-weight: bold;">10/10/2019, 11:36</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="3">    
+        <h2 class="heading heading--large heading-medium">
+          Odometer reading
+        </h2>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Odometer reading <span class="badge--info">Difference</span></th>
+      <td style="font-weight: bold;">62 745 miles</td>
+      <td style="font-weight: bold;">62 745 kilometers</td>
+      <td><a href="">Mark as significant difference</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <h2 class="heading heading--large heading-medium">
+          Defects
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <th><span class="badge--info">Difference</span></th>
+      <td>-</td>
+      <td>Daytime running lamp obviously incorrectly positioned <span class="key-value-list__meta">Nearside front</span> <span class="badge--warn">Minor</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="badge--info">Difference</span></th>
+      <td>-</td>
+      <td>Daytime running lamp obviously incorrectly positioned <span class="key-value-list__meta">Offside front</span><span class="badge--warn">Minor</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="badge--info">Difference</span></th>
+      <td>-</td>
+      <td>Wheel hub spigot mounting slightly worn<span class="key-value-list__meta">Nearside rear</span><span class="badge">Advisory</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="badge--info">Difference</span></th>
+      <td>-</td>
+      <td>Wheel hub spigot mounting slightly worn<span class="key-value-list__meta">Offside rear</span><span class="badge">Advisory</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+      <td></td>
+   </tr>
+    <tr>
+      <th><span class="badge">Match</span></th>
+      <td>Electronic power steering warning lamp indicates a system malfunction <span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
+      <td>Electronic power steering warning lamp indicates a system malfunction <span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <h2 class="heading heading--large heading-medium">
+          Brake test results 
+        </h2>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Service brake efficiency<br /><span class="badge">Match</span></th>
+      <td>12%</td>
+      <td>12%</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Service brake lock<br /><span class="badge">Match</span></th>
+      <td>50%</td>
+      <td>50%</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Brake imbalance - Axle 1<br /><span class="badge">Match</span></th>
+      <td>2%</td>
+      <td>2%</td>
+      <td></td>
+       <td></td>
+   </tr>
+    <tr>
+      <th>Brake imbalance - Axle 2 <br /><span class="badge">Match</span></th>
+      <td>80%<span class="key-value-list__meta"></span><span class="badge--alert">Fail</span></td>
+      <td>80%<span class="key-value-list__meta"></span><span class="badge--alert">Fail</span></td>
+      <td></td>
+      <td></td>
+    </tr>    
+    <tr>
+      <th>Parking brake efficiency <span class="badge--info">Difference</span></th>
+      <td>0%</td>
+      <td>7%</td>
+      <td><a href="">Mark as significant difference</a></td>
+      <td></td>
+   </tr>
+    <tr>
+      <th>Parking brake lock <br /><span class="badge">Match</span></th>
+      <td>0%</td>
+      <td>0%</td>
+      <td></td>
+      <td></td>
+    </tr>    
+  </tbody>
+</table>
+
+<div style="margin-top: 20px;">
+    <input class="button" type="submit" value="Save and continue" disabled="disabled">
+    <br/>
+    <a>Back</a>
+</div>
+
+
+{% endblock %}

@@ -7,7 +7,21 @@
 ] %}
  {% block content %}
  <main id="content">
-     <a href="/prototypes/recalls/V1/start-page" class="link-back">Back</a> 
+     <a href="#" class="link-back">Back</a> 
+
+     <div class="error-summary" role="alert" aria-labelledby="error-summary-example-heading-one" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-example-heading-one">
+            There was a problem
+        </h2>
+        <ul class="error-summary-list">
+            <li>
+                <a href="#example-personal-details">
+                    Please select an option
+                </a>
+            </li>
+        </ul>
+    </div>
+
      <header class="content-header">
         <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
                 What type of recall information are you looking for?</h1>
@@ -16,9 +30,10 @@
         <div class="col-lg-12">
      <div class="grid-row">
     <div class="column-three-quarters">
-        <form action="/prototypes/recalls/V1/vehicle-type">
-            <div class="form-group">
+        <form action="#">
+            <div class="form-group form-group-error">
                 <fieldset>
+                <span class="error-message">Please select an option</span>
                  <div class="multiple-choice">
                     
                     <input id="recalls-vehicle" type="radio" name="radio-recalls-group" value="vehicle">

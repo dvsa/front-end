@@ -1,0 +1,133 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<main id="content">
+
+   
+    <a href="/prototypes/recalls/V1/component-model" class="link-back">Back</a> 
+
+    <header class="content-header">
+        <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                Michelin Cargobib 600/55</h1>
+    </header> 
+
+    <p class="lede"> This component has <strong>1 recall.</strong></p>                       
+
+        <div class="js-accordion js-accordion--up-down-arrows">
+  <div class="js-accordion__top-section">
+    <button class="js-accordion__expand-button">
+      Open All
+    </button>
+  </div>
+        <div class="js-accordion__wrapper">
+            <div class="js-accordion__section" data-section-category="category-one">
+                
+                <div class="js-accordion__header">
+                    <div class="js-accordion__header-left">
+                        <h2 class="js-accordion__title">
+                            <button class="js-accordion__title-button">
+                            Deformation of the sidewall may result in deflation
+                            </button>
+                        </h2>
+                        <div class="grid-row">
+                            <div class="column-one-third">
+                                <p class="js-accordion__description" >
+                                    <span class="form-hint" >Recall number</span>
+                                    RTW/2009/002
+                                </p>
+                            </div>
+                            <div class="column-one-third">
+                                <p class="js-accordion__description" >
+                                    <span class="form-hint">Recall date</span>
+                                    13/04/2009
+                                </p>
+                            </div>
+                            <div class="column-one-third">
+                                <p class="js-accordion__description">
+                                    <span class="form-hint">Severity level</span>
+                                    Safety recall
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="js-accordion__header-right">
+                        <button class="js-accordion__header-icon"></button>
+                    </div>
+                </div>
+                
+                <div class="js-accordion__content">
+                    <div class="grid-row">
+                        <div class="column-two-thirds">
+                            <header>
+                                <h1 class="heading heading--small heading-small">Reason for recall</h1>
+                            </header>
+                            <p>Gradual deflation of the tyre can occur as a result of incorrect positioning of the casing piles.</p>
+                            <header>
+                                <h1 class="heading heading--small heading-small">How to check if the vehicle is recalled</h1>
+                            </header>
+                            <p>Contact the vehicle’s local dealership or manufacturer.</p>
+                            <header>
+                                <h1 class="heading heading--small heading-small">How the manufacturer will repair</h1>
+                            </header>
+                            <p>Recall the tyres that are likely to be affected and replace them with new quality assured units.</p>
+                            <header>
+                                <h1 class="heading heading--small heading-small">Number of affected items</h1>
+                            </header>
+                            <p>295</p>
+                            <details>
+                                <summary><span class="summary">Other affected models</span></summary>
+                                    <div class="panel panel-border-narrow">
+                                        <div class="grid-row">
+                                            <div class="column-two-thirds">
+                                                <table class="key-value-list">
+                                                <thead >
+                                                    <tr><th class="key-value-list__key">Make/Model</th></tr>
+                                                </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                        <th class="key-value-list__key">
+                                                            <a href="#">Michelin XM28 710/70</a>
+                                                        </th>
+                                                        </tr>
+                                                        <tr>
+                                                        <th class="key-value-list__key">
+                                                        <a href="#">Michelin Cargobib 600/55</a>
+                                                        </th>
+                                                        </tr>
+                                                        <tr>
+                                                        <th class="key-value-list__key">
+                                                            <a href="#">Michelin AXIOBIB 1F 800/70</a>
+                                                        </th>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </details>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+               
+        <br>
+        <div>
+            <a class="button" id="search-again" href="/prototypes/recalls/V1/type-of-recall" style="margin-bottom:30px">Search again</a>
+        </div>
+
+
+</main>
+
+
+{% endblock %}

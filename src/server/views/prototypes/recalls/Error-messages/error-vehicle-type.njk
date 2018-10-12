@@ -1,0 +1,82 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'homepage' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+
+<main id="content">
+
+   
+    <a href="/prototypes/recalls/V1/type-of-recall" class="link-back">Back</a> 
+
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-example-heading-one" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-example-heading-one">
+            There was a problem
+        </h2>
+        <ul class="error-summary-list">
+            <li>
+                <a href="#example-personal-details">
+                    Please select an option
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <header class="content-header">
+        <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
+                What type of vehicle are you checking?</h1>
+    </header>                       
+
+    <div class="row contents">
+        <div class="col-lg-12">
+
+    <div class="grid-row">
+    <div class="column-three-quarters">
+
+       <form>
+            <div class="form-group form-group-error">
+                <fieldset >
+                    <span class="error-message">Please select an option</span>
+                    <div class="multiple-choice">
+                        <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                        <label for="radio-inline-1">Cars and vans</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                        <label for="radio-inline-2">Lorries, buses, coaches and minibuses</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="radio-inline-3" type="radio" name="radio-inline-group" value="No">
+                        <label for="radio-inline-3">Motorcycles, mopeds and motor tricyles</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="radio-inline-4" type="radio" name="radio-inline-group" value="No">
+                        <label for="radio-inline-4">Trailers</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="radio-inline-5" type="radio" name="radio-inline-group" value="No">
+                        <label for="radio-inline-5">Bicycles</label>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+        <br>
+        <div>
+            <a class="button" id="choose-model" href="/prototypes/recalls/V1/vehicle-make" style="margin-bottom:30px">Continue</a>
+        </div>
+
+    </div>
+</div>  
+
+          
+
+</main>
+
+{% endblock %}

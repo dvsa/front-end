@@ -4,29 +4,66 @@
 
 {% block content %}
 
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests     
+    </a>
+    </li>
+    <li>
+        Review comparison     
+    </li>  
+    </ol>
+</div>
 
 <h1 class="heading-xlarge heading heading--page-heading">
   <span class="heading-secondary">Compare tests</span> Review comparison
 </h1>
 
-
 <table class="key-value-list">
   <tbody>
     <tr>
-      <td style="border-top: 0px;"></td>
+      <td style="border-top: 0px;" colspan="2"></td>
       <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2; width: 315px;">John Morris, MORR6734</td>
       <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>
+      <td style="border-top: 0px;"></td>
     </tr>
     <tr>
-      <td>Test number</td>
+      <td colspan="2">Test number</td>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">7363 8263 2176 3182</td>
       <td style="font-weight: bold; padding-left: 10px;">0384 7252 2463 9634</td>
       <td></td>
     </tr>
     <tr>
-      <td>Test duration</td>
+      <td colspan="2">Start of the test</td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;">10/10/2018, 09:11</td>
+      <td style="font-weight: bold; padding-left: 10px;">10/10/2018, 11:36</td>
+    </tr>
+    <tr>
+      <td colspan="2">End of the test</td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;">10/10/2018, 09:25</td>
+      <td style="font-weight: bold; padding-left: 10px;">10/10/2018, 12:07</td>
+    </tr>    
+    <tr>
+      <td colspan="2">Test duration</td>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">14 minutes</td>
-      <td style="font-weight: bold; padding-left: 10px;">37 minutes</td>
+      <td style="font-weight: bold; padding-left: 10px;">31 minutes</td>
       <td></td>
     </tr>
     <tr>
@@ -36,14 +73,12 @@
         </h2>
       </td>
       <td></td>
-      <td></td>
     </tr>
     <tr>
-      <th style="font-weight: bold">Significantly wrong</th>
+      <th style="font-weight: bold" colspan="2">Significantly wrong</th>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">62 745 miles</td>
       <td style="font-weight: bold; padding-left: 10px;">62 745 kilometers</td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
     <tr>
       <td colspan="3">
@@ -53,34 +88,31 @@
       </td>
     </tr>
     <tr>
-      <th style="font-weight: bold">Damage missed</span></th>
+      <th style="font-weight: bold" colspan="2">Exs. corr/wear/damage missed</span></th>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
       <td style="font-weight: bold; padding-left: 10px;">Daytime running lamp obviously incorrectly positioned Nearside front [4.2.3 (a) (i)]
       <span class="key-value-list__meta" style="margin-bottom: 5px;">Lamps, reflectors and electrical equipment > Daytime running lamps</span>
       <span class="badge--warn">Minor</span></td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
     <tr>
-      <th style="font-weight: bold">Damage missed</span></th>
+      <th style="font-weight: bold" colspan="2">Exs. corr/wear/damage missed</span></th>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
       <td style="font-weight: bold; padding-left: 10px;">Daytime running lamp obviously incorrectly positioned Offside front [4.2.3 (a) (i)] 
       <span class="key-value-list__meta" style="margin-bottom: 5px;">Lamps, reflectors and electrical equipment > Daytime running lamps</span>
       <span class="badge--warn">Minor</span></td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
     <tr>
-      <th style="font-weight: bold">Overruled, marginally wrong</span></th>
+      <th style="font-weight: bold" colspan="2">Overruled, marginally wrong</span></th>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
       <td style="font-weight: bold; padding-left: 10px;">Wheel hub spigot mounting slightly worn Nearside rear
         <span class="key-value-list__meta" style="margin-bottom: 5px;">Road Wheels > Hubs</span>
         <span class="badge">Advisory</span></td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
     <tr>
-      <th style="font-weight: bold">Overruled, marginally wrong</span></th>
+      <th style="font-weight: bold" colspan="2">Overruled, marginally wrong</span></th>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
       <td style="font-weight: bold; padding-left: 10px;">
         Wheel hub spigot mounting slightly worn Offside rear 
@@ -88,14 +120,12 @@
         <span class="badge">Advisory</span>
       </td>
       <td><a href="">change</a></td>
-      <td></td>
    </tr>
     <tr>
-      <th style="font-weight: bold">Match</th>
+      <th style="font-weight: bold" colspan="2">Match</th>
       <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">Electronic power steering warning lamp indicates a system malfunction [2.6 (a)]<span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
       <td style="font-weight: bold; padding-left: 10px;">Electronic power steering warning lamp indicates a system malfunction [2.6 (a)]<span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
   <tr>
       <td colspan="4" style="border: 0px solid;">
@@ -113,17 +143,17 @@
     </tr>
     <tr>
       <td style="font-weight: bold">Match</td>
-      <td>Brake efficiency: 56%</td>
-      <td>Brake efficiency: 12%</td>
+      <td>Brake efficiency</td>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">56%</td>
+      <td style="font-weight: bold; padding-left: 10px;">12%</td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
      <tr>
       <td style="font-weight: bold">Match</td>
-      <td>Brake lock: 77%</td>
-      <td>Brake lock: 77%</td>
+      <td>Brake lock</td>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">77%</td>
+      <td style="font-weight: bold; padding-left: 10px;">77%</td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
     <tr>
       <td colspan="4">
@@ -134,17 +164,17 @@
     </tr>
     <tr>
       <td style="font-weight: bold">Match</td>
-      <td>Axle 1 : 56%</td>
-      <td>Axle 1 : 56%</td>
+      <td>Axle 1</td>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">56%</td>
+      <td style="font-weight: bold; padding-left: 10px;">56%</td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
      <tr>
       <td style="font-weight: bold">Match</td>
-      <td>Axle 2: 77%</td>
-      <td>Axle 2: 77%</td>
+      <td>Axle 2</td>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">77%</td>
+      <td style="font-weight: bold; padding-left: 10px;">77%</td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
     <tr>
       <td colspan="4" style="border: 0px solid;">
@@ -155,25 +185,33 @@
     </tr>
     <tr>
       <td style="font-weight: bold">Match</td>
-      <td>Brake efficiency: 56%</td>
-      <td>Brake efficiency: 12%</td>
+      <td>Brake efficiency</td>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">56%</td>
+      <td style="font-weight: bold; padding-left: 10px;">12%</td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
      <tr>
       <td style="font-weight: bold">Match</td>
-      <td>Brake lock: 77%</td>
-      <td>Brake lock: 77%</td>
+      <td>Brake lock</td>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">77%</td>
+      <td style="font-weight: bold; padding-left: 10px;">77%</td>
       <td><a href="">change</a></td>
-      <td></td>
     </tr>
   </tbody>
 </table>
 
-<div style="margin-top: 20px;">
-    <a class="button" value="Save and continue" href="saved">Save and continue</a>
+
+<h2 class="heading-large heading heading--page-heading">
+  <span class="heading-secondary">Indicative case outcome</span> 
+  Advisory Warning Letter (AWL)
+  <span><a href="change-outcome" style="font-weight: 400; font-size: 19px; float: right;padding-top: 22px;">change</a></span>
+</h2>
+
+
+<div style="margin-top: 40px;">
+    <a class="button" href="saved">Record comparison</a>
     <br/>
-    <a>Back</a>
+    <a href="test-comparison-v4-defects-reviewed">Back</a>
 </div>
 
 

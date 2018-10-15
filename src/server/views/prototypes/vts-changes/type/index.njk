@@ -6,7 +6,7 @@
   { text: 'Home', url: '/manuals' },
   { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
   { text: 'VTS079774', url: '/prototypes/vts-changes' },
-  { text: 'Notify of changes to equipment'  }
+  { text: 'Tell about changes to fixed equipment'  }
 ] %}
 
 {% block content %}
@@ -14,7 +14,7 @@
   {% call components.form(action='/prototypes/vts-changes/type', method='POST') %} 
 
   <h1 class="heading-large ">
-      <span class="heading-secondary">Notify of changes to equipment</span>
+      <span class="heading-secondary">Tell about changes to fixed equipment</span>
       <label for="select-box">
         What type of equipment are you changing?
       </label>
@@ -53,16 +53,16 @@
 
   <div class="form-group u-margin-bottom-30"> 
     <details>
-      <summary><span class="summary">I can't find the type of equipment I'm changing</span></summary>
+      <summary><span class="summary">Help with type of equipment</span></summary>
       <div class="panel panel-border-narrow">
-        <p>The renewal of mobile testing equipment does not have to be notified to DVSA provided that the replacement is on the <a href="https://www.gov.uk/government/publications/mot-centre-approved-testing-equipment">current DVSA approved list</a> and will not affect the range of vehicles that can be tested. </p>
-        <p>Equipment that is considered to be mobile:</p>
+        <p>Fixed and mobile testing equipment must be on the list of DVSA approved testing equipment <a href="https://www.gov.uk/government/publications/mot-centre-approved-testing-equipment">DVSA approved testing equipment.</a></p>
+        <p>You do not need to tell DVSA about changes to mobile testing equipment:</p>
         <ul class="list list-bullet">
-          <li>Diesel smoke meters</li>
-          <li>Decelerometers</li>
-          <li>Exhaust gas analysers</li>
-          <li>Pedal application devices</li>
-          <li>Tyre tread depth gauges</li>
+          <li>diesel smoke meters</li>
+          <li>decelerometers</li>
+          <li>exhaust gas analysers</li>
+          <li>pedal application devices</li>
+          <li>tyre tread depth gauges</li>
           <li>13-pin Euro trailer socket wiring testers</li>
         </ul>
       </div>

@@ -7,7 +7,7 @@
   { text: 'Home', url: '/manuals' },
   { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
   { text: 'VTS079774', url: '/prototypes/vts-changes' },
-  { text: 'Notify of changes to equipment'  }
+  { text: 'Tell about changes to fixed equipment'  }
 ] %}
 
 {% block content %}
@@ -15,9 +15,9 @@
 
   {% call components.form(action='/prototypes/vts-changes/layout', method='POST') %} 
   <h1 class="heading-large ">
-        <span class="heading-secondary">Notify of changes to equipment</span>
+        <span class="heading-secondary">Tell about changes to fixed equipment</span>
         <label for="radio-inline-group">
-          Will the new equipment change the layout of the premises?
+          Will the building need to be altered for the new equipment?
         </label>
   </h1> 
 
@@ -40,10 +40,13 @@
  
   <div class="form-group u-margin-bottom-15">
     <details>
-      <summary><span class="summary">Help on changes to layout of the premises</span></summary>
+      <summary><span class="summary">Help with building alterations</span></summary>
       <div class="panel panel-border-narrow">
-        <p>The proposed change will not be acceptable if it reduces clearances or dimensions (including those for access) below the limits specified in the Requirements for Authorisation.</p>
-        <p>For features currently approved only as `acceptable variations', proposed changes will not be acceptable below their existing values. </p>
+        <p>You must not make building alterations that:</p>
+        <ul class="list list-bullet">
+          <li>reduce clearances or dimensions, including those for access, below the limits specified in sections D2-D4 in the <a href="https://www.gov.uk/government/publications/mot-testing-guide">MOT Testing Guide</a></li>
+          <li>reduce other features approved only as 'acceptable variations'</li>
+        </ul>
       </div>
     </details>
   </div>

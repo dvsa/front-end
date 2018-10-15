@@ -1,0 +1,54 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Site review index' %}
+
+
+{% block content %}
+
+
+{{ components.pageHeading('Prototypes', 'Test comparison') }}
+
+
+<div class="grid-row">
+  <div class="column-one-half">
+    
+    <ul class="list list-bullet">
+       <li>
+        version 2 - update 15/10/2018
+        <ul>
+          <li><a href="/prototypes/compare-tests/v2/">Full user journey</a></li>
+          <li><a href="/prototypes/compare-tests/v2/test-comparison-v4">Compare tests</a>
+            <ul>
+              <li><a href="/prototypes/compare-tests/v2/compare-odometer">Compare odometer</a></li>
+              <li><a href="/prototypes/compare-tests/v2/compare-defects">Compare defects</a></li>
+              <li><a href="/prototypes/compare-tests/v2/compare-brakes">Compare brake test results</a></li>
+              <li><a href="/prototypes/compare-tests/v2/test-comparison-v4-brakes-reviewed">All section has been compared</a></li>
+              </ul>
+            </li>
+          <li><a href="/prototypes/compare-tests/v2/check-answers-v2">Check your answers</a></li>
+          <li><a href="/prototypes/compare-tests/v2/change-outcome">Change outcome of the case</a></li>
+          <li><a href="/prototypes/compare-tests/v2/saved">Confirmation screen</a></li>
+          </ul>
+
+      </li>
+    </ul>
+
+
+    <ul class="list list-bullet">
+      <li>
+        version 1 - update 04/10/2018
+        <ul class="list list-bullet">
+          <li><a href="/prototypes/compare-tests/v1/test/history">Start from test history</a></li>
+          <li><a href="/prototypes/compare-tests/v1/test-comparison">Comparison v 1.0</a> </li>
+          <li><a href="/prototypes/compare-tests/v1/test-comparison-v2">Comparison v. 1.1</a></li>
+          <li><a href="/prototypes/compare-tests/v1/test-comparison-v3">Comparison v. 1.2</a></li>
+          <li><a href="/prototypes/compare-tests/v1/test-comparison-v3-add-justification">Add justification for change</a></li>
+         </ul>
+      </li>
+    </ul>
+
+    
+ </div>
+</div>
+
+{% endblock %}

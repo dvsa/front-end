@@ -1,0 +1,173 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary"></span> Compare tests
+</h1>
+
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <th>Inspector</th>
+      <td style="font-weight: bold;">John Morris, MORR6734</td>
+      <td style="font-weight: bold;">Harry Enforsmith, Vehicle Exminer</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Start of the inspection</th>
+      <td style="font-weight: bold;">10/10/2018, 09:11</td>
+      <td style="font-weight: bold;">10/10/2019, 11:36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <h2 class="heading heading--large heading-medium">
+          Inspected vehicle
+        </h2>
+      </td>
+       <td></td>
+   </tr>
+    <tr>
+      <th>Make and model</th>
+      <td style="font-weight: bold;">Aston Martin DB7</td>
+      <td style="font-weight: bold;">Aston Martin DB7</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Registration plate</th>
+      <td style="font-weight: bold;">HGW 725</td>
+      <td style="font-weight: bold;">HGW 725</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>VIN</th>
+      <td style="font-weight: bold;">SCFBF04B78GD08826</td>
+      <td style="font-weight: bold;">SCFBF04B78GD08826</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Colour</th>
+      <td style="font-weight: bold;">Green</td>
+      <td style="font-weight: bold;">Green</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="3">    
+        <h2 class="heading heading--large heading-medium">
+          Odometer reading
+        </h2>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Odometer reading</th>
+      <td style="font-weight: bold;">62 745 miles</td>
+      <td style="font-weight: bold;">62 745 kilometers</td>
+      <td>
+        <select  class="form-control" id="select-box" style="width:130px; margin-bottom: 20px;">
+            <option value="1">Disregard</option>
+            <option value="2">Overruled, marginally wrong</option>
+            <option value="3">Obviously wrong</option>
+            <option value="4">Significantly wrong</option>
+            <option value="5">No defect</option>
+            <option value="7">Not testable</option>
+            <option value="8">Exs. corr/wear/damage missed</option>
+            <option value="9">Risk of injury missed</option>
+        </select>
+        <label class="form-label" for="justification">Justification</label>
+        <textarea class="form-control" name="justification" id="justification" rows="5" style="width:130px; margin-bottom: 20px;"></textarea>
+        <input class="button" type="submit" value="Save">
+    </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <h2 class="heading heading--large heading-medium">
+          Defects
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>-</td>
+      <td>Daytime running lamp obviously incorrectly positioned <span class="key-value-list__meta">Nearside front</span> <span class="badge--warn">Minor</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>-</td>
+      <td>Daytime running lamp obviously incorrectly positioned <span class="key-value-list__meta">Offside front</span><span class="badge--warn">Minor</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>-</td>
+      <td>Wheel hub spigot mounting slightly worn<span class="key-value-list__meta">Nearside rear</span><span class="badge">Advisory</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+   </tr>
+    <tr>
+      <th></th>
+      <td>-</td>
+      <td>Wheel hub spigot mounting slightly worn<span class="key-value-list__meta">Offside rear</span><span class="badge">Advisory</span></td>
+      <td><a href="">Mark as significant difference</a></td>
+   </tr>
+    <tr>
+      <th></th>
+      <td>Electronic power steering warning lamp indicates a system malfunction <span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
+      <td>Electronic power steering warning lamp indicates a system malfunction <span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
+      <td><span class="badge">OK</span></td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        <h2 class="heading heading--large heading-medium">
+          Brake test results
+        </h2>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Service brake efficiency</th>
+      <td>12%</td>
+      <td>12%</td>
+      <td><span class="badge">OK</span></td>
+    </tr>
+    <tr>
+      <th>Service brake lock</th>
+      <td>50%</td>
+      <td>50%</td>
+      <td><span class="badge">OK</span></td>
+    </tr>
+    <tr>
+      <th>Brake imbalance - Axle 1</th>
+      <td>2%</td>
+      <td>2%</td>
+      <td><span class="badge">OK</span></td>
+    </tr>
+    <tr>
+      <th>Brake imbalance - Axle 2</th>
+      <td>80%<span class="key-value-list__meta"></span><span class="badge--alert">Fail</span></td>
+      <td>80%<span class="key-value-list__meta"></span><span class="badge--alert">Fail</span></td>
+      <td><span class="badge">OK</span></td>
+    </tr>    
+    <tr>
+      <th>Parking brake efficiency</th>
+      <td>-</td>
+      <td>7%</td>
+      <td><a href="">Mark as significant difference</a></td>
+    </tr>
+    <tr>
+      <th>Parking brake lock</th>
+      <td>0%</td>
+      <td>0%</td>
+      <td><span class="badge">OK</span></td>
+    </tr>    
+  </tbody>
+</table>
+
+
+
+{% endblock %}

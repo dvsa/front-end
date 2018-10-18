@@ -168,6 +168,7 @@
 
           &-content {
             display: block;
+            word-wrap: break-word;
             @include media(tablet) {
               margin-right: 220px;
             }

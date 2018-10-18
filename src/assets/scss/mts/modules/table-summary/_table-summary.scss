@@ -1,7 +1,7 @@
 .table-summary {
   table-layout: fixed;
-
-  // BL-1708 40 character values
+  word-wrap: break-word;
+  
   &--smaller-key {
     table-layout: fixed;
   
@@ -36,7 +36,6 @@
       position: relative;
 
       &:last-child {
-        // Damn el selectors in elements styling!
         padding-right: 80px;
       }
     }
@@ -75,7 +74,6 @@
 
   &__action {
     display: block;
-    width: 80px;
     top: em(12, 16);
     right: 0;
 

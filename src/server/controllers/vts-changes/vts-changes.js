@@ -30,15 +30,26 @@ export const postType = (req, res) => {
   req.session.viewData.questions.type.answer = formData;
 
   // Push each answer into array of types for display in Summary
-  const answers = formData;
+  const labelArr = Object.entries(formData).map( ([key, value]) =>  key );
+  
   const types = [];
-  for (var answer in answers) {
-    if (answers.hasOwnProperty(answer)) {
-      // Convert first leter to uppercase
-      let capAnswer = answer.replace(/^\w/, cap => cap.toUpperCase());
-      types.push(capAnswer);
-    }
-  }
+  let answer = '';
+  
+  labelArr.forEach( label => {  
+      if ( label == 'headlamp' ) {
+        answer = 'Headlamp beam tester'
+      } else if ( label == 'plate' ) {
+        answer = 'Plate brake tester'
+      } else if ( label == 'roller') {
+        answer = 'Roller brake tester'
+      } else if ( label == 'wheel' ) {
+        answer = 'Wheel play detector'
+      } else if ( label == 'ramp') {
+        answer = 'Ramp, hoist or lift'
+      }
+      types.push(answer);
+  });
+
   // Add array of types to session
   req.session.viewData.typeNames = types;
 
@@ -47,7 +58,6 @@ export const postType = (req, res) => {
   if (errors) {
     return res.redirect(`/prototypes/vts-changes/type`);
   }
-
   // Proceed to next question
   return res.redirect(`/prototypes/vts-changes/approved`);
 };

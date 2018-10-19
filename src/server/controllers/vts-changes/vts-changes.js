@@ -26,7 +26,7 @@ export const resetSession = (req, res, next) => {
 export const startJourney = (req, res) => {
   req.session.viewData = initViewData();
   const version = req.query.v || '0';
-  req.session.version = version;
+  req.session.viewData.version = version;
   return res.render('./prototypes/vts-changes/home', { viewData: req.session.viewData });
 };
 
@@ -136,7 +136,7 @@ export const postStage = (req, res) => {
         return res.redirect('/prototypes/vts-changes/change-notice');
       }
       // if a specific prototype, show the short summary page
-      if (req.session.viewData.version == '3') {
+      if (req.session.viewData.version == '2') {
         return res.redirect('/prototypes/vts-changes/short-summary');
       }
       // if yes, go to summary

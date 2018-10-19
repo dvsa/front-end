@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -11,6 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 const initViewData = exports.initViewData = () => {
   return {
     typeNames: [],
+    version: '',
     questions: {
       type: {
         answer: [],

@@ -26,7 +26,7 @@ export const resetSession = (req, res, next) => {
 export const startJourney = (req, res) => {
   req.session.viewData = initViewData();
   const version = req.query.v || '0';
-  req.session.version = version; 
+  req.session.version = version;
   return res.render('./prototypes/vts-changes/home', { viewData: req.session.viewData });
 };
 

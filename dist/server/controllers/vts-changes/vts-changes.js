@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getConfirmation = exports.getStage = exports.postStage = exports.postType = exports.resetSession = undefined;
+exports.getConfirmation = exports.getStage = exports.postStage = exports.postType = exports.getStart = exports.startJourney = exports.resetSession = undefined;
 
 var _validation = require('./validators/validation.js');
 
@@ -23,15 +23,40 @@ var _helpers = require('./helpers/helpers');
 
 var _getLastInUrl = require('../site-review/helpers/getLastInUrl.js');
 
+var _vm = require('vm');
+
 /**
  * GET Middleware - Initialise session for Stage 1
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const resetSession = exports.resetSession = (req, res) => {
+const resetSession = exports.resetSession = (req, res, next) => {
   // Reset session to dummy data from home page if not present
   req.session.viewData = (0, _initChangeData.initViewData)();
+  next();
+};
+
+/**
+ * GET Middleware - Initialise session for Journey Start
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+const startJourney = exports.startJourney = (req, res) => {
+  req.session.viewData = (0, _initChangeData.initViewData)();
+  const version = req.query.v || '0';
+  req.session.version = version;
+  return res.render('./prototypes/vts-changes/home', { viewData: req.session.viewData });
+};
+
+/**
+ * GET Middleware - Get Start page
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+const getStart = exports.getStart = (req, res) => {
   return res.render('./prototypes/vts-changes/start', { viewData: req.session.viewData });
 };
 
@@ -125,9 +150,14 @@ const postStage = exports.postStage = (req, res) => {
       break;
 
     case 'classes':
+      console.log(req.session.viewData.version);
       // If 'yes', render notice
       if (answer === 'no') {
         return res.redirect('/prototypes/vts-changes/change-notice');
+      }
+      // if a specific prototype, show the short summary page
+      if (req.session.viewData.version == '3') {
+        return res.redirect('/prototypes/vts-changes/short-summary');
       }
       // if yes, go to summary
       return res.redirect('/prototypes/vts-changes/summary');
@@ -146,6 +176,8 @@ const postStage = exports.postStage = (req, res) => {
  */
 const getStage = exports.getStage = (req, res) => {
   req.session.viewData = req.session.viewData || (0, _initChangeData.initViewData)();
+  console.log(req.params);
+
   const stageName = (0, _getLastInUrl.getLastInUrl)(req);
   return res.render(`./prototypes/vts-changes/${stageName}/index`, { viewData: req.session.viewData });
 };

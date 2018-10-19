@@ -1,0 +1,49 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes/v3/' },
+  { text: 'Tell about changes to your fixed equipment'  }
+] %}
+
+{% block content %}
+ 
+<a href="/prototypes/vts-changes/v3/" class="link-back">Back</a>
+<h1 class="heading-large">
+      <span class="heading-secondary">Vehicle testing station</span>
+      Tell about changes to your fixed equipment
+</h1>
+  <div class="text">
+    <p class="lede">
+      Use this to tell DVSA of like-for-like changes to your fixed MOT testing equipment.
+    </p>
+
+    <h2 class="heading heading--medium  heading-medium">Before you start</h2>
+    <p>First make sure that the changes to your fixed testing equipment do not affect:</p>
+      <ul class="list list-bullet">
+        <li>the range of vehicles that can be tested</li>
+        <li>the building</li>
+      </ul>
+      <p>Also <a href=" https://www.gov.uk/become-an-mot-station/approved-testing-equipment">check that the testing equipment is approved by the DVSA.</a></p>
+    
+      <div class="u-margin-bottom-15">
+          <a href="/prototypes/vts-changes/v3/type" class="button button-start">Start</a>
+      </div>
+
+    <h2 class="heading heading-medium">Apply for approval for changes to building or range of vehicles tested</h2>
+    <p>You must get DVSA's approval before changing testing equipment if the:</p>
+      <ul class="list list-bullet">
+        <li>building needs to be altered because of the planned changes</li>
+        <li>range of vehicles that can be tested will be affected</li>
+      </ul>
+      
+    <p>To apply for approval fill in the form to <a href="https://www.gov.uk/government/publications/application-for-mot-authorisation-vt01">Apply for or vary MOT authorised examiner status (VT01)</a></p>
+    
+
+  </div>
+ 
+
+{% endblock %}

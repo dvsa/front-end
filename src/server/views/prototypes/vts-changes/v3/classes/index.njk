@@ -1,0 +1,62 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes' },
+  { text: 'Tell about changes to fixed equipment'  }
+] %}
+ 
+{% block content %}
+ 
+
+  <h1 class="heading-large ">
+        <span class="heading-secondary">Tell about changes to fixed equipment</span>
+        <label for="radio-inline-group">
+          Can the new equipment test the same vehicle classes?
+        </label>
+  </h1>
+
+   {% call components.form(action='/prototypes/vts-changes/classes', method='POST') %} 
+  
+  <div class="form-group {{ 'form-group-error' if viewData.questions.classes.errors[0]['error'] }}">
+    {% if viewData.questions.classes.errors[0]['error'] %}
+      <span class="error-message">{{ viewData.questions.classes.errors[0]['error'] }}</span>
+    {% endif %}
+    
+    <fieldset class="inline u-margin-top-15">
+      <div class="multiple-choice">
+        <input id="radio-inline-1" type="radio" name="classes" value="yes" {{ 'checked' if viewData.questions.classes.answer['classes'] == 'yes' }}>
+        <label for="radio-inline-1">Yes</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-inline-2" type="radio" name="classes" value="no" {{ 'checked' if viewData.questions.classes.answer['classes'] == 'no' }}>
+        <label for="radio-inline-2">No</label>
+      </div>
+    </fieldset>
+  </div>
+  
+  <div class="form-group">
+
+    <details >
+      <summary><span class="summary">Help with changes to vehicle classes</span></summary>
+      <div class="panel panel-border-narrow">
+        <p>The new equipment must be able to test the vehicle classes you are authorised to test.</p>
+        <p>If you want to make changes to the AE's testing classes, you must <a href=" https://www.gov.uk/government/publications/application-for-mot-authorisation-vt01">apply to the DVSA</a> in advance. </p>
+      </div>
+    </details>
+
+  </div>
+  
+
+  <div class="u-margin-bottom-15">
+     <input type="submit" value="Continue" class="button"/> 
+  </div>
+  <div class="u-margin-bottom-10">
+    <a href="/prototypes/vts-changes/v3/layout">Back</a>
+  </div>
+
+  {% endcall %} 
+  {% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
+ 
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes' },
+  { text: 'Tell about changes to your fixed equipment'  }
+] %}
+
+{% block content %}
+
+  <h1 class="heading-large">
+        <span class="heading-secondary">Vehicle testing station</span>
+        Tell about changes to your fixed equipment
+  </h1>
+  
+  <div class="text">
+    <p class="lede">
+      You cannot use equipment that is not approved by the DVSA. 
+    </p>
+
+    <p>Find your new equipment from the list of <a href="https://www.gov.uk/become-an-mot-station/approved-testing-equipment">DVSA approved testing equipment.</a></p>
+
+  <div class="u-margin-top-15">
+    <a href="/prototypes/vts-changes/">Back to VTS Overview</a>
+  </div>
+
+  </div>
+  
+  </div>
+  {% endblock %}

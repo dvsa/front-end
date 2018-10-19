@@ -1,6 +1,7 @@
 import { initViewData } from './initChangeData.js';
 import { isEmpty } from './helpers/helpers';
 import { getLastInUrl } from '../site-review/helpers/getLastInUrl.js';
+import { runInNewContext } from 'vm';
 
 export * from './validators/validation.js';
 
@@ -10,9 +11,32 @@ export * from './validators/validation.js';
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const resetSession = (req, res) => {
+export const resetSession = (req, res, next) => {
   // Reset session to dummy data from home page if not present
   req.session.viewData = initViewData();
+  next();
+};
+
+/**
+ * GET Middleware - Initialise session for Journey Start
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const startJourney = (req, res) => {
+  req.session.viewData = initViewData();
+  const version = req.query.v || '0';
+  req.session.viewData.version = version;
+  return res.render('./prototypes/vts-changes/home', { viewData: req.session.viewData });
+};
+
+/**
+ * GET Middleware - Get Start page
+ *
+ * @param {Express.Request} req - Express request object
+ * @param {Express.Response} res - Express response object
+ */
+export const getStart = (req, res) => {
   return res.render('./prototypes/vts-changes/start', { viewData: req.session.viewData });
 };
 
@@ -106,9 +130,14 @@ export const postStage = (req, res) => {
       break;
 
     case 'classes':
+      console.log(req.session.viewData.version);
       // If 'yes', render notice
       if (answer === 'no') {
         return res.redirect('/prototypes/vts-changes/change-notice');
+      }
+      // if a specific prototype, show the short summary page
+      if (req.session.viewData.version == '2') {
+        return res.redirect('/prototypes/vts-changes/short-summary');
       }
       // if yes, go to summary
       return res.redirect('/prototypes/vts-changes/summary');
@@ -127,6 +156,8 @@ export const postStage = (req, res) => {
  */
 export const getStage = (req, res) => {
   req.session.viewData = req.session.viewData || initViewData();
+  console.log(req.params);
+
   const stageName = getLastInUrl(req);
   return res.render(`./prototypes/vts-changes/${stageName}/index`, { viewData: req.session.viewData });
 };

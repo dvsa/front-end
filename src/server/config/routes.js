@@ -127,7 +127,10 @@ router.get('/prototypes/messages/archive/:messageIndex', messagingController.arc
 router.get('/prototypes/mts-messages', messagingController.resetMessages);
 
 // VTS changes
-router.get('/prototypes/vts-changes/start', vtsChangeController.resetSession);
+
+router.get('/prototypes/vts-changes/', vtsChangeController.resetSession);
+router.get('/prototypes/vts-changes/home', vtsChangeController.startJourney);
+router.get('/prototypes/vts-changes/start', vtsChangeController.getStart);
 router.get('/prototypes/vts-changes/type', vtsChangeController.getStage);
 router.post('/prototypes/vts-changes/type', [vtsChangeController.validateType, vtsChangeController.postType]);
 router.get('/prototypes/vts-changes/approved', vtsChangeController.getStage);
@@ -137,6 +140,8 @@ router.get('/prototypes/vts-changes/layout', vtsChangeController.getStage);
 router.get('/prototypes/vts-changes/classes', vtsChangeController.getStage);
 router.post('/prototypes/vts-changes/classes', [vtsChangeController.validateStage, vtsChangeController.postStage]);
 router.get('/prototypes/vts-changes/summary', vtsChangeController.getStage);
+router.get('/prototypes/vts-changes/short-summary', vtsChangeController.getStage);
+
 // Recalls
 router.post('/prototypes/recalls/V1/type-of-recall', [recalls.validateType, recalls.postRecallType]);
 

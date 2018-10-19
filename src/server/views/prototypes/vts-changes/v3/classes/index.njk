@@ -19,7 +19,7 @@
         </label>
   </h1>
 
-   {% call components.form(action='/prototypes/vts-changes/classes', method='POST') %} 
+  {% call components.form(action='/prototypes/vts-changes/v3/classes', method='POST') %} 
   
   <div class="form-group {{ 'form-group-error' if viewData.questions.classes.errors[0]['error'] }}">
     {% if viewData.questions.classes.errors[0]['error'] %}
@@ -40,7 +40,7 @@
   
   <div class="form-group">
 
-    <details >
+    <details>
       <summary><span class="summary">Help with changes to vehicle classes</span></summary>
       <div class="panel panel-border-narrow">
         <p>The new equipment must be able to test the vehicle classes you are authorised to test.</p>
@@ -55,7 +55,7 @@
      <input type="submit" value="Continue" class="button"/> 
   </div>
   <div class="u-margin-bottom-10">
-    <a href="/prototypes/vts-changes/layout">Back</a>
+    <a href="/prototypes/vts-changes/v3/layout">Back</a>
   </div>
 
   {% endcall %} 

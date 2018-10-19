@@ -30,24 +30,24 @@ export const postType = (req, res) => {
   req.session.viewData.questions.type.answer = formData;
 
   // Push each answer into array of types for display in Summary
-  const labelArr = Object.entries(formData).map( ([key, value]) =>  key );
-  
+  const labelArr = Object.entries(formData).map(([key, value]) => key);
+
   const types = [];
   let answer = '';
-  
-  labelArr.forEach( label => {  
-      if ( label == 'headlamp' ) {
-        answer = 'Headlamp beam tester'
-      } else if ( label == 'plate' ) {
-        answer = 'Plate brake tester'
-      } else if ( label == 'roller') {
-        answer = 'Roller brake tester'
-      } else if ( label == 'wheel' ) {
-        answer = 'Wheel play detector'
-      } else if ( label == 'ramp') {
-        answer = 'Ramp, hoist or lift'
-      }
-      types.push(answer);
+
+  labelArr.forEach(label => {
+    if (label == 'headlamp') {
+      answer = 'Headlamp beam tester';
+    } else if (label == 'plate') {
+      answer = 'Plate brake tester';
+    } else if (label == 'roller') {
+      answer = 'Roller brake tester';
+    } else if (label == 'wheel') {
+      answer = 'Wheel play detector';
+    } else if (label == 'ramp') {
+      answer = 'Ramp, hoist or lift';
+    }
+    types.push(answer);
   });
 
   // Add array of types to session

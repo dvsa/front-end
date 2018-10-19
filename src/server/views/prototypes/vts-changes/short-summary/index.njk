@@ -1,0 +1,84 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/manuals' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
+  { text: 'VTS079774', url: '/prototypes/vts-changes' },
+  { text: 'Tell us about changes to fixed equipment'  }
+] %}
+ 
+{% block content %}
+ 
+  <h1 class="heading-large">
+      <span class="heading-secondary">Tell us about changes to fixed equipment</span> 
+      Confirm changes to equipment
+  </h1>
+
+  <p class="lede">
+    Check that the information is correct before submitting the details to the DVSA.
+  </p> 
+
+  <table class='u-margin-bottom-30'>
+    <tbody>
+      <tr>
+        <td>
+          Equipment type(s)
+        </td>
+        <td class='u-font-bold'>
+          {% for type in viewData.typeNames %}
+             <span class="u-block">
+               {{type}}{{ ", " if not (loop.last) }}
+            </span>
+          {% endfor %}
+        </td>
+        <td class='u-align-right'>
+          <a href="./type" class="table-summary__action" title="Change equipment type">Change<span class="visuallyhidden"> equipment type</span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Will the building need to be altered?
+        </td>
+        <td class='u-font-bold'>
+          No
+        </td>
+        <td class='u-align-right'>
+          <a href="./layout" class="table-summary__action" title="Change premises declaration">Change<span class="visuallyhidden"> premises declaration</span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Is the new equipment approved by the DVSA?
+        </td>
+        <td class='u-font-bold'>
+          Yes
+        </td>
+        <td class='u-align-right'>
+          <a href="./approved" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Can the equipment test the same vehicle classes?
+        </td>
+        <td class='u-font-bold'>
+          Yes
+        </td>
+        <td class='u-align-right'>
+          <a href="./classes" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="u-margin-bottom-10">
+      <a href="/prototypes/vts-changes/declaration" class="button">Submit changes</a><br><br>
+  </div>
+  <div class="u-margin-bottom-10">
+    <a href="/prototypes/vts-changes/start">Back</a>
+  </div>
+  
+ 
+{% endblock %}

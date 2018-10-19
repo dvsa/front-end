@@ -6,6 +6,7 @@
 export const initViewData = () => {
   return {
     typeNames: [],
+    version: '',
     questions: {
       type: {
         answer: [],

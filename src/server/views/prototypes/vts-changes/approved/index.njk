@@ -2,14 +2,12 @@
 
 {% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
 
-{% set pageBreadcrumbItems = [
-  { text: 'Home', url: '/manuals' },
-  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
-  { text: 'VTS079774', url: '/prototypes/vts-changes' },
-  { text: 'Tell about changes to fixed equipment'  }
-] %}
 
 {% block content %} 
+
+ <div class="u-margin-bottom-15">
+    <a href="/prototypes/vts-changes/type" class="link-back">Back</a>
+  </div>
 
   <h1 class="heading-large">
         <span class="heading-secondary">Tell about changes to fixed equipment</span>
@@ -44,9 +42,6 @@
   <div class="u-margin-bottom-15">
     <input type="submit" value="Continue" class="button"/> 
   </div> 
-  <div class="u-margin-bottom-15">
-    <a href="/prototypes/vts-changes/type">Back</a>
-  </div>
   
   
   {% endcall %}

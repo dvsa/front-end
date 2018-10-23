@@ -189,24 +189,18 @@ p,
 .link-back {
   @include inline-block;
   position: relative;
-
   @include core-16;
-
   margin-top: $gutter-half;
   margin-bottom: $gutter-half;
   padding-left: 14px;
-
   color: $black;
-
-  &:link,
-  &:visited,
-  &:hover,
-  a#{&}:focus,
-  &:active {
-    color: $black;
-  }
-
-
+    &:link,
+    &:visited,
+    &:hover,
+    a#{&}:focus,
+    &:active {
+      color: $black;
+    }
   text-decoration: none;
   border-bottom: 1px solid $black;
 
@@ -216,11 +210,9 @@ p,
     display: block;
     width: 0;
     height: 0;
-
     border-top: 5px solid transparent;
     border-right: 6px solid $text-colour;
     border-bottom: 5px solid transparent;
-
     position: absolute;
     left: 0;
     top: 50%;
@@ -240,7 +232,6 @@ p,
 .code {
   color: $text-colour;
   background-color: $highlight-colour;
-
   text-shadow: 0 1px $page-colour;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 14px;
@@ -283,18 +274,34 @@ hr {
 .notice {
   @extend %contain-floats;
   position: relative;
+  margin-bottom: 20px;
 
   .icon {
     position: absolute;
     left: 0;
     top: 50%;
-    margin-top: -17px; // Half the height of the important icon
+    background-size: contain;
+    &-important {
+      margin-top: -17px;  
+    }
+    &-file-download {
+      margin-top: -18px;
+    }
+    &-information {
+      margin-top: -13px;
+    }
+    &-failure {
+      margin-top: -13px;
+    }
+    &-success {
+      margin-top: -13px;
+    }
   }
-
-  strong {
+  p {
     display: block;
     padding-left: (35 + 30) + px;
     margin-left: -$gutter-half;
+    margin-bottom: em(19, 25);
   }
 }
 

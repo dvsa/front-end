@@ -51,5 +51,19 @@
     <p><strong>This is a message:</strong><br> Lorem ipsum dolor sit amet.</p>
   </div>
   {%- endcall %}
+ 
+  {{ components.heading(
+    text='File download',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="notice">
+    <i class="icon icon-file-download"><span class="visually-hidden">Download All recalls since 1992</span></i>
+    <p><a href="#"><strong>All recalls since 1992</strong> (CSV, 50kb)</a></p>
+  </div>
+  {%- endcall %}
+
 
 {% endblock %}

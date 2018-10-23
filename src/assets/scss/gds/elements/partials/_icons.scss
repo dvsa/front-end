@@ -12,15 +12,23 @@
   }
 
   &-file-download {
-    @include icon(icon-file-download, 30, 39);
+    @include icon(icon-file-download, 28, 35);
+  }
+
+  &-failure {
+    @include icon(icon-cross, 28, 35, '/icons');
+  }
+
+  &-success {
+    @include icon(icon-tick, 28, 35, '/icons');
   }
 
   &-important {
-    @include icon(icon-important, 35, 35);
+    @include icon(icon-important, 28, 35);
   }
 
   &-information {
-    @include icon(icon-information, 27, 27);
+    @include icon(icon-information, 28, 35);
   }
 
   &-locator {

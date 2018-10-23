@@ -1,0 +1,46 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Notice messages' %}
+
+{% block content %}  
+
+  {{ components.heading(
+    text='Notices',
+    tag='h1',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="notice">
+    <i class="icon icon-important"><span class="visually-hidden">Important information</span></i>
+    <p><strong>Important</strong> <br />
+      Please note: Passenger grab handle insecure</p>
+  </div>
+  {%- endcall %}
+
+  {% call components.displayCode() %}
+  <div class="notice">
+    <i class="icon icon-information"><span class="visually-hidden">Information</span></i>
+    <p><strong>Key information</strong> <br />
+      Passenger grab handle insecure</p>
+  </div>
+  {%- endcall %} 
+
+  {% call components.displayCode() %}
+  <div class="notice">
+    <i class="icon icon-success"><span class="visually-hidden">Success</span></i>
+    <p><strong>Success</strong><br />
+      Application in progress</p>
+  </div>
+  {%- endcall %}
+
+  {% call components.displayCode() %}
+  <div class="notice">
+    <i class="icon icon-failure"><span class="visually-hidden">Error</span></i>
+    <p><strong>Error</strong> <br />
+      There has been a problem</p>
+  </div>
+  {%- endcall %}
+
+
+{% endblock %}

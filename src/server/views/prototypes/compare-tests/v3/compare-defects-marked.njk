@@ -1,0 +1,126 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      Compare defects
+    </li>
+  </ol>
+</div>
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary"></span>Compare defects of Toyota Corolla, FI18 JIU
+</h1>
+
+<span style=" font-size: 19px;"><a href="compare-defects-differences" style="font-weight: 400;">show differences only</a></span>
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2;">John Morris, MORR6734<a name="john" /></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>
+    </tr>
+    <tr>
+      <th>Steering <span class="badge">Match</span></th>
+      <td style="background-color: #dee0e2; font-weight: bold; padding-left: 10px;">
+        Electronic power steering warning lamp indicates a system malfunction [<a href="#" title="Check defect categorisation">2.6 (a)</a>] (lamp is blinking randomly)<span class="key-value-list__meta"></span>
+        <span class="key-value-list__meta" style="margin-bottom: 5px;">Steering > Electronic power steering</span>
+        <span class="badge--alert">Major</span></td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Electronic power steering warning lamp indicates a system malfunction [<a href="#" title="Check defect categorisation">2.6 (a)</a>] (lamp indicating inconsistently)
+          <span class="key-value-list__meta" style="margin-bottom: 5px;">Steering > Electronic power steering</span>
+          <span class="badge--alert">Major</span>
+        </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>Lamps <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Daytime running lamp obviously incorrectly positioned Nearside front [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px;">Lamps, reflectors and electrical equipment > Daytime running lamps</span>
+          <span class="badge--warn">Minor</span>
+      </td>
+      <td><strong>obviously wrong</strong><br/><a href="assess-difference-defect">Change</a></td>
+    </tr>
+    <tr>
+      <th>Lamps <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Daytime running lamp obviously incorrectly positioned Offside front [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px;">Lamps, reflectors and electrical equipment > Daytime running lamps</span>
+          <span class="badge--warn">Minor</span>
+      </td>    
+      <td><a href="">Rate difference</a></td>
+    </tr>
+    <tr>
+      <th>Road wheels <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Wheel hub spigot mounting slightly worn Nearside rear [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px;">Road Wheels > Hubs</span>
+          <span class="badge">Advisory</span>
+      </td>
+      <td><a href="">Rate difference</a></td>
+   </tr>
+    <tr>
+      <th>Road wheels <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Wheel hub spigot mounting slightly worn Offside rear [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px;">Road Wheels > Hubs</span>
+          <span class="badge">Advisory</span>
+          </td>
+      <td><a href="">Rate difference</a></td>
+   </tr>
+    <tr>
+      <th>Body, chassis, structure <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px;">
+          Exhaust has a minor leak of exhaust gases [<a href="#" title="Check defect categorisation">6.1.2 (a)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px;">Body, chassis, structure > Exhaust system</span>
+          <span class="badge">Advisory</span>
+      </td>
+      <td style="font-weight: bold; padding-left: 10px;">-</td>
+      <td><a href="">Rate difference</a></td>
+   </tr>
+  </tbody>
+</table>
+
+
+<div style="margin-top: 40px;">
+    <a class="button" href="test-comparison-defects-reviewed">Save and continue</a>
+    <br/>
+    <a href="test-comparison">Back</a>
+</div>
+
+
+
+
+{% endblock %}

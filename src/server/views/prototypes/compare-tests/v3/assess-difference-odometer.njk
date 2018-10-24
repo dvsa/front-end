@@ -1,0 +1,83 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare odometer readings
+      </a>
+    </li>
+    <li>
+        Assess difference
+    </li>  
+    </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary"></span> Assess difference in odometer readings of Toyota Corolla, FI18 JIU
+</h1>
+
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; background-color: #dee0e2; padding-left: 10px;">John Morris, MORR6734</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>
+    </tr>
+    <tr>
+      <td>Reading</td>
+      <td style="background-color: #dee0e2; padding-left: 10px;">62 745 <strong>miles</strong></td>
+      <td style="padding-left: 10px;">62 745 <strong>kilometers</strong></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 20px;">
+    <label class="form-label" for="choose-action">Assessment</label>
+    <select class="form-control" id="choose-action" style="margin-bottom:20px;">
+        <option value="1">Disregard</option>
+        <option value="2">Overruled, marginally wrong</option>
+        <option value="3">Obviously wrong</option>
+        <option value="4">Significantly wrong</option>
+        <option value="5">No defect</option>
+        <option value="7">Not testable</option>
+        <option value="8">Excessive corrosion/wear/damage missed</option>
+        <option value="9">Risk of injury missed</option>
+    </select>
+    <label class="form-label" for="justification">Justification</label>
+    <textarea class="form-control" name="justification" id="justification" rows="3" style="width:480px; margin-bottom: 20px;"></textarea>
+    <a class="button" href="compare-odometer-marked" value="Save">Save</a><br/>
+    <a href="compare-brakes#john">Back</a>
+</div>
+
+
+
+
+
+{% endblock %}

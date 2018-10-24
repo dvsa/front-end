@@ -1,0 +1,30 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+
+<div class="dvsa-banner dvsa-banner--confirmation">
+  <h1 class="dvsa-banner__heading-large">Test comparison saved</h1>
+  <p class="dvsa-banner__secondary-text">Disciplinary Action Report issued</p>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <div>
+    Inform the Nominated Tester that they can view details and outcome of the comparison in the MOT testing service in their profile
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 40px;">
+  <form action="test-comparison-v4-odometer-reviewed">
+    <a href="index">Back to MOT test history</a>
+  </form>
+</div>
+
+
+
+
+{% endblock %}

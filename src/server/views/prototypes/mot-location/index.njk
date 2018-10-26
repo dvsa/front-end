@@ -1,0 +1,23 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'VTS Changes' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+  
+  {% call components.columnHalf() %}
+  
+  {{ components.pageHeading(heading='Find a MOT location') }}
+
+      <ul>
+        <li>
+          <a href="/prototypes/mot-location/v1/">Journey 1</a>   
+        </li>
+      </ul>
+
+    {%- endcall %} 
+
+  {%- endcall %}
+  
+{% endblock %}

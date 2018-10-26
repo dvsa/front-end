@@ -1,15 +1,12 @@
 {% extends 'layouts/default.layout.njk' %}
 
 {% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
-
-{% set pageBreadcrumbItems = [
-  { text: 'Home', url: '/manuals' },
-  { text: 'WILLETTA AREDONDO', url: '/prototypes/mot-test' },
-  { text: 'VTS079774', url: '/prototypes/vts-changes' },
-  { text: 'Tell about changes to fixed equipment'  }
-] %}
  
 {% block content %}
+
+  <div class="u-margin-bottom-15">
+    <a href="/prototypes/vts-changes/layout" class="link-back">Back</a>
+  </div>
  
 
   <h1 class="heading-large ">
@@ -53,9 +50,6 @@
 
   <div class="u-margin-bottom-15">
      <input type="submit" value="Continue" class="button"/> 
-  </div>
-  <div class="u-margin-bottom-10">
-    <a href="/prototypes/vts-changes/layout">Back</a>
   </div>
 
   {% endcall %} 

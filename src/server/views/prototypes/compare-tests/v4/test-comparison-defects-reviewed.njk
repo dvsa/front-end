@@ -1,0 +1,84 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+        Compare tests     
+    </li>
+  </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary"></span> Compare MOT test results for FI18 JIU
+</h1>
+
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2;">John Morris, MORR6734</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>
+    </tr>
+    <tr>
+      <td>Start of the test</td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;">10/10/2018, 09:11</td>
+      <td style="font-weight: bold; padding-left: 10px;">10/10/2018, 11:36</td>
+    </tr>
+    <tr>
+      <td>End of the test</td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;">10/10/2018, 09:25</td>
+      <td style="font-weight: bold; padding-left: 10px;">10/10/2018, 12:07</td>
+    </tr>
+    <tr>
+      <td>Odometer reading</td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;">64 524 kilometers</td>
+      <td style="font-weight: bold; padding-left: 10px;">64 524 miles</td>
+    </tr>    
+        <tr>
+        <td colspan="3">
+            <h2 class="heading heading--large heading-medium">
+                Test results
+            </h2>
+        </td>
+    </tr>
+    <tr>
+      <td colspan="2"><a href="compare-defects">Defects</a></td>
+      <td>✔️ reviewed</td>
+    </tr>
+    <tr>
+      <td colspan="2"><a href="compare-brakes">Brakes</a></td>
+      <td><span class="badge">Match</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 20px;">
+    <a class="button" href="check-answers">Save</a>
+    <br/>
+    <a>Back</a>
+</div>
+
+
+
+
+{% endblock %}

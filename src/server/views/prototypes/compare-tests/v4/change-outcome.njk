@@ -1,0 +1,73 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests     
+    </a>
+    </li>
+    <li>
+      <a href="/">
+        Review comparison     
+      </a>
+    </li>  
+    <li>
+        Change outcome     
+    </li>  
+    </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary"></span>Change the result of this review
+</h1>
+
+<h3 class="heading heading--medium heading-medium">
+  Advisory Warning Letter (AWL)
+</h3>
+
+
+<div class="form-group">
+  <label class="form-label" for="select-box">
+   Select a different result
+  </label>
+  <select class="form-control" id="select-box" name="select-box">
+    <option value="one">No further action</option>
+    <option value="two" selected="selected">AWL - Advisory Warning Letter</option>
+    <option value="three">DAR - Disciplinary Action Report</option>
+  </select>
+</div>
+
+<label class="form-label" for="textarea">
+ Why did you change this result?
+</label>
+<textarea class="form-control" name="textarea" id="textarea" rows="5"></textarea>
+
+
+<div style="margin-top: 20px;">
+    <a class="button" href="check-answers-DAR">Save and continue</a>
+    <br/>
+    <a href="check-answers-v2">Back</a>
+</div>
+
+
+{% endblock %}

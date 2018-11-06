@@ -1,0 +1,60 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Confirm Vehicle and Start Test' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    <header class="content-header">
+      <h1>
+        <span class="content-header__title">Add minor failure</span>
+      </h1>
+      <h2>
+        <span class="content-header__tertiary">Headlight lens slightly defective</span>
+      </h2>
+    </header>
+
+    <form method="GET" action="front-exterior-checks-4">
+      <fieldset>
+        <legend class="heading heading--medium heading-medium">Location</legend>
+        <div class="form-group">
+          <label class="form-label" for="lateral">Lateral</label>
+          <input class="form-control" id="lateral" type="text" name="lateral" value="n/a">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="longitudinal">Longitudinal</label>
+          <input class="form-control" id="longitudinal" type="text" name="longitudinal" value="n/a">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vertical">Vertical</label>
+          <input class="form-control" id="vertical" type="text" name="vertical" value="n/a">
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend class="heading heading--medium heading-medium">Additional information</legend>
+          <div class="form-group">
+            <label class="form-label" for="textarea">Add any further comment if required?</label>
+            <textarea class="form-control" name="textarea" id="textarea" rows="5"></textarea>
+          </div>
+      </fieldset>
+
+      <div class="form-group">
+        <input class="button button--touch" type="submit" value="Add minor defect"/>
+      </div>
+
+      <a href="/prototypes/vsi-during-test/front-exterior-checks/front-exterior-checks-1">Cancel and return to defects</a>
+    </form>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

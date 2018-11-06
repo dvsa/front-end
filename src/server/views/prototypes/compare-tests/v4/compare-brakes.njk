@@ -1,0 +1,99 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      Compare brakes
+    </li>
+  </ol>
+</div>
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary"></span> Compare brake test results of Toyota Corolla, FI18 JIU
+</h1>
+
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2;">John Morris, MORR6734</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Service brake
+        </h2>
+      </td>
+    </tr>    <tr>
+      <td><span class="badge">Match</span></td>
+      <td style="font-weight: bold; border-top: 0px; padding-left: 10px; background-color: #dee0e2;">PASS</td>
+      <td style="font-weight: bold; padding-left: 10px;">PASS</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Imbalances
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <td><span class="badge--info">Difference</span></td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;">PASS</td>
+      <td style="font-weight: bold; padding-left: 10px;">FAIL</td>
+      <td><a href="">Review difference</a></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Parking brake
+        </h2>
+      </td>
+    </tr>
+   <tr>
+      <td><span class="badge">Match</span></td>
+      <td style="font-weight: bold; border-top: 0px; padding-left: 10px; background-color: #dee0e2;">PASS</td>
+      <td style="font-weight: bold; padding-left: 10px;">PASS</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div style="margin-top: 40px;">
+    <a class="button" href="test-comparison-brakes-reviewed">Save and continue</a>
+    <br/>
+    <a href="test-comparison-v3">Back</a>
+</div>
+
+
+
+
+{% endblock %}

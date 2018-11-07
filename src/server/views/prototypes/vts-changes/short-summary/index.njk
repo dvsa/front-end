@@ -10,18 +10,15 @@
  
   <h1 class="heading-large">
       <span class="heading-secondary">Tell us about changes to fixed equipment</span> 
-      Confirm changes to equipment
+      Check that the information is correct
   </h1>
 
-  <p class="lede">
-    Check that the information is correct before submitting the details to the DVSA.
-  </p> 
 
   <table class='u-margin-bottom-30'>
     <tbody>
       <tr>
         <td>
-          Equipment type(s)
+          Equipment type
         </td>
         <td class='u-font-bold'>
           {% for type in viewData.typeNames %}
@@ -36,7 +33,7 @@
       </tr>
       <tr>
         <td>
-          Will the building need to be altered?
+          Will the new equipment reduce the approved clearances or dimensions?
         </td>
         <td class='u-font-bold'>
           No
@@ -71,7 +68,7 @@
   </table>
 
   <div class="u-margin-bottom-10">
-      <a href="/prototypes/vts-changes/declaration" class="button">Submit changes</a><br><br>
+      <a href="/prototypes/vts-changes/declaration" class="button">Continue</a><br><br>
   </div>
   <div class="u-margin-bottom-10">
     <a href="/prototypes/vts-changes/start">Return to VTS Overview</a>

@@ -1,0 +1,118 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Confirm Vehicle and Start Test' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT testing'}
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+    
+    {{ components.pageHeading(heading='Confirm vehicle and start test', extraClass='u-margin-top-15 u-margin-bottom-30') }} 
+
+    <div class="vehicle-info-banner grid-row">
+      <div class="vehicle-info-banner__details-wrapper">
+          <div class="grid-row">
+            <div class="vehicle-info-banner__details">
+                <h4 class="heading-medium u-margin-0">Vehicle</h4>
+                <p class="u-margin-bottom-15">Peugeot 3008 SUV</p> 
+              
+                <h4 class="heading-medium u-margin-0">Color</h4>
+                <span class="vehicle-info-banner__color vehicle-info-banner__color--blue">Blue</span>  
+            </div>
+        
+            <div class="vehicle-info-banner__details">
+                <h4 class="heading-medium u-margin-0">VIN</h4>
+                <p class="u-margin-bottom-15">GAULAGAAAAA11951</p> 
+              
+                <h4 class="heading-medium u-margin-0">Registration number</h4>
+                <p class="u-margin-0">
+                  TH10 CZR
+                </p> 
+            </div>
+          </div>
+          
+      </div> 
+      <div class="vehicle-info-banner__logo-wrapper"> 
+          <img src="https://upload.wikimedia.org/wikipedia/en/8/88/Peugeot_Logo.png" alt="Peugeot" class="img-fluid">
+      </div>
+    </div>  
+
+    <div class="text">
+      <p>Check that you have the right vehicle before starting the test</p>
+    </div>
+ 
+  <h4 class="heading heading--small heading-small">
+      Vehicle Specification
+  </h4>
+ 
+  <table class="table-summary u-margin-bottom-20">
+
+    <tbody>
+      <tr>
+        <th class="table-summary__key">Engine</th>
+        <td class="table-summary__value">Diesel 1998cc</td>
+      </tr>
+      <tr>
+          <th class="table-summary__key">Brake test weight</th>
+          <td class="table-summary__value">1750kg</td>
+        </tr>
+    </tbody>
+
+  </table> 
+ 
+
+
+  <h4 class="heading heading--small heading-small u-margin-top-30">
+      Vehicle Registration
+  </h4>
+ 
+  <table class="table-summary u-margin-bottom-20">
+
+      <tbody>
+        <tr>
+          <th class="table-summary__key">VIN</th>
+          <td class="table-summary__value">WBVBAAIAA46633</td>
+        </tr>
+        <tr>
+            <th class="table-summary__key">Country of registration</th>
+            <td class="table-summary__value">GB, UK, ENG, CYM, SCO (UK)</td>
+          </tr>
+        <tr>
+          <th class="table-summary__key">MOT test class</th>
+          <td class="table-summary__value">4</td>
+        </tr>
+        <tr>
+            <th class="table-summary__key">Vehicle category</th>
+            <td class="table-summary__value">M1</td>
+        </tr>
+        <tr>
+            <th class="table-summary__key">Date of first use</th>
+            <td class="table-summary__value">7 June 2011</td>
+          </tr>
+        <tr>
+            <th class="table-summary__key">MOT expiration date</th>
+            <td class="table-summary__value">6 July 2019</td>
+          </tr>
+      </tbody>
+  
+    </table>
+
+
+        <a class="button button--touch" id="confirm-start-test" href="/prototypes/vsi-during-test/v1/advice/advice-sheet">Confirm and continue</a>
+
+        <div class="content-navigation__secondary u-margin-top-10"> 
+          <a href="/prototypes">Cancel and return to find a vehicle</a>
+        </div>
+    </nav>
+
+    {% endcall %}
+
+  {% endcall %}
+
+{% endblock %}

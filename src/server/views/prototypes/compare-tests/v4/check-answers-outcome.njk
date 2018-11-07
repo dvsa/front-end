@@ -1,0 +1,55 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests     
+    </a>
+    </li>
+    <li>
+        Review assessment     
+    </li>  
+    </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+ Confirm the result of this review 
+</h1>
+
+<h3 class="heading-medium heading heading--page-heading">
+  <span class="heading-secondary">Proposed case outcome: </span> 
+  Advisory Warning Letter (AWL)
+  <span><a href="change-outcome" style="font-weight: 400; font-size: 19px; float: right; padding-top: 5px;">change</a></span>
+</h3>
+
+
+<div style="margin-top: 40px;">
+    <a class="button" href="saved">Save to MOT Testing Service</a>
+    <br/>
+    <div  style="margin-top: 20px;"><a href="#">Save PDF</a></div>
+    <br/>
+    <a href="test-comparison-defects-reviewed">Back</a>
+</div>
+
+
+{% endblock %}

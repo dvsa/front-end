@@ -22,7 +22,7 @@ export class CookieMessage {
     if (!this.storeValueForCookieMessage) {
       this.cookieMessageElement.style.display = 'block';
       // Add to store so it doesn't show message again
-      store.set(this.cookieMessageStoreKey, 'yes', this.expireDate);
+      store.set(this.cookieMessageStoreKey, 'yes', this.expireDate.getTime());
     }
   }
 }

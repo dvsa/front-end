@@ -1,8 +1,17 @@
 ## Demo
 
-You can view a live demo here:
+You can view the MOT component library and prototypes here:
 
 [Heroku Demo](https://dvsa-front-end.herokuapp.com/)
+
+## Login credentials
+
+If you'd like to access the library and prototypes, log in as below.
+The prototype system is password protected to prevent users accidentally accessing what may look like a real Government Service.
+
+User: admin  
+Password: dvsa  
+
 
 ## Local Setup
 

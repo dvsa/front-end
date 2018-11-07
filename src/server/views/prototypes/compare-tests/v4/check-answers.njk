@@ -1,0 +1,176 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests     
+    </a>
+    </li>
+    <li>
+        Review assessment     
+    </li>  
+    </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+ Check your MOT test review 
+</h1>
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td colspan="4" style="border: 0px;">    
+        <h2 class="heading heading--large heading-medium">
+          Inspection details
+        </h2>
+      </td>
+    </tr>    
+    <tr>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2; width: 315px;">John Morris, MORR6734</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>
+      <td style="border-top: 0px;" colspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px;">    
+        <h2 class="heading heading--large heading-medium">
+          Odometer reading comparison
+        </h2>
+      </td>
+    </tr>
+    <tr>
+     <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px; border-top: 0px;">64 524 kilometers</td>
+      <td style="font-weight: bold; padding-left: 10px; border-top: 0px;">64 524 miles</td>
+      <th style="font-weight: bold; border-top: 0px;" colspan="3" border-top: 0px;></th>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px;">
+        <h2 class="heading heading--large heading-medium">
+          Defects comparison
+        </h2>
+      </td>
+    </tr>
+    <tr>
+     <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px; border-top: 0px;">John Morris, MORR6734</td>
+      <td style="font-weight: bold; padding-left: 10px; border-top: 0px;">Harry Enforsmith, Vehicle Examiner</td>
+      <th style="font-weight: bold; border-top: 0px;" colspan="3">assessment</th>
+    </tr>
+     <tr>
+        <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
+        <td style="font-weight: bold; padding-left: 10px;">
+            Daytime running lamp obviously incorrectly positioned Nearside front [4.2.3 (a) (i)]
+            <span class="key-value-list__meta" style="margin-bottom: 5px;">Lamps, reflectors and electrical equipment > Daytime running lamps</span>
+            <span class="badge--warn">Minor</span>
+        </td>
+        <th style="font-weight: bold" colspan="2">Significantly wrong<br /><span style="font-weight: normal;">score:</span> 10</th>
+        <td><a href="">change</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="font-weight: bold; padding-left: 10px;">Daytime running lamp obviously incorrectly positioned Offside front [4.2.3 (a) (i)] 
+      <span class="key-value-list__meta" style="margin-bottom: 5px;">Lamps, reflectors and electrical equipment > Daytime running lamps</span>
+      <span class="badge--warn">Minor</span></td>
+      <th style="font-weight: bold" colspan="2">Significantly wrong<br /><span style="font-weight: normal;">score:</span> 10</th>
+      <td><a href="">change</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="font-weight: bold; padding-left: 10px;">Wheel hub spigot mounting slightly worn Nearside rear [5.2.1 (b) (i)]
+        <span class="key-value-list__meta" style="margin-bottom: 5px;">Road Wheels > Hubs</span>
+        <span class="badge">Advisory</span></td>
+      <th style="font-weight: bold" colspan="2">Overruled, marginally wrong</span></th>
+      <td><a href="">change</a></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="font-weight: bold; padding-left: 10px;">
+        Wheel hub spigot mounting slightly worn Offside rear [5.2.1 (b) (i)]
+        <span class="key-value-list__meta" style="margin-bottom: 5px;">Road Wheels > Hubs</span>
+        <span class="badge">Advisory</span>
+      </td>
+      <th style="font-weight: bold" colspan="2">Overruled, marginally wrong</span></th>
+      <td><a href="">change</a></td>
+   </tr>
+    <tr>
+      <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">Electronic power steering warning lamp indicates a system malfunction [2.6 (a)] (lamp is blinking randomly)<span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
+      <td style="font-weight: bold; padding-left: 10px;">Electronic power steering warning lamp indicates a system malfunction [2.6 (a)] (lamp indicating inconsistently)<span class="key-value-list__meta"></span><span class="badge--alert">Major</span></td>
+      <th style="font-weight: bold" colspan="2">Match</th>
+      <td></td>
+    </tr>
+  <tr>
+      <td colspan="4" style="border: 0px solid; padding-top: 40px;">
+        <h2 class="heading heading--large heading-large">
+            Brake test results comparison
+        </h2>
+      </td>
+    </tr>  
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Service brake
+        </h2>
+      </td>
+    </tr>    <tr>
+      <td><span class="badge">Match</span></td>
+      <td style="font-weight: bold; border-top: 0px; padding-left: 10px; background-color: #dee0e2;">PASS</td>
+      <td style="font-weight: bold; padding-left: 10px;">PASS</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Imbalances
+        </h2>
+      </td>
+    </tr>
+    <tr>
+      <td><span class="badge--info">Difference</span></td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;">PASS</td>
+      <td style="font-weight: bold; padding-left: 10px;">FAIL</td>
+      <td><a href="">Review difference</a></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Parking brake
+        </h2>
+      </td>
+    </tr>
+   <tr>
+      <td><span class="badge">Match</span></td>
+      <td style="font-weight: bold; border-top: 0px; padding-left: 10px; background-color: #dee0e2;">PASS</td>
+      <td style="font-weight: bold; padding-left: 10px;">PASS</td>
+      <td></td>
+    </tr>  </tbody>
+</table>
+
+
+<div style="margin-top: 40px;">
+    <a class="button" href="check-answers-outcome">Save and continue</a>
+    <br/>
+    <div  style="margin-top: 20px;"><a href="#">Save PDF</a></div>
+    <br/>
+    <a href="test-comparison-defects-reviewed">Back</a>
+</div>
+
+
+{% endblock %}

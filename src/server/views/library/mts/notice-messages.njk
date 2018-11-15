@@ -53,17 +53,26 @@
   {%- endcall %}
  
   {{ components.heading(
-    text='File download',
+    text='Notices with white background',
     tag='h2',
     size='medium'
-  ) }}
+  ) }}  
 
+  {% call components.displayCode() %}
+  <div class="notice">
+  <i class="icon icon-important">
+       <span class="visually-hidden">Warning</span>
+     </i>
+  <p><strong>If the changes do not meet the requirements for authorisation, DVSA will not approve the changes and the VTS may have to stop testing.</strong>
+  </p>
+  </div>
+  {%- endcall %}
+   
   {% call components.displayCode() %}
   <div class="notice">
     <i class="icon icon-file-download"><span class="visually-hidden">Download All recalls since 1992</span></i>
     <p><a href="#"><strong>All recalls since 1992</strong> (CSV, 50kb)</a></p>
   </div>
   {%- endcall %}
-
 
 {% endblock %}

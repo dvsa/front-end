@@ -1,4 +1,4 @@
-{% extends 'layouts/default.layout.njk' %}
+{% extends 'layouts/mts.layout.njk' %}
 
 {% set pageTitle = 'Notify of changes to equipment - VTS079774' %}
  
@@ -13,67 +13,72 @@
       Check that the information is correct
   </h1>
 
-
-  <table class='u-margin-bottom-30'>
-    <tbody>
-      <tr>
-        <td>
+  <table class="key-value-list">
+      <tbody>
+        <tr>
+          <th class="key-value-list__key"> 
           Equipment type
-        </td>
-        <td class='u-font-bold'>
-          {% for type in viewData.typeNames %}
-             <span class="u-block">
-               {{type}}{{ ", " if not (loop.last) }}
-            </span>
-          {% endfor %}
-        </td>
-        <td class='u-align-right'>
-          <a href="./type" class="table-summary__action" title="Change equipment type">Change<span class="visuallyhidden"> equipment type</span></a>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          Will the new equipment reduce the approved clearances or dimensions?
-        </td>
-        <td class='u-font-bold'>
-          No
-        </td>
-        <td class='u-align-right'>
-          <a href="./layout" class="table-summary__action" title="Change premises declaration">Change<span class="visuallyhidden"> premises declaration</span></a>
-        </td>
-      </tr>
-      <tr>
-        <td>
+          </th>
+          <td class="key-value-list__value"> 
+            {% for type in viewData.typeNames %}
+              <span class="u-block">
+                {{type}}{{ ", " if not (loop.last) }}
+             </span>
+           {% endfor %}
+          </td>
+          <td class="key-value-list__item-action">
+              <a href="./type" title="Change equipment type">
+                Change
+                <span class="visuallyhidden">equipment type</span>
+              </a>
+            </td>
+        </tr>
+        <tr>
+          <th class="key-value-list__key"> 
+              Will the new equipment reduce the approved clearances or dimensions?
+          </th>
+          <td class="key-value-list__value"> 
+            <span class="u-block">
+                No
+              </span>
+          </td>
+          <td class="key-value-list__item-action">
+              <a href="./layout" title="Change premises declaration">Change
+                <span class="visuallyhidden"> premises declaration</span></a>
+          </td> 
+       </tr>
+       <tr>
+        <th class="key-value-list__key"> 
           Is the new equipment approved by the DVSA?
-        </td>
-        <td class='u-font-bold'>
+        </th>
+        <td class="key-value-list__value"> 
           Yes
         </td>
-        <td class='u-align-right'>
-          <a href="./approved" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
+        <td class="key-value-list__item-action">
+          <a href="./approved"  title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
         </td>
-      </tr>
+      </tr> 
       <tr>
-        <td>
+        <th class="key-value-list__key"> 
           Can the equipment test the same vehicle classes?
+        </th>
+        <td class="key-value-list__value"> 
+            <span class="u-block">Yes</span>
         </td>
-        <td class='u-font-bold'>
-          Yes
+        <td class="key-value-list__item-action">
+          <a href="./classes"  title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
         </td>
-        <td class='u-align-right'>
-          <a href="./classes" class="table-summary__action" title="Change approval declaration">Change<span class="visuallyhidden"> approval declaration</span></a>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+      </tr>  
+      </tbody>
+    </table>
+ 
   <div class="u-margin-top-15 u-margin-bottom-15">
     <input type="submit" value="Continue" class="button"/> 
   </div>
 
   <p>
     <a href="/prototypes/vts-changes/start">Return to VTS Overview </a></p>
-    </p>
+  </p>
   
  
 {% endblock %}

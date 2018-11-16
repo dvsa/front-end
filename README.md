@@ -6,7 +6,7 @@ You can view the MOT component library and prototypes here:
 
 ## Login credentials
 
-If you'd like to access the library and prototypes, log in as below.
+If you'd like to access the [Prototypes pages](https://dvsa-front-end.herokuapp.com/prototpes), log in as below.
 The prototype system is password protected to prevent users accidentally accessing what may look like a real Government Service.
 
 User: admin  

@@ -63,12 +63,18 @@ var _authentication = require('../middlewares/authentication');
 
 var PrototypeAuth = _interopRequireWildcard(_authentication);
 
+var _constants = require('../config/constants');
+
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 const router = (0, _express.Router)();
 
-// Mount Auth function to all prototype paths. Requires credentials to match those in in Heroku env settings
-router.get('/prototypes*', PrototypeAuth.authenticationMiddleware);
+/* Mount Authorisation to all prototype paths when in Prod.
+   Requires credentials to match those in in Heroku env settings
+*/
+if (!(0, _constants.isDevelopment)()) {
+  router.get('/prototypes*', PrototypeAuth.authenticationMiddleware);
+}
 
 // Misc routes
 router.get('/robots.txt', mainController.robots);

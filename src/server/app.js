@@ -117,7 +117,6 @@ export const startApp = async () => {
     // Remove powered by express
     // for security reasons
     app.disable('x-powered-by');
-    
   }
 
   // Enable GZip Compression

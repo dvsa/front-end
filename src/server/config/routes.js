@@ -13,8 +13,17 @@ import * as messagingController from '../controllers/mts-messages';
 import * as vtsChangeController from '../controllers/vts-changes';
 import * as vsiDuringTestController from '../controllers/vsi-during-test';
 import * as recalls from '../controllers/recalls';
+import * as PrototypeAuth from '../middlewares/authentication';
+import {  isDevelopment } from '../config/constants';
 
 const router = Router();
+
+/* Mount Authorisation to all prototype paths when in Prod.
+   Requires credentials to match those in in Heroku env settings
+*/
+if (!isDevelopment()) { 
+  router.get('/prototypes*', PrototypeAuth.authenticationMiddleware);
+}
 
 // Misc routes
 router.get('/robots.txt', mainController.robots);

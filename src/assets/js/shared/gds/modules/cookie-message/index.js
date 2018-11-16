@@ -23,13 +23,13 @@ export class CookieMessage {
       Cookie expiry must be an Integer.
       Check if user either has no cookie, or has an invalid one (String)...
       */
-     const cookieExpiryDate = store.getExpiration(this.cookieMessageStoreKey);
-     const hasInvalidCookie = !Number.isInteger(cookieExpiryDate);
-     
-     if (!this.storeValueForCookieMessage || hasInvalidCookie ) {
-       /* Show message and set cookie */
-     this.cookieMessageElement.style.display = 'block';
-     store.set(this.cookieMessageStoreKey, 'yes', this.expireDate.getTime());
+    const cookieExpiryDate = store.getExpiration(this.cookieMessageStoreKey);
+    const hasInvalidCookie = !Number.isInteger(cookieExpiryDate);
+
+    if (!this.storeValueForCookieMessage || hasInvalidCookie) {
+      /* Show message and set cookie */
+      this.cookieMessageElement.style.display = 'block';
+      store.set(this.cookieMessageStoreKey, 'yes', this.expireDate.getTime());
     }
   }
 }

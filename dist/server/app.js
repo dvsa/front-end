@@ -185,9 +185,6 @@ const startApp = exports.startApp = async () => {
     // Remove powered by express
     // for security reasons
     app.disable('x-powered-by');
-
-    // Add basic auth based on enviroment variables
-    app.use(Middlewares.authenticationMiddleware);
   }
 
   // Enable GZip Compression

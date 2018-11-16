@@ -119,7 +119,7 @@ export const startApp = async () => {
     app.disable('x-powered-by');
     
   }
-  
+
   // Enable GZip Compression
   app.use(compression());
 

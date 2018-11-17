@@ -59,6 +59,12 @@
   }
 }
 
+.breadcrumbs {
+  a, a:visited {
+    color: $text-colour;
+  }
+}
+
 .breadcrumb {
   list-style-type: none;
   list-style-image: none;

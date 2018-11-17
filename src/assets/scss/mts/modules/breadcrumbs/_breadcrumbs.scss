@@ -3,6 +3,13 @@
   z-index: 50;
   background-color: $white;
 
+
+  .breadcrumbs {
+    a, a:visited {
+      color: $text-colour;
+    }
+  }
+ 
   nav {
     max-width: 960px;
     margin: 0 auto;
@@ -71,8 +78,7 @@
   @extend %breadcrumb-base;
 }
 
-#global-breadcrumb {
-
+#global-breadcrumb { 
   a {
     color: #0b0c0c;
   }

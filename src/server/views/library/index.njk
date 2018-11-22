@@ -6,6 +6,12 @@
 
   {{ components.pageHeading(heading='Library', secondary='GOV.UK elements') }}
 
-  {{ components.paragraph(text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis facilis totam libero quas tenetur quam, fugiat saepe quisquam inventore blanditiis?', lead=true) }}
+  {{ components.paragraph(text='This is the component library in use at DVSA on the MOT application.', lead=true) }}
+  {{ components.paragraph(text='Here you can see how we\'ve extended the standard GDS components to include those under the \'Mts\' tab which address specific needs for our users.', lead=true) }}
+
+  {{ components.heading(text='Discussion', tag='h2', size='medium') }}
+  {{ components.paragraph(text='For discussion or feedback, please head to the Issues on our GitHub:', lead=true) }}
+
+  {{ components.link(text='DVSA front-end on GitHub', url='http://github.com/dvsa/front-end', back=false) }}
 
 {% endblock %}

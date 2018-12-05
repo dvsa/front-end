@@ -15,7 +15,7 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * 
+ *
  * Modified 2012-02-28 by @danmillar to allow for maintained visibility
  * while the mouse is over the popover itself (rather than disappearing
  * when the mouse leaves the trigger). Note: Set a 'delay.hide' option.
@@ -146,7 +146,7 @@ export const initBootstrapPopover = $ => {
   });
 
   /* POPOVER PLUGIN DEFINITION
-  * ======================= */
+   * ======================= */
 
   $.fn.popover = function(option) {
     return this.each(function() {

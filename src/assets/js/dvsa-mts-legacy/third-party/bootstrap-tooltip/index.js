@@ -19,7 +19,7 @@
  * ========================================================== */
 
 /* TOOLTIP PUBLIC CLASS DEFINITION
-  * =============================== */
+ * =============================== */
 
 export const initBootstrapTooltip = $ => {
   var Tooltip = function(element, options) {
@@ -237,7 +237,7 @@ export const initBootstrapTooltip = $ => {
   };
 
   /* TOOLTIP PLUGIN DEFINITION
-  * ========================= */
+   * ========================= */
 
   var old = $.fn.tooltip;
 
@@ -265,7 +265,7 @@ export const initBootstrapTooltip = $ => {
   };
 
   /* TOOLTIP NO CONFLICT
-  * =================== */
+   * =================== */
 
   $.fn.tooltip.noConflict = function() {
     $.fn.tooltip = old;

@@ -1,0 +1,122 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      Compare brake tests
+    </li>
+  </ol>
+</div>
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary"></span> Compare brake tests for FI18 JIU
+</h1>
+
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="font-weight: bold; border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2;">John Morris, MORR6734</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>   
+      <td style="border-top: 0px solid;"></td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold; border-top: 0px;">Wehicle weight</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2;">1111 kg</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">1525 kg</td>   
+      <td></td>
+    </tr>    
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Service brake <span class="badge">Match</span>
+        </h2>
+      </td>      
+    </tr> 
+    <tr>
+      <td>Test result</td>
+      <td style="font-weight: bold; border-top: 0px; padding-left: 10px; background-color: #dee0e2;"><span class="badge--success">PASS</span></td>
+      <td style="font-weight: bold; padding-left: 10px;"><span class="badge--success">PASS</span></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td colspan="3">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 40px;">
+            Imbalances <span class="badge--info">Difference</span>
+        </h2>
+      </td>
+      <td style="border: 0px solid; vertical-align: bottom; padding-bottom: 25px;">
+        <a href="assess-difference-brakes">Review&nbsp;difference</a>
+      </td>
+    </tr>
+    <tr>
+      <td style="border-bottom: 0px solid;">Axle 1</td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2; border-bottom: 0px solid;"><span class="badge--success">PASS</span></td>
+      <td style="font-weight: bold; padding-left: 10px; border-bottom: 0px solid;"><span class="badge--alert">FAIL</span></td>
+      <td></td>
+    </tr>
+     <tr>
+      <td>Axle 2</td>
+      <td style="font-weight: bold; padding-left: 10px; background-color: #dee0e2;" border-bottom: 0px solid;><span class="badge--success">PASS</span></td>
+      <td style="font-weight: bold; padding-left: 10px;"><span class="badge--alert">FAIL</span></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td style="border: 0px solid;"></td>
+      <td style="border: 0px solid;"></td>
+      <td style="border: 0px solid;"></td>
+      <td style="border: 0px solid;"></td>
+    </tr>
+    <tr>
+      <td colspan="4" style="border: 0px solid;">
+        <h2 class="heading heading--medium heading-medium" style="margin-top: 20px;">
+            Parking brake <span class="badge">Match</span>
+        </h2>
+      </td>
+    </tr>
+   <tr>
+      <td>Test result</td>
+      <td style="font-weight: bold; border-top: 0px; padding-left: 10px; background-color: #dee0e2;"><span class="badge--success">PASS</span></td>
+      <td style="font-weight: bold; padding-left: 10px;"><span class="badge--success">PASS</span></td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div style="margin-top: 40px;">
+    <a class="button" href="test-comparison-brakes-reviewed">Save and continue</a>
+    <br/>
+    <a href="test-comparison">Back</a>
+</div>
+
+
+
+
+{% endblock %}

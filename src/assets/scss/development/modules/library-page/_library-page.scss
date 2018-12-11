@@ -1,4 +1,8 @@
 .library-page {
+  box-sizing: border-box;
+  * {
+    box-sizing: inherit;
+  }
   @media(min-width: 1080px) {
     #global-header-bar,
     #content {

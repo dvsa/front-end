@@ -1,5 +1,9 @@
 .js-accordion {
 
+  * {
+    box-sizing: border-box;
+  }
+
   &__top-section {
     display: none;
 

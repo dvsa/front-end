@@ -1,5 +1,4 @@
-// Wrap old MTS modules which can be wrapped
-// Only used for legacy as they do not meet best practice
+// Modules wraped with 'mts-body-wrapper'
 @include mtsBodyWrapper {
   // Misc specific to MTS
   @import 'misc/misc';
@@ -55,8 +54,7 @@
   @import 'panel-indent/panel-indent';
 }
 
-// Old modules does not follow best
-// practice so cannot be wrapped with body class
+// Old modules not wraped with 'mts-body-wrapper'
 @import 'task-list/task-list';
 @import 'badge/badge';  
 @import 'browse/browse';
@@ -79,9 +77,7 @@
 @import 'two-fa/two-fa';
 @import 'criteria/criteria';
 
-// BEM Style modules
-// Do not need to be wrapped
-// Follows best practice
+// Newer BEM-style modules
 @import 'matched-records/matched-records';
 @import 'notification/notification';
 @import 'o-bordered-list/o-bordered-list';

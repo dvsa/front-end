@@ -71,7 +71,7 @@
   @include _core-font-generator(24px, 20px, 16pt, (30 / 24), (24 / 20), false, 700);
   @include box-sizing(border-box);
   background-image: file-url('icons/icon-pointer.png');
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; 
   background-position: 100% 50%;
   padding: .3em 45px .2em .6em;
   width: 100%;

@@ -7,7 +7,7 @@ All notable changes included in tagged released will be documented in this file.
 ## [1.2.43] - 2018-12-12
 ### Changed
 - CSS Border-box fix for use in MOTH accordions and MTS Messages filters
-- Fonts loaded via font files, removing use of base64 fonts for a smaller CSS file
+- Fonts now loaded via font files, removing use of base64 fonts for a smaller CSS file. SASS Partial _fonts-64.scss now deprecated and not used. To be eventually deleted.
 
 ### Added 
 - Changelog ;) 

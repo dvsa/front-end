@@ -50,8 +50,8 @@ export class MessagesFilter {
 
   init = () => {
     // Attach listeners to checkboxes
-    //let checkboxes = Array.from(this.elements.checkboxes);
-    this.elements.checkboxes.forEach(checkbox => {
+    const checkboxes = Array.from(this.elements.checkboxes);
+    checkboxes.forEach(checkbox => {
       addEventListenerToEl(checkbox, 'change', this.handleCheck);
     });
 
@@ -60,6 +60,8 @@ export class MessagesFilter {
     if (filterSpecialNotices) {
       this.filterSpecialNotices();
     }
+
+    this.handleCheck();
   };
 
   filterSpecialNotices = () => {
@@ -85,18 +87,35 @@ export class MessagesFilter {
   handleCheck = e => {
     // Empty state
     const newFilters = [];
+    const newFilterStrings = [];
+
+    let parametersNeeded = true;
+
     // Map through checkboxes - Get their data value
     this.elements.checkboxes.forEach(checkbox => {
       // If it's checked, store filter value in state
       if (checkbox.checked) {
         const filterType = checkbox.attributes['data-type'].value;
         newFilters.push(filterType);
+
+        const filterString = checkbox.attributes['data-filter'].value;
+        newFilterStrings.push(filterString);
       }
     });
+
+    if (newFilters.length === this.elements.checkboxes.length) {
+      parametersNeeded = false;
+    }
     // Update state with new filters
     this.state.currFilters = newFilters;
     // State updated > filter messages by state
     this.filterMessages(this.state.currFilters);
+
+    if (parametersNeeded) {
+      this.updateMessageLinks(newFilterStrings.join('+'));
+    } else {
+      this.updateMessageLinks();
+    }
   };
 
   filterMessages = filterOpts => {
@@ -117,5 +136,18 @@ export class MessagesFilter {
     const listTitle = document.querySelector(FILTER_CONFIG.selectors.listTitle);
     listTitle.style.display = displayInboxTitle;
     document.querySelector('.message-panel__notice').style.display = displayEmptyMessage;
+  };
+
+  updateMessageLinks = filterString => {
+    this.elements.messageItems.forEach(message => {
+      message.querySelectorAll('a').forEach(anchor => {
+        let href = anchor.attributes['href'].value;
+        href = href.split('?')[0];
+        if (filterString) {
+          href = `${href}?filter=${filterString}`;
+        }
+        anchor.attributes['href'].value = href;
+      });
+    });
   };
 }

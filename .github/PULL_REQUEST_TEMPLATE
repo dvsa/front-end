@@ -8,6 +8,7 @@
 - [ ] Your changes are browser tested (remember to conduct/organise testing before a tagged release if not yet)
 - [ ] Branch name include Jira ticket ref.
 - [ ] `npm run start-dev` runs successfully.
+- [ ] If helpful or material, add to the Changelog.md file
 
 ** Style **
 

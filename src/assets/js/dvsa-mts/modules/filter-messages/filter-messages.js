@@ -16,6 +16,7 @@ export class MessagesFilter {
     const messageItems = [...messageList.querySelectorAll(FILTER_CONFIG.data.messages)];
     const filteredView = component.querySelector(FILTER_CONFIG.selectors.filteredView);
     const emptyMessageTarget = document.querySelector(FILTER_CONFIG.selectors.messageList);
+    const pinnedMessages = document.querySelector('.message-panel__messages');
 
     // Construct new DOM node for empty view
     const emptyMessageEl = document.createElement('p');
@@ -33,6 +34,7 @@ export class MessagesFilter {
       messageItems,
       filteredView,
       emptyMessageTarget,
+      pinnedMessages,
     };
 
     // Get values for state
@@ -148,6 +150,17 @@ export class MessagesFilter {
         }
         anchor.attributes['href'].value = href;
       });
+    });
+
+    this.elements.pinnedMessages.forEach(message => {
+        message.querySelectorAll('a').forEach(anchor => {
+            let href = anchor.attributes['href'].value;
+            href = href.split('?')[0];
+            if (filterString) {
+                href = `${href}?filter=${filterString}`;
+            }
+            anchor.attributes['href'].value = href;
+        });
     });
   };
 }

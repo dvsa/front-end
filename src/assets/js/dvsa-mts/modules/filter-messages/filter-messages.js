@@ -140,13 +140,13 @@ export class MessagesFilter {
 
   updateMessageLinks = filterString => {
     this.elements.messageItems.forEach(message => {
-      message.querySelectorAll('a').forEach(anchor => {
-        let href = anchor.attributes['href'].value;
+      Array.from(message.querySelectorAll('a')).forEach(anchor => {
+        let href = anchor.href;
         href = href.split('?')[0];
         if (filterString) {
           href = `${href}?filter=${filterString}`;
         }
-        anchor.attributes['href'].value = href;
+        anchor.href = href;
       });
     });
   };

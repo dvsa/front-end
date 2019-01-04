@@ -1,0 +1,91 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'AE applicant search results' %}
+
+{% block content %}
+
+
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/prototypes/ae-application-tool/v1/applicant-search">
+              Search Authorised Examiner applicant
+            </a>
+          </li>
+          <li>
+            AE applicant search results
+          </li>
+        </ol>
+      </div>
+
+<h1 class="heading-xlarge" style="margin-bottom: 30px">
+      <span class="heading-secondary">AE application check</span>
+      AE applicant search results
+</h1>
+
+
+    <h2 id="summaryLine" class="result__group-heading">
+    <strong>7</strong> matches found for <strong>John Smith, 23rd October 1993, BN1 7QE</strong></h2>
+
+<form action="">
+
+
+<table class="govuk-table result-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Name</th>
+      <th class="govuk-table__header" scope="col">Date of Birth</th>
+      <th class="govuk-table__header" scope="col">Postcode</th>
+      <th class="govuk-table__header" scope="col">Reason/s for flag</th>
+      <th class="govuk-table__header" scope="col">Record Source</th>
+      <th class="govuk-table__header" scope="col">Similarity</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href=""><strong>John Smith</strong></a></td>
+      <td class="govuk-table__cell "><strong>23rd October 1993</strong></td>
+      <td class="govuk-table__cell "><strong>BN1 7QE</strong></td>
+      <td class="govuk-table__cell ">Suspended within last 5 years</td>
+      <td class="govuk-table__cell ">MTS</td>
+      <td class="govuk-table__cell ">100%</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>John</strong> Brown</td>
+      <td class="govuk-table__cell "><strong>23rd October 1993</strong></td>
+      <td class="govuk-table__cell ">B16 9BG</td>
+      <td class="govuk-table__cell ">AEP of AE with withdrawal or rejection</br>
+      Case number: 002375 (Closed)
+      </td>
+      <td class="govuk-table__cell ">CRT List</td>
+      <td class="govuk-table__cell ">50%</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="">Peter <strong>John Smith</strong></a></td>
+      <td class="govuk-table__cell ">5th March 1963</td>
+      <td class="govuk-table__cell ">BN1 2QZ</td>
+      <td class="govuk-table__cell ">AEP of AE with withdrawal or rejection</td>
+      <td class="govuk-table__cell ">MTS</td>
+      <td class="govuk-table__cell ">33%</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<nav class="content-navigation">
+    <ul class="content-navigation__secondary">
+        <li>
+          <a href="/prototypes/ae-application-tool/v1/">Return to search</a>
+        </li>
+    </ul>
+</nav>
+
+
+</form>
+{% endblock %}

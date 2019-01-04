@@ -1,0 +1,76 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'AE application check tool - prototype homepage' %}
+
+{% block content %}
+
+<main id="content">
+
+    <div class="container">
+
+        <div id="global-breadcrumb" class="header-context">
+        </div>
+
+        <header class="content-header">
+            <h1>
+                <span class="content-header__type">MOT testing</span>
+                <span class="content-header__title">AE application check tool prototypes</span>
+                </h1>
+        </header>                        
+
+        <div class="row contents">
+            <div class="col-lg-12">
+
+                <h1 class="content-header__type"> 
+                        Prototype versions
+                </h1>
+
+
+                <table class="key-value-list" style="table-layout: fixed;">
+                    <thead>
+                        <col width="140">
+                        <col width="200">
+                        <col width="350">
+                        <tr>
+                        <th scope="col">Version</th>
+                        <th class="" scope="col">Tested on</th>
+                        <th class="" scope="col">Changes/Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th>
+                            Version 1 - <a href="/prototypes/ae-application-tool/v1/">link</a></span>
+                        </th>
+                        <td class="">
+                            08 January 2019
+                        </td>
+                        <td class="">
+                            <details>
+                                <summary><span class="summary">Details included in version 1</span></summary>
+                                    <div class="panel panel-border-narrow">
+                                        <ul class="list list-bullet">
+                                            <li>A flow of 4 screens:
+                                                <ol class="list list-bullet">
+                                                    <li>User homepage (with added link under AE management)</li>
+                                                    <li>Applicant search entry screen</li>
+                                                    <li>Applicant search results screen</li>
+                                                    <li>User Details screen (unchanged, opens in new tab)</li>
+                                                </ol>
+                                            </li>
+                                        </ul>
+                                    </div>
+                            </details>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                        
+
+            </div>
+        </div>
+    </div>
+</main>
+
+  
+{% endblock %}

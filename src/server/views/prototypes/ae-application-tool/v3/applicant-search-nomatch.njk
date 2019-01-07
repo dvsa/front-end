@@ -1,0 +1,112 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Investigate AE applicant' %}
+
+{% block content %}
+
+  <div class="breadcrumbs">
+    <ol>
+      <li>
+        <a href="">
+          Home
+        </a>
+      </li>
+      <li>
+        Search AE applicant
+      </li>
+    </ol>
+  </div>
+
+  <h1 class="heading-xlarge" style="margin-bottom: 30px">
+    <span class="heading-secondary">Investigate AE applicant</span>
+    Check AE applicant connections
+  </h1>
+
+    <div class="">
+      <p class="lede">This search will compare the AE applicant's details against a list of people similar to or associated with the applicant. The search result will show the closest matches. </br>All fields are required.</p>
+    </div>
+
+<div class="message--failure">
+  <p><strong>No matches found</strong></p>
+</div>
+
+  <form action="ae-search-results">
+
+    <div class="form-group ">
+      <label for="firstName" id="First-name" class="form-label">
+        First name
+        <span class="form-hint"></span>
+        <span class="validation-message"></span>
+      </label>
+      <input type="text" id="firstName" name="firstName" value="" class="form-control " required="" title="">
+    </div>
+
+    <div class="form-group ">
+      <label for="middleName" id="Middle-name" class="form-label">
+        Middle name (optional)
+        <span class="form-hint"></span>
+        <span class="validation-message"></span>
+      </label>
+      <input type="text" id="middleName" name="middleName" value="" class="form-control " required="" title="">
+    </div>
+
+    <div class="form-group ">
+      <label for="lastName" id="Last-name" class="form-label">
+        Last name
+        <span class="form-hint"></span>
+        <span class="validation-message"></span>
+      </label>
+
+      <input type="text" id="lastName" name="lastName" value="" class="form-control " required="" title="">
+    </div>
+
+    <div class="form-group ">
+      <fieldset>
+        <legend class="form-label">
+          Date of birth
+          <span class="form-hint">For example, 02 12 1970</span>
+        </legend>
+        <div class="form-date">
+          <div class="form-group form-group-day">
+            <label for="date1-day" id="form-group-dayDay" class="">
+              Day
+              <span class="form-hint"></span>
+              <span class="validation-message"></span>
+            </label>
+            <input type="text" id="date1-day" name="dobDay" value="" class="form-control " required="" maxlength="2" title="">
+          </div>
+          <div class="form-group form-group-month">
+            <label for="date1-month" id="form-group-monthMonth" class="">
+              Month
+              <span class="form-hint"></span>
+              <span class="validation-message"></span>
+            </label>
+            <input type="text" id="date1-month" name="dobMonth" value="" class="form-control " required="" maxlength="2" title="">
+          </div>
+          <div class="form-group form-group-year">
+            <label for="date1-year" id="form-group-yearYear" class="">
+              Year
+              <span class="form-hint"></span>
+              <span class="validation-message"></span>
+            </label>
+            <input type="text" id="date1-year" name="dobYear" value="" class="form-control " required="" maxlength="4" title="">
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="ae-postcode">
+          Postcode 
+          <span class="form-hint">For example, AB12 3CD</span>
+        </label>
+        <input class="form-control form-control-1-8" id="ae-postcode" type="text" name="ae-postcode" value="">
+      </div>
+
+      <div>
+        <a href="/prototypes/ae-application-tool/v3/applicant-search-results" class="button">Check</a><br><br>
+        <a href="">Back</a>
+      </div>
+
+    </form>
+
+  {% endblock %}

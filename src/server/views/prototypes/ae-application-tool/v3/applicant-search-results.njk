@@ -1,0 +1,117 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'AE applicant closest matches' %}
+
+{% block content %}
+
+<style>
+    .similarity {
+      display:block; 
+      background-color:green; 
+      min-height:15px;
+      font-size: 16px;
+      line-height: 1.25;
+      color:#FFFFFF;
+      padding: 2px 5px 0px 5px;
+    }
+    .similarityContainer {
+      display:block; 
+      background-color:#BBBBBB; 
+      min-height:15px;
+      width:100%;
+    }
+
+    .noWrapTD {
+      white-space: nowrap;
+    }
+    a .result-table__meta{
+      color: inherit;
+    }
+  </style>
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/prototypes/ae-application-tool/v3/">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/prototypes/ae-application-tool/v3/applicant-search">
+              Investigate AE applicant
+            </a>
+          </li>
+          <li>
+            Closest matches
+          </li>
+        </ol>
+      </div>
+
+<h1 class="heading-xlarge" style="margin-bottom: 30px">
+      <span class="heading-secondary">Investigate AE applicant</span>
+      Closest matches
+</h1>
+
+
+    <h2 id="summaryLine" class="result__group-heading">
+    People similar to or associated with <strong class="noWrapTD">'Dorothy Warnock, 24 January 1984, HA7 3PN'</strong></h2>
+
+<form action="">
+
+
+<table class="govuk-table result-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Name</th>
+      <th class="govuk-table__header" scope="col">Date of birth</th>
+      <th class="govuk-table__header" scope="col">Postcode</th>
+      <th class="govuk-table__header" scope="col">Similarity</th>
+      <th class="govuk-table__header" scope="col">Flag reason</th>
+      <th class="govuk-table__header" scope="col">AE details</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Lily Dorothy Warnock</strong></br>
+      <span class="result-table__meta">AEP</span></td>
+      <td class="govuk-table__cell noWrapTD"><strong>24 January 1984</strong></td>
+      <td class="govuk-table__cell noWrapTD"><strong>HA7 3PN</strong></br>
+      <span class="result-table__meta">Current</span></td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:97%;" title="97% similarity to search terms">97%</span></span></td>
+      <td class="govuk-table__cell ">Withdrawn</br>
+      <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event"><span class="result-table__meta noWrapTD">04 December 2018</span></a></td>
+      <td class="govuk-table__cell "><a href="/prototypes/ae-application-tool/v3/applicant-details-ae" target="_blank">Stanmore Motors Ltd</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="" target="_blank"><strong>Alan Joseph Warnock</strong></a></br>
+      <span class="result-table__meta">Tester</span></td>
+      <td class="govuk-table__cell noWrapTD">11 August 1991</td>
+      <td class="govuk-table__cell noWrapTD"><strong>HA7 3PN</strong></br>
+      <span class="result-table__meta">Historic</span></td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:70%;" title="70% similarity to search terms">70%</span></td>
+      <td class="govuk-table__cell ">Suspended</br>
+      <a href=""><span class="result-table__meta noWrapTD">23 March 2017</span></a></td>
+      <td class="govuk-table__cell "><a href="/prototypes/ae-application-tool/v3/applicant-details-ae" target="_blank">Stanmore Motors Ltd</a></td>
+ </tr>
+
+
+  </tbody>
+</table>
+
+
+
+
+
+<nav class="content-navigation">
+    <ul class="content-navigation__secondary">
+        <li>
+          <a href="/prototypes/ae-application-tool/v3/applicant-search">Return to search</a>
+        </li>
+    </ul>
+</nav>
+
+
+</form>
+{% endblock %}

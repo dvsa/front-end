@@ -202,9 +202,14 @@ textarea.form-control {
 
 .form-control-1-2 {
   width: 100%;
-
   @include media(tablet) {
     width: 50%;
+  }
+  &--desktop {
+    width: 100%;
+    @include media(desktop) {
+      width: 50%;
+    }
   }
 }
 
@@ -222,6 +227,13 @@ textarea.form-control {
   @include media(tablet) {
     width: 25%;
   }
+  &--desktop {
+    width: 100%;
+    @include media(desktop) {
+      width: 25%;
+    }
+  }
+
 }
 
 .form-control-1-8 {

@@ -1,9 +1,14 @@
 # Changelog 🗒️
 All notable changes included in tagged released will be documented in this file.
 
-## [Unreleased]
-- No present changes
+## [Unreleased versions]
 
+### Changed for 1.2.46
+- 'Action panel' component refactored and updated in Library. Can be seen in Site Review and on MOT Test Results page
+
+### Changed for 1.2.45
+- Common touch-friendly affordances to buttons, spacing and defects across the MOT Test Journey 
+- 'Vehicle Info' component added for use on VTS Home Page
 
 ## [1.2.44] - 2018-12-13
 ### Changed

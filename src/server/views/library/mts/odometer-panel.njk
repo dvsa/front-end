@@ -12,19 +12,10 @@
 
   {% call components.displayCode() %}
   <div class="action-panel">
-    <div class="clear-float">
       <div class="action-panel__container">
         <h3 class="action-panel__heading">Odometer</h3>
       </div>
-
-      <div class="action-panel__container">
-        <h3 class="action-panel__value"></h3>
-      </div>
-
-      <div class="action-panel__container--last">
-        <a href="/rfr/browser" class="button">Add reading</a>
-      </div>
-    </div>
+      <a href="/rfr/browser" class="button">Add reading</a>
   </div>
   {%- endcall %}
 
@@ -36,20 +27,12 @@
 
   {% call components.displayCode() %}
   <div class="action-panel">
-    <div class="clear-float">
       <div class="action-panel__container">
         <h3 class="action-panel__heading">Odometer</h3>
-      </div>
-      
-      <div class="action-panel__container">
         <h3 class="action-panel__value">142,101 miles</h3>
         <span class="action-panel__meta">This is lower than the last test</span>
       </div>
-
-      <div class="action-panel__container--last">
-        <a href="/rfr/browser" class="button">Edit reading</a>
-      </div>
-    </div>
+      <a href="/rfr/browser" class="button">Edit reading</a>
   </div>
   {%- endcall %}
 

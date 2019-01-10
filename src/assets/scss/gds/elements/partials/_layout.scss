@@ -51,7 +51,12 @@
 
 .column-half,
 .column-one-half {
-  @include grid-column(1 / 2);
+  @include grid-column(1 / 2);  
+}
+
+.column-half--desktop,
+.column-one-half--desktop {
+  @include grid-column(1 / 2, desktop);
 }
 
 .column-third,
@@ -61,6 +66,10 @@
 
 .column-two-thirds {
   @include grid-column(2 / 3);
+}
+
+.column-two-thirds--desktop {
+  @include grid-column(2 / 3, desktop);
 }
 
 .column-full {

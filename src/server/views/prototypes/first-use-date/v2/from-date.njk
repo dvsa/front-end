@@ -1,0 +1,36 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Are you sure?' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '' },
+  { text: 'Search for a defect', url: '' },
+  { text: 'Add major failure' }
+] %}
+
+{% block content %}
+
+
+
+<div class="interrupt-panel">
+  <div class="column-two-thirds" style="background-color: #005ea5; color: #fff; padding-bottom:40px;">
+    <h1 class="heading heading--xlarge heading-xlarge">Are you sure?</h1>
+      <p>You have selected the defect <strong>Emitting excessive smoke or vapour, likely to obscure vision of other road users.</strong></p>
+      <p>This defect is only for vehicles manufactured <strong>from 1 March 2018</strong>. The vehicle you are testing was manufactured before this date.</p>
+      <p>Make sure you have selected the correct defect.</p>
+
+      <input class="button" type="submit" value="I'm sure – continue" style="background-color: #fff; color: #000;">
+
+
+    <div style="margin-top: 40px;">
+        <a href="index" style="color: #fff;">Cancel and return to defects</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

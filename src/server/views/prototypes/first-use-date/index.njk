@@ -1,0 +1,21 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'First use date' %}
+
+
+{% block content %}
+
+
+{{ components.pageHeading('Prototypes', 'First use date') }}
+
+
+<div class="grid-row">
+  <div class="column-one-half">
+    <ul class="list list-bullet">
+      <li><a href="/prototypes/first-use-date/from-date">Defect valid from date</a></li>
+      <li><a href="/prototypes/first-use-date/pre-date">Defect valid before date</a></li>
+    </ul>  
+ </div>
+</div>
+
+{% endblock %}

@@ -1,6 +1,155 @@
-.vehicle-details-summary {
+/* Swatch colours */
 
+/* Vehicle colour names derived from Java Vehicle service API response:
+   Stings are looped to create classes with corresponding colour on the ::before element
+*/
+$vehicleSolidColors: (
+  "beige":  #cdaf95,
+  "black":  #333333,
+  "blue":  #005EA5,
+  "bronze":  #CD7F32,
+  "brown": #8B4513,
+  "cream": #FFFDD0,
+  "green": #006435,
+  "grey": #9B9B9B,
+  "maroon": #800000,
+  "orange": #F47738,
+  "pink": #D53880,
+  "purple": #2E358B,
+  "red": #D0021B,
+  "silver": #C0C0C0,
+  "turquoise": #28A197,
+  "white": #FFFFFF,
+  "yellow": #FFBF47,
+  "gold": #DAA520
+); 
+
+.vehicle-info {
+  width: 100%; 
+  position: relative;
+  
+  &--light {
+    color: #ffffff;  
+   .heading__secondary {
+     color: white;
+   }
+  
+  }
+  
+  &__swatch {
+    &::before {
+      content: '';
+      position: relative;
+      margin-right: 10px;
+      top: -5px;
+      display: block;
+      float: left;
+      width: 24px;
+      height: 24px;
+      border: 1px solid white;
+      border-radius: 5px; 
+
+      @include media(tablet){ 
+        width: 22px;
+        height: 22px;
+        border-width: 2px;
+      } 
+    }
+    .vehicle-info--light & {
+      &::before {
+        border-color: white;
+      }
+    }
+ 
+    /* Loop over each colour name to create a class for each colour used in the template.*/
+    @each $name, $hexColour in $vehicleSolidColors {
+      &--#{$name}::before {
+        background: $hexColour;
+        @if ( $name == 'cream' or $name == 'white') {
+          border-color: black;
+        }
+      } 
+    }
+
+    &--multi-colour::before {
+      background: rgb(0,100,53);
+      background: -moz-linear-gradient(150deg, rgba(0,100,53,1) 31%, rgba(177,14,30,1) 67%);
+      background: -webkit-linear-gradient(150deg, rgba(0,100,53,1) 31%, rgba(177,14,30,1) 67%);
+      background: linear-gradient(150deg, rgba(0,100,53,1) 31%, rgba(177,14,30,1) 67%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#006435",endColorstr="#b10e1e",GradientType=1);
+     }
+    &--not-stated::before {
+      background: rgb(255,255,255);
+      background: -moz-linear-gradient(315deg, rgba(255,255,255,1) 43%, rgba(51,51,51,1) 47%, rgba(255,255,255,1) 51%);
+      background: -webkit-linear-gradient(315deg, rgba(255,255,255,1) 43%, rgba(51,51,51,1) 47%, rgba(255,255,255,1) 51%);
+      background: linear-gradient(315deg, rgba(255,255,255,1) 43%, rgba(51,51,51,1) 47%, rgba(255,255,255,1) 51%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+      border-color: black;
+    }
+  }
+
+  &__heading-large {
+    font-size: 24px;
+    @include media(desktop){ 
+      font-size: 36px;
+    }
+  }
+
+  &__details {
+    padding-bottom: $gutter/2;
+    .column-one-third { 
+      padding-right: 0;
+    }
+    @include media(tablet){ 
+       padding-bottom: $gutter/2;
+       padding-right: inherit;
+    }
+
+    &-heading {
+      font-size: 19px;
+      margin-top: 8px;
+      @include media(tablet){ 
+        font-size: 17px;  
+      } 
+      @include media(desktop){ 
+        margin-top: 12px;
+        font-size: 17px;  
+      } 
+      @include media(desktopLrg){
+        margin-bottom: 0;
+        font-size: 19px;  
+      } 
+  
+      /* Matched font-sizes for data sub-headings */
+      .heading__secondary {
+        @include media(tablet){
+          font-size: 17px;  
+        }
+        @include media(desktopLrg){
+          font-size: 19px;  
+        }
+      }
+  
+      /* Vehicle info on MOT home page */
+      .c-home-hero__content & {
+        @include media(tablet){
+          font-size: 15px;  
+        }
+        @include media(desktopLrg){
+          font-size: 17px;  
+        }
+      }
+    }
+  }
+
+  &__confirm {
+    margin-bottom: $gutter;
+    @include media(desktop){ 
+      margin-bottom: $gutter/2
+   }
+  }   
 }
+
 
 .vehicle-info-banner {
   * {

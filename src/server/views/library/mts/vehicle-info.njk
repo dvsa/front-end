@@ -1,0 +1,34 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Vehicle info' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Vehicle Information',
+    tag='h1',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="Features in Find a Vehicle and Test Summary views in addition to a varient on the VTS Home page. This component may or may not include the last Test information and 'Select Vehicle' button, depending on where it's used.",
+    lead=true
+  ) }}
+
+  {% call components.displayCode() %}
+  
+  {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495118', color='red', selectVehicle=true) }}
+
+{%- endcall %}
+
+
+{{ components.heading(
+  text='Vehicle Information in other places',
+  tag='h3',
+  size='medium'
+) }}
+
+{{ components.link(text='MOT Home page', paragraph=true, url='/library/mts-patterns/MOT-home-page', back=false) }}
+
+
+{% endblock %}

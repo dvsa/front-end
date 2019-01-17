@@ -1,0 +1,217 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'Confirm Vehicle Details' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+<main id="content">
+        <div class="container">
+          <div class="header-context" id="global-breadcrumb">
+            <nav>
+              <ol class="group">
+                <li id="breadcrumb-0">
+                  <a href="/prototypes/correct-test-record/v1/home-page">Home</a>
+                </li>
+                <li id="breadcrumb-1">MOT testing
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <header class="content-header">
+            <h1>
+              <span class="content-header__type">MOT testing</span> <span class="content-header__title">Confirm vehicle and start test</span>
+            </h1>
+          </header>
+          <div class="row contents">
+
+              <form action="/start-test-confirmation/3o2Y7--GlHI/0/1" data-form-state-index="0" id="StartTestConfirmation" method="post" name="StartTestConfirmation">
+                <input name="_csrf_token" type="hidden" value="4C621A77-EE4C-31DD-91A5-D89F0A738E38"><input name="prgToken" type="hidden" value="5939F7BF-5EE3-8193-29FE-319859A82C3F"> <input name="motTestType" type="hidden" value="NT">
+                <div class="text">
+
+                  <p class="lede">
+                    Check that you have the right vehicle before starting the test.
+                  </p>
+                </div>
+                
+                <fieldset>
+                
+                <h2 class="heading-medium u-margin-top-20">
+                  Vehicle specification
+                </h2>
+
+                <dl class="app-check-your-answers app-check-your-answers--short u-margin-bottom-30">
+
+                      <div class="app-check-your-answers__contents">
+                        <dt class="app-check-your-answers__question">
+                          Make and model
+                        </dt>
+                        <dd class="app-check-your-answers__answer"> 
+                            KIA Sportage
+                        </dd>
+                        <dd class="app-check-your-answers__change">
+                            <a href="#" id="change-vehicle-make">Change<span class="visuallyhidden"> make and model</span></a>
+                        </dd>
+                      </div>
+              
+                      <div class="app-check-your-answers__contents">
+                        <dt class="app-check-your-answers__question">
+                        Engine
+                        </dt>
+                        <dd class="app-check-your-answers__answer">
+                            Petrol, 1753
+                        </dd>
+                        <dd class="app-check-your-answers__change">
+                            <a href="#" id="change-vehicle-engine">Change<span class="visuallyhidden"> engine or fuel type</span></a>
+                        </dd>
+                      </div>
+              
+                      <div class="app-check-your-answers__contents">
+                        <dt class="app-check-your-answers__question">
+                        Colour
+                        </dt>
+                        <dd class="app-check-your-answers__answer">
+                        Red
+                        </dd>
+                        <dd class="app-check-your-answers__change">
+                               <a href="#" id="change-vehicle-colour">Change<span class="visuallyhidden"> colour</span></a>
+                         </dd>
+                      </div>
+              
+                      <div class="app-check-your-answers__contents">
+                        <dt class="app-check-your-answers__question">
+                         Brake test weight
+                        </dt>
+                        <dd class="app-check-your-answers__answer" id="vehicleWeight">
+                            1690 kg
+                        </dd>
+                        <dd class="app-check-your-answers__change"> 
+                        </dd>
+                      </div> 
+                </dl>
+              </fieldset>
+                <fieldset>
+                <h2 class="heading-medium u-margin-top-10">
+                  Vehicle registration
+                </h2>
+
+                <dl class="app-check-your-answers app-check-your-answers--short">
+
+                    <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Registration mark
+                        </dt>
+                      <dd class="app-check-your-answers__answer"> 
+                          BR14 YXW
+                        </dd>
+                      <dd class="app-check-your-answers__change">
+                       </dd>
+                    </div>
+            
+                    <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          VIN
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                          PWXYRBGAAAAA060868
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                       </dd>
+                    </div>
+            
+                    <div class="app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          Country of registration
+                      </dt>
+                      <dd class="app-check-your-answers__answer">
+                          GB, UK, ENG, CYM, SCO (UK) - Great Britain
+                        </dd>
+                      <dd class="app-check-your-answers__change">
+                            <a href="#" id="change-vehicle-country-of-registration">Change<span class="visuallyhidden"> country of registration</span></a>
+                       </dd>
+                    </div>
+            
+                    <div class="app-check-your-answers__contents app-check-your-answers__contents">
+                      <dt class="app-check-your-answers__question">
+                          MOT test class
+                        </dt>
+                      <dd class="app-check-your-answers__answer">
+                          Unknown
+                          <span class="app-check-your-answers__meta app-check-your-answers__meta--error">
+                            Set a test class
+                          </span>
+                      </dd>
+                      <dd class="app-check-your-answers__change">
+                          <a href="#" id="change-vehicle-class">Change <span class="visuallyhidden">test class</span></a>
+                      </dd>
+                    </div> 
+
+                    <div class="app-check-your-answers__contents">
+                        <dt class="app-check-your-answers__question">
+                            Vehicle category
+                          </dt>
+                        <dd class="app-check-your-answers__answer">
+                            M1
+                        </dd>
+                        <dd class="app-check-your-answers__change">
+                        </dd>
+                    </div> 
+
+                    <div class="app-check-your-answers__contents">
+                        <dt class="app-check-your-answers__question">
+                            Date of first use
+                          </dt>
+                        <dd class="app-check-your-answers__answer">
+                            Unknown
+                            <span class="app-check-your-answers__meta app-check-your-answers__meta--error">
+                            Set a date of first use
+                          </span>
+                        </dd>
+                        <dd class="app-check-your-answers__change">
+                            <a href="#" id="change-first-use">Change <span class="visuallyhidden">date of first use</span></a>
+                        </dd>
+                    </div> 
+
+                    <div class="app-check-your-answers__contents">
+                        <dt class="app-check-your-answers__question">
+                            MOT expiration date
+                          </dt>
+                        <dd class="app-check-your-answers__answer">
+                            4 October 2018
+                        </dd>
+                        <dd class="app-check-your-answers__change">
+                        </dd>
+                    </div> 
+              </dl>
+              </div>
+
+              </fieldset>
+                   
+              <fieldset>
+                <div class="form-group">
+                  <nav class="content-navigation">
+                    <ul class="list-unstyled content-navigation__split u-clearfix">
+                      <li class="content-navigation__split--left">
+                        <a class="button" href="#" id="confirm-start-test">Confirm and start test</a>
+                      </li>
+                      <li class="content-navigation__split--right">
+                        <a class="button button--alert" href="#" id="refuse-to-test">Refuse to test</a>
+                      </li>
+                    </ul>
+                    <ul class="content-navigation__secondary">
+                      <li>
+                        <a href="#">Cancel and return to find a vehicle</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </fieldset>
+            </form>
+        </div>
+      </main>
+{% endblock %}

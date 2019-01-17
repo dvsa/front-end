@@ -10,6 +10,14 @@
     width: 100%;
     text-align: center;
   }
+  
+  .pin-form & {
+    width: 100%;
+    @include media (desktop) {
+      width: auto;
+      text-align: center;
+    }
+  }
 }
 
 // Fix unwanted button padding in Firefox

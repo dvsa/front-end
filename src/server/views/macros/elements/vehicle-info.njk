@@ -1,0 +1,37 @@
+{% macro vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495118', color='red', selectVehicle=false) %}
+
+<div class="vehicle-info">
+        <div class="grid-row">
+            <div class="column-full">
+                <h1 class="vehicle-info__heading-large heading-large u-margin-0">
+                <span class="heading__secondary">Vehicle</span> {{ vehicleName }}
+                </h1>
+            </div>
+        </div>
+        <div class="grid-row vehicle-info__details">
+            <div class="column-one-third">
+                <h2 class="heading-medium vehicle-info__details-heading">
+                <span class="heading__secondary">Registration number</span> {{ reg }}
+                </h2>
+            </div>
+            <div class="column-one-third">
+                <h2 class="heading-medium vehicle-info__details-heading">
+                <span class="heading__secondary">VIN</span> {{ vin }}
+                </h2>
+            </div>
+            <div class="column-one-third">
+                <h2 class="heading-medium vehicle-info__details-heading">
+                <span class="heading__secondary">Colour</span> <span class="vehicle-info__swatch vehicle-info__swatch--{{ color}}">{{ color | title }}</span>
+                </h2>
+            </div>
+        </div>
+        {% if selectVehicle %}
+        <div class="vehicle-info__confirm u-border-bottom">
+            <p>1 test, last tested 4 October 2017</p>
+            <a class="button" href="/prototypes/responsive-mot/confirm-vehicle-details" role="button">Select vehicle</a>
+        </div>
+        {% endif %}
+  </div> 
+   
+{% endmacro %}
+

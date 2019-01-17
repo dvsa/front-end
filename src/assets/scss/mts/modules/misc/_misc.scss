@@ -163,3 +163,25 @@ span.label-value {
   white-space: normal;
   word-wrap: break-word; 
 }
+ 
+.helper-links {
+  p {
+    font-size: 19px;
+    margin-bottom: $gutter-half;
+  }
+  details { 
+    font-size: 19px;
+    margin-bottom: $gutter-half;
+  }
+
+  @include media(desktop){  
+    p {
+      margin-bottom: $gutter-half;
+      font-size: 16px;
+    }
+    details {
+      font-size: 16px;
+      margin: 0;
+    } 
+  }
+}

@@ -7,7 +7,9 @@ All notable changes included in tagged released will be documented in this file.
 
 ## [1.2.44] - 2018-12-13
 ### Changed
-- MTS messages: Persist filter state between Message view and Inbox `filter-messages/filter-messages.js`  
+- MTS messages: Persist filter state between Message view and Inbox 
+- Mobile-friendly links on 2fa login page
+`filter-messages/filter-messages.js`  
 
 ## [1.2.43] - 2018-12-12
 ### Changed

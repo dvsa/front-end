@@ -1,5 +1,4 @@
 .c-home-hero {
-  //@include core-19();
   float: left;
   width: 100%;
   position: relative;
@@ -45,9 +44,5 @@
     &:focus {
       color: $white;
     }
-  }
-
-  .vehicle-info {
-    margin-bottom: 0;
   }
 }

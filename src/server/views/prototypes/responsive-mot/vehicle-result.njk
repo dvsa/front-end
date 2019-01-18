@@ -1,0 +1,84 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'Find a Vehicle' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results', url: '/prototypes/mot-test' },
+  { text: 'Brake test' }
+] %}
+
+{% block content %}
+
+
+<main id="content">
+        <div class="container">
+          <div class="header-context" id="global-breadcrumb">
+            <nav>
+              <ol class="group">
+                <li id="breadcrumb-0">
+                  <a href="/prototypes/correct-test-record/v1a/home-page">Home</a>
+                </li>
+                <li id="breadcrumb-1">MOT testing
+                </li>
+              </ol>
+            </nav>
+          </div>
+          <header class="content-header">
+            <h1>
+              <span class="content-header__type">MOT testing</span> <span class="content-header__title">Find a vehicle</span>
+            </h1>
+          </header>
+          <div class="row contents">
+
+              <form action="#" data-form-state-index="0" id="VehicleSearch" method="get" name="VehicleSearch">
+                <p class="result__group-heading u-border-bottom" id="main-message">
+                  <strong>2</strong> vehicles found with registration <strong>TH10 CZR</strong> and a VIN matching <strong>GAULAGAAAAA495HSS</strong>.
+                </p>
+                
+                {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495HSS', color='red', selectVehicle=true ) }}
+                {{ components.vehicleInfo(vehicleName='Toyota Rav4 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495HSS', color='blue', selectVehicle=true ) }}
+
+                <div class="u-margin-bottom-20">
+                  <details role="group">
+                    <summary aria-controls="details-content-1" aria-expanded="false" role="button" tabindex="0">
+                      <span class="summary" id="search-again">Search again</span>
+                    </summary>
+                    <div aria-hidden="true" class="panel-indent" id="details-content-1">
+                      <fieldset>
+                        <div class="form-group" id="registration-field">
+                          <label class="form-label" for="reg-input" id="reg-label">Registration mark</label> <input class="form-control is-reg" id="reg-input" maxlength="13" name="registration" type="text" value="BR14 YXW">
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label" for="vin-input" id="vin-label">VIN <span class="form-hint">Enter the last 6 digits or the full VIN</span></label> <input class="form-control is-vin" id="vin-input" maxlength="20" name="vin" type="text" value=" WXYRBGAAAAA060868">
+                        </div>
+                        <div class="form-group">
+                          <a class="button" href="#" role="button">Select vehicle</a>
+                        </div>
+                      </fieldset>
+                    </div>
+                  </details>
+                </div>
+              </form>
+              <nav class="content-navigation">
+                <ul class="content-navigation__secondary">
+                  <li>
+                    <a href="/prototypes/responsive-mot/mot-home" id="cancel_vehicle_search">Cancel and return home</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="message--important">
+                <p id="new-vehicle-record-info">
+                  If you can't find a vehicle you can <a href="/create-vehicle" id="new-vehicle-record-link">create a new vehicle record</a>.
+                </p>
+                <p>
+                  Check that you have searched with the correct VIN and registration mark before you do this.
+                </p>
+              </div>
+          </div>
+        </div>
+      </main>
+
+
+
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Mot test results' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'MOT test results' }
+] %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+   
+      <header class="content-header">
+
+        <h1><span class="content-header__title">MOT test results</span></h1>
+
+      </header>
+
+      <ul class='content-header__tertiary-list u-margin-bottom-35'> 
+        <li class='content-header__list-item--primary'>Peugeot 3008 SUV</li> 
+        <li class='content-header__list-item'>TH10 CZR</li> 
+        <li class='content-header__list-item'>First used 7 June 2011</li> 
+      </ul>
+      
+      <div class='text u-clearfix'>
+        
+        <p><a href='/prototypes/'>Print the MOT inspection sheet</a> for this test.</p>
+
+        <p>See <a href='/prototypes/'>testing advice</a> for this vechicle.</p>
+
+      </div>
+
+      {% if flashMessage != '' %} 
+
+      {% endif %}
+
+      <div class='u-margin-bottom-30'>
+
+        <div class="action-panel"> 
+            <div class="action-panel__container"> 
+              <h3 class="action-panel__heading">Odometer</h3>
+              <h3 class="action-panel__value">Not recorded</h3>  
+            </div> 
+            {{ components.button(text='Add reading', url='#') }}
+        </div>
+
+        <div class="action-panel"> 
+
+            <div class="action-panel__container"> 
+              <h3 class="action-panel__heading">Defects</h3> 
+            </div>
+            {{ components.button(text='Add a defect', url='/prototypes/mot-test/categories/') }}  
+
+        </div>
+
+        <div class="defect-summary">
+          <div id="rfrList" class="">
+              <h3 class="defect-summary__heading">
+                <span class="badge--alert js-numberOfFailures">1</span>
+                <span class="defect-summary__heading-type">Failures</span>
+              </h3>
+              <ol>
+                    <li class="js-rfrItem defect">
+              
+                      <div class="defect-status">
+                      <div class="js-itemStatus defect-status__inner"></div>
+                      </div>
+                      
+                      <div>
+                          <strong class="defect__is-dangerous" aria-hidden="true">Major failure</strong>
+                          <h4 class="defect__title">Electronic braking system warning device inoperative</h4>
+                          <p class="defect__meta"></p>
+                          <strong class="visuallyhidden">Major failure</strong>
+                          <h5 class="visuallyhidden">Position</h5>
+                          <ul class="defect__positions">
+                                  <li>Location not recorded</li>
+                          </ul>
+                      </div>
+                      <h5 class="visuallyhidden">Actions</h5>
+              
+                      <ul class="defect__edit"> 
+                          <li class="defect__marked-undo">
+                              <span>Repaired</span>
+                              <form class="js-rfrForm" data-ignore-form-disable-submit-button="true" method="POST" action="http://localhost:3000/user" data-form-state-index="0">
+                                  <input type="hidden" name="_csrf_token" value="7A400ABA-BA1A-B898-4CB7-3F8F71D8B8DF">
+                                  <input class="js-buttonMarkRepaired button--link button--right" type="submit" value="Undo">
+                                  <input type="hidden" name="defectId" value="12">
+                                  <input type="hidden" name="defectType" value="failure">
+                                  <input type="hidden" name="defectText" value="Electronic braking system warning device inoperative">
+                              </form>
+                          </li> 
+                          <li class="defect__mark-repaired">
+                              <form class="js-rfrForm" data-ignore-form-disable-submit-button="true" method="POST" action="http://localhost:3000/user" data-form-state-index="1">
+                                  <input type="hidden" name="_csrf_token" value="7A400ABA-BA1A-B898-4CB7-3F8F71D8B8DF">
+                                  <input class="js-buttonMarkRepaired button button--small button--right" type="submit" value="Mark as repaired">
+                                  <input type="hidden" name="defectId" value="12">
+                                  <input type="hidden" name="defectType" value="failure">
+                                  <input type="hidden" name="defectText" value="Electronic braking system warning device inoperative">
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+              </ol>
+        </div>
+       </div>
+
+       <div class="action-panel"> 
+          <div class="action-panel__container"> 
+            <h3 class="action-panel__heading">Brake test</h3>
+            <h3 class="action-panel__value">Passed</h3>  
+          </div>
+          <span class="action-panel__action-group js-brakeTestActions">
+              <a class="button" href="#" id="editBrakeTestButton">Edit brake test</a>
+              <span class="action-panel__secondary-action">or
+                  <a href="#">view brake test results</a>
+              </span>
+          </span> 
+      </div>
+
+
+      </div>
+
+      <form action="/prototypes/mot-test/review" method="GET">
+
+        {% if viewData.comment %}
+          {{ components.button(text='Review test') }}
+
+        {% else %}
+
+          {{ components.button(text='Review test', disabled=true) }}
+
+        {% endif %}
+
+      </form>
+
+      {{ components.link(text='Cancel test', url='/prototypes/', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

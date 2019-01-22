@@ -20,7 +20,7 @@ $buttonwidth: 180px;
     margin: 0;
     text-align: center;
     font-weight: 700;
-    display: block;
+    width: 100%;
     @include media(desktop) {
       width: $buttonwidth; 
       float: right; 
@@ -77,15 +77,13 @@ $buttonwidth: 180px;
 
   &__secondary-action {
     font-size: 19px;
-    padding: 10px 0;
+    padding: 22px 0 6px;
     display: block;
-    text-align: center;
+    clear: both;
+    text-align: right;
     @include media(desktop) {
-      @include core-16();
-      text-align: right;
-      clear: both;
-      margin-top: 0;
-      padding-bottom: 0; 
+      @include core-16();  
+      padding: 14px 0 10px;
     }
   }
 

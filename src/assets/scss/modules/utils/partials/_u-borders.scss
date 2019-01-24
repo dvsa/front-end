@@ -1,5 +1,8 @@
 .u-border {
-    &-bgrey2 {
+    &-bottom {
         border-bottom: 1px solid $grey-2;
-    }    
+    }
+    &-top {
+        border-top: 1px solid $grey-2;
+    }
 }

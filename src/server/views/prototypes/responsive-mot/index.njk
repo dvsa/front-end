@@ -1,0 +1,133 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'Responsive MOT' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Responsive MOT', url: '/prototypes/responsive-mot' }
+] %}
+
+{% block content %}
+
+<main id="content">
+
+    <div class="container">  
+
+        <header class="content-header">
+                <h2>
+                    <span class="content-header__type">For production</span>
+                    <span class="content-header__title">Responsive MOT views</span>
+                </h2>
+        </header>
+
+        <p>New MOT journey views with Vehicle information component:</p>
+
+      
+        <ul class="list list-bullet u-margin-bottom-60">
+            <li><p>
+                <strong><a href="/prototypes/responsive-mot/mot-home-vehicle-info">MOT Home</a></strong>
+                - Test in progress, Message notifications showing</p>
+            </li>
+            <li><p>
+                <strong><a href="/prototypes/responsive-mot/vehicle-result">Find a Vehicle</a></strong>
+                 </p>
+            </li> 
+            <li><p>
+                <strong><a href="/prototypes/responsive-mot/confirm-vehicle-details">Confirm vehicle and start test
+                </a></strong> </p>
+            </li> 
+        </ul>
+
+        <header class="content-header">
+                <h1>
+                    <span class="content-header__type">Prototype journeys</span>
+                    <span class="content-header__title">Correct test record</span>
+                </h1>
+            </header>           
+    
+          
+    
+            <table class="key-value-list" style="table-layout: fixed;">
+                <thead>
+                    <col width="140">
+                    <col width="200">
+                    <col width="350">
+                    <tr>
+                    <th scope="col">Version</th>
+                    <th class="" scope="col">User-tested on</th>
+                    <th class="" scope="col">Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>
+                        Version 2<br>
+                        <span><a href="/prototypes/correct-test-record/v1a/home-page">No logo</a></span><br>
+                        <span><a href="/prototypes/correct-test-record/v2a/home-page">With logos</a></span>
+                    </th>
+                    <td class="">
+                        September/ October 2018
+                    </td>
+                    <td width="50px">
+                        <details>
+                            <summary><span class="summary">Changes included in version 2</span></summary>
+                                <div class="panel panel-border-narrow">
+                                        <ul class="list list-bullet">
+                                        <li>
+                                            Re-arrange order to - Reg plate > VIN > Colour. On each page
+                                        </li>
+                                        <li>
+                                            Strip out duplicated data in confirm details table.
+                                        </li>
+                                        <li>
+                                            Typos-corrected on brake test areas
+                                        </li>
+                                        <li>
+                                            Button text change to "Continue to inspection"
+                                        </li>
+                                    </ul>
+                                </div>
+                        </details>
+                    </td>
+                    </tr>
+                    <tr>
+                    <th>
+                        Version 1<br>
+                        <span><a href="/prototypes/correct-test-record/v1/home-page">No logo</a></span><br>
+                        <span><a href="/prototypes/correct-test-record/v2/home-page">With logos</a></span>
+                    </th>
+                    <td class="">
+                        04 September 2018
+                    </td>
+                    <td class="">
+                        <details>
+                            <summary><span class="summary">Changes included in version 1</span></summary>
+                                <div class="panel panel-border-narrow">
+                                    <ul class="list list-bullet">
+                                        <li>
+                                            First prototype building targeting sections of the journey where we can affect  
+                                        </li>
+                                        <li>
+                                            Peugeot prototype
+                                        </li>
+                                        <li>
+                                            Home page, test in progress change
+                                        </li>
+                                        <li>
+                                            Vehicle visualization throughout on each changed page
+                                        </li>
+                                    </ul>
+                                </div>
+                        </details>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+                        
+
+    </div>
+
+</main>
+
+  
+{% endblock %}

@@ -5,9 +5,14 @@ All notable changes included in tagged released will be documented in this file.
 - No present changes
 
 
+## [1.2.45] - 2019-01-17
+### Changed
+- MTS messages: Display 'No messages' notice in Messages inbox
+
 ## [1.2.44] - 2018-12-13
 ### Changed
 - MTS messages: Persist filter state between Message view and Inbox 
+- Adds 'Check Your Answers' GDS pattern
 - Mobile-friendly links on 2fa login page
 `filter-messages/filter-messages.js`  
 

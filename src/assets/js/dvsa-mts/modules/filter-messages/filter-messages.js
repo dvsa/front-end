@@ -15,16 +15,15 @@ export class MessagesFilter {
     const checkboxes = [...component.querySelectorAll(FILTER_CONFIG.selectors.checkboxes)];
     const messageItems = [...messageList.querySelectorAll(FILTER_CONFIG.data.messages)];
     const filteredView = component.querySelector(FILTER_CONFIG.selectors.filteredView);
-    const emptyMessageTarget = document.querySelector(FILTER_CONFIG.selectors.messageList);
+    const filterNoticeTarget = document.querySelector(FILTER_CONFIG.selectors.messageList);
 
-    // Construct new DOM node for empty view
-    const emptyMessageEl = document.createElement('p');
-    emptyMessageEl.classList.add(`${FILTER_CONFIG.selectors.emptyNotice}`);
-    emptyMessageEl.innerHTML = FILTER_CONFIG.data.emptyNotice;
-    emptyMessageEl.style.display = 'none';
+    // Construct new DOM node for filters notice view
+    const filterNoticeEl = document.createElement('p');
+    filterNoticeEl.classList.add(`${FILTER_CONFIG.selectors.filterNotice}`);
+    filterNoticeEl.style.display = 'none';
 
-    // Insert 'empty' message after the messages list
-    emptyMessageTarget.parentNode.insertBefore(emptyMessageEl, emptyMessageTarget);
+    // Insert no checked filters message after the messages list
+    filterNoticeTarget.parentNode.insertBefore(filterNoticeEl, filterNoticeTarget);
 
     this.elements = {
       component,
@@ -32,7 +31,7 @@ export class MessagesFilter {
       messageList,
       messageItems,
       filteredView,
-      emptyMessageTarget,
+      filterNoticeTarget,
     };
 
     // Get values for state
@@ -121,21 +120,29 @@ export class MessagesFilter {
   filterMessages = filterOpts => {
     // Show or hide each message based on its data type. Matches against filters active in state.
     let messagesItems = Array.from(this.elements.messageItems);
+    let hiddenMessageCount = 0;
     messagesItems.forEach(item => {
       const messageType = item.attributes['data-type'].value;
       if (!filterOpts.includes(messageType)) {
         item.classList.add('hidden');
+        hiddenMessageCount++;
       } else {
         item.classList.remove('hidden');
       }
     });
 
-    // Show or hide 'Empty inbox' notice and section title
-    const displayEmptyMessage = this.state.currFilters.length ? 'none' : 'block';
-    const displayInboxTitle = this.state.currFilters.length ? 'block' : 'none';
-    const listTitle = document.querySelector(FILTER_CONFIG.selectors.listTitle);
-    listTitle.style.display = displayInboxTitle;
-    document.querySelector('.message-panel__notice').style.display = displayEmptyMessage;
+    // Set the filter notice text and show/hide
+    let filterNotice = document.querySelector('.message-panel__notice');
+    filterNotice.style.display = 'none';
+    if (this.state.currFilters.length === 0) {
+      filterNotice.innerHTML = FILTER_CONFIG.data.noFilterNotice;
+      filterNotice.style.display = 'block';
+    } else {
+      if (messagesItems.length === 0 || messagesItems.length === hiddenMessageCount) {
+        filterNotice.innerHTML = FILTER_CONFIG.data.noMessagesNotice;
+        filterNotice.style.display = 'block';
+      }
+    }
   };
 
   updateMessageLinks = filterString => {

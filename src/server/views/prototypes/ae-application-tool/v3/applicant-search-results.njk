@@ -1,0 +1,220 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'AE applicant closest matches' %}
+
+{% block content %}
+
+<style>
+    .similarity {
+      display:block; 
+      background-color:green; 
+      min-height:15px;
+      font-size: 16px;
+      line-height: 1.25;
+      color:#FFFFFF;
+      padding: 2px 5px 0px 5px;
+    }
+    .similarityContainer {
+      display:block; 
+      background-color:#CCCCCC; 
+      min-height:15px;
+      width:100%;
+    }
+
+    .noWrapTD {
+      white-space: nowrap;
+    }
+  </style>
+
+      <div class="breadcrumbs">
+        <ol>
+          <li>
+            <a href="/prototypes/ae-application-tool/v3/">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="/prototypes/ae-application-tool/v3/applicant-search">
+              Investigate AE applicant
+            </a>
+          </li>
+          <li>
+            Closest matches
+          </li>
+        </ol>
+      </div>
+
+<h1 class="heading-xlarge" style="margin-bottom: 30px">
+      <span class="heading-secondary">Investigate AE applicant</span>
+      Closest matches
+</h1>
+
+
+    <h2 id="summaryLine" class="result__group-heading">
+    People similar to or associated with <strong class="noWrapTD">'Dorothy Warnock, 24 January 1984, HA7 3PN'</strong></h2>
+
+<form action="">
+
+
+<table class="govuk-table result-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Name</th>
+      <th class="govuk-table__header" scope="col">Date of birth</th>
+      <th class="govuk-table__header" scope="col">Postcode</th>
+      <th class="govuk-table__header" scope="col">Similarity</th>
+      <th class="govuk-table__header" scope="col">Flag reason</th>
+      <th class="govuk-table__header" scope="col">AE details</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Lily Dorothy Warnock</strong></br>
+      <span class="result-table__meta">AEP</span></td>
+      <td class="govuk-table__cell noWrapTD"><strong>24 January 1984</strong></td>
+      <td class="govuk-table__cell noWrapTD"><strong>HA7 3PN</strong></td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:97%;" title="97% similarity to search terms">97%</span></span></td>
+      <td class="govuk-table__cell ">Withdrawn</br>
+      <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event"><span class="result-table__meta noWrapTD">04 December 2018</span></a></td>
+      <td class="govuk-table__cell "><a href="/prototypes/ae-application-tool/v3/applicant-details-ae" target="_blank">Stanmore Motors Ltd</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="" target="_blank"><strong>Alan Joseph Warnock</strong></a></br>
+      <span class="result-table__meta">Tester</span></td>
+      <td class="govuk-table__cell noWrapTD">11 August 1991</td>
+      <td class="govuk-table__cell noWrapTD"><strong>HA7 3PN</strong></td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:70%;" title="70% similarity to search terms">70%</span></td>
+      <td class="govuk-table__cell ">Suspended</br>
+      <a href=""><span class="result-table__meta noWrapTD">23 March 2017</span></a></td>
+      <td class="govuk-table__cell "><a href="/prototypes/ae-application-tool/v3/applicant-details-ae" target="_blank">Stanmore Motors Ltd</a></td>
+ </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Isabella Dorothy Westbrook</strong></br>
+      <span class="result-table__meta">AEP</span></td>
+      <td class="govuk-table__cell noWrapTD">22 June 1937</td>
+      <td class="govuk-table__cell noWrapTD">ST7 8BQ</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">Rejected</br>
+      <a href=""><span class="result-table__meta noWrapTD">12 September 2016</span></a></td>
+      <td class="govuk-table__cell "><a href="" target="_blank">K &amp; J Motors Pontyclun Ltd</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="" target="_blank"><strong>Kathleen Dorothy Kammerman</strong></a></br>
+      <span class="result-table__meta">Tester</span></td>
+      <td class="govuk-table__cell noWrapTD">13 August 1968</td>
+      <td class="govuk-table__cell noWrapTD">CO16 9AX</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">Suspended</br>
+      <a href=""><span class="result-table__meta noWrapTD">19 April 2018</span></a></td>
+      <td class="govuk-table__cell "><a href="" target="_blank">Easy Fit Auto Ltd</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Mia Dorothy Crofts</strong></br>
+      <span class="result-table__meta">AEP</span></td>
+      <td class="govuk-table__cell noWrapTD">27 February 1958</td>
+      <td class="govuk-table__cell noWrapTD">NG11 7FQ</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">CRT disciplinary log</br>
+      <span class="result-table__meta noWrapTD">Case: 5436 (AEFWL)</span></td>
+      <td class="govuk-table__cell ">N/A</td>
+ </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Riley Dorothy Loehr</strong></br>
+      <span class="result-table__meta">AEP</span></td>
+      <td class="govuk-table__cell noWrapTD">03 January 1953</td>
+      <td class="govuk-table__cell noWrapTD">TQ7 4NB</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">Withdrawn</br>
+      <a href=""><span class="result-table__meta noWrapTD">22 January 2016</span></a></td>
+      <td class="govuk-table__cell "><a href="" target="_blank">Highway Tachograph &amp; Autocentre Ltd</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="" target="_blank"><strong>Natalia Dorothy McCarthy</strong></a></br>
+      <span class="result-table__meta">Tester</span></td>
+      <td class="govuk-table__cell noWrapTD">31 August 1982</td>
+      <td class="govuk-table__cell noWrapTD">WF17 7DG</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">Suspended</br>
+      <a href=""><span class="result-table__meta noWrapTD">09 September 2016</span></a></td>
+      <td class="govuk-table__cell "><a href="" target="_blank">SNT Auto Centre Midlands Ltd</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><strong>Lilian Ruth Humphreys</strong></br>
+      <span class="result-table__meta">AEP</span></td>
+      <td class="govuk-table__cell noWrapTD">01 July 1957</td>
+      <td class="govuk-table__cell noWrapTD">PL15 9TJ</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">CRT disciplinary log</br>
+      <span class="result-table__meta noWrapTD">Case: 5427 (AEFWL)</span></td>
+      <td class="govuk-table__cell "><a href="" target="_blank">B &amp; R Motors Ltd</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="" target="_blank"><strong>Blake Dorothy Ryan</strong></a></br>
+      <span class="result-table__meta">Tester</span></td>
+      <td class="govuk-table__cell noWrapTD">18 June 1961</td>
+      <td class="govuk-table__cell noWrapTD">ME15 7DR</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">Suspended</br>
+      <a href=""><span class="result-table__meta noWrapTD">28 June 2017</span></a></td>
+      <td class="govuk-table__cell "><a href="" target="_blank">Technikar Auto Centre</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="" target="_blank"><strong>Kyle Dorothy Candida</strong></a></br>
+      <span class="result-table__meta">Tester</span></td>
+      <td class="govuk-table__cell noWrapTD">n/a</td>
+      <td class="govuk-table__cell noWrapTD">LS26 8HE</td>
+      <td class="govuk-table__cell "><span class="similarityContainer"><span class="similarity" style="width:35%;" title="35% similarity to search terms">35%</span></td>
+      <td class="govuk-table__cell ">Suspended</br>
+      <a href=""><span class="result-table__meta noWrapTD">22 August 2015</span></a></td>
+      <td class="govuk-table__cell "><a href="" target="_blank">Houghton Motors</a></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<div class="pager">
+  <div class="pager__controls">
+    <ul class="pager__list">
+      <li>1</li>
+      <li>
+        <a href="#">2</a>
+      </li>
+      <li>
+        <a href="#">3</a>
+      </li>
+      <li>
+        <a href="#">4</a>
+      </li>
+      <li>
+        <a href="#">5</a>
+      </li>
+    </ul>
+    <a class="pager__next" href="#">Next</a>
+  </div>
+  <div class="pager__summary">Showing 1 &ndash; 10 of 105 items</div>
+</div>
+
+
+
+
+<nav class="content-navigation">
+    <ul class="content-navigation__secondary">
+        <li>
+          <a href="/prototypes/ae-application-tool/v3/applicant-search">Return to search</a>
+        </li>
+    </ul>
+</nav>
+
+
+</form>
+{% endblock %}

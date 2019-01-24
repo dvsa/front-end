@@ -1,7 +1,11 @@
-// .action-panel
-// Used in mot test results
+$buttonwidth: 180px;
 
-.action-panel {
+// Used in MOT test results and Site Review
+.action-panel { 
+  &, * {
+    box-sizing: border-box;
+  }
+
   @extend %contain-floats;
   position: relative;
   background-color: $grey-3;
@@ -9,125 +13,82 @@
   padding: 15px;
 
   & + .action-panel {
-    margin-top: 30px;
+    margin-top: $gutter/2;
   }
 
   .button {
     margin: 0;
     text-align: center;
-    width: 180px;
     font-weight: 700;
-  }
+    width: 100%;
+    @include media(desktop) {
+      width: $buttonwidth; 
+      float: right; 
+     }
+  } 
 
   &__container {
-    display: block;
-    width: 50%;
-    float: left;
-
-    @include media(tablet) {
-      width: 33.333%;
-    }
-
+    padding-bottom: 8px;
+    @include media(desktop) {
+      width: 70%;
+      width: calc(100% - #{$buttonwidth});
+      display: inline-block;
+      float: left;
+      padding-bottom: 0;
+      padding-top: 5px;
+    } 
+  
     @include media(mobile) {
       width: 100%;
       float: initial;
     }
-
-    &--last {
-      width: 100%;
-      padding-top: 10px;
-
-      @include media(tablet) {
-        padding-top: 0;
-        width: 33.333%;
-        text-align: right;
-        float: right;
-      }
-
-      @include media(mobile) {
-        padding-top: 0px;
-        width: 100%;
-        float: initial;
-        margin-top: 10px;
-      }
-    }
-
-    &--wider {
-      width: 55%;
-
-      @include media(mobile) {
-        width: 100%;
-      }
-
-      & + .action-panel__container {
-        width: 45%;
-
-        @include media(mobile) {
-          width: 100%;
-        }
-      }
-    }
-
-    &--twothirds {
-      width: 66%;
-      display: inline-block;
-
-      @include media(mobile) {
-        width: 100%;
-      }
-
-      & + .action-panel__container {
-        width: 45%;
-
-        @include media(mobile) {
-          width: 100%;
-        }
-      }
-    }
   }
 
   &__value {
-    @media(max-width: 890px) {
-      @include bold-24();
-      margin-top: 5px;
-    }
-
-    @include media(mobile) {
-      @include bold-19(); 
-      margin-top: 10px;
-    }
+    text-align: right;
+    float: right;
   }
 
   &__heading,
   &__value {
-    @include bold-36();
+    display: inline-block;
+    @include bold-24();
     line-height: 1;
-    display: block;  
+    @include media(desktop) {
+      @include bold-27();
+      width: 50%;
+      text-align: left;
+    }
+    @include media(desktopLrg) {
+      @include bold-36();
+    } 
   }
 
+  &__meta {
+    display: block;
+    padding-top: 6px;
+  }
+
+  &__action-group {
+    @include media(desktop) {
+      float: right;
+    }
+  }
 
   &__secondary-action {
-    @include core-16();
-    position: relative;
-    top: 10px;
-    left: 10px;
-
-    @include media(tablet) {
-      position: static;
-      margin-top: 10px;
-      display: block;
-    }
-
-    @include media(mobile) {
-      display: block;
-      position: static;
-      margin: 10px 0 0 0;
+    font-size: 19px;
+    padding: 22px 0 6px;
+    display: block;
+    clear: both;
+    text-align: right;
+    @include media(desktop) {
+      @include core-16();  
+      padding: 14px 0 10px;
     }
   }
 
   &__heads {
     @include core-16();
-
     &-item {
       span {
         display: inline-block;
@@ -138,6 +99,11 @@
         }
       }
     }
+  }
+
+  &__sub-heading {
+    float: left;
+    clear: left;
   }
 
   &__summary {
@@ -175,4 +141,5 @@
           }
       }
   }
+
 }

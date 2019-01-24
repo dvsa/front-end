@@ -12,16 +12,10 @@
 
   {% call components.displayCode() %}
   <div class="action-panel">
-    <div class="clear-float">
       <div class="action-panel__container">
         <h3 class="action-panel__heading">Brake test</h3>
-        <h4 class="action-panel__sub-heading"></h4>
       </div>
-
-      <div class="action-panel__container--last">
-        <a href="#" class="button">Add brake test</a>
-      </div>
-    </div>
+      <a href="#" class="button">Add brake test</a>
   </div>
   {%- endcall %}
 
@@ -32,26 +26,20 @@
   ) }}
 
   {{ components.paragraph(
-    text='The primary call to action reads <code class="dev-code-snippet">Edit brake test</code>. The secondary call to action reads <code class="dev-code-snippet">or view brake test results</code>.'
+    text='The primary call to action reads <code class="dev-code-snippet">Edit brake test</code>. 
+    The secondary call to action reads <code class="dev-code-snippet">or view brake test results</code>.'
   ) }}
 
   {% call components.displayCode() %}
   <div class="action-panel">
-    <div class="clear-float">
       <div class="action-panel__container">
         <h3 class="action-panel__heading">Brake test</h3>
-        <h4 class="action-panel__sub-heading"></h4>
-      </div>
-      <div class="action-panel__container">
         <h3 class="action-panel__value">Failed</h3>
       </div>
-      <div class="action-panel__container--last">
-        <a href="#" class="button">Edit brake test</a>
-        <span class="action-panel__secondary-action">or
-          <a href="#">view brake test results</a>
-        </span>
-      </div>
-    </div>
+      <a href="#" class="button">Edit brake test</a>
+      <span class="action-panel__secondary-action">or
+        <a href="#">view brake test results</a>
+      </span> 
   </div>
   {%- endcall %}
 
@@ -63,24 +51,14 @@
 
   {% call components.displayCode() %}
   <div class="action-panel">
-    <div class="clear-float">
       <div class="action-panel__container">
         <h3 class="action-panel__heading">Brake test</h3>
-        <h4 class="action-panel__sub-heading"></h4>
+        <h3 class="action-panel__value">Failed</h3>
       </div>
-
-      <div class="action-panel__container">
-        <h3 class="action-panel__value">Passed</h3>
-        <h4 class="action-panel__sub-heading">Initial test failed</h4>
-      </div>
-
-      <div class="action-panel__container--last">
-        <a href="#" class="button">Edit brake test</a>
-        <span class="action-panel__secondary-action">or
-          <a href="#">view brake test results</a>
-        </span>
-      </div>
-    </div>
+      <a href="#" class="button">Edit brake test</a>
+      <span class="action-panel__secondary-action">or
+        <a href="#">view brake test results</a>
+      </span> 
   </div>
   {%- endcall %}
 
@@ -91,25 +69,18 @@
   ) }}
 
   {% call components.displayCode() %}
-  <div class="action-panel">
-    <div class="clear-float">
+  <div class="action-panel"> 
       <div class="action-panel__container">
-        <h3 class="action-panel__heading">Brake test</h3>
-        <h4 class="action-panel__sub-heading"></h4>
-      </div>
-
-      <div class="action-panel__container">
+        <h3 class="action-panel__heading">Brake test</h3> 
         <h3 class="action-panel__value">Failed</h3>
-        <h4 class="action-panel__sub-heading">Initial test failed</h4>
+        <span class="action-panel__meta">Initial test failed</span> 
       </div>
-
-      <div class="action-panel__container--last">
-        <a href="#" class="button">Edit brake test</a>
-        <span class="action-panel__secondary-action">or
-          <a href="#">view brake test results</a>
-        </span>
+      <div class="action-panel__action-group">
+          <a href="#" class="button">Edit brake test</a>
+          <span class="action-panel__secondary-action">or
+              <a href="#">view brake test results</a>
+          </span>
       </div>
-    </div>
   </div>
 
   <div class="defect-summary">
@@ -121,7 +92,6 @@
 
       <ol>
         <li class="defect">
-          <strong class="defect__title">Parking brake performance</strong>
           <p class="defect__meta">Parking brake efficiency below requirements.</p>
         </li>
 

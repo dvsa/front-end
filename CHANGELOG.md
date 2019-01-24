@@ -4,6 +4,10 @@ All notable changes included in tagged released will be documented in this file.
 ## [Unreleased]
 - No present changes
 
+## [1.3] - 2019-01-24
+### Changed
+- Breaking change for Action Panels used in Site Review and MOT Test Results
+
 ## [1.2.47] - 2019-01-24
 ### Added
 - Utility class for borders

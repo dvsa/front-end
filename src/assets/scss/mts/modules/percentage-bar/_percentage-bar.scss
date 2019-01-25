@@ -1,0 +1,20 @@
+// Typically used inside of a table cell
+.percentage-indicator {
+    display: block; 
+    background-color: $grey-2;
+    position: relative;
+    width: 100%; 
+    max-width: 110px;
+    @include media(tablet){ 
+        max-width: 160px;
+        font-size: 16px
+    }
+    &__bar {
+        display: block;
+        padding: 4px;
+        background-color: $green; 
+        color:#FFFFFF;
+        height: 100%;
+        line-height: 16px;
+    }
+} 

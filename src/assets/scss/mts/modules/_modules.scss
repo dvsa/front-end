@@ -36,6 +36,7 @@
   @import 'messages/markdown';
   @import 'message-notification/message-notification';
   @import 'responsive-toggle/responsive-toggle';
+  @import 'responsive-table/responsive-table';
   @import 'sign-in/sign-in';
   @import 'slot-hero/slot-hero';
   @import 'summary-heading/summary-heading';
@@ -52,6 +53,7 @@
   @import 'table-default/table-default';
   @import 'table-reference/table-reference';
   @import 'panel-indent/panel-indent';
+  @import 'percentage-bar/percentage-bar';
 }
 
 // Old modules not wraped with 'mts-body-wrapper'

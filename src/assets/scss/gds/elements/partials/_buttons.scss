@@ -6,14 +6,14 @@
   @include box-sizing (border-box);
   vertical-align: top;
 
-  @include media (mobile) {
+  @media (max-width: $tablet-breakpoint) {
     width: 100%;
     text-align: center;
   }
   
   .pin-form & {
     width: 100%;
-    @include media (desktop) {
+    @include media(desktop) {
       width: auto;
       text-align: center;
     }

@@ -27,8 +27,12 @@ $buttonwidth: 180px;
      }
   } 
 
-  &__container {
-    padding-bottom: 8px;
+
+  &__container { 
+
+    padding-bottom: 8px; 
+    width: 100%;
+    
     @include media(desktop) {
       width: 70%;
       width: calc(100% - #{$buttonwidth});
@@ -36,11 +40,6 @@ $buttonwidth: 180px;
       float: left;
       padding-bottom: 0;
       padding-top: 5px;
-    } 
-  
-    @include media(mobile) {
-      width: 100%;
-      float: initial;
     }
   }
 

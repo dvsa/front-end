@@ -4,11 +4,6 @@
   background-color: $white;
 
 
-  .breadcrumbs {
-    a, a:visited {
-      color: $text-colour;
-    }
-  }
  
   nav {
     max-width: 960px;
@@ -53,10 +48,17 @@
   }
 }
 
+
 .breadcrumbs {
   a, a:visited {
-    color: $text-colour;
+    color: $text-colour; 
   }
+
+  &--defects {
+    a, a:visited {
+      color: $govuk-blue;
+    }
+  } 
 }
 
 .breadcrumb {

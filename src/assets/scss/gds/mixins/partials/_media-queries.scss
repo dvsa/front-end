@@ -43,12 +43,12 @@ $desktop-breakpoint: 769px !default;
     @media (min-width: $tablet-breakpoint){
       @content;
     }
-  } @else if $size == smallMobile {
-      @media (min-width: $mobile-breakpoint){
+  } @else if  $size == smallTablet {
+      @media (min-width: $mobile-breakpoint){ 
         @content;
-    }
+    }  
   } @else if $size == mobile {
-    @media (max-width: $tablet-breakpoint - 1px){
+    @media (max-width: $mobile-breakpoint - 1px){
       @content;
     }
   } @else if $max-width != false {

@@ -2,3 +2,21 @@
     @include core-14();
     color: $grey-1;
 }
+
+.u-cell-meta { 
+    color: $govuk-secondary-text-colour;
+    font-weight: 300;
+    font-size: .85em;
+    display: block;
+    &--error {
+        color: $red;
+        font-weight: bold;
+    } 
+}
+// Use on cells to right-align numeric data
+.u-numeric {
+    text-align: left; 
+    @include media(desktop) {
+      text-align: right;
+    }
+  }

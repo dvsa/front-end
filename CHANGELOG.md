@@ -4,6 +4,13 @@ All notable changes included in tagged released will be documented in this file.
 ## [Unreleased]
 - No present changes
 
+## [1.3.1] - 2019-01-28
+### Changed
+- Responsive table component
+- Percentage complete badge component used in this table
+- Updated 'Check your answers' pattern to be GovUK's own summary list with overrides for MTS
+- Removed legacy 'Check your answers' pattern
+
 ## [1.3] - 2019-01-24
 ### Changed
 - Breaking change for Action Panels used in Site Review and MOT Test Results

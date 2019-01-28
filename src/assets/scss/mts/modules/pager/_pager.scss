@@ -1,13 +1,14 @@
 .pager {
-  margin-top: em(5, 16);
+  margin-top: $gutter/3;
   margin-bottom: em(20, 16);
-
+  
   @include media(tablet) {
-    margin-top: em(5);
+    margin-top: $gutter/2;
     margin-bottom: em(20);
   }
 
   &__controls {
+    padding-bottom: 12px;
     @include media(tablet) {
       float: right;
     }

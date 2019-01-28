@@ -1,26 +1,22 @@
-# New PR ~ front end 💻 🍕
+# New PR ~ front end 💻 
 
 ***
 
-**Before submitting a PR for PRODUCTION in MTS, consider ** - 
+** Before submitting a PR for PRODUCTION in MTS, consider: ** - 
 
-- [ ] This solution is documented and approved against ACs in the Jira ticket.
-- [ ] Your changes are browser tested (remember to conduct/organise testing before a tagged release if not yet)
-- [ ] Branch name include Jira ticket ref.
-- [ ] `npm run start-dev` runs successfully.
-- [ ] If helpful or material, add to the Changelog.md file
+- This solution is documented and approved against ACs in the Jira ticket
+- Changes are browser tested (remember to conduct/organise testing before a tagged release if not yet)
+- Branch name include Jira ticket ref
+- `npm run start-dev` runs successfully
+- If helpful or material, add to the Changelog.md file
 
 ** Style **
 
-- [ ] If applicable, CSS updates will not unwillingly affect other components - please mention if they may so we can test.
-- [ ] Console logs and commented-out code is removed.
-- [ ] Code has been indented and __approriately__ commented.
-- [ ] You haven't added inline JavaScript or CSS. 
-
-* Mark done with an ❎ *
+- CSS updates will not unwillingly affect other components - please mention if they may so we can test
+- Console logs and commented-out code is removed
+- Code has been indented and __appropriately__ commented
+- No inline JavaScript or CSS
 
 ***
 
 ## Notes
-
-_If there is something worth mentioning..._

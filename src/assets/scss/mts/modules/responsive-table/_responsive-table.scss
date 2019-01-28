@@ -1,0 +1,118 @@
+.responsive-table { 
+    width: 100%;
+    @include media(tablet){
+      max-width: 75%;
+    }
+    @include media(desktop){
+      max-width: none;
+    }
+
+    &--compact  {
+      font-size: 18px;
+      td, th {
+        @include media(desktop) {
+          font-size: .9em;
+        } 
+      }
+    }
+
+    th, td {
+      padding: 12px 0;
+      &:last-child {
+        padding-right: 0;
+      }
+      @include media(desktop) {
+        padding: 12px 6px;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    } 
+
+    thead {
+      border: 0;
+      clip: rect(1px, 1px, 1px, 1px);
+      height: 1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+      
+      @include media(desktop) {
+        clip: auto;
+        display: table-header-group;
+        height: auto;
+        overflow: auto;
+        position: relative;
+        width: auto;
+      }
+    }
+ 
+    &__values-group {
+        display: block;
+        @include media(desktop) { 
+        }
+    }
+  
+    tbody {
+      @include media(desktop) {
+        display: table-row-group;
+      }
+  
+      tr {
+        display: block;
+      }
+  
+      td {
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        vertical-align: top;
+        border-top: 0;
+        border-bottom: 1px solid $grey-2;
+  
+        @include media(desktop) {
+          display: table-cell; 
+        } 
+      }
+ 
+      .table-heading {
+        font-weight: 700;
+        text-align: left;
+        padding-right: 1em;
+        display: block;
+        white-space: nowrap;
+        @include media(desktop) {
+          display: none;
+        }
+      }
+  
+      tr {
+        margin-bottom: 2em; 
+        
+        @include media(desktop) {
+          display: table-row;
+        }
+  
+        th {
+          text-align: right;
+          @include media(desktop) {
+            text-align: left;
+          }
+        }
+  
+        td {
+          min-width: 1px;
+          text-align: right;
+  
+          @include media(desktop) {
+            text-align: left;
+          } 
+        
+        }
+      }  
+    }
+  }

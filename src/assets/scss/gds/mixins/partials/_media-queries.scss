@@ -21,8 +21,8 @@
 //     }
 //   }
 
-$mobile-breakpoint: 550px !default;
-$tablet-breakpoint: 641px !default;
+$mobile-breakpoint: 480px !default;
+$tablet-breakpoint: 600px !default;
 $desktop-breakpoint: 769px !default;
 
 @mixin media($size: false, $max-width: false, $min-width: false, $ignore-for-ie: false) {

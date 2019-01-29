@@ -31,8 +31,10 @@
   display: block;
   position: relative;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 19px;
   padding: 15px 8px;
+  padding-left: 3px;
+  color: $govuk-blue;
   @include media(desktop) {
     font-size: 16px;
     padding: 12px 12px 12px 8px
@@ -212,9 +214,7 @@
     }
 
     a {
-      @include list-anchor;
-      padding-left: 3px;
-      color: $govuk-blue;
+      @include list-anchor; 
       &:hover {
         // falls between grey-2 (too dark) and grey-3 (too light)
         background: #f1f1f1;
@@ -249,52 +249,85 @@
 }
 
 // Hide numbered breadcrumb items if currently browsing at that level
- $nums: (1, 2, 3, 4, 5);
+ //$nums: (1, 2, 3, 4, 5);
 
-//WIP
-  @each $number in $nums {
-  .breadcrumbs--defects {
-      .breadcrumb__item--{
-        &#{$number} {
-          @if ( $number == 1 ){
-            .browse--one & {
-             opacity: .7;
-            }
-          }
-          @if ( $number == 2 ){ 
-            .browse--two & {
-             opacity: .7; 
-            }
-          }
-          @if ( $number == 3 ){
-            .browse--three & {
-             opacity: .7;
-            }
-          }
-          @if ( $number == 4 ){
-            .browse--four & {
-             opacity: .7;
-            }
-          }
-          @if ( $number == 5 ){
-            .browse--five & {
-             opacity: .7;
-            }
-          }
-      }
-    }
-  }
-}   
-
-.breadcrumbs--defects {
+ .breadcrumbs--defects {
   a {
     padding: 4px;
     font-size: 19px;
   }
+   
   @include media(desktop) {
     display: none;
-  }  
+  } 
+
+  $itemClass: 'breadcrumb__item';
+ 
+    &-one { 
+      .#{$itemClass}--1 {
+          display: none;
+        }
+    }
+    &-two { 
+      .#{$itemClass}--2 {
+        display: none;  
+      }
+      .#{$itemClass}--1 {
+        display: block;
+        @include media(smallTablet) {
+          display: none;
+        }
+      }
+    }
+    &-three {
+      .#{$itemClass}--3 {
+        display: none;
+      } 
+      @include media(smallTablet) {
+        .#{$itemClass}--2 {
+          display: none;
+        }
+      } 
+    }
+    
+    &-four {
+      .#{$itemClass}--4 {
+        display: none;
+      }
+      .#{$itemClass}--1, 
+      .#{$itemClass}--2,
+      .#{$itemClass}--3 {
+        display: block;
+      }
+      @include media(smallTablet) { 
+        .#{$itemClass}--3 {
+          display: none;
+        }
+      } 
+    }
+    &-five {
+      .#{$itemClass}--5 {
+        display: none;
+      }
+      .#{$itemClass}--1, 
+      .#{$itemClass}--2,
+      .#{$itemClass}--3,
+      .#{$itemClass}--4 {
+        display: block;
+      }
+      @include media(smallTablet) { 
+        .#{$itemClass}--4 {
+          display: none;
+        }
+      } 
+    }
+
 }
+
+
+
+   
+
  
 // Used only in Defects prototype
 .browse--no-media-break {

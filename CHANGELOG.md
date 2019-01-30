@@ -4,6 +4,10 @@ All notable changes included in tagged released will be documented in this file.
 ## [Unreleased]
 - No present changes
 
+## [1.3.2] - 2019-01-30
+### Changed
+- Updated asset paths for new directory names in MOTH application
+
 ## [1.3.1] - 2019-01-28
 ### Changed
 - Responsive table component

@@ -64,11 +64,10 @@ export class ShowHideToggle {
       const elementDetails = this.getElementDetails(element);
       if (!elementDetails) return;
 
-      console.log(elementDetails.targetState);
 
       // Set hidden unless target state is anything other than open
       const hidden = elementDetails.targetState !== this.targetStates.open;
-
+    
       // If not hidden,
       if (!hidden) {
         toggleClass(elementDetails.targetElement, this.classnames.jsHidden, false);

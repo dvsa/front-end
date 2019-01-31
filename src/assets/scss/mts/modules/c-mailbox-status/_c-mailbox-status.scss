@@ -27,9 +27,13 @@
   }
 
   &__type {
-    padding-left: .5em;
     position: relative;
-    top: -1em;
     vertical-align: super;
+    padding-left: 16px;
+    font-size: 19px;
+    @include media(desktop){ 
+      top: -0.4em;
+      font-size: 16px;
+    }
   }
 }

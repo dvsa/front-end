@@ -3,10 +3,16 @@
 
 // RFR buttons
 .button {
+
+
+  text-align: center;
+  @include media(tablet){
+    text-align: left;
+  }
+
+
   &--alert {
-    @include button($red);
-    @include core-16;
-    margin: 0;
+    @include button($red); 
   }
 
   &--info {
@@ -34,8 +40,8 @@
     margin-right: 0;
   } 
 
-  &--touch {   
-    padding: em(10) em(41);
+  &--touch {  
+    padding: em(10) em(41); 
   }
 
   &--on-blue {
@@ -57,34 +63,43 @@
     }
   }
 
-}
 
-.button-warning {
-  @include button($red);
-  margin: 0 $gutter-half $gutter-half 0;
-  padding: em(10) em(15) em(5);
-  vertical-align: top;
-}
-
-// Start now buttons
-.button-start {
-  @include _core-font-generator(24px, 20px, 16pt, (30 / 24), (24 / 20), false, 700);
-  @include box-sizing(border-box);
-  background-image: file-url('icons/icon-pointer.png');
-  background-repeat: no-repeat; 
-  background-position: 100% 50%;
-  padding: .3em 45px .2em .6em;
-  width: 100%;
-  margin-bottom: 15px;
-  
-  @include device-pixel-ratio {
-    background-image: file-url('icons/icon-pointer-2x.png');
-    background-size: 30px 19px;
+  &-warning {
+    @include button($red);
+    margin: 0 $gutter-half $gutter-half 0;
+    padding: em(10) em(15) em(5);
+    vertical-align: top;
   }
 
-  @include ie(6) {
-    background-image: file-url('icons/icon-pointer-2x.png');
+  &-start {
+    @include _core-font-generator(24px, 20px, 16pt, (30 / 24), (24 / 20), false, 700);
+    @include box-sizing(border-box);
+    background-image: file-url('icons/icon-pointer.png');
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    padding: 14px 45px 14px 12px;
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+
+    @include media(desktop){  
+        padding: 9px 45px 6px 12px;
+        font-size: 22px;
+    }
+    @include media(desktopLrg){ 
+        font-size: 24px;
+    }
+
+    @include device-pixel-ratio {
+      background-image: file-url('icons/icon-pointer-2x.png');
+      background-size: 30px 19px;
+    }
+
+    @include ie(6) {
+      background-image: file-url('icons/icon-pointer-2x.png');
+    }
   }
+
 }
 
 .related-button {
@@ -98,7 +113,6 @@
   }
 }
 
-//Be specific - don't wan't this class added to a tags
 input.button--link {
   background-color: transparent;
   border: 0;

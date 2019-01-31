@@ -3,16 +3,15 @@
   z-index: 50;
   background-color: $white;
 
-  nav { 
-    margin: 0 auto;
-    padding: 0;
-    border: 0;
-    display: block;
 
-    ol {
-      margin: 0;
-      padding-left: 0;
+  .breadcrumbs {
+    a, a:visited {
+      color: $text-colour;
     }
+  }
+ 
+  nav {
+    max-width: 960px; 
     
     li {
       font-family: "nta",Arial,sans-serif;
@@ -26,8 +25,14 @@
       list-style: none;
       margin-left: 0;
       margin-right: .5em;
-      padding-right: 1em; 
-      
+      padding-right: 1em;
+
+      @media (max-width: 640px) {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        margin-bottom: 6px;
+      }
+
       @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
         background-image: file-url('icons/separator-2x.png');
         background-size: 6px 11px;

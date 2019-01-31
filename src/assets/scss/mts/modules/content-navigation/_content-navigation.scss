@@ -2,19 +2,40 @@
   &,
   &--notice {
     margin-top: $gutter;
-
     [class*='button'] {
-      margin: 0 15px 15px 0;
+      margin: 0 0 $gutter/2 0;
+      padding: 12px;
+      text-align: center;
+      @include media(desktop) {  
+        padding: em(10) em(22);
+      }
     }
   }
-
   &--notice {
     border: 10px solid $panel-colour;
     padding: $gutter;
   }
 
+  [class*='button'] {
+    @include media(tablet) {
+     padding: 13px 20px 10px;
+    }
+    @include media(desktop) {
+      
+    }
+  }
+
+ 
+
   &__secondary {
     list-style: none;
+    margin-bottom: $gutter;
+    margin-top: $gutter-half;
+    font-size: 19px;
+    @include media(desktop) {  
+      font-size: 16px;
+      margin: $gutter-half 0;
+    }
   
     li {
       margin-bottom: 5px;
@@ -32,32 +53,32 @@
 
   &__split {
     li { 
-      width: 100%;
+      display: block;
       list-style: none;
-      display: block; 
-      @include media(smallTablet) {  
+      margin-bottom: $gutter/2;
+       
+      @include media(tablet) {  
         display: inline;
         width: auto;
+        margin: auto; 
+        .button {
+          display: inline-block;
+        }
       }
     }
 
     // The following allows for
     // left/right green/red split buttons
     &--left { 
-      @include media(smallTablet) {  
+      @include media(tablet) {  
         float: left; 
       }
     }
 
     &--right {  
-      @include media(smallTablet) {
+      @include media(tablet) {
         float: right;
-      }
-  
-      .button {
-        @include core-19();
-        margin-right: 0;
-      }
+      } 
     }
   }
 }

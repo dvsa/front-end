@@ -3,81 +3,74 @@
   @include core-16;
   background-color: #e7e7e7;
   border: 1px solid $grey-2;
-  margin-bottom: $gutter-half;
-
+  margin-bottom: $gutter-half/2;
+  
+  @include media(tablet) {
+    margin-bottom: $gutter-half
+  }
+  
+  .button {
+    margin-bottom: 0;
+  }
+  
   // Optional totals for browse, search and list views
   &__total {
     position: relative;
-    padding: $gutter-half;
-
+    padding: $gutter-half; 
+    float: left;
+    width: 100%;
     @include media(tablet) {
-      padding: 15px 130px;
+      padding: 15px;
     }
 
-    &-heading {
-      // display: none;
+    &-heading { 
       font-weight: 700;
-
-      @include media(tablet) {
-        display: inline-block;
-        position: absolute;
-        top: 15px;
-        left: 15px;
-      }
-
-      @include media(mobile) {
-        padding-bottom: 20px;
+      font-size: 19px;
+      padding-bottom: 14px;
+      @include media(desktop) {  
+        font-size: 16px;
+        float: left; 
+        padding-bottom: 0;
       }
     }
 
     ul {
 
+      @include media(desktop) {
+        display: inline;
+        padding-left: $gutter/2;
+      }
       li {
+        @media (max-width: 480px){
+          margin-bottom: 10px;
+        } 
         display: inline-block;
-        margin-right: 10px;
-
+        padding-right: 14px;
+        font-size: 16px;
+        
         @include media(tablet) {
-          width: 32%;
-          margin-right: 0;
+          padding-right: 12px;
+          margin: 0;
+        }
+        @include media(desktop) {
+          width: 16%;
+          max-width: 130px;
+          padding-right: 8px;
         }
       }
     }
 
-    &--eu {
-
-      @include media(tablet) {
-        padding: 15px 85px 15px 80px;
-      }
-
-      ul {
-        @include media(tablet) {
-          margin-left: 20px;
-        }
-
+    &--eu {  
+      @include media(desktop){
         li {
-
-          @include media(tablet) {
-            width: 22%;
-          }
-
-          @include media(mobile) {
-            width: 20%;
-          }
+          padding-right: 12px;
         }
-      }
-
+      }  
       span[class^="badge"] {
-        display: block;
-        max-width: 20px;
-        margin-bottom: 2px;
-        padding: 5px 3px 3px;
-
-        @include media(desktop) {
-          display: inline-block;
-          max-width: auto;
-          padding: 5px 8px 3px;
-          margin-bottom: -5px;
-        }
+        position: relative;
+        top: -2px;
+        min-width: 24px;
+        padding: 4px 2px;
       }
     }
   }
@@ -88,6 +81,7 @@
     border-top: 1px solid $grey-2;
     padding: 12px 15px;
     background-color: #f1f1f1;
+    clear: both;
 
     &-type {
       padding-left: 10px;
@@ -106,10 +100,14 @@
 
   &__toggle {
     font-weight: 700;
+    font-size: 19px;
     position: absolute;
     right: 15px;
     top: 15px;
     display: none;
+    @include media(desktop){
+      font-size: 16px;
+    }
 
     .js-enabled & {
       display: block;
@@ -141,11 +139,4 @@
       }
     }
   }
-
-  //Context stuff 
- /*  .action-panel + & {
-    border-top: 0;
-    margin-top: -1px;
-    margin-bottom: 30px;
-  } */
 }

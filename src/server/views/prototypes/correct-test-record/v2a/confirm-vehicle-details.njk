@@ -10,25 +10,7 @@
 
 {% block content %}
 
-<style>
-    .circle-table {
-    float: left;
-    height: 20px;
-    width: 20px;
-    background-color: #B10E1E;
-    border-radius: 20%;
-    margin-right: 5px;
-    }  
-
-    .circle {
-    height: 25px;
-    width: 25px;
-    background-color: #B10E1E;
-    border-radius: 20%;
-    margin-right: 5px;
-    }  
-</style>
-
+ 
 <main id="content">
 
    
@@ -66,40 +48,8 @@
             <p class="lede">Check that you have the right vehicle before starting the test.</p>
         </div>
     
-        <div class="grid-row">
-                <div class="column-three-quarters">   
-            <h1 class="heading-large heading heading--page-heading heading--small-margin-bottom">
-                <span class="heading-secondary">
-                    Vehicle    </span>
-                Peugeot 3008 SUV</h1>
+        {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495HSS', color='red', selectVehicle=true ) }}
 
-    
-        <div class="grid-row">
-            <div class="column-one-third" style="width:30%">
-                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-                    <span class="heading__secondary">Colour</span>
-                    <div class="circle"></div>
-
-                    Red                </h2>
-            </div>
-
-            <div class="column-one-third" style="width:37.5%">
-                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-                    <span class="heading__secondary">VIN</span>
-                    GAULAGAAAAA495118               </h2>
-            </div>
-
-            <div class="column-one-third" style="width:32.5%; float:right">
-                <h2 class="heading heading--medium heading--no-margin-top heading--small-margin-bottom heading-medium">
-                    <span class="heading__secondary">Registration number</span>
-                    TH10 CZR               </h2>
-            </div>
-        </div>
-    </div>
-    <div class="column-one-quarter">
-                <img src="http://www.car-brand-names.com/wp-content/uploads/2015/05/Peugeot-logo.png" style="width:170px;height:150px; padding-top:50px;">
-            </div>
-</div>           
 
         <h2 class="heading-medium">Vehicle specification</h2>
     <table class="table-summary">

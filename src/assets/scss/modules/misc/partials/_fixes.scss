@@ -65,16 +65,17 @@ a:hover {
   color: $light-blue;
 }
 
-body .button-start,
-body .button-get-started,
-body .button-start:visited,
-body .button-get-started:visited,
-body .button-start:focus,
-body .button-get-started:focus,
-body .button-start:hover,
-body .button-get-started:hover {
-  color: #fff;
+body .button {
+  &-start,
+  &-get-started  {
+    color: #fff;
+    &:visited,
+    &:hover {
+      color: #fff;
+    }
+  }
 }
+
 
 // screenreader only
 .sr-only {

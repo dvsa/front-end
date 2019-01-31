@@ -33,10 +33,9 @@
     padding: $search-padding;
     height: 42px;
     background-color: $white;
-    width: 75%;
+    width: 65%;
     width: calc(100% - 204px); 
     border: 1px solid $border-colour;
-    // Grrr, damn your specificity alphaGov!
     &[type='search'] {
       @include box-sizing(border-box);
       appearance: none;
@@ -58,6 +57,7 @@
     height: 40px;
     margin: 0; 
     width: 200px;
+    float: right;
   }
 
   &__secondary-action {

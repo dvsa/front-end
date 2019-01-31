@@ -58,7 +58,7 @@
 </div>
   
 <div class="action-panel">
-      <div class="action-panel__container">
+    <div class="action-panel__container">
         <h3 class="action-panel__heading">Management and quality</h3>
         <span class="action-panel__value">Not recorded</span>
     </div>
@@ -89,14 +89,20 @@
 
 </div>
 
-<div class="form-group u-margin-top-20">
-    <a class="button" href="#" type="submit" value="Continue" disabled="true">Continue</a>
-    <a href="abort-are-you-sure" class="button" type="submit" style="background-color:#b10e1e; float:right;">Abort</a>
- </div>
+<ul class="list-unstyled content-navigation__split u-margin-bottom-20">
+    <li class="content-navigation__split--left">
+      <a class="button" href="/prototypes/site-review/summary">Continue</a>
+    </li>
+
+    <li class="content-navigation__split--right">
+      <a class="button button--alert" href="/prototypes/site-review/abort">Abort</a>
+    </li>
+</ul>
 
 <div class="form-group u-margin-bottom-20">
-  <a href="VE-view">Return to VTS overview</a>
-</div>
+    <a href="#">Cancel</a>
+  </div>
+  
  
 
 {% endblock %}

@@ -7,19 +7,20 @@
   color: #0b0c0c !important;
 
   &__message-type-count {
-    font-size: 80px;
+    font-size: 55px;
+    margin: 0 15px -10px 0;
     font-weight: 700;
     line-height: 1;
-    font-size: 60px;
-  
-    @media screen and (min-width:800px) {
-      float: left;   
-      margin: 0 15px -10px 0;
-      min-width: 80px;
-      text-align: right;
-      padding-bottom: 10px;
-    }
-
+    float: left;  
+    min-width: 80px;
+    text-align: right;
+    padding-bottom: 10px;
+    
+    @include media(desktop){
+      padding-bottom: 22px;
+      font-size: 80px;
+    } 
+    
     @media screen and (min-width:900px) {
       padding-bottom: 0;
     }

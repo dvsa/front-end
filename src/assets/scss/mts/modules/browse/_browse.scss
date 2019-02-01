@@ -14,16 +14,12 @@
   }
 }
 
+
 // Container
 %browse {
   position: relative;
   width: 100%;
   overflow: hidden;
-}
-
-%sizeForTwo {
-   display: block;
-   width: 35%;
 }
 
 // Mixin for control over anchor behavior
@@ -198,7 +194,11 @@
 
   &__title {
     font-weight: bold;
+    font-size: 19px;
     padding: 0 0 10px 3px;
+    @include media(desktop) {
+      font-size: 16px;
+    }
   }
 
   &__list {
@@ -247,27 +247,33 @@
     }
   }
 }
-
-// Hide numbered breadcrumb items if currently browsing at that level
- //$nums: (1, 2, 3, 4, 5);
+ 
 
  .breadcrumbs--defects {
-  a {
-    padding: 4px;
-    font-size: 19px;
-  }
-   
-  @include media(desktop) {
-    display: none;
-  } 
 
   $itemClass: 'breadcrumb__item';
+  margin-bottom: 12px;
+    
+  @include media(desktop) {
+    display: none;
+  }
+ 
+  a {
+      font-size: 19px;
+  }
+  
+  .#{$itemClass} {
+    margin-bottom: 12px;
+    line-height: 1.3;
+    clear: left;
+  }
  
     &-one { 
       .#{$itemClass}--1 {
           display: none;
         }
     }
+
     &-two { 
       .#{$itemClass}--2 {
         display: none;  
@@ -279,6 +285,7 @@
         }
       }
     }
+
     &-three {
       .#{$itemClass}--3 {
         display: none;
@@ -289,7 +296,7 @@
         }
       } 
     }
-    
+
     &-four {
       .#{$itemClass}--4 {
         display: none;
@@ -321,12 +328,7 @@
         }
       } 
     }
-
 }
-
-
-
-   
 
  
 // Used only in Defects prototype

@@ -2,14 +2,11 @@
   float: left;
 
   &:last-of-type {
-    // width: 100%;
-
     a {
       @include media(false, 768px) {
         padding-left: 0;
         padding-right: 0;
-      }
-
+      } 
       &.browse__slctd {
         color: $white;
       }
@@ -17,150 +14,226 @@
   }
 }
 
+
+// Container
 %browse {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
-// have to have a mixin here as the active link
-// won't naturally inherit the rules of the anchor
+// Mixin for control over anchor behavior
 @mixin list-anchor {
   display: block;
   position: relative;
   text-decoration: none;
-  font-size: 16px;
-  padding: 8px 12px 8px 8px;
+  font-size: 19px;
+  padding: 15px 8px;
+  padding-left: 3px;
+  color: $govuk-blue;
+  @include media(desktop) {
+    font-size: 16px;
+    padding: 12px 12px 12px 8px
+  }
 }
 
-.browse {
-
+.browse { 
   &,
   &--two,
   &--three,
   &--four,
   &--five {
     @extend %browse;
-    // need generic div class and partial selector to pick out __cats and __cats--sub
-    // can't just use "div" without either as that won't override the .browse_cats--sub:last-of-type column 
+    
+    .browse__cats {
+      width: 100%; 
+      clear: none;
 
-    div[class^=browse__cats] {
-      @include media(false, 768px) {
-        display: none;
+      @include ie-lte(8) {
+        display: block;
+        width: 100%;
+      }
 
-        .lte-ie8 & {
+      @include media(smallTablet) {
+        width: 35%;
+        float: left;
+      } 
+ 
+      // Bring back all panels for desktop
+       @include media(desktop){
+        display: block;
+        &:first-child {
           display: block;
         }
+      } 
+    
+      // Always show current panel
+      &--current {
+        display: block;
+        width: 100%; 
+         //min-width 550px 
+        @include media(smallTablet) {
+          width: 65%;
+        } 
+        @include media(desktop) {
+          width: 60%;
+        } 
+      } 
+    }
+  }
 
-        &:last-child {
+  &--one { 
+    .browse__cats {
+        display: block;
+        width: 100%; 
+    }
+  } 
+  &--two {
+    .browse__cats {
+      &:first-child {
+         display: none; 
+        // Show first panel on tablet
+        @include media(smallTablet){
           display: block;
-          width: 100%;
+          width: 35%;
+        }
+        @include media(desktop){
+          width: 40%;
+       }
+      }
+    }
+  }
 
-          .browse__list {
-            min-height: 1px;
-          }
+  &--three {
+    .browse__cats {
+      &:first-child,
+      &--2 {
+        display: none;
+      }
+     @include media(smallTablet){
+      &--2 { 
+        display: block;    width: 35%;
+      } 
+     }
+      @include media(desktop){
+        &:first-child {
+          display: block;
+          width: 20%;
+        }
+        &--2 {
+          width: 30%;
+        }
+        &--3 { 
+          width: 50%;
+        } 
+      }
+    }
+  }
+
+  &--four {
+    .browse__cats {
+      // Hide first, second and third on mobile
+      &:first-child,
+      &--2,
+      &--3 { display:none; } 
+      // Show third panel on tablet
+      @include media(smallTablet){ 
+        &--3 {
+          display: block;
+          width: 35%;
+        }
+      }
+      @include media(desktop){
+        &:first-child,
+        &--2 {
+          display: block;
+          width: 15%;
+        }
+        &--3 {
+          width: 30%;
+        }
+        &--current {
+          width: 40%
         }
       }
     }
   }
 
-
-  &__cats {
-    width: 100%;
-    
-    .browse &,
-    .browse--two &,
-    .browse--three &,
-    .browse--four &,
-    .browse--five & {
-      @extend %cats;
-
-      &--sub {
-        // have to add the rules for __cats as it won't inherit
-        // should only be adding modifiers below, not the whole shebang
-        @extend %cats;
-      }
-    }
-
-    .browse--two & {
-      width: 49%;
-
-      &:last-of-type {
-        width: 49%
-      }
-
-      &--sub {
-        width: 49%;
-      }
-    }
-
-    .browse--three & {
-      width: 24%;
-
-      &:nth-child(3) {
-        width: 52%;
-      }
-
-      &--sub {
-        width: 24%;
-  
-        &:last-child {
-          width: 50%;
+  &--five {
+    // fifth panel
+    .browse__cats {
+      // Hide first, second and third on mobile
+      &:first-child,
+      &--2,
+      &--3,
+      &--4 { display:none; } 
+      // Show fourth panel on tablet
+      @include media(smallTablet){ 
+        &--4 { 
+          display: block;
+          width: 35%;
         }
       }
-    }
-
-    .browse--four & {
-      width: 24%;
-
-      &--sub {
-        width: 24%;
-      }
-    }
-
-    .browse--five & {
-      width: 15%;
-
-      &--sub {
-        width: 24%;
+      @include media(desktop){
+        &:first-child,
+        &--2,
+        &--3 {
+          display: block;
+          width: 15%;
+        }
+        &--4 {
+          display: block;
+          width: 20%;
+        }
+        &--current {
+          width: 35%
+        }
       }
     }
   }
 
   &__title {
     font-weight: bold;
-    padding: 0 0 10px 8px;
+    font-size: 19px;
+    padding: 0 0 10px 3px;
+    @include media(desktop) {
+      font-size: 16px;
+    }
   }
 
   &__list {
-    position: relative;
-    border-right: 1px solid $grey-2;
-    border-left: 1px solid $grey-2;
-    margin-left: -1px;
+    @include media(smallTablet){
+      border-right: 1px solid $grey-2;
+    }
 
     li {
       margin: 0;
-
       &:last-child {
         border-bottom: 0;
       }
     }
 
     a {
-      @include list-anchor;
-      color: $govuk-blue;
-
+      @include list-anchor; 
       &:hover {
         // falls between grey-2 (too dark) and grey-3 (too light)
         background: #f1f1f1;
+        color: $govuk-blue;
       }
 
       &:after {
         position: absolute;
         content: '\203A';
-        top: 7px;
-        right: 5px;
         color: #003;
+        position: absolute;
+        top: 0;
+        right: 3px;
+        width: 12px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
       }
 
       &.browse__slctd {
@@ -174,14 +247,98 @@
     }
   }
 }
+ 
 
+ .breadcrumbs--defects {
+
+  $itemClass: 'breadcrumb__item';
+  margin-bottom: 12px;
+    
+  @include media(desktop) {
+    display: none;
+  }
+ 
+  a {
+      font-size: 19px;
+  }
+  
+  .#{$itemClass} {
+    margin-bottom: 12px;
+    line-height: 1.3;
+    clear: left;
+  }
+ 
+    &-one { 
+      .#{$itemClass}--1 {
+          display: none;
+        }
+    }
+
+    &-two { 
+      .#{$itemClass}--2 {
+        display: none;  
+      }
+      .#{$itemClass}--1 {
+        display: block;
+        @include media(smallTablet) {
+          display: none;
+        }
+      }
+    }
+
+    &-three {
+      .#{$itemClass}--3 {
+        display: none;
+      } 
+      @include media(smallTablet) {
+        .#{$itemClass}--2 {
+          display: none;
+        }
+      } 
+    }
+
+    &-four {
+      .#{$itemClass}--4 {
+        display: none;
+      }
+      .#{$itemClass}--1, 
+      .#{$itemClass}--2,
+      .#{$itemClass}--3 {
+        display: block;
+      }
+      @include media(smallTablet) { 
+        .#{$itemClass}--3 {
+          display: none;
+        }
+      } 
+    }
+    &-five {
+      .#{$itemClass}--5 {
+        display: none;
+      }
+      .#{$itemClass}--1, 
+      .#{$itemClass}--2,
+      .#{$itemClass}--3,
+      .#{$itemClass}--4 {
+        display: block;
+      }
+      @include media(smallTablet) { 
+        .#{$itemClass}--4 {
+          display: none;
+        }
+      } 
+    }
+}
+
+ 
+// Used only in Defects prototype
 .browse--no-media-break {
   @media screen and (min-width: 600px) {
     .browse--two {
       div[class^=browse__cats],
       div[class^=browse__cats]:last-child {
         display: block !important;
-        width: 49% !important;
+        width: 50% !important;
       }
 
       .browse__list a {
@@ -201,4 +358,3 @@
     }
   }
 }
-   

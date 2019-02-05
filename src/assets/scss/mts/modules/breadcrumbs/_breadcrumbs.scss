@@ -3,19 +3,11 @@
   z-index: 50;
   background-color: $white;
 
-
-  .breadcrumbs {
-    a, a:visited {
-      color: $text-colour;
-    }
-  }
- 
-  nav {
-    max-width: 960px;
+  nav { 
     margin: 0 auto;
     padding: 0;
-
     border: 0;
+    display: block;
 
     ol {
       margin: 0;
@@ -45,18 +37,25 @@
         background-image: none;
         margin-right: 0;
       }
-    }
-
+    } 
     strong {
       font-weight: normal;
     }
   }
 }
 
+
 .breadcrumbs {
   a, a:visited {
-    color: $text-colour;
+    color: $text-colour; 
   }
+
+  &--defects {
+    padding: 0;
+    a, a:visited {
+      color: $govuk-blue;
+    }
+  } 
 }
 
 .breadcrumb {

@@ -1,6 +1,6 @@
 .two-fa {
   @include box-sizing(border-box);
-  background-color: #005ea5;
+  background-color: $govuk-blue;
   color: $white;
   padding: $gutter-half;
 

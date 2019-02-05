@@ -4,7 +4,7 @@ All notable changes included in tagged releases will be documented in this file.
 ## [Unreleased]
 - No present changes
 
-## [1.3.4] - 2019-02-04
+## [1.3.4] - 2019-02-05
 ### Changed
 - Mobile-optimised behaviour for defect tree UI in MTS
 

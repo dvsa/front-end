@@ -1,9 +1,9 @@
 /*!
  * 
  *   Name: dvsa-front-end/development
- *   Version: 1.3.3
+ *   Version: 1.3.4
  *   Contributors: Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
- *   Timestamp: February 4th 2019, 9:24:53 pm
+ *   Timestamp: February 5th 2019, 4:55:07 pm
  *   Source: https://github.com/dvsa/front-end
  * 
  */

@@ -4,6 +4,11 @@ All notable changes included in tagged released will be documented in this file.
 ## [Unreleased]
 - No present changes
 
+## [1.3.3] - 2019-02-04
+### Changed
+- Removes relative sizing at the root element to allow easier use of GDS components which use `rem` units.
+- Breadcrumbs which relied on root component for `rem` sizing are updated to retain expected font size
+
 ## [1.3.2] - 2019-01-30
 ### Changed
 - Updated asset paths for new directory names in MOTH application

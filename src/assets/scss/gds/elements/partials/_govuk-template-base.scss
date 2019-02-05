@@ -46,7 +46,7 @@ main {
 // 5. Force the scrollbar to always display in IE10/11
 
 html {
-  font-size: 62.5%; // 1
+  font-size: 16px;
   overflow-y: scroll; // 2
   // Allow RGBA here, this line has been copied from govuk_template
   // scss-lint:disable ColorVariable
@@ -57,15 +57,8 @@ html {
   background-color: $white;
 }
 
-// 1. Font-size increased to compensate for change to html element font-size in
-//    order to support beta typography which was set in ems
-//    (62.5% * 160% = 100%)
-// 2. Addresses margins handled incorrectly in IE6/7
-
 body {
-  font-size: 160%; // 1
-  margin: 0; // 2
-
+  margin: 0;
   background: $white;
   color: $text-colour;
   line-height: 1.5;

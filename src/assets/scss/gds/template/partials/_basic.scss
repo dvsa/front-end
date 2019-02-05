@@ -51,13 +51,10 @@ html {
   -ms-text-size-adjust: 100%; /* 1 */
   // Set background colour to match footer background
   background-color: $footer-background;
-}
-
-/*
-  Force the scrollbar to always display in IE10/11
- */
-html {
-  -ms-overflow-style: scrollbar;
+  /*
+    Force the scrollbar to always display in IE10/11
+   */
+   -ms-overflow-style: scrollbar;
 }
 
 body {
@@ -97,9 +94,7 @@ a:active {
 // adjustments to normalize.css
 
 /*
- * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
- *    http://clagnut.com/blog/348/#c790
- *    note - font-size reduced to 62.5% to allow simple rem/px font-sizing and fallback
+ * 1. Normalise base font size for sizing using rem units: 
  *    http://snook.ca/archives/html_and_css/font-size-with-rem
  * 2. Keeps page centred in all browsers regardless of content height
  * 3. Removes Android and iOS tap highlight color to prevent entire container being highlighted
@@ -107,21 +102,14 @@ a:active {
  */
 
 html {
-  font-size: 62.5%; /* 1 */
+  font-size: 16px;
   overflow-y: scroll; /* 2 */
   -webkit-tap-highlight-color: rgba(0,0,0,0); /* 3 */
 }
+ 
 
-/*
- * 1. Font-size increased to compensate for change to html element font-size in
- *    order to support beta typography which was set in ems
- *    (62.5% * 160% = 100%)
- * 2. Addresses margins handled incorrectly in IE6/7
- */
-
-body {
-  font-size: 160%; /* 1 */
-  margin: 0; /* 2 */
+body { 
+  margin: 0; 
 }
 
 b,

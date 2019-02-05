@@ -24,7 +24,6 @@
     
     li {
       font-family: "nta",Arial,sans-serif;
-      font-size: 1.6rem;
       line-height: 1.25;
       font-weight: 300;
       text-transform: none;
@@ -35,13 +34,8 @@
       list-style: none;
       margin-left: 0;
       margin-right: .5em;
-      padding-right: 1em;
-
-      @media (max-width: 640px) {
-        font-size: 1.4rem;
-        line-height: 1.14286;
-      }
-
+      padding-right: 1em; 
+      
       @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
         background-image: file-url('icons/separator-2x.png');
         background-size: 6px 11px;
@@ -82,10 +76,14 @@
 #global-breadcrumb,
 .content-breadcrumb {
   @extend %breadcrumb-base;
+ 
 }
 
 #global-breadcrumb { 
-  a {
-    color: #0b0c0c;
+  li { 
+    font-size: 16px;
+    a {
+      color: #0b0c0c;
+    }
   }
 }

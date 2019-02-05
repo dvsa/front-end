@@ -22,7 +22,7 @@
   // Size and shape
   position: relative;
   @include inline-block;
-  padding: .526315em .789473em .263157em; // 10px 15px 5px
+  padding: 10px 15px 5px;
   border: none;
   @include border-radius(0);
   outline: 1px solid transparent; // keep some button appearance when changing colour settings in browsers

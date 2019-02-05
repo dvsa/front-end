@@ -76,10 +76,14 @@
 #global-breadcrumb,
 .content-breadcrumb {
   @extend %breadcrumb-base;
+ 
 }
 
 #global-breadcrumb { 
-  a {
-    color: #0b0c0c;
+  li { 
+    font-size: 16px;
+    a {
+      color: #0b0c0c;
+    }
   }
 }

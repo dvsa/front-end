@@ -1,9 +1,9 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-mts-legacy
- *   Version: 1.3.4
+ *   Version: 1.3.5
  *   Contributors: Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
- *   Timestamp: February 5th 2019, 4:55:07 pm
+ *   Timestamp: February 7th 2019, 12:03:11 pm
  *   Source: https://github.com/dvsa/front-end
  * 
  */

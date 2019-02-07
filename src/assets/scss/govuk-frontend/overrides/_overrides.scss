@@ -1,1 +1,18 @@
 // Put any GDS overrides here, if we need to modify a component from the package
+.govuk-summary-list  {
+    &__value-group {
+        &-item {
+            
+        }
+    }
+
+    &__actions {
+        .heading-action & {
+            border-bottom: 0;
+            font-weight: normal;
+            font-size: inherit;
+            display: block;
+        }
+    }
+}
+ 

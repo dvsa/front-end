@@ -4,6 +4,10 @@ All notable changes included in tagged releases will be documented in this file.
 ## [Unreleased]
 - No present changes
 
+## [1.3.7] - 2019-02-08
+### Changed
+- Updated tests for MOTH elements, so no warning shown for elements which shouldn't be present
+
 ## [1.3.6] - 2019-02-08
 ### Changed
 - Directory maintenance

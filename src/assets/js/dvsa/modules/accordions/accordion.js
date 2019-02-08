@@ -181,7 +181,6 @@ export class Accordion {
    * @author Tameem Safi <t.safi@kainos.com>
    */
   expandButtonClickHandler = event => {
-    console.log('expanded')
     this.state.expanding = true;
     this.state.expandAll = !this.state.expandAll;
     if (this.state.expandAll) {

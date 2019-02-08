@@ -4,6 +4,11 @@ All notable changes included in tagged releases will be documented in this file.
 ## [Unreleased]
 - No present changes
 
+## [1.3.6] - 2019-02-08
+### Changed
+- Directory maintenance
+- Extended GDS Summary list
+
 ## [1.3.5] - 2019-02-07
 ### Added
 - npm script for copying files to MOTH (MOT History) project

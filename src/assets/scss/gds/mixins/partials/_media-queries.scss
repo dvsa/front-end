@@ -24,6 +24,7 @@
 $mobile-breakpoint: 480px !default;
 $tablet-breakpoint: 600px !default;
 $desktop-breakpoint: 769px !default;
+$desktop-lrg-breakpoint: 960px !default;
 
 @mixin media($size: false, $max-width: false, $min-width: false, $ignore-for-ie: false) {
 
@@ -37,6 +38,10 @@ $desktop-breakpoint: 769px !default;
 
   @if $size == desktop {
     @media (min-width: $desktop-breakpoint){
+      @content;
+    }
+  } @else if $size == desktopLrg {
+    @media (min-width: $desktop-lrg-breakpoint){
       @content;
     }
   } @else if $size == tablet {

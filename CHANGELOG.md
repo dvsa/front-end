@@ -7,7 +7,7 @@ All notable changes included in tagged releases will be documented in this file.
 ## [1.3.6] - 2019-02-08
 ### Changed
 - Directory maintenance
-- Extended GDS Summary list
+- Extended GDS Summary List component for Change links in titles
 
 ## [1.3.5] - 2019-02-07
 ### Added

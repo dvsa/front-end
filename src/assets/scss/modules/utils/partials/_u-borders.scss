@@ -1,8 +1,14 @@
 .u-border {
     &-bottom {
         border-bottom: 1px solid $grey-2;
+        &-none {
+            border-bottom: 0;
+        }
     }
     &-top {
         border-top: 1px solid $grey-2;
+        &-none {
+            border-top: 0;
+        }
     }
 }

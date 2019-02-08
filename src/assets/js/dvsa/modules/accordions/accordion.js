@@ -134,7 +134,7 @@ export class Accordion {
    * @author Tameem Safi <t.safi@kainos.com>
    * @param {Event} event Event object when it is firect.
    */
-  headerClickHandler = event => { 
+  headerClickHandler = event => {
     if (!event.target || !this.state.sections.length) return;
     let section = closestParentOfEl(event.target, '.' + ACCORDION_CONSTANTS.classNames.section);
     if (section.getAttribute(ACCORDION_CONSTANTS.attributeNames.preventDefault)) return;

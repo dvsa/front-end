@@ -1,1 +1,20 @@
 // Put any GDS overrides here, if we need to modify a component from the package
+.govuk-summary-list  { 
+    &__row--title {
+        width: 100%;
+        display: table;
+        border-bottom: 0;
+        .govuk-summary-list__actions {
+            border-bottom: 0;
+        }
+    }
+    &__value-group-item {
+        padding: 10px 0;
+        border-top: 1px solid $govuk-border-colour;
+        &:first-child {
+            border-top: 0;
+            padding-top: 0;
+        }
+    }
+}
+

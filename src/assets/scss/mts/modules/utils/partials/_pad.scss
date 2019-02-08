@@ -21,4 +21,13 @@
     padding-top: #{$value}px !important;
     padding-bottom: #{$value}px !important;
   }
+  &-pad-r#{$value} {
+    padding-right: #{$value}px !important;
+  }
+  &-pad-l#{$value} {
+    padding-left: #{$value}px !important;
+  }
+  &-pad-#{$value} {
+    padding: #{$value}px !important;
+  }
 }

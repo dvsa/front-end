@@ -1,9 +1,9 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-manuals
- *   Version: 1.3.5
+ *   Version: 1.3.6
  *   Contributors: Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
- *   Timestamp: February 7th 2019, 12:03:11 pm
+ *   Timestamp: February 8th 2019, 10:04:58 am
  *   Source: https://github.com/dvsa/front-end
  * 
  */

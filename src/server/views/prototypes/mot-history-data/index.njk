@@ -1,0 +1,145 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'MOT History - prototype homepage' %}
+
+{% block content %}
+
+<main id="content">
+
+    <div class="container">
+
+        <div id="global-breadcrumb" class="header-context">
+        </div>
+
+        <header class="content-header">
+            <h1>
+                <span class="content-header__type">MOT testing</span>
+                <span class="content-header__title">MOT History - Exploiting our data</span>
+                </h1>
+        </header>                        
+
+        <div class="row contents">
+            <div class="col-lg-12">
+
+                <h1 class="content-header__type"> 
+                        Prototype versions
+                </h1>
+
+
+                <table class="key-value-list" style="table-layout: fixed;">
+                    <thead>
+                        <col width="170">
+                        <col width="100">
+                        <col width="420">
+                        <tr>
+                        <th scope="col">Version</th>
+                        <th class="" scope="col">Tested on</th>
+                        <th class="" scope="col">Changes/Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            
+                        <tr>
+                            <th>
+                                <h2 class="heading heading--small heading-small">Version 2</h2>
+                                <ol class="list list-bullet">
+                                     <li><a href="/prototypes/mot-history-data/v3/index">Journey 1</a></br>
+                                    Volkswagen Golf 2009 GR06EDS</li>
+                                </ol>
+                            </th>
+                            <td class="">
+                                </br>17 February 2019
+                            </td>
+                            <td class="">
+                                <div class="panel panel-border-narrow">
+                                    <h3><strong>HTML prototype built for user testing</strong></h3>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h2 class="heading heading--small heading-small">Version 1</h2>
+                                <ol class="list list-bullet">
+                                    <li><a href="https://invis.io/86Q3V3YCDN5" target="blank">Invision version</a><br>Audi TT 2013 G010TRS</li>
+                                     <li><a href="/prototypes/mot-history-data/v2/index">HTML Version</a></br>
+                                    Audi TT 2013 G010TRS</li>
+                                </ol>
+                            </th>
+                            <td class="">
+                                </br>N/A
+                            </td>
+                            <td class="">
+                                <div class="panel panel-border-narrow">
+                                <h3><strong>Initial invision prototype based on data teams visualizations</strong></h3>
+                                    <ul class="list list-bullet">
+                                        <li>Clickable prototype with two screens and radio selections
+                                            <ol class="list list-bullet">
+                                                <li>Audi TT 2013 - White - Petrol</li>
+                                                <li>Mileage comparison - this Audi TT vs all other Audi TT's. Located in MOT history accordion</li>
+                                                <li>New Accordion section added - "Vehicle performance"</li>
+                                                <li>Top defects graph =- Audi TT top 5 defect vs top defects of all other cars</li>
+                                                <li>Pass rate by mileage - Audi TT vs All other Audi's vs all other vehicles</li>
+                                                <li>Pass rate by age - Audi TT vs All other Audi's vs all other vehicles</li>
+                                                <li>Defects added to Audi TT over time - all Audi TT's</li>
+                                            </ol>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                        
+
+            </div>
+
+            <div class="col-lg-12">
+
+                <h1 class="content-header__type" style="margin-top: 50px;"> 
+                        CSV certificates
+                </h1>
+
+
+                <table class="key-value-list" style="table-layout: fixed;">
+                    <thead>
+                        <col width="170">
+                        <col width="100">
+                        <col width="420">
+                        <tr>
+                        <th scope="col">Version</th>
+                        <th class="" scope="col">Tested on</th>
+                        <th class="" scope="col">Changes/Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            
+                        <tr>
+                            <th>
+                                <h2 class="heading heading--small heading-small">Version 1</h2>
+                                <ol class="list list-bullet">
+                                    <li><a href="/prototypes/mot-history-data/cvs/index">Journey 1</a></br>
+                                    Audi TT 2013 G010TRS</li>
+                                </ol>
+                            </th>
+                            <td class="">
+                                </br>17 February 2019
+                            </td>
+                            <td class="">
+                                <div class="panel panel-border-narrow">
+                                    <h3><strong>HTML prototype built for user testing</strong></h3>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                        
+
+            </div>
+        </div>
+    </div>
+</main>
+
+  
+{% endblock %}

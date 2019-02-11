@@ -1,0 +1,295 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'MOT history - vehicle results' %}
+
+{% block content %}
+
+<style type="text/css">
+    @media (min-width: 641px) {
+        .related {
+            border-top: 1px solid #bfc1c3
+        }
+        }
+        .related-item {
+            padding-top: 1em
+        }
+        .related-item__title {
+            font-family: "nta", Arial, sans-serif;
+            font-weight: 700;
+            text-transform: none;
+            font-size: 16px;
+            line-height: 1.25;
+            margin-bottom: 0.5em
+        }
+
+        @media (min-width: 641px) {
+        .related-item__title {
+            font-size: 19px;
+            line-height: 1.31579
+        }
+        }
+        .related-item__description {
+            margin-bottom: 0.5em
+        }
+        .related-item__list {
+            font-family: "nta", Arial, sans-serif;
+            font-weight: 400;
+            text-transform: none;
+            font-size: 14px;
+            line-height: 1.14286;
+            list-style: none
+        }
+
+        @media (min-width: 641px) {
+        .related-item__list {
+            font-size: 16px;
+            line-height: 1.25
+        }
+        }
+        .related-item__list-item {
+            margin-bottom: 0.5em
+        }
+        .related-item__email-link {
+            padding-left: 30px;
+            font-weight: bold;
+            background: url(https://assets.publishing.service.gov.uk/service-manual-frontend/mail-icon-x2-875fea8b0999065a033d6d6f952eb6cb8f43507629d6ea4f7992dcc4eaed2cb9.png) 5px 40% no-repeat;
+            background-size: 20px 14px
+        }
+</style>
+
+<main id="content" role="main"> <a class="link-back" href="enter-reg">Back</a>
+    <h1 class="heading-xlarge" style="margin-bottom: 20px;"> <span class="heading-secondary">GU10TRS</span>Audi TT</h1>
+    <p><a href="#">Check another vehicle</a></p>
+    <div class="grid-row">
+        <div class="column-quarter">
+            <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Colour </span>White</h1>
+        </div>
+        <div class="column-quarter">
+            <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Fuel type </span>Petrol</h1>
+        </div>
+        <div class="column-quarter">
+            <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Year of manufacture </span>2013 (13)</h1>
+        </div>
+    </div>
+    <br>
+    <h1 class="heading-large" style="margin-top: 0px;"> <span class="heading-secondary">MOT valid until</span> 10 June 2019
+
+    </h1>
+    <p><a href="/reminders/v1/index">Get an MOT reminder</a> by email or text</p>
+
+    <p>If you think the MOT expiry date or any of the vehicle details are wrong, <a href="">contact DVSA</a></p>
+
+    <div class="js-accordion js-accordion--up-down-arrows">
+  <div class="js-accordion__top-section">
+    <button class="js-accordion__expand-button">
+      Open All
+    </button>
+  </div>
+  <div class="js-accordion__wrapper">
+    <div class="js-accordion__section" data-section-category="category-three">
+      <div class="js-accordion__header">
+        <div class="js-accordion__header-left">
+          <h2 class="js-accordion__title">
+            <button class="js-accordion__title-button">
+              MOT history 
+            </button>
+          </h2>
+          <p class="js-accordion__description">
+            Check mileage recorded at test, MOT expiry date, defects and advisories
+          </p>
+        </div>
+        <div class="js-accordion__header-right">
+          <button class="js-accordion__header-icon"></button>
+        </div>
+      </div>
+      <div class="js-accordion__content">
+        
+        <div class="grid-row">
+                      <div class="column-full">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> 
+                            Mileage comparison
+                            <span class="heading-secondary" style="font-size:1.05em">
+                                Audi TT GU10TRS compared to all other 2013 Audi TT cars</span>
+                        </h1>
+                        <br>
+                        <div class="panel panel-border-wide">
+                            <p>
+                                Audi TT GU10TRS has been driven more than other same make, model and age cars. 
+                            </p>
+                        </div>
+                        <div class="image-wrapper">
+                            <img src="/images/Mileage-graph.png"  alt="Mileage visualization" class="image">
+                        </div>
+                      </div>
+                    </div>
+                  
+                  <hr>
+                  <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 38,611 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size: 1.05em;">Expiry date</span> 10 June 2019 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span></h1>
+                                <details class="u-space-t15" role="group" closed="">
+                                            <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
+                                                <span class="summary">View test location</span>
+                                            </summary>
+                                            <div class="panel panel-border-narrow " aria-hidden="true" id="test-location-details-0"> 
+                                            <p>Test location for this MOT test will be available in 4 days. You'll need the latest V5C number</p>                                            </div>
+
+                                        </details>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 3995 7555 7274 </h1>
+                            </div>
+                        </div>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Repair as soon as possible (minor defects):</span>
+                            <ul class="list list-bullet">
+                                <li>Electronic stability system component repaired but not inappropriately [3.4.4]</li>
+                                <li>Body has slight corrosion [6.1.B.2]</li>
+                                <li>Offside front track rod end ball joint dust cover deteriorated, but preventing ingress
+                                of dirt [2.2.c.1c]</li>
+                            </ul>
+                        </h1>
+
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Monitor and repair if necessary (advisories):</span>
+                            <ul class="list list-bullet">
+                                <li>Child seat fitted not allowing full inspection of adult belt</li>
+                                <li>Drive shaft which forms part of the suspension support bearing slightly worn </li>
+                                <li>Engine bay obscured by covers</li>
+                            </ul>
+                        </h1>
+                        <details class="u-space-t15" role="group">
+                                <summary role="button" aria-controls="details-content-1" aria-expanded="false">
+                                    <span class="summary">What are advisories?</span>
+                                </summary>
+                                <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-1" style="display: none;">
+                                    <p>Advisories are given for guidance. Some of these may need to be monitored in case they become more serious and need immediate repairs.</p>
+                                </div>
+                        </details>
+                    </div>
+                </div>
+                <hr>
+                <div class="grid-row">
+                    <div class="column-third">
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #B10E1E;">FAIL</h1>
+                    </div>
+                    <div class="column-two-thirds">
+                        <div class="grid-row">
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Mileage</span> 38,611 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 3995 7555 7274 </h1>
+                            </div>
+                            <div class="column-one-half">
+                                <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span></h1>
+                                <details class="u-space-t15" role="group" closed="">
+                                            <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
+                                                <span class="summary">View test location</span>
+                                            </summary>
+                                            <div class="panel panel-border-narrow " aria-hidden="true" id="test-location-details-0"> 
+                                            <p>Test location for this MOT test will be available in 4 days. You'll need the latest V5C number</p>                                            </div>
+
+                                </details>
+                            </div>
+                            
+                        </div>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Do not drive until repaired (dangerous defects):</span>
+                            <ul class="list list-bullet">
+                                <li>Brake lining or pad missing or incorrectly mounted</li>
+                                <li>Brakes imbalance across an axle such that the braking effort from any wheel is less than 50% of the maximum effort recorded from the other wheel on a steered axle</li>
+                                <li>Steering gear casing fixing holes in chassis elongated to the extent that attachment is seriously affected</li>
+                            </ul>
+                        </h1>
+
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Repair immediately (major defects):</span>
+                            <ul class="list list-bullet">
+                                <li>Relative movement between steering wheel and column indicating looseness</li>
+                                <li>Windscreen or window damaged or seriously discoloured and a ecting the driver’s view of the road or of an obligatory external mirror</li>
+                            </ul>
+                        </h1>
+                        <details class="u-space-t15" role="group">
+                    <summary role="button" aria-controls="details-content-3" aria-expanded="false">
+                        <span class="summary">What are defects and advisories? </span>
+                    </summary>
+                    <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-3">
+                        <p>Dangerous defects are a direct and immediate risk to the road safety or the environment. A vehicle with a dangerous defect will fail the test.</p>
+                         <p>Major defects may compromise the safety of the vehicle, put other road users at risk, or harm the environment. A vehicle with a major defect will fail the test.</p>
+                    </div>
+                </details>
+                    </div>
+                </div>
+
+
+
+      </div>
+    </div>
+    <div class="js-accordion__section" data-section-category="category-four">
+      <div class="js-accordion__header">
+        <div class="js-accordion__header-left">
+          <h2 class="js-accordion__title">
+            <button class="js-accordion__title-button">
+              Vehicle performance
+            </button>
+          </h2>
+          <p class="js-accordion__description">
+            Check what DVSA knows about Audi TT cars from 2013
+          </p>
+        </div>
+        <div class="js-accordion__header-right">
+          <button class="js-accordion__header-icon"></button>
+        </div>
+      </div>
+      <div class="js-accordion__content">
+    
+        <div class="placeholder-box"></div>
+        
+      </div>
+    </div>
+    <div class="js-accordion__wrapper">
+    <div class="js-accordion__section" data-section-category="category-three">
+      <div class="js-accordion__header">
+        <div class="js-accordion__header-left">
+          <h2 class="js-accordion__title">
+            <button class="js-accordion__title-button">
+              Outstanding safety recalls 
+            </button>
+          </h2>
+          <p class="js-accordion__description">
+            Check if AUDI TT GU10TRS has outstanding safety recalls
+          </p>
+        </div>
+        <div class="js-accordion__header-right">
+          <button class="js-accordion__header-icon"></button>
+        </div>
+      </div>
+      <div class="js-accordion__content">
+        
+        <div class="text">
+                    <h1 class="heading-large" style="margin-top: 15px; color: #B10E1E;">Outstanding recall found</h1>
+
+                    <p>As of <span class="bold">17 September 2015</span> there's an outstanding manufacturer's safety recall on <span class="bold">Audi TT GU10TRS</span>.</p>
+                    <p>Contact a Audi dealership to arrange for repairs.</p>
+                    <p>If you've had the recalled component repaired recently, it can take up to three weeks for the manufacturer to update their records.</p>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+
+</main>
+{% endblock %}

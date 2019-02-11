@@ -1,0 +1,104 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'MOT history - vehicle results' %}
+
+{% block content %}
+
+<main id="content" role="main"> <a class="link-back" href="enter-reg">Back</a>
+    <h1 class="heading-xlarge" style="margin-bottom: 20px;"> <span class="heading-secondary">GU10TRS</span>Audi TT</h1>
+        <div class="js-accordion">
+  <div class="js-accordion__top-section">
+    <button class="js-accordion__expand-button">
+      Open All
+    </button>
+  </div>
+  <div class="js-accordion__wrapper">
+    <div class="js-accordion__section" data-section-category="category-one">
+      <div class="js-accordion__header">
+        <div class="js-accordion__header-left">
+          <h2 class="js-accordion__title">
+            <button class="js-accordion__title-button">
+              Section One
+            </button>
+          </h2>
+          <p class="js-accordion__description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+        </div>
+        <div class="js-accordion__header-right">
+          <button class="js-accordion__header-icon"></button>
+        </div>
+      </div>
+      <div class="js-accordion__content">
+        
+        <h2 class="heading heading--large heading-large">
+  MOT History
+</h2>
+<p class="lede">
+2013 Audi TT
+</p>
+<p>Car tested at QuikFit Nottingham</p>
+
+<label class="form-label" for="full-name-f1" style="margin-bottom: 10px; margin-top: 20px;">
+  Car age
+</label>
+<input class="form-control" id="full-name-f1" type="text" name="full-name-f1" value="">
+<label class="form-label" for="full-name-f1" style="margin-bottom: 10px; margin-top: 20px;">
+  Make of car
+</label>
+<input class="form-control" id="full-name-f1" type="text" name="full-name-f1" value="">
+<label class="form-label" for="full-name-f1" style="margin-bottom: 10px; margin-top: 20px;">
+  Model of car
+</label>
+<input class="form-control" id="full-name-f1" type="text" name="full-name-f1" value="">
+
+<form>
+  <fieldset>
+    <legend>
+      <h3 class="heading-medium">What colour is the car?</h3>
+      <span class="body-text">Select all that apply</span>
+    </legend>
+    <div class="multiple-choice">
+      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+      <label for="waste-type-1">Red</label>
+    </div>
+    <div class="multiple-choice">
+      <input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+      <label for="waste-type-2">Black</label>
+    </div>
+  </fieldset>
+</form>
+<br>
+<input class="button" type="submit" value="Submit">
+    
+      </div>
+    </div>
+    <div class="js-accordion__section" data-section-category="category-two">
+      <div class="js-accordion__header">
+        <div class="js-accordion__header-left">
+          <h2 class="js-accordion__title">
+            <button class="js-accordion__title-button">
+              Section Two
+            </button>
+          </h2>
+          <p class="js-accordion__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing.
+          </p>
+        </div>
+        <div class="js-accordion__header-right">
+          <button class="js-accordion__header-icon"></button>
+        </div>
+      </div>
+      <div class="js-accordion__content">
+        
+        <div class="placeholder-box"></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </main>
+
+{% endblock %}

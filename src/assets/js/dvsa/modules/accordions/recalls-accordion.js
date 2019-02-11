@@ -24,7 +24,7 @@ export class RecallsAccordion {
 
     // Loop through each element
     for (let name in this.elements) {
-      // Check all elements exist, except JS backup if no records are held
+      // Check all DOM elements exist, except JS backup if Service returns no records
       if (!this.elements[name] && !this.elements.noRecordsHeld === null) {
         return console.warn(`${name} - Element was not found`);
       }

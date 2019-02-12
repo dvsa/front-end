@@ -1,0 +1,85 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'MOT history - vehicle results' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li class="">
+        <a href="/">Home</a>
+    </li>
+
+    <li class="">
+        <a href="/browse/driving">Driving and transport</a>
+    </li>
+
+    <li class="">
+        <a href="/browse/driving/vehicle-tax-mot-insurance">Vehicle tax, MOT and insurance</a>
+    </li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        Check the MOT history of a vehicle
+      </h1>
+
+      <p>Check the past results of a vehicle’s MOT tests, including:</p>
+
+      <ul class="list list-bullet">
+        <li>if it passed or failed</li>
+        <li>the mileage recorded when it was tested</li>
+        <li>where each test was done</li>
+        <li>what parts failed at each test, and if any parts had minor problems</li>
+        <li>when its next MOT is due</li>
+      </ul>
+
+      <p>You can only get results for tests done in England, Scotland or Wales since 2005.</p>
+
+      <div>
+        <a class="button button-start margin-top-2 margin-bottom-8" href="enter-vrm" role="button" style="width: 200px;">Start now</a>
+      </div>
+
+
+
+
+
+      <h2 class="heading-medium">Before you start</h2>
+
+      <p>You’ll need the vehicle’s registration number (number plate).</p>
+      <p>You can only get test results from 2005 onwards, for tests done in England, Scotland or Wales.</p>
+      <p>You can see the test location 14 days after the test. You’ll need the 11-digit number from the vehicle’s log book (V5C).</p>
+
+      <p style="font-size: 16px; color: #6f777b;">Last updated: 16 June 2017</p>
+    </div>
+    <div class="column-third">
+
+      <aside class="govuk-related-items" role="complementary">
+        <h2 class="heading-medium" id="subsection-title">Vehicle tax, MOT and insurance</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="font-xsmall">
+          <li><a href="">Getting an MOT</a></li>
+          <li><a href="">Check if a vehicle is taxed</a></li>
+            <li><a href="">Check the MOT status of a vehicle</a></li>
+            <li><a href="">Check for vehicle, part or accessory recalls</a></li>
+            <li><a href="">Check you’re not buying a stolen vehicle</a></li>
+            <li><a href="">Replace a lost or damaged MOT certificate</a></li>
+            <li class="related-items-more">
+              <a href="" class="bold-xsmall">
+                More
+</a>            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

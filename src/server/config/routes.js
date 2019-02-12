@@ -13,6 +13,7 @@ import * as messagingController from '../controllers/mts-messages';
 import * as vtsChangeController from '../controllers/vts-changes';
 import * as vsiDuringTestController from '../controllers/vsi-during-test';
 import * as recalls from '../controllers/recalls';
+import * as mothController from '../controllers/moth';
 import * as PrototypeAuth from '../middlewares/authentication';
 import { isDevelopment } from '../config/constants';
 
@@ -167,5 +168,8 @@ router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.post
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
+
+// MOT history vehicle type
+router.post('/prototypes/mot-history-data/cvs/what-vehicle', mothController.postMothType);
 
 export const allRoutes = router;

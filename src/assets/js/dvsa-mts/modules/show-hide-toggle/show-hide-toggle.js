@@ -11,12 +11,13 @@ export class ShowHideToggle {
 
     this.attributes = {
       targetState: 'data-target-state',
-      openText: 'data-open-text',
+      openedText: 'data-opened-text',
       target: 'data-target',
       toggleType: 'data-toggle-type',
       closedText: 'data-closed-text',
       toggleClass: 'data-toggle-class',
       disableToggleSwitchClass: 'data-disable-toggle-switch-class',
+      initialState: 'data-initial-state',
     };
 
     this.targetStates = {
@@ -62,21 +63,29 @@ export class ShowHideToggle {
     this.elements.showHideToggles.forEach(element => {
       const elementDetails = this.getElementDetails(element);
       if (!elementDetails) return;
-      const hidden = elementDetails.targetState === this.targetStates.closed;
 
-      element.setAttribute(this.attributes.closedText, element.textContent);
-      element.setAttribute(this.attributes.targetState, this.targetStates.closed);
+      console.log(elementDetails.targetState);
 
-      if (elementDetails.toggleType !== this.toggleTypes.responsive && elementDetails.targetElement) {
-        toggleClass(elementDetails.targetElement, this.classnames.jsHidden, !hidden);
+      // Set hidden unless target state is anything other than open
+      const hidden = elementDetails.targetState !== this.targetStates.open;
+
+      // If not hidden,
+      if (!hidden) {
+        toggleClass(elementDetails.targetElement, this.classnames.jsHidden, false);
+        element.textContent = elementDetails.openedText;
       } else {
-        toggleClass(elementDetails.targetElement, this.classnames.hideSmall, !hidden);
-      }
+        // Need checks on initially shown to prevent another toggle?
+        if (elementDetails.toggleType !== this.toggleTypes.responsive && elementDetails.targetElement) {
+          toggleClass(elementDetails.targetElement, this.classnames.jsHidden, hidden);
+        } else {
+          toggleClass(elementDetails.targetElement, this.classnames.hideSmall, hidden);
+        }
 
-      if (elementDetails.toggleType === this.toggleTypes.class && elementDetails.targetElements) {
-        elementDetails.targetElements.forEach(targetElement => {
-          toggleClass(targetElement, this.classnames.jsHidden, !hidden);
-        });
+        if (elementDetails.toggleType === this.toggleTypes.class && elementDetails.targetElements) {
+          elementDetails.targetElements.forEach(targetElement => {
+            toggleClass(targetElement, this.classnames.jsHidden, hidden);
+          });
+        }
       }
     });
   };
@@ -116,6 +125,7 @@ export class ShowHideToggle {
   updateElementState = element => {
     if (!element) return;
     const elementDetails = this.getElementDetails(element);
+
     if (!elementDetails) return;
     const hidden = elementDetails.targetState === this.targetStates.closed;
 
@@ -155,8 +165,9 @@ export class ShowHideToggle {
       this.elements.showHideToggles.forEach(element => {
         const elementDetails = this.getElementDetails(element);
         if (!elementDetails) return;
+
         const hidden = elementDetails.targetState === this.targetStates.closed;
-        element.textContent = hidden ? elementDetails.closedText : elementDetails.openText;
+        element.textContent = hidden ? elementDetails.closedText : elementDetails.openedText;
         if (elementDetails.diableToggleSwitchClass) return;
         toggleClass(element, this.classnames.toggleSwitch, !hidden);
         toggleClass(element, this.classnames.toggleSwitchOpen, hidden);
@@ -174,27 +185,29 @@ export class ShowHideToggle {
    */
   getElementDetails = element => {
     if (!element) return;
-    const openText = element.getAttribute(this.attributes.openText);
+    const openedText = element.getAttribute(this.attributes.openedText);
     const closedText = element.getAttribute(this.attributes.closedText);
     const targetId = element.getAttribute(this.attributes.target);
     const toggleType = element.getAttribute(this.attributes.toggleType);
     const targetElement = targetId ? document.querySelector(`#${targetId}`) : false;
     const targetState = element.getAttribute(this.attributes.targetState);
     const toggleClass = element.getAttribute(this.attributes.toggleClass);
+    const initialState = element.getAttribute(this.attributes.initialState);
     const targetElements =
       toggleType === this.toggleTypes.class && toggleClass ? Array.from(document.querySelectorAll(`.${toggleClass}`)) : false;
-    const diableToggleSwitchClass = element.getAttribute(this.attributes.disableToggleSwitchClass);
+    const disableToggleSwitchClass = element.getAttribute(this.attributes.disableToggleSwitchClass);
     if (!targetElement && !targetElements) return;
     return {
-      openText,
+      openedText,
       closedText,
       targetId,
       toggleType,
       targetElement,
       targetState,
       toggleClass,
+      initialState,
       targetElements,
-      diableToggleSwitchClass,
+      disableToggleSwitchClass,
     };
   };
 }

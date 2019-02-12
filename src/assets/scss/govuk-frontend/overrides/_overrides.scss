@@ -1,5 +1,15 @@
 // Put any GDS overrides here, if we need to modify a component from the package
 .govuk-summary-list  { 
+
+    margin-bottom: $gutter;
+    
+    &--border-top {
+        padding-top: 15px;
+        border-top: 1px solid $govuk-border-colour;
+        @include govuk-media-query($from: tablet) {
+            padding-top: 0;
+        }
+    } 
     &__row--title {
         width: 100%;
         display: table;
@@ -8,12 +18,31 @@
             border-bottom: 0;
         }
     }
-    &__value-group-item {
-        padding: 10px 0;
-        border-top: 1px solid $govuk-border-colour;
-        &:first-child {
-            border-top: 0;
-            padding-top: 0;
+    &__value-group {
+        padding-right: 0;
+        margin-bottom: 0;
+        @include govuk-media-query($from: tablet) { 
+            padding-bottom: 0;
+        }
+        &-item {
+            padding: 10px 0;
+            border-top: 1px solid $govuk-border-colour;
+            &:first-child {
+                border-top: 0;
+                padding-top: 0;
+            }
+        }
+    }
+
+    &__row--large {
+        font-size: 18px;
+        font-size: 1.2rem;
+        .govuk-summary-list__value { 
+            padding: $gutter/2 0;
+            margin-bottom: 0;
+            @include govuk-media-query($from: tablet) {
+                padding: $gutter 0;
+            }
         }
     }
 }

@@ -4,6 +4,9 @@
         &-none {
             border-bottom: 0;
         }
+        &:last-of-type {
+            border-bottom: 0
+        }
     }
     &-top {
         border-top: 1px solid $grey-2;

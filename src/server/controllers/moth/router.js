@@ -5,9 +5,9 @@
  * @param {Express.Response} res - Express response object
  */
 export const postMothType = (req, res) => {
-    if (req.body.mothRadio === undefined ) {
-        return res.redirect('/prototypes/mot-history-data/cvs/what-vehicle');
-    }
+  if (req.body.mothRadio === undefined) {
+    return res.redirect('/prototypes/mot-history-data/cvs/what-vehicle');
+  }
 
   // If radio response === other
   if (req.body.mothRadio === 'other') {

@@ -59,6 +59,10 @@ var _recalls2 = require('../controllers/recalls');
 
 var recalls = _interopRequireWildcard(_recalls2);
 
+var _moth = require('../controllers/moth');
+
+var mothController = _interopRequireWildcard(_moth);
+
 var _authentication = require('../middlewares/authentication');
 
 var PrototypeAuth = _interopRequireWildcard(_authentication);
@@ -183,5 +187,8 @@ router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.post
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
+
+// MOT history vehicle type
+router.post('/prototypes/mot-history-data/cvs/what-vehicle', mothController.postMothType);
 
 const allRoutes = exports.allRoutes = router;

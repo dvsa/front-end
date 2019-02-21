@@ -46,3 +46,8 @@
         }
     }
 }
+.govuk-input {
+    &[disabled] {
+        background: #e8e8e8;
+    }
+}

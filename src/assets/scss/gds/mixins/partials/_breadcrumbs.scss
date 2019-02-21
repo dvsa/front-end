@@ -15,20 +15,16 @@
 
   li {
     @include core-16;
+  font-size: 16px;
     float: left;
-
     background-image: file-url("separator.png");
-
     @include device-pixel-ratio() {
       background-image: file-url("separator-2x.png");
       background-size: 6px 11px;
     }
-
     background-position: 0% 50%;
     background-repeat: no-repeat;
-
     list-style: none;
-
     margin-left: 0.6em;
     margin-bottom: 0.4em;
     padding-left: 0.9em;
@@ -38,11 +34,9 @@
       margin-left: 0;
       padding-left: 0;
     }
-
   }
-
   a {
     color: $text-colour;
   }
 
-}  
+}

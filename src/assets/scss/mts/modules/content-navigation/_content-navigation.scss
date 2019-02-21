@@ -20,12 +20,7 @@
     @include media(tablet) {
      padding: 13px 20px 10px;
     }
-    @include media(desktop) {
-      
-    }
   }
-
- 
 
   &__secondary {
     list-style: none;

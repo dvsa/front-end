@@ -5,9 +5,11 @@
     [class*='button'] {
       margin: 0 0 $gutter/2 0;
       padding: 12px;
+      font-size: 19px;
       text-align: center;
-      @include media(desktop) {  
-        padding: em(10) em(22);
+      @include media(tablet) {  
+        font-size: 1em;
+        padding: em(13) em(22) em(10) em(22);
       }
     }
   }
@@ -16,19 +18,13 @@
     padding: $gutter;
   }
 
-  [class*='button'] {
-    @include media(tablet) {
-     padding: 13px 20px 10px;
-    }
-  }
-
   &__secondary {
     list-style: none;
     margin-bottom: $gutter;
     margin-top: $gutter-half;
     font-size: 19px;
     @include media(desktop) {  
-      font-size: 16px;
+      font-size: 1em;
       margin: $gutter-half 0;
     }
   

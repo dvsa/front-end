@@ -4,7 +4,6 @@
 // RFR buttons
 .button {
 
-
   text-align: center;
   @include media(tablet){
     text-align: left;
@@ -32,7 +31,6 @@
     @include core-16;
     border: 1px solid $black;
     box-shadow: 0 2px 0 $grey-1;
-    padding: .2em .52em;
     margin: 0;
   } 
 

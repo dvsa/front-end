@@ -2,6 +2,28 @@
 .govuk-summary-list  { 
 
     margin-bottom: $gutter;
+
+    @include media(tablet){
+        &__value,
+        &__key,
+        &__actions {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid $govuk-border-colour;
+            display: table-cell;
+            padding-right: 20px;
+        }
+        &__row {
+            display: table-row;
+        }
+        &__key {
+            width: 30%;
+        }
+        &__actions {
+            padding-right: 0;
+            text-align: right;
+        }
+    }
     
     &--border-top {
         padding-top: 15px;

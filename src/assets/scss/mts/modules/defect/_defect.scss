@@ -1,13 +1,12 @@
 .defect {
   @include core-16;
-  font-size: 16px;
   position: relative;
   border-top: 1px solid $grey-2;
   padding: 15px;
   background-color: $white;
   transition: background-color .4s ease-in-out;
 
-  &__is-dangerous {
+  &__is-dangerous { 
     color: $mellow-red;
     font-weight: 700;
     display: block;
@@ -95,6 +94,7 @@
     padding: 5px 0; 
     font-size: 19px;  
     li {
+      display: inline-block; 
       a {
         padding: 5px;
       }
@@ -152,21 +152,17 @@
     color: $secondary-text-colour;
     padding: 6px 0;
 
-    li {
-      @include media(false, 740px) {
-        display: block;
-        width: 100%;
-      }
+    li { 
+      display: block;
+      width: 100%; 
 
-      @include media(false, 640px) {
+      @include media(tablet) {
         display: inline-block;
         width: 30%;
       }
     }
-
-    &-value {
-
-      @include media(desktop) {
+    &-value { 
+      @include media(desktop) { 
         display: inline;
       }
 

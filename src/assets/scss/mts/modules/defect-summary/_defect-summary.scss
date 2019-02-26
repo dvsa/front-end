@@ -20,7 +20,7 @@
     float: left;
     width: 100%;
     @include media(tablet) {
-      padding: 15px;
+      padding: 17px 15px 15px;
     }
 
     &-heading { 
@@ -34,38 +34,32 @@
       }
     }
 
-    ul {
-
+    ul { 
       @include media(desktop) {
         display: inline;
         padding-left: $gutter/2;
       }
       li {
         @media (max-width: 480px){
-          margin-bottom: 10px;
-        } 
+          margin-bottom: 14px;
+        }
         display: inline-block;
-        padding-right: 14px;
         font-size: 16px;
-        
-        @include media(tablet) {
-          padding-right: 12px;
-          margin: 0;
+        margin-right: 16px;
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @include media(tablet){
+          margin-right: 16px;
         }
         @include media(desktop) {
-          width: 16%;
-          max-width: 130px;
-          padding-right: 8px;
+          max-width: 130px; 
         }
       }
     }
 
-    &--eu {  
-      @include media(desktop){
-        li {
-          padding-right: 12px;
-        }
-      }  
+    &--eu {
       span[class^="badge"] {
         position: relative;
         top: -2px;

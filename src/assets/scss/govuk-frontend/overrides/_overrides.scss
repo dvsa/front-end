@@ -49,9 +49,24 @@
         &-item {
             padding: 10px 0;
             border-top: 1px solid $govuk-border-colour;
+            position: relative;
             &:first-child {
                 border-top: 0;
                 padding-top: 0;
+            }
+            @include govuk-media-query($from: tablet) { 
+                &--has-badge {
+                    padding-right: 25%;
+                }
+            }
+            .govuk-tag {
+                margin-top: 5px;
+                @include govuk-media-query($from: tablet) {  
+                    position: absolute;
+                    right: 0;
+                    top: 5px;
+                }
+
             }
         }
     }
@@ -105,5 +120,13 @@
         &--width-30 {
             max-width: 56ex + 3ex;
         }
+    }
+}
+
+.govuk-tag {
+    text-transform: none;
+    font-size: 14px;
+    &--danger {
+        background: $red;
     }
 }

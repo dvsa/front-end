@@ -16,6 +16,10 @@
     margin-bottom: 6px;
   }
 
+  &__marked-undo  {
+    display: none; 
+  }
+
   &.has-success {
     background-color: mix($white, $green, 85%);
 
@@ -67,13 +71,11 @@
   }
 
   &__marked-undo {
-    display: none;
-
     span {
       @include bold-16;
       display: block;
       color: $green;
-
+      margin-bottom: 10px;
       &:before {
         background-position: 0 0;
         background-repeat: no-repeat;
@@ -90,20 +92,20 @@
   }
 
   // Actions for editing or removing defects (summary view}
-  &__edit {
+  &__edit { 
     padding: 5px 0; 
     font-size: 19px;  
-    li {
-      display: inline-block; 
-      a {
-        padding: 5px;
-      }
-      &:first-child {
+      &-item { 
+        display: inline-block;
         a {
-          padding-left: 0;
+          padding: 5px;
+        }
+        &:first-child {
+          a { 
+            padding-left: 0;
+          }
         }
       }
-    }  
     @include media(desktop) {
       position: absolute;
       font-size: 16px; 
@@ -184,7 +186,7 @@
     min-height: 45px;
     padding-right: 100px;
 
-    @include media(false, 445px) {
+    @include media(false, 445px) {  
       min-height: 0;   
       padding-right: 0;   
     }

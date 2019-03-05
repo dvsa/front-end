@@ -1,0 +1,15 @@
+.interrupt-panel {
+    width: 100%;
+    padding: $gutter;
+    background: $govuk-blue;
+    color: white;
+
+    a {
+        color: white;
+        &:link,
+        &:active,
+        &:visited {
+            color: white;
+        }
+    }
+}

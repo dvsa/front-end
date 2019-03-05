@@ -18,6 +18,7 @@
       text-align: center;
     }
   }
+
 }
 
 // Fix unwanted button padding in Firefox
@@ -38,6 +39,7 @@
 .button[disabled="disabled"]:focus {
   outline: none;
 }
+
 
 // Start now buttons
 .button-start,

@@ -28,7 +28,17 @@
     box-shadow: 0 2px 0 $grey-1;
     padding: .2em .52em;
     margin: 0;
-  } 
+  }
+
+  &--white {
+    &:visited,
+    &:focus,
+    &:link,
+    &:link:focus {
+      background: white;
+      color: black;
+    }
+  }
 
   &--right {
     margin-right: 0;

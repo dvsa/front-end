@@ -16,7 +16,6 @@
 
 @mixin button($colour: $button-colour) {
   background-color: $colour;
-
   position: relative;
   @include inline-block;
   border: none; 
@@ -25,17 +24,19 @@
   outline-offset: -1px; // fixes bug in Safari that outline width on focus is not overwritten, is reset to 0 on focus in govuk_template
   cursor: pointer;
   -webkit-appearance: none;
-  
-  padding: em(12) em(15) em(7) em(15);
-  @include media(tablet){
-    padding: em(12) em(15) em(7) em(15);
-  }
 
   // Bottom edge effect
   @include box-shadow(0 2px 0 darken($colour, 15%));
   @include ie-lte(8) {
     border-bottom: 2px solid darken($colour, 15%);
-  } 
+  }
+
+  // Padding
+  padding: 12px;
+  @include media(tablet){
+    padding: em(12) em(22) em(9) em(22);
+  }
+
   // Text
   font-size: 19px;
   text-align: center;

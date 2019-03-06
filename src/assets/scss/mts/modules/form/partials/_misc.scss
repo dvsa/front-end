@@ -1,22 +1,19 @@
-.form-group.has-error {
-  background-color: $error-background;
-  border-left: 3px solid $mellow-red;
-
-  // margin-left: -$gutter-half;
+// Maintain backward compatibility for plain .form-group where gov styles not used
+.form-group.has-error,
+.govuk-form-group.has-error {
+  clear: both;
+  border-left: 5px solid $error-colour;
   padding-left: $gutter-half;
 }
 
 .form-group + .panel-indent.has-error,
 .panel-indent.has-error {
   border-left: 5px solid $error-colour;
-
   padding: 0;
   box-sizing: content-box;
-
   > .form-label,
   > .form-control {
     margin-left: 15px;
-    
     @media(max-width: 640px) {
       width: calc(100% - 20px);
     }

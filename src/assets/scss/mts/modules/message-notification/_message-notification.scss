@@ -4,24 +4,19 @@
   margin-bottom: 20px;
   display: block;
   text-decoration: none;
-  color: #0b0c0c !important;
+  color: $black;
 
   &__message-type-count {
-    font-size: 55px;
-    margin: 0 15px -10px 0;
+    font-size: 80px;
     font-weight: 700;
     line-height: 1;
-    float: left;  
+    font-size: 60px;
+    float: left;   
+    margin: 0 15px -10px 0;
     min-width: 80px;
-    text-align: right;
-    padding-bottom: 10px;
-    
-    @include media(desktop){
-      padding-bottom: 22px;
-      font-size: 80px;
-    } 
-    
-    @media screen and (min-width:900px) {
+    text-align: center;
+    padding-bottom: 14px;
+    @include media(desktop) {
       padding-bottom: 0;
     }
   }
@@ -29,11 +24,13 @@
   &__message-type-title,
   &__message-type-info {
     display: block;
+    line-height: 1.1
   }
 
   &__message-type-title {
     font-weight: 700;
     font-size: 24px;
+    padding-top: 4px;
   }
 
   &__message-type-info {

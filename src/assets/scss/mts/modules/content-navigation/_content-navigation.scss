@@ -1,7 +1,7 @@
 .content-navigation {
   &,
   &--notice {
-    margin-top: $gutter;
+    margin-top: $gutter/2;
     [class*='button'] {
       margin: 0 0 $gutter/2 0;
       padding: 12px;
@@ -12,7 +12,7 @@
         padding: em(12) em(22) em(9) em(22);
       }
     }
-  }
+  } 
   &--notice {
     border: 10px solid $panel-colour;
     padding: $gutter;

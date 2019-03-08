@@ -20,7 +20,7 @@
     float: left;
     width: 100%;
     @include media(tablet) {
-      padding: 17px 15px 15px;
+      padding: 17px 15px 10px;
     }
 
     &-heading { 
@@ -35,21 +35,24 @@
     }
 
     ul { 
-      @include media(desktop) {
-        display: inline;
+      @include media(desktop) { 
         padding-left: $gutter/2;
+        display: inline;
+        float: left;
       }
       li {
+        display: block;
+        float: left;
+        width: 50%;
+        font-size: 16px;
+        margin-right: 0;
         @media (max-width: 480px){
           margin-bottom: 14px;
         }
-        display: inline-block;
-        font-size: 16px;
-        margin-right: 16px;
-        &:last-child {
-          margin-right: 0;
+        @include media(smallTablet){
+          margin-right: 12px;
+          width: auto;
         }
-
         @include media(tablet){
           margin-right: 16px;
         }

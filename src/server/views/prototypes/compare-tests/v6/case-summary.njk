@@ -1,0 +1,125 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'WILLETTA AREDONDO', url: '#' },
+  { text: 'DILENA GROUP', url: '/prototypes/site-review/v5/VE-view-VTS-overview' },
+  { text: 'Check details' }
+] %}
+
+{% block content %} 
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Disciplinary process</span>
+  Check details
+</h1>
+
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+    <tr>
+      <th class="table-summary__value" width="300">Nominated tester</th>
+      <td class="table-summary__value--tabular">
+         <strong>John Morris, MORR6743</strong>
+      </td>
+    </tr>    
+    <tr>
+      <th class="table-summary__value">Registration number</th>
+      <td class="table-summary__value--tabular">
+         <strong>FI18 JIU </strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">VTS number</th>
+      <td class="table-summary__value--tabular">
+        <strong>VTS0071</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">VTS name</th>
+      <td class="table-summary__value--tabular">
+        <strong>Clutch&Bones Ltd.</strong> 
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Score</th>
+      <td class="table-summary__value--tabular">
+        <strong>30 points</strong><br/>
+        <a href="#" class="table-summary__action" title="">Change</a> 
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Outcome</th>
+      <td class="table-summary__value--tabular">
+          <strong>AWL - Advisory Warning Letter</strong>
+        <a href="#" class="table-summary__action" title="">Change</a>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Defects</th>
+      <td class="table-summary__value--tabular">
+          <table class="key-value-list" style="margin-top: 0; width: 100%" width="100%">
+            <tr>
+              <td class="table-summary__value--tabular" style="font-weight: bold; border-top: 0;">
+                  Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+                  <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside front</span>
+                  <span class="badge--warn">Minor</span>
+              </td>
+              <td class="table-summary__value--tabular" style="border-top: 0;">
+                  10 points
+                  <a href="#" class="table-summary__action" title="">Change</a>
+              </td>
+            </tr>
+            <tr>
+                <td class="table-summary__value--tabular" style="font-weight: bold;">
+                    Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+                    <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Offside front</span>
+                    <span class="badge--warn">Minor</span>
+                </td> 
+                <td class="table-summary__value--tabular" >
+                    10 points
+                    <a href="#" class="table-summary__action" title="">Change</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-summary__value--tabular" style="font-weight: bold; border-bottom: 0">
+                    Wheel hub spigot mounting slightly worn [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
+                    <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside rear</span>
+                    <span class="badge">Advisory</span>
+                </td>
+                <td class="table-summary__value--tabular" style="border-bottom: 0">
+                    10 points
+                    <a href="#" class="table-summary__action" title="">Change</a>
+                </td>
+            </tr>
+          </table>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Site issues</th>
+      <td class="table-summary__value--tabular">
+        <strong>Testing equipment out of calibration</strong><br/>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Site issue points</th>
+      <td class="table-summary__value--tabular">
+        <strong>50 points</strong><br/>
+        <a href="#" class="table-summary__action" title="">Change</a> 
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="u-margin-bottom-20">
+  <a href="saved" class="button">Save case</a> 
+</div> 
+<div class="form-group"> 
+  <a href="vt59">Back</a>
+</div> 
+
+<div>
+</div>
+
+{% endblock %}

@@ -10,14 +10,14 @@
   }  
   
   &--one-third {
-    @include media(desktop) {
+    @include media(tablet) {
       width: 33.333%; 
       float: left;
     }
   }
 
   &--two-thirds {
-    @include media(desktop) {
+    @include media(tablet) {
       width: 66.666%; 
       float: left;
     }

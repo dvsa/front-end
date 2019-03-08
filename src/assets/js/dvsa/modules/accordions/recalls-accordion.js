@@ -19,13 +19,14 @@ export class RecallsAccordion {
       loading: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.loading),
       output: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.output),
       error: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.classNames.errorMessage),
+      noRecordsHeld: document.querySelector('.' + RECALLS_ACCORDION_CONSTANTS.dataLayer.noRecordsHeld),
     };
 
     // Loop through each element
     for (let name in this.elements) {
-      // Check all element exist
-      if (!this.elements[name]) {
-        return console.warn(`${name} - Element was not found, aborting.`);
+      // Check all DOM elements exist, except JS backup if Service returns no records
+      if (!this.elements[name] && !this.elements.noRecordsHeld === null) {
+        return console.warn(`${name} - Element was not found`);
       }
     }
 

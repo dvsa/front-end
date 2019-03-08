@@ -59,6 +59,7 @@ export const RECALLS_ACCORDION_CONSTANTS = {
     output: 'recalls-accordion__output',
   },
   dataLayer: {
+    noRecordsHeld: 'no-records',
     submitEvent: 'recall-cta-submit',
     submitElementName: 'Recall',
     submitRecallUi: 'cta-submitted',

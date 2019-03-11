@@ -57,9 +57,13 @@
       <td>
           <form>
             <fieldset>
-              <div class="multiple-choice">
+              <div class="multiple-choice" data-target="disregard-defect-1">
                 <input id="waste-type-1" name="waste-types" type="checkbox" value="disregard-1">
                 <label for="waste-type-1">Disregard</label>
+              </div>     
+              <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-1">
+                  <label class="form-label" for="test-number">Why?</label>
+                  <textarea class="form-control" id="disregard-defect-1-reason" name="disregard-defect-1-reason" rows="2" cols="5" style="width: 100px;"></textarea>
               </div>
             </fieldset>
           </form>
@@ -76,9 +80,13 @@
             <td>
           <form>
             <fieldset>
-              <div class="multiple-choice">
+              <div class="multiple-choice" data-target="disregard-defect-2">
                 <input id="waste-type-2" name="waste-types" type="checkbox" value="disregard-2">
                 <label for="waste-type-2">Disregard</label>
+              </div>
+              <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-2">
+                  <label class="form-label" for="test-number">Why?</label>
+                  <textarea class="form-control" id="disregard-defect-1-reason" name="disregard-defect-1-reason" rows="2" cols="5" style="width: 100px;"></textarea>
               </div>
             </fieldset>
           </form>
@@ -92,13 +100,17 @@
           <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside rear</span>
           <span class="badge">Advisory</span>
       </td>
-            <td>
+      <td>
           <form>
             <fieldset>
-              <div class="multiple-choice">
+              <div class="multiple-choice" data-target="disregard-defect-3">
                 <input id="waste-type-3" name="waste-types" type="checkbox" value="disregard-3">
                 <label for="waste-type-3">Disregard</label>
               </div>
+              <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-3">
+                  <label class="form-label" for="test-number">Why?</label>
+                  <textarea class="form-control" id="disregard-defect-1-reason" name="disregard-defect-1-reason" rows="2" cols="5" style="width: 100px;"></textarea>
+              </div>              
             </fieldset>
           </form>
       </td>

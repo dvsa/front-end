@@ -24,24 +24,6 @@
 
     </h1>
 
-    <div class="grid-row" style="margin-bottom: 20px;">
-        <div class="column-one-half">
-            <h1 class="heading-large" style="margin-top: 0px;"> <span class="heading-secondary">Annual test valid until</span>30 March 2019</h1>
-            <p><a href="#">Get an annual test reminder</a> by email or text</p>
-        </div>
-        <div class="column-one-half" style="background-color: #005ea5;">
-            <div style="float: left;"><img src="/images/certificate-example.png" class="image" style="height: 130px; width: 90px; margin-top: 10px; margin-bottom: 10px; margin-right: 15px;"></div>
-                <div>
-                    <p style="color: #FFFFFF; margin-top: 10px">
-                        This vehicles paper certicate is only avaible for download if you have the latest V5C number (logbook number).
-                    </p>
-                    <p>
-                        <a href="enter-v5c" style="color: #FFFFFF;">Download Paper certicate</a>
-                    </p>
-                </div>
-            </div>
-    </div>
-    
     <p><a href="#">Get an MOT reminder</a> by email or text</p>
 
     <p>If you think the MOT expiry date or any of the vehicle details are wrong, <a href="">contact DVSA</a></p>
@@ -74,7 +56,15 @@
                   <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B; margin-bottom: 15px;">PASS</h1>
+                        <div>
+                            <p>
+                                This vehicles paper certicate is only available for download if you have the latest V5C number (logbook number).
+                            </p>
+                            <p>
+                                <a href="enter-v5c">Download Paper certificate</a>
+                            </p>
+                        </div>                      
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -86,15 +76,17 @@
                             </div>
                             <div class="column-one-half">
                                 <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Test location</span></h1>
-                                <details class="u-space-t15" role="group" closed="">
-                                            <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
+                                    <details class="u-space-t15" role="group" closed="">
+                                        <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
                                                 <span class="summary">View test location</span>
-                                            </summary>
-                                            <div class="panel panel-border-narrow " aria-hidden="true" id="test-location-details-0"> 
-                                                <p>Test location for this MOT test will be available in 4 days. You'll need the latest V5C number</p>
+                                        </summary>
+                                            <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
+                                                <label for="v5c-input">Enter latest V5C number</label>
+                                                    <span class="form-hint">11 digits from the vehicle log book</span>
+                                                <input class="form-control" id="v5c-input">
+                                                <a class="button" href="#" role="button" style="margin-top: 10px;">Show test location</a>
                                             </div>
-
-                                        </details>
+                                    </details>
                             </div>
                             <div class="column-one-half">
                                 <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">MOT test number</span> 3995 7555 7274 </h1>
@@ -130,7 +122,15 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #B10E1E;">FAIL</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #B10E1E; margin-bottom: 15px;">FAIL</h1>
+                            <div>
+                                <p>
+                                    This vehicles paper certicate is only available for download if you have the latest V5C number (logbook number).
+                                </p>
+                                <p>
+                                    <a href="enter-v5c">Download Paper certificate</a>
+                                </p>
+                            </div>
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -148,7 +148,6 @@
                                             </summary>
                                             <div class="panel panel-border-narrow " aria-hidden="true" id="test-location-details-0"> 
                                             <p>Test location for this MOT test will be available in 4 days. You'll need the latest V5C number</p>                                            </div>
-
                                 </details>
                             </div>
                             
@@ -184,7 +183,8 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 8 June 2017 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B; margin-bottom: 15px;">PASS</h1>
+                        
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -231,7 +231,8 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 11 June 2016 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B; margin-bottom: 15px;">PASS</h1>
+                        
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -279,7 +280,8 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 02 June 2015 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B; margin-bottom: 15px;">PASS</h1>
+                        
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -327,7 +329,8 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 30 May 2014 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B; margin-bottom: 15px;">PASS</h1>
+                        
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -362,7 +365,8 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 30 May 2014 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #B10E1E;">FAIL</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #B10E1E; margin-bottom: 15px;">FAIL</h1>
+                        
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -409,7 +413,7 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 30 May 2013 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B; margin-bottom: 15px;">PASS</h1>
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">
@@ -444,7 +448,7 @@
                 <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 28 May 2012 </h1>
-                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
+                        <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B; margin-bottom: 15px;">PASS</h1>
                     </div>
                     <div class="column-two-thirds">
                         <div class="grid-row">

@@ -1,0 +1,45 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'MOT history - vehicle results' %}
+
+{% block content %}
+
+
+
+<main id="content" role="main">
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+
+        <a class="link-back" href="index">Back</a>
+        <h1 class="form-title heading-large">
+          What type of vehicle are you searching for?
+        </h1>
+        {% call components.form(action='/prototypes/mot-history-data/cvs/what-vehicle', method='POST') %} 
+                <fieldset>
+                 <div class="multiple-choice">
+                    
+                    <input id="MOTH-vehicle" type="radio" name="mothRadio" value="vehicle" {{ 'checked' if viewData.questions.vehicle.answer['vehicle'] == 'vehicle' }}>
+                    <label for="MOTH-vehicle">Cars and Motorbikes </label>
+                </div>
+                <div class="multiple-choice">
+                    <input id="MOTH-other" type="radio" name="mothRadio" value="other" {{ 'checked' if viewData.questions.other.answer['other'] == 'other' }}>
+                    <label for="MOTH-other">Large vehicles<span class="form-hint">For example, HGV's or trailers</span></label>
+                </div>
+                
+                </fieldset>
+                <br>
+                <div>
+                    <input class="button" type="submit" value="Continue">
+                </div>
+            </div>
+          
+      {% endcall %}
+  </div>
+</main>
+
+
+{% endblock %}

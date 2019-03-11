@@ -1,5 +1,7 @@
 // Put any GDS overrides here, if we need to modify a component from the package
-.govuk-summary-list  { 
+// Separate each override with the component's namespace
+
+.govuk-summary-list  {
     margin-bottom: $gutter;
     @include media(tablet){
         &__value,
@@ -43,6 +45,7 @@
         margin-bottom: 0;
         @include govuk-media-query($from: tablet) { 
             padding-bottom: 0;
+            padding-top: 0;
         }
         &-item {
             padding: 10px 0;
@@ -50,7 +53,6 @@
             position: relative;
             &:first-child {
                 border-top: 0;
-                padding-top: 0;
             }
             @include govuk-media-query($from: tablet) { 
                 &--has-badge {

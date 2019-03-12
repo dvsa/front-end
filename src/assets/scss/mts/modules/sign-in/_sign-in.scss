@@ -1,3 +1,19 @@
+// Sign-in form
+// Normalise height of textarea vs input
+.sign-in-form .form-group {
+  input, textarea,
+  input[type='text'],
+  input[type='password']  {
+    height: 40px;
+    line-height: 1.8;
+    width: 100%;
+    @include media(desktop) {
+      max-width: 70%;
+    }
+  }
+}
+
+// Below appears unusued as sign-in form has __in its class name
 .sign-in {
   margin-bottom: $gutter;
   border: solid 10px $grey-2; 
@@ -8,12 +24,14 @@
     margin-bottom: $gutter-half;
   }
 
-  input[type='text'] {
-    width: 175px;
-  }
-
-  input[type='password'] {
-    width: 225px;
+  @include media(tablet){
+    input[type='text'] {
+      width: 175px;
+    }
+  
+    input[type='password'] {
+      width: 225px;
+    }
   }
 
   .content-navigation {

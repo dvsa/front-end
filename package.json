@@ -8,7 +8,7 @@
     "start-dev": "cross-env NODE_ENV=development npm run pretty-js && concurrently \"npm run webpack-dev\" \"cross-env NODE_ENV=development npm run start-dev-server\"",
     "start-dev:copy-to-mts": "cross-env COPY_TO_MTS=true npm run start-dev",
     "start-dev:copy-to-moth": "cross-env COPY_TO_MOTH=true npm run start-dev",
-  "start-dev:copy-to-manuals": "cross-env COPY_TO_MANUALS=true npm run start-dev",
+    "start-dev:copy-to-manuals": "cross-env COPY_TO_MANUALS=true npm run start-dev",
     "start-dev-server": "SESSION_SECRET=secret babel-watch ./src/server",
     "build-server": "babel ./src/server --out-dir ./dist/server",
     "build-production": "cross-env NODE_ENV=production concurrently \"npm run pretty-js\" \"npm run build-server\" \"npm run webpack-prod\" && npm run clean-production",

@@ -1,9 +1,15 @@
 .c-home-block {
   display: block;
-  margin-bottom: 60px;
+  font-size: 19px;
+  margin-bottom: 26px;
+  @include media(desktop){ 
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
 
   &__head {
     margin-bottom: 15px;
+    clear: both;
   }
 
   &__title {
@@ -17,5 +23,14 @@
   &__subtitle {
     @include core-16();
     color: $grey-1;
+  }
+
+  .button {
+    display: block;
+    text-align: center;
+    @include media(desktop){ 
+      display: inline;
+      text-align: left;
+    }
   }
 }

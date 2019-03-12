@@ -140,6 +140,17 @@ $vehicleSolidColors: (
         }
       }
     }
+
+    // Different way to mark-up columns for matching 'Summary list' table
+    &-group {
+      @include govuk-media-query($from: tablet) {
+        width: 30%;
+        display: inline-block;
+        &:first-child + .vehicle-info__details-group {
+          padding-right: 20px;
+        }
+     }
+    }
   }
 
   &__confirm {

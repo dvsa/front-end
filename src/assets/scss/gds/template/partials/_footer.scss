@@ -45,8 +45,10 @@
       vertical-align: bottom;
       width: 100%;
 
-      @include media(tablet) {
+      @include media(desktop) {
         width: 75%;
+        vertical-align: top;
+        padding-top: 12px;
       }
 
       @include ie-lte(7) {
@@ -128,13 +130,13 @@
       margin: 30px 0 0 0;
       width: 100%;
       display: block;
-
-      @include media(tablet) {
+      text-align: center;
+      @include media(desktop) {
         display: inline-block;
-        text-align: inherit;
         width: 25%;
         padding-top: 15px;
         margin-top: 0;
+        text-align: right;
       }
 
       @include ie-lte(7) {
@@ -144,33 +146,22 @@
       }
 
       a {
-        display: block;
-
+        display: block; 
         background-image: url("#{$path}govuk-crest.png");
         background-repeat: no-repeat;
         background-position: 50% 0%;
-
-        @include media(tablet) {
+        text-decoration: none;
+        padding: 115px 0 0 0;
+        @include media(desktop) {
           background-position: 100% 0%;
-        }
-
+        } 
         @include device-pixel-ratio() {
           background-image: url("#{$path}govuk-crest-2x.png");
           background-size: 125px 102px;
-        }
-
+        } 
         @include ie(6) {
           background-image: url("#{$path}govuk-crest-ie.png");
-        }
-
-        text-align: center;
-        text-decoration: none;
-
-        @include media(tablet) {
-          text-align: right;
-        }
-
-        padding: 115px 0 0 0;
+        } 
 
       }
     }

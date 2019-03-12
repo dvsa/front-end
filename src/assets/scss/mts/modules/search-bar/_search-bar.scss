@@ -33,10 +33,9 @@
     padding: $search-padding;
     height: 42px;
     background-color: $white;
-    width: 75%;
+    width: 65%;
     width: calc(100% - 204px); 
     border: 1px solid $border-colour;
-    // Grrr, damn your specificity alphaGov!
     &[type='search'] {
       @include box-sizing(border-box);
       appearance: none;
@@ -50,14 +49,25 @@
       border-width: 2px;
       border-color: $mot-border;
     }
+    @include media(mobile){
+      width: 100%;
+      margin-bottom: 4px;
+    }
   }
 
   &__search-submit {
-    @include button();
+    @include button();  
     font-weight: 700;  
     height: 40px;
     margin: 0; 
     width: 200px;
+    float: right;
+    // Edited padding due to fixed height
+    padding: em(10) em(15) em(7) em(15);
+    
+    @include media(mobile){
+      width: 100%;
+    }
   }
 
   &__secondary-action {

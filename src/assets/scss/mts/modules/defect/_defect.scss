@@ -6,7 +6,7 @@
   background-color: $white;
   transition: background-color .4s ease-in-out;
 
-  &__is-dangerous {
+  &__is-dangerous { 
     color: $mellow-red;
     font-weight: 700;
     display: block;
@@ -14,6 +14,10 @@
 
   &__mark-repaired {
     margin-bottom: 6px;
+  }
+
+  &__marked-undo  {
+    display: none; 
   }
 
   &.has-success {
@@ -33,8 +37,9 @@
     @include bold-16;
     display: block;
 
-    @include media(tablet) {
-      margin-right: 220px;
+    @include media(desktop) {
+      margin-right: 195px;
+      max-width: 75%;
     }
   }
 
@@ -44,7 +49,7 @@
     margin: 0;
 
     @include media(tablet) {
-      margin-right: 220px;
+      margin-right: 195px;
     }
   }
 
@@ -66,13 +71,11 @@
   }
 
   &__marked-undo {
-    display: none;
-
     span {
       @include bold-16;
       display: block;
       color: $green;
-
+      margin-bottom: 10px;
       &:before {
         background-position: 0 0;
         background-repeat: no-repeat;
@@ -89,47 +92,47 @@
   }
 
   // Actions for editing or removing defects (summary view}
-  &__edit {
-    padding: 5px 0 0;
-
-    @include media(tablet) {
+  &__edit { 
+    padding: 5px 0; 
+    font-size: 19px;  
+      &-item { 
+        display: inline-block;
+        a {
+          padding: 5px;
+        }
+        &:first-child {
+          a { 
+            padding-left: 0;
+          }
+        }
+      }
+    @include media(desktop) {
       position: absolute;
+      font-size: 16px; 
       right: 15px;
       top: 10px;
       padding-bottom: 5px;
       text-align: right;
-    }
-
-    // li {
-    //     display: inline;
-    //
-    //     @include media(tablet) {
-    //         display: block;
-    //     }
-    // }
-
-    li:first-child {
-      font-weight: 700;
-      margin-bottom: 5px;
+      li { 
+        > a {
+          padding: 3px;
+        }
+      } 
     }
   }
 
   &__change-error {
-    @include core-14();
-
-    display: none;
-    // display: block;
+    @include core-14(); 
+    display: none; 
     position: relative;
     line-height: 12px;
     text-align: right;
-    color: $red;
-    // top: -10px;
+    color: $red; 
   }
 
   // Actions for adding defects (list view)
   &__add {
     margin-top: 10px;
-
     @include media(tablet) {
       position: absolute;
       right: 0;
@@ -139,10 +142,9 @@
 
     li {
       display: inline;
-    }
-
-    li + li {
-      margin-left: 10px;
+      & + li {
+        margin-left: 10px;
+      }
     }
   }
 
@@ -150,28 +152,19 @@
   &__positions {
     @extend %contain-floats;
     color: $secondary-text-colour;
-    padding-top: 5px;
+    padding: 6px 0;
 
-    li {
+    li { 
+      display: block;
+      width: 100%; 
+
       @include media(tablet) {
         display: inline-block;
         width: 30%;
       }
-
-      @include media(false, 740px) {
-        display: block;
-        width: 100%;
-      }
-
-      @include media(false, 640px) {
-        display: inline-block;
-        width: 30%;
-      }
     }
-
-    &-value {
-
-      @include media(desktop) {
+    &-value { 
+      @include media(desktop) { 
         display: inline;
       }
 
@@ -193,13 +186,12 @@
     min-height: 45px;
     padding-right: 100px;
 
-    @include media(false, 445px) {
+    @include media(false, 445px) {  
       min-height: 0;   
       padding-right: 0;   
     }
   }
 
-  // CONTEXT STUFF
   .defect-results & {
     padding-left: 0;
 

@@ -139,7 +139,7 @@ span.label-value {
 
   margin-top: em(10, 20);
   margin-bottom: em(10, 20);
-  padding-bottom: 8px;
+
   @include media(tablet) {
       margin-top: em(20, 24);
       margin-bottom: em(20, 24);
@@ -169,7 +169,7 @@ span.label-value {
     font-size: 19px;
     margin-bottom: $gutter-half;
   }
-  details { 
+  details {
     font-size: 19px;
     margin-bottom: $gutter-half;
   }

@@ -1,6 +1,11 @@
 # Changelog 🗒️
 All notable changes included in tagged releases will be documented in this file.
 
+# Unreleased
+### Added
+- 'Interrupt panel' component
+- Various Tablet and Touch affordances on the core MTS journey
+
 ## [1.3.9] - 2019-02-13
 ### Added
 - Added utility CSS class to remove border bottom on 'last-of-type'
@@ -8,10 +13,6 @@ All notable changes included in tagged releases will be documented in this file.
 ## [1.3.8] - 2019-02-08
 ### Changed
 - Updated tests for MOTH elements, so no warning shown for elements which shouldn't be present
-
-## [1.3.8] - 2019-02-08
-### Changed
-- Updated tests for MOTH elements.
 
 ## [1.3.7] - 2019-02-08
 ### Changed
@@ -29,7 +30,7 @@ All notable changes included in tagged releases will be documented in this file.
 
 ## [1.3.4] - 2019-02-05
 ### Changed
-- Mobile-optimised behaviour for defect tree UI in MTS
+- Mobile-optimised behaviour for bdefect tree UI in MTS
 
 ## [1.3.3] - 2019-02-04
 ### Changed

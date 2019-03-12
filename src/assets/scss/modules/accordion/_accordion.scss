@@ -141,6 +141,10 @@
   &__content {
     display: block;
     padding: 10px 0 30px 12px;
+    
+    > div:last-child {
+      border-bottom: 0;
+    }
 
     .js-accordion--js-enabled & {
       display: none;
@@ -149,6 +153,7 @@
     .js-accordion__section--open & {
       display: block;
     }
+
   }
 
   @media(max-width: 640px) {

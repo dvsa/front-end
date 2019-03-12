@@ -14,6 +14,7 @@
   &__count--sm {
     @include bold-19();
     line-height: 1;
+    font-size: 19px;
   }
   
   &__count--lg {
@@ -23,6 +24,6 @@
   &__subtext {
     @include core-16();
     display: block;
-    margin-top: -5px;
+    font-size: 19px;
   }
 }

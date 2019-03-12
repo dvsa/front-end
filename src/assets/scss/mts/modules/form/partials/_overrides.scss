@@ -1,12 +1,3 @@
-// Sign-in form
-// Normalise height of textarea vs input
-.sign-in-form .form-group {
-    input, textarea {
-      height: 40px;
-      line-height: 1.8;
-    } 
-}
-
 .password-field {
   caret-color: black;
   resize: none;

@@ -3,18 +3,18 @@ import { delegateEvent, triggerClickEventOnElement } from './../../../shared';
 export class OdometerReading {
   constructor() {
     this.selectors = {
-      notReadble: '#notReadable',
-      noOdometer: '#noOdometer',
-      odometer: '#odometer',
-      odoInputRadio: '#odoInputRadio',
+      unknown: '.js-unknown',
+      noOdometer: '.js-noOdometer',
+      odometer: '.js-odometer',
+      odoInputRadio: '.js-odoInputRadio',
     };
 
     this.elements = {
-      odomter: document.querySelector(this.selectors.odometer),
+      odometer: document.querySelector(this.selectors.odometer),
       odoInputRadio: document.querySelector(this.selectors.odoInputRadio),
     };
 
-    if (!this.elements.odomter || !this.elements.odoInputRadio) return;
+    if (!this.elements.odometer || !this.elements.odoInputRadio) return;
 
     this.init();
   }
@@ -27,8 +27,8 @@ export class OdometerReading {
    * @since 1.1.21
    */
   init = () => {
-    delegateEvent(document, 'click', this.selectors.notReadble, this.onNotReadableOrNoOdomoeterClick);
-    delegateEvent(document, 'click', this.selectors.noOdometer, this.onNotReadableOrNoOdomoeterClick);
+    delegateEvent(document, 'click', this.selectors.unknown, this.onUnknownOrNoOdometerClick);
+    delegateEvent(document, 'click', this.selectors.noOdometer, this.onUnknownOrNoOdometerClick);
     delegateEvent(document, 'click', this.selectors.odometer, this.onOdometerClick);
   };
 
@@ -40,20 +40,8 @@ export class OdometerReading {
    * @author Tameem Safi <t.safi@kainos.com>
    * @since 1.1.21
    */
-  onNotReadableOrNoOdomoeterClick = event => {
-    this.elements.odomter.value = '';
-  };
-
-  /**
-   * Handle when odomoter radios change
-   *
-   * @param {Event} event DOM event object
-   *
-   * @author Tameem Safi <t.safi@kainos.com>
-   * @since 1.1.21
-   */
-  onNotReadableOrNoOdomoeterClick = event => {
-    this.elements.odomter.value = '';
+  onUnknownOrNoOdometerClick = event => {
+    this.elements.odometer.value = '';
   };
 
   /**

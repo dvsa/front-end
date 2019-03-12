@@ -1,7 +1,7 @@
 details {
   list-style: none;
-
-  summary {
-    
+  font-size: 19px;
+  @include media(desktop){ 
+    font-size: 16px;  
   }
 }

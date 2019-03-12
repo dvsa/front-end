@@ -83,8 +83,7 @@ main {
   .heading-secondary {
     @include heading-27();
 
-    display: block;
-    color: $secondary-text-colour;
+    display: block; 
   }
 
 }
@@ -102,9 +101,7 @@ main {
 
   .heading-secondary {
     @include heading-24();
-
-    display: block;
-    color: $secondary-text-colour;
+    display: block; 
   }
 
 }
@@ -143,8 +140,7 @@ p,
   @include media(tablet) {
     margin-top: em(5);
     margin-bottom: em(20);
-  }
-
+  } 
 }
 
 .body-text {
@@ -156,10 +152,11 @@ p,
   @include core-24;
 }
 
-// Set a max-width for text blocks
-// Less than 75 characters per line of text
-.text {
-  max-width: 30em;
+// Set a max-width for text blocks for readability on wider viewports
+.text { 
+  @include media(tablet){
+    max-width: 30em;
+  }
 }
 
 .text-secondary {

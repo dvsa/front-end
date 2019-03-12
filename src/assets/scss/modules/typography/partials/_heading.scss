@@ -14,6 +14,9 @@
   &--small-margin-bottom {
     margin-bottom: 20px;
   }
+  &--small-margin-top {
+    margin-top: 20px;
+  }
   
   &__secondary {
     font-family: $nta-light;
@@ -28,6 +31,9 @@
     .heading--large & {
       font-size: 24px;
       line-height: 1.25;
+    }
+    &--light {
+      color: white;
     }
   }
 

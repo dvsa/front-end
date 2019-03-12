@@ -48,7 +48,7 @@
   <main id="content">
      <div class="container">
         <div class="grid-row">
-          <div class="column-half">
+          <div class="column-half--desktop">
 
               <section id="special-notice-list">
 
@@ -101,12 +101,13 @@
               {% endif %}
                 
               </section>
+
               <section>
                 <p><a href="/prototypes/messages/inbox">View all messages</a></p>
               </section>
 
           </div>
-          <div class="column-half">
+          <div class="column-half--desktop">
               <section class="c-home-block">
                 <header class="c-home-block__head">
                     <h2 class="c-home-block__title">Authorised Examiner management</h2>
@@ -146,6 +147,24 @@
                     </a>
                 </p>
               </div>
+              <section class="c-home-block">
+                <header class="c-home-block__head">
+                  <h2 class="c-home-block__title">
+                    Contingency Tests
+                  </h2>
+                </header>
+                <ul class="c-action-list">
+                  <li class="c-action-list__item">
+                    <a class="c-action-list__link" href="/contingency" id="action-view-performance-dashboard">Record contingency test</a>
+                  </li>
+                  <li class="c-action-list__item">
+                    <a class="c-action-list__link" href="/forms/contingency-pass-certificate" target="_blank">CT20 Pass Certificate</a>
+                  </li>
+                  <li class="c-action-list__item">
+                    <a class="c-action-list__link" href="/forms/contingency-fail-certificate" target="_blank">CT30 Refusal Notice</a>
+                  </li>
+                </ul>
+              </section>
           </div>
         </div>
      </div>

@@ -13,7 +13,7 @@
       font-size: 16px;
     }
 
-  &__content {
+  &__content { 
     @include grid-column(8 / 12, desktop);
     padding: 0;
     padding-bottom: $gutter/2;
@@ -44,5 +44,9 @@
     &:focus {
       color: $white;
     }
+  }
+
+  .vehicle-info {
+    margin-bottom: 0;
   }
 }

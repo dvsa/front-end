@@ -7,7 +7,7 @@
     @include media(tablet) {
       padding-bottom: 30px;
     }
-  }
+  }  
   
   &--one-third {
     @include media(tablet) {
@@ -32,4 +32,17 @@
       border-bottom: 1px solid $border-colour;
     }
   }
+
+  &__list {
+    li > a { 
+      font-size: 19px;
+      padding: 12px 0;
+      display: block;
+      @include media(desktop){ 
+        font-size: 16px;
+        padding: 4px 0;
+      } 
+    }
+  }
+
 }

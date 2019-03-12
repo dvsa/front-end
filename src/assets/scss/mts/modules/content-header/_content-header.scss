@@ -40,7 +40,7 @@
 
   &__tertiary-list {
     @extend %contain-floats;
-    @include core-19;
+    font-size: 19px;
   }
 
   &__list-item {
@@ -50,8 +50,8 @@
     &--primary {
       display: inline-block;
       padding: 0 30px 0 0;
-      @include bold-24;
       font-weight: 700;
+      font-size: 24px; 
     }
   }
 

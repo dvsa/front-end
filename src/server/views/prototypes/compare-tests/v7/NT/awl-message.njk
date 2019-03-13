@@ -1,0 +1,138 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Disciplinary notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Notifications' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+        <h1>
+          <span class="content-header__type">Disciplinary message</span>
+          <span class="content-header__title">Advisory Warning Letter was issued for you after re-inspection</span>
+        </h1>
+      </header>
+
+      <div class="text">
+        <div class="panel panel-border-wide">
+            <p>You must acknowledge this message by <strong>26 March 2019</strong></p>
+        </div>
+      </div>
+
+      <div class='text u-clearfix'>
+
+        <p>Re-inspection by Vehicle Examiner revealed malpractice during the MOT test.</p>
+        <h4 class="heading heading--small heading-small">
+          Re-inspection details
+        </h4>
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+    <tr>
+      <th class="table-summary__value" width="200">Date</th>
+      <td class="table-summary__value--tabular">
+         <strong>11 March 2019</strong>
+      </td>
+    </tr>    
+    <tr>
+      <th class="table-summary__value">Registration number</th>
+      <td class="table-summary__value--tabular">
+         <strong>FI18 JIU </strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Vehicle Examiner</th>
+      <td class="table-summary__value--tabular">
+         <strong>Rob Smith </strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">VTS number</th>
+      <td class="table-summary__value--tabular">
+        <strong>VTS0071</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">VTS name</th>
+      <td class="table-summary__value--tabular">
+        <strong>Clutch&Bones Ltd.</strong> 
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Score</th>
+      <td class="table-summary__value--tabular">
+        <strong>30 points</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Outcome</th>
+      <td class="table-summary__value--tabular">
+          <strong>Advisory Warning Letter</strong>
+      </td>
+    </tr>
+    <tr>
+      <th class="table-summary__value">Missed defects</th>
+      <td class="table-summary__value--tabular" style="padding-right: 0;">
+          <table class="key-value-list" style="margin-top: 0; width: 100%" width="100%">
+            <tr>
+              <td class="table-summary__value--tabular" style="font-weight: bold; border-top: 0;">
+                  Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+                  <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside front</span>
+                  <span class="badge--warn">Minor</span>
+              </td>
+              <td class="table-summary__value--tabular" style="border-top: 0;">
+                  obviously wrong
+              </td>
+            </tr>
+            <tr>
+              <td class="table-summary__value--tabular" style="font-weight: bold; border-top: 0;">
+                  Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+                  <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside front</span>
+                  <span class="badge--warn">Minor</span>
+              </td>
+              <td class="table-summary__value--tabular" style="border-top: 0;">
+                  obviously wrong
+              </td>
+            </tr>
+            <tr>
+              <td class="table-summary__value--tabular" style="font-weight: bold; border: 0;">
+                  Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+                  <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside front</span>
+                  <span class="badge--warn">Minor</span>
+              </td>
+              <td class="table-summary__value--tabular" style="border: 0;">
+                  obviously wrong
+              </td>
+            </tr>
+
+          </table>
+          </td>
+          </tr>
+          </tbody>
+          </table>
+
+        <div class="notice">
+          <i class="icon icon-important"><span class="visually-hidden">Important information</span></i>
+          <p><strong>Important</strong><br>
+            By acknowledging this notification, you confirm that you have read, understood and agree.</p>
+        </div>
+      </div>
+
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Acknowledge disciplinary notification', url='/prototypes/mts-messages/notifications-inbox-scheme-user-sn-acknowledged') }}
+      </div>
+
+      {{ components.link(text='Back to notifications', url='/prototypes/mts-messages/notifications-inbox-scheme-user', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

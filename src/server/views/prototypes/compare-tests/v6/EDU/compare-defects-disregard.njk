@@ -58,8 +58,8 @@
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-1">
-                
-                <label for="waste-type-1"><a href="#">Judge difference</a></label>
+                <input id="waste-type-1" name="waste-types" type="checkbox" value="disregard-1">
+                <label for="waste-type-1">Disregard</label>
               </div>     
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-1">
                   <label class="form-label" for="test-number">Why?</label>
@@ -81,8 +81,8 @@
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-2">
-                
-                <label for="waste-type-2"><a href="#">Judge difference</a></label>
+                <input id="waste-type-2" name="waste-types" type="checkbox" value="disregard-2">
+                <label for="waste-type-2">Disregard</label>
               </div>
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-2">
                   <label class="form-label" for="test-number">Why?</label>
@@ -104,8 +104,8 @@
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-3">
-                
-                <label for="waste-type-3"><a href="#">Judge difference</a></label>
+                <input id="waste-type-3" name="waste-types" type="checkbox" value="disregard-3">
+                <label for="waste-type-3">Disregard</label>
               </div>
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-3">
                   <label class="form-label" for="test-number">Why?</label>

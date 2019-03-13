@@ -1,0 +1,33 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+
+<div class="dvsa-banner dvsa-banner--confirmation">
+  <h1 class="dvsa-banner__heading-large">Draft of report generated</h1>
+  <p class="dvsa-banner__secondary-text"></p>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <h4 class="heading heading--small heading-small">What happens next</h4>
+      <p>
+        You need to interview the nominated tester, take photos of defects and compile them into report using draft you can download below.
+      </p>
+
+      <input class="button" type="submit" value="Download draft of report">
+  </div>
+</div>
+
+<div style="margin-top: 40px;">
+  <form action="index">
+    <a href="index">Compare another MOT test</a>
+  </form>
+</div>
+
+
+
+
+{% endblock %}

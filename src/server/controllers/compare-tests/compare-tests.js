@@ -1,144 +1,84 @@
-import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js';
 import { initViewData } from './initViewData.js';
-import { getLastInUrl } from './helpers/getLastInUrl.js';
-import { getMonth } from './helpers/getMonth.js';
-
-export * from './validators/validation.js';
-export * from './helpers/index.js';
 
 /**
- * GET request middleware - clears session and returns to site review landing view
+ * GET request middleware - clears session
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const clearReviewSession = (req, res) => {
-  // Resets session data if exists
-  if (req.session.viewData) {
-    req.session.viewData = initViewData();
-  }
-  // Renders view
-  return res.render('prototypes/site-review/index');
-};
-
-/**
- *
- * GET request middleware - gets the assessment view
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getAssessment = (req, res) => {
-  let assessmentType = getLastInUrl(req);
-
-  // If assessmentType type doesnt exist
-  if (!assessmentType) {
-    // Re-render previous view
-    return res.render('/prototypes/site-review/choose-section/');
-  }
-
-  // Set session viewData
+export const getStart = (req, res) => {
+  // Resets session data if doesn't exist
   req.session.viewData = req.session.viewData || initViewData();
-
-  // Renders categories view
-  return res.render(`prototypes/site-review/assessment/${assessmentType}/index`, { viewData: req.session.viewData });
+  return res.render('./prototypes/compare-tests/v7/start');
 };
 
-/**
- * POST request middleware - posts an assessment
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const postAssessment = (req, res) => {
-  let assessmentType = getLastInUrl(req);
-
-  if (req.session.viewData[assessmentType].errors.length) {
-    return res.redirect(`/prototypes/site-review/assessment/${assessmentType}`);
-  }
-
-  // Redirect to section on successful post
-  return res.redirect('/prototypes/site-review/choose-section/');
-};
-
-/**
- *
- * GET request middleware - gets the choose section view
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getChooseSection = (req, res) => {
-  // Render choose section index
+export const getOverview = (req, res) => {
+  // Resets session data if doesn't exist
   req.session.viewData = req.session.viewData || initViewData();
-  return res.render('prototypes/site-review/choose-section/index', { viewData: req.session.viewData });
+  return res.render('./prototypes/compare-tests/v7/overview', { viewData: req.session.viewData });
 };
 
-/**
- *
- * GET request middleware - gets the choose section view
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getDetails = (req, res) => {
-  // Render choose section index
-  req.session.viewData = req.session.viewData || initViewData();
-  return res.render('prototypes/site-review/enter-details/index', { viewData: req.session.viewData });
+export const getRecordOutcome = (req, res) => {
+  const scores = Array.from(req.session.viewData.defects).map(defect => parseInt(defect.points, 10));
+  const shortComingsSubmitted = req.session.viewData.shortcomings.points;
+
+  // Check if submitted score value is NaN (empty). Set to Zero if so.
+  let shortComingsScore = isNaN(parseInt(shortComingsSubmitted)) ? 0 : parseInt(shortComingsSubmitted);
+
+  // Add up defect points and add Shortcomings score
+  const sumOfPoints = scores.reduce((running, a) => running + a) + shortComingsScore;
+  req.session.viewData.score = sumOfPoints;
+  return res.render('./prototypes/compare-tests/v7/record-outcome', { viewData: req.session.viewData });
 };
 
-/**
- * Get request middleware - Posts details form summary view
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-
-export const postDetails = (req, res) => {
-  // If there are errors, reload details page
-  if (req.session.viewData.testerDetails.errors.length) {
-    return res.redirect(`/prototypes/site-review/enter-details`);
-  }
-
-  // Add friendly date to viewData
-  //req.session.viewData = req.session.viewData || {};
-  const testerDetails = req.body || {};
-  // Create a friendly date from the three numbers input
-  let testDate = `${testerDetails.testDay} ${getMonth(testerDetails.testMonth - 1)} ${testerDetails.testYear}`;
-
-  // Check we have a valid date string
-  if (testDate.indexOf('undefined') == 1) {
-    testDate = '02 August 2018';
-  }
-
-  // Append form data to viewdata in session
-  req.session.viewData.testerDetails.date = testDate;
-
-  // No errors - Successful post
-  return res.redirect('/prototypes/site-review/choose-section');
+export const getDifference = (req, res) => {
+  req.session.viewData.defectIndex = req.params.defectIndex;
+  return res.render('./prototypes/compare-tests/v7/assess-difference', { viewData: req.session.viewData });
 };
 
-/**
- * Get request middleware - Handle redirect to summary view
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
+export const checkCompletion = (req, res, next) => {
+  // Mark defect as resolved
+  const currentDefect = req.params.defectIndex;
+  req.session.viewData.defects[currentDefect].isResolved = true;
+
+  // Check if all defects are complete and set if true
+  const allComplete = Array.from(req.session.viewData.defects).every(defect => defect.isResolved);
+  req.session.viewData.allComplete = allComplete;
+  next();
+};
+
+export const postDifference = (req, res) => {
+  const currentDefect = req.params.defectIndex;
+
+  // Set form congtents into Viewdata
+  req.session.viewData.defects[currentDefect].isResolved = true;
+  req.session.viewData.defects[currentDefect].points = req.body.decision;
+  req.session.viewData.defects[currentDefect].comment = req.body.justification;
+  return res.redirect('/prototypes/compare-tests/v7/overview');
+};
+
+export const postShortcomings = (req, res) => {
+  const comment = req.body.shortcomings;
+  const points = parseInt(req.body.points, 10);
+  // Set form contents into Viewdata
+  req.session.viewData.shortcomings.comment = comment;
+  req.session.viewData.shortcomings.points = points;
+  return res.redirect('/prototypes/compare-tests/v7/record-outcome');
+};
+
+export const postRecordOutcome = (req, res) => {
+  const comment = req.body.comment;
+  const outcome = req.body.outcome;
+  // Set form contents into Viewdata
+  req.session.viewData.outcome.comment = comment;
+  req.session.viewData.outcome.type = outcome;
+  return res.redirect('/prototypes/compare-tests/v7/summary');
+};
 
 export const getSummary = (req, res) => {
-  return res.render('./prototypes/site-review/summary/index', {
-    viewData: req.session.viewData,
-  });
+  return res.render('./prototypes/compare-tests/v7/summary', { viewData: req.session.viewData });
 };
 
-export const branchOnActivity = (req, res) => {
-  const radioResponse = req.body['radio-activity'];
-
-  if (!radioResponse) {
-    return res.redirect('/prototypes/site-review/v5/assessment-activity');
-  } else if (radioResponse === 'yes') {
-    return res.redirect('/prototypes/site-review/v5/assessment-activity-enter-mot-number');
-  } else {
-    return res.redirect('/prototypes/site-review/v5/assessment-activity-choose-reason');
-  }
+export const getShortcomings = (req, res) => {
+  return res.render('./prototypes/compare-tests/v7/shortcomings', { viewData: req.session.viewData });
 };

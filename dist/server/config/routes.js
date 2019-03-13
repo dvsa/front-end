@@ -23,6 +23,10 @@ var _createAccount = require('../controllers/create-account');
 
 var createAccountController = _interopRequireWildcard(_createAccount);
 
+var _compareTests = require('../controllers/compare-tests/compare-tests');
+
+var compareTestsController = _interopRequireWildcard(_compareTests);
+
 var _suspendTesters = require('../controllers/annual-assessment-tool/suspend-testers');
 
 var suspendTestersController = _interopRequireWildcard(_suspendTesters);
@@ -184,6 +188,24 @@ router.get('/prototypes/vsi-during-test/inspection', [vsiDuringTestController.in
 router.get('/prototypes/vsi-during-test/advice', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getAdvice]);
 router.get('/prototypes/vsi-during-test/odometer', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getOdometer]);
 router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
+
+// Compare tests
+router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);
+router.get('/prototypes/compare-tests/v7/overview', compareTestsController.getOverview);
+router.get('/prototypes/compare-tests/v7/record-outcome', compareTestsController.getRecordOutcome);
+router.get('/prototypes/compare-tests/v7/assess-difference/:defectIndex', compareTestsController.getDifference);
+router.get('/prototypes/compare-tests/v7/shortcomings', compareTestsController.getShortcomings);
+router.get('/prototypes/compare-tests/v7/summary', compareTestsController.getSummary);
+
+router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [compareTestsController.checkCompletion, compareTestsController.postDifference]);
+
+router.post('/prototypes/compare-tests/v7/record-outcome', compareTestsController.postRecordOutcome);
+router.post('/prototypes/compare-tests/v7/shortcomings', compareTestsController.postShortcomings);
+
+/* router.get('/prototypes/compare-tests/v7/assess-difference-1', compareTestsController.getDifference1);
+router.get('/prototypes/compare-tests/v7/assess-difference-2', compareTestsController.getDifference2);
+router.get('/prototypes/compare-tests/v7/assess-difference-3', compareTestsController.getDifference3);
+ */
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

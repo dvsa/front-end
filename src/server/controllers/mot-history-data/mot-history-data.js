@@ -3,39 +3,41 @@ import { isEmpty } from '../vts-changes/helpers/helpers.js';
 
 export const initViewData = (req, res, next) => {
   req.session.viewData = req.session.viewData || initData();
+  req.session.viewData.targetCert = 'pass';
+  if(req.query.cert == 'fail' ){
+    req.session.viewData.targetCert = 'fail';
+  }
   next();
 };
 
-export const getPrevUrl = (req, res, next) => {
-  const fullPreviousUrl = req.header('Referer');
-  req.session.viewData = req.session.viewData || initData();
-  req.session.viewData.prevUrl = '/' + fullPreviousUrl.substring(fullPreviousUrl.indexOf('/prototypes') + 1);
+const validV5c = '12345';
+
+export const checkV5c = (req, res, next) => {
+  req.session.viewData.invalid = false;
+  if ( req.body.v5c !== validV5c) {
+    req.session.viewData.invalid = true;
+  }
   next();
 };
+
+export const getError = (req, res) => {
+  let version = req.params.version;
+  console.log(req.session.viewData)
+  return res.render(`prototypes/mot-history-data/${version}/enter-v5c-error`, { viewData: req.session.viewData });
+}
 
 export const postV5c = (req, res, next) => {
-  console.log(req.session.viewData)
-  return res.render('prototypes/mot-history-data/cvs/download-certificate', { viewData: req.session.viewData });
-};
- 
- 
-/**
- * POST Middleware - Take inputted odometer reading and persist on inspection sheet #4
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const postOdometer = (req, res) => {
-  req.session.viewData.odometer = req.body.odometer;
-  return res.redirect(`${req.session.viewData.prevUrl}`);
-};
+  req.session.viewData.v5c = req.body.v5c;
+  let version = req.params.version;
 
-/**
- * GET Middleware - Persist entered odometer reading when returning to /odometer
- *
- * @param {Express.Request} req - Express request object
- * @param {Express.Response} res - Express response object
- */
-export const getOdometer = (req, res) => {
-  return res.render('./prototypes/vsi-during-test/odometer/index', { viewData: req.session.viewData });
+  if (req.session.viewData.invalid) { 
+    req.session.viewData.v5c = req.body.v5c;
+    return res.redirect(`/prototypes/mot-history-data/${version}/enter-v5c-error`);
+  }
+  console.log(req.session.targetCert)
+  if (req.session.viewData.targetCert !== 'fail'){
+    return res.render(`prototypes/mot-history-data/${version}/download-certificate`, { viewData: req.session.viewData });
+  }
+  return res.render(`prototypes/mot-history-data/${version}/download-certificate-fail`, { viewData: req.session.viewData });
+
 };

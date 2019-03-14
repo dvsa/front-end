@@ -12,7 +12,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <form class="form">
+      <form class="form" action="enter-v5c" method="POST">
         <a class="link-back" href="history-results-audi">Back</a>
         <h1 class="form-title heading-large">
           Download your MOT test certificate
@@ -21,7 +21,7 @@
         <div class="form-group">
           <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
           <span class="form-hint">For example, 13451067289</span>
-          <input type="text" class="form-control" id="full-name" style="text-transform: uppercase;">
+          <input type="text" class="form-control" name="v5c" class="govuk-input govuk-!-width-one-half" id="v5c" style="text-transform: uppercase;">
         </div>
 
         <div style="margin-bottom: 20px">
@@ -37,11 +37,10 @@
         </details>
         </div>
 
-        <div class="form-group">
-          <a class="button" href="download-certificate" role="button">Continue</a>
+        <div class="govuk-form-group">
+          <button class="govuk-button" type="submit" role="button">Continue</button> 
         </div>
-
-
+        
       </form>
 
     </div>

@@ -12,6 +12,7 @@ import * as brakeTestController from '../controllers/brake-test/brake-test';
 import * as messagingController from '../controllers/mts-messages';
 import * as vtsChangeController from '../controllers/vts-changes';
 import * as vsiDuringTestController from '../controllers/vsi-during-test';
+import * as mothData from '../controllers/mot-history-data';
 import * as recalls from '../controllers/recalls';
 import * as mothController from '../controllers/moth';
 import * as PrototypeAuth from '../middlewares/authentication';
@@ -165,6 +166,10 @@ router.get('/prototypes/vsi-during-test/inspection', [vsiDuringTestController.in
 router.get('/prototypes/vsi-during-test/advice', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getAdvice]);
 router.get('/prototypes/vsi-during-test/odometer', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getOdometer]);
 router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
+
+// MOTH Data
+router.post('/prototypes/mot-history-data/cvs/enter-v5c', mothData.postV5c)
+router.get('/prototypes/mot-history-data/cvs/enter-v5c', mothData.initViewData)
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

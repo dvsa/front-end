@@ -69,8 +69,7 @@
                                       <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
                                       <span class="form-hint">For example, 13451067289</span>
                                          {% if invalid %}
-                                            <span class="error-message">V5C number must have 11 numbers</span>
-                                            <span class="error-message">V5C number cannot be empty</span>
+                                            <span class="error-message">Check that you entered the V5C number correctly</span>
                                         {% endif %}
                                         <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
                                         <button class="govuk-button" type="submit" role="button">Continue</button> 

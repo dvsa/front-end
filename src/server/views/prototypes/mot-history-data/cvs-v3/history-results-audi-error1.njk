@@ -6,6 +6,25 @@
 
 
 <main id="content" role="main"> <a class="link-back" href="enter-vrm">Back</a>
+
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-example-heading-one" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-example-heading-one">
+            There was a problem
+        </h2>
+            <ul class="error-summary-list">
+                <li>
+                <a href="#v5c-entry">
+                    V5C number must have 11 numbers
+                </a>
+                </li>
+                <li>
+                <a href="#v5c-entry">
+                    V5C number cannot be empty
+                </a>
+                </li>
+            </ul>
+    </div>
+
     <h1 class="heading-xlarge" style="margin-bottom: 20px;"> <span class="heading-secondary">GU09TRS</span>Audi TT</h1>
     <p><a href="enter-vrm">Check another vehicle</a></p>
     <div class="grid-row">
@@ -66,8 +85,7 @@
                                     <div class="form-group form-group-error">
                                       <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
                                       <span class="form-hint">For example, 13451067289</span>
-                                      <span class="error-message">V5C number must have 11 numbers</span>
-                                      <span class="error-message">V5C number cannot be empty</span>
+                                      <span class="error-message">Check that you entered the V5C number correctly</span>
                                       <input type="text" value="{{ viewData.v5c }}" class="form-control" name="v5c" id="v5c" style="text-transform: uppercase;">
                                     </div>
                                 </form>

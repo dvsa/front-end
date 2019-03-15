@@ -6,7 +6,7 @@
 export const initData = () => {
   return {
     v5c: '',
-    prevUrl: '',
+    version: 'cvs',
     targetCert: 'pass',
     invalid: false,
   };

@@ -13,12 +13,12 @@
         </h2>
             <ul class="error-summary-list">
                 <li>
-                <a href="#v5c-entry">
+                <a href="#v5c">
                     V5C number must have 11 numbers
                 </a>
                 </li>
                 <li>
-                <a href="#v5c-entry">
+                <a href="#v5c">
                     V5C number cannot be empty
                 </a>
                 </li>
@@ -55,7 +55,7 @@
   </div>
   <div class="js-accordion__wrapper">
     <div class="js-accordion__section" data-section-category="category-three">
-      <div class="js-accordion__header">
+      <div class="js-accordion__header" id="accordion-error">
         <div class="js-accordion__header-left">
           <h2 class="js-accordion__title">
             <button class="js-accordion__title-button">
@@ -70,25 +70,29 @@
           <button class="js-accordion__header-icon"></button>
         </div>
       </div>
-      <div class="js-accordion__content">
-        
+      <div class="js-accordion__content" style="display: block;">
+         {% set invalid = viewData.invalid %}
                   <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
-                        <details class="u-space-t15" role="group" closed="">
+                        <details class="u-space-t15" role="group" open>
                             <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
                                 <span class="summary">Download MOT certificate</span>
                             </summary>
                              <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
-                                <form class="form" action="enter-v5c" method="POST">
-                                    <div class="form-group form-group-error">
-                                      <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
-                                      <span class="form-hint">For example, 13451067289</span>
-                                      <span class="error-message">Check that you entered the V5C number correctly</span>
-                                      <input type="text" value="{{ viewData.v5c }}" class="form-control" name="v5c" id="v5c" style="text-transform: uppercase;">
-                                    </div>
-                                </form>
+                                 <form class="form-group {{  " form-group-error" if invalid }}" action="enter-v5c?targetCert=pass" method="POST"> 
+                                <div class="form-group">
+                                    <input type="hidden" value="pass" name="targetCert" id="targetCert">
+                                    <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
+                                    <span class="form-hint">For example, 13451067289</span>
+                                        {% if invalid %}
+                                        <span class="error-message">Check that you entered the V5C number correctly</span>
+                                        {% endif %}
+                                    <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
+                                    <button class="govuk-button" type="submit" role="button">Continue</button> 
+                                </div>
+                            </form>
                             </div>
                         </details>
                         

@@ -1,18 +1,28 @@
-import { initData } from './initData.js';
-import { isEmpty } from '../vts-changes/helpers/helpers.js';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.postV5c = exports.getError = exports.checkV5c = exports.initViewData = undefined;
+
+var _initData = require('./initData.js');
+
+var _helpers = require('../vts-changes/helpers/helpers.js');
+
 const validV5c = '12345';
 
-export const initViewData = (req, res, next) => {
-  req.session.viewData = req.session.viewData || initData();
+const initViewData = exports.initViewData = (req, res, next) => {
+  req.session.viewData = req.session.viewData || (0, _initData.initData)();
   req.session.viewData.targetCert = 'pass';
   console.log('init view data');
+  console.log(req.session.viewData);
   if (req.query.cert == 'fail') {
     req.session.viewData.targetCert = 'fail';
   }
   next();
 };
 
-export const checkV5c = (req, res, next) => {
+const checkV5c = exports.checkV5c = (req, res, next) => {
   req.session.viewData.invalid = false;
   if (req.body.v5c !== validV5c) {
     req.session.viewData.invalid = true;
@@ -20,7 +30,7 @@ export const checkV5c = (req, res, next) => {
   next();
 };
 
-export const getError = (req, res) => {
+const getError = exports.getError = (req, res) => {
   let version = req.session.viewData.version;
   let targetCert = req.session.viewData.targetCert;
   // Version 3 only
@@ -32,11 +42,13 @@ export const getError = (req, res) => {
   return res.render(`prototypes/mot-history-data/${version}/enter-v5c-error`, { viewData: req.session.viewData });
 };
 
-export const postV5c = (req, res, next) => {
+const postV5c = exports.postV5c = (req, res, next) => {
   let version = req.params.version;
   let v5c = req.body.v5c;
   let targetCert = req.session.viewData.targetCert;
- 
+
+  console.log('body', req.body);
+
   req.session.viewData.v5c = v5c;
   req.session.viewData.version = version;
 
@@ -49,12 +61,15 @@ export const postV5c = (req, res, next) => {
     return res.redirect(`/prototypes/mot-history-data/${version}/download-certificate`);
   }
 
-  // Version 3
+  // Version 3 
   if (version.indexOf('3') !== -1) {
+
     // ...and has error
     if (req.session.viewData.invalid) {
       req.session.viewData.v5c = req.body.v5c;
       req.session.viewData.targetCert = 'pass';
+      console.log('redirecting to audi error1');
+      console.log(req.session.viewData.targetCert);
       return res.redirect(`/prototypes/mot-history-data/${version}/history-results-audi-error1`);
     }
     // Get pass/fail results

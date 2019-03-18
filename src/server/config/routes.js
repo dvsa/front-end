@@ -169,10 +169,16 @@ router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.post
 
 // MOTH Data
 router.post('/prototypes/mot-history-data/:version/enter-v5c', [mothData.checkV5c, mothData.postV5c]);
+
+router.get('/prototypes/mot-history-data/:version/history-results-audi', mothData.initViewData);
 router.get('/prototypes/mot-history-data/:version/enter-v5c', mothData.initViewData);
 router.get('/prototypes/mot-history-data/:version/enter-v5c-fail', mothData.initViewData);
-router.get('/prototypes/mot-history-data/:version/enter-v5c-error', mothData.getError);
 
+router.get('/prototypes/mot-history-data/:version/enter-v5c-error', mothData.getError);
+router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error1', mothData.getError);
+router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error2', mothData.getError);
+
+// Diret to error via v5c fn
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
 

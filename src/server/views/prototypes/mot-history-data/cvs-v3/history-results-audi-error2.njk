@@ -6,6 +6,25 @@
 
 
 <main id="content" role="main"> <a class="link-back" href="enter-vrm">Back</a>
+
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-example-heading-one" tabindex="-1">
+        <h2 class="heading-medium error-summary-heading" id="error-summary-example-heading-one">
+            There was a problem
+        </h2>
+            <ul class="error-summary-list">
+                <li>
+                <a href="#v5c2">
+                    V5C number must have 11 numbers
+                </a>
+                </li>
+                <li>
+                <a href="#v5c2">
+                    V5C number cannot be empty
+                </a>
+                </li>
+            </ul>
+    </div>
+
     <h1 class="heading-xlarge" style="margin-bottom: 20px;"> <span class="heading-secondary">GU09TRS</span>Audi TT</h1>
     <p><a href="enter-vrm">Check another vehicle</a></p>
     <div class="grid-row">
@@ -51,32 +70,28 @@
           <button class="js-accordion__header-icon"></button>
         </div>
       </div>
-      <div class="js-accordion__content">
-      {% set invalid  = viewData.invalid %}
-        
+      <div class="js-accordion__content" style="display: block;">
+         {% set invalid = viewData.invalid %}
                   <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
-                        <details class="u-space-t15" role="group" {{  "open" if invalid }}>
-                            <summary role="button" aria-controls="test-location-details-0" aria-expanded="">
+                        <details class="u-space-t15" role="group">
+                            <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
                                 <span class="summary">Download MOT certificate</span>
                             </summary>
-                             <div class="panel panel-border-narrow" aria-hidden="false" id="test-location-details-0" style="display: block;">
-
-                            <form class="form-group {{  " form-group-error" if invalid }}" action="enter-v5c?targetCert=pass" method="POST"> 
+                             <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
+                                <form class="form-group" action="enter-v5c?targetCert=pass" method="POST"> 
                                 <div class="form-group">
+                                    <input type="hidden" value="pass" name="targetCert" id="targetCert">
                                     <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
                                     <span class="form-hint">For example, 13451067289</span>
-                                        {% if invalid %}
-                                        <span class="error-message">Check that you entered the V5C number correctly</span>
-                                    {% endif %}
                                     <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
                                     <button class="govuk-button" type="submit" role="button">Download test record</button> 
                                 </div>
                             </form>
-                    </div>
-                    </details>
+                            </div>
+                        </details>
                         
                         
                     </div>
@@ -123,12 +138,12 @@
                             </ul>
                         </h1>
                         <details class="u-space-t15" role="group">
-                            <summary role="button" aria-controls="details-content-1" aria-expanded="false">
-                                <span class="summary">What are advisories?</span>
-                            </summary>
-                            <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-1" style="display: none;">
-                                <p>Advisories are given for guidance. Some of these may need to be monitored in case they become more serious and need immediate repairs.</p>
-                            </div>
+                                <summary role="button" aria-controls="details-content-1" aria-expanded="false">
+                                    <span class="summary">What are advisories?</span>
+                                </summary>
+                                <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-1" style="display: none;">
+                                    <p>Advisories are given for guidance. Some of these may need to be monitored in case they become more serious and need immediate repairs.</p>
+                                </div>
                         </details>
                     </div>
                 </div>
@@ -137,22 +152,21 @@
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #B10E1E;">FAIL</h1>
-                        <details class="u-space-t15" role="group" closed="">
+                        <details class="u-space-t15" role="group" open>
                             <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
                                 <span class="summary">Download MOT certificate</span>
                             </summary>
                              <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
-                                  <form class="form-group {{  " form-group-error" if invalid }}" action="enter-v5c?targetCert=fail" method="POST"> 
-                                <div class="form-group">
-                                    <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
-                                    <span class="form-hint">For example, 13451067289</span>
-                                        {% if invalid %}
-                                        <span class="error-message">Check that you entered the V5C number correctly</span>
-                                    {% endif %}
-                                    <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
-                                    <button class="govuk-button" type="submit" role="button">Download test record</button> 
-                                </div>
-                            </form>
+                                <form class="form-group form-group-error" action="enter-v5c?targetCert=fail" method="POST"> 
+                                    <div class="form-group">
+                                        <input type="hidden" value="fail" name="targetCert" id="targetCert">
+                                        <label class="form-label-bold" id="v5c2" for="v5c">Enter V5C reference number</label>
+                                        <span class="form-hint">For example, 13451067289</span>
+                                            <span class="error-message">Check that you entered the V5C number correctly</span>
+                                        <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
+                                        <button class="govuk-button" type="submit" role="button">Download test record</button> 
+                                    </div>
+                                </form>
                             </div>
                         </details>
                     </div>

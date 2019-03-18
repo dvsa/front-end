@@ -26,9 +26,11 @@ export const getError = (req, res) => {
   // Version 3 only
   if (version.indexOf('3') !== -1 && targetCert == 'pass') {
     req.session.viewData.targetCert = 'pass';
-    console.log(req.session.viewData);
     return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error1`, { viewData: req.session.viewData });
+  } else if (targetCert == 'fail') {
+    return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error2`, { viewData: req.session.viewData });
   }
+
   return res.render(`prototypes/mot-history-data/${version}/enter-v5c-error`, { viewData: req.session.viewData });
 };
 
@@ -54,9 +56,14 @@ export const postV5c = (req, res, next) => {
     // ...and has error
     if (req.session.viewData.invalid) {
       req.session.viewData.v5c = req.body.v5c;
-      req.session.viewData.targetCert = 'pass';
+      let targetCert = req.query.targetCert; 
+      req.session.viewData.targetCert = targetCert
+      if (targetCert !== 'pass'){
+        return res.redirect(`/prototypes/mot-history-data/${version}/history-results-audi-error2`);
+      }
       return res.redirect(`/prototypes/mot-history-data/${version}/history-results-audi-error1`);
     }
+
     // Get pass/fail results
     if (req.query.targetCert === 'fail') {
       return res.redirect(`/prototypes/mot-history-data/${version}/download-certificate-fail`);

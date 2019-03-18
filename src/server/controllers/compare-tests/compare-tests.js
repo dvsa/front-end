@@ -13,5 +13,14 @@ import { getLastInUrl } from './helpers/getLastInUrl.js';
 export const getStart = (req, res) => {
   // Resets session data if doesn't exist
   req.session.viewData = req.session.viewData || initViewData();
-  return res.render('prototypes/compare-test/demo', { viewData: req.session.viewData });
+  console.log('init data');
+  console.log(req.session.viewData);
+  return res.render('./prototypes/compare-tests/demo/start', { viewData: req.session.viewData });
+};
+
+export const getOverview = (req, res) => {
+  // Resets session data if doesn't exist
+  req.session.viewData = req.session.viewData || initViewData();
+  console.log(req.session.viewData)
+  return res.render('./prototypes/compare-tests/demo/overview', { viewData: req.session.viewData });
 };

@@ -4,7 +4,7 @@ import * as mainController from '../controllers/main.controller';
 import * as miscController from '../controllers/misc.controller';
 import * as recallsController from '../controllers/api/v1/recalls.controller';
 import * as createAccountController from '../controllers/create-account';
-import * as compareTestsController from '../controllers/compare-tests';
+import * as compareTestsController from '../controllers/compare-tests/compare-tests';
 import * as suspendTestersController from '../controllers/annual-assessment-tool/suspend-testers';
 import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
@@ -169,6 +169,7 @@ router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.post
 
 // Compare tests
 router.get('/prototypes/compare-tests/demo', compareTestsController.getStart);
+router.get('/prototypes/compare-tests/demo/overview', compareTestsController.getOverview);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

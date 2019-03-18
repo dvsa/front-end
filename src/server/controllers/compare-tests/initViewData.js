@@ -5,96 +5,58 @@
  */
 export const initViewData = () => {
   return {
-    testerDetails: {
-      initialDate: '20 July 2018',
-      testDay: '',
-      testMonth: '',
-      testYear: '',
-      examinerId: '',
-      testerRepId: '',
-      testerName: '',
-      testerRole: '',
-      twoExaminers: 'no',
-      errors: [],
+    inspection: {
+      tester: 'John Morris, MORR6743',
+      regNumber: 'FL18 JIU',
+      vtsNumber: 'VTS0071',
+      vtsName: 'RS Tuning Ltd',
     },
-    activity: {
-      isCompleted: false,
-      activityIsNotPeformed: false,
-      activityIsPerformed: false,
-      motTestNum: '',
-      formData: {
-        activityPerformed: '',
-        testNum: '',
-      },
-      errors: [],
+    score: 0,
+    outcome: {
+      type: '',
+      comment: '',
+      points: 0,
     },
-    compliance: {
-      commitedLevel: '',
-      commitedComment: '',
-      errors: [],
-      satisfactory: {
-        isChecked: false,
-        comment: '',
-      },
-      improve: {
-        isChecked: false,
-        comment: '',
-      },
-      unsatisfactory: {
-        isChecked: false,
-        comment: '',
-      },
+    shortcomings: {
+      comment: '',
+      points: 0,
     },
-    'management-and-quality': {
-      commitedLevel: '',
-      commitedComment: '',
-      errors: [],
-      satisfactory: {
-        isChecked: false,
-        comment: '',
-      },
-      improve: {
-        isChecked: false,
-        comment: '',
-      },
-      unsatisfactory: {
-        isChecked: false,
-        comment: '',
-      },
+    defects: [],
+    defect1a: {
+      name: 'Incorrect item',
+      severity: 'Minor',
+      position: 'Nearside front',
+      points: 0,
     },
-    people: {
-      commitedLevel: '',
-      commitedComment: '',
-      errors: [],
-      satisfactory: {
-        isChecked: false,
-        comment: '',
-      },
-      improve: {
-        isChecked: false,
-        comment: '',
-      },
-      unsatisfactory: {
-        isChecked: false,
-        comment: '',
-      },
+    defect2a: {
+      name: 'Incorrect item',
+      severity: 'Minor',
+      position: 'Nearside front',
+      points: 0,
     },
-    premises: {
-      commitedLevel: '',
-      commitedComment: '',
-      errors: [],
-      satisfactory: {
-        isChecked: false,
-        comment: '',
-      },
-      improve: {
-        isChecked: false,
-        comment: '',
-      },
-      unsatisfactory: {
-        isChecked: false,
-        comment: '',
-      },
+    defect3a: {
+      name: 'Incorrect item',
+      position: 'Offside rear',
+      severity: 'Major',
+      points: 0,
+    },
+    defect1b: {
+      name: 'Incorrect item',
+      severity: 'Minor',
+      position: 'Nearside front',
+      points: 0,
+    },
+    defect2b: {
+      name: 'Incorrect item',
+      severity: 'Minor',
+      position: 'Nearside front',
+      points: 0,
+    },
+    defect3b: {
+      name: 'Incorrect item',
+      position: 'Offside rear',
+      severity: 'Major',
+      points: 0,
     },
   };
 };

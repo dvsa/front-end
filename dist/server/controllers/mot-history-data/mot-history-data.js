@@ -9,7 +9,7 @@ var _initData = require('./initData.js');
 
 var _helpers = require('../vts-changes/helpers/helpers.js');
 
-const validV5c = '12345';
+const validV5c = '61943311568';
 
 const initViewData = exports.initViewData = (req, res, next) => {
   req.session.viewData = req.session.viewData || (0, _initData.initData)();

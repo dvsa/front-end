@@ -21,6 +21,6 @@ export const getStart = (req, res) => {
 export const getOverview = (req, res) => {
   // Resets session data if doesn't exist
   req.session.viewData = req.session.viewData || initViewData();
-  console.log(req.session.viewData)
+  console.log(req.session.viewData);
   return res.render('./prototypes/compare-tests/demo/overview', { viewData: req.session.viewData });
 };

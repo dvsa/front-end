@@ -48,7 +48,8 @@
     </tr>
 
     {# Loop through all the users 
-      RAF NOTES
+      RAF NOTES.
+      Defects and severities are not necessarily congruent; nor are Manual refs. May need to be edited.
 
       Docs for Nunjucks templates: https://mozilla.github.io/nunjucks/templating.html
       
@@ -58,15 +59,42 @@
 
     {% for defect in viewData.defects %}
       <tr>
-        <th> {{ defect.category }} <span class="badge--info">Difference</span></th>
-        <td style="background-color: #dee0e2; padding-left: 10px;">None</td>
+        <th>
+          {{ defect.category }}
+          <span class="badge{{ "--info" if defect.hasDifference }}">
+          {{ "Difference" if defect.hasDifference else "Match" }}</span>
+        </th>
+          {% set hasDifference = defect.hasDifference %}
+        
+          {% if hasDifference %}
+            <td style="background-color: #dee0e2; padding-left: 10px;">
+            {{ defect.difference.name }}
+
+              {% if defect.difference.name !== "None" %}
+              [<a href="#" title="Check defect documents">{{ defect.difference.manualsRef }}</a>]
+              <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ defect.difference.position }}</span>
+              <span class="badge--{{ "warn" if defect.difference.severity == "Minor" else "alert" }}">
+                {{ defect.severity }}
+              </span>
+              {% endif %}
+
+            </td>
+          {% else %}
+            <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">
+              {{ defect.name }} [<a href="#" title="Check defect documents">{{ defect.manualsRef }}</a>]
+              <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ defect.difference.position }}</span>
+              <span class="badge--{{ "warn" if defect.difference.severity == "Minor" else "alert" }}">
+                {{ defect.severity }}
+              </span>
+            </td>
+          {% endif %}
+        
         <td style="font-weight: bold; padding-left: 10px;">
-            {{ defect.name }}[<a href="#" title="Check defect documents">{{ defect.manualsRef }}</a>]
-            <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ defect.location }}</span>
-            {#  
-             RAF:  Use correct class below depending on defect.severity, eg badge--warn or badge--alert
-             #}
-            <span class="badge--warn">{{ defect.severity }}</span>
+            {{ defect.name }} [<a href="#" title="Check defect documents">{{ defect.manualsRef }}</a>]
+            <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ defect.position }}</span>
+            <span class="badge--{{ "warn" if defect.severity == "Minor" else "alert" }}">
+              {{ defect.severity }}
+            </span>
         </td>
         <td>
             {#  
@@ -75,7 +103,7 @@
             <form>
               <fieldset>
                 <div class="multiple-choice" data-target="disregard-defect-1"> 
-                  <label for="waste-type-1"><a href="#">Record defect</a></label>
+                  <label for="waste-type-1"><a href="#">Edit record</a></label>
                 </div>
               </fieldset>
             </form>
@@ -84,13 +112,14 @@
     {% else %} 
       <tr><p>No viewdata</p></tr> 
     {% endfor %}
+
   </tbody>
 </table>
 
 <div style="margin-top: 40px;">
-    <a class="button" href="assess-difference-defect-1">Continue</a>
-    <br/>
-    <a href="test-comparison">Back</a>
+    {% set allCompleted = viewData.completedReviewCount === 3 %}
+    <a class="button" {{ "disabled" if not allCompleted }} href="assess-difference-defect-1">Continue</a>
+    <p><a href="/prototypes/compare-tests/demo">Back</a></p>
 </div>
 
 

@@ -81,7 +81,7 @@
                                 <span class="summary">Download MOT certificate</span>
                             </summary>
                              <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
-                                 <form class="form-group {{  " form-group-error" if invalid }}" action="enter-v5c?targetCert=pass" method="POST"> 
+                                <form class="form-group {{  " form-group-error" if invalid }}" action="enter-v5c?targetCert=pass" method="POST"> 
                                 <div class="form-group">
                                     <input type="hidden" value="pass" name="targetCert" id="targetCert">
                                     <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
@@ -90,7 +90,7 @@
                                         <span class="error-message">Check that you entered the V5C number correctly</span>
                                         {% endif %}
                                     <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
-                                    <button class="govuk-button" type="submit" role="button">Continue</button> 
+                                    <button class="govuk-button" type="submit" role="button">Download test record</button> 
                                 </div>
                             </form>
                             </div>
@@ -160,10 +160,18 @@
                                 <span class="summary">Download MOT certificate</span>
                             </summary>
                              <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
-                                <label for="v5c-input">Enter latest V5C number</label>
-                                    <span class="form-hint">11 digits from the vehicle log book</span>
-                                <input class="form-control" id="v5c-input">
-                                <a class="button" href="download-certificate-fail" role="button" style="margin-top: 10px;">Download test record</a>
+                                <form class="form-group {{  " form-group-error" if invalidFail }}" action="enter-v5c?targetCert=fail" method="POST"> 
+                                    <div class="form-group">
+                                        <input type="hidden" value="pass" name="targetCert" id="targetCert">
+                                        <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
+                                        <span class="form-hint">For example, 13451067289</span>
+                                            {% if invalidFail %}
+                                            <span class="error-message">Check that you entered the V5C number correctly</span>
+                                            {% endif %}
+                                        <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
+                                        <button class="govuk-button" type="submit" role="button">Download test record</button> 
+                                    </div>
+                                </form>
                             </div>
                         </details>
                     </div>

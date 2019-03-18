@@ -1,6 +1,6 @@
 import { initData } from './initData.js';
 import { isEmpty } from '../vts-changes/helpers/helpers.js';
-const validV5c = '12345';
+const validV5c = '61943311568';
 
 export const initViewData = (req, res, next) => {
   req.session.viewData = req.session.viewData || initData();

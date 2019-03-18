@@ -14,6 +14,7 @@ export const initViewData = () => {
     },
     totalDifferences: 3,
     completedReviewCount: 0,
+    allComplete: false,
     score: 0,
     outcome: {
       type: '',
@@ -33,6 +34,7 @@ export const initViewData = () => {
         position: 'Nearside front',
         points: 0,
         hasDifference: true,
+        isResolved: true,
         difference: {
           name: 'None',
         },
@@ -45,6 +47,7 @@ export const initViewData = () => {
         position: 'Nearside front',
         points: 0,
         hasDifference: true,
+        isResolved: false,
         difference: {
           name: 'None',
         },
@@ -57,6 +60,7 @@ export const initViewData = () => {
         position: 'Nearside front',
         points: 0,
         hasDifference: true,
+        isResolved: false,
         difference: {
           name: 'None',
         },
@@ -69,6 +73,7 @@ export const initViewData = () => {
         position: 'Nearside rear',
         points: 0,
         hasDifference: false,
+        isresolved: true,
         difference: {
           name: 'Daytime running lamp obviously incorrectly positioned',
           category: 'Lamps',

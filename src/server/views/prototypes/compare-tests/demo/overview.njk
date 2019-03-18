@@ -49,6 +49,11 @@
 
     {# Loop through all the users 
       RAF NOTES.
+
+      To do:
+      * Linking to views from overview
+      * Include points from data model to overview
+
       Defects and severities are not necessarily congruent; nor are Manual refs. May need to be edited.
 
       Docs for Nunjucks templates: https://mozilla.github.io/nunjucks/templating.html
@@ -64,8 +69,7 @@
           <span class="badge{{ "--info" if defect.hasDifference }}">
           {{ "Difference" if defect.hasDifference else "Match" }}</span>
         </th>
-          {% set hasDifference = defect.hasDifference %}
-        
+          {% set hasDifference = defect.hasDifference %} 
           {% if hasDifference %}
             <td style="background-color: #dee0e2; padding-left: 10px;">
             {{ defect.difference.name }}
@@ -77,7 +81,6 @@
                 {{ defect.severity }}
               </span>
               {% endif %}
-
             </td>
           {% else %}
             <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">
@@ -96,17 +99,18 @@
               {{ defect.severity }}
             </span>
         </td>
-        <td>
-            {#  
-              RAF: No need to use a form; just a link to a route; pick it up with a route for 'get' in routes.js
-            #}
-            <form>
-              <fieldset>
-                <div class="multiple-choice" data-target="disregard-defect-1"> 
-                  <label for="waste-type-1"><a href="#">Edit record</a></label>
-                </div>
-              </fieldset>
-            </form>
+        <td> 
+        {% if defect.hasDifference %}
+            {% if defect.isResolved %}
+              <a href="#">
+                 Change
+              </a>
+            {% else %}
+              <a href="#">
+                Record defect
+              </a>
+            {% endif %} 
+        {% endif %}
         </td>
       </tr>
     {% else %} 
@@ -117,12 +121,8 @@
 </table>
 
 <div style="margin-top: 40px;">
-    {% set allCompleted = viewData.completedReviewCount === 3 %}
-    <a class="button" {{ "disabled" if not allCompleted }} href="assess-difference-defect-1">Continue</a>
+    <a class="button" {{ "disabled" if not viewData.allComplete}} href="assess-difference-defect-1">Continue</a>
     <p><a href="/prototypes/compare-tests/demo">Back</a></p>
 </div>
-
-
-
 
 {% endblock %}

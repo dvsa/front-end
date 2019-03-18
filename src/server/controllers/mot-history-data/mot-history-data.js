@@ -26,12 +26,11 @@ export const getError = (req, res) => {
   // Version 3 only
   if (version.indexOf('3') !== -1 && targetCert == 'pass') {
     req.session.viewData.targetCert = 'pass';
-    console.log(req.session.viewData);
     return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error1`, { viewData: req.session.viewData });
   } else if (targetCert == 'fail') {
     return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error2`, { viewData: req.session.viewData });
   }
-  
+
   return res.render(`prototypes/mot-history-data/${version}/enter-v5c-error`, { viewData: req.session.viewData });
 };
 

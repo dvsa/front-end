@@ -56,9 +56,9 @@ export const postV5c = (req, res, next) => {
     // ...and has error
     if (req.session.viewData.invalid) {
       req.session.viewData.v5c = req.body.v5c;
-      let targetCert = req.query.targetCert; 
-      req.session.viewData.targetCert = targetCert
-      if (targetCert !== 'pass'){
+      let targetCert = req.query.targetCert;
+      req.session.viewData.targetCert = targetCert;
+      if (targetCert !== 'pass') {
         return res.redirect(`/prototypes/mot-history-data/${version}/history-results-audi-error2`);
       }
       return res.redirect(`/prototypes/mot-history-data/${version}/history-results-audi-error1`);

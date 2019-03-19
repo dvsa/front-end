@@ -53,10 +53,13 @@
       <td>Defect</td>
       <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
       <td style="padding-left: 10px; font-weight: bold;">
-        All position lamps light intensity obviously reduced [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+        {{ viewData.defects[0]['name'] }} [<a href="#" title="Check defect categorisation">{{ viewData.defects[0]['manualsRef'] }}</a>]
         <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;"></span>
-        <span class="key-value-list__meta" style="margin-bottom: 5px;">Lights are almost invisible</span>
-        <span class="badge--warn">Minor</span>
+        <span class="key-value-list__meta" style="margin-bottom: 5px;">{{ viewData.defects[0]['comment'] }}</span>
+        <span class="badge--{{ "warn" if viewData.defects[0]['severity'] == "Minor" else "alert" }}">
+                {{ viewData.defects[0]['severity'] }}
+              </span>
+              
     </td>
       <td></td>
     </tr>

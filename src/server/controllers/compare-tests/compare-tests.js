@@ -15,12 +15,33 @@ export const getStart = (req, res) => {
   req.session.viewData = req.session.viewData || initViewData();
   console.log('init data');
   console.log(req.session.viewData);
-  return res.render('./prototypes/compare-tests/demo/start', { viewData: req.session.viewData });
+  return res.render('./prototypes/compare-tests/v7/start', { viewData: req.session.viewData });
 };
 
 export const getOverview = (req, res) => {
   // Resets session data if doesn't exist
   req.session.viewData = req.session.viewData || initViewData();
   console.log(req.session.viewData);
-  return res.render('./prototypes/compare-tests/demo/overview', { viewData: req.session.viewData });
+  return res.render('./prototypes/compare-tests/v7/overview', { viewData: req.session.viewData });
+};
+
+export const getDifference1 = (req, res) => {
+  // Resets session data if doesn't exist
+  req.session.viewData = req.session.viewData || initViewData();
+  console.log(req.session.viewData);
+  return res.render('./prototypes/compare-tests/v7/assess-difference-1', { viewData: req.session.viewData });
+};
+
+export const getDifference2 = (req, res) => {
+  // Resets session data if doesn't exist
+  req.session.viewData = req.session.viewData || initViewData();
+  console.log(req.session.viewData);
+  return res.render('./prototypes/compare-tests/v7/assess-difference-2', { viewData: req.session.viewData });
+};
+
+export const getDifference3 = (req, res) => {
+  // Resets session data if doesn't exist
+  req.session.viewData = req.session.viewData || initViewData();
+  console.log(req.session.viewData);
+  return res.render('./prototypes/compare-tests/v7/assess-difference-3', { viewData: req.session.viewData });
 };

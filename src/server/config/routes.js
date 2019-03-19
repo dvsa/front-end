@@ -168,8 +168,11 @@ router.get('/prototypes/vsi-during-test/odometer', [vsiDuringTestController.getP
 router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
 
 // Compare tests
-router.get('/prototypes/compare-tests/demo', compareTestsController.getStart);
-router.get('/prototypes/compare-tests/demo/overview', compareTestsController.getOverview);
+router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);
+router.get('/prototypes/compare-tests/v7/overview', compareTestsController.getOverview);
+router.get('/prototypes/compare-tests/v7/assess-difference-1', compareTestsController.getDifference1);
+router.get('/prototypes/compare-tests/v7/assess-difference-2', compareTestsController.getDifference2);
+router.get('/prototypes/compare-tests/v7/assess-difference-3', compareTestsController.getDifference3);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

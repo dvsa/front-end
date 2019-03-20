@@ -46,21 +46,7 @@
       <td style="font-weight: bold; border-top: 0px; font-size: 32px; padding-left: 10px; background-color: #dee0e2;">{{ viewData.inspection.tester }} </td>
       <td style="font-weight: bold; border-top: 0px; font-size: 32px; padding-left: 10px;">{{ viewData.inspection.veName }}</td>
     </tr>
-
-    {# Loop through all the users 
-      RAF NOTES.
-
-      To do:
-      * Linking to views from overview
-      * Include points from data model to overview
-
-      Defects and severities are not necessarily congruent; nor are Manual refs. May need to be edited.
-
-      Docs for Nunjucks templates: https://mozilla.github.io/nunjucks/templating.html
-      
-      Loop over Viewdata - the model for which is in initViewData to pull out the details for each defect in the table!
-      Modify the data in initViewData if needed, but it's a good model to start with 
-    #}
+ 
 
     {% for defect in viewData.defects %}
       <tr>

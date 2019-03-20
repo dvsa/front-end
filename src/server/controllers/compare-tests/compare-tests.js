@@ -26,6 +26,14 @@ export const getOverview = (req, res) => {
   return res.render('./prototypes/compare-tests/v7/overview', { viewData: req.session.viewData });
 };
 
+
+export const getSummary = (req, res) => {
+  console.log(req.session.viewData);
+  console.log('summary')
+  return res.render('./prototypes/compare-tests/v7/case-summary', { viewData: req.session.viewData });
+};
+
+
 export const getDifference = (req, res) => {
   console.log(req.session.viewData);
   console.log(req.query.defectIndex);
@@ -33,17 +41,16 @@ export const getDifference = (req, res) => {
   return res.render('./prototypes/compare-tests/v7/assess-difference', { viewData: req.session.viewData });
 };
 
-export const postDifference = (req, res) => { 
+export const postDifference = (req, res) => {
   req.session.viewData.defectIndex = req.query.defectIndex;
   return res.redirect('./prototypes/compare-tests/v7/overview');
 };
 
 export const checkCompletion = (req, res, next) => {
-  req.session.viewData.allComplete = Array.from(req.session.viewData.defects)
-    .every( defect => defect.isResolved )
-    console.log(req.session.viewData)
+  req.session.viewData.allComplete = Array.from(req.session.viewData.defects).every(defect => defect.isResolved);
+  console.log(req.session.viewData);
   next();
-}
+};
 
 export const getDifference1 = (req, res) => {
   // Resets session data if doesn't exist

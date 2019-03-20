@@ -2,8 +2,10 @@
 All notable changes included in tagged releases will be documented in this file.
 
 ## [1.3.11] - 2019-03-20
-### Added
+### Changed
 - Increased width of Action panel buttons
+- MOTH Accordion - last border-bottom fix on History panels
+- Bottom spacing on details element for mobile
 
 ## [1.3.10] - 2019-03-18
 ### Changed

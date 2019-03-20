@@ -7,7 +7,7 @@ export const initViewData = () => {
   return {
     inspection: {
       tester: 'John Morris, MORR6743',
-      veName: 'Robert Smith, SMIT9746',
+      veName: 'Robert Smith,<br /> Vehicle Examiner',
       regNumber: 'FL18 JIU',
       vtsNumber: 'VTS0071',
       vtsName: 'RS Tuning Ltd',
@@ -15,6 +15,7 @@ export const initViewData = () => {
     totalDifferences: 3,
     completedReviewCount: 0,
     allComplete: false,
+    currentDefect: 0,
     score: 0,
     outcome: {
       type: '',
@@ -34,6 +35,7 @@ export const initViewData = () => {
         manualsRef: '4.2.3 (a) (i)]',
         position: '',
         points: 0,
+        comment: '',
         hasDifference: true,
         isResolved: false,
         difference: {
@@ -48,6 +50,7 @@ export const initViewData = () => {
         manualsRef: '1.2.3 a',
         position: 'Nearside front',
         points: 0,
+        comment: '',
         hasDifference: true,
         isResolved: false,
         difference: {
@@ -62,6 +65,7 @@ export const initViewData = () => {
         manualsRef: '5.2.1 (b) (i)',
         position: 'Nearside rear',
         points: 0,
+        comment: '',
         hasDifference: true,
         isResolved: false,
         difference: {
@@ -80,6 +84,7 @@ export const initViewData = () => {
         manualsRef: '4.2.3 (i)',
         position: 'Nearside rear',
         points: 0,
+        comment: '',
         hasDifference: false,
         isresolved: true,
         difference: {

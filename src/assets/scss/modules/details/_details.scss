@@ -1,7 +1,9 @@
 details {
   list-style: none;
   font-size: 19px;
+  margin-bottom: $gutter/2;
   @include media(desktop){ 
     font-size: 16px;  
+    margin-bottom: 0;
   }
 }

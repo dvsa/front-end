@@ -1,7 +1,7 @@
 {
   "name": "dvsa/front-end",
   "description": "DVSA front-end assets used within all applications",
-  "version": "1.3.10",
+  "version": "1.3.11",
   "homepage": "https://github.com/dvsa/front-end",
   "license": "MIT",
   "authors": [
@@ -11,13 +11,13 @@
       "role": "Front-end Developer"
     },
     {
-      "name": "James Nelson",
-      "homepage": "https://github.com/Jamesnelson117",
+      "name": "Martin D Marriott",
+      "homepage": "https://github.com/martindm",
       "role": "Front-end Developer"
     },
     {
-      "name": "Martin D Marriott",
-      "homepage": "https://github.com/martindm",
+      "name": "James Nelson",
+      "homepage": "https://github.com/Jamesnelson117",
       "role": "Front-end Developer"
     }
   ]

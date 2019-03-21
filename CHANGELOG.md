@@ -1,11 +1,16 @@
 # Changelog 🗒️
 All notable changes included in tagged releases will be documented in this file.
 
+## [1.3.12] - 2019-03-21
+### Added
+- Utility class for grey border
+- Adds image for MTS messages markdown
+
 ## [1.3.11] - 2019-03-20
 ### Changed
-- Increased width of Action panel buttons
+- Increased width of Action panel buttons used in Site Review
 - MOTH Accordion - last border-bottom fix on History panels
-- Bottom spacing on details element for mobile
+- Bottom spacing on `<details>` element for mobile
 
 ## [1.3.10] - 2019-03-18
 ### Changed

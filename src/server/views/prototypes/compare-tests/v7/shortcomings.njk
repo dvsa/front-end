@@ -45,21 +45,22 @@
   <label class="govuk-label" for="shortcomings">
     Add comment
   </label>
-  <textarea class="govuk-textarea" name="shortcomings" id="shortcomings" rows="5"></textarea>
+  <textarea class="govuk-textarea" name="shortcomings" id="shortcomings" rows="5">{{viewData.shortcomings.comment}}</textarea>
 
   <div class="govuk-form-group" style="margin-top: 20px;">
       <label class="govuk-label" for="points">
           Assign points
       </label>
-      <input class="govuk-input govuk-input--width-10" id="points" type="number" name="points" value="">
+      <input class="govuk-input govuk-input--width-10" id="points" value="{{viewData.shortcomings.points}}" type="number" name="points" value="">
   </div>
 
   <div><a href="#">Add another</div>
 
   <div style="margin-top: 40px;">
       <button type="submit" class="button">Save and continue</button>
-      <br/>
-      <a href="overview">Back</a>
+  </div>
+  <div>
+   <a href="overview">Back</a>
   </div>
   </form>
 

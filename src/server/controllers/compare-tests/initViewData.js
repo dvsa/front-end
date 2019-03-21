@@ -21,13 +21,13 @@ export const initViewData = () => {
       points: 0,
     },
     shortcomings: {
-      comment: 'There were shortcomings',
+      comment: '',
       points: 0,
     },
     defects: [
       {
         id: 1,
-        name: 'All position lamps light intensity obviously reduced ',
+        name: 'Vehicles internal headlight adjuster altered to recheck lights',
         category: 'Lamps',
         severity: 'Minor',
         manualsRef: '4.2.3 (a) (i)]',
@@ -42,7 +42,7 @@ export const initViewData = () => {
       },
       {
         id: 2,
-        name: 'Damage to wheel hub spigot mounting',
+        name: 'Sub-frame likely to become detached',
         category: 'Wheels',
         severity: 'Minor',
         manualsRef: '1.2.3 a',
@@ -57,7 +57,7 @@ export const initViewData = () => {
       },
       {
         id: 3,
-        name: 'Wheel hub spigot mounting slightly worn ',
+        name: 'Sub-frame has an unsafe modification',
         category: 'Road wheels',
         severity: 'Major',
         manualsRef: '5.2.1 (b) (i)',
@@ -76,7 +76,7 @@ export const initViewData = () => {
       },
       {
         id: 4,
-        name: 'Daytime running lamp obviously incorrectly positioned',
+        name: 'Road wheel fractured',
         category: 'Lamps',
         severity: 'Minor',
         manualsRef: '4.2.3 (i)',
@@ -86,7 +86,7 @@ export const initViewData = () => {
         hasDifference: false,
         isResolved: true,
         difference: {
-          name: 'Daytime running lamp obviously incorrectly positioned',
+          name: 'Road wheel more than one fixing loose',
           category: 'Lamps',
           severity: 'Minor',
           manualsRef: '4.2.3 (i)',

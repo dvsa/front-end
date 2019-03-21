@@ -1,6 +1,6 @@
 {% extends 'layouts/mts.layout.njk' %}
 
-{% set pageTitle = 'Site review summary' %}
+{% set pageTitle = 'Record outcome' %}
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/prototypes' },
@@ -53,6 +53,7 @@
           </table>
       </td>
     </tr>
+    {% if viewData.shortcomings.comment !== "" %}
     <tr>
       <th class="table-summary__value">Procedural shortcomings </th>
       <td style="padding-top: 0;">      
@@ -61,16 +62,17 @@
                   <td class="table-summary__value--tabular" style="border: 0px solid; width: 512px;">
                       <strong>{{ viewData.shortcomings.comment }}</strong>
                   </td>
-                  <td class="table-summary__value--tabular" style="border: 0px solid; padding-right: 5px; text-align: right;">
+                  <td class="table-summary__value--tabular" style="font-size: 19px; border: 0px solid; padding-right: 5px; text-align: right;">
                       {{ viewData.shortcomings.points }} points
-                  </td>              
+                  </td> 
               </tr>
           </table>
       </td>
-
     </tr>
+    {% endif %}
+    <tr>
       <th class="table-summary__value" style="width: 512px;">Score</th>
-      <td class="table-summary__value--tabular" style="padding-right: 5px; text-align: right;">
+      <td class="table-summary__value--tabular" style="font-size: 19px; padding-right: 5px; text-align: right;">
         <strong>{{ viewData.score }} points</strong>
       </td>
     </tr>
@@ -78,28 +80,31 @@
 </table>
 
 
+<form action="./record-outcome" method="post">
+
 <div class="form-group" style="margin-top:40px;">
-  <label class="form-label" for="select-box">
+  <label class="form-label" for="outcome">
    Select activity outcome
   </label>
-  <select class="form-control" id="select-box" name="select-box">
-    <option value="zero" selected="selected">Select</option>
-    <option value="one">NFA - no further action</option>    
-    <option value="three">EDU - education</option>
-    <option value="two">AWL - Advisory Warning Letter</option>
-    <option value="three">DAR - Disciplinary Action Report</option>
+  <select class="form-control" id="select-box" name="outcome">
+    <option value="0" {{ "selected" if viewData.outcome.type == "0" }}>Select</option>
+    <option value="No further action" {{ "selected" if viewData.outcome.type == "No further action" }}>NFA - No further action</option>    
+    <option value="Educate" {{ "selected" if viewData.outcome.type == "Educate" }}>EDU - Educate</option>
+    <option value="Advisory Warning Letter" {{ "selected" if viewData.outcome.type == "Advisory Warning Letter" }}>AWL - Advisory Warning Letter</option>
+    <option value="Disciplinary Action Report" {{ "selected" if viewData.outcome.type == "Disciplinary Action Report" }}>DAR - Disciplinary Action Report</option>
   </select>
 </div>
 
-<label class="form-label" for="textarea">
+<label class="form-label" for="comment">
  Enter event details<br />This will automatically be added to events
 </label>
-<textarea class="form-control" name="textarea" id="textarea" rows="5" style="margin-bottom: 20px;"></textarea>
+<textarea class="form-control" name="comment" id="textarea" rows="5" style="margin-bottom: 20px;"></textarea>
 
 
 <div class="u-margin-bottom-20">
-  <a href="summary" class="button">Save and review</a> 
+  <button type="submit" class="button">Save and continue</button>
 </div> 
+</form>
 <div class="form-group"> 
   <a href="vt59">Back</a>
 </div> 

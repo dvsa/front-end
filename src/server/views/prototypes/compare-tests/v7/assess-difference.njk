@@ -91,13 +91,12 @@
       <label class="govuk-label" for="decision">Decision</label>
       <select class="govuk-select" name="decision" id="decision">
         <option value="0" {{ "selected" if viewData.defects[defectIndex].points == "0" }}>Disregard</option>
-        <option value="1" {{ "selected" if viewData.defects[defectIndex].points == "1" }}>Overruled, marginally wrong</option>
-        <option value="2" {{ "selected" if viewData.defects[defectIndex].points == "2" }}>Obviously wrong</option>
-        <option value="3" {{ "selected" if viewData.defects[defectIndex].points == "3" }}>Significantly wrong</option>
-        <option value="4" {{ "selected" if viewData.defects[defectIndex].points == "4" }}>No defect</option>
-        <option value="5" {{ "selected" if viewData.defects[defectIndex].points == "5" }}>Not testable</option>
-        <option value="6" {{ "selected" if viewData.defects[defectIndex].points == "6" }}>Excessive corrosion/wear/damage missed</option>
-        <option value="7" {{ "selected" if viewData.defects[defectIndex].points == "7" }}>Risk of injury missed</option>
+        <option value="0" {{ "selected" if viewData.defects[defectIndex].points == "0" }}>Overruled, marginally wrong</option>
+        <option value="5" {{ "selected" if viewData.defects[defectIndex].points == "5" }}>Obviously wrong</option>
+        <option value="10" {{ "selected" if viewData.defects[defectIndex].points == "10" }}>Significantly wrong</option>
+        <option value="20" {{ "selected" if viewData.defects[defectIndex].points == "20" }}>No defect</option>
+        <option value="20" {{ "selected" if viewData.defects[defectIndex].points == "20" }}>Not testable</option>
+        <option value="40" {{ "selected" if viewData.defects[defectIndex].points == "40" }}>Risk of injury missed</option>
       </select>
     </div>
     <div class="govuk-form-group">

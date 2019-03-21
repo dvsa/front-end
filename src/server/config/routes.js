@@ -177,13 +177,14 @@ router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [
   compareTestsController.checkCompletion,
   compareTestsController.postDifference,
 ]);
+router.post('/prototypes/compare-tests/v7/shortcomings', compareTestsController.postShortcomings);
 
 /* router.get('/prototypes/compare-tests/v7/assess-difference-1', compareTestsController.getDifference1);
 router.get('/prototypes/compare-tests/v7/assess-difference-2', compareTestsController.getDifference2);
 router.get('/prototypes/compare-tests/v7/assess-difference-3', compareTestsController.getDifference3);
  */
 
- // Create route from view path
+// Create route from view path
 router.get('*', miscController.viewFileRoute);
 
 // MOT history vehicle type

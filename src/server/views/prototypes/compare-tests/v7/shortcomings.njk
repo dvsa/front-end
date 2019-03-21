@@ -37,28 +37,34 @@
   <span class="heading-secondary">Record a reinspection</span>Procedural shortcomings
 </h1>
 
-<form action="" method="post">
+<div class="grid-row">
+  <div class="column-one-half--desktop"> 
+
+<form action="./shortcomings" method="post">
 
   <label class="govuk-label" for="shortcomings">
-   Add comment
-</label>
-<textarea class="govuk-textarea" name="shortcomings" id="shortcomings" rows="5"></textarea>
+    Add comment
+  </label>
+  <textarea class="govuk-textarea" name="shortcomings" id="shortcomings" rows="5"></textarea>
 
-<div class="govuk-form-group" style="margin-top: 20px;">
-    <label class="govuk-label" for="points">
-        Assign points
-    </label>
-    <input class="govuk-input govuk-input--width-10" id="points" type="number" name="points" value="">
+  <div class="govuk-form-group" style="margin-top: 20px;">
+      <label class="govuk-label" for="points">
+          Assign points
+      </label>
+      <input class="govuk-input govuk-input--width-10" id="points" type="number" name="points" value="">
+  </div>
+
+  <div><a href="#">Add another</div>
+
+  <div style="margin-top: 40px;">
+      <button type="submit" class="button">Save and continue</button>
+      <br/>
+      <a href="overview">Back</a>
+  </div>
+  </form>
+
 </div>
-
-<div><a href="#">add another</div>
-
-<div style="margin-top: 40px;">
-    <button type="submit" class="button">Save and continue</button>
-    <br/>
-    <a href="overview">Back</a>
 </div>
-</form>
 
 
 

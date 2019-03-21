@@ -19,21 +19,22 @@ export const getStart = (req, res) => {
 
 export const getOverview = (req, res) => {
   // Resets session data if doesn't exist
-  req.session.viewData = req.session.viewData || initViewData(); 
+  req.session.viewData = req.session.viewData || initViewData();
   console.log(req.session.viewData.defects);
   return res.render('./prototypes/compare-tests/v7/overview', { viewData: req.session.viewData });
 };
 
 export const getRecordOutcome = (req, res) => {
-  const scores = Array.from(req.session.viewData.defects).map( defect => parseInt(defect.points, 10) )
-  const sumOfPoints = scores.reduce(( running, a) => running + a); 
-  console.log(scores);
+  const scores = Array.from(req.session.viewData.defects).map(defect => parseInt(defect.points, 10));
+  const shortComingsScore = parseInt(req.session.viewData.shortcomings.points);
+  const sumOfPoints = scores.reduce((running, a) => running + a) + shortComingsScore;
   console.log(sumOfPoints);
   req.session.viewData.score = sumOfPoints;
   return res.render('./prototypes/compare-tests/v7/record-outcome', { viewData: req.session.viewData });
 };
 
-export const getDifference = (req, res) => { 
+
+export const getDifference = (req, res) => {
   console.log(req.params.defectIndex);
   console.log(req.session.viewData);
   req.session.viewData.defectIndex = req.params.defectIndex;
@@ -43,7 +44,7 @@ export const getDifference = (req, res) => {
 export const checkCompletion = (req, res, next) => {
   // Mark defect as resolved
   const currentDefect = req.params.defectIndex;
-  console.log(currentDefect)
+  console.log(currentDefect);
   req.session.viewData.defects[currentDefect].isResolved = true;
 
   // Check if all defects are complete and set if true
@@ -54,7 +55,7 @@ export const checkCompletion = (req, res, next) => {
 };
 
 export const postDifference = (req, res) => {
-  console.log('post difference')
+  console.log('post difference');
   const currentDefect = req.params.defectIndex;
   // Set form congtents into Viewdata
   req.session.viewData.defects[currentDefect].isResolved = true;
@@ -62,6 +63,18 @@ export const postDifference = (req, res) => {
   req.session.viewData.defects[currentDefect].comment = req.body.justification;
   return res.redirect('/prototypes/compare-tests/v7/overview');
 };
+
+export const postShortcomings = (req, res) => {
+  console.log('post shortcomings');
+  const comment = req.body.shortcomings;
+  const points = parseInt(req.body.points, 10);
+  console.log('shortcomings points:', points);
+  // Set form contents into Viewdata
+  req.session.viewData.shortcomings.comment = comment;
+  req.session.viewData.shortcomings.points = points;
+  return res.redirect('/prototypes/compare-tests/v7/record-outcome');
+};
+
 /* 
 export const getDifference1 = (req, res) => {
   // Resets session data if doesn't exist

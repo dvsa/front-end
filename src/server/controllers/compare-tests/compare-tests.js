@@ -14,44 +14,55 @@ import { nextTick } from 'q';
 export const getStart = (req, res) => {
   // Resets session data if doesn't exist
   req.session.viewData = req.session.viewData || initViewData();
-  console.log('init data');
-  console.log(req.session.viewData);
-  return res.render('./prototypes/compare-tests/v7/start', { viewData: req.session.viewData });
+  return res.render('./prototypes/compare-tests/v7/start');
 };
 
 export const getOverview = (req, res) => {
   // Resets session data if doesn't exist
-  req.session.viewData = req.session.viewData || initViewData();
-  console.log(req.session.viewData);
+  req.session.viewData = req.session.viewData || initViewData(); 
+  console.log(req.session.viewData.defects);
   return res.render('./prototypes/compare-tests/v7/overview', { viewData: req.session.viewData });
 };
 
-
-export const getSummary = (req, res) => {
-  console.log(req.session.viewData);
-  console.log('summary')
-  return res.render('./prototypes/compare-tests/v7/case-summary', { viewData: req.session.viewData });
+export const getRecordOutcome = (req, res) => {
+  const scores = Array.from(req.session.viewData.defects).map( defect => parseInt(defect.points, 10) )
+  const sumOfPoints = scores.reduce(( running, a) => running + a); 
+  console.log(scores);
+  console.log(sumOfPoints);
+  req.session.viewData.score = sumOfPoints;
+  return res.render('./prototypes/compare-tests/v7/record-outcome', { viewData: req.session.viewData });
 };
 
-
-export const getDifference = (req, res) => {
+export const getDifference = (req, res) => { 
+  console.log(req.params.defectIndex);
   console.log(req.session.viewData);
-  console.log(req.query.defectIndex);
-  req.session.viewData.defectIndex = req.query.defectIndex;
+  req.session.viewData.defectIndex = req.params.defectIndex;
   return res.render('./prototypes/compare-tests/v7/assess-difference', { viewData: req.session.viewData });
 };
 
-export const postDifference = (req, res) => {
-  req.session.viewData.defectIndex = req.query.defectIndex;
-  return res.redirect('./prototypes/compare-tests/v7/overview');
-};
-
 export const checkCompletion = (req, res, next) => {
-  req.session.viewData.allComplete = Array.from(req.session.viewData.defects).every(defect => defect.isResolved);
-  console.log(req.session.viewData);
+  // Mark defect as resolved
+  const currentDefect = req.params.defectIndex;
+  console.log(currentDefect)
+  req.session.viewData.defects[currentDefect].isResolved = true;
+
+  // Check if all defects are complete and set if true
+  const allComplete = Array.from(req.session.viewData.defects).every(defect => defect.isResolved);
+  req.session.viewData.allComplete = allComplete;
+  console.log(allComplete);
   next();
 };
 
+export const postDifference = (req, res) => {
+  console.log('post difference')
+  const currentDefect = req.params.defectIndex;
+  // Set form congtents into Viewdata
+  req.session.viewData.defects[currentDefect].isResolved = true;
+  req.session.viewData.defects[currentDefect].points = req.body.decision;
+  req.session.viewData.defects[currentDefect].comment = req.body.justification;
+  return res.redirect('/prototypes/compare-tests/v7/overview');
+};
+/* 
 export const getDifference1 = (req, res) => {
   // Resets session data if doesn't exist
   req.session.viewData = req.session.viewData || initViewData();
@@ -71,3 +82,4 @@ export const getDifference3 = (req, res) => {
   console.log(req.session.viewData);
   return res.render('./prototypes/compare-tests/v7/assess-difference-3', { viewData: req.session.viewData });
 };
+ */

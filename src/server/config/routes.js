@@ -170,18 +170,20 @@ router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.post
 // Compare tests
 router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);
 router.get('/prototypes/compare-tests/v7/overview', compareTestsController.getOverview);
-router.get('/prototypes/compare-tests/v7/case-summary', compareTestsController.getSummary);
+router.get('/prototypes/compare-tests/v7/record-outcome', compareTestsController.getRecordOutcome);
 router.get('/prototypes/compare-tests/v7/assess-difference/:defectIndex', compareTestsController.getDifference);
+
 router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [
   compareTestsController.checkCompletion,
   compareTestsController.postDifference,
 ]);
 
-router.get('/prototypes/compare-tests/v7/assess-difference-1', compareTestsController.getDifference1);
+/* router.get('/prototypes/compare-tests/v7/assess-difference-1', compareTestsController.getDifference1);
 router.get('/prototypes/compare-tests/v7/assess-difference-2', compareTestsController.getDifference2);
 router.get('/prototypes/compare-tests/v7/assess-difference-3', compareTestsController.getDifference3);
+ */
 
-// Create route from view path
+ // Create route from view path
 router.get('*', miscController.viewFileRoute);
 
 // MOT history vehicle type

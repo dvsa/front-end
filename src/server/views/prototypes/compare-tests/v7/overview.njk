@@ -52,7 +52,7 @@
       <tr>
         <th>
           {{ defect.category }}
-          <span class="badge{{ "--info" if defect.hasDifference }}">
+          <span class="u-margin-top-5 u-block badge{{ "--info" if defect.hasDifference }}">
           {{ "Difference" if defect.hasDifference else "Match" }}</span>
         </th>
           {% set hasDifference = defect.hasDifference %} 
@@ -108,7 +108,7 @@
 </table>
 
 <div style="margin-top: 40px;">
-    <a class="button" {{ "disabled" if not viewData.allComplete}} href="case-summary">Continue</a>
+    <a class="button" {{ "disabled" if not viewData.allComplete}} href="shortcomings">Continue</a>
     <p><a href="/prototypes/compare-tests/v7/start">Back</a></p>
 </div>
 

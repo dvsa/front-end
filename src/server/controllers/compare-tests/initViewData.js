@@ -12,10 +12,8 @@ export const initViewData = () => {
       vtsNumber: 'VTS0071',
       vtsName: 'RS Tuning Ltd',
     },
-    totalDifferences: 3,
-    completedReviewCount: 0,
     allComplete: false,
-    currentDefect: 0,
+    defectIndex: 0,
     score: 0,
     outcome: {
       type: '',
@@ -23,7 +21,7 @@ export const initViewData = () => {
       points: 0,
     },
     shortcomings: {
-      comment: '',
+      comment: 'There were shortcomings',
       points: 0,
     },
     defects: [
@@ -33,7 +31,7 @@ export const initViewData = () => {
         category: 'Lamps',
         severity: 'Minor',
         manualsRef: '4.2.3 (a) (i)]',
-        position: '',
+        position: 'Rear',
         points: 0,
         comment: '',
         hasDifference: true,
@@ -44,7 +42,7 @@ export const initViewData = () => {
       },
       {
         id: 2,
-        name: 'Wheel hub spigot mounting slightly worn ',
+        name: 'Damage to wheel hub spigot mounting',
         category: 'Wheels',
         severity: 'Minor',
         manualsRef: '1.2.3 a',
@@ -86,7 +84,7 @@ export const initViewData = () => {
         points: 0,
         comment: '',
         hasDifference: false,
-        isresolved: true,
+        isResolved: true,
         difference: {
           name: 'Daytime running lamp obviously incorrectly positioned',
           category: 'Lamps',

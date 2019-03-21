@@ -52,39 +52,57 @@
     <tr>
       <td>Defect</td>
       <td style="background-color: #dee0e2; padding-left: 10px;">
-      
+          {% set defectIndex = viewData.defectIndex %}
+          {% if viewData.defects[defectIndex].difference.name !== "None" %}
+            {{ viewData.defects[defectIndex].difference.name}} [<a href="#" title="Check defect categorisation">
+            {{ viewData.defects[defectIndex].difference.manualsRef }}</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">
+            {{ viewData.defects[defectIndex].difference.position }}
+          </span> 
+          {% set severity = viewData.defects[defectIndex].difference.severity %}
+          <span class="badge--{{ "warn" if  severity == "Minor" else "alert" }}">
+              {{ viewData.defects[defectIndex].difference.severity}}
+          </span>
+           {% else %}
+            {{ viewData.defects[defectIndex].difference.name }}
+          {% endif %}
       </td>
       <td style="padding-left: 10px; font-weight: bold;">
-        {% set defectIndex = viewData.currentDefect %}
-        {{ viewData.defects[defectIndex].name}} [<a href="#" title="Check defect categorisation">
-          {{ viewData.defects[defectIndex].manualsRef }}</a>]
-        <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ viewData.defects[defectIndex].position }}</span>
-        <span class="key-value-list__meta" style="margin-bottom: 5px;">{{ viewData.defects[defectIndex].comment}}</span>
-        <span class="badge--{{ "warn" if  viewData.defects[defectIndex].severity == "Minor" else "alert" }}">
-            {{ viewData.defects[defectIndex].severity}}
-        </span>
+         {% if viewData.defects[defectIndex].name !== "None" %}
+            {{ viewData.defects[defectIndex].name}} [<a href="#" title="Check defect categorisation">
+            {{ viewData.defects[defectIndex].manualsRef }}</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">
+            {{ viewData.defects[defectIndex].position }}
+          </span> 
+          {% set severity = viewData.defects[defectIndex].severity %}
+          <span class="badge--{{ "warn" if  severity == "Minor" else "alert" }}">
+              {{ viewData.defects[defectIndex].severity}}
+          </span>
+           {% else %}
+            {{ viewData.defects[defectIndex].name }}
+          {% endif %}
     </td> 
     </tr>
   </tbody>
 </table>
  
-  <form action="{{ defectIndex }}" method="post"> 
+  <form action="./{{ defectIndex }}" method="post"> 
     <div class="govuk-form-group">
       <label class="govuk-label" for="decision">Decision</label>
       <select class="govuk-select" name="decision" id="decision">
-        <option value="0">Disregard</option>
-        <option value="1">Overruled, marginally wrong</option>
-        <option value="2">Obviously wrong</option>
-        <option value="3">Significantly wrong</option>
-        <option value="4">No defect</option>
-        <option value="5">Not testable</option>
-        <option value="6">Excessive corrosion/wear/damage missed</option>
-        <option value="7">Risk of injury missed</option>
+        <option value="0" {{ "selected" if viewData.defects[defectIndex].points == "0" }}>Disregard</option>
+        <option value="1" {{ "selected" if viewData.defects[defectIndex].points == "1" }}>Overruled, marginally wrong</option>
+        <option value="2" {{ "selected" if viewData.defects[defectIndex].points == "2" }}>Obviously wrong</option>
+        <option value="3" {{ "selected" if viewData.defects[defectIndex].points == "3" }}>Significantly wrong</option>
+        <option value="4" {{ "selected" if viewData.defects[defectIndex].points == "4" }}>No defect</option>
+        <option value="5" {{ "selected" if viewData.defects[defectIndex].points == "5" }}>Not testable</option>
+        <option value="6" {{ "selected" if viewData.defects[defectIndex].points == "6" }}>Excessive corrosion/wear/damage missed</option>
+        <option value="7" {{ "selected" if viewData.defects[defectIndex].points == "7" }}>Risk of injury missed</option>
       </select>
     </div>
     <div class="govuk-form-group">
       <label class="govuk-form-label" for="justification">Add comment</label>
-      <textarea class="form-control" name="justification" id="justification" rows="3"></textarea>
+      <textarea class="form-control" name="justification" id="justification" rows="3">{{ viewData.defects[defectIndex].comment }}</textarea>
     </div>
     <div class="govuk-form-group">
       <button type="submit" class="button" href="overview" value="Save">Save</button>
@@ -92,9 +110,5 @@
     </form>
     <a href="../overview">Back to Compare tests</a>
 </div>
-
-
-
-
 
 {% endblock %}

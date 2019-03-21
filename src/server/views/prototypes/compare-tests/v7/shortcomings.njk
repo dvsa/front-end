@@ -37,25 +37,28 @@
   <span class="heading-secondary">Record a reinspection</span>Procedural shortcomings
 </h1>
 
-<label class="form-label" for="textarea">
-    These comments will be included in report
-</label>
-<textarea class="form-control" name="textarea" id="textarea" rows="5"></textarea>
+<form action="" method="post">
 
-<div class="form-group" style="margin-top: 20px;">
-    <label class="form-label" for="full-name-f1">
+  <label class="govuk-label" for="shortcomings">
+   Add comment
+</label>
+<textarea class="govuk-textarea" name="shortcomings" id="shortcomings" rows="5"></textarea>
+
+<div class="govuk-form-group" style="margin-top: 20px;">
+    <label class="govuk-label" for="points">
         Assign points
     </label>
-    <input class="form-control" id="full-name-f1" type="text" name="full-name-f1" value="">
+    <input class="govuk-input govuk-input--width-10" id="points" type="number" name="points" value="">
 </div>
 
 <div><a href="#">add another</div>
 
 <div style="margin-top: 40px;">
-    <a class="button" href="case-summary">Save and continue</a>
+    <button type="submit" class="button">Save and continue</button>
     <br/>
-    <a href="test-comparison">Back</a>
+    <a href="overview">Back</a>
 </div>
+</form>
 
 
 

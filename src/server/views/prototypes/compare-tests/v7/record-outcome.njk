@@ -1,0 +1,110 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Site review summary' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'WILLETTA AREDONDO', url: '#' },
+  { text: 'DILENA GROUP', url: '/prototypes/site-review/v5/VE-view-VTS-overview' },
+  { text: 'Check details' }
+] %}
+
+{% block content %} 
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Record a re-inspection</span>
+  Record outcome
+</h1>
+
+  <table class="table-summary" style="margin-bottom: 20px;">
+  <tbody>
+    <tr>
+      <th class="table-summary__value" width="250">Missed defects</th>
+      <td class="table-summary__value--tabular" style="padding-right: 0;">
+          <table class="key-value-list" style="margin-top: 0; width: 100%; border-top: 0;" width="100%">
+            
+        {% for defect in viewData.defects %}
+        <tr>
+     
+        {% set hasDifference = defect.hasDifference %} 
+
+        {% if hasDifference %}
+       <td style="font-weight: bold; border-top: 0; padding-left: 10px;">
+           {{ defect.name }}
+            {% if defect.name !== "None" %}
+              [<a href="#" title="Check defect documents">{{ defect.manualsRef }}</a>]
+              <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">
+              {{ defect.position }}</span>
+              <span class="badge--{{ "warn" if defect.severity == "Minor" else "alert" }}">
+                {{ defect.severity }}
+              </span>
+            {% endif %}
+          </td>
+          <td style="border-top: 0;">  
+            {% if defect.isResolved %}
+              <span class="u-block u-margin-bottom-15">{{ defect.points }} points</span> 
+            {% endif %}
+          </td>
+        {% endif %} 
+    </tr>
+  {% else %} 
+    <tr><p>No viewdata</p></tr> 
+  {% endfor %}
+          </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="table-summary__value">Procedural shortcomings </td>
+      <td style="padding-top: 0;">      
+          <table>
+              <tr>
+                  <td class="table-summary__value--tabular" style="border: 0px solid; width: 512px;">
+                      <strong>{{ viewData.shortcomings.comment }}</strong>
+                  </td>
+                  <td class="table-summary__value--tabular" style="border: 0px solid;">
+                      - 
+                  </td>              
+              </tr>
+          </table>
+      </td>
+
+    </tr>
+      <th class="table-summary__value" style="width: 512px;">Score</th>
+      <td class="table-summary__value--tabular" style="padding-right: 5px; text-align: right;">
+        <strong>{{ viewData.score }} points</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="form-group" style="margin-top:40px;">
+  <label class="form-label" for="select-box">
+   Select activity outcome
+  </label>
+  <select class="form-control" id="select-box" name="select-box">
+    <option value="zero" selected="selected">Select</option>
+    <option value="one">NFA - no further action</option>    
+    <option value="three">EDU - education</option>
+    <option value="two">AWL - Advisory Warning Letter</option>
+    <option value="three">DAR - Disciplinary Action Report</option>
+  </select>
+</div>
+
+<label class="form-label" for="textarea">
+ Enter event details<br />This will automatically be added to events
+</label>
+<textarea class="form-control" name="textarea" id="textarea" rows="5" style="margin-bottom: 20px;"></textarea>
+
+
+<div class="u-margin-bottom-20">
+  <a href="summary" class="button">Save and review</a> 
+</div> 
+<div class="form-group"> 
+  <a href="vt59">Back</a>
+</div> 
+
+<div>
+</div>
+
+{% endblock %}

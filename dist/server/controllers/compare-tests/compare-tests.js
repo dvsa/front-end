@@ -1,7 +1,17 @@
-import { addToSession } from '../speech-to-text-search/helpers/add-to-session.js';
-import { initViewData } from './initViewData.js';
-import { getLastInUrl } from './helpers/getLastInUrl.js';
-import { nextTick } from 'q';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getShortcomings = exports.getSummary = exports.postRecordOutcome = exports.postShortcomings = exports.postDifference = exports.checkCompletion = exports.getDifference = exports.getRecordOutcome = exports.getOverview = exports.getStart = undefined;
+
+var _addToSession = require('../speech-to-text-search/helpers/add-to-session.js');
+
+var _initViewData = require('./initViewData.js');
+
+var _getLastInUrl = require('./helpers/getLastInUrl.js');
+
+var _q = require('q');
 
 //export * from './validators/validation.js';
 
@@ -11,19 +21,19 @@ import { nextTick } from 'q';
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-export const getStart = (req, res) => {
+const getStart = exports.getStart = (req, res) => {
   // Resets session data if doesn't exist
-  req.session.viewData = req.session.viewData || initViewData();
+  req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
   return res.render('./prototypes/compare-tests/v7/start');
 };
 
-export const getOverview = (req, res) => {
+const getOverview = exports.getOverview = (req, res) => {
   // Resets session data if doesn't exist
-  req.session.viewData = req.session.viewData || initViewData();
+  req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
   return res.render('./prototypes/compare-tests/v7/overview', { viewData: req.session.viewData });
 };
 
-export const getRecordOutcome = (req, res) => {
+const getRecordOutcome = exports.getRecordOutcome = (req, res) => {
   const scores = Array.from(req.session.viewData.defects).map(defect => parseInt(defect.points, 10));
   const shortComingsSubmitted = req.session.viewData.shortcomings.points;
 
@@ -37,13 +47,13 @@ export const getRecordOutcome = (req, res) => {
   return res.render('./prototypes/compare-tests/v7/record-outcome', { viewData: req.session.viewData });
 };
 
-export const getDifference = (req, res) => {
+const getDifference = exports.getDifference = (req, res) => {
   console.log(req.params.defectIndex);
   req.session.viewData.defectIndex = req.params.defectIndex;
   return res.render('./prototypes/compare-tests/v7/assess-difference', { viewData: req.session.viewData });
 };
 
-export const checkCompletion = (req, res, next) => {
+const checkCompletion = exports.checkCompletion = (req, res, next) => {
   // Mark defect as resolved
   const currentDefect = req.params.defectIndex;
   req.session.viewData.defects[currentDefect].isResolved = true;
@@ -54,7 +64,7 @@ export const checkCompletion = (req, res, next) => {
   next();
 };
 
-export const postDifference = (req, res) => {
+const postDifference = exports.postDifference = (req, res) => {
   const currentDefect = req.params.defectIndex;
 
   // Set form congtents into Viewdata
@@ -64,7 +74,7 @@ export const postDifference = (req, res) => {
   return res.redirect('/prototypes/compare-tests/v7/overview');
 };
 
-export const postShortcomings = (req, res) => {
+const postShortcomings = exports.postShortcomings = (req, res) => {
   const comment = req.body.shortcomings;
   const points = parseInt(req.body.points, 10);
   // Set form contents into Viewdata
@@ -73,7 +83,7 @@ export const postShortcomings = (req, res) => {
   return res.redirect('/prototypes/compare-tests/v7/record-outcome');
 };
 
-export const postRecordOutcome = (req, res) => {
+const postRecordOutcome = exports.postRecordOutcome = (req, res) => {
   const comment = req.body.comment;
   const outcome = req.body.outcome;
   // Set form contents into Viewdata
@@ -85,13 +95,13 @@ export const postRecordOutcome = (req, res) => {
   return res.redirect('/prototypes/compare-tests/v7/summary');
 };
 
-export const getSummary = (req, res) => {
+const getSummary = exports.getSummary = (req, res) => {
   console.log('get summary');
   console.log(req.session.viewData);
   return res.render('./prototypes/compare-tests/v7/summary', { viewData: req.session.viewData });
 };
 
-export const getShortcomings = (req, res) => {
+const getShortcomings = exports.getShortcomings = (req, res) => {
   return res.render('./prototypes/compare-tests/v7/shortcomings', { viewData: req.session.viewData });
 };
 

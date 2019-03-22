@@ -34,7 +34,7 @@ const initViewData = exports.initViewData = () => {
       name: 'Vehicles internal headlight adjuster altered to recheck lights',
       category: 'Lamps',
       severity: 'Minor',
-      manualsRef: '4.2.3 (a) (i)]',
+      manualsRef: '4.2.3 (a) (i)',
       position: 'Rear',
       points: 0,
       comment: '',

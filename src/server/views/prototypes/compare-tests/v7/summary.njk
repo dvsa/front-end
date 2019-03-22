@@ -62,8 +62,7 @@
 
             {% for defect in viewData.defects %}
               <tr>
-              {% set hasDifference = defect.hasDifference %}  
-
+              {% set hasDifference = defect.hasDifference %}
               {% if hasDifference %}
             <td style="font-weight: bold; font-size: 16px; border-top: 0; padding-right: 3px;">
                 {{ defect.name }}

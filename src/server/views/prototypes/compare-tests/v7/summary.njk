@@ -57,7 +57,7 @@
     </tr>
     <tr>
       <th class="table-summary__value">Defects</th>
-      <td colspan="2" class="table-summary__value--tabular" style="padding-right: 0">
+      <td colspan="2" class="table-summary__value--tabular" style="padding: 0">
           <table class="key-value-list" style="margin-top: 0; width: 100%" width="100%">
 
             {% for defect in viewData.defects %}
@@ -65,7 +65,7 @@
               {% set hasDifference = defect.hasDifference %}  
 
               {% if hasDifference %}
-            <td style="font-weight: bold; font-size: 16px; border-top: 0; padding-left: 10px;">
+            <td style="font-weight: bold; font-size: 16px; border-top: 0; padding-right: 3px;">
                 {{ defect.name }}
                   {% if defect.name !== "None" %}
                     [<a href="#" title="Check defect documents">{{ defect.manualsRef }}</a>]

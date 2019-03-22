@@ -20,14 +20,13 @@
   <tbody>
     <tr>
       <th class="table-summary__value" width="250">Missed defects</th>
-      <td class="table-summary__value--tabular" style="padding-right: 0;">
+      <td class="table-summary__value--tabular" style="padding: 0;">
           <table class="key-value-list" style="margin-top: 0; width: 100%; border-top: 0;" width="100%">
             
         {% for defect in viewData.defects %}
         <tr>
      
-        {% set hasDifference = defect.hasDifference %} 
-
+        {% set hasDifference = defect.hasDifference %}  
         {% if hasDifference %}
        <td style="font-weight: bold; border-top: 0; padding-left: 10px;">
            {{ defect.name }}
@@ -42,7 +41,7 @@
           </td>
           <td style="border-top: 0;">  
             {% if defect.isResolved %}
-              <span class="u-block u-margin-bottom-15">{{ defect.points }} points</span> 
+              <span class="u-block u-margin-bottom-15">{{ defect.points }}&nbsp;points</span> 
             {% endif %}
           </td>
         {% endif %} 
@@ -56,7 +55,7 @@
     {% if viewData.shortcomings.comment !== "" %}
     <tr>
       <th class="table-summary__value">Procedural shortcomings </th>
-      <td style="padding-top: 0;">      
+      <td style="padding: 0;">      
           <table>
               <tr>
                   <td class="table-summary__value--tabular" style="border: 0px solid; width: 512px;">

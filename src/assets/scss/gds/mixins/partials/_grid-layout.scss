@@ -68,6 +68,16 @@ $site-width: 960px;
   clear: both;
 }
 
+.grid-row {
+    &--flex-mobile-reverse {
+    @include media(mobile){
+      display: flex;
+      flex: 0 0 100%;
+      flex-direction: column-reverse;
+    } 
+  }
+}
+
 // A mixin for a grid column
 // Creates a cross browser grid column with a standardised gutter between the
 // columns. Widths should be defined as fractions of the full desktop width

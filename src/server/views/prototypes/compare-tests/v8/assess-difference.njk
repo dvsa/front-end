@@ -1,0 +1,119 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li> 
+    <li>
+      <a href="/">
+        Compare defects
+      </a>
+    </li>
+    <li>
+        Defect outcome
+    </li>  
+    </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Record a reinspection</span>Defect outcome
+</h1>
+
+
+<table class="key-value-list u-margin-bottom-25">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 32px; background-color: #dee0e2; padding-left: 10px;">{{viewData.inspection.tester}}</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 32px; padding-left: 10px;">{{viewData.inspection.veName}}</td>
+    </tr>
+    <tr>
+      <td>Defect</td>
+      <td style="background-color: #dee0e2; padding-left: 10px;">
+          {% set defectIndex = viewData.defectIndex %}
+          {% if viewData.defects[defectIndex].difference.name !== "None" %}
+            {{ viewData.defects[defectIndex].difference.name}} [<a href="#" title="Check defect categorisation">
+            {{ viewData.defects[defectIndex].difference.manualsRef }}</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">
+            {{ viewData.defects[defectIndex].difference.position }}
+          </span> 
+          {% set severity = viewData.defects[defectIndex].difference.severity %}
+          <span class="badge--{{ "warn" if  severity == "Minor" else "alert" }}">
+              {{ viewData.defects[defectIndex].difference.severity}}
+          </span>
+           {% else %}
+            {{ viewData.defects[defectIndex].difference.name }}
+          {% endif %}
+      </td>
+      <td style="padding-left: 10px; font-weight: bold;">
+         {% if viewData.defects[defectIndex].name !== "None" %}
+            {{ viewData.defects[defectIndex].name}} [<a href="#" title="Check defect categorisation">
+            {{ viewData.defects[defectIndex].manualsRef }}</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">
+            {{ viewData.defects[defectIndex].position }}
+          </span> 
+          {% set severity = viewData.defects[defectIndex].severity %}
+          <span class="badge--{{ "warn" if  severity == "Minor" else "alert" }}">
+              {{ viewData.defects[defectIndex].severity}}
+          </span>
+           {% else %}
+            {{ viewData.defects[defectIndex].name }}
+          {% endif %}
+    </td> 
+    </tr>
+  </tbody>
+</table>
+ 
+  <form action="./{{ defectIndex }}" method="post"> 
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="decision">Decision</label>
+      <select class="govuk-select" name="decision" id="decision" style="width: 300px;">
+        <option value="0" {{ "selected" if viewData.defects[defectIndex].points == "0" }}>Disregard</option>
+        <option value="0" {{ "selected" if viewData.defects[defectIndex].points == "0" }}>Overruled, marginally wrong</option>
+        <option value="5" {{ "selected" if viewData.defects[defectIndex].points == "5" }}>Obviously wrong</option>
+        <option value="10" {{ "selected" if viewData.defects[defectIndex].points == "10" }}>Significantly wrong</option>
+        <option value="20" {{ "selected" if viewData.defects[defectIndex].points == "20" }}>No defect</option>
+        <option value="20" {{ "selected" if viewData.defects[defectIndex].points == "20" }}>Not testable</option>
+        <option value="40" {{ "selected" if viewData.defects[defectIndex].points == "40" }}>Risk of injury missed</option>
+      </select>
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="decision">Common comments</label>
+      <select class="govuk-select" name="decision" id="decision" style="width: 300px;">
+        <option value="0">select</option>
+        <option value="1">Poor judgement</option>
+        <option value="2">Didn't bother looking</option>
+        <option value="3">Wrong distance of the beam tester</option>
+        <option value="4">Didn't jack up the car</option>
+        <option value="5">Emission not checked</option>
+      </select>
+    </div>
+    <div class="govuk-form-group">
+      <label class="govuk-form-label" for="justification">Additional comment</label>
+      <textarea class="form-control" name="justification" id="justification" rows="3">{{ viewData.defects[defectIndex].comment }}</textarea>
+    </div>
+    <div class="govuk-form-group">
+      <button type="submit" class="button" href="overview" value="Save">Save</button>
+    </div>
+    </form>
+    <a href="../overview">Back to defect differences</a>
+</div>
+
+{% endblock %}

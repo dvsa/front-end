@@ -57,7 +57,7 @@ export const initViewData = () => {
       },
       {
         id: 3,
-        name: 'Sub-frame has an unsafe modification',
+        name: 'Wheel hub spigot mounting slightly worn',
         category: 'Road wheels',
         severity: 'Major',
         manualsRef: '5.2.1 (b) (i)',

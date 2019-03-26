@@ -168,18 +168,18 @@ router.get('/prototypes/vsi-during-test/odometer', [vsiDuringTestController.getP
 router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
 
 // Compare tests
-router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);
-router.get('/prototypes/compare-tests/v7/overview', compareTestsController.getOverview);
-router.get('/prototypes/compare-tests/v7/record-outcome', compareTestsController.getRecordOutcome);
-router.get('/prototypes/compare-tests/v7/assess-difference/:defectIndex', compareTestsController.getDifference);
-router.get('/prototypes/compare-tests/v7/shortcomings', compareTestsController.getShortcomings);
-router.get('/prototypes/compare-tests/v7/summary', compareTestsController.getSummary);
-router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [
+router.get('/prototypes/compare-tests/v8/start', compareTestsController.getStart);
+router.get('/prototypes/compare-tests/v8/overview', compareTestsController.getOverview);
+router.get('/prototypes/compare-tests/v8/record-outcome', compareTestsController.getRecordOutcome);
+router.get('/prototypes/compare-tests/v8/assess-difference/:defectIndex', compareTestsController.getDifference);
+router.get('/prototypes/compare-tests/v8/shortcomings', compareTestsController.getShortcomings);
+router.get('/prototypes/compare-tests/v8/summary', compareTestsController.getSummary);
+router.post('/prototypes/compare-tests/v8/assess-difference/:defectIndex', [
   compareTestsController.checkCompletion,
   compareTestsController.postDifference,
 ]);
-router.post('/prototypes/compare-tests/v7/record-outcome', compareTestsController.postRecordOutcome);
-router.post('/prototypes/compare-tests/v7/shortcomings', compareTestsController.postShortcomings);
+router.post('/prototypes/compare-tests/v8/record-outcome', compareTestsController.postRecordOutcome);
+router.post('/prototypes/compare-tests/v8/shortcomings', compareTestsController.postShortcomings);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

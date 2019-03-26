@@ -1,0 +1,66 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      Procedural shortcomings
+    </li>
+  </ol>
+</div>
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Record a reinspection</span>Procedural shortcomings
+</h1>
+
+<div class="grid-row">
+  <div class="column-one-half--desktop"> 
+
+<form action="./shortcomings" method="post">
+
+  <label class="govuk-label" for="shortcomings">
+    Add comment
+  </label>
+  <textarea class="govuk-textarea" name="shortcomings" id="shortcomings" rows="5">{{viewData.shortcomings.comment}}</textarea>
+
+  <div><a href="#">Add another</div>
+
+  <div style="margin-top: 40px;">
+      <button type="submit" class="button">Save and continue</button>
+  </div>
+  <div>
+   <a href="overview">Back</a>
+  </div>
+  </form>
+
+</div>
+</div>
+
+
+
+
+{% endblock %}

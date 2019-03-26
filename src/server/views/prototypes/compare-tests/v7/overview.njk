@@ -1,0 +1,116 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      Defect differences 
+    </li>
+  </ol>
+</div>
+
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Record reinspection</span>Defect differences
+</h1>
+
+<span style=" font-size: 19px;"><a href="#" style="font-weight: 400;">Hide matches</a></span>
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 32px; padding-left: 10px; background-color: #dee0e2;">{{ viewData.inspection.tester }} </td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 32px; padding-left: 10px;">{{ viewData.inspection.veName }}</td>
+    </tr>
+ 
+
+    {% for defect in viewData.defects %}
+      <tr>
+        <th>
+          {{ defect.category }}
+          <span class="u-margin-top-5 u-block badge{{ "--info" if defect.hasDifference }}">
+          {{ "Difference" if defect.hasDifference else "Match" }}</span>
+        </th>
+          {% set hasDifference = defect.hasDifference %} 
+          {% if hasDifference %}
+            <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">
+            {{ defect.difference.name }}
+
+              {% if defect.difference.name !== "None" %}
+              [<a href="#" title="Check defect documents">{{ defect.difference.manualsRef }}</a>]
+              <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ defect.difference.position }}</span>
+              <span class="badge--{{ "warn" if defect.difference.severity == "Minor" else "alert" }}">
+                {{ defect.severity }}
+              </span>
+              {% endif %}
+            </td>
+          {% else %}
+            <td style="font-weight: bold; background-color: #dee0e2; padding-left: 10px;">
+              {{ defect.name }} [<a href="#" title="Check defect documents">{{ defect.manualsRef }}</a>]
+              <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ defect.difference.position }}</span>
+              <span class="badge--{{ "warn" if defect.difference.severity == "Minor" else "alert" }}">
+                {{ defect.severity }}
+              </span>
+            </td>
+          {% endif %}
+        
+        <td style="font-weight: bold; padding-left: 10px;">
+            {{ defect.name }} [<a href="#" title="Check defect documents">{{ defect.manualsRef }}</a>]
+            <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">{{ defect.position }}</span>
+            <span class="badge--{{ "warn" if defect.severity == "Minor" else "alert" }}">
+              {{ defect.severity }}
+            </span>
+        </td>
+        <td> 
+        {% if defect.hasDifference %}
+            {% if defect.isResolved %}
+              <span class="u-block u-margin-bottom-15">{{ defect.points }} points</span>
+              <a href="assess-difference/{{loop.index0}}">
+                Change
+              </a>
+              {% else %}
+              <a href="assess-difference/{{loop.index0}}">
+                Record defect
+              </a>
+            {% endif %} 
+        {% endif %}
+        </td>
+      </tr>
+    {% else %} 
+      <tr><p>No viewdata</p></tr> 
+    {% endfor %}
+
+  </tbody>
+</table>
+
+<div style="margin-top: 40px;">
+    <a class="button" {{ "disabled" if not viewData.allComplete}} href="shortcomings">Continue</a>
+    <p><a href="/prototypes/compare-tests/v7/start">Back</a></p>
+</div>
+
+{% endblock %}

@@ -4,6 +4,7 @@ import * as mainController from '../controllers/main.controller';
 import * as miscController from '../controllers/misc.controller';
 import * as recallsController from '../controllers/api/v1/recalls.controller';
 import * as createAccountController from '../controllers/create-account';
+import * as compareTestsController from '../controllers/compare-tests/compare-tests';
 import * as suspendTestersController from '../controllers/annual-assessment-tool/suspend-testers';
 import * as motTestResultsController from '../controllers/mot-test/mot-test';
 import * as speechToTextController from '../controllers/speech-to-text-search/speech-to-text-search';
@@ -165,6 +166,20 @@ router.get('/prototypes/vsi-during-test/inspection', [vsiDuringTestController.in
 router.get('/prototypes/vsi-during-test/advice', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getAdvice]);
 router.get('/prototypes/vsi-during-test/odometer', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getOdometer]);
 router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
+
+// Compare tests
+router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);
+router.get('/prototypes/compare-tests/v7/overview', compareTestsController.getOverview);
+router.get('/prototypes/compare-tests/v7/record-outcome', compareTestsController.getRecordOutcome);
+router.get('/prototypes/compare-tests/v7/assess-difference/:defectIndex', compareTestsController.getDifference);
+router.get('/prototypes/compare-tests/v7/shortcomings', compareTestsController.getShortcomings);
+router.get('/prototypes/compare-tests/v7/summary', compareTestsController.getSummary);
+router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [
+  compareTestsController.checkCompletion,
+  compareTestsController.postDifference,
+]);
+router.post('/prototypes/compare-tests/v7/record-outcome', compareTestsController.postRecordOutcome);
+router.post('/prototypes/compare-tests/v7/shortcomings', compareTestsController.postShortcomings);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

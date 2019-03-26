@@ -1,0 +1,92 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare defects
+      </a>
+    </li>
+    <li>
+        Review difference
+    </li>  
+    </ol>
+</div>
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Record a reinspection</span>Defect outcome
+</h1>
+
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; background-color: #dee0e2; padding-left: 10px;">John Morris,<br>MORR6734</td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith,<br>Vehicle Examiner</td>
+    </tr>
+    <tr>
+      <td>Defect</td>
+      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="padding-left: 10px; font-weight: bold;">
+        {{ viewData.defects[1]['name'] }} [<a href="#" title="Check defect categorisation">{{ viewData.defects[1]['manualsRef'] }}</a>]
+        <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;"></span>
+        <span class="key-value-list__meta" style="margin-bottom: 5px;">{{ viewData.defects[1]['comment'] }}</span>
+        <span class="badge--{{ "warn" if viewData.defects[1]['severity'] == "Minor" else "alert" }}">
+                {{ viewData.defects[1]['severity'] }}
+              </span>
+              
+    </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 40px;">
+    <label class="form-label" for="choose-action">Decision</label>
+    <select class="form-control" id="choose-action" style="margin-bottom:20px;">
+        <option value="0">Disregard</option>
+        <option value="1">Overruled, marginally wrong</option>
+        <option value="2">Obviously wrong</option>
+        <option value="3">Significantly wrong</option>
+        <option value="4">No defect</option>
+        <option value="5">Not testable</option>
+        <option value="6">Excessive corrosion/wear/damage missed</option>
+        <option value="7">Risk of injury missed</option>
+    </select>
+    <label class="form-label" for="justification">Add comment</label>
+    <textarea class="form-control" name="justification" id="justification" rows="3" style="width:480px; margin-bottom: 20px;"></textarea>
+    
+    <a class="button" href="overview" value="Save">Save</a><br/>
+    <a href="">Back</a>
+</div>
+
+
+
+
+
+{% endblock %}

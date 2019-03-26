@@ -34,10 +34,10 @@
 
 
 <h1 class="heading-xlarge heading heading--page-heading">
-  <span class="heading-secondary">Record a reinspection</span>Defect differences
+  <span class="heading-secondary"></span>Record outcome
 </h1>
 
-<span style=" font-size: 19px;"><a href="#" style="font-weight: 400;">hide matches</a></span>
+<span style=" font-size: 19px;"><a href="#" style="font-weight: 400;">show differences only</a></span>
 
 <table class="key-value-list">
   <tbody>
@@ -50,16 +50,16 @@
       <th>Lamps <span class="badge--info">Difference</span></th>
       <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
       <td style="font-weight: bold; padding-left: 10px;">
-          All position lamps light intensity obviously reduced [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
-          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;"></span>
-          <span class="badge--warn">Minor</span>
+          Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside front</span>
+          <span class="badge--alert">Major</span>
       </td>
       <td>
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-1">
                 
-                <label for="waste-type-1"><a href="assess-difference-defect-1">Record defect</a></label>
+                <label for="waste-type-1">10 points<br /><br /><a href="assess-difference-defect-1">change</a></label>
               </div>     
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-1">
                   <label class="form-label" for="test-number">Why?</label>
@@ -73,16 +73,16 @@
       <th>Lamps <span class="badge--info">Difference</span></th>
       <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
       <td style="font-weight: bold; padding-left: 10px;">
-          Position lamp has a product on the lens or light source which changes the emitted colour [<a href="#" title="Check defect categorisation">4.2.3 (b) (i)</a>]
+          Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
           <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Offside front</span>
-          <span class="badge--warn">Minor</span>
+          <span class="badge--alert">Major</span>
       </td>    
             <td>
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-2">
                 
-                <label for="waste-type-2"><a href="assess-difference-defect-2">Record defect</a></label>
+                <label for="waste-type-2">10 points<br /><br /><a href="assess-difference-defect-2">change</a></label>
               </div>
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-2">
                   <label class="form-label" for="test-number">Why?</label>
@@ -94,11 +94,7 @@
     </tr>
     <tr>
       <th>Road wheels <span class="badge--info">Difference</span></th>
-      <td style="background-color: #dee0e2; padding-left: 10px; font-weight: bold;">
-              Wheel hub spigot mounting slightly worn [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
-          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Offside rear</span>
-          <span class="badge--alert">Major</span>
-          </td>
+      <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
       <td style="font-weight: bold; padding-left: 10px;">
           Wheel hub spigot mounting slightly worn [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
           <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside rear</span>
@@ -109,7 +105,7 @@
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-3">
                 
-                <label for="waste-type-3"><a href="assess-difference-defect-3">Record defect</a></label>
+                <label for="waste-type-3"><a href="assess-difference-defect-3">Review difference</a></label>
               </div>
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-3">
                   <label class="form-label" for="test-number">Why?</label>
@@ -138,7 +134,7 @@
 </table>
 
 <div style="margin-top: 40px;">
-    <a class="button" disabled="disabled" aria-disabled="true">Continue</a>
+    <a class="button" href="assess-difference-defect-1">Continue</a>
     <br/>
     <a href="test-comparison">Back</a>
 </div>

@@ -196,16 +196,9 @@ router.get('/prototypes/compare-tests/v7/record-outcome', compareTestsController
 router.get('/prototypes/compare-tests/v7/assess-difference/:defectIndex', compareTestsController.getDifference);
 router.get('/prototypes/compare-tests/v7/shortcomings', compareTestsController.getShortcomings);
 router.get('/prototypes/compare-tests/v7/summary', compareTestsController.getSummary);
-
 router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [compareTestsController.checkCompletion, compareTestsController.postDifference]);
-
 router.post('/prototypes/compare-tests/v7/record-outcome', compareTestsController.postRecordOutcome);
 router.post('/prototypes/compare-tests/v7/shortcomings', compareTestsController.postShortcomings);
-
-/* router.get('/prototypes/compare-tests/v7/assess-difference-1', compareTestsController.getDifference1);
-router.get('/prototypes/compare-tests/v7/assess-difference-2', compareTestsController.getDifference2);
-router.get('/prototypes/compare-tests/v7/assess-difference-3', compareTestsController.getDifference3);
- */
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

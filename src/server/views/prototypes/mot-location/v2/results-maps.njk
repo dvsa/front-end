@@ -47,45 +47,54 @@ li{
                             <option>50 Miles</option>
                         </select>
                     </div>
-                    
-                    <legend>
-                        <span class="body-text">Filter results by vehicle type</span>
-                        </legend>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-1" name="vehicle-types" type="checkbox" value="vehicle-small-engine-mototcycle">
-                        <label for="vehicle-type-1">&lt; 200cc motorcycle</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-2" name="vehicle-types" type="checkbox" value="vehicle-mototcycle">
-                        <label for="vehicle-type-2"> &gt; 200cc motorcycle</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-3" name="vehicle-types" type="checkbox" value="vehicle-three-wheel">
-                        <label for="vehicle-type-3">3-wheeled vehicles</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-4" name="vehicle-types" type="checkbox" value="vehicle-car">
-                        <label for="vehicle-type-4">Cars and vans</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-5" name="vehicle-types" type="checkbox" value="vehicle-passanger">
-                        <label for="vehicle-type-5">Passenger vehicles</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-6" name="vehicle-types" type="checkbox" value="vehicle-goods-vehicle">
-                        <label for="vehicle-type-6">Goods vehicles</label>
-                    </div>
-
-                  <button class="button button-filter-search" href="#"  type="submit" style="margin-top: 15px;">Update search</button>
+                  <button class="button button-filter-search" type="submit" style="margin-top: 15px;">Update search</button>
                   <span id="error-message"></span>
                 </div>
               </fieldset>
-            </div>            
+            </div>
+            
           </form>
 
-        <hr>
-          <div style="border-top: 5px solid #005ea5; margin-top: 30px;">
-                <h2 class="bold-small" style="margin-top:20px;"> More information on the MOT test</h2>
+           <p>
+                <a href="#" style="font-size: 22">What are garage ratings?</a>
+           </p>
+
+          <hr>
+
+          <div class="image-wrapper">
+            <img src="/images/Risk-rating-green.png" alt="Risk rating green" class="image" style="width: 60px; display: inline;">
+                <span style="padding-bottom: 15px;">
+                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">17</strong>
+                </span>
+            <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Green Garage ratings</p>
+          </div>
+          <div>  
+        </div>
+
+          <hr>
+
+          <div class="image-wrapper">
+            <img src="/images/Risk-rating-amber.png" alt="Risk rating amber" class="image" style="width: 60px; display: inline;">
+                <span style="padding-bottom: 15px;">
+                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">3</strong>
+                </span>
+                <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Amber Garage ratings</p>
+          </div>
+
+          <hr>
+
+          <div class="image-wrapper">
+            <img src="/images/Risk-rating-red.png" alt="Risk rating red" class="image" style="width: 60px; display: inline;">
+                <span style="padding-bottom: 15px;">
+                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">2</strong>
+                </span>
+                <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Red Garage ratings</p>
+          </div>
+
+          <hr>
+
+          <div>
+                <h2 class="bold-small"> More information on the MOT test</h2>
                     <ul class="list list-bullet">
                         <li>
                             <a href="https://www.gov.uk/getting-an-mot">
@@ -148,9 +157,10 @@ li{
           <div>
             <div class="mapouter" style="text-align: left;">
                 <div class="gmap_canvas">
-                    <iframe width="630" height="700" id="gmap_canvas" src="https://maps.google.com/maps?q=nottingham&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <iframe width="630" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=nottingham&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                      
                 </div>
+                <style>.mapouter{text-align:right;height:500px;width:775px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:775px;}</style>
             </div>
           </div>
 

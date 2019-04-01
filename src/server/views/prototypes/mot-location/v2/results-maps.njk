@@ -1,0 +1,173 @@
+{% extends "layouts/mts.layout.njk" %}
+
+{% block page_title %}
+  Find MOT location
+{% endblock %}
+
+
+{% block content %}
+
+<style>
+li{
+  margin: 15px 0;
+}
+</style>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="postcode-search">Back</a>
+
+      <h1 class="heading-xlarge">Find local MOT test centre
+      </h1>
+      </div>
+      </div>
+
+      <div class="grid-row">
+      <div class="column-one-third">
+
+      <form autocomplete="off" class="form" action="prototypes/MOT-location/v1/results-maps" method="post">
+            <div class="form-group">
+            <h2 class="heading-small">Postcode or Town
+            </h2>
+            <div class="form-group">
+              <fieldset>
+                <div class="form-group">
+                  <label for="location" class="visuallyhidden">
+                  </label>
+                  <input id="location" name="location" class="form-control" style="width:100%;" type="text" placeholder="e.g. SW1A 2AA or Bakewell" value=" ">
+                    <div class="form-group" style="Margin-top: 15px">
+                        <label class="form-label" for="select-box" style="font-weight: Bold">Distance</label>
+                        <select class="form-control" style="width:100%; Margin-top: 10px" id="select-box" name="select-box">
+                            <option>5 Miles</option>
+                            <option>10 Miles</option>
+                            <option>15 Miles</option>
+                            <option>25 Miles</option>
+                            <option>50 Miles</option>
+                        </select>
+                    </div>
+                  <button class="button button-filter-search" type="submit" style="margin-top: 15px;">Update search</button>
+                  <span id="error-message"></span>
+                </div>
+              </fieldset>
+            </div>
+            
+          </form>
+
+           <p>
+                <a href="#" style="font-size: 22">What are garage ratings?</a>
+           </p>
+
+          <hr>
+
+          <div class="image-wrapper">
+            <img src="/images/Risk-rating-green.png" alt="Risk rating green" class="image" style="width: 60px; display: inline;">
+                <span style="padding-bottom: 15px;">
+                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">17</strong>
+                </span>
+            <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Green Garage ratings</p>
+          </div>
+          <div>  
+        </div>
+
+          <hr>
+
+          <div class="image-wrapper">
+            <img src="/images/Risk-rating-amber.png" alt="Risk rating amber" class="image" style="width: 60px; display: inline;">
+                <span style="padding-bottom: 15px;">
+                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">3</strong>
+                </span>
+                <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Amber Garage ratings</p>
+          </div>
+
+          <hr>
+
+          <div class="image-wrapper">
+            <img src="/images/Risk-rating-red.png" alt="Risk rating red" class="image" style="width: 60px; display: inline;">
+                <span style="padding-bottom: 15px;">
+                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">2</strong>
+                </span>
+                <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Red Garage ratings</p>
+          </div>
+
+          <hr>
+
+          <div>
+                <h2 class="bold-small"> More information on the MOT test</h2>
+                    <ul class="list list-bullet">
+                        <li>
+                            <a href="https://www.gov.uk/getting-an-mot">
+                                When to get an MOT?
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.gov.uk/getting-an-mot/mot-test-fees">
+                                Costs of an MOT test
+                            </a>
+                        </li>
+                         <li>
+                            <a href="https://www.gov.uk/getting-an-mot/booking-an-mot">
+                                How to book an MOT test?
+                            </a>
+                        </li>
+                    </ul>
+          </div>
+
+          <div>
+                <h2 class="bold-small"> You can also</h2>
+                    <ul class="list list-bullet">
+                        <li>
+                            <a href="https://www.gov.uk/check-mot-history">
+                                Check your vehicle MOT history
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.gov.uk/check-vehicle-tax">
+                                Check your vehicles tax status
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.gov.uk/mot-reminder">
+                                Sign up for MOT reminders
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Check vehicle safety recalls
+                            </a>
+                        </li>
+
+                    </ul>
+          </div>
+
+
+          </div>
+          </div>
+
+          <div class="column-two-thirds">
+            <div>
+                <Strong style="font-weight: Bold; font-size: 36px">22</strong>
+                <span style="font-weight: Bold;">results</span>
+                <a href="results-list" style="float: right; font-size: 19px; margin-top: 15px">View as list</a>
+          </div>
+
+          <hr style="margin-top: 5px">
+
+          <div>
+            <div class="mapouter" style="text-align: left;">
+                <div class="gmap_canvas">
+                    <iframe width="630" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=nottingham&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                     
+                </div>
+                <style>.mapouter{text-align:right;height:500px;width:775px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:775px;}</style>
+            </div>
+          </div>
+
+     
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

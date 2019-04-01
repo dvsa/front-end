@@ -4,20 +4,104 @@
 
 {% block content %}
 
-  {% call components.gridRow() %}
-  
-  {% call components.columnHalf() %}
-  
-  {{ components.pageHeading(heading='Find a MOT location') }}
+<main id="content">
 
-      <ul>
-        <li>
-          <a href="/prototypes/mot-location/v1/">Journey 1</a>   
-        </li>
-      </ul>
+    <div class="container">
 
-    {%- endcall %} 
+        <div id="global-breadcrumb" class="header-context">
+        </div>
 
-  {%- endcall %}
+        <header class="content-header">
+            <h1>
+                <span class="content-header__type">MOT testing</span>
+                <span class="content-header__title">MOT History - Exploiting our data</span>
+                </h1>
+        </header>                        
+
+        <div class="row contents">
+            <div class="col-lg-12">
+
+                <h1 class="content-header__type"> 
+                        Prototype versions
+                </h1>
+  <div class="col-lg-12">
+
+                <h1 class="content-header__type" style="margin-top: 50px;"> 
+                        CSV certificates
+                </h1>
+
+
+                <table class="key-value-list" style="table-layout: fixed;">
+                    <thead>
+                        <col width="170">
+                        <col width="100">
+                        <col width="420">
+                        <tr>
+                        <th scope="col">Version</th>
+                        <th class="" scope="col">Tested on</th>
+                        <th class="" scope="col">Changes/Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                                <th>
+                                <h2 class="heading heading--small heading-small">Version 2</h2>
+                                <ol class="list list-bullet">
+                                    <li><a href="/prototypes/mot-location/v2/">Journey 1</a></br>
+                                    </li>
+                                </ol>
+                            </th>
+                            <td class="">
+                                </br>TBC
+                            </td>
+                            <td class="">
+                                <div class="panel panel-border-narrow">
+                                    <h3><strong>HTML prototype built for user testing</strong></h3>
+                                    <p>Iteration, adding:</p>
+                                    <ol class="list list-bullet">
+                                      <li>Contact details page</li>
+                                      <li>Removing risk rating</li>
+                                    </ol>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <h2 class="heading heading--small heading-small">Version 1</h2>
+                                <ol class="list list-bullet">
+                                    <li><a href="/prototypes/mot-location/v1/">Journey 1</a></br>
+                                    </li>
+                                </ol>
+                            </th>
+                            <td class="">
+                                </br>November 2018
+                            </td>
+                            <td class="">
+                                <div class="panel panel-border-narrow">
+                                    <h3><strong>HTML prototype built for user testing</strong></h3>
+                                    <p>POC for MOT location. Initial prototype for testing risk rating scheme on public service</p>
+                                    <p style="color: #005DA6">“It would be great if you had like a TripAdvisor of trustworthy garages.”</p>
+                                    <p>Important themes when picking an MOT garage that came out of the research</p>
+                                    <ol class="list list-bullet">
+                                      <li>Cost of MOT</li>
+                                      <li>Location and convience is mentioned as very important when choosing a garage</li>
+                                      <li>Trust and reliablity</li>
+                                    </ol>
+                                    <p>What can be added:</p>
+                                    <ol class="list list-bullet">
+                                      <li>Waiting Times</li>
+                                      <li>Contact details of Garage (Address and Telephone number)</li>
+                                      <li>Opening Times</li>
+                                    </ol>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                        
+
+            </div>
+
+</main>
   
 {% endblock %}

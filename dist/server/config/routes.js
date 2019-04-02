@@ -23,6 +23,10 @@ var _createAccount = require('../controllers/create-account');
 
 var createAccountController = _interopRequireWildcard(_createAccount);
 
+var _compareTests = require('../controllers/compare-tests/compare-tests');
+
+var compareTestsController = _interopRequireWildcard(_compareTests);
+
 var _suspendTesters = require('../controllers/annual-assessment-tool/suspend-testers');
 
 var suspendTestersController = _interopRequireWildcard(_suspendTesters);
@@ -200,7 +204,17 @@ router.get('/prototypes/mot-history-data/:version/enter-v5c-error', mothData.get
 router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error1', mothData.getError);
 router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error2', mothData.getError);
 
-// Diret to error via v5c fn
+// Compare tests
+router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);
+router.get('/prototypes/compare-tests/v7/overview', compareTestsController.getOverview);
+router.get('/prototypes/compare-tests/v7/record-outcome', compareTestsController.getRecordOutcome);
+router.get('/prototypes/compare-tests/v7/assess-difference/:defectIndex', compareTestsController.getDifference);
+router.get('/prototypes/compare-tests/v7/shortcomings', compareTestsController.getShortcomings);
+router.get('/prototypes/compare-tests/v7/summary', compareTestsController.getSummary);
+router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [compareTestsController.checkCompletion, compareTestsController.postDifference]);
+router.post('/prototypes/compare-tests/v7/record-outcome', compareTestsController.postRecordOutcome);
+router.post('/prototypes/compare-tests/v7/shortcomings', compareTestsController.postShortcomings);
+
 // Create route from view path
 router.get('*', miscController.viewFileRoute);
 

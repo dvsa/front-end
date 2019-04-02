@@ -1,0 +1,156 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Summary List' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Summary List',
+    tag='h2',
+    size='medium'
+  ) }}
+  
+
+  {{ components.paragraph(
+    text='This table-like layout is modified from the GDS Summary List.'
+  ) }}
+
+  {{ components.paragraph(
+    text='Not strictly a table, but marked up as a definition list, extended to allow headings to have Change links, and nested rows to review all vehicle defects.'
+  ) }}
+
+  {% call components.displayCode() %}
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row govuk-summary-list__row--large">
+            <dt class="govuk-summary-list__key u-valign-middle">
+                Result
+            </dt>
+            <dd class="govuk-summary-list__value">
+                <span class="mot-result mot-result--fail" id="testStatus">Fail</span>
+            </dd>
+        </div>
+      </dl>
+
+      <h2 class="heading-medium u-margin-top-20">
+          Vehicle summary
+      </h2>
+
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row" id="vehicleSummary">
+            <dt class="govuk-summary-list__key" id="testClass">
+                Test class            </dt>
+            <dd class="govuk-summary-list__value">
+                4            </dd>
+        </div>
+            <div class="govuk-summary-list__row" id="vehicleSummary">
+            <dt class="govuk-summary-list__key" id="euClassification">
+                Vehicle category            </dt>
+            <dd class="govuk-summary-list__value">
+                N1            </dd>
+        </div>
+            <div class="govuk-summary-list__row" id="vehicleSummary">
+            <dt class="govuk-summary-list__key" id="fuel-type">
+                Fuel type            </dt>
+            <dd class="govuk-summary-list__value">
+                Diesel</dd> 
+        </div>
+        </dl>
+
+    <div class="govuk-summary-list__row govuk-summary-list__row--title">
+        <h2 class="heading-medium u-margin-top-20">
+            Odometer
+        </h2>
+                <span class="govuk-summary-list__actions">
+            <a href="#" title="Change odometer result">Change</a>
+        </span>
+            </div>
+
+   
+    <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                Odometer reading
+            </dt>
+            <dd class="govuk-summary-list__value" id="issueDate">
+                3330 miles
+            </dd>
+           
+        </div>
+    </dl>
+    <div class="govuk-summary-list__row govuk-summary-list__row--title">
+        <h2 class="heading-action heading-medium u-margin-top-20">
+            Defect results
+        </h2>
+                <span class="govuk-summary-list__actions">
+            <a href="#" title="Change defect results">Change</a>
+        </span>
+            </div>
+    <dl class="govuk-summary-list">
+    <div class="govuk-summary-list__row" id="fails">
+    <dt class="govuk-summary-list__key">
+        Dangerous failures    </dt>
+
+    <dd class="govuk-summary-list__value govuk-summary-list__value-group">
+            
+                        <div class="u-block govuk-summary-list__value-group-item" id="2350390425">
+            <span class="u-block">
+            Fluid leaking continuously posing a serious risk to road safety [8.4.1 (a) (ii)]                </span>
+
+                    </div>
+                        <div class="u-block govuk-summary-list__value-group-item" id="2350390433">
+            <span class="u-block">
+            Entrance/exit step in such a condition as to affect the stability of passengers during use [9.7 (a) (iii)]                </span>
+
+                    </div>
+        </dd>
+</div><div class="govuk-summary-list__row" id="fails">
+    <dt class="govuk-summary-list__key">
+        Major failures    </dt>
+
+    <dd class="govuk-summary-list__value govuk-summary-list__value-group">
+            
+                        <div class="u-block govuk-summary-list__value-group-item" id="2350390435">
+            <span class="u-block">
+            Entrance/exit step significantly damaged [9.7 (a) (ii)]                </span>
+
+                    </div>
+        </dd>
+</div><div class="govuk-summary-list__row" id="minors">
+    <dt class="govuk-summary-list__key">
+        Minors    </dt>
+
+    <dd class="govuk-summary-list__value govuk-summary-list__value-group">
+            
+                        <div class="u-block govuk-summary-list__value-group-item" id="2350390437">
+            <span class="u-block"> 
+            Entrance/exit step in a deteriorated condition [9.7 (a) (i)]                </span>
+
+                    </div>
+        </dd>
+</div><div class="govuk-summary-list__row" id="prses">
+    <dt class="govuk-summary-list__key">
+        PRS    </dt>
+
+    <dd class="govuk-summary-list__value govuk-summary-list__value-group">
+            
+                        <div class="u-block govuk-summary-list__value-group-item" id="2350390423">
+            <span class="u-block">
+            Exhaust on a vehicle fitted with a diesel particulate filter emits visible smoke of any colour [8.2.2.2 (d)]                </span>
+
+                    </div>
+        </dd>
+</div><div class="govuk-summary-list__row" id="advisoryText">
+    <dt class="govuk-summary-list__key">
+        Advisory text    </dt>
+
+    <dd class="govuk-summary-list__value govuk-summary-list__value-group">
+            
+    <span class="u-block govuk-summary-list__value-group-item">None recorded</span>
+    </dd>
+</div>    </dl>
+  {%- endcall %}
+
+  
+
+{% endblock %}

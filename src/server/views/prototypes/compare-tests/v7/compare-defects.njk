@@ -1,0 +1,149 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'MOT test comparison' %}
+
+{% block content %}
+
+<div class="breadcrumbs">
+  <ol>
+    <li>
+      <a href="/manuals">
+        Home
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT tests
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        MOT test history
+      </a>
+    </li>
+    <li>
+      <a href="/">
+        Compare tests
+      </a>
+    </li>
+    <li>
+      Compare defects
+    </li>
+  </ol>
+</div>
+
+
+<h1 class="heading-xlarge heading heading--page-heading">
+  <span class="heading-secondary">Record a reinspection</span>Defect differences
+</h1>
+
+<span style=" font-size: 19px;"><a href="#" style="font-weight: 400;">hide matches</a></span>
+
+<table class="key-value-list">
+  <tbody>
+    <tr>
+      <td style="border-top: 0px;"></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px; background-color: #dee0e2;">John Morris, MORR6734<a name="john" /></td>
+      <td style="font-weight: bold; border-top: 0px; font-size: 2.25rem; padding-left: 10px;">Harry Enforsmith, Vehicle Examiner</td>
+    </tr>
+    <tr>
+      <th>Lamps <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          All position lamps light intensity obviously reduced [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;"></span>
+          <span class="badge--warn">Minor</span>
+      </td>
+      <td>
+          <form>
+            <fieldset>
+              <div class="multiple-choice" data-target="disregard-defect-1">
+                
+                <label for="waste-type-1"><a href="assess-difference-defect-1">Record defect</a></label>
+              </div>     
+              <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-1">
+                  <label class="form-label" for="test-number">Why?</label>
+                  <textarea class="form-control" id="disregard-defect-1-reason" name="disregard-defect-1-reason" rows="2" cols="5" style="width: 100px;"></textarea>
+              </div>
+            </fieldset>
+          </form>
+      </td>
+    </tr>
+    <tr>
+      <th>Lamps <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Position lamp has a product on the lens or light source which changes the emitted colour [<a href="#" title="Check defect categorisation">4.2.3 (b) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Offside front</span>
+          <span class="badge--warn">Minor</span>
+      </td>    
+            <td>
+          <form>
+            <fieldset>
+              <div class="multiple-choice" data-target="disregard-defect-2">
+                
+                <label for="waste-type-2"><a href="assess-difference-defect-2">Record defect</a></label>
+              </div>
+              <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-2">
+                  <label class="form-label" for="test-number">Why?</label>
+                  <textarea class="form-control" id="disregard-defect-1-reason" name="disregard-defect-1-reason" rows="2" cols="5" style="width: 100px;"></textarea>
+              </div>
+            </fieldset>
+          </form>
+      </td>
+    </tr>
+    <tr>
+      <th>Road wheels <span class="badge--info">Difference</span></th>
+      <td style="background-color: #dee0e2; padding-left: 10px; font-weight: bold;">
+              Wheel hub spigot mounting slightly worn [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Offside rear</span>
+          <span class="badge--alert">Major</span>
+          </td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Wheel hub spigot mounting slightly worn [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
+          <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside rear</span>
+          <span class="badge--alert">Major</span>
+      </td>
+      <td>
+          <form>
+            <fieldset>
+              <div class="multiple-choice" data-target="disregard-defect-3">
+                
+                <label for="waste-type-3"><a href="assess-difference-defect-3">Record defect</a></label>
+              </div>
+              <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-3">
+                  <label class="form-label" for="test-number">Why?</label>
+                  <textarea class="form-control" id="disregard-defect-1-reason" name="disregard-defect-1-reason" rows="2" cols="5" style="width: 100px;"></textarea>
+              </div>              
+            </fieldset>
+          </form>
+      </td>
+   </tr>
+
+    <tr>
+      <th>Steering <span class="badge">Match</span></th>
+      <td style="background-color: #dee0e2; font-weight: bold; padding-left: 10px;">
+        Electronic power steering warning lamp indicates a system malfunction [<a href="#" title="Check defect categorisation">2.6 (a)</a>] (lamp is blinking randomly)<span class="key-value-list__meta"></span>
+        <span class="key-value-list__meta" style="margin-bottom: 5px;"></span>
+        <span class="badge--alert">Major</span></td>
+      <td style="font-weight: bold; padding-left: 10px;">
+          Electronic power steering warning lamp indicates a system malfunction [<a href="#" title="Check defect categorisation">2.6 (a)</a>] (lamp indicating inconsistently)
+          <span class="key-value-list__meta" style="margin-bottom: 5px;"></span>
+          <span class="badge--alert">Major</span>
+        </td>
+      <td></td>
+      <td></td>
+    </tr>   
+  </tbody>
+</table>
+
+<div style="margin-top: 40px;">
+    <a class="button" disabled="disabled" aria-disabled="true">Continue</a>
+    <br/>
+    <a href="test-comparison">Back</a>
+</div>
+
+
+
+
+{% endblock %}

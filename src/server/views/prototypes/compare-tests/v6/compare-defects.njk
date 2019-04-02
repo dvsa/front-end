@@ -48,7 +48,7 @@
     </tr>
     <tr>
       <th>Lamps <span class="badge--info">Difference</span></th>
-      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
       <td style="font-weight: bold; padding-left: 10px;">
           Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
           <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside front</span>
@@ -58,8 +58,8 @@
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-1">
-                <input id="waste-type-1" name="waste-types" type="checkbox" value="disregard-1">
-                <label for="waste-type-1">Disregard</label>
+                
+                <label for="waste-type-1"><a href="#">Judge difference</a></label>
               </div>     
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-1">
                   <label class="form-label" for="test-number">Why?</label>
@@ -71,7 +71,7 @@
     </tr>
     <tr>
       <th>Lamps <span class="badge--info">Difference</span></th>
-      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
       <td style="font-weight: bold; padding-left: 10px;">
           Daytime running lamp obviously incorrectly positioned [<a href="#" title="Check defect categorisation">4.2.3 (a) (i)</a>]
           <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Offside front</span>
@@ -81,8 +81,8 @@
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-2">
-                <input id="waste-type-2" name="waste-types" type="checkbox" value="disregard-2">
-                <label for="waste-type-2">Disregard</label>
+                
+                <label for="waste-type-2"><a href="#">Judge difference</a></label>
               </div>
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-2">
                   <label class="form-label" for="test-number">Why?</label>
@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <th>Road wheels <span class="badge--info">Difference</span></th>
-      <td style="background-color: #dee0e2; padding-left: 10px;">-</td>
+      <td style="background-color: #dee0e2; padding-left: 10px;">none</td>
       <td style="font-weight: bold; padding-left: 10px;">
           Wheel hub spigot mounting slightly worn [<a href="#" title="Check defect categorisation">5.2.1 (b) (i)</a>]
           <span class="key-value-list__meta" style="margin-bottom: 5px; color: black;">Nearside rear</span>
@@ -104,8 +104,8 @@
           <form>
             <fieldset>
               <div class="multiple-choice" data-target="disregard-defect-3">
-                <input id="waste-type-3" name="waste-types" type="checkbox" value="disregard-3">
-                <label for="waste-type-3">Disregard</label>
+                
+                <label for="waste-type-3"><a href="#">Judge difference</a></label>
               </div>
               <div class="panel panel-border-narrow js-hidden {{ 'form-group-error' if viewData.activity.errors[0]['testNumber'] }}" id="disregard-defect-3">
                   <label class="form-label" for="test-number">Why?</label>
@@ -133,27 +133,8 @@
   </tbody>
 </table>
 
-<div class="form-group" style="margin-top:40px;">
-  <label class="form-label" for="select-box">
-   Select outcome of the activity
-  </label>
-  <select class="form-control" id="select-box" name="select-box">
-    <option value="zero" selected="selected">Select</option>
-    <option value="one">NFA - No further action</option>
-    <option value="two">AWL - Advisory Warning Letter</option>
-    <option value="three">EDU - educational chat</option>
-    <option value="three">DAR - Disciplinary Action Report</option>
-  </select>
-</div>
-
-<label class="form-label" for="textarea">
- Comments
-</label>
-<textarea class="form-control" name="textarea" id="textarea" rows="5"></textarea>
-
-
 <div style="margin-top: 40px;">
-    <a class="button" href="assess-difference-defect-1">Compare tests and continue</a>
+    <a class="button" href="assess-difference-defect-1">Continue</a>
     <br/>
     <a href="test-comparison">Back</a>
 </div>

@@ -1,10 +1,21 @@
 # Changelog 🗒️
 All notable changes included in tagged releases will be documented in this file.
 
-# Unreleased
+## [1.3.12] - 2019-03-21
 ### Added
-- 'Interrupt panel' component
+- Utility class for grey border
+- Adds image for MTS messages markdown
+
+## [1.3.11] - 2019-03-20
+### Changed
+- Increased width of Action panel buttons used in Site Review
+- MOTH Accordion - last border-bottom fix on History panels
+- Bottom spacing on `<details>` element for mobile
+
+## [1.3.10] - 2019-03-18
+### Changed
 - Various Tablet and Touch affordances on the core MTS journey
+- Interrupt panel component
 
 ## [1.3.9] - 2019-02-13
 ### Added

@@ -1,0 +1,138 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      {{ components.pageHeading(heading='Messages') }}
+ 
+        <div class="c-tab-list">
+          <ul class="c-tab-list__tabs message-filters__tabs">          
+            <li>
+              <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Inbox</span>
+            </li>
+            <li>
+              <a href="/prototypes/messages/archive" class="c-tab-list__tab-link message-filters__tab">Archived</a>
+            </li>
+          </ul>
+          
+          <div class="message-filters__tab-panel js-filter-wrapper">
+
+            <h2 class="heading-large u-margin-top-10">Inbox</h2> 
+
+            
+              <div class="message-panel"> 
+              <h3 class="heading-small u-margin-top-10"> Message acknowledgment required</h3>
+
+                <ul class="message-panel__messages u-margin-bottom-15"> 
+
+                      <li data-type="Special notice" class="message-panel__message message-panel__message--unread">
+                        <div class='message-panel__message-type'>
+                          <span class='visually-hidden'>Type:</span>Disciplinary notification
+                        </div>
+                        <div class="grid-row">
+                          <div class="message-panel__col message-panel__col--six">
+                            <div class="message-panel__message-title">
+                              <a href="/prototypes/compare-tests/v6/NT/awl-message">You received Advisory Warning Letter following a re-inspection</a>
+                            </div>
+                          </div>
+                          <div class='message-panel__col message-panel__col--four'>
+                            
+                              <span class="message-panel__alert">Due in 11 days</span>
+                           
+                          </div>
+                        </div>
+                        <ul class="grid-row message-panel__details">
+                          <li class="message-panel__col message-panel__col--six">
+                            <span class='visually-hidden'>Date received:</span> 
+                            11/03/2019
+                          </li>
+                          <li class="message-panel__col message-panel__col--four">
+                            <span class='visually-hidden'>Action:</span>
+                            Action required
+                          </li>
+                          
+                        </ul> 
+                      </li>
+
+                </ul>
+              </div>
+            
+  
+            <div class="message-panel js-message-panel"> 
+
+              <form class='js-show'>
+                <fieldset>
+                  <div class="form-group inline u-margin-bottom-30">
+                    <legend class="heading-small">Select message type</legend>
+                    <div class="multiple-choice multiple-choice--inline">
+                      <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked>
+                      <label for="type-special">Special notices</label>
+                    </div>
+                    <div class="multiple-choice multiple-choice--inline">
+                      <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="notification" checked>
+                      <label for="type-reminder">Notifications</label>
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            
+              <ul class="message-panel__messages js-message-list">
+
+              {% for message in viewData.messages %}
+
+                {% if not message.state.isPinned %}
+
+                  <li data-type="{{'Special notice' if message.type=="Special notice" else 'Notification'}}" class="message-panel__message {{ '' if message.state.isRead else 'message-panel__message--unread' }}">
+                    {% if message.type=='Special notice' %}
+                    <div class='message-panel__message-type'>
+                      <span class='visually-hidden'>Type:</span> Special notice {{message.issueNum}}
+                    </div>
+                    {% endif %}
+                    <div class="grid-row">
+                      <div class="message-panel__col">
+                        <div class="message-panel__message-title">
+                          <a href="/prototypes/messages/{{message.id}}">{{message.title}}</a>
+                        </div>
+                      </div>
+                    </div>
+                    <ul class="grid-row message-panel__details">
+                      <li class="message-panel__col message-panel__col--six">
+                        <span class='visually-hidden'>Date received::</span> 
+                        {{ message.date.received }}
+                      </li>
+                      {% if (message.type=='Special notice' and not message.state.acknowledged) or (message.type!='Special notice' and message.type!='News' and not message.state.accepted and not message.state.rejected) %}
+                      <li class="message-panel__col message-panel__col--four">
+                        <span class='visually-hidden'>Action:</span>
+                        Action required
+                      </li>
+                      {% endif %}
+                    </ul>
+                  </li>
+                
+                  {% endif %}
+                {% endfor %} 
+              </ul>
+            </div> 
+
+          </div>
+
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          {{ components.link(text='Return to home', url='/prototypes/messages/homepage/', paragraph=true) }}
+        </div>
+
+    </div>
+
+    {%- endcall %} 
+    {%- endcall %} 
+  
+{% endblock %}

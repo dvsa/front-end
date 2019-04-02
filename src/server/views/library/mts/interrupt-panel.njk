@@ -1,0 +1,31 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Accordions' %}
+
+{% block content %}
+
+  {{ components.heading(text='Interrupt panel', tag='h2', size='medium') }}
+
+  {% call components.displayCode() %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <div class="interrupt-panel">
+            <h1 class="heading-xlarge">This defect is for vehicles newer than the one you're testing</h1>
+            <div class="u-margin-bottom-40">
+                <p>You have selected the defect <strong>Tyre pressure monitoring system inoperative</strong>.</p>
+                <p>It is only for vehicles <strong>first used from 1st April 2003</strong>.</p>
+                <p>Make sure you have selected the correct defect.</p>
+            </div>
+            <a class="button button--white" href="#">Defect is correct — continue</a>
+            <div class="u-margin-top-20">
+                <a href="#">Cancel and return to defects</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+  {%- endcall %}
+ 
+{% endblock %}

@@ -52,22 +52,31 @@
         </div>
       </div>
       <div class="js-accordion__content">
+      {% set invalid  = viewData.invalid %}
         
                   <div class="grid-row">
                     <div class="column-third">
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 1.05em; font-weight: bold;"> <span class="heading-secondary" style="font-size:1.05em">Date tested</span> 10 June 2018 </h1>
                         <h1 class="heading-large" style="margin-top: 0px; font-size: 3.5em; color: #00823B;">PASS</h1>
-                        <details class="u-space-t15" role="group" closed="">
-                            <summary role="button" aria-controls="test-location-details-0" aria-expanded="false">
+                        <details class="u-space-t15" role="group" {{  "open" if invalid }}>
+                            <summary role="button" aria-controls="test-location-details-0" aria-expanded="">
                                 <span class="summary">Download MOT certificate</span>
                             </summary>
-                             <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
-                                <label for="v5c-input">Enter latest V5C number</label>
-                                    <span class="form-hint">11 digits from the vehicle log book</span>
-                                <input class="form-control" id="v5c-input">
-                                <a class="button" href="download-certificate" role="button" style="margin-top: 10px;">Download test record</a>
-                            </div>
-                        </details>
+                             <div class="panel panel-border-narrow" aria-hidden="false" id="test-location-details-0" style="display: block;">
+
+                            <form class="form-group {{  " form-group-error" if invalid }}" action="enter-v5c?targetCert=pass" method="POST"> 
+                                <div class="form-group">
+                                    <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
+                                    <span class="form-hint">For example, 13451067289</span>
+                                        {% if invalid %}
+                                        <span class="error-message">Check that you entered the V5C number correctly</span>
+                                    {% endif %}
+                                    <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
+                                    <button class="govuk-button" type="submit" role="button">Download test record</button> 
+                                </div>
+                            </form>
+                    </div>
+                    </details>
                         
                         
                     </div>
@@ -114,12 +123,12 @@
                             </ul>
                         </h1>
                         <details class="u-space-t15" role="group">
-                                <summary role="button" aria-controls="details-content-1" aria-expanded="false">
-                                    <span class="summary">What are advisories?</span>
-                                </summary>
-                                <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-1" style="display: none;">
-                                    <p>Advisories are given for guidance. Some of these may need to be monitored in case they become more serious and need immediate repairs.</p>
-                                </div>
+                            <summary role="button" aria-controls="details-content-1" aria-expanded="false">
+                                <span class="summary">What are advisories?</span>
+                            </summary>
+                            <div class="panel panel-border-narrow" aria-hidden="true" id="details-content-1" style="display: none;">
+                                <p>Advisories are given for guidance. Some of these may need to be monitored in case they become more serious and need immediate repairs.</p>
+                            </div>
                         </details>
                     </div>
                 </div>
@@ -133,10 +142,17 @@
                                 <span class="summary">Download MOT certificate</span>
                             </summary>
                              <div class="panel panel-border-narrow " aria-hidden="false" id="test-location-details-0" style="display: block;">
-                                <label for="v5c-input">Enter latest V5C number</label>
-                                    <span class="form-hint">11 digits from the vehicle log book</span>
-                                <input class="form-control" id="v5c-input">
-                                <a class="button" href="#" role="button" style="margin-top: 10px;">Download test record</a>
+                                  <form class="form-group {{  " form-group-error" if invalid }}" action="enter-v5c?targetCert=fail" method="POST"> 
+                                <div class="form-group">
+                                    <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
+                                    <span class="form-hint">For example, 13451067289</span>
+                                        {% if invalid %}
+                                        <span class="error-message">Check that you entered the V5C number correctly</span>
+                                    {% endif %}
+                                    <input type="number" value="{{ viewData.v5c }}" class="govuk-input u-margin-bottom-15" name="v5c" id="v5c" style="text-transform: uppercase;">
+                                    <button class="govuk-button" type="submit" role="button">Download test record</button> 
+                                </div>
+                            </form>
                             </div>
                         </details>
                     </div>

@@ -59,6 +59,10 @@ var _vsiDuringTest = require('../controllers/vsi-during-test');
 
 var vsiDuringTestController = _interopRequireWildcard(_vsiDuringTest);
 
+var _motHistoryData = require('../controllers/mot-history-data');
+
+var mothData = _interopRequireWildcard(_motHistoryData);
+
 var _recalls2 = require('../controllers/recalls');
 
 var recalls = _interopRequireWildcard(_recalls2);
@@ -188,6 +192,17 @@ router.get('/prototypes/vsi-during-test/inspection', [vsiDuringTestController.in
 router.get('/prototypes/vsi-during-test/advice', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getAdvice]);
 router.get('/prototypes/vsi-during-test/odometer', [vsiDuringTestController.getPrevUrl, vsiDuringTestController.getOdometer]);
 router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.postOdometer);
+
+// MOTH Data
+router.post('/prototypes/mot-history-data/:version/enter-v5c', [mothData.checkV5c, mothData.postV5c]);
+
+router.get('/prototypes/mot-history-data/:version/history-results-audi', mothData.initViewData);
+router.get('/prototypes/mot-history-data/:version/enter-v5c', mothData.initViewData);
+router.get('/prototypes/mot-history-data/:version/enter-v5c-fail', mothData.initViewData);
+
+router.get('/prototypes/mot-history-data/:version/enter-v5c-error', mothData.getError);
+router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error1', mothData.getError);
+router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error2', mothData.getError);
 
 // Compare tests
 router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);

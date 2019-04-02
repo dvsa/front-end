@@ -1,0 +1,66 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'MOT history - vehicle results' %}
+
+{% block content %}
+
+
+<main id="content" role="main">
+
+<a class="link-back" href="history-results-audi">Back</a>
+
+  <div class="error-summary" role="alert" aria-labelledby="error-summary-example-heading-one">
+      <h2 class="heading-medium error-summary-heading" id="error-summary-example-heading-one">
+        There was a problem
+      </h2>
+
+      <ul class="error-summary-list">
+        <li>
+          <a href="#v5c">
+            Check that you entered the V5C number correctly
+          </a>
+        </li>
+      </ul>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <form class="form">
+        
+        <h1 class="form-title heading-large">
+          Download your MOT test certifcate
+        </h1>
+
+        <div class="form-group form-group-error">
+          <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
+          <span class="form-hint">For example, 13451067289</span>
+          <span class="error-message">Check that you entered the V5C number correctly</span>
+          <input type="text" class="form-control" id="v5c" style="text-transform: uppercase;">
+        </div>
+
+        <div style="margin-bottom: 20px">   
+        <details>
+            <summary><span class="summary">Where to find the V5C number</span></summary>
+                <div class="panel panel-border-narrow">
+                    <p>
+                        To be able to download the latest annual test certificate you need to enter your V5C number to show you own the car.
+                        This can be found on the front of your latest V5C registartaion certificate or logbook.
+                    </p>
+                    <img src="/images/V5C-diagram.png" class="image">
+                </div>
+        </details>
+        </div>
+
+        <div class="form-group">
+          <a class="button" href="#" role="button">Continue</a>
+        </div>
+
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -47,6 +47,35 @@ li{
                             <option>50 Miles</option>
                         </select>
                     </div>
+
+                    <legend>
+                        <span class="body-text">Filter results by vehicle type</span>
+                        </legend>
+                    <div class="multiple-choice">
+                        <input id="vehicle-type-1" name="vehicle-types" type="checkbox" value="vehicle-small-engine-mototcycle">
+                        <label for="vehicle-type-1">&lt; 200cc motorcycle</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="vehicle-type-2" name="vehicle-types" type="checkbox" value="vehicle-mototcycle">
+                        <label for="vehicle-type-2"> &gt; 200cc motorcycle</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="vehicle-type-3" name="vehicle-types" type="checkbox" value="vehicle-three-wheel">
+                        <label for="vehicle-type-3">3-wheeled vehicles</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="vehicle-type-4" name="vehicle-types" type="checkbox" value="vehicle-car">
+                        <label for="vehicle-type-4">Cars and vans</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="vehicle-type-5" name="vehicle-types" type="checkbox" value="vehicle-passanger">
+                        <label for="vehicle-type-5">Passenger vehicles</label>
+                    </div>
+                    <div class="multiple-choice">
+                        <input id="vehicle-type-6" name="vehicle-types" type="checkbox" value="vehicle-goods-vehicle">
+                        <label for="vehicle-type-6">Goods vehicles</label>
+                    </div>
+
                   <a class="button button-filter-search" href="#" type="submit" style="margin-top: 15px;">Update search</a>
                   <span id="error-message"></span>
                 </div>
@@ -55,64 +84,21 @@ li{
             
           </form>
 
-          <p>
-            <a href="#" style="font-size: 22">What are garage ratings?</a>
-          </p>
-
-
-          <hr>
-
-          <div class="image-wrapper">
-            <img src="/images/Risk-rating-green.png" alt="Risk rating green" class="image" style="width: 60px; display: inline;">
-                <span style="padding-bottom: 15px;">
-                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">17</strong>
-                </span>
-            <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Green Garage ratings</p>
-          </div>
-          <div>  
-            
-        </div>
-
-          <hr>
-
-          <div class="image-wrapper">
-            <img src="/images/Risk-rating-amber.png" alt="Risk rating amber" class="image" style="width: 60px; display: inline;">
-                <span style="padding-bottom: 15px;">
-                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">3</strong>
-                </span>
-                <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Amber Garage ratings</p>
-         
-
-
-          </div>
-
-          <hr>
-
-          <div class="image-wrapper">
-            <img src="/images/Risk-rating-red.png" alt="Risk rating red" class="image" style="width: 60px; display: inline;">
-                <span style="padding-bottom: 15px;">
-                    <strong style="Font-size: 48px; Font-weight:700; vertical-align: top; margin-top: 15px">2</strong>
-                </span>
-                <p style="padding-left:5px; Font-size: 24px; Font-weight:700;">Red Garage ratings</p>
-          </div>
-
-          <hr>
-
-          <div>
-                <h2 class="bold-small"> More information on the MOT test</h2>
+          <div style="border-top: 5px solid #005ea5; margin-top: 30px;">
+                <h2 class="bold-small" style="margin-top:20px;"> More information on the MOT test</h2>
                     <ul class="list list-bullet">
                         <li>
-                            <a href="https://www.gov.uk/getting-an-mot">
+                            <a href="https://www.gov.uk/getting-an-mot" target="_blank">
                                 When to get an MOT?
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.gov.uk/getting-an-mot/mot-test-fees">
+                            <a href="https://www.gov.uk/getting-an-mot/mot-test-fees" target="_blank">
                                 Costs of an MOT test
                             </a>
                         </li>
                          <li>
-                            <a href="https://www.gov.uk/getting-an-mot/booking-an-mot">
+                            <a href="https://www.gov.uk/getting-an-mot/booking-an-mot" target="_blank">
                                 How to book an MOT test?
                             </a>
                         </li>
@@ -123,17 +109,17 @@ li{
                 <h2 class="bold-small"> You can also</h2>
                     <ul class="list list-bullet">
                         <li>
-                            <a href="https://www.gov.uk/check-mot-history">
+                            <a href="https://www.gov.uk/check-mot-history" target="_blank">
                                 Check your vehicle MOT history
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.gov.uk/check-vehicle-tax">
+                            <a href="https://www.gov.uk/check-vehicle-tax" target="_blank">
                                 Check your vehicles tax status
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.gov.uk/mot-reminder">
+                            <a href="https://www.gov.uk/mot-reminder" target="_blank">
                                 Sign up for MOT reminders
                             </a>
                         </li>
@@ -161,9 +147,9 @@ li{
 
             <div class="grid-row">
                 <div class="column-full">
-                       <h1><a href="">Halfords Autocentre Nottingham (Castle Blvd)</a></h1>
+                       <h1><a href="halfords">Halfords Autocentre Nottingham (Castle Blvd)</a></h1>
                             <address style="color: #6f777b; font-size: 16px">Unit 4, Castlebridge Office Village, Castle Marina Road, Nottingham, NG7 1TN <strong style="font-weight: Bold;">- 0.17</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #D0021B; font-weight: Bold;">Red</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>11 May 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>11 May 2018</time></li></ul>
                 </div>
             </div>
 
@@ -171,9 +157,9 @@ li{
 
             <div class="grid-row">
                 <div class="column-full">
-                       <h1><a href="">ATS Euromaster Ltd</a></h1>
+                       <h1><a href="ats-euro">ATS Euromaster Ltd</a></h1>
                             <address style="color: #6f777b; font-size: 16px">66 Castle Blvd, Nottingham NG7 1GQ<strong style="font-weight: Bold;">- 0.19</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #00823b; font-weight: Bold;">Green</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>30 August 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1,2,3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>30 August 2018</time></li></ul>
                 </div>
             </div>
 
@@ -181,9 +167,9 @@ li{
 
             <div class="grid-row">
                 <div class="column-full">
-                       <h1><a href="">Mr Clutch Autocentres</a></h1>
+                       <h1><a href="mr-clutch">Mr Clutch Autocentres</a></h1>
                             <address style="color: #6f777b; font-size: 16px">Unit 13, Castle Park Industrial Estate, Queens Dr, Nottingham NG2 1AH<strong style="font-weight: Bold;">- 1.21</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #00823b; font-weight: Bold;">Green</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>18 September 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>18 September 2018</time></li></ul>
                 </div>
             </div>
 
@@ -193,7 +179,7 @@ li{
                 <div class="column-full">
                        <h1><a href="">Halfords Autocentre Nottingham (Huntingdon St)</a></h1>
                             <address style="color: #6f777b; font-size: 16px">248-262 Huntingdon St, Nottingham NG1 3NB<strong style="font-weight: Bold;">- 1.53</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #00823b; font-weight: Bold;">Green</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>28 July 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>28 July 2018</time></li></ul>
                 </div>
             </div>
 
@@ -203,7 +189,7 @@ li{
                 <div class="column-full">
                        <h1><a href="">Lindleys Autocentres</a></h1>
                             <address style="color: #6f777b; font-size: 16px">Unit 2 The Embankment, 15 Traffic Street, Nottingham NG2 1NE<strong style="font-weight: Bold;">- 2.30</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #00823b; font-weight: Bold;">Green</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>22 August 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>22 August 2018</time></li></ul>
                 </div>
             </div>
 
@@ -213,7 +199,7 @@ li{
                 <div class="column-full">
                        <h1><a href="">Nottingham MOT Centre</a></h1>
                             <address style="color: #6f777b; font-size: 16px">23 St Peter's St, Nottingham NG7 3EN<strong style="font-weight: Bold;">- 2.33</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #F47738; font-weight: Bold;">Amber</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>08 September 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>08 September 2018</time></li></ul>
                 </div>
             </div>
 
@@ -223,7 +209,7 @@ li{
                 <div class="column-full">
                        <h1><a href="">Formula One Autocentres</a></h1>
                             <address style="color: #6f777b; font-size: 16px">1 Glasshouse St, Nottingham NG1 3LP<strong style="font-weight: Bold;">- 3.37</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #00823b; font-weight: Bold;">Green</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>21 July 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
                 </div>
             </div>
 
@@ -233,7 +219,7 @@ li{
                 <div class="column-full">
                        <h1><a href="">KAM Servicing</a></h1>
                             <address style="color: #6f777b; font-size: 16px">59 N Sherwood St, Nottingham NG1 4EQ<strong style="font-weight: Bold;">- 4.50</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #00823b; font-weight: Bold;">Green</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>21 July 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
                 </div>
             </div>
 
@@ -243,7 +229,7 @@ li{
                 <div class="column-full">
                        <h1><a href="">DPR Motors Mot &amp; Service Centre Ltd</a></h1>
                             <address style="color: #6f777b; font-size: 16px">Unit 3 Redwood Court, Salisbury Street, Radford, Nottingham NG7 2BQ<strong style="font-weight: Bold;">- 5.37</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #F47738; font-weight: Bold;">Amber</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>21 July 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
                 </div>
             </div>
 
@@ -253,7 +239,7 @@ li{
                 <div class="column-full">
                        <h1><a href="">Nottingham City Council Workshop &amp; MOT Centre</a></h1>
                             <address style="color: #6f777b; font-size: 16px">Eastcroft Depot, London Rd, Nottingham NG2 3AH<strong style="font-weight: Bold;">- 5.87</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Garage rating: <strong style="color: #00823b; font-weight: Bold;">Green</strong></li><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Latest report: <time>21 July 2018</time></li></ul>
+                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
                 </div>
             </div>
 

@@ -27,14 +27,6 @@
     text-transform: uppercase;
     border-color: #999;
 
-    &.is-reg {
-      text-align: center;
-      background-color: lighten($yellow, 5);
-      text-transform: uppercase;
-      min-width: 9em;
-      max-width: 9em;
-    }
-
     &.is-vin {
       width: 100%;
       max-width: 14em;

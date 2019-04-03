@@ -5,10 +5,12 @@
 {% block content %}
 
   {{ components.heading(text='Page Width', tag='h2', size='medium') }}
-  {{ components.paragraph(text='The default maximum page width is 1020px, but go wider if the content requires it.') }}
+  {{ components.paragraph(text='The default maximum page width is 960px, but go wider if the content requires it.') }}
 
   {{ components.heading(text='Screen Size', tag='h2', size='medium') }}
-  {{ components.paragraph(text='Design for small screens first using a single column layout.') }}
+  
+  {{ components.paragraph(text='Design for small screens first using a single column layout. 
+   The default breakpoint for the columns shown here is specified by $tablet variable, found in _media-queries.scss') }}
 
   {{ components.heading(text='Full Width', tag='h2', size='medium') }}
 

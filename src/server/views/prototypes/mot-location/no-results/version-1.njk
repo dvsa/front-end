@@ -17,9 +17,9 @@ li{
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <a class="link-back" href="postcode-search">Back</a>
+      <a class="link-back" href="../index">Back</a>
 
-      <h1 class="heading-xlarge">Find a local MOT test centre
+      <h1 class="heading-xlarge">Find local MOT test centre
       </h1>
       </div>
       </div>
@@ -27,7 +27,7 @@ li{
       <div class="grid-row">
       <div class="column-one-third">
 
-      <form autocomplete="off" class="form" action="prototypes/MOT-location/v1/results-maps" method="post">
+      <form>
             <div class="form-group">
             <h2 class="heading-small">Postcode or Town
             </h2>
@@ -47,7 +47,7 @@ li{
                             <option>50 Miles</option>
                         </select>
                     </div>
-                    
+
                     <legend>
                         <span class="body-text">Filter results by vehicle type</span>
                         </legend>
@@ -76,29 +76,29 @@ li{
                         <label for="vehicle-type-6">Goods vehicles</label>
                     </div>
 
-                  <button class="button button-filter-search" href="#"  type="submit" style="margin-top: 15px;">Update search</button>
+                  <a class="button button-filter-search" href="#" type="submit" style="margin-top: 15px;">Update search</a>
                   <span id="error-message"></span>
                 </div>
               </fieldset>
-            </div>            
+            </div>
+            
           </form>
 
-        <hr>
           <div style="border-top: 5px solid #005ea5; margin-top: 30px;">
                 <h2 class="bold-small" style="margin-top:20px;"> More information on the MOT test</h2>
                     <ul class="list list-bullet">
                         <li>
-                            <a href="https://www.gov.uk/getting-an-mot">
+                            <a href="https://www.gov.uk/getting-an-mot" target="_blank">
                                 When to get an MOT?
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.gov.uk/getting-an-mot/mot-test-fees">
+                            <a href="https://www.gov.uk/getting-an-mot/mot-test-fees" target="_blank">
                                 Costs of an MOT test
                             </a>
                         </li>
                          <li>
-                            <a href="https://www.gov.uk/getting-an-mot/booking-an-mot">
+                            <a href="https://www.gov.uk/getting-an-mot/booking-an-mot" target="_blank">
                                 How to book an MOT test?
                             </a>
                         </li>
@@ -109,17 +109,17 @@ li{
                 <h2 class="bold-small"> You can also</h2>
                     <ul class="list list-bullet">
                         <li>
-                            <a href="https://www.gov.uk/check-mot-history">
+                            <a href="https://www.gov.uk/check-mot-history" target="_blank">
                                 Check your vehicle MOT history
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.gov.uk/check-vehicle-tax">
+                            <a href="https://www.gov.uk/check-vehicle-tax" target="_blank">
                                 Check your vehicles tax status
                             </a>
                         </li>
                         <li>
-                            <a href="https://www.gov.uk/mot-reminder">
+                            <a href="https://www.gov.uk/mot-reminder" target="_blank">
                                 Sign up for MOT reminders
                             </a>
                         </li>
@@ -137,9 +137,9 @@ li{
           </div>
 
           <div class="column-two-thirds">
-          <nav>
+            <nav>
                 <div>
-                    <p>Showing <Strong style="font-weight: Bold; font-size: 24px">1 - 10 </strong>of <Strong style="font-weight: Bold; font-size: 24px">22 </strong>results</p>
+                    <p>Showing <Strong style="font-weight: Bold; font-size: 24px">0 </strong>of <Strong style="font-weight: Bold; font-size: 24px">0 </strong>results</p>
                 </div>
             </nav>
             <hr style="margin-top: 5px">
@@ -151,20 +151,30 @@ li{
                         <option value="two">Alphabetical A - Z</option>
                         <option value="three">Alphabetical Z - A</option>
                     </select>
-                    <a href="results-list" style="float: right; font-size: 19px; margin-top: 15px">View on map</a>
+                    <a href="#" style="float: right; font-size: 19px; margin-top: 15px">View on map</a>
                 </div>
             </nav>
 
-          <hr>
+          <hr >
 
-          <div>
-            <div class="mapouter" style="text-align: left;">
-                <div class="gmap_canvas">
-                    <iframe width="630" height="700" id="gmap_canvas" src="https://maps.google.com/maps?q=nottingham&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                     
-                </div>
-            </div>
-          </div>
+          <div class="list active">
+                                
+                <p class="bold-small" style="margin-top:22px;">Please try:</p>
+                <ul class="list list-bullet">
+                    <li><a href="../index">searching again</a> using different spelling or words</li>
+                <li>
+                    removing your filters
+                </li>
+                </ul>
+
+
+                <hr>
+           </div>
+
+
+          
+
+     
 
     </div>
   </div>

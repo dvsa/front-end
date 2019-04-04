@@ -1,0 +1,82 @@
+{% extends "layouts/mts.layout.njk" %}
+
+{% block page_title %}
+  Find MOT location
+{% endblock %}
+
+{% set serviceName %}
+  Find MOT location
+{% endset%}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="https://www.gov.uk">Home</a></li>
+      <li><a href="">Driving and transport</a></li>
+      <li><a href="">Transport and driving businesses</a></li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>You must use an approved MOT test centre to get your MOT.</p>
+
+      <p>Use this service to:</p>
+
+      <ul class="list list-bullet">
+        <li>Find active MOT test stations in your area</li>
+        <li>Garages for sepcific types of vehicles</li>
+        <li>Contact details and opening time of garages</li>
+      </ul>
+
+      <p>This service is only available in England, Scotland and Wales.</p>
+
+      <div class="panel panel-border-wide">
+        <p>
+          There is a different process to <a href="https://www.nidirect.gov.uk/articles/book-view-change-or-cancel-mot-vehicle-test" target="_blank">get an MOT</a> in Northern Ireland.
+        </p>
+      </div>
+
+        <a class="button button-start" href="postcode-search" style="width: 200px" role="button">Start now</a>
+
+      <h2 class="heading-medium">Before you start</h2>
+
+      <p>You will need to know the postcode for the area you want to search in.</a></p>
+
+    </div>
+    <div class="column-third">
+
+      <aside class="govuk-related-items" role="complementary">
+        <h2 class="heading-medium" id="subsection-title">Related content</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="font-xsmall">
+            <li><a href="https://www.gov.uk/check-mot-history">Check the MOT history of a vehicle</a></li>
+            <li><a href="https://www.gov.uk/mot-reminder">Get MOT reminders</a></li>
+            <li><a href="https://vehicleenquiry.service.gov.uk/">Check if a vehicle is taxed</a></li>
+            <li><a href="#" class="bold-xsmall">More <span class="visuallyhidden">in Subsection</span></a></li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

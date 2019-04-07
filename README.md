@@ -1,3 +1,5 @@
+Further details and guidance for using this kit for prototypes and releases for MTS can be found internally in Confluence by searching for front-end.
+
 ## Demo
 
 You can view the MOT component library and prototypes here:

@@ -1,0 +1,208 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Responsive table' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Responsive table',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="Responsive Table for displaying several columns in a narrow viewport, with optional 'progress bar' component"
+  ) }}
+ 
+    
+  {% call components.displayCode() %}
+  <table class="responsive-table responsive-table--compact" role="grid"> 
+    <thead>
+      <tr role="row">
+        <th scope="col">Name</th>
+        <th scope="col" class="u-no-wrap">Date of birth</th>
+        <th scope="col">Postcode</th>
+        <th scope="col">Similarity</th>
+        <th scope="col">Flag reason</th>
+        <th scope="col">AE details</th>
+      </tr>
+    </thead>
+    
+    <tbody> 
+
+      <tr role="row">
+            <td role="gridcell">
+                <span class="table-heading" aria-hidden="true">Name:</span>
+                <span class="responsive-table__values-group">
+                    <strong>Lily Dorothy Warnock</strong>
+                    <span class="u-cell-meta">AEP</span>
+                </span>
+            </td>
+            <td role="gridcell" class="u-no-wrap">
+                <span class="table-heading" aria-hidden="true">Date of birth:</span><strong>24 January 1984</strong>
+            </td>
+            <td role="gridcell" class="u-no-wrap" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Postcode:</span><strong>HA7 3PN</strong></td>
+            <td role="gridcell">
+                <span class="table-heading" aria-hidden="true">Similarity: </span>
+                <div class="percentage-indicator">
+                     <span class="percentage-indicator__bar" style="width:97%;" title="97% similarity to search terms">97%</span>
+                </div>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Flag reason:</span>
+                <span class="responsive-table__values-group">
+                    Withdrawn
+                    <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">
+                        <span class="u-cell-meta">04 December 2018</span>
+                    </a>
+                </span>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">AE details:</span>
+                <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">Stanmore Motors Ltd</a> 
+            </td>
+        </tr> 
+
+        <tr role="row">
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Name:</span>
+                <span class="responsive-table__values-group">
+                    <a href="#" target="_blank">
+                        <strong>Lily Dorothy Warnock</strong> 
+                    </a>
+                    <span class="u-cell-meta">Tester</span>
+                </span> 
+            </td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Date of birth:</span>11 August 1991</td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Postcode:</span><strong>HA7 3PN</strong></td>
+            <td role="gridcell">
+                <span class="table-heading" aria-hidden="true">Similarity: </span>
+                <div class="percentage-indicator">
+                    <span class="percentage-indicator__bar" style="width:40%;" title="40% similarity to search terms">40%</span>
+                </div>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Flag reason:</span>
+                <span class="responsive-table__values-group">
+                    Suspended    
+                    <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">
+                        <span class="u-cell-meta">23 March 2017</span>
+                    </a>
+                </span>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">AE details:</span>
+                <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">Stanmore Motors Ltd</a>
+            </td>
+        </tr> 
+
+        <tr role="row">
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Name:</span> 
+                <span class="responsive-table__values-group">
+                    <strong>Isabella Dorothy Westbrook</strong>
+                    <span class="u-cell-meta">Tester</span>
+                </span>  
+            </td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Date of birth:</span>22 June 1937</td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Postcode:</span><strong>ST7 8BQ</strong></td>
+            <td role="gridcell">
+                <span class="table-heading" aria-hidden="true">Similarity: </span>
+                <div class="percentage-indicator">
+                        <span class="percentage-indicator__bar" style="width:20%;" title="20% similarity to search terms">20%</span>
+                </div>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Flag reason:</span>
+                <span class="responsive-table__values-group">
+                    Rejected  
+                    <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">
+                        <span class="u-cell-meta">23 March 2017</span>
+                    </a>
+                </span>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">AE details:</span>
+                <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">K & J Motors Pontyclun Ltd</a>
+            </td>
+        </tr> 
+
+        <tr role="row">
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Name:</span>
+                <span class="responsive-table__values-group">
+                    <strong>Mia Dorothy Crofts</strong> 
+                    <span class="u-cell-meta">AEP</span>
+                </span> 
+            </td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Date of birth:</span>27 February 1958</td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Postcode:</span>NG11 7FQ</td>
+            <td role="gridcell">
+                <span class="table-heading" aria-hidden="true">Similarity: </span>
+                <div class="percentage-indicator">
+                        <span class="percentage-indicator__bar" style="width:70%;" title="70% similarity to search terms">70%</span>
+                </div>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Flag reason:</span>
+                <span class="responsive-table__values-group">
+                    CRT disciplinary log
+                    <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">
+                        <span class="u-cell-meta">Case: 5436 (AEFWL)</span>
+                    </a>
+                </span>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">AE details:</span>
+                N/A
+            </td>
+        </tr>
+
+        <tr role="row">
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Name:</span>
+                <span class="responsive-table__values-group">
+                    <strong>Riley Dorothy Loehr</strong>
+                    <span class="u-cell-meta">AEP</span>
+                </span>  
+            </td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Date of birth:</span>03 January 1953</td>
+            <td role="gridcell" class="u-no-wrap"><span class="table-heading" aria-hidden="true">Postcode:</span>TQ7 4NB</td>
+            <td role="gridcell">
+                <span class="table-heading" aria-hidden="true">Similarity: </span>
+                <div class="percentage-indicator">
+                        <span class="percentage-indicator__bar" style="width:70%;" title="70% similarity to search terms">70%</span>
+                </div>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">Flag reason:</span>
+                <span class="responsive-table__values-group">
+                    Withdrawn
+                    <a href="/prototypes/ae-application-tool/v3/applicant-details-ae-event">
+                    <span class="u-cell-meta">12 September 2016</span>
+                    </a>
+                </span>
+            </td>
+            <td role="gridcell"><span class="table-heading" aria-hidden="true">AE details:</span>
+                <a href="#">Highway Tachograph &amp; Autocentre Ltd</a>
+            </td>
+        </tr> 
+     
+    </tbody>
+  </table> 
+
+  <div class="pager">
+    <div class="pager__controls">
+      <ul class="pager__list">
+        <li>1
+        </li>
+        <li>
+          <a href="#">2</a>
+        </li>
+        <li>
+          <a href="#">3</a>
+        </li>
+        <li>
+          <a href="#">4</a>
+        </li>
+        <li>
+          <a href="#">5</a>
+        </li>
+      </ul><a class="pager__next" href="#">Next</a>
+    </div>
+    <div class="pager__summary">
+      Showing 1 &ndash; 10 of 105 items
+    </div>
+  </div>
+  {%- endcall %}
+  
+ 
+  
+{% endblock %}

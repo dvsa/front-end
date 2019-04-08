@@ -1,0 +1,34 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Tertiary List' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Tertiary List',
+    tag='h1',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="Used primarily for displaying Vehicle Information underneath the page title, such as on MOT test Results page",
+    lead=true
+  ) }}
+
+  {% call components.displayCode() %}
+  
+<h2 class="govuk-heading-l">MOT test results</h2>
+
+
+  <div class="content-header">
+    <ul class="content-header__tertiary-list">
+        <li id="vehicleMakeModel" class="content-header__list-item--primary">IVECO, DAILY</li>
+        <li id="vehicleRegistration" class="content-header__list-item">WP40BNQ</li>
+        <li id="firstUsedDate" class="content-header__list-item">First used 1 Jul 2005</li>
+    </ul>
+  </div>
+
+{%- endcall %}
+
+
+{% endblock %}

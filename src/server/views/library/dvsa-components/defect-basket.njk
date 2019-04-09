@@ -4,8 +4,15 @@
 
 {% block content %}
 
+{{ components.heading(
+  text='Defect basket',
+  tag='h1',
+  size='large'
+) }}
+
+
   {{ components.heading(
-    text='Default - No defects present',
+    text='No defects present',
     tag='h2',
     size='medium'
   ) }}
@@ -38,6 +45,17 @@
     tag='h2',
     size='medium'
   ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'Defect count is shown in the coloured squares next to each type label' },
+      { text: 'If JavaScript is available, Show defects button shown on the right' },
+      { text: 'Clicking on Show defects will display the full list of identified defects' },
+      { text: 'When toggled, the Show defects text will change to Hide defects' },
+      { text: 'If JavaScript unavailable there will be no Show defects link (at top or bottom), and the list will be open/visible permanently' }
+    ],
+    type='number'
+  )}}
 
   {% call components.displayCode() %}
   <div class="defect-summary" id="defect-summary">

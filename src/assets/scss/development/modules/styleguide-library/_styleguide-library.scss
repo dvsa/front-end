@@ -5,6 +5,9 @@
     width: calc( 100% - 250px );
     float: right;
     min-height: 100%;
+    > .heading:first-of-type {
+      margin-top: $gutter;
+    }
 
     img {
       max-width: 100%;

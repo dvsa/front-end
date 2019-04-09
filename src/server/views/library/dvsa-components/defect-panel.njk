@@ -5,7 +5,12 @@
 {% block content %}
 
   {{ components.heading(
-    text='Default',
+    text='Defect panel',
+    tag='h1',
+    size='large'
+  ) }}
+  {{ components.heading(
+    text='No defects',
     tag='h2',
     size='medium'
   ) }}
@@ -18,33 +23,10 @@
         <a href="#" class="button">Add a defect</a>
   </div>
   {%- endcall %}
+   
 
   {{ components.heading(
-    text='Success Message',
-    tag='h2',
-    size='medium'
-  ) }}
-
-  {% call components.displayCode() %}
-  <div class="message--success">
-    <h3>The failure <strong>Tyre pressure monitoring system inoperative</strong> has been removed</h3>
-  </div>
-  {%- endcall %}
-
-  {{ components.heading(
-    text='Error Message',
-    tag='h2',
-    size='medium'
-  ) }}
-
-  {% call components.displayCode() %}
-  <div class="message--failure">
-    <h3>The advisory <strong>Brake pads worn close to legal limit</strong> has not been removed. Try again.</h3>
-  </div>
-  {%- endcall %}
-
-  {{ components.heading(
-    text='With data',
+    text='With defects',
     tag='h2',
     size='medium'
   ) }}
@@ -66,7 +48,7 @@
       </h3>
 
       <ol>
-        <li class="defect ">
+       <li class="defect">
           <strong class="defect__is-dangerous" aria-hidden="true">Dangerous failure</strong>
 
           <strong class="defect__title">Tyre pressure monitoring system inoperative</strong>
@@ -89,7 +71,7 @@
           </ul>
         </li>
         
-        <li class="defect ">
+       <li class="defect">
           <strong class="defect__is-dangerous" aria-hidden="true">Major failure</strong>
 
           <strong class="defect__title">Torsion bar deteriorated by corrosion so that its cross sectional area is reduced and seriously weakened</strong>
@@ -113,7 +95,7 @@
           </ul>
         </li>
 
-        <li class="defect ">
+       <li class="defect">
           <strong class="defect__is-dangerous" aria-hidden="true">Dangerous failure</strong>
 
           <strong class="defect__title">Drivers door hinge erroded</strong>
@@ -144,7 +126,7 @@
       </h3>
 
       <ol>
-        <li class="defect ">
+       <li class="defect">
 
           <strong class="defect__title">Tyre worn close to the legal limit</strong>
 
@@ -173,7 +155,7 @@
           </ul>
 
         </li>
-        <li class="defect ">
+       <li class="defect">
 
           <strong class="defect__title">Windscreen has damage to an area less than a 10mm circle within zone &#39;A&#39;</strong>
 
@@ -201,7 +183,7 @@
           </ul>
 
         </li>
-        <li class="defect ">
+       <li class="defect">
 
           <strong class="defect__title">Towbar component slightly corroded</strong>
 
@@ -237,7 +219,7 @@
       </h3>
 
       <ol>
-        <li class="defect ">
+       <li class="defect">
 
           <strong class="defect__title">Tyre pressure monitoring system inoperative</strong>
 
@@ -258,7 +240,7 @@
           </ul>
 
         </li>
-        <li class="defect ">
+       <li class="defect">
 
           <strong class="defect__title">Torsion bar deteriorated by corrosion so that its cross sectional area is reduced and seriously weakened</strong>
 
@@ -294,7 +276,7 @@
       </h3>
 
       <ol>
-        <li class="defect ">
+       <li class="defect">
 
           <strong class="defect__title">Rear view mirror fixing coming loose</strong>
 
@@ -314,9 +296,9 @@
           </ul>
 
         </li>
-        <li class="defect ">
+       <li class="defect">
 
-          <strong class="defect__title">BEaring cup showing signs of wear</strong>
+          <strong class="defect__title">Bearing cup showing signs of wear</strong>
 
           <h4 class="visuallyhidden">Position</h4>
           <ul class="defect__positions">
@@ -349,7 +331,7 @@
   {%- endcall %}
 
   {{ components.heading(
-    text='With data during re-test',
+    text='With defects during re-test',
     tag='h2',
     size='medium'
   ) }}
@@ -370,7 +352,7 @@
       </h3>
 
       <ol>
-        <li class="defect ">
+       <li class="defect">
           <strong class="defect__is-dangerous" aria-hidden="true">Dangerous failure</strong>
 
           <strong class="defect__title">Tyre pressure monitoring system inoperative</strong>
@@ -422,141 +404,7 @@
       </ol>
     </div>
   </div>
-  {%- endcall %}
-
-  {{ components.heading(
-    text='Defects, with data during retest',
-    tag='h2',
-    size='medium'
-  ) }}
-
-  {% call components.displayCode() %}
-  <div class="action-panel">
-      <div class="action-panel__container">
-        <h3 class="action-panel__heading">Defects</h3>
-      </div>
-      <a href="#" class="button">Add a defect</a>
-  </div>
-
-  <div class="defect-summary">
-    <div>
-      <h3 class="defect-summary__heading">
-        <span class="badge--alert">2</span>
-        <span class="defect-summary__heading-type">Failures</span>
-      </h3>
-
-      <ol>
-        <li class="defect ">
-          <strong class="defect__is-dangerous" aria-hidden="true">Dangerous failure</strong>
-          <strong class="defect__title">Tyre pressure monitoring system inoperative</strong>
-
-          <p class="defect__meta">Showing no fault when tyres are flat.</p>
-          <strong class="visuallyhidden">Dangerous failure</strong>
-          <h4 class="visuallyhidden">Position</h4>
-
-          <ul class="defect__positions">
-            <li>Location not recorded</li>
-          </ul>
-
-          <h4 class="visuallyhidden">Actions</h4>
-
-          <ul class="defect__edit">
-            <li>
-              <a href="#" class="button button--small button--right">Mark as repaired</a>
-            </li>
-          </ul>
-
-        </li>
-        <li class="defect defect--is-selected">
-          <strong class="defect__is-dangerous" aria-hidden="true">Major failure</strong>
-          <strong class="defect__title">Torsion bar deteriorated by corrosion so that its cross sectional area is reduced and seriously weakened</strong>
-          <strong class="visuallyhidden">Major failure</strong>
-          <h4 class="visuallyhidden">Position</h4>
-
-          <ul class="defect__positions">
-            <li>Lateral:
-              <span class="defect__property-list-value">Nearside</span>
-            </li>
-            <li>Longitudinal:
-              <span class="defect__property-list-value">Front</span>
-            </li>
-            <li>Vertical:
-              <span class="defect__property-list-value">N/A</span>
-            </li>
-          </ul>
-
-          <ul class="defect__edit">
-            <li class="defect__marked-undo">
-              <span>Repaired</span>
-              <a href="#">Undo</a>
-            </li>
-          </ul>
-        </li>
-      </ol>
-    </div>
-  </div>
-  {%- endcall %}
-
-  {{ components.heading(
-    text='Defect summary mark as repaired button',
-    tag='h2',
-    size='medium'
-  ) }}
-
-  {% call components.displayCode() %}
-  <div class="action-panel">
-      <div class="action-panel__container">
-        <h2 class="action-panel__heading">Defects</h2>
-      </div>
-      <a href="#" id="addDefectButton" class="button">Add a defect</a>
-  </div>
-
-  <div class="defect-summary">
-    <div id="rfrList">
-      <h3 class="defect-summary__heading">
-        <span class="badge--alert js-numberOfFailures">1</span>
-        <span class="defect-summary__heading-type">Failures</span>
-      </h3>
-      <ol>
-        <li class="js-rfrItem defect ">
-
-          <div class="defect-status">
-            <div class="js-itemStatus defect-status__inner"></div>
-          </div>
-
-          <div>
-            <strong class="defect__is-dangerous" aria-hidden="true">Major failure</strong>
-            <h4 class="defect__title">Vehicle identification number obviously falsified</h4>
-            <p class="defect__meta"></p>
-            <strong class="visuallyhidden">Major failure</strong>
-            <h5 class="visuallyhidden">Position</h5>
-            <ul class="defect__positions">
-              <li>Location not recorded</li>
-            </ul>
-          </div>
-          <h5 class="visuallyhidden">Actions</h5>
-
-          <ul class="defect__edit">
-
-            <li class="defect__marked-undo">
-              <span>Repaired</span>
-              <form class="js-rfrForm" method="post" action="#" data-form-state-index="0">
-                <input class="js-buttonMarkRepaired button--link button--right" type="submit" value="Undo">
-              </form>
-            </li>
-
-            <li class="defect__mark-repaired">
-              <form class="js-rfrForm" method="post" action="#" data-form-state-index="1">
-                <input class="js-buttonMarkRepaired button button--small button--right" type="submit" value="Mark as repaired">
-              </form>
-            </li>
-
-          </ul>
-        </li>
-      </ol>
-    </div>
-  </div>
-  {%- endcall %}
+  {%- endcall %} 
 
   {{ components.heading(
     text='Defect summary mark as repaired loading',
@@ -620,7 +468,7 @@
   {%- endcall %}
 
   {{ components.heading(
-    text='Defect summary repaird',
+    text='Defect summary repaired',
     tag='h2',
     size='medium'
   ) }}

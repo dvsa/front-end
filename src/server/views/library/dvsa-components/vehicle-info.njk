@@ -7,16 +7,24 @@
   {{ components.heading(
     text='Vehicle Information',
     tag='h1',
+    size='large'
+  ) }}
+
+  {{ components.paragraph(
+    text="Features in Find a Vehicle and Test Summary views in addition to a varient on the VTS Home page.") }}
+
+  {{ components.heading(
+    text='Vehicle search results',
+    tag='h2',
     size='medium'
   ) }}
 
   {{ components.paragraph(
-    text="Features in Find a Vehicle and Test Summary views in addition to a varient on the VTS Home page. This component may or may not include the last Test information and 'Select Vehicle' button, depending on where it's used.") }}
+    text="Each result is stacked, with the 'Select vehicle' button. Bottom border separator will oinly show if there is more than one result.") }}
 
   {% call components.displayCode() %}
-  
-  {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495118', color='red', selectVehicle=true) }}
-
+    {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495118', color='red', selectVehicle=true) }}
+    {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='RH15 ERL', vin='RRULAGAAFAA495138', color='blue', selectVehicle=true) }}
   {%- endcall %}
 
   {{ components.heading(
@@ -28,7 +36,6 @@
   {% call components.displayCode() %} 
   {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495118', color='red', selectVehicle=false) }}
   {%- endcall %}
-
 
 {{ components.heading(
   text='Vehicle Information on Home page',

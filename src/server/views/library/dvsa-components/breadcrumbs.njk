@@ -1,26 +1,49 @@
-{% extends 'layouts/library.layout.njk' %}
+{% extends 'layouts/library-mts.layout.njk' %}
 
 {% set pageTitle = 'MOT Library - Breadcrumbs' %}
 
 {% set pageBreadcrumbItems = [
   { text: 'Home', url: '/manuals' },
-  { text: 'Subsection one', url: '/' },
-  { text: 'This page title' }
+  { text: 'Henderson Auto Repairs Ltd.', url: '/' },
+  { text: 'Change business details' }
 ] %}
 
 {% set defectSearchHistory = [
   { text: 'Home' },
   { text: 'Subsection one'},
   { text: 'This page title' }
-] %}
+] %} 
+)}}
 
 {% block content %}
 
   {{ components.heading(text='Breadcrumbs', tag='h2', size='medium') }}
 
+  {{ components.list(
+    items=[
+      { text: 'Breadcrumbs are not used on the Home page' },
+      { text: 'the first item must always be a link to Home' },
+      { text: 'the last item must never be a link' },
+      { text: 'when in an AE/VTS the breadcrumbs should reflect the entities\' name' },
+      { text: 'task steps must not be shown in the breadcrumb trail' }
+    ],
+    type='number')
+  }}  
+
+
   {{ components.breadcrumb(items=pageBreadcrumbItems) | prism }}
 
+
+  {{ components.paragraph(
+    text="In the above, example, the last \'crumb\' reflects the task (not hyperlinked) - despite the user being on the second step of the task (Reviewing changes to business details) ") }}   
+
+
   {{ components.heading(text='Breadcrumbs (Muted)', tag='h2', size='medium') }}
+ 
+
+  {{ components.paragraph(
+    text="This version of the breadcrumb is used within Defect search results and is not clickable, but shows the position of each defect") }}   
+
 
   {{ components.breadcrumb(items=defectSearchHistory, muted=true) | prism }}
 

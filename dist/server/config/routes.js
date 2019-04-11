@@ -205,15 +205,15 @@ router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error1', mo
 router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error2', mothData.getError);
 
 // Compare tests
-router.get('/prototypes/compare-tests/v7/start', compareTestsController.getStart);
-router.get('/prototypes/compare-tests/v7/overview', compareTestsController.getOverview);
-router.get('/prototypes/compare-tests/v7/record-outcome', compareTestsController.getRecordOutcome);
-router.get('/prototypes/compare-tests/v7/assess-difference/:defectIndex', compareTestsController.getDifference);
-router.get('/prototypes/compare-tests/v7/shortcomings', compareTestsController.getShortcomings);
-router.get('/prototypes/compare-tests/v7/summary', compareTestsController.getSummary);
-router.post('/prototypes/compare-tests/v7/assess-difference/:defectIndex', [compareTestsController.checkCompletion, compareTestsController.postDifference]);
-router.post('/prototypes/compare-tests/v7/record-outcome', compareTestsController.postRecordOutcome);
-router.post('/prototypes/compare-tests/v7/shortcomings', compareTestsController.postShortcomings);
+router.get('/prototypes/compare-tests/v8/start', compareTestsController.getStart);
+router.get('/prototypes/compare-tests/v8/overview', compareTestsController.getOverview);
+router.get('/prototypes/compare-tests/v8/record-outcome', compareTestsController.getRecordOutcome);
+router.get('/prototypes/compare-tests/v8/assess-difference/:defectIndex', compareTestsController.getDifference);
+router.get('/prototypes/compare-tests/v8/shortcomings', compareTestsController.getShortcomings);
+router.get('/prototypes/compare-tests/v8/summary', compareTestsController.getSummary);
+router.post('/prototypes/compare-tests/v8/assess-difference/:defectIndex', [compareTestsController.checkCompletion, compareTestsController.postDifference]);
+router.post('/prototypes/compare-tests/v8/record-outcome', compareTestsController.postRecordOutcome);
+router.post('/prototypes/compare-tests/v8/shortcomings', compareTestsController.postShortcomings);
 
 // Create route from view path
 router.get('*', miscController.viewFileRoute);

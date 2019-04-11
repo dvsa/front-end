@@ -1,6 +1,10 @@
 # Changelog 🗒️
 All notable changes included in tagged releases will be documented in this file.
 
+## [1.3.14] - 2019-04-11
+### Added
+- Max width for images added to Special Notice markdown
+
 ## [1.3.13] - 2019-04-07
 ### Added
 - Responsive Table to MTS Component Library

@@ -4,6 +4,10 @@
     list-style-type: circle;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   h1 {
     @include bold-36();
 

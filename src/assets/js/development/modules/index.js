@@ -13,5 +13,5 @@ export const initModules = () => {
   initThemeToggle();
   initLibraryNavigation();
   initAutoComplete();
-  //initDevPreview();
+  initDevPreview();
 };

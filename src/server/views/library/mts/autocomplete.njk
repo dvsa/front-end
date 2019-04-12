@@ -1,0 +1,78 @@
+
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Brake tests panel' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Autocomplete',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {% call components.displayCode() %}
+    <form>
+      <fieldset>
+        <div class="form-group">
+        <label for="last-location">What is the vehicle manufacturer?</label>
+        <div class="autocomplete-wrapper">
+          <select class="select-autocomplete" name="last-location" id="last-location">
+            <option value="0"></option>
+            <option value="Alfa Romeo">Alfa Romeo</option>
+            <option value="Allied Vehicles">Allied Vehicles</option>
+            <option value="Aston Martin">Aston Martin</option>
+            <option value="Audi">Audi</option>
+            <option value="Bentley">Bentley</option>
+            <option value="BMW">BMW</option>
+            <option value="Bugatti Automobiles SAS">Bugatti Automobiles SAS</option>
+            <option value="Cadillac">Cadillac</option>
+            <option value="Caterham Cars">Caterham Cars</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Chrysler">Chrysler</option>
+            <option value="Citroen">Citroen</option>
+            <option value="Dacia">Dacia</option>
+            <option value="Dodge">Dodge</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Fiat">Fiat</option>
+            <option value="Ford">Ford</option>
+            <option value="General Motors">General Motors</option>
+            <option value="Honda">Honda</option>
+            <option value="Hummer">Hummer</option>
+            <option value="Hyundai">Hyundai</option>
+            <option value="Infiniti">Infiniti</option>
+            <option value="Jaguar">Jaguar</option>
+            <option value="Jeep">Jeep</option>
+            <option value="Kia">Kia</option>
+            <option value="Lamborghini">Lamborghini</option>
+            <option value="Land Rover">Land Rover</option>
+            <option value="Lancia">Lancia</option>
+            <option value="Lotus">Lotus</option>
+            <option value="Maserati">Maserati</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Mclaren">Mclaren</option>
+            <option value="Mercedes Benz">Mercedes Benz</option>
+            <option value="Mini">Mini</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Morgan">Morgan</option>
+            <option value="Nissan">Nissan</option>
+            <option value="Peugeot">Peugeot</option>
+            <option value="Porsche">Porsche</option>
+            <option value="Renault">Renault</option>
+            <option value="Rolls Royce">Rolls Royce</option>
+            <option value="Rover">Rover</option>
+            <option value="SAAB">SAAB</option>
+            <option value="Skoda">Skoda</option>
+            <option value="Subaru">Subaru</option>
+            <option value="Tesla">Tesla</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Vauxhall">Vauxhall</option>
+            <option value="Volvo">Volvo</option>
+            <option value="VW">VW</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+  {% endcall %}
+{% endblock %}

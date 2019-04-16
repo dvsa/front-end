@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% set serviceName %}
-  Find MOT location
+  Find a local MOT test centre
 {% endset%}
 
 {% block proposition_header %}
@@ -28,10 +28,10 @@
     </ol>
   </div>
 
-  <div class="grid-row">
-    <div class="column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="heading-xlarge">
+      <h1 class="govuk-heading-xl govuk-!-margin-top-6">
         {% if serviceName %} {{ serviceName }} {% endif %}
       </h1>
 
@@ -40,14 +40,14 @@
       <p>Use this service to:</p>
 
       <ul class="list list-bullet">
-        <li>Find active MOT test stations in your area</li>
-        <li>Garages for sepcific types of vehicles</li>
-        <li>Contact details and opening time of garages</li>
+        <li>find active MOT test stations in your area</li>
+        <li>garages for sepcific types of vehicles</li>
+        <li>contact details and opening time of garages</li>
       </ul>
 
       <p>This service is only available in England, Scotland and Wales.</p>
 
-      <div class="panel panel-border-wide">
+      <div class="govuk-inset-text">
         <p>
           There is a different process to <a href="https://www.nidirect.gov.uk/articles/book-view-change-or-cancel-mot-vehicle-test" target="_blank">get an MOT</a> in Northern Ireland.
         </p>
@@ -55,12 +55,12 @@
 
         <a class="button button-start" href="postcode-search" style="width: 200px" role="button">Start now</a>
 
-      <h2 class="heading-medium">Before you start</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">Before you start</h2>
 
       <p>You will need to know the postcode for the area you want to search in.</a></p>
 
     </div>
-    <div class="column-third">
+    <div class="govuk-grid-column-one-third">
 
       <aside class="govuk-related-items" role="complementary">
         <h2 class="heading-medium" id="subsection-title">Related content</h2>

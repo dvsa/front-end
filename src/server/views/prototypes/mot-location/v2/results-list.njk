@@ -30,14 +30,13 @@ li{
 
       <form>
             <div class="form-group">
-            <h2 class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-3">Postcode or Town
-            </h2>
               <fieldset>
-                  <label for="location" class="visuallyhidden">
-                  </label>
+                  <legend for="location" class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                    Postcode or Town
+                  </legend>
                   <input id="location" name="location" class="form-control" style="width:100%;" type="text" placeholder="e.g. SW1A 2AA or Bakewell" value=" ">
-                    <div class="form-group" style="margin-top: 15px">
-                        <label class="form-label govuk-!-font-weight-bold" for="select-box">Distance</label>
+
+                        <label class="form-label govuk-!-font-weight-bold govuk-!-margin-top-5" for="select-box">Distance</label>
                         <select class="form-control" style="width:100%; Margin-top: 10px" id="select-box" name="select-box">
                             <option>5 Miles</option>
                             <option>10 Miles</option>
@@ -45,10 +44,9 @@ li{
                             <option>25 Miles</option>
                             <option>50 Miles</option>
                         </select>
-                    </div>
 
                     <legend>
-                        <span class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-3">Filter results by vehicle type</span>
+                        <span class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-5">Filter results by vehicle type</span>
                         </legend>
                     <div class="multiple-choice">
                         <input id="vehicle-type-1" name="vehicle-types" type="checkbox" value="vehicle-small-engine-mototcycle">
@@ -81,7 +79,7 @@ li{
             
           </form>
 
-          <div style="border-top: 5px solid #005ea5; margin-top: 30px;">
+          <div class="app-related-content">
                 <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-4"> More information on the MOT test</h2>
                     <ul class="list list-bullet">
                         <li>
@@ -102,8 +100,8 @@ li{
                     </ul>
           </div>
 
-          <div>
-                <h2 class="govuk-!-font-weight-bold"> You can also</h2>
+          <div class="app-related-content">
+                <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-4"> You can also</h2>
                     <ul class="list list-bullet">
                         <li>
                             <a href="https://www.gov.uk/check-mot-history" target="_blank">

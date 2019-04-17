@@ -47,4 +47,25 @@
   {{ components.vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495118', color='red', selectVehicle=false, home='true') }}  
 {%- endcall %}
 
+  {{ components.heading(
+    text='Vehicle information',
+    tag='h1',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text='Example of vehicle search showing vehicle information prior to selecting vehicle for test. Makes it easy for testers to verify the vehicle presented for test is the one being selected.',
+    lead=true
+  ) }}
+  
+  {{ components.heading(
+    text='Coded examples',
+    tag='h3',
+    size='small'
+  ) }}
+  
+  {{ components.link(text='Find a Vehicle', paragraph=true, url='/prototypes/responsive-mot/vehicle-result', back=false) }}
+  {{ components.link(text='Confirm Vehicle and start test', paragraph=true, url='/prototypes/responsive-mot/confirm-vehicle-details', back=false) }}
+ 
+
 {% endblock %}

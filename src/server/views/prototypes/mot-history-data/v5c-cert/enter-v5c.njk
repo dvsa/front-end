@@ -1,0 +1,47 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'MOT history - vehicle results' %}
+
+{% block content %}
+
+
+
+<main id="content" role="main">
+
+
+  <div class="grid-row">
+    <div class="column-full">
+      <a class="link-back" href="history-results-audi">Back</a>
+    </div>
+  </div>
+    <div class="grid-row">
+    <div class="column-one-half">
+      <form class="form" action="enter-v5c" method="POST">
+        
+        <h1 class="form-title heading-large">
+          View your MOT test certificate
+        </h1>
+        <div class="form-group">
+          <p>
+              To be able to view the MOT test certificate you need to enter your V5C number to show you own the car.
+          </p>
+          <label class="form-label-bold" for="full-name">Enter V5C reference number</label>
+          <span class="form-hint">For example, 13451067289</span>
+          <input type="text" class="form-control" name="v5c" class="govuk-input govuk-!-width-one-half" id="v5c" style="text-transform: uppercase;">
+        </div>
+        <div class="govuk-form-group">
+          <button class="govuk-button" type="submit" role="button">Continue</button> 
+        </div>
+      </form>
+    </div>
+
+    <div class="column-one-half">
+      <div class="app-related-content govuk-!-margin-top-8">
+        <h2 class="govuk-heading-s govuk-!-margin-top-3">Where to find the V5C?</h2>
+        <img src="/images/V5C-diagram.png" class="image">
+      </div>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

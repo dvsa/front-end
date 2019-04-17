@@ -1,41 +1,34 @@
 {% extends "layouts/mts.layout.njk" %}
 
 {% block page_title %}
-  Find MOT location
+  Find a local MOT test centre
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
       <a class="link-back" href="index">Back</a>
 
-      <h1 class="heading-xlarge">Find local MOT test centre
+      <h1 class="govuk-heading-xl govuk-!-margin-top-6">Find a local MOT test centre
       </h1>
 
       <form>
-            <h2 class="heading-medium">Enter postcode or city name
-                <span class="form-hint">e.g. NG1 9ZZ or Nottingham</span>
-            </h2>
-            <div class="form-group no-bottom">
+            <div class="govuk-form-group">
               <fieldset>
-                <legend class="visuallyhidden">Search by postcode or town</legend>
-                <div class="form-group">
+                  <h2 class="govuk-heading-m">Enter postcode or city name
+                    <span class="govuk-hint">e.g. NG1 9ZZ or Nottingham</span>
+                </h2>
                   <label for="location" class="visuallyhidden">
-                    <span class="form-label">Postcode or town</span>
+                    <span class="govuk-form-group">Postcode or town</span>
                   </label>
-                  <input id="location" name="location" class="form-control" type="text" placeholder="e.g. SW1A 2AA or Bakewell" value=" "><br>
-                  <a class="button button-filter-search" href="results-list" type="submit" style="margin-top: 15px;">Find address</a>
-                  <span id="error-message"></span>
-                </div>
+                  <input id="location" name="location" class="govuk-input govuk-!-width-one-half" type="text" placeholder="e.g. SW1A 2AA or Bakewell" value=" "><br>
+                  <a class="button button-filter-search govuk-!-margin-top-5" href="results-list" type="submit">Find MOT centre</a>
               </fieldset>
             </div>
           </form>
-
-     
-
     </div>
   </div>
 </main>

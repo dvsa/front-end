@@ -14,31 +14,29 @@ li{
 </style>
 
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
       <a class="link-back" href="postcode-search">Back</a>
 
-      <h1 class="heading-xlarge">Find local MOT test centre
-      </h1>
-      </div>
-      </div>
+        <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+            Find a local MOT test centre
+        </h1>
+    </div>
+   </div>
 
-      <div class="grid-row">
-      <div class="column-one-third">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
 
       <form>
             <div class="form-group">
-            <h2 class="heading-small">Postcode or Town
-            </h2>
-            <div class="form-group">
               <fieldset>
-                <div class="form-group">
-                  <label for="location" class="visuallyhidden">
-                  </label>
+                  <legend for="location" class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                    Postcode or Town
+                  </legend>
                   <input id="location" name="location" class="form-control" style="width:100%;" type="text" placeholder="e.g. SW1A 2AA or Bakewell" value=" ">
-                    <div class="form-group" style="Margin-top: 15px">
-                        <label class="form-label" for="select-box" style="font-weight: Bold">Distance</label>
+
+                        <label class="form-label govuk-!-font-weight-bold govuk-!-margin-top-5" for="select-box">Distance</label>
                         <select class="form-control" style="width:100%; Margin-top: 10px" id="select-box" name="select-box">
                             <option>5 Miles</option>
                             <option>10 Miles</option>
@@ -46,10 +44,9 @@ li{
                             <option>25 Miles</option>
                             <option>50 Miles</option>
                         </select>
-                    </div>
 
                     <legend>
-                        <span class="body-text">Filter results by vehicle type</span>
+                        <span class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-5">Filter results by vehicle type</span>
                         </legend>
                     <div class="multiple-choice">
                         <input id="vehicle-type-1" name="vehicle-types" type="checkbox" value="vehicle-small-engine-mototcycle">
@@ -77,15 +74,13 @@ li{
                     </div>
 
                   <a class="button button-filter-search" href="#" type="submit" style="margin-top: 15px;">Update search</a>
-                  <span id="error-message"></span>
-                </div>
               </fieldset>
             </div>
             
           </form>
 
-          <div style="border-top: 5px solid #005ea5; margin-top: 30px;">
-                <h2 class="bold-small" style="margin-top:20px;"> More information on the MOT test</h2>
+          <div class="app-related-content">
+                <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-4"> More information on the MOT test</h2>
                     <ul class="list list-bullet">
                         <li>
                             <a href="https://www.gov.uk/getting-an-mot" target="_blank">
@@ -105,8 +100,8 @@ li{
                     </ul>
           </div>
 
-          <div>
-                <h2 class="bold-small"> You can also</h2>
+          <div class="app-related-content">
+                <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-4"> You can also</h2>
                     <ul class="list list-bullet">
                         <li>
                             <a href="https://www.gov.uk/check-mot-history" target="_blank">
@@ -133,126 +128,141 @@ li{
           </div>
 
 
-          </div>
-          </div>
+        </div>
 
-          <div class="column-two-thirds">
-            <div>
-                <Strong style="font-weight: Bold; font-size: 36px">22</strong>
-                <span style="font-weight: Bold;">results</span>
+          <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-!-margin-bottom-2">
+                <Strong class="govuk-!-font-weight-bold govuk-!-font-size-36" >22</strong>
+                <span class="govuk-!-font-weight-bold">results</span>
                 <a href="results-maps" style="float: right; font-size: 19px; margin-top: 15px">View on map</a>
           </div>
 
-          <hr style="margin-top: 5px">
+          <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
-                       <h1><a href="halfords">Halfords Autocentre Nottingham (Castle Blvd)</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">Unit 4, Castlebridge Office Village, Castle Marina Road, Nottingham, NG7 1TN <strong style="font-weight: Bold;">- 0.17</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>11 May 2018</time></li></ul>
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
+                    <h1><a href="halfords">Halfords Autocentre Nottingham (Castle Blvd)</a></h1>
+                    <address class="heading-meta govuk-!-margin-top-1">Unit 4, Castlebridge Office Village, Castle Marina Road, Nottingham, NG7 1TN <strong class="govuk-!-font-weight-bold">- 0.17</strong></address>
                 </div>
+                <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 3,4,5 &amp; 7</p></div>
+                <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>11 May 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
-                       <h1><a href="ats-euro">ATS Euromaster Ltd</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">66 Castle Blvd, Nottingham NG7 1GQ<strong style="font-weight: Bold;">- 0.19</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1,2,3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>30 August 2018</time></li></ul>
+            <div class="govuk-grid-row govuk-!-margin-top-3" >
+                <div class="govuk-grid-column-full">
+                    <h1><a href="ats-euro">ATS Euromaster Ltd</a></h1>
+                    <address class="heading-meta govuk-!-margin-top-1">66 Castle Blvd, Nottingham NG7 1GQ<strong class="govuk-!-font-weight-bold">- 0.19</strong></address>
                 </div>
+                    <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 1,2,3,4,5 &amp; 7</p></div>
+                    <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>30 August 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="mr-clutch">Mr Clutch Autocentres</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">Unit 13, Castle Park Industrial Estate, Queens Dr, Nottingham NG2 1AH<strong style="font-weight: Bold;">- 1.21</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>18 September 2018</time></li></ul>
+                       <address class="heading-meta govuk-!-margin-top-1">Unit 13, Castle Park Industrial Estate, Queens Dr, Nottingham NG2 1AH<strong class="govuk-!-font-weight-bold">- 1.21</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 1 &amp; 2</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>18 September 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="">Halfords Autocentre Nottingham (Huntingdon St)</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">248-262 Huntingdon St, Nottingham NG1 3NB<strong style="font-weight: Bold;">- 1.53</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>28 July 2018</time></li></ul>
+                        <address class="heading-meta govuk-!-margin-top-1">248-262 Huntingdon St, Nottingham NG1 3NB<strong class="govuk-!-font-weight-bold">- 1.53</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 1 &amp; 2</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>28 July 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="">Lindleys Autocentres</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">Unit 2 The Embankment, 15 Traffic Street, Nottingham NG2 1NE<strong style="font-weight: Bold;">- 2.30</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>22 August 2018</time></li></ul>
+                        <address class="heading-meta govuk-!-margin-top-1">Unit 2 The Embankment, 15 Traffic Street, Nottingham NG2 1NE<strong class="govuk-!-font-weight-bold">- 2.30</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 3,4,5 &amp; 7</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>22 August 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="">Nottingham MOT Centre</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">23 St Peter's St, Nottingham NG7 3EN<strong style="font-weight: Bold;">- 2.33</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 3,4,5 &amp; 7</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>08 September 2018</time></li></ul>
+                        <address class="heading-meta govuk-!-margin-top-1">23 St Peter's St, Nottingham NG7 3EN<strong class="govuk-!-font-weight-bold">- 2.33</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 3,4,5 &amp; 7</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>08 September 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="">Formula One Autocentres</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">1 Glasshouse St, Nottingham NG1 3LP<strong style="font-weight: Bold;">- 3.37</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
+                        <address class="heading-meta govuk-!-margin-top-1">1 Glasshouse St, Nottingham NG1 3LP<strong class="govuk-!-font-weight-bold">- 3.37</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 1 &amp; 2</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>21 July 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="">KAM Servicing</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">59 N Sherwood St, Nottingham NG1 4EQ<strong style="font-weight: Bold;">- 4.50</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
+                        <address class="heading-meta govuk-!-margin-top-1">59 N Sherwood St, Nottingham NG1 4EQ<strong class="govuk-!-font-weight-bold">- 4.50</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 3,4,5 &amp; 7</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>21 July 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="">DPR Motors Mot &amp; Service Centre Ltd</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">Unit 3 Redwood Court, Salisbury Street, Radford, Nottingham NG7 2BQ<strong style="font-weight: Bold;">- 5.37</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
+                            <address class="heading-meta govuk-!-margin-top-1">Unit 3 Redwood Court, Salisbury Street, Radford, Nottingham NG7 2BQ<strong class="govuk-!-font-weight-bold">- 5.37</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 4</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>21 July 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="grid-row">
-                <div class="column-full">
+            <div class="govuk-grid-row govuk-!-margin-top-3">
+                <div class="govuk-grid-column-full">
                        <h1><a href="">Nottingham City Council Workshop &amp; MOT Centre</a></h1>
-                            <address style="color: #6f777b; font-size: 16px">Eastcroft Depot, London Rd, Nottingham NG2 3AH<strong style="font-weight: Bold;">- 5.87</strong></address>
-                        <ul><li style="display: inline-block; font-size: 16px; margin-right: 20px;">Class tested: 1 &amp; 2</li><li style="display: inline-block; font-size: 16px; margin-left: 20px;">Last updated: <time>21 July 2018</time></li></ul>
+                            <address class="heading-meta govuk-!-margin-top-1">Eastcroft Depot, London Rd, Nottingham NG2 3AH<strong class="govuk-!-font-weight-bold">- 5.87</strong></address>
                 </div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Class tested: 3,4,5 &amp; 7</p></div>
+                        <div class="govuk-grid-column-one-half govuk-!-margin-top-3"><p class="govuk-body-s">Last updated: <time>21 July 2018</time></p></div>
             </div>
 
-            <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-            <div class="pagination row">
-                <div class="col half">
-                    </div>
-                <div class="col half">
-                        <a href="#" style="font-size: 24px; text-align: right; float: right;">Next
-                    <span style="font-size: 16px; font-weight: normal; display: block;">1 of 3</span>
-                    </a>
+            <div class="pager">
+                <div class="pager__controls">
+                    <ul class="pager__list">
+                        <li>1</li>
+                        <li>
+                            <a href="#">2</a>
+                        </li>
+                        <li>
+                            <a href="#">3</a>
+                        </li>
+                    </ul>
+                    <a class="pager__next" href="#">Next</a>
                 </div>
+                <div class="pager__summary">Showing 1 &ndash; 10 of 22 results</div>
             </div>
 
 

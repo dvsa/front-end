@@ -19,73 +19,68 @@ li{
 
       <a class="link-back" href="postcode-search">Back</a>
 
-      <h1 class="heading-xlarge">Find local MOT test centre
+      <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+        Find a local MOT test centre
       </h1>
-      </div>
-      </div>
+    </div>
+   </div>
 
-      <div class="grid-row">
-      <div class="column-one-third">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
 
-      <form autocomplete="off" class="form" action="prototypes/MOT-location/v1/results-maps" method="post">
+        <form>
             <div class="form-group">
-            <h2 class="heading-small">Postcode or Town
-            </h2>
-            <div class="form-group">
-              <fieldset>
-                <div class="form-group">
-                  <label for="location" class="visuallyhidden">
-                  </label>
-                  <input id="location" name="location" class="form-control" style="width:100%;" type="text" placeholder="e.g. SW1A 2AA or Bakewell" value=" ">
-                    <div class="form-group" style="Margin-top: 15px">
-                        <label class="form-label" for="select-box" style="font-weight: Bold">Distance</label>
-                        <select class="form-control" style="width:100%; Margin-top: 10px" id="select-box" name="select-box">
-                            <option>5 Miles</option>
-                            <option>10 Miles</option>
-                            <option>15 Miles</option>
-                            <option>25 Miles</option>
-                            <option>50 Miles</option>
-                        </select>
-                    </div>
-                    
-                    <legend>
-                        <span class="body-text">Filter results by vehicle type</span>
-                        </legend>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-1" name="vehicle-types" type="checkbox" value="vehicle-small-engine-mototcycle">
-                        <label for="vehicle-type-1">&lt; 200cc motorcycle</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-2" name="vehicle-types" type="checkbox" value="vehicle-mototcycle">
-                        <label for="vehicle-type-2"> &gt; 200cc motorcycle</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-3" name="vehicle-types" type="checkbox" value="vehicle-three-wheel">
-                        <label for="vehicle-type-3">3-wheeled vehicles</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-4" name="vehicle-types" type="checkbox" value="vehicle-car">
-                        <label for="vehicle-type-4">Cars and vans</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-5" name="vehicle-types" type="checkbox" value="vehicle-passanger">
-                        <label for="vehicle-type-5">Passenger vehicles</label>
-                    </div>
-                    <div class="multiple-choice">
-                        <input id="vehicle-type-6" name="vehicle-types" type="checkbox" value="vehicle-goods-vehicle">
-                        <label for="vehicle-type-6">Goods vehicles</label>
-                    </div>
+                <fieldset>
+                    <legend for="location" class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-3">
+                        Postcode or Town
+                    </legend>
+                    <input id="location" name="location" class="form-control" style="width:100%;" type="text" placeholder="e.g. SW1A 2AA or Bakewell" value=" ">
 
-                  <button class="button button-filter-search" href="#"  type="submit" style="margin-top: 15px;">Update search</button>
-                  <span id="error-message"></span>
-                </div>
-              </fieldset>
-            </div>            
-          </form>
+                            <label class="form-label govuk-!-font-weight-bold govuk-!-margin-top-5" for="select-box">Distance</label>
+                            <select class="form-control" style="width:100%; Margin-top: 10px" id="select-box" name="select-box">
+                                <option>5 Miles</option>
+                                <option>10 Miles</option>
+                                <option>15 Miles</option>
+                                <option>25 Miles</option>
+                                <option>50 Miles</option>
+                            </select>
 
-        <hr>
-          <div style="border-top: 5px solid #005ea5; margin-top: 30px;">
-                <h2 class="bold-small" style="margin-top:20px;"> More information on the MOT test</h2>
+                        <legend>
+                            <span class="govuk-heading-s govuk-!-margin-bottom-3 govuk-!-margin-top-5">Filter results by vehicle type</span>
+                            </legend>
+                        <div class="multiple-choice">
+                            <input id="vehicle-type-1" name="vehicle-types" type="checkbox" value="vehicle-small-engine-mototcycle">
+                            <label for="vehicle-type-1">&lt; 200cc motorcycle</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="vehicle-type-2" name="vehicle-types" type="checkbox" value="vehicle-mototcycle">
+                            <label for="vehicle-type-2"> &gt; 200cc motorcycle</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="vehicle-type-3" name="vehicle-types" type="checkbox" value="vehicle-three-wheel">
+                            <label for="vehicle-type-3">3-wheeled vehicles</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="vehicle-type-4" name="vehicle-types" type="checkbox" value="vehicle-car">
+                            <label for="vehicle-type-4">Cars and vans</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="vehicle-type-5" name="vehicle-types" type="checkbox" value="vehicle-passanger">
+                            <label for="vehicle-type-5">Passenger vehicles</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="vehicle-type-6" name="vehicle-types" type="checkbox" value="vehicle-goods-vehicle">
+                            <label for="vehicle-type-6">Goods vehicles</label>
+                        </div>
+
+                    <a class="button button-filter-search" href="#" type="submit" style="margin-top: 15px;">Update search</a>
+                </fieldset>
+            </div>
+                
+        </form>
+
+        <div class="app-related-content">
+                <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-4"> More information on the MOT test</h2>
                     <ul class="list list-bullet">
                         <li>
                             <a href="https://www.gov.uk/getting-an-mot">
@@ -97,16 +92,17 @@ li{
                                 Costs of an MOT test
                             </a>
                         </li>
-                         <li>
+                        <li>
                             <a href="https://www.gov.uk/getting-an-mot/booking-an-mot">
                                 How to book an MOT test?
                             </a>
                         </li>
                     </ul>
-          </div>
+        </div>
+        
 
-          <div>
-                <h2 class="bold-small"> You can also</h2>
+        <div class="app-related-content">
+                <h2 class="govuk-!-font-weight-bold govuk-!-margin-top-4"> You can also</h2>
                     <ul class="list list-bullet">
                         <li>
                             <a href="https://www.gov.uk/check-mot-history">
@@ -130,33 +126,30 @@ li{
                         </li>
 
                     </ul>
-          </div>
+        </div>
 
 
-          </div>
-          </div>
+        
+    </div>
 
-          <div class="column-two-thirds">
-            <div>
-                <Strong style="font-weight: Bold; font-size: 36px">22</strong>
-                <span style="font-weight: Bold;">results</span>
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-!-margin-bottom-2">
+                <Strong class="govuk-!-font-weight-bold govuk-!-font-size-36" >22</strong>
+                <span class="govuk-!-font-weight-bold">results</span>
                 <a href="results-list" style="float: right; font-size: 19px; margin-top: 15px">View as list</a>
-          </div>
+            </div>
 
-          <hr style="margin-top: 5px">
+            <hr class="govuk-section-break govuk-section-break--visible">
 
-          <div>
-            <div class="mapouter" style="text-align: left;">
-                <div class="gmap_canvas">
-                    <iframe width="630" height="700" id="gmap_canvas" src="https://maps.google.com/maps?q=nottingham&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                     
+            <div class="govuk-!-margin-top-3">
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="630" height="700" id="gmap_canvas" src="https://maps.google.com/maps?q=nottingham&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            
+                    </div>
                 </div>
             </div>
-          </div>
-
-     
-
-    </div>
+        </div>
   </div>
 </main>
 

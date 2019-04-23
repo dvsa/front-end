@@ -1,6 +1,9 @@
 # Changelog 🗒️
 All notable changes included in tagged releases will be documented in this file.
 
+## Unreleased
+- Changed paths for library dependencies used in MTS as mis-leadingly labeled 'old'
+
 ## [1.3.14] - 2019-04-11
 ### Added
 - Max width for images added to Special Notice markdown

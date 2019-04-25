@@ -19,6 +19,17 @@
     text='Not strictly a table, but marked up as a definition list, extended to allow headings to have Change links, and nested rows to review all vehicle defects.'
   ) }}
 
+  {{ components.heading(
+    text='When to use this component',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="If the data you're displaying cannot be changed at individual steps, as shown in the <a href='https://design-system.service.gov.uk/components/summary-list/'>GDS Summary List</a>. This patternm is ideal when data in each row cannot be edited individually."
+  ) }}
+  
+
   {% call components.displayCode() %}
 
     <dl class="govuk-summary-list">

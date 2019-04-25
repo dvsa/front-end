@@ -10,44 +10,94 @@
     size='medium'
   ) }}
 
+  {{ components.paragraph(
+    text='The Action panel is used on the MOT Test Results entry and Site Review pages. See <a href="defect-panel">Defect panel</a> for variants for defects'
+  ) }}
+
+  {{ components.paragraph(
+    text='The primary call to action reads "Add brake test".' ) }}
+  
+  {% call components.displayCode() %}
+  <div class="action-panel">
+    <div class="action-panel__container">
+      <h3 class="action-panel__heading">Brake test</h3>
+    </div>
+    <a href="#" class="button">Add brake test</a>
+  </div>
+  {%- endcall %}
+  
+  {{ components.paragraph(
+    text='The primary call to action reads "Add reading".' ) }}
+
   {% call components.displayCode() %}
   <div class="action-panel">
       <div class="action-panel__container">
-        <h3 class="action-panel__heading">Brake test</h3>
+        <h3 class="action-panel__heading">Odometer</h3>
       </div>
-      <a href="#" class="button">Add brake test</a>
+      <a href="/rfr/browser" class="button">Add reading</a>
   </div>
   {%- endcall %}
+
 
   {{ components.heading(
     text='With data',
     tag='h2',
     size='medium'
   ) }}
+  
+  {{ components.paragraph(
+    text='The primary call to action reads "Edit reading".' ) }}
 
   {{ components.paragraph(
-    text='The primary call to action reads <code class="dev-code-snippet">Edit brake test</code>. 
-    The secondary call to action reads <code class="dev-code-snippet">or view brake test results</code>.'
-  ) }}
+    text='The odometer can display the following values:' ) }}
+   
+
+  {{ components.list(items=[
+    { text: 'Distance in miles (comma is required)' },
+    { text: 'Distance in km (comma is required)' },
+    { text: 'Unreadable' },
+    { text: 'Missing' }
+  ], type='bullet')}} 
+
+  {{ components.paragraph(
+    text='and optionally, the following messages:' ) }}
+
+  {{ components.list(items=[
+    { text: 'This is lower than the last test' },
+    { text: 'This is the same as the last test' },
+    { text: 'This is significantly higher than the last test' }
+  ], type='bullet')}} 
+   
 
   {% call components.displayCode() %}
   <div class="action-panel">
       <div class="action-panel__container">
-        <h3 class="action-panel__heading">Brake test</h3>
-        <h3 class="action-panel__value">Failed</h3>
+        <h3 class="action-panel__heading">Odometer</h3>
+        <h3 class="action-panel__value">142,101 miles</h3>
+        <span class="action-panel__meta">This is lower than the last test</span>
       </div>
-      <a href="#" class="button">Edit brake test</a>
-      <span class="action-panel__secondary-action">or
-        <a href="#">view brake test results</a>
-      </span> 
+      <a href="/rfr/browser" class="button">Edit reading</a>
   </div>
   {%- endcall %}
 
+
   {{ components.heading(
-    text='After successful re-test',
+    text='Brake test',
     tag='h2',
-    size='medium'
+    size='large'
   ) }}
+  
+  {{ components.paragraph(
+    text='The primary call to action reads "Edit brake test".' ) }}
+  
+  {{ components.paragraph(
+    text='The brake test can display either "Passsed" or "Failed".')}} 
+    
+
+  {{ components.paragraph(
+    text="The secondary call to action reads \"or view brake test results\"."
+  ) }}
+
 
   {% call components.displayCode() %}
   <div class="action-panel">
@@ -61,9 +111,10 @@
       </span> 
   </div>
   {%- endcall %}
+ 
 
   {{ components.heading(
-    text='With defects',
+    text='With brake defects',
     tag='h2',
     size='medium'
   ) }}

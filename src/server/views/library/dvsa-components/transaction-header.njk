@@ -1,0 +1,42 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Transaction Headers' %}
+
+{% block content %}
+
+  {{ components.heading(
+    text='Default',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="A transaction header is the header displayed at the end of a transaction.",
+    lead=true
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header">
+    <h1 class="transaction-header__title">Your security card has been ordered</h1>
+    <p class="transaction-header__next-step">Activate your card as soon as it arrives</p>
+  </header>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Failed',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="Use the modified class <code class='dev-code-snippet'>.transaction-header--failure</code> to show a failed transaction (allows graceful handling of 500 errors)."
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="transaction-header--failure">
+    <h1 class="transaction-header__title">Something went wrong</h1>
+    <p class="transaction-header__next-step">Please try again</p>
+  </header>
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Buttons' %}
+
+{% block content %}
+
+{{ components.heading(text='Buttons', tag='h2', size='medium') }}
+
+{{ components.heading(text='Start now button', tag='h2', size='medium') }}
+
+{{ components.paragraph(
+  text="Used at the start of a journey. Button text might be 'Start MOT test' or 'Start Site Review' ") }}
+  
+{{ components.button(text='Start MOT test', url='#', start=true) | prism }}
+
+{{ components.heading(text='Other buttons', tag='h2', size='medium') }}
+
+{{ components.paragraph(
+      text="These variants are used during the Defect search and selection journey") }}  
+
+{% call components.displayCode() %}
+  
+  <a href="#" class="button--warn">Minor defect</a>
+  <a href="#" class="button--alert">Dangerous failure</a>
+  <a href="#" class="button--info">PRS</a>
+  <a href="#" class="button--plain">Advisory</a>
+
+{%- endcall %}
+
+
+{% endblock %}

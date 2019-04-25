@@ -1,18 +1,118 @@
-{% extends 'layouts/library.layout.njk' %}
+{% extends 'layouts/library-mts.layout.njk' %}
 
-{% set pageTitle = 'MOT Library - Headings' %}
+{% set pageTitle = 'MOT Library - MTS Headings' %}
 
 {% block content %}
 
-  {{ components.heading(text='Page Heading with Sub-heading', tag='h2', size='medium') }}
+  {{ components.heading(
+    text='Content Header',
+    tag='h2',
+    size='medium'
+  ) }}
 
-  {{ components.pageHeading(heading='Main Heading', secondary='Secondary heading text') | prism }}
+  {{ components.paragraph(
+    text="A content header is the main header on every page. It's used in conjunction with breadcrumbs to inform users of what they're doing - and where they're doing it.",
+    lead=true
+  ) }}
 
-  {{ components.heading(text='Headings', tag='h2', size='medium') }}
-  
-  {{ components.heading(text='A 48px Bold heading',tag='h1', size='xlarge') | prism }}
-  {{ components.heading(text='A 36px Bold heading', tag='h2', size='large') | prism }}
-  {{ components.heading(text='A 24px Bold heading', tag='h3', size='medium') | prism }}
-  {{ components.heading(text='A 19px Bold heading', tag='h4', size='small') | prism }}
+  {{ components.paragraph(
+    text="The content header can contain up to 4 pieces of information."
+  ) }}
+
+  {{ components.heading(
+    text='Type',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text="Which 'entity level' or 'task' are you in?"
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'Authorised Examiner' },
+      { text: 'Vehicle Testing Station' },
+      { text: 'MOT Testing' },
+      { text: 'Your Profile' }
+    ],
+    type='bullet'
+  ) }}
+
+  {{ components.heading(
+    text='Title',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text="What are you doing?"
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'Managing something' },
+      { text: 'Changing something' },
+      { text: 'Viewing something (VTS name, AE name or Person name)' },
+      { text: 'Reviewing something' }
+    ],
+    type='bullet'
+  ) }}
+
+  {{ components.heading(
+    text='Progress (optional)',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text="Does the task have multiple steps? In the format 'Step n of total'."
+  ) }}
+
+  {{ components.heading(
+    text='Tertiary (optional)',
+    tag='h4',
+    size='small'
+  ) }}
+
+  {{ components.paragraph(
+    text="Occasionally, a tertiary piece of information may be required to clarify a user's location within the site."
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">Type</span>
+      <span class="content-header__title">Title</span>
+      <span class="content-header__progress">Progress</span>
+    </h1>
+    <h2 class="content-header__tertiary">Tertiary</h2>
+  </header>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='Tertiary list',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="It's also possible to list data within the tertiary row using a <code class='dev-code-snippet'>.content-header__tertiary-list</code> element."
+  ) }}
+
+  {% call components.displayCode() %}
+  <header class="content-header">
+    <h1>
+      <span class="content-header__type">MOT test</span>
+      <span class="content-header__title">Reasons for rejection</span>
+    </h1>
+
+    <ul class="content-header__tertiary-list">
+      <li class="content-header__list-item--primary">Renault, Clio</li>
+      <li class="content-header__list-item">FNZ 6610</li>
+      <li class="content-header__list-item">Registered 1 Feb 2004</li>
+    </ul>
+  </header>
+  {%- endcall %}
 
 {% endblock %}

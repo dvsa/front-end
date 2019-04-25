@@ -7,17 +7,7 @@
 <main class="dvsa-full-width-content {{  mainContainerClass if mainContainerClass }}">
   <div class="styleguide-library" id="library-container">
     {% include './partials/library-navigation.njk' %}
-    <div class="styleguide-library__right" id="styleguide-content">
-      <br class="clearfix">
-
-      <!-- only-in-mts-banner -->
-      {{ components.dvsaBanner(
-        mainText='MTS Components',
-        secondaryText='This component should only be used in MTS. Do <strong>NOT</strong> use in any other application.',
-        type='error'
-      ) }}
-      <!-- /only-in-mts-banner -->
-
+    <div class="styleguide-library__right" id="styleguide-content"> 
       {% block content %}{% endblock %}
     </div>
   </div>

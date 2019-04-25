@@ -1,0 +1,67 @@
+{% extends 'layouts/library.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Badges' %}
+
+{% block content %}
+
+{{ components.heading(text='Badges', tag='h2', size='medium') }} 
+
+{{ components.paragraph(
+  text="Badges are used by the MOT testing service to draw attention to transient properties, values and states.") }}
+
+{% call components.displayCode() %} 
+    <span class="badge">.badge</span>
+    <span class="badge--alert">.badge--alert</span>
+    <span class="badge--warn">.badge--warn</span>
+    <span class="badge--success">.badge--success</span>
+    <span class="badge--info">.badge--info</span> 
+{%- endcall %}
+
+{{ components.heading(text='When to use badges', tag='h2', size='medium') }}  
+
+{{ components.paragraph(text="These variants are used during the Defect search and selection journey") }}  
+
+    <p><span class="badge">Default state</span></p>
+    {{ components.list(
+        items=[
+        { text: 'Displaying the initial state'},
+        { text: 'Zero values (without negative connotations). For example, \'Active MOT tests\' or \'Risk assessment\' ' }
+        ],
+        type='number')
+    }}
+    
+    <p> <span class="badge--alert">Alert state</span></p>
+    {{ components.list(
+        items=[
+        { text: 'Red in RAG score'},
+        { text: 'Zero values (with negative connotations), For example, Slots.' },
+        { text: 'Something has run out' },
+        { text: 'Something has expired' },
+        { text: 'Something has failed' },
+        { text: 'Something has been rejected' }
+        ],
+        type='number')
+    }}
+
+    <p> <span class="badge--warn">Warning state</span></p>
+    {{ components.list(
+        items=[
+        { text: 'Amber in a RAG score'},
+        { text: 'If no action is taken there is a chance of dropping to Alert' }
+        ],
+        type='number')
+    }}
+
+{{ components.heading(text='Relative sizing', tag='h2', size='medium') }} 
+
+{{ components.paragraph(
+  text="Badges inherit the font size of the parent element.") }}
+
+{% call components.displayCode() %} 
+    <h2 class="heading-large">Example heading <span class="badge--info">Badge</span></h2>
+    <h2 class="heading-medium">Example heading <span class="badge--info">Badge</span></h2>
+    <h2 class="heading-small">Example heading <span class="badge--info">Badge</span></h2>
+    <p>Body copy <span class="badge--info">Badge</span></p>
+{% endcall %} 
+
+{% endblock %}

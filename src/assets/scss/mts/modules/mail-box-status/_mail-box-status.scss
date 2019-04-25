@@ -23,36 +23,6 @@
     .big-data {
       padding: $gutter-half 0;
     }
-  
-    .big-data__number:after {
-      
-      // TODO: create a new icon for pointer
-  
-      // content: '';
-      // position: absolute;
-      // right: 15px;
-      // top: 5px;
-      // opacity: 0;
-  
-      // -webkit-transition: right .2s, opacity .1s;
-      // transition: right .2s, opacity .1s;
-      
-      // // Taken from elements/_icons.scss
-      // background-position: 0 0;
-      // background-repeat: no-repeat;
-  
-      // background-image: file-url('icons/icon-pointer.png');
-  
-      // @include device-pixel-ratio() {
-      //     background-image: file-url('icons/icon-pointer-2x.png');
-      //     background-size: 100%;
-      // }
-      
-      // width: 27px;
-      // height: 27px;
-  
-    }
-  
     &:hover .big-data__number:after {
       opacity: 1;
       right: 0;

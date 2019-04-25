@@ -124,6 +124,13 @@
 
   &__prism-code {
     font-size: 14px;
+     code {
+       max-height: inherit;
+    }
+    pre {
+      max-height: 24em;
+    }
   }
+
 
 }

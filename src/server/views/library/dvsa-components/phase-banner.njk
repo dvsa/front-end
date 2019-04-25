@@ -1,0 +1,23 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Phase banner' %}
+
+{% block content %}
+
+{{ components.heading(
+  text='Phase banner',
+  tag='h2',
+  size='medium'
+) }}
+ 
+{% call components.displayCode() %}
+<div class="phase-banner">
+  <p>
+    <strong class="phase-tag">BETA</strong>
+    <span>This is a new service – your <a href="#">feedback</a> will help us to improve it.</span>
+  </p>
+</div> 
+{%- endcall %}
+
+
+{% endblock %}

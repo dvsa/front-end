@@ -1,0 +1,101 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Defects Panel' %}
+
+{% block content %}
+
+{{ components.heading(
+  text='Defect basket',
+  tag='h1',
+  size='large'
+) }}
+
+
+  {{ components.heading(
+    text='No defects present',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'All defect types should be displayed with a value of 0' },
+      { text: 'The "Show defects" link should not be present' }
+    ],
+    type='number'
+  ) }}
+
+  {% call components.displayCode() %}
+  <div class="defect-summary" id="defect-summary">
+    <div class="defect-summary__total defect-summary__total--eu">
+        <h2 class="defect-summary__total-heading">Defects</h2>
+        <ul>
+          <li><span class="badge--alert js-numberOfFailures">0</span> Failures</li>
+          <li><span class="badge--warn js-numberOfMinors">0</span> Minors</li>
+          <li><span class="badge--info">0</span> PRS</li>
+          <li><span class="badge js-numberOfAdvisories">0</span> Advisories</li>
+        </ul> 
+      </div>
+  
+</div>
+  {%- endcall %}
+
+  {{ components.heading(
+    text='With defects',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.list(
+    items=[
+      { text: 'Defect count is shown in the coloured squares next to each type label' },
+      { text: 'If JavaScript is available, Show defects button shown on the right' },
+      { text: 'Clicking on Show defects will display the full list of identified defects' },
+      { text: 'When toggled, the Show defects text will change to Hide defects' },
+      { text: 'If JavaScript unavailable there will be no Show defects link (at top or bottom), and the list will be open/visible permanently' }
+    ],
+    type='number'
+  )}}
+
+  {% call components.displayCode() %}
+  <div class="defect-summary" id="defect-summary">
+    <div class="defect-summary__total defect-summary__total--eu">
+        <h2 class="defect-summary__total-heading">Defects</h2>
+        <ul>
+          <li><span class="badge--alert js-numberOfFailures">0</span> Failures</li>
+          <li><span class="badge--warn js-numberOfMinors">0</span> Minors</li>
+          <li><span class="badge--info">0</span> PRS</li>
+          <li><span class="badge js-numberOfAdvisories">1</span> Advisories</li>
+        </ul>
+        <span class="defect-summary__toggle">
+          <a href="#" data-target-state="closed" data-action="showHideToggle" data-closed-text="Show defects" data-opened-text="Hide defects" data-target="rfrList" id="toggleRFRList" class="toggle-switch--open">Show defects</a>
+      </span>
+      </div>
+      <div id="rfrList" class="js-hidden">
+
+        <h3 class="defect-summary__heading">
+            <span class="badge  badge--plain  js-numberOfAdvisories">1</span>
+            <span class="defect-summary__heading-type">Advisories</span>
+        </h3>
+        <ol>
+              <li class="js-rfrItem defect"> 
+               <div>
+                <h4 class="defect__title"> Chain guard missing</h4>
+                <p class="defect__meta"></p>
+                <h5 class="visuallyhidden">Position</h5>
+                <ul class="defect__positions">
+                    <li>Location not recorded</li>
+                </ul>
+              </div>
+              <h5 class="visuallyhidden">Actions</h5>
+              <ul class="defect__edit">
+                  <li class="defect__edit-item"><a href="/mot-test/337397759423/defects/categories/10000/2350390427/edit" class="">Edit</a></li>
+                  <li class="defect__edit-item">or <a href="/mot-test/337397759423/defects/categories/10000/2350390427/remove" class="">Remove</a></li>
+              </ul>
+          </li>
+        </ol>
+      </div>
+</div>
+{%- endcall %}
+
+{% endblock %}

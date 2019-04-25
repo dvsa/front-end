@@ -1,6 +1,9 @@
-{% macro vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA495118', color='red', selectVehicle=false) %}
+{% macro vehicleInfo(vehicleName='Peugeot 3008 SUV', reg='TH10 CZR', vin='GAULAGAAAAA49511', color='red', selectVehicle=false, home=false) %}
 
-<div class="vehicle-info">
+{% if home %}
+<div class="mts-body-wrapper c-home-hero">
+{% endif %} 
+<div class="vehicle-info {{"vehicle-info--light" if home}}">
         <div class="grid-row">
             <div class="column-full">
                 <h1 class="vehicle-info__heading-large heading-large u-margin-0">
@@ -26,12 +29,15 @@
             </div>
         </div>
         {% if selectVehicle %}
-        <div class="vehicle-info__confirm u-border-bottom">
+        <div class="vehicle-info__confirm">
             <p>1 test, last tested 4 October 2017</p>
             <a class="button" href="/prototypes/responsive-mot/confirm-vehicle-details" role="button">Select vehicle</a>
         </div>
         {% endif %}
-  </div> 
+  </div>
+  {% if home %}
+</div>
+{% endif %}
    
 {% endmacro %}
 

@@ -39,6 +39,17 @@
     text="Links are made more accessible by the inclusion of the property name within a hidden element. This allows screen readers to expose the context of the link, for example, 'Change email address' rather than 'Change'."
   ) }}
 
+  {{ components.heading(
+    text='When to use this component',
+    tag='h2',
+    size='medium'
+  ) }}
+
+  {{ components.paragraph(
+    text="If you're displaying data which requires 'meta' information in eah row. If meta information is not required, consider using instead the <a href='https://design-system.service.gov.uk/components/summary-list/'>GDS Summary List</a> or the <a href='summary-list'>MTS version</a> for summarising grouped data."
+  ) }}
+  
+
   {% call components.displayCode() %}
   <table class="table-summary">
     <tbody>

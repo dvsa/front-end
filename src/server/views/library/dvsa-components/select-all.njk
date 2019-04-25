@@ -12,11 +12,11 @@
 
   {% call components.displayCode() %}
   <form>
-    <legend>
-      <h3 class="heading-medium">Select all checkbox</h3>
-      <span class="body-text">Select all that apply</span>
-    </legend>
-    <fieldset class="js-check-all-group">
+    <fieldset class="govuk-fieldset js-check-all-group" aria-describedby="select-all">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l"> 
+      <h1 class="govuk-fieldset__heading">Select all checkbox</h1>
+      <span id="select-all" class="govuk-hint">Select all that apply</span>
+    </legend> 
       <div class="multiple-choice js-show">
         <input id="class-all" class="js-check-all" name="class-all" type="checkbox" value="All MOT testers">
         <label for="class-all">All MOT testers</label>

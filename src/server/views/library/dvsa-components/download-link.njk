@@ -1,0 +1,20 @@
+{% extends 'layouts/library-mts.layout.njk' %}
+
+{% set pageTitle = 'MOT Library - Download link' %}
+
+{% block content %}
+
+{{ components.heading(
+  text='Download link',
+  tag='h2',
+  size='medium'
+) }}
+
+{% call components.displayCode() %}
+<div class="notice">
+  <i class="icon icon-file-download"><span class="visually-hidden">Download All recalls since 1992</span></i>
+  <p><a href="#"><strong>All recalls since 1992</strong> (CSV, 50kb)</a></p>
+</div>
+{%- endcall %}
+
+{% endblock %}

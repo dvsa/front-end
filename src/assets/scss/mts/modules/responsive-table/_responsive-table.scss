@@ -7,7 +7,7 @@
       max-width: none;
     }
 
-    &--compact  {
+    &--compact {
       font-size: 18px;
       td, th {
         @include media(desktop) {

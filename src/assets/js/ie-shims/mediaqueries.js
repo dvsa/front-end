@@ -967,7 +967,6 @@ domReady(
         var type = mqs[i].getMediaType();
         if (mqs[i].getExpressions().length === 0) {
           continue;
-          // TODO: Browser check! Assuming old browsers do apply the bare media types, even in a list with media queries.
         }
         var typeAllowed = true;
         if (type !== 'all' && ts && ts.length > 0) {

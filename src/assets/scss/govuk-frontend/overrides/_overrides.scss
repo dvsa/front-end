@@ -1,5 +1,5 @@
 // Put any GDS overrides here, if we need to modify a component from the package
-// Separate each override with the component's namespace
+// Consider attaching overrides to a *modifier class* if we require the original GDS implementation too.
 
 .govuk-summary-list  {
     margin-bottom: $gutter;

@@ -145,11 +145,12 @@ https://govuk-prototype-kit.herokuapp.com/docs/templates/check-your-answers
     }
 }
 
-// Overrides gov tag style for its only use in MTS
-// Consider a modifier class (eg '.govuk-tag--mts') if our version is used more than once in MTS to retain global use of default GDS version
+// Modifiers for GovUK Tag componment
 .govuk-tag {
-    text-transform: none;
-    font-size: 14px;
+    &--mts {
+        text-transform: none;
+        font-size: 14px;
+    }
     &--danger {
         background: $red;
     }

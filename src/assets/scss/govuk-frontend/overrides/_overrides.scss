@@ -1,8 +1,23 @@
 // Put any GDS overrides here, if we need to modify a component from the package
 // Consider attaching overrides to a *modifier class* if we require the original GDS implementation too.
+/*Example:
+https://govuk-prototype-kit.herokuapp.com/docs/templates/check-your-answers
+*/
 
 .govuk-summary-list  {
+    font-size: inherit;
     margin-bottom: $gutter;
+    
+    &__meta { 
+        color: $grey-1;
+        clear: both;
+        display: block;
+        &--error {
+            font-weight: 600; 
+            color: $red;
+        }
+    }
+
     @include media(tablet){
         &__value,
         &__key,
@@ -31,7 +46,7 @@
         @include govuk-media-query($from: tablet) {
             padding-top: 0;
         }
-    } 
+    }
     &__row--title {
         width: 100%;
         display: table;
@@ -95,7 +110,7 @@
 }
  
 
-// Modifier class for inputs and selects
+// Overrides gov inputs and selects
 .govuk-input,
 .govuk-select {
     background-color: white;
@@ -130,6 +145,8 @@
     }
 }
 
+// Overrides gov tag style for its only use in MTS
+// Consider a modifier class (eg '.govuk-tag--mts') if our version is used more than once in MTS to retain global use of default GDS version
 .govuk-tag {
     text-transform: none;
     font-size: 14px;

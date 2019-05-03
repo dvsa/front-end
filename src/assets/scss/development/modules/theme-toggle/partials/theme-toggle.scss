@@ -1,4 +1,3 @@
-// Theme switcher component
 .theme-toggle {
   &__theme-swatch {
     border: 1px solid #CCCCCC;
@@ -27,26 +26,5 @@
       background-color: #FCED20;
       border-color: #CABE00;
     }
-  }
-}
-
-// Styles applied to body
-.theme {
-  color: #343a3f;
-  &__high-contrast-yellow {
-    color: #FCED20;
-    background-color: #000;   
-  }
-
-  &__low-contrast-grey {
-    background-color: #cacfdd;
-  }
-
-  &__sepia {
-    background-color: #f4eed9;
-  }
-
-  &__medium-contrast-yellow {
-    background-color: #FCED20;
   }
 }

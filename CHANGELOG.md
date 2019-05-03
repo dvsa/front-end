@@ -3,6 +3,7 @@ All notable changes included in tagged releases will be documented in this file.
 
 ## Unreleased
 - Changed paths for library dependencies used in MTS as mis-leadingly labeled 'old'
+- jQuery 1.1.11 left in this repo but may be removed once confirmed remains unused in MTS
 
 ## [1.3.14] - 2019-04-11
 ### Added

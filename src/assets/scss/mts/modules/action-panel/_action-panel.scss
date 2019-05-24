@@ -65,7 +65,12 @@ $buttonwidth: 188px;
 
   &__meta {
     display: block;
-    padding-top: 6px;
+    font-size: 16px;
+    font-weight: normal;
+    padding: 2px 0 6px 0;
+    @include media(desktop) {
+      padding: 0;
+    }
   }
 
   &__action-group {

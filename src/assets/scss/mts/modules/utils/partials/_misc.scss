@@ -23,6 +23,13 @@
  }
 }
 
+// Constrain images to 50% for < tablet only
+&-mobile-img-50 {
+  @include media(false, $tablet-breakpoint) {
+    max-width: 50%;
+  }
+}
+
 .hide-large {
  @include media(false, false, 768px) {
    display: none !important;

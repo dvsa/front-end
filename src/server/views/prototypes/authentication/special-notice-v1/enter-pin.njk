@@ -1,0 +1,64 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+            <span class="heading-secondary">Sign in</span>
+          Your security card PIN
+        </h1>
+            
+        <p class="lede">You are using the card with serial number <strong class="bold"> ZZZZ000000169431</strong>. Press the button on the security card to display the PIN.</p>
+        
+     
+         
+        <fieldset>
+            <div class="form-group">    
+            <details>
+
+                  <summary><span class="summary">Where to find the security card PIN</span></summary>
+
+                  <div class="panel panel-border-narrow">
+
+                    <p>
+                       <strong class="bold-small">PIN:</strong> generate a new PIN by pressing the button on the front of the card.
+                    </p>
+
+                    <img src="/images/register-new-card-pin.png" class="u-full-width" alt="The PIN will show in the top-right corner of the security card and has 6 digits">
+
+                  </div>
+
+                </details>
+                </div>
+            
+            <div class="form-group">
+              <label class="form-label" for="card-pin">Security card PIN</label>
+              <input type="text" class="form-control form-control-1-4" id="card-pin">
+            </div>
+            
+            
+            <ul class="list">
+                <li><a href="SQ">Lost, forgotten or damaged security card?</a></li>
+            </ul>
+
+
+            <div class="govuk-!-margin-top-6">
+                <a class="button button-filter-search govuk-!-margin-bottom-5" href="2FA" type="submit">Sign in</a>
+            </div>
+            
+            <a href="index">Cancel and return to sign in</a>
+         
+         </fieldset>
+        
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

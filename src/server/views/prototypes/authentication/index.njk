@@ -1,0 +1,73 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content">
+
+    <div class="container">
+
+        <div id="global-breadcrumb" class="header-context">
+        </div>
+
+        <header class="content-header">
+            <h1>
+                <span class="content-header__type">MOT testing</span>
+                <span class="content-header__title">CI Authentication - 2FA improvements</span>
+                </h1>
+        </header>                        
+
+        <div class="row contents">
+            <div class="col-lg-12">
+
+                <h1 class="content-header__type"> 
+                        Prototype versions
+                </h1>
+        <div class="col-lg-12">
+
+
+                <table class="key-value-list" style="table-layout: fixed;">
+                    <thead>
+                        <col width="170">
+                        <col width="100">
+                        <col width="420">
+                        <tr>
+                        <th scope="col">Version</th>
+                        <th class="" scope="col">Tested on</th>
+                        <th class="" scope="col">Changes/Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <h2 class="heading heading--small heading-small">Version 1</h2>
+                                <ol class="list list-bullet">
+                                    <br>
+                                    <li><a href="/prototypes/authentication/special-notice-v1/">Special notice</a></br>
+                                    </li>
+                                    <br>
+                                    <li><a href="/prototypes/authentication/forced-update-v1/">Forced SQ update</a></br>
+                                    </li>
+                                </ol>
+                            </th>
+                            <td class="">
+                                </br>July 2019
+                            </td>
+                            <td class="">
+                                <div class="panel panel-border-narrow">
+                                    <h3><strong>HTML prototype built for user testing</strong></h3>
+                                    <p>Initial prototype for testing reset secuirty question journey</p>
+                                    <p>Contains journey for special notice activated and forced SQ update.</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                        
+
+            </div>
+
+</main>
+  
+{% endblock %}

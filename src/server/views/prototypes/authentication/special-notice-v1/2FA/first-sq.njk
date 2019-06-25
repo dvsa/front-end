@@ -1,0 +1,124 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Your profile', url: '#' },
+  { text: 'Change security questions'}
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+        <h1>
+            <span class="content-header__type">Your profile</span>
+            <span class="content-header__title">Change security questions</span>
+        </h1>
+    </header> 
+
+    <div class="text govuk-!-margin-bottom-5">
+        <p>Memorable answers must be:</p>
+        <ol class="list-bullet">
+            <li>at least 6 characters</li>
+            <li>different from each other</li>
+        </ol>
+    </div>
+  
+    <h2 class="heading heading--large  heading-large">
+      First security question
+    </h2>
+  
+    <div class="form-group ">
+        <label class="form-label  " for="questionOne">
+        Choose question
+        </label>
+  
+        <select class="form-control " id="questionOne" name="questionOne" selectedValue="values.questionOne">
+            <option value="select">Please select</option>
+            <option selected="selected" value="1">What did you want to be when you grew up?</option>
+            <option value="2">What was the name of your first pet?</option>
+            <option value="3">Who was your first kiss?</option>
+            <option value="4">Where did you go on your first memorable holiday?</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+        <label class="form-label  " for="questionOneAnswer">
+            Memorable answer 
+        </label>
+        <input class="form-control" id="questionOneAnswer" type="text" name="questionOneAnswer" value="Cricketer">
+    </div>
+
+    <h2 class="heading heading--large  heading-large">
+      Second security question
+    </h2>
+
+    <div class="form-group ">
+        <label class="form-label  " for="questionTwo">
+        Choose question 
+        </label>
+        <select class="form-control " id="questionTwo" name="questionTwo">
+            <option value="select">Please select</option>
+            <option value="1">In what city or town did your parents meet?</option>
+            <option value="2">What was the first album that you purchased?</option>
+            <option value="3">What was the name of the company where you had your first job?</option>
+            <option selected="selected" value="4">What is the name of the street where you grew up?</option>
+        </select>
+    </div>
+
+    <div class="form-group  ">
+        <label class="form-label  " for="questionTwoAnswer">
+            Memorable answer 
+        </label>
+        <input class="form-control" id="questionTwoAnswer" type="text" name="questionTwoAnswer" value="Spain">
+    </div>
+
+    <div class="govuk-inset-text govuk-!-margin-bottom-8 govuk-!-margin-top-8">
+        <p class="">Add third security question</p>
+    </div>
+    
+    <h2 class="heading heading--large  heading-large">
+      Third security question
+    </h2>
+
+    <div class="form-group ">
+        <label class="form-label  " for="questionThree">
+        Choose question 
+        </label>
+        <select class="form-control " id="questionThree" name="questionTwo">
+            <option value="select">Please select</option>
+            <option value="1">In what city or town did you spend your honeymoon?</option>
+            <option value="2">What is your grandmother's (on your mother's side) maiden name?</option>
+            <option value="3">What was the last name of your favorite high school teacher?</option>
+            <option value="4">What was your childhood nickname?</option>
+        </select>
+    </div>
+
+    <div class="form-group  ">
+        <label class="form-label  " for="questionThreeAnswer">
+            Memorable answer 
+        </label>
+        <input class="form-control" id="questionThreeAnswer" type="" name="questionThreeAnswer" value="">
+    </div>
+
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a class="button" href="review-new-sq" role="button">Continue</a>
+        </div> 
+  
+        <p>
+        <a href="inbox">Back</a>
+        </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

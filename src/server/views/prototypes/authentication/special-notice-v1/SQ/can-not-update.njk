@@ -1,0 +1,44 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Your profile' }
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+  <div class="column-full">
+    
+    <header class="content-header">
+        <h1>
+            <span class="content-header__type"></span>
+            <span class="content-header__title">You cannot update your security questions at this time</span>
+        </h1>
+    </header> 
+
+    <div class="lede">
+        <p>
+            To update your security question you need to log in using your security card pin. 
+        </p>
+    </div>
+
+    <div>
+        <p>
+            If you have your security card, please <a href="../enter-pin">log back in</a> with this security method. 
+        </p>
+        <p>
+            If your card is lost or damaged, then <a href="#">order a new security card</a>. You can also order one later from your profile.
+        </p>
+    </div>
+  
+    <p>
+      <a href="inbox">Back to special notices</a>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

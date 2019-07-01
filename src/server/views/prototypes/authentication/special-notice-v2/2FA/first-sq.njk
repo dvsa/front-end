@@ -1,0 +1,67 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Your profile', url: '#' },
+  { text: 'Change security questions'}
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+        <h1>
+            <span class="content-header__type">Your profile</span>
+            <span class="content-header__title">Change first security question</span>
+        </h1>
+    </header> 
+
+    <div class="text govuk-!-margin-bottom-5">
+        <p>Memorable answers must be:</p>
+        <ol class="list-bullet">
+            <li>at least 6 characters</li>
+            <li>different from each other</li>
+        </ol>
+    </div>
+  
+    <div class="form-group ">
+        <label class="form-label  " for="questionOne">
+        Choose question
+        </label>
+  
+        <select class="form-control " id="questionOne" name="questionOne" selectedValue="values.questionOne">
+            <option value="select">Please select</option>
+            <option selected="selected" value="1">What did you want to be when you grew up?</option>
+            <option value="2">What was the name of your first pet?</option>
+            <option value="3">Who was your first kiss?</option>
+            <option value="4">Where did you go on your first memorable holiday?</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+        <label class="form-label  " for="questionOneAnswer">
+            Memorable answer 
+        </label>
+        <input class="form-control" id="questionOneAnswer" type="text" name="questionOneAnswer" value="Cricketer">
+    </div>
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a class="button" href="second-sq" role="button">Continue</a>
+        </div> 
+  
+        <p>
+        <a href="update-sq">Back</a>
+        </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

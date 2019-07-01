@@ -1,0 +1,67 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Your profile', url: '#' },
+  { text: 'Change security questions'}
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+        <h1>
+            <span class="content-header__type">Your profile</span>
+            <span class="content-header__title">Change second security question</span>
+        </h1>
+    </header> 
+
+    <div class="text govuk-!-margin-bottom-5">
+        <p>Memorable answers must be:</p>
+        <ol class="list-bullet">
+            <li>at least 6 characters</li>
+            <li>different from each other</li>
+        </ol>
+    </div>
+
+    <div class="form-group ">
+        <label class="form-label  " for="questionTwo">
+        Choose question 
+        </label>
+        <select class="form-control " id="questionTwo" name="questionTwo">
+            <option value="select">Please select</option>
+            <option value="1">In what city or town did your parents meet?</option>
+            <option value="2">What was the first album that you purchased?</option>
+            <option value="3">What was the name of the company where you had your first job?</option>
+            <option selected="selected" value="4">What is the name of the street where you grew up?</option>
+        </select>
+    </div>
+
+    <div class="form-group  ">
+        <label class="form-label  " for="questionTwoAnswer">
+            Memorable answer 
+        </label>
+        <input class="form-control" id="questionTwoAnswer" type="text" name="questionTwoAnswer" value="Spain">
+    </div>
+
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a class="button" href="third-sq" role="button">Continue</a>
+        </div> 
+  
+        <p>
+        <a href="first-sq">Back</a>
+        </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

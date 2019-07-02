@@ -1,0 +1,31 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+            <span class="content-header__type">Sign in</span>
+          Sign in without your security card
+        </h1>
+            
+        <p class="lede">If your security card is lost, forgotten or damaged then you can sign in by answering your security questions.</p>
+
+        <p>If you need a new card then you can order one from your profile, once you’ve signed in.</p>
+
+        <div class="govuk-!-margin-top-6">
+            <a class="button button-filter-search govuk-!-margin-bottom-5" href="answer-sq" type="submit">Continue</a>
+        </div>
+
+        <a href="enter-pin">Cancel and return to your security card pin</a>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

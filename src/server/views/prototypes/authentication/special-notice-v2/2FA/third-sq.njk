@@ -1,0 +1,67 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Your profile', url: '#' },
+  { text: 'Change security questions'}
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+        <h1>
+            <span class="content-header__type">Your profile</span>
+            <span class="content-header__title">Change third security question</span>
+        </h1>
+    </header> 
+
+    <div class="text govuk-!-margin-bottom-5">
+        <p>Memorable answers must be:</p>
+        <ol class="list-bullet">
+            <li>at least 6 characters</li>
+            <li>different from each other</li>
+        </ol>
+    </div>
+
+    <div class="form-group ">
+        <label class="form-label  " for="questionThree">
+        Choose question 
+        </label>
+        <select class="form-control " id="questionThree" name="questionTwo">
+            <option value="select">Please select</option>
+            <option value="1">In what city or town did you spend your honeymoon?</option>
+            <option value="2">What is your grandmother's (on your mother's side) maiden name?</option>
+            <option value="3">What was the last name of your favorite high school teacher?</option>
+            <option value="4">What was your childhood nickname?</option>
+        </select>
+    </div>
+
+    <div class="form-group  ">
+        <label class="form-label  " for="questionThreeAnswer">
+            Memorable answer 
+        </label>
+        <input class="form-control" id="questionThreeAnswer" type="" name="questionThreeAnswer" value="">
+    </div>
+
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a class="button" href="review-new-sq" role="button">Continue</a>
+        </div> 
+  
+        <p>
+        <a href="second-sq">Back</a>
+        </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

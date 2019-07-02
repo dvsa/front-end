@@ -1,0 +1,56 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+  
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+        <h1 class="heading-xlarge">
+            <span class="content-header__type">Sign in without your security card</span>
+          Your security question
+        </h1>
+            
+        <div class="govuk-form-group">
+            <label class="govuk-label" for="question-1">
+                Where did you go on your first memorable holiday?
+            </label>
+            <input class="govuk-input" id="question-1" name="question-1" type="text">
+        </div>
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Forgotten your security questions?
+                </span>
+            </summary>
+            <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display: block;">
+                <p>
+                    Call the DVSA helpdesk on <strong>0330 123 5654</strong> to reset your questions.
+                </p>
+
+                <p>
+                    Opening hours are:
+                </p>
+                <ul>
+                    <li>Monday to Friday, 8am to 8pm</li>
+                    <li>Saturday, 8am to 2pm</li>
+                    <li>Sunday, closed</li>
+                </ul>
+         </div>
+        </details>
+
+        <div class="govuk-!-margin-top-6">
+            <a class="button button-filter-search govuk-!-margin-bottom-5" href="sign-in-success" type="submit">Continue</a>
+        </div>
+
+        <a href="sign-in-w-sq">Back</a>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

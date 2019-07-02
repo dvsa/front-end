@@ -1,0 +1,53 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+        <h1>
+          <span class="content-header__type">Special notice</span>
+          <span class="content-header__title">Update security questions</span>
+        </h1>
+        <h2 class="content-header__tertiary">Published 22 June 2019</h2>
+      </header>
+
+      
+
+        <div class="text">
+          <div class="panel panel-border-wide">
+              <p>This message must be acknowledged by <strong>Date</strong></p>
+          </div>
+
+          <p><a href="can-not-update">Update security questions</a></p>
+        </div>
+
+      
+
+      <div class="text u-clearfix">
+
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a class="button" href="/prototypes/messages/acknowledge/0" role="button">Acknowledge special notice</a>
+        </div> 
+  
+    <p>
+      <a href="inbox">Back to messages</a>
+    </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

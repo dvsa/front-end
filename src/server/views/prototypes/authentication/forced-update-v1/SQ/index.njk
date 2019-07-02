@@ -1,0 +1,50 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    
+    <div class="grid-row">
+        <div class="column-full">
+
+        <header class="transaction-header--failure">
+            <h1 class="transaction-header__title">Reset you account security</h1>
+        </header>
+
+        <p class="lede">You will need to update your security questions to keep your account secure.</p>
+
+        <p>However to be confident that you are authorised to update them question we need you to log in to the service using your security card pin.</p>
+         
+          <h2 class="heading-medium">Don't have a security pin card?</h2>
+            <p>If you do not have your security card or you are waiting for one to arrive, please contact the helpdesk so we can verifiy you and reset your security questions.</p>
+            <p>By resetting through the contact centre you will then be able to log in using your new secuirty questions going forward.</p>
+            
+        <div class="form-group">    
+                <details class="govuk-details">
+
+                  <summary class="govuk-details__summary"><span class="govuk-details__summary-text">Contact the helpdesk</span></summary>
+
+                  <div class="panel panel-border-narrow" id="details-content-0">
+
+                    <p>Call the DVSA helpdesk on <strong class="bold-small">0330 123 5654</strong> to reset your questions.</p>
+                    <p>Opening hours are:</p>
+                    <ul>
+                        <li>Monday to friday, 8am to 8pm</li>
+                        <li>Saturday, 8am to 2pm</li>
+                        <li>Sunday, closed</li>
+                    </ul>
+
+                  </div>
+
+                </details>
+            </div>
+            
+         <a href="enter-pin">Cancel and return to sign in to your security card PIN</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

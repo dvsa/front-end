@@ -1,0 +1,34 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+  
+    <div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+    <div class="govuk-grid-row">
+        <div class="column-full">
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-9">
+          <h1 class="govuk-panel__title">
+            You have signed in without your security card
+          </h1>
+        </div>
+
+        <h2 class="govuk-heading-m">What happens next</h2>
+
+        <p class="govuk-body">
+          Next time you sign in, you will need to answer your security questions.
+        </p>
+        <p class="govuk-body">
+          If your card is lost or damaged, then <a href="">order a new security card</a>. You can also order one later from your profile.
+        </p>
+
+        <a href="SQ" class="govuk-link">Continue to home</a>
+
+    </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

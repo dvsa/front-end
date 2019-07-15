@@ -1,0 +1,56 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home'},
+  { text: 'Your profile' }
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+    <h1>
+        <span class="content-header__type">Your profile</span>
+        <span class="content-header__title">Change security questions</span>
+            </h1>
+    </header> 
+
+    <div class="lede">
+        <p>
+            Keep your security questions up-to-date so you can access your account if you forget your password.
+        </p>
+    </div>
+
+    <div>
+        <p>
+            For security, enter your password again to continue.
+        </p>
+    </div>
+
+    <div class="form-group form-group">
+        <label for="Password" class="form-label ">
+            Your password
+        </label>
+        <input type="password" id="Password" name="Password" value="" class="form-control">
+    </div>
+
+        <div class="u-margin-top-10 u-margin-bottom-30">
+          <a class="button" href="first-sq" role="button">Continue</a>
+        </div> 
+  
+    <p>
+      <a href="index">Cancel and return to sign in</a>
+    </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

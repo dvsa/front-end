@@ -1,0 +1,88 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home'},
+  { text: 'Your profile' },
+  { text: 'Change security questions'}
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+        <h1>
+            <span class="content-header__type">Your profile</span>
+            <span class="content-header__title">Review security question changes</span>
+        </h1>
+    </header> 
+    
+    <h3 class="heading-medium">Your account security</h3>
+  
+    <table class="key-value-list">
+        <tbody>
+            <tr>
+                <th class="key-value-list__key">
+                    First security question
+                </th>
+                <td class="key-value-list__value">
+                    What did you want to be when you grew up?
+                    <span class="font-small">Cricketer</span>
+                </td>
+                <td class="key-value-list__item-action">
+                    <a href="first-sq" title="Change Email address">
+                    Change
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th class="key-value-list__key">
+                    Second security question
+                </th>
+                <td class="key-value-list__value">
+                What is the name of the street where you grew up?
+                <br> <span class="font-small">Southampton road</span>
+                </td>
+                <td class="key-value-list__item-action">
+                    <a href="first-sq" title="Change Password">
+                    Change
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <th class="key-value-list__key">
+                    Third security question
+                </th>
+                <td class="key-value-list__value">
+                    In what city or town did you spend your honeymoon?
+                    <br> <span class="font-small">Edinburgh</span>
+                </td>
+                <td class="key-value-list__item-action">
+                    <a href="first-sq" title="Change Password">
+                    Change
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+        <div class="u-margin-top-30 u-margin-bottom-30">
+          <a class="button" href="confirmation" role="button">Save changes</a>
+        </div> 
+  
+        <p>
+        <a href="first-sq">Back</a>
+        </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

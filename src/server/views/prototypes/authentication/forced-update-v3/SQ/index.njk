@@ -1,0 +1,50 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    
+    <div class="grid-row">
+        <div class="column-full">
+
+        <header class="transaction-header--failure">
+            <h1 class="transaction-header__title">Improve your account security</h1>
+        </header>
+
+        <p class="lede">You need to update your security questions to keep your account secure.</p>
+
+        <p>Sign in to the service using your security card PIN.</p>
+         
+          <h2 class="heading-medium">If you do not have a security card</h2>
+            <p>If you do not have your security card or you are waiting for one to arrive, contact the helpdesk so we can verify you and update your security questions.</p>
+            <p>You will then be able to sign in using your new security questions.</p>
+            
+        <div class="form-group">    
+                <details class="govuk-details">
+
+                  <summary class="govuk-details__summary"><span class="govuk-details__summary-text">Contact the helpdesk</span></summary>
+
+                  <div class="panel panel-border-narrow" id="details-content-0">
+
+                    <p>Call the DVSA helpdesk on <strong class="bold-small">0330 123 5654</strong> to reset your questions.</p>
+                    <p>Opening hours are:</p>
+                    <ul>
+                        <li>Monday to friday, 8am to 8pm</li>
+                        <li>Saturday, 8am to 2pm</li>
+                        <li>Sunday, closed</li>
+                    </ul>
+
+                  </div>
+
+                </details>
+            </div>
+            
+         <a href="enter-pin">Cancel and return to sign in</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

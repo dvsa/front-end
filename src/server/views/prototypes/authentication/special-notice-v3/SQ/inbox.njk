@@ -1,0 +1,159 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">Messages
+      </h1>
+      </div>
+      </div>
+
+<div class="c-tab-list">
+  <ul class="c-tab-list__tabs message-filters__tabs">
+    <li>
+      <span class="c-tab-list__tab-link c-tab-list__tab-link--active message-filters__tab message-filters__tab--active">Inbox</span>
+    </li>
+    <li>
+      <a href="#" class="c-tab-list__tab-link message-filters__tab">Archived</a>
+    </li>
+  </ul>
+  <div class="message-filters__tab-panel js-filter-wrapper">
+    <h2 class="heading-large u-margin-top-10">Inbox</h2>
+    <div class="message-panel">
+      <h3 class="heading-small u-margin-top-10">Special notice acknowledgment required</h3>
+      <ul class="message-panel__messages u-margin-bottom-15">
+        <li data-type="Special notice" class="message-panel__message message-panel__message--unread">
+          <div class="message-panel__message-type">
+            <span class="visually-hidden">Type:</span>Special notice 07-19
+          </div>
+          <div class="grid-row">
+            <div class="message-panel__col message-panel__col--six">
+              <div class="message-panel__message-title">
+                <a href="you-need-to-update">Update security questions</a>
+              </div>
+            </div>
+            <div class="message-panel__col message-panel__col--four">
+              <span class="message-panel__alert">Due in 4 days</span>
+            </div>
+          </div>
+          <ul class="grid-row message-panel__details">
+            <li class="message-panel__col message-panel__col--six">
+              <span class="visually-hidden">Date received:</span>
+              22 June 2019
+            </li>
+            <li class="message-panel__col message-panel__col--four">
+              <span class="visually-hidden">Action:</span>
+              Action required
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="message-panel js-message-panel">
+      <form class="js-show" data-form-state-index="0">
+        <fieldset>
+          <div class="form-group inline u-margin-bottom-30">
+            <legend class="heading-small">Filter by type</legend>
+            <div class="multiple-choice multiple-choice--inline">
+              <input data-type="Special notice" class="js-message-filter" id="type-special" name="type" type="checkbox" value="special" checked="checked">
+              <label for="type-special">Special notices</label>
+            </div>
+            <div class="multiple-choice multiple-choice--inline">
+              <input data-type="Notification" class="js-message-filter" id="type-reminder" name="type" type="checkbox" value="notification" checked="checked">
+              <label for="type-reminder">Notifications</label>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <p class="message-panel__notice" style="display: none;">Select a message type to view</p>
+      <ul class="message-panel__messages js-message-list">
+        <ul class="message-panel__messages js-message-list">
+          <li data-type="Special notice" class="message-panel__message">
+            <div class="message-panel__message-type">
+              <span class="visually-hidden">Type:</span> Special notice 08-18
+            </div>
+            <div class="grid-row">
+              <div class="message-panel__col">
+                <div class="message-panel__message-title">
+                  <a href="#">MOT Testing guide</a>
+                </div>
+              </div>
+            </div>
+            <ul class="grid-row message-panel__details">
+              <li class="message-panel__col message-panel__col--six">
+                <span class="visually-hidden">Date received:</span>
+                18 June 2018
+              </li>
+            </ul>
+          </li>
+          <li data-type="Special notice" class="message-panel__message">
+            <div class="message-panel__message-type">
+              <span class="visually-hidden">Type:</span> Special notice 06-18
+            </div>
+            <div class="grid-row">
+              <div class="message-panel__col">
+                <div class="message-panel__message-title">
+                  <a href="#">EU roadworthiness directive updates</a>
+                </div>
+              </div>
+            </div>
+            <ul class="grid-row message-panel__details">
+              <li class="message-panel__col message-panel__col--six">
+                <span class="visually-hidden">Date received:</span>
+                8 May 2018
+              </li>
+            </ul>
+          </li>
+          <li data-type="Notification" class="message-panel__message message-panel__message--unread">
+            <div class="grid-row">
+              <div class="message-panel__col">
+                <div class="message-panel__message-title">
+                  <a href="#">Site manager nomination</a>
+                </div>
+              </div>
+            </div>
+            <ul class="grid-row message-panel__details">
+              <li class="message-panel__col message-panel__col--six">
+                <span class="visually-hidden">Date received:</span>
+                1 May 2018
+              </li>
+              <li class="message-panel__col message-panel__col--four">
+                <span class="visually-hidden">Action:</span>
+                Action required
+              </li>
+            </ul>
+          </li>
+          <li data-type="Notification" class="message-panel__message message-panel__message--unread">
+            <div class="grid-row">
+              <div class="message-panel__col">
+                <div class="message-panel__message-title">
+                  <a href="#">2018 Regulations</a>
+                </div>
+              </div>
+            </div>
+            <ul class="grid-row message-panel__details">
+              <li class="message-panel__col message-panel__col--six">
+                <span class="visually-hidden">Date received:</span>
+                4 February 2018
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+  <div class="govuk-!-margin-top-4">
+    <a href="index">Back</a>
+  </div>
+</div>
+
+{% endblock %}

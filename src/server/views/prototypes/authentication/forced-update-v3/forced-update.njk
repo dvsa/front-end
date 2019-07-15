@@ -1,0 +1,28 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    
+    <div class="grid-row">
+        <div class="column-full">
+
+        <header class="transaction-header--failure">
+            <h1 class="transaction-header__title">Improve your account security</h1>
+        </header>
+        
+        <p class="lede">You need to update your security questions to keep your account secure.</p>
+
+        <p>You will now be asked to select new security questions.</p>
+         
+        <div style="margin-top: 30px;"><p><a class="button" href="update-sq">Continue</a></p></div>
+        
+         <a href="enter-pin">Cancel and return to sign in to your security card PIN</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -10,6 +10,7 @@ import { initMotTestSearch } from './mot-test-search';
 import { initCheckAll } from './check-all';
 import { initMessageFilter } from './filter-messages';
 import { initMtsLogin } from './mts-login';
+import { initTextareaAutoresize } from './textarea-autorisize';
 
 /**
  * MTS Application modules
@@ -32,4 +33,5 @@ export const initModules = () => {
   initCheckAll();
   initMessageFilter();
   initMtsLogin();
+  initTextareaAutoresize();
 };

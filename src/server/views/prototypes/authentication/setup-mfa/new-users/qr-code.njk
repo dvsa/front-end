@@ -1,0 +1,39 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Scan and check for your 6-digit access code', secondary='Set up your device') }}
+
+      <div class="text u-clearfix">
+ <p>You need to:</p>
+            <ol class="list list-number">
+                <li>
+                    Scan this QR code using the app: <br>
+                    <img style="width: 200px;" src="data:image/png;base64,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" alt="qr code">
+                    <details>
+                        <summary style="margin-bottom: 15px;"><span class="summary">I can’t scan the QR code</span></summary>
+                        <div class="panel panel-border-narrow">
+                            <p>Choose ‘enter code manually’, then enter this key:</p>
+                            <h3 class="heading-small" style="font-weight: normal">H5XU ENLO MFUG IYLO<pre id="tpas_token_secret"></pre></h3>
+                        </div>
+                    </details>
+
+                </li>
+                <li>Check the app for your 6 digit access code. The code refreshes every 30 seconds.</li>
+            </ol>
+
+      <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa/new-users/app-code') }}
+      </div>
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

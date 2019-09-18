@@ -1,0 +1,50 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+<div class="u-margin-top-30 u-margin-bottom-30">
+{{ components.dvsaBanner(mainText='Security authentication complete', secondaryText='You can now access the full MOT testing service', type="confirmation") }}
+</div>
+        <div class="module-criteria" id="password-criteria-scope">
+        <p>The following security actions have been completed:</p>
+      <ul class="criteria__list">
+          <li class="criteria__criterion--has-passed" data-criteria="minLength" data-criteria-param="8">your mobile number is verified</li>
+          <li class="criteria__criterion--has-passed" data-criteria="hasNumeric">your authentication app is verified</li>
+          <li class="criteria__criterion--has-passed" data-criteria="hasMixedCase">your account meets security requirements</li>
+        </ul>
+      </div>
+
+       <div class="text" style="margin-top: 30px">
+        <p>You shouldn’t need to set up additional account security again unless you change your mobile number or device. You will be able to update your details in your profile.</p>
+
+    <div class="text">
+        <h3 class="heading-medium">What happens next?</h3>
+        <p>Next time you sign into the MOT testing service you will be asked for:</p>
+  
+  {{ components.list(
+    items=[
+    { text: 'your username' },
+    { text: 'your password' },
+    { text: 'the 6 digit code from the authentication app on your device' }
+    ],
+    type='bullet'
+    ) }}
+
+        <p>You will normally only need to use the 6 digit code once a day unless you change the device you’re using to access the system.</p>     
+       
+
+    </div>  
+
+    <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue to homepage', url='/prototypes/authentication/setup-mfa/new-users/sign-in') }}
+      </div>
+
+</div>
+
+ {% endblock %}

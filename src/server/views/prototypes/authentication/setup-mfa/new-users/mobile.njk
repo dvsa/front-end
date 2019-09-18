@@ -1,0 +1,27 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Set up account security' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Your mobile number', secondary='Set up account security') }}
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='It must be a mobile phone number. Landlines will not be accepted.', lead=true) }}
+
+      {{ components.field(label='Mobile phone number', id='mobile', group=true, width=75) }}
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Send code', url='/prototypes/authentication/setup-mfa/new-users/text-code-v2') }}
+      </div>
+
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

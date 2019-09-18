@@ -1,0 +1,77 @@
+{% extends 'layouts/mts-without-container.layout.njk' %}
+
+{% set pageTitle = 'Homepage' %}
+
+
+{% block content %}
+
+   <div class="o-wrapper phase-banner">
+      <p>
+         <strong class="phase-tag">BETA</strong>
+         <span>
+         This is a new service – your
+         <a id="feedback-link" target="_blank" href="">feedback</a>
+         will help us to improve it.
+         </span>
+      </p>
+   </div>
+   <section class="c-home-hero">
+     <div class="o-wrapper u-clearfix">
+        <div class="c-home-hero__content">
+           <h1 class="c-home-hero__title">
+              Your home
+           </h1>
+        </div>
+        
+     </div>
+  </section>
+  <main id="content">
+     <div class="container">
+        <div class="grid-row">
+          <div class="column-half--desktop">
+
+              <section id="special-notice-list">
+
+              <header class="c-home-block__head">
+                <h2 class="c-home-block__title">
+                    Messages
+                </h2>
+              </header>
+
+              <a class="message-notification" href="/prototypes/authentication/setup-mfa/new-users/inbox"> 
+                <h3 class="row">
+                  <span class="message-notification__message-type-count">1</span>
+                  <span class="message-notification__message-type-title">role nominations</span>
+                  <span class="message-notification__message-type-info">waiting to be accepted or rejected</span>
+                </h3>
+              </a>
+              </section>
+
+              <section>
+                <p><a href="/prototypes/messages/inbox">View all messages</a></p>
+              </section>
+
+          </div>
+          <div class="column-half--desktop">
+               
+              <section class="c-home-block">
+                <header class="c-home-block__head">
+                    <h2 class="c-home-block__title">Training</h2>
+                </header>
+                <p>Practice on any class of vehicle without using slots or recording the outcome.</p>
+                <p>
+                    <a href="/training-test-vehicle-search" class="button" id="action-start-mot-demonstration">
+                    Start training test
+                    </a>
+                </p>
+              </section>
+              
+                
+              
+          </div>
+        </div>
+     </div>
+  </main>
+
+  
+{% endblock %}

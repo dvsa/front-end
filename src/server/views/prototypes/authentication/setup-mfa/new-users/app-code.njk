@@ -1,0 +1,27 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Check the Authy authenticator app', secondary='Set up account security') }}
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='Enter the 6-digit code for MOT Testing Service ', lead=true) }}
+
+      {{ components.field(label='Code in app', id='mobile', group=true, width=75) }}
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa/new-users/app-confirmation') }}
+      </div>
+
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

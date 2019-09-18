@@ -1,0 +1,47 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Set up account security' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    <header class="content-header" style="margin-top: 35px;" >
+      <span class="govuk-caption-xl">Sign in</span>
+      <h1 class="govuk-heading-xl">Your 6 digit security code</h1>
+    </header>
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='Open your authentication app and enter the 6 digit code below', lead=true) }}
+
+ <details>
+       <summary style="margin-bottom: 15px;"><span class="summary">Where do I find the 6 digit code?</span></summary>
+       <div class="panel panel-border-narrow">
+       <p>Open the authentication app you used to set up your additional account security and look for the MOT Testing Service 6 digit code. The code refreshes every 30 seconds. </p>
+       </div>
+       </details>
+
+       <div class="form" style="margin-top:30px">
+                      <label class="form-label" for="code">Code in app</label>
+                      <input type="code" class="form-control" id="code">
+                    </div>
+
+      </form>
+
+      <div class="u-margin-top-30 u-margin-bottom-30">
+      <a href="#">Unable to access the code?</a>
+      </div>
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Sign in', url='/prototypes/authentication/setup-mfa/existing-users-forced') }}
+      </div>
+
+<a href="#">Cancel and return to sign in </a>
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

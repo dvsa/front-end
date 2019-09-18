@@ -1,0 +1,98 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <header class="content-header">
+        <h1>
+          <span class="content-header__type">Special notice</span>
+          <span class="content-header__title">Changes to account security</span>
+        </h1>
+        <h2 class="content-header__tertiary">Published 19 September 2019</h2>
+      </header>
+
+      <div class="text">
+        <div class="panel panel-border-wide">
+            <p>This message must be acknowledged by <strong>30 September 2019</strong></p>
+        </div>
+      </div>
+
+      <div class='text u-clearfix'>
+
+        <h2 class="heading-medium">Overview</h2>
+        <p>From October 30th, you will need to have additional authentication set up on your account. You’ll need to install an authentication app (such as Microsoft Authenticator, Google Authenticator or Authy) on your smartphone or tablet device which will generate a security code to enter when you sign in.</p>
+
+        <h2 class="heading-medium">What the changes are</h2>
+
+        <p>You will need to set up additional authentication which will generate a security code to enter when you sign in. You will normally only need to use the code once a day unless you change the device you’re using to access the system.</p>
+
+        <h2 class="heading-medium">How to set up additional security</h2>
+
+        <h3 class="heading-medium">Check for an authentication app on your device</h3>
+
+        <p>If you've been issued with a DVSA smartphone, check the device to see if you have Microsoft Authenticator installed.</p>
+
+        <p>For the items retested the new standards will apply. In most cases this will make no difference but for a small number of items where the standards have changed, for example, diesel emissions - it will mean the new limits apply.</p>
+
+        <p>During the retest, there is no requirement to test the new areas introduced by the EU directive 
+        (for example, reversing light, MIL light). However, if in the course of the retest defects in these new areas are seen then the defect must be recorded – which in the case of a major or dangerous defect will mean the retest will fail.</p>
+
+        <h2 class="heading-medium">
+        <span class="number">4. </span> MOT testing service access during changeover</h2>
+
+        <p>To introduce the changes, the MOT testing service won’t be available from 8pm on Saturday 19 May 2018 until around 5am Sunday 20 May 2018.</p>
+
+        <div class="panel panel-border-wide">
+        <p>Any tests that haven’t been completed before the service is taken down will automatically be cancelled.</p>
+        </div>
+
+        <p>The service should be available for you to use again on the Sunday morning. However, if there are any issues, you should regularly check the <a rel="external" href="https://mattersoftesting.blog.gov.uk/mot-testing-service-status/">MOT testing service status page</a> for updates.</p>
+
+        <h2 class="heading-medium">
+        <span class="number">5. </span> Contingency testing</h2>
+
+        <p>As an MOT tester, you should where possible, make sure that you enter any outstanding contingency tests into the MOT testing service before it is taken down at 8pm on Saturday 19 May 2018.</p>
+
+        <p>If you’re entering contingency tests after the changeover, you’ll be presented with the ‘reason for rejection’ (defects) dataset, relevant to the date the test took place.</p>
+
+        <h2 class="heading-medium">
+        <span class="number">6. </span> Support for garages on 20 May 2018</h2>
+
+        <p>You can find a <a href="https://www.gov.uk/government/publications/mot-changes-from-may-2018-guidance-for-mot-testers/other-important-information-for-mot-testers">list of important information for MOT testers</a> following feedback from the training environment and testers’ manuals.</p>
+
+        <p>In addition, the helpdesk will be open on Sunday 20 May 2018 from 9am to 3pm.</p>
+
+        <p>You should call 0330 123 5654 if you need help with entering test results or have any questions when carrying out tests.</p>
+
+        <p>Following implementation of the MOT changes, the helpdesk will then operate as normal, Monday to Friday, 8am to 6pm on 0300 123 9000 and Saturday 8am to 2pm on 0330 123 5654.</p>
+
+      </div>
+
+      <div class="notice text u-margin-top-10 u-margin-bottom-30">
+        <i class="icon icon-important">
+          <span class="visually-hidden">Warning</span>
+        </i>
+        <strong class="bold-small">By acknowledging this message, you confirm that you have read, understood and agree to test in accordance to the new legislative changes associated to this special notice.</strong>
+      </div>
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Acknowledge special notice', url='/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-acknowledged-system-message') }}
+      </div>
+
+      {{ components.link(text='Back to messages', url='/prototypes/mts-messages/trade/notifications-inbox-trade-user-sn-read', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

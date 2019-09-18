@@ -1,0 +1,29 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='We’ve sent you a text message', secondary='Set up account security') }}
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='It contains a code and should and should arrive in a few minutes.', lead=true) }}
+        {{ components.paragraph(text='We sent it to a number ending 03746.', lead=true) }}
+
+      {{ components.field(label='Code in text message', id='mobile', group=true, width=75) }}
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa/new-users/install-app') }}
+      </div>
+
+    {{ components.link(text='I didn’t receive a text message', url='/prototypes/authentication/setup-mfa/new-users/send-text-again', paragraph=true) }}
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -7,10 +7,15 @@ export class TextareaAutoresize {
     document.querySelectorAll('textarea.autoresize').forEach(function(element) {
       element.style.boxSizing = 'border-box';
       var offset = element.offsetHeight - element.clientHeight;
-      document.addEventListener('input', function(event) {
-        event.target.style.height = 'auto';
-        event.target.style.height = event.target.scrollHeight + offset + 'px';
+      TextareaAutoresize.resize(element, offset);
+      element.addEventListener('input', function() {
+        TextareaAutoresize.resize(element, offset);
       });
     });
+  }
+
+  static resize(element, offset) {
+    element.style.height = 'auto';
+    element.style.height = element.scrollHeight + offset + 'px';
   }
 }

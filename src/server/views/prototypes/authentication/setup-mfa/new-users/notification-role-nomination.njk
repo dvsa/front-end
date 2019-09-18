@@ -1,0 +1,47 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes' },
+  { text: 'Messages' }
+] %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+ <header class="content-header">
+        <h1>
+          <span class="content-header__type">Notification</span>
+          <span class="content-header__title">Role assigned: Vehicle examiner - set up account security</span>
+        </h1>
+        <h2 class="content-header__tertiary">Published 10 September 2019</h2>
+      </header>
+
+      
+
+      <div class='text u-clearfix'>
+        <p>You have been assigned the role of Vehicle examiner.</p>
+        <p>You need to set up account security before you can access the full MOT testing service</p>
+      </div>
+
+       <div class='text u-clearfix'>
+        <a class="button" href="/prototypes/authentication/setup-mfa/new-users/setup-security">Set up account security</a>
+      </div>
+
+      <div class="u-margin-top-20 u-margin-bottom-30">
+        <a class="button" href="#">Archive this message</a>
+      </div>
+
+      </div>
+
+      {{ components.link(text='Back to messages', url='inbox', paragraph=true) }}
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+<div class="container">
+
+    <div class="grid-row">
+        <div class="column-full">
+
+        <header class="transaction-header--failure">
+            <h1 class="transaction-header__title">Update your account security</h1>
+        </header>
+        
+        <div class="text">
+        <p class="lede">You need additional authentication to access the full MOT  testing service and to make your account more secure.</p>
+
+        <p>You can set up security authentication now or do it later from your profile. </p>
+        </div>
+         
+              <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa/new-users/mobile') }}
+      </div>
+        
+    </div>
+</div>
+</main>
+
+{% endblock %}

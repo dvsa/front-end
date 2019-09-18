@@ -1,0 +1,39 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+<div class="u-margin-top-30 u-margin-bottom-30">
+{{ components.dvsaBanner(mainText='Security authentication complete', secondaryText='You can now access the full MOT testing service', type="confirmation") }}
+</div>
+  
+    <div class="text">
+        <h3 class="heading-medium">What happens next?</h3>
+        <p>Next time you sign into the MOT testing service you will be asked for:</p>
+  
+  {{ components.list(
+    items=[
+    { text: 'your username' },
+    { text: 'your password' },
+    { text: 'the code from the Authy authentication app' }
+    ],
+    type='bullet'
+    ) }}
+
+        <p>You will normally only need to use the code once a day unless you change the device you’re using to access the system.</p>     
+       
+
+    </div>  
+
+    <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue to homepage', url='') }}
+      </div>
+
+</div>
+
+ {% endblock %}

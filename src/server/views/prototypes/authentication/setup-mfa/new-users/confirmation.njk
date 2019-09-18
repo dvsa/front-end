@@ -1,0 +1,33 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes/authentication/' },
+  { text: 'Your profile', url: '#' },
+  { text: 'Change security questions'}
+] %}
+
+{% block content %}
+
+
+<div class="container">
+
+    <header class="transaction-header">
+        <h1 class="transaction-header__title">Your security questions have been changed</h1>
+    </header>
+    <div class="text">
+        <h3 class="heading-medium">What happens next?</h3>
+        <p>You can change your account security – including your password and security questions – at any time from your profile.
+        </p>
+        <nav class="content-navigation">
+            <ul class="content-navigation__secondary">
+                <li>
+                    <a href="#">Continue to home</a>
+                </li>
+            </ul>
+        </nav>
+    </div>                        
+</div>
+
+ {% endblock %}

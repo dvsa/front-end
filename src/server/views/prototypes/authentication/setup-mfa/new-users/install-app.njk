@@ -1,0 +1,34 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Download and install the Authy authenticator app', secondary='Set up your device') }}
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='Download and install the Authy authenticator app to your smartphone, tablet, or desktop computer.', lead=true) }}
+
+        <details class="u-margin-bottom-10">
+          <summary><span class="summary">How to install Authy</span></summary>
+          <div class="panel panel-border-narrow">
+           <p>Install Authy based on your device:</p>
+           <p><b>Google Android.</b> On your device, go to Google Play to download and install an authentication app</p>
+           <p><b>Apple iOS.</b> On your Apple iOS device go to the App Store to download and install an authentication app</p>
+           <p><b>Desktop. </b> Go to <a href="https://authy.com/download/">authy.com/download</a> and download the app for Windows or macOS. </p>
+      </div>
+  </details>
+
+      <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa/new-users/qr-code-v2') }}
+      </div>
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

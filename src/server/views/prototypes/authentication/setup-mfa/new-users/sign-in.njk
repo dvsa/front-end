@@ -1,0 +1,69 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+        
+
+        <div class="organisation-logo organisation-logo--md">Driver &amp; Vehicle Standards Agency</div>
+
+        <h1 class="form-title heading-xlarge">
+          MOT testing service
+        </h1>
+        <div class="grid-row">
+        <div class="column-half">
+                <fieldset>
+                 <legend class="form-title heading-large">Sign in</legend>
+
+                    <div class="form-group">
+                      <label class="form-label" for="User-id">User ID</label>
+                      <input type="text" class="form-control" id="User-id">
+                    </div>
+
+                    <div class="form-group">
+                      <label class="form-label" for="Password">Password</label>
+                      <input type="password" class="form-control" id="Password">
+                    </div>
+                    
+                    <a href="#">Forgotten your password?</a>
+
+                    <div class="govuk-!-margin-top-6">
+                        <a class="button button-filter-search govuk-!-margin-top-5" href="/prototypes/authentication/setup-mfa/new-users/sign-in-mfa" type="submit">Sign in</a>
+                    </div>
+
+                 </fieldset>
+
+        </div>
+      
+            <div class="column-half">
+                <h3 class="heading-medium">Sign in help</h3>
+                <div class="form-group">    
+                    <details>
+
+                          <summary><span class="summary">Lost, forgotten or damaged security card</span></summary>
+                          <div class="panel panel-border-narrow">
+                            <p>
+                                Sign in with your user ID and password. You’ll then see an option to sign in without your card and order a new one if you need to.
+                            </p>
+                          </div>
+
+                    </details>
+                    <details>
+
+                          <summary><span class="summary">Don't have an account</span></summary>
+                          <div class="panel panel-border-narrow">
+                            <p>
+                                <a href="#">Create a new account</a> for the MOT testing service. Only do this if you don’t already have one.
+                            </p>
+
+                          </div>
+
+                    </details>
+                </div>
+            </div>
+  </div>
+</main>
+
+{% endblock %}

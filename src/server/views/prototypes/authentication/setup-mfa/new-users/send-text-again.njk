@@ -1,0 +1,25 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Set up account security' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      {{ components.pageHeading(heading='Send me another text message', secondary='Set up account security') }}
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='The text message will contain a new code.', lead=true) }}
+        {{ components.paragraph(text='If your previous text arrives later, the code in it won’t work.', lead=true) }}
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Send new text message', url='/prototypes/authentication/setup-mfa/new-users/text-code') }}
+      </div>
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

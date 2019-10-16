@@ -1,0 +1,58 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+<div class="container">
+
+    <div class="grid-row">
+        <div class="column-full">
+
+        <header class="transaction-header--failure">
+            <h1 class="transaction-header__title">Set up your account security</h1>
+        </header>
+        
+        <div class="column-two-thirds">
+        <p class="lede">You need additional authentication to access the full MOT  testing service and to make your account more secure.</p>
+        <p>You’ll need to install an authentication app on your smartphone or tablet device which will generate a security code to enter when you sign in.</p>
+        <p>Once you’ve set up additional authentication you won’t need to do this again unless you change your mobile number or device. </p>
+        <h3 class="govuk-heading-m">You will need:</h3>
+  
+  {{ components.list(
+    items=[
+    { text: 'your mobile phone number (you can use a personal mobile phone number)' },
+    { text: 'an authentication app (such as Microsoft Authenticator, Google Authenticator or Authy) installed on your device' }
+    ],
+    type='bullet'
+    ) }}
+
+    <div class="govuk-inset-text">
+        Check to see if you have an authentication app pre-installed on your device or download and install one from your app store. See <a href="">LINK TO GUIDANCE TBC</a> for detailed step-by-step guidance. 
+        </div>
+
+      <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa/new-users/mobile-v2') }}
+      </div>
+
+        <details>
+            <summary style="margin-bottom: 30px;"><span class="summary">I don’t have access to a smartphone</span></summary>
+            <div class="panel panel-border-narrow">
+            <p>If you are unable to use a smartphone or tablet, then you can set up your account security to receive a security code via email. You will be emailed a new code each day you sign in.</p>
+            <p><a href="/prototypes/authentication/staff-setup-email-mfa/email-sent">Set up account security via email</a>
+            </div>
+        </details>
+
+        </div>
+
+        
+         
+      
+        
+    </div>
+</div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+    
+      <header class="content-header">
+    <h1>
+        <span class="content-header__type">Set up account security</span>
+        <span class="content-header__title">We’ve sent you an email</span>
+            </h1>
+    </header> 
+
+    <div>
+        <p>It contains a 6 digit code and should arrive in a few minutes.</p>
+
+        <p>We sent it to <b>Alden.Amison@dvsa.gov.uk</b></p>
+
+    </div>
+
+    <div class="u-margin-top-30 u-margin-bottom-30">
+      <a href="#">Send code again</a>
+    </div>
+
+    <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/staff-setup-email-mfa/sign-in-email-mfa') }}
+    </div>
+  
+    <p>
+      <a href="/prototypes/authentication/staff-order-card/forced-update">Back</a>
+    </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

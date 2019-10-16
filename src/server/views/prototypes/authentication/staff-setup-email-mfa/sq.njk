@@ -1,0 +1,51 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-full">
+    
+      <header class="content-header">
+    <h1>
+        <span class="content-header__type">Order a security card</span>
+        <span class="content-header__title">Your security question</span>
+            </h1>
+    </header> 
+
+    <div class="form-group form-group">
+        <label for="Password" class="form-label ">
+            Where did you go on your first memorable holiday?
+        </label>
+        <input type="" id="" name="Password" value="" class="form-control">
+    </div>
+
+    <details>
+            <summary style="margin-bottom: 30px;"><span class="summary">Forgotten your security questions?</span></summary>
+            <div class="panel panel-border-narrow">
+            <p>Call the DVSA helpdesk on <b>0330 123 5654</b> to reset your questions.</p>
+            <p>Opening hours are:</p>
+            <p>Monday to Friday, 8am to 8pm <br>
+            Saturday, 8am to 2pm <br>
+            Sunday, closed</p>
+            </div>
+    </details>
+
+      <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/staff-order-card/order-card') }}
+      </div>
+  
+    <p>
+      <a href="/prototypes/authentication/staff-order-card/forced-update">Back</a>
+    </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

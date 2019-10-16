@@ -1,0 +1,37 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+
+{% block content %}
+
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+    
+      <header class="content-header">
+    <h1>
+        <span class="content-header__type">Temporary sign in</span>
+        <span class="content-header__title">Request a temporary 6 digit security code</span>
+            </h1>
+    </header> 
+
+    <div>
+        <p class="lede"><p class="lede">If you’re unable to access your 6 digit security code you can request a temporary one</p></p>
+        <p>We will email you a code which will work for today. After this time, you’ll need to sign in with the 6 digit security code from your authentication app or set up security on a new device from your profile.</p>
+
+    <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Send code', url='/prototypes/authentication/temporary-sign-in/email-confirmation') }}
+    </div>
+  
+    <p>
+      <a href="/prototypes/authentication/temporary-sign-in/index">Cancel and return to sign in </a>
+    </p>
+  
+
+  </div>
+
+  
+  </div>
+
+  {% endblock %}

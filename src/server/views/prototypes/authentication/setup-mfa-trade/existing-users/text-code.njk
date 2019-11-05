@@ -1,0 +1,52 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Set up account security' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+      <header class="content-header" style="margin-top: 35px;" >
+      <span class="govuk-caption-xl">Set up account security</span>
+      <h1 class="govuk-heading-xl">We've sent you a text message</h1>
+    </header>
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='It contains a 5 digit code and should arrive in a few minutes.', lead=true) }}
+        {{ components.paragraph(text='We sent it to <b>07790 903746</b>', lead=true) }}
+
+      <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label" for="width-10">
+              Code in text message
+            </label>
+          </h1>
+          <input class="govuk-input govuk-input--width-20" id="registration-number" name="phone-number" value="{{ data['phone-number'] }}" type="text" for="width-10">
+        </div>
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa-trade/existing-users/qr-code') }}
+      </div>
+
+      <details class="u-margin-bottom-10">
+          <summary><span class="summary">I didn’t receive a text message</span></summary>
+          <div class="panel panel-border-narrow">
+           <p>It can take several minutes for the text code to arrive. If you haven't received a text code:</p>
+           <p><b>Check your mobile number</b></p>
+           <p><a href='/prototypes/authentication/setup-mfa/new-users/mobile'>Change mobile number</a></p>
+           <p class="u-margin-top-50"><b>Request another code</b></p>
+           <p>The text message will contain a new code.</p>
+           <p>If your previous text arrives later, the code in it won’t work.</p>
+           <p><a href="">Send new text message</a></p>
+      </div>
+  </details>
+
+  
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

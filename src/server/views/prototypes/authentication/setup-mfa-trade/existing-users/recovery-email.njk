@@ -1,0 +1,40 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+<div class="container">
+
+    <div class="grid-row">
+        <div class="column-full">
+
+     <header class="content-header" style="margin-top: 35px;" >
+      <span class="govuk-caption-xl">Set up account security</span>
+      <h1 class="govuk-heading-xl">Recovery email address</h1>
+    </header>
+        
+        <div class="column-two-thirds">
+        <p>If at any time you are unable to to access the security code on your smartphone or tablet, we will email a recovery security code to the email address in your profile:</p>
+        <p><b>oshurgot@yahoo.com</b></p>
+        <p>If you are currently using a shared email address, <a href="/prototypes/authentication/setup-mfa-trade/existing-users/change-email">change your email address</a> to one only you can access.</p>
+       
+
+                <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa-trade/existing-users/app-confirmation') }}
+      </div>
+
+
+        </div>
+
+        
+         
+      
+        
+    </div>
+</div>
+</main>
+
+{% endblock %}

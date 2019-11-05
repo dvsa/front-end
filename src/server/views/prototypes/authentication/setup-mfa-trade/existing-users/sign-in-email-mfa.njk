@@ -1,0 +1,40 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Sign in' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    <header class="content-header" style="margin-top: 35px;" >
+      <span class="govuk-caption-xl">Sign in</span>
+      <h1 class="govuk-heading-xl">Your 6 digit security code</h1>
+    </header>
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='Enter the 6 digit security code that you received via email', lead=true) }}
+
+       <div class="form" style="margin-top:30px">
+                      <label class="form-label" for="code">Code in email</label>
+                      <input type="code" class="form-control" id="code">
+                    </div>
+
+      </form>
+
+      <div class="u-margin-top-30 u-margin-bottom-30">
+      <a href="#">Send code again</a>
+      </div>
+ 
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Sign in', url='/prototypes/authentication/setup-mfa-trade/existing-users/home') }}
+      </div>
+
+<a href="/prototypes/authentication/setup-mfa-trade/existing-users/sign-in">Cancel and return to sign in </a>
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

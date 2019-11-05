@@ -1,0 +1,46 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Set up account security' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+    <header class="content-header" style="margin-top: 35px;" >
+      <span class="govuk-caption-xl">Set up account security</span>
+      <h1 class="govuk-heading-xl">Change your recovery <br>email address</h1>
+    </header>
+
+      <div class="text u-clearfix">
+        {{ components.paragraph(text='Enter an email address that only you can access. This will update the email address in your profile.', lead=true) }}
+
+
+      <form action="/docs/examples/pass-data/vehicle-type" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label" for="width-20">
+              Email address
+            </label>
+          </h1>
+          <input class="govuk-input govuk-input--width-20" id="registration-number" name="phone-number" value="{{ data['phone-number'] }}" type="text" for="width-10">
+        </div>
+
+      </form>
+
+      <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa-trade/existing-users/app-confirmation') }}
+      </div>
+
+          <p>
+      <a href="/prototypes/authentication/setup-mfa-trade/existing-users/recovery-email">Back</a>
+    </p>
+
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,5 @@
+{% if values.hasAllRequiredKeys %}
+  {{ components.button(text='Save and continue') }}
+{% else %}
+  {{ components.button(text='Continue') }}
+{% endif %}

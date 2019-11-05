@@ -1,0 +1,32 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Temporary sign in' %}
+
+
+{% block content %}
+
+
+<div class="container">
+
+<div class="u-margin-top-30 u-margin-bottom-30">
+{{ components.dvsaBanner(mainText='Now check your email', secondaryText='Your 6 digit security code has been sent to <br><b>oshurgot@yahoo.com</b>', type="confirmation") }}
+</div>
+
+       <div class="text" style="margin-top: 30px">
+       <h3 class="heading-medium">What happens next?</h3>
+        <p>Check your email for your 6 digit security code.</p>
+        <p>Use this code to sign in to the MOT testing service.</p>
+
+       <div class="u-margin-top-30 u-margin-bottom-30">
+        <a href="#">Send code again</a>
+      </div>
+
+    <div class="u-margin-top-10 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa-trade/existing-users/sign-in-email-mfa') }}
+      </div>
+
+<a href="/prototypes/authentication/setup-mfa-trade/existing-users/sign-in">Cancel and return to sign in</a>
+
+</div>
+
+ {% endblock %}

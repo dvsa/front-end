@@ -1,0 +1,54 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'CI Authentication' %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+<div class="container">
+
+    <div class="grid-row">
+        <div class="column-full">
+
+      <header class="content-header" style="margin-top: 35px;" >
+      <h1 class="govuk-heading-xl">Set up account security on <br>your smartphone or tablet</h1>
+    </header>
+        
+        <div class="column-two-thirds">
+        <p class="lede">You’ll need to install an authentication app on your smartphone or tablet which will generate a security code to enter when you sign in.</p>
+        <p>Unlike using your security card, you will normally only need to use the security code once a day.</p>
+        <p>Once you’ve set up smartphone app security your security card will be deactivated and you will use the authentication app to sign into the service.</p>
+        <h3 class="govuk-heading-m">You will need:</h3>
+  
+  {{ components.list(
+    items=[
+    { text: 'your mobile phone number' },
+    { text: 'an authentication app (such as Microsoft Authenticator, Google Authenticator or Authy) installed on your device' }
+    ],
+    type='bullet'
+    ) }}
+
+    <div class="govuk-inset-text">
+        Check to see if you have an authentication app pre-installed on your device or download and install one from your app store. See <a href="">How to set up additional account security</a> for detailed step-by-step guidance. 
+        </div>
+
+                <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa-trade/existing-users/mobile') }}
+      </div>
+
+          <p>
+      <a href="/prototypes/authentication/setup-mfa-trade/existing-users/your-profile">Back</a>
+    </p>
+
+        </div>
+
+        
+         
+      
+        
+    </div>
+</div>
+</main>
+
+{% endblock %}

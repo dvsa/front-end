@@ -1,0 +1,62 @@
+{% extends 'layouts/default.layout.njk' %}
+
+{% set pageTitle = 'Create an Account' %}
+
+{% block content %}
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      
+     <header class="content-header" style="margin-top: 35px;" >
+      <span class="govuk-caption-xl">Set up account security</span>
+      <h1 class="govuk-heading-xl">Set up authentication on your device</h1>
+    </header>
+
+
+
+      <div class="text u-clearfix">
+        <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+    You need to have an authentication app installed on your device before you can set up additional account security.
+  </strong>
+</div>
+
+      <h3 class="govuk-heading-m">1. Open an authentication app on your device</h3>
+      
+            
+            <div class="govuk-inset-text">
+        Check to see if you have an authentication app pre-installed on your smartphone or tablet device or download and install one (such as Microsoft Authenticator, Google Authenticator or Authy) from your app store. See <a href="">How to set up additional account security</a> for detailed step-by-step guidance. 
+        </div>
+        
+      <h3 class="govuk-heading-m">2. Scan this QR code using the app</h3>
+               
+                    <img style="width: 200px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAYAAAB5fY51AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAZiS0dEAAAAAAAA+UO7fwAAAAlwSFlzAAAASAAAAEgARslrPgAACAtJREFUeNrt3cFtwzAQRFGVoP5rVA9OB0EQRJud4ftAjlJkk3y+ENT1kaSQLl+BJGBJErAkAUuSgCVJwJIELEkCliQBSxKwJAlYkgQsScCSJGBJErAkAUuSgCVJwJIELEkCliQBSxKwJAlYkgQsScCSJGBJErAkAUuSgCUJWJIELEkCliRgSRKwftR935/ruqL/fj0IL9zzjWd543t547rp8TOvgQUsYAELWMACFrCABSwDCyxgmdfAAhawgAUsYAELWMACloEFFrDM66PBep7nk/Ccbyyw9ntOIz99Xfu8BhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYH07sNP7Tt4YWHuf5vCchvXkeQ0sYAELWMACFrCABSxgGVhgAQtYwAIWsIAFLGABC1jAApaBBRawgAWsmIFthydlX1TKPixgAQtYwAIWsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsAIGNuVIl03/b9MeLfMaWMACFrCABSxgAQtYwAIWsIBlXgMLWMACFrCABSxgAQtYBhZYwDKvjwZr03OmwDONRAO63poDLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAGl4sjlFx3X8eL9Mwr4EFLNcBC1jAApbrgAUsYFmYrgMWsIDlOmABC1jAch2wgAUsC9p1wDoELP3xwA6jm7JnqmHRHj2vfQXAAhawgCVgAUvAErCABSwBC1jAApaABSwBS8ACFrCyFtim/VTt+742vY2mAeuU64AFLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1irgDz5WTbhsgnWTd/nyXvJgAUsYAELWMAClkXrswMLWMACFrCABSxgAQtYwAKWReuzAwtYwAIWsAxezF4k+7d69yI56gZYwAIWsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsFaB9cbAprw95eSjZzaNUco9U75PYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYAELWMAqAuvkfTwp8DQg3/6D0370DLCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgbXzIYSQaIGjfF9XwnA1YAwtYwAIWsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwALWIWA1vK1lEzwpSDhCZscPKrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgAatiYaY8S8rnO/nHIeVHBVjAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgLVq8TXsRdoEXf2RJ+VHFQELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYAELWMACFrBiANn0GRp+HBrQbf/RBBawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYDnyZAku7W+qaUCw4cghYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYAELWMAKA2sapfb9Rpu+z/bxS5nXm+YSsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGCFgdXwNpoUQBreCjS9+NqPMYrBGljAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgFUxsAcvhoajYE5GCVjAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawwsCavmfDnqKGt8ps+nzuCSxgAQtYwAIWsIAFF2ABC1jAck9gAQtYwAIWsIAFLLgAC1jAApZ7AuvQ/TGb3oLS8MYg+/Z6AxawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABS8ACFrCABawwsBoQbPjsqyZ1yPEy7W91AhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAWsIrDaa3/jTMpn2HTP6R+cinWEEmABC1jAErCABSxgAQtYwAKWgAUsYAFLwAIWsIAFLGABC1j/033fMUeGbNkf07DfaNOCTjnm52TMgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYAFrIVjP83wSnnN68a2aSOULM2UfVvscBBawgAUQYAELWMACFrCABSxgAQtYwAIWsIAFLGABy/8DFrCABSxghYE1va/mt2C1HyGTsker/a05wAIWsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGAt2W/0xgR0hEz2vq+UNxsBC1jAAhawgAUsYAELWMCy2IEFLGABC1jAAhawgOUzAAtYwAIWsIAFrAqw2vcwTS9o/y87YAELWP4fsIAFLGABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAJWGFibnjNlAqYAMg1kyo/DyXu0gAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAAhawgAUsYAFrIQQNb3lJeXtKCgTt474JcmABC1jAAhawgAUsYAELWMACFrCABSxgAQtYwAIWsIAFLGABC1jAApYkAUsSsCQJWJIELEnAkiRgSRKwJAFLkoAlScCSBCxJApYkYEkSsCQJWJKAJUnAkiRgSQKWJAFLkoAlCViSBCxJApYkYEkSsCQJWJKAJUnAkiRgSQKWJAFLkoAlCViSNNQXuBATIhYOUWwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMDktMTBUMTU6NDg6MDArMDA6MDCu2SqCAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTA5LTEwVDE1OjQ4OjAwKzAwOjAw34SSPgAAACh0RVh0c3ZnOmJhc2UtdXJpAGZpbGU6Ly8vdG1wL21hZ2ljay1xamZEMEFpc+n3eNoAAAAASUVORK5CYII=" alt="qr code">
+                    <details>
+                        <summary style="margin-bottom: 30px;"><span class="summary">I can’t scan the QR code</span></summary>
+                        <div class="panel panel-border-narrow">
+                            <p>If you are having diffculty scanning the QR code, you can enter it manually.</p>
+                            <p>Look for links such as ‘enter code manually’ or ‘enter a provided key’ in your authentication app then enter this key:</p>
+                            <h3 class="heading-small" style="font-weight: normal">H5XU ENLO MFUG IYLO<pre id="tpas_token_secret"></pre></h3>
+                        </div>
+                    </details>
+
+      <h3 class="govuk-heading-m">3. Check the app for your 6 digit code'</h3>
+            <p>Enter the 6 digit access code. The code refreshes every 30 seconds.</p>
+                  <div class="form" style="margin-top:30px">
+                      <label class="form-label" for="code">Code in app</label>
+                      <input type="code" class="form-control" id="code">
+                    </div>
+
+
+      <div class="u-margin-top-30 u-margin-bottom-30">
+        {{ components.button(text='Continue', url='/prototypes/authentication/setup-mfa-trade/existing-users/recovery-email') }}
+      </div>
+     
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

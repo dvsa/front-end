@@ -34,7 +34,9 @@
     "npm": "5.6.0"
   },
   "dependencies": {
+    "@dvsa/cookie-manager": "^1.0.1",
     "accessible-autocomplete": "^1.6.1",
+    "ajv": "^6.11.0",
     "axios": "^0.17.1",
     "basic-auth": "^2.0.0",
     "body-parser": "^1.18.3",

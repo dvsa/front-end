@@ -11,6 +11,7 @@ import { initCheckAll } from './check-all';
 import { initMessageFilter } from './filter-messages';
 import { initMtsLogin } from './mts-login';
 import { initTextareaAutoresize } from './textarea-autorisize';
+import { initCookieManager } from './cookie-manager';
 
 /**
  * MTS Application modules
@@ -34,4 +35,5 @@ export const initModules = () => {
   initMessageFilter();
   initMtsLogin();
   initTextareaAutoresize();
+  initCookieManager();
 };

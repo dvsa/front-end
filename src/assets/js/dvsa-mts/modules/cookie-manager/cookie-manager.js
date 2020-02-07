@@ -1,6 +1,6 @@
-import cm from '@dvsa/cookie-manager';
+import cookieManager from '@dvsa/cookie-manager';
 export class CookieManager {
   constructor() {
-    cm.init(cookieManagerConfig);
+      cookieManager.init(cookieManagerConfig);
   }
 }

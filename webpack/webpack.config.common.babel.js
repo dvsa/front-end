@@ -191,7 +191,7 @@ export default {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /node_modules\/(?!@dvsa\/cookie-manager).*/,
         use: {
           loader: 'babel-loader',
           options: {

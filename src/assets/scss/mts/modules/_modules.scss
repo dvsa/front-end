@@ -39,7 +39,6 @@
   @import 'responsive-table/responsive-table';
   @import 'sign-in/sign-in';
   @import 'slot-hero/slot-hero';
-  @import "success-message/success-message";
   @import 'summary-heading/summary-heading';
   @import 'table/table';
   @import 'table-row-cta/table-row-cta';
@@ -59,7 +58,7 @@
 
 // Old modules not wraped with 'mts-body-wrapper'
 @import 'task-list/task-list';
-@import 'badge/badge';  
+@import 'badge/badge';
 @import 'browse/browse';
 @import 'data-paging/data-paging';
 @import 'defect/defect';

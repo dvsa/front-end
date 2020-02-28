@@ -1,9 +1,9 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-mts
- *   Version: 1.3.24
+ *   Version: 1.3.27
  *   Contributors: Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
- *   Timestamp: February 24th 2020, 11:42:56 am
+ *   Timestamp: February 28th 2020, 11:50:27 am
  *   Source: https://github.com/dvsa/front-end
  * 
  */

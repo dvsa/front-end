@@ -37,7 +37,7 @@
     "@dvsa/cookie-manager": "^1.0.10",
     "accessible-autocomplete": "^1.6.1",
     "ajv": "^6.11.0",
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "basic-auth": "^2.0.0",
     "body-parser": "^1.18.3",
     "clean-html": "^1.5.0",

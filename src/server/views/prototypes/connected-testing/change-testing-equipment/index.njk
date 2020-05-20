@@ -1,0 +1,44 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes/connected-testing' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/self-serve-api-key' },
+  { text: 'DILENA GROUP', url: '/prototypes/index' },
+  { text: 'Change testing equipment', url: '/prototypes/connected-testing/change-testing-equipment/index' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+      
+      <span class="heading-secondary" style="display: inline-block; margin-top: 20px;">Vehicle testing station</span>
+      <h1 class="govuk-heading-xl">Tell us about changes to your equipment</h1>
+
+      <p class="govuk-body">Use this service to tell DVSA about changes to your MOT testing equipment.</p>
+
+      <h2 class="govuk-heading-m">Do not use this service if:</h2>
+
+      <p class="govuk-body">you are upgrading to a one person test lane. In this case, you need to get DVSA's approval by completing and sending the form to <a class="govuk-link" href="https://www.gov.uk/government/publications/application-for-mot-authorisation-vt01?_ga=2.163984255.113284615.1582554015-1466360154.1570439560">apply to open, run or change an MOT test station (VT01)</a>.</p>
+
+      <a href="/prototypes/connected-testing/change-testing-equipment/type-of-equipment" role="button" draggable="false" class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-button--start" style="margin-top:50px;" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+
+      <p><a href="../index">Return to VTS Overview</a></p>
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

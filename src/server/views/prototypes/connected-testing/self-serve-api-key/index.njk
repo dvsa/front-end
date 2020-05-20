@@ -1,0 +1,62 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes/connected-testing' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/self-serve-api-key' },
+  { text: 'DILENA GROUP', url: '/prototypes/index' },
+  { text: 'Request a key', url: '/prototypes/connected-testing/self-serve-api-key/index' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+      
+      <span class="heading-secondary" style="display: block; margin-top: 20px;">Request a key</span>
+      <h1 class="govuk-heading-xl">
+        Request a key for your connected equipment
+      </h1>
+
+      <p>Use this service to request a key if you:</p>
+
+      <ul class="list list-bullet">
+        <li>upgrade or replace existing equipment</li>
+        <li>connect existing equipment</li>
+        <li>add new connected equipment</li>
+        <li>have lost a previous key</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        <p>Only class 4, 5 and 7 Vehicle Testing Stations need to connect equipment to the MOT testing service and need to get a key.</p>
+        <p>Make sure you have an up-to-date email in your profile. We will use this to send you the key.</p>
+      </div>
+
+      <a href="type-of-equipment" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-7"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>If you are replacing or upgrading existing equipment, make sure you have told DVSA about the changes:
+      <ul class="list list-bullet">
+        <li>If you are changing testing equipment, use the online service <a href="../change-testing-equipment/index">change testing equipment</a></li>
+        <li>If the new equipment will reduce the approved clearances or change the layout, use the form to <a href="https://www.gov.uk/government/publications/application-for-mot-authorisation-vt01?_ga=2.163984255.113284615.1582554015-1466360154.1570439560">apply to open, run or change an MOT test station (VT01)</a></li>
+      </ul>
+      
+      <p><a href="../index">Return to VTS Overview</a></p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

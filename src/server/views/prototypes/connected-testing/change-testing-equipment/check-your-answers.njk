@@ -1,0 +1,91 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Back', url: '/prototypes/connected-testing/change-testing-equipment/vehicle-classes' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+      
+      <span class="heading-secondary">Tell us about changes to your equipment</span>
+      <h1 class="govuk-heading-xl">Check that the information is correct</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-7">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Equipment type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['type-of-equipment'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="type-of-equipment">
+              Change
+              <span class="govuk-visually-hidden"> Equipment type </span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Is the new equipment on the list of DVSA approved testing equipment?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['approved-equipment'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="approved-equipment">
+              Change
+              <span class="govuk-visually-hidden">Is the new equipment on the list of DVSA approved testing equipment?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Will the new equipment reduce the approved clearances or change the layout?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['reduce-clearance'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="reduce-clearance">
+              Change
+              <span class="govuk-visually-hidden">Will the new equipment reduce the approved clearances or change the layout?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Can the new equipment test the same vehicle classes you are authorised to test?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['vehicle-classes'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="vehicle-classes">
+              Change
+              <span class="govuk-visually-hidden">Can the new equipment test the same vehicle classes you are authorised to test?</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      
+      <a href="declaration" class="govuk-button" data-module="govuk-button">Continue</a>
+
+      <p><a href="../index">Return to VTS Overview</a></p>
+
+    </div>
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

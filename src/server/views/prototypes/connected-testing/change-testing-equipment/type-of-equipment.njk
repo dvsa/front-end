@@ -1,0 +1,105 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Back', url: '/prototypes/connected-testing/change-testing-equipment' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+    
+      <span class="heading-secondary">Tell us about changes to your equipment</span>
+      <h1 class="govuk-heading-xl">What equipment are you changing?</h1>
+
+      <form class="form" id="continue">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment-7" name="type-of-equipment" onclick="changeLink();" type="radio" value="Decelerometers">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-7">
+                  Decelerometer
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment-6" name="type-of-equipment" onclick="changeLink();" type="radio" value="Diesel smoke meters">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-6">
+                  Diesel smoke meter
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment-4" name="type-of-equipment" type="radio" value="Wheel play detector">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-4">
+                  Exhaust gas analyser
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment" name="type-of-equipment" type="radio" value="Headlamp beam tester">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-1">
+                  Headlamp beam tester
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment-2" name="type-of-equipment" type="radio" value="Plate brake tester">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-2">
+                  Plate brake tester
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment-5" name="type-of-equipment" type="radio" value="Ramp, hoist or lift">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-5">
+                  Ramp, hoist or lift
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment-3" name="type-of-equipment" type="radio" value="Roller brake tester">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-3">
+                  Roller brake tester
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="type-of-equipment-4" name="type-of-equipment" type="radio" value="Wheel play detector">
+                <label class="govuk-label govuk-radios__label" for="type-of-equipment-4">
+                  Wheel play detector
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Why is my equipment not on the list?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>You do not need to tell DVSA about changes to some of the equipment.</p>
+            <p>For example:</p>
+            <ul class="list list-bullet">
+                <li>pedal application devices</li>
+                <li>tyre tread depth gauges</li>
+                <li>13-pin Euro trailer socket wiring testers</li>
+                <li>required hand tools</li>
+            </ul>
+          </div>
+        </details>
+
+        <a href="approved-equipment" class="govuk-button" data-module="govuk-button">Continue</a>
+      </form>
+
+      <p><a href="../index">Return to VTS Overview</a></p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

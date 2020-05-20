@@ -1,0 +1,148 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+ 
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+       
+      <div class="govuk-panel govuk-panel--confirmation">
+        <div class="govuk-panel__body">
+          Guidance
+        </div>
+        <h1 class="govuk-panel__title">
+          MOT special notice 02-20: Keys for connected equipment
+        </h1>
+        <div class="govuk-panel__body govuk-published-date">
+          Published 27 June 2020
+        </div>
+      </div>
+
+      <div class="govuk-grid-row sidebar-with-body" data-module="sticky-element-container" id="contents">
+
+        <div class="govuk-grid-column-one-quarter-from-desktop contents-list-container">
+          <nav class="gem-c-contents-list  gem-c-contents-list--no-underline " role="navigation" data-module="track-click">
+            <h2 class="gem-c-contents-list__title">Contents</h2>
+
+            <ol class="gem-c-contents-list__list">
+              <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--numbered">
+                <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 1" data-track-label="#about-mot-connected-equipment" data-track-options="{&quot;dimension29&quot;:&quot;\n1. About MOT connected equipment&quot;}" href="#about-mot-connected-equipment"><span class="gem-c-contents-list__number">1. </span><span class="gem-c-contents-list__numbered-text">About MOT connected equipment</span></a>
+              </li>
+
+              <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--numbered">
+                <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 2" data-track-label="#who-it-applies-to" data-track-options="{&quot;dimension29&quot;:&quot;\n2. Who it applies to&quot;}" href="#who-it-applies-to"><span class="gem-c-contents-list__number">2. </span><span class="gem-c-contents-list__numbered-text">Who it applies to</span></a>
+              </li>
+
+              <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--numbered">
+                <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 3" data-track-label="#how-you-connect-equipment" data-track-options="{&quot;dimension29&quot;:&quot;\n3. How you connect equipment&quot;}" href="#how-you-connect-equipment"><span class="gem-c-contents-list__number">3. </span><span class="gem-c-contents-list__numbered-text">How you connect equipment</span></a>
+              </li>
+
+              <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--numbered">
+                <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 4" data-track-label="#what-happens-if-equipment-fails" data-track-options="{&quot;dimension29&quot;:&quot;\n4. What happens if equipment fails&quot;}" href="#what-happens-if-equipment-fails"><span class="gem-c-contents-list__number">4. </span><span class="gem-c-contents-list__numbered-text">What happens if equipment fails</span></a>
+              </li>      
+            </ol>
+          </nav>
+        </div>
+
+        <div class="main-content-container">
+          <div class="gem-c-govspeak-html-publication">
+            <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+              <div class="govspeak">
+                <h2 id="about-mot-connected-equipment">
+                <span class="number">1. </span>About MOT connected equipment</h2>
+                <p>Some types of equipment can connect directly to the service you use to record MOT test results. This means that test results can be automatically transferred to service without the need for manual data entry.</p>
+
+                <p>The Driver and Vehicle Standards Agency (DVSA) is introducing further equipment to enable more benefits to the MOT test.</p>
+
+                <h2 id="who-it-applies-to">
+                <span class="number">2. </span>Who it applies to</h2>
+
+                <p>The rule applies to any applications to:</p>
+
+                <ul>
+                  <li>open a new MOT centre</li>
+                  <li>reopen a closed MOT centre (this applies regardless of how long it’s been closed)</li>
+                  <li>make a change of ownership of a currently operating  MOT centre (where it moves from one authorised examiner (AE) to another)</li>
+                </ul>
+
+                <p>It also applies if you want or need to replace current connected equipment.</p>
+
+                <h3 id="who-the-rules-do-not-apply-to">
+                <span class="number">2.1 </span>Who the rules do not apply to</h3>
+
+                <p>The rule does not apply if:</p>
+
+                <ul>
+                  <li>you’re making a change to an existing AE (for example, where you add a new partner and keep the same AE number)</li>
+                  <li>your application was received by DVSA before 1 February 2020 – you can purchase any connected equipment that was approved at the point you applied</li>
+                  <li>class 1,2 and 3 vehicle testing stations</li>
+                </ul>
+
+                <h2 id="how-you-connect-equipment">
+                <span class="number">3. </span>How you connect equipment</h2>
+
+                <p>You need a software code (called a ‘key’) to connect equipment to the MOT testing service.</p>
+
+                <p>To get the key, you need to:</p>
+
+                <ul>
+                  <li>log in to your MTS account as AED, AEDM or SM</li>
+                  <li>open the VTS Overview page for the site you need the key for</li>
+                  <li>follow the link "Get a key" on the right side in the "Related" section</li>
+                </ul>
+
+                <p>Then, you can view your key on "My keys" page which can be accessed from the VTS Overview page in the "Related" section.</p>
+
+                <p>You can download the key from "My keys" page only once. After you download it, the link will become inactive. Make sure you do this when the Installation engineer is on site and give the key to them.</p>
+
+                <p>You must keep your keys secure. Only allow keys to be used by the engineer installing your equipment.</p>
+
+                <h3 id="after-the-equipment-is-installed">
+                <span class="number">3.1 </span>After the equipment is installed</h3>
+
+                <p>Connected equipment only sends results for live MOT tests – it does not have a trial mode. You and the tester need to check that the results have been sent through on the first test after the equipment is installed.</p>
+
+                <p>Contact the equipment supplier immediately if the results are not sent through.</p>
+
+                <h3 id="if-youre-upgrading-equipment">
+                <span class="number">3.2 </span>If you’re upgrading equipment</h3>
+
+                <p>The AE designated manager or site manager must tell DVSA if an existing authorised MOT centre is upgrading to connected equipment by email/ filling in the Change of equipment form which can be accessed from the VTS Overview page and also get a Key.</p>
+
+                <h3 id="connecting-existing-compatible-decelerometers">
+                <span class="number">3.3 </span>Connecting existing compatible equipment</h3>
+
+                <p>You may be able to install software on existing digital? equipment to allow them to connect to the MOT testing service. Check with your supplier to see if your equipment is compatible.</p>
+
+                <h2 id="what-happens-if-equipment-fails">
+                <span class="number">4. </span>What happens if equipment fails</h2>
+
+                <p>The rules about equipment failing are not changing. They’re in section B4, paragraph 4 of the MOT testing guide.
+                If the decelerometer fails, you must not test any vehicles that would require use of the decelerometer.  If your RBT also fails, then testing must stop immediately as no decelerometer is available.</p>
+
+                <p>However, if the problem is only with connecting to the MOT testing service, you have 7 calendar days to fix the problem.</p>
+
+                <p>After this, you must stop testing. The MOT testing guide will be updated to reflect this.</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

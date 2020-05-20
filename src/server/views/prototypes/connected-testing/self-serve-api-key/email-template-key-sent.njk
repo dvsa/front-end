@@ -1,0 +1,82 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+
+      <p>Hi,</p>
+      <p style="margin-bottom: 3px;">Please, find attached the secure folder, which contains the key.</p>
+      <p>You will need to download and share this folder with the engineer when they are installing your equipment.</p>
+      <p style="margin:30px 0 10px 0; font-weight:bold;">Follow this process to ensure all files are correctly extracted to your computer:</p>
+      <ol class="list list-number">
+        <li>Download the zip folder to your local machine</li>
+        <li>Find the zip folder in your files</li>
+        <li>Right-click on the zip file and select “Extract”</li>
+        <li>Type your password on the prompted window</li>
+      </ol>
+      <div class="govuk-inset-text">
+        <p style="margin-bottom: 10px;">Your password is your MOT Service Username.</p>
+        <p>Please, enter the letters in capitals.</p>
+      </div>
+      <p>If you are passing this email directly to the engineer, please provide them with this information so they can open the folder.</p>
+
+      <p style="margin-bottom: 10px;"><strong>Please note:</strong></p>
+      <ul class="list list-bullet">
+        <li>You must only share this key with the engineer installing your equipment.</li>
+        <li>If the engineer does not have this key, they will be unable to connect your equipment and your authorisation will be delayed.</li>
+        <li>Calibration certificates must be produced that state the relevant testing equipment is connected to the MOT testing service.</li>
+      </ul>
+
+      <p style="color: red; font-weight:bold;">This key is unique to your VTS and must not be shared with anyone outside your organisation.</p>
+
+      <p style="margin-bottom: 3px;">When testing begins at the site, you must check if the results are transferred correctly to the MOT testing service.</p>
+      <p style="margin-bottom: 3px;">If there is a problem, the AEDM must contact their engineer immediately and arrange for this to be fixed.</p>
+      <p>If you need DVSA’s assistance, please provide the following details to aid investigations to the contact centre:</p>
+
+      <p style="margin-bottom: 10px;"><strong>Contact details:</strong></p>
+      <ul class="list list-bullet">
+        <li>VTS number:</li>
+        <li>VTS contact details:</li>
+        <li>Supplier:</li>
+        <li>Make/Model of equipment:</li>
+        <li>Supplier engineer contact details:</li>
+        <li>When is engineer next on site:</li>
+      </ul>
+
+      <p style="margin-bottom: 10px;"><strong>Issue details:</strong></p>
+      <ul class="list list-bullet">
+        <li>Date and time of install:</li>
+        <li>Detailed description of error:</li>
+        <li>Screenshot/confirmation of endpoint configured within their application</li>
+        <li>Screenshot/confirmation of certificate configured within their application</li>
+        <li>Can you access the MTS <a href="https://www.mot-testing.service.gov.uk">(https://www.mot-testing.service.gov.uk)</a> from the connected terminal?</li>
+        <li>VTS connected in MTS prior to install?</li>
+      </ul>
+
+      <p style="margin-bottom: 10px;"><strong>Vehicles tested:</strong></p>
+      <ul class="list list-bullet">
+        <li>Date and time of tests conducted</li>
+        <li>Registration (VRM)</li>
+        <li>MOT Test ID:</li>
+      </ul>
+
+      <p style="margin-top: 50px; margin-bottom: 5px;">Best regards,</p>
+      <p>Driver and Vehicle Standards Agency</p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

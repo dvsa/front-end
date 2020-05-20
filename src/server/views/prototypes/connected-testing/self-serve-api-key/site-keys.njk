@@ -1,0 +1,72 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes/connected-testing' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/self-serve-api-key/index' },
+  { text: 'DILENA GROUP', url: '/prototypes/self-serve-api-key/index' },
+  { text: 'View sites keys', url: '/prototypes/connected-testing/self-serve-api-key/site-keys' }
+] %} %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+    
+      <h1 class="govuk-heading-xl" style="margin-top: 30px;">Site's keys</h1>
+
+      <div class="govuk-inset-text">
+        <p><strong>Please note:</strong></p>
+        <ul class="list list-bullet">
+          <li>Make sure you have an up-to-date email in your profile so we can send you the key.</li>
+          <li>When the engineer is on site, click "Email me the key" - open the email and download the key.</li>
+          <li>Once the engineer has activated the key and the equipment is connected, you will not be able to email the same key again.</li>
+          <li>You must only share this key with the engineer installing your equipment.</li>
+        </ul>
+      </div>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <p style="margin-bottom:10px;"><a href="start">Add a new key</a></p>
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">User</th>
+            <th scope="col" class="govuk-table__header">Created</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Roller Brake Tester</th>
+            <td class="govuk-table__cell">Jon Smith</td>
+            <td class="govuk-table__cell">20/10/2020</td>
+            <td class="govuk-table__cell"><a href="are-you-sure">Email me the key</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Decelerometer</th>
+            <td class="govuk-table__cell">Jon Smith</td>
+            <td class="govuk-table__cell">17/06/2020</td>
+            <td class="govuk-table__cell" style="color:gray; cursor:default;">In use</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Roller Brake Tester</th>
+            <td class="govuk-table__cell">Jon Smith</td>
+            <td class="govuk-table__cell">18/02/2020</td>
+            <td class="govuk-table__cell" style="color:gray; cursor:default;">Unavailable</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p><a href="../index">Return to VTS Overview</a></p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

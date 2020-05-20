@@ -1,0 +1,41 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+
+      <div class="govuk-panel govuk-panel--error banner--error">
+        <h1 class="govuk-panel__title">There was a problem</h1>
+        <div class="govuk-panel__body">
+          You do not have a unique email address in your profile
+        </div>
+      </div>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>You need to add an email address to your profile.</p>
+      <p>We will use this email to send you the key.</p>
+      <p>Once you add an email, go to the "Site's keys" page and click "Email me the key".</p>
+
+      <a href="add-email" role="button" draggable="false" class="govuk-button govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-7"  data-module="govuk-button">
+        Add an email
+      </a>
+
+      <p><a href="site-keys">Return to Site's keys</a></p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

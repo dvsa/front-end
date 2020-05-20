@@ -1,0 +1,50 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Back', url: '/prototypes/connected-testing/change-testing-equipment/reduce-clearance' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+      
+      <span class="heading-secondary">Tell us about changes to your equipment</span>
+      <h1 class="govuk-heading-xl">Can the new equipment test the same vehicle classes you are authorised to test?</h1>
+
+      <form class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <div class="govuk-radios">
+              <div class="govuk-radios__item" style="display:inline-block; margin-right: 15px;">
+                <input class="govuk-radios__input" id="vehicle-classes" name="vehicle-classes" type="radio" value="Yes">
+                <label class="govuk-label govuk-radios__label" for="vehicle-classes-1">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item" style="display:inline-block;">
+                <input class="govuk-radios__input" id="vehicle-classes-2" name="vehicle-classes" onclick="changeLink();" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="vehicle-classes-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <a href="check-your-answers" id="continue" class="govuk-button" data-module="govuk-button">Continue</a>
+      </form>
+
+      <p><a href="../index">Return to VTS Overview</a></p>
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Back', url: '/prototypes/connected-testing/self-serve-api-key/there-was-a-problem' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+    
+      <span class="heading-secondary">Your profile</span>
+      <h1 class="govuk-heading-xl">Add email address</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          Email address
+        </label>
+        <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          Re-type your email address
+        </label>
+        <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+      </div>
+
+      <a href="confirmation-email-added" class="govuk-button" data-module="govuk-button">Add email address</a>
+
+      <p><a href="site-keys">Cancel and return to Site's keys</a></p>
+
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -24,7 +24,7 @@ Password: dvsa
 2. Install dependencies using NPM
 
 ```javascript
-npm install
+docker-compose run app npm install
 ```
 
 ### Development
@@ -32,7 +32,7 @@ npm install
 To run development mode run the following command inside the directory.
 
 ```javascript
-npm run start-dev
+docker-compose up
 ```
 
 You can access the local server with the following url
@@ -55,7 +55,7 @@ Build production command will generate production ready assets and node js serve
 The productions assets are located in the **dist/assets** folder and the server code is located in the **dist/server** folder.
 
 ```javascript
-npm run build-production
+docker-compose run app npm run build-production
 ```
 
 **Run this command and commit changes before pushing to heroku.**

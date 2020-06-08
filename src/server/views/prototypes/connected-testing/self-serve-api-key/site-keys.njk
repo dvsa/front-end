@@ -6,7 +6,7 @@
   { text: 'Home', url: '/prototypes/connected-testing' },
   { text: 'WILLETTA AREDONDO', url: '/prototypes/self-serve-api-key/index' },
   { text: 'DILENA GROUP', url: '/prototypes/self-serve-api-key/index' },
-  { text: 'View sites keys', url: '/prototypes/connected-testing/self-serve-api-key/site-keys' }
+  { text: 'View site keys', url: '/prototypes/connected-testing/self-serve-api-key/site-keys' }
 ] %} %}
 
 {% set message = viewData %}
@@ -19,7 +19,7 @@
 
     {% call components.columnFull() %}
     
-      <h1 class="govuk-heading-xl" style="margin-top: 30px;">Site's keys</h1>
+      <h1 class="govuk-heading-xl" style="margin-top: 30px;">Site keys</h1>
 
       <div class="govuk-inset-text">
         <p><strong>Please note:</strong></p>
@@ -33,7 +33,6 @@
 
       <table class="govuk-table">
         <thead class="govuk-table__head">
-            <p style="margin-bottom:10px;"><a href="start">Add a new key</a></p>
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Name</th>
             <th scope="col" class="govuk-table__header">User</th>
@@ -63,7 +62,7 @@
         </tbody>
       </table>
 
-      <p><a href="../index">Return to VTS Overview</a></p>
+      <p><a href="../index">Return to Vehicle Testing Station</a></p>
 
     {%- endcall %}
 

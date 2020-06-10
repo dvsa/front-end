@@ -1,0 +1,32 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnTwoThirds() %}
+      
+      <div class="govuk-panel govuk-panel--confirmation dvsa-banner--confirmation">
+        <h1 class="govuk-panel__title">The results have been transferred</h1>
+      </div>
+
+      <p>The results from the Roller Brake Tester have been successfully transferred to the MOT testing service.</p>
+      <p>This means that your connection works and you can start using your connected equipment.</p>
+
+      <p><a href="../index">Return to Vehicle Testing Station</a></p>
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

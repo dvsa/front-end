@@ -1,0 +1,43 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes/connected-testing' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/self-serve-api-key' },
+  { text: 'DILENA GROUP', url: '/prototypes/index' },
+  { text: 'Test connection', url: '/prototypes/connected-testing/test-connection/index' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      <span class="heading-secondary">Test connection</span>
+      <h1 class="govuk-heading-xl">Test the connection for your connected equipment</h1>
+       
+      <div class="action-panel">
+        <div class="action-panel__container">
+          <h3 class="action-panel__heading">Brake test</h3>
+        </div>
+        <a href="/prototypes/connected-testing/test-connection/results" class="button">Continue test</a>
+      </div>
+      <div class="action-panel">
+        <div class="action-panel__container">
+          <h3 class="action-panel__heading">Decelerometer</h3>
+        </div>
+        <a href="#" class="button">Start test</a>
+      </div>
+      
+      <p style="margin-top: 60px;"><a href="../index">Return to Vehicle Testing Station</a></p>
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

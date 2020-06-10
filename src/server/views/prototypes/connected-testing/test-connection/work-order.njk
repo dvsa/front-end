@@ -1,0 +1,36 @@
+{% extends 'layouts/mts.layout.njk' %}
+
+{% set pageTitle = 'Create a notification' %}
+
+{% set pageBreadcrumbItems = [
+  { text: 'Home', url: '/prototypes/connected-testing' },
+  { text: 'WILLETTA AREDONDO', url: '/prototypes/self-serve-api-key' },
+  { text: 'DILENA GROUP', url: '/prototypes/index' },
+  { text: 'Test connection', url: '/prototypes/connected-testing/test-connection/index' }
+] %}
+
+{% set message = viewData %}
+
+{% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
+
+{% block content %} 
+
+  {% call components.gridRow() %}
+
+    {% call components.columnFull() %}
+      <span class="heading-secondary">Test connection</span>
+      <h1 class="govuk-heading-xl">We have sent you a work order</h1>
+       
+      <p>Check the roller brake machine. Make sure it is connected to the Internet.</p>
+      <p>Perform a roller brake test and send the results.</p>
+      <p>Login, navigate to the start page of "Test connection" and click "Continue test" to see if your results came through.</p>
+
+      <a href="/prototypes/connected-testing/test-connection/vts" class="govuk-button" data-module="govuk-button">Logout</a>
+
+      <p style=""><a href="../index">Return to Vehicle Testing Station</a></p>
+      
+    {%- endcall %}
+
+  {%- endcall %}
+  
+{% endblock %}

@@ -13,7 +13,15 @@
 
 {% set canBeArchived = message.type !== 'Special notice' and (message.state.rejected or message.state.accepted) and not message.state.isArchived %}
 
-{% block content %} 
+{% block content %}
+
+  <style>
+
+  .govuk-table__header:first-child {
+    width: 30%;
+  }
+
+  </style>
 
   {% call components.gridRow() %}
 
@@ -21,35 +29,23 @@
       <span class="heading-secondary">Test connection</span>
       <h1 class="govuk-heading-xl">Results</h1>
        
-      <p>This is what we received from you:</p>
+      <p>These are the results from the last test performed on <strong>20/10/2020</strong>:</p>
 
        <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Name</th>
-            <th scope="col" class="govuk-table__header">User</th>
-            <th scope="col" class="govuk-table__header">Created</th>
+            <th scope="col" class="govuk-table__header">Equipment type</th>
             <th scope="col" class="govuk-table__header">Status</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Roller Brake Tester</th>
-            <td class="govuk-table__cell">Jon Smith</td>
-            <td class="govuk-table__cell">20/10/2020</td>
-            <td class="govuk-table__cell"><a href="are-you-sure">Email me the key</a></td>
+            <td class="govuk-table__cell">Connected</td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Decelerometer</th>
-            <td class="govuk-table__cell">Jon Smith</td>
-            <td class="govuk-table__cell">17/06/2020</td>
-            <td class="govuk-table__cell" style="color:gray; cursor:default;">In use</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header">Roller Brake Tester</th>
-            <td class="govuk-table__cell">Jon Smith</td>
-            <td class="govuk-table__cell">18/02/2020</td>
-            <td class="govuk-table__cell" style="color:gray; cursor:default;">Unavailable</td>
+            <td class="govuk-table__cell">No results</td>
           </tr>
         </tbody>
       </table>
@@ -57,8 +53,6 @@
       <a href="confirmation" class="govuk-button" data-module="govuk-button">Continue</a>
 
       <p><a href="../index">Return to Vehicle Testing Station</a></p>
-
-      <p style="margin-top: 70px;"> <a href="/prototypes/connected-testing/test-connection/there-was-a-problem" style="color: red;">There was a problem page</a> </p>
       
     {%- endcall %}
 

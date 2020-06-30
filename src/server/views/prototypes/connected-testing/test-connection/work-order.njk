@@ -17,17 +17,20 @@
 
   {% call components.gridRow() %}
 
-    {% call components.columnFull() %}
-      <span class="heading-secondary">Test connection</span>
-      <h1 class="govuk-heading-xl">We have sent you a work order</h1>
-       
-      <p>Check the roller brake machine. Make sure it is connected to the Internet.</p>
-      <p>Perform a roller brake test and send the results.</p>
-      <p>Login, navigate to the start page of "Test connection" and click "Continue test" to see if your results came through.</p>
+    {% call components.columnTwoThirds() %}
+        <span class="heading-secondary">Test connection</span>
+        <h1 class="govuk-heading-xl">Perform a test to check your connection</h1>
 
-      <a href="/prototypes/connected-testing/test-connection/vts" class="govuk-button" data-module="govuk-button">Logout</a>
+        <p>To check your connection, we will send some vehicle data to your connected equipment.</p>
+        <p>Once you have received this data, you need to perform a test. You can use any vehicle but instead of registering it, use our data.</p>
 
-      <p style=""><a href="../index">Return to Vehicle Testing Station</a></p>
+        <div class="govuk-inset-text">
+            <p>You can perform a test with more than one piece of connected equipment at a time.</p>
+        </div>
+
+        <a href="/prototypes/connected-testing/test-connection/confirmation" class="govuk-button" data-module="govuk-button">Send data</a>
+
+        <p style=""><a href="../index">Return to Vehicle Testing Station</a></p>
       
     {%- endcall %}
 

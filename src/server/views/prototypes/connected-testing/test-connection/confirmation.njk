@@ -16,14 +16,29 @@
 
     {% call components.columnTwoThirds() %}
       
-      <div class="govuk-panel govuk-panel--confirmation dvsa-banner--confirmation">
-        <h1 class="govuk-panel__title">The results have been transferred</h1>
-      </div>
+        <div class="govuk-panel govuk-panel--confirmation dvsa-banner--confirmation">
+            <h1 class="govuk-panel__title">The vehicle's data has been sent to your connected equipment</h1>
+        </div>
 
-      <p>The results from the Roller Brake Tester have been successfully transferred to the MOT testing service.</p>
-      <p>This means that your connection works and you can start using your connected equipment.</p>
+        <h2 class="govuk-heading-m">What happens next</h2>
 
-      <p><a href="../index">Return to Vehicle Testing Station</a></p>
+        <p>Following the step by step guide, perform a test and check if your connected equipment can transfer results to the MOT testing service.</p>
+
+        <ul class="govuk-list list-number">
+            <li>Make sure the equipment you are testing is connected to the Internet and it has received our vehicle's data.</li>
+            <li>Perform a test on any vehicle using our vehicle's data.</li>
+            <li>Send the results from the equipment to the MOT testing service.</li>
+            <li>Sign in to the MOT testing service and open the "View the latest connection test results" page to check the results. This page can be accessed from the VTS Overview page.</li>
+        </ul>
+
+        <div class="govuk-inset-text">
+            <p>You will need to sign out at this point and come back to view the results once you are done with the test.</p>
+            <p>You will not lose a test slot by using this service.</p>
+        </div>
+
+        <a href="../index" class="govuk-button" data-module="govuk-button" style="margin-top: 15px;">Sign out</a>
+
+        <p><a href="../index">Return to Vehicle Testing Station</a></p>
       
     {%- endcall %}
 

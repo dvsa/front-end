@@ -26,31 +26,53 @@
   {% call components.gridRow() %}
 
     {% call components.columnFull() %}
-      <span class="heading-secondary">Test connection</span>
-      <h1 class="govuk-heading-xl">Results</h1>
-       
-      <p>These are the results from the last test performed on <strong>20/10/2020</strong>:</p>
+      <span class="heading-secondary">Check equipment connection</span>
+      <h1 class="govuk-heading-xl">Connection check results</h1>
 
-       <table class="govuk-table">
+      <p>When you checked your equipment was connected at <b>11:32am</b> on <b>20 June 2020</b>:</p>
+
+      <table class="govuk-table">
         <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header">Equipment type</th>
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Equipment</th>
             <th scope="col" class="govuk-table__header">Status</th>
-          </tr>
-        </thead>
+        </tr>
+      </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
+        <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Roller Brake Tester</th>
-            <td class="govuk-table__cell">Connected</td>
-          </tr>
-          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><span class="badge--success">Connected</span></td>
+         </tr>
+        <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">Decelerometer</th>
-            <td class="govuk-table__cell">No results</td>
-          </tr>
+            <td class="govuk-table__cell" style="cursor:default;">No results</td>
+        </tr>
         </tbody>
       </table>
-     
-      <a href="confirmation" class="govuk-button" data-module="govuk-button">Continue</a>
+
+      <p>You can run MOT tests with your connected equipment once it is connected.
+
+      <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+                I don't see the results I was expecting
+            </span>
+          </summary>
+
+          <div class="govuk-details__text">
+              <p>Check the installation engineer has finished installing your equipment, and your equipment is connected to the internet.</p>
+
+              <p>If you see no results, or you have run a more recent test, contact your installation engineer.</p>
+
+              <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    You must <a href="../index">tell DVSA if your equipment has stopped working</a> for more than 2 weeks.
+                </strong>
+              </div>
+          </div>
+      </details>
 
       <p><a href="../index">Return to Vehicle Testing Station</a></p>
       

@@ -1,7 +1,6 @@
 // Brand colours
 $govuk-blue: #005ea5;
 $mainstream-brand: $govuk-blue;
-$govuk-yellow: #ffdd00;
 
 // Standard palette, colours
 $purple: #2e358b;
@@ -31,7 +30,7 @@ $orange-25: #fde4d4;
 $brown: #b58840;
 $brown-50: #dac39c;
 $brown-25: #f0e7d7;
-$yellow: #ffbf47;
+$yellow: #ffdd00;
 $yellow-50: #ffdf94;
 $yellow-25: #fff2d3;
 $grass-green: #85994b;
@@ -61,7 +60,7 @@ $link-active-colour: $light-blue;
 $link-hover-colour: $light-blue;
 $link-visited-colour: #4c2c92;
 $button-colour: #00823b;
-$focus-colour: $govuk-yellow;
+$focus-colour: $yellow;
 $text-colour: $black;             // Standard text colour
 $secondary-text-colour: $grey-1;  // Section headers, help text etc.
 $border-colour: $grey-2;          // Borders, seperators, rules, keylines etc.

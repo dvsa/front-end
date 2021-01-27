@@ -1,6 +1,6 @@
 {
   "name": "dvsa-front-end",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Front-end assets built on Node/Express to be used for public-facing DVSA sites and applications. Based on GOV UK prototype kit, but highly modified. It uses SCSS, Nunjucks, ES6, Webpack 3, Babel, Mocha, Chai, Puppeteer, and NPM libraries.",
   "main": "index.js",
   "scripts": {
@@ -60,7 +60,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^4.3.0",
     "express-writer": "0.0.4",
-    "govuk-frontend": "^2.13.0",
+    "govuk-frontend": "^3.10.2",
     "helmet": "^3.23.3",
     "html": "^1.0.0",
     "html-minifier": "^3.5.21",

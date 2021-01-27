@@ -108,3 +108,14 @@ button:focus {
   outline: 3px solid $focus-colour;
   outline-offset: 0;
 }
+
+.govuk-button:focus {
+  outline: 3px solid $focus-colour;
+  outline-offset: 0;
+}
+
+.govuk-link:focus {
+  outline: 3px solid $focus-colour;
+  background-color: $focus-colour;
+  outline-offset: 0;
+}

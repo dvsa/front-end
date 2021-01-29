@@ -1,3 +1,4 @@
+@import '../../../../gds/variables/partials/palette-colours';
 // Buttons
 // GOV.UK front end toolkit dependencies
 
@@ -15,7 +16,7 @@
   }
 
   &:focus {
-    outline: 3px solid $yellow;
+    outline: 3px solid $focus-colour;
   }
 
   // Disabled buttons

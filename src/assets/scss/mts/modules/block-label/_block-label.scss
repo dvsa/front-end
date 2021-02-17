@@ -1,3 +1,5 @@
+@import '../../../gds/variables/partials/palette-colours';
+
 .block-label {
   display: block;
   float: none;
@@ -16,7 +18,7 @@
   }
 
   &.focused {
-    outline: 3px solid $yellow;
+    outline: 3px solid $focus-colour;
   }
 
   @include media(tablet) {

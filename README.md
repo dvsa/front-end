@@ -1,3 +1,38 @@
+## Localdev setup
+
+1. Run npm install in the root directory of front-end
+2. Make changes to your code  
+3. Build assets using 
+``` docker-compose run app npm run build-production```
+4. Refresh the page
+NOTE:
+   If you want to update the assets for MTS, the easiest way is to take the Styles.css file
+   
+   ```front-end/dist/assets/stylesheets/styles.css```
+   and copy it's content to
+   
+  ```mot/mot-web-frontend/public/assets/stylesheets/styles.css``` 
+   and then refresh the page.
+
+For the old stylesheets:
+1. Modify the relevant sass file under mot/mot-static
+2. Run:
+```sass app.scss app.scss```
+   This will generate a new app.css which will contain your changes (even if you modified a different sass file
+   such as buttons.scss in mot-static)
+3. Copy the newly generated app.css file into```mot/mot-web-frontend/public/css/```
+4. Refresh the page. 
+
+## Deploy to Jenkins
+1. Update front-end/composer.json with an incremented front-end version number.
+2. Run composer update to update the composer.lock file   
+3. Update package.json and package.lock with an incremented version number.
+4. Commit your changes
+5. Run ```git tag -a 1.5.x -m "Updated assets" ``` to tag your latest commit
+6. Run ```git push origin 1.5.x``` to push the new asset version
+7. Under web-frontend/CVR/MOTH/MOTR update the composer dependancy to point to the new version.
+8. Run the Jenkins build.
+
 Further details and guidance for using this kit for prototypes and releases for MTS can be found internally in Confluence by searching for front-end.
 
 ## Demo
@@ -15,7 +50,7 @@ User: admin
 Password: dvsa  
 
 
-## Local Setup
+## OLD Local Setup 
 
 ### Prerequisite
 

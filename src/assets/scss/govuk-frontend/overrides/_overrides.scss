@@ -1,8 +1,29 @@
+@import '../../gds/variables/partials/palette-colours';
 // Put any GDS overrides here, if we need to modify a component from the package
 // Consider attaching overrides to a *modifier class* if we require the original GDS implementation too.
 /*Example:
 https://govuk-prototype-kit.herokuapp.com/docs/templates/check-your-answers
 */
+$govuk-focus-width: 3px;
+$govuk-radios-focus-width: $govuk-focus-width + 1px;
+
+.govuk-details__summary:focus{
+    outline: 4px solid $focus-colour;
+    outline-offset: -1px;
+    color: #0b0c0c;
+    background: $focus-colour;
+}
+
+// Focused state
+.govuk-radios__input:focus + .govuk-radios__label:before {
+    border-width: 4px;
+    box-shadow: 0 0 0 $govuk-radios-focus-width $focus-colour;
+}
+
+.govuk-checkboxes__input:focus + .govuk-checkboxes__label:before {
+    border-width: 4px;
+    box-shadow: 0 0 0 $govuk-focus-width $focus-colour;
+}
 
 .govuk-summary-list  {
     font-size: inherit;

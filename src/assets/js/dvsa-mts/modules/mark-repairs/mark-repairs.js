@@ -32,6 +32,8 @@ export class MarkRepairs {
       rfrForm: '.js-rfrForm',
       rfrItem: '.js-rfrItem',
       itemStatus: '.js-itemStatus',
+      emissionsTestFailures: 'js-emissionsTestFailures',
+      defectFailures: 'js-defectFailures',
     };
 
     this.elements = {
@@ -139,7 +141,7 @@ export class MarkRepairs {
         if (data && data.success) {
           toggleClass(rfrItem, this.classnames.hasStatus, false);
           toggleClass(rfrItem, this.classnames.hasSuccess, data.action === this.responseActions.repair);
-          this.updateCount(data.defectType, data.action);
+          this.updateCount(data.defectType, data.action, data.failureType);
           this.updateBrakeTest(data.brakeTestOutcome, data.brakesTested, data.brakeTestResults, data.disableSubmitButton);
           element.disabled = false;
         } else {
@@ -161,20 +163,20 @@ export class MarkRepairs {
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  updateCount = (defectType, action) => {
+  updateCount = (defectType, action, failureType) => {
     switch (defectType) {
       case 'advisory': {
-        this.updateCountForAllElements(this.elements.numberOfAdvisories, action);
+        this.updateCountForAllElements(this.elements.numberOfAdvisories, action, failureType);
         break;
       }
 
       case 'minor': {
-        this.updateCountForAllElements(this.elements.numberOfMinors, action);
+        this.updateCountForAllElements(this.elements.numberOfMinors, action, failureType);
         break;
       }
 
       case 'failure': {
-        this.updateCountForAllElements(this.elements.numberOfFailures, action);
+        this.updateCountForAllElements(this.elements.numberOfFailures, action, failureType);
         break;
       }
 
@@ -185,7 +187,7 @@ export class MarkRepairs {
   };
 
   /**
-   * Updates the count of failures, advisories and minors for all elements
+   * Updates the count of failures, advisories and minors for all elements of the same type
    *
    * @param {HTMLElement} element Elements which to parse number from and change
    * @param {String} action Action can be repair or not
@@ -193,10 +195,16 @@ export class MarkRepairs {
    * @since 1.1.0
    * @author Tameem Safi <t.safi@kainos.com>
    */
-  updateCountForAllElements = (elements, action) => {
+  updateCountForAllElements = (elements, action, failureType) => {
     if (!elements || !Array.isArray(elements)) return;
     elements.forEach(element => {
-      this.updateCountForElement(element, action);
+      if (failureType === 'emissionsTest' && element.classList.contains(this.selectors.emissionsTestFailures)) {
+        this.updateCountForElement(element, action);
+      } else if (failureType === 'defect' && element.classList.contains(this.selectors.defectFailures)) {
+        this.updateCountForElement(element, action);
+      } else if (failureType === null || failureType === undefined) {
+        this.updateCountForElement(element, action);
+      }
     });
   };
 

@@ -44,6 +44,12 @@
     }
   }
 
+  $govuk-radios-focus-width: $govuk-focus-width + 1px;
+  .govuk-radios__input:focus {
+    border-width: 4px;
+    box-shadow: 0 0 0 $govuk-radios-focus-width $focus-colour;
+  }
+
   &--right {
     margin-right: 0;
   } 

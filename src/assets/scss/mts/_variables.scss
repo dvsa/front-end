@@ -1,3 +1,4 @@
+@import '../gds/variables/partials/palette-colours';
 $space: 5px;
 $space-class-values: (0, 5, 10, 15, 20, 30, 45);
 
@@ -10,6 +11,6 @@ $proposition-active-nav: #1d8feb;
 $search-line-height:    24px;
 $search-padding:        5px;
 
-$focus-colour: $yellow;
+$focus-colour: $govuk-yellow;
 
 $site-width: 960px;

@@ -18,6 +18,9 @@
       &:active {
         color: #fff;
       }
+      &:focus {
+        color: $black;
+      }
     }
   }
 

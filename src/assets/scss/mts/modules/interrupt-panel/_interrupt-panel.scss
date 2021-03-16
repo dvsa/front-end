@@ -11,5 +11,8 @@
         &:visited {
             color: white;
         }
+        &:focus {
+            color: $black
+        }
     }
 }

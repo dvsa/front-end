@@ -176,3 +176,16 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
         background: $red;
     }
 }
+
+.govuk-input:focus,
+.govuk-button:focus {
+    outline:3px solid $focus-colour;
+	outline-offset: 0;
+}
+
+.govuk-link:focus,
+.govuk-back-link:focus {
+    outline:3px solid $focus-colour;
+	outline-offset: 0;
+	background-color: $focus-colour;
+}

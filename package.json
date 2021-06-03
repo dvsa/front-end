@@ -61,7 +61,7 @@
     "express-session": "^1.17.1",
     "express-validator": "^4.3.0",
     "express-writer": "0.0.4",
-    "govuk-frontend": "^3.10.2",
+    "govuk-frontend": "^3.12.0",
     "helmet": "^3.23.3",
     "html": "^1.0.0",
     "html-minifier": "^3.5.21",

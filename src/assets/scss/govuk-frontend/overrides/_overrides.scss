@@ -175,6 +175,14 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
     &--danger {
         background: $red;
     }
+    &--green {
+        color:#005a30;
+        background:#cce2d8;
+    }
+    &--red {
+        color:#942514;
+        background:#f6d7d2
+    }
 }
 
 .govuk-input:focus,

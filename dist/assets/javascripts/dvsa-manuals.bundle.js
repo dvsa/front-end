@@ -1,9 +1,9 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-manuals
- *   Version: 1.5.9
+ *   Version: 1.5.12
  *   Contributors: Daniel Kiriasidis Christou <danielch@kainos.com>, Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
- *   Timestamp: March 26th 2021, 3:51:41 pm
+ *   Timestamp: August 5th 2021, 11:32:52 am
  *   Source: https://github.com/dvsa/front-end
  * 
  */

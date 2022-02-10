@@ -1,9 +1,9 @@
 /*!
  * 
  *   Name: dvsa-front-end/dvsa-mts-legacy
- *   Version: 1.5.12
+ *   Version: 1.5.13
  *   Contributors: Daniel Kiriasidis Christou <danielch@kainos.com>, Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
- *   Timestamp: August 5th 2021, 11:32:52 am
+ *   Timestamp: February 10th 2022, 4:48:30 pm
  *   Source: https://github.com/dvsa/front-end
  * 
  */

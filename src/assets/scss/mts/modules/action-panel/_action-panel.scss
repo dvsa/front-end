@@ -1,5 +1,33 @@
 $buttonwidth: 188px;
 
+@mixin container($width) {
+  padding-bottom: 8px;
+  width: 100%;
+
+  @include media(desktop) {
+    width: 70%;
+    width: $width;
+    display: inline-block;
+    float: left;
+    padding-bottom: 0;
+    padding-top: 5px;
+  }
+}
+
+@mixin heading-value($width) {
+  display: inline-block;
+  @include bold-24();
+  line-height: 1;
+  @include media(desktop) {
+    @include bold-27();
+    width: $width;
+    text-align: left;
+  }
+  @include media(desktopLrg) {
+    @include bold-36();
+  }
+}
+
 // Used in MOT test results and Site Review
 .action-panel {
   &, * {
@@ -28,39 +56,32 @@ $buttonwidth: 188px;
   } 
 
 
-  &__container { 
+  &__container {
+    @include container(calc(100% - #{$buttonwidth}));
 
-    padding-bottom: 8px; 
-    width: 100%;
-    
-    @include media(desktop) {
-      width: 70%;
-      width: calc(100% - #{$buttonwidth});
-      display: inline-block;
-      float: left;
-      padding-bottom: 0;
-      padding-top: 5px;
+    &-activity {
+      @include container(100%);
     }
   }
 
+  &__heading {
+    @include heading-value(50%);
+
+    &-activity {
+      @include heading-value(calc((100% - #{$buttonwidth}) / 2));
+    }
+  }
   &__value {
+    @include heading-value(50%);
     text-align: right;
     float: right;
-  }
 
-  &__heading,
-  &__value {
-    display: inline-block;
-    @include bold-24();
-    line-height: 1;
-    @include media(desktop) {
-      @include bold-27();
-      width: 50%;
-      text-align: left;
+    &-activity {
+      @include heading-value(calc(100% - (100% - #{$buttonwidth}) / 2));
+      text-align: right;
+      float: right;
     }
-    @include media(desktopLrg) {
-      @include bold-36();
-    }
+
   }
 
   &__meta {

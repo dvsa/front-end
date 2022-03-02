@@ -1,9 +1,9 @@
 /*!
  * 
  *   Name: dvsa-front-end/vendor
- *   Version: 1.5.13
+ *   Version: 1.5.14
  *   Contributors: Daniel Kiriasidis Christou <danielch@kainos.com>, Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
- *   Timestamp: February 10th 2022, 5:02:23 pm
+ *   Timestamp: February 22nd 2022, 2:28:44 pm
  *   Source: https://github.com/dvsa/front-end
  * 
  */

@@ -24,8 +24,6 @@
   &__value {
     @include bold-19;
     padding-left: $gutter-half;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
 
     &--numeric {
       @include bold-19($tabular-numbers: true);

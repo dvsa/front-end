@@ -2,6 +2,7 @@ import os from 'os';
 import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import cssnano from 'cssnano';
 
 /**  Constants */
 const isCopyToMTS = process.env.COPY_TO_MTS === true;
@@ -32,58 +33,24 @@ const isProduction = () => {
   return process.env.NODE_ENV === 'production';
 };
 
-/**
- * Get the extract text plugin loader settings based on environment
- *
- * @returns A webpack loader array
- *
- */
-const getExtractTextPluginLoaders = () => {
-  let postCSSPlugins = [
-    require('autoprefixer')({
-      browsers: [
+const postCSSPlugins = [
+  require('autoprefixer')({
+    browsers: [
         "ie 8",
         "ie 9",
         "ie 10",
         "ie 11",
         "last 2 versions"
-      ]
-    })
-  ];
-
-  if(isProduction()) {
-    postCSSPlugins.push(require('cssnano')({
-      preset: 'advanced',
-      minifyFontValues: false
-    }));
-  }
-
-  return MiniCssExtractPlugin.extract({
-    use: [
-      {
-        loader: 'css-loader',
-        options: {
-          url: false,
-          sourceMap: !isProduction()
-        }
-      },
-      {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: !isProduction(),
-          plugins: postCSSPlugins,
-        }
-      },
-      {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: !isProduction(),
-        }
-      },
     ]
   })
-};
+];
 
+if (isProduction()) {
+  postCSSPlugins.push(cssnano({
+    preset: 'advanced',
+    minifyFontValues: false
+  }));
+}
 const copyPluginPatterns = [
   {
     context: path.resolve(config.paths.fonts),
@@ -172,9 +139,33 @@ export default {
         },
       },
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: getExtractTextPluginLoaders(),
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: !isProduction()
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: !isProduction(),
+              postcssOptions :  postCSSPlugins ,
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: !isProduction(),
+              sassOptions: {
+                quietDeps: true,
+              },
+            },
+          },
+        ],
       },
     ],
   },
@@ -190,7 +181,6 @@ export default {
     new CopyWebpackPlugin({
       patterns: copyPluginPatterns
     }),
-//    new ExtractTextPlugin({
     new MiniCssExtractPlugin({
       filename: '../stylesheets/[name].css'
     })

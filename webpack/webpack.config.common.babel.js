@@ -153,7 +153,9 @@ export default {
             loader: 'postcss-loader',
             options: {
               sourceMap: !isProduction(),
-              postcssOptions :  postCSSPlugins ,
+              postcssOptions: {
+                plugins: postCSSPlugins,
+              },
             }
           },
           {

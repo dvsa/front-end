@@ -3,6 +3,7 @@ import path from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import cssnano from 'cssnano';
+import autoprefixer from 'autoprefixer';
 
 /**  Constants */
 const isCopyToMTS = process.env.COPY_TO_MTS === true;
@@ -34,7 +35,7 @@ const isProduction = () => {
 };
 
 const postCSSPlugins = [
-  require('autoprefixer')({
+  autoprefixer({
     browsers: [
         "ie 8",
         "ie 9",

@@ -1,16 +1,15 @@
 import os from 'os';
 import path from 'path';
-import webpack from 'webpack';
-import ConcatPlugin from 'webpack-concat-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import cssnano from 'cssnano';
+import autoprefixer from 'autoprefixer';
 
-/**
- * Constants
- * 
- * @author Tameem Safi <t.safi@kainos.com>
- * @since 1.2.0
- */
+/**  Constants */
+const isCopyToMTS = process.env.COPY_TO_MTS === true;
+const isCopyToMOTH = process.env.COPY_TO_MOTH === true;
+const isCopyToManuals = process.env.COPY_TO_MANUALS === true;
+
 const config = {
   paths: {
     scss: path.resolve('src', 'assets', 'scss'),
@@ -27,157 +26,80 @@ const config = {
 
 /**
  * Checks environment variable to see if we are in production mode
- * 
- * @returns {Boolean} true if we are in production and false otherwise 
- * 
- * @author Tameem Safi <t.safi@kainos.com>
- * @since 1.2.0
+ *
+ * @returns {Boolean} true if we are in production and false otherwise
+ *
  */
 const isProduction = () => {
   return process.env.NODE_ENV === 'production';
 };
 
-/**
- * Get the extract text plugin loader settings based on environment
- * 
- * @returns A webpack loader array
- * 
- * @author Tameem Safi <t.safi@kainos.com>
- * @since 1.2.0
- */
-const getExtractTextPluginLoaders = () => {
-  let postCSSPlugins = [
-    require('autoprefixer')({
-      browsers: [
+const postCSSPlugins = [
+  autoprefixer({
+    browsers: [
         "ie 8",
         "ie 9",
         "ie 10",
         "ie 11",
         "last 2 versions"
-      ]
-    })
-  ];
-
-  if(isProduction()) {
-    postCSSPlugins.push(require('cssnano')({
-      preset: 'advanced',
-      minifyFontValues: false
-    }));
-  }
-
-  return ExtractTextPlugin.extract({
-    use: [
-      {
-        loader: 'css-loader',
-        options: {
-          url: false,
-          sourceMap: !isProduction()
-        }
-      },
-      {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: !isProduction(),
-          plugins: postCSSPlugins,
-        }
-      },
-      {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: !isProduction(),
-        }
-      },
     ]
   })
-};
+];
 
-/**
- * Get settings for copying files
- * 
- * @returns array containing all settings
- * 
- * @author Tameem Safi <t.safi@kainos.com>
- * @since 1.2.2
- */
-const getCopyWebpackPluginSettings = () => {
-  let copyWebpackPluginSettings = [
-    new CopyWebpackPlugin([
-      {
-        context: path.resolve(config.paths.fonts),
-        from: '**/*',
-        to: '../fonts'
-      },
-      {
-        context: path.resolve(config.paths.images),
-        from: '**/*',
-        to: '../images',
-      },
-      {
-        context: path.resolve(config.paths.misc),
-        from: '**/*',
-        to: '../misc'
-      }
-    ])
-  ];
-
-  // Check environment variable
-  // to copy public assets to mts
-  if(process.env.COPY_TO_MTS) {
-    copyWebpackPluginSettings.push(new CopyWebpackPlugin([
-      {
-        context: path.resolve('public'),
-        from: '**/*',
-        to: config.paths.mtsPublicAssets,
-        force: true,
-      }
-    ]));
-  }
-  // Check environment variable
-  // to copy public assets to moth
-  if(process.env.COPY_TO_MOTH) {
-    copyWebpackPluginSettings.push(new CopyWebpackPlugin([
-      {
-        context: path.resolve('public'),
-        from: '**/*',
-        to: config.paths.mothPublicAssets,
-        force: true,
-      }
-    ]));
-  }
-
-  // Check environment variable
-  // to copy public assets to manuals
-  if(process.env.COPY_TO_MANUALS) {
-    // Class 3457
-    copyWebpackPluginSettings.push(new CopyWebpackPlugin([
-      {
-        context: path.resolve('public'),
-        from: '**/*',
-        to: config.paths.manuals3456Assets,
-        force: true,
-      }
-    ]));
-
-    // Class 12
-    copyWebpackPluginSettings.push(new CopyWebpackPlugin([
-      {
-        context: path.resolve('public'),
-        from: '**/*',
-        to: config.paths.manuals12Assets,
-        force: true,
-      }
-    ]));
-  }
-
-  return copyWebpackPluginSettings;
+if (isProduction()) {
+  postCSSPlugins.push(cssnano({
+    preset: 'advanced',
+    minifyFontValues: false
+  }));
+}
+const copyPluginPatterns = [
+  {
+    context: path.resolve(config.paths.fonts),
+    from: '**/*',
+    to: '../fonts'
+  },
+  {
+    context: path.resolve(config.paths.images),
+    from: '**/*',
+    to: '../images',
+  },
+  {
+    context: path.resolve(config.paths.misc),
+    from: '**/*',
+    to: '../misc'
+  },
+];
+if(isCopyToMTS) {
+  copyPluginPatterns.push({
+    context: path.resolve('public'),
+    from: '**/*',
+    to: config.paths.mtsPublicAssets,
+    force: true,
+  });
+}
+if(isCopyToMOTH) {
+  copyPluginPatterns.push({
+    context: path.resolve('public'),
+    from: '**/*',
+    to: config.paths.mothPublicAssets,
+    force: true,
+  });
+}
+if(isCopyToManuals) {
+  // Class 3457 and Class 12
+  copyPluginPatterns.push({
+    context: path.resolve('public'),
+    from: '**/*',
+    to: config.paths.manuals3456Assets,
+    force: true,
+  }, {
+    context: path.resolve('public'),
+    from: '**/*',
+    to: config.paths.manuals12Assets,
+    force: true,
+  });
 }
 
-/**
- * Webpack configuration
- * 
- * @author Tameem Safi <t.safi@kainos.com>
- * @since 1.2.0
- */
 export default {
   entry: {
     'dvsa': path.resolve(config.paths.js, 'dvsa', 'index.js'),
@@ -218,33 +140,52 @@ export default {
         },
       },
       {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: getExtractTextPluginLoaders(),
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+              sourceMap: !isProduction()
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: !isProduction(),
+              postcssOptions: {
+                plugins: postCSSPlugins,
+              },
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: !isProduction(),
+              sassOptions: {
+                quietDeps: true,
+              },
+            },
+          },
+        ],
       },
     ],
   },
-  plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
+  optimization: {
+    splitChunks: {
       name: 'vendor',
-      filename: 'vendor.bundle.js',
-      minChunks: 2
+      minChunks: 2,
+      chunks: 'initial',
+      filename: 'vendor.bundle.js'
+    },
+  },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: copyPluginPatterns
     }),
-    new ConcatPlugin({
-      name: 'ie-shims',
-      fileName: 'ie-shims.js',
-      filesToConcat: [
-        path.resolve(config.paths.js, 'ie-shims', 'ie.js'),
-        path.resolve(config.paths.js, 'ie-shims', 'html5.js'),
-        path.resolve(config.paths.js, 'ie-shims', 'mediaqueries.js')
-      ],
-      uglify: {
-        ie8: true
-      }
-    }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: '../stylesheets/[name].css'
-    }),
-    ...getCopyWebpackPluginSettings()
+    })
   ]
 };

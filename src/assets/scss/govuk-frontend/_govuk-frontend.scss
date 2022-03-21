@@ -1,8 +1,8 @@
 $govuk-fonts-path: '../fonts/';
-@import '../../../../node_modules/govuk-frontend/all.scss';
+@import '../../../../node_modules/govuk-frontend/govuk/all';
 
 /*
-Guidance on extending GDS components: 
+Guidance on extending GDS components:
 https://design-system.service.gov.uk/get-started/extending-and-modifying-components */
 
 @import 'overrides/overrides';

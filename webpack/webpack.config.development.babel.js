@@ -14,14 +14,14 @@ export default merge(common, {
   plugins: [
     /**
      * Adds sourcemaps
-     * 
+     *
      * https://webpack.js.org/plugins/source-map-dev-tool-plugin/
      */
     new webpack.SourceMapDevToolPlugin(),
 
     /**
      * Creates a bundle size report based on all modules used
-     * 
+     *
      * https://www.npmjs.com/package/webpack-bundle-analyzer
      */
     // new BundleAnalyzerPlugin({

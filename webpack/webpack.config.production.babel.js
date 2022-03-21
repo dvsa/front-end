@@ -2,7 +2,6 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import moment from 'moment';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import ImageminWebpackPlugin from 'imagemin-webpack-plugin';
 
 import common from './webpack.config.common.babel';
@@ -22,12 +21,11 @@ export default merge(common, {
     path: path.resolve('dist', 'assets', 'javascripts'),
   },
   plugins: [
-    new webpack.DefinePlugin({ 
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production')
-      }
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    new webpack.optimize.UglifyJsPlugin({
+
+    new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
     new webpack.BannerPlugin({

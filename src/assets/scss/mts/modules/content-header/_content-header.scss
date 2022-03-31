@@ -16,6 +16,8 @@
 
   &__title {
     @include bold-48;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
   }
 
   &__progress {

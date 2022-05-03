@@ -1,0 +1,42 @@
+/*!
+ * 
+ *   Name: dvsa-front-end/dvsa-mts-legacy
+ *   Version: 1.6.1
+ *   Contributors: Daniel Kiriasidis Christou <danielch@kainos.com>, Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
+ *   Timestamp: May 3rd 2022, 10:37:39 am
+ *   Source: https://github.com/dvsa/front-end
+ *
+ */
+
+/*!
+ * Sizzle CSS Selector Engine v2.3.6
+ * https://sizzlejs.com/
+ *
+ * Copyright JS Foundation and other contributors
+ * Released under the MIT license
+ * https://js.foundation/
+ *
+ * Date: 2021-02-16
+ */
+
+/*!
+ * jQuery JavaScript Library v3.6.0
+ * https://jquery.com/
+ *
+ * Includes Sizzle.js
+ * https://sizzlejs.com/
+ *
+ * Copyright OpenJS Foundation and other contributors
+ * Released under the MIT license
+ * https://jquery.org/license
+ *
+ * Date: 2021-03-02T17:08Z
+ */
+
+/*! DataTables 1.11.5
+ * ©2008-2021 SpryMedia Ltd - datatables.net/license
+ */
+
+/*! Responsive 2.2.9
+ * 2014-2021 SpryMedia Ltd - datatables.net/license
+ */

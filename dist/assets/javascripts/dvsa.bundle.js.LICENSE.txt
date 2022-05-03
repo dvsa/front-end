@@ -1,0 +1,11 @@
+/*!
+ * 
+ *   Name: dvsa-front-end/dvsa
+ *   Version: 1.6.1
+ *   Contributors: Daniel Kiriasidis Christou <danielch@kainos.com>, Martin D Marriott <martind@kainos.com>, James Nelson <j.nelson@kainos.com>, Tameem Safi <https://github.com/tameemsafi>
+ *   Timestamp: May 3rd 2022, 10:37:39 am
+ *   Source: https://github.com/dvsa/front-end
+ *
+ */
+
+/*! smooth-scroll v12.1.5 | (c) 2017 Chris Ferdinandi | MIT License | http://github.com/cferdinandi/smooth-scroll */

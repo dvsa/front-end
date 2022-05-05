@@ -1,6 +1,6 @@
 {
   "name": "dvsa-front-end",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "description": "Front-end assets built on Node/Express to be used for public-facing DVSA sites and applications. Based on GOV UK prototype kit, but highly modified. It uses SCSS, Nunjucks, ES6, Webpack 3, Babel, Mocha, Chai, Puppeteer, and NPM libraries.",
   "main": "index.js",
   "scripts": {
@@ -22,18 +22,7 @@
     "type": "git",
     "url": "git@github.com:dvsa/front-end.git"
   },
-  "author": "Tameem Safi <https://github.com/tameemsafi>",
-  "contributors": [
-    "Daniel Kiriasidis Christou <danielch@kainos.com>",
-    "Martin D Marriott <martind@kainos.com>",
-    "James Nelson <j.nelson@kainos.com>",
-    "Tameem Safi <https://github.com/tameemsafi>"
-  ],
   "license": "MIT",
-  "engines": {
-    "node": "12.16.3",
-    "npm": "6.14.4"
-  },
   "dependencies": {
     "@dvsa/cookie-manager": "^1.0.10",
     "accessible-autocomplete": "^1.6.2",
@@ -118,6 +107,7 @@
     "run-sequence": "^2.2.1",
     "sass-loader": "^6.0.7",
     "sass-module-importer": "^1.4.0",
+    "terser-webpack-plugin": "^5.3.1",
     "undertaker-forward-reference": "^1.0.2",
     "webpack": "^5.15.0",
     "webpack-bundle-analyzer": "^4.3.0",

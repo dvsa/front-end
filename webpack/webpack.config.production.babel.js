@@ -10,7 +10,6 @@ import * as packageJSON from './../package.json';
 const banner = `
   Name: ${packageJSON.name}/[name]
   Version: ${packageJSON.version}
-  Contributors: ${packageJSON.contributors.join(', ')}
   Timestamp: ${moment().format('MMMM Do YYYY, h:mm:ss a')}
   Source: https://github.com/dvsa/front-end
 `;

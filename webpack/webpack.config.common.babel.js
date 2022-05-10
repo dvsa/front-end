@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import cssnano from 'cssnano';
 import autoprefixer from 'autoprefixer';
+import TerserPlugin from "terser-webpack-plugin";
 
 /**  Constants */
 const isCopyToMTS = process.env.COPY_TO_MTS === true;
@@ -109,6 +110,7 @@ export default {
     'development': path.resolve(config.paths.js, 'development', 'index.js'),
     'styles': path.resolve(config.paths.scss, 'styles.scss'),
   },
+  target: ["web", "es5"],
   module: {
     rules: [
       {
@@ -179,6 +181,9 @@ export default {
       chunks: 'initial',
       filename: 'vendor.bundle.js'
     },
+    minimizer: [new TerserPlugin({
+      extractComments: false,
+    })],
   },
   plugins: [
     new CopyWebpackPlugin({

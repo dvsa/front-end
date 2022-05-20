@@ -1,8 +1,8 @@
 /*!
  * 
  *   Name: dvsa-front-end/vendor
- *   Version: 1.7.0
- *   Timestamp: May 5th 2022, 3:39:46 pm
+ *   Version: 1.7.1
+ *   Timestamp: May 20th 2022, 2:06:47 pm
  *   Source: https://github.com/dvsa/front-end
  *
  */

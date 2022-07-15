@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "UKNumberPlate";
+  src: url("#{$fonts-dir}UKNumberPlate.ttf");
+}
+
+.reg-mark-div {
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+}
+.reg-mark-sm {
+  width: 110px;
+  max-width: 110px;
+  font: 24px 'UKNumberPlate',Verdana,sans-serif;
+  padding: 0.25em 0.15em;
+}
+.reg-mark, .reg-mark-sm {
+  margin-right: 10px;
+  text-align: center;
+  background-color: #ffd307;
+  border-radius: 0.25em;
+  text-transform: uppercase;
+}

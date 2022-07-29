@@ -64,6 +64,9 @@
       }
     }
 
+    &.is-sign-out {
+      float: right;
+    }
     a {
       @include bold-14;
       color: $white;

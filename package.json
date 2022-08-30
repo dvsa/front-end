@@ -70,7 +70,7 @@
     "lodash": "^4.17.20",
     "md5": "^2.3.0",
     "memorystore": "^1.6.4",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "morgan": "^1.10.0",
     "node-dir": "^0.1.17",
     "nunjucks": "^3.2.2",

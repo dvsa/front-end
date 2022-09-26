@@ -1,0 +1,11 @@
+@include motr-specific {
+
+    .govuk-details__summary:focus{
+        outline: 0px solid $focus-colour !important;
+        color: #0b0c0c;
+        background: $focus-colour;
+        box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+        text-decoration: none;
+    }
+
+}

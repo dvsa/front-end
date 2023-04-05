@@ -66,3 +66,78 @@
   background-position: left 10px;
   background-size: 36px;
 }
+
+// Spinner
+
+.ccms-loader {
+  border: 10px solid #DEE0E2;
+  border-radius: 50%;
+  border-top-color: #005EA5;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  animation: spin 2s linear infinite;
+}
+.ccms-loader__fast {
+  animation: spin 0.65s linear infinite;
+}
+
+#spinner {
+  animation-name: spin;
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  display: inline-block;
+}
+#spinner.done {
+  animation-name: spinback;
+  animation-duration: 1.25s;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinback {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// Mini spinner
+
+#confirm-photo-button.confirm-photo-button {
+  position: relative;
+  transition: width ease 5s;
+}
+
+#confirm-photo-button.confirm-photo-button::before {
+  content: "";
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: -7px;
+  margin-top: 0px;
+  height: 20px;
+  width: 20px;
+  background-size: 25px 25px;
+  animation-name: spin;
+  animation-duration: 0.75s;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  border: 2px solid #b1b4b6;
+  border-radius: 50%;
+  border-top-color: #FFFFFF;
+}
+
+#confirm-photo-button.confirm-photo-button[disabled], #confirm-photo-button.confirm-photo-button[disabled]:hover {
+  opacity: 0.7;
+  box-shadow: 0 2px 0 #88988c;
+}

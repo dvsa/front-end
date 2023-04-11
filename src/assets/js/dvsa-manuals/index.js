@@ -1,5 +1,5 @@
 // Polyfills
-import 'babel-polyfill';
+import "core-js/stable";
 import './../third-party';
 
 import { domReady, initGDS } from './../shared';

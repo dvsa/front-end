@@ -119,10 +119,9 @@ export default {
         use: {
           loader: 'babel-loader',
           options: {
-            babelrc: false,
             presets: [
-              ['env', {
-                'targets': {
+              ['@babel/preset-env', {
+                targets: {
                   'browsers': [
                     'last 3 versions',
                     'ie >= 9',
@@ -131,12 +130,7 @@ export default {
                     'safari >= 9'
                   ]
                 },
-                debug: true,
-                useBuiltIns: true,
-                uglify: true
               }],
-              'stage-2',
-              'stage-3'
             ],
           },
         },

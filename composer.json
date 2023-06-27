@@ -1,7 +1,7 @@
 {
   "name": "dvsa/front-end",
   "description": "DVSA front-end assets used within all applications",
-  "version": "1.7.11",
+  "version": "1.7.12",
   "homepage": "https://github.com/dvsa/front-end",
   "license": "MIT"
 }

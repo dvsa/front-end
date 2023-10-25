@@ -1,6 +1,6 @@
 {
   "name": "dvsa-front-end",
-  "version": "1.7.13",
+  "version": "1.7.14",
   "description": "Front-end assets built on Node/Express to be used for public-facing DVSA sites and applications. Based on GOV UK prototype kit, but highly modified. It uses SCSS, Nunjucks, ES6, Webpack 3, Babel, Mocha, Chai, Puppeteer, and NPM libraries.",
   "main": "index.js",
   "scripts": {
@@ -39,8 +39,8 @@
     "cookie-session": "^2.0.0-rc.1",
     "core-js": "^2.6.12",
     "datatables": "^1.10.18",
-    "datatables.net": "^1.10.23",
-    "datatables.net-responsive": "^2.2.7",
+    "datatables.net": "^1.11.3",
+    "datatables.net-responsive": "^2.3.0",
     "document-ready": "^2.0.2",
     "element-closest": "^2.0.2",
     "errorhandler": "^1.5.1",

@@ -68,7 +68,7 @@
     "readdir": "0.0.6",
     "regenerator-runtime": "^0.13.9",
     "require-dir": "^0.3.2",
-    "rimraf": "^2.7.1",
+    "rimraf": "^4.3.1",
     "smooth-scroll": "^12.1.5",
     "store": "^2.0.12"
   },

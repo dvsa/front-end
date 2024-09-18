@@ -45,7 +45,7 @@
     "element-closest": "^2.0.2",
     "errorhandler": "^1.5.1",
     "etag": "^1.8.1",
-    "express": "^4.17.1",
+    "express": "^4.20.0",
     "express-minify-html": "^0.11.6",
     "express-session": "^1.17.1",
     "express-validator": "^4.3.0",

@@ -7,17 +7,17 @@
   "description": "Check your MOT.",
   "icons": [
     {
-      "src": "/images/apple-touch-icon-180x180.png?0.22.1",
+      "src": "/images/govuk-apple-touch-icon-180x180.png?0.22.1",
       "sizes": "180x180",
       "type": "image/png"
     },
     {
-      "src": "/images/apple-touch-icon-167x167.png?0.22.1",
+      "src": "/images/govuk-apple-touch-icon-167x167.png?0.22.1",
       "sizes": "167x167",
       "type": "image/png"
     },
     {
-      "src": "/images/apple-touch-icon-152x152.png?0.22.1",
+      "src": "/images/govuk-apple-touch-icon-152x152.png?0.22.1",
       "sizes": "152x152",
       "type": "image/png"
     }

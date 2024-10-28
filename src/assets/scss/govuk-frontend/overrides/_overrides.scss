@@ -4,6 +4,7 @@
 /*Example:
 https://govuk-prototype-kit.herokuapp.com/docs/templates/check-your-answers
 */
+$path: "../images/";
 $govuk-focus-width: 3px;
 $govuk-radios-focus-width: $govuk-focus-width + 1px;
 
@@ -28,13 +29,13 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
 .govuk-summary-list  {
     font-size: inherit;
     margin-bottom: $gutter;
-    
-    &__meta { 
+
+    &__meta {
         color: $grey-1;
         clear: both;
         display: block;
         &--error {
-            font-weight: 600; 
+            font-weight: 600;
             color: $red;
         }
     }
@@ -60,7 +61,7 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
             text-align: right;
         }
     }
-    
+
     &--border-top {
         padding-top: 15px;
         border-top: 1px solid $govuk-border-colour;
@@ -79,7 +80,7 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
     &__value-group {
         padding-right: 0;
         margin-bottom: 0;
-        @include govuk-media-query($from: tablet) { 
+        @include govuk-media-query($from: tablet) {
             padding-bottom: 0;
             padding-top: 0;
         }
@@ -90,14 +91,14 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
             &:first-child {
                 border-top: 0;
             }
-            @include govuk-media-query($from: tablet) { 
+            @include govuk-media-query($from: tablet) {
                 &--has-badge {
                     padding-right: 25%;
                 }
             }
             .govuk-tag {
                 margin-top: 5px;
-                @include govuk-media-query($from: tablet) {  
+                @include govuk-media-query($from: tablet) {
                     position: absolute;
                     right: 0;
                     top: 5px;
@@ -110,7 +111,7 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
     &__row--large {
         font-size: 18px;
         font-size: 1.2rem;
-        .govuk-summary-list__value { 
+        .govuk-summary-list__value {
             padding: $gutter/2 0;
             margin-bottom: 0;
             @include govuk-media-query($from: tablet) {
@@ -129,7 +130,7 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
 .govuk-form-group {
     clear: both;
 }
- 
+
 
 // Overrides gov inputs and selects
 .govuk-input,
@@ -137,9 +138,9 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
     background-color: white;
     &--tab-input {
         width: 100%;
-        max-width: none; 
+        max-width: none;
     }
-    
+
     // Re-assert Gov width helpers after tablet if '--tab-input' used on same element
     @include govuk-media-query($from: tablet) {
         &--width-2 {
@@ -196,4 +197,9 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
     outline:3px solid $focus-colour;
 	outline-offset: 0;
 	background-color: $focus-colour;
+}
+
+// Overwrite footer image
+.govuk-footer__copyright-logo {
+    background-image: url("#{$path}govuk-crest.svg");
 }

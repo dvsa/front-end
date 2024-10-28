@@ -146,22 +146,22 @@
       }
 
       a {
-        display: block; 
-        background-image: url("#{$path}govuk-crest.png");
+        display: block;
+        background-image: url("#{$path}govuk-crest.svg");
         background-repeat: no-repeat;
         background-position: 50% 0%;
         text-decoration: none;
         padding: 115px 0 0 0;
         @include media(desktop) {
           background-position: 100% 0%;
-        } 
+        }
         @include device-pixel-ratio() {
           background-image: url("#{$path}govuk-crest-2x.png");
           background-size: 125px 102px;
-        } 
+        }
         @include ie(6) {
           background-image: url("#{$path}govuk-crest-ie.png");
-        } 
+        }
 
       }
     }

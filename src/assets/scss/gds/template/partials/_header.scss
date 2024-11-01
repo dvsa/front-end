@@ -77,14 +77,6 @@
     text-rendering: optimizeLegibility;
     border-bottom: 1px solid transparent;
 
-    background: url('#{$path}gov.uk_logotype_crown.png') no-repeat;
-    background-size: 36px 32px;
-    background-position: 0 0;
-
-    @include ie-lte(8) {
-      background-image: url('#{$path}gov.uk_logotype_crown-1x.png');
-    }
-
     img {
       margin: 2px 1px 0 0; // top margin aligns bottom of img with bottom of "G"
       vertical-align: bottom;

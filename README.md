@@ -3,6 +3,8 @@
 
 **Note:** Previously also used by [CVR](https://gitlab.mot.dvsacloud.uk/vehicle-recalls/recalls-app) / [MOTH](https://github.com/dvsa/mot-history) / [MOTR](https://github.com/dvsa/motr)
 
+**IMPORTANT: NEVER UPDATE DIST FILES DIRECTLY!** They are generated from `/src` directory with `npm run build-production`.
+
 ## Localdev setup
 
 **Requirements: Node.js "^12.16"**

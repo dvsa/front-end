@@ -28,10 +28,35 @@
       background-position: 6px center;
       white-space: nowrap;
     }
-  
+
     @media all and (min-width: 641px) and (-webkit-min-device-pixel-ratio: 2) {
       background-image: url('../images/icons/crests/org_crest_18px_x2.png');
       background-size: auto 26px;
+    }
+  }
+}
+
+.organisation-logo-new {
+  width: 400px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+
+  @media (max-width: 600px) {
+    height: 45px;
+  }
+
+  img {
+    position: absolute;
+    top: -15px;
+    left: -32px;
+    width: 400px;
+    height: auto;
+
+    @media (max-width: 600px) {
+      top: -7px;
+      left: -25px;
+      width: 320px;
     }
   }
 }

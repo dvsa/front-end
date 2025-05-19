@@ -97,3 +97,19 @@
     }
   }
 }
+
+
+// CSS for custom header when user is logged in
+.custom-header__container {
+  display:flex;align-items:center;
+  justify-content:space-between
+}
+
+.custom-header__logo {
+  margin-right:20px;
+  flex-shrink:0
+}
+
+.custom-header__proposition {
+  margin-left:auto
+}

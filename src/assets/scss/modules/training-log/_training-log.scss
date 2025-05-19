@@ -1,0 +1,29 @@
+.add-training-button {
+  float: right;
+}
+
+.training-log-summary-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.training-log-summary-header h3 {
+  margin-top: auto;
+}
+
+.training-year-dropdown-form {
+  margin-left: auto;
+}
+
+.training-year-dropdown-box {
+  display: flex;
+}
+
+.training-year-dropdown label {
+  text-align: left;
+  text-wrap: nowrap;
+  padding-right: 10px;
+}
+
+.add-training-button{float:right;}.training-log-summary-header{display:flex;flex-direction:row;}.training-log-summary-header h3{margin-top:auto;}.training-year-dropdown-form{margin-left:auto;}.training-year-dropdown-box{display:flex;}.training-year-dropdown label{text-align:left;text-wrap:nowrap;padding-right:10px;}
+

@@ -203,9 +203,3 @@ $govuk-radios-focus-width: $govuk-focus-width + 1px;
 .govuk-footer__copyright-logo {
     background-image: url("#{$path}govuk-crest.svg");
 }
-
-// remove word spacing in header text
-.govuk-template--rebranded .govuk-header__link--homepage {
-    display: inline;
-    word-spacing: 0;
-}

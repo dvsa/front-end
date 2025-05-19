@@ -167,6 +167,8 @@ export default {
               sourceMap: !isProduction(),
               sassOptions: {
                 quietDeps: true,
+                includePaths: ['node_modules'],
+
               },
             },
           },

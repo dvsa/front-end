@@ -1,5 +1,7 @@
 $govuk-fonts-path: '../fonts/';
-@import '../../../../node_modules/govuk-frontend/govuk/all';
+
+@import "govuk-frontend/dist/govuk/all";
+
 
 /*
 Guidance on extending GDS components:

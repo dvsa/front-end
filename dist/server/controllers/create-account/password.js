@@ -1,13 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.postPassword = exports.getPassword = undefined;
-
-var _helpers = require('./helpers');
-
-const getPassword = exports.getPassword = (req, res) => {
+exports.postPassword = exports.getPassword = void 0;
+var _helpers = require("./helpers");
+var getPassword = exports.getPassword = function getPassword(req, res) {
   // Only testing password route
   if (req.query.testPasswordJouneyOnly) {
     // Reset session with pre-filled data
@@ -34,7 +32,6 @@ const getPassword = exports.getPassword = (req, res) => {
   }
   return (0, _helpers.renderViewWithValuesOrRedirect)(req, res, 'prototypes/create-account/password');
 };
-
-const postPassword = exports.postPassword = (req, res) => {
+var postPassword = exports.postPassword = function postPassword(req, res) {
   return (0, _helpers.renderWithErrorsOrRedirectWithSession)(req, res, 'prototypes/create-account/password', '/prototypes/create-account/review');
 };

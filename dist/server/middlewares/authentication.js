@@ -1,16 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.authenticationMiddleware = undefined;
-
-var _basicAuth = require('basic-auth');
-
-var _basicAuth2 = _interopRequireDefault(_basicAuth);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+exports.authenticationMiddleware = void 0;
+var _basicAuth = _interopRequireDefault(require("basic-auth"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 /**
  * Handle when request is unauthorized
  *
@@ -18,7 +13,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  *
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const unauthorized = res => {
+var unauthorized = function unauthorized(res) {
   res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
   return res.send(401);
 };
@@ -32,11 +27,11 @@ const unauthorized = res => {
  *
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const authenticationMiddleware = exports.authenticationMiddleware = (req, res, next) => {
+var authenticationMiddleware = exports.authenticationMiddleware = function authenticationMiddleware(req, res, next) {
   // Handles http basic auth prompt
   // and gets input from user
   // https://www.npmjs.com/package/basic-auth
-  const user = (0, _basicAuth2.default)(req);
+  var user = (0, _basicAuth["default"])(req);
 
   // Check if username and password was set
   if (!user || !user.name || !user.pass) {

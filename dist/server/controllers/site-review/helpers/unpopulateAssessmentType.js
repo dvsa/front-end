@@ -1,12 +1,10 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.unpopulateAssessmentType = undefined;
-
-var _getLastInUrl = require('./getLastInUrl');
-
+exports.unpopulateAssessmentType = void 0;
+var _getLastInUrl = require("./getLastInUrl");
 /**
  * Resets an assessment sections value in the site review journey
  *
@@ -14,9 +12,9 @@ var _getLastInUrl = require('./getLastInUrl');
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-const unpopulateAssessmentType = exports.unpopulateAssessmentType = (req, res, next) => {
+var unpopulateAssessmentType = exports.unpopulateAssessmentType = function unpopulateAssessmentType(req, res, next) {
   // Gets text string after last '/' in URL
-  let assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
+  var assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
 
   // Resets assessment types session data
   req.session.viewData[assessmentType].commitedLevel = '';

@@ -1,19 +1,15 @@
-'use strict';
+"use strict";
 
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.getReview = exports.destorySession = exports.postEditTesterComment = exports.getEditTesterComment = exports.postAddTesterComment = exports.getAddTesterComment = exports.getMOTResults = undefined;
-
-var _helpers = require('./helpers/helpers');
-
-var motTestHelpers = _interopRequireWildcard(_helpers);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
+exports.postEditTesterComment = exports.postAddTesterComment = exports.getReview = exports.getMOTResults = exports.getEditTesterComment = exports.getAddTesterComment = exports.destorySession = void 0;
+var motTestHelpers = _interopRequireWildcard(require("./helpers/helpers"));
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function _interopRequireWildcard(e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, "default": e }; if (null === e || "object" != _typeof(e) && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (var _t in e) "default" !== _t && {}.hasOwnProperty.call(e, _t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, _t)) && (i.get || i.set) ? o(f, _t, i) : f[_t] = e[_t]); return f; })(e, t); }
 // Config param populates error / flash message & redirect URL
-const postMessage = (req, res, config) => {
-  let viewData = {
+var postMessage = function postMessage(req, res, config) {
+  var viewData = {
     comment: req.body.comment ? motTestHelpers.formatTextAreaResponse(req.body.comment.trim()) : null,
     errors: []
   };
@@ -37,42 +33,46 @@ const postMessage = (req, res, config) => {
   // Return to add tester comment view if errors
   return res.redirect(config.redirectUrl);
 };
-
-const getMOTResults = exports.getMOTResults = (req, res) => {
+var getMOTResults = exports.getMOTResults = function getMOTResults(req, res) {
   // Resets error session
   if (req.session.viewData) req.session.viewData.errors = null;
-  return res.render('prototypes/mot-test/index', { viewData: req.session.viewData, flashMessage: req.flash('flash-message') });
+  return res.render('prototypes/mot-test/index', {
+    viewData: req.session.viewData,
+    flashMessage: req.flash('flash-message')
+  });
 };
-
-const getAddTesterComment = exports.getAddTesterComment = (req, res) => {
-  return res.render('prototypes/mot-test/comment/index', { viewData: req.session.viewData ? req.session.viewData : null });
+var getAddTesterComment = exports.getAddTesterComment = function getAddTesterComment(req, res) {
+  return res.render('prototypes/mot-test/comment/index', {
+    viewData: req.session.viewData ? req.session.viewData : null
+  });
 };
-
-const postAddTesterComment = exports.postAddTesterComment = (req, res) => {
+var postAddTesterComment = exports.postAddTesterComment = function postAddTesterComment(req, res) {
   postMessage(req, res, {
     errorMessage: 'Enter comment - You must enter a comment',
     flashMsg: 'Testers comment successfully added',
     redirectUrl: '/prototypes/mot-test/comment'
   });
 };
-
-const getEditTesterComment = exports.getEditTesterComment = (req, res) => {
-  return res.render('prototypes/mot-test/comment/edit', { viewData: req.session.viewData });
+var getEditTesterComment = exports.getEditTesterComment = function getEditTesterComment(req, res) {
+  return res.render('prototypes/mot-test/comment/edit', {
+    viewData: req.session.viewData
+  });
 };
-
-const postEditTesterComment = exports.postEditTesterComment = (req, res) => {
+var postEditTesterComment = exports.postEditTesterComment = function postEditTesterComment(req, res) {
   postMessage(req, res, {
     errorMessage: 'Edit comment - You must enter a comment',
     flashMsg: 'Testers comment successfully edited',
     redirectUrl: '/prototypes/mot-test/comment/edit'
   });
 };
-
-const destorySession = exports.destorySession = (req, res) => {
+var destorySession = exports.destorySession = function destorySession(req, res) {
   // Resets session & redirects
   req.session.viewData = null;
   req.flash('flash-message', 'Testers comment successfully removed');
   return res.redirect('/prototypes/mot-test/');
 };
-
-const getReview = exports.getReview = (req, res) => res.render('prototypes/mot-test/review', { viewData: req.session.viewData });
+var getReview = exports.getReview = function getReview(req, res) {
+  return res.render('prototypes/mot-test/review', {
+    viewData: req.session.viewData
+  });
+};

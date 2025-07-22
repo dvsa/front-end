@@ -1,16 +1,19 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.resetMessages = exports.rejectMessage = exports.getMessages = exports.getMessage = exports.getHomepage = exports.getArchive = exports.archiveMessage = exports.acknowledgeMessage = exports.acceptMessage = void 0;
 /**
  * GET Middleware - Renders homepage view with messages data
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getHomepage = exports.getHomepage = (req, res) => {
-  return res.render('prototypes/messages/homepage/index', { viewData: req.session.viewData });
+var getHomepage = exports.getHomepage = function getHomepage(req, res) {
+  return res.render('prototypes/messages/homepage/index', {
+    viewData: req.session.viewData
+  });
 };
 
 /**
@@ -19,9 +22,12 @@ const getHomepage = exports.getHomepage = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getMessages = exports.getMessages = (req, res) => {
+var getMessages = exports.getMessages = function getMessages(req, res) {
   // Renders the messaging index view
-  return res.render(`prototypes/messages/inbox/index`, { viewData: req.session.viewData, flashMessage: req.flash('flash-message') });
+  return res.render("prototypes/messages/inbox/index", {
+    viewData: req.session.viewData,
+    flashMessage: req.flash('flash-message')
+  });
 };
 
 /**
@@ -30,9 +36,12 @@ const getMessages = exports.getMessages = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getArchive = exports.getArchive = (req, res) => {
+var getArchive = exports.getArchive = function getArchive(req, res) {
   // Renders the messaging archived view
-  return res.render(`prototypes/messages/archive/index`, { viewData: req.session.viewData, flashMessage: req.flash('flash-message') });
+  return res.render("prototypes/messages/archive/index", {
+    viewData: req.session.viewData,
+    flashMessage: req.flash('flash-message')
+  });
 };
 
 /**
@@ -41,7 +50,7 @@ const getArchive = exports.getArchive = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getMessage = exports.getMessage = (req, res) => {
+var getMessage = exports.getMessage = function getMessage(req, res) {
   if (req.message.type === 'News') {
     req.message.state.accepted = true;
     req.message.state.rejected = true;
@@ -50,7 +59,9 @@ const getMessage = exports.getMessage = (req, res) => {
   // Set the message's isRead state to true
   req.message.state.isRead = true;
   // Navigate to message view
-  return res.render('prototypes/messages/view/index', { viewData: req.message });
+  return res.render('prototypes/messages/view/index', {
+    viewData: req.message
+  });
 };
 
 /**
@@ -60,12 +71,12 @@ const getMessage = exports.getMessage = (req, res) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
-const acknowledgeMessage = exports.acknowledgeMessage = (req, res, next) => {
+var acknowledgeMessage = exports.acknowledgeMessage = function acknowledgeMessage(req, res, next) {
   // Message acknowledge state is set to true
   req.message.state.acknowledged = true;
 
   // Creates success flash message
-  req.flash('flash-message', `${req.message.type} successfully acknowledged.`);
+  req.flash('flash-message', "".concat(req.message.type, " successfully acknowledged."));
 
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messages/inbox/');
@@ -78,11 +89,11 @@ const acknowledgeMessage = exports.acknowledgeMessage = (req, res, next) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
-const acceptMessage = exports.acceptMessage = (req, res, next) => {
+var acceptMessage = exports.acceptMessage = function acceptMessage(req, res, next) {
   req.message.state.accepted = true;
   req.message.state.rejected = false;
   // Creates success flash message
-  req.flash('flash-message', `${req.message.type} successfully accepted.`);
+  req.flash('flash-message', "".concat(req.message.type, " successfully accepted."));
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messages/inbox/');
 };
@@ -94,13 +105,13 @@ const acceptMessage = exports.acceptMessage = (req, res, next) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
-const rejectMessage = exports.rejectMessage = (req, res, next) => {
+var rejectMessage = exports.rejectMessage = function rejectMessage(req, res, next) {
   // Set message as rejected
   req.message.state.accepted = false;
   req.message.state.rejected = true;
 
   // Creates success flash message
-  req.flash('flash-message', `${req.message.type} successfully rejected.`);
+  req.flash('flash-message', "".concat(req.message.type, " successfully rejected."));
 
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messages/inbox/');
@@ -113,11 +124,10 @@ const rejectMessage = exports.rejectMessage = (req, res, next) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
-const archiveMessage = exports.archiveMessage = (req, res, next) => {
+var archiveMessage = exports.archiveMessage = function archiveMessage(req, res, next) {
   // Helper variables
-  const messageData = req.session.viewData.messages;
-  const archiveData = req.session.viewData.archive;
-
+  var messageData = req.session.viewData.messages;
+  var archiveData = req.session.viewData.archive;
   req.message.state.isArchived = true;
 
   // Splices the message from session.messages
@@ -127,7 +137,7 @@ const archiveMessage = exports.archiveMessage = (req, res, next) => {
   archiveData.push(req.message);
 
   // Creates success flash message
-  req.flash('flash-message', `${req.message.type} successfully archived.`);
+  req.flash('flash-message', "".concat(req.message.type, " successfully archived."));
 
   // Redirect to messages dashboard
   return res.redirect('/prototypes/messages/inbox/');
@@ -140,7 +150,7 @@ const archiveMessage = exports.archiveMessage = (req, res, next) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
-const resetMessages = exports.resetMessages = (req, res, next) => {
+var resetMessages = exports.resetMessages = function resetMessages(req, res, next) {
   // If session viewData is set
   if (req.session.viewData) {
     // unset it

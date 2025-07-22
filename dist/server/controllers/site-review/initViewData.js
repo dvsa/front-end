@@ -1,14 +1,15 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.initViewData = void 0;
 /**
  * Sets and returns an empty site review view data object
  *
  * @returns {Object} - Site review view data object
  */
-const initViewData = exports.initViewData = () => {
+var initViewData = exports.initViewData = function initViewData() {
   return {
     testerDetails: {
       initialDate: '20 July 2018',

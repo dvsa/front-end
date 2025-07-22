@@ -1,15 +1,16 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.filterUnreadNews = exports.filterUnactionedNotification = exports.filterPinned = void 0;
 /**
  * filterUnreadNews - Filters for actioned notifications
  *
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
-const filterUnactionedNotification = exports.filterUnactionedNotification = message => {
+var filterUnactionedNotification = exports.filterUnactionedNotification = function filterUnactionedNotification(message) {
   if (message.type === 'Notification' && !message.state.accepted && !message.state.rejected) {
     return message;
   }
@@ -21,7 +22,7 @@ const filterUnactionedNotification = exports.filterUnactionedNotification = mess
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
-const filterUnreadNews = exports.filterUnreadNews = message => {
+var filterUnreadNews = exports.filterUnreadNews = function filterUnreadNews(message) {
   if (message.type === 'News' && !message.state.isRead) {
     return message;
   }
@@ -33,4 +34,6 @@ const filterUnreadNews = exports.filterUnreadNews = message => {
  * @param {message} Object - Object containing message info
  * @returns {Object} message - Message object
  */
-const filterPinned = exports.filterPinned = message => message.state.isPinned;
+var filterPinned = exports.filterPinned = function filterPinned(message) {
+  return message.state.isPinned;
+};

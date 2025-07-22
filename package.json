@@ -14,8 +14,8 @@
     "build-production": "cross-env NODE_ENV=production concurrently \"npm run pretty-js\" \"npm run build-server\" \"npm run webpack-prod\" && npm run clean-production",
     "pretty-js": "prettier --print-width 140 --single-quote --trailing-comma es5 --write \"src/**/*.js\"",
     "test": "cross-env NODE_ENV=testing jest",
-    "webpack-dev": "cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.babel.js",
-    "webpack-prod": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.production.babel.js",
+    "webpack-dev": "cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.js",
+    "webpack-prod": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.production.js",
     "clean-production": "rimraf ./dist/assets/javascripts/styles.bundle.js"
   },
   "repository": {
@@ -26,8 +26,8 @@
   "dependencies": {
     "@dvsa/cookie-manager": "^1.1.2",
     "accessible-autocomplete": "^1.6.2",
-    "ajv": "^6.12.6",
-    "axios": "^0.21.1",
+    "ajv": "^8.17.1",
+    "axios": "1.8.2",
     "basic-auth": "^2.0.0",
     "body-parser": "^1.20.3",
     "clean-html": "^1.5.0",
@@ -37,7 +37,7 @@
     "connect-flash": "^0.1.1",
     "consolidate": "^0.10.0",
     "cookie-session": "^2.1.0",
-    "core-js": "^2.6.12",
+    "core-js": "^3.x",
     "datatables": "^1.10.18",
     "datatables.net": "^1.13.11",
     "datatables.net-responsive": "^2.5.1",
@@ -73,14 +73,12 @@
     "store": "^2.0.12"
   },
   "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/register": "^7.27.1",
     "autoprefixer": "^7.2.6",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-2": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1",
+    "babel-loader": "^9.2.1",
     "babel-watch": "^7.8.1",
     "caw": "^2.0.1",
     "chai": "^4.5.0",
@@ -98,25 +96,25 @@
     "jest": "^26.6.3",
     "mini-css-extract-plugin": "^2.9.2",
     "mocha": "^8.2.1",
-    "node-sass": "^7.0.0",
     "onchange": "^7.1.0",
     "postcss-loader": "^2.1.5",
     "prettier": "^1.19.1",
     "puppeteer": "^5.5.0",
     "recursive-readdir": "^2.2.3",
     "run-sequence": "^2.2.1",
-    "sass-loader": "^6.0.7",
+    "sass": "^1.89.2",
+    "sass-loader": "^13.0.0",
     "sass-module-importer": "^1.4.0",
     "terser-webpack-plugin": "^5.3.10",
     "undertaker-forward-reference": "^1.0.2",
     "webpack": "^5.96.1",
     "webpack-bundle-analyzer": "^4.10.2",
-    "webpack-cli": "^4.10.0",
+    "webpack-cli": "^5.1.4",
     "webpack-concat-plugin": "^2.4.2",
-    "webpack-merge": "^4.2.2",
-    "webpack-stream": "^6.1.1"
+    "webpack-merge": "^5.10.0",
+    "webpack-stream": "^7.0.0"
   },
   "engines": {
-    "node": "^12.16.0"
+    "node": "^20.0.0"
   }
 }

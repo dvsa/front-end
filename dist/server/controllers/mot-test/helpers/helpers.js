@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.formatTextAreaResponse = void 0;
 /**
  * Replaces new lines in the string with <br/>
  *
@@ -11,7 +12,7 @@ Object.defineProperty(exports, "__esModule", {
  *
  * @author James Nelson <j.nelson@kainos.com>
  */
-const formatTextAreaResponse = exports.formatTextAreaResponse = text => {
+var formatTextAreaResponse = exports.formatTextAreaResponse = function formatTextAreaResponse(text) {
   if (!text) return console.warn('formatTextArea was not provided a text param');
   if (typeof text !== 'string') return console.warn('Non string value passed into formatTextAreaResponse');
   // (/g) enables global matching

@@ -1,50 +1,38 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.viewFileRoute = undefined;
-
-var _fs = require('fs');
-
-var _fs2 = _interopRequireDefault(_fs);
-
-var _path = require('path');
-
-var _path2 = _interopRequireDefault(_path);
-
-var _constants = require('./../config/constants');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+exports.viewFileRoute = void 0;
+var _fs = _interopRequireDefault(require("fs"));
+var _path = _interopRequireDefault(require("path"));
+var _constants = require("./../config/constants");
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 // View file
-const viewFileRoute = exports.viewFileRoute = (req, res) => {
-  let directoryName = _path2.default.dirname(req.path);
-  let directoryBaseName = _path2.default.basename(directoryName);
+var viewFileRoute = exports.viewFileRoute = function viewFileRoute(req, res) {
+  var directoryName = _path["default"].dirname(req.path);
+  var directoryBaseName = _path["default"].basename(directoryName);
 
   // Partials folder show not be accessed
   if (directoryBaseName == 'partials') {
     return res.send('Partials folder is not an accessible route.');
   }
-
-  let viewFilePath = _path2.default.join(_constants.CONFIG.paths.views.base, req.path + '.njk');
-  let viewIndexFilePath = _path2.default.join(_constants.CONFIG.paths.views.base, req.path, 'index.njk');
-
-  let viewData = {
+  var viewFilePath = _path["default"].join(_constants.CONFIG.paths.views.base, req.path + '.njk');
+  var viewIndexFilePath = _path["default"].join(_constants.CONFIG.paths.views.base, req.path, 'index.njk');
+  var viewData = {
     libraryNavigationItems: req.libraryNavgiationItems,
     loggedOut: true,
     designSystem: true
   };
 
   // Check if view file exists
-  if (_fs2.default.existsSync(viewFilePath)) {
+  if (_fs["default"].existsSync(viewFilePath)) {
     return res.render(viewFilePath, viewData);
   }
 
   // Check if folder has index file
-  if (_fs2.default.existsSync(viewIndexFilePath)) {
+  if (_fs["default"].existsSync(viewIndexFilePath)) {
     return res.render(viewIndexFilePath, viewData);
   }
-
   return res.send('404 - No route or view file found.');
 };

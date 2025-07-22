@@ -1,9 +1,10 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-const getRoot = exports.getRoot = (req, res) => {
+exports.getRoot = void 0;
+var getRoot = exports.getRoot = function getRoot(req, res) {
   // Reset session
   if (req.session && req.session.createAccountForm) {
     req.session.createAccountForm = {};

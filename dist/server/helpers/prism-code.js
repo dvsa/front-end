@@ -4,23 +4,17 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPreviwAndPrism = exports.highlightCode = undefined;
-
 var _prismjs = require('prismjs');
-
 var _prismjs2 = _interopRequireDefault(_prismjs);
-
 var _prismNormalizeWhitespace = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
-
 var _prismNormalizeWhitespace2 = _interopRequireDefault(_prismNormalizeWhitespace);
-
 var _htmlMinifier = require('html-minifier');
-
 var _pretty = require('pretty');
-
 var _pretty2 = _interopRequireDefault(_pretty);
-
 function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
 }
 
 /**
@@ -32,8 +26,8 @@ function _interopRequireDefault(obj) {
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const highlightCode = exports.highlightCode = code => {
-  let nw = new _prismNormalizeWhitespace2.default({
+var highlightCode = exports.highlightCode = function (code) {
+  var nw = new _prismNormalizeWhitespace2["default"]({
     'remove-trailing': true,
     'remove-indent': false,
     'left-trim': true,
@@ -42,23 +36,23 @@ const highlightCode = exports.highlightCode = code => {
 
   // Minifies the html code
   // This is done to normalize it before making it pretty
-  let cleanHTML = (0, _htmlMinifier.minify)(code, {
+  var cleanHTML = (0, _htmlMinifier.minify)(code, {
     html5: true,
     collapseWhitespace: true,
     preserveLineBreaks: true
   });
 
   // Normalize the html code to Prism standards
-  let normalizedCode = nw.normalize(cleanHTML);
+  var normalizedCode = nw.normalize(cleanHTML);
 
   // Make the HTML code pretty
-  let prettyCode = (0, _pretty2.default)(normalizedCode);
+  var prettyCode = (0, _pretty2["default"])(normalizedCode);
 
   // Highlight the code using prismjs
-  let highlightedCode = _prismjs2.default.highlight(prettyCode, _prismjs2.default.languages.markup);
+  var highlightedCode = _prismjs2["default"].highlight(prettyCode, _prismjs2["default"].languages.markup);
 
   // Create the code highlighting output
-  return `<pre><code class="line-numbers language-html">${highlightedCode}</code></pre>`;
+  return "<pre><code class=\"line-numbers language-html\">".concat(highlightedCode, "</code></pre>");
 };
 
 /**
@@ -70,32 +64,16 @@ const highlightCode = exports.highlightCode = code => {
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const wrapCodeWithPreviwAndPrism = exports.wrapCodeWithPreviwAndPrism = code => {
+var wrapCodeWithPreviwAndPrism = exports.wrapCodeWithPreviwAndPrism = function (code) {
   // Highlight the code using prismjs
-  let prismCode = highlightCode(code);
+  var prismCode = highlightCode(code);
 
   // Create the developer preview output
-  let preview = `
-  <div class="dev-preview__example">
-    <div class="dev-preview__fullscreen-button">Fullscreen preview</div>
-    <div class="dev-preview__code">
-      ${code}
-    </div>
-  </div>
-  `;
+  var preview = "\n  <div class=\"dev-preview__example\">\n    <div class=\"dev-preview__fullscreen-button\">Fullscreen preview</div>\n    <div class=\"dev-preview__code\">\n      ".concat(code, "\n    </div>\n  </div>\n  ");
 
   // Return the new HTML
   // Combination of the preview and prism code highlighting
-  return `
-    <!-- dev-preview -->
-    <div class="dev-preview">
-      ${preview}
-      <div class="dev-preview__prism-code">
-        ${prismCode}
-      </div>
-    </div>
-    <!-- /dev-preview -->
-  `;
+  return "\n    <!-- dev-preview -->\n    <div class=\"dev-preview\">\n      ".concat(preview, "\n      <div class=\"dev-preview__prism-code\">\n        ").concat(prismCode, "\n      </div>\n    </div>\n    <!-- /dev-preview -->\n  ");
 };
 
 /**
@@ -107,35 +85,11 @@ const wrapCodeWithPreviwAndPrism = exports.wrapCodeWithPreviwAndPrism = code => 
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPrismForFullPagePreview = code => {
+var wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPrismForFullPagePreview = function (code) {
   // Highlight the code using prismjs
-  let prismCode = highlightCode(code);
+  var prismCode = highlightCode(code);
 
   // Return the new HTML
   // Combination of the preview and prism code highlighting
-  return `
-   
-    <!-- content -->
-    ${code}
-    <!-- content -->
-    <!--
-    <div class="dev-preview__floating-button">
-      <span class="dev-preview__floating-button-text">
-        View HTML Markup
-        <br/>
-        <em>(only for developers)</em>
-      </span>
-    </div>
-
-    <div class="dev-preview dev-preview--full-page dev-preview--hidden">
-      <div class="dev-preview__content">
-        <button class="dev-preview__close-button">&times;</button>
-        <p>The HTML markup below only includes the content of the page and excludes all layout markup.</p>
-      </div>
-
-      <div class="dev-preview__code">
-        ${prismCode}
-      </div>
-    </div> -->
-  `;
+  return "\n   \n    <!-- content -->\n    ".concat(code, "\n    <!-- content -->\n    <!--\n    <div class=\"dev-preview__floating-button\">\n      <span class=\"dev-preview__floating-button-text\">\n        View HTML Markup\n        <br/>\n        <em>(only for developers)</em>\n      </span>\n    </div>\n\n    <div class=\"dev-preview dev-preview--full-page dev-preview--hidden\">\n      <div class=\"dev-preview__content\">\n        <button class=\"dev-preview__close-button\">&times;</button>\n        <p>The HTML markup below only includes the content of the page and excludes all layout markup.</p>\n      </div>\n\n      <div class=\"dev-preview__code\">\n        ").concat(prismCode, "\n      </div>\n    </div> -->\n  ");
 };

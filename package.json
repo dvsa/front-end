@@ -42,6 +42,7 @@
     "datatables.net": "^1.13.11",
     "datatables.net-responsive": "^2.5.1",
     "document-ready": "^2.0.2",
+    "dompurify": "^3.2.6",
     "element-closest": "^2.0.2",
     "errorhandler": "^1.5.1",
     "etag": "^1.8.1",

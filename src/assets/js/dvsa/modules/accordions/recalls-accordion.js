@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 import { ACCORDION_CONSTANTS, RECALLS_ACCORDION_CONSTANTS } from './constants';
-import { closestParentOfEl, toggleClass, delegateEvent, addEventListenerToEl } from './../../../shared/misc';
+import { closestParentOfEl, toggleClass, delegateEvent, addEventListenerToEl } from '../../../shared';
+import DOMPurify from 'dompurify';
 
 export class RecallsAccordion {
   constructor() {
@@ -124,7 +125,7 @@ export class RecallsAccordion {
         }
 
         // Change recalls accordion DOM content with response
-        this.elements.output.innerHTML = responseData.result;
+        this.elements.output.innerHTML = DOMPurify.sanitize(responseData.result);
 
         // Display the accordion output
         toggleClass(this.elements.content, RECALLS_ACCORDION_CONSTANTS.classNames.contentShowOutput, true);
@@ -192,7 +193,7 @@ export class RecallsAccordion {
         }
 
         // Add html form ajax to output
-        this.elements.output.innerHTML = response.data;
+        this.elements.output.innerHTML = DOMPurify.sanitize(response.data);
 
         // Change state to reflect DOM change
         this.state.ajaxContentAddedToDOM = true;

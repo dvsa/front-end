@@ -11,6 +11,7 @@ import {
   delegateEvent,
   triggerCustomEvent,
 } from './../../../shared/misc';
+import DOMPurify from 'dompurify';
 
 export class Accordion {
   constructor(accordionElement) {
@@ -27,7 +28,8 @@ export class Accordion {
     this.smoothScroll = new SmoothScroll();
 
     // Create unique hash for current element based on DOM HTML
-    this.uniqueIdentifier = 'js-accordion-' + md5(this.accordionElement.innerHTML);
+    const safeHtml = DOMPurify.sanitize(this.accordionElement.innerHTML, { SAFE_FOR_JQUERY: true });
+    this.uniqueIdentifier = 'js-accordion-' + md5(safeHtml);
 
     // Get all of the accordion sections
     this.sections = Array.from(this.accordionElement.querySelectorAll('.' + ACCORDION_CONSTANTS.classNames.section));
@@ -98,7 +100,8 @@ export class Accordion {
 
       sectionHeaderElement.setAttribute('role', 'region');
 
-      let sectionUniqueIdentifier = md5(sectionElement.innerHTML);
+      let safeHTML = DOMPurify.sanitize(sectionElement.innerHTML);
+      let sectionUniqueIdentifier = md5(safeHTML);
       let sectionContentId = sectionHeaderElement.getAttribute(ACCORDION_CONSTANTS.attributeNames.sectionContentId);
 
       // Add the section elements to the state

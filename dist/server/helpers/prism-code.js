@@ -4,6 +4,9 @@ function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present,
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { if (r) i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n;else { var o = function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); }; o("next", 0), o("throw", 1), o("return", 2); } }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+}
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
@@ -55,7 +58,7 @@ var highlightCode = exports.highlightCode = /*#__PURE__*/function () {
           normalizedCode = nw.normalize(cleanHTML); // Make the HTML code pretty
           prettyCode = (0, _pretty2["default"])(normalizedCode); // Highlight the code using prismjs
           highlightedCode = _prismjs2["default"].highlight(prettyCode, _prismjs2["default"].languages.markup); // Create the code highlighting output
-          return _context.a(2, "<pre><code class=\"line-numbers language-html\">".concat(highlightedCode, "</code></pre>"));
+          return _context.a(2, "<pre><code class=\"line-numbers language-html\">".concat(escapeHtml(highlightedCode), "</code></pre>"));
       }
     }, _callee);
   }));

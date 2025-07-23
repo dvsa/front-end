@@ -32,6 +32,16 @@ module.exports = merge(common, {
     new ImageMinimizerPlugin({
       minimizer: {
         implementation: ImageMinimizerPlugin.imageminGenerate,
+        options: {
+          plugins: [
+            ['svgo', {
+              plugins: [
+                { name: 'removeViewBox', active: false },
+                { name: 'preset-default' }
+              ]
+            }]
+          ]
+        }
       },
       test: /\.(jpe?g|png|gif|svg)$/i
     })

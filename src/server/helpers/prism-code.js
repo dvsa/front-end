@@ -1,5 +1,14 @@
 'use strict';
 
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 Object.defineProperty(exports, '__esModule', {
   value: true,
 });
@@ -57,7 +66,7 @@ const highlightCode = (exports.highlightCode = async code => {
   let highlightedCode = _prismjs2.default.highlight(prettyCode, _prismjs2.default.languages.markup);
 
   // Create the code highlighting output
-  return `<pre><code class="line-numbers language-html">${highlightedCode}</code></pre>`;
+  return `<pre><code class="line-numbers language-html">${escapeHtml(highlightedCode)}</code></pre>`;
 });
 
 /**

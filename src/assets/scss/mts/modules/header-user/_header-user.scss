@@ -28,7 +28,7 @@
       line-height: 1;
       position: relative;
       text-decoration: none;
-      
+
       @include media(tablet) {
         top: -5px;
       }
@@ -87,7 +87,6 @@
       }
 
       &.is-active {
-        // color: $proposition-active-nav;
         color: $white;
       }
 

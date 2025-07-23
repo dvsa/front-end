@@ -1,3 +1,4 @@
+@use "sass:math";
 // @import 'conditionals';
 // @import 'css3';
 // @import 'measurements';
@@ -106,7 +107,7 @@ $site-width: 960px;
 
   @include media($full-width) {
     float: $float;
-    width: percentage($width);
+    width: math.percentage($width);
   }
 
   @include ie-lte(7) {

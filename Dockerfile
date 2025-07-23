@@ -1,7 +1,9 @@
-FROM node:12.16.3
+FROM --platform=linux/amd64 node:22
 
 # Create app directory
 WORKDIR /usr/app
+
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
 # Copy the package.json file
 COPY package.json .

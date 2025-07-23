@@ -16,7 +16,8 @@
     "test": "cross-env NODE_ENV=testing jest",
     "webpack-dev": "cross-env NODE_ENV=development webpack --config ./webpack/webpack.config.development.js",
     "webpack-prod": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.config.production.js",
-    "clean-production": "rimraf ./dist/assets/javascripts/styles.bundle.js"
+    "clean-production": "rimraf ./dist/assets/javascripts/styles.bundle.js",
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,7 @@
     "htmlclean": "^3.0.8",
     "imagemin": "^9.0.1",
     "jquery": "^3.7.1",
+    "jsdom": "^26.1.0",
     "lodash": "^4.17.20",
     "md5": "^2.3.0",
     "memorystore": "^1.6.7",
@@ -98,7 +100,9 @@
     "mini-css-extract-plugin": "^2.9.2",
     "mocha": "^11.7.1",
     "onchange": "^7.1.0",
+    "patch-package": "^8.0.0",
     "postcss-loader": "^7.3.1",
+    "postinstall-postinstall": "^2.1.0",
     "prettier": "^1.19.1",
     "puppeteer": "^5.5.0",
     "recursive-readdir": "^2.2.3",

@@ -1,0 +1,61 @@
+diff --git a/node_modules/datatables.net/js/jquery.dataTables.js b/node_modules/datatables.net/js/jquery.dataTables.js
+index 3361ce6..fba8720 100644
+--- a/node_modules/datatables.net/js/jquery.dataTables.js
++++ b/node_modules/datatables.net/js/jquery.dataTables.js
+@@ -1516,14 +1516,21 @@
+ 		return out;
+ 	};
+ 
++	const createDOMPurify = require('dompurify');
++	const { JSDOM } = require('jsdom');
+ 
+-	var _stripHtml = function ( d ) {
+-		return d
+-			.replace( _re_html, '' ) // Complete tags
+-			.replace(/<script/i, ''); // Safety for incomplete script tag
++	const window = new JSDOM('').window;
++	const DOMPurify = createDOMPurify(window);
++
++	var _stripHtml = function (d) {
++		if (typeof d !== 'string') return d;
++
++		return DOMPurify.sanitize(d, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
+ 	};
+ 
+ 
++
++
+ 	/**
+ 	 * Determine if all values in the array are unique. This means we can short
+ 	 * cut the _unique method at the cost of a single loop. A sorted array is used
+diff --git a/node_modules/datatables.net/js/jquery.dataTables.mjs b/node_modules/datatables.net/js/jquery.dataTables.mjs
+index 04bee9d..3712f2d 100644
+--- a/node_modules/datatables.net/js/jquery.dataTables.mjs
++++ b/node_modules/datatables.net/js/jquery.dataTables.mjs
+@@ -1460,13 +1460,22 @@ var _removeEmpty = function ( a )
+ };
+ 
+ 
+-var _stripHtml = function ( d ) {
+-	return d
+-		.replace( _re_html, '' ) // Complete tags
+-		.replace(/<script/i, ''); // Safety for incomplete script tag
++
++const createDOMPurify = require('dompurify');
++const { JSDOM } = require('jsdom');
++
++const window = new JSDOM('').window;
++const DOMPurify = createDOMPurify(window);
++
++var _stripHtml = function (d) {
++	if (typeof d !== 'string') return d;
++
++	return DOMPurify.sanitize(d, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] });
+ };
+ 
+ 
++
++
+ /**
+  * Determine if all values in the array are unique. This means we can short
+  * cut the _unique method at the cost of a single loop. A sorted array is used

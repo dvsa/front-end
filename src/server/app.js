@@ -10,7 +10,6 @@ import nunjucks from 'nunjucks';
 import nodeDir from 'node-dir';
 import compression from 'compression';
 import etag from 'etag';
-import minifyHTML from 'express-minify-html';
 import helmet from 'helmet';
 import errorhandler from 'errorhandler';
 import _ from 'lodash';

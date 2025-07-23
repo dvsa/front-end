@@ -4,7 +4,7 @@ const { merge } = require('webpack-merge');
 const moment = require('moment');
 const common = require('./webpack.config.common.js');
 const packageJSON = require('./../package.json');
-const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 const banner = `
   Name: ${packageJSON.name}/[name]
@@ -29,8 +29,24 @@ module.exports = merge(common, {
     new webpack.BannerPlugin({
       banner
     }),
-    new ImageminWebpackPlugin({
+    new ImageMinimizerPlugin({
+      minimizer: {
+        implementation: ImageMinimizerPlugin.imageminGenerate,
+        options: {
+          plugins: [
+            ['mozjpeg', { quality: 75 }],
+            ['pngquant', { quality: [0.6, 0.8] }],
+            ['svgo', {
+              plugins: [
+                { name: 'removeViewBox', active: false },
+                { name: 'preset-default' }
+              ]
+            }]
+          ]
+        }
+      },
       test: /\.(jpe?g|png|gif|svg)$/i
     })
+
   ],
 });

@@ -13,7 +13,7 @@ var _prismNormalizeWhitespace = require('prismjs/plugins/normalize-whitespace/pr
 
 var _prismNormalizeWhitespace2 = _interopRequireDefault(_prismNormalizeWhitespace);
 
-var _htmlMinifier = require('html-minifier');
+const { minify } = require('html-minifier-terser');
 
 var _pretty = require('pretty');
 
@@ -27,12 +27,12 @@ function _interopRequireDefault(obj) {
  * Prettifies and highlights code using prismjs
  *
  * @param {String} code Markup code to highlight
- * @returns {String} Highlighted code in HTML markup
+ * @returns {Promise<String>} Highlighted code in HTML markup
  *
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const highlightCode = (exports.highlightCode = code => {
+const highlightCode = (exports.highlightCode = async code => {
   let nw = new _prismNormalizeWhitespace2.default({
     'remove-trailing': true,
     'remove-indent': false,
@@ -40,9 +40,8 @@ const highlightCode = (exports.highlightCode = code => {
     'right-trim': true,
   });
 
-  // Minifies the html code
-  // This is done to normalize it before making it pretty
-  let cleanHTML = (0, _htmlMinifier.minify)(code, {
+  // Minifies the html code asynchronously
+  let cleanHTML = await minify(code, {
     html5: true,
     collapseWhitespace: true,
     preserveLineBreaks: true,
@@ -65,14 +64,14 @@ const highlightCode = (exports.highlightCode = code => {
  * Wraps the code in a preview div used for styleguide pages
  *
  * @param {String} code Code to wrap in preview markup
- * @returns {String} Code wrapped in preview markup
+ * @returns {Promise<String>} Code wrapped in preview markup
  *
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const wrapCodeWithPreviwAndPrism = (exports.wrapCodeWithPreviwAndPrism = code => {
+const wrapCodeWithPreviwAndPrism = (exports.wrapCodeWithPreviwAndPrism = async code => {
   // Highlight the code using prismjs
-  let prismCode = highlightCode(code);
+  let prismCode = await highlightCode(code);
 
   // Create the developer preview output
   let preview = `
@@ -99,17 +98,17 @@ const wrapCodeWithPreviwAndPrism = (exports.wrapCodeWithPreviwAndPrism = code =>
 });
 
 /**
- * Wraps the code in a div used for full page peviews
+ * Wraps the code in a div used for full page previews
  *
  * @param {String} code Code to wrap in full page markup preview
- * @returns {String} Code wrapped in full page markup preview
+ * @returns {Promise<String>} Code wrapped in full page markup preview
  *
  * @since 1.1.0
  * @author Tameem Safi <t.safi@kainos.com>
  */
-const wrapCodeWithPrismForFullPagePreview = (exports.wrapCodeWithPrismForFullPagePreview = code => {
+const wrapCodeWithPrismForFullPagePreview = (exports.wrapCodeWithPrismForFullPagePreview = async code => {
   // Highlight the code using prismjs
-  let prismCode = highlightCode(code);
+  let prismCode = await highlightCode(code);
 
   // Return the new HTML
   // Combination of the preview and prism code highlighting

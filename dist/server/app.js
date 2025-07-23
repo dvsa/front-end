@@ -17,7 +17,6 @@ var _nunjucks = _interopRequireDefault(require("nunjucks"));
 var _nodeDir = _interopRequireDefault(require("node-dir"));
 var _compression = _interopRequireDefault(require("compression"));
 var _etag = _interopRequireDefault(require("etag"));
-var _expressMinifyHtml = _interopRequireDefault(require("express-minify-html"));
 var _helmet = _interopRequireDefault(require("helmet"));
 var _errorhandler = _interopRequireDefault(require("errorhandler"));
 var _lodash = _interopRequireDefault(require("lodash"));

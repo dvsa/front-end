@@ -20,6 +20,8 @@ var _etag = _interopRequireDefault(require("etag"));
 var _helmet = _interopRequireDefault(require("helmet"));
 var _errorhandler = _interopRequireDefault(require("errorhandler"));
 var _lodash = _interopRequireDefault(require("lodash"));
+var _cookieParser = _interopRequireDefault(require("cookie-parser"));
+var _csurf = _interopRequireDefault(require("csurf"));
 var _routes = require("./config/routes");
 var _constants = require("./config/constants");
 var Middlewares = _interopRequireWildcard(require("./middlewares"));
@@ -38,7 +40,10 @@ var startApp = exports.startApp = /*#__PURE__*/function () {
       while (1) switch (_context2.n) {
         case 0:
           // Create express server
-          app = (0, _express["default"])(); // Create nunjucks fileloader instance for the views folder
+          app = (0, _express["default"])();
+          app.use((0, _cookieParser["default"])());
+
+          // Create nunjucks fileloader instance for the views folder
           nunjucksFileLoader = new _nunjucks["default"].FileSystemLoader(_path["default"].resolve('src', 'server', 'views'), {
             noCache: true
           }); // Create a nunjucks instance to be used for the view engine
@@ -161,9 +166,21 @@ var startApp = exports.startApp = /*#__PURE__*/function () {
                 checkPeriod: 86400000
               }),
               // 20 minutes
+              secure: !(0, _constants.isDevelopment)(),
               maxAge: 1200000
             }
           }));
+
+          // CSRF protection middleware after session and cookie parser
+          app.use((0, _csurf["default"])({
+            cookie: false
+          }));
+
+          // Middleware to expose CSRF token to views
+          app.use(function (req, res, next) {
+            res.locals.csrfToken = req.csrfToken();
+            next();
+          });
 
           // Express flash messaging middleware
           // https://www.npmjs.com/package/connect-flash

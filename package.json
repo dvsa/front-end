@@ -38,6 +38,7 @@
     "consolidate": "^0.10.0",
     "cookie-session": "^2.1.0",
     "core-js": "^3.x",
+    "csurf": "^1.11.0",
     "datatables": "^1.10.18",
     "datatables.net": "^1.13.11",
     "datatables.net-responsive": "^2.5.1",

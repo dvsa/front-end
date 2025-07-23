@@ -15,6 +15,7 @@
 
 
     <form id="Login" name="Login" action="/login" method="post" autocomplete="new-password">
+    <input type="hidden" name="_csrf" value="{{ csrfToken }}">
     <fieldset class="sign-in-form">
     <legend class="form-title heading-large">Sign in</legend>
 

@@ -47,6 +47,7 @@
           <h2 class="heading-medium">Why are you aborting the site review?</h2>
 
           <form action="/mot-test/327661242214/cancel" method="POST" data-form-state-index="0">
+                  <input type="hidden" name="_csrf" value="{{ csrfToken }}">
                   <legend class="u-space-b15">Choose a reason from the list</legend>
 
                   <div id="reasonForCancelId" class="form-group">

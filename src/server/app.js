@@ -13,6 +13,8 @@ import etag from 'etag';
 import helmet from 'helmet';
 import errorhandler from 'errorhandler';
 import _ from 'lodash';
+import cookieParser from 'cookie-parser';
+import csurf from 'csurf';
 
 import { allRoutes } from './config/routes';
 import { CONFIG, isDevelopment, isTesting } from './config/constants';
@@ -23,6 +25,8 @@ import * as REPO_PACKAGE_JSON from './../../package.json';
 export const startApp = async () => {
   // Create express server
   const app = express();
+
+  app.use(cookieParser());
 
   // Create nunjucks fileloader instance for the views folder
   const nunjucksFileLoader = new nunjucks.FileSystemLoader(path.resolve('src', 'server', 'views'), {
@@ -144,10 +148,24 @@ export const startApp = async () => {
           checkPeriod: 86400000,
         }),
         // 20 minutes
+        secure: !isDevelopment(),
         maxAge: 1200000,
       },
     })
   );
+
+  // CSRF protection middleware after session and cookie parser
+  app.use(
+    csurf({
+      cookie: false,
+    })
+  );
+
+  // Middleware to expose CSRF token to views
+  app.use((req, res, next) => {
+    res.locals.csrfToken = req.csrfToken();
+    next();
+  });
 
   // Express flash messaging middleware
   // https://www.npmjs.com/package/connect-flash

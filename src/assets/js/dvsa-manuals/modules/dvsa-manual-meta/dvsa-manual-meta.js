@@ -142,7 +142,9 @@ export class DvsaManualMeta {
     this.state.historySections.forEach(historySection => {
       if (!historySection.showHideLinkElement || !historySection.historyElement) return;
       // Change show/hide text
-      historySection.showHideLinkElement.innerHTML = historySection.open ? historySection.openText : historySection.hiddenText;
+      historySection.showHideLinkElement.innerHTML = DOMPurify.sanitize(
+        historySection.open ? historySection.openText : historySection.hiddenText
+      );
       // Show/hide history
       toggleClass(historySection.historyElement, this.classnames.openHistory, historySection.open);
       // Update aria

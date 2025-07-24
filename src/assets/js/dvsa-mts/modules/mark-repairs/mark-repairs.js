@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { delegateEvent, closestParentOfEl, serializeForm, toggleClass } from './../../../shared';
+import DOMPurify from 'dompurify';
 
 export class MarkRepairs {
   constructor() {
@@ -145,11 +146,11 @@ export class MarkRepairs {
           this.updateBrakeTest(data.brakeTestOutcome, data.brakesTested, data.brakeTestResults, data.disableSubmitButton);
           element.disabled = false;
         } else {
-          itemStatus.innerHTML = tryAgainMessage;
+          itemStatus.innerHTML = DOMPurify.sanitize(tryAgainMessage);
         }
       })
       .catch(error => {
-        itemStatus.innerHTML = tryAgainMessage;
+        itemStatus.innerHTML = DOMPurify.sanitize(tryAgainMessage);
         element.disabled = false;
       });
   };

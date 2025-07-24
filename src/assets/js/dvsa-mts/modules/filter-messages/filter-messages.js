@@ -1,6 +1,7 @@
 import { FILTER_CONFIG } from './config';
 import { addEventListenerToEl } from '../../../shared/misc/events';
 import { getQueryVariable } from '../../../shared/misc/get-query';
+import DOMPurify from 'dompurify';
 
 export class MessagesFilter {
   // constructor runs on instantiated
@@ -135,11 +136,11 @@ export class MessagesFilter {
     let filterNotice = document.querySelector('.message-panel__notice');
     filterNotice.style.display = 'none';
     if (this.state.currFilters.length === 0) {
-      filterNotice.innerHTML = FILTER_CONFIG.data.noFilterNotice;
+      filterNotice.innerHTML = DOMPurify.sanitize(FILTER_CONFIG.data.noFilterNotice);
       filterNotice.style.display = 'block';
     } else {
       if (messagesItems.length === 0 || messagesItems.length === hiddenMessageCount) {
-        filterNotice.innerHTML = FILTER_CONFIG.data.noMessagesNotice;
+        filterNotice.innerHTML = DOMPurify.sanitize(FILTER_CONFIG.data.noMessagesNotice);
         filterNotice.style.display = 'block';
       }
     }

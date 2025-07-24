@@ -1,6 +1,8 @@
 /**
  * @preserve HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
  */
+import DOMPurify from 'dompurify';
+
 (function(window, document) {
   /*jshint evil:true */
   /** version */
@@ -33,7 +35,8 @@
   (function() {
     try {
       var a = document.createElement('a');
-      a.innerHTML = '<xyz></xyz>';
+      var xyz = document.createElement('xyz');
+      a.appendChild(xyz);
       //if the hidden property is implemented we can assume, that the browser supports basic HTML5 Styles
       supportsHtml5Styles = 'hidden' in a;
 
@@ -69,7 +72,7 @@
     var p = ownerDocument.createElement('p'),
       parent = ownerDocument.getElementsByTagName('head')[0] || ownerDocument.documentElement;
 
-    p.innerHTML = 'x<style>' + cssText + '</style>';
+    p.innerHTML = DOMPurify.sanitize('x<style>' + cssText + '</style>');
     return parent.insertBefore(p.lastChild, parent.firstChild);
   }
 

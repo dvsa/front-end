@@ -1,3 +1,5 @@
+import DOMPurify from 'dompurify';
+
 export class SafarFontFix {
   constructor() {
     this.isSafari =
@@ -26,7 +28,7 @@ export class SafarFontFix {
       let newStyleElement = document.createElement('style');
       newStyleElement.setAttribute('type', 'text/css');
       newStyleElement.setAttribute('media', 'print');
-      newStyleElement.innerHTML = printStylesFixForSarai;
+      newStyleElement.innerHTML = DOMPurify.sanitize(printStylesFixForSarai);
       this.elements.head.appendChild(newStyleElement);
     }
   };

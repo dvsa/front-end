@@ -1,6 +1,7 @@
 import { addEventListenerToEl, isElementInViewport, toggleClass } from './../../../shared';
 import throttle from 'lodash/throttle';
 import md5 from 'md5';
+import DOMPurify from 'dompurify';
 
 export class ManualSmartSurvey {
   constructor() {
@@ -86,7 +87,7 @@ export class ManualSmartSurvey {
       if (!isElementInViewport(item.smartSurveyElement, 200)) return;
 
       // Add iframe
-      item.smartSurveyElement.innerHTML = this.generateIframeCode(item.src);
+      item.smartSurveyElement.innerHTML = DOMPurify.sanitize(this.generateIframeCode(item.src));
 
       // Set attached state for element
       this.state.smartsurveys[index].attached = true;

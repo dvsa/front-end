@@ -1,5 +1,6 @@
 import { addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
 import { TEXT_TO_SPEECH_CONFIG } from './config';
+import DOMPurify from 'dompurify';
 
 export class TextToSpeech {
   constructor() {
@@ -108,7 +109,7 @@ export class TextToSpeech {
     button.classList.add(`${TEXT_TO_SPEECH_CONFIG.classes.audioBtn}`);
 
     // Assigns the button with the text 'Play'
-    button.innerHTML = TEXT_TO_SPEECH_CONFIG.buttonInnerHtml;
+    button.innerHTML = DOMPurify.sanitize(TEXT_TO_SPEECH_CONFIG.buttonInnerHtml);
 
     // Adds click event listener to element
     addEventListenerToEl(button, 'click', this.playAudioClickHandler);

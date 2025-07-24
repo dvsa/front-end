@@ -1,5 +1,6 @@
 import { addEventListenerToEl, closestParentOfEl } from './../../../shared/misc';
 import { SPEECH_TO_TEXT_CONFIG } from './config';
+import DOMPurify from 'dompurify';
 
 export class SpeechToText {
   constructor(recordButton) {
@@ -87,7 +88,7 @@ export class SpeechToText {
     this.state.isRecording = true;
     this.elements.submitBtn.disabled = true;
     this.elements.input.disabled = true;
-    this.elements.recordButton.innerHTML = SPEECH_TO_TEXT_CONFIG.content.recording;
+    this.elements.recordButton.innerHTML = DOMPurify.sanitize(SPEECH_TO_TEXT_CONFIG.content.recording);
   };
 
   /**
@@ -97,6 +98,6 @@ export class SpeechToText {
     this.state.isRecording = false;
     this.elements.submitBtn.disabled = false;
     this.elements.input.disabled = false;
-    this.elements.recordButton.innerHTML = SPEECH_TO_TEXT_CONFIG.content.init;
+    this.elements.recordButton.innerHTML = DOMPurify.sanitize(SPEECH_TO_TEXT_CONFIG.content.init);
   };
 }

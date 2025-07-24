@@ -1,4 +1,5 @@
 import { toggleClass, delegateEvent } from './../../../shared';
+import DOMPurify from 'dompurify';
 
 export class DvsaManualMeta {
   constructor() {
@@ -138,17 +139,24 @@ export class DvsaManualMeta {
    * @author Tameem Safi <t.safi@kainos.com>
    * @since 1.2.3
    */
+
   updateDOMBasedOnState = callback => {
     this.state.historySections.forEach(historySection => {
       if (!historySection.showHideLinkElement || !historySection.historyElement) return;
-      // Change show/hide text
-      historySection.showHideLinkElement.innerHTML = DOMPurify.sanitize(
-        historySection.open ? historySection.openText : historySection.hiddenText
-      );
+
+      const rawHtml = historySection.open ? historySection.openText : historySection.hiddenText;
+
+      historySection.showHideLinkElement.innerHTML = DOMPurify.sanitize(rawHtml, {
+        ALLOWED_TAGS: ['span'], // ← allow only what you absolutely need
+        ALLOWED_ATTR: ['class'],
+      });
+
       // Show/hide history
       toggleClass(historySection.historyElement, this.classnames.openHistory, historySection.open);
-      // Update aria
+
+      // Update ARIA attributes
       historySection.showHideLinkElement.setAttribute(this.attributes.aria.expanded, historySection.open);
+
       if (historySection.open) {
         historySection.historyElement.removeAttribute(this.attributes.aria.hidden);
       } else {

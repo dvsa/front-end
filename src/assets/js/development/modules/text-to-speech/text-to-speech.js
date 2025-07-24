@@ -109,7 +109,10 @@ export class TextToSpeech {
     button.classList.add(`${TEXT_TO_SPEECH_CONFIG.classes.audioBtn}`);
 
     // Assigns the button with the text 'Play'
-    button.innerHTML = DOMPurify.sanitize(TEXT_TO_SPEECH_CONFIG.buttonInnerHtml);
+    button.innerHTML = DOMPurify.sanitize(TEXT_TO_SPEECH_CONFIG.buttonInnerHtml, {
+      ALLOWED_TAGS: [],
+      ALLOWED_ATTR: [],
+    });
 
     // Adds click event listener to element
     addEventListenerToEl(button, 'click', this.playAudioClickHandler);

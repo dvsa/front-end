@@ -4,23 +4,17 @@ Object.defineProperty(exports, '__esModule', {
   value: true
 });
 exports.wrapCodeWithPrismForFullPagePreview = exports.wrapCodeWithPreviwAndPrism = exports.highlightCode = undefined;
-
 var _prismjs = require('prismjs');
-
 var _prismjs2 = _interopRequireDefault(_prismjs);
-
 var _prismNormalizeWhitespace = require('prismjs/plugins/normalize-whitespace/prism-normalize-whitespace');
-
 var _prismNormalizeWhitespace2 = _interopRequireDefault(_prismNormalizeWhitespace);
-
 var _htmlMinifier = require('html-minifier');
-
 var _pretty = require('pretty');
-
 var _pretty2 = _interopRequireDefault(_pretty);
-
 function _interopRequireDefault(obj) {
-  return obj && obj.__esModule ? obj : { default: obj };
+  return obj && obj.__esModule ? obj : {
+    default: obj
+  };
 }
 
 /**

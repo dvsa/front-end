@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.unpinSpecialNotice = void 0;
 /**
  * GET Middleware - unpins special notice
  *
@@ -10,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
-const unpinSpecialNotice = exports.unpinSpecialNotice = (req, res, next) => {
+const unpinSpecialNotice = (req, res, next) => {
   // unpins message
   req.message.state.isPinned = false;
 
@@ -20,3 +21,4 @@ const unpinSpecialNotice = exports.unpinSpecialNotice = (req, res, next) => {
   // Calls next middleware method
   next();
 };
+exports.unpinSpecialNotice = unpinSpecialNotice;

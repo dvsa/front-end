@@ -1,13 +1,14 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-const allRequiredKeys = exports.allRequiredKeys = () => {
+exports.filterFormData = exports.allSecurityQuestions = exports.allRequiredKeys = void 0;
+const allRequiredKeys = () => {
   return ['email', 'firstname', 'lastname', 'day', 'month', 'year', 'address1', 'townOrCity', 'postCode', 'phoneNumber', 'password', 'questionOne', 'questionOneAnswer', 'questionTwo', 'questionTwoAnswer'];
 };
-
-const allSecurityQuestions = exports.allSecurityQuestions = () => {
+exports.allRequiredKeys = allRequiredKeys;
+const allSecurityQuestions = () => {
   return [{
     value: 'select',
     text: 'Please select'
@@ -25,13 +26,12 @@ const allSecurityQuestions = exports.allSecurityQuestions = () => {
     text: 'Where did you go on your first memorable holiday?'
   }];
 };
-
-const filterFormData = exports.filterFormData = formData => {
+exports.allSecurityQuestions = allSecurityQuestions;
+const filterFormData = formData => {
   if (!formData) return false;
 
   // List of all allowed form values
   const requiredKeys = allRequiredKeys();
-
   const allowKeys = [...requiredKeys, 'emailConfirmation', 'middlename', 'address2', 'address3', 'passwordConfirmation'];
 
   // Temporary object for later use
@@ -49,3 +49,4 @@ const filterFormData = exports.filterFormData = formData => {
   // Return all filtered data
   return filteredValues;
 };
+exports.filterFormData = filterFormData;

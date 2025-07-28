@@ -1,13 +1,12 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _populateActivity = require('./populateActivity');
-
+var _populateActivity = require("./populateActivity");
 Object.keys(_populateActivity).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _populateActivity[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -15,11 +14,10 @@ Object.keys(_populateActivity).forEach(function (key) {
     }
   });
 });
-
-var _unpopulateAssessmentType = require('./unpopulateAssessmentType');
-
+var _unpopulateAssessmentType = require("./unpopulateAssessmentType");
 Object.keys(_unpopulateAssessmentType).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _unpopulateAssessmentType[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -27,11 +25,10 @@ Object.keys(_unpopulateAssessmentType).forEach(function (key) {
     }
   });
 });
-
-var _getMonth = require('./getMonth');
-
+var _getMonth = require("./getMonth");
 Object.keys(_getMonth).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _getMonth[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {

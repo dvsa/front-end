@@ -1,84 +1,30 @@
-'use strict';
+"use strict";
 
+require("core-js/modules/esnext.weak-map.delete-all.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.allRoutes = undefined;
-
-var _express = require('express');
-
-var _main = require('../controllers/main.controller');
-
-var mainController = _interopRequireWildcard(_main);
-
-var _misc = require('../controllers/misc.controller');
-
-var miscController = _interopRequireWildcard(_misc);
-
-var _recalls = require('../controllers/api/v1/recalls.controller');
-
-var recallsController = _interopRequireWildcard(_recalls);
-
-var _createAccount = require('../controllers/create-account');
-
-var createAccountController = _interopRequireWildcard(_createAccount);
-
-var _compareTests = require('../controllers/compare-tests/compare-tests');
-
-var compareTestsController = _interopRequireWildcard(_compareTests);
-
-var _suspendTesters = require('../controllers/annual-assessment-tool/suspend-testers');
-
-var suspendTestersController = _interopRequireWildcard(_suspendTesters);
-
-var _motTest = require('../controllers/mot-test/mot-test');
-
-var motTestResultsController = _interopRequireWildcard(_motTest);
-
-var _speechToTextSearch = require('../controllers/speech-to-text-search/speech-to-text-search');
-
-var speechToTextController = _interopRequireWildcard(_speechToTextSearch);
-
-var _siteReview = require('../controllers/site-review/site-review');
-
-var siteReviewController = _interopRequireWildcard(_siteReview);
-
-var _brakeTest = require('../controllers/brake-test/brake-test');
-
-var brakeTestController = _interopRequireWildcard(_brakeTest);
-
-var _mtsMessages = require('../controllers/mts-messages');
-
-var messagingController = _interopRequireWildcard(_mtsMessages);
-
-var _vtsChanges = require('../controllers/vts-changes');
-
-var vtsChangeController = _interopRequireWildcard(_vtsChanges);
-
-var _vsiDuringTest = require('../controllers/vsi-during-test');
-
-var vsiDuringTestController = _interopRequireWildcard(_vsiDuringTest);
-
-var _motHistoryData = require('../controllers/mot-history-data');
-
-var mothData = _interopRequireWildcard(_motHistoryData);
-
-var _recalls2 = require('../controllers/recalls');
-
-var recalls = _interopRequireWildcard(_recalls2);
-
-var _moth = require('../controllers/moth');
-
-var mothController = _interopRequireWildcard(_moth);
-
-var _authentication = require('../middlewares/authentication');
-
-var PrototypeAuth = _interopRequireWildcard(_authentication);
-
-var _constants = require('../config/constants');
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
+exports.allRoutes = void 0;
+var _express = require("express");
+var mainController = _interopRequireWildcard(require("../controllers/main.controller"));
+var miscController = _interopRequireWildcard(require("../controllers/misc.controller"));
+var recallsController = _interopRequireWildcard(require("../controllers/api/v1/recalls.controller"));
+var createAccountController = _interopRequireWildcard(require("../controllers/create-account"));
+var compareTestsController = _interopRequireWildcard(require("../controllers/compare-tests/compare-tests"));
+var suspendTestersController = _interopRequireWildcard(require("../controllers/annual-assessment-tool/suspend-testers"));
+var motTestResultsController = _interopRequireWildcard(require("../controllers/mot-test/mot-test"));
+var speechToTextController = _interopRequireWildcard(require("../controllers/speech-to-text-search/speech-to-text-search"));
+var siteReviewController = _interopRequireWildcard(require("../controllers/site-review/site-review"));
+var brakeTestController = _interopRequireWildcard(require("../controllers/brake-test/brake-test"));
+var messagingController = _interopRequireWildcard(require("../controllers/mts-messages"));
+var vtsChangeController = _interopRequireWildcard(require("../controllers/vts-changes"));
+var vsiDuringTestController = _interopRequireWildcard(require("../controllers/vsi-during-test"));
+var mothData = _interopRequireWildcard(require("../controllers/mot-history-data"));
+var recalls = _interopRequireWildcard(require("../controllers/recalls"));
+var mothController = _interopRequireWildcard(require("../controllers/moth"));
+var PrototypeAuth = _interopRequireWildcard(require("../middlewares/authentication"));
+var _constants = require("../config/constants");
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
 const router = (0, _express.Router)();
 
 /* Mount Authorisation to all prototype paths when in Prod.
@@ -152,7 +98,6 @@ router.post('/prototypes/brake-test-entry', brakeTestController.postBrakeEntry);
 
 // MTS Messaging
 router.param('messageIndex', messagingController.isValidMessage);
-
 router.get('/prototypes/messages/homepage', [messagingController.setupMessages, messagingController.setNotificationCounts, messagingController.getHomepage]);
 router.get('/prototypes/messages/archive', messagingController.getArchive);
 router.get('/prototypes/messages/inbox', messagingController.getMessages);
@@ -195,11 +140,9 @@ router.post('/prototypes/vsi-during-test/odometer', vsiDuringTestController.post
 
 // MOTH Data
 router.post('/prototypes/mot-history-data/:version/enter-v5c', [mothData.checkV5c, mothData.postV5c]);
-
 router.get('/prototypes/mot-history-data/:version/history-results-audi', mothData.initViewData);
 router.get('/prototypes/mot-history-data/:version/enter-v5c', mothData.initViewData);
 router.get('/prototypes/mot-history-data/:version/enter-v5c-fail', mothData.initViewData);
-
 router.get('/prototypes/mot-history-data/:version/enter-v5c-error', mothData.getError);
 router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error1', mothData.getError);
 router.get('/prototypes/mot-history-data/cvs-v3/history-results-audi-error2', mothData.getError);
@@ -220,5 +163,4 @@ router.get('*', miscController.viewFileRoute);
 
 // MOT history vehicle type
 router.post('/prototypes/mot-history-data/cvs/what-vehicle', mothController.postMothType);
-
 const allRoutes = exports.allRoutes = router;

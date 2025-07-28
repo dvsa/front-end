@@ -1,14 +1,15 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.initViewData = void 0;
 /**
  * Returns an empty equipment change declaration
  *
  * @returns {Object} - Equipment change answers
  */
-const initViewData = exports.initViewData = () => {
+const initViewData = () => {
   return {
     typeNames: [],
     version: '',
@@ -32,3 +33,4 @@ const initViewData = exports.initViewData = () => {
     }
   };
 };
+exports.initViewData = initViewData;

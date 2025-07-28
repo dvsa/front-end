@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.isValidMessage = void 0;
 /**
  * GET Middleware - Checks to see if message exists in messages array
  *
@@ -11,7 +12,7 @@ Object.defineProperty(exports, "__esModule", {
  * @param {Express.Response} next - Express next object
  * @param {Int} messageID - Message ID number
  */
-const isValidMessage = exports.isValidMessage = (req, res, next, messageID) => {
+const isValidMessage = (req, res, next, messageID) => {
   // Helper variables
   const messages = req.session.viewData.messages;
   const archive = req.session.viewData.archive;
@@ -31,3 +32,4 @@ const isValidMessage = exports.isValidMessage = (req, res, next, messageID) => {
   // Run next middleware stack
   next();
 };
+exports.isValidMessage = isValidMessage;

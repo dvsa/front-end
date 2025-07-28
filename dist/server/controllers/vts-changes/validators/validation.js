@@ -1,14 +1,11 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateStage = exports.validateType = undefined;
-
-var _helpers = require('../helpers/helpers');
-
-var _getLastInUrl = require('../../site-review/helpers/getLastInUrl.js');
-
+exports.validateType = exports.validateStage = void 0;
+var _helpers = require("../helpers/helpers");
+var _getLastInUrl = require("../../site-review/helpers/getLastInUrl.js");
 /**
  * Validation middleware function used to populate errors on
  * equipment type
@@ -17,7 +14,7 @@ var _getLastInUrl = require('../../site-review/helpers/getLastInUrl.js');
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-const validateType = exports.validateType = (req, res, next) => {
+const validateType = (req, res, next) => {
   // Get submitted values
   const formData = req.body;
   // Remove any that are null (eg submit button)
@@ -26,7 +23,9 @@ const validateType = exports.validateType = (req, res, next) => {
   // If form data is empty...
   if ((0, _helpers.isEmpty)(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions.type.errors.push({ error: 'Choose an equipment type' });
+    req.session.viewData.questions.type.errors.push({
+      error: 'Choose an equipment type'
+    });
     return next();
   }
   // If no errors, reset and pass on
@@ -42,7 +41,8 @@ const validateType = exports.validateType = (req, res, next) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-const validateStage = exports.validateStage = (req, res, next) => {
+exports.validateType = validateType;
+const validateStage = (req, res, next) => {
   const stageName = (0, _getLastInUrl.getLastInUrl)(req);
   // Get submitted values
   const formData = req.body;
@@ -52,10 +52,13 @@ const validateStage = exports.validateStage = (req, res, next) => {
   // If form data is empty...
   if ((0, _helpers.isEmpty)(formData)) {
     // Pass on with errors in session
-    req.session.viewData.questions[`${stageName}`].errors.push({ error: 'Select an answer' });
+    req.session.viewData.questions[`${stageName}`].errors.push({
+      error: 'Select an answer'
+    });
     return next();
   }
   // If no errors, empty errors and pass on
   req.session.viewData.questions[`${stageName}`].errors = [];
   return next();
 };
+exports.validateStage = validateStage;

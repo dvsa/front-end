@@ -1,17 +1,13 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.postV5c = exports.getError = exports.checkV5c = exports.initViewData = undefined;
-
-var _initData = require('./initData.js');
-
-var _helpers = require('../vts-changes/helpers/helpers.js');
-
+exports.postV5c = exports.initViewData = exports.getError = exports.checkV5c = void 0;
+var _initData = require("./initData.js");
+var _helpers = require("../vts-changes/helpers/helpers.js");
 const validV5c = '61943311568';
-
-const initViewData = exports.initViewData = (req, res, next) => {
+const initViewData = (req, res, next) => {
   req.session.viewData = req.session.viewData || (0, _initData.initData)();
   req.session.viewData.targetCert = 'pass';
   console.log('init view data');
@@ -20,34 +16,38 @@ const initViewData = exports.initViewData = (req, res, next) => {
   }
   next();
 };
-
-const checkV5c = exports.checkV5c = (req, res, next) => {
+exports.initViewData = initViewData;
+const checkV5c = (req, res, next) => {
   req.session.viewData.invalid = false;
   if (req.body.v5c !== validV5c) {
     req.session.viewData.invalid = true;
   }
   next();
 };
-
-const getError = exports.getError = (req, res) => {
+exports.checkV5c = checkV5c;
+const getError = (req, res) => {
   let version = req.session.viewData.version;
   let targetCert = req.session.viewData.targetCert;
   // Version 3 only
   if (version.indexOf('3') !== -1 && targetCert == 'pass') {
     req.session.viewData.targetCert = 'pass';
-    return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error1`, { viewData: req.session.viewData });
+    return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error1`, {
+      viewData: req.session.viewData
+    });
   } else if (targetCert == 'fail') {
-    return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error2`, { viewData: req.session.viewData });
+    return res.render(`prototypes/mot-history-data/${version}/history-results-audi-error2`, {
+      viewData: req.session.viewData
+    });
   }
-
-  return res.render(`prototypes/mot-history-data/${version}/enter-v5c-error`, { viewData: req.session.viewData });
+  return res.render(`prototypes/mot-history-data/${version}/enter-v5c-error`, {
+    viewData: req.session.viewData
+  });
 };
-
-const postV5c = exports.postV5c = (req, res, next) => {
+exports.getError = getError;
+const postV5c = (req, res, next) => {
   let version = req.params.version;
   let v5c = req.body.v5c;
   let targetCert = req.session.viewData.targetCert;
-
   req.session.viewData.v5c = v5c;
   req.session.viewData.version = version;
 
@@ -55,7 +55,6 @@ const postV5c = exports.postV5c = (req, res, next) => {
   if (req.session.viewData.invalid && version.indexOf('3') == -1) {
     return res.redirect(`/prototypes/mot-history-data/${version}/enter-v5c-error`);
   }
-
   if (targetCert !== 'fail' && version.indexOf('3') == -1) {
     return res.redirect(`/prototypes/mot-history-data/${version}/download-certificate`);
   }
@@ -83,3 +82,4 @@ const postV5c = exports.postV5c = (req, res, next) => {
   // Version 1 and 2 download fail cert
   return res.redirect(`/prototypes/mot-history-data/${version}/download-certificate-fail`);
 };
+exports.postV5c = postV5c;

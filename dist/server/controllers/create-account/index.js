@@ -1,13 +1,12 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _validators = require('./validators');
-
+var _validators = require("./validators");
 Object.keys(_validators).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _validators[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -15,11 +14,10 @@ Object.keys(_validators).forEach(function (key) {
     }
   });
 });
-
-var _root = require('./root');
-
+var _root = require("./root");
 Object.keys(_root).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _root[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -27,11 +25,10 @@ Object.keys(_root).forEach(function (key) {
     }
   });
 });
-
-var _details = require('./details');
-
+var _details = require("./details");
 Object.keys(_details).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _details[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -39,11 +36,10 @@ Object.keys(_details).forEach(function (key) {
     }
   });
 });
-
-var _email = require('./email');
-
+var _email = require("./email");
 Object.keys(_email).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _email[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -51,11 +47,10 @@ Object.keys(_email).forEach(function (key) {
     }
   });
 });
-
-var _contactDetails = require('./contact-details');
-
+var _contactDetails = require("./contact-details");
 Object.keys(_contactDetails).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _contactDetails[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -63,11 +58,10 @@ Object.keys(_contactDetails).forEach(function (key) {
     }
   });
 });
-
-var _securityQuestions = require('./security-questions');
-
+var _securityQuestions = require("./security-questions");
 Object.keys(_securityQuestions).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _securityQuestions[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -75,11 +69,10 @@ Object.keys(_securityQuestions).forEach(function (key) {
     }
   });
 });
-
-var _password = require('./password');
-
+var _password = require("./password");
 Object.keys(_password).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _password[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -87,11 +80,10 @@ Object.keys(_password).forEach(function (key) {
     }
   });
 });
-
-var _review = require('./review');
-
+var _review = require("./review");
 Object.keys(_review).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (key in exports && exports[key] === _review[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {

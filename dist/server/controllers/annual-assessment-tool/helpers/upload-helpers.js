@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.isFileExtensionOfType = exports.getFileExtension = void 0;
 /**
  * Returns the file extension of a given file name
  *
@@ -11,7 +12,7 @@ Object.defineProperty(exports, "__esModule", {
  *
  * @author James Nelson <j.nelson@kainos.com>
  */
-const getFileExtension = exports.getFileExtension = fileName => {
+const getFileExtension = fileName => {
   if (typeof fileName !== 'string') return console.log('Filename is not a string value');
   return fileName.substr(fileName.lastIndexOf('.') + 1);
 };
@@ -25,8 +26,10 @@ const getFileExtension = exports.getFileExtension = fileName => {
  *
  * @author James Nelson <j.nelson@kainos.com>
  */
-const isFileExtensionOfType = exports.isFileExtensionOfType = (ext, extType) => {
+exports.getFileExtension = getFileExtension;
+const isFileExtensionOfType = (ext, extType) => {
   ext = ext.toLowerCase();
   extType = extType.toLowerCase();
   return ext == extType;
 };
+exports.isFileExtensionOfType = isFileExtensionOfType;

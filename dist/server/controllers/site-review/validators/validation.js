@@ -1,14 +1,15 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.validateDetails = exports.validateActivity = exports.validateAssessmentPost = undefined;
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var _getLastInUrl = require('../helpers/getLastInUrl');
-
+exports.validateDetails = exports.validateAssessmentPost = exports.validateActivity = void 0;
+var _getLastInUrl = require("../helpers/getLastInUrl");
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 /**
  * Returns boolean based on string length
  *
@@ -40,7 +41,7 @@ const isLessThan = (val, maxInt) => val.length < maxInt;
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next) => {
+const validateAssessmentPost = (req, res, next) => {
   let assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
 
   // If radio group not populated
@@ -49,11 +50,12 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
   // If radio value is not populated
   if (!radioValue) {
     // Push a new error to session errors
-    req.session.viewData[assessmentType].errors.push({ radioGroup: 'Choose an outcome' });
+    req.session.viewData[assessmentType].errors.push({
+      radioGroup: 'Choose an outcome'
+    });
     // Calls the next middleware method in the stack
     next();
   }
-
   radioValue = radioValue.toLowerCase();
 
   // Validation switch statement
@@ -63,19 +65,21 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isPopulated(req.body['improve-textarea'])) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Provide actions' });
+        req.session.viewData[assessmentType].errors.push({
+          textareaImprove: 'Provide actions'
+        });
       } else if (!isLessThan(req.body['improve-textarea'], 250)) {
         // If textarea exceeds limit of 2500
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaImprove: 'Enter up to 250 characters' });
+        req.session.viewData[assessmentType].errors.push({
+          textareaImprove: 'Enter up to 250 characters'
+        });
       } else {
         req.session.viewData[assessmentType].commitedLevel = 'Improve';
         req.session.viewData[assessmentType].commitedComment = req.body['improve-textarea'];
       }
-
       req.session.viewData[assessmentType][radioValue].comment = req.body['improve-textarea'];
       req.session.viewData[assessmentType][radioValue].isChecked = true;
-
       break;
 
     // If radio select was unsatisfactory
@@ -83,19 +87,21 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isPopulated(req.body['unsatisfactory-advice-textarea'])) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Provide actions' });
+        req.session.viewData[assessmentType].errors.push({
+          textareaUnsatisfactory: 'Provide actions'
+        });
       } else if (!isLessThan(req.body['unsatisfactory-advice-textarea'], 250)) {
         // If textarea exceeds limit of 2500
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaUnsatisfactory: 'Enter up to 250 characters' });
+        req.session.viewData[assessmentType].errors.push({
+          textareaUnsatisfactory: 'Enter up to 250 characters'
+        });
       } else {
         req.session.viewData[assessmentType].commitedLevel = 'Unsatisfactory';
         req.session.viewData[assessmentType].commitedComment = req.body['unsatisfactory-advice-textarea'];
       }
-
       req.session.viewData[assessmentType][radioValue].comment = req.body['unsatisfactory-advice-textarea'];
       req.session.viewData[assessmentType][radioValue].isChecked = true;
-
       break;
 
     // If radio select was satisfactory
@@ -103,15 +109,15 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
       // Ensure textarea is populated (mandatory)
       if (!isLessThan(req.body['satisfactory-textarea'], 2500)) {
         // Add an error
-        req.session.viewData[assessmentType].errors.push({ textareaSatisfactory: 'Enter up to 250 characters' });
+        req.session.viewData[assessmentType].errors.push({
+          textareaSatisfactory: 'Enter up to 250 characters'
+        });
       } else {
         req.session.viewData[assessmentType].commitedLevel = 'Satisfactory';
         req.session.viewData[assessmentType].commitedComment = req.body['satisfactory-textarea'];
       }
-
       req.session.viewData[assessmentType][radioValue].comment = req.body['satisfactory-textarea'];
       req.session.viewData[assessmentType][radioValue].isChecked = true;
-
       break;
   }
 
@@ -127,7 +133,8 @@ const validateAssessmentPost = exports.validateAssessmentPost = (req, res, next)
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-const validateActivity = exports.validateActivity = (req, res, next) => {
+exports.validateAssessmentPost = validateAssessmentPost;
+const validateActivity = (req, res, next) => {
   // Reset formData
   req.session.viewData.activity.formData = {};
 
@@ -147,9 +154,7 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
     // Calls the next middleware method in the stack
     next();
   }
-
   activityRadioResponse = activityRadioResponse.toLowerCase();
-
   switch (activityRadioResponse) {
     case 'yes':
       // Set activity response to true
@@ -163,7 +168,6 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
     case 'no':
       // Set activity response to false
       req.session.viewData.activity.formData.activityIsNotPerformed = true;
-
       req.session.viewData.activity.formData.otherReason = req.body['activity-unperformed-comment'];
 
       // Break from switch statement
@@ -196,7 +200,8 @@ const validateActivity = exports.validateActivity = (req, res, next) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-const validateDetails = exports.validateDetails = (req, res, next) => {
+exports.validateActivity = validateActivity;
+const validateDetails = (req, res, next) => {
   // Date keys
   const day = req.body['testDay'];
   const month = req.body['testMonth'];
@@ -209,7 +214,7 @@ const validateDetails = exports.validateDetails = (req, res, next) => {
   const dateValid = dayValid && monthValid && yearValid;
 
   // Persists form fields on reload
-  req.session.viewData.testerDetails = _extends({}, req.body);
+  req.session.viewData.testerDetails = _objectSpread({}, req.body);
 
   // New array for errors
   req.session.viewData.testerDetails.errors = [];
@@ -217,3 +222,4 @@ const validateDetails = exports.validateDetails = (req, res, next) => {
   // Calls the next middleware method in the stack
   next();
 };
+exports.validateDetails = validateDetails;

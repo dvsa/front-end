@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.recalls = void 0;
 const delay = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -10,8 +11,7 @@ const delay = () => {
     }, 3000);
   });
 };
-
-const recalls = exports.recalls = async (req, res) => {
+const recalls = async (req, res) => {
   await delay();
   res.status(500).send('Something broke!');
   res.json({
@@ -24,3 +24,4 @@ const recalls = exports.recalls = async (req, res) => {
     }]
   });
 };
+exports.recalls = recalls;

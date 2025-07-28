@@ -1,14 +1,28 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.branchOnActivity = exports.getSummary = exports.postDetails = exports.getDetails = exports.getChooseSection = exports.postAssessment = exports.getAssessment = exports.clearReviewSession = undefined;
-
-var _validation = require('./validators/validation.js');
-
+var _exportNames = {
+  clearReviewSession: true,
+  getAssessment: true,
+  postAssessment: true,
+  getChooseSection: true,
+  getDetails: true,
+  postDetails: true,
+  getSummary: true,
+  branchOnActivity: true
+};
+exports.postDetails = exports.postAssessment = exports.getSummary = exports.getDetails = exports.getChooseSection = exports.getAssessment = exports.clearReviewSession = exports.branchOnActivity = void 0;
+var _addToSession = require("../speech-to-text-search/helpers/add-to-session.js");
+var _initViewData = require("./initViewData.js");
+var _getLastInUrl = require("./helpers/getLastInUrl.js");
+var _getMonth = require("./helpers/getMonth.js");
+var _validation = require("./validators/validation.js");
 Object.keys(_validation).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _validation[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -16,11 +30,11 @@ Object.keys(_validation).forEach(function (key) {
     }
   });
 });
-
-var _index = require('./helpers/index.js');
-
+var _index = require("./helpers/index.js");
 Object.keys(_index).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _index[key]) return;
   Object.defineProperty(exports, key, {
     enumerable: true,
     get: function () {
@@ -28,22 +42,13 @@ Object.keys(_index).forEach(function (key) {
     }
   });
 });
-
-var _addToSession = require('../speech-to-text-search/helpers/add-to-session.js');
-
-var _initViewData = require('./initViewData.js');
-
-var _getLastInUrl = require('./helpers/getLastInUrl.js');
-
-var _getMonth = require('./helpers/getMonth.js');
-
 /**
  * GET request middleware - clears session and returns to site review landing view
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const clearReviewSession = exports.clearReviewSession = (req, res) => {
+const clearReviewSession = (req, res) => {
   // Resets session data if exists
   if (req.session.viewData) {
     req.session.viewData = (0, _initViewData.initViewData)();
@@ -59,7 +64,8 @@ const clearReviewSession = exports.clearReviewSession = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getAssessment = exports.getAssessment = (req, res) => {
+exports.clearReviewSession = clearReviewSession;
+const getAssessment = (req, res) => {
   let assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
 
   // If assessmentType type doesnt exist
@@ -72,7 +78,9 @@ const getAssessment = exports.getAssessment = (req, res) => {
   req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
 
   // Renders categories view
-  return res.render(`prototypes/site-review/assessment/${assessmentType}/index`, { viewData: req.session.viewData });
+  return res.render(`prototypes/site-review/assessment/${assessmentType}/index`, {
+    viewData: req.session.viewData
+  });
 };
 
 /**
@@ -81,9 +89,9 @@ const getAssessment = exports.getAssessment = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const postAssessment = exports.postAssessment = (req, res) => {
+exports.getAssessment = getAssessment;
+const postAssessment = (req, res) => {
   let assessmentType = (0, _getLastInUrl.getLastInUrl)(req);
-
   if (req.session.viewData[assessmentType].errors.length) {
     return res.redirect(`/prototypes/site-review/assessment/${assessmentType}`);
   }
@@ -99,10 +107,13 @@ const postAssessment = exports.postAssessment = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getChooseSection = exports.getChooseSection = (req, res) => {
+exports.postAssessment = postAssessment;
+const getChooseSection = (req, res) => {
   // Render choose section index
   req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
-  return res.render('prototypes/site-review/choose-section/index', { viewData: req.session.viewData });
+  return res.render('prototypes/site-review/choose-section/index', {
+    viewData: req.session.viewData
+  });
 };
 
 /**
@@ -112,10 +123,13 @@ const getChooseSection = exports.getChooseSection = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const getDetails = exports.getDetails = (req, res) => {
+exports.getChooseSection = getChooseSection;
+const getDetails = (req, res) => {
   // Render choose section index
   req.session.viewData = req.session.viewData || (0, _initViewData.initViewData)();
-  return res.render('prototypes/site-review/enter-details/index', { viewData: req.session.viewData });
+  return res.render('prototypes/site-review/enter-details/index', {
+    viewData: req.session.viewData
+  });
 };
 
 /**
@@ -124,8 +138,8 @@ const getDetails = exports.getDetails = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-
-const postDetails = exports.postDetails = (req, res) => {
+exports.getDetails = getDetails;
+const postDetails = (req, res) => {
   // If there are errors, reload details page
   if (req.session.viewData.testerDetails.errors.length) {
     return res.redirect(`/prototypes/site-review/enter-details`);
@@ -155,16 +169,15 @@ const postDetails = exports.postDetails = (req, res) => {
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-
-const getSummary = exports.getSummary = (req, res) => {
+exports.postDetails = postDetails;
+const getSummary = (req, res) => {
   return res.render('./prototypes/site-review/summary/index', {
     viewData: req.session.viewData
   });
 };
-
-const branchOnActivity = exports.branchOnActivity = (req, res) => {
+exports.getSummary = getSummary;
+const branchOnActivity = (req, res) => {
   const radioResponse = req.body['radio-activity'];
-
   if (!radioResponse) {
     return res.redirect('/prototypes/site-review/v5/assessment-activity');
   } else if (radioResponse === 'yes') {
@@ -173,3 +186,4 @@ const branchOnActivity = exports.branchOnActivity = (req, res) => {
     return res.redirect('/prototypes/site-review/v5/assessment-activity-choose-reason');
   }
 };
+exports.branchOnActivity = branchOnActivity;

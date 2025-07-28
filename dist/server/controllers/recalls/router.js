@@ -1,15 +1,16 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.validateType = exports.postRecallType = void 0;
 /**
  * GET Middleware - Brancing method based on radio response
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const postRecallType = exports.postRecallType = (req, res) => {
+const postRecallType = (req, res) => {
   // If radio response === other
   if (req.radioResponse === 'other') {
     // Redirect to component make
@@ -27,7 +28,8 @@ const postRecallType = exports.postRecallType = (req, res) => {
  * @param {Express.Response} res - Express response object
  * @param {Express.Response} next - Express next object
  */
-const validateType = exports.validateType = (req, res, next) => {
+exports.postRecallType = postRecallType;
+const validateType = (req, res, next) => {
   // Gets reference to radio response
   const radioResponse = req.body['radio-recalls-group'];
 
@@ -43,3 +45,4 @@ const validateType = exports.validateType = (req, res, next) => {
   // Call next middleware function in middleware stack
   next();
 };
+exports.validateType = validateType;

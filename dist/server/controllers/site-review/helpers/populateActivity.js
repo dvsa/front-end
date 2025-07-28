@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.populateActivity = void 0;
 /**
  * Populates activity data middlestack
  *
@@ -10,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
  * @param {Express.Response} res - Express response object
  * @param {Express.Next} - Express Next object
  */
-const populateActivity = exports.populateActivity = (req, res, next) => {
+const populateActivity = (req, res, next) => {
   // Resets activity viewData
   req.session.viewData.activity.isCompleted = false;
   req.session.viewData.activity.commitedTestNum = '';
@@ -39,7 +40,6 @@ const populateActivity = exports.populateActivity = (req, res, next) => {
 
     // Map commited reason from an int to string
     req.session.viewData.activity.commitedReason = reasons[req.session.viewData.activity.formData.reason - 1];
-
     req.session.viewData.activity.commitedOtherReason = req.body['activity-unperformed-comment'];
   }
 
@@ -49,3 +49,4 @@ const populateActivity = exports.populateActivity = (req, res, next) => {
   // Run next middleware method
   next();
 };
+exports.populateActivity = populateActivity;

@@ -1,8 +1,9 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.data = void 0;
 // JSON represenation of messages
 const data = exports.data = [{
   title: 'Class 1 and 2 test standard change',

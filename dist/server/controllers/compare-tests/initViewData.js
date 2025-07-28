@@ -1,14 +1,15 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.initViewData = void 0;
 /**
  * Sets and returns a sample data object of defect differences
  *
  * @returns {Object} - Difference data object
  */
-const initViewData = exports.initViewData = () => {
+const initViewData = () => {
   return {
     inspection: {
       tester: 'John Morris, MORR6743',
@@ -96,3 +97,4 @@ const initViewData = exports.initViewData = () => {
     }]
   };
 };
+exports.initViewData = initViewData;

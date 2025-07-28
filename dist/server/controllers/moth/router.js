@@ -1,15 +1,16 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.postMothType = void 0;
 /**
  * GET Middleware - Brancing method based on radio response
  *
  * @param {Express.Request} req - Express request object
  * @param {Express.Response} res - Express response object
  */
-const postMothType = exports.postMothType = (req, res) => {
+const postMothType = (req, res) => {
   if (req.body.mothRadio === undefined) {
     return res.redirect('/prototypes/mot-history-data/cvs/what-vehicle');
   }
@@ -23,3 +24,4 @@ const postMothType = exports.postMothType = (req, res) => {
   // else return to vehicle make
   return res.redirect('/prototypes/mot-history-data/cvs/enter-vrm');
 };
+exports.postMothType = postMothType;

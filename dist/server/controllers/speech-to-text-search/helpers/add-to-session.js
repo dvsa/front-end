@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.addToSession = void 0;
 /*
 // Partial add to session function
 // 
@@ -10,7 +11,7 @@ Object.defineProperty(exports, "__esModule", {
 // Returns a function which expects an object to append to the
 // closure sessionObject
 */
-const addToSession = exports.addToSession = (req, sessionName) => {
+const addToSession = (req, sessionName) => {
   // Init's session object / references current version
   req.session[sessionName] = req.session[sessionName] || {};
 
@@ -25,3 +26,4 @@ const addToSession = exports.addToSession = (req, sessionName) => {
     });
   };
 };
+exports.addToSession = addToSession;

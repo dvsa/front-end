@@ -1,106 +1,45 @@
-'use strict';
+"use strict";
 
+require("core-js/modules/esnext.weak-map.delete-all.js");
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.startApp = undefined;
-
-var _fs = require('fs');
-
-var _fs2 = _interopRequireDefault(_fs);
-
-var _path = require('path');
-
-var _path2 = _interopRequireDefault(_path);
-
-var _express = require('express');
-
-var _express2 = _interopRequireDefault(_express);
-
-var _bodyParser = require('body-parser');
-
-var _bodyParser2 = _interopRequireDefault(_bodyParser);
-
-var _expressSession = require('express-session');
-
-var _expressSession2 = _interopRequireDefault(_expressSession);
-
-var _connectFlash = require('connect-flash');
-
-var _connectFlash2 = _interopRequireDefault(_connectFlash);
-
-var _memorystore = require('memorystore');
-
-var _memorystore2 = _interopRequireDefault(_memorystore);
-
-var _morgan = require('morgan');
-
-var _morgan2 = _interopRequireDefault(_morgan);
-
-var _nunjucks = require('nunjucks');
-
-var _nunjucks2 = _interopRequireDefault(_nunjucks);
-
-var _nodeDir = require('node-dir');
-
-var _nodeDir2 = _interopRequireDefault(_nodeDir);
-
-var _compression = require('compression');
-
-var _compression2 = _interopRequireDefault(_compression);
-
-var _etag = require('etag');
-
-var _etag2 = _interopRequireDefault(_etag);
-
-var _expressMinifyHtml = require('express-minify-html');
-
-var _expressMinifyHtml2 = _interopRequireDefault(_expressMinifyHtml);
-
-var _helmet = require('helmet');
-
-var _helmet2 = _interopRequireDefault(_helmet);
-
-var _errorhandler = require('errorhandler');
-
-var _errorhandler2 = _interopRequireDefault(_errorhandler);
-
-var _lodash = require('lodash');
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _routes = require('./config/routes');
-
-var _constants = require('./config/constants');
-
-var _middlewares = require('./middlewares');
-
-var Middlewares = _interopRequireWildcard(_middlewares);
-
-var _helpers = require('./helpers');
-
-var Helpers = _interopRequireWildcard(_helpers);
-
-var _package = require('./../../package.json');
-
-var REPO_PACKAGE_JSON = _interopRequireWildcard(_package);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-const startApp = exports.startApp = async () => {
+exports.startApp = void 0;
+var _fs = _interopRequireDefault(require("fs"));
+var _path = _interopRequireDefault(require("path"));
+var _express = _interopRequireDefault(require("express"));
+var _bodyParser = _interopRequireDefault(require("body-parser"));
+var _expressSession = _interopRequireDefault(require("express-session"));
+var _connectFlash = _interopRequireDefault(require("connect-flash"));
+var _memorystore = _interopRequireDefault(require("memorystore"));
+var _morgan = _interopRequireDefault(require("morgan"));
+var _nunjucks = _interopRequireDefault(require("nunjucks"));
+var _nodeDir = _interopRequireDefault(require("node-dir"));
+var _compression = _interopRequireDefault(require("compression"));
+var _etag = _interopRequireDefault(require("etag"));
+var _expressMinifyHtml = _interopRequireDefault(require("express-minify-html"));
+var _helmet = _interopRequireDefault(require("helmet"));
+var _errorhandler = _interopRequireDefault(require("errorhandler"));
+var _lodash = _interopRequireDefault(require("lodash"));
+var _routes = require("./config/routes");
+var _constants = require("./config/constants");
+var Middlewares = _interopRequireWildcard(require("./middlewares"));
+var Helpers = _interopRequireWildcard(require("./helpers"));
+var REPO_PACKAGE_JSON = _interopRequireWildcard(require("./../../package.json"));
+function _interopRequireWildcard(e, t) { if ("function" == typeof WeakMap) var r = new WeakMap(), n = new WeakMap(); return (_interopRequireWildcard = function (e, t) { if (!t && e && e.__esModule) return e; var o, i, f = { __proto__: null, default: e }; if (null === e || "object" != typeof e && "function" != typeof e) return f; if (o = t ? n : r) { if (o.has(e)) return o.get(e); o.set(e, f); } for (const t in e) "default" !== t && {}.hasOwnProperty.call(e, t) && ((i = (o = Object.defineProperty) && Object.getOwnPropertyDescriptor(e, t)) && (i.get || i.set) ? o(f, t, i) : f[t] = e[t]); return f; })(e, t); }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+const startApp = async () => {
   // Create express server
-  const app = (0, _express2.default)();
+  const app = (0, _express.default)();
 
   // Create nunjucks fileloader instance for the views folder
-  const nunjucksFileLoader = new _nunjucks2.default.FileSystemLoader(_path2.default.resolve('src', 'server', 'views'), {
+  const nunjucksFileLoader = new _nunjucks.default.FileSystemLoader(_path.default.resolve('src', 'server', 'views'), {
     noCache: true
   });
 
   // Create a nunjucks instance to be used for the view engine
   // This instance can be used to add filters and globals
-  let env = new _nunjucks2.default.Environment(nunjucksFileLoader, {
+  let env = new _nunjucks.default.Environment(nunjucksFileLoader, {
     autoescape: false,
     web: {
       useCache: false
@@ -114,7 +53,7 @@ const startApp = exports.startApp = async () => {
   env.addFilter('prismFullpage', Helpers.wrapCodeWithPrismForFullPagePreview);
 
   // Add lodash as a global for view templates
-  env.addGlobal('_', _lodash2.default);
+  env.addGlobal('_', _lodash.default);
 
   // Add app url as global
   env.addGlobal('appURL', _constants.CONFIG.appURL);
@@ -126,7 +65,7 @@ const startApp = exports.startApp = async () => {
   const getMacroFilePaths = async () => {
     // Creates a promise since the function uses a callback
     return new Promise((resolve, reject) => {
-      _nodeDir2.default.paths(_path2.default.resolve(_constants.CONFIG.paths.views.base, 'macros'), (err, paths) => {
+      _nodeDir.default.paths(_path.default.resolve(_constants.CONFIG.paths.views.base, 'macros'), (err, paths) => {
         // Handles error
         if (err) {
           // Returns a reject promise response
@@ -139,7 +78,7 @@ const startApp = exports.startApp = async () => {
   };
 
   // Add all macro file paths to be accessible inside view templates
-  env.addGlobal('macroFilePaths', (await getMacroFilePaths()));
+  env.addGlobal('macroFilePaths', await getMacroFilePaths());
 
   // Add express to the nunjucks enviroment instance
   env.express(app);
@@ -159,9 +98,8 @@ const startApp = exports.startApp = async () => {
   // The eTag hash is generated from the file content
   // So if the file changes, the hash is also changed which clears the current cache
   app.set('etag', (body, encoding) => {
-    return (0, _etag2.default)(body, encoding);
+    return (0, _etag.default)(body, encoding);
   });
-
   app.use(Middlewares.addLibraryNavigationItemsToRequestObject);
 
   // Enable HTML Compression
@@ -180,7 +118,7 @@ const startApp = exports.startApp = async () => {
   if (!(0, _constants.isDevelopment)()) {
     // Helmet middleware
     // https://helmetjs.github.io/
-    app.use((0, _helmet2.default)());
+    app.use((0, _helmet.default)());
 
     // Remove powered by express
     // for security reasons
@@ -188,21 +126,21 @@ const startApp = exports.startApp = async () => {
   }
 
   // Enable GZip Compression
-  app.use((0, _compression2.default)());
+  app.use((0, _compression.default)());
 
   // Logger middleware
   // Outputs all http requests and responses
   if (!(0, _constants.isTesting)()) {
-    app.use((0, _morgan2.default)('dev'));
+    app.use((0, _morgan.default)('dev'));
   }
 
   // Memory store created for production use
   // See: https://www.npmjs.com/package/memorystore
-  const MemoryStore = (0, _memorystore2.default)(_expressSession2.default);
+  const MemoryStore = (0, _memorystore.default)(_expressSession.default);
 
   // Express session middleware
   // Website: https://www.npmjs.com/package/express-session
-  app.use((0, _expressSession2.default)({
+  app.use((0, _expressSession.default)({
     resave: true,
     saveUninitialized: true,
     secret: _constants.CONFIG.sessionSecret,
@@ -218,19 +156,21 @@ const startApp = exports.startApp = async () => {
 
   // Express flash messaging middleware
   // https://www.npmjs.com/package/connect-flash
-  app.use((0, _connectFlash2.default)());
+  app.use((0, _connectFlash.default)());
 
   // Static folder
-  app.use(_express2.default.static(_constants.CONFIG.paths.publicAssets));
+  app.use(_express.default.static(_constants.CONFIG.paths.publicAssets));
 
   // Body parsing middleware
   // Website: https://www.npmjs.com/package/body-parser
-  app.use(_bodyParser2.default.json());
-  app.use(_bodyParser2.default.urlencoded({ extended: true }));
+  app.use(_bodyParser.default.json());
+  app.use(_bodyParser.default.urlencoded({
+    extended: true
+  }));
 
   // Error handling for development
   if ((0, _constants.isDevelopment)()) {
-    app.use((0, _errorhandler2.default)());
+    app.use((0, _errorhandler.default)());
   }
 
   // Routes
@@ -246,3 +186,4 @@ const startApp = exports.startApp = async () => {
     }
   });
 };
+exports.startApp = startApp;

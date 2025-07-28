@@ -5,7 +5,6 @@ services:
     command: npm run start-dev
     volumes:
       - .:/usr/app/
-      - node_modules:/usr/app/node_modules
     ports:
       - "3002:3002"
       - "8888:8888"
@@ -13,6 +12,3 @@ services:
       PORT: 3002
       NODE_ENV: development
       SESSION_SECRET: 'secret'
-
-volumes:
-  node_modules:

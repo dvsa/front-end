@@ -1,7 +1,16 @@
 diff --git a/node_modules/datatables.net/js/jquery.dataTables.js b/node_modules/datatables.net/js/jquery.dataTables.js
-index 3361ce6..360fc33 100644
+index 3361ce6..a0df5ec 100644
 --- a/node_modules/datatables.net/js/jquery.dataTables.js
 +++ b/node_modules/datatables.net/js/jquery.dataTables.js
+@@ -1378,7 +1378,7 @@
+ 			_re_dic[ decimalPoint ] = new RegExp( _fnEscapeRegex( decimalPoint ), 'g' );
+ 		}
+ 		return typeof num === 'string' && decimalPoint !== '.' ?
+-			num.replace( /\./g, '' ).replace( _re_dic[ decimalPoint ], '.' ) :
++			num.replace(/\./g, '').replace(new RegExp(_fnEscapeRegex(decimalPoint), 'g'), '.') :
+ 			num;
+ 	};
+ 	
 @@ -1502,7 +1502,6 @@
  		return out;
  	};

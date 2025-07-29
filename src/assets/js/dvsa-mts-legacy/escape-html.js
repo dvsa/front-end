@@ -1,3 +1,5 @@
+import sanitizeHtml from 'sanitize-html';
+
 function escapeHTML(str) {
   return String(str).replaceAll(/[&<>"']/g, function(m) {
     return {
@@ -11,8 +13,5 @@ function escapeHTML(str) {
 }
 
 var stripHtml = function(d) {
-  return String(d)
-    .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '') // Remove full script tags
-    .replace(/<\/?[^>]+(>|$)/g, '') // Remove all HTML tags
-    .replace(/[<>]/g, ''); // Remove leftover brackets
+  return sanitizeHtml(String(d), { allowedTags: [], allowedAttributes: {} });
 };

@@ -1,8 +1,19 @@
 diff --git a/node_modules/datatables.net/js/jquery.dataTables.js b/node_modules/datatables.net/js/jquery.dataTables.js
-index 3361ce6..6b316a5 100644
+index 3361ce6..18c3599 100644
 --- a/node_modules/datatables.net/js/jquery.dataTables.js
 +++ b/node_modules/datatables.net/js/jquery.dataTables.js
-@@ -1378,7 +1378,7 @@
+@@ -23,7 +23,9 @@
+ /*jslint evil: true, undef: true, browser: true */
+ /*globals $,require,jQuery,define,_selector_run,_selector_opts,_selector_first,_selector_row_indexes,_ext,_Api,_api_register,_api_registerPlural,_re_new_lines,_re_html,_re_formatted_numeric,_re_escape_regex,_empty,_intVal,_numToDecimal,_isNumber,_isHtml,_htmlNumeric,_pluck,_pluck_order,_range,_stripHtml,_unique,_fnBuildAjax,_fnAjaxUpdate,_fnAjaxParameters,_fnAjaxUpdateDraw,_fnAjaxDataSrc,_fnAddColumn,_fnColumnOptions,_fnAdjustColumnSizing,_fnVisibleToColumnIndex,_fnColumnIndexToVisible,_fnVisbleColumns,_fnGetColumns,_fnColumnTypes,_fnApplyColumnDefs,_fnHungarianMap,_fnCamelToHungarian,_fnLanguageCompat,_fnBrowserDetect,_fnAddData,_fnAddTr,_fnNodeToDataIndex,_fnNodeToColumnIndex,_fnGetCellData,_fnSetCellData,_fnSplitObjNotation,_fnGetObjectDataFn,_fnSetObjectDataFn,_fnGetDataMaster,_fnClearTable,_fnDeleteIndex,_fnInvalidate,_fnGetRowElements,_fnCreateTr,_fnBuildHead,_fnDrawHead,_fnDraw,_fnReDraw,_fnAddOptionsHtml,_fnDetectHeader,_fnGetUniqueThs,_fnFeatureHtmlFilter,_fnFilterComplete,_fnFilterCustom,_fnFilterColumn,_fnFilter,_fnFilterCreateSearch,_fnEscapeRegex,_fnFilterData,_fnFeatureHtmlInfo,_fnUpdateInfo,_fnInfoMacros,_fnInitialise,_fnInitComplete,_fnLengthChange,_fnFeatureHtmlLength,_fnFeatureHtmlPaginate,_fnPageChange,_fnFeatureHtmlProcessing,_fnProcessingDisplay,_fnFeatureHtmlTable,_fnScrollDraw,_fnApplyToChildren,_fnCalculateColumnWidths,_fnThrottle,_fnConvertToWidth,_fnGetWidestNode,_fnGetMaxLenString,_fnStringToCss,_fnSortFlatten,_fnSort,_fnSortAria,_fnSortListener,_fnSortAttachListener,_fnSortingClasses,_fnSortData,_fnSaveState,_fnLoadState,_fnSettingsFromNode,_fnLog,_fnMap,_fnBindAction,_fnCallbackReg,_fnCallbackFire,_fnLengthOverflow,_fnRenderer,_fnDataSource,_fnRowAttributes*/
+ 
+-(function( factory ) {
++import sanitizeHtml from "sanitize-html";
++
++(function(factory ) {
+ 	"use strict";
+ 
+ 	if ( typeof define === 'function' && define.amd ) {
+@@ -1378,7 +1380,7 @@
  			_re_dic[ decimalPoint ] = new RegExp( _fnEscapeRegex( decimalPoint ), 'g' );
  		}
  		return typeof num === 'string' && decimalPoint !== '.' ?
@@ -11,7 +22,7 @@ index 3361ce6..6b316a5 100644
  			num;
  	};
  	
-@@ -1502,7 +1502,6 @@
+@@ -1502,7 +1504,6 @@
  		return out;
  	};
  	
@@ -19,35 +30,39 @@ index 3361ce6..6b316a5 100644
  	var _removeEmpty = function ( a )
  	{
  		var out = [];
-@@ -1518,9 +1517,7 @@
- 	
- 	
+@@ -1516,11 +1517,10 @@
+ 		return out;
+ 	};
+ 
++	import sanitizeHtml from 'sanitize-html';
+ 
  	var _stripHtml = function ( d ) {
 -		return d
 -			.replace( _re_html, '' ) // Complete tags
 -			.replace(/<script/i, ''); // Safety for incomplete script tag
-+		return stripHtml(d)
++		return sanitizeHtml(String(d), { allowedTags: [], allowedAttributes: {} });
  	};
  	
  	
 diff --git a/node_modules/datatables.net/js/jquery.dataTables.mjs b/node_modules/datatables.net/js/jquery.dataTables.mjs
-index 04bee9d..a55acb0 100644
+index 04bee9d..3fbddc3 100644
 --- a/node_modules/datatables.net/js/jquery.dataTables.mjs
 +++ b/node_modules/datatables.net/js/jquery.dataTables.mjs
-@@ -1459,11 +1459,8 @@ var _removeEmpty = function ( a )
+@@ -1459,11 +1459,10 @@ var _removeEmpty = function ( a )
  	return out;
  };
  
--
++import sanitizeHtml from 'sanitize-html';
+ 
  var _stripHtml = function ( d ) {
 -	return d
 -		.replace( _re_html, '' ) // Complete tags
 -		.replace(/<script/i, ''); // Safety for incomplete script tag
-+	return stripHTML(d)
++	return sanitizeHtml(String(d), { allowedTags: [], allowedAttributes: {} });
  };
  
  
-@@ -1636,9 +1633,10 @@ DataTable.util = {
+@@ -1636,9 +1635,10 @@ DataTable.util = {
  	 *  @returns {string} escaped string
  	 */
  	escapeRegex: function ( val ) {

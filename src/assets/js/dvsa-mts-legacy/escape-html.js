@@ -9,3 +9,10 @@ function escapeHTML(str) {
     }[m];
   });
 }
+
+var stripHtml = function(d) {
+  return String(d)
+    .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '') // Remove full script tags
+    .replace(/<\/?[^>]+(>|$)/g, '') // Remove all HTML tags
+    .replace(/[<>]/g, ''); // Remove leftover brackets
+};

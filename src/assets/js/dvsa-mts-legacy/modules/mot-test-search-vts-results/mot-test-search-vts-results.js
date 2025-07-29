@@ -64,12 +64,12 @@ export class MotTestSearchVTSResults {
             return (
               '<a href="javascript:void(0)" class="info-popup" ' +
               'data-sorting="' +
-              data.display_status +
+              escapeHTML(data.display_status) +
               '" data-toggle="popover" ' +
               'data-placement="auto" role="button" data-content="' +
-              data.popover +
+              escapeHTML(data.popover) +
               '">' +
-              data.display_status +
+              escapeHTML(data.display_status) +
               '</a>'
             );
           },

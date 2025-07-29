@@ -1,0 +1,18 @@
+diff --git a/node_modules/datatables.net/js/jquery.dataTables.mjs b/node_modules/datatables.net/js/jquery.dataTables.mjs
+index 04bee9d..b692265 100644
+--- a/node_modules/datatables.net/js/jquery.dataTables.mjs
++++ b/node_modules/datatables.net/js/jquery.dataTables.mjs
+@@ -1635,9 +1635,10 @@ DataTable.util = {
+ 	 *  @param {string} val string to escape
+ 	 *  @returns {string} escaped string
+ 	 */
+-	escapeRegex: function ( val ) {
+-		return val.replace( _re_escape_regex, '\\$1' );
+-	},
++	// patched
++	escapeRegex: function(e) {
++		return e.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
++	}
+ 
+ 	/**
+ 	 * Create a function that will write to a nested object or array

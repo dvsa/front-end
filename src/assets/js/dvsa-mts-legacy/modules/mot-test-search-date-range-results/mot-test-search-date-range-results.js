@@ -63,7 +63,7 @@ export class MotTestSearchDateRangeResults {
           sortable: false,
           targets: [5],
           render: function(data, type, row) {
-            return '<a ' + data.id + '" href="' + data.url + '">' + data.text + '</a>';
+            return '<a ' + escapeHTML(data.id) + '" href="' + escapeHTML(data.url) + '">' + escapeHTML(data.text) + '</a>';
           },
         },
         { class: 'truncate', targets: [7, 8] },

@@ -40,7 +40,6 @@
     "cookie-session": "^2.1.0",
     "core-js": "^3.44.0",
     "csurf": "^1.11.0",
-    "datatables": "^1.10.18",
     "datatables.net": "^1.13.11",
     "datatables.net-responsive": "^2.5.1",
     "document-ready": "^2.0.2",

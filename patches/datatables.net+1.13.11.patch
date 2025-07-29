@@ -1,5 +1,5 @@
 diff --git a/node_modules/datatables.net/js/jquery.dataTables.js b/node_modules/datatables.net/js/jquery.dataTables.js
-index 3361ce6..7df0424 100644
+index 3361ce6..23ad1c0 100644
 --- a/node_modules/datatables.net/js/jquery.dataTables.js
 +++ b/node_modules/datatables.net/js/jquery.dataTables.js
 @@ -1502,7 +1502,6 @@
@@ -10,34 +10,19 @@ index 3361ce6..7df0424 100644
  	var _removeEmpty = function ( a )
  	{
  		var out = [];
-@@ -1519,6 +1518,9 @@
- 	
- 	var _stripHtml = function ( d ) {
- 		return d
-+			.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
-+			.replace(/<\/?[^>]+(>|$)/g, '')
-+			.replace(/[<>]/g, '')
- 			.replace( _re_html, '' ) // Complete tags
- 			.replace(/<script/i, ''); // Safety for incomplete script tag
- 	};
 diff --git a/node_modules/datatables.net/js/jquery.dataTables.mjs b/node_modules/datatables.net/js/jquery.dataTables.mjs
-index 04bee9d..e094781 100644
+index 04bee9d..81b437d 100644
 --- a/node_modules/datatables.net/js/jquery.dataTables.mjs
 +++ b/node_modules/datatables.net/js/jquery.dataTables.mjs
-@@ -1459,9 +1459,11 @@ var _removeEmpty = function ( a )
+@@ -1459,7 +1459,6 @@ var _removeEmpty = function ( a )
  	return out;
  };
  
 -
  var _stripHtml = function ( d ) {
  	return d
-+		.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '')
-+		.replace(/<\/?[^>]+(>|$)/g, '')
-+		.replace(/[<>]/g, '')
  		.replace( _re_html, '' ) // Complete tags
- 		.replace(/<script/i, ''); // Safety for incomplete script tag
- };
-@@ -1636,9 +1638,10 @@ DataTable.util = {
+@@ -1636,9 +1635,10 @@ DataTable.util = {
  	 *  @returns {string} escaped string
  	 */
  	escapeRegex: function ( val ) {

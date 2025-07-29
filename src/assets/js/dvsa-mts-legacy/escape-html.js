@@ -1,5 +1,5 @@
 function escapeHTML(str) {
-  return String(str).replace(/[&<>"']/g, function(m) {
+  return String(str).replaceAll(/[&<>"']/g, function(m) {
     return {
       '&': '&amp;',
       '<': '&lt;',

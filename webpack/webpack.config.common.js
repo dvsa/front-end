@@ -1,15 +1,15 @@
-import os from 'os';
-import path from 'path';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
-import cssnano from 'cssnano';
-import autoprefixer from 'autoprefixer';
-import TerserPlugin from "terser-webpack-plugin";
+const os = require('os');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const cssnano = require('cssnano');
+const autoprefixer = require('autoprefixer');
+const TerserPlugin = require("terser-webpack-plugin");
 
-/**  Constants */
-const isCopyToMTS = process.env.COPY_TO_MTS === true;
-const isCopyToMOTH = process.env.COPY_TO_MOTH === true;
-const isCopyToManuals = process.env.COPY_TO_MANUALS === true;
+/** Constants */
+const isCopyToMTS = process.env.COPY_TO_MTS === 'true';
+const isCopyToMOTH = process.env.COPY_TO_MOTH === 'true';
+const isCopyToManuals = process.env.COPY_TO_MANUALS === 'true';
 
 const config = {
   paths: {
@@ -25,24 +25,16 @@ const config = {
   }
 };
 
-/**
- * Checks environment variable to see if we are in production mode
- *
- * @returns {Boolean} true if we are in production and false otherwise
- *
- */
-const isProduction = () => {
-  return process.env.NODE_ENV === 'production';
-};
+const isProduction = () => process.env.NODE_ENV === 'production';
 
 const postCSSPlugins = [
   autoprefixer({
-    browsers: [
-        "ie 8",
-        "ie 9",
-        "ie 10",
-        "ie 11",
-        "last 2 versions"
+    overrideBrowserslist: [
+      "ie 8",
+      "ie 9",
+      "ie 10",
+      "ie 11",
+      "last 2 versions"
     ]
   })
 ];
@@ -53,6 +45,7 @@ if (isProduction()) {
     minifyFontValues: false
   }));
 }
+
 const copyPluginPatterns = [
   {
     context: path.resolve(config.paths.fonts),
@@ -70,7 +63,8 @@ const copyPluginPatterns = [
     to: '../misc'
   },
 ];
-if(isCopyToMTS) {
+
+if (isCopyToMTS) {
   copyPluginPatterns.push({
     context: path.resolve('public'),
     from: '**/*',
@@ -78,7 +72,8 @@ if(isCopyToMTS) {
     force: true,
   });
 }
-if(isCopyToMOTH) {
+
+if (isCopyToMOTH) {
   copyPluginPatterns.push({
     context: path.resolve('public'),
     from: '**/*',
@@ -86,8 +81,8 @@ if(isCopyToMOTH) {
     force: true,
   });
 }
-if(isCopyToManuals) {
-  // Class 3457 and Class 12
+
+if (isCopyToManuals) {
   copyPluginPatterns.push({
     context: path.resolve('public'),
     from: '**/*',
@@ -101,7 +96,7 @@ if(isCopyToManuals) {
   });
 }
 
-export default {
+module.exports = {
   entry: {
     'dvsa': path.resolve(config.paths.js, 'dvsa', 'index.js'),
     'dvsa-manuals': path.resolve(config.paths.js, 'dvsa-manuals', 'index.js'),
@@ -121,9 +116,9 @@ export default {
           options: {
             babelrc: false,
             presets: [
-              ['env', {
-                'targets': {
-                  'browsers': [
+              ['@babel/preset-env', {
+                targets: {
+                  browsers: [
                     'last 3 versions',
                     'ie >= 9',
                     'last 3 iOS major versions',
@@ -132,11 +127,9 @@ export default {
                   ]
                 },
                 debug: true,
-                useBuiltIns: true,
-                uglify: true
-              }],
-              'stage-2',
-              'stage-3'
+                useBuiltIns: 'usage',
+                corejs: 3
+              }]
             ],
           },
         },

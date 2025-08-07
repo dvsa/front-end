@@ -1,5 +1,6 @@
 // Polyfills
-import 'babel-polyfill';
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
 import './../third-party';
 
 import { domReady, initGDS } from './../shared';

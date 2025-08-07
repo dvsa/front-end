@@ -1,10 +1,10 @@
-import path from 'path';
-import webpack from 'webpack';
-import common from './webpack.config.common.babel';
-import merge from 'webpack-merge';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+const path = require('path');
+const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.config.common.js');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-export default merge(common, {
+module.exports = merge(common, {
   watch: true,
   output: {
     filename: '[name].bundle.js',
@@ -24,9 +24,9 @@ export default merge(common, {
      *
      * https://www.npmjs.com/package/webpack-bundle-analyzer
      */
+    // Uncomment below to enable bundle analyzer
     // new BundleAnalyzerPlugin({
     //   analyzerPort: 8888,
-    //   // Relative to output path
     //   reportFilename: './../../tmp/webpack-bundle-report.html'
     // }),
   ]
